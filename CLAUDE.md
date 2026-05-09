@@ -10,6 +10,22 @@ The user's current collection total is expected to equal exactly 331 cards.
 
 The user currently has 383 pack hourglasses and wants to save 240, meaning they can spend 143. Since a 10-pack costs 120, they can open one 10-pack and still have 263 saved.
 
+## Operating Principle
+
+Act like a senior engineer maintaining a clean, durable repo.
+
+Do not blindly follow narrow task wording if there is an obvious best-practice repo hygiene issue that should be addressed before moving forward. If a cleanup, validation, or organization step is clearly necessary to achieve the project goal safely, propose or perform it within the current phase if it does not violate hard constraints.
+
+Examples of expected proactive behavior:
+
+- Remove redundant local artifacts once they are proven unnecessary.
+- Keep only the optimal working source files.
+- Avoid committing large binaries, screenshots, caches, zip files, generated temp files, or local IDE metadata.
+- Keep scripts modular and reusable.
+- Prefer deterministic, auditable workflows over ad hoc manual edits.
+- Validate before and after meaningful changes.
+- Stop before high-risk or scope-expanding work.
+
 ## Critical Workflow Rule
 
 Work in small phases.
@@ -22,16 +38,97 @@ Never do card extraction, database merging, validation, and deck recommendations
 
 Always stop after completing the exact requested phase.
 
+If the user asks for general improvement, optimization, organization, or best practices, proactively inspect the current phase for obvious repo hygiene issues and address them if safe.
+
 ## Hard Stop Behavior
 
 At the end of every response, stop and report only:
 
 1. Files created or edited
 2. What was completed
-3. Any uncertainties
-4. The exact next recommended prompt
+3. Any uncertainties or blockers
+4. Validation results
+5. Git status
+6. The exact next recommended prompt
 
 Do not continue into the next phase unless explicitly instructed.
+
+## Git and Repository Best Practices
+
+Use git carefully and consistently.
+
+Before each phase:
+
+1. Run `git status`.
+2. Confirm the current branch.
+3. Confirm whether the working tree is clean.
+4. Do not start new work on a dirty tree unless the dirty changes are intentional and understood.
+
+During each phase:
+
+1. Make focused, minimal changes.
+2. Commit only logically related changes.
+3. Do not mix unrelated work into one commit.
+4. Do not commit screenshots, zip files, caches, temporary files, virtual environments, local Claude config, or IDE metadata.
+5. Do not force push.
+6. Do not rewrite commit history unless the user explicitly asks.
+7. Use descriptive commit messages.
+8. Prefer text/code artifacts that can be diffed and reviewed.
+
+After each phase:
+
+1. Run relevant validation commands.
+2. Run `git status`.
+3. Commit if appropriate.
+4. Push only when explicitly instructed or when the user has established that pushes should happen after commits.
+5. If push fails due to authentication, clearly explain the blocker and do not attempt unsafe credential changes.
+
+The intended remote is:
+
+git@github.com:jackpendley/Pokemon-TCGP-DB.git
+
+If SSH authentication fails:
+
+1. Check whether a public key exists.
+2. Check whether the key is loaded in the SSH agent.
+3. Test `ssh -T git@github.com`.
+4. If GitHub rejects the key, stop and tell the user to add the public key to GitHub.
+5. Do not switch to HTTPS unless the user explicitly chooses that option.
+
+## Local File Hygiene
+
+The repo should stay clean and modular.
+
+Allowed tracked files include:
+
+- Markdown documentation
+- JSON database files
+- JSON schema files
+- CSV exports generated from tracked JSON
+- Python scripts
+- Batch JSON files after they are intentionally created
+- Manifest and audit reports
+
+Do not track:
+
+- Raw screenshot image files
+- Zip archives
+- macOS metadata folders such as `__MACOSX`
+- `.DS_Store`
+- Python caches
+- virtual environments
+- local `.env` files
+- Claude local config
+- temporary logs
+- crop images unless the user explicitly requests they be tracked
+
+The active local screenshot source should be:
+
+screenshots/IMG_1524.PNG through screenshots/IMG_1547.PNG
+
+These screenshots are used for local extraction but are gitignored.
+
+Redundant files such as `Archive.zip` and `screenshots/__MACOSX/` should be removed after verifying that the 24 real PNG screenshots are intact.
 
 ## Database Philosophy
 
@@ -111,6 +208,21 @@ When extracting from screenshots:
 8. If special type is unclear, use `special_type: "unknown"`.
 9. If the card appears special but exact category is unclear, use `needs_review: true`.
 10. Do not infer set, rarity, HP, type, or stage unless visible or confidently known from the card image.
+
+## One-Screenshot Extraction Workflow
+
+For each screenshot:
+
+1. Read `CLAUDE.md`.
+2. Read `extraction_checklist.md`.
+3. Process exactly one screenshot.
+4. Create exactly one batch file.
+5. Do not edit `cards.json`.
+6. Run `python3 scripts/validate_batch.py <batch_file>`.
+7. Update `ambiguous_cards.md` only for uncertain cards.
+8. Stop and report results.
+
+Never process the next screenshot automatically.
 
 ## Special Type Categories
 
@@ -242,7 +354,7 @@ The validation script should check:
 
 Run validation with:
 
-python scripts/validate_cards.py --expected-total 331
+python3 scripts/validate_cards.py --expected-total 331
 
 ## CSV Export
 
@@ -251,6 +363,10 @@ python scripts/validate_cards.py --expected-total 331
 Do not manually maintain `cards.csv`.
 
 Create a script that exports `cards.json` to `cards.csv`.
+
+Run CSV export with:
+
+python3 scripts/export_cards_csv.py
 
 ## Files to Maintain
 
@@ -263,12 +379,16 @@ cards.json
 cards.csv
 ambiguous_cards.md
 screenshots_manifest.md
+screenshots_inventory.json
+extraction_checklist.md
 merge_report.md
 deck_recommendations.md
 batches/
 scripts/validate_cards.py
+scripts/validate_batch.py
 scripts/export_cards_csv.py
 scripts/merge_batches.py
+scripts/inventory_screenshots.py
 
 ## Deck Recommendation Rules
 
@@ -300,6 +420,21 @@ Current deck candidates to consider include:
 
 If current meta information is required but unavailable locally, state what external data should be checked rather than guessing.
 
+## Proactive Quality Checks
+
+Before suggesting the next phase, check whether any of these should happen first:
+
+- Is the git working tree clean?
+- Are generated files up to date?
+- Are ignored local artifacts cluttering the working directory?
+- Are there redundant source files?
+- Are validation scripts still passing/failing only for expected reasons?
+- Is the next step too broad?
+- Would the next step risk burning excessive context?
+- Should the next step be split smaller?
+
+If the next step is too broad, propose a smaller safer prompt.
+
 ## Forbidden Behaviors
 
 Do not:
@@ -313,3 +448,6 @@ Do not:
 - Reprocess previous screenshots unless asked.
 - Continue to the next phase without instruction.
 - Claim the database is exact unless the total validates to 331 and all ambiguous cards are resolved or clearly flagged.
+- Commit large binaries or image files.
+- Force push.
+- Switch remote authentication methods without user approval.
