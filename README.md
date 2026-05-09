@@ -59,3 +59,24 @@ Key fields: `id`, `card_name`, `quantity`, `special_type`, `card_category`, `con
 ## Ambiguous Cards
 
 Cards that could not be identified with high confidence are logged in `ambiguous_cards.md` with instructions for what crop or screenshot to provide for confirmation.
+
+## Screenshots and Image Files
+
+`screenshots/` and `Archive.zip` are intentionally excluded from git (see `.gitignore`).
+
+- `Archive.zip` is the canonical backup of all 24 source screenshots.
+- `screenshots/` is the extracted working copy used during card extraction.
+- The two sources are byte-for-byte identical (verified by sha256).
+- `screenshots/__MACOSX/` contains macOS metadata artifacts — not image data.
+
+Screenshot inventory is tracked through:
+- `screenshots_manifest.md` — human-readable manifest with dimensions and hashes
+- `screenshots_inventory.json` — machine-readable full inventory
+
+Card extraction processes one screenshot at a time, saving results to `batches/cards_batch_XXX.json`.
+
+### Re-generate the screenshot inventory
+
+```bash
+python3 scripts/inventory_screenshots.py
+```
