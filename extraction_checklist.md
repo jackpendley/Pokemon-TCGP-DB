@@ -174,6 +174,26 @@ Example: `"Card partially cut off at bottom of screen; quantity not readable. Pr
 
 ---
 
+### Optional: Local Crop Workflow
+
+When card names are not readable from the binder grid, use the crop script to extract individual card images for closer inspection before building the batch.
+
+**Generate crops:**
+
+```bash
+python3 scripts/crop_3x3_cards.py screenshots/IMG_XXXX.PNG crops/IMG_XXXX
+```
+
+Output: `crops/IMG_XXXX/r1c1.png` through `r3c3.png` plus `crop_manifest.json`.
+
+**Alignment note:** The default crop parameters cut each 495px-tall tile from the top of the row. Row 1 card names appear at the bottom of `r1` crops; row 2 names at the bottom of `r2` crops; row 3 names at the bottom of `r3` crops. Quantity chips for row N appear at the top of row N+1 crops. Row 3 quantity chips fall below the crop window and must be confirmed from the full screenshot.
+
+**Use crops to confirm:** card name, HP, pokemon_type, stage, is_ex, special_type (if clearly visible). Do not infer fields not visible in the crop.
+
+**Crops are gitignored.** Do not commit crop images.
+
+---
+
 ### Step 4 — Build the batch file
 
 Save the extracted cards to:

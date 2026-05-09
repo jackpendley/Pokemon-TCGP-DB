@@ -10,18 +10,16 @@ Skipped partial cards (bottom/top edge cutoffs) are intentionally omitted — th
 
 ## IMG_1524.PNG — Batch 001
 
-All 9 cards in the 3×3 extraction grid have unreadable names from the screenshot grid zoom. Each requires a zoomed crop of the card title to confirm identity.
+Card names confirmed from crop inspection. Quick-Grow Extract and Clemont resolved (special_type clear from crops). Remaining: special_type and rarity unconfirmed for 7 cards; row 3 quantity chips fall outside the crop window.
 
-| ID | Row | Col | Name | Qty | Visual Notes | To Resolve |
-|----|-----|-----|------|-----|--------------|------------|
-| unknown_r1c1_unknown_unknown_v1 | 1 | 1 | unknown | 1 | Yellow/gold special-art trainer card; full-bleed swirling illustration | Zoomed crop of card title |
-| unknown_r1c2_unknown_unknown_v1 | 1 | 2 | unknown | 1 | Pokemon with ex indicator visible; orange/amber fire-colored canine-like art | Zoomed crop of card title and energy symbol |
-| unknown_r1c3_unknown_unknown_v1 | 1 | 3 | unknown | 1 | Purple seaweed/kelp-like Pokemon silhouette with sparkle/star art background | Zoomed crop of card title and rarity symbol |
-| unknown_r2c1_unknown_unknown_v1 | 2 | 1 | unknown | 1 | Blue lizard Pokemon in elaborate water/pond scene with extended art | Zoomed crop of card title and rarity symbol |
-| unknown_r2c2_unknown_unknown_v1 | 2 | 2 | unknown | 1 | Golden/sparkle humanoid art with elaborate full-bleed illustration | Zoomed crop of card title and category line |
-| unknown_r2c3_unknown_unknown_v1 | 2 | 3 | unknown | 1 | Green Pokemon in elaborate forest/jungle setting with extended art | Zoomed crop of card title and rarity symbol |
-| unknown_r3c1_unknown_unknown_v1 | 3 | 1 | unknown | 1 | Gray/rock-colored Pokemon in nature setting | Zoomed crop of card title |
-| unknown_r3c2_unknown_unknown_v1 | 3 | 2 | unknown | 1 | Tan/beige compact Pokemon in jungle/bamboo setting | Zoomed crop of card title |
-| unknown_r3c3_unknown_unknown_v1 | 3 | 3 | unknown | 1 | Very dark shadowy Pokemon with high-contrast dramatic art | Zoomed crop of card title |
+| ID | Row | Col | Name | Qty | Reason for Review | To Resolve |
+|----|-----|-----|------|-----|-------------------|------------|
+| blaziken_unknown_unknown_v1 | 1 | 2 | Blaziken | 1 | Sparkle art effects in crop suggest illustration_rare or special_art; cannot confirm special_type or rarity from partial view | Zoomed crop or full card view showing rarity symbol and complete art |
+| skrelp_unknown_unknown_v1 | 1 | 3 | Skrelp | 1 | Sparkle art effects in crop background suggest illustration_rare; cannot confirm special_type or rarity from partial view | Zoomed crop or full card view showing rarity symbol and complete art |
+| sobble_unknown_unknown_v1 | 2 | 1 | Sobble | 1 | Special type not determinable from partial crop | Zoomed crop or full card view showing rarity symbol |
+| bulbasaur_unknown_unknown_v1 | 2 | 3 | Bulbasaur | 1 | Special type not determinable from partial crop | Zoomed crop or full card view showing rarity symbol |
+| shroomish_unknown_unknown_v1 | 3 | 1 | Shroomish | 1 | Special type not determinable from partial crop; row 3 quantity chip outside crop window | Zoomed crop or full card view; quantity to be confirmed from next screenshot |
+| tepig_unknown_unknown_v1 | 3 | 2 | Tepig | 1 | Special type not determinable from partial crop; row 3 quantity chip outside crop window | Zoomed crop or full card view; quantity to be confirmed from next screenshot |
+| zekrom_unknown_unknown_v1 | 3 | 3 | Zekrom | 1 | Special type not determinable from partial crop; row 3 quantity chip outside crop window | Zoomed crop or full card view; quantity to be confirmed from next screenshot |
 
 ---
