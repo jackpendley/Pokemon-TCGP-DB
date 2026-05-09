@@ -16,6 +16,19 @@ Follow every step in order. Do not skip steps or combine multiple screenshots.
 
 ---
 
+## Extraction Scope — 9 Cards Per Screenshot
+
+Extract only the **9 completely visible cards** in the main 3×3 grid (3 columns × 3 rows).
+
+- A card is extractable only if its **full tile and quantity chip are both visible**.
+- **Skip** partial cards at the top or bottom edge of the screenshot. Do not create entries for them.
+- **Do not** log skipped partial cards to `ambiguous_cards.md`. They are intentionally skipped and will appear in the next screenshot.
+- **Do not** include speculative guesses in `card_name` or `review_reason`. Use `"unknown"` when uncertain.
+- If a fully visible card's name is not readable, set `card_name: "unknown"`, `confidence: "low"`, `needs_review: true`.
+- The final screenshot only: extract however many fully visible cards remain (may be fewer than 9).
+
+---
+
 ## Step-by-Step Extraction Process
 
 ### Step 1 — Identify the screenshot
@@ -34,11 +47,11 @@ Do not abbreviate or alter the filename.
 
 The Pokémon TCG Pocket app displays cards in a grid.
 
-Scan the screenshot top-to-bottom, left-to-right.
+Identify the **3×3 block** of completely visible cards with readable quantity chips. These are the only cards to extract.
 
-Count visible rows and columns.
+Scan top-to-bottom, left-to-right within that 3×3 block.
 
-Note any partially visible cards at the top or bottom edge.
+Ignore any partially visible cards at the top or bottom edge — skip them entirely.
 
 ---
 
@@ -191,15 +204,17 @@ Fix any validation errors before proceeding.
 
 ### Step 6 — Log ambiguous cards
 
-For every card with `needs_review: true` or `confidence: "low"`:
+For every card with `needs_review: true` or `confidence: "low"` **that was extracted** (i.e., fully visible with a visible quantity chip):
 
 Add an entry to `ambiguous_cards.md` with:
 - Source screenshot filename
-- Approximate row and column
-- Suspected card name
-- Suspected quantity
+- Row and column
+- Card name (or `unknown`)
+- Quantity
 - Why it is ambiguous
 - What crop or screenshot the user should provide to confirm it
+
+**Do not** log skipped partial cards. **Do not** include speculative guesses in the suspected name or reason.
 
 ---
 
@@ -234,10 +249,9 @@ Grid positions are recorded as 1-indexed integers.
 
 If a card is only partially visible at the top or bottom edge of the screenshot:
 
-- Still record it as an entry.
-- Add `"partial visible card"` to `variant_notes`.
-- Set confidence no higher than `"medium"` — unless the card is fully identifiable despite the crop, which is rare.
-- If the card name or quantity is not readable due to the crop, set confidence to `"low"` and `needs_review: true`.
+- **Skip it entirely.** Do not create an entry for it.
+- Do not log it in `ambiguous_cards.md`. It will be fully visible in the next screenshot.
+- The 9-card extraction scope means only fully visible cards with readable quantity chips are extracted.
 
 ---
 

@@ -209,6 +209,46 @@ When extracting from screenshots:
 9. If the card appears special but exact category is unclear, use `needs_review: true`.
 10. Do not infer set, rarity, HP, type, or stage unless visible or confidently known from the card image.
 
+## Screenshot Extraction Scope
+
+For each screenshot, extract only the completely visible cards in the main 3×3 grid (3 columns × 3 rows = 9 cards) that have visible quantity chips.
+
+Rules:
+
+- For normal screenshots, extract only the 9 completely visible cards in the main 3×3 grid.
+- A card counts as extractable only if the full card tile and its quantity chip are visible.
+- Do not create entries for partial cards at the top or bottom edge of the screenshot.
+- Do not create placeholder entries for cards that will be fully visible in a later screenshot.
+- Do not guess names from unclear artwork.
+- If a fully visible card has a visible quantity but an unclear name, create an unknown entry with `needs_review: true`.
+- If a card is not fully visible or its quantity chip is not visible, skip it entirely.
+- The final screenshot may contain fewer than 9 fully visible cards; extract only those fully visible cards.
+
+## Primary and Secondary Extraction Fields
+
+Primary fields must be populated for every entry:
+
+- `card_name`
+- `quantity`
+- `special_type`
+- `is_ex`
+- `variant_notes`
+- `source_screenshot`
+- `source_row`
+- `source_column`
+- `confidence`
+- `needs_review`
+- `review_reason`
+
+Secondary fields may use `"unknown"`, `"Unknown"`, `"None"`, `false`, or `null` when not clearly visible:
+
+- `card_category`
+- `pokemon_type`
+- `stage`
+- `hp`
+- `rarity`
+- `set_or_pack`
+
 ## One-Screenshot Extraction Workflow
 
 For each screenshot:
@@ -441,7 +481,7 @@ Do not:
 
 - Process all screenshots at once.
 - Edit `cards.json` during individual screenshot extraction.
-- Guess unknown cards.
+- Guess unknown cards or include speculative names in card_name or review_reason.
 - Merge same-name variants carelessly.
 - Create deck recommendations before validation.
 - Run long exploratory loops.
