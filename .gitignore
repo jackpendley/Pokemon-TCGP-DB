@@ -11,3 +11,13 @@ screenshots/
 crops/
 *.log
 .claude/
+
+# Automated pipeline — generated images (not tracked)
+review/contact_sheets/
+ocr_temp/
+
+# Raw reference downloads (unprocessed source data)
+data/reference/*.raw.json
+
+# Downloaded card images from reference builder
+data/reference/images/

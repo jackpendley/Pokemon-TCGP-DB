@@ -79,3 +79,97 @@ Card extraction processes one screenshot at a time, saving results to `batches/c
 ```bash
 python3 scripts/inventory_screenshots.py
 ```
+
+## Automated Extraction Pipeline
+
+The pipeline replaces manual Claude-vision extraction with a reproducible
+Python workflow.  Human review is still required for low-confidence cards,
+but all mechanical work is automated.
+
+### A. Install dependencies
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+Also install Tesseract for OCR (macOS):
+
+```bash
+brew install tesseract
+```
+
+### B. Build card reference
+
+Downloads and caches a PTCGP card-name index for fuzzy matching.
+
+```bash
+python3 scripts/build_card_reference.py
+```
+
+Outputs:
+- `data/reference/card_reference.json`
+- `data/reference/card_names.txt`
+
+If the download fails, run with `--local path/to/cards.json` to supply a
+local file instead.
+
+### C. Crop screenshots
+
+Batch-crops all 24 screenshots into 3×3 card grids.
+
+```bash
+python3 scripts/crop_all_screenshots.py
+```
+
+Outputs: `crops/IMG_XXXX/r1c1.png … r3c3.png` and
+`data/extraction/crop_manifest.json`.  Use `--force` to re-crop.
+
+### D. Create contact sheets
+
+Builds labeled overview images for visual inspection.
+
+```bash
+python3 scripts/create_contact_sheets.py
+```
+
+Outputs: `review/contact_sheets/<stem>_contact.png` (gitignored).
+
+### E. OCR crops
+
+Extracts card name text from the top band of each crop.
+
+```bash
+python3 scripts/ocr_card_crops.py
+```
+
+Output: `data/extraction/ocr_results.json`.  Runs gracefully and
+reports clearly if `tesseract` is missing.
+
+### F. Match OCR to reference
+
+Fuzzy-matches OCR text to the card name list.
+
+```bash
+python3 scripts/match_ocr_to_reference.py
+```
+
+Output: `data/extraction/match_candidates.json`.
+
+### G. Generate review report
+
+Produces human-readable files listing every crop that needs manual
+confirmation.
+
+```bash
+python3 scripts/generate_review_report.py
+```
+
+Outputs:
+- `review/review_needed.md` — grouped by screenshot with top match candidates
+- `review/extraction_candidates.csv` — flat table for spreadsheet review
+
+### H. Create batch files
+
+Open `review/review_needed.md` and confirm card names for all flagged
+crops.  Then manually create `batches/cards_batch_XXX.json` files using the
+confirmed names, following the canonical schema in `CLAUDE.md`.

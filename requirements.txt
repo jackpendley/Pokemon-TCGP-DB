@@ -1,0 +1,6 @@
+Pillow
+rapidfuzz
+requests
+opencv-python
+pytesseract
+imagehash
