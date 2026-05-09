@@ -62,15 +62,14 @@ Cards that could not be identified with high confidence are logged in `ambiguous
 
 ## Screenshots and Image Files
 
-`screenshots/` and `Archive.zip` are intentionally excluded from git (see `.gitignore`).
+`screenshots/` is intentionally excluded from git (see `.gitignore`). Image files are never committed.
 
-- `Archive.zip` is the canonical backup of all 24 source screenshots.
-- `screenshots/` is the extracted working copy used during card extraction.
-- The two sources are byte-for-byte identical (verified by sha256).
-- `screenshots/__MACOSX/` contains macOS metadata artifacts — not image data.
+- `screenshots/` contains 24 PNG source screenshots (IMG_1524.PNG – IMG_1547.PNG), all 1179×2556 px.
+- `Archive.zip` was removed — it was a byte-for-byte redundant copy, verified by sha256 before deletion.
+- `screenshots/__MACOSX/` was removed — it contained only macOS AppleDouble metadata, not image data.
 
 Screenshot inventory is tracked through:
-- `screenshots_manifest.md` — human-readable manifest with dimensions and hashes
+- `screenshots_manifest.md` — human-readable manifest with dimensions, hashes, and cleanup status
 - `screenshots_inventory.json` — machine-readable full inventory
 
 Card extraction processes one screenshot at a time, saving results to `batches/cards_batch_XXX.json`.
