@@ -1,0 +1,22 @@
+[
+  {
+    "id": "example_card_normal_unknown_v1",
+    "card_name": "Example Card",
+    "quantity": 1,
+    "card_category": "Pokemon",
+    "pokemon_type": "Grass",
+    "stage": "Basic",
+    "hp": 60,
+    "is_ex": false,
+    "special_type": "normal",
+    "rarity": "unknown",
+    "set_or_pack": "unknown",
+    "variant_notes": "template example only; do not include in real batches",
+    "source_screenshot": "IMG_0000.PNG",
+    "source_row": 1,
+    "source_column": 1,
+    "confidence": "high",
+    "needs_review": false,
+    "review_reason": ""
+  }
+]
