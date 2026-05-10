@@ -370,3 +370,41 @@ After each new group of confirmed batches, re-run steps A → D to:
 2. Measure whether accuracy improved
 3. Re-score unconfirmed crops with the updated reference
 4. Update the autofill candidate list
+
+---
+
+## Field Detection Experiments
+
+Confirmed batches serve as ground-truth validation data for evaluating
+individual field extraction without touching `cards.json`.
+
+### Evaluate field detection
+
+```bash
+python3 scripts/evaluate_field_detection.py
+```
+
+Evaluates three fields against confirmed ground truth:
+
+| Field | Method | Notes |
+|---|---|---|
+| `quantity` | OCR on quantity chip (bottom-left of tile) | Low accuracy on PTCGP chip style; treat as hint only |
+| `is_ex` | Name-pattern heuristic (`\bex\b`, `^mega\s`) | ~89% accuracy; 0 false positives; misses unnamed ex cards |
+| `card_name` | Fuzzy match from OCR (existing pipeline) | Top-3 accuracy ~33%; useful as review hint |
+
+Outputs `data/extraction/field_detection_report.json` and `field_detection_report.md`.
+
+### Generate a prefilled template for the next screenshot
+
+```bash
+python3 scripts/generate_next_review_template.py \
+  --screenshot IMG_1530.PNG \
+  --output review/confirmed/IMG_1530_confirmed_TEMPLATE.csv
+```
+
+Combines autofill candidates, field detection results, and top-3 match
+hints to prefill as many fields as can be done conservatively.
+Quantity is always left blank — read it from the quantity chip visually.
+
+**User verification is always required** before running
+`create_batch_from_confirmation.py` on any template.
