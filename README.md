@@ -419,6 +419,76 @@ Fix any validation errors before proceeding to the next screenshot.
 
 ---
 
+## Draft Batch Workflow
+
+When OCR candidates exist but manual confirmation would take too long, use the
+draft batch workflow to auto-fill what can be auto-filled and flag the rest for
+human review.
+
+### Step 1 — Create draft CSV and batch from template
+
+```bash
+python3 scripts/create_draft_batch_from_template.py \
+  --screenshot IMG_1538.PNG \
+  --template review/confirmed/IMG_1538_confirmed_TEMPLATE.csv \
+  --confirmed-output review/confirmed/IMG_1538_confirmed_DRAFT.csv \
+  --batch-output batches/cards_batch_015_DRAFT.json \
+  --allow-unknown
+```
+
+Rules applied automatically:
+- **Prefilled** (autofill score ≥ 95): used directly, confidence=medium
+- **Candidate** (top match score ≥ 80): used as draft name, confidence=low, flagged for review
+- **No match** (score < 80): `UNKNOWN_<stem>_rNcM` placeholder, confidence=low, flagged
+
+All draft entries have `quantity=0` and `needs_review=true`. Output filenames
+must end `_DRAFT.csv` / `_DRAFT.json` — the script refuses to write to confirmed paths.
+
+### Step 2 — Summarize all draft batches
+
+```bash
+python3 scripts/summarize_draft_batches.py
+```
+
+Outputs `review/draft_batch_summary.md` — counts prefilled/candidates/UNKNOWN/qty=0
+across all `batches/*_DRAFT.json` files.
+
+### Step 3 — Review and correct the draft CSV
+
+Open the contact sheet and DRAFT CSV side by side:
+
+```bash
+open review/contact_sheets/IMG_1538_contact.png
+open review/confirmed/IMG_1538_confirmed_DRAFT.csv
+```
+
+For each row:
+- Replace `UNKNOWN_*` placeholders with the correct card name.
+- Replace candidate names you disagree with.
+- Fill in the actual quantity from the app.
+- Set `special_type` if identifiable.
+
+### Step 4 — Promote draft to confirmed
+
+Once all rows are correct, rename and validate:
+
+```bash
+cp review/confirmed/IMG_1538_confirmed_DRAFT.csv review/confirmed/IMG_1538_confirmed.csv
+# Edit the copy: remove _DRAFT notes, confirm all fields
+
+python3 scripts/validate_confirmed_csv_against_reference.py \
+  --input review/confirmed/IMG_1538_confirmed.csv
+
+python3 scripts/create_batch_from_confirmation.py \
+  --input review/confirmed/IMG_1538_confirmed.csv \
+  --screenshot IMG_1538.PNG \
+  --output batches/cards_batch_015.json
+
+python3 scripts/validate_batch.py batches/cards_batch_015.json
+```
+
+---
+
 ## Automation Improvement / Active Learning
 
 As confirmed batches accumulate, use them to improve automation for the

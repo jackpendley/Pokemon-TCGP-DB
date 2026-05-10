@@ -1,0 +1,10 @@
+screenshot,row,column,card_name,quantity,special_type,is_ex,notes
+IMG_1538.PNG,1,1,UNKNOWN_IMG_1538_r1c1,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1538.PNG,1,2,Houndoom,0,unknown,false,auto_draft_candidate_score_80; user_verify; ref:stage=Stage 1; is_ex_unverified
+IMG_1538.PNG,1,3,UNKNOWN_IMG_1538_r1c3,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1538.PNG,2,1,Clauncher,0,unknown,false,auto_draft_candidate_score_85; user_verify; ref:stage=Basic; is_ex_unverified
+IMG_1538.PNG,2,2,UNKNOWN_IMG_1538_r2c2,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1538.PNG,2,3,Helioptile,0,unknown,false,auto_draft_candidate_score_87; user_verify; ref:stage=Basic; is_ex_unverified
+IMG_1538.PNG,3,1,UNKNOWN_IMG_1538_r3c1,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1538.PNG,3,2,UNKNOWN_IMG_1538_r3c2,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1538.PNG,3,3,UNKNOWN_IMG_1538_r3c3,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified

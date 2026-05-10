@@ -1,0 +1,10 @@
+screenshot,row,column,card_name,quantity,special_type,is_ex,notes
+IMG_1540.PNG,1,1,UNKNOWN_IMG_1540_r1c1,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1540.PNG,1,2,UNKNOWN_IMG_1540_r1c2,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1540.PNG,1,3,UNKNOWN_IMG_1540_r1c3,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1540.PNG,2,1,UNKNOWN_IMG_1540_r2c1,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1540.PNG,2,2,UNKNOWN_IMG_1540_r2c2,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1540.PNG,2,3,UNKNOWN_IMG_1540_r2c3,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1540.PNG,3,1,UNKNOWN_IMG_1540_r3c1,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1540.PNG,3,2,UNKNOWN_IMG_1540_r3c2,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
+IMG_1540.PNG,3,3,UNKNOWN_IMG_1540_r3c3,0,unknown,false,no_candidate; user_identify_required; is_ex_unverified
