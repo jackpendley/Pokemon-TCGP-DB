@@ -10,6 +10,33 @@ The user's current collection total is expected to equal exactly 331 cards.
 
 The user currently has 383 pack hourglasses and wants to save 240, meaning they can spend 143. Since a 10-pack costs 120, they can open one 10-pack and still have 263 saved.
 
+## Ultimate Product Goal
+
+Build a practical collection database that enables:
+1. Tracking owned cards and quantities
+2. Set/variant/collection progress tracking
+3. Precise pack-opening recommendations (which pack to open, when, and why)
+4. Meta deck recommendations (which current decks can be built or pursued)
+5. Easy future updates via screenshot uploads
+
+Everything added to this project must serve one of these goals.
+
+## Anti-Overengineering Principle
+
+Do not add infrastructure that does not measurably reduce manual confirmation work
+or improve recommendation quality.
+
+Specifically:
+- Do not build image matching or ML training pipelines.
+- Do not chase perfect quantity OCR — users read quantity chips from the app.
+- Do not build complex Game8 or Pokémon.com scrapers unless trivially available.
+- Do not add automation layers that require more debugging than manual work saves.
+- External references are name/metadata hints only; they never write to cards.json.
+- User verification is always required before any batch file is created.
+- Stop before any step that is harder than "copy template → fill names+quantities → run one script".
+
+The shortest path to a validated collection DB and recommendation engine is always preferred.
+
 ## Operating Principle
 
 Act like a senior engineer maintaining a clean, durable repo.

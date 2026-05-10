@@ -172,6 +172,60 @@ screenshot crops → OCR candidates → user confirmation → batch JSON → mer
 ```
 
 See `docs/reference_sources.md` for full details and planned future use (meta deck recommendations).
+See `docs/source_strategy.md` for the full external source role matrix.
+See `docs/product_roadmap.md` for the complete project roadmap (Phases 1–6).
+
+---
+
+## Recommended Workflow From Here
+
+**Current status:** Batches 001–006 complete (IMG_1524–IMG_1529). Next: IMG_1530.
+
+### Step 1 — Create a review package
+
+```bash
+python3 scripts/create_screenshot_review_package.py --screenshot IMG_1530.PNG
+```
+
+Outputs:
+- `review/screenshot_reviews/IMG_1530_review.md` — OCR candidates, reference hints, per-crop notes
+- `review/confirmed/IMG_1530_confirmed_TEMPLATE.csv` — prefilled template (verify before use)
+
+### Step 2 — Confirm the template
+
+```bash
+open review/contact_sheets/IMG_1530_contact.png
+open review/screenshot_reviews/IMG_1530_review.md
+cp review/confirmed/IMG_1530_confirmed_TEMPLATE.csv review/confirmed/IMG_1530_confirmed.csv
+# Fill in card_name and quantity for every row
+```
+
+### Step 3 — Convert to batch JSON
+
+```bash
+python3 scripts/create_batch_from_confirmation.py \
+  --input review/confirmed/IMG_1530_confirmed.csv \
+  --screenshot IMG_1530.PNG \
+  --output batches/cards_batch_007.json
+python3 scripts/validate_batch.py batches/cards_batch_007.json
+```
+
+### Step 4 — Repeat for each remaining screenshot
+
+Repeat Steps 1–3 for IMG_1531 through IMG_1547 (batches 008–024).
+
+### Step 5 — Merge and validate
+
+```bash
+python3 scripts/merge_batches.py
+python3 scripts/validate_cards.py --expected-total 331
+python3 scripts/export_cards_csv.py
+```
+
+### Step 6 — Analytics and recommendations
+
+Run collection analytics, pack recommendations, and meta deck recommendations.
+See `docs/product_roadmap.md` for details.
 
 ---
 
