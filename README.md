@@ -365,7 +365,29 @@ Add `notes` for anything uncertain.
 
 See `review/manual_confirmation_instructions.md` for the full field reference.
 
-### Step 3 — Convert to batch JSON
+### Step 3 — Validate card names against reference (catch typos before batch generation)
+
+```bash
+python3 scripts/validate_confirmed_csv_against_reference.py \
+  --input review/confirmed/IMG_1525_confirmed.csv
+```
+
+This catches name spelling errors and typos using the Limitless/reference data
+before the batch JSON is created. It shows top-5 fuzzy suggestions for any
+unrecognised name and warns when `is_ex` in the CSV is inconsistent with
+reference metadata.
+
+Notes:
+- Does **not** validate quantity — quantity always comes from reading the app screenshot.
+- Does **not** require `special_type` to be known; `unknown` is accepted without error.
+- Exits non-zero if any `card_name` is blank, any quantity is non-integer, or any name
+  is not found and no high-quality fuzzy suggestion exists.
+- Names already present in the confirmed lexicon are always treated as valid, even if
+  absent from the external reference.
+
+Fix any errors before proceeding to batch generation.
+
+### Step 4 — Convert to batch JSON
 
 ```bash
 python3 scripts/create_batch_from_confirmation.py \
@@ -377,7 +399,7 @@ python3 scripts/create_batch_from_confirmation.py \
 Use `--allow-fewer` for the final screenshot if it has fewer than 9 fully
 visible cards.
 
-### Step 4 — Validate the batch
+### Step 5 — Validate the batch
 
 ```bash
 python3 scripts/validate_batch.py batches/cards_batch_002.json
