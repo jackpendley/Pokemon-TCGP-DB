@@ -12,19 +12,23 @@ Bouffalant
 Bramblin
 Breloom
 Bronzong
+Bronzor
 Budew
 Bulbasaur
 Buneary
 Burmy
 Carnivine
+Castform
 Castform Rainy Form
 Castform Snowy Form
 Castform Sunny Form
+Chansey
 Charizard
 Charmander
 Charmeleon
 Cheren
 Cherubi
+Cinccino
 Clamperl
 Clauncher
 Clawitzer
@@ -33,6 +37,7 @@ Clemont's Backpack
 Copycat
 Corviknight
 Corvisquire
+Croagunk
 Crobat
 Cubchoo
 Cubone
@@ -44,6 +49,7 @@ Dodrio
 Doublade
 Dratini
 Dubwool
+Dwebble
 Eelektross
 Electrode
 Espurr
@@ -58,6 +64,7 @@ Giovanni
 Golbat
 Gorebyss
 Grimer
+Hand Scope
 Hariyama
 Hattrem
 Hearthflame Mask Ogerpon
@@ -71,12 +78,15 @@ Huntail
 Incineroar
 Ivysaur
 Jigglypuff
+Koffing
 Korrina
+Kubfu
 Lanturn
 Larvesta
 Leaf
 Leavanny
 Lillie
+Lillipup
 Machamp
 Magearna
 Magnemite
@@ -95,6 +105,7 @@ Meloetta
 Meltan
 Mienfoo
 Mienshao
+Minccino
 Misdreavus
 Mismagius
 Moltres
@@ -108,18 +119,25 @@ Paldean Tauros
 Palossand
 Pidgey
 Pignite
+Poké Ball
+Pokédex
 Poliwhirl
 Porygon
 Porygon2
+Potion
 Probopass
+Professor's Research
 Quagsire
 Quick-Grow Extract
+Qwilfish
 Rare Candy
 Raticate
 Rattata
+Red Card
 Riolu
 Rockruff
 Roggenrola
+Rolycoly
 Roselia
 Sabrina
 Sandaconda
@@ -129,10 +147,12 @@ Sandygast
 Scraggy
 Seedot
 Serena
+Seviper
 Sewaddle
 Shellder
 Shroomish
 Silcoon
+Silicobra
 Sinistea
 Skrelp
 Sobble
@@ -144,12 +164,15 @@ Staravia
 Starly
 Steelix
 Stoutland
+Stufful
 Sunkern
 Surskit
 Swadloon
 Tangela
 Tepig
+Throh
 Toxicroak
+Trapinch
 Treecko
 Trubbish
 Turtonator
@@ -160,7 +183,12 @@ Venonat
 Vibrava
 Victini
 Voltorb
+Vullaby
 Wartortle
+Watchog
 Wooper
+X Speed
 Yveltal
 Zekrom
+Zorua
+Zygarde

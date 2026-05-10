@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Exports cards.json to cards.csv.
+Exports cards.json to data/exports/cards_collection.csv.
 
 Usage:
-    python scripts/export_cards_csv.py
+    python3 scripts/export_cards_csv.py
 
-Do not manually edit cards.csv — regenerate it by running this script.
+Do not manually edit the output CSV — regenerate it by running this script.
 """
 
 import csv
@@ -15,27 +15,26 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CARDS_JSON = ROOT / "cards.json"
-CARDS_CSV = ROOT / "cards.csv"
+EXPORT_CSV = ROOT / "data" / "exports" / "cards_collection.csv"
 
 FIELD_ORDER = [
     "id",
     "card_name",
     "quantity",
+    "special_type",
+    "is_ex",
     "card_category",
     "pokemon_type",
     "stage",
     "hp",
-    "is_ex",
-    "special_type",
     "rarity",
     "set_or_pack",
-    "variant_notes",
     "source_screenshot",
     "source_row",
     "source_column",
-    "confidence",
     "needs_review",
     "review_reason",
+    "variant_notes",
 ]
 
 
@@ -51,7 +50,8 @@ def load_cards():
 
 
 def export(cards):
-    with CARDS_CSV.open("w", newline="", encoding="utf-8") as f:
+    EXPORT_CSV.parent.mkdir(parents=True, exist_ok=True)
+    with EXPORT_CSV.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=FIELD_ORDER, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(cards)
@@ -61,7 +61,7 @@ def export(cards):
 def main():
     cards = load_cards()
     count = export(cards)
-    print(f"Exported {count} rows to cards.csv")
+    print(f"Exported {count} rows to {EXPORT_CSV}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-05-10 20:18 UTC",
+  "total_entries": 211,
+  "total_quantity": 329,
+  "unique_card_names": 194,
+  "total_ex_cards": 8,
+  "total_needs_review": 209,
+  "special_type_unknown_count": 209,
+  "top_duplicate_quantities": [
+    {
+      "card_name": "Spritzee",
+      "quantity": 6
+    },
+    {
+      "card_name": "Nosepass",
+      "quantity": 6
+    },
+    {
+      "card_name": "Staraptor",
+      "quantity": 5
+    },
+    {
+      "card_name": "Charmander",
+      "quantity": 4
+    },
+    {
+      "card_name": "Misdreavus",
+      "quantity": 4
+    },
+    {
+      "card_name": "Clamperl",
+      "quantity": 4
+    },
+    {
+      "card_name": "Vullaby",
+      "quantity": 4
+    },
+    {
+      "card_name": "Minccino",
+      "quantity": 4
+    },
+    {
+      "card_name": "Poké Ball",
+      "quantity": 4
+    },
+    {
+      "card_name": "Professor's Research",
+      "quantity": 4
+    }
+  ],
+  "counts_by_card_category": {
+    "Unknown": 202,
+    "Pokemon": 7,
+    "Item": 1,
+    "Supporter": 1
+  },
+  "counts_by_pokemon_type": {
+    "Unknown": 202,
+    "None": 2,
+    "Fire": 2,
+    "Grass": 2,
+    "Darkness": 1,
+    "Water": 1,
+    "Lightning": 1
+  },
+  "counts_by_source_screenshot": {
+    "IMG_1524.PNG": 9,
+    "IMG_1525.PNG": 9,
+    "IMG_1526.PNG": 9,
+    "IMG_1527.PNG": 9,
+    "IMG_1528.PNG": 9,
+    "IMG_1529.PNG": 9,
+    "IMG_1530.PNG": 9,
+    "IMG_1531.PNG": 9,
+    "IMG_1532.PNG": 9,
+    "IMG_1533.PNG": 9,
+    "IMG_1534.PNG": 9,
+    "IMG_1535.PNG": 9,
+    "IMG_1536.PNG": 9,
+    "IMG_1537.PNG": 9,
+    "IMG_1538.PNG": 9,
+    "IMG_1539.PNG": 9,
+    "IMG_1540.PNG": 9,
+    "IMG_1541.PNG": 9,
+    "IMG_1542.PNG": 9,
+    "IMG_1543.PNG": 9,
+    "IMG_1544.PNG": 9,
+    "IMG_1545.PNG": 9,
+    "IMG_1546.PNG": 9,
+    "IMG_1547.PNG": 4
+  },
+  "metadata_warning": "Metadata enrichment is incomplete. Fields such as card_category, pokemon_type, stage, hp, rarity, and set_or_pack are unknown for many entries. Enrichment from Limitless TCG Pocket reference data is planned for a future phase."
+}

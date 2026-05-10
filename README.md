@@ -2,9 +2,23 @@
 
 Builds and maintains an exact Pokémon TCG Pocket card collection database from app screenshots.
 
-## Collection Target
+## Current Baseline
 
-Expected total: **331 cards**
+`cards.json` currently represents a **provisional 329-card baseline** (211 unique entries).
+
+- The original expected app total was 331. A −2 discrepancy exists and is documented in
+  `review/final_ingestion_reconciliation.md` and `review/provisional_baseline.md`.
+- All 24 screenshots (IMG_1524–IMG_1547) have been ingested and confirmed.
+- The user's live app collection has already changed since the screenshots were taken.
+- **Do not force the total to 331 by adding fake cards.** Quantities are read from the app only.
+- Future updates should use fresh screenshots of newly collected cards (see Phase 6 in
+  `docs/product_roadmap.md`).
+
+Validate the current baseline with:
+
+```bash
+python3 scripts/validate_cards.py --expected-total 329
+```
 
 Canonical database file: `cards.json`
 

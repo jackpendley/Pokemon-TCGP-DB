@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-10T19:53:44.856961+00:00",
-  "total_unique_names": 166,
+  "generated_at": "2026-05-10T20:13:00.183784+00:00",
+  "total_unique_names": 194,
   "source_batches": [
     "batches/cards_batch_001.json",
     "batches/cards_batch_002.json",
@@ -21,7 +21,11 @@
     "batches/cards_batch_017.json",
     "batches/cards_batch_018.json",
     "batches/cards_batch_019.json",
-    "batches/cards_batch_020.json"
+    "batches/cards_batch_020.json",
+    "batches/cards_batch_021.json",
+    "batches/cards_batch_022.json",
+    "batches/cards_batch_023.json",
+    "batches/cards_batch_024.json"
   ],
   "entries": [
     {
@@ -221,6 +225,20 @@
       ]
     },
     {
+      "card_name": "Bronzor",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1545.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Budew",
       "count_seen": 1,
       "total_quantity": 1,
@@ -293,6 +311,20 @@
       ]
     },
     {
+      "card_name": "Castform",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1545.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Castform Rainy Form",
       "count_seen": 1,
       "total_quantity": 3,
@@ -326,6 +358,20 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1542.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Chansey",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1545.PNG"
       ],
       "is_ex_values": [
         false
@@ -397,6 +443,20 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1536.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Cinccino",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1546.PNG"
       ],
       "is_ex_values": [
         false
@@ -511,6 +571,20 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1534.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Croagunk",
+      "count_seen": 1,
+      "total_quantity": 3,
+      "screenshots_seen": [
+        "IMG_1544.PNG"
       ],
       "is_ex_values": [
         false
@@ -665,6 +739,20 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1536.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Dwebble",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1544.PNG"
       ],
       "is_ex_values": [
         false
@@ -870,6 +958,20 @@
       ]
     },
     {
+      "card_name": "Hand Scope",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1546.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Hariyama",
       "count_seen": 1,
       "total_quantity": 2,
@@ -1052,11 +1154,39 @@
       ]
     },
     {
+      "card_name": "Koffing",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1545.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Korrina",
       "count_seen": 1,
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1534.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Kubfu",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1544.PNG"
       ],
       "is_ex_values": [
         false
@@ -1127,6 +1257,20 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1528.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Lillipup",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1546.PNG"
       ],
       "is_ex_values": [
         false
@@ -1392,6 +1536,20 @@
       ]
     },
     {
+      "card_name": "Minccino",
+      "count_seen": 1,
+      "total_quantity": 4,
+      "screenshots_seen": [
+        "IMG_1546.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Misdreavus",
       "count_seen": 1,
       "total_quantity": 4,
@@ -1576,6 +1734,34 @@
       ]
     },
     {
+      "card_name": "Poké Ball",
+      "count_seen": 1,
+      "total_quantity": 4,
+      "screenshots_seen": [
+        "IMG_1546.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Pokédex",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1546.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Poliwhirl",
       "count_seen": 1,
       "total_quantity": 2,
@@ -1618,11 +1804,39 @@
       ]
     },
     {
+      "card_name": "Potion",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1546.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Probopass",
       "count_seen": 1,
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1530.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Professor's Research",
+      "count_seen": 1,
+      "total_quantity": 4,
+      "screenshots_seen": [
+        "IMG_1547.PNG"
       ],
       "is_ex_values": [
         false
@@ -1658,6 +1872,20 @@
       ],
       "special_type_values": [
         "special_trainer",
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Qwilfish",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1545.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
         "unknown"
       ]
     },
@@ -1704,11 +1932,26 @@
       ]
     },
     {
-      "card_name": "Riolu",
+      "card_name": "Red Card",
       "count_seen": 1,
       "total_quantity": 1,
       "screenshots_seen": [
-        "IMG_1525.PNG"
+        "IMG_1546.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Riolu",
+      "count_seen": 2,
+      "total_quantity": 3,
+      "screenshots_seen": [
+        "IMG_1525.PNG",
+        "IMG_1544.PNG"
       ],
       "is_ex_values": [
         false
@@ -1737,6 +1980,20 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1540.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Rolycoly",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1544.PNG"
       ],
       "is_ex_values": [
         false
@@ -1872,6 +2129,20 @@
       ]
     },
     {
+      "card_name": "Seviper",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1545.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Sewaddle",
       "count_seen": 1,
       "total_quantity": 2,
@@ -1920,6 +2191,20 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1537.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Silicobra",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1544.PNG"
       ],
       "is_ex_values": [
         false
@@ -2084,6 +2369,20 @@
       ]
     },
     {
+      "card_name": "Stufful",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1544.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Sunkern",
       "count_seen": 1,
       "total_quantity": 1,
@@ -2155,11 +2454,39 @@
       ]
     },
     {
+      "card_name": "Throh",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1544.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Toxicroak",
       "count_seen": 1,
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1533.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Trapinch",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1544.PNG"
       ],
       "is_ex_values": [
         false
@@ -2282,10 +2609,11 @@
     },
     {
       "card_name": "Victini",
-      "count_seen": 1,
-      "total_quantity": 2,
+      "count_seen": 2,
+      "total_quantity": 3,
       "screenshots_seen": [
-        "IMG_1527.PNG"
+        "IMG_1527.PNG",
+        "IMG_1547.PNG"
       ],
       "is_ex_values": [
         false
@@ -2309,6 +2637,20 @@
       ]
     },
     {
+      "card_name": "Vullaby",
+      "count_seen": 1,
+      "total_quantity": 4,
+      "screenshots_seen": [
+        "IMG_1545.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Wartortle",
       "count_seen": 1,
       "total_quantity": 1,
@@ -2323,11 +2665,39 @@
       ]
     },
     {
+      "card_name": "Watchog",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1545.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Wooper",
       "count_seen": 1,
       "total_quantity": 2,
       "screenshots_seen": [
         "IMG_1542.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "X Speed",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1546.PNG"
       ],
       "is_ex_values": [
         false
@@ -2356,6 +2726,34 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1524.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Zorua",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1545.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Zygarde",
+      "count_seen": 2,
+      "total_quantity": 4,
+      "screenshots_seen": [
+        "IMG_1547.PNG"
       ],
       "is_ex_values": [
         false
