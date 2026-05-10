@@ -230,6 +230,73 @@ Outputs:
 
 ### H. Create batch files
 
-Open `review/review_needed.md` and confirm card names for all flagged
-crops.  Then manually create `batches/cards_batch_XXX.json` files using the
-confirmed names, following the canonical schema in `CLAUDE.md`.
+Use the Manual Confirmation Workflow below to confirm card names one
+screenshot at a time and generate batch files automatically.
+
+---
+
+## Manual Confirmation Workflow
+
+Process one screenshot at a time. Do not skip ahead.
+
+### Step 1 — Review the contact sheet and OCR suggestions
+
+Open the contact sheet for the screenshot:
+
+```
+review/contact_sheets/IMG_1525_contact.png
+```
+
+Open the per-screenshot review aid (if it exists):
+
+```
+review/screenshot_reviews/IMG_1525_review.md
+```
+
+This file contains OCR text and fuzzy match candidates for each crop position.
+
+### Step 2 — Fill in the confirmed CSV
+
+Copy the pre-filled template (if it exists) or the blank template:
+
+```bash
+cp review/confirmed/IMG_1525_confirmed_TEMPLATE.csv review/confirmed/IMG_1525_confirmed.csv
+# or from blank:
+cp review/manual_confirmation_template.csv review/confirmed/IMG_1526_confirmed.csv
+```
+
+Fill in `card_name` and `quantity` for every row.
+Set `special_type` if clearly identifiable; otherwise use `unknown`.
+Add `notes` for anything uncertain.
+
+See `review/manual_confirmation_instructions.md` for the full field reference.
+
+### Step 3 — Convert to batch JSON
+
+```bash
+python3 scripts/create_batch_from_confirmation.py \
+  --input review/confirmed/IMG_1525_confirmed.csv \
+  --screenshot IMG_1525.PNG \
+  --output batches/cards_batch_002.json
+```
+
+Use `--allow-fewer` for the final screenshot if it has fewer than 9 fully
+visible cards.
+
+### Step 4 — Validate the batch
+
+```bash
+python3 scripts/validate_batch.py batches/cards_batch_002.json
+```
+
+Fix any validation errors before proceeding to the next screenshot.
+
+### Batch Numbering
+
+| Screenshot | Batch file |
+|---|---|
+| IMG_1524.PNG | `batches/cards_batch_001.json` (already complete) |
+| IMG_1525.PNG | `batches/cards_batch_002.json` |
+| IMG_1526.PNG | `batches/cards_batch_003.json` |
+| … | … |
+| IMG_1547.PNG | `batches/cards_batch_024.json` |
