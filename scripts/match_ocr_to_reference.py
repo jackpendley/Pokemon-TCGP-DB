@@ -81,16 +81,48 @@ def main():
     ocr_data = json.loads(OCR_FILE.read_text(encoding="utf-8"))
     ocr_results = ocr_data.get("results", [])
 
+    def best_match_for_text(text: str) -> tuple:
+        """Return (best_name, best_score, top_matches_list) for a text string."""
+        norm = normalize(text)
+        if not norm:
+            return None, 0, []
+        matches = rf_process.extract(
+            norm,
+            normalized_refs,
+            scorer=rf_fuzz.token_sort_ratio,
+            limit=args.top_n,
+        )
+        top = [
+            {"name": reference_names[idx], "score": round(score, 1)}
+            for _, score, idx in matches
+        ]
+        score = top[0]["score"] if top else 0
+        name = top[0]["name"] if score >= args.threshold else None
+        return name, score, top
+
     candidates = []
     for item in ocr_results:
         crop_id = item["crop_id"]
-        guess = item.get("cleaned_title_guess", "")
-        norm_guess = normalize(guess)
+        raw_joined = item.get("cleaned_title_guess", "")
+        ocr_lines = item.get("ocr_lines", [])
 
-        if not norm_guess:
+        # Try the full joined text AND each individual OCR line; take the best result.
+        texts_to_try = [raw_joined] + ocr_lines
+        best_name, best_score, best_top = None, 0, []
+        best_source = ""
+        for text in texts_to_try:
+            if not text.strip():
+                continue
+            name, score, top = best_match_for_text(text)
+            if score > best_score:
+                best_name, best_score, best_top = name, score, top
+                best_source = text
+
+        if not texts_to_try or all(not t.strip() for t in texts_to_try):
             candidates.append({
                 "crop_id": crop_id,
-                "title_guess": guess,
+                "title_guess": raw_joined,
+                "best_ocr_source": "",
                 "top_matches": [],
                 "suggested_card_name": None,
                 "needs_review": True,
@@ -99,33 +131,14 @@ def main():
             print(f"  {crop_id:30s}  (no OCR text)")
             continue
 
-        matches = rf_process.extract(
-            norm_guess,
-            normalized_refs,
-            scorer=rf_fuzz.token_sort_ratio,
-            limit=args.top_n,
-        )
-
-        top_matches = [
-            {"name": reference_names[idx], "score": round(score, 1)}
-            for _, score, idx in matches
-        ]
-
-        best_score = top_matches[0]["score"] if top_matches else 0
-        best_name = top_matches[0]["name"] if best_score >= args.threshold else None
         needs_review = best_score < args.threshold
-
-        reason = ""
-        if needs_review:
-            if not guess:
-                reason = "OCR produced no text"
-            elif best_score < args.threshold:
-                reason = f"Best match score {best_score:.0f} < threshold {args.threshold}"
+        reason = f"Best match score {best_score:.0f} < threshold {args.threshold}" if needs_review else ""
 
         candidates.append({
             "crop_id": crop_id,
-            "title_guess": guess,
-            "top_matches": top_matches,
+            "title_guess": raw_joined,
+            "best_ocr_source": best_source,
+            "top_matches": best_top,
             "suggested_card_name": best_name,
             "needs_review": needs_review,
             "reason": reason,

@@ -1,0 +1,691 @@
+# Pokémon TCG Pocket — manual card name seed
+# One name per line. Lines starting with # are ignored.
+# Confirmed from batches/cards_batch_001.json (IMG_1524.PNG):
+Quick-Grow Extract
+Blaziken
+Skrelp
+Sobble
+Clemont
+Bulbasaur
+Shroomish
+Tepig
+Zekrom
+
+# ── Grass Pokémon ────────────────────────────────────────────────────────────
+Ivysaur
+Venusaur
+Venusaur ex
+Caterpie
+Metapod
+Butterfree
+Oddish
+Gloom
+Vileplume
+Bellsprout
+Weepinbell
+Victreebel
+Tangela
+Scyther
+Pinsir
+Chikorita
+Bayleef
+Meganium
+Sunkern
+Sunflora
+Treecko
+Grovyle
+Sceptile
+Sceptile ex
+Breloom
+Tropius
+Turtwig
+Grotle
+Torterra
+Budew
+Roselia
+Roserade
+Leafeon
+Snover
+Abomasnow
+Pansage
+Simisage
+Cottonee
+Whimsicott
+Petilil
+Lilligant
+Maractus
+Deerling
+Sawsbuck
+Virizion
+Chespin
+Quilladin
+Chesnaught
+Skiddo
+Gogoat
+Rowlet
+Dartrix
+Decidueye
+Fomantis
+Lurantis
+
+# ── Fire Pokémon ─────────────────────────────────────────────────────────────
+Charmander
+Charmeleon
+Charizard
+Charizard ex
+Vulpix
+Ninetales
+Growlithe
+Arcanine
+Ponyta
+Rapidash
+Magmar
+Magmortar
+Flareon
+Moltres
+Moltres ex
+Cyndaquil
+Quilava
+Typhlosion
+Ho-Oh
+Torchic
+Combusken
+Numel
+Camerupt
+Heatmor
+Pignite
+Emboar
+Reshiram
+Litwick
+Lampent
+Chandelure
+Larvesta
+Volcarona
+Fennekin
+Braixen
+Delphox
+Fletchling
+Fletchinder
+Talonflame
+Litten
+Torracat
+Incineroar
+Salandit
+Salazzle
+Turtonator
+Blacephalon
+
+# ── Water Pokémon ─────────────────────────────────────────────────────────────
+Squirtle
+Wartortle
+Blastoise
+Blastoise ex
+Psyduck
+Golduck
+Poliwag
+Poliwhirl
+Poliwrath
+Tentacool
+Tentacruel
+Seel
+Dewgong
+Shellder
+Cloyster
+Krabby
+Kingler
+Horsea
+Seadra
+Kingdra
+Staryu
+Starmie
+Lapras
+Vaporeon
+Omanyte
+Omastar
+Kabuto
+Kabutops
+Gyarados
+Gyarados ex
+Totodile
+Croconaw
+Feraligatr
+Wooper
+Quagsire
+Marill
+Azumarill
+Corsola
+Mudkip
+Marshtomp
+Swampert
+Lotad
+Lombre
+Ludicolo
+Surskit
+Masquerain
+Corphish
+Crawdaunt
+Feebas
+Milotic
+Piplup
+Prinplup
+Empoleon
+Buizel
+Floatzel
+Shellos
+Gastrodon
+Finneon
+Lumineon
+Glaceon
+Oshawott
+Dewott
+Samurott
+Tympole
+Palpitoad
+Seismitoad
+Alomomola
+Froakie
+Frogadier
+Greninja
+Dragalge
+Drizzile
+Inteleon
+Suicune
+Kyogre
+Kyogre ex
+
+# ── Lightning Pokémon ─────────────────────────────────────────────────────────
+Pikachu
+Pikachu ex
+Raichu
+Magnemite
+Magneton
+Magnezone
+Magnezone ex
+Voltorb
+Electrode
+Jolteon
+Zapdos
+Zapdos ex
+Mareep
+Flaaffy
+Ampharos
+Ampharos ex
+Raikou
+Shinx
+Luxio
+Luxray
+Luxray ex
+Pachirisu
+Electivire
+Electivire ex
+Rotom
+Joltik
+Galvantula
+Helioptile
+Heliolisk
+Dedenne
+Charjabug
+Vikavolt
+Xurkitree
+
+# ── Psychic Pokémon ───────────────────────────────────────────────────────────
+Abra
+Kadabra
+Alakazam
+Slowpoke
+Slowbro
+Gastly
+Haunter
+Gengar
+Gengar ex
+Drowzee
+Hypno
+Jynx
+Mr. Mime
+Exeggcute
+Exeggutor
+Natu
+Xatu
+Misdreavus
+Mismagius
+Wobbuffet
+Espeon
+Ralts
+Kirlia
+Gardevoir
+Gardevoir ex
+Mewtwo
+Mewtwo ex
+Mew
+Mew ex
+Duskull
+Dusclops
+Dusknoir
+Gothita
+Gothorita
+Gothitelle
+Sigilyph
+Solosis
+Duosion
+Reuniclus
+Elgyem
+Beheeyem
+Meloetta
+Spritzee
+Aromatisse
+Espurr
+Meowstic
+Inkay
+Malamar
+Phantump
+Trevenant
+Pumpkaboo
+Gourgeist
+Hoopa
+Mimikyu
+Mimikyu ex
+Nihilego
+
+# ── Fighting Pokémon ──────────────────────────────────────────────────────────
+Sandshrew
+Sandslash
+Diglett
+Dugtrio
+Geodude
+Graveler
+Golem
+Machop
+Machoke
+Machamp
+Machamp ex
+Onix
+Hitmonlee
+Hitmonchan
+Rhyhorn
+Rhydon
+Rhyperior
+Cubone
+Marowak
+Tyrogue
+Hitmontop
+Heracross
+Phanpy
+Donphan
+Bagon
+Shelgon
+Salamence
+Salamence ex
+Regirock
+Lucario
+Lucario ex
+Mega Lucario ex
+Riolu
+Gible
+Gabite
+Garchomp
+Garchomp ex
+Hippopotas
+Hippowdon
+Croagunk
+Toxicroak
+Mienfoo
+Mienshao
+Terrakion
+Landorus
+Pancham
+Pangoro
+Hawlucha
+Noibat
+Noivern
+
+# ── Darkness Pokémon ──────────────────────────────────────────────────────────
+Murkrow
+Honchkrow
+Sneasel
+Weavile
+Houndour
+Houndoom
+Houndoom ex
+Umbreon
+Absol
+Absol ex
+Mega Absol ex
+Spiritomb
+Sableye
+Purrloin
+Liepard
+Scraggy
+Scrafty
+Sandile
+Krokorok
+Krookodile
+Deino
+Zweilous
+Hydreigon
+Darkrai
+Darkrai ex
+Yveltal
+Yveltal ex
+Greninja ex
+Incineroar ex
+
+# ── Metal Pokémon ─────────────────────────────────────────────────────────────
+Steelix
+Steelix ex
+Scizor
+Scizor ex
+Mawile
+Beldum
+Metang
+Metagross
+Metagross ex
+Registeel
+Empoleon ex
+Dialga
+Dialga ex
+Klang
+Klinklang
+Cobalion
+Ferrothorn
+Ferroseed
+Aegislash
+Aegislash ex
+Honedge
+Doublade
+Klefki
+Togedemaru
+
+# ── Dragon Pokémon ────────────────────────────────────────────────────────────
+Dratini
+Dragonair
+Dragonite
+Dragonite ex
+Axew
+Fraxure
+Haxorus
+Reshiram ex
+Zekrom ex
+Kyurem
+Kyurem ex
+Rayquaza
+Rayquaza ex
+Drampa
+Kommo-o
+
+# ── Colorless Pokémon ─────────────────────────────────────────────────────────
+Rattata
+Raticate
+Jigglypuff
+Wigglytuff
+Meowth
+Persian
+Chansey
+Blissey
+Tauros
+Kangaskhan
+Eevee
+Snorlax
+Ditto
+Porygon
+Porygon2
+Porygon-Z
+Clefairy
+Clefable
+Aipom
+Ambipom
+Togepi
+Togetic
+Togekiss
+Togekiss ex
+Dunsparce
+Dudunsparce
+Stantler
+Teddiursa
+Ursaring
+Smeargle
+Miltank
+Swablu
+Altaria
+Altaria ex
+Mega Altaria ex
+Glameow
+Purugly
+Chatot
+Lopunny
+Happiny
+Blissey ex
+Porygon-Z ex
+Arceus
+Arceus ex
+Bouffalant
+Bunnelby
+Diggersby
+Meowth ex
+Eevee ex
+Sylveon
+Sylveon ex
+
+# ── Supporter Trainers ────────────────────────────────────────────────────────
+Professor's Research
+Misty
+Brock
+Erika
+Koga
+Blaine
+Giovanni
+Lt. Surge
+Sabrina
+Bill
+Cynthia
+Roark
+Gardenia
+Crasher Wake
+Volkner
+Fantina
+Byron
+Aaron
+Bertha
+Flint
+Lucian
+Hareta
+Maylene
+Candice
+Barry
+Dawn
+Lucas
+Hop
+Bede
+Marnie
+Sonia
+Raihan
+Melony
+Avery
+Piers
+Klara
+Nessa
+Bea
+Allister
+Gordie
+Kabu
+Opal
+Milo
+Gloria
+Victor
+Leaf
+Serena
+Tierno
+Shauna
+Trevor
+Calem
+Sina
+Dexio
+Skyla
+Elesa
+Clay
+Burgh
+Lenora
+Cheren
+Bianca
+Iris
+Drayden
+Lillie
+Hau
+Kiawe
+Mallow
+Lana
+Sophocles
+Mina
+Acerola
+Hapu
+Molayne
+Plumeria
+Grimsley
+Nanu
+Olivia
+Kahili
+Guzma
+Gladion
+Wicke
+Lusamine
+Shelly
+Matt
+Tabitha
+Courtney
+Archie
+Maxie
+Zinnia
+Steven
+May
+Brendan
+Wally
+Phoebe
+Glacia
+Drake
+Sydney
+Scott
+Brigette
+Colress
+N
+Hugh
+Rosa
+Hilda
+Hilbert
+Alder
+Elesa ex
+Misty ex
+Giovanni ex
+
+# ── Item Trainers ─────────────────────────────────────────────────────────────
+Poké Ball
+Great Ball
+Ultra Ball
+Nest Ball
+Net Ball
+Repeat Ball
+Timer Ball
+Luxury Ball
+Master Ball
+Quick Ball
+Level Ball
+Fast Ball
+Friend Ball
+Moon Ball
+Lure Ball
+Safari Ball
+Heavy Ball
+Love Ball
+Premier Ball
+Dusk Ball
+Heal Ball
+Dive Ball
+Cherish Ball
+Super Rod
+Old Rod
+Good Rod
+Potion
+Super Potion
+Hyper Potion
+Max Potion
+Full Restore
+Antidote
+Full Heal
+Awakening
+Paralyze Heal
+Burn Heal
+Ice Heal
+Revive
+Max Revive
+Elixir
+Max Elixir
+Ether
+Max Ether
+Energy Search
+Energy Retrieval
+Energy Recycler
+Rare Candy
+Exp. Share
+Life Dew
+Air Balloon
+Rescue Stretcher
+Switch
+Escape Rope
+Rope
+X Speed
+X Attack
+X Defense
+X Special
+X Sp. Def
+Devolution Spray
+Dome Fossil
+Helix Fossil
+Old Amber
+Mysterious Fossil
+Root Fossil
+Claw Fossil
+Skull Fossil
+Armor Fossil
+Cover Fossil
+Plume Fossil
+Jaw Fossil
+Sail Fossil
+Leaf Extract
+Root Fossil Aerodactyl
+Aero Ball
+Rocky Helmet
+Expert Belt
+Giant Cape
+Choice Band
+Choice Scarf
+Muscle Band
+Silver Bangle
+Hard Charm
+Float Stone
+Weakness Policy
+Buddy-Buddy Poffin
+PokéStop
+Pokémon Communication
+Pokémon Catcher
+Evolution Incense
+Cherrim
+Power Plant
+
+# ── Tool Trainers ─────────────────────────────────────────────────────────────
+Cape of Toughness
+Hero's Cape
+Violet City Gym Badge
+Celadon City Gym Badge
+Cinnabar Gym Badge
+Saffron City Gym Badge
+
+# ── Stadium Trainers ──────────────────────────────────────────────────────────
+Viridian Forest
+Pallet Town
+Training Court
+Fossil Research Lab
+Giant Water Lily
+Forest Seal Stone
+Cave
+Dragon's Peak
+Pokémon League Headquarters
+Power Plant Stadium
+

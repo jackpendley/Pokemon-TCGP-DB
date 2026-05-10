@@ -9,12 +9,12 @@ Outputs:
 Usage:
     python3 scripts/build_card_reference.py
 
-If the online download fails, you can supply a local JSON file instead:
+If the online download fails, supply a local JSON file or a seed text file:
     python3 scripts/build_card_reference.py --local path/to/cards.json
+    python3 scripts/build_card_reference.py --seed data/reference/manual_card_names_seed.txt
 
-The local file must be a JSON array of objects that each have at least a
-"name" field.  All other fields are optional and will be extracted when
-present.
+The --local file must be a JSON array of objects each with at least a "name" field.
+The --seed file must be plain text with one card name per line (# comment lines ignored).
 """
 
 import argparse
@@ -124,6 +124,19 @@ def load_from_url(url: str) -> list:
     return data
 
 
+def load_from_seed(path: Path) -> list:
+    if not path.exists():
+        print(f"ERROR: Seed file not found: {path}")
+        sys.exit(1)
+    lines = path.read_text(encoding="utf-8").splitlines()
+    names = [ln.strip() for ln in lines if ln.strip() and not ln.strip().startswith("#")]
+    if not names:
+        print(f"ERROR: No card names found in seed file: {path}")
+        sys.exit(1)
+    print(f"  Loaded {len(names)} names from seed file: {path}")
+    return [{"name": name, "_seed": True} for name in names]
+
+
 def load_from_local(path: Path) -> list:
     if not path.exists():
         print(f"ERROR: Local file not found: {path}")
@@ -145,10 +158,10 @@ def load_from_local(path: Path) -> list:
 def _print_local_instructions():
     print(
         "\nTo provide a local card list instead:\n"
-        "  1. Download or create a JSON file containing a list of card objects\n"
-        "     (each object must have at minimum a 'name' field).\n"
-        "  2. Run:\n"
+        "  Option A — local JSON (array of objects with a 'name' field):\n"
         "       python3 scripts/build_card_reference.py --local path/to/cards.json\n"
+        "  Option B — seed text file (one card name per line):\n"
+        "       python3 scripts/build_card_reference.py --seed data/reference/manual_card_names_seed.txt\n"
     )
 
 
@@ -160,11 +173,26 @@ def main():
         metavar="FILE",
         help="Use a local JSON file instead of downloading.",
     )
+    parser.add_argument(
+        "--seed",
+        type=Path,
+        metavar="FILE",
+        help="Use a plain-text seed file (one card name per line) as fallback reference.",
+    )
     args = parser.parse_args()
+
+    if args.local and args.seed:
+        print("ERROR: Specify either --local or --seed, not both.")
+        sys.exit(1)
 
     REFERENCE_DIR.mkdir(parents=True, exist_ok=True)
 
-    raw = load_from_local(args.local) if args.local else load_from_url(REFERENCE_URL)
+    if args.local:
+        raw = load_from_local(args.local)
+    elif args.seed:
+        raw = load_from_seed(args.seed)
+    else:
+        raw = load_from_url(REFERENCE_URL)
     print(f"  Loaded {len(raw)} raw card entries.")
 
     normalized = []

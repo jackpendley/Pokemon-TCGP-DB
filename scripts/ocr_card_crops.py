@@ -37,20 +37,21 @@ OCR_OUT = Path("data/extraction/ocr_results.json")
 
 # ---------------------------------------------------------------------------
 # Name-band region within each card crop.
-# Cards in the PTCGP binder view at 1179×2556 crop to roughly 392×495 px.
-# The card name appears in a banner at the TOP of the card tile.
-# Adjust these if OCR quality is poor.
+# Cards in the PTCGP binder view at 1179×2556 crop to roughly 392×499 px.
+# The card name appears in a banner at the TOP of the card tile, but may be
+# accompanied by noise (HP value, energy icons, type labels).
+# A wider band (y=0–70) captures the full name region.
+# Grayscale + SHARPEN + 3× upscale gives the best results on game fonts.
 # ---------------------------------------------------------------------------
 NAME_BAND = {
-    "x0": 8,
-    "y0": 4,
-    "x1": 340,  # stops before HP value on right side
-    "y1": 52,
+    "x0": 10,
+    "y0": 0,
+    "x1": 380,
+    "y1": 70,
 }
 
-# Tesseract config for single-line card name: allow letters, digits, spaces,
-# hyphens, apostrophes (for names like "Farfetch'd").
-TESS_CONFIG = r"--oem 3 --psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 -"
+# psm 6 = assume a uniform block of text (better than psm 7 for multi-line card banners)
+TESS_CONFIG = r"--oem 3 --psm 6"
 
 
 def check_dependencies():
@@ -82,37 +83,26 @@ def clean_name(raw: str) -> str:
 
 
 def ocr_crop(img_path: Path, pytesseract_mod) -> tuple:
-    img = Image.open(img_path).convert("RGB")
+    # Grayscale is more reliable than RGB for PTCGP card fonts on colored backgrounds
+    img = Image.open(img_path).convert("L")
     band = img.crop(
         (NAME_BAND["x0"], NAME_BAND["y0"], NAME_BAND["x1"], NAME_BAND["y1"])
     )
     # Upscale 3× + sharpen to improve OCR accuracy on small text
-    band = band.resize(
+    band = band.filter(ImageFilter.SHARPEN).resize(
         (band.width * 3, band.height * 3), Image.LANCZOS
-    ).filter(ImageFilter.SHARPEN)
+    )
 
     try:
-        data = pytesseract_mod.image_to_data(
-            band,
-            config=TESS_CONFIG,
-            output_type=pytesseract_mod.Output.DICT,
-        )
-        words = [
-            w for w, c in zip(data["text"], data["conf"])
-            if isinstance(c, (int, float)) and int(c) > 0 and w.strip()
-        ]
-        confs = [
-            int(c) for c, w in zip(data["conf"], data["text"])
-            if isinstance(c, (int, float)) and int(c) > 0 and w.strip()
-        ]
-        raw_text = " ".join(words)
-        avg_conf = round(sum(confs) / len(confs) / 100.0, 3) if confs else 0.0
-    except Exception as exc:
+        raw_text = pytesseract_mod.image_to_string(band, config=TESS_CONFIG)
+    except Exception:
         raw_text = ""
-        avg_conf = 0.0
-        _ = exc  # logged via cleaned title
 
-    return raw_text, clean_name(raw_text), avg_conf
+    lines = [l.strip() for l in raw_text.splitlines() if l.strip()]
+    joined = " | ".join(lines)
+    avg_conf = 0.5 if lines else 0.0  # non-zero when any text found
+
+    return joined, clean_name(joined), avg_conf, lines
 
 
 def main():
@@ -150,11 +140,11 @@ def main():
     for ss in manifest.get("screenshots", []):
         for crop_info in ss.get("crops", []):
             crop_path = Path(crop_info["file"])
-            raw, cleaned, conf = ("", "", 0.0)
+            raw, cleaned, conf, lines = ("", "", 0.0, [])
 
             if pytesseract_mod and crop_path.exists():
                 try:
-                    raw, cleaned, conf = ocr_crop(crop_path, pytesseract_mod)
+                    raw, cleaned, conf, lines = ocr_crop(crop_path, pytesseract_mod)
                 except Exception as exc:
                     print(f"  WARN  OCR failed for {crop_path}: {exc}")
 
@@ -164,6 +154,7 @@ def main():
                 "row": crop_info["row"],
                 "col": crop_info["col"],
                 "raw_ocr_text": raw,
+                "ocr_lines": lines,
                 "cleaned_title_guess": cleaned,
                 "confidence": conf,
             })

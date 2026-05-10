@@ -117,7 +117,7 @@ def main():
                     f"- **Reason:** {c['reason']}",
                     "",
                     "**Action needed:** Open the crop file and confirm the card name:",
-                    f"  `crops/{Path(c['screenshot']).stem}/{c['row']}{c['col'].replace('col', 'c')}.png`",
+                    f"  `crops/{Path(c['screenshot']).stem}/r{c['row']}c{c['col']}.png`",
                     "",
                     "Top candidates:",
                 ]

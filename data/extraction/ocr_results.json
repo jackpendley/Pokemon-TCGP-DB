@@ -1,0 +1,2531 @@
+{
+  "generated_at": "2026-05-10T04:22:22.264217+00:00",
+  "ocr_available": true,
+  "results": [
+    {
+      "crop_id": "IMG_1524_r1c1",
+      "screenshot": "IMG_1524.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "gz zz | _ item TRAINER | Quick-Grow Extract",
+      "ocr_lines": [
+        "gz zz",
+        "_ item TRAINER",
+        "Quick-Grow Extract"
+      ],
+      "cleaned_title_guess": "gz zz item TRAINER Quick-Grow Extract",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1524_r1c2",
+      "screenshot": "IMG_1524.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "ormoes ai . | r +> — - = \"7 s | ) a",
+      "ocr_lines": [
+        "ormoes ai .",
+        "r +> — - = \"7 s",
+        ") a"
+      ],
+      "cleaned_title_guess": "ormoes ai r - 7 s a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1524_r1c3",
+      "screenshot": "IMG_1524.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "==3 Skrelp 60) | ~ «2 ; <",
+      "ocr_lines": [
+        "==3 Skrelp 60)",
+        "~ «2 ; <"
+      ],
+      "cleaned_title_guess": "3 Skrelp 60 2",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1524_r2c1",
+      "screenshot": "IMG_1524.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "iy | ; = a HS",
+      "ocr_lines": [
+        "iy",
+        "; = a HS"
+      ],
+      "cleaned_title_guess": "iy a HS",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1524_r2c2",
+      "screenshot": "IMG_1524.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "~ VF Nir =. | Supporter TRAINER & | Clemont . | ‘wees See eee OC SQ Se",
+      "ocr_lines": [
+        "~ VF Nir =.",
+        "Supporter TRAINER &",
+        "Clemont .",
+        "‘wees See eee OC SQ Se"
+      ],
+      "cleaned_title_guess": "VF Nir Supporter TRAINER Clemont wees See eee OC SQ Se",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1524_r2c3",
+      "screenshot": "IMG_1524.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "eS ro | ——- |Bijlbasaur, me gROute)",
+      "ocr_lines": [
+        "eS ro",
+        "——- |Bijlbasaur, me gROute)"
+      ],
+      "cleaned_title_guess": "eS ro - Bijlbasaur me gROute",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1524_r3c1",
+      "screenshot": "IMG_1524.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1524_r3c2",
+      "screenshot": "IMG_1524.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "as as ae | BaotD /Tepig we)",
+      "ocr_lines": [
+        "as as ae",
+        "BaotD /Tepig we)"
+      ],
+      "cleaned_title_guess": "as as ae BaotD Tepig we",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1524_r3c3",
+      "screenshot": "IMG_1524.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "viel = Gn ; pe , | . — > : a ,",
+      "ocr_lines": [
+        "viel = Gn ; pe ,",
+        ". — > : a ,"
+      ],
+      "cleaned_title_guess": "viel Gn pe a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1525_r1c1",
+      "screenshot": "IMG_1525.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1525_r1c2",
+      "screenshot": "IMG_1525.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "_= Bonsly #30",
+      "ocr_lines": [
+        "_= Bonsly #30"
+      ],
+      "cleaned_title_guess": "Bonsly 30",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1525_r1c3",
+      "screenshot": "IMG_1525.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "“w= Riolu | — -— r",
+      "ocr_lines": [
+        "“w= Riolu",
+        "— -— r"
+      ],
+      "cleaned_title_guess": "w Riolu - r",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1525_r2c1",
+      "screenshot": "IMG_1525.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "TARA. GCdEPe Ort Ane | anc a i‘ Li oe) | ‘om Vr 4 aa F me Tae, le",
+      "ocr_lines": [
+        "TARA. GCdEPe Ort Ane",
+        "anc a i‘ Li oe)",
+        "‘om Vr 4 aa F me Tae, le"
+      ],
+      "cleaned_title_guess": "TARA GCdEPe Ort Ane anc a i Li oe om Vr 4 aa F me Tae le",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1525_r2c2",
+      "screenshot": "IMG_1525.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1525_r2c3",
+      "screenshot": "IMG_1525.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "’ 4 7 es” > | * Sat - - = | SMarowakSe i140",
+      "ocr_lines": [
+        "’ 4 7 es” >",
+        "* Sat - - =",
+        "SMarowakSe i140"
+      ],
+      "cleaned_title_guess": "4 7 es Sat - - SMarowakSe i140",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1525_r3c1",
+      "screenshot": "IMG_1525.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1525_r3c2",
+      "screenshot": "IMG_1525.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "f ge ce aenusauts gy.",
+      "ocr_lines": [
+        "f ge ce aenusauts gy."
+      ],
+      "cleaned_title_guess": "f ge ce aenusauts gy",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1525_r3c3",
+      "screenshot": "IMG_1525.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "a Bb, PO «—. thse Oe aire Poe Pee tr",
+      "ocr_lines": [
+        "a Bb, PO «—. thse Oe aire Poe Pee tr"
+      ],
+      "cleaned_title_guess": "a Bb PO thse Oe aire Poe Pee tr",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1526_r1c1",
+      "screenshot": "IMG_1526.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "Sse Sas",
+      "ocr_lines": [
+        "Sse Sas"
+      ],
+      "cleaned_title_guess": "Sse Sas",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1526_r1c2",
+      "screenshot": "IMG_1526.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "——— a  — | » —- 7, | = Magnezone(2¢ 1807",
+      "ocr_lines": [
+        "——— a  —",
+        "» —- 7,",
+        "= Magnezone(2¢ 1807"
+      ],
+      "cleaned_title_guess": "a - 7 Magnezone2 1807",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1526_r1c3",
+      "screenshot": "IMG_1526.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "——————— - €6FErl rt—C—CC ZZ | a | “=e Corviknight(@7  w180",
+      "ocr_lines": [
+        "——————— - €6FErl rt—C—CC ZZ",
+        "a",
+        "“=e Corviknight(@7  w180"
+      ],
+      "cleaned_title_guess": "- 6FErl rtCCC ZZ a e Corviknight7 w180",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1526_r2c1",
+      "screenshot": "IMG_1526.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "—————————— lll Ee | > = eet ae Ss 5 | ox Eelektross we 140 4",
+      "ocr_lines": [
+        "—————————— lll Ee",
+        "> = eet ae Ss 5",
+        "ox Eelektross we 140 4"
+      ],
+      "cleaned_title_guess": "lll Ee eet ae Ss 5 ox Eelektross we 140 4",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1526_r2c2",
+      "screenshot": "IMG_1526.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "Sc etc‘ tw; . se =; Ff",
+      "ocr_lines": [
+        "Sc etc‘ tw; . se =; Ff"
+      ],
+      "cleaned_title_guess": "Sc etc tw se Ff",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1526_r2c3",
+      "screenshot": "IMG_1526.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "——zz{{£_  ————E— | [= eee se | | «< Genesect  — 110 PY |",
+      "ocr_lines": [
+        "——zz{{£_  ————E—",
+        "[= eee se |",
+        "«< Genesect  — 110 PY |"
+      ],
+      "cleaned_title_guess": "zz E eee se Genesect 110 PY",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1526_r3c1",
+      "screenshot": "IMG_1526.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "———————K xh hCU a",
+      "ocr_lines": [
+        "———————K xh hCU a"
+      ],
+      "cleaned_title_guess": "K xh hCU a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1526_r3c2",
+      "screenshot": "IMG_1526.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "——Tellel , | — os — 7 | | Zoe Y¥veltal 1200\") |",
+      "ocr_lines": [
+        "——Tellel ,",
+        "— os — 7",
+        "| Zoe Y¥veltal 1200\") |"
+      ],
+      "cleaned_title_guess": "Tellel os 7 Zoe Yveltal 1200",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1526_r3c3",
+      "screenshot": "IMG_1526.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "= Budew 30 1 |",
+      "ocr_lines": [
+        "= Budew 30 1 |"
+      ],
+      "cleaned_title_guess": "Budew 30 1",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1527_r1c1",
+      "screenshot": "IMG_1527.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "| \\ . , | wa 7",
+      "ocr_lines": [
+        "| \\ . ,",
+        "wa 7"
+      ],
+      "cleaned_title_guess": "wa 7",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1527_r1c2",
+      "screenshot": "IMG_1527.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "ee 8 .~ | rw, @ u™",
+      "ocr_lines": [
+        "ee 8 .~",
+        "rw, @ u™"
+      ],
+      "cleaned_title_guess": "ee 8 rw u",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1527_r1c3",
+      "screenshot": "IMG_1527.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "ho “me",
+      "ocr_lines": [
+        "ho “me"
+      ],
+      "cleaned_title_guess": "ho me",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1527_r2c1",
+      "screenshot": "IMG_1527.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "q o — = co | a",
+      "ocr_lines": [
+        "q o — = co | a"
+      ],
+      "cleaned_title_guess": "q o co a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1527_r2c2",
+      "screenshot": "IMG_1527.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1527_r2c3",
+      "screenshot": "IMG_1527.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1527_r3c1",
+      "screenshot": "IMG_1527.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "9 _ —$____—_, | | |e 7. a: a",
+      "ocr_lines": [
+        "9 _ —$____—_,",
+        "| |e 7. a: a"
+      ],
+      "cleaned_title_guess": "9 e 7 a a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1527_r3c2",
+      "screenshot": "IMG_1527.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1527_r3c3",
+      "screenshot": "IMG_1527.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1528_r1c1",
+      "screenshot": "IMG_1528.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "‘@ Kel”",
+      "ocr_lines": [
+        "‘@ Kel”"
+      ],
+      "cleaned_title_guess": "Kel",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1528_r1c2",
+      "screenshot": "IMG_1528.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1528_r1c3",
+      "screenshot": "IMG_1528.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1528_r2c1",
+      "screenshot": "IMG_1528.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1528_r2c2",
+      "screenshot": "IMG_1528.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1528_r2c3",
+      "screenshot": "IMG_1528.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "Serer | wt* . - | eo” ~—se",
+      "ocr_lines": [
+        "Serer",
+        "wt* . -",
+        "eo” ~—se"
+      ],
+      "cleaned_title_guess": "Serer wt - eo se",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1528_r3c1",
+      "screenshot": "IMG_1528.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1528_r3c2",
+      "screenshot": "IMG_1528.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "ie, YAceeel",
+      "ocr_lines": [
+        "ie, YAceeel"
+      ],
+      "cleaned_title_guess": "ie YAceeel",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1528_r3c3",
+      "screenshot": "IMG_1528.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1529_r1c1",
+      "screenshot": "IMG_1529.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1529_r1c2",
+      "screenshot": "IMG_1529.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "item TRAINEGEF | Flame Patch",
+      "ocr_lines": [
+        "item TRAINEGEF",
+        "Flame Patch"
+      ],
+      "cleaned_title_guess": "item TRAINEGEF Flame Patch",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1529_r1c3",
+      "screenshot": "IMG_1529.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "Supporter | TRAINER | | May",
+      "ocr_lines": [
+        "Supporter | TRAINER |",
+        "May"
+      ],
+      "cleaned_title_guess": "Supporter TRAINER May",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1529_r2c1",
+      "screenshot": "IMG_1529.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "Supporter a” TRAINER | Copycat",
+      "ocr_lines": [
+        "Supporter a” TRAINER",
+        "Copycat"
+      ],
+      "cleaned_title_guess": "Supporter a TRAINER Copycat",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1529_r2c2",
+      "screenshot": "IMG_1529.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1529_r2c3",
+      "screenshot": "IMG_1529.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "~— Wartortlelil 90@ | cae ane 4",
+      "ocr_lines": [
+        "~— Wartortlelil 90@",
+        "cae ane 4"
+      ],
+      "cleaned_title_guess": "Wartortlelil 90 cae ane 4",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1529_r3c1",
+      "screenshot": "IMG_1529.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1529_r3c2",
+      "screenshot": "IMG_1529.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "--« Magneton = #80 4",
+      "ocr_lines": [
+        "--« Magneton = #80 4"
+      ],
+      "cleaned_title_guess": "-- Magneton 80 4",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1529_r3c3",
+      "screenshot": "IMG_1529.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "“oo! Heliolisk —-wl004",
+      "ocr_lines": [
+        "“oo! Heliolisk —-wl004"
+      ],
+      "cleaned_title_guess": "oo Heliolisk -wl004",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1530_r1c1",
+      "screenshot": "IMG_1530.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "= r og a",
+      "ocr_lines": [
+        "= r og a"
+      ],
+      "cleaned_title_guess": "r og a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1530_r1c2",
+      "screenshot": "IMG_1530.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "1: <= if",
+      "ocr_lines": [
+        "1: <= if"
+      ],
+      "cleaned_title_guess": "1 if",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1530_r1c3",
+      "screenshot": "IMG_1530.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1530_r2c1",
+      "screenshot": "IMG_1530.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "a | “ ‘a | ANA",
+      "ocr_lines": [
+        "a",
+        "“ ‘a",
+        "ANA"
+      ],
+      "cleaned_title_guess": "a a ANA",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1530_r2c2",
+      "screenshot": "IMG_1530.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "2? 6 ONE",
+      "ocr_lines": [
+        "2? 6 ONE"
+      ],
+      "cleaned_title_guess": "2 6 ONE",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1530_r2c3",
+      "screenshot": "IMG_1530.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "Fal",
+      "ocr_lines": [
+        "Fal"
+      ],
+      "cleaned_title_guess": "Fal",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1530_r3c1",
+      "screenshot": "IMG_1530.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "- onal",
+      "ocr_lines": [
+        "- onal"
+      ],
+      "cleaned_title_guess": "- onal",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1530_r3c2",
+      "screenshot": "IMG_1530.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1530_r3c3",
+      "screenshot": "IMG_1530.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1531_r1c1",
+      "screenshot": "IMG_1531.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "° Sar oP Wee wrew f | Rt i : ——_,",
+      "ocr_lines": [
+        "° Sar oP Wee wrew f",
+        "Rt i : ——_,"
+      ],
+      "cleaned_title_guess": "Sar oP Wee wrew f Rt i",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1531_r1c2",
+      "screenshot": "IMG_1531.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "Clemont’s Backpack",
+      "ocr_lines": [
+        "Clemont’s Backpack"
+      ],
+      "cleaned_title_guess": "Clemonts Backpack",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1531_r1c3",
+      "screenshot": "IMG_1531.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "Quick-Grow Extract",
+      "ocr_lines": [
+        "Quick-Grow Extract"
+      ],
+      "cleaned_title_guess": "Quick-Grow Extract",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1531_r2c1",
+      "screenshot": "IMG_1531.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "Clemont y",
+      "ocr_lines": [
+        "Clemont y"
+      ],
+      "cleaned_title_guess": "Clemont y",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1531_r2c2",
+      "screenshot": "IMG_1531.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "—— ————— lll ee | a —- a",
+      "ocr_lines": [
+        "—— ————— lll ee",
+        "a —- a"
+      ],
+      "cleaned_title_guess": "lll ee a - a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1531_r2c3",
+      "screenshot": "IMG_1531.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1531_r3c1",
+      "screenshot": "IMG_1531.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1531_r3c2",
+      "screenshot": "IMG_1531.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "AS ae ee)",
+      "ocr_lines": [
+        "AS ae ee)"
+      ],
+      "cleaned_title_guess": "AS ae ee",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1531_r3c3",
+      "screenshot": "IMG_1531.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1532_r1c1",
+      "screenshot": "IMG_1532.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": ", ny lO | Sa | | hy ae }",
+      "ocr_lines": [
+        ", ny lO",
+        "Sa |",
+        "hy ae }"
+      ],
+      "cleaned_title_guess": "ny lO Sa hy ae",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1532_r1c2",
+      "screenshot": "IMG_1532.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "OO ———— | —aeew,\\ ae |",
+      "ocr_lines": [
+        "OO ————",
+        "—aeew,\\ ae |"
+      ],
+      "cleaned_title_guess": "OO aeew ae",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1532_r1c3",
+      "screenshot": "IMG_1532.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1532_r2c1",
+      "screenshot": "IMG_1532.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "Ses | . .",
+      "ocr_lines": [
+        "Ses",
+        ". ."
+      ],
+      "cleaned_title_guess": "Ses",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1532_r2c2",
+      "screenshot": "IMG_1532.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": ", _. FOUW NT! a FU | = ee",
+      "ocr_lines": [
+        ", _. FOUW NT! a FU",
+        "= ee"
+      ],
+      "cleaned_title_guess": "FOUW NT a FU ee",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1532_r2c3",
+      "screenshot": "IMG_1532.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "ao CO Nae he UU ey | i af",
+      "ocr_lines": [
+        "ao CO Nae he UU ey",
+        "i af"
+      ],
+      "cleaned_title_guess": "ao CO Nae he UU ey i af",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1532_r3c1",
+      "screenshot": "IMG_1532.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1532_r3c2",
+      "screenshot": "IMG_1532.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "S =< - e | » © = | | —o—— a | i; *",
+      "ocr_lines": [
+        "S =< - e",
+        "» © =",
+        "| —o—— a | i; *"
+      ],
+      "cleaned_title_guess": "S - e o a i",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1532_r3c3",
+      "screenshot": "IMG_1532.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "oy he |",
+      "ocr_lines": [
+        "oy he |"
+      ],
+      "cleaned_title_guess": "oy he",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1533_r1c1",
+      "screenshot": "IMG_1533.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "4 =| . ~~ s | : 4 | i FA he , ~ | a) ' | ) | ! ee ; | = aa — | - “oy 7 5 | > . | Z. ~~ = 1) . | AA",
+      "ocr_lines": [
+        "4 =| . ~~ s",
+        ": 4",
+        "i FA he , ~",
+        "a) '",
+        ")",
+        "! ee ;",
+        "= aa —",
+        "- “oy 7 5",
+        "> .",
+        "Z. ~~ = 1) . | AA"
+      ],
+      "cleaned_title_guess": "4 s 4 i FA he a ' ee aa - oy 7 5 Z 1 AA",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1533_r1c2",
+      "screenshot": "IMG_1533.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1533_r1c3",
+      "screenshot": "IMG_1533.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "i» yi 24k",
+      "ocr_lines": [
+        "i» yi 24k"
+      ],
+      "cleaned_title_guess": "i yi 24k",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1533_r2c1",
+      "screenshot": "IMG_1533.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1533_r2c2",
+      "screenshot": "IMG_1533.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "i te “, io‘ >",
+      "ocr_lines": [
+        "i te “, io‘ >"
+      ],
+      "cleaned_title_guess": "i te io",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1533_r2c3",
+      "screenshot": "IMG_1533.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "¥ Me —",
+      "ocr_lines": [
+        "¥ Me —"
+      ],
+      "cleaned_title_guess": "Me",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1533_r3c1",
+      "screenshot": "IMG_1533.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "a | a Fie. = ¥ .",
+      "ocr_lines": [
+        "a | a Fie. = ¥ ."
+      ],
+      "cleaned_title_guess": "a a Fie",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1533_r3c2",
+      "screenshot": "IMG_1533.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "; . > | hh wl",
+      "ocr_lines": [
+        "; . >",
+        "hh wl"
+      ],
+      "cleaned_title_guess": "hh wl",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1533_r3c3",
+      "screenshot": "IMG_1533.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1534_r1c1",
+      "screenshot": "IMG_1534.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1534_r1c2",
+      "screenshot": "IMG_1534.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1534_r1c3",
+      "screenshot": "IMG_1534.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1534_r2c1",
+      "screenshot": "IMG_1534.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1534_r2c2",
+      "screenshot": "IMG_1534.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "ne be Nn Coll | SS _ . S",
+      "ocr_lines": [
+        "ne be Nn Coll",
+        "SS _ . S"
+      ],
+      "cleaned_title_guess": "ne be Nn Coll SS S",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1534_r2c3",
+      "screenshot": "IMG_1534.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "AT i",
+      "ocr_lines": [
+        "AT i"
+      ],
+      "cleaned_title_guess": "AT i",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1534_r3c1",
+      "screenshot": "IMG_1534.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "/",
+      "ocr_lines": [
+        "/"
+      ],
+      "cleaned_title_guess": "",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1534_r3c2",
+      "screenshot": "IMG_1534.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1534_r3c3",
+      "screenshot": "IMG_1534.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "(| AY, ae",
+      "ocr_lines": [
+        "(| AY, ae"
+      ],
+      "cleaned_title_guess": "AY ae",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1535_r1c1",
+      "screenshot": "IMG_1535.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1535_r1c2",
+      "screenshot": "IMG_1535.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "= — si i | $ lpaeee a",
+      "ocr_lines": [
+        "= — si i",
+        "$ lpaeee a"
+      ],
+      "cleaned_title_guess": "si i lpaeee a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1535_r1c3",
+      "screenshot": "IMG_1535.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1535_r2c1",
+      "screenshot": "IMG_1535.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1535_r2c2",
+      "screenshot": "IMG_1535.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "Lace",
+      "ocr_lines": [
+        "Lace"
+      ],
+      "cleaned_title_guess": "Lace",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1535_r2c3",
+      "screenshot": "IMG_1535.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "a aa",
+      "ocr_lines": [
+        "a aa"
+      ],
+      "cleaned_title_guess": "a aa",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1535_r3c1",
+      "screenshot": "IMG_1535.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "i",
+      "ocr_lines": [
+        "i"
+      ],
+      "cleaned_title_guess": "i",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1535_r3c2",
+      "screenshot": "IMG_1535.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1535_r3c3",
+      "screenshot": "IMG_1535.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1536_r1c1",
+      "screenshot": "IMG_1536.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1536_r1c2",
+      "screenshot": "IMG_1536.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "iT bl pl mvy | |",
+      "ocr_lines": [
+        "iT bl pl mvy",
+        "|"
+      ],
+      "cleaned_title_guess": "iT bl pl mvy",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1536_r1c3",
+      "screenshot": "IMG_1536.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1536_r2c1",
+      "screenshot": "IMG_1536.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "Se | ere | Pa cy hs |",
+      "ocr_lines": [
+        "Se",
+        "ere",
+        "Pa cy hs |"
+      ],
+      "cleaned_title_guess": "Se ere Pa cy hs",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1536_r2c2",
+      "screenshot": "IMG_1536.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "2°56'7 r= rrwww | a",
+      "ocr_lines": [
+        "2°56'7 r= rrwww",
+        "a"
+      ],
+      "cleaned_title_guess": "256'7 r rrwww a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1536_r2c3",
+      "screenshot": "IMG_1536.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1536_r3c1",
+      "screenshot": "IMG_1536.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "Xt eel BI nr ieav ot | jot |",
+      "ocr_lines": [
+        "Xt eel BI nr ieav ot",
+        "jot |"
+      ],
+      "cleaned_title_guess": "Xt eel BI nr ieav ot jot",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1536_r3c2",
+      "screenshot": "IMG_1536.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1536_r3c3",
+      "screenshot": "IMG_1536.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1537_r1c1",
+      "screenshot": "IMG_1537.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1537_r1c2",
+      "screenshot": "IMG_1537.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "BPC Jy | pra Ms . = gen",
+      "ocr_lines": [
+        "BPC Jy",
+        "pra Ms . = gen"
+      ],
+      "cleaned_title_guess": "BPC Jy pra Ms gen",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1537_r1c3",
+      "screenshot": "IMG_1537.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1537_r2c1",
+      "screenshot": "IMG_1537.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "_-* BuIDasSaullr HeOV 6 | p+ ae",
+      "ocr_lines": [
+        "_-* BuIDasSaullr HeOV 6",
+        "p+ ae"
+      ],
+      "cleaned_title_guess": "- BuIDasSaullr HeOV 6 p ae",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1537_r2c2",
+      "screenshot": "IMG_1537.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "—_/ epinarak wll 6 | =",
+      "ocr_lines": [
+        "—_/ epinarak wll 6",
+        "="
+      ],
+      "cleaned_title_guess": "epinarak wll 6",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1537_r2c3",
+      "screenshot": "IMG_1537.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "=o — a | |",
+      "ocr_lines": [
+        "=o — a",
+        "|"
+      ],
+      "cleaned_title_guess": "o a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1537_r3c1",
+      "screenshot": "IMG_1537.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "_. SUPMy weOU & | ae a—\" _—*",
+      "ocr_lines": [
+        "_. SUPMy weOU &",
+        "ae a—\" _—*"
+      ],
+      "cleaned_title_guess": "SUPMy weOU ae a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1537_r3c2",
+      "screenshot": "IMG_1537.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "~~ MOtnim oe TU ee",
+      "ocr_lines": [
+        "~~ MOtnim oe TU ee"
+      ],
+      "cleaned_title_guess": "MOtnim oe TU ee",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1537_r3c3",
+      "screenshot": "IMG_1537.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1538_r1c1",
+      "screenshot": "IMG_1538.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "a oe",
+      "ocr_lines": [
+        "a oe"
+      ],
+      "cleaned_title_guess": "a oe",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1538_r1c2",
+      "screenshot": "IMG_1538.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1538_r1c3",
+      "screenshot": "IMG_1538.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "ee 7 | - |",
+      "ocr_lines": [
+        "ee 7",
+        "- |"
+      ],
+      "cleaned_title_guess": "ee 7 -",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1538_r2c1",
+      "screenshot": "IMG_1538.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1538_r2c2",
+      "screenshot": "IMG_1538.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1538_r2c3",
+      "screenshot": "IMG_1538.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1538_r3c1",
+      "screenshot": "IMG_1538.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "Uhh a",
+      "ocr_lines": [
+        "Uhh a"
+      ],
+      "cleaned_title_guess": "Uhh a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1538_r3c2",
+      "screenshot": "IMG_1538.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1538_r3c3",
+      "screenshot": "IMG_1538.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": ". i __,, =, ‘ oor | ut oa” _ i",
+      "ocr_lines": [
+        ". i __,, =, ‘ oor",
+        "ut oa” _ i"
+      ],
+      "cleaned_title_guess": "i oor ut oa i",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1539_r1c1",
+      "screenshot": "IMG_1539.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "\"Aromatics BES 100 @ | Cpe oro",
+      "ocr_lines": [
+        "\"Aromatics BES 100 @",
+        "Cpe oro"
+      ],
+      "cleaned_title_guess": "Aromatics BES 100 Cpe oro",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1539_r1c2",
+      "screenshot": "IMG_1539.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": ": — — os > i",
+      "ocr_lines": [
+        ": — — os > i"
+      ],
+      "cleaned_title_guess": "os i",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1539_r1c3",
+      "screenshot": "IMG_1539.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "<< Makuhita 80 &",
+      "ocr_lines": [
+        "<< Makuhita 80 &"
+      ],
+      "cleaned_title_guess": "Makuhita 80",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1539_r2c1",
+      "screenshot": "IMG_1539.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "“Nosepass sw 70 | =< (Nosepass | aa",
+      "ocr_lines": [
+        "“Nosepass sw 70",
+        "=< (Nosepass",
+        "aa"
+      ],
+      "cleaned_title_guess": "Nosepass sw 70 Nosepass aa",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1539_r2c2",
+      "screenshot": "IMG_1539.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1539_r2c3",
+      "screenshot": "IMG_1539.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "=! Mienshao 90 BS | 4",
+      "ocr_lines": [
+        "=! Mienshao 90 BS",
+        "4"
+      ],
+      "cleaned_title_guess": "Mienshao 90 BS 4",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1539_r3c1",
+      "screenshot": "IMG_1539.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "Grimer 800)",
+      "ocr_lines": [
+        "Grimer 800)"
+      ],
+      "cleaned_title_guess": "Grimer 800",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1539_r3c2",
+      "screenshot": "IMG_1539.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "Ee 0",
+      "ocr_lines": [
+        "Ee 0"
+      ],
+      "cleaned_title_guess": "Ee 0",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1539_r3c3",
+      "screenshot": "IMG_1539.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "“<< Porygon 60 * | -",
+      "ocr_lines": [
+        "“<< Porygon 60 *",
+        "-"
+      ],
+      "cleaned_title_guess": "Porygon 60 -",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1540_r1c1",
+      "screenshot": "IMG_1540.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": ". i W A ee a.",
+      "ocr_lines": [
+        ". i W A ee a."
+      ],
+      "cleaned_title_guess": "i W A ee a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1540_r1c2",
+      "screenshot": "IMG_1540.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1540_r1c3",
+      "screenshot": "IMG_1540.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "re d 4",
+      "ocr_lines": [
+        "re d 4"
+      ],
+      "cleaned_title_guess": "re d 4",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1540_r2c1",
+      "screenshot": "IMG_1540.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "| ton SG © | ro y . | ze",
+      "ocr_lines": [
+        "| ton SG ©",
+        "ro y .",
+        "ze"
+      ],
+      "cleaned_title_guess": "ton SG ro y ze",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1540_r2c2",
+      "screenshot": "IMG_1540.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "| | 1 9 ere —— 5",
+      "ocr_lines": [
+        "| | 1 9 ere —— 5"
+      ],
+      "cleaned_title_guess": "1 9 ere 5",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1540_r2c3",
+      "screenshot": "IMG_1540.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "\"ng os wr",
+      "ocr_lines": [
+        "\"ng os wr"
+      ],
+      "cleaned_title_guess": "ng os wr",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1540_r3c1",
+      "screenshot": "IMG_1540.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "eae.",
+      "ocr_lines": [
+        "eae."
+      ],
+      "cleaned_title_guess": "eae",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1540_r3c2",
+      "screenshot": "IMG_1540.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1540_r3c3",
+      "screenshot": "IMG_1540.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "ey / | — > i“ AE",
+      "ocr_lines": [
+        "ey /",
+        "— > i“ AE"
+      ],
+      "cleaned_title_guess": "ey i AE",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1541_r1c1",
+      "screenshot": "IMG_1541.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1541_r1c2",
+      "screenshot": "IMG_1541.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "“= Tangela 80 | ‘SS .o S53",
+      "ocr_lines": [
+        "“= Tangela 80",
+        "‘SS .o S53"
+      ],
+      "cleaned_title_guess": "Tangela 80 SS o S53",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1541_r1c3",
+      "screenshot": "IMG_1541.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "—-° Treecko ; 60 @",
+      "ocr_lines": [
+        "—-° Treecko ; 60 @"
+      ],
+      "cleaned_title_guess": "- Treecko 60",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1541_r2c1",
+      "screenshot": "IMG_1541.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1541_r2c2",
+      "screenshot": "IMG_1541.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1541_r2c3",
+      "screenshot": "IMG_1541.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1541_r3c1",
+      "screenshot": "IMG_1541.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "“<< Sewaddle § w60@",
+      "ocr_lines": [
+        "“<< Sewaddle § w60@"
+      ],
+      "cleaned_title_guess": "Sewaddle w60",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1541_r3c2",
+      "screenshot": "IMG_1541.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "“ Swadioon 80 @",
+      "ocr_lines": [
+        "“ Swadioon 80 @"
+      ],
+      "cleaned_title_guess": "Swadioon 80",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1541_r3c3",
+      "screenshot": "IMG_1541.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1542_r1c1",
+      "screenshot": "IMG_1542.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "4a “a ea",
+      "ocr_lines": [
+        "4a “a ea"
+      ],
+      "cleaned_title_guess": "4a a ea",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1542_r1c2",
+      "screenshot": "IMG_1542.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1542_r1c3",
+      "screenshot": "IMG_1542.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1542_r2c1",
+      "screenshot": "IMG_1542.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "¥",
+      "ocr_lines": [
+        "¥"
+      ],
+      "cleaned_title_guess": "",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1542_r2c2",
+      "screenshot": "IMG_1542.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1542_r2c3",
+      "screenshot": "IMG_1542.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1542_r3c1",
+      "screenshot": "IMG_1542.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "2 S- -ee “ns. - . | “Gg i >) ae",
+      "ocr_lines": [
+        "2 S- -ee “ns. - .",
+        "“Gg i >) ae"
+      ],
+      "cleaned_title_guess": "2 S- -ee ns - Gg i ae",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1542_r3c2",
+      "screenshot": "IMG_1542.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1542_r3c3",
+      "screenshot": "IMG_1542.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "a. =. SS",
+      "ocr_lines": [
+        "a. =. SS"
+      ],
+      "cleaned_title_guess": "a SS",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1543_r1c1",
+      "screenshot": "IMG_1543.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "\\ om |",
+      "ocr_lines": [
+        "\\ om |"
+      ],
+      "cleaned_title_guess": "om",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1543_r1c2",
+      "screenshot": "IMG_1543.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1543_r1c3",
+      "screenshot": "IMG_1543.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "le ae",
+      "ocr_lines": [
+        "le ae"
+      ],
+      "cleaned_title_guess": "le ae",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1543_r2c1",
+      "screenshot": "IMG_1543.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1543_r2c2",
+      "screenshot": "IMG_1543.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "‘, _M ae We K | ee” Ke",
+      "ocr_lines": [
+        "‘, _M ae We K",
+        "ee” Ke"
+      ],
+      "cleaned_title_guess": "M ae We K ee Ke",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1543_r2c3",
+      "screenshot": "IMG_1543.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "_— +e",
+      "ocr_lines": [
+        "_— +e"
+      ],
+      "cleaned_title_guess": "e",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1543_r3c1",
+      "screenshot": "IMG_1543.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "| aq, ‘2 wl",
+      "ocr_lines": [
+        "| aq, ‘2 wl"
+      ],
+      "cleaned_title_guess": "aq 2 wl",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1543_r3c2",
+      "screenshot": "IMG_1543.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "—",
+      "ocr_lines": [
+        "—"
+      ],
+      "cleaned_title_guess": "",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1543_r3c3",
+      "screenshot": "IMG_1543.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1544_r1c1",
+      "screenshot": "IMG_1544.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "lings _--.. ~~",
+      "ocr_lines": [
+        "lings _--.. ~~"
+      ],
+      "cleaned_title_guess": "lings --",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1544_r1c2",
+      "screenshot": "IMG_1544.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "~S =—__ % = F | ~ ae ee",
+      "ocr_lines": [
+        "~S =—__ % = F",
+        "~ ae ee"
+      ],
+      "cleaned_title_guess": "S F ae ee",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1544_r1c3",
+      "screenshot": "IMG_1544.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "J | os + a ee ~",
+      "ocr_lines": [
+        "J",
+        "os + a ee ~"
+      ],
+      "cleaned_title_guess": "J os a ee",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1544_r2c1",
+      "screenshot": "IMG_1544.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1544_r2c2",
+      "screenshot": "IMG_1544.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "ae +",
+      "ocr_lines": [
+        "ae +"
+      ],
+      "cleaned_title_guess": "ae",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1544_r2c3",
+      "screenshot": "IMG_1544.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "ult JU Sa | =\" - = « . “~~, Cae - | aa ow | | a",
+      "ocr_lines": [
+        "ult JU Sa",
+        "=\" - = « . “~~, Cae -",
+        "aa ow |",
+        "a"
+      ],
+      "cleaned_title_guess": "ult JU Sa - Cae - aa ow a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1544_r3c1",
+      "screenshot": "IMG_1544.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1544_r3c2",
+      "screenshot": "IMG_1544.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1544_r3c3",
+      "screenshot": "IMG_1544.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "{",
+      "ocr_lines": [
+        "{"
+      ],
+      "cleaned_title_guess": "",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1545_r1c1",
+      "screenshot": "IMG_1545.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "L. a .",
+      "ocr_lines": [
+        "L. a ."
+      ],
+      "cleaned_title_guess": "L a",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1545_r1c2",
+      "screenshot": "IMG_1545.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "EN). aad",
+      "ocr_lines": [
+        "EN). aad"
+      ],
+      "cleaned_title_guess": "EN aad",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1545_r1c3",
+      "screenshot": "IMG_1545.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1545_r2c1",
+      "screenshot": "IMG_1545.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "—«d TS BO | .  @",
+      "ocr_lines": [
+        "—«d TS BO",
+        ".  @"
+      ],
+      "cleaned_title_guess": "d TS BO",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1545_r2c2",
+      "screenshot": "IMG_1545.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "a. - ae ll",
+      "ocr_lines": [
+        "a. - ae ll"
+      ],
+      "cleaned_title_guess": "a - ae ll",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1545_r2c3",
+      "screenshot": "IMG_1545.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1545_r3c1",
+      "screenshot": "IMG_1545.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1545_r3c2",
+      "screenshot": "IMG_1545.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1545_r3c3",
+      "screenshot": "IMG_1545.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "x _ sf bP",
+      "ocr_lines": [
+        "x _ sf bP"
+      ],
+      "cleaned_title_guess": "x sf bP",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1546_r1c1",
+      "screenshot": "IMG_1546.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1546_r1c2",
+      "screenshot": "IMG_1546.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1546_r1c3",
+      "screenshot": "IMG_1546.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "Lee Saar “al",
+      "ocr_lines": [
+        "Lee Saar “al"
+      ],
+      "cleaned_title_guess": "Lee Saar al",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1546_r2c1",
+      "screenshot": "IMG_1546.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1546_r2c2",
+      "screenshot": "IMG_1546.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "——) Ld bli | a SY ee | r y, *< ait",
+      "ocr_lines": [
+        "——) Ld bli",
+        "a SY ee",
+        "r y, *< ait"
+      ],
+      "cleaned_title_guess": "Ld bli a SY ee r y ait",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1546_r2c3",
+      "screenshot": "IMG_1546.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1546_r3c1",
+      "screenshot": "IMG_1546.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "re eS | E x |. | i ee | | E",
+      "ocr_lines": [
+        "re eS",
+        "E x |.",
+        "i ee |",
+        "E"
+      ],
+      "cleaned_title_guess": "re eS E x i ee E",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1546_r3c2",
+      "screenshot": "IMG_1546.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1546_r3c3",
+      "screenshot": "IMG_1546.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1547_r1c1",
+      "screenshot": "IMG_1547.PNG",
+      "row": 1,
+      "col": 1,
+      "raw_ocr_text": "ftem TRAINGR | B.toaAaw",
+      "ocr_lines": [
+        "ftem TRAINGR",
+        "B.toaAaw"
+      ],
+      "cleaned_title_guess": "ftem TRAINGR BtoaAaw",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1547_r1c2",
+      "screenshot": "IMG_1547.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "Item | TRAINER | | o,..,-4 0.1!",
+      "ocr_lines": [
+        "Item | TRAINER |",
+        "o,..,-4 0.1!"
+      ],
+      "cleaned_title_guess": "Item TRAINER o-4 01",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1547_r1c3",
+      "screenshot": "IMG_1547.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "item TRAINGF | | o.d4 Mae",
+      "ocr_lines": [
+        "item TRAINGF |",
+        "o.d4 Mae"
+      ],
+      "cleaned_title_guess": "item TRAINGF od4 Mae",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1547_r2c1",
+      "screenshot": "IMG_1547.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": "Supporter TRAINER | Bantaccawre Basaawek -a.+..... wi",
+      "ocr_lines": [
+        "Supporter TRAINER",
+        "Bantaccawre Basaawek -a.+..... wi"
+      ],
+      "cleaned_title_guess": "Supporter TRAINER Bantaccawre Basaawek -a wi",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1547_r2c2",
+      "screenshot": "IMG_1547.PNG",
+      "row": 2,
+      "col": 2,
+      "raw_ocr_text": "! =o Victini wel",
+      "ocr_lines": [
+        "! =o Victini wel"
+      ],
+      "cleaned_title_guess": "o Victini wel",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1547_r2c3",
+      "screenshot": "IMG_1547.PNG",
+      "row": 2,
+      "col": 3,
+      "raw_ocr_text": "“<< Zygarde sw BOD | = <P “seo os Qe ee",
+      "ocr_lines": [
+        "“<< Zygarde sw BOD",
+        "= <P “seo os Qe ee"
+      ],
+      "cleaned_title_guess": "Zygarde sw BOD P seo os Qe ee",
+      "confidence": 0.5
+    },
+    {
+      "crop_id": "IMG_1547_r3c1",
+      "screenshot": "IMG_1547.PNG",
+      "row": 3,
+      "col": 1,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1547_r3c2",
+      "screenshot": "IMG_1547.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1547_r3c3",
+      "screenshot": "IMG_1547.PNG",
+      "row": 3,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    }
+  ]
+}

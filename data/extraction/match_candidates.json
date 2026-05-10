@@ -1,0 +1,3631 @@
+{
+  "generated_at": "2026-05-10T04:23:46.881713+00:00",
+  "threshold": 80,
+  "top_n": 3,
+  "total_crops": 216,
+  "auto_matched": 12,
+  "needs_review": 204,
+  "candidates": [
+    {
+      "crop_id": "IMG_1524_r1c1",
+      "title_guess": "gz zz item TRAINER Quick-Grow Extract",
+      "best_ocr_source": "Quick-Grow Extract",
+      "top_matches": [
+        {
+          "name": "Quick-Grow Extract",
+          "score": 100.0
+        },
+        {
+          "name": "Leaf Extract",
+          "score": 53.3
+        },
+        {
+          "name": "Quick Ball",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": "Quick-Grow Extract",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1524_r1c2",
+      "title_guess": "ormoes ai r - 7 s a",
+      "best_ocr_source": "ormoes ai .",
+      "top_matches": [
+        {
+          "name": "Aipom",
+          "score": 57.1
+        },
+        {
+          "name": "Tauros",
+          "score": 53.3
+        },
+        {
+          "name": "Arceus",
+          "score": 53.3
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1524_r1c3",
+      "title_guess": "3 Skrelp 60 2",
+      "best_ocr_source": "==3 Skrelp 60)",
+      "top_matches": [
+        {
+          "name": "Skrelp",
+          "score": 70.6
+        },
+        {
+          "name": "Lt. Surge",
+          "score": 42.1
+        },
+        {
+          "name": "Seel",
+          "score": 40.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 71 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1524_r2c1",
+      "title_guess": "iy a HS",
+      "best_ocr_source": "iy",
+      "top_matches": [
+        {
+          "name": "Inkay",
+          "score": 57.1
+        },
+        {
+          "name": "Misty",
+          "score": 57.1
+        },
+        {
+          "name": "Ivysaur",
+          "score": 44.4
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1524_r2c2",
+      "title_guess": "VF Nir Supporter TRAINER Clemont wees See eee OC SQ Se",
+      "best_ocr_source": "Clemont .",
+      "top_matches": [
+        {
+          "name": "Clemont",
+          "score": 100.0
+        },
+        {
+          "name": "Calem",
+          "score": 66.7
+        },
+        {
+          "name": "Charmeleon",
+          "score": 58.8
+        }
+      ],
+      "suggested_card_name": "Clemont",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1524_r2c3",
+      "title_guess": "eS ro - Bijlbasaur me gROute",
+      "best_ocr_source": "eS ro",
+      "top_matches": [
+        {
+          "name": "Escape Rope",
+          "score": 62.5
+        },
+        {
+          "name": "Zekrom ex",
+          "score": 57.1
+        },
+        {
+          "name": "Zekrom",
+          "score": 54.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1524_r3c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1524_r3c2",
+      "title_guess": "as as ae BaotD Tepig we",
+      "best_ocr_source": "as as ae",
+      "top_matches": [
+        {
+          "name": "Aegislash",
+          "score": 58.8
+        },
+        {
+          "name": "Gyarados ex",
+          "score": 52.6
+        },
+        {
+          "name": "Hero's Cape",
+          "score": 52.6
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 59 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1524_r3c3",
+      "title_guess": "viel Gn pe a",
+      "best_ocr_source": "viel Gn pe a",
+      "top_matches": [
+        {
+          "name": "Magnemite",
+          "score": 57.1
+        },
+        {
+          "name": "Dragon's Peak",
+          "score": 56.0
+        },
+        {
+          "name": "Level Ball",
+          "score": 54.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1525_r1c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1525_r1c2",
+      "title_guess": "Bonsly 30",
+      "best_ocr_source": "Bonsly 30",
+      "top_matches": [
+        {
+          "name": "Bunnelby",
+          "score": 47.1
+        },
+        {
+          "name": "Bagon",
+          "score": 42.9
+        },
+        {
+          "name": "Absol",
+          "score": 42.9
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 47 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1525_r1c3",
+      "title_guess": "w Riolu - r",
+      "best_ocr_source": "“w= Riolu",
+      "top_matches": [
+        {
+          "name": "Riolu",
+          "score": 83.3
+        },
+        {
+          "name": "Raikou",
+          "score": 61.5
+        },
+        {
+          "name": "Prinplup",
+          "score": 53.3
+        }
+      ],
+      "suggested_card_name": "Riolu",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1525_r2c1",
+      "title_guess": "TARA GCdEPe Ort Ane anc a i Li oe om Vr 4 aa F me Tae le",
+      "best_ocr_source": "TARA. GCdEPe Ort Ane",
+      "top_matches": [
+        {
+          "name": "Magmortar",
+          "score": 50.0
+        },
+        {
+          "name": "Training Court",
+          "score": 48.5
+        },
+        {
+          "name": "Rare Candy",
+          "score": 48.3
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1525_r2c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1525_r2c3",
+      "title_guess": "4 7 es Sat - - SMarowakSe i140",
+      "best_ocr_source": "SMarowakSe i140",
+      "top_matches": [
+        {
+          "name": "Marowak",
+          "score": 63.6
+        },
+        {
+          "name": "Aromatisse",
+          "score": 48.0
+        },
+        {
+          "name": "Ampharos ex",
+          "score": 46.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 64 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1525_r3c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1525_r3c2",
+      "title_guess": "f ge ce aenusauts gy",
+      "best_ocr_source": "f ge ce aenusauts gy",
+      "top_matches": [
+        {
+          "name": "Pansage",
+          "score": 44.4
+        },
+        {
+          "name": "Blastoise ex",
+          "score": 43.8
+        },
+        {
+          "name": "Aegislash ex",
+          "score": 43.8
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 44 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1525_r3c3",
+      "title_guess": "a Bb PO thse Oe aire Poe Pee tr",
+      "best_ocr_source": "a Bb PO thse Oe aire Poe Pee tr",
+      "top_matches": [
+        {
+          "name": "Pokémon League Headquarters",
+          "score": 41.4
+        },
+        {
+          "name": "Hippopotas",
+          "score": 39.0
+        },
+        {
+          "name": "Rescue Stretcher",
+          "score": 38.3
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 41 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1526_r1c1",
+      "title_guess": "Sse Sas",
+      "best_ocr_source": "Sse Sas",
+      "top_matches": [
+        {
+          "name": "Sneasel",
+          "score": 57.1
+        },
+        {
+          "name": "Absol ex",
+          "score": 53.3
+        },
+        {
+          "name": "Elesa ex",
+          "score": 53.3
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1526_r1c2",
+      "title_guess": "a - 7 Magnezone2 1807",
+      "best_ocr_source": "= Magnezone(2¢ 1807",
+      "top_matches": [
+        {
+          "name": "Magnezone",
+          "score": 72.0
+        },
+        {
+          "name": "Magnezone ex",
+          "score": 71.4
+        },
+        {
+          "name": "Magneton",
+          "score": 58.3
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 72 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1526_r1c3",
+      "title_guess": "- 6FErl rtCCC ZZ a e Corviknight7 w180",
+      "best_ocr_source": "a",
+      "top_matches": [
+        {
+          "name": "Bea",
+          "score": 50.0
+        },
+        {
+          "name": "Hau",
+          "score": 50.0
+        },
+        {
+          "name": "May",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1526_r2c1",
+      "title_guess": "lll Ee eet ae Ss 5 ox Eelektross we 140 4",
+      "best_ocr_source": "—————————— lll Ee",
+      "top_matches": [
+        {
+          "name": "Seel",
+          "score": 60.0
+        },
+        {
+          "name": "Aero Ball",
+          "score": 53.3
+        },
+        {
+          "name": "Weepinbell",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1526_r2c2",
+      "title_guess": "Sc etc tw se Ff",
+      "best_ocr_source": "Sc etc tw se Ff",
+      "top_matches": [
+        {
+          "name": "Sceptile ex",
+          "score": 46.2
+        },
+        {
+          "name": "Rescue Stretcher",
+          "score": 45.2
+        },
+        {
+          "name": "Forest Seal Stone",
+          "score": 43.8
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 46 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1526_r2c3",
+      "title_guess": "zz E eee se Genesect 110 PY",
+      "best_ocr_source": "[= eee se |",
+      "top_matches": [
+        {
+          "name": "Eevee",
+          "score": 72.7
+        },
+        {
+          "name": "Eevee ex",
+          "score": 71.4
+        },
+        {
+          "name": "Beheeyem",
+          "score": 57.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 73 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1526_r3c1",
+      "title_guess": "K xh hCU a",
+      "best_ocr_source": "K xh hCU a",
+      "top_matches": [
+        {
+          "name": "X Attack",
+          "score": 55.6
+        },
+        {
+          "name": "Arceus ex",
+          "score": 52.6
+        },
+        {
+          "name": "Hugh",
+          "score": 42.9
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 56 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1526_r3c2",
+      "title_guess": "Tellel os 7 Zoe Yveltal 1200",
+      "best_ocr_source": "——Tellel ,",
+      "top_matches": [
+        {
+          "name": "Gothitelle",
+          "score": 62.5
+        },
+        {
+          "name": "Steelix",
+          "score": 61.5
+        },
+        {
+          "name": "Seel",
+          "score": 60.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1526_r3c3",
+      "title_guess": "Budew 30 1",
+      "best_ocr_source": "Budew 30 1",
+      "top_matches": [
+        {
+          "name": "Budew",
+          "score": 66.7
+        },
+        {
+          "name": "Bede",
+          "score": 42.9
+        },
+        {
+          "name": "Buizel",
+          "score": 37.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 67 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1527_r1c1",
+      "title_guess": "wa 7",
+      "best_ocr_source": "wa 7",
+      "top_matches": [
+        {
+          "name": "Wally",
+          "score": 44.4
+        },
+        {
+          "name": "Mew ex",
+          "score": 40.0
+        },
+        {
+          "name": "Swablu",
+          "score": 40.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 44 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1527_r1c2",
+      "title_guess": "ee 8 rw u",
+      "best_ocr_source": "ee 8 .~",
+      "top_matches": [
+        {
+          "name": "Seel",
+          "score": 50.0
+        },
+        {
+          "name": "Bede",
+          "score": 50.0
+        },
+        {
+          "name": "Eevee",
+          "score": 44.4
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1527_r1c3",
+      "title_guess": "ho me",
+      "best_ocr_source": "ho me",
+      "top_matches": [
+        {
+          "name": "Ho-Oh",
+          "score": 60.0
+        },
+        {
+          "name": "Horsea",
+          "score": 54.5
+        },
+        {
+          "name": "Lombre",
+          "score": 54.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1527_r2c1",
+      "title_guess": "q o co a",
+      "best_ocr_source": "q o co a",
+      "top_matches": [
+        {
+          "name": "Tentacool",
+          "score": 47.1
+        },
+        {
+          "name": "Moon Ball",
+          "score": 47.1
+        },
+        {
+          "name": "Quick-Grow Extract",
+          "score": 46.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 47 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1527_r2c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1527_r2c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1527_r3c1",
+      "title_guess": "9 e 7 a a",
+      "best_ocr_source": "| |e 7. a: a",
+      "top_matches": [
+        {
+          "name": "Dialga ex",
+          "score": 50.0
+        },
+        {
+          "name": "Darkrai ex",
+          "score": 47.1
+        },
+        {
+          "name": "Altaria ex",
+          "score": 47.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1527_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1527_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1528_r1c1",
+      "title_guess": "Kel",
+      "best_ocr_source": "Kel",
+      "top_matches": [
+        {
+          "name": "Skrelp",
+          "score": 66.7
+        },
+        {
+          "name": "Seel",
+          "score": 57.1
+        },
+        {
+          "name": "Numel",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 67 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1528_r1c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1528_r1c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1528_r2c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1528_r2c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1528_r2c3",
+      "title_guess": "Serer wt - eo se",
+      "best_ocr_source": "Serer",
+      "top_matches": [
+        {
+          "name": "Serena",
+          "score": 72.7
+        },
+        {
+          "name": "Seel",
+          "score": 66.7
+        },
+        {
+          "name": "Roserade",
+          "score": 61.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 73 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1528_r3c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1528_r3c2",
+      "title_guess": "ie YAceeel",
+      "best_ocr_source": "ie YAceeel",
+      "top_matches": [
+        {
+          "name": "Victreebel",
+          "score": 60.0
+        },
+        {
+          "name": "Eevee",
+          "score": 53.3
+        },
+        {
+          "name": "Tentacruel",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1528_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1529_r1c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1529_r1c2",
+      "title_guess": "item TRAINEGEF Flame Patch",
+      "best_ocr_source": "item TRAINEGEF",
+      "top_matches": [
+        {
+          "name": "Training Court",
+          "score": 57.1
+        },
+        {
+          "name": "Hitmonlee",
+          "score": 52.2
+        },
+        {
+          "name": "Terrakion",
+          "score": 52.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1529_r1c3",
+      "title_guess": "Supporter TRAINER May",
+      "best_ocr_source": "May",
+      "top_matches": [
+        {
+          "name": "May",
+          "score": 100.0
+        },
+        {
+          "name": "Omanyte",
+          "score": 60.0
+        },
+        {
+          "name": "Maylene",
+          "score": 60.0
+        }
+      ],
+      "suggested_card_name": "May",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1529_r2c1",
+      "title_guess": "Supporter a TRAINER Copycat",
+      "best_ocr_source": "Supporter a” TRAINER",
+      "top_matches": [
+        {
+          "name": "Masquerain",
+          "score": 55.2
+        },
+        {
+          "name": "Training Court",
+          "score": 54.5
+        },
+        {
+          "name": "Power Plant Stadium",
+          "score": 52.6
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 55 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1529_r2c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1529_r2c3",
+      "title_guess": "Wartortlelil 90 cae ane 4",
+      "best_ocr_source": "~— Wartortlelil 90@",
+      "top_matches": [
+        {
+          "name": "Wartortle",
+          "score": 75.0
+        },
+        {
+          "name": "Grotle",
+          "score": 47.6
+        },
+        {
+          "name": "Roselia",
+          "score": 45.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 75 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1529_r3c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1529_r3c2",
+      "title_guess": "-- Magneton 80 4",
+      "best_ocr_source": "-- Magneton 80 4",
+      "top_matches": [
+        {
+          "name": "Magneton",
+          "score": 76.2
+        },
+        {
+          "name": "Magnezone ex",
+          "score": 64.0
+        },
+        {
+          "name": "Magnezone",
+          "score": 63.6
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 76 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1529_r3c3",
+      "title_guess": "oo Heliolisk -wl004",
+      "best_ocr_source": "oo Heliolisk -wl004",
+      "top_matches": [
+        {
+          "name": "Heliolisk",
+          "score": 66.7
+        },
+        {
+          "name": "Helioptile",
+          "score": 50.0
+        },
+        {
+          "name": "Petilil",
+          "score": 40.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 67 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1530_r1c1",
+      "title_guess": "r og a",
+      "best_ocr_source": "r og a",
+      "top_matches": [
+        {
+          "name": "Kyogre ex",
+          "score": 53.3
+        },
+        {
+          "name": "Magmar",
+          "score": 50.0
+        },
+        {
+          "name": "Kyogre",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 53 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1530_r1c2",
+      "title_guess": "1 if",
+      "best_ocr_source": "1 if",
+      "top_matches": [
+        {
+          "name": "Life Dew",
+          "score": 50.0
+        },
+        {
+          "name": "Mienfoo",
+          "score": 36.4
+        },
+        {
+          "name": "Misty ex",
+          "score": 33.3
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1530_r1c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1530_r2c1",
+      "title_guess": "a a ANA",
+      "best_ocr_source": "ANA",
+      "top_matches": [
+        {
+          "name": "Lana",
+          "score": 85.7
+        },
+        {
+          "name": "Shauna",
+          "score": 66.7
+        },
+        {
+          "name": "Bianca",
+          "score": 66.7
+        }
+      ],
+      "suggested_card_name": "Lana",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1530_r2c2",
+      "title_guess": "2 6 ONE",
+      "best_ocr_source": "2 6 ONE",
+      "top_matches": [
+        {
+          "name": "Cubone",
+          "score": 46.2
+        },
+        {
+          "name": "Float Stone",
+          "score": 44.4
+        },
+        {
+          "name": "Omanyte",
+          "score": 42.9
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 46 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1530_r2c3",
+      "title_guess": "Fal",
+      "best_ocr_source": "Fal",
+      "top_matches": [
+        {
+          "name": "Opal",
+          "score": 57.1
+        },
+        {
+          "name": "Floatzel",
+          "score": 54.5
+        },
+        {
+          "name": "Clefable",
+          "score": 54.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1530_r3c1",
+      "title_guess": "- onal",
+      "best_ocr_source": "- onal",
+      "top_matches": [
+        {
+          "name": "Opal",
+          "score": 75.0
+        },
+        {
+          "name": "Sonia",
+          "score": 66.7
+        },
+        {
+          "name": "Ponyta",
+          "score": 60.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 75 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1530_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1530_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1531_r1c1",
+      "title_guess": "Sar oP Wee wrew f Rt i",
+      "best_ocr_source": "Rt i : ——_,",
+      "top_matches": [
+        {
+          "name": "Mr. Mime",
+          "score": 54.5
+        },
+        {
+          "name": "Hilbert",
+          "score": 54.5
+        },
+        {
+          "name": "Root Fossil",
+          "score": 53.3
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 54 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1531_r1c2",
+      "title_guess": "Clemonts Backpack",
+      "best_ocr_source": "Clemonts Backpack",
+      "top_matches": [
+        {
+          "name": "Clemont",
+          "score": 58.3
+        },
+        {
+          "name": "Blacephalon",
+          "score": 57.1
+        },
+        {
+          "name": "Moon Ball",
+          "score": 46.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 58 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1531_r1c3",
+      "title_guess": "Quick-Grow Extract",
+      "best_ocr_source": "Quick-Grow Extract",
+      "top_matches": [
+        {
+          "name": "Quick-Grow Extract",
+          "score": 100.0
+        },
+        {
+          "name": "Leaf Extract",
+          "score": 53.3
+        },
+        {
+          "name": "Quick Ball",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": "Quick-Grow Extract",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1531_r2c1",
+      "title_guess": "Clemont y",
+      "best_ocr_source": "Clemont y",
+      "top_matches": [
+        {
+          "name": "Clemont",
+          "score": 87.5
+        },
+        {
+          "name": "Calem",
+          "score": 57.1
+        },
+        {
+          "name": "Melony",
+          "score": 53.3
+        }
+      ],
+      "suggested_card_name": "Clemont",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1531_r2c2",
+      "title_guess": "lll ee a - a",
+      "best_ocr_source": "—— ————— lll ee",
+      "top_matches": [
+        {
+          "name": "Seel",
+          "score": 60.0
+        },
+        {
+          "name": "Aero Ball",
+          "score": 53.3
+        },
+        {
+          "name": "Weepinbell",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1531_r2c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1531_r3c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1531_r3c2",
+      "title_guess": "AS ae ee",
+      "best_ocr_source": "AS ae ee",
+      "top_matches": [
+        {
+          "name": "Aegislash ex",
+          "score": 60.0
+        },
+        {
+          "name": "Arceus ex",
+          "score": 58.8
+        },
+        {
+          "name": "Steelix ex",
+          "score": 55.6
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1531_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1532_r1c1",
+      "title_guess": "ny lO Sa hy ae",
+      "best_ocr_source": ", ny lO",
+      "top_matches": [
+        {
+          "name": "Melony",
+          "score": 72.7
+        },
+        {
+          "name": "Lopunny",
+          "score": 66.7
+        },
+        {
+          "name": "Ponyta",
+          "score": 54.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 73 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1532_r1c2",
+      "title_guess": "OO aeew ae",
+      "best_ocr_source": "—aeew,\\ ae |",
+      "top_matches": [
+        {
+          "name": "Mew ex",
+          "score": 61.5
+        },
+        {
+          "name": "Axew",
+          "score": 54.5
+        },
+        {
+          "name": "Magnezone ex",
+          "score": 52.6
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1532_r1c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1532_r2c1",
+      "title_guess": "Ses",
+      "best_ocr_source": "Ses",
+      "top_matches": [
+        {
+          "name": "Shellos",
+          "score": 60.0
+        },
+        {
+          "name": "Sneasel",
+          "score": 60.0
+        },
+        {
+          "name": "Seel",
+          "score": 57.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1532_r2c2",
+      "title_guess": "FOUW NT a FU ee",
+      "best_ocr_source": "= ee",
+      "top_matches": [
+        {
+          "name": "Seel",
+          "score": 66.7
+        },
+        {
+          "name": "Bede",
+          "score": 66.7
+        },
+        {
+          "name": "Eevee",
+          "score": 57.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 67 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1532_r2c3",
+      "title_guess": "ao CO Nae he UU ey i af",
+      "best_ocr_source": "i af",
+      "top_matches": [
+        {
+          "name": "Leaf",
+          "score": 50.0
+        },
+        {
+          "name": "Ice Heal",
+          "score": 50.0
+        },
+        {
+          "name": "Dive Ball",
+          "score": 46.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1532_r3c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1532_r3c2",
+      "title_guess": "S - e o a i",
+      "best_ocr_source": "S - e o a i",
+      "top_matches": [
+        {
+          "name": "Hero's Cape",
+          "score": 60.0
+        },
+        {
+          "name": "Cherish Ball",
+          "score": 47.6
+        },
+        {
+          "name": "Zweilous",
+          "score": 47.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1532_r3c3",
+      "title_guess": "oy he",
+      "best_ocr_source": "oy he",
+      "top_matches": [
+        {
+          "name": "Ho-Oh",
+          "score": 60.0
+        },
+        {
+          "name": "Rocky Helmet",
+          "score": 58.8
+        },
+        {
+          "name": "Melony",
+          "score": 54.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1533_r1c1",
+      "title_guess": "4 s 4 i FA he a ' ee aa - oy 7 5 Z 1 AA",
+      "best_ocr_source": "! ee ;",
+      "top_matches": [
+        {
+          "name": "Seel",
+          "score": 66.7
+        },
+        {
+          "name": "Bede",
+          "score": 66.7
+        },
+        {
+          "name": "Eevee",
+          "score": 57.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 67 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1533_r1c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1533_r1c3",
+      "title_guess": "i yi 24k",
+      "best_ocr_source": "i yi 24k",
+      "top_matches": [
+        {
+          "name": "Kirlia",
+          "score": 42.9
+        },
+        {
+          "name": "Kahili",
+          "score": 42.9
+        },
+        {
+          "name": "Misty ex",
+          "score": 37.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 43 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1533_r2c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1533_r2c2",
+      "title_guess": "i te io",
+      "best_ocr_source": "i te io",
+      "top_matches": [
+        {
+          "name": "Pignite",
+          "score": 57.1
+        },
+        {
+          "name": "Antidote",
+          "score": 53.3
+        },
+        {
+          "name": "Giant Water Lily",
+          "score": 52.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1533_r2c3",
+      "title_guess": "Me",
+      "best_ocr_source": "Me",
+      "top_matches": [
+        {
+          "name": "Mew",
+          "score": 80.0
+        },
+        {
+          "name": "Numel",
+          "score": 57.1
+        },
+        {
+          "name": "Maxie",
+          "score": 57.1
+        }
+      ],
+      "suggested_card_name": "Mew",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1533_r3c1",
+      "title_guess": "a a Fie",
+      "best_ocr_source": "a a Fie",
+      "top_matches": [
+        {
+          "name": "Friend Ball",
+          "score": 55.6
+        },
+        {
+          "name": "Safari Ball",
+          "score": 55.6
+        },
+        {
+          "name": "Arcanine",
+          "score": 53.3
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 56 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1533_r3c2",
+      "title_guess": "hh wl",
+      "best_ocr_source": "hh wl",
+      "top_matches": [
+        {
+          "name": "Hawlucha",
+          "score": 46.2
+        },
+        {
+          "name": "Hugh",
+          "score": 44.4
+        },
+        {
+          "name": "Honchkrow",
+          "score": 42.9
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 46 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1533_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1534_r1c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1534_r1c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1534_r1c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1534_r2c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1534_r2c2",
+      "title_guess": "ne be Nn Coll SS S",
+      "best_ocr_source": "ne be Nn Coll",
+      "top_matches": [
+        {
+          "name": "Net Ball",
+          "score": 57.1
+        },
+        {
+          "name": "Nest Ball",
+          "score": 54.5
+        },
+        {
+          "name": "Friend Ball",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1534_r2c3",
+      "title_guess": "AT i",
+      "best_ocr_source": "AT i",
+      "top_matches": [
+        {
+          "name": "Dartrix",
+          "score": 54.5
+        },
+        {
+          "name": "Dratini",
+          "score": 54.5
+        },
+        {
+          "name": "Altaria",
+          "score": 54.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 54 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1534_r3c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 0 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1534_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1534_r3c3",
+      "title_guess": "AY ae",
+      "best_ocr_source": "AY ae",
+      "top_matches": [
+        {
+          "name": "Avery",
+          "score": 60.0
+        },
+        {
+          "name": "Luxray ex",
+          "score": 57.1
+        },
+        {
+          "name": "Aero Ball",
+          "score": 57.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1535_r1c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1535_r1c2",
+      "title_guess": "si i lpaeee a",
+      "best_ocr_source": "= — si i",
+      "top_matches": [
+        {
+          "name": "Pinsir",
+          "score": 60.0
+        },
+        {
+          "name": "Sail Fossil",
+          "score": 53.3
+        },
+        {
+          "name": "Sina",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1535_r1c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1535_r2c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1535_r2c2",
+      "title_guess": "Lace",
+      "best_ocr_source": "Lace",
+      "top_matches": [
+        {
+          "name": "Glaceon",
+          "score": 72.7
+        },
+        {
+          "name": "Salamence",
+          "score": 61.5
+        },
+        {
+          "name": "Arceus",
+          "score": 60.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 73 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1535_r2c3",
+      "title_guess": "a aa",
+      "best_ocr_source": "a aa",
+      "top_matches": [
+        {
+          "name": "Kadabra",
+          "score": 54.5
+        },
+        {
+          "name": "Malamar",
+          "score": 54.5
+        },
+        {
+          "name": "Rattata",
+          "score": 54.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 54 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1535_r3c1",
+      "title_guess": "i",
+      "best_ocr_source": "i",
+      "top_matches": [
+        {
+          "name": "Onix",
+          "score": 40.0
+        },
+        {
+          "name": "Bill",
+          "score": 40.0
+        },
+        {
+          "name": "Milo",
+          "score": 40.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 40 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1535_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1535_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1536_r1c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1536_r1c2",
+      "title_guess": "iT bl pl mvy",
+      "best_ocr_source": "iT bl pl mvy",
+      "top_matches": [
+        {
+          "name": "Violet City Gym Badge",
+          "score": 48.5
+        },
+        {
+          "name": "Dive Ball",
+          "score": 47.6
+        },
+        {
+          "name": "Blissey ex",
+          "score": 45.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 48 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1536_r1c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1536_r2c1",
+      "title_guess": "Se ere Pa cy hs",
+      "best_ocr_source": "Se",
+      "top_matches": [
+        {
+          "name": "Seel",
+          "score": 66.7
+        },
+        {
+          "name": "Skrelp",
+          "score": 50.0
+        },
+        {
+          "name": "Sobble",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 67 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1536_r2c2",
+      "title_guess": "256'7 r rrwww a",
+      "best_ocr_source": "a",
+      "top_matches": [
+        {
+          "name": "Bea",
+          "score": 50.0
+        },
+        {
+          "name": "Hau",
+          "score": 50.0
+        },
+        {
+          "name": "May",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1536_r2c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1536_r3c1",
+      "title_guess": "Xt eel BI nr ieav ot jot",
+      "best_ocr_source": "jot |",
+      "top_matches": [
+        {
+          "name": "Joltik",
+          "score": 66.7
+        },
+        {
+          "name": "Jolteon",
+          "score": 60.0
+        },
+        {
+          "name": "Lotad",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 67 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1536_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1536_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1537_r1c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1537_r1c2",
+      "title_guess": "BPC Jy pra Ms gen",
+      "best_ocr_source": "pra Ms . = gen",
+      "top_matches": [
+        {
+          "name": "Devolution Spray",
+          "score": 53.8
+        },
+        {
+          "name": "Gengar",
+          "score": 50.0
+        },
+        {
+          "name": "Espurr",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 54 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1537_r1c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1537_r2c1",
+      "title_guess": "- BuIDasSaullr HeOV 6 p ae",
+      "best_ocr_source": "p+ ae",
+      "top_matches": [
+        {
+          "name": "Mareep",
+          "score": 60.0
+        },
+        {
+          "name": "Escape Rope",
+          "score": 53.3
+        },
+        {
+          "name": "Caterpie",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1537_r2c2",
+      "title_guess": "epinarak wll 6",
+      "best_ocr_source": "epinarak wll 6",
+      "top_matches": [
+        {
+          "name": "Weepinbell",
+          "score": 50.0
+        },
+        {
+          "name": "Paralyze Heal",
+          "score": 44.4
+        },
+        {
+          "name": "Gengar ex",
+          "score": 43.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1537_r2c3",
+      "title_guess": "o a",
+      "best_ocr_source": "o a",
+      "top_matches": [
+        {
+          "name": "Poké Ball",
+          "score": 54.5
+        },
+        {
+          "name": "Ho-Oh",
+          "score": 50.0
+        },
+        {
+          "name": "Bagon",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 54 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1537_r3c1",
+      "title_guess": "SUPMy weOU ae a",
+      "best_ocr_source": "ae a—\" _—*",
+      "top_matches": [
+        {
+          "name": "Rare Candy",
+          "score": 57.1
+        },
+        {
+          "name": "Pansage",
+          "score": 54.5
+        },
+        {
+          "name": "Master Ball",
+          "score": 53.3
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1537_r3c2",
+      "title_guess": "MOtnim oe TU ee",
+      "best_ocr_source": "MOtnim oe TU ee",
+      "top_matches": [
+        {
+          "name": "Moltres ex",
+          "score": 48.0
+        },
+        {
+          "name": "Mimikyu ex",
+          "score": 48.0
+        },
+        {
+          "name": "Pokémon Catcher",
+          "score": 46.7
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 48 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1537_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1538_r1c1",
+      "title_guess": "a oe",
+      "best_ocr_source": "a oe",
+      "top_matches": [
+        {
+          "name": "Love Ball",
+          "score": 61.5
+        },
+        {
+          "name": "Machoke",
+          "score": 54.5
+        },
+        {
+          "name": "Escape Rope",
+          "score": 53.3
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1538_r1c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1538_r1c3",
+      "title_guess": "ee 7 -",
+      "best_ocr_source": "ee 7 -",
+      "top_matches": [
+        {
+          "name": "Seel",
+          "score": 50.0
+        },
+        {
+          "name": "Bede",
+          "score": 50.0
+        },
+        {
+          "name": "Eevee",
+          "score": 44.4
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1538_r2c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1538_r2c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1538_r2c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1538_r3c1",
+      "title_guess": "Uhh a",
+      "best_ocr_source": "Uhh a",
+      "top_matches": [
+        {
+          "name": "Hau",
+          "score": 50.0
+        },
+        {
+          "name": "Cherish Ball",
+          "score": 47.1
+        },
+        {
+          "name": "Hawlucha",
+          "score": 46.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1538_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1538_r3c3",
+      "title_guess": "i oor ut oa i",
+      "best_ocr_source": ". i __,, =, ‘ oor",
+      "top_matches": [
+        {
+          "name": "Wooper",
+          "score": 54.5
+        },
+        {
+          "name": "Scizor",
+          "score": 54.5
+        },
+        {
+          "name": "Victor",
+          "score": 54.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 54 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1539_r1c1",
+      "title_guess": "Aromatics BES 100 Cpe oro",
+      "best_ocr_source": "\"Aromatics BES 100 @",
+      "top_matches": [
+        {
+          "name": "Aromatisse",
+          "score": 66.7
+        },
+        {
+          "name": "Fomantis",
+          "score": 48.0
+        },
+        {
+          "name": "Raticate",
+          "score": 48.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 67 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1539_r1c2",
+      "title_guess": "os i",
+      "best_ocr_source": "os i",
+      "top_matches": [
+        {
+          "name": "Zweilous",
+          "score": 50.0
+        },
+        {
+          "name": "Milo",
+          "score": 50.0
+        },
+        {
+          "name": "Iris",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1539_r1c3",
+      "title_guess": "Makuhita 80",
+      "best_ocr_source": "Makuhita 80",
+      "top_matches": [
+        {
+          "name": "Machamp ex",
+          "score": 47.6
+        },
+        {
+          "name": "Omastar",
+          "score": 44.4
+        },
+        {
+          "name": "Gothita",
+          "score": 44.4
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 48 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1539_r2c1",
+      "title_guess": "Nosepass sw 70 Nosepass aa",
+      "best_ocr_source": "aa",
+      "top_matches": [
+        {
+          "name": "Abra",
+          "score": 66.7
+        },
+        {
+          "name": "Lana",
+          "score": 66.7
+        },
+        {
+          "name": "Aaron",
+          "score": 57.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 67 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1539_r2c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1539_r2c3",
+      "title_guess": "Mienshao 90 BS 4",
+      "best_ocr_source": "=! Mienshao 90 BS",
+      "top_matches": [
+        {
+          "name": "Mienshao",
+          "score": 72.7
+        },
+        {
+          "name": "Mienfoo",
+          "score": 47.6
+        },
+        {
+          "name": "Simisage",
+          "score": 45.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 73 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1539_r3c1",
+      "title_guess": "Grimer 800",
+      "best_ocr_source": "Grimer 800",
+      "top_matches": [
+        {
+          "name": "Grimsley",
+          "score": 55.6
+        },
+        {
+          "name": "Gordie",
+          "score": 50.0
+        },
+        {
+          "name": "Timer Ball",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 56 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1539_r3c2",
+      "title_guess": "Ee 0",
+      "best_ocr_source": "Ee 0",
+      "top_matches": [
+        {
+          "name": "Seel",
+          "score": 50.0
+        },
+        {
+          "name": "Bede",
+          "score": 50.0
+        },
+        {
+          "name": "Eevee",
+          "score": 44.4
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1539_r3c3",
+      "title_guess": "Porygon 60 -",
+      "best_ocr_source": "Porygon 60 -",
+      "top_matches": [
+        {
+          "name": "Porygon",
+          "score": 82.4
+        },
+        {
+          "name": "Porygon2",
+          "score": 77.8
+        },
+        {
+          "name": "Porygon-Z",
+          "score": 73.7
+        }
+      ],
+      "suggested_card_name": "Porygon",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1540_r1c1",
+      "title_guess": "i W A ee a",
+      "best_ocr_source": "i W A ee a",
+      "top_matches": [
+        {
+          "name": "Axew",
+          "score": 42.9
+        },
+        {
+          "name": "Salamence",
+          "score": 42.1
+        },
+        {
+          "name": "Dialga ex",
+          "score": 42.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 43 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1540_r1c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1540_r1c3",
+      "title_guess": "re d 4",
+      "best_ocr_source": "re d 4",
+      "top_matches": [
+        {
+          "name": "Drake",
+          "score": 54.5
+        },
+        {
+          "name": "Rare Candy",
+          "score": 50.0
+        },
+        {
+          "name": "Drowzee",
+          "score": 46.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 54 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1540_r2c1",
+      "title_guess": "ton SG ro y ze",
+      "best_ocr_source": "| ton SG ©",
+      "top_matches": [
+        {
+          "name": "Shelgon",
+          "score": 61.5
+        },
+        {
+          "name": "Magneton",
+          "score": 57.1
+        },
+        {
+          "name": "Bagon",
+          "score": 54.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1540_r2c2",
+      "title_guess": "1 9 ere 5",
+      "best_ocr_source": "1 9 ere 5",
+      "top_matches": [
+        {
+          "name": "Serena",
+          "score": 40.0
+        },
+        {
+          "name": "Cheren",
+          "score": 40.0
+        },
+        {
+          "name": "Full Restore",
+          "score": 38.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 40 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1540_r2c3",
+      "title_guess": "ng os wr",
+      "best_ocr_source": "ng os wr",
+      "top_matches": [
+        {
+          "name": "Pangoro",
+          "score": 53.3
+        },
+        {
+          "name": "Power Plant",
+          "score": 52.6
+        },
+        {
+          "name": "Good Rod",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 53 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1540_r3c1",
+      "title_guess": "eae",
+      "best_ocr_source": "eae",
+      "top_matches": [
+        {
+          "name": "Bea",
+          "score": 66.7
+        },
+        {
+          "name": "Leafeon",
+          "score": 60.0
+        },
+        {
+          "name": "Sneasel",
+          "score": 60.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 67 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1540_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1540_r3c3",
+      "title_guess": "ey i AE",
+      "best_ocr_source": "ey /",
+      "top_matches": [
+        {
+          "name": "Avery",
+          "score": 57.1
+        },
+        {
+          "name": "Elgyem",
+          "score": 50.0
+        },
+        {
+          "name": "Melony",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1541_r1c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1541_r1c2",
+      "title_guess": "Tangela 80 SS o S53",
+      "best_ocr_source": "“= Tangela 80",
+      "top_matches": [
+        {
+          "name": "Tangela",
+          "score": 82.4
+        },
+        {
+          "name": "Talonflame",
+          "score": 50.0
+        },
+        {
+          "name": "Metang",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": "Tangela",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1541_r1c3",
+      "title_guess": "- Treecko 60",
+      "best_ocr_source": "- Treecko 60",
+      "top_matches": [
+        {
+          "name": "Treecko",
+          "score": 82.4
+        },
+        {
+          "name": "Trevor",
+          "score": 50.0
+        },
+        {
+          "name": "Inteleon",
+          "score": 44.4
+        }
+      ],
+      "suggested_card_name": "Treecko",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1541_r2c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1541_r2c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1541_r2c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1541_r3c1",
+      "title_guess": "Sewaddle w60",
+      "best_ocr_source": "Sewaddle w60",
+      "top_matches": [
+        {
+          "name": "Sandile",
+          "score": 52.6
+        },
+        {
+          "name": "Roserade",
+          "score": 50.0
+        },
+        {
+          "name": "Smeargle",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 53 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1541_r3c2",
+      "title_guess": "Swadioon 80",
+      "best_ocr_source": "Swadioon 80",
+      "top_matches": [
+        {
+          "name": "Gladion",
+          "score": 55.6
+        },
+        {
+          "name": "Air Balloon",
+          "score": 45.5
+        },
+        {
+          "name": "Duosion",
+          "score": 44.4
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 56 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1541_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1542_r1c1",
+      "title_guess": "4a a ea",
+      "best_ocr_source": "4a a ea",
+      "top_matches": [
+        {
+          "name": "Mega Absol ex",
+          "score": 50.0
+        },
+        {
+          "name": "Dialga ex",
+          "score": 50.0
+        },
+        {
+          "name": "Heal Ball",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1542_r1c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1542_r1c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1542_r2c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 0 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1542_r2c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1542_r2c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1542_r3c1",
+      "title_guess": "2 S- -ee ns - Gg i ae",
+      "best_ocr_source": "“Gg i >) ae",
+      "top_matches": [
+        {
+          "name": "Giant Cape",
+          "score": 58.8
+        },
+        {
+          "name": "Gengar ex",
+          "score": 50.0
+        },
+        {
+          "name": "Aegislash",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 59 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1542_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1542_r3c3",
+      "title_guess": "a SS",
+      "best_ocr_source": "a SS",
+      "top_matches": [
+        {
+          "name": "Claw Fossil",
+          "score": 53.3
+        },
+        {
+          "name": "Armor Fossil",
+          "score": 50.0
+        },
+        {
+          "name": "Blastoise",
+          "score": 46.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 53 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1543_r1c1",
+      "title_guess": "om",
+      "best_ocr_source": "om",
+      "top_matches": [
+        {
+          "name": "Gloom",
+          "score": 57.1
+        },
+        {
+          "name": "Rotom",
+          "score": 57.1
+        },
+        {
+          "name": "Golem",
+          "score": 57.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1543_r1c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1543_r1c3",
+      "title_guess": "le ae",
+      "best_ocr_source": "le ae",
+      "top_matches": [
+        {
+          "name": "Graveler",
+          "score": 61.5
+        },
+        {
+          "name": "Life Dew",
+          "score": 61.5
+        },
+        {
+          "name": "Calem",
+          "score": 60.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1543_r2c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1543_r2c2",
+      "title_guess": "M ae We K ee Ke",
+      "best_ocr_source": "ee” Ke",
+      "top_matches": [
+        {
+          "name": "Eevee ex",
+          "score": 61.5
+        },
+        {
+          "name": "Elesa ex",
+          "score": 61.5
+        },
+        {
+          "name": "Eevee",
+          "score": 60.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1543_r2c3",
+      "title_guess": "e",
+      "best_ocr_source": "e",
+      "top_matches": [
+        {
+          "name": "Mew",
+          "score": 50.0
+        },
+        {
+          "name": "Bea",
+          "score": 50.0
+        },
+        {
+          "name": "Seel",
+          "score": 40.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1543_r3c1",
+      "title_guess": "aq 2 wl",
+      "best_ocr_source": "aq 2 wl",
+      "top_matches": [
+        {
+          "name": "Mawile",
+          "score": 46.2
+        },
+        {
+          "name": "Hawlucha",
+          "score": 40.0
+        },
+        {
+          "name": "Cyndaquil",
+          "score": 37.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 46 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1543_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 0 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1543_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1544_r1c1",
+      "title_guess": "lings --",
+      "best_ocr_source": "lings --",
+      "top_matches": [
+        {
+          "name": "Deerling",
+          "score": 61.5
+        },
+        {
+          "name": "Klang",
+          "score": 60.0
+        },
+        {
+          "name": "Flint",
+          "score": 60.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1544_r1c2",
+      "title_guess": "S F ae ee",
+      "best_ocr_source": "S F ae ee",
+      "top_matches": [
+        {
+          "name": "Hero's Cape",
+          "score": 60.0
+        },
+        {
+          "name": "Bayleef",
+          "score": 50.0
+        },
+        {
+          "name": "Eevee ex",
+          "score": 47.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1544_r1c3",
+      "title_guess": "J os a ee",
+      "best_ocr_source": "os + a ee ~",
+      "top_matches": [
+        {
+          "name": "Hero's Cape",
+          "score": 55.6
+        },
+        {
+          "name": "Zapdos ex",
+          "score": 50.0
+        },
+        {
+          "name": "Elesa",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 56 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1544_r2c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1544_r2c2",
+      "title_guess": "ae",
+      "best_ocr_source": "ae",
+      "top_matches": [
+        {
+          "name": "Axew",
+          "score": 66.7
+        },
+        {
+          "name": "Cave",
+          "score": 66.7
+        },
+        {
+          "name": "Avery",
+          "score": 57.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 67 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1544_r2c3",
+      "title_guess": "ult JU Sa - Cae - aa ow a",
+      "best_ocr_source": "=\" - = « . “~~, Cae -",
+      "top_matches": [
+        {
+          "name": "Cave",
+          "score": 85.7
+        },
+        {
+          "name": "Calem",
+          "score": 75.0
+        },
+        {
+          "name": "Chansey",
+          "score": 60.0
+        }
+      ],
+      "suggested_card_name": "Cave",
+      "needs_review": false,
+      "reason": ""
+    },
+    {
+      "crop_id": "IMG_1544_r3c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1544_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1544_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 0 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1545_r1c1",
+      "title_guess": "L a",
+      "best_ocr_source": "L a",
+      "top_matches": [
+        {
+          "name": "Opal",
+          "score": 57.1
+        },
+        {
+          "name": "Ralts",
+          "score": 50.0
+        },
+        {
+          "name": "Absol",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1545_r1c2",
+      "title_guess": "EN aad",
+      "best_ocr_source": "EN aad",
+      "top_matches": [
+        {
+          "name": "Drayden",
+          "score": 61.5
+        },
+        {
+          "name": "Gardenia",
+          "score": 57.1
+        },
+        {
+          "name": "Charizard ex",
+          "score": 55.6
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1545_r1c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1545_r2c1",
+      "title_guess": "d TS BO",
+      "best_ocr_source": "d TS BO",
+      "top_matches": [
+        {
+          "name": "Dusk Ball",
+          "score": 50.0
+        },
+        {
+          "name": "Super Rod",
+          "score": 50.0
+        },
+        {
+          "name": "Oddish",
+          "score": 46.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1545_r2c2",
+      "title_guess": "a - ae ll",
+      "best_ocr_source": "a - ae ll",
+      "top_matches": [
+        {
+          "name": "Aero Ball",
+          "score": 62.5
+        },
+        {
+          "name": "Air Balloon",
+          "score": 55.6
+        },
+        {
+          "name": "Azumarill",
+          "score": 50.0
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1545_r2c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1545_r3c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1545_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1545_r3c3",
+      "title_guess": "x sf bP",
+      "best_ocr_source": "x sf bP",
+      "top_matches": [
+        {
+          "name": "Absol ex",
+          "score": 53.3
+        },
+        {
+          "name": "X Sp. Def",
+          "score": 53.3
+        },
+        {
+          "name": "Blissey ex",
+          "score": 47.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 53 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1546_r1c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1546_r1c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1546_r1c3",
+      "title_guess": "Lee Saar al",
+      "best_ocr_source": "Lee Saar al",
+      "top_matches": [
+        {
+          "name": "Safari Ball",
+          "score": 72.7
+        },
+        {
+          "name": "Level Ball",
+          "score": 57.1
+        },
+        {
+          "name": "Malamar",
+          "score": 55.6
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 73 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1546_r2c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1546_r2c2",
+      "title_guess": "Ld bli a SY ee r y ait",
+      "best_ocr_source": "——) Ld bli",
+      "top_matches": [
+        {
+          "name": "Bill",
+          "score": 60.0
+        },
+        {
+          "name": "Hilda",
+          "score": 54.5
+        },
+        {
+          "name": "Lure Ball",
+          "score": 53.3
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 60 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1546_r2c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1546_r3c1",
+      "title_guess": "re eS E x i ee E",
+      "best_ocr_source": "re eS",
+      "top_matches": [
+        {
+          "name": "Escape Rope",
+          "score": 62.5
+        },
+        {
+          "name": "Elesa ex",
+          "score": 61.5
+        },
+        {
+          "name": "Kyogre ex",
+          "score": 57.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1546_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1546_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1547_r1c1",
+      "title_guess": "ftem TRAINGR BtoaAaw",
+      "best_ocr_source": "ftem TRAINGR",
+      "top_matches": [
+        {
+          "name": "Feraligatr",
+          "score": 63.6
+        },
+        {
+          "name": "Training Court",
+          "score": 61.5
+        },
+        {
+          "name": "Terrakion",
+          "score": 57.1
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 64 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1547_r1c2",
+      "title_guess": "Item TRAINER o-4 01",
+      "best_ocr_source": "Item | TRAINER |",
+      "top_matches": [
+        {
+          "name": "Terrakion",
+          "score": 57.1
+        },
+        {
+          "name": "Training Court",
+          "score": 53.8
+        },
+        {
+          "name": "Fletchinder",
+          "score": 52.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 57 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1547_r1c3",
+      "title_guess": "item TRAINGF od4 Mae",
+      "best_ocr_source": "item TRAINGF |",
+      "top_matches": [
+        {
+          "name": "Training Court",
+          "score": 61.5
+        },
+        {
+          "name": "Terrakion",
+          "score": 57.1
+        },
+        {
+          "name": "Metang",
+          "score": 55.6
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 62 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1547_r2c1",
+      "title_guess": "Supporter TRAINER Bantaccawre Basaawek -a wi",
+      "best_ocr_source": "Supporter TRAINER",
+      "top_matches": [
+        {
+          "name": "Training Court",
+          "score": 58.1
+        },
+        {
+          "name": "Torterra",
+          "score": 56.0
+        },
+        {
+          "name": "Terrakion",
+          "score": 53.8
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 58 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1547_r2c2",
+      "title_guess": "o Victini wel",
+      "best_ocr_source": "o Victini wel",
+      "top_matches": [
+        {
+          "name": "Victreebel",
+          "score": 52.2
+        },
+        {
+          "name": "Super Potion",
+          "score": 48.0
+        },
+        {
+          "name": "Electivire ex",
+          "score": 46.2
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 52 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1547_r2c3",
+      "title_guess": "Zygarde sw BOD P seo os Qe ee",
+      "best_ocr_source": "= <P “seo os Qe ee",
+      "top_matches": [
+        {
+          "name": "Espeon",
+          "score": 50.0
+        },
+        {
+          "name": "Escape Rope",
+          "score": 48.0
+        },
+        {
+          "name": "Eevee ex",
+          "score": 45.5
+        }
+      ],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "Best match score 50 < threshold 80"
+    },
+    {
+      "crop_id": "IMG_1547_r3c1",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1547_r3c2",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    },
+    {
+      "crop_id": "IMG_1547_r3c3",
+      "title_guess": "",
+      "best_ocr_source": "",
+      "top_matches": [],
+      "suggested_card_name": null,
+      "needs_review": true,
+      "reason": "OCR produced no text"
+    }
+  ]
+}

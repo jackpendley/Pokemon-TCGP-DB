@@ -1,0 +1,217 @@
+crop_id,screenshot,row,col,ocr_guess,ocr_conf,best_match_name,best_match_score,suggested_card_name,needs_review,reason,top_matches_json
+IMG_1524_r1c1,IMG_1524.PNG,1,1,gz zz item TRAINER Quick-Grow Extract,0.5,Quick-Grow Extract,100.0,Quick-Grow Extract,False,,"[{""name"": ""Quick-Grow Extract"", ""score"": 100.0}, {""name"": ""Leaf Extract"", ""score"": 53.3}, {""name"": ""Quick Ball"", ""score"": 50.0}]"
+IMG_1524_r1c2,IMG_1524.PNG,1,2,ormoes ai r - 7 s a,0.5,Aipom,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Aipom"", ""score"": 57.1}, {""name"": ""Tauros"", ""score"": 53.3}, {""name"": ""Arceus"", ""score"": 53.3}]"
+IMG_1524_r1c3,IMG_1524.PNG,1,3,3 Skrelp 60 2,0.5,Skrelp,70.6,,True,Best match score 71 < threshold 80,"[{""name"": ""Skrelp"", ""score"": 70.6}, {""name"": ""Lt. Surge"", ""score"": 42.1}, {""name"": ""Seel"", ""score"": 40.0}]"
+IMG_1524_r2c1,IMG_1524.PNG,2,1,iy a HS,0.5,Inkay,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Inkay"", ""score"": 57.1}, {""name"": ""Misty"", ""score"": 57.1}, {""name"": ""Ivysaur"", ""score"": 44.4}]"
+IMG_1524_r2c2,IMG_1524.PNG,2,2,VF Nir Supporter TRAINER Clemont wees See eee OC SQ Se,0.5,Clemont,100.0,Clemont,False,,"[{""name"": ""Clemont"", ""score"": 100.0}, {""name"": ""Calem"", ""score"": 66.7}, {""name"": ""Charmeleon"", ""score"": 58.8}]"
+IMG_1524_r2c3,IMG_1524.PNG,2,3,eS ro - Bijlbasaur me gROute,0.5,Escape Rope,62.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Escape Rope"", ""score"": 62.5}, {""name"": ""Zekrom ex"", ""score"": 57.1}, {""name"": ""Zekrom"", ""score"": 54.5}]"
+IMG_1524_r3c1,IMG_1524.PNG,3,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1524_r3c2,IMG_1524.PNG,3,2,as as ae BaotD Tepig we,0.5,Aegislash,58.8,,True,Best match score 59 < threshold 80,"[{""name"": ""Aegislash"", ""score"": 58.8}, {""name"": ""Gyarados ex"", ""score"": 52.6}, {""name"": ""Hero's Cape"", ""score"": 52.6}]"
+IMG_1524_r3c3,IMG_1524.PNG,3,3,viel Gn pe a,0.5,Magnemite,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Magnemite"", ""score"": 57.1}, {""name"": ""Dragon's Peak"", ""score"": 56.0}, {""name"": ""Level Ball"", ""score"": 54.5}]"
+IMG_1525_r1c1,IMG_1525.PNG,1,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1525_r1c2,IMG_1525.PNG,1,2,Bonsly 30,0.5,Bunnelby,47.1,,True,Best match score 47 < threshold 80,"[{""name"": ""Bunnelby"", ""score"": 47.1}, {""name"": ""Bagon"", ""score"": 42.9}, {""name"": ""Absol"", ""score"": 42.9}]"
+IMG_1525_r1c3,IMG_1525.PNG,1,3,w Riolu - r,0.5,Riolu,83.3,Riolu,False,,"[{""name"": ""Riolu"", ""score"": 83.3}, {""name"": ""Raikou"", ""score"": 61.5}, {""name"": ""Prinplup"", ""score"": 53.3}]"
+IMG_1525_r2c1,IMG_1525.PNG,2,1,TARA GCdEPe Ort Ane anc a i Li oe om Vr 4 aa F me Tae le,0.5,Magmortar,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Magmortar"", ""score"": 50.0}, {""name"": ""Training Court"", ""score"": 48.5}, {""name"": ""Rare Candy"", ""score"": 48.3}]"
+IMG_1525_r2c2,IMG_1525.PNG,2,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1525_r2c3,IMG_1525.PNG,2,3,4 7 es Sat - - SMarowakSe i140,0.5,Marowak,63.6,,True,Best match score 64 < threshold 80,"[{""name"": ""Marowak"", ""score"": 63.6}, {""name"": ""Aromatisse"", ""score"": 48.0}, {""name"": ""Ampharos ex"", ""score"": 46.2}]"
+IMG_1525_r3c1,IMG_1525.PNG,3,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1525_r3c2,IMG_1525.PNG,3,2,f ge ce aenusauts gy,0.5,Pansage,44.4,,True,Best match score 44 < threshold 80,"[{""name"": ""Pansage"", ""score"": 44.4}, {""name"": ""Blastoise ex"", ""score"": 43.8}, {""name"": ""Aegislash ex"", ""score"": 43.8}]"
+IMG_1525_r3c3,IMG_1525.PNG,3,3,a Bb PO thse Oe aire Poe Pee tr,0.5,Pokémon League Headquarters,41.4,,True,Best match score 41 < threshold 80,"[{""name"": ""Pok\u00e9mon League Headquarters"", ""score"": 41.4}, {""name"": ""Hippopotas"", ""score"": 39.0}, {""name"": ""Rescue Stretcher"", ""score"": 38.3}]"
+IMG_1526_r1c1,IMG_1526.PNG,1,1,Sse Sas,0.5,Sneasel,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Sneasel"", ""score"": 57.1}, {""name"": ""Absol ex"", ""score"": 53.3}, {""name"": ""Elesa ex"", ""score"": 53.3}]"
+IMG_1526_r1c2,IMG_1526.PNG,1,2,a - 7 Magnezone2 1807,0.5,Magnezone,72.0,,True,Best match score 72 < threshold 80,"[{""name"": ""Magnezone"", ""score"": 72.0}, {""name"": ""Magnezone ex"", ""score"": 71.4}, {""name"": ""Magneton"", ""score"": 58.3}]"
+IMG_1526_r1c3,IMG_1526.PNG,1,3,- 6FErl rtCCC ZZ a e Corviknight7 w180,0.5,Bea,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Bea"", ""score"": 50.0}, {""name"": ""Hau"", ""score"": 50.0}, {""name"": ""May"", ""score"": 50.0}]"
+IMG_1526_r2c1,IMG_1526.PNG,2,1,lll Ee eet ae Ss 5 ox Eelektross we 140 4,0.5,Seel,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Seel"", ""score"": 60.0}, {""name"": ""Aero Ball"", ""score"": 53.3}, {""name"": ""Weepinbell"", ""score"": 50.0}]"
+IMG_1526_r2c2,IMG_1526.PNG,2,2,Sc etc tw se Ff,0.5,Sceptile ex,46.2,,True,Best match score 46 < threshold 80,"[{""name"": ""Sceptile ex"", ""score"": 46.2}, {""name"": ""Rescue Stretcher"", ""score"": 45.2}, {""name"": ""Forest Seal Stone"", ""score"": 43.8}]"
+IMG_1526_r2c3,IMG_1526.PNG,2,3,zz E eee se Genesect 110 PY,0.5,Eevee,72.7,,True,Best match score 73 < threshold 80,"[{""name"": ""Eevee"", ""score"": 72.7}, {""name"": ""Eevee ex"", ""score"": 71.4}, {""name"": ""Beheeyem"", ""score"": 57.1}]"
+IMG_1526_r3c1,IMG_1526.PNG,3,1,K xh hCU a,0.5,X Attack,55.6,,True,Best match score 56 < threshold 80,"[{""name"": ""X Attack"", ""score"": 55.6}, {""name"": ""Arceus ex"", ""score"": 52.6}, {""name"": ""Hugh"", ""score"": 42.9}]"
+IMG_1526_r3c2,IMG_1526.PNG,3,2,Tellel os 7 Zoe Yveltal 1200,0.5,Gothitelle,62.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Gothitelle"", ""score"": 62.5}, {""name"": ""Steelix"", ""score"": 61.5}, {""name"": ""Seel"", ""score"": 60.0}]"
+IMG_1526_r3c3,IMG_1526.PNG,3,3,Budew 30 1,0.5,Budew,66.7,,True,Best match score 67 < threshold 80,"[{""name"": ""Budew"", ""score"": 66.7}, {""name"": ""Bede"", ""score"": 42.9}, {""name"": ""Buizel"", ""score"": 37.5}]"
+IMG_1527_r1c1,IMG_1527.PNG,1,1,wa 7,0.5,Wally,44.4,,True,Best match score 44 < threshold 80,"[{""name"": ""Wally"", ""score"": 44.4}, {""name"": ""Mew ex"", ""score"": 40.0}, {""name"": ""Swablu"", ""score"": 40.0}]"
+IMG_1527_r1c2,IMG_1527.PNG,1,2,ee 8 rw u,0.5,Seel,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Seel"", ""score"": 50.0}, {""name"": ""Bede"", ""score"": 50.0}, {""name"": ""Eevee"", ""score"": 44.4}]"
+IMG_1527_r1c3,IMG_1527.PNG,1,3,ho me,0.5,Ho-Oh,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Ho-Oh"", ""score"": 60.0}, {""name"": ""Horsea"", ""score"": 54.5}, {""name"": ""Lombre"", ""score"": 54.5}]"
+IMG_1527_r2c1,IMG_1527.PNG,2,1,q o co a,0.5,Tentacool,47.1,,True,Best match score 47 < threshold 80,"[{""name"": ""Tentacool"", ""score"": 47.1}, {""name"": ""Moon Ball"", ""score"": 47.1}, {""name"": ""Quick-Grow Extract"", ""score"": 46.2}]"
+IMG_1527_r2c2,IMG_1527.PNG,2,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1527_r2c3,IMG_1527.PNG,2,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1527_r3c1,IMG_1527.PNG,3,1,9 e 7 a a,0.5,Dialga ex,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Dialga ex"", ""score"": 50.0}, {""name"": ""Darkrai ex"", ""score"": 47.1}, {""name"": ""Altaria ex"", ""score"": 47.1}]"
+IMG_1527_r3c2,IMG_1527.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1527_r3c3,IMG_1527.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1528_r1c1,IMG_1528.PNG,1,1,Kel,0.5,Skrelp,66.7,,True,Best match score 67 < threshold 80,"[{""name"": ""Skrelp"", ""score"": 66.7}, {""name"": ""Seel"", ""score"": 57.1}, {""name"": ""Numel"", ""score"": 50.0}]"
+IMG_1528_r1c2,IMG_1528.PNG,1,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1528_r1c3,IMG_1528.PNG,1,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1528_r2c1,IMG_1528.PNG,2,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1528_r2c2,IMG_1528.PNG,2,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1528_r2c3,IMG_1528.PNG,2,3,Serer wt - eo se,0.5,Serena,72.7,,True,Best match score 73 < threshold 80,"[{""name"": ""Serena"", ""score"": 72.7}, {""name"": ""Seel"", ""score"": 66.7}, {""name"": ""Roserade"", ""score"": 61.5}]"
+IMG_1528_r3c1,IMG_1528.PNG,3,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1528_r3c2,IMG_1528.PNG,3,2,ie YAceeel,0.5,Victreebel,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Victreebel"", ""score"": 60.0}, {""name"": ""Eevee"", ""score"": 53.3}, {""name"": ""Tentacruel"", ""score"": 50.0}]"
+IMG_1528_r3c3,IMG_1528.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1529_r1c1,IMG_1529.PNG,1,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1529_r1c2,IMG_1529.PNG,1,2,item TRAINEGEF Flame Patch,0.5,Training Court,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Training Court"", ""score"": 57.1}, {""name"": ""Hitmonlee"", ""score"": 52.2}, {""name"": ""Terrakion"", ""score"": 52.2}]"
+IMG_1529_r1c3,IMG_1529.PNG,1,3,Supporter TRAINER May,0.5,May,100.0,May,False,,"[{""name"": ""May"", ""score"": 100.0}, {""name"": ""Omanyte"", ""score"": 60.0}, {""name"": ""Maylene"", ""score"": 60.0}]"
+IMG_1529_r2c1,IMG_1529.PNG,2,1,Supporter a TRAINER Copycat,0.5,Masquerain,55.2,,True,Best match score 55 < threshold 80,"[{""name"": ""Masquerain"", ""score"": 55.2}, {""name"": ""Training Court"", ""score"": 54.5}, {""name"": ""Power Plant Stadium"", ""score"": 52.6}]"
+IMG_1529_r2c2,IMG_1529.PNG,2,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1529_r2c3,IMG_1529.PNG,2,3,Wartortlelil 90 cae ane 4,0.5,Wartortle,75.0,,True,Best match score 75 < threshold 80,"[{""name"": ""Wartortle"", ""score"": 75.0}, {""name"": ""Grotle"", ""score"": 47.6}, {""name"": ""Roselia"", ""score"": 45.5}]"
+IMG_1529_r3c1,IMG_1529.PNG,3,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1529_r3c2,IMG_1529.PNG,3,2,-- Magneton 80 4,0.5,Magneton,76.2,,True,Best match score 76 < threshold 80,"[{""name"": ""Magneton"", ""score"": 76.2}, {""name"": ""Magnezone ex"", ""score"": 64.0}, {""name"": ""Magnezone"", ""score"": 63.6}]"
+IMG_1529_r3c3,IMG_1529.PNG,3,3,oo Heliolisk -wl004,0.5,Heliolisk,66.7,,True,Best match score 67 < threshold 80,"[{""name"": ""Heliolisk"", ""score"": 66.7}, {""name"": ""Helioptile"", ""score"": 50.0}, {""name"": ""Petilil"", ""score"": 40.0}]"
+IMG_1530_r1c1,IMG_1530.PNG,1,1,r og a,0.5,Kyogre ex,53.3,,True,Best match score 53 < threshold 80,"[{""name"": ""Kyogre ex"", ""score"": 53.3}, {""name"": ""Magmar"", ""score"": 50.0}, {""name"": ""Kyogre"", ""score"": 50.0}]"
+IMG_1530_r1c2,IMG_1530.PNG,1,2,1 if,0.5,Life Dew,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Life Dew"", ""score"": 50.0}, {""name"": ""Mienfoo"", ""score"": 36.4}, {""name"": ""Misty ex"", ""score"": 33.3}]"
+IMG_1530_r1c3,IMG_1530.PNG,1,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1530_r2c1,IMG_1530.PNG,2,1,a a ANA,0.5,Lana,85.7,Lana,False,,"[{""name"": ""Lana"", ""score"": 85.7}, {""name"": ""Shauna"", ""score"": 66.7}, {""name"": ""Bianca"", ""score"": 66.7}]"
+IMG_1530_r2c2,IMG_1530.PNG,2,2,2 6 ONE,0.5,Cubone,46.2,,True,Best match score 46 < threshold 80,"[{""name"": ""Cubone"", ""score"": 46.2}, {""name"": ""Float Stone"", ""score"": 44.4}, {""name"": ""Omanyte"", ""score"": 42.9}]"
+IMG_1530_r2c3,IMG_1530.PNG,2,3,Fal,0.5,Opal,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Opal"", ""score"": 57.1}, {""name"": ""Floatzel"", ""score"": 54.5}, {""name"": ""Clefable"", ""score"": 54.5}]"
+IMG_1530_r3c1,IMG_1530.PNG,3,1,- onal,0.5,Opal,75.0,,True,Best match score 75 < threshold 80,"[{""name"": ""Opal"", ""score"": 75.0}, {""name"": ""Sonia"", ""score"": 66.7}, {""name"": ""Ponyta"", ""score"": 60.0}]"
+IMG_1530_r3c2,IMG_1530.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1530_r3c3,IMG_1530.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1531_r1c1,IMG_1531.PNG,1,1,Sar oP Wee wrew f Rt i,0.5,Mr. Mime,54.5,,True,Best match score 54 < threshold 80,"[{""name"": ""Mr. Mime"", ""score"": 54.5}, {""name"": ""Hilbert"", ""score"": 54.5}, {""name"": ""Root Fossil"", ""score"": 53.3}]"
+IMG_1531_r1c2,IMG_1531.PNG,1,2,Clemonts Backpack,0.5,Clemont,58.3,,True,Best match score 58 < threshold 80,"[{""name"": ""Clemont"", ""score"": 58.3}, {""name"": ""Blacephalon"", ""score"": 57.1}, {""name"": ""Moon Ball"", ""score"": 46.2}]"
+IMG_1531_r1c3,IMG_1531.PNG,1,3,Quick-Grow Extract,0.5,Quick-Grow Extract,100.0,Quick-Grow Extract,False,,"[{""name"": ""Quick-Grow Extract"", ""score"": 100.0}, {""name"": ""Leaf Extract"", ""score"": 53.3}, {""name"": ""Quick Ball"", ""score"": 50.0}]"
+IMG_1531_r2c1,IMG_1531.PNG,2,1,Clemont y,0.5,Clemont,87.5,Clemont,False,,"[{""name"": ""Clemont"", ""score"": 87.5}, {""name"": ""Calem"", ""score"": 57.1}, {""name"": ""Melony"", ""score"": 53.3}]"
+IMG_1531_r2c2,IMG_1531.PNG,2,2,lll ee a - a,0.5,Seel,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Seel"", ""score"": 60.0}, {""name"": ""Aero Ball"", ""score"": 53.3}, {""name"": ""Weepinbell"", ""score"": 50.0}]"
+IMG_1531_r2c3,IMG_1531.PNG,2,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1531_r3c1,IMG_1531.PNG,3,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1531_r3c2,IMG_1531.PNG,3,2,AS ae ee,0.5,Aegislash ex,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Aegislash ex"", ""score"": 60.0}, {""name"": ""Arceus ex"", ""score"": 58.8}, {""name"": ""Steelix ex"", ""score"": 55.6}]"
+IMG_1531_r3c3,IMG_1531.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1532_r1c1,IMG_1532.PNG,1,1,ny lO Sa hy ae,0.5,Melony,72.7,,True,Best match score 73 < threshold 80,"[{""name"": ""Melony"", ""score"": 72.7}, {""name"": ""Lopunny"", ""score"": 66.7}, {""name"": ""Ponyta"", ""score"": 54.5}]"
+IMG_1532_r1c2,IMG_1532.PNG,1,2,OO aeew ae,0.5,Mew ex,61.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Mew ex"", ""score"": 61.5}, {""name"": ""Axew"", ""score"": 54.5}, {""name"": ""Magnezone ex"", ""score"": 52.6}]"
+IMG_1532_r1c3,IMG_1532.PNG,1,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1532_r2c1,IMG_1532.PNG,2,1,Ses,0.5,Shellos,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Shellos"", ""score"": 60.0}, {""name"": ""Sneasel"", ""score"": 60.0}, {""name"": ""Seel"", ""score"": 57.1}]"
+IMG_1532_r2c2,IMG_1532.PNG,2,2,FOUW NT a FU ee,0.5,Seel,66.7,,True,Best match score 67 < threshold 80,"[{""name"": ""Seel"", ""score"": 66.7}, {""name"": ""Bede"", ""score"": 66.7}, {""name"": ""Eevee"", ""score"": 57.1}]"
+IMG_1532_r2c3,IMG_1532.PNG,2,3,ao CO Nae he UU ey i af,0.5,Leaf,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Leaf"", ""score"": 50.0}, {""name"": ""Ice Heal"", ""score"": 50.0}, {""name"": ""Dive Ball"", ""score"": 46.2}]"
+IMG_1532_r3c1,IMG_1532.PNG,3,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1532_r3c2,IMG_1532.PNG,3,2,S - e o a i,0.5,Hero's Cape,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Hero's Cape"", ""score"": 60.0}, {""name"": ""Cherish Ball"", ""score"": 47.6}, {""name"": ""Zweilous"", ""score"": 47.1}]"
+IMG_1532_r3c3,IMG_1532.PNG,3,3,oy he,0.5,Ho-Oh,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Ho-Oh"", ""score"": 60.0}, {""name"": ""Rocky Helmet"", ""score"": 58.8}, {""name"": ""Melony"", ""score"": 54.5}]"
+IMG_1533_r1c1,IMG_1533.PNG,1,1,4 s 4 i FA he a ' ee aa - oy 7 5 Z 1 AA,0.5,Seel,66.7,,True,Best match score 67 < threshold 80,"[{""name"": ""Seel"", ""score"": 66.7}, {""name"": ""Bede"", ""score"": 66.7}, {""name"": ""Eevee"", ""score"": 57.1}]"
+IMG_1533_r1c2,IMG_1533.PNG,1,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1533_r1c3,IMG_1533.PNG,1,3,i yi 24k,0.5,Kirlia,42.9,,True,Best match score 43 < threshold 80,"[{""name"": ""Kirlia"", ""score"": 42.9}, {""name"": ""Kahili"", ""score"": 42.9}, {""name"": ""Misty ex"", ""score"": 37.5}]"
+IMG_1533_r2c1,IMG_1533.PNG,2,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1533_r2c2,IMG_1533.PNG,2,2,i te io,0.5,Pignite,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Pignite"", ""score"": 57.1}, {""name"": ""Antidote"", ""score"": 53.3}, {""name"": ""Giant Water Lily"", ""score"": 52.2}]"
+IMG_1533_r2c3,IMG_1533.PNG,2,3,Me,0.5,Mew,80.0,Mew,False,,"[{""name"": ""Mew"", ""score"": 80.0}, {""name"": ""Numel"", ""score"": 57.1}, {""name"": ""Maxie"", ""score"": 57.1}]"
+IMG_1533_r3c1,IMG_1533.PNG,3,1,a a Fie,0.5,Friend Ball,55.6,,True,Best match score 56 < threshold 80,"[{""name"": ""Friend Ball"", ""score"": 55.6}, {""name"": ""Safari Ball"", ""score"": 55.6}, {""name"": ""Arcanine"", ""score"": 53.3}]"
+IMG_1533_r3c2,IMG_1533.PNG,3,2,hh wl,0.5,Hawlucha,46.2,,True,Best match score 46 < threshold 80,"[{""name"": ""Hawlucha"", ""score"": 46.2}, {""name"": ""Hugh"", ""score"": 44.4}, {""name"": ""Honchkrow"", ""score"": 42.9}]"
+IMG_1533_r3c3,IMG_1533.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1534_r1c1,IMG_1534.PNG,1,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1534_r1c2,IMG_1534.PNG,1,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1534_r1c3,IMG_1534.PNG,1,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1534_r2c1,IMG_1534.PNG,2,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1534_r2c2,IMG_1534.PNG,2,2,ne be Nn Coll SS S,0.5,Net Ball,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Net Ball"", ""score"": 57.1}, {""name"": ""Nest Ball"", ""score"": 54.5}, {""name"": ""Friend Ball"", ""score"": 50.0}]"
+IMG_1534_r2c3,IMG_1534.PNG,2,3,AT i,0.5,Dartrix,54.5,,True,Best match score 54 < threshold 80,"[{""name"": ""Dartrix"", ""score"": 54.5}, {""name"": ""Dratini"", ""score"": 54.5}, {""name"": ""Altaria"", ""score"": 54.5}]"
+IMG_1534_r3c1,IMG_1534.PNG,3,1,,0.5,,0,,True,Best match score 0 < threshold 80,[]
+IMG_1534_r3c2,IMG_1534.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1534_r3c3,IMG_1534.PNG,3,3,AY ae,0.5,Avery,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Avery"", ""score"": 60.0}, {""name"": ""Luxray ex"", ""score"": 57.1}, {""name"": ""Aero Ball"", ""score"": 57.1}]"
+IMG_1535_r1c1,IMG_1535.PNG,1,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1535_r1c2,IMG_1535.PNG,1,2,si i lpaeee a,0.5,Pinsir,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Pinsir"", ""score"": 60.0}, {""name"": ""Sail Fossil"", ""score"": 53.3}, {""name"": ""Sina"", ""score"": 50.0}]"
+IMG_1535_r1c3,IMG_1535.PNG,1,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1535_r2c1,IMG_1535.PNG,2,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1535_r2c2,IMG_1535.PNG,2,2,Lace,0.5,Glaceon,72.7,,True,Best match score 73 < threshold 80,"[{""name"": ""Glaceon"", ""score"": 72.7}, {""name"": ""Salamence"", ""score"": 61.5}, {""name"": ""Arceus"", ""score"": 60.0}]"
+IMG_1535_r2c3,IMG_1535.PNG,2,3,a aa,0.5,Kadabra,54.5,,True,Best match score 54 < threshold 80,"[{""name"": ""Kadabra"", ""score"": 54.5}, {""name"": ""Malamar"", ""score"": 54.5}, {""name"": ""Rattata"", ""score"": 54.5}]"
+IMG_1535_r3c1,IMG_1535.PNG,3,1,i,0.5,Onix,40.0,,True,Best match score 40 < threshold 80,"[{""name"": ""Onix"", ""score"": 40.0}, {""name"": ""Bill"", ""score"": 40.0}, {""name"": ""Milo"", ""score"": 40.0}]"
+IMG_1535_r3c2,IMG_1535.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1535_r3c3,IMG_1535.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1536_r1c1,IMG_1536.PNG,1,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1536_r1c2,IMG_1536.PNG,1,2,iT bl pl mvy,0.5,Violet City Gym Badge,48.5,,True,Best match score 48 < threshold 80,"[{""name"": ""Violet City Gym Badge"", ""score"": 48.5}, {""name"": ""Dive Ball"", ""score"": 47.6}, {""name"": ""Blissey ex"", ""score"": 45.5}]"
+IMG_1536_r1c3,IMG_1536.PNG,1,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1536_r2c1,IMG_1536.PNG,2,1,Se ere Pa cy hs,0.5,Seel,66.7,,True,Best match score 67 < threshold 80,"[{""name"": ""Seel"", ""score"": 66.7}, {""name"": ""Skrelp"", ""score"": 50.0}, {""name"": ""Sobble"", ""score"": 50.0}]"
+IMG_1536_r2c2,IMG_1536.PNG,2,2,256'7 r rrwww a,0.5,Bea,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Bea"", ""score"": 50.0}, {""name"": ""Hau"", ""score"": 50.0}, {""name"": ""May"", ""score"": 50.0}]"
+IMG_1536_r2c3,IMG_1536.PNG,2,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1536_r3c1,IMG_1536.PNG,3,1,Xt eel BI nr ieav ot jot,0.5,Joltik,66.7,,True,Best match score 67 < threshold 80,"[{""name"": ""Joltik"", ""score"": 66.7}, {""name"": ""Jolteon"", ""score"": 60.0}, {""name"": ""Lotad"", ""score"": 50.0}]"
+IMG_1536_r3c2,IMG_1536.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1536_r3c3,IMG_1536.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1537_r1c1,IMG_1537.PNG,1,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1537_r1c2,IMG_1537.PNG,1,2,BPC Jy pra Ms gen,0.5,Devolution Spray,53.8,,True,Best match score 54 < threshold 80,"[{""name"": ""Devolution Spray"", ""score"": 53.8}, {""name"": ""Gengar"", ""score"": 50.0}, {""name"": ""Espurr"", ""score"": 50.0}]"
+IMG_1537_r1c3,IMG_1537.PNG,1,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1537_r2c1,IMG_1537.PNG,2,1,- BuIDasSaullr HeOV 6 p ae,0.5,Mareep,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Mareep"", ""score"": 60.0}, {""name"": ""Escape Rope"", ""score"": 53.3}, {""name"": ""Caterpie"", ""score"": 50.0}]"
+IMG_1537_r2c2,IMG_1537.PNG,2,2,epinarak wll 6,0.5,Weepinbell,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Weepinbell"", ""score"": 50.0}, {""name"": ""Paralyze Heal"", ""score"": 44.4}, {""name"": ""Gengar ex"", ""score"": 43.5}]"
+IMG_1537_r2c3,IMG_1537.PNG,2,3,o a,0.5,Poké Ball,54.5,,True,Best match score 54 < threshold 80,"[{""name"": ""Pok\u00e9 Ball"", ""score"": 54.5}, {""name"": ""Ho-Oh"", ""score"": 50.0}, {""name"": ""Bagon"", ""score"": 50.0}]"
+IMG_1537_r3c1,IMG_1537.PNG,3,1,SUPMy weOU ae a,0.5,Rare Candy,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Rare Candy"", ""score"": 57.1}, {""name"": ""Pansage"", ""score"": 54.5}, {""name"": ""Master Ball"", ""score"": 53.3}]"
+IMG_1537_r3c2,IMG_1537.PNG,3,2,MOtnim oe TU ee,0.5,Moltres ex,48.0,,True,Best match score 48 < threshold 80,"[{""name"": ""Moltres ex"", ""score"": 48.0}, {""name"": ""Mimikyu ex"", ""score"": 48.0}, {""name"": ""Pok\u00e9mon Catcher"", ""score"": 46.7}]"
+IMG_1537_r3c3,IMG_1537.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1538_r1c1,IMG_1538.PNG,1,1,a oe,0.5,Love Ball,61.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Love Ball"", ""score"": 61.5}, {""name"": ""Machoke"", ""score"": 54.5}, {""name"": ""Escape Rope"", ""score"": 53.3}]"
+IMG_1538_r1c2,IMG_1538.PNG,1,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1538_r1c3,IMG_1538.PNG,1,3,ee 7 -,0.5,Seel,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Seel"", ""score"": 50.0}, {""name"": ""Bede"", ""score"": 50.0}, {""name"": ""Eevee"", ""score"": 44.4}]"
+IMG_1538_r2c1,IMG_1538.PNG,2,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1538_r2c2,IMG_1538.PNG,2,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1538_r2c3,IMG_1538.PNG,2,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1538_r3c1,IMG_1538.PNG,3,1,Uhh a,0.5,Hau,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Hau"", ""score"": 50.0}, {""name"": ""Cherish Ball"", ""score"": 47.1}, {""name"": ""Hawlucha"", ""score"": 46.2}]"
+IMG_1538_r3c2,IMG_1538.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1538_r3c3,IMG_1538.PNG,3,3,i oor ut oa i,0.5,Wooper,54.5,,True,Best match score 54 < threshold 80,"[{""name"": ""Wooper"", ""score"": 54.5}, {""name"": ""Scizor"", ""score"": 54.5}, {""name"": ""Victor"", ""score"": 54.5}]"
+IMG_1539_r1c1,IMG_1539.PNG,1,1,Aromatics BES 100 Cpe oro,0.5,Aromatisse,66.7,,True,Best match score 67 < threshold 80,"[{""name"": ""Aromatisse"", ""score"": 66.7}, {""name"": ""Fomantis"", ""score"": 48.0}, {""name"": ""Raticate"", ""score"": 48.0}]"
+IMG_1539_r1c2,IMG_1539.PNG,1,2,os i,0.5,Zweilous,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Zweilous"", ""score"": 50.0}, {""name"": ""Milo"", ""score"": 50.0}, {""name"": ""Iris"", ""score"": 50.0}]"
+IMG_1539_r1c3,IMG_1539.PNG,1,3,Makuhita 80,0.5,Machamp ex,47.6,,True,Best match score 48 < threshold 80,"[{""name"": ""Machamp ex"", ""score"": 47.6}, {""name"": ""Omastar"", ""score"": 44.4}, {""name"": ""Gothita"", ""score"": 44.4}]"
+IMG_1539_r2c1,IMG_1539.PNG,2,1,Nosepass sw 70 Nosepass aa,0.5,Abra,66.7,,True,Best match score 67 < threshold 80,"[{""name"": ""Abra"", ""score"": 66.7}, {""name"": ""Lana"", ""score"": 66.7}, {""name"": ""Aaron"", ""score"": 57.1}]"
+IMG_1539_r2c2,IMG_1539.PNG,2,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1539_r2c3,IMG_1539.PNG,2,3,Mienshao 90 BS 4,0.5,Mienshao,72.7,,True,Best match score 73 < threshold 80,"[{""name"": ""Mienshao"", ""score"": 72.7}, {""name"": ""Mienfoo"", ""score"": 47.6}, {""name"": ""Simisage"", ""score"": 45.5}]"
+IMG_1539_r3c1,IMG_1539.PNG,3,1,Grimer 800,0.5,Grimsley,55.6,,True,Best match score 56 < threshold 80,"[{""name"": ""Grimsley"", ""score"": 55.6}, {""name"": ""Gordie"", ""score"": 50.0}, {""name"": ""Timer Ball"", ""score"": 50.0}]"
+IMG_1539_r3c2,IMG_1539.PNG,3,2,Ee 0,0.5,Seel,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Seel"", ""score"": 50.0}, {""name"": ""Bede"", ""score"": 50.0}, {""name"": ""Eevee"", ""score"": 44.4}]"
+IMG_1539_r3c3,IMG_1539.PNG,3,3,Porygon 60 -,0.5,Porygon,82.4,Porygon,False,,"[{""name"": ""Porygon"", ""score"": 82.4}, {""name"": ""Porygon2"", ""score"": 77.8}, {""name"": ""Porygon-Z"", ""score"": 73.7}]"
+IMG_1540_r1c1,IMG_1540.PNG,1,1,i W A ee a,0.5,Axew,42.9,,True,Best match score 43 < threshold 80,"[{""name"": ""Axew"", ""score"": 42.9}, {""name"": ""Salamence"", ""score"": 42.1}, {""name"": ""Dialga ex"", ""score"": 42.1}]"
+IMG_1540_r1c2,IMG_1540.PNG,1,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1540_r1c3,IMG_1540.PNG,1,3,re d 4,0.5,Drake,54.5,,True,Best match score 54 < threshold 80,"[{""name"": ""Drake"", ""score"": 54.5}, {""name"": ""Rare Candy"", ""score"": 50.0}, {""name"": ""Drowzee"", ""score"": 46.2}]"
+IMG_1540_r2c1,IMG_1540.PNG,2,1,ton SG ro y ze,0.5,Shelgon,61.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Shelgon"", ""score"": 61.5}, {""name"": ""Magneton"", ""score"": 57.1}, {""name"": ""Bagon"", ""score"": 54.5}]"
+IMG_1540_r2c2,IMG_1540.PNG,2,2,1 9 ere 5,0.5,Serena,40.0,,True,Best match score 40 < threshold 80,"[{""name"": ""Serena"", ""score"": 40.0}, {""name"": ""Cheren"", ""score"": 40.0}, {""name"": ""Full Restore"", ""score"": 38.1}]"
+IMG_1540_r2c3,IMG_1540.PNG,2,3,ng os wr,0.5,Pangoro,53.3,,True,Best match score 53 < threshold 80,"[{""name"": ""Pangoro"", ""score"": 53.3}, {""name"": ""Power Plant"", ""score"": 52.6}, {""name"": ""Good Rod"", ""score"": 50.0}]"
+IMG_1540_r3c1,IMG_1540.PNG,3,1,eae,0.5,Bea,66.7,,True,Best match score 67 < threshold 80,"[{""name"": ""Bea"", ""score"": 66.7}, {""name"": ""Leafeon"", ""score"": 60.0}, {""name"": ""Sneasel"", ""score"": 60.0}]"
+IMG_1540_r3c2,IMG_1540.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1540_r3c3,IMG_1540.PNG,3,3,ey i AE,0.5,Avery,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Avery"", ""score"": 57.1}, {""name"": ""Elgyem"", ""score"": 50.0}, {""name"": ""Melony"", ""score"": 50.0}]"
+IMG_1541_r1c1,IMG_1541.PNG,1,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1541_r1c2,IMG_1541.PNG,1,2,Tangela 80 SS o S53,0.5,Tangela,82.4,Tangela,False,,"[{""name"": ""Tangela"", ""score"": 82.4}, {""name"": ""Talonflame"", ""score"": 50.0}, {""name"": ""Metang"", ""score"": 50.0}]"
+IMG_1541_r1c3,IMG_1541.PNG,1,3,- Treecko 60,0.5,Treecko,82.4,Treecko,False,,"[{""name"": ""Treecko"", ""score"": 82.4}, {""name"": ""Trevor"", ""score"": 50.0}, {""name"": ""Inteleon"", ""score"": 44.4}]"
+IMG_1541_r2c1,IMG_1541.PNG,2,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1541_r2c2,IMG_1541.PNG,2,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1541_r2c3,IMG_1541.PNG,2,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1541_r3c1,IMG_1541.PNG,3,1,Sewaddle w60,0.5,Sandile,52.6,,True,Best match score 53 < threshold 80,"[{""name"": ""Sandile"", ""score"": 52.6}, {""name"": ""Roserade"", ""score"": 50.0}, {""name"": ""Smeargle"", ""score"": 50.0}]"
+IMG_1541_r3c2,IMG_1541.PNG,3,2,Swadioon 80,0.5,Gladion,55.6,,True,Best match score 56 < threshold 80,"[{""name"": ""Gladion"", ""score"": 55.6}, {""name"": ""Air Balloon"", ""score"": 45.5}, {""name"": ""Duosion"", ""score"": 44.4}]"
+IMG_1541_r3c3,IMG_1541.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1542_r1c1,IMG_1542.PNG,1,1,4a a ea,0.5,Mega Absol ex,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Mega Absol ex"", ""score"": 50.0}, {""name"": ""Dialga ex"", ""score"": 50.0}, {""name"": ""Heal Ball"", ""score"": 50.0}]"
+IMG_1542_r1c2,IMG_1542.PNG,1,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1542_r1c3,IMG_1542.PNG,1,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1542_r2c1,IMG_1542.PNG,2,1,,0.5,,0,,True,Best match score 0 < threshold 80,[]
+IMG_1542_r2c2,IMG_1542.PNG,2,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1542_r2c3,IMG_1542.PNG,2,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1542_r3c1,IMG_1542.PNG,3,1,2 S- -ee ns - Gg i ae,0.5,Giant Cape,58.8,,True,Best match score 59 < threshold 80,"[{""name"": ""Giant Cape"", ""score"": 58.8}, {""name"": ""Gengar ex"", ""score"": 50.0}, {""name"": ""Aegislash"", ""score"": 50.0}]"
+IMG_1542_r3c2,IMG_1542.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1542_r3c3,IMG_1542.PNG,3,3,a SS,0.5,Claw Fossil,53.3,,True,Best match score 53 < threshold 80,"[{""name"": ""Claw Fossil"", ""score"": 53.3}, {""name"": ""Armor Fossil"", ""score"": 50.0}, {""name"": ""Blastoise"", ""score"": 46.2}]"
+IMG_1543_r1c1,IMG_1543.PNG,1,1,om,0.5,Gloom,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Gloom"", ""score"": 57.1}, {""name"": ""Rotom"", ""score"": 57.1}, {""name"": ""Golem"", ""score"": 57.1}]"
+IMG_1543_r1c2,IMG_1543.PNG,1,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1543_r1c3,IMG_1543.PNG,1,3,le ae,0.5,Graveler,61.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Graveler"", ""score"": 61.5}, {""name"": ""Life Dew"", ""score"": 61.5}, {""name"": ""Calem"", ""score"": 60.0}]"
+IMG_1543_r2c1,IMG_1543.PNG,2,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1543_r2c2,IMG_1543.PNG,2,2,M ae We K ee Ke,0.5,Eevee ex,61.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Eevee ex"", ""score"": 61.5}, {""name"": ""Elesa ex"", ""score"": 61.5}, {""name"": ""Eevee"", ""score"": 60.0}]"
+IMG_1543_r2c3,IMG_1543.PNG,2,3,e,0.5,Mew,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Mew"", ""score"": 50.0}, {""name"": ""Bea"", ""score"": 50.0}, {""name"": ""Seel"", ""score"": 40.0}]"
+IMG_1543_r3c1,IMG_1543.PNG,3,1,aq 2 wl,0.5,Mawile,46.2,,True,Best match score 46 < threshold 80,"[{""name"": ""Mawile"", ""score"": 46.2}, {""name"": ""Hawlucha"", ""score"": 40.0}, {""name"": ""Cyndaquil"", ""score"": 37.5}]"
+IMG_1543_r3c2,IMG_1543.PNG,3,2,,0.5,,0,,True,Best match score 0 < threshold 80,[]
+IMG_1543_r3c3,IMG_1543.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1544_r1c1,IMG_1544.PNG,1,1,lings --,0.5,Deerling,61.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Deerling"", ""score"": 61.5}, {""name"": ""Klang"", ""score"": 60.0}, {""name"": ""Flint"", ""score"": 60.0}]"
+IMG_1544_r1c2,IMG_1544.PNG,1,2,S F ae ee,0.5,Hero's Cape,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Hero's Cape"", ""score"": 60.0}, {""name"": ""Bayleef"", ""score"": 50.0}, {""name"": ""Eevee ex"", ""score"": 47.1}]"
+IMG_1544_r1c3,IMG_1544.PNG,1,3,J os a ee,0.5,Hero's Cape,55.6,,True,Best match score 56 < threshold 80,"[{""name"": ""Hero's Cape"", ""score"": 55.6}, {""name"": ""Zapdos ex"", ""score"": 50.0}, {""name"": ""Elesa"", ""score"": 50.0}]"
+IMG_1544_r2c1,IMG_1544.PNG,2,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1544_r2c2,IMG_1544.PNG,2,2,ae,0.5,Axew,66.7,,True,Best match score 67 < threshold 80,"[{""name"": ""Axew"", ""score"": 66.7}, {""name"": ""Cave"", ""score"": 66.7}, {""name"": ""Avery"", ""score"": 57.1}]"
+IMG_1544_r2c3,IMG_1544.PNG,2,3,ult JU Sa - Cae - aa ow a,0.5,Cave,85.7,Cave,False,,"[{""name"": ""Cave"", ""score"": 85.7}, {""name"": ""Calem"", ""score"": 75.0}, {""name"": ""Chansey"", ""score"": 60.0}]"
+IMG_1544_r3c1,IMG_1544.PNG,3,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1544_r3c2,IMG_1544.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1544_r3c3,IMG_1544.PNG,3,3,,0.5,,0,,True,Best match score 0 < threshold 80,[]
+IMG_1545_r1c1,IMG_1545.PNG,1,1,L a,0.5,Opal,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Opal"", ""score"": 57.1}, {""name"": ""Ralts"", ""score"": 50.0}, {""name"": ""Absol"", ""score"": 50.0}]"
+IMG_1545_r1c2,IMG_1545.PNG,1,2,EN aad,0.5,Drayden,61.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Drayden"", ""score"": 61.5}, {""name"": ""Gardenia"", ""score"": 57.1}, {""name"": ""Charizard ex"", ""score"": 55.6}]"
+IMG_1545_r1c3,IMG_1545.PNG,1,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1545_r2c1,IMG_1545.PNG,2,1,d TS BO,0.5,Dusk Ball,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Dusk Ball"", ""score"": 50.0}, {""name"": ""Super Rod"", ""score"": 50.0}, {""name"": ""Oddish"", ""score"": 46.2}]"
+IMG_1545_r2c2,IMG_1545.PNG,2,2,a - ae ll,0.5,Aero Ball,62.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Aero Ball"", ""score"": 62.5}, {""name"": ""Air Balloon"", ""score"": 55.6}, {""name"": ""Azumarill"", ""score"": 50.0}]"
+IMG_1545_r2c3,IMG_1545.PNG,2,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1545_r3c1,IMG_1545.PNG,3,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1545_r3c2,IMG_1545.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1545_r3c3,IMG_1545.PNG,3,3,x sf bP,0.5,Absol ex,53.3,,True,Best match score 53 < threshold 80,"[{""name"": ""Absol ex"", ""score"": 53.3}, {""name"": ""X Sp. Def"", ""score"": 53.3}, {""name"": ""Blissey ex"", ""score"": 47.1}]"
+IMG_1546_r1c1,IMG_1546.PNG,1,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1546_r1c2,IMG_1546.PNG,1,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1546_r1c3,IMG_1546.PNG,1,3,Lee Saar al,0.5,Safari Ball,72.7,,True,Best match score 73 < threshold 80,"[{""name"": ""Safari Ball"", ""score"": 72.7}, {""name"": ""Level Ball"", ""score"": 57.1}, {""name"": ""Malamar"", ""score"": 55.6}]"
+IMG_1546_r2c1,IMG_1546.PNG,2,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1546_r2c2,IMG_1546.PNG,2,2,Ld bli a SY ee r y ait,0.5,Bill,60.0,,True,Best match score 60 < threshold 80,"[{""name"": ""Bill"", ""score"": 60.0}, {""name"": ""Hilda"", ""score"": 54.5}, {""name"": ""Lure Ball"", ""score"": 53.3}]"
+IMG_1546_r2c3,IMG_1546.PNG,2,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1546_r3c1,IMG_1546.PNG,3,1,re eS E x i ee E,0.5,Escape Rope,62.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Escape Rope"", ""score"": 62.5}, {""name"": ""Elesa ex"", ""score"": 61.5}, {""name"": ""Kyogre ex"", ""score"": 57.1}]"
+IMG_1546_r3c2,IMG_1546.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1546_r3c3,IMG_1546.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
+IMG_1547_r1c1,IMG_1547.PNG,1,1,ftem TRAINGR BtoaAaw,0.5,Feraligatr,63.6,,True,Best match score 64 < threshold 80,"[{""name"": ""Feraligatr"", ""score"": 63.6}, {""name"": ""Training Court"", ""score"": 61.5}, {""name"": ""Terrakion"", ""score"": 57.1}]"
+IMG_1547_r1c2,IMG_1547.PNG,1,2,Item TRAINER o-4 01,0.5,Terrakion,57.1,,True,Best match score 57 < threshold 80,"[{""name"": ""Terrakion"", ""score"": 57.1}, {""name"": ""Training Court"", ""score"": 53.8}, {""name"": ""Fletchinder"", ""score"": 52.2}]"
+IMG_1547_r1c3,IMG_1547.PNG,1,3,item TRAINGF od4 Mae,0.5,Training Court,61.5,,True,Best match score 62 < threshold 80,"[{""name"": ""Training Court"", ""score"": 61.5}, {""name"": ""Terrakion"", ""score"": 57.1}, {""name"": ""Metang"", ""score"": 55.6}]"
+IMG_1547_r2c1,IMG_1547.PNG,2,1,Supporter TRAINER Bantaccawre Basaawek -a wi,0.5,Training Court,58.1,,True,Best match score 58 < threshold 80,"[{""name"": ""Training Court"", ""score"": 58.1}, {""name"": ""Torterra"", ""score"": 56.0}, {""name"": ""Terrakion"", ""score"": 53.8}]"
+IMG_1547_r2c2,IMG_1547.PNG,2,2,o Victini wel,0.5,Victreebel,52.2,,True,Best match score 52 < threshold 80,"[{""name"": ""Victreebel"", ""score"": 52.2}, {""name"": ""Super Potion"", ""score"": 48.0}, {""name"": ""Electivire ex"", ""score"": 46.2}]"
+IMG_1547_r2c3,IMG_1547.PNG,2,3,Zygarde sw BOD P seo os Qe ee,0.5,Espeon,50.0,,True,Best match score 50 < threshold 80,"[{""name"": ""Espeon"", ""score"": 50.0}, {""name"": ""Escape Rope"", ""score"": 48.0}, {""name"": ""Eevee ex"", ""score"": 45.5}]"
+IMG_1547_r3c1,IMG_1547.PNG,3,1,,0.0,,0,,True,OCR produced no text,[]
+IMG_1547_r3c2,IMG_1547.PNG,3,2,,0.0,,0,,True,OCR produced no text,[]
+IMG_1547_r3c3,IMG_1547.PNG,3,3,,0.0,,0,,True,OCR produced no text,[]
