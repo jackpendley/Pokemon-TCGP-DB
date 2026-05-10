@@ -1,6 +1,8 @@
 Arcanine
 Arena of Antiquity
+Aromatisse
 Audino
+Basculin
 Bewear
 Bisharp
 Blaziken
@@ -10,12 +12,14 @@ Breloom
 Bronzong
 Budew
 Bulbasaur
+Buneary
 Burmy
 Charizard
 Charmander
 Charmeleon
 Cheren
 Cherubi
+Clauncher
 Clawitzer
 Clemont
 Clemont's Backpack
@@ -42,12 +46,16 @@ Giant Cape
 Giovanni
 Golbat
 Gorebyss
+Grimer
 Hariyama
 Hattrem
 Hearthflame Mask Ogerpon
 Heliolisk
+Helioptile
 Herdier
 Hitmonchan
+Houndoom
+Houndour
 Huntail
 Incineroar
 Ivysaur
@@ -59,28 +67,35 @@ Leavanny
 Lillie
 Machamp
 Magearna
+Magnemite
 Magneton
 Magnezone
+Makuhita
 Malamar
 Mandibuzz
 Marowak
+Mawile
 May
+Meditite
 Mega Charizard Y ex
 Mega Venusaur ex
 Meloetta
 Meltan
 Mienfoo
 Mienshao
+Misdreavus
 Mismagius
 Moltres
 Morpeko
 Mothim
+Nosepass
 Onix
 Paldean Tauros
 Palossand
 Pidgey
 Pignite
 Poliwhirl
+Porygon
 Porygon2
 Probopass
 Quagsire
@@ -90,25 +105,34 @@ Raticate
 Rattata
 Riolu
 Rockruff
+Roggenrola
+Roselia
 Sabrina
 Sandaconda
 Sandshrew
 Sandslash
 Sandygast
+Scraggy
 Seedot
 Serena
 Shellder
 Shroomish
 Silcoon
+Sinistea
 Skrelp
 Sobble
+Solosis
 Spinarak
+Spritzee
 Staraptor
+Staravia
+Starly
 Steelix
 Stoutland
 Sunkern
 Tepig
 Toxicroak
+Trubbish
 Turtonator
 Ursaring
 Urshifu

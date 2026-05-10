@@ -1,0 +1,10 @@
+screenshot,row,column,card_name,quantity,special_type,is_ex,notes
+IMG_1542.PNG,1,1,,,unknown,,no_candidates; user_identify
+IMG_1542.PNG,1,2,,,unknown,,top3=Castform(60); Float Stone(52); Castform Sunny Form(51); user_identify
+IMG_1542.PNG,1,3,,,unknown,,no_candidates; user_identify
+IMG_1542.PNG,2,1,,,unknown,,top3=Scrafty(50); Shiftry(50); Silvally(46); user_identify
+IMG_1542.PNG,2,2,,,unknown,,no_candidates; user_identify
+IMG_1542.PNG,2,3,,,unknown,,top3=Wooper(80); Paldean Wooper(60); Super Potion(47); user_identify; ref:stage=Basic; type=Water; rarity=one_diamond; set=B3
+IMG_1542.PNG,3,1,,,unknown,,no_candidates; user_identify
+IMG_1542.PNG,3,2,,,unknown,,top3=Castform(61); Castform Sunny Form(54); Castform Rainy Form(54); user_identify
+IMG_1542.PNG,3,3,,,unknown,,top3=Seel(66); Numel(57); Elesa(57); user_identify
