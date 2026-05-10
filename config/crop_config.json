@@ -18,5 +18,11 @@
     "card_height_cell": "step between row y-origins = card_height_tile + row_gap; if you set card_height_tile and row_gap, card_height_cell is recomputed automatically"
   },
   "per_screenshot_overrides": {
+    "IMG_1527.PNG": {
+      "top_y": 506
+    },
+    "IMG_1530.PNG": {
+      "top_y": 446
+    }
   }
 }
