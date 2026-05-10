@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T04:59:28.568061+00:00",
+  "generated_at": "2026-05-10T05:13:04.333933+00:00",
   "thresholds": {
     "dimension_tolerance": 10,
     "title_bright_warn": 225,
@@ -855,12 +855,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 161.3,
-        "title_variance": 3320.9,
-        "chip_mean": 229.0,
-        "chip_variance": 284.8,
-        "bottom_mean": 226.6,
-        "bottom_variance": 932.3
+        "title_mean": 217.8,
+        "title_variance": 968.7,
+        "chip_mean": 174.0,
+        "chip_variance": 4949.8,
+        "bottom_mean": 216.4,
+        "bottom_variance": 78.1
       },
       "issues": []
     },
@@ -878,12 +878,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 161.0,
-        "title_variance": 3302.0,
-        "chip_mean": 219.7,
-        "chip_variance": 711.5,
-        "bottom_mean": 216.9,
-        "bottom_variance": 1659.3
+        "title_mean": 217.1,
+        "title_variance": 932.8,
+        "chip_mean": 124.4,
+        "chip_variance": 3114.4,
+        "bottom_mean": 216.2,
+        "bottom_variance": 48.6
       },
       "issues": []
     },
@@ -901,12 +901,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 201.7,
-        "title_variance": 1582.5,
-        "chip_mean": 219.2,
-        "chip_variance": 604.4,
-        "bottom_mean": 227.1,
-        "bottom_variance": 902.3
+        "title_mean": 219.7,
+        "title_variance": 784.5,
+        "chip_mean": 100.0,
+        "chip_variance": 1054.9,
+        "bottom_mean": 216.5,
+        "bottom_variance": 80.1
       },
       "issues": []
     },
@@ -924,12 +924,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 144.7,
-        "title_variance": 4967.3,
-        "chip_mean": 227.5,
-        "chip_variance": 410.2,
-        "bottom_mean": 219.5,
-        "bottom_variance": 1600.1
+        "title_mean": 221.0,
+        "title_variance": 820.0,
+        "chip_mean": 173.1,
+        "chip_variance": 5006.0,
+        "bottom_mean": 216.0,
+        "bottom_variance": 97.3
       },
       "issues": []
     },
@@ -947,12 +947,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 135.8,
-        "title_variance": 6164.5,
-        "chip_mean": 209.1,
-        "chip_variance": 1501.7,
-        "bottom_mean": 177.4,
-        "bottom_variance": 1583.9
+        "title_mean": 216.5,
+        "title_variance": 1128.5,
+        "chip_mean": 122.8,
+        "chip_variance": 3068.4,
+        "bottom_mean": 215.7,
+        "bottom_variance": 68.4
       },
       "issues": []
     },
@@ -970,12 +970,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 174.3,
-        "title_variance": 3676.3,
-        "chip_mean": 191.9,
-        "chip_variance": 2524.7,
-        "bottom_mean": 172.2,
-        "bottom_variance": 1606.4
+        "title_mean": 221.2,
+        "title_variance": 783.0,
+        "chip_mean": 97.5,
+        "chip_variance": 829.8,
+        "bottom_mean": 216.2,
+        "bottom_variance": 97.7
       },
       "issues": []
     },
@@ -993,12 +993,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 119.4,
-        "title_variance": 8364.6,
-        "chip_mean": 226.0,
-        "chip_variance": 556.8,
-        "bottom_mean": 176.4,
-        "bottom_variance": 1944.2
+        "title_mean": 217.4,
+        "title_variance": 1131.8,
+        "chip_mean": 171.9,
+        "chip_variance": 4912.7,
+        "bottom_mean": 214.8,
+        "bottom_variance": 76.6
       },
       "issues": []
     },
@@ -1016,12 +1016,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 169.9,
-        "title_variance": 2661.3,
-        "chip_mean": 217.7,
-        "chip_variance": 699.8,
-        "bottom_mean": 214.0,
-        "bottom_variance": 1683.7
+        "title_mean": 177.1,
+        "title_variance": 2483.5,
+        "chip_mean": 122.3,
+        "chip_variance": 3047.6,
+        "bottom_mean": 214.5,
+        "bottom_variance": 46.2
       },
       "issues": []
     },
@@ -1039,12 +1039,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 159.7,
-        "title_variance": 4307.1,
-        "chip_mean": 217.1,
-        "chip_variance": 590.9,
-        "bottom_mean": 225.4,
-        "bottom_variance": 946.2
+        "title_mean": 176.7,
+        "title_variance": 2589.7,
+        "chip_mean": 101.8,
+        "chip_variance": 1381.8,
+        "bottom_mean": 214.8,
+        "bottom_variance": 78.6
       },
       "issues": []
     },
@@ -1476,12 +1476,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 172.8,
-        "title_variance": 2894.8,
-        "chip_mean": 218.9,
-        "chip_variance": 1779.6,
-        "bottom_mean": 209.8,
-        "bottom_variance": 1192.1
+        "title_mean": 199.0,
+        "title_variance": 2267.4,
+        "chip_mean": 174.6,
+        "chip_variance": 4943.8,
+        "bottom_mean": 217.1,
+        "bottom_variance": 79.0
       },
       "issues": []
     },
@@ -1499,12 +1499,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 175.3,
-        "title_variance": 3569.0,
-        "chip_mean": 202.6,
-        "chip_variance": 2728.1,
-        "bottom_mean": 208.9,
-        "bottom_variance": 1141.7
+        "title_mean": 209.4,
+        "title_variance": 1609.5,
+        "chip_mean": 125.3,
+        "chip_variance": 3200.6,
+        "bottom_mean": 216.8,
+        "bottom_variance": 49.9
       },
       "issues": []
     },
@@ -1522,12 +1522,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 195.3,
-        "title_variance": 1985.0,
-        "chip_mean": 181.8,
-        "chip_variance": 3271.8,
-        "bottom_mean": 152.1,
-        "bottom_variance": 3078.9
+        "title_mean": 211.4,
+        "title_variance": 1535.8,
+        "chip_mean": 104.5,
+        "chip_variance": 1444.4,
+        "bottom_mean": 217.1,
+        "bottom_variance": 81.0
       },
       "issues": []
     },
@@ -1545,12 +1545,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 196.4,
-        "title_variance": 2099.6,
-        "chip_mean": 218.4,
-        "chip_variance": 1816.8,
-        "bottom_mean": 159.7,
-        "bottom_variance": 2648.7
+        "title_mean": 218.4,
+        "title_variance": 1125.1,
+        "chip_mean": 175.1,
+        "chip_variance": 4909.2,
+        "bottom_mean": 216.5,
+        "bottom_variance": 79.0
       },
       "issues": []
     },
@@ -1568,12 +1568,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 201.6,
-        "title_variance": 1515.3,
-        "chip_mean": 200.8,
-        "chip_variance": 2496.7,
-        "bottom_mean": 194.8,
-        "bottom_variance": 2469.1
+        "title_mean": 218.4,
+        "title_variance": 1002.5,
+        "chip_mean": 126.4,
+        "chip_variance": 3249.4,
+        "bottom_mean": 216.2,
+        "bottom_variance": 49.0
       },
       "issues": []
     },
@@ -1591,12 +1591,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 182.7,
-        "title_variance": 2198.6,
-        "chip_mean": 184.8,
-        "chip_variance": 3052.1,
-        "bottom_mean": 157.1,
-        "bottom_variance": 2923.8
+        "title_mean": 179.0,
+        "title_variance": 2755.1,
+        "chip_mean": 102.2,
+        "chip_variance": 1263.5,
+        "bottom_mean": 216.5,
+        "bottom_variance": 81.0
       },
       "issues": []
     },
@@ -1614,12 +1614,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 161.8,
-        "title_variance": 2567.8,
-        "chip_mean": 215.7,
-        "chip_variance": 1912.9,
-        "bottom_mean": 171.4,
-        "bottom_variance": 2363.6
+        "title_mean": 176.4,
+        "title_variance": 2627.0,
+        "chip_mean": 172.5,
+        "chip_variance": 4897.0,
+        "bottom_mean": 215.1,
+        "bottom_variance": 75.0
       },
       "issues": []
     },
@@ -1637,12 +1637,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 177.4,
-        "title_variance": 2476.9,
-        "chip_mean": 195.6,
-        "chip_variance": 2760.6,
-        "bottom_mean": 170.4,
-        "bottom_variance": 2098.3
+        "title_mean": 196.8,
+        "title_variance": 1932.5,
+        "chip_mean": 123.0,
+        "chip_variance": 3091.7,
+        "bottom_mean": 214.6,
+        "bottom_variance": 47.1
       },
       "issues": []
     },
@@ -1660,12 +1660,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 175.3,
-        "title_variance": 2544.5,
-        "chip_mean": 180.0,
-        "chip_variance": 3241.2,
-        "bottom_mean": 157.7,
-        "bottom_variance": 2608.3
+        "title_mean": 183.1,
+        "title_variance": 2504.1,
+        "chip_mean": 102.4,
+        "chip_variance": 1353.4,
+        "bottom_mean": 215.1,
+        "bottom_variance": 77.2
       },
       "issues": []
     },
@@ -1683,12 +1683,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 168.2,
-        "title_variance": 1825.9,
-        "chip_mean": 211.7,
-        "chip_variance": 2582.4,
-        "bottom_mean": 177.5,
-        "bottom_variance": 2123.7
+        "title_mean": 180.7,
+        "title_variance": 2127.9,
+        "chip_mean": 174.0,
+        "chip_variance": 4950.1,
+        "bottom_mean": 216.4,
+        "bottom_variance": 79.1
       },
       "issues": []
     },
@@ -1706,12 +1706,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 171.6,
-        "title_variance": 1858.9,
-        "chip_mean": 188.6,
-        "chip_variance": 3506.5,
-        "bottom_mean": 187.6,
-        "bottom_variance": 1566.2
+        "title_mean": 181.7,
+        "title_variance": 1968.0,
+        "chip_mean": 124.4,
+        "chip_variance": 3123.3,
+        "bottom_mean": 216.3,
+        "bottom_variance": 48.0
       },
       "issues": []
     },
@@ -1729,12 +1729,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 160.0,
-        "title_variance": 2589.2,
-        "chip_mean": 174.8,
-        "chip_variance": 3749.3,
-        "bottom_mean": 189.3,
-        "bottom_variance": 1600.0
+        "title_mean": 172.1,
+        "title_variance": 2593.8,
+        "chip_mean": 103.8,
+        "chip_variance": 1411.4,
+        "bottom_mean": 216.6,
+        "bottom_variance": 79.6
       },
       "issues": []
     },
@@ -1752,12 +1752,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 161.4,
-        "title_variance": 2402.5,
-        "chip_mean": 210.8,
-        "chip_variance": 2719.3,
-        "bottom_mean": 187.8,
-        "bottom_variance": 1593.3
+        "title_mean": 176.1,
+        "title_variance": 2663.7,
+        "chip_mean": 173.1,
+        "chip_variance": 5006.7,
+        "bottom_mean": 215.9,
+        "bottom_variance": 101.8
       },
       "issues": []
     },
@@ -1775,12 +1775,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 173.5,
-        "title_variance": 2111.0,
-        "chip_mean": 187.1,
-        "chip_variance": 3639.1,
-        "bottom_mean": 186.9,
-        "bottom_variance": 1461.0
+        "title_mean": 185.3,
+        "title_variance": 2134.4,
+        "chip_mean": 123.8,
+        "chip_variance": 3095.6,
+        "bottom_mean": 215.6,
+        "bottom_variance": 70.8
       },
       "issues": []
     },
@@ -1798,12 +1798,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 158.3,
-        "title_variance": 3183.6,
-        "chip_mean": 172.9,
-        "chip_variance": 3893.3,
-        "bottom_mean": 187.3,
-        "bottom_variance": 1562.2
+        "title_mean": 176.8,
+        "title_variance": 2917.5,
+        "chip_mean": 101.7,
+        "chip_variance": 1245.5,
+        "bottom_mean": 216.1,
+        "bottom_variance": 103.5
       },
       "issues": []
     },
@@ -1821,12 +1821,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 155.1,
-        "title_variance": 3659.6,
-        "chip_mean": 209.2,
-        "chip_variance": 2623.6,
-        "bottom_mean": 207.6,
-        "bottom_variance": 707.5
+        "title_mean": 177.5,
+        "title_variance": 3081.4,
+        "chip_mean": 171.8,
+        "chip_variance": 4916.0,
+        "bottom_mean": 214.7,
+        "bottom_variance": 77.1
       },
       "issues": []
     },
@@ -1844,12 +1844,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 138.8,
-        "title_variance": 3644.0,
-        "chip_mean": 186.0,
-        "chip_variance": 3500.0,
-        "bottom_mean": 207.5,
-        "bottom_variance": 566.3
+        "title_mean": 169.8,
+        "title_variance": 3386.5,
+        "chip_mean": 123.2,
+        "chip_variance": 3071.7,
+        "bottom_mean": 214.2,
+        "bottom_variance": 48.1
       },
       "issues": []
     },
@@ -1867,12 +1867,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 179.4,
-        "title_variance": 1805.2,
-        "chip_mean": 170.7,
-        "chip_variance": 3813.6,
-        "bottom_mean": 173.9,
-        "bottom_variance": 2099.2
+        "title_mean": 186.6,
+        "title_variance": 2179.5,
+        "chip_mean": 97.4,
+        "chip_variance": 914.3,
+        "bottom_mean": 214.8,
+        "bottom_variance": 78.3
       },
       "issues": []
     },
@@ -1890,12 +1890,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 148.9,
-        "title_variance": 2908.0,
-        "chip_mean": 214.5,
-        "chip_variance": 1606.3,
-        "bottom_mean": 184.4,
-        "bottom_variance": 2330.0
+        "title_mean": 180.4,
+        "title_variance": 3270.6,
+        "chip_mean": 173.6,
+        "chip_variance": 4990.5,
+        "bottom_mean": 216.6,
+        "bottom_variance": 77.4
       },
       "issues": []
     },
@@ -1913,12 +1913,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 170.2,
-        "title_variance": 1272.5,
-        "chip_mean": 189.2,
-        "chip_variance": 2172.3,
-        "bottom_mean": 178.6,
-        "bottom_variance": 2773.9
+        "title_mean": 193.1,
+        "title_variance": 1426.5,
+        "chip_mean": 124.8,
+        "chip_variance": 3129.3,
+        "bottom_mean": 216.2,
+        "bottom_variance": 46.5
       },
       "issues": []
     },
@@ -1936,12 +1936,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 199.8,
-        "title_variance": 1604.9,
-        "chip_mean": 167.5,
-        "chip_variance": 2254.6,
-        "bottom_mean": 157.1,
-        "bottom_variance": 3947.8
+        "title_mean": 190.7,
+        "title_variance": 2437.6,
+        "chip_mean": 102.7,
+        "chip_variance": 1340.3,
+        "bottom_mean": 216.6,
+        "bottom_variance": 79.6
       },
       "issues": []
     },
@@ -1959,12 +1959,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 173.7,
-        "title_variance": 3446.3,
-        "chip_mean": 217.2,
-        "chip_variance": 1069.9,
-        "bottom_mean": 153.2,
-        "bottom_variance": 2737.4
+        "title_mean": 184.6,
+        "title_variance": 2545.7,
+        "chip_mean": 174.5,
+        "chip_variance": 4946.6,
+        "bottom_mean": 216.6,
+        "bottom_variance": 78.3
       },
       "issues": []
     },
@@ -1982,12 +1982,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 172.6,
-        "title_variance": 3824.8,
-        "chip_mean": 188.0,
-        "chip_variance": 2109.5,
-        "bottom_mean": 124.4,
-        "bottom_variance": 2857.7
+        "title_mean": 174.8,
+        "title_variance": 2883.9,
+        "chip_mean": 126.3,
+        "chip_variance": 3216.4,
+        "bottom_mean": 216.1,
+        "bottom_variance": 50.7
       },
       "issues": []
     },
@@ -2005,12 +2005,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 154.1,
-        "title_variance": 4028.4,
-        "chip_mean": 161.5,
-        "chip_variance": 3275.3,
-        "bottom_mean": 124.9,
-        "bottom_variance": 4220.5
+        "title_mean": 174.0,
+        "title_variance": 2880.1,
+        "chip_mean": 100.6,
+        "chip_variance": 1123.8,
+        "bottom_mean": 216.6,
+        "bottom_variance": 80.0
       },
       "issues": []
     },
@@ -2028,12 +2028,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 148.5,
-        "title_variance": 2788.3,
-        "chip_mean": 208.9,
-        "chip_variance": 2221.3,
-        "bottom_mean": 135.5,
-        "bottom_variance": 5222.0
+        "title_mean": 155.1,
+        "title_variance": 5139.8,
+        "chip_mean": 171.9,
+        "chip_variance": 4931.2,
+        "bottom_mean": 214.8,
+        "bottom_variance": 80.6
       },
       "issues": []
     },
@@ -2051,12 +2051,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 124.6,
-        "title_variance": 3064.4,
-        "chip_mean": 197.9,
-        "chip_variance": 1351.9,
-        "bottom_mean": 148.1,
-        "bottom_variance": 3768.1
+        "title_mean": 149.0,
+        "title_variance": 5129.9,
+        "chip_mean": 122.0,
+        "chip_variance": 3060.5,
+        "bottom_mean": 214.6,
+        "bottom_variance": 52.8
       },
       "issues": []
     },
@@ -2074,12 +2074,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 129.6,
-        "title_variance": 4853.1,
-        "chip_mean": 172.9,
-        "chip_variance": 3158.8,
-        "bottom_mean": 171.9,
-        "bottom_variance": 2525.9
+        "title_mean": 145.3,
+        "title_variance": 5963.1,
+        "chip_mean": 96.7,
+        "chip_variance": 843.2,
+        "bottom_mean": 214.8,
+        "bottom_variance": 82.1
       },
       "issues": []
     },
@@ -2097,12 +2097,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 126.8,
-        "title_variance": 5007.7,
-        "chip_mean": 225.7,
-        "chip_variance": 637.5,
-        "bottom_mean": 184.0,
-        "bottom_variance": 1689.1
+        "title_mean": 180.4,
+        "title_variance": 3969.8,
+        "chip_mean": 174.1,
+        "chip_variance": 4951.2,
+        "bottom_mean": 216.3,
+        "bottom_variance": 79.4
       },
       "issues": []
     },
@@ -2120,12 +2120,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 138.0,
-        "title_variance": 4574.2,
-        "chip_mean": 216.4,
-        "chip_variance": 769.3,
-        "bottom_mean": 176.5,
-        "bottom_variance": 2065.7
+        "title_mean": 185.9,
+        "title_variance": 2859.3,
+        "chip_mean": 124.5,
+        "chip_variance": 3122.4,
+        "bottom_mean": 216.1,
+        "bottom_variance": 48.2
       },
       "issues": []
     },
@@ -2143,12 +2143,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 175.6,
-        "title_variance": 2274.5,
-        "chip_mean": 208.4,
-        "chip_variance": 1722.2,
-        "bottom_mean": 205.7,
-        "bottom_variance": 1033.9
+        "title_mean": 187.4,
+        "title_variance": 2664.8,
+        "chip_mean": 99.8,
+        "chip_variance": 1016.2,
+        "bottom_mean": 216.4,
+        "bottom_variance": 81.5
       },
       "issues": []
     },
@@ -2166,12 +2166,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 156.2,
-        "title_variance": 2012.9,
-        "chip_mean": 230.6,
-        "chip_variance": 262.3,
-        "bottom_mean": 209.7,
-        "bottom_variance": 734.0
+        "title_mean": 186.5,
+        "title_variance": 1861.6,
+        "chip_mean": 173.3,
+        "chip_variance": 5006.0,
+        "bottom_mean": 216.0,
+        "bottom_variance": 102.7
       },
       "issues": []
     },
@@ -2189,12 +2189,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 153.0,
-        "title_variance": 2630.2,
-        "chip_mean": 217.4,
-        "chip_variance": 755.3,
-        "bottom_mean": 198.1,
-        "bottom_variance": 1647.1
+        "title_mean": 196.1,
+        "title_variance": 2206.3,
+        "chip_mean": 122.9,
+        "chip_variance": 3082.5,
+        "bottom_mean": 215.7,
+        "bottom_variance": 72.9
       },
       "issues": []
     },
@@ -2212,12 +2212,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 176.1,
-        "title_variance": 2801.1,
-        "chip_mean": 220.9,
-        "chip_variance": 766.8,
-        "bottom_mean": 218.4,
-        "bottom_variance": 1742.7
+        "title_mean": 208.8,
+        "title_variance": 1537.1,
+        "chip_mean": 97.4,
+        "chip_variance": 839.2,
+        "bottom_mean": 216.1,
+        "bottom_variance": 103.2
       },
       "issues": []
     },
@@ -2235,12 +2235,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 203.4,
-        "title_variance": 1072.5,
-        "chip_mean": 225.8,
-        "chip_variance": 427.3,
-        "bottom_mean": 217.2,
-        "bottom_variance": 1643.7
+        "title_mean": 212.2,
+        "title_variance": 1363.2,
+        "chip_mean": 172.0,
+        "chip_variance": 4915.5,
+        "bottom_mean": 214.9,
+        "bottom_variance": 75.4
       },
       "issues": []
     },
@@ -2258,12 +2258,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 176.6,
-        "title_variance": 3806.4,
-        "chip_mean": 218.8,
-        "chip_variance": 490.4,
-        "bottom_mean": 194.0,
-        "bottom_variance": 3371.7
+        "title_mean": 206.1,
+        "title_variance": 1906.6,
+        "chip_mean": 122.4,
+        "chip_variance": 3067.8,
+        "bottom_mean": 214.5,
+        "bottom_variance": 46.3
       },
       "issues": []
     },
@@ -2281,12 +2281,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 186.1,
-        "title_variance": 2886.0,
-        "chip_mean": 187.4,
-        "chip_variance": 2262.9,
-        "bottom_mean": 192.0,
-        "bottom_variance": 1545.4
+        "title_mean": 220.0,
+        "title_variance": 881.1,
+        "chip_mean": 97.4,
+        "chip_variance": 896.6,
+        "bottom_mean": 214.9,
+        "bottom_variance": 78.0
       },
       "issues": []
     },
@@ -2304,12 +2304,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 206.2,
-        "title_variance": 1332.6,
-        "chip_mean": 227.8,
-        "chip_variance": 560.4,
-        "bottom_mean": 159.7,
-        "bottom_variance": 3049.3
+        "title_mean": 218.4,
+        "title_variance": 866.9,
+        "chip_mean": 173.9,
+        "chip_variance": 4961.7,
+        "bottom_mean": 216.7,
+        "bottom_variance": 77.3
       },
       "issues": []
     },
@@ -2327,12 +2327,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 158.7,
-        "title_variance": 3418.5,
-        "chip_mean": 211.9,
-        "chip_variance": 1104.9,
-        "bottom_mean": 161.2,
-        "bottom_variance": 3452.8
+        "title_mean": 211.3,
+        "title_variance": 1368.7,
+        "chip_mean": 124.1,
+        "chip_variance": 3102.9,
+        "bottom_mean": 216.6,
+        "bottom_variance": 47.4
       },
       "issues": []
     },
@@ -2350,12 +2350,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 175.0,
-        "title_variance": 2218.0,
-        "chip_mean": 189.8,
-        "chip_variance": 2452.1,
-        "bottom_mean": 153.5,
-        "bottom_variance": 2734.0
+        "title_mean": 187.6,
+        "title_variance": 2018.6,
+        "chip_mean": 99.1,
+        "chip_variance": 949.4,
+        "bottom_mean": 216.9,
+        "bottom_variance": 78.9
       },
       "issues": []
     },
@@ -2373,12 +2373,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 152.7,
-        "title_variance": 2122.6,
-        "chip_mean": 227.3,
-        "chip_variance": 633.1,
-        "bottom_mean": 171.1,
-        "bottom_variance": 1549.9
+        "title_mean": 172.5,
+        "title_variance": 2859.1,
+        "chip_mean": 174.5,
+        "chip_variance": 4942.7,
+        "bottom_mean": 216.6,
+        "bottom_variance": 78.0
       },
       "issues": []
     },
@@ -2396,12 +2396,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 109.4,
-        "title_variance": 4246.9,
-        "chip_mean": 210.0,
-        "chip_variance": 1396.5,
-        "bottom_mean": 171.2,
-        "bottom_variance": 1155.3
+        "title_mean": 165.2,
+        "title_variance": 3970.1,
+        "chip_mean": 125.4,
+        "chip_variance": 3202.6,
+        "bottom_mean": 216.4,
+        "bottom_variance": 49.0
       },
       "issues": []
     },
@@ -2419,12 +2419,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 131.1,
-        "title_variance": 3085.8,
-        "chip_mean": 189.2,
-        "chip_variance": 2705.7,
-        "bottom_mean": 184.7,
-        "bottom_variance": 1057.0
+        "title_mean": 161.0,
+        "title_variance": 3316.0,
+        "chip_mean": 105.3,
+        "chip_variance": 1655.5,
+        "bottom_mean": 216.7,
+        "bottom_variance": 79.8
       },
       "issues": []
     },
@@ -2442,12 +2442,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 168.3,
-        "title_variance": 1743.7,
-        "chip_mean": 225.4,
-        "chip_variance": 642.8,
-        "bottom_mean": 174.9,
-        "bottom_variance": 2291.8
+        "title_mean": 175.9,
+        "title_variance": 2294.6,
+        "chip_mean": 171.9,
+        "chip_variance": 4921.4,
+        "bottom_mean": 214.9,
+        "bottom_variance": 74.6
       },
       "issues": []
     },
@@ -2465,12 +2465,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 171.9,
-        "title_variance": 1149.1,
-        "chip_mean": 217.8,
-        "chip_variance": 708.1,
-        "bottom_mean": 200.6,
-        "bottom_variance": 1080.0
+        "title_mean": 174.0,
+        "title_variance": 2251.3,
+        "chip_mean": 122.2,
+        "chip_variance": 3057.5,
+        "bottom_mean": 214.6,
+        "bottom_variance": 45.2
       },
       "issues": []
     },
@@ -2488,12 +2488,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 177.5,
-        "title_variance": 2464.1,
-        "chip_mean": 206.5,
-        "chip_variance": 1871.8,
-        "bottom_mean": 188.9,
-        "bottom_variance": 2693.3
+        "title_mean": 183.7,
+        "title_variance": 2113.0,
+        "chip_mean": 101.3,
+        "chip_variance": 1268.8,
+        "bottom_mean": 215.0,
+        "bottom_variance": 76.7
       },
       "issues": []
     },
@@ -2511,12 +2511,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 162.4,
-        "title_variance": 3076.2,
-        "chip_mean": 218.6,
-        "chip_variance": 1806.0,
-        "bottom_mean": 210.8,
-        "bottom_variance": 2171.6
+        "title_mean": 180.6,
+        "title_variance": 2726.8,
+        "chip_mean": 174.4,
+        "chip_variance": 4943.7,
+        "bottom_mean": 216.4,
+        "bottom_variance": 79.2
       },
       "issues": []
     },
@@ -2534,12 +2534,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 188.2,
-        "title_variance": 1460.3,
-        "chip_mean": 199.9,
-        "chip_variance": 2614.5,
-        "bottom_mean": 208.7,
-        "bottom_variance": 2306.0
+        "title_mean": 204.4,
+        "title_variance": 1315.6,
+        "chip_mean": 126.1,
+        "chip_variance": 3196.7,
+        "bottom_mean": 216.1,
+        "bottom_variance": 49.6
       },
       "issues": []
     },
@@ -2557,12 +2557,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 182.5,
-        "title_variance": 2250.7,
-        "chip_mean": 187.0,
-        "chip_variance": 3013.1,
-        "bottom_mean": 208.2,
-        "bottom_variance": 2433.6
+        "title_mean": 194.8,
+        "title_variance": 2401.6,
+        "chip_mean": 104.7,
+        "chip_variance": 1531.8,
+        "bottom_mean": 216.5,
+        "bottom_variance": 81.5
       },
       "issues": []
     },
@@ -2580,12 +2580,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 188.9,
-        "title_variance": 1692.1,
-        "chip_mean": 217.6,
-        "chip_variance": 1960.8,
-        "bottom_mean": 208.1,
-        "bottom_variance": 2352.1
+        "title_mean": 205.8,
+        "title_variance": 1512.8,
+        "chip_mean": 173.3,
+        "chip_variance": 4994.9,
+        "bottom_mean": 216.3,
+        "bottom_variance": 83.8
       },
       "issues": []
     },
@@ -2603,12 +2603,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 216.3,
-        "title_variance": 1009.2,
-        "chip_mean": 195.6,
-        "chip_variance": 3013.0,
-        "bottom_mean": 188.4,
-        "bottom_variance": 3355.1
+        "title_mean": 215.6,
+        "title_variance": 1298.2,
+        "chip_mean": 123.1,
+        "chip_variance": 3082.0,
+        "bottom_mean": 216.0,
+        "bottom_variance": 53.2
       },
       "issues": []
     },
@@ -2626,12 +2626,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 176.9,
-        "title_variance": 2340.3,
-        "chip_mean": 181.8,
-        "chip_variance": 3316.8,
-        "bottom_mean": 161.8,
-        "bottom_variance": 2431.8
+        "title_mean": 198.5,
+        "title_variance": 2099.6,
+        "chip_mean": 97.8,
+        "chip_variance": 845.7,
+        "bottom_mean": 216.5,
+        "bottom_variance": 84.6
       },
       "issues": []
     },
@@ -2649,12 +2649,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 187.2,
-        "title_variance": 2293.3,
-        "chip_mean": 215.7,
-        "chip_variance": 1892.7,
-        "bottom_mean": 174.7,
-        "bottom_variance": 1983.5
+        "title_mean": 201.0,
+        "title_variance": 1844.6,
+        "chip_mean": 172.2,
+        "chip_variance": 4896.2,
+        "bottom_mean": 214.7,
+        "bottom_variance": 77.2
       },
       "issues": []
     },
@@ -2672,12 +2672,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 180.5,
-        "title_variance": 1831.0,
-        "chip_mean": 196.0,
-        "chip_variance": 2713.8,
-        "bottom_mean": 174.3,
-        "bottom_variance": 1831.8
+        "title_mean": 193.1,
+        "title_variance": 2290.2,
+        "chip_mean": 122.8,
+        "chip_variance": 3063.7,
+        "bottom_mean": 214.3,
+        "bottom_variance": 47.9
       },
       "issues": []
     },
@@ -2695,12 +2695,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 183.4,
-        "title_variance": 1950.2,
-        "chip_mean": 182.2,
-        "chip_variance": 3108.9,
-        "bottom_mean": 160.7,
-        "bottom_variance": 2310.8
+        "title_mean": 185.0,
+        "title_variance": 2177.4,
+        "chip_mean": 98.1,
+        "chip_variance": 948.9,
+        "bottom_mean": 214.8,
+        "bottom_variance": 78.2
       },
       "issues": []
     },
@@ -2718,12 +2718,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 166.6,
-        "title_variance": 2681.6,
-        "chip_mean": 210.0,
-        "chip_variance": 2796.2,
-        "bottom_mean": 189.5,
-        "bottom_variance": 1384.6
+        "title_mean": 180.4,
+        "title_variance": 2358.3,
+        "chip_mean": 173.5,
+        "chip_variance": 4985.1,
+        "bottom_mean": 216.4,
+        "bottom_variance": 78.8
       },
       "issues": []
     },
@@ -2741,12 +2741,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 128.7,
-        "title_variance": 3398.4,
-        "chip_mean": 185.3,
-        "chip_variance": 3759.3,
-        "bottom_mean": 188.4,
-        "bottom_variance": 1290.1
+        "title_mean": 161.0,
+        "title_variance": 3604.8,
+        "chip_mean": 123.3,
+        "chip_variance": 3087.2,
+        "bottom_mean": 216.2,
+        "bottom_variance": 48.2
       },
       "issues": []
     },
@@ -2764,12 +2764,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 158.6,
-        "title_variance": 2447.0,
-        "chip_mean": 169.1,
-        "chip_variance": 4008.2,
-        "bottom_mean": 189.2,
-        "bottom_variance": 1339.2
+        "title_mean": 174.8,
+        "title_variance": 2514.4,
+        "chip_mean": 98.0,
+        "chip_variance": 863.1,
+        "bottom_mean": 216.6,
+        "bottom_variance": 80.1
       },
       "issues": []
     },
@@ -2787,12 +2787,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 150.6,
-        "title_variance": 4738.3,
-        "chip_mean": 210.3,
-        "chip_variance": 2717.9,
-        "bottom_mean": 192.0,
-        "bottom_variance": 1144.2
+        "title_mean": 176.5,
+        "title_variance": 3677.5,
+        "chip_mean": 174.0,
+        "chip_variance": 4952.0,
+        "bottom_mean": 216.5,
+        "bottom_variance": 78.9
       },
       "issues": []
     },
@@ -2810,12 +2810,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 175.0,
-        "title_variance": 2567.0,
-        "chip_mean": 186.4,
-        "chip_variance": 3599.7,
-        "bottom_mean": 189.7,
-        "bottom_variance": 1189.4
+        "title_mean": 189.3,
+        "title_variance": 1913.6,
+        "chip_mean": 125.5,
+        "chip_variance": 3160.0,
+        "bottom_mean": 216.2,
+        "bottom_variance": 48.7
       },
       "issues": []
     },
@@ -2833,12 +2833,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 162.8,
-        "title_variance": 2592.0,
-        "chip_mean": 170.3,
-        "chip_variance": 3870.8,
-        "bottom_mean": 179.4,
-        "bottom_variance": 1883.1
+        "title_mean": 179.3,
+        "title_variance": 2333.3,
+        "chip_mean": 99.6,
+        "chip_variance": 997.0,
+        "bottom_mean": 216.5,
+        "bottom_variance": 80.5
       },
       "issues": []
     },
@@ -2856,12 +2856,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 175.6,
-        "title_variance": 2200.9,
-        "chip_mean": 207.5,
-        "chip_variance": 2812.5,
-        "bottom_mean": 177.7,
-        "bottom_variance": 2038.8
+        "title_mean": 188.2,
+        "title_variance": 1941.0,
+        "chip_mean": 171.6,
+        "chip_variance": 4944.3,
+        "bottom_mean": 214.1,
+        "bottom_variance": 108.9
       },
       "issues": []
     },
@@ -2879,12 +2879,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 186.1,
-        "title_variance": 2204.4,
-        "chip_mean": 182.7,
-        "chip_variance": 3717.9,
-        "bottom_mean": 176.3,
-        "bottom_variance": 1949.1
+        "title_mean": 193.0,
+        "title_variance": 1943.2,
+        "chip_mean": 122.6,
+        "chip_variance": 3066.5,
+        "bottom_mean": 213.5,
+        "bottom_variance": 80.3
       },
       "issues": []
     },
@@ -2902,12 +2902,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 191.2,
-        "title_variance": 2547.3,
-        "chip_mean": 166.3,
-        "chip_variance": 3956.9,
-        "bottom_mean": 188.2,
-        "bottom_variance": 1571.3
+        "title_mean": 187.5,
+        "title_variance": 2546.4,
+        "chip_mean": 100.7,
+        "chip_variance": 1349.9,
+        "bottom_mean": 214.1,
+        "bottom_variance": 110.9
       },
       "issues": []
     },
@@ -2925,12 +2925,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 116.1,
-        "title_variance": 3576.6,
-        "chip_mean": 226.3,
-        "chip_variance": 700.6,
-        "bottom_mean": 194.6,
-        "bottom_variance": 1118.7
+        "title_mean": 153.1,
+        "title_variance": 4283.4,
+        "chip_mean": 173.7,
+        "chip_variance": 4983.2,
+        "bottom_mean": 216.6,
+        "bottom_variance": 76.9
       },
       "issues": []
     },
@@ -2948,12 +2948,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 83.8,
-        "title_variance": 5331.0,
-        "chip_mean": 215.5,
-        "chip_variance": 862.8,
-        "bottom_mean": 144.5,
-        "bottom_variance": 5432.9
+        "title_mean": 150.4,
+        "title_variance": 5737.4,
+        "chip_mean": 123.6,
+        "chip_variance": 3094.3,
+        "bottom_mean": 216.4,
+        "bottom_variance": 47.0
       },
       "issues": []
     },
@@ -2971,12 +2971,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 172.5,
-        "title_variance": 1597.9,
-        "chip_mean": 201.4,
-        "chip_variance": 1923.2,
-        "bottom_mean": 162.8,
-        "bottom_variance": 3105.8
+        "title_mean": 185.0,
+        "title_variance": 1878.2,
+        "chip_mean": 98.4,
+        "chip_variance": 900.1,
+        "bottom_mean": 216.7,
+        "bottom_variance": 79.1
       },
       "issues": []
     },
@@ -2994,12 +2994,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 190.5,
-        "title_variance": 2363.4,
-        "chip_mean": 224.1,
-        "chip_variance": 1085.0,
-        "bottom_mean": 139.1,
-        "bottom_variance": 4792.3
+        "title_mean": 190.1,
+        "title_variance": 2114.8,
+        "chip_mean": 174.4,
+        "chip_variance": 4945.3,
+        "bottom_mean": 216.6,
+        "bottom_variance": 78.1
       },
       "issues": []
     },
@@ -3017,12 +3017,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 116.4,
-        "title_variance": 5543.8,
-        "chip_mean": 203.3,
-        "chip_variance": 1961.0,
-        "bottom_mean": 194.0,
-        "bottom_variance": 916.2
+        "title_mean": 169.5,
+        "title_variance": 4722.2,
+        "chip_mean": 125.0,
+        "chip_variance": 3179.8,
+        "bottom_mean": 216.2,
+        "bottom_variance": 50.3
       },
       "issues": []
     },
@@ -3040,12 +3040,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 162.0,
-        "title_variance": 2052.3,
-        "chip_mean": 181.2,
-        "chip_variance": 2991.2,
-        "bottom_mean": 173.8,
-        "bottom_variance": 1799.6
+        "title_mean": 181.1,
+        "title_variance": 2849.2,
+        "chip_mean": 104.6,
+        "chip_variance": 1511.7,
+        "bottom_mean": 216.7,
+        "bottom_variance": 79.7
       },
       "issues": []
     },
@@ -3063,12 +3063,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 133.9,
-        "title_variance": 3537.2,
-        "chip_mean": 223.7,
-        "chip_variance": 857.5,
-        "bottom_mean": 193.7,
-        "bottom_variance": 1081.0
+        "title_mean": 156.0,
+        "title_variance": 4267.2,
+        "chip_mean": 171.8,
+        "chip_variance": 4930.2,
+        "bottom_mean": 214.6,
+        "bottom_variance": 83.7
       },
       "issues": []
     },
@@ -3086,12 +3086,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 181.0,
-        "title_variance": 2711.3,
-        "chip_mean": 206.0,
-        "chip_variance": 1454.2,
-        "bottom_mean": 188.4,
-        "bottom_variance": 726.3
+        "title_mean": 184.8,
+        "title_variance": 2030.4,
+        "chip_mean": 123.0,
+        "chip_variance": 3080.5,
+        "bottom_mean": 214.3,
+        "bottom_variance": 53.0
       },
       "issues": []
     },
@@ -3109,12 +3109,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 161.5,
-        "title_variance": 2263.5,
-        "chip_mean": 184.3,
-        "chip_variance": 2767.9,
-        "bottom_mean": 163.8,
-        "bottom_variance": 2702.6
+        "title_mean": 174.1,
+        "title_variance": 2367.2,
+        "chip_mean": 101.3,
+        "chip_variance": 1316.8,
+        "bottom_mean": 214.6,
+        "bottom_variance": 85.7
       },
       "issues": []
     },
@@ -3339,12 +3339,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 126.5,
-        "title_variance": 4499.6,
-        "chip_mean": 218.5,
-        "chip_variance": 772.8,
-        "bottom_mean": 162.2,
-        "bottom_variance": 3438.5
+        "title_mean": 178.1,
+        "title_variance": 5347.0,
+        "chip_mean": 173.2,
+        "chip_variance": 4993.9,
+        "bottom_mean": 216.4,
+        "bottom_variance": 78.7
       },
       "issues": []
     },
@@ -3362,12 +3362,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 171.1,
-        "title_variance": 3983.5,
-        "chip_mean": 171.8,
-        "chip_variance": 3220.9,
-        "bottom_mean": 135.6,
-        "bottom_variance": 1823.7
+        "title_mean": 206.0,
+        "title_variance": 1438.2,
+        "chip_mean": 123.3,
+        "chip_variance": 3056.4,
+        "bottom_mean": 216.0,
+        "bottom_variance": 47.4
       },
       "issues": []
     },
@@ -3385,12 +3385,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 181.8,
-        "title_variance": 3358.7,
-        "chip_mean": 160.2,
-        "chip_variance": 2125.5,
-        "bottom_mean": 209.9,
-        "bottom_variance": 1197.8
+        "title_mean": 207.9,
+        "title_variance": 1632.8,
+        "chip_mean": 102.7,
+        "chip_variance": 1370.4,
+        "bottom_mean": 216.4,
+        "bottom_variance": 80.9
       },
       "issues": []
     },
@@ -3408,12 +3408,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 158.5,
-        "title_variance": 3410.1,
-        "chip_mean": 216.1,
-        "chip_variance": 1033.8,
-        "bottom_mean": 164.3,
-        "bottom_variance": 1441.5
+        "title_mean": 180.7,
+        "title_variance": 2611.1,
+        "chip_mean": 172.8,
+        "chip_variance": 5040.3,
+        "bottom_mean": 215.3,
+        "bottom_variance": 174.3
       },
       "issues": []
     },
@@ -3431,12 +3431,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 155.4,
-        "title_variance": 1583.2,
-        "chip_mean": 181.7,
-        "chip_variance": 3384.4,
-        "bottom_mean": 190.5,
-        "bottom_variance": 1146.5
+        "title_mean": 161.0,
+        "title_variance": 2949.6,
+        "chip_mean": 122.2,
+        "chip_variance": 3071.1,
+        "bottom_mean": 214.9,
+        "bottom_variance": 145.1
       },
       "issues": []
     },
@@ -3454,12 +3454,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 223.0,
-        "title_variance": 908.5,
-        "chip_mean": 160.0,
-        "chip_variance": 5314.3,
-        "bottom_mean": 126.4,
-        "bottom_variance": 5159.0
+        "title_mean": 182.1,
+        "title_variance": 2296.9,
+        "chip_mean": 96.9,
+        "chip_variance": 821.7,
+        "bottom_mean": 215.4,
+        "bottom_variance": 176.0
       },
       "issues": []
     },
@@ -3477,12 +3477,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 166.1,
-        "title_variance": 5921.8,
-        "chip_mean": 214.2,
-        "chip_variance": 1289.7,
-        "bottom_mean": 180.1,
-        "bottom_variance": 2114.2
+        "title_mean": 175.8,
+        "title_variance": 2249.7,
+        "chip_mean": 171.5,
+        "chip_variance": 4935.8,
+        "bottom_mean": 214.7,
+        "bottom_variance": 81.0
       },
       "issues": []
     },
@@ -3500,12 +3500,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 192.7,
-        "title_variance": 1757.7,
-        "chip_mean": 186.2,
-        "chip_variance": 1886.0,
-        "bottom_mean": 179.1,
-        "bottom_variance": 3085.7
+        "title_mean": 161.1,
+        "title_variance": 4830.0,
+        "chip_mean": 121.6,
+        "chip_variance": 3019.0,
+        "bottom_mean": 214.6,
+        "bottom_variance": 52.5
       },
       "issues": []
     },
@@ -3523,12 +3523,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 120.6,
-        "title_variance": 4433.9,
-        "chip_mean": 161.9,
-        "chip_variance": 3831.6,
-        "bottom_mean": 118.2,
-        "bottom_variance": 5497.8
+        "title_mean": 184.5,
+        "title_variance": 3401.4,
+        "chip_mean": 96.7,
+        "chip_variance": 853.5,
+        "bottom_mean": 214.7,
+        "bottom_variance": 83.6
       },
       "issues": []
     },
@@ -3753,12 +3753,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 159.4,
-        "title_variance": 1675.6,
-        "chip_mean": 215.9,
-        "chip_variance": 1571.9,
-        "bottom_mean": 147.8,
-        "bottom_variance": 1647.2
+        "title_mean": 178.2,
+        "title_variance": 2538.8,
+        "chip_mean": 173.6,
+        "chip_variance": 4976.6,
+        "bottom_mean": 216.3,
+        "bottom_variance": 80.1
       },
       "issues": []
     },
@@ -3776,12 +3776,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 149.4,
-        "title_variance": 2355.8,
-        "chip_mean": 189.4,
-        "chip_variance": 2187.3,
-        "bottom_mean": 138.9,
-        "bottom_variance": 1866.0
+        "title_mean": 169.8,
+        "title_variance": 2932.7,
+        "chip_mean": 123.7,
+        "chip_variance": 3075.0,
+        "bottom_mean": 215.9,
+        "bottom_variance": 49.4
       },
       "issues": []
     },
@@ -3799,12 +3799,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 165.1,
-        "title_variance": 3239.7,
-        "chip_mean": 173.4,
-        "chip_variance": 3069.2,
-        "bottom_mean": 163.4,
-        "bottom_variance": 3086.1
+        "title_mean": 175.0,
+        "title_variance": 3015.9,
+        "chip_mean": 98.8,
+        "chip_variance": 926.8,
+        "bottom_mean": 216.4,
+        "bottom_variance": 81.4
       },
       "issues": []
     },
@@ -3822,12 +3822,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 158.4,
-        "title_variance": 2023.8,
-        "chip_mean": 219.9,
-        "chip_variance": 977.0,
-        "bottom_mean": 184.1,
-        "bottom_variance": 1375.5
+        "title_mean": 167.1,
+        "title_variance": 2691.8,
+        "chip_mean": 172.9,
+        "chip_variance": 5033.4,
+        "bottom_mean": 215.6,
+        "bottom_variance": 151.7
       },
       "issues": []
     },
@@ -3845,12 +3845,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 174.4,
-        "title_variance": 2162.3,
-        "chip_mean": 202.2,
-        "chip_variance": 1213.8,
-        "bottom_mean": 205.4,
-        "bottom_variance": 384.4
+        "title_mean": 164.6,
+        "title_variance": 2649.7,
+        "chip_mean": 123.5,
+        "chip_variance": 3106.8,
+        "bottom_mean": 215.2,
+        "bottom_variance": 120.9
       },
       "issues": []
     },
@@ -3868,12 +3868,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 171.2,
-        "title_variance": 2776.2,
-        "chip_mean": 187.5,
-        "chip_variance": 2030.8,
-        "bottom_mean": 183.4,
-        "bottom_variance": 2446.6
+        "title_mean": 179.1,
+        "title_variance": 2690.1,
+        "chip_mean": 101.2,
+        "chip_variance": 1276.3,
+        "bottom_mean": 215.7,
+        "bottom_variance": 151.8
       },
       "issues": []
     },
@@ -3891,12 +3891,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 170.6,
-        "title_variance": 1550.5,
-        "chip_mean": 217.5,
-        "chip_variance": 1083.7,
-        "bottom_mean": 147.6,
-        "bottom_variance": 3868.9
+        "title_mean": 185.0,
+        "title_variance": 2285.4,
+        "chip_mean": 171.7,
+        "chip_variance": 4926.1,
+        "bottom_mean": 214.7,
+        "bottom_variance": 77.4
       },
       "issues": []
     },
@@ -3914,12 +3914,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 204.8,
-        "title_variance": 821.6,
-        "chip_mean": 202.5,
-        "chip_variance": 1136.8,
-        "bottom_mean": 224.1,
-        "bottom_variance": 679.3
+        "title_mean": 190.0,
+        "title_variance": 1987.5,
+        "chip_mean": 121.9,
+        "chip_variance": 3035.2,
+        "bottom_mean": 214.5,
+        "bottom_variance": 48.1
       },
       "issues": []
     },
@@ -3937,12 +3937,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 150.7,
-        "title_variance": 4555.0,
-        "chip_mean": 193.4,
-        "chip_variance": 1773.6,
-        "bottom_mean": 182.4,
-        "bottom_variance": 3405.8
+        "title_mean": 184.3,
+        "title_variance": 2520.3,
+        "chip_mean": 101.4,
+        "chip_variance": 1373.3,
+        "bottom_mean": 214.7,
+        "bottom_variance": 80.4
       },
       "issues": []
     },
@@ -3960,12 +3960,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 172.8,
-        "title_variance": 3669.0,
-        "chip_mean": 224.4,
-        "chip_variance": 442.5,
-        "bottom_mean": 221.5,
-        "bottom_variance": 415.4
+        "title_mean": 170.9,
+        "title_variance": 3230.5,
+        "chip_mean": 173.6,
+        "chip_variance": 4989.3,
+        "bottom_mean": 216.6,
+        "bottom_variance": 76.6
       },
       "issues": []
     },
@@ -3983,12 +3983,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 198.5,
-        "title_variance": 1010.5,
-        "chip_mean": 201.6,
-        "chip_variance": 1202.5,
-        "bottom_mean": 165.5,
-        "bottom_variance": 2534.4
+        "title_mean": 197.6,
+        "title_variance": 1902.3,
+        "chip_mean": 124.6,
+        "chip_variance": 3119.3,
+        "bottom_mean": 216.2,
+        "bottom_variance": 47.4
       },
       "issues": []
     },
@@ -4006,12 +4006,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 172.3,
-        "title_variance": 3269.6,
-        "chip_mean": 192.1,
-        "chip_variance": 1783.4,
-        "bottom_mean": 194.9,
-        "bottom_variance": 2782.6
+        "title_mean": 191.8,
+        "title_variance": 2473.1,
+        "chip_mean": 102.4,
+        "chip_variance": 1328.2,
+        "bottom_mean": 216.5,
+        "bottom_variance": 80.0
       },
       "issues": []
     },
@@ -4029,12 +4029,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 196.3,
-        "title_variance": 1268.7,
-        "chip_mean": 213.3,
-        "chip_variance": 1816.1,
-        "bottom_mean": 178.2,
-        "bottom_variance": 1540.9
+        "title_mean": 206.9,
+        "title_variance": 1300.1,
+        "chip_mean": 174.3,
+        "chip_variance": 4948.8,
+        "bottom_mean": 216.5,
+        "bottom_variance": 78.3
       },
       "issues": []
     },
@@ -4052,12 +4052,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 160.6,
-        "title_variance": 2789.1,
-        "chip_mean": 184.1,
-        "chip_variance": 2393.0,
-        "bottom_mean": 207.3,
-        "bottom_variance": 2000.0
+        "title_mean": 190.7,
+        "title_variance": 2209.4,
+        "chip_mean": 124.8,
+        "chip_variance": 3162.7,
+        "bottom_mean": 216.3,
+        "bottom_variance": 49.6
       },
       "issues": []
     },
@@ -4075,12 +4075,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 183.7,
-        "title_variance": 3655.7,
-        "chip_mean": 154.6,
-        "chip_variance": 2474.8,
-        "bottom_mean": 165.9,
-        "bottom_variance": 1369.5
+        "title_mean": 200.5,
+        "title_variance": 1924.7,
+        "chip_mean": 100.1,
+        "chip_variance": 1055.5,
+        "bottom_mean": 216.6,
+        "bottom_variance": 80.2
       },
       "issues": []
     },
@@ -4098,12 +4098,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 160.1,
-        "title_variance": 1830.4,
-        "chip_mean": 216.9,
-        "chip_variance": 1001.0,
-        "bottom_mean": 193.0,
-        "bottom_variance": 830.3
+        "title_mean": 175.4,
+        "title_variance": 2244.6,
+        "chip_mean": 171.8,
+        "chip_variance": 4935.2,
+        "bottom_mean": 214.4,
+        "bottom_variance": 92.9
       },
       "issues": []
     },
@@ -4121,12 +4121,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 199.9,
-        "title_variance": 1817.1,
-        "chip_mean": 188.1,
-        "chip_variance": 1983.9,
-        "bottom_mean": 171.8,
-        "bottom_variance": 2150.2
+        "title_mean": 184.0,
+        "title_variance": 2563.2,
+        "chip_mean": 122.9,
+        "chip_variance": 3089.9,
+        "bottom_mean": 214.2,
+        "bottom_variance": 62.4
       },
       "issues": []
     },
@@ -4144,12 +4144,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 187.4,
-        "title_variance": 1098.2,
-        "chip_mean": 159.3,
-        "chip_variance": 2614.9,
-        "bottom_mean": 161.6,
-        "bottom_variance": 4583.1
+        "title_mean": 170.1,
+        "title_variance": 2374.7,
+        "chip_mean": 100.8,
+        "chip_variance": 1276.7,
+        "bottom_mean": 214.4,
+        "bottom_variance": 94.5
       },
       "issues": []
     },
@@ -4167,12 +4167,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 192.8,
-        "title_variance": 1737.9,
-        "chip_mean": 214.6,
-        "chip_variance": 2324.9,
-        "bottom_mean": 165.7,
-        "bottom_variance": 2003.2
+        "title_mean": 184.8,
+        "title_variance": 2010.3,
+        "chip_mean": 173.9,
+        "chip_variance": 4963.1,
+        "bottom_mean": 216.8,
+        "bottom_variance": 77.2
       },
       "issues": []
     },
@@ -4190,12 +4190,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 162.4,
-        "title_variance": 2291.1,
-        "chip_mean": 193.3,
-        "chip_variance": 3251.6,
-        "bottom_mean": 164.2,
-        "bottom_variance": 1872.9
+        "title_mean": 177.4,
+        "title_variance": 2109.7,
+        "chip_mean": 125.2,
+        "chip_variance": 3138.2,
+        "bottom_mean": 216.6,
+        "bottom_variance": 46.9
       },
       "issues": []
     },
@@ -4213,12 +4213,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 148.5,
-        "title_variance": 3670.4,
-        "chip_mean": 178.8,
-        "chip_variance": 3614.8,
-        "bottom_mean": 165.6,
-        "bottom_variance": 1922.8
+        "title_mean": 172.9,
+        "title_variance": 3301.9,
+        "chip_mean": 103.0,
+        "chip_variance": 1284.1,
+        "bottom_mean": 216.9,
+        "bottom_variance": 79.4
       },
       "issues": []
     },
@@ -4236,12 +4236,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 146.2,
-        "title_variance": 3999.1,
-        "chip_mean": 215.2,
-        "chip_variance": 2249.8,
-        "bottom_mean": 167.3,
-        "bottom_variance": 1972.2
+        "title_mean": 171.4,
+        "title_variance": 3119.4,
+        "chip_mean": 174.5,
+        "chip_variance": 4941.4,
+        "bottom_mean": 216.6,
+        "bottom_variance": 77.0
       },
       "issues": []
     },
@@ -4259,12 +4259,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 152.0,
-        "title_variance": 1732.6,
-        "chip_mean": 194.3,
-        "chip_variance": 3170.9,
-        "bottom_mean": 166.0,
-        "bottom_variance": 1810.5
+        "title_mean": 171.3,
+        "title_variance": 2179.4,
+        "chip_mean": 125.3,
+        "chip_variance": 3195.9,
+        "bottom_mean": 216.3,
+        "bottom_variance": 47.7
       },
       "issues": []
     },
@@ -4282,12 +4282,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 160.3,
-        "title_variance": 3244.5,
-        "chip_mean": 180.5,
-        "chip_variance": 3562.9,
-        "bottom_mean": 167.8,
-        "bottom_variance": 1830.3
+        "title_mean": 171.7,
+        "title_variance": 2683.2,
+        "chip_mean": 100.9,
+        "chip_variance": 1177.1,
+        "bottom_mean": 216.6,
+        "bottom_variance": 80.8
       },
       "issues": []
     },
@@ -4305,12 +4305,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 130.2,
-        "title_variance": 3613.2,
-        "chip_mean": 212.4,
-        "chip_variance": 2353.3,
-        "bottom_mean": 118.9,
-        "bottom_variance": 5710.5
+        "title_mean": 159.5,
+        "title_variance": 3830.5,
+        "chip_mean": 171.9,
+        "chip_variance": 4922.7,
+        "bottom_mean": 214.8,
+        "bottom_variance": 75.6
       },
       "issues": []
     },
@@ -4328,12 +4328,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 167.0,
-        "title_variance": 1421.6,
-        "chip_mean": 190.8,
-        "chip_variance": 3273.7,
-        "bottom_mean": 118.9,
-        "bottom_variance": 5409.0
+        "title_mean": 173.2,
+        "title_variance": 2033.6,
+        "chip_mean": 123.2,
+        "chip_variance": 3070.4,
+        "bottom_mean": 214.3,
+        "bottom_variance": 47.3
       },
       "issues": []
     },
@@ -4351,12 +4351,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 166.5,
-        "title_variance": 2747.2,
-        "chip_mean": 176.1,
-        "chip_variance": 3674.5,
-        "bottom_mean": 116.9,
-        "bottom_variance": 5552.0
+        "title_mean": 178.1,
+        "title_variance": 2564.1,
+        "chip_mean": 97.0,
+        "chip_variance": 854.9,
+        "bottom_mean": 214.9,
+        "bottom_variance": 76.8
       },
       "issues": []
     },
@@ -4374,12 +4374,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 163.7,
-        "title_variance": 3214.1,
-        "chip_mean": 216.5,
-        "chip_variance": 2651.0,
-        "bottom_mean": 165.2,
-        "bottom_variance": 2249.6
+        "title_mean": 159.9,
+        "title_variance": 5145.3,
+        "chip_mean": 174.4,
+        "chip_variance": 4948.6,
+        "bottom_mean": 216.8,
+        "bottom_variance": 78.3
       },
       "issues": []
     },
@@ -4397,12 +4397,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 176.1,
-        "title_variance": 3347.3,
-        "chip_mean": 187.9,
-        "chip_variance": 4390.1,
-        "bottom_mean": 130.3,
-        "bottom_variance": 2556.5
+        "title_mean": 153.4,
+        "title_variance": 4773.1,
+        "chip_mean": 124.8,
+        "chip_variance": 3149.9,
+        "bottom_mean": 216.6,
+        "bottom_variance": 48.6
       },
       "issues": []
     },
@@ -4420,12 +4420,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 113.4,
-        "title_variance": 4565.6,
-        "chip_mean": 210.2,
-        "chip_variance": 1976.5,
-        "bottom_mean": 193.3,
-        "bottom_variance": 1484.6
+        "title_mean": 148.7,
+        "title_variance": 5254.3,
+        "chip_mean": 104.1,
+        "chip_variance": 1450.5,
+        "bottom_mean": 216.9,
+        "bottom_variance": 79.8
       },
       "issues": []
     },
@@ -4443,12 +4443,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 136.9,
-        "title_variance": 3152.9,
-        "chip_mean": 230.3,
-        "chip_variance": 263.1,
-        "bottom_mean": 234.2,
-        "bottom_variance": 520.4
+        "title_mean": 152.1,
+        "title_variance": 5068.2,
+        "chip_mean": 175.0,
+        "chip_variance": 4927.4,
+        "bottom_mean": 216.5,
+        "bottom_variance": 78.9
       },
       "issues": []
     },
@@ -4466,12 +4466,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 125.5,
-        "title_variance": 2106.5,
-        "chip_mean": 220.2,
-        "chip_variance": 660.1,
-        "bottom_mean": 190.7,
-        "bottom_variance": 1614.9
+        "title_mean": 139.3,
+        "title_variance": 5007.4,
+        "chip_mean": 127.2,
+        "chip_variance": 3287.0,
+        "bottom_mean": 216.2,
+        "bottom_variance": 50.4
       },
       "issues": []
     },
@@ -4489,12 +4489,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 157.8,
-        "title_variance": 3683.8,
-        "chip_mean": 207.2,
-        "chip_variance": 1895.5,
-        "bottom_mean": 193.3,
-        "bottom_variance": 1637.2
+        "title_mean": 199.4,
+        "title_variance": 2034.5,
+        "chip_mean": 101.5,
+        "chip_variance": 1205.8,
+        "bottom_mean": 216.6,
+        "bottom_variance": 81.1
       },
       "issues": []
     },
@@ -4512,12 +4512,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 222.9,
-        "title_variance": 371.6,
-        "chip_mean": 228.5,
-        "chip_variance": 255.0,
-        "bottom_mean": 176.6,
-        "bottom_variance": 2192.9
+        "title_mean": 221.9,
+        "title_variance": 1335.7,
+        "chip_mean": 172.3,
+        "chip_variance": 4912.2,
+        "bottom_mean": 215.0,
+        "bottom_variance": 74.1
       },
       "issues": []
     },
@@ -4535,12 +4535,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 199.3,
-        "title_variance": 1215.5,
-        "chip_mean": 217.9,
-        "chip_variance": 741.5,
-        "bottom_mean": 167.4,
-        "bottom_variance": 2299.5
+        "title_mean": 207.8,
+        "title_variance": 1562.7,
+        "chip_mean": 123.8,
+        "chip_variance": 3130.7,
+        "bottom_mean": 214.8,
+        "bottom_variance": 44.5
       },
       "issues": []
     },
@@ -4558,12 +4558,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 174.7,
-        "title_variance": 2897.7,
-        "chip_mean": 206.8,
-        "chip_variance": 1709.4,
-        "bottom_mean": 186.1,
-        "bottom_variance": 2936.3
+        "title_mean": 203.6,
+        "title_variance": 1939.4,
+        "chip_mean": 101.7,
+        "chip_variance": 1348.9,
+        "bottom_mean": 215.1,
+        "bottom_variance": 76.1
       },
       "issues": []
     },
@@ -4581,12 +4581,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 166.1,
-        "title_variance": 2959.6,
-        "chip_mean": 226.2,
-        "chip_variance": 567.4,
-        "bottom_mean": 224.7,
-        "bottom_variance": 1208.6
+        "title_mean": 197.3,
+        "title_variance": 2328.6,
+        "chip_mean": 173.4,
+        "chip_variance": 4988.3,
+        "bottom_mean": 216.5,
+        "bottom_variance": 77.8
       },
       "issues": []
     },
@@ -4604,12 +4604,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 163.3,
-        "title_variance": 2513.9,
-        "chip_mean": 219.2,
-        "chip_variance": 804.8,
-        "bottom_mean": 221.0,
-        "bottom_variance": 1388.2
+        "title_mean": 194.8,
+        "title_variance": 2382.2,
+        "chip_mean": 124.5,
+        "chip_variance": 3121.6,
+        "bottom_mean": 216.2,
+        "bottom_variance": 48.9
       },
       "issues": []
     },
@@ -4627,12 +4627,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 186.3,
-        "title_variance": 2969.4,
-        "chip_mean": 219.9,
-        "chip_variance": 943.4,
-        "bottom_mean": 218.9,
-        "bottom_variance": 1729.3
+        "title_mean": 201.9,
+        "title_variance": 2285.1,
+        "chip_mean": 102.3,
+        "chip_variance": 1268.4,
+        "bottom_mean": 216.6,
+        "bottom_variance": 80.0
       },
       "issues": []
     },
@@ -4650,12 +4650,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 184.3,
-        "title_variance": 2283.4,
-        "chip_mean": 226.4,
-        "chip_variance": 512.0,
-        "bottom_mean": 222.3,
-        "bottom_variance": 1334.1
+        "title_mean": 219.8,
+        "title_variance": 1007.9,
+        "chip_mean": 174.0,
+        "chip_variance": 4953.0,
+        "bottom_mean": 216.5,
+        "bottom_variance": 79.1
       },
       "issues": []
     },
@@ -4673,12 +4673,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 192.9,
-        "title_variance": 1760.9,
-        "chip_mean": 219.8,
-        "chip_variance": 708.9,
-        "bottom_mean": 219.0,
-        "bottom_variance": 1468.9
+        "title_mean": 217.7,
+        "title_variance": 1073.2,
+        "chip_mean": 124.4,
+        "chip_variance": 3125.8,
+        "bottom_mean": 216.3,
+        "bottom_variance": 49.5
       },
       "issues": []
     },
@@ -4696,12 +4696,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 131.9,
-        "title_variance": 6558.1,
-        "chip_mean": 220.4,
-        "chip_variance": 847.3,
-        "bottom_mean": 222.0,
-        "bottom_variance": 1362.6
+        "title_mean": 216.8,
+        "title_variance": 1249.2,
+        "chip_mean": 99.7,
+        "chip_variance": 1026.4,
+        "bottom_mean": 216.6,
+        "bottom_variance": 80.1
       },
       "issues": []
     },
@@ -4719,12 +4719,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 181.8,
-        "title_variance": 2441.6,
-        "chip_mean": 227.1,
-        "chip_variance": 304.2,
-        "bottom_mean": 206.6,
-        "bottom_variance": 2603.7
+        "title_mean": 218.7,
+        "title_variance": 1044.8,
+        "chip_mean": 171.6,
+        "chip_variance": 4945.7,
+        "bottom_mean": 214.2,
+        "bottom_variance": 104.5
       },
       "issues": []
     },
@@ -4742,12 +4742,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 154.4,
-        "title_variance": 3624.4,
-        "chip_mean": 209.8,
-        "chip_variance": 731.1,
-        "bottom_mean": 198.2,
-        "bottom_variance": 1591.3
+        "title_mean": 217.1,
+        "title_variance": 1074.3,
+        "chip_mean": 122.8,
+        "chip_variance": 3091.0,
+        "bottom_mean": 213.9,
+        "bottom_variance": 73.5
       },
       "issues": []
     },
@@ -4765,12 +4765,12 @@
         "actual_height": 499,
         "dimensions_ok": true,
         "clamped": false,
-        "title_mean": 142.3,
-        "title_variance": 5321.9,
-        "chip_mean": 193.7,
-        "chip_variance": 2170.4,
-        "bottom_mean": 173.0,
-        "bottom_variance": 1666.8
+        "title_mean": 218.2,
+        "title_variance": 1065.8,
+        "chip_mean": 96.3,
+        "chip_variance": 813.8,
+        "bottom_mean": 214.2,
+        "bottom_variance": 106.2
       },
       "issues": []
     },

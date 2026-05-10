@@ -18,11 +18,22 @@
     "card_height_cell": "step between row y-origins = card_height_tile + row_gap; if you set card_height_tile and row_gap, card_height_cell is recomputed automatically"
   },
   "per_screenshot_overrides": {
-    "IMG_1527.PNG": {
-      "top_y": 506
-    },
-    "IMG_1530.PNG": {
-      "top_y": 446
-    }
+    "IMG_1527.PNG": { "top_y": 506 },
+    "IMG_1528.PNG": { "top_y": 493 },
+    "IMG_1530.PNG": { "top_y": 446 },
+    "IMG_1531.PNG": { "top_y": 514 },
+    "IMG_1532.PNG": { "top_y": 519 },
+    "IMG_1533.PNG": { "top_y": 463 },
+    "IMG_1534.PNG": { "top_y": 486 },
+    "IMG_1535.PNG": { "top_y": 491 },
+    "IMG_1536.PNG": { "top_y": 514 },
+    "IMG_1537.PNG": { "top_y": 520 },
+    "IMG_1538.PNG": { "top_y": 489 },
+    "IMG_1540.PNG": { "top_y": 463 },
+    "IMG_1542.PNG": { "top_y": 477 },
+    "IMG_1543.PNG": { "top_y": 475 },
+    "IMG_1544.PNG": { "top_y": 517 },
+    "IMG_1545.PNG": { "top_y": 486 },
+    "IMG_1546.PNG": { "top_y": 494 }
   }
 }
