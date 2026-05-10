@@ -186,7 +186,7 @@ python3 scripts/crop_3x3_cards.py screenshots/IMG_XXXX.PNG crops/IMG_XXXX
 
 Output: `crops/IMG_XXXX/r1c1.png` through `r3c3.png` plus `crop_manifest.json`.
 
-**Alignment note:** The default crop parameters cut each 495px-tall tile from the top of the row. Row 1 card names appear at the bottom of `r1` crops; row 2 names at the bottom of `r2` crops; row 3 names at the bottom of `r3` crops. Quantity chips for row N appear at the top of row N+1 crops. Row 3 quantity chips fall below the crop window and must be confirmed from the full screenshot.
+**Alignment note:** Each crop (392×499 px) covers one complete card tile (484 px of content) plus the 15 px inter-row binder separator. The card name banner appears at the top of each crop; the quantity chip appears at the bottom-left of each crop. All quantity chips are visible in all row crops including row 3. Visually inspect the contact sheets before proceeding to OCR to confirm alignment.
 
 **Use crops to confirm:** card name, HP, pokemon_type, stage, is_ex, special_type (if clearly visible). Do not infer fields not visible in the crop.
 

@@ -28,13 +28,33 @@ except ImportError:
 
 # ---------------------------------------------------------------------------
 # Calibration — tuned for 1179×2556 PTCGP binder screenshots (iPhone 15 Pro).
-# Adjust once here; all screenshots use the same values.
+# Measured empirically by detecting uniform inter-row separator bands across
+# the full image width (see crop_calibration_report.md for full derivation).
+#
+# Separator bands detected at:
+#   y=1030–1044  (between rows 1 and 2, ~15 px)
+#   y=1529–1544  (between rows 2 and 3, ~16 px)
+#   y=2029–2042  (after row 3, ~14 px)
+#
+# GRID_LEFT_X        x where the left edge of col 1 begins
+# GRID_TOP_Y         y where the top of row 1 card content begins
+# CARD_WIDTH         width of one card tile column (inter-column gap is ≤1 px)
+# CARD_HEIGHT_TILE   height of the card tile content only (no separator)
+# ROW_GAP            height of the binder separator strip between tile rows
+# CARD_HEIGHT_CELL   tile + gap — the step between row y-origins
 # ---------------------------------------------------------------------------
+GRID_LEFT_X        = 3
+GRID_TOP_Y         = 546
+CARD_WIDTH         = 392
+CARD_HEIGHT_TILE   = 484
+ROW_GAP            = 15
+CARD_HEIGHT_CELL   = CARD_HEIGHT_TILE + ROW_GAP   # 499
+
 DEFAULT_PARAMS = {
-    "top_y": 235,       # y-pixel where the first card row begins
-    "card_height": 495, # height of one card row including gap
-    "left_x": 3,        # x-pixel where the leftmost column begins
-    "card_width": 392,  # width of one card column including gap
+    "top_y":       GRID_TOP_Y,
+    "card_height": CARD_HEIGHT_CELL,   # step between rows; crop includes tile + separator
+    "left_x":      GRID_LEFT_X,
+    "card_width":  CARD_WIDTH,
 }
 
 GRID_ROWS = 3

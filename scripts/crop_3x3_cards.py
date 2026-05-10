@@ -9,8 +9,8 @@ Example:
     python3 scripts/crop_3x3_cards.py screenshots/IMG_1524.PNG crops/IMG_1524
 
 Override default crop parameters with flags if crops look off:
-    --top-y       y-pixel where the first card row begins (default: 235)
-    --card-height height of one card row including gap  (default: 495)
+    --top-y       y-pixel where the first card row begins (default: 546)
+    --card-height height of one card row including gap  (default: 499)
     --left-x      x-pixel where the leftmost column begins (default: 3)
     --card-width  width of one card column including gap  (default: 392)
 
@@ -31,13 +31,28 @@ except ImportError:
     print("       Install it with:  python3 -m pip install Pillow")
     sys.exit(1)
 
-# Default crop parameters tuned for 1179x2556 PTCGP binder screenshots
+# Calibration — tuned for 1179×2556 PTCGP binder screenshots
 # (iPhone 15 Pro portrait, standard Binders view).
+# Measured empirically; see crop_calibration_report.md for full derivation.
+#
+# GRID_LEFT_X        x where the left edge of col 1 begins
+# GRID_TOP_Y         y where the top of row 1 card content begins
+# CARD_WIDTH         width of one card tile column
+# CARD_HEIGHT_TILE   height of card tile content only (484 px)
+# ROW_GAP            inter-row binder separator strip height (~15 px)
+# CARD_HEIGHT_CELL   tile + gap = step between row y-origins (499 px)
+GRID_LEFT_X        = 3
+GRID_TOP_Y         = 546
+CARD_WIDTH         = 392
+CARD_HEIGHT_TILE   = 484
+ROW_GAP            = 15
+CARD_HEIGHT_CELL   = CARD_HEIGHT_TILE + ROW_GAP   # 499
+
 DEFAULT_PARAMS = {
-    "top_y": 235,
-    "card_height": 495,
-    "left_x": 3,
-    "card_width": 392,
+    "top_y":       GRID_TOP_Y,
+    "card_height": CARD_HEIGHT_CELL,
+    "left_x":      GRID_LEFT_X,
+    "card_width":  CARD_WIDTH,
 }
 
 GRID_ROWS = 3
