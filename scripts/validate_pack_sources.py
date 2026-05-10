@@ -20,7 +20,7 @@ PACK_SOURCES_SCHEMA = ROOT / "data" / "reference" / "pack_sources.schema.json"
 VALID_SET_CODES = {"A4b", "B1", "B1a", "B2", "B2a", "B2b", "B3"}
 VALID_RARITIES = {
     "one_diamond", "two_diamond", "three_diamond", "four_diamond",
-    "one_star", "double_star", "triple_star", "crown", None,
+    "one_star", "double_star", "triple_star", "crown", "promo", None,
 }
 VALID_CONFIDENCES = {"high", "medium", "low"}
 REQUIRED_FIELDS = ["set_code", "card_number", "card_name", "pack_name", "expansion"]
@@ -30,22 +30,34 @@ def main():
     if not PACK_SOURCES_JSON.exists():
         print("INFO  pack_sources.json does not exist — this is expected and not an error.")
         print(f"      Expected path: {PACK_SOURCES_JSON}")
-        print("      Build pack_sources.json using the plan in review/pack_source_mapping_plan.md")
+        print("      Build it with: python3 scripts/build_pack_sources.py")
         print("      Schema: data/reference/pack_sources.schema.json")
         sys.exit(0)
 
     print(f"Found: {PACK_SOURCES_JSON}")
     try:
-        data = json.loads(PACK_SOURCES_JSON.read_text(encoding="utf-8"))
+        raw = json.loads(PACK_SOURCES_JSON.read_text(encoding="utf-8"))
     except json.JSONDecodeError as exc:
         print(f"FAIL  pack_sources.json is not valid JSON: {exc}")
         sys.exit(1)
 
-    if not isinstance(data, list):
-        print("FAIL  pack_sources.json top-level must be an array")
+    # Support both flat array and envelope format {"_meta": {...}, "records": [...]}
+    if isinstance(raw, list):
+        data = raw
+        meta = {}
+    elif isinstance(raw, dict) and "records" in raw:
+        data = raw["records"]
+        meta = raw.get("_meta", {})
+        print(f"PASS  envelope format detected (generated: {meta.get('generated_at', 'unknown')})")
+    else:
+        print("FAIL  pack_sources.json must be an array or an object with a 'records' key")
         sys.exit(1)
 
-    print(f"PASS  pack_sources.json loaded ({len(data)} entries)")
+    if not isinstance(data, list):
+        print("FAIL  records must be an array")
+        sys.exit(1)
+
+    print(f"PASS  pack_sources.json loaded ({len(data)} records)")
 
     failures = 0
     warnings = 0
@@ -100,10 +112,10 @@ def main():
 
     print()
     if failures == 0:
-        print(f"ALL CHECKS PASSED  ({len(data)} entries, {warnings} warnings)")
+        print(f"ALL CHECKS PASSED  ({len(data)} records, {warnings} warnings)")
         sys.exit(0)
     else:
-        print(f"{failures} CHECK(S) FAILED  ({len(data)} entries, {warnings} warnings)")
+        print(f"{failures} CHECK(S) FAILED  ({len(data)} records, {warnings} warnings)")
         sys.exit(1)
 
 

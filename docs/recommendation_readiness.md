@@ -17,6 +17,14 @@ recommendations can be made reliably, lists current blockers, and outlines the n
 | Validation | PASS at 329 |
 | Metadata enrichment | 179 / 211 cards enriched from Limitless TCG Pocket reference |
 | Readiness score | ~50% (see `review/collection_analytics.md` for current score) |
+| pack_sources.json | **Built** — 1483 records across 7 sets (A4b, B1, B1a, B2, B2a, B2b, B3) |
+| Owned pack coverage | 93/211 exact (44.1%); 36 agreed name-match; 62 ambiguous; 20 no match |
+| source_packs in cards.json | Added for 93 exact-match cards |
+
+### Pack Source Coverage Reports
+
+- `review/owned_pack_coverage.md` — full coverage breakdown
+- `data/exports/owned_pack_coverage.json` — machine-readable
 
 ---
 
@@ -76,24 +84,27 @@ See `review/pack_source_mapping_plan.md` for how to build it.
 
 ## Current Blockers
 
-1. **set_or_pack is unknown for all 211 cards** — The enrichment added `set_code` as a
-   machine field for 108 cards, but `set_or_pack` (the human-readable set/pack name) was
-   not updated because most cards appear in multiple sets and cannot be disambiguated from
-   name alone. Resolution: Use card number + set_code to determine exact set, or accept
-   the set_code field as the canonical set identifier.
+1. **set_or_pack is unknown for all 211 cards** — `set_code` has been enriched for 93
+   cards and `source_packs` added, but `set_or_pack` (the human-readable set/pack name)
+   remains `unknown` in cards.json. For the remaining 118 cards without set_code,
+   pack source cannot be definitively determined from name alone (62 ambiguous, 20 no match).
 
-2. **pack_sources.json does not exist** — No mapping from card to which pack it drops from.
-   This is the primary blocker for pack recommendations.
+2. **Pack coverage is only 44% by exact match** — 118 owned cards still have no confirmed
+   pack assignment. Name-only matches add 36 more with medium confidence, but 62 are
+   ambiguous (same name appears in multiple packs across sets) and 20 have no reference match.
 
 3. **special_type is unknown for 209/211 cards** — Full art, illustration rare, special art,
-   immersive, and crown/gold distinctions are not captured. This affects recommendation
-   quality for high-rarity targeted pulls.
+   immersive, and crown/gold distinctions are not captured. Affects recommendation quality
+   for high-rarity targeted pulls.
 
 4. **rarity is unknown for 94/211 cards** — These are cards where the external reference
    had multiple matches with disagreeing rarities, or no match at all. Rarity is needed
    to estimate the value of opening a specific pack.
 
-5. **No meta data** — Current meta deck archetypes, win rates, and tier lists are not
+5. **No pack pull probability model** — Rarity tier pull rates by pack are not yet modeled.
+   This is needed to calculate expected value of opening any given pack.
+
+6. **No meta data** — Current meta deck archetypes, win rates, and tier lists are not
    integrated. Deck recommendations cannot be confident without this.
 
 ---

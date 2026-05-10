@@ -1,0 +1,4159 @@
+{
+  "generated_at": "2026-05-10 22:56 UTC",
+  "deferred_note": "Pack-opening recommendations are intentionally deferred. This report is coverage analysis only.",
+  "summary": {
+    "total_entries": 211,
+    "total_quantity": 329,
+    "exact_match": 93,
+    "name_agree_match": 36,
+    "name_ambiguous": 62,
+    "no_match": 20,
+    "resolved_entries": 93,
+    "partially_resolved_entries": 36,
+    "unresolved_entries": 82,
+    "exact_coverage_pct": 44.1,
+    "broad_coverage_pct": 61.1,
+    "by_set_code_exact": {
+      "B3": 42,
+      "B1a": 28,
+      "B1": 11,
+      "B2": 11,
+      "B2b": 1
+    },
+    "by_pack_name_exact": {
+      "Pulsing Aura": 42,
+      "Crimson Blaze": 28,
+      "Fantastical Parade": 11,
+      "Mega Blaziken": 5,
+      "None": 3,
+      "Mega Gyarados": 2,
+      "Mega Shine": 1,
+      "Mega Altaria": 1
+    }
+  },
+  "detail": [
+    {
+      "card_name": "Quick-Grow Extract",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a']; all agree on pack_name='Crimson Blaze'",
+      "source_screenshot": "IMG_1524.PNG"
+    },
+    {
+      "card_name": "Blaziken",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Blaziken",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Blaziken', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1524.PNG"
+    },
+    {
+      "card_name": "Skrelp",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Blaziken",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Blaziken', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1524.PNG"
+    },
+    {
+      "card_name": "Sobble",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1524.PNG"
+    },
+    {
+      "card_name": "Clemont",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a']; all agree on pack_name='Crimson Blaze'",
+      "source_screenshot": "IMG_1524.PNG"
+    },
+    {
+      "card_name": "Bulbasaur",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1a"
+      ],
+      "notes": "Name match across 3 records in set(s) ['A4b', 'B1a']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex']",
+      "source_screenshot": "IMG_1524.PNG"
+    },
+    {
+      "card_name": "Shroomish",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Pulsing Aura",
+        null
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 3 records in set(s) ['B1', 'B3']; pack disagrees: ['None', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1524.PNG"
+    },
+    {
+      "card_name": "Tepig",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1524.PNG"
+    },
+    {
+      "card_name": "Zekrom",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1524.PNG"
+    },
+    {
+      "card_name": "Morpeko",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B2b",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['B2b', 'B3']; pack disagrees: ['Mega Shine', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1525.PNG"
+    },
+    {
+      "card_name": "Bonsly",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1525.PNG"
+    },
+    {
+      "card_name": "Riolu",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "A4b",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['A4b', 'B3']; pack disagrees: ['Deluxe Pack: ex', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1525.PNG"
+    },
+    {
+      "card_name": "Meltan",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Gyarados",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 3 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Gyarados', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1525.PNG"
+    },
+    {
+      "card_name": "Moltres",
+      "quantity": 1,
+      "owned_set_code": "B1",
+      "owned_card_number": 292,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Mega Blaziken"
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Matched by set_code=B1 card_number=292",
+      "source_screenshot": "IMG_1525.PNG"
+    },
+    {
+      "card_name": "Marowak",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1525.PNG"
+    },
+    {
+      "card_name": "Incineroar",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1525.PNG"
+    },
+    {
+      "card_name": "Mega Venusaur ex",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Name match across 3 records in set(s) ['B1a']; all agree on pack_name='Crimson Blaze'",
+      "source_screenshot": "IMG_1525.PNG"
+    },
+    {
+      "card_name": "Mega Charizard Y ex",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Name match across 3 records in set(s) ['B1a']; all agree on pack_name='Crimson Blaze'",
+      "source_screenshot": "IMG_1525.PNG"
+    },
+    {
+      "card_name": "Vaporeon",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Deluxe Pack: ex"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex"
+      ],
+      "set_codes": [
+        "A4b"
+      ],
+      "notes": "Name match across 2 records in set(s) ['A4b']; all agree on pack_name='Deluxe Pack: ex'",
+      "source_screenshot": "IMG_1526.PNG"
+    },
+    {
+      "card_name": "Magnezone",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 26,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=26",
+      "source_screenshot": "IMG_1526.PNG"
+    },
+    {
+      "card_name": "Corviknight",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Mega Blaziken"
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1']; all agree on pack_name='Mega Blaziken'",
+      "source_screenshot": "IMG_1526.PNG"
+    },
+    {
+      "card_name": "Eelektross",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1526.PNG"
+    },
+    {
+      "card_name": "Charizard",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a']; all agree on pack_name='Crimson Blaze'",
+      "source_screenshot": "IMG_1526.PNG"
+    },
+    {
+      "card_name": "Genesect",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 54,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=54",
+      "source_screenshot": "IMG_1526.PNG"
+    },
+    {
+      "card_name": "Hearthflame Mask Ogerpon",
+      "quantity": 1,
+      "owned_set_code": "B2",
+      "owned_card_number": 27,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Matched by set_code=B2 card_number=27",
+      "source_screenshot": "IMG_1526.PNG"
+    },
+    {
+      "card_name": "Yveltal",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B2']; all agree on pack_name='Fantastical Parade'",
+      "source_screenshot": "IMG_1526.PNG"
+    },
+    {
+      "card_name": "Budew",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1526.PNG"
+    },
+    {
+      "card_name": "Victini",
+      "quantity": 2,
+      "owned_set_code": "B3",
+      "owned_card_number": 25,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=25",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Meloetta",
+      "quantity": 3,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Fantastical Parade",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Fantastical Parade",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B2",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['B2', 'B3']; pack disagrees: ['Fantastical Parade', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Crobat",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "A4b",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['A4b', 'B3']; pack disagrees: ['Deluxe Pack: ex', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Urshifu",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Stoutland",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Altaria",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 3 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Altaria', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Sandslash",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Fantastical Parade",
+        null
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Fantastical Parade",
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1",
+        "B1a",
+        "B2"
+      ],
+      "notes": "Name match across 3 records in set(s) ['B1', 'B1a', 'B2']; pack disagrees: ['Crimson Blaze', 'Fantastical Parade', 'None']",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Onix",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1a",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a', 'B3']; pack disagrees: ['Crimson Blaze', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Mienshao",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 44,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=44",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Dodrio",
+      "quantity": 1,
+      "owned_set_code": "B1",
+      "owned_card_number": 315,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Mega Blaziken"
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Matched by set_code=B1 card_number=315",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Giovanni",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1528.PNG"
+    },
+    {
+      "card_name": "Sabrina",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1528.PNG"
+    },
+    {
+      "card_name": "Leaf",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1528.PNG"
+    },
+    {
+      "card_name": "Cyrus",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Deluxe Pack: ex"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex"
+      ],
+      "set_codes": [
+        "A4b"
+      ],
+      "notes": "Name match across 2 records in set(s) ['A4b']; all agree on pack_name='Deluxe Pack: ex'",
+      "source_screenshot": "IMG_1528.PNG"
+    },
+    {
+      "card_name": "Rare Candy",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Deluxe Pack: ex"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex"
+      ],
+      "set_codes": [
+        "A4b"
+      ],
+      "notes": "Name match across 2 records in set(s) ['A4b']; all agree on pack_name='Deluxe Pack: ex'",
+      "source_screenshot": "IMG_1528.PNG"
+    },
+    {
+      "card_name": "Lillie",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1528.PNG"
+    },
+    {
+      "card_name": "Giant Cape",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Deluxe Pack: ex"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex"
+      ],
+      "set_codes": [
+        "A4b"
+      ],
+      "notes": "Name match across 2 records in set(s) ['A4b']; all agree on pack_name='Deluxe Pack: ex'",
+      "source_screenshot": "IMG_1528.PNG"
+    },
+    {
+      "card_name": "Arcanine",
+      "quantity": 1,
+      "owned_set_code": "B1",
+      "owned_card_number": 29,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Mega Blaziken"
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Matched by set_code=B1 card_number=29",
+      "source_screenshot": "IMG_1528.PNG"
+    },
+    {
+      "card_name": "Turtonator",
+      "quantity": 2,
+      "owned_set_code": "B1",
+      "owned_card_number": 47,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Mega Gyarados"
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Matched by set_code=B1 card_number=47",
+      "source_screenshot": "IMG_1528.PNG"
+    },
+    {
+      "card_name": "Palossand",
+      "quantity": 1,
+      "owned_set_code": "B1",
+      "owned_card_number": 144,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        null
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Matched by set_code=B1 card_number=144",
+      "source_screenshot": "IMG_1529.PNG"
+    },
+    {
+      "card_name": "Flame Patch",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Blaziken",
+        null
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1']; pack disagrees: ['Mega Blaziken', 'None']",
+      "source_screenshot": "IMG_1529.PNG"
+    },
+    {
+      "card_name": "May",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Mega Blaziken"
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1']; all agree on pack_name='Mega Blaziken'",
+      "source_screenshot": "IMG_1529.PNG"
+    },
+    {
+      "card_name": "Copycat",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Mega Gyarados"
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1']; all agree on pack_name='Mega Gyarados'",
+      "source_screenshot": "IMG_1529.PNG"
+    },
+    {
+      "card_name": "Ivysaur",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1a"
+      ],
+      "notes": "Name match across 3 records in set(s) ['A4b', 'B1a']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex']",
+      "source_screenshot": "IMG_1529.PNG"
+    },
+    {
+      "card_name": "Wartortle",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 18,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=18",
+      "source_screenshot": "IMG_1529.PNG"
+    },
+    {
+      "card_name": "Clawitzer",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 23,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=23",
+      "source_screenshot": "IMG_1529.PNG"
+    },
+    {
+      "card_name": "Magneton",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1a",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['A4b', 'B1a', 'B3']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1529.PNG"
+    },
+    {
+      "card_name": "Heliolisk",
+      "quantity": 2,
+      "owned_set_code": "B1a",
+      "owned_card_number": 29,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=29",
+      "source_screenshot": "IMG_1529.PNG"
+    },
+    {
+      "card_name": "Mismagius",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        null
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1",
+        "B1a"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B1a']; pack disagrees: ['Crimson Blaze', 'None']",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Hariyama",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Mega Blaziken"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1",
+        "B1a"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B1a']; pack disagrees: ['Crimson Blaze', 'Mega Blaziken']",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Garbodor",
+      "quantity": 3,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Mega Shine"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Mega Shine"
+      ],
+      "set_codes": [
+        "B1a",
+        "B2b"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a', 'B2b']; pack disagrees: ['Crimson Blaze', 'Mega Shine']",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Steelix",
+      "quantity": 3,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1a",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a', 'B3']; pack disagrees: ['Crimson Blaze', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Probopass",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 53,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=53",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Ditto",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 55,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=55",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Porygon2",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1a",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a', 'B3']; pack disagrees: ['Crimson Blaze', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Staraptor",
+      "quantity": 5,
+      "owned_set_code": "B1a",
+      "owned_card_number": 61,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=61",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Bouffalant",
+      "quantity": 2,
+      "owned_set_code": "B1a",
+      "owned_card_number": 64,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=64",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Furfrou",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Fantastical Parade",
+        "Mega Altaria",
+        "Mega Blaziken",
+        "Mega Gyarados",
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Fantastical Parade",
+        "Mega Rising",
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B1a",
+        "B2",
+        "B2b",
+        "B3"
+      ],
+      "notes": "Name match across 7 records in set(s) ['B1', 'B1a', 'B2', 'B2b', 'B3']; pack disagrees: ['Crimson Blaze', 'Fantastical Parade', 'Mega Altaria', 'Mega Blaziken', 'Mega Gyarados', 'Mega Shine', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1531.PNG"
+    },
+    {
+      "card_name": "Clemont's Backpack",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 66,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=66",
+      "source_screenshot": "IMG_1531.PNG"
+    },
+    {
+      "card_name": "Quick-Grow Extract",
+      "quantity": 3,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a']; all agree on pack_name='Crimson Blaze'",
+      "source_screenshot": "IMG_1531.PNG"
+    },
+    {
+      "card_name": "Clemont",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a']; all agree on pack_name='Crimson Blaze'",
+      "source_screenshot": "IMG_1531.PNG"
+    },
+    {
+      "card_name": "Serena",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a']; all agree on pack_name='Crimson Blaze'",
+      "source_screenshot": "IMG_1531.PNG"
+    },
+    {
+      "card_name": "Galarian Rapidash",
+      "quantity": 1,
+      "owned_set_code": "B2",
+      "owned_card_number": 59,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Matched by set_code=B2 card_number=59",
+      "source_screenshot": "IMG_1531.PNG"
+    },
+    {
+      "card_name": "Machamp",
+      "quantity": 1,
+      "owned_set_code": "B2",
+      "owned_card_number": 81,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Matched by set_code=B2 card_number=81",
+      "source_screenshot": "IMG_1531.PNG"
+    },
+    {
+      "card_name": "Doublade",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Fantastical Parade",
+        "Mega Blaziken"
+      ],
+      "expansions": [
+        "Fantastical Parade",
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1",
+        "B2"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B2']; pack disagrees: ['Fantastical Parade', 'Mega Blaziken']",
+      "source_screenshot": "IMG_1531.PNG"
+    },
+    {
+      "card_name": "Charmeleon",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Mega Shine"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Mega Shine"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1a",
+        "B2b"
+      ],
+      "notes": "Name match across 5 records in set(s) ['A4b', 'B1a', 'B2b']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex', 'Mega Shine']",
+      "source_screenshot": "IMG_1531.PNG"
+    },
+    {
+      "card_name": "Breloom",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Pulsing Aura",
+        null
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['None', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Leavanny",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 17,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=17",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Pignite",
+      "quantity": 3,
+      "owned_set_code": "B3",
+      "owned_card_number": 27,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=27",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Darmanitan",
+      "quantity": 3,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Gyarados",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Gyarados', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Poliwhirl",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Gyarados",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Gyarados', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Paldean Tauros",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Shine",
+        "Paldean Wonders",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Shine",
+        "Paldean Wonders",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B2a",
+        "B2b",
+        "B3"
+      ],
+      "notes": "Name match across 3 records in set(s) ['B2a', 'B2b', 'B3']; pack disagrees: ['Mega Shine', 'Paldean Wonders', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Quagsire",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Huntail",
+      "quantity": 2,
+      "owned_set_code": "B3",
+      "owned_card_number": 43,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=43",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Gorebyss",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 44,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=44",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Magneton",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1a",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['A4b', 'B1a', 'B3']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Lanturn",
+      "quantity": 2,
+      "owned_set_code": "B3",
+      "owned_card_number": 58,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=58",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Hattrem",
+      "quantity": 2,
+      "owned_set_code": "B3",
+      "owned_card_number": 70,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=70",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Toxicroak",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 83,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=83",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Bewear",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Blaziken",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Blaziken', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Sandaconda",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 96,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=96",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Golbat",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "A4b",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['A4b', 'B3']; pack disagrees: ['Deluxe Pack: ex', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Mandibuzz",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 110,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=110",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Malamar",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Bronzong",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 118,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=118",
+      "source_screenshot": "IMG_1534.PNG"
+    },
+    {
+      "card_name": "Bisharp",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1534.PNG"
+    },
+    {
+      "card_name": "Magearna",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 121,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=121",
+      "source_screenshot": "IMG_1534.PNG"
+    },
+    {
+      "card_name": "Vibrava",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 125,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=125",
+      "source_screenshot": "IMG_1534.PNG"
+    },
+    {
+      "card_name": "Ursaring",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 132,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=132",
+      "source_screenshot": "IMG_1534.PNG"
+    },
+    {
+      "card_name": "Herdier",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Altaria",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Altaria', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1534.PNG"
+    },
+    {
+      "card_name": "Audino",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 140,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=140",
+      "source_screenshot": "IMG_1534.PNG"
+    },
+    {
+      "card_name": "Corvisquire",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Blaziken",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Blaziken', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1534.PNG"
+    },
+    {
+      "card_name": "Korrina",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1534.PNG"
+    },
+    {
+      "card_name": "Cheren",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Arena of Antiquity",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 154,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=154",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Bulbasaur",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1a"
+      ],
+      "notes": "Name match across 3 records in set(s) ['A4b', 'B1a']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex']",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Venonat",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Shellder",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 92,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=92",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Sandshrew",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Fantastical Parade",
+        null
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Fantastical Parade",
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1",
+        "B1a",
+        "B2"
+      ],
+      "notes": "Name match across 4 records in set(s) ['B1', 'B1a', 'B2']; pack disagrees: ['Crimson Blaze', 'Fantastical Parade', 'None']",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Cubone",
+      "quantity": 2,
+      "owned_set_code": "B2",
+      "owned_card_number": 82,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Matched by set_code=B2 card_number=82",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Hitmonchan",
+      "quantity": 1,
+      "owned_set_code": "B2",
+      "owned_card_number": 219,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Matched by set_code=B2 card_number=219",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Mienfoo",
+      "quantity": 2,
+      "owned_set_code": "B1a",
+      "owned_card_number": 43,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=43",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Dratini",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Deluxe Pack: ex",
+        "Mega Shine"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex",
+        "Mega Shine"
+      ],
+      "set_codes": [
+        "A4b",
+        "B2b"
+      ],
+      "notes": "Name match across 4 records in set(s) ['A4b', 'B2b']; pack disagrees: ['Deluxe Pack: ex', 'Mega Shine']",
+      "source_screenshot": "IMG_1536.PNG"
+    },
+    {
+      "card_name": "Pidgey",
+      "quantity": 2,
+      "owned_set_code": "B1",
+      "owned_card_number": 180,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        null
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Matched by set_code=B1 card_number=180",
+      "source_screenshot": "IMG_1536.PNG"
+    },
+    {
+      "card_name": "Rattata",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1536.PNG"
+    },
+    {
+      "card_name": "Raticate",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1536.PNG"
+    },
+    {
+      "card_name": "Jigglypuff",
+      "quantity": 1,
+      "owned_set_code": "B2b",
+      "owned_card_number": 58,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Mega Shine"
+      ],
+      "expansions": [
+        "Mega Shine"
+      ],
+      "set_codes": [
+        "B2b"
+      ],
+      "notes": "Matched by set_code=B2b card_number=58",
+      "source_screenshot": "IMG_1536.PNG"
+    },
+    {
+      "card_name": "Farfetch'd",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Deluxe Pack: ex"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex"
+      ],
+      "set_codes": [
+        "A4b"
+      ],
+      "notes": "Name match across 2 records in set(s) ['A4b']; all agree on pack_name='Deluxe Pack: ex'",
+      "source_screenshot": "IMG_1536.PNG"
+    },
+    {
+      "card_name": "Dubwool",
+      "quantity": 1,
+      "owned_set_code": "B1",
+      "owned_card_number": 212,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Mega Altaria"
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Matched by set_code=B1 card_number=212",
+      "source_screenshot": "IMG_1536.PNG"
+    },
+    {
+      "card_name": "Cherubi",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Deluxe Pack: ex"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex"
+      ],
+      "set_codes": [
+        "A4b"
+      ],
+      "notes": "Name match across 2 records in set(s) ['A4b']; all agree on pack_name='Deluxe Pack: ex'",
+      "source_screenshot": "IMG_1536.PNG"
+    },
+    {
+      "card_name": "Rockruff",
+      "quantity": 1,
+      "owned_set_code": "B1",
+      "owned_card_number": 310,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Mega Gyarados"
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Matched by set_code=B1 card_number=310",
+      "source_screenshot": "IMG_1536.PNG"
+    },
+    {
+      "card_name": "Silcoon",
+      "quantity": 1,
+      "owned_set_code": "B1",
+      "owned_card_number": 4,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Mega Blaziken"
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Matched by set_code=B1 card_number=4",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Seedot",
+      "quantity": 1,
+      "owned_set_code": "B1",
+      "owned_card_number": 8,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Mega Blaziken"
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Matched by set_code=B1 card_number=8",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Sandygast",
+      "quantity": 1,
+      "owned_set_code": "B1",
+      "owned_card_number": 143,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        null
+      ],
+      "expansions": [
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1"
+      ],
+      "notes": "Matched by set_code=B1 card_number=143",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Bulbasaur",
+      "quantity": 3,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1a"
+      ],
+      "notes": "Name match across 3 records in set(s) ['A4b', 'B1a']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex']",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Spinarak",
+      "quantity": 2,
+      "owned_set_code": "B1a",
+      "owned_card_number": 5,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=5",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Sunkern",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 7,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=7",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Burmy",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 9,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=9",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Mothim",
+      "quantity": 3,
+      "owned_set_code": "B1a",
+      "owned_card_number": 10,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=10",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Charmander",
+      "quantity": 4,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Mega Shine"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Mega Shine"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1a",
+        "B2b"
+      ],
+      "notes": "Name match across 5 records in set(s) ['A4b', 'B1a', 'B2b']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex', 'Mega Shine']",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Houndour",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 15,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=15",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Houndoom",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 16,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=16",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Basculin",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 21,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=21",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Clauncher",
+      "quantity": 2,
+      "owned_set_code": "B1a",
+      "owned_card_number": 22,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=22",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Magnemite",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1a",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['A4b', 'B1a', 'B3']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Helioptile",
+      "quantity": 2,
+      "owned_set_code": "B1a",
+      "owned_card_number": 28,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=28",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Misdreavus",
+      "quantity": 4,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        null
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1",
+        "B1a"
+      ],
+      "notes": "Name match across 4 records in set(s) ['A4b', 'B1', 'B1a']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex', 'None']",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Solosis",
+      "quantity": 2,
+      "owned_set_code": "B1a",
+      "owned_card_number": 32,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=32",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Spritzee",
+      "quantity": 6,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        null
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1",
+        "B1a"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B1a']; pack disagrees: ['Crimson Blaze', 'None']",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Aromatisse",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        null
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1",
+        "B1a"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B1a']; pack disagrees: ['Crimson Blaze', 'None']",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Onix",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1a",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a', 'B3']; pack disagrees: ['Crimson Blaze', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Makuhita",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Mega Blaziken"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Mega Rising"
+      ],
+      "set_codes": [
+        "B1",
+        "B1a"
+      ],
+      "notes": "Name match across 3 records in set(s) ['B1', 'B1a']; pack disagrees: ['Crimson Blaze', 'Mega Blaziken']",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Nosepass",
+      "quantity": 6,
+      "owned_set_code": "B1a",
+      "owned_card_number": 41,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=41",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Mienfoo",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 43,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=43",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Mienshao",
+      "quantity": 2,
+      "owned_set_code": "B1a",
+      "owned_card_number": 44,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=44",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Grimer",
+      "quantity": 3,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1a",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a', 'B3']; pack disagrees: ['Crimson Blaze', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Trubbish",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Mega Shine"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Mega Shine"
+      ],
+      "set_codes": [
+        "B1a",
+        "B2b"
+      ],
+      "notes": "Name match across 3 records in set(s) ['B1a', 'B2b']; pack disagrees: ['Crimson Blaze', 'Mega Shine']",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Porygon",
+      "quantity": 3,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1a",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a', 'B3']; pack disagrees: ['Crimson Blaze', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Starly",
+      "quantity": 2,
+      "owned_set_code": "B1a",
+      "owned_card_number": 59,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=59",
+      "source_screenshot": "IMG_1540.PNG"
+    },
+    {
+      "card_name": "Staravia",
+      "quantity": 1,
+      "owned_set_code": "B1a",
+      "owned_card_number": 60,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Matched by set_code=B1a card_number=60",
+      "source_screenshot": "IMG_1540.PNG"
+    },
+    {
+      "card_name": "Buneary",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Crimson Blaze"
+      ],
+      "expansions": [
+        "Crimson Blaze"
+      ],
+      "set_codes": [
+        "B1a"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1a']; all agree on pack_name='Crimson Blaze'",
+      "source_screenshot": "IMG_1540.PNG"
+    },
+    {
+      "card_name": "Roselia",
+      "quantity": 1,
+      "owned_set_code": "B2",
+      "owned_card_number": 4,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Matched by set_code=B2 card_number=4",
+      "source_screenshot": "IMG_1540.PNG"
+    },
+    {
+      "card_name": "Sinistea",
+      "quantity": 1,
+      "owned_set_code": "B2",
+      "owned_card_number": 74,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Matched by set_code=B2 card_number=74",
+      "source_screenshot": "IMG_1540.PNG"
+    },
+    {
+      "card_name": "Meditite",
+      "quantity": 1,
+      "owned_set_code": "B2",
+      "owned_card_number": 83,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Matched by set_code=B2 card_number=83",
+      "source_screenshot": "IMG_1540.PNG"
+    },
+    {
+      "card_name": "Roggenrola",
+      "quantity": 1,
+      "owned_set_code": "B2",
+      "owned_card_number": 85,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Matched by set_code=B2 card_number=85",
+      "source_screenshot": "IMG_1540.PNG"
+    },
+    {
+      "card_name": "Scraggy",
+      "quantity": 1,
+      "owned_set_code": "B2",
+      "owned_card_number": 106,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Matched by set_code=B2 card_number=106",
+      "source_screenshot": "IMG_1540.PNG"
+    },
+    {
+      "card_name": "Mawile",
+      "quantity": 1,
+      "owned_set_code": "B2",
+      "owned_card_number": 112,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Fantastical Parade"
+      ],
+      "expansions": [
+        "Fantastical Parade"
+      ],
+      "set_codes": [
+        "B2"
+      ],
+      "notes": "Matched by set_code=B2 card_number=112",
+      "source_screenshot": "IMG_1540.PNG"
+    },
+    {
+      "card_name": "Charmander",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Mega Shine"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Mega Shine"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1a",
+        "B2b"
+      ],
+      "notes": "Name match across 5 records in set(s) ['A4b', 'B1a', 'B2b']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex', 'Mega Shine']",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Tangela",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Fantastical Parade",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Fantastical Parade",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B2",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B2', 'B3']; pack disagrees: ['Fantastical Parade', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Treecko",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Surskit",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 9,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=9",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Shroomish",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Pulsing Aura",
+        null
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 3 records in set(s) ['B1', 'B3']; pack disagrees: ['None', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Carnivine",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 14,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=14",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Sewaddle",
+      "quantity": 2,
+      "owned_set_code": "B3",
+      "owned_card_number": 15,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=15",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Swadloon",
+      "quantity": 2,
+      "owned_set_code": "B3",
+      "owned_card_number": 16,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=16",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Applin",
+      "quantity": 2,
+      "owned_set_code": "B3",
+      "owned_card_number": 19,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=19",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Numel",
+      "quantity": 2,
+      "owned_set_code": "B3",
+      "owned_card_number": 21,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=21",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Castform Sunny Form",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 24,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=24",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Tepig",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Darumaka",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Gyarados",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Gyarados', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Larvesta",
+      "quantity": 3,
+      "owned_set_code": "B3",
+      "owned_card_number": 31,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=31",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Wooper",
+      "quantity": 2,
+      "owned_set_code": "B3",
+      "owned_card_number": 38,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=38",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Castform Rainy Form",
+      "quantity": 3,
+      "owned_set_code": "B3",
+      "owned_card_number": 40,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=40",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Castform Snowy Form",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 41,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=41",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Clamperl",
+      "quantity": 4,
+      "owned_set_code": "B3",
+      "owned_card_number": 42,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=42",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Cubchoo",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 46,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=46",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Sobble",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Magnemite",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Crimson Blaze",
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1a",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['A4b', 'B1a', 'B3']; pack disagrees: ['Crimson Blaze', 'Deluxe Pack: ex', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Voltorb",
+      "quantity": 3,
+      "owned_set_code": "B3",
+      "owned_card_number": 55,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=55",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Electrode",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 56,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=56",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Morpeko",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B2b",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['B2b', 'B3']; pack disagrees: ['Mega Shine', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Espurr",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 65,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=65",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Oricorio",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Deluxe Pack: ex",
+        "Fantastical Parade",
+        "Mega Gyarados",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex",
+        "Fantastical Parade",
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "A4b",
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "notes": "Name match across 9 records in set(s) ['A4b', 'B1', 'B2', 'B3']; pack disagrees: ['Deluxe Pack: ex', 'Fantastical Parade', 'Mega Gyarados', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Bramblin",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Paldean Wonders",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Paldean Wonders",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B2a",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B2a', 'B3']; pack disagrees: ['Paldean Wonders', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Trapinch",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 76,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=76",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Riolu",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Deluxe Pack: ex",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "A4b",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['A4b', 'B3']; pack disagrees: ['Deluxe Pack: ex', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Croagunk",
+      "quantity": 3,
+      "owned_set_code": "B3",
+      "owned_card_number": 82,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=82",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Throh",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 85,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=85",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Dwebble",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 87,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=87",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Stufful",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Blaziken",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Blaziken', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Rolycoly",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Gyarados",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Gyarados', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Silicobra",
+      "quantity": 2,
+      "owned_set_code": "B3",
+      "owned_card_number": 95,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=95",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Kubfu",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Koffing",
+      "quantity": 2,
+      "owned_set_code": "B3",
+      "owned_card_number": 101,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=101",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Qwilfish",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 103,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=103",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Seviper",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Zorua",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B2b",
+        "B3"
+      ],
+      "notes": "Name match across 4 records in set(s) ['B2b', 'B3']; pack disagrees: ['Mega Shine', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Vullaby",
+      "quantity": 4,
+      "owned_set_code": "B3",
+      "owned_card_number": 109,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=109",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Bronzor",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 117,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=117",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Chansey",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Castform",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_agree",
+      "match_confidence": "medium",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B3']; all agree on pack_name='Pulsing Aura'",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Watchog",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Pulsing Aura",
+        null
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['None', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Lillipup",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Altaria",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B1",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B1', 'B3']; pack disagrees: ['Mega Altaria', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Minccino",
+      "quantity": 4,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B2b",
+        "B3"
+      ],
+      "notes": "Name match across 2 records in set(s) ['B2b', 'B3']; pack disagrees: ['Mega Shine', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Cinccino",
+      "quantity": 2,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "name_ambiguous",
+      "match_confidence": "low",
+      "pack_names": [
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Mega Shine",
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B2b",
+        "B3"
+      ],
+      "notes": "Name match across 3 records in set(s) ['B2b', 'B3']; pack disagrees: ['Mega Shine', 'Pulsing Aura']",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Potion",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "X Speed",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Hand Scope",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Pokédex",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Poké Ball",
+      "quantity": 4,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Red Card",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Professor's Research",
+      "quantity": 4,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1547.PNG"
+    },
+    {
+      "card_name": "Victini",
+      "quantity": 1,
+      "owned_set_code": "B3",
+      "owned_card_number": 25,
+      "outcome": "exact",
+      "match_confidence": "high",
+      "pack_names": [
+        "Pulsing Aura"
+      ],
+      "expansions": [
+        "Pulsing Aura"
+      ],
+      "set_codes": [
+        "B3"
+      ],
+      "notes": "Matched by set_code=B3 card_number=25",
+      "source_screenshot": "IMG_1547.PNG"
+    },
+    {
+      "card_name": "Zygarde",
+      "quantity": 1,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1547.PNG"
+    },
+    {
+      "card_name": "Zygarde",
+      "quantity": 3,
+      "owned_set_code": null,
+      "owned_card_number": null,
+      "outcome": "no_match",
+      "match_confidence": "low",
+      "pack_names": [],
+      "expansions": [],
+      "set_codes": [],
+      "notes": "No match in pack_sources by name",
+      "source_screenshot": "IMG_1547.PNG"
+    }
+  ]
+}

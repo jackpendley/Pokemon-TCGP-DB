@@ -2,63 +2,90 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Pack Source Mapping",
   "description": "Maps each card to the pack(s) it can be obtained from in Pokémon TCG Pocket. Built from Limitless TCG Pocket data. Do not fabricate entries.",
-  "type": "array",
-  "items": {
-    "type": "object",
-    "required": ["set_code", "card_number", "card_name", "pack_name", "expansion"],
-    "properties": {
-      "set_code": {
-        "type": "string",
-        "description": "Set code as used by Limitless TCG Pocket (e.g. A4b, B1, B1a)",
-        "examples": ["A4b", "B1", "B1a", "B2", "B2a", "B2b", "B3"]
-      },
-      "card_number": {
-        "type": "integer",
-        "description": "Card number within the set",
-        "minimum": 1
-      },
-      "card_name": {
-        "type": "string",
-        "description": "Canonical card name"
-      },
-      "pack_name": {
-        "type": ["string", "null"],
-        "description": "Pack within the set this card drops from (null if available in all packs or pack-independent)"
-      },
-      "expansion": {
-        "type": "string",
-        "description": "Expansion name (e.g. Celestial Guardians, Space-Time Smackdown)"
-      },
-      "rarity": {
-        "type": ["string", "null"],
-        "description": "Rarity code (e.g. one_diamond, two_diamond, one_star, double_star, crown)",
-        "enum": ["one_diamond", "two_diamond", "three_diamond", "four_diamond", "one_star", "double_star", "triple_star", "crown", null]
-      },
-      "is_promo": {
-        "type": "boolean",
-        "description": "True if this card is a promo / not obtainable from standard packs",
-        "default": false
-      },
-      "source_url": {
-        "type": ["string", "null"],
-        "description": "URL of the source page for this mapping",
-        "format": "uri"
-      },
-      "source": {
-        "type": "string",
-        "description": "Source identifier (e.g. limitless, game8)",
-        "default": "limitless"
-      },
-      "confidence": {
-        "type": "string",
-        "description": "Confidence in this mapping",
-        "enum": ["high", "medium", "low"]
-      },
-      "notes": {
-        "type": ["string", "null"],
-        "description": "Any notes about availability, exclusivity, or data quality"
+  "type": "object",
+  "required": ["records"],
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "description": "Metadata about this file: when it was generated, source, notes.",
+      "properties": {
+        "generated_at": { "type": "string" },
+        "source": { "type": "string" },
+        "total_records": { "type": "integer" },
+        "note": { "type": "string" }
       }
     },
-    "additionalProperties": false
-  }
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["set_code", "card_number", "card_name", "pack_name", "expansion"],
+        "properties": {
+          "set_code": {
+            "type": "string",
+            "description": "Set code as used by Limitless TCG Pocket (e.g. A4b, B1, B1a)",
+            "examples": ["A4b", "B1", "B1a", "B2", "B2a", "B2b", "B3"]
+          },
+          "card_number": {
+            "type": "integer",
+            "description": "Card number within the set",
+            "minimum": 1
+          },
+          "card_name": {
+            "type": "string",
+            "description": "Canonical card name"
+          },
+          "pack_name": {
+            "type": ["string", "null"],
+            "description": "Pack within the set this card drops from (null = shared across all packs in expansion)"
+          },
+          "expansion": {
+            "type": "string",
+            "description": "Expansion name (e.g. Mega Rising, Fantastical Parade)"
+          },
+          "rarity": {
+            "type": ["string", "null"],
+            "description": "Rarity code from Limitless",
+            "enum": ["one_diamond", "two_diamond", "three_diamond", "four_diamond", "one_star", "double_star", "triple_star", "crown", "promo", null]
+          },
+          "card_category": {
+            "type": ["string", "null"],
+            "description": "Card category from external reference (Pokemon, Item, Supporter, etc.)"
+          },
+          "pokemon_type": {
+            "type": ["string", "null"],
+            "description": "Pokémon type (Fire, Water, etc.) from external reference"
+          },
+          "is_ex": {
+            "type": ["boolean", "null"],
+            "description": "True if this is an EX card"
+          },
+          "is_promo": {
+            "type": ["boolean", "null"],
+            "description": "True if this card is a promo / not obtainable from standard packs"
+          },
+          "source_url": {
+            "type": ["string", "null"],
+            "description": "Limitless TCG Pocket card page URL"
+          },
+          "source": {
+            "type": "string",
+            "description": "Source identifier (e.g. limitless, game8)",
+            "default": "limitless"
+          },
+          "confidence": {
+            "type": "string",
+            "description": "Confidence: high=pack label in HTML, medium=inferred from expansion, low=unknown",
+            "enum": ["high", "medium", "low"]
+          },
+          "notes": {
+            "type": ["string", "null"],
+            "description": "Any notes about availability, exclusivity, or data quality"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
 }
