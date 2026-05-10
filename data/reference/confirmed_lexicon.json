@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-10T19:42:44.227734+00:00",
-  "total_unique_names": 145,
+  "generated_at": "2026-05-10T19:53:44.856961+00:00",
+  "total_unique_names": 166,
   "source_batches": [
     "batches/cards_batch_001.json",
     "batches/cards_batch_002.json",
@@ -18,9 +18,26 @@
     "batches/cards_batch_014.json",
     "batches/cards_batch_015.json",
     "batches/cards_batch_016.json",
-    "batches/cards_batch_017.json"
+    "batches/cards_batch_017.json",
+    "batches/cards_batch_018.json",
+    "batches/cards_batch_019.json",
+    "batches/cards_batch_020.json"
   ],
   "entries": [
+    {
+      "card_name": "Applin",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1541.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
     {
       "card_name": "Arcanine",
       "count_seen": 1,
@@ -162,6 +179,20 @@
       ]
     },
     {
+      "card_name": "Bramblin",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1543.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Breloom",
       "count_seen": 1,
       "total_quantity": 1,
@@ -248,6 +279,62 @@
       ]
     },
     {
+      "card_name": "Carnivine",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1541.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Castform Rainy Form",
+      "count_seen": 1,
+      "total_quantity": 3,
+      "screenshots_seen": [
+        "IMG_1542.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Castform Snowy Form",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1542.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Castform Sunny Form",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1542.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Charizard",
       "count_seen": 1,
       "total_quantity": 1,
@@ -263,10 +350,11 @@
     },
     {
       "card_name": "Charmander",
-      "count_seen": 1,
-      "total_quantity": 4,
+      "count_seen": 2,
+      "total_quantity": 6,
       "screenshots_seen": [
-        "IMG_1537.PNG"
+        "IMG_1537.PNG",
+        "IMG_1541.PNG"
       ],
       "is_ex_values": [
         false
@@ -309,6 +397,20 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1536.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Clamperl",
+      "count_seen": 1,
+      "total_quantity": 4,
+      "screenshots_seen": [
+        "IMG_1542.PNG"
       ],
       "is_ex_values": [
         false
@@ -432,6 +534,20 @@
       ]
     },
     {
+      "card_name": "Cubchoo",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1543.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Cubone",
       "count_seen": 1,
       "total_quantity": 2,
@@ -465,6 +581,20 @@
       "total_quantity": 3,
       "screenshots_seen": [
         "IMG_1532.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Darumaka",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1542.PNG"
       ],
       "is_ex_values": [
         false
@@ -549,6 +679,34 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1526.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Electrode",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1543.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Espurr",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1543.PNG"
       ],
       "is_ex_values": [
         false
@@ -922,6 +1080,20 @@
       ]
     },
     {
+      "card_name": "Larvesta",
+      "count_seen": 1,
+      "total_quantity": 3,
+      "screenshots_seen": [
+        "IMG_1542.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Leaf",
       "count_seen": 1,
       "total_quantity": 1,
@@ -993,10 +1165,11 @@
     },
     {
       "card_name": "Magnemite",
-      "count_seen": 1,
-      "total_quantity": 1,
+      "count_seen": 2,
+      "total_quantity": 3,
       "screenshots_seen": [
-        "IMG_1538.PNG"
+        "IMG_1538.PNG",
+        "IMG_1543.PNG"
       ],
       "is_ex_values": [
         false
@@ -1262,10 +1435,11 @@
     },
     {
       "card_name": "Morpeko",
-      "count_seen": 1,
-      "total_quantity": 1,
+      "count_seen": 2,
+      "total_quantity": 2,
       "screenshots_seen": [
-        "IMG_1525.PNG"
+        "IMG_1525.PNG",
+        "IMG_1543.PNG"
       ],
       "is_ex_values": [
         false
@@ -1303,12 +1477,40 @@
       ]
     },
     {
+      "card_name": "Numel",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1542.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Onix",
       "count_seen": 2,
       "total_quantity": 3,
       "screenshots_seen": [
         "IMG_1527.PNG",
         "IMG_1539.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Oricorio",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1543.PNG"
       ],
       "is_ex_values": [
         false
@@ -1670,6 +1872,20 @@
       ]
     },
     {
+      "card_name": "Sewaddle",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1541.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Shellder",
       "count_seen": 1,
       "total_quantity": 1,
@@ -1685,10 +1901,11 @@
     },
     {
       "card_name": "Shroomish",
-      "count_seen": 1,
-      "total_quantity": 1,
+      "count_seen": 2,
+      "total_quantity": 2,
       "screenshots_seen": [
-        "IMG_1524.PNG"
+        "IMG_1524.PNG",
+        "IMG_1541.PNG"
       ],
       "is_ex_values": [
         false
@@ -1741,10 +1958,11 @@
     },
     {
       "card_name": "Sobble",
-      "count_seen": 1,
-      "total_quantity": 1,
+      "count_seen": 2,
+      "total_quantity": 3,
       "screenshots_seen": [
-        "IMG_1524.PNG"
+        "IMG_1524.PNG",
+        "IMG_1543.PNG"
       ],
       "is_ex_values": [
         false
@@ -1880,11 +2098,54 @@
       ]
     },
     {
-      "card_name": "Tepig",
+      "card_name": "Surskit",
       "count_seen": 1,
       "total_quantity": 1,
       "screenshots_seen": [
-        "IMG_1524.PNG"
+        "IMG_1541.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Swadloon",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1541.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Tangela",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1541.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Tepig",
+      "count_seen": 2,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1524.PNG",
+        "IMG_1542.PNG"
       ],
       "is_ex_values": [
         false
@@ -1899,6 +2160,20 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1533.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Treecko",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1541.PNG"
       ],
       "is_ex_values": [
         false
@@ -2020,11 +2295,39 @@
       ]
     },
     {
+      "card_name": "Voltorb",
+      "count_seen": 1,
+      "total_quantity": 3,
+      "screenshots_seen": [
+        "IMG_1543.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Wartortle",
       "count_seen": 1,
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1529.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Wooper",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1542.PNG"
       ],
       "is_ex_values": [
         false

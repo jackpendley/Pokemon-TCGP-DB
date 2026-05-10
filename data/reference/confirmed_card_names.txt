@@ -1,3 +1,4 @@
+Applin
 Arcanine
 Arena of Antiquity
 Aromatisse
@@ -8,17 +9,23 @@ Bisharp
 Blaziken
 Bonsly
 Bouffalant
+Bramblin
 Breloom
 Bronzong
 Budew
 Bulbasaur
 Buneary
 Burmy
+Carnivine
+Castform Rainy Form
+Castform Snowy Form
+Castform Sunny Form
 Charizard
 Charmander
 Charmeleon
 Cheren
 Cherubi
+Clamperl
 Clauncher
 Clawitzer
 Clemont
@@ -27,15 +34,19 @@ Copycat
 Corviknight
 Corvisquire
 Crobat
+Cubchoo
 Cubone
 Cyrus
 Darmanitan
+Darumaka
 Ditto
 Dodrio
 Doublade
 Dratini
 Dubwool
 Eelektross
+Electrode
+Espurr
 Farfetch'd
 Flame Patch
 Furfrou
@@ -62,6 +73,7 @@ Ivysaur
 Jigglypuff
 Korrina
 Lanturn
+Larvesta
 Leaf
 Leavanny
 Lillie
@@ -89,7 +101,9 @@ Moltres
 Morpeko
 Mothim
 Nosepass
+Numel
 Onix
+Oricorio
 Paldean Tauros
 Palossand
 Pidgey
@@ -115,6 +129,7 @@ Sandygast
 Scraggy
 Seedot
 Serena
+Sewaddle
 Shellder
 Shroomish
 Silcoon
@@ -130,8 +145,12 @@ Starly
 Steelix
 Stoutland
 Sunkern
+Surskit
+Swadloon
+Tangela
 Tepig
 Toxicroak
+Treecko
 Trubbish
 Turtonator
 Ursaring
@@ -140,6 +159,8 @@ Vaporeon
 Venonat
 Vibrava
 Victini
+Voltorb
 Wartortle
+Wooper
 Yveltal
 Zekrom
