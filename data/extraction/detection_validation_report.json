@@ -1,71 +1,73 @@
 {
-  "generated_at": "2026-05-10T17:30:19.050103+00:00",
+  "generated_at": "2026-05-10T18:14:56.376339+00:00",
   "confirmed_screenshots": [
     "IMG_0000.PNG",
     "IMG_1524.PNG",
     "IMG_1525.PNG",
     "IMG_1526.PNG",
-    "IMG_1527.PNG"
+    "IMG_1527.PNG",
+    "IMG_1528.PNG",
+    "IMG_1529.PNG"
   ],
   "summary": {
-    "total_confirmed_positions": 37,
-    "top1_correct": 3,
-    "top1_accuracy": 0.081,
-    "top3_correct": 8,
-    "top3_accuracy": 0.216,
-    "ocr_empty_count": 5,
-    "ocr_empty_rate": 0.135,
-    "avg_score_when_correct": 94.4,
-    "avg_score_when_incorrect": 56.1
+    "total_confirmed_positions": 55,
+    "top1_correct": 10,
+    "top1_accuracy": 0.182,
+    "top3_correct": 18,
+    "top3_accuracy": 0.327,
+    "ocr_empty_count": 10,
+    "ocr_empty_rate": 0.182,
+    "avg_score_when_correct": 98.3,
+    "avg_score_when_incorrect": 57.7
   },
   "threshold_analysis": [
     {
       "threshold": 70,
-      "tp": 6,
+      "tp": 15,
       "fp": 1,
-      "fn": 30,
-      "precision": 0.857,
-      "recall": 0.167
+      "fn": 39,
+      "precision": 0.938,
+      "recall": 0.278
     },
     {
       "threshold": 75,
-      "tp": 3,
+      "tp": 12,
       "fp": 0,
-      "fn": 34,
+      "fn": 43,
       "precision": 1.0,
-      "recall": 0.081
+      "recall": 0.218
     },
     {
       "threshold": 80,
-      "tp": 3,
+      "tp": 10,
       "fp": 0,
-      "fn": 34,
+      "fn": 45,
       "precision": 1.0,
-      "recall": 0.081
+      "recall": 0.182
     },
     {
       "threshold": 85,
-      "tp": 2,
+      "tp": 9,
       "fp": 0,
-      "fn": 35,
+      "fn": 46,
       "precision": 1.0,
-      "recall": 0.054
+      "recall": 0.164
     },
     {
       "threshold": 90,
-      "tp": 2,
+      "tp": 9,
       "fp": 0,
-      "fn": 35,
+      "fn": 46,
       "precision": 1.0,
-      "recall": 0.054
+      "recall": 0.164
     },
     {
       "threshold": 95,
-      "tp": 2,
+      "tp": 9,
       "fp": 0,
-      "fn": 35,
+      "fn": 46,
       "precision": 1.0,
-      "recall": 0.054
+      "recall": 0.164
     }
   ],
   "per_screenshot": {
@@ -108,6 +110,22 @@
       "top3_correct": 1,
       "top3_accuracy": 0.111,
       "ocr_empty": 1
+    },
+    "IMG_1528.PNG": {
+      "total": 9,
+      "top1_correct": 6,
+      "top1_accuracy": 0.667,
+      "top3_correct": 6,
+      "top3_accuracy": 0.667,
+      "ocr_empty": 2
+    },
+    "IMG_1529.PNG": {
+      "total": 9,
+      "top1_correct": 1,
+      "top1_accuracy": 0.111,
+      "top3_correct": 4,
+      "top3_accuracy": 0.444,
+      "ocr_empty": 3
     }
   },
   "per_crop": [
@@ -871,6 +889,355 @@
         {
           "name": "Old Rod",
           "score": 50.0
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1528_r1c1",
+      "confirmed_name": "Giovanni",
+      "suggested": "Giovanni",
+      "top1_correct": true,
+      "top3_correct": true,
+      "top1_score": 100.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Giovanni",
+          "score": 100.0
+        },
+        {
+          "name": "Giovanni ex",
+          "score": 84.2
+        },
+        {
+          "name": "Zinnia",
+          "score": 57.1
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1528_r1c2",
+      "confirmed_name": "Sabrina",
+      "suggested": "Sabrina",
+      "top1_correct": true,
+      "top3_correct": true,
+      "top1_score": 100.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Sabrina",
+          "score": 100.0
+        },
+        {
+          "name": "Abra",
+          "score": 72.7
+        },
+        {
+          "name": "Sina",
+          "score": 72.7
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1528_r1c3",
+      "confirmed_name": "Leaf",
+      "suggested": "Leaf",
+      "top1_correct": true,
+      "top3_correct": true,
+      "top1_score": 100.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Leaf",
+          "score": 100.0
+        },
+        {
+          "name": "Leafeon",
+          "score": 72.7
+        },
+        {
+          "name": "Elesa",
+          "score": 66.7
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1528_r2c1",
+      "confirmed_name": "Cyrus",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 58.1,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Training Court",
+          "score": 58.1
+        },
+        {
+          "name": "Torterra",
+          "score": 56.0
+        },
+        {
+          "name": "Terrakion",
+          "score": 53.8
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1528_r2c2",
+      "confirmed_name": "Rare Candy",
+      "suggested": "Rare Candy",
+      "top1_correct": true,
+      "top3_correct": true,
+      "top1_score": 100.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Rare Candy",
+          "score": 100.0
+        },
+        {
+          "name": "Chandelure",
+          "score": 60.0
+        },
+        {
+          "name": "Candice",
+          "score": 58.8
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1528_r2c3",
+      "confirmed_name": "Lillie",
+      "suggested": "Lillie",
+      "top1_correct": true,
+      "top3_correct": true,
+      "top1_score": 100.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Lillie",
+          "score": 100.0
+        },
+        {
+          "name": "Lilligant",
+          "score": 66.7
+        },
+        {
+          "name": "Bill",
+          "score": 60.0
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1528_r3c1",
+      "confirmed_name": "Giant Cape",
+      "suggested": "Giant Cape",
+      "top1_correct": true,
+      "top3_correct": true,
+      "top1_score": 100.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Giant Cape",
+          "score": 100.0
+        },
+        {
+          "name": "Lampent",
+          "score": 58.8
+        },
+        {
+          "name": "Persian",
+          "score": 58.8
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1528_r3c2",
+      "confirmed_name": "Arcanine",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 0,
+      "ocr_empty": true,
+      "top_matches": []
+    },
+    {
+      "crop_id": "IMG_1528_r3c3",
+      "confirmed_name": "Turtonator",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 0,
+      "ocr_empty": true,
+      "top_matches": []
+    },
+    {
+      "crop_id": "IMG_1529_r1c1",
+      "confirmed_name": "Palossand",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 0,
+      "ocr_empty": true,
+      "top_matches": []
+    },
+    {
+      "crop_id": "IMG_1529_r1c2",
+      "confirmed_name": "Flame Patch",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 57.1,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Training Court",
+          "score": 57.1
+        },
+        {
+          "name": "Hitmonlee",
+          "score": 52.2
+        },
+        {
+          "name": "Terrakion",
+          "score": 52.2
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1529_r1c3",
+      "confirmed_name": "May",
+      "suggested": "May",
+      "top1_correct": true,
+      "top3_correct": true,
+      "top1_score": 100.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "May",
+          "score": 100.0
+        },
+        {
+          "name": "Omanyte",
+          "score": 60.0
+        },
+        {
+          "name": "Maylene",
+          "score": 60.0
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1529_r2c1",
+      "confirmed_name": "Copycat",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 55.2,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Masquerain",
+          "score": 55.2
+        },
+        {
+          "name": "Training Court",
+          "score": 54.5
+        },
+        {
+          "name": "Power Plant Stadium",
+          "score": 52.6
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1529_r2c2",
+      "confirmed_name": "Ivysaur",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 0,
+      "ocr_empty": true,
+      "top_matches": []
+    },
+    {
+      "crop_id": "IMG_1529_r2c3",
+      "confirmed_name": "Wartortle",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": true,
+      "top1_score": 75.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Wartortle",
+          "score": 75.0
+        },
+        {
+          "name": "Grotle",
+          "score": 47.6
+        },
+        {
+          "name": "Roselia",
+          "score": 45.5
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1529_r3c1",
+      "confirmed_name": "Clawitzer",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 0,
+      "ocr_empty": true,
+      "top_matches": []
+    },
+    {
+      "crop_id": "IMG_1529_r3c2",
+      "confirmed_name": "Magneton",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": true,
+      "top1_score": 76.2,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Magneton",
+          "score": 76.2
+        },
+        {
+          "name": "Magnezone ex",
+          "score": 64.0
+        },
+        {
+          "name": "Magnezone",
+          "score": 63.6
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1529_r3c3",
+      "confirmed_name": "Heliolisk",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": true,
+      "top1_score": 66.7,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Heliolisk",
+          "score": 66.7
+        },
+        {
+          "name": "Helioptile",
+          "score": 50.0
+        },
+        {
+          "name": "Petilil",
+          "score": 40.0
         }
       ]
     },

@@ -27,6 +27,7 @@ from pathlib import Path
 MATCH_FILE = Path("data/extraction/match_candidates.json")
 AUTOFILL_CSV = Path("review/autofill_candidates.csv")
 FIELD_REPORT = Path("data/extraction/field_detection_report.json")
+EXT_REF = Path("data/reference/external/external_card_reference.json")
 
 POSITIONS = [(r, c) for r in (1, 2, 3) for c in (1, 2, 3)]
 
@@ -38,6 +39,28 @@ AUTOFILL_MED = 90
 def crop_id(screenshot: str, row: int, col: int) -> str:
     stem = screenshot.replace(".PNG", "").replace(".png", "")
     return f"{stem}_r{row}c{col}"
+
+
+def load_ext_ref_by_name(path: Path) -> dict[str, dict]:
+    """Load external reference → dict normalized_name → card record."""
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return {}
+    result: dict[str, dict] = {}
+    for entry in data:
+        n = entry.get("name", "").strip()
+        if n:
+            key = re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", " ", n.lower())).strip()
+            if key not in result:
+                result[key] = entry
+    return result
+
+
+def normalize_for_lookup(name: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", " ", name.lower())).strip()
 
 
 def is_ex_from_name(name: str) -> bool:
@@ -82,6 +105,10 @@ def main():
     qty_usable = qty_accuracy >= 0.6
     ex_usable = ex_accuracy >= 0.85
 
+    # Load external reference for metadata hints
+    ext_ref = load_ext_ref_by_name(EXT_REF)
+    ext_available = bool(ext_ref)
+
     output_rows = []
 
     for row, col in POSITIONS:
@@ -123,6 +150,24 @@ def main():
             else:
                 name_notes.append("no_ocr_text; user_identify")
 
+        # Add external reference metadata hints for high-confidence candidates
+        if ext_available and (card_name or (top1_score >= 65 and suggested)):
+            lookup_name = card_name if card_name else suggested
+            if lookup_name:
+                ext_rec = ext_ref.get(normalize_for_lookup(lookup_name))
+                if ext_rec:
+                    ext_hints = []
+                    if ext_rec.get("is_ex"):
+                        ext_hints.append("ext:is_ex=true")
+                    cat = ext_rec.get("card_category")
+                    if cat and cat not in ("Pokemon", "Unknown"):
+                        ext_hints.append(f"ext:category={cat}")
+                    stage = ext_rec.get("stage")
+                    if stage and stage not in ("Unknown", "None"):
+                        ext_hints.append(f"ext:stage={stage}")
+                    if ext_hints:
+                        name_notes.append("; ".join(ext_hints))
+
         # Determine is_ex prefill
         is_ex = ""
         if card_name and ex_usable:
@@ -162,6 +207,7 @@ def main():
     print(f"Name prefilled  : {prefilled_names}/9")
     print(f"is_ex prefilled : {prefilled_ex}/9")
     print(f"Qty prefilled   : 0/9  (always blank — read from quantity chip visually)")
+    print(f"Ext ref hints   : {'enabled (' + str(len(ext_ref)) + ' names)' if ext_available else 'not available'}")
     if not qty_usable:
         print(f"  (qty OCR accuracy {qty_accuracy:.0%} too low for prefill — leave blank)")
     if not ex_usable:

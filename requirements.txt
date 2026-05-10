@@ -4,3 +4,5 @@ requests
 opencv-python
 pytesseract
 imagehash
+beautifulsoup4
+lxml

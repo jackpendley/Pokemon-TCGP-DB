@@ -135,6 +135,46 @@ Do not run OCR or create batch files until the contact sheets look correct
 
 ---
 
+## External Reference Sources
+
+External references improve card-name fuzzy matching and provide metadata hints
+(is_ex, category, stage) during extraction.  **Quantity always comes from screenshots.**
+
+| Source | Role | URL |
+|---|---|---|
+| Limitless TCG Pocket | Primary — structured card/set/rarity data | https://pocket.limitlesstcg.com/cards |
+| Game8 | Supplemental — all-card, ex-card, special-card lists | https://game8.co/games/Pokemon-TCG-Pocket/ |
+
+### Build external reference (run once, then use `--use-cache`)
+
+```bash
+python3 scripts/build_external_reference.py --source limitless
+```
+
+### Merge into main reference
+
+```bash
+python3 scripts/build_card_reference.py --seed data/reference/manual_card_names_seed.txt --merge-external
+```
+
+### Check coverage
+
+```bash
+python3 scripts/evaluate_reference_coverage.py
+```
+
+External data improves name candidates and metadata hints. It does **not** affect
+owned quantities — those are always read from the app screenshot quantity chips.
+
+Recommended workflow remains unchanged:
+```
+screenshot crops → OCR candidates → user confirmation → batch JSON → merge into cards.json → recommendations
+```
+
+See `docs/reference_sources.md` for full details and planned future use (meta deck recommendations).
+
+---
+
 ## Automated Extraction Pipeline
 
 The pipeline replaces manual Claude-vision extraction with a reproducible

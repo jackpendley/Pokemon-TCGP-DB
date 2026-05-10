@@ -1,19 +1,32 @@
+Arcanine
 Blaziken
 Bonsly
 Budew
 Bulbasaur
 Charizard
+Clawitzer
 Clemont
+Copycat
 Corviknight
 Crobat
+Cyrus
 Dodrio
 Eelektross
 Example Card
+Flame Patch
 Genesect
+Giant Cape
+Giovanni
 Hearthflame Mask Ogerpon
+Heliolisk
 Incineroar
+Ivysaur
+Leaf
+Lillie
+Magneton
 Magnezone
 Marowak
+May
 Mega Charizard Y ex
 Mega Venusaur ex
 Meloetta
@@ -22,16 +35,21 @@ Mienshao
 Moltres
 Morpeko
 Onix
+Palossand
 Quick-Grow Extract
+Rare Candy
 Riolu
+Sabrina
 Sandslash
 Shroomish
 Skrelp
 Sobble
 Stoutland
 Tepig
+Turtonator
 Urshifu
 Vaporeon
 Victini
+Wartortle
 Yveltal
 Zekrom

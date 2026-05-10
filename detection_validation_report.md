@@ -1,29 +1,29 @@
 # Detection Validation Report
 
-Generated: 2026-05-10T17:30:19Z
-Confirmed screenshots: IMG_0000.PNG, IMG_1524.PNG, IMG_1525.PNG, IMG_1526.PNG, IMG_1527.PNG
+Generated: 2026-05-10T18:14:56Z
+Confirmed screenshots: IMG_0000.PNG, IMG_1524.PNG, IMG_1525.PNG, IMG_1526.PNG, IMG_1527.PNG, IMG_1528.PNG, IMG_1529.PNG
 
 ## Summary
 
 | Metric | Value |
 |---|---|
-| Confirmed positions | 37 |
-| Top-1 accuracy | 8.1% (3/37) |
-| Top-3 accuracy | 21.6% (8/37) |
-| OCR empty rate | 13.5% (5/37) |
-| Avg score (correct) | 94.4 |
-| Avg score (incorrect) | 56.1 |
+| Confirmed positions | 55 |
+| Top-1 accuracy | 18.2% (10/55) |
+| Top-3 accuracy | 32.7% (18/55) |
+| OCR empty rate | 18.2% (10/55) |
+| Avg score (correct) | 98.3 |
+| Avg score (incorrect) | 57.7 |
 
 ## Threshold Analysis
 
 | Threshold | TP | FP | FN | Precision | Recall |
 |---|---|---|---|---|---|
-| 70 | 6 | 1 | 30 | 85.7% | 16.7% |
-| 75 | 3 | 0 | 34 | 100.0% | 8.1% |
-| 80 | 3 | 0 | 34 | 100.0% | 8.1% |
-| 85 | 2 | 0 | 35 | 100.0% | 5.4% |
-| 90 | 2 | 0 | 35 | 100.0% | 5.4% |
-| 95 | 2 | 0 | 35 | 100.0% | 5.4% |
+| 70 | 15 | 1 | 39 | 93.8% | 27.8% |
+| 75 | 12 | 0 | 43 | 100.0% | 21.8% |
+| 80 | 10 | 0 | 45 | 100.0% | 18.2% |
+| 85 | 9 | 0 | 46 | 100.0% | 16.4% |
+| 90 | 9 | 0 | 46 | 100.0% | 16.4% |
+| 95 | 9 | 0 | 46 | 100.0% | 16.4% |
 
 ## Per-Screenshot Accuracy
 
@@ -34,6 +34,8 @@ Confirmed screenshots: IMG_0000.PNG, IMG_1524.PNG, IMG_1525.PNG, IMG_1526.PNG, I
 | IMG_1525.PNG | 9 | 1 (11%) | 2 (22%) | 3 |
 | IMG_1526.PNG | 9 | 0 (0%) | 2 (22%) | 0 |
 | IMG_1527.PNG | 9 | 0 (0%) | 1 (11%) | 1 |
+| IMG_1528.PNG | 9 | 6 (67%) | 6 (67%) | 2 |
+| IMG_1529.PNG | 9 | 1 (11%) | 4 (44%) | 3 |
 
 ## Per-Crop Results
 
@@ -75,4 +77,22 @@ Confirmed screenshots: IMG_0000.PNG, IMG_1524.PNG, IMG_1525.PNG, IMG_1526.PNG, I
 | IMG_1527_r3c1 | Onix | — | ✗ | ✗ | 0 |
 | IMG_1527_r3c2 | Mienshao | — | ✗ | ✓ | 72.7 |
 | IMG_1527_r3c3 | Dodrio | — | ✗ | ✗ | 50.0 |
+| IMG_1528_r1c1 | Giovanni | Giovanni | ✓ | ✓ | 100.0 |
+| IMG_1528_r1c2 | Sabrina | Sabrina | ✓ | ✓ | 100.0 |
+| IMG_1528_r1c3 | Leaf | Leaf | ✓ | ✓ | 100.0 |
+| IMG_1528_r2c1 | Cyrus | — | ✗ | ✗ | 58.1 |
+| IMG_1528_r2c2 | Rare Candy | Rare Candy | ✓ | ✓ | 100.0 |
+| IMG_1528_r2c3 | Lillie | Lillie | ✓ | ✓ | 100.0 |
+| IMG_1528_r3c1 | Giant Cape | Giant Cape | ✓ | ✓ | 100.0 |
+| IMG_1528_r3c2 | Arcanine | — | ✗ | ✗ | 0 |
+| IMG_1528_r3c3 | Turtonator | — | ✗ | ✗ | 0 |
+| IMG_1529_r1c1 | Palossand | — | ✗ | ✗ | 0 |
+| IMG_1529_r1c2 | Flame Patch | — | ✗ | ✗ | 57.1 |
+| IMG_1529_r1c3 | May | May | ✓ | ✓ | 100.0 |
+| IMG_1529_r2c1 | Copycat | — | ✗ | ✗ | 55.2 |
+| IMG_1529_r2c2 | Ivysaur | — | ✗ | ✗ | 0 |
+| IMG_1529_r2c3 | Wartortle | — | ✗ | ✓ | 75.0 |
+| IMG_1529_r3c1 | Clawitzer | — | ✗ | ✗ | 0 |
+| IMG_1529_r3c2 | Magneton | — | ✗ | ✓ | 76.2 |
+| IMG_1529_r3c3 | Heliolisk | — | ✗ | ✓ | 66.7 |
 | IMG_0000_r1c1 | Example Card | — | ✗ | ✗ | 0 |

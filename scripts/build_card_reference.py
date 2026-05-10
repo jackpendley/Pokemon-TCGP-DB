@@ -41,6 +41,7 @@ REFERENCE_URL = (
 REFERENCE_DIR = Path("data/reference")
 OUT_REFERENCE = REFERENCE_DIR / "card_reference.json"
 OUT_NAMES = REFERENCE_DIR / "card_names.txt"
+EXT_REFERENCE = REFERENCE_DIR / "external" / "external_card_reference.json"
 
 # Fields to extract from each source card object.
 # Keys are our output field names; values are candidate source field names to
@@ -165,6 +166,42 @@ def _print_local_instructions():
     )
 
 
+def load_external(path: Path) -> list:
+    """Load external reference JSON (from build_external_reference.py output)."""
+    if not path.exists():
+        print(f"  WARN: External reference not found at {path}. Skipping --merge-external.")
+        return []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except ValueError as exc:
+        print(f"  WARN: Could not parse external reference: {exc}")
+        return []
+    if not isinstance(data, list):
+        print("  WARN: External reference is not a list. Skipping.")
+        return []
+    print(f"  Loaded {len(data)} external card entries from {path}")
+    return data
+
+
+def build_external_entry(src: dict) -> dict:
+    """Convert external reference card to internal schema."""
+    name = src.get("name", "")
+    return {
+        "card_id": f"{src.get('set_code','?')}_{src.get('number','?')}",
+        "name": name,
+        "set": src.get("set_code"),
+        "pack": None,
+        "rarity": src.get("rarity"),
+        "type": src.get("pokemon_type"),
+        "hp": src.get("hp"),
+        "stage": src.get("stage"),
+        "is_ex": src.get("is_ex", False),
+        "image_url": src.get("source_url"),
+        "source": "limitless",
+        "normalized_name": normalize_name(name),
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description="Build PTCGP card reference index.")
     parser.add_argument(
@@ -178,6 +215,14 @@ def main():
         type=Path,
         metavar="FILE",
         help="Use a plain-text seed file (one card name per line) as fallback reference.",
+    )
+    parser.add_argument(
+        "--merge-external",
+        action="store_true",
+        help=(
+            "Merge external reference data from "
+            f"{EXT_REFERENCE} into card_reference.json and card_names.txt."
+        ),
     )
     args = parser.parse_args()
 
@@ -196,6 +241,7 @@ def main():
     print(f"  Loaded {len(raw)} raw card entries.")
 
     normalized = []
+    seen_names: set[str] = set()
     names = []
     for src in raw:
         if not isinstance(src, dict):
@@ -206,7 +252,27 @@ def main():
             continue
         entry["normalized_name"] = normalize_name(str(name))
         normalized.append(entry)
+        seen_names.add(entry["normalized_name"])
         names.append(str(name))
+
+    if args.merge_external:
+        ext_raw = load_external(EXT_REFERENCE)
+        ext_added = 0
+        for ext_src in ext_raw:
+            if not isinstance(ext_src, dict):
+                continue
+            ext_name = ext_src.get("name", "").strip()
+            if not ext_name:
+                continue
+            norm = normalize_name(ext_name)
+            if norm in seen_names:
+                continue  # Already present — skip to avoid duplicates
+            entry = build_external_entry(ext_src)
+            normalized.append(entry)
+            seen_names.add(norm)
+            names.append(ext_name)
+            ext_added += 1
+        print(f"  Merged {ext_added} new names from external reference.")
 
     if not normalized:
         print("ERROR: No cards with a 'name' field were found in the source data.")

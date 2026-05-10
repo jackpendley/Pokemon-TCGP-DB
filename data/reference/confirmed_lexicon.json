@@ -1,14 +1,30 @@
 {
-  "generated_at": "2026-05-10T17:30:17.113433+00:00",
-  "total_unique_names": 37,
+  "generated_at": "2026-05-10T18:14:34.524452+00:00",
+  "total_unique_names": 55,
   "source_batches": [
     "batches/cards_batch_001.json",
     "batches/cards_batch_002.json",
     "batches/cards_batch_003.json",
     "batches/cards_batch_004.json",
+    "batches/cards_batch_005.json",
+    "batches/cards_batch_006.json",
     "batches/cards_batch_TEMPLATE.json"
   ],
   "entries": [
+    {
+      "card_name": "Arcanine",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1528.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
     {
       "card_name": "Blaziken",
       "count_seen": 1,
@@ -80,6 +96,20 @@
       ]
     },
     {
+      "card_name": "Clawitzer",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1529.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Clemont",
       "count_seen": 1,
       "total_quantity": 1,
@@ -91,6 +121,20 @@
       ],
       "special_type_values": [
         "special_trainer"
+      ]
+    },
+    {
+      "card_name": "Copycat",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1529.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
       ]
     },
     {
@@ -113,6 +157,20 @@
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1527.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Cyrus",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1528.PNG"
       ],
       "is_ex_values": [
         false
@@ -164,11 +222,53 @@
       ]
     },
     {
+      "card_name": "Flame Patch",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1529.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Genesect",
       "count_seen": 1,
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1526.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Giant Cape",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1528.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Giovanni",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1528.PNG"
       ],
       "is_ex_values": [
         false
@@ -192,6 +292,20 @@
       ]
     },
     {
+      "card_name": "Heliolisk",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1529.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Incineroar",
       "count_seen": 1,
       "total_quantity": 1,
@@ -200,6 +314,62 @@
       ],
       "is_ex_values": [
         true
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Ivysaur",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1529.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Leaf",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1528.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Lillie",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1528.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Magneton",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1529.PNG"
+      ],
+      "is_ex_values": [
+        false
       ],
       "special_type_values": [
         "unknown"
@@ -228,6 +398,20 @@
       ],
       "is_ex_values": [
         true
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "May",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1529.PNG"
+      ],
+      "is_ex_values": [
+        false
       ],
       "special_type_values": [
         "unknown"
@@ -346,6 +530,20 @@
       ]
     },
     {
+      "card_name": "Palossand",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1529.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Quick-Grow Extract",
       "count_seen": 1,
       "total_quantity": 1,
@@ -360,11 +558,39 @@
       ]
     },
     {
+      "card_name": "Rare Candy",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1528.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Riolu",
       "count_seen": 1,
       "total_quantity": 1,
       "screenshots_seen": [
         "IMG_1525.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Sabrina",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1528.PNG"
       ],
       "is_ex_values": [
         false
@@ -458,6 +684,20 @@
       ]
     },
     {
+      "card_name": "Turtonator",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1528.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
       "card_name": "Urshifu",
       "count_seen": 1,
       "total_quantity": 1,
@@ -491,6 +731,20 @@
       "total_quantity": 2,
       "screenshots_seen": [
         "IMG_1527.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Wartortle",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1529.PNG"
       ],
       "is_ex_values": [
         false
