@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T04:22:22.264217+00:00",
+  "generated_at": "2026-05-10T05:20:15.034001+00:00",
   "ocr_available": true,
   "results": [
     {
@@ -350,12 +350,12 @@
       "screenshot": "IMG_1527.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "| \\ . , | wa 7",
+      "raw_ocr_text": "Mm _i | har tr” aaa",
       "ocr_lines": [
-        "| \\ . ,",
-        "wa 7"
+        "Mm _i",
+        "har tr” aaa"
       ],
-      "cleaned_title_guess": "wa 7",
+      "cleaned_title_guess": "Mm i har tr aaa",
       "confidence": 0.5
     },
     {
@@ -363,12 +363,12 @@
       "screenshot": "IMG_1527.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "ee 8 .~ | rw, @ u™",
+      "raw_ocr_text": "= = fF: (8&2 8 | | YY 5 | EEE. >",
       "ocr_lines": [
-        "ee 8 .~",
-        "rw, @ u™"
+        "= = fF: (8&2 8 |",
+        "YY 5 | EEE. >"
       ],
-      "cleaned_title_guess": "ee 8 rw u",
+      "cleaned_title_guess": "fF 82 8 YY 5 EEE",
       "confidence": 0.5
     },
     {
@@ -376,11 +376,11 @@
       "screenshot": "IMG_1527.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "ho “me",
+      "raw_ocr_text": "E39 Crobat i w 130) |",
       "ocr_lines": [
-        "ho “me"
+        "E39 Crobat i w 130) |"
       ],
-      "cleaned_title_guess": "ho me",
+      "cleaned_title_guess": "E39 Crobat i w 130",
       "confidence": 0.5
     },
     {
@@ -388,11 +388,11 @@
       "screenshot": "IMG_1527.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "q o — = co | a",
+      "raw_ocr_text": "| — D single Strike Urshifu w 120.0)",
       "ocr_lines": [
-        "q o — = co | a"
+        "| — D single Strike Urshifu w 120.0)"
       ],
-      "cleaned_title_guess": "q o co a",
+      "cleaned_title_guess": "D single Strike Urshifu w 1200",
       "confidence": 0.5
     },
     {
@@ -400,64 +400,72 @@
       "screenshot": "IMG_1527.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "iF Stoutland w 150 *",
+      "ocr_lines": [
+        "iF Stoutland w 150 *"
+      ],
+      "cleaned_title_guess": "iF Stoutland w 150",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1527_r2c3",
       "screenshot": "IMG_1527.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "ence J ey) | ==Te, . —— — — | rindi :",
+      "ocr_lines": [
+        "ence J ey)",
+        "==Te, . —— — —",
+        "rindi :"
+      ],
+      "cleaned_title_guess": "ence J ey Te rindi",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1527_r3c1",
       "screenshot": "IMG_1527.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "9 _ —$____—_, | | |e 7. a: a",
-      "ocr_lines": [
-        "9 _ —$____—_,",
-        "| |e 7. a: a"
-      ],
-      "cleaned_title_guess": "9 e 7 a a",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1527_r3c2",
       "screenshot": "IMG_1527.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "“--\\Mienshao sw 80)",
+      "ocr_lines": [
+        "“--\\Mienshao sw 80)"
+      ],
+      "cleaned_title_guess": "--Mienshao sw 80",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1527_r3c3",
       "screenshot": "IMG_1527.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "~' Dodrio = 08",
+      "ocr_lines": [
+        "~' Dodrio = 08"
+      ],
+      "cleaned_title_guess": "' Dodrio 08",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1528_r1c1",
       "screenshot": "IMG_1528.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "‘@ Kel”",
+      "raw_ocr_text": "Supporter TRAINER | Giovanni",
       "ocr_lines": [
-        "‘@ Kel”"
+        "Supporter TRAINER",
+        "Giovanni"
       ],
-      "cleaned_title_guess": "Kel",
+      "cleaned_title_guess": "Supporter TRAINER Giovanni",
       "confidence": 0.5
     },
     {
@@ -465,53 +473,66 @@
       "screenshot": "IMG_1528.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "Supporter TRAINER | —<—<———_—<—$<—$<<————— TT = — | Sabrina",
+      "ocr_lines": [
+        "Supporter TRAINER",
+        "—<—<———_—<—$<—$<<————— TT = —",
+        "Sabrina"
+      ],
+      "cleaned_title_guess": "Supporter TRAINER TT Sabrina",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1528_r1c3",
       "screenshot": "IMG_1528.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "Supporter TRAINER | | ee | Leaf",
+      "ocr_lines": [
+        "Supporter TRAINER |",
+        "ee",
+        "Leaf"
+      ],
+      "cleaned_title_guess": "Supporter TRAINER ee Leaf",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1528_r2c1",
       "screenshot": "IMG_1528.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "Supporter | TRAINER | Cyrus y",
+      "ocr_lines": [
+        "Supporter | TRAINER",
+        "Cyrus y"
+      ],
+      "cleaned_title_guess": "Supporter TRAINER Cyrus y",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1528_r2c2",
       "screenshot": "IMG_1528.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "Steer | TRAIVER | | Rare Candy",
+      "ocr_lines": [
+        "Steer | TRAIVER |",
+        "Rare Candy"
+      ],
+      "cleaned_title_guess": "Steer TRAIVER Rare Candy",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1528_r2c3",
       "screenshot": "IMG_1528.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "Serer | wt* . - | eo” ~—se",
+      "raw_ocr_text": "Supporter | TRAINER | | Lillie",
       "ocr_lines": [
-        "Serer",
-        "wt* . -",
-        "eo” ~—se"
+        "Supporter | TRAINER |",
+        "Lillie"
       ],
-      "cleaned_title_guess": "Serer wt - eo se",
+      "cleaned_title_guess": "Supporter TRAINER Lillie",
       "confidence": 0.5
     },
     {
@@ -519,22 +540,23 @@
       "screenshot": "IMG_1528.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "‘Pokémon Toat TRAINER | Giant Cape",
+      "ocr_lines": [
+        "‘Pokémon Toat TRAINER",
+        "Giant Cape"
+      ],
+      "cleaned_title_guess": "Pokmon Toat TRAINER Giant Cape",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1528_r3c2",
       "screenshot": "IMG_1528.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "ie, YAceeel",
-      "ocr_lines": [
-        "ie, YAceeel"
-      ],
-      "cleaned_title_guess": "ie YAceeel",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1528_r3c3",
@@ -657,11 +679,11 @@
       "screenshot": "IMG_1530.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "= r og a",
+      "raw_ocr_text": "———_ =—le",
       "ocr_lines": [
-        "= r og a"
+        "———_ =—le"
       ],
-      "cleaned_title_guess": "r og a",
+      "cleaned_title_guess": "le",
       "confidence": 0.5
     },
     {
@@ -669,11 +691,11 @@
       "screenshot": "IMG_1530.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "1: <= if",
+      "raw_ocr_text": "| 120",
       "ocr_lines": [
-        "1: <= if"
+        "| 120"
       ],
-      "cleaned_title_guess": "1 if",
+      "cleaned_title_guess": "120",
       "confidence": 0.5
     },
     {
@@ -681,23 +703,27 @@
       "screenshot": "IMG_1530.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "rr) | 130\") | nF | dor | | rbo",
+      "ocr_lines": [
+        "rr)",
+        "130\")",
+        "nF",
+        "dor |",
+        "rbo"
+      ],
+      "cleaned_title_guess": "rr 130 nF dor rbo",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1530_r2c1",
       "screenshot": "IMG_1530.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "a | “ ‘a | ANA",
+      "raw_ocr_text": "“= Steelix  w150@",
       "ocr_lines": [
-        "a",
-        "“ ‘a",
-        "ANA"
+        "“= Steelix  w150@"
       ],
-      "cleaned_title_guess": "a a ANA",
+      "cleaned_title_guess": "Steelix w150",
       "confidence": 0.5
     },
     {
@@ -705,11 +731,11 @@
       "screenshot": "IMG_1530.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "2? 6 ONE",
+      "raw_ocr_text": "ar 'Probopass _ 130",
       "ocr_lines": [
-        "2? 6 ONE"
+        "ar 'Probopass _ 130"
       ],
-      "cleaned_title_guess": "2 6 ONE",
+      "cleaned_title_guess": "ar 'Probopass 130",
       "confidence": 0.5
     },
     {
@@ -717,11 +743,12 @@
       "screenshot": "IMG_1530.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "Fal",
+      "raw_ocr_text": "«ws Ditto w6O * | ie... a",
       "ocr_lines": [
-        "Fal"
+        "«ws Ditto w6O *",
+        "ie... a"
       ],
-      "cleaned_title_guess": "Fal",
+      "cleaned_title_guess": "ws Ditto w6O ie a",
       "confidence": 0.5
     },
     {
@@ -729,11 +756,11 @@
       "screenshot": "IMG_1530.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "- onal",
+      "raw_ocr_text": "soe! Porygon2 90 *)",
       "ocr_lines": [
-        "- onal"
+        "soe! Porygon2 90 *)"
       ],
-      "cleaned_title_guess": "- onal",
+      "cleaned_title_guess": "soe Porygon2 90",
       "confidence": 0.5
     },
     {
@@ -741,32 +768,36 @@
       "screenshot": "IMG_1530.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "ptor § wl40* | SSS *=",
+      "ocr_lines": [
+        "ptor § wl40*",
+        "SSS *="
+      ],
+      "cleaned_title_guess": "ptor wl40 SSS",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1530_r3c3",
       "screenshot": "IMG_1530.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "“<= Bouffalant 100 #",
+      "ocr_lines": [
+        "“<= Bouffalant 100 #"
+      ],
+      "cleaned_title_guess": "Bouffalant 100",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1531_r1c1",
       "screenshot": "IMG_1531.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "° Sar oP Wee wrew f | Rt i : ——_,",
+      "raw_ocr_text": "e<c\\Furfrou .o.  w70*",
       "ocr_lines": [
-        "° Sar oP Wee wrew f",
-        "Rt i : ——_,"
+        "e<c\\Furfrou .o.  w70*"
       ],
-      "cleaned_title_guess": "Sar oP Wee wrew f Rt i",
+      "cleaned_title_guess": "ecFurfrou o w70",
       "confidence": 0.5
     },
     {
@@ -774,11 +805,12 @@
       "screenshot": "IMG_1531.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "Clemont’s Backpack",
+      "raw_ocr_text": "Sferrt TRAINGF | Clemont’s Backpack",
       "ocr_lines": [
+        "Sferrt TRAINGF",
         "Clemont’s Backpack"
       ],
-      "cleaned_title_guess": "Clemonts Backpack",
+      "cleaned_title_guess": "Sferrt TRAINGF Clemonts Backpack",
       "confidence": 0.5
     },
     {
@@ -786,11 +818,12 @@
       "screenshot": "IMG_1531.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "Quick-Grow Extract",
+      "raw_ocr_text": "it errs TRAINER | | Quick-Grow Extract",
       "ocr_lines": [
+        "it errs TRAINER |",
         "Quick-Grow Extract"
       ],
-      "cleaned_title_guess": "Quick-Grow Extract",
+      "cleaned_title_guess": "it errs TRAINER Quick-Grow Extract",
       "confidence": 0.5
     },
     {
@@ -798,11 +831,11 @@
       "screenshot": "IMG_1531.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "Clemont y",
+      "raw_ocr_text": "Clemont",
       "ocr_lines": [
-        "Clemont y"
+        "Clemont"
       ],
-      "cleaned_title_guess": "Clemont y",
+      "cleaned_title_guess": "Clemont",
       "confidence": 0.5
     },
     {
@@ -810,12 +843,12 @@
       "screenshot": "IMG_1531.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "—— ————— lll ee | a —- a",
+      "raw_ocr_text": "Supporter TRAINER | Serena",
       "ocr_lines": [
-        "—— ————— lll ee",
-        "a —- a"
+        "Supporter TRAINER",
+        "Serena"
       ],
-      "cleaned_title_guess": "lll ee a - a",
+      "cleaned_title_guess": "Supporter TRAINER Serena",
       "confidence": 0.5
     },
     {
@@ -823,31 +856,38 @@
       "screenshot": "IMG_1531.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "0) a a",
+      "ocr_lines": [
+        "0) a a"
+      ],
+      "cleaned_title_guess": "0 a a",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1531_r3c1",
       "screenshot": "IMG_1531.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "oracee Mach-> a 440-4 | SS : | ~ J a",
+      "ocr_lines": [
+        "oracee Mach-> a 440-4",
+        "SS :",
+        "~ J a"
+      ],
+      "cleaned_title_guess": "oracee Mach- a 440-4 SS J a",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1531_r3c2",
       "screenshot": "IMG_1531.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "AS ae ee)",
+      "raw_ocr_text": "-~=«! Doublade ee 90 | 2 SS eet",
       "ocr_lines": [
-        "AS ae ee)"
+        "-~=«! Doublade ee 90",
+        "2 SS eet"
       ],
-      "cleaned_title_guess": "AS ae ee",
+      "cleaned_title_guess": "- Doublade ee 90 2 SS eet",
       "confidence": 0.5
     },
     {
@@ -855,23 +895,23 @@
       "screenshot": "IMG_1531.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "ST",
+      "ocr_lines": [
+        "ST"
+      ],
+      "cleaned_title_guess": "ST",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1532_r1c1",
       "screenshot": "IMG_1532.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": ", ny lO | Sa | | hy ae }",
+      "raw_ocr_text": "P=",
       "ocr_lines": [
-        ", ny lO",
-        "Sa |",
-        "hy ae }"
+        "P="
       ],
-      "cleaned_title_guess": "ny lO Sa hy ae",
+      "cleaned_title_guess": "P",
       "confidence": 0.5
     },
     {
@@ -879,12 +919,12 @@
       "screenshot": "IMG_1532.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "OO ———— | —aeew,\\ ae |",
+      "raw_ocr_text": "“==\\Leavanny 140 | = ea",
       "ocr_lines": [
-        "OO ————",
-        "—aeew,\\ ae |"
+        "“==\\Leavanny 140",
+        "= ea"
       ],
-      "cleaned_title_guess": "OO aeew ae",
+      "cleaned_title_guess": "Leavanny 140 ea",
       "confidence": 0.5
     },
     {
@@ -892,22 +932,26 @@
       "screenshot": "IMG_1532.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": ">. r :, ,.' | rik <- ae 100 f | a iH | —",
+      "ocr_lines": [
+        ">. r :, ,.'",
+        "rik <- ae 100 f",
+        "a iH",
+        "—"
+      ],
+      "cleaned_title_guess": "r ' rik - ae 100 f a iH",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1532_r2c1",
       "screenshot": "IMG_1532.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "Ses | . .",
+      "raw_ocr_text": "SS a |",
       "ocr_lines": [
-        "Ses",
-        ". ."
+        "SS a |"
       ],
-      "cleaned_title_guess": "Ses",
+      "cleaned_title_guess": "SS a",
       "confidence": 0.5
     },
     {
@@ -915,12 +959,12 @@
       "screenshot": "IMG_1532.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": ", _. FOUW NT! a FU | = ee",
+      "raw_ocr_text": "==\" Poliwhirl Ln »90@ | Ca ae = —=—hr",
       "ocr_lines": [
-        ", _. FOUW NT! a FU",
-        "= ee"
+        "==\" Poliwhirl Ln »90@",
+        "Ca ae = —=—hr"
       ],
-      "cleaned_title_guess": "FOUW NT a FU ee",
+      "cleaned_title_guess": "Poliwhirl Ln 90 Ca ae hr",
       "confidence": 0.5
     },
     {
@@ -928,12 +972,12 @@
       "screenshot": "IMG_1532.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "ao CO Nae he UU ey | i af",
+      "raw_ocr_text": "“=< paldean TaurOSi w 100 @) | — nT os",
       "ocr_lines": [
-        "ao CO Nae he UU ey",
-        "i af"
+        "“=< paldean TaurOSi w 100 @)",
+        "— nT os"
       ],
-      "cleaned_title_guess": "ao CO Nae he UU ey i af",
+      "cleaned_title_guess": "paldean TaurOSi w 100 nT os",
       "confidence": 0.5
     },
     {
@@ -941,23 +985,24 @@
       "screenshot": "IMG_1532.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "=<\" Quagsire 7 w130@",
+      "ocr_lines": [
+        "=<\" Quagsire 7 w130@"
+      ],
+      "cleaned_title_guess": "Quagsire 7 w130",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1532_r3c2",
       "screenshot": "IMG_1532.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "S =< - e | » © = | | —o—— a | i; *",
+      "raw_ocr_text": "a neal 100 @ | | = |",
       "ocr_lines": [
-        "S =< - e",
-        "» © =",
-        "| —o—— a | i; *"
+        "a neal 100 @",
+        "| = |"
       ],
-      "cleaned_title_guess": "S - e o a i",
+      "cleaned_title_guess": "a neal 100",
       "confidence": 0.5
     },
     {
@@ -965,11 +1010,12 @@
       "screenshot": "IMG_1532.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": "oy he |",
+      "raw_ocr_text": "=~’ Gorebyss ww 100@ | 8 |",
       "ocr_lines": [
-        "oy he |"
+        "=~’ Gorebyss ww 100@",
+        "8 |"
       ],
-      "cleaned_title_guess": "oy he",
+      "cleaned_title_guess": "Gorebyss ww 100 8",
       "confidence": 0.5
     },
     {
@@ -977,20 +1023,12 @@
       "screenshot": "IMG_1533.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "4 =| . ~~ s | : 4 | i FA he , ~ | a) ' | ) | ! ee ; | = aa — | - “oy 7 5 | > . | Z. ~~ = 1) . | AA",
+      "raw_ocr_text": "o~«'Magneton 904 | OO  .  — |",
       "ocr_lines": [
-        "4 =| . ~~ s",
-        ": 4",
-        "i FA he , ~",
-        "a) '",
-        ")",
-        "! ee ;",
-        "= aa —",
-        "- “oy 7 5",
-        "> .",
-        "Z. ~~ = 1) . | AA"
+        "o~«'Magneton 904",
+        "OO  .  — |"
       ],
-      "cleaned_title_guess": "4 s 4 i FA he a ' ee aa - oy 7 5 Z 1 AA",
+      "cleaned_title_guess": "o'Magneton 904 OO",
       "confidence": 0.5
     },
     {
@@ -998,22 +1036,22 @@
       "screenshot": "IMG_1533.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "a Pe: wll 4",
+      "ocr_lines": [
+        "a Pe: wll 4"
+      ],
+      "cleaned_title_guess": "a Pe wll 4",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1533_r1c3",
       "screenshot": "IMG_1533.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "i» yi 24k",
-      "ocr_lines": [
-        "i» yi 24k"
-      ],
-      "cleaned_title_guess": "i yi 24k",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1533_r2c1",
@@ -1030,23 +1068,23 @@
       "screenshot": "IMG_1533.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "i te “, io‘ >",
-      "ocr_lines": [
-        "i te “, io‘ >"
-      ],
-      "cleaned_title_guess": "i te io",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1533_r2c3",
       "screenshot": "IMG_1533.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "¥ Me —",
+      "raw_ocr_text": "el . . | —) fame rar Mae a “- > | _Pa ' ja « =",
       "ocr_lines": [
-        "¥ Me —"
+        "el . .",
+        "—) fame rar Mae a “- >",
+        "_Pa ' ja « ="
       ],
-      "cleaned_title_guess": "Me",
+      "cleaned_title_guess": "el fame rar Mae a - Pa ' ja",
       "confidence": 0.5
     },
     {
@@ -1054,11 +1092,12 @@
       "screenshot": "IMG_1533.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "a | a Fie. = ¥ .",
+      "raw_ocr_text": "whine G | — 2",
       "ocr_lines": [
-        "a | a Fie. = ¥ ."
+        "whine G",
+        "— 2"
       ],
-      "cleaned_title_guess": "a a Fie",
+      "cleaned_title_guess": "whine G 2",
       "confidence": 0.5
     },
     {
@@ -1066,12 +1105,12 @@
       "screenshot": "IMG_1533.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "; . > | hh wl",
+      "raw_ocr_text": ". Mandibuzz  100*) | = , — a",
       "ocr_lines": [
-        "; . >",
-        "hh wl"
+        ". Mandibuzz  100*)",
+        "= , — a"
       ],
-      "cleaned_title_guess": "hh wl",
+      "cleaned_title_guess": "Mandibuzz 100 a",
       "confidence": 0.5
     },
     {
@@ -1079,62 +1118,73 @@
       "screenshot": "IMG_1533.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "> Ee EEE =",
+      "ocr_lines": [
+        "> Ee EEE ="
+      ],
+      "cleaned_title_guess": "Ee EEE",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1534_r1c1",
       "screenshot": "IMG_1534.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "race F Bronzong 120 @ | oe | Uf",
+      "ocr_lines": [
+        "race F Bronzong 120 @",
+        "oe | Uf"
+      ],
+      "cleaned_title_guess": "race F Bronzong 120 oe Uf",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1534_r1c2",
       "screenshot": "IMG_1534.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "-—~' Bisharp sw 90 | OD ee ee",
+      "ocr_lines": [
+        "-—~' Bisharp sw 90",
+        "OD ee ee"
+      ],
+      "cleaned_title_guess": "-' Bisharp sw 90 OD ee ee",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1534_r1c3",
       "screenshot": "IMG_1534.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "<< Magearna #90 @",
+      "ocr_lines": [
+        "<< Magearna #90 @"
+      ],
+      "cleaned_title_guess": "Magearna 90",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1534_r2c1",
       "screenshot": "IMG_1534.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "2 Wibray 90 @",
+      "ocr_lines": [
+        "2 Wibray 90 @"
+      ],
+      "cleaned_title_guess": "2 Wibray 90",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1534_r2c2",
       "screenshot": "IMG_1534.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "ne be Nn Coll | SS _ . S",
+      "raw_ocr_text": "Sint —— “ral",
       "ocr_lines": [
-        "ne be Nn Coll",
-        "SS _ . S"
+        "Sint —— “ral"
       ],
-      "cleaned_title_guess": "ne be Nn Coll SS S",
+      "cleaned_title_guess": "Sint ral",
       "confidence": 0.5
     },
     {
@@ -1142,11 +1192,11 @@
       "screenshot": "IMG_1534.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "AT i",
+      "raw_ocr_text": "oc! Herdier — #90",
       "ocr_lines": [
-        "AT i"
+        "oc! Herdier — #90"
       ],
-      "cleaned_title_guess": "AT i",
+      "cleaned_title_guess": "oc Herdier 90",
       "confidence": 0.5
     },
     {
@@ -1154,11 +1204,11 @@
       "screenshot": "IMG_1534.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "/",
+      "raw_ocr_text": "= Audino w80 *)",
       "ocr_lines": [
-        "/"
+        "= Audino w80 *)"
       ],
-      "cleaned_title_guess": "",
+      "cleaned_title_guess": "Audino w80",
       "confidence": 0.5
     },
     {
@@ -1166,21 +1216,25 @@
       "screenshot": "IMG_1534.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "“=! Corvisquire 80 *) | = —=__—__aaas",
+      "ocr_lines": [
+        "“=! Corvisquire 80 *)",
+        "= —=__—__aaas"
+      ],
+      "cleaned_title_guess": "Corvisquire 80 aaas",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1534_r3c3",
       "screenshot": "IMG_1534.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": "(| AY, ae",
+      "raw_ocr_text": "Gupporter | TRAINER | Korrina",
       "ocr_lines": [
-        "(| AY, ae"
+        "Gupporter | TRAINER",
+        "Korrina"
       ],
-      "cleaned_title_guess": "AY ae",
+      "cleaned_title_guess": "Gupporter TRAINER Korrina",
       "confidence": 0.5
     },
     {
@@ -1188,22 +1242,25 @@
       "screenshot": "IMG_1535.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "Supporter TRAINGF | Cheren",
+      "ocr_lines": [
+        "Supporter TRAINGF",
+        "Cheren"
+      ],
+      "cleaned_title_guess": "Supporter TRAINGF Cheren",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1535_r1c2",
       "screenshot": "IMG_1535.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "= — si i | $ lpaeee a",
+      "raw_ocr_text": "Sterctiurn TRAINER | | Arena of Antiquity |",
       "ocr_lines": [
-        "= — si i",
-        "$ lpaeee a"
+        "Sterctiurn TRAINER |",
+        "Arena of Antiquity |"
       ],
-      "cleaned_title_guess": "si i lpaeee a",
+      "cleaned_title_guess": "Sterctiurn TRAINER Arena of Antiquity",
       "confidence": 0.5
     },
     {
@@ -1221,21 +1278,25 @@
       "screenshot": "IMG_1535.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "~—-° Wenonat 60 @ | TS",
+      "ocr_lines": [
+        "~—-° Wenonat 60 @",
+        "TS"
+      ],
+      "cleaned_title_guess": "- Wenonat 60 TS",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1535_r2c2",
       "screenshot": "IMG_1535.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "Lace",
+      "raw_ocr_text": "= Shellder | .60@ | ix mm. .o. TY",
       "ocr_lines": [
-        "Lace"
+        "= Shellder | .60@",
+        "ix mm. .o. TY"
       ],
-      "cleaned_title_guess": "Lace",
+      "cleaned_title_guess": "Shellder 60 ix mm o TY",
       "confidence": 0.5
     },
     {
@@ -1243,24 +1304,20 @@
       "screenshot": "IMG_1535.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "a aa",
-      "ocr_lines": [
-        "a aa"
-      ],
-      "cleaned_title_guess": "a aa",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1535_r3c1",
       "screenshot": "IMG_1535.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "i",
-      "ocr_lines": [
-        "i"
-      ],
-      "cleaned_title_guess": "i",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1535_r3c2",
@@ -1287,22 +1344,23 @@
       "screenshot": "IMG_1536.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "<= )Dratini | 70 @",
+      "ocr_lines": [
+        "<= )Dratini | 70 @"
+      ],
+      "cleaned_title_guess": "Dratini 70",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1536_r1c2",
       "screenshot": "IMG_1536.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "iT bl pl mvy | |",
+      "raw_ocr_text": "= 'Pidgey 60 *)",
       "ocr_lines": [
-        "iT bl pl mvy",
-        "|"
+        "= 'Pidgey 60 *)"
       ],
-      "cleaned_title_guess": "iT bl pl mvy",
+      "cleaned_title_guess": "'Pidgey 60",
       "confidence": 0.5
     },
     {
@@ -1310,23 +1368,23 @@
       "screenshot": "IMG_1536.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "—~< |Rattata 40 *",
+      "ocr_lines": [
+        "—~< |Rattata 40 *"
+      ],
+      "cleaned_title_guess": "Rattata 40",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1536_r2c1",
       "screenshot": "IMG_1536.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "Se | ere | Pa cy hs |",
+      "raw_ocr_text": "spe Raticate —— ~=64480@",
       "ocr_lines": [
-        "Se",
-        "ere",
-        "Pa cy hs |"
+        "spe Raticate —— ~=64480@"
       ],
-      "cleaned_title_guess": "Se ere Pa cy hs",
+      "cleaned_title_guess": "spe Raticate 64480",
       "confidence": 0.5
     },
     {
@@ -1334,12 +1392,12 @@
       "screenshot": "IMG_1536.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "2°56'7 r= rrwww | a",
+      "raw_ocr_text": "page i | Jigglypuff 50 *",
       "ocr_lines": [
-        "2°56'7 r= rrwww",
-        "a"
+        "page i",
+        "Jigglypuff 50 *"
       ],
-      "cleaned_title_guess": "256'7 r rrwww a",
+      "cleaned_title_guess": "page i Jigglypuff 50",
       "confidence": 0.5
     },
     {
@@ -1347,22 +1405,24 @@
       "screenshot": "IMG_1536.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "<< Farfetch’d 60 *) | VW Se Ew 6B",
+      "ocr_lines": [
+        "<< Farfetch’d 60 *)",
+        "VW Se Ew 6B"
+      ],
+      "cleaned_title_guess": "Farfetchd 60 VW Se Ew 6B",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1536_r3c1",
       "screenshot": "IMG_1536.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "Xt eel BI nr ieav ot | jot |",
+      "raw_ocr_text": "~s!'Dubwool = 120 *#",
       "ocr_lines": [
-        "Xt eel BI nr ieav ot",
-        "jot |"
+        "~s!'Dubwool = 120 *#"
       ],
-      "cleaned_title_guess": "Xt eel BI nr ieav ot jot",
+      "cleaned_title_guess": "s'Dubwool 120",
       "confidence": 0.5
     },
     {
@@ -1370,10 +1430,12 @@
       "screenshot": "IMG_1536.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
+      "raw_ocr_text": "— =<",
+      "ocr_lines": [
+        "— =<"
+      ],
       "cleaned_title_guess": "",
-      "confidence": 0.0
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1536_r3c3",
@@ -1390,22 +1452,25 @@
       "screenshot": "IMG_1537.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "s-«'/§icoon #80 @ | A en ae | in|",
+      "ocr_lines": [
+        "s-«'/§icoon #80 @",
+        "A en ae | in|"
+      ],
+      "cleaned_title_guess": "s-'icoon 80 A en ae in",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1537_r1c2",
       "screenshot": "IMG_1537.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "BPC Jy | pra Ms . = gen",
+      "raw_ocr_text": "=\" Seedot ~50@ | ie AS Se",
       "ocr_lines": [
-        "BPC Jy",
-        "pra Ms . = gen"
+        "=\" Seedot ~50@",
+        "ie AS Se"
       ],
-      "cleaned_title_guess": "BPC Jy pra Ms gen",
+      "cleaned_title_guess": "Seedot 50 ie AS Se",
       "confidence": 0.5
     },
     {
@@ -1413,22 +1478,23 @@
       "screenshot": "IMG_1537.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "ys 0 >",
+      "ocr_lines": [
+        "ys 0 >"
+      ],
+      "cleaned_title_guess": "ys 0",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1537_r2c1",
       "screenshot": "IMG_1537.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "_-* BuIDasSaullr HeOV 6 | p+ ae",
+      "raw_ocr_text": "——- Bulbasaur w60 a",
       "ocr_lines": [
-        "_-* BuIDasSaullr HeOV 6",
-        "p+ ae"
+        "——- Bulbasaur w60 a"
       ],
-      "cleaned_title_guess": "- BuIDasSaullr HeOV 6 p ae",
+      "cleaned_title_guess": "- Bulbasaur w60 a",
       "confidence": 0.5
     },
     {
@@ -1436,25 +1502,22 @@
       "screenshot": "IMG_1537.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "—_/ epinarak wll 6 | =",
-      "ocr_lines": [
-        "—_/ epinarak wll 6",
-        "="
-      ],
-      "cleaned_title_guess": "epinarak wll 6",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1537_r2c3",
       "screenshot": "IMG_1537.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "=o — a | |",
+      "raw_ocr_text": "—Sunkern 50. @ | —————",
       "ocr_lines": [
-        "=o — a",
-        "|"
+        "—Sunkern 50. @",
+        "—————"
       ],
-      "cleaned_title_guess": "o a",
+      "cleaned_title_guess": "Sunkern 50",
       "confidence": 0.5
     },
     {
@@ -1462,12 +1525,12 @@
       "screenshot": "IMG_1537.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "_. SUPMy weOU & | ae a—\" _—*",
+      "raw_ocr_text": "<> | Burmy 60 @ | [—-“~ ws",
       "ocr_lines": [
-        "_. SUPMy weOU &",
-        "ae a—\" _—*"
+        "<> | Burmy 60 @",
+        "[—-“~ ws"
       ],
-      "cleaned_title_guess": "SUPMy weOU ae a",
+      "cleaned_title_guess": "Burmy 60 - ws",
       "confidence": 0.5
     },
     {
@@ -1475,11 +1538,12 @@
       "screenshot": "IMG_1537.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "~~ MOtnim oe TU ee",
+      "raw_ocr_text": "= _— — H | | aie, be — i BP. it",
       "ocr_lines": [
-        "~~ MOtnim oe TU ee"
+        "= _— — H",
+        "| aie, be — i BP. it"
       ],
-      "cleaned_title_guess": "MOtnim oe TU ee",
+      "cleaned_title_guess": "H aie be i BP it",
       "confidence": 0.5
     },
     {
@@ -1497,11 +1561,12 @@
       "screenshot": "IMG_1538.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "a oe",
+      "raw_ocr_text": "Fer ountouln £0 & | in SEO",
       "ocr_lines": [
-        "a oe"
+        "Fer ountouln £0 &",
+        "in SEO"
       ],
-      "cleaned_title_guess": "a oe",
+      "cleaned_title_guess": "Fer ountouln 0 in SEO",
       "confidence": 0.5
     },
     {
@@ -1509,22 +1574,27 @@
       "screenshot": "IMG_1538.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "—— Houndoom 090 | he ediers bene See eel )",
+      "ocr_lines": [
+        "—— Houndoom 090",
+        "he ediers bene See eel )"
+      ],
+      "cleaned_title_guess": "Houndoom 090 he ediers bene See eel",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1538_r1c3",
       "screenshot": "IMG_1538.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "ee 7 | - |",
+      "raw_ocr_text": "acre || | | ; | Bascu 80 @ | = Se |",
       "ocr_lines": [
-        "ee 7",
-        "- |"
+        "acre || |",
+        ";",
+        "Bascu 80 @",
+        "= Se |"
       ],
-      "cleaned_title_guess": "ee 7 -",
+      "cleaned_title_guess": "acre Bascu 80 Se",
       "confidence": 0.5
     },
     {
@@ -1532,41 +1602,50 @@
       "screenshot": "IMG_1538.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "=< Clauncher 60) | iS - — a gael",
+      "ocr_lines": [
+        "=< Clauncher 60)",
+        "iS - — a gael"
+      ],
+      "cleaned_title_guess": "Clauncher 60 iS - a gael",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1538_r2c2",
       "screenshot": "IMG_1538.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "nant: Magnemite #50 47 | Sa ters « Vl",
+      "ocr_lines": [
+        "nant: Magnemite #50 47",
+        "Sa ters « Vl"
+      ],
+      "cleaned_title_guess": "nant Magnemite 50 47 Sa ters Vl",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1538_r2c3",
       "screenshot": "IMG_1538.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "--« Helioptile 60 : | A =... —",
+      "ocr_lines": [
+        "--« Helioptile 60 :",
+        "A =... —"
+      ],
+      "cleaned_title_guess": "-- Helioptile 60 A",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1538_r3c1",
       "screenshot": "IMG_1538.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "Uhh a",
+      "raw_ocr_text": "~ Sy <a .",
       "ocr_lines": [
-        "Uhh a"
+        "~ Sy <a ."
       ],
-      "cleaned_title_guess": "Uhh a",
+      "cleaned_title_guess": "Sy a",
       "confidence": 0.5
     },
     {
@@ -1574,23 +1653,23 @@
       "screenshot": "IMG_1538.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "— Seless dow | zs wv. - at",
+      "ocr_lines": [
+        "— Seless dow",
+        "zs wv. - at"
+      ],
+      "cleaned_title_guess": "Seless dow zs wv - at",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1538_r3c3",
       "screenshot": "IMG_1538.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": ". i __,, =, ‘ oor | ut oa” _ i",
-      "ocr_lines": [
-        ". i __,, =, ‘ oor",
-        "ut oa” _ i"
-      ],
-      "cleaned_title_guess": "i oor ut oa i",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1539_r1c1",
@@ -1708,11 +1787,11 @@
       "screenshot": "IMG_1540.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": ". i W A ee a.",
+      "raw_ocr_text": "~=<= Starly w6O",
       "ocr_lines": [
-        ". i W A ee a."
+        "~=<= Starly w6O"
       ],
-      "cleaned_title_guess": "i W A ee a",
+      "cleaned_title_guess": "Starly w6O",
       "confidence": 0.5
     },
     {
@@ -1720,21 +1799,25 @@
       "screenshot": "IMG_1540.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "eave! Staravia 80 * | ‘by = . el’",
+      "ocr_lines": [
+        "eave! Staravia 80 *",
+        "‘by = . el’"
+      ],
+      "cleaned_title_guess": "eave Staravia 80 by el",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1540_r1c3",
       "screenshot": "IMG_1540.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "re d 4",
+      "raw_ocr_text": "~-<« Buneary wOO >) | 7.",
       "ocr_lines": [
-        "re d 4"
+        "~-<« Buneary wOO >)",
+        "7."
       ],
-      "cleaned_title_guess": "re d 4",
+      "cleaned_title_guess": "- Buneary wOO 7",
       "confidence": 0.5
     },
     {
@@ -1742,13 +1825,12 @@
       "screenshot": "IMG_1540.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "| ton SG © | ro y . | ze",
+      "raw_ocr_text": "e<< Roselia w60 @ | —— Ta . a",
       "ocr_lines": [
-        "| ton SG ©",
-        "ro y .",
-        "ze"
+        "e<< Roselia w60 @",
+        "—— Ta . a"
       ],
-      "cleaned_title_guess": "ton SG ro y ze",
+      "cleaned_title_guess": "e Roselia w60 Ta a",
       "confidence": 0.5
     },
     {
@@ -1756,35 +1838,35 @@
       "screenshot": "IMG_1540.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "| | 1 9 ere —— 5",
-      "ocr_lines": [
-        "| | 1 9 ere —— 5"
-      ],
-      "cleaned_title_guess": "1 9 ere 5",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1540_r2c3",
       "screenshot": "IMG_1540.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "\"ng os wr",
-      "ocr_lines": [
-        "\"ng os wr"
-      ],
-      "cleaned_title_guess": "ng os wr",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1540_r3c1",
       "screenshot": "IMG_1540.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "eae.",
+      "raw_ocr_text": "— % | = f =\" s | OTE tt o. . Fy “ts | Pel SOP Py = | et Re eas A 5",
       "ocr_lines": [
-        "eae."
+        "— %",
+        "= f =\" s",
+        "OTE tt o. . Fy “ts",
+        "Pel SOP Py =",
+        "et Re eas A 5"
       ],
-      "cleaned_title_guess": "eae",
+      "cleaned_title_guess": "f s OTE tt o Fy ts Pel SOP Py et Re eas A 5",
       "confidence": 0.5
     },
     {
@@ -1802,12 +1884,11 @@
       "screenshot": "IMG_1540.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": "ey / | — > i“ AE",
+      "raw_ocr_text": "~<= Mawile — w80&",
       "ocr_lines": [
-        "ey /",
-        "— > i“ AE"
+        "~<= Mawile — w80&"
       ],
-      "cleaned_title_guess": "ey i AE",
+      "cleaned_title_guess": "Mawile w80",
       "confidence": 0.5
     },
     {
@@ -1914,11 +1995,11 @@
       "screenshot": "IMG_1542.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "4a “a ea",
+      "raw_ocr_text": "—————-",
       "ocr_lines": [
-        "4a “a ea"
+        "—————-"
       ],
-      "cleaned_title_guess": "4a a ea",
+      "cleaned_title_guess": "-",
       "confidence": 0.5
     },
     {
@@ -1926,10 +2007,13 @@
       "screenshot": "IMG_1542.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "setforry sat) | 1",
+      "ocr_lines": [
+        "setforry sat)",
+        "1"
+      ],
+      "cleaned_title_guess": "setforry sat 1",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1542_r1c3",
@@ -1946,11 +2030,11 @@
       "screenshot": "IMG_1542.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "¥",
+      "raw_ocr_text": "_ © “ VY SF",
       "ocr_lines": [
-        "¥"
+        "_ © “ VY SF"
       ],
-      "cleaned_title_guess": "",
+      "cleaned_title_guess": "VY SF",
       "confidence": 0.5
     },
     {
@@ -1968,44 +2052,47 @@
       "screenshot": "IMG_1542.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "<< Wooper | 60 | — owe |",
+      "ocr_lines": [
+        "<< Wooper | 60",
+        "— owe |"
+      ],
+      "cleaned_title_guess": "Wooper 60 owe",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1542_r3c1",
       "screenshot": "IMG_1542.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "2 S- -ee “ns. - . | “Gg i >) ae",
-      "ocr_lines": [
-        "2 S- -ee “ns. - .",
-        "“Gg i >) ae"
-      ],
-      "cleaned_title_guess": "2 S- -ee ns - Gg i ae",
-      "confidence": 0.5
-    },
-    {
-      "crop_id": "IMG_1542_r3c2",
-      "screenshot": "IMG_1542.PNG",
-      "row": 3,
-      "col": 2,
       "raw_ocr_text": "",
       "ocr_lines": [],
       "cleaned_title_guess": "",
       "confidence": 0.0
     },
     {
+      "crop_id": "IMG_1542_r3c2",
+      "screenshot": "IMG_1542.PNG",
+      "row": 3,
+      "col": 2,
+      "raw_ocr_text": "==\" Castformsaairem 70 @) | _ —==_",
+      "ocr_lines": [
+        "==\" Castformsaairem 70 @)",
+        "_ —==_"
+      ],
+      "cleaned_title_guess": "Castformsaairem 70",
+      "confidence": 0.5
+    },
+    {
       "crop_id": "IMG_1542_r3c3",
       "screenshot": "IMG_1542.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": "a. =. SS",
+      "raw_ocr_text": "el",
       "ocr_lines": [
-        "a. =. SS"
+        "el"
       ],
-      "cleaned_title_guess": "a SS",
+      "cleaned_title_guess": "el",
       "confidence": 0.5
     },
     {
@@ -2013,11 +2100,12 @@
       "screenshot": "IMG_1543.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "\\ om |",
+      "raw_ocr_text": "= ‘Cubchoo 70 ¢ | a | “ae",
       "ocr_lines": [
-        "\\ om |"
+        "= ‘Cubchoo 70 ¢",
+        "a | “ae"
       ],
-      "cleaned_title_guess": "om",
+      "cleaned_title_guess": "Cubchoo 70 a ae",
       "confidence": 0.5
     },
     {
@@ -2025,21 +2113,24 @@
       "screenshot": "IMG_1543.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "= Sobbte INET ~60.@",
+      "ocr_lines": [
+        "= Sobbte INET ~60.@"
+      ],
+      "cleaned_title_guess": "Sobbte INET 60",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1543_r1c3",
       "screenshot": "IMG_1543.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "le ae",
+      "raw_ocr_text": "soe Magnemite w60 4 | ee “a",
       "ocr_lines": [
-        "le ae"
+        "soe Magnemite w60 4",
+        "ee “a"
       ],
-      "cleaned_title_guess": "le ae",
+      "cleaned_title_guess": "soe Magnemite w60 4 ee a",
       "confidence": 0.5
     },
     {
@@ -2047,22 +2138,24 @@
       "screenshot": "IMG_1543.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "= Voltorb 50 + | | a",
+      "ocr_lines": [
+        "= Voltorb 50 +",
+        "| a"
+      ],
+      "cleaned_title_guess": "Voltorb 50 a",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1543_r2c2",
       "screenshot": "IMG_1543.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "‘, _M ae We K | ee” Ke",
+      "raw_ocr_text": "~«' Electrode #90 4",
       "ocr_lines": [
-        "‘, _M ae We K",
-        "ee” Ke"
+        "~«' Electrode #90 4"
       ],
-      "cleaned_title_guess": "M ae We K ee Ke",
+      "cleaned_title_guess": "' Electrode 90 4",
       "confidence": 0.5
     },
     {
@@ -2070,11 +2163,12 @@
       "screenshot": "IMG_1543.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "_— +e",
+      "raw_ocr_text": "“<< Morpeko w7Q 4 | aoewllU",
       "ocr_lines": [
-        "_— +e"
+        "“<< Morpeko w7Q 4",
+        "aoewllU"
       ],
-      "cleaned_title_guess": "e",
+      "cleaned_title_guess": "Morpeko w7Q 4 aoewllU",
       "confidence": 0.5
     },
     {
@@ -2082,11 +2176,13 @@
       "screenshot": "IMG_1543.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "| aq, ‘2 wl",
+      "raw_ocr_text": ", | —_ | =",
       "ocr_lines": [
-        "| aq, ‘2 wl"
+        ",",
+        "—_",
+        "="
       ],
-      "cleaned_title_guess": "aq 2 wl",
+      "cleaned_title_guess": "",
       "confidence": 0.5
     },
     {
@@ -2094,12 +2190,10 @@
       "screenshot": "IMG_1543.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "—",
-      "ocr_lines": [
-        "—"
-      ],
+      "raw_ocr_text": "",
+      "ocr_lines": [],
       "cleaned_title_guess": "",
-      "confidence": 0.5
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1543_r3c3",
@@ -2116,74 +2210,63 @@
       "screenshot": "IMG_1544.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "lings _--.. ~~",
-      "ocr_lines": [
-        "lings _--.. ~~"
-      ],
-      "cleaned_title_guess": "lings --",
-      "confidence": 0.5
-    },
-    {
-      "crop_id": "IMG_1544_r1c2",
-      "screenshot": "IMG_1544.PNG",
-      "row": 1,
-      "col": 2,
-      "raw_ocr_text": "~S =—__ % = F | ~ ae ee",
-      "ocr_lines": [
-        "~S =—__ % = F",
-        "~ ae ee"
-      ],
-      "cleaned_title_guess": "S F ae ee",
-      "confidence": 0.5
-    },
-    {
-      "crop_id": "IMG_1544_r1c3",
-      "screenshot": "IMG_1544.PNG",
-      "row": 1,
-      "col": 3,
-      "raw_ocr_text": "J | os + a ee ~",
-      "ocr_lines": [
-        "J",
-        "os + a ee ~"
-      ],
-      "cleaned_title_guess": "J os a ee",
-      "confidence": 0.5
-    },
-    {
-      "crop_id": "IMG_1544_r2c1",
-      "screenshot": "IMG_1544.PNG",
-      "row": 2,
-      "col": 1,
       "raw_ocr_text": "",
       "ocr_lines": [],
       "cleaned_title_guess": "",
       "confidence": 0.0
     },
     {
+      "crop_id": "IMG_1544_r1c2",
+      "screenshot": "IMG_1544.PNG",
+      "row": 1,
+      "col": 2,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1544_r1c3",
+      "screenshot": "IMG_1544.PNG",
+      "row": 1,
+      "col": 3,
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
+    },
+    {
+      "crop_id": "IMG_1544_r2c1",
+      "screenshot": "IMG_1544.PNG",
+      "row": 2,
+      "col": 1,
+      "raw_ocr_text": ": - 10",
+      "ocr_lines": [
+        ": - 10"
+      ],
+      "cleaned_title_guess": "- 10",
+      "confidence": 0.5
+    },
+    {
       "crop_id": "IMG_1544_r2c2",
       "screenshot": "IMG_1544.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "ae +",
-      "ocr_lines": [
-        "ae +"
-      ],
-      "cleaned_title_guess": "ae",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1544_r2c3",
       "screenshot": "IMG_1544.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "ult JU Sa | =\" - = « . “~~, Cae - | aa ow | | a",
+      "raw_ocr_text": "ii, “ua aie",
       "ocr_lines": [
-        "ult JU Sa",
-        "=\" - = « . “~~, Cae -",
-        "aa ow |",
-        "a"
+        "ii, “ua aie"
       ],
-      "cleaned_title_guess": "ult JU Sa - Cae - aa ow a",
+      "cleaned_title_guess": "ii ua aie",
       "confidence": 0.5
     },
     {
@@ -2201,45 +2284,43 @@
       "screenshot": "IMG_1544.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "Ss",
+      "ocr_lines": [
+        "Ss"
+      ],
+      "cleaned_title_guess": "Ss",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1544_r3c3",
       "screenshot": "IMG_1544.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": "{",
-      "ocr_lines": [
-        "{"
-      ],
+      "raw_ocr_text": "",
+      "ocr_lines": [],
       "cleaned_title_guess": "",
-      "confidence": 0.5
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1545_r1c1",
       "screenshot": "IMG_1545.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "L. a .",
-      "ocr_lines": [
-        "L. a ."
-      ],
-      "cleaned_title_guess": "L a",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1545_r1c2",
       "screenshot": "IMG_1545.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "EN). aad",
+      "raw_ocr_text": "it = =a ep",
       "ocr_lines": [
-        "EN). aad"
+        "it = =a ep"
       ],
-      "cleaned_title_guess": "EN aad",
+      "cleaned_title_guess": "it a ep",
       "confidence": 0.5
     },
     {
@@ -2247,34 +2328,33 @@
       "screenshot": "IMG_1545.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "=e Seviper 70\")",
+      "ocr_lines": [
+        "=e Seviper 70\")"
+      ],
+      "cleaned_title_guess": "e Seviper 70",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1545_r2c1",
       "screenshot": "IMG_1545.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "—«d TS BO | .  @",
-      "ocr_lines": [
-        "—«d TS BO",
-        ".  @"
-      ],
-      "cleaned_title_guess": "d TS BO",
-      "confidence": 0.5
+      "raw_ocr_text": "",
+      "ocr_lines": [],
+      "cleaned_title_guess": "",
+      "confidence": 0.0
     },
     {
       "crop_id": "IMG_1545_r2c2",
       "screenshot": "IMG_1545.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "a. - ae ll",
+      "raw_ocr_text": "pz #60 a",
       "ocr_lines": [
-        "a. - ae ll"
+        "pz #60 a"
       ],
-      "cleaned_title_guess": "a - ae ll",
+      "cleaned_title_guess": "pz 60 a",
       "confidence": 0.5
     },
     {
@@ -2282,41 +2362,49 @@
       "screenshot": "IMG_1545.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "«<< \\Bronzor | 60@",
+      "ocr_lines": [
+        "«<< \\Bronzor | 60@"
+      ],
+      "cleaned_title_guess": "Bronzor 60",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1545_r3c1",
       "screenshot": "IMG_1545.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "=~ \\Chansey ue 100 *",
+      "ocr_lines": [
+        "=~ \\Chansey ue 100 *"
+      ],
+      "cleaned_title_guess": "Chansey ue 100",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1545_r3c2",
       "screenshot": "IMG_1545.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "2 Castform  § w70* | = . we. 4",
+      "ocr_lines": [
+        "2 Castform  § w70*",
+        "= . we. 4"
+      ],
+      "cleaned_title_guess": "2 Castform w70 we 4",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1545_r3c3",
       "screenshot": "IMG_1545.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": "x _ sf bP",
+      "raw_ocr_text": "5 - : | 4",
       "ocr_lines": [
-        "x _ sf bP"
+        "5 - :",
+        "4"
       ],
-      "cleaned_title_guess": "x sf bP",
+      "cleaned_title_guess": "5 - 4",
       "confidence": 0.5
     },
     {
@@ -2324,31 +2412,37 @@
       "screenshot": "IMG_1546.PNG",
       "row": 1,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
+      "raw_ocr_text": "| |",
+      "ocr_lines": [
+        "| |"
+      ],
       "cleaned_title_guess": "",
-      "confidence": 0.0
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1546_r1c2",
       "screenshot": "IMG_1546.PNG",
       "row": 1,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "“ae Minccino 50",
+      "ocr_lines": [
+        "“ae Minccino 50"
+      ],
+      "cleaned_title_guess": "ae Minccino 50",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1546_r1c3",
       "screenshot": "IMG_1546.PNG",
       "row": 1,
       "col": 3,
-      "raw_ocr_text": "Lee Saar “al",
+      "raw_ocr_text": "“2! Cinccino w9O | Wal '—+—'aae ——— | Sint —— <——_ |",
       "ocr_lines": [
-        "Lee Saar “al"
+        "“2! Cinccino w9O",
+        "Wal '—+—'aae ———",
+        "Sint —— <——_ |"
       ],
-      "cleaned_title_guess": "Lee Saar al",
+      "cleaned_title_guess": "2 Cinccino w9O Wal ''aae Sint",
       "confidence": 0.5
     },
     {
@@ -2356,23 +2450,25 @@
       "screenshot": "IMG_1546.PNG",
       "row": 2,
       "col": 1,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "‘Item TRAINER | Potion",
+      "ocr_lines": [
+        "‘Item TRAINER",
+        "Potion"
+      ],
+      "cleaned_title_guess": "Item TRAINER Potion",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1546_r2c2",
       "screenshot": "IMG_1546.PNG",
       "row": 2,
       "col": 2,
-      "raw_ocr_text": "——) Ld bli | a SY ee | r y, *< ait",
+      "raw_ocr_text": "Jtem | TRAIVER | | X Speed",
       "ocr_lines": [
-        "——) Ld bli",
-        "a SY ee",
-        "r y, *< ait"
+        "Jtem | TRAIVER |",
+        "X Speed"
       ],
-      "cleaned_title_guess": "Ld bli a SY ee r y ait",
+      "cleaned_title_guess": "Jtem TRAIVER X Speed",
       "confidence": 0.5
     },
     {
@@ -2380,24 +2476,25 @@
       "screenshot": "IMG_1546.PNG",
       "row": 2,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "item TRAINER | | Hand Scope |",
+      "ocr_lines": [
+        "item TRAINER |",
+        "Hand Scope |"
+      ],
+      "cleaned_title_guess": "item TRAINER Hand Scope",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1546_r3c1",
       "screenshot": "IMG_1546.PNG",
       "row": 3,
       "col": 1,
-      "raw_ocr_text": "re eS | E x |. | i ee | | E",
+      "raw_ocr_text": "fterm TRAINER | Pokédex",
       "ocr_lines": [
-        "re eS",
-        "E x |.",
-        "i ee |",
-        "E"
+        "fterm TRAINER",
+        "Pokédex"
       ],
-      "cleaned_title_guess": "re eS E x i ee E",
+      "cleaned_title_guess": "fterm TRAINER Pokdex",
       "confidence": 0.5
     },
     {
@@ -2405,20 +2502,26 @@
       "screenshot": "IMG_1546.PNG",
       "row": 3,
       "col": 2,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "Steers TRAINVEF | Poke Ball",
+      "ocr_lines": [
+        "Steers TRAINVEF",
+        "Poke Ball"
+      ],
+      "cleaned_title_guess": "Steers TRAINVEF Poke Ball",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1546_r3c3",
       "screenshot": "IMG_1546.PNG",
       "row": 3,
       "col": 3,
-      "raw_ocr_text": "",
-      "ocr_lines": [],
-      "cleaned_title_guess": "",
-      "confidence": 0.0
+      "raw_ocr_text": "iter TRAINER | | Red Card",
+      "ocr_lines": [
+        "iter TRAINER |",
+        "Red Card"
+      ],
+      "cleaned_title_guess": "iter TRAINER Red Card",
+      "confidence": 0.5
     },
     {
       "crop_id": "IMG_1547_r1c1",

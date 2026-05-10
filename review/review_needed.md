@@ -1,10 +1,10 @@
 # Extraction Review Report
 
-Generated: 2026-05-10T04:23:46Z
+Generated: 2026-05-10T05:20:23Z
 
 **Total crops:** 216  
-**Auto-matched:** 12  
-**Needs review:** 204
+**Auto-matched:** 31  
+**Needs review:** 185
 
 ---
 
@@ -342,216 +342,153 @@ Top candidates:
 
 ### `IMG_1527_r1c1` (row 1, col 1)
 
-- **OCR guess:** `wa 7` (conf 0.50)
-- **Best match:** `Wally` (score 44.4)
-- **Reason:** Best match score 44 < threshold 80
+- **OCR guess:** `Mm i har tr aaa` (conf 0.50)
+- **Best match:** `Mr. Mime` (score 54.5)
+- **Reason:** Best match score 54 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1527/r1c1.png`
 
 Top candidates:
-  - `Wally` — score 44.4
-  - `Mew ex` — score 40.0
-  - `Swablu` — score 40.0
+  - `Mr. Mime` — score 54.5
+  - `Aipom` — score 44.4
+  - `Mimikyu ex` — score 42.9
 
 ### `IMG_1527_r1c2` (row 1, col 2)
 
-- **OCR guess:** `ee 8 rw u` (conf 0.50)
-- **Best match:** `Seel` (score 50.0)
+- **OCR guess:** `fF 82 8 YY 5 EEE` (conf 0.50)
+- **Best match:** `Beheeyem` (score 50.0)
 - **Reason:** Best match score 50 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1527/r1c2.png`
 
 Top candidates:
-  - `Seel` — score 50.0
-  - `Bede` — score 50.0
-  - `Eevee` — score 44.4
+  - `Beheeyem` — score 50.0
+  - `Eevee ex` — score 50.0
+  - `X Defense` — score 47.1
 
 ### `IMG_1527_r1c3` (row 1, col 3)
 
-- **OCR guess:** `ho me` (conf 0.50)
-- **Best match:** `Ho-Oh` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
+- **OCR guess:** `E39 Crobat i w 130` (conf 0.50)
+- **Best match:** `Crasher Wake` (score 40.0)
+- **Reason:** Best match score 40 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1527/r1c3.png`
 
 Top candidates:
-  - `Ho-Oh` — score 60.0
-  - `Horsea` — score 54.5
-  - `Lombre` — score 54.5
+  - `Crasher Wake` — score 40.0
+  - `Caterpie` — score 38.5
+  - `Croconaw` — score 38.5
 
 ### `IMG_1527_r2c1` (row 2, col 1)
 
-- **OCR guess:** `q o co a` (conf 0.50)
-- **Best match:** `Tentacool` (score 47.1)
-- **Reason:** Best match score 47 < threshold 80
+- **OCR guess:** `D single Strike Urshifu w 1200` (conf 0.50)
+- **Best match:** `Mysterious Fossil` (score 42.6)
+- **Reason:** Best match score 43 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1527/r2c1.png`
 
 Top candidates:
-  - `Tentacool` — score 47.1
-  - `Moon Ball` — score 47.1
-  - `Quick-Grow Extract` — score 46.2
+  - `Mysterious Fossil` — score 42.6
+  - `Silver Bangle` — score 41.9
+  - `Rescue Stretcher` — score 34.8
 
 ### `IMG_1527_r2c2` (row 2, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `iF Stoutland w 150` (conf 0.50)
+- **Best match:** `Seismitoad` (score 42.9)
+- **Reason:** Best match score 43 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1527/r2c2.png`
 
 Top candidates:
+  - `Seismitoad` — score 42.9
+  - `Float Stone` — score 41.4
+  - `Cape of Toughness` — score 40.0
 
 ### `IMG_1527_r2c3` (row 2, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `ence J ey Te rindi` (conf 0.50)
+- **Best match:** `Dratini` (score 66.7)
+- **Reason:** Best match score 67 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1527/r2c3.png`
 
 Top candidates:
+  - `Dratini` — score 66.7
+  - `Pinsir` — score 54.5
+  - `Marnie` — score 54.5
 
 ### `IMG_1527_r3c1` (row 3, col 1)
 
-- **OCR guess:** `9 e 7 a a` (conf 0.50)
-- **Best match:** `Dialga ex` (score 50.0)
-- **Reason:** Best match score 50 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1527/r3c1.png`
 
 Top candidates:
-  - `Dialga ex` — score 50.0
-  - `Darkrai ex` — score 47.1
-  - `Altaria ex` — score 47.1
 
 ### `IMG_1527_r3c2` (row 3, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `--Mienshao sw 80` (conf 0.50)
+- **Best match:** `Mienshao` (score 72.7)
+- **Reason:** Best match score 73 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1527/r3c2.png`
 
 Top candidates:
+  - `Mienshao` — score 72.7
+  - `Mienfoo` — score 47.6
+  - `Metagross ex` — score 46.2
 
 ### `IMG_1527_r3c3` (row 3, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `' Dodrio 08` (conf 0.50)
+- **Best match:** `Duosion` (score 50.0)
+- **Reason:** Best match score 50 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1527/r3c3.png`
 
 Top candidates:
+  - `Duosion` — score 50.0
+  - `Dugtrio` — score 50.0
+  - `Old Rod` — score 50.0
 
 ## IMG_1528.PNG
 
-### `IMG_1528_r1c1` (row 1, col 1)
-
-- **OCR guess:** `Kel` (conf 0.50)
-- **Best match:** `Skrelp` (score 66.7)
-- **Reason:** Best match score 67 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1528/r1c1.png`
-
-Top candidates:
-  - `Skrelp` — score 66.7
-  - `Seel` — score 57.1
-  - `Numel` — score 50.0
-
-### `IMG_1528_r1c2` (row 1, col 2)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1528/r1c2.png`
-
-Top candidates:
-
-### `IMG_1528_r1c3` (row 1, col 3)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1528/r1c3.png`
-
-Top candidates:
-
 ### `IMG_1528_r2c1` (row 2, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Supporter TRAINER Cyrus y` (conf 0.50)
+- **Best match:** `Training Court` (score 58.1)
+- **Reason:** Best match score 58 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1528/r2c1.png`
 
 Top candidates:
-
-### `IMG_1528_r2c2` (row 2, col 2)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1528/r2c2.png`
-
-Top candidates:
-
-### `IMG_1528_r2c3` (row 2, col 3)
-
-- **OCR guess:** `Serer wt - eo se` (conf 0.50)
-- **Best match:** `Serena` (score 72.7)
-- **Reason:** Best match score 73 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1528/r2c3.png`
-
-Top candidates:
-  - `Serena` — score 72.7
-  - `Seel` — score 66.7
-  - `Roserade` — score 61.5
-
-### `IMG_1528_r3c1` (row 3, col 1)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1528/r3c1.png`
-
-Top candidates:
+  - `Training Court` — score 58.1
+  - `Torterra` — score 56.0
+  - `Terrakion` — score 53.8
 
 ### `IMG_1528_r3c2` (row 3, col 2)
 
-- **OCR guess:** `ie YAceeel` (conf 0.50)
-- **Best match:** `Victreebel` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1528/r3c2.png`
 
 Top candidates:
-  - `Victreebel` — score 60.0
-  - `Eevee` — score 53.3
-  - `Tentacruel` — score 50.0
 
 ### `IMG_1528_r3c3` (row 3, col 3)
 
@@ -673,360 +610,356 @@ Top candidates:
 
 ### `IMG_1530_r1c1` (row 1, col 1)
 
-- **OCR guess:** `r og a` (conf 0.50)
-- **Best match:** `Kyogre ex` (score 53.3)
-- **Reason:** Best match score 53 < threshold 80
+- **OCR guess:** `le` (conf 0.50)
+- **Best match:** `Leaf` (score 66.7)
+- **Reason:** Best match score 67 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1530/r1c1.png`
 
 Top candidates:
-  - `Kyogre ex` — score 53.3
-  - `Magmar` — score 50.0
-  - `Kyogre` — score 50.0
+  - `Leaf` — score 66.7
+  - `Golem` — score 57.1
+  - `Gible` — score 57.1
 
 ### `IMG_1530_r1c2` (row 1, col 2)
 
-- **OCR guess:** `1 if` (conf 0.50)
-- **Best match:** `Life Dew` (score 50.0)
-- **Reason:** Best match score 50 < threshold 80
+- **OCR guess:** `120` (conf 0.50)
+- **Best match:** `Porygon2` (score 18.2)
+- **Reason:** Best match score 18 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1530/r1c2.png`
 
 Top candidates:
-  - `Life Dew` — score 50.0
-  - `Mienfoo` — score 36.4
-  - `Misty ex` — score 33.3
+  - `Porygon2` — score 18.2
+  - `Quick-Grow Extract` — score 0.0
+  - `Blaziken` — score 0.0
 
 ### `IMG_1530_r1c3` (row 1, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `rr 130 nF dor rbo` (conf 0.50)
+- **Best match:** `N` (score 66.7)
+- **Reason:** Best match score 67 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1530/r1c3.png`
 
 Top candidates:
+  - `N` — score 66.7
+  - `Mienfoo` — score 44.4
+  - `Sunflora` — score 40.0
+
+### `IMG_1530_r2c1` (row 2, col 1)
+
+- **OCR guess:** `Steelix w150` (conf 0.50)
+- **Best match:** `Steelix` (score 73.7)
+- **Reason:** Best match score 74 < threshold 80
+
+**Action needed:** Open the crop file and confirm the card name:
+  `crops/IMG_1530/r2c1.png`
+
+Top candidates:
+  - `Steelix` — score 73.7
+  - `Steelix ex` — score 63.6
+  - `Seel` — score 50.0
 
 ### `IMG_1530_r2c2` (row 2, col 2)
 
-- **OCR guess:** `2 6 ONE` (conf 0.50)
-- **Best match:** `Cubone` (score 46.2)
+- **OCR guess:** `ar 'Probopass 130` (conf 0.50)
+- **Best match:** `Aromatisse` (score 46.2)
 - **Reason:** Best match score 46 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1530/r2c2.png`
 
 Top candidates:
-  - `Cubone` — score 46.2
-  - `Float Stone` — score 44.4
-  - `Omanyte` — score 42.9
+  - `Aromatisse` — score 46.2
+  - `Lapras` — score 45.5
+  - `Metagross ex` — score 42.9
 
 ### `IMG_1530_r2c3` (row 2, col 3)
 
-- **OCR guess:** `Fal` (conf 0.50)
-- **Best match:** `Opal` (score 57.1)
-- **Reason:** Best match score 57 < threshold 80
+- **OCR guess:** `ws Ditto w6O ie a` (conf 0.50)
+- **Best match:** `Maxie` (score 66.7)
+- **Reason:** Best match score 67 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1530/r2c3.png`
 
 Top candidates:
-  - `Opal` — score 57.1
-  - `Floatzel` — score 54.5
-  - `Clefable` — score 54.5
+  - `Maxie` — score 66.7
+  - `Ice Heal` — score 66.7
+  - `Dive Ball` — score 61.5
 
 ### `IMG_1530_r3c1` (row 3, col 1)
 
-- **OCR guess:** `- onal` (conf 0.50)
-- **Best match:** `Opal` (score 75.0)
-- **Reason:** Best match score 75 < threshold 80
+- **OCR guess:** `soe Porygon2 90` (conf 0.50)
+- **Best match:** `Porygon2` (score 69.6)
+- **Reason:** Best match score 70 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1530/r3c1.png`
 
 Top candidates:
-  - `Opal` — score 75.0
-  - `Sonia` — score 66.7
-  - `Ponyta` — score 60.0
+  - `Porygon2` — score 69.6
+  - `Porygon-Z` — score 66.7
+  - `Porygon-Z ex` — score 66.7
 
 ### `IMG_1530_r3c2` (row 3, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `ptor wl40 SSS` (conf 0.50)
+- **Best match:** `Solosis` (score 60.0)
+- **Reason:** Best match score 60 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1530/r3c2.png`
 
 Top candidates:
-
-### `IMG_1530_r3c3` (row 3, col 3)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1530/r3c3.png`
-
-Top candidates:
+  - `Solosis` — score 60.0
+  - `Sandslash` — score 50.0
+  - `Nessa` — score 50.0
 
 ## IMG_1531.PNG
 
 ### `IMG_1531_r1c1` (row 1, col 1)
 
-- **OCR guess:** `Sar oP Wee wrew f Rt i` (conf 0.50)
-- **Best match:** `Mr. Mime` (score 54.5)
-- **Reason:** Best match score 54 < threshold 80
+- **OCR guess:** `ecFurfrou o w70` (conf 0.50)
+- **Best match:** `Murkrow` (score 45.5)
+- **Reason:** Best match score 46 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1531/r1c1.png`
 
 Top candidates:
-  - `Mr. Mime` — score 54.5
-  - `Hilbert` — score 54.5
-  - `Root Fossil` — score 53.3
+  - `Murkrow` — score 45.5
+  - `Croconaw` — score 43.5
+  - `Ferrothorn` — score 40.0
 
 ### `IMG_1531_r1c2` (row 1, col 2)
 
-- **OCR guess:** `Clemonts Backpack` (conf 0.50)
-- **Best match:** `Clemont` (score 58.3)
-- **Reason:** Best match score 58 < threshold 80
+- **OCR guess:** `Sferrt TRAINGF Clemonts Backpack` (conf 0.50)
+- **Best match:** `Training Court` (score 64.3)
+- **Reason:** Best match score 64 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1531/r1c2.png`
 
 Top candidates:
-  - `Clemont` — score 58.3
-  - `Blacephalon` — score 57.1
-  - `Moon Ball` — score 46.2
-
-### `IMG_1531_r2c2` (row 2, col 2)
-
-- **OCR guess:** `lll ee a - a` (conf 0.50)
-- **Best match:** `Seel` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1531/r2c2.png`
-
-Top candidates:
-  - `Seel` — score 60.0
-  - `Aero Ball` — score 53.3
-  - `Weepinbell` — score 50.0
+  - `Training Court` — score 64.3
+  - `Ferrothorn` — score 58.3
+  - `Terrakion` — score 52.2
 
 ### `IMG_1531_r2c3` (row 2, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `0 a a` (conf 0.50)
+- **Best match:** `Abra` (score 44.4)
+- **Reason:** Best match score 44 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1531/r2c3.png`
 
 Top candidates:
+  - `Abra` — score 44.4
+  - `Lana` — score 44.4
+  - `Fast Ball` — score 42.9
 
 ### `IMG_1531_r3c1` (row 3, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `oracee Mach- a 440-4 SS J a` (conf 0.50)
+- **Best match:** `Nessa` (score 57.1)
+- **Reason:** Best match score 57 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1531/r3c1.png`
 
 Top candidates:
+  - `Nessa` — score 57.1
+  - `Surskit` — score 44.4
+  - `Shellos` — score 44.4
 
 ### `IMG_1531_r3c2` (row 3, col 2)
 
-- **OCR guess:** `AS ae ee` (conf 0.50)
-- **Best match:** `Aegislash ex` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
+- **OCR guess:** `- Doublade ee 90 2 SS eet` (conf 0.50)
+- **Best match:** `Doublade` (score 72.7)
+- **Reason:** Best match score 73 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1531/r3c2.png`
 
 Top candidates:
-  - `Aegislash ex` — score 60.0
-  - `Arceus ex` — score 58.8
-  - `Steelix ex` — score 55.6
+  - `Doublade` — score 72.7
+  - `Blastoise ex` — score 46.2
+  - `Dialga ex` — score 43.5
 
 ### `IMG_1531_r3c3` (row 3, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `ST` (conf 0.50)
+- **Best match:** `Misty` (score 57.1)
+- **Reason:** Best match score 57 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1531/r3c3.png`
 
 Top candidates:
+  - `Misty` — score 57.1
+  - `Scott` — score 57.1
+  - `Staryu` — score 50.0
 
 ## IMG_1532.PNG
 
 ### `IMG_1532_r1c1` (row 1, col 1)
 
-- **OCR guess:** `ny lO Sa hy ae` (conf 0.50)
-- **Best match:** `Melony` (score 72.7)
-- **Reason:** Best match score 73 < threshold 80
+- **OCR guess:** `P` (conf 0.50)
+- **Best match:** `Hop` (score 50.0)
+- **Reason:** Best match score 50 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1532/r1c1.png`
 
 Top candidates:
-  - `Melony` — score 72.7
-  - `Lopunny` — score 66.7
-  - `Ponyta` — score 54.5
-
-### `IMG_1532_r1c2` (row 1, col 2)
-
-- **OCR guess:** `OO aeew ae` (conf 0.50)
-- **Best match:** `Mew ex` (score 61.5)
-- **Reason:** Best match score 62 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1532/r1c2.png`
-
-Top candidates:
-  - `Mew ex` — score 61.5
-  - `Axew` — score 54.5
-  - `Magnezone ex` — score 52.6
+  - `Hop` — score 50.0
+  - `Opal` — score 40.0
+  - `Hapu` — score 40.0
 
 ### `IMG_1532_r1c3` (row 1, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `r ' rik - ae 100 f a iH` (conf 0.50)
+- **Best match:** `Raichu` (score 60.0)
+- **Reason:** Best match score 60 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1532/r1c3.png`
 
 Top candidates:
+  - `Raichu` — score 60.0
+  - `Raihan` — score 60.0
+  - `Tabitha` — score 54.5
 
 ### `IMG_1532_r2c1` (row 2, col 1)
 
-- **OCR guess:** `Ses` (conf 0.50)
-- **Best match:** `Shellos` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
+- **OCR guess:** `SS a` (conf 0.50)
+- **Best match:** `Claw Fossil` (score 53.3)
+- **Reason:** Best match score 53 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1532/r2c1.png`
 
 Top candidates:
-  - `Shellos` — score 60.0
-  - `Sneasel` — score 60.0
-  - `Seel` — score 57.1
+  - `Claw Fossil` — score 53.3
+  - `Armor Fossil` — score 50.0
+  - `Blastoise` — score 46.2
 
 ### `IMG_1532_r2c2` (row 2, col 2)
 
-- **OCR guess:** `FOUW NT a FU ee` (conf 0.50)
-- **Best match:** `Seel` (score 66.7)
-- **Reason:** Best match score 67 < threshold 80
+- **OCR guess:** `Poliwhirl Ln 90 Ca ae hr` (conf 0.50)
+- **Best match:** `Poliwhirl` (score 75.0)
+- **Reason:** Best match score 75 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1532/r2c2.png`
 
 Top candidates:
-  - `Seel` — score 66.7
-  - `Bede` — score 66.7
-  - `Eevee` — score 57.1
+  - `Poliwhirl` — score 75.0
+  - `Power Plant` — score 53.8
+  - `Poliwrath` — score 50.0
 
 ### `IMG_1532_r2c3` (row 2, col 3)
 
-- **OCR guess:** `ao CO Nae he UU ey i af` (conf 0.50)
-- **Best match:** `Leaf` (score 50.0)
-- **Reason:** Best match score 50 < threshold 80
+- **OCR guess:** `paldean TaurOSi w 100 nT os` (conf 0.50)
+- **Best match:** `Tauros` (score 54.5)
+- **Reason:** Best match score 54 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1532/r2c3.png`
 
 Top candidates:
-  - `Leaf` — score 50.0
-  - `Ice Heal` — score 50.0
-  - `Dive Ball` — score 46.2
+  - `Tauros` — score 54.5
+  - `Tropius` — score 50.0
+  - `Power Plant` — score 50.0
 
 ### `IMG_1532_r3c1` (row 3, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Quagsire 7 w130` (conf 0.50)
+- **Best match:** `Quagsire` (score 69.6)
+- **Reason:** Best match score 70 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1532/r3c1.png`
 
 Top candidates:
+  - `Quagsire` — score 69.6
+  - `Squirtle` — score 43.5
+  - `Sandshrew` — score 41.7
 
 ### `IMG_1532_r3c2` (row 3, col 2)
 
-- **OCR guess:** `S - e o a i` (conf 0.50)
-- **Best match:** `Hero's Cape` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
+- **OCR guess:** `a neal 100` (conf 0.50)
+- **Best match:** `Heal Ball` (score 52.6)
+- **Reason:** Best match score 53 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1532/r3c2.png`
 
 Top candidates:
-  - `Hero's Cape` — score 60.0
-  - `Cherish Ball` — score 47.6
-  - `Zweilous` — score 47.1
+  - `Heal Ball` — score 52.6
+  - `Tangela` — score 47.1
+  - `Sneasel` — score 47.1
 
 ### `IMG_1532_r3c3` (row 3, col 3)
 
-- **OCR guess:** `oy he` (conf 0.50)
-- **Best match:** `Ho-Oh` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
+- **OCR guess:** `Gorebyss ww 100 8` (conf 0.50)
+- **Best match:** `Colress` (score 45.5)
+- **Reason:** Best match score 46 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1532/r3c3.png`
 
 Top candidates:
-  - `Ho-Oh` — score 60.0
-  - `Rocky Helmet` — score 58.8
-  - `Melony` — score 54.5
+  - `Colress` — score 45.5
+  - `Gourgeist` — score 41.7
+  - `Moltres ex` — score 40.0
 
 ## IMG_1533.PNG
 
 ### `IMG_1533_r1c1` (row 1, col 1)
 
-- **OCR guess:** `4 s 4 i FA he a ' ee aa - oy 7 5 Z 1 AA` (conf 0.50)
-- **Best match:** `Seel` (score 66.7)
-- **Reason:** Best match score 67 < threshold 80
+- **OCR guess:** `o'Magneton 904 OO` (conf 0.50)
+- **Best match:** `Magneton` (score 72.7)
+- **Reason:** Best match score 73 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1533/r1c1.png`
 
 Top candidates:
-  - `Seel` — score 66.7
-  - `Bede` — score 66.7
-  - `Eevee` — score 57.1
+  - `Magneton` — score 72.7
+  - `Magnezone ex` — score 61.5
+  - `Magnezone` — score 60.9
 
 ### `IMG_1533_r1c2` (row 1, col 2)
+
+- **OCR guess:** `a Pe wll 4` (conf 0.50)
+- **Best match:** `Aero Ball` (score 52.6)
+- **Reason:** Best match score 53 < threshold 80
+
+**Action needed:** Open the crop file and confirm the card name:
+  `crops/IMG_1533/r1c2.png`
+
+Top candidates:
+  - `Aero Ball` — score 52.6
+  - `Petilil` — score 47.1
+  - `Dragon's Peak` — score 43.5
+
+### `IMG_1533_r1c3` (row 1, col 3)
 
 - **OCR guess:** `(empty)` (conf 0.00)
 - **Best match:** `` (score 0)
 - **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1533/r1c2.png`
-
-Top candidates:
-
-### `IMG_1533_r1c3` (row 1, col 3)
-
-- **OCR guess:** `i yi 24k` (conf 0.50)
-- **Best match:** `Kirlia` (score 42.9)
-- **Reason:** Best match score 43 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1533/r1c3.png`
 
 Top candidates:
-  - `Kirlia` — score 42.9
-  - `Kahili` — score 42.9
-  - `Misty ex` — score 37.5
 
 ### `IMG_1533_r2c1` (row 2, col 1)
 
@@ -1041,193 +974,214 @@ Top candidates:
 
 ### `IMG_1533_r2c2` (row 2, col 2)
 
-- **OCR guess:** `i te io` (conf 0.50)
-- **Best match:** `Pignite` (score 57.1)
-- **Reason:** Best match score 57 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1533/r2c2.png`
 
 Top candidates:
-  - `Pignite` — score 57.1
-  - `Antidote` — score 53.3
-  - `Giant Water Lily` — score 52.2
+
+### `IMG_1533_r2c3` (row 2, col 3)
+
+- **OCR guess:** `el fame rar Mae a - Pa ' ja` (conf 0.50)
+- **Best match:** `Seel` (score 66.7)
+- **Reason:** Best match score 67 < threshold 80
+
+**Action needed:** Open the crop file and confirm the card name:
+  `crops/IMG_1533/r2c3.png`
+
+Top candidates:
+  - `Seel` — score 66.7
+  - `Numel` — score 57.1
+  - `Elesa` — score 57.1
 
 ### `IMG_1533_r3c1` (row 3, col 1)
 
-- **OCR guess:** `a a Fie` (conf 0.50)
-- **Best match:** `Friend Ball` (score 55.6)
-- **Reason:** Best match score 56 < threshold 80
+- **OCR guess:** `whine G 2` (conf 0.50)
+- **Best match:** `Growlithe` (score 50.0)
+- **Reason:** Best match score 50 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1533/r3c1.png`
 
 Top candidates:
-  - `Friend Ball` — score 55.6
-  - `Safari Ball` — score 55.6
-  - `Arcanine` — score 53.3
+  - `Growlithe` — score 50.0
+  - `Shinx` — score 50.0
+  - `Hitmonlee` — score 50.0
 
 ### `IMG_1533_r3c2` (row 3, col 2)
 
-- **OCR guess:** `hh wl` (conf 0.50)
-- **Best match:** `Hawlucha` (score 46.2)
-- **Reason:** Best match score 46 < threshold 80
+- **OCR guess:** `Mandibuzz 100 a` (conf 0.50)
+- **Best match:** `Bea` (score 50.0)
+- **Reason:** Best match score 50 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1533/r3c2.png`
 
 Top candidates:
-  - `Hawlucha` — score 46.2
-  - `Hugh` — score 44.4
-  - `Honchkrow` — score 42.9
+  - `Bea` — score 50.0
+  - `Hau` — score 50.0
+  - `May` — score 50.0
 
 ### `IMG_1533_r3c3` (row 3, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Ee EEE` (conf 0.50)
+- **Best match:** `Eevee` (score 72.7)
+- **Reason:** Best match score 73 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1533/r3c3.png`
 
 Top candidates:
+  - `Eevee` — score 72.7
+  - `Eevee ex` — score 71.4
+  - `Beheeyem` — score 57.1
 
 ## IMG_1534.PNG
 
 ### `IMG_1534_r1c1` (row 1, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `race F Bronzong 120 oe Uf` (conf 0.50)
+- **Best match:** `Dome Fossil` (score 50.0)
+- **Reason:** Best match score 50 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1534/r1c1.png`
 
 Top candidates:
+  - `Dome Fossil` — score 50.0
+  - `Cover Fossil` — score 47.1
+  - `Choice Scarf` — score 47.1
 
 ### `IMG_1534_r1c2` (row 1, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `-' Bisharp sw 90 OD ee ee` (conf 0.50)
+- **Best match:** `Eevee ex` (score 62.5)
+- **Reason:** Best match score 62 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1534/r1c2.png`
 
 Top candidates:
+  - `Eevee ex` — score 62.5
+  - `Eevee` — score 61.5
+  - `Beheeyem` — score 50.0
 
 ### `IMG_1534_r1c3` (row 1, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Magearna 90` (conf 0.50)
+- **Best match:** `Magmar` (score 58.8)
+- **Reason:** Best match score 59 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1534/r1c3.png`
 
 Top candidates:
+  - `Magmar` — score 58.8
+  - `Magneton` — score 52.6
+  - `Gardenia` — score 52.6
 
 ### `IMG_1534_r2c1` (row 2, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `2 Wibray 90` (conf 0.50)
+- **Best match:** `Luxray ex` (score 40.0)
+- **Reason:** Best match score 40 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1534/r2c1.png`
 
 Top candidates:
+  - `Luxray ex` — score 40.0
+  - `Abra` — score 40.0
+  - `Inkay` — score 37.5
 
 ### `IMG_1534_r2c2` (row 2, col 2)
 
-- **OCR guess:** `ne be Nn Coll SS S` (conf 0.50)
-- **Best match:** `Net Ball` (score 57.1)
-- **Reason:** Best match score 57 < threshold 80
+- **OCR guess:** `Sint ral` (conf 0.50)
+- **Best match:** `Net Ball` (score 62.5)
+- **Reason:** Best match score 62 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1534/r2c2.png`
 
 Top candidates:
-  - `Net Ball` — score 57.1
-  - `Nest Ball` — score 54.5
-  - `Friend Ball` — score 50.0
+  - `Net Ball` — score 62.5
+  - `Ralts` — score 61.5
+  - `Flint` — score 61.5
 
 ### `IMG_1534_r2c3` (row 2, col 3)
 
-- **OCR guess:** `AT i` (conf 0.50)
-- **Best match:** `Dartrix` (score 54.5)
-- **Reason:** Best match score 54 < threshold 80
+- **OCR guess:** `oc Herdier 90` (conf 0.50)
+- **Best match:** `Rocky Helmet` (score 48.0)
+- **Reason:** Best match score 48 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1534/r2c3.png`
 
 Top candidates:
-  - `Dartrix` — score 54.5
-  - `Dratini` — score 54.5
-  - `Altaria` — score 54.5
+  - `Rocky Helmet` — score 48.0
+  - `Shellder` — score 47.6
+  - `Regirock` — score 47.6
 
 ### `IMG_1534_r3c1` (row 3, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.50)
-- **Best match:** `` (score 0)
-- **Reason:** Best match score 0 < threshold 80
+- **OCR guess:** `Audino w80` (conf 0.50)
+- **Best match:** `Deino` (score 53.3)
+- **Reason:** Best match score 53 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1534/r3c1.png`
 
 Top candidates:
+  - `Deino` — score 53.3
+  - `Gladion` — score 47.1
+  - `Ludicolo` — score 44.4
 
 ### `IMG_1534_r3c2` (row 3, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Corvisquire 80 aaas` (conf 0.50)
+- **Best match:** `Lapras` (score 60.0)
+- **Reason:** Best match score 60 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1534/r3c2.png`
 
 Top candidates:
+  - `Lapras` — score 60.0
+  - `Kadabra` — score 54.5
+  - `Malamar` — score 54.5
 
 ### `IMG_1534_r3c3` (row 3, col 3)
 
-- **OCR guess:** `AY ae` (conf 0.50)
-- **Best match:** `Avery` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
+- **OCR guess:** `Gupporter TRAINER Korrina` (conf 0.50)
+- **Best match:** `Chikorita` (score 62.5)
+- **Reason:** Best match score 62 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1534/r3c3.png`
 
 Top candidates:
-  - `Avery` — score 60.0
-  - `Luxray ex` — score 57.1
-  - `Aero Ball` — score 57.1
+  - `Chikorita` — score 62.5
+  - `Kirlia` — score 61.5
+  - `Gloria` — score 61.5
 
 ## IMG_1535.PNG
 
-### `IMG_1535_r1c1` (row 1, col 1)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1535/r1c1.png`
-
-Top candidates:
-
 ### `IMG_1535_r1c2` (row 1, col 2)
 
-- **OCR guess:** `si i lpaeee a` (conf 0.50)
-- **Best match:** `Pinsir` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
+- **OCR guess:** `Sterctiurn TRAINER Arena of Antiquity` (conf 0.50)
+- **Best match:** `Training Court` (score 56.2)
+- **Reason:** Best match score 56 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1535/r1c2.png`
 
 Top candidates:
-  - `Pinsir` — score 60.0
-  - `Sail Fossil` — score 53.3
-  - `Sina` — score 50.0
+  - `Training Court` — score 56.2
+  - `Terrakion` — score 51.9
+  - `Rescue Stretcher` — score 47.1
 
 ### `IMG_1535_r1c3` (row 1, col 3)
 
@@ -1242,56 +1196,39 @@ Top candidates:
 
 ### `IMG_1535_r2c1` (row 2, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `- Wenonat 60 TS` (conf 0.50)
+- **Best match:** `Ralts` (score 57.1)
+- **Reason:** Best match score 57 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1535/r2c1.png`
 
 Top candidates:
-
-### `IMG_1535_r2c2` (row 2, col 2)
-
-- **OCR guess:** `Lace` (conf 0.50)
-- **Best match:** `Glaceon` (score 72.7)
-- **Reason:** Best match score 73 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1535/r2c2.png`
-
-Top candidates:
-  - `Glaceon` — score 72.7
-  - `Salamence` — score 61.5
-  - `Arceus` — score 60.0
+  - `Ralts` — score 57.1
+  - `Tauros` — score 50.0
+  - `Tropius` — score 44.4
 
 ### `IMG_1535_r2c3` (row 2, col 3)
 
-- **OCR guess:** `a aa` (conf 0.50)
-- **Best match:** `Kadabra` (score 54.5)
-- **Reason:** Best match score 54 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1535/r2c3.png`
 
 Top candidates:
-  - `Kadabra` — score 54.5
-  - `Malamar` — score 54.5
-  - `Rattata` — score 54.5
 
 ### `IMG_1535_r3c1` (row 3, col 1)
 
-- **OCR guess:** `i` (conf 0.50)
-- **Best match:** `Onix` (score 40.0)
-- **Reason:** Best match score 40 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1535/r3c1.png`
 
 Top candidates:
-  - `Onix` — score 40.0
-  - `Bill` — score 40.0
-  - `Milo` — score 40.0
 
 ### `IMG_1535_r3c2` (row 3, col 2)
 
@@ -1317,100 +1254,67 @@ Top candidates:
 
 ## IMG_1536.PNG
 
-### `IMG_1536_r1c1` (row 1, col 1)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1536/r1c1.png`
-
-Top candidates:
-
 ### `IMG_1536_r1c2` (row 1, col 2)
 
-- **OCR guess:** `iT bl pl mvy` (conf 0.50)
-- **Best match:** `Violet City Gym Badge` (score 48.5)
-- **Reason:** Best match score 48 < threshold 80
+- **OCR guess:** `'Pidgey 60` (conf 0.50)
+- **Best match:** `Pignite` (score 50.0)
+- **Reason:** Best match score 50 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1536/r1c2.png`
 
 Top candidates:
-  - `Violet City Gym Badge` — score 48.5
-  - `Dive Ball` — score 47.6
-  - `Blissey ex` — score 45.5
-
-### `IMG_1536_r1c3` (row 1, col 3)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1536/r1c3.png`
-
-Top candidates:
+  - `Pignite` — score 50.0
+  - `Decidueye` — score 44.4
+  - `Diggersby` — score 44.4
 
 ### `IMG_1536_r2c1` (row 2, col 1)
 
-- **OCR guess:** `Se ere Pa cy hs` (conf 0.50)
-- **Best match:** `Seel` (score 66.7)
-- **Reason:** Best match score 67 < threshold 80
+- **OCR guess:** `spe Raticate 64480` (conf 0.50)
+- **Best match:** `Raticate` (score 61.5)
+- **Reason:** Best match score 62 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1536/r2c1.png`
 
 Top candidates:
-  - `Seel` — score 66.7
-  - `Skrelp` — score 50.0
-  - `Sobble` — score 50.0
-
-### `IMG_1536_r2c2` (row 2, col 2)
-
-- **OCR guess:** `256'7 r rrwww a` (conf 0.50)
-- **Best match:** `Bea` (score 50.0)
-- **Reason:** Best match score 50 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1536/r2c2.png`
-
-Top candidates:
-  - `Bea` — score 50.0
-  - `Hau` — score 50.0
-  - `May` — score 50.0
+  - `Raticate` — score 61.5
+  - `Dragonite ex` — score 46.7
+  - `Caterpie` — score 46.2
 
 ### `IMG_1536_r2c3` (row 2, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Farfetchd 60 VW Se Ew 6B` (conf 0.50)
+- **Best match:** `Mew ex` (score 47.1)
+- **Reason:** Best match score 47 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1536/r2c3.png`
 
 Top candidates:
+  - `Mew ex` — score 47.1
+  - `Life Dew` — score 42.1
+  - `X Sp. Def` — score 42.1
 
 ### `IMG_1536_r3c1` (row 3, col 1)
 
-- **OCR guess:** `Xt eel BI nr ieav ot jot` (conf 0.50)
-- **Best match:** `Joltik` (score 66.7)
-- **Reason:** Best match score 67 < threshold 80
+- **OCR guess:** `s'Dubwool 120` (conf 0.50)
+- **Best match:** `Duosion` (score 40.0)
+- **Reason:** Best match score 40 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1536/r3c1.png`
 
 Top candidates:
-  - `Joltik` — score 66.7
-  - `Jolteon` — score 60.0
-  - `Lotad` — score 50.0
+  - `Duosion` — score 40.0
+  - `Dusclops` — score 38.1
+  - `Absol ex` — score 38.1
 
 ### `IMG_1536_r3c2` (row 3, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
+- **OCR guess:** `(empty)` (conf 0.50)
 - **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **Reason:** Best match score 0 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1536/r3c2.png`
@@ -1432,109 +1336,98 @@ Top candidates:
 
 ### `IMG_1537_r1c1` (row 1, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `s-'icoon 80 A en ae in` (conf 0.50)
+- **Best match:** `Awakening` (score 63.2)
+- **Reason:** Best match score 63 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1537/r1c1.png`
 
 Top candidates:
+  - `Awakening` — score 63.2
+  - `Greninja ex` — score 57.1
+  - `Arcanine` — score 55.6
 
 ### `IMG_1537_r1c2` (row 1, col 2)
 
-- **OCR guess:** `BPC Jy pra Ms gen` (conf 0.50)
-- **Best match:** `Devolution Spray` (score 53.8)
-- **Reason:** Best match score 54 < threshold 80
+- **OCR guess:** `Seedot 50 ie AS Se` (conf 0.50)
+- **Best match:** `Blastoise ex` (score 60.0)
+- **Reason:** Best match score 60 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1537/r1c2.png`
 
 Top candidates:
-  - `Devolution Spray` — score 53.8
-  - `Gengar` — score 50.0
-  - `Espurr` — score 50.0
+  - `Blastoise ex` — score 60.0
+  - `Blastoise` — score 58.8
+  - `Mega Absol ex` — score 57.1
 
 ### `IMG_1537_r1c3` (row 1, col 3)
+
+- **OCR guess:** `ys 0` (conf 0.50)
+- **Best match:** `Gyarados ex` (score 40.0)
+- **Reason:** Best match score 40 < threshold 80
+
+**Action needed:** Open the crop file and confirm the card name:
+  `crops/IMG_1537/r1c3.png`
+
+Top candidates:
+  - `Gyarados ex` — score 40.0
+  - `Ivysaur` — score 36.4
+  - `Cloyster` — score 33.3
+
+### `IMG_1537_r2c1` (row 2, col 1)
+
+- **OCR guess:** `- Bulbasaur w60 a` (conf 0.50)
+- **Best match:** `Bulbasaur` (score 75.0)
+- **Reason:** Best match score 75 < threshold 80
+
+**Action needed:** Open the crop file and confirm the card name:
+  `crops/IMG_1537/r2c1.png`
+
+Top candidates:
+  - `Bulbasaur` — score 75.0
+  - `Venusaur ex` — score 46.2
+  - `Malamar` — score 45.5
+
+### `IMG_1537_r2c2` (row 2, col 2)
 
 - **OCR guess:** `(empty)` (conf 0.00)
 - **Best match:** `` (score 0)
 - **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1537/r1c3.png`
-
-Top candidates:
-
-### `IMG_1537_r2c1` (row 2, col 1)
-
-- **OCR guess:** `- BuIDasSaullr HeOV 6 p ae` (conf 0.50)
-- **Best match:** `Mareep` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1537/r2c1.png`
-
-Top candidates:
-  - `Mareep` — score 60.0
-  - `Escape Rope` — score 53.3
-  - `Caterpie` — score 50.0
-
-### `IMG_1537_r2c2` (row 2, col 2)
-
-- **OCR guess:** `epinarak wll 6` (conf 0.50)
-- **Best match:** `Weepinbell` (score 50.0)
-- **Reason:** Best match score 50 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1537/r2c2.png`
 
 Top candidates:
-  - `Weepinbell` — score 50.0
-  - `Paralyze Heal` — score 44.4
-  - `Gengar ex` — score 43.5
-
-### `IMG_1537_r2c3` (row 2, col 3)
-
-- **OCR guess:** `o a` (conf 0.50)
-- **Best match:** `Poké Ball` (score 54.5)
-- **Reason:** Best match score 54 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1537/r2c3.png`
-
-Top candidates:
-  - `Poké Ball` — score 54.5
-  - `Ho-Oh` — score 50.0
-  - `Bagon` — score 50.0
 
 ### `IMG_1537_r3c1` (row 3, col 1)
 
-- **OCR guess:** `SUPMy weOU ae a` (conf 0.50)
-- **Best match:** `Rare Candy` (score 57.1)
-- **Reason:** Best match score 57 < threshold 80
+- **OCR guess:** `Burmy 60 - ws` (conf 0.50)
+- **Best match:** `Luxray ex` (score 47.1)
+- **Reason:** Best match score 47 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1537/r3c1.png`
 
 Top candidates:
-  - `Rare Candy` — score 57.1
-  - `Pansage` — score 54.5
-  - `Master Ball` — score 53.3
+  - `Luxray ex` — score 47.1
+  - `Kyurem ex` — score 47.1
+  - `Barry` — score 46.2
 
 ### `IMG_1537_r3c2` (row 3, col 2)
 
-- **OCR guess:** `MOtnim oe TU ee` (conf 0.50)
-- **Best match:** `Moltres ex` (score 48.0)
-- **Reason:** Best match score 48 < threshold 80
+- **OCR guess:** `H aie be i BP it` (conf 0.50)
+- **Best match:** `Hop` (score 50.0)
+- **Reason:** Best match score 50 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1537/r3c2.png`
 
 Top candidates:
-  - `Moltres ex` — score 48.0
-  - `Mimikyu ex` — score 48.0
-  - `Pokémon Catcher` — score 46.7
+  - `Hop` — score 50.0
+  - `Hau` — score 50.0
+  - `Hapu` — score 40.0
 
 ### `IMG_1537_r3c3` (row 3, col 3)
 
@@ -1551,114 +1444,98 @@ Top candidates:
 
 ### `IMG_1538_r1c1` (row 1, col 1)
 
-- **OCR guess:** `a oe` (conf 0.50)
-- **Best match:** `Love Ball` (score 61.5)
+- **OCR guess:** `Fer ountouln 0 in SEO` (conf 0.50)
+- **Best match:** `Finneon` (score 61.5)
 - **Reason:** Best match score 62 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1538/r1c1.png`
 
 Top candidates:
-  - `Love Ball` — score 61.5
-  - `Machoke` — score 54.5
-  - `Escape Rope` — score 53.3
-
-### `IMG_1538_r1c2` (row 1, col 2)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1538/r1c2.png`
-
-Top candidates:
+  - `Finneon` — score 61.5
+  - `Lumineon` — score 57.1
+  - `Inteleon` — score 57.1
 
 ### `IMG_1538_r1c3` (row 1, col 3)
 
-- **OCR guess:** `ee 7 -` (conf 0.50)
-- **Best match:** `Seel` (score 50.0)
-- **Reason:** Best match score 50 < threshold 80
+- **OCR guess:** `acre Bascu 80 Se` (conf 0.50)
+- **Best match:** `Seel` (score 66.7)
+- **Reason:** Best match score 67 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1538/r1c3.png`
 
 Top candidates:
-  - `Seel` — score 50.0
-  - `Bede` — score 50.0
-  - `Eevee` — score 44.4
+  - `Seel` — score 66.7
+  - `Skrelp` — score 50.0
+  - `Sobble` — score 50.0
 
 ### `IMG_1538_r2c1` (row 2, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Clauncher 60 iS - a gael` (conf 0.50)
+- **Best match:** `Haunter` (score 52.6)
+- **Reason:** Best match score 53 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1538/r2c1.png`
 
 Top candidates:
+  - `Haunter` — score 52.6
+  - `Candice` — score 52.6
+  - `Salamence ex` — score 50.0
 
 ### `IMG_1538_r2c2` (row 2, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `nant Magnemite 50 47 Sa ters Vl` (conf 0.50)
+- **Best match:** `Magnemite` (score 62.1)
+- **Reason:** Best match score 62 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1538/r2c2.png`
 
 Top candidates:
-
-### `IMG_1538_r2c3` (row 2, col 3)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1538/r2c3.png`
-
-Top candidates:
+  - `Magnemite` — score 62.1
+  - `Magneton` — score 50.0
+  - `Magnezone ex` — score 43.8
 
 ### `IMG_1538_r3c1` (row 3, col 1)
 
-- **OCR guess:** `Uhh a` (conf 0.50)
-- **Best match:** `Hau` (score 50.0)
-- **Reason:** Best match score 50 < threshold 80
+- **OCR guess:** `Sy a` (conf 0.50)
+- **Best match:** `Gastly` (score 60.0)
+- **Reason:** Best match score 60 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1538/r3c1.png`
 
 Top candidates:
-  - `Hau` — score 50.0
-  - `Cherish Ball` — score 47.1
-  - `Hawlucha` — score 46.2
+  - `Gastly` — score 60.0
+  - `May` — score 57.1
+  - `Chansey` — score 54.5
 
 ### `IMG_1538_r3c2` (row 3, col 2)
+
+- **OCR guess:** `Seless dow zs wv - at` (conf 0.50)
+- **Best match:** `Drowzee` (score 58.8)
+- **Reason:** Best match score 59 < threshold 80
+
+**Action needed:** Open the crop file and confirm the card name:
+  `crops/IMG_1538/r3c2.png`
+
+Top candidates:
+  - `Drowzee` — score 58.8
+  - `Colress` — score 58.8
+  - `Life Dew` — score 55.6
+
+### `IMG_1538_r3c3` (row 3, col 3)
 
 - **OCR guess:** `(empty)` (conf 0.00)
 - **Best match:** `` (score 0)
 - **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1538/r3c2.png`
-
-Top candidates:
-
-### `IMG_1538_r3c3` (row 3, col 3)
-
-- **OCR guess:** `i oor ut oa i` (conf 0.50)
-- **Best match:** `Wooper` (score 54.5)
-- **Reason:** Best match score 54 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1538/r3c3.png`
 
 Top candidates:
-  - `Wooper` — score 54.5
-  - `Scizor` — score 54.5
-  - `Victor` — score 54.5
 
 ## IMG_1539.PNG
 
@@ -1775,98 +1652,95 @@ Top candidates:
 
 ### `IMG_1540_r1c1` (row 1, col 1)
 
-- **OCR guess:** `i W A ee a` (conf 0.50)
-- **Best match:** `Axew` (score 42.9)
-- **Reason:** Best match score 43 < threshold 80
+- **OCR guess:** `Starly w6O` (conf 0.50)
+- **Best match:** `Staryu` (score 62.5)
+- **Reason:** Best match score 62 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1540/r1c1.png`
 
 Top candidates:
-  - `Axew` — score 42.9
-  - `Salamence` — score 42.1
-  - `Dialga ex` — score 42.1
+  - `Staryu` — score 62.5
+  - `Gastly` — score 50.0
+  - `Tauros` — score 50.0
 
 ### `IMG_1540_r1c2` (row 1, col 2)
+
+- **OCR guess:** `eave Staravia 80 by el` (conf 0.50)
+- **Best match:** `Heal Ball` (score 57.1)
+- **Reason:** Best match score 57 < threshold 80
+
+**Action needed:** Open the crop file and confirm the card name:
+  `crops/IMG_1540/r1c2.png`
+
+Top candidates:
+  - `Heal Ball` — score 57.1
+  - `Burn Heal` — score 57.1
+  - `Buizel` — score 54.5
+
+### `IMG_1540_r1c3` (row 1, col 3)
+
+- **OCR guess:** `- Buneary wOO 7` (conf 0.50)
+- **Best match:** `Bunnelby` (score 52.6)
+- **Reason:** Best match score 53 < threshold 80
+
+**Action needed:** Open the crop file and confirm the card name:
+  `crops/IMG_1540/r1c3.png`
+
+Top candidates:
+  - `Bunnelby` — score 52.6
+  - `Budew` — score 50.0
+  - `Barry` — score 50.0
+
+### `IMG_1540_r2c1` (row 2, col 1)
+
+- **OCR guess:** `e Roselia w60 Ta a` (conf 0.50)
+- **Best match:** `Roselia` (score 70.0)
+- **Reason:** Best match score 70 < threshold 80
+
+**Action needed:** Open the crop file and confirm the card name:
+  `crops/IMG_1540/r2c1.png`
+
+Top candidates:
+  - `Roselia` — score 70.0
+  - `Steelix ex` — score 52.2
+  - `Greninja ex` — score 50.0
+
+### `IMG_1540_r2c2` (row 2, col 2)
 
 - **OCR guess:** `(empty)` (conf 0.00)
 - **Best match:** `` (score 0)
 - **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1540/r1c2.png`
-
-Top candidates:
-
-### `IMG_1540_r1c3` (row 1, col 3)
-
-- **OCR guess:** `re d 4` (conf 0.50)
-- **Best match:** `Drake` (score 54.5)
-- **Reason:** Best match score 54 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1540/r1c3.png`
-
-Top candidates:
-  - `Drake` — score 54.5
-  - `Rare Candy` — score 50.0
-  - `Drowzee` — score 46.2
-
-### `IMG_1540_r2c1` (row 2, col 1)
-
-- **OCR guess:** `ton SG ro y ze` (conf 0.50)
-- **Best match:** `Shelgon` (score 61.5)
-- **Reason:** Best match score 62 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1540/r2c1.png`
-
-Top candidates:
-  - `Shelgon` — score 61.5
-  - `Magneton` — score 57.1
-  - `Bagon` — score 54.5
-
-### `IMG_1540_r2c2` (row 2, col 2)
-
-- **OCR guess:** `1 9 ere 5` (conf 0.50)
-- **Best match:** `Serena` (score 40.0)
-- **Reason:** Best match score 40 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1540/r2c2.png`
 
 Top candidates:
-  - `Serena` — score 40.0
-  - `Cheren` — score 40.0
-  - `Full Restore` — score 38.1
 
 ### `IMG_1540_r2c3` (row 2, col 3)
 
-- **OCR guess:** `ng os wr` (conf 0.50)
-- **Best match:** `Pangoro` (score 53.3)
-- **Reason:** Best match score 53 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1540/r2c3.png`
 
 Top candidates:
-  - `Pangoro` — score 53.3
-  - `Power Plant` — score 52.6
-  - `Good Rod` — score 50.0
 
 ### `IMG_1540_r3c1` (row 3, col 1)
 
-- **OCR guess:** `eae` (conf 0.50)
-- **Best match:** `Bea` (score 66.7)
-- **Reason:** Best match score 67 < threshold 80
+- **OCR guess:** `f s OTE tt o Fy ts Pel SOP Py et Re eas A 5` (conf 0.50)
+- **Best match:** `PokéStop` (score 55.6)
+- **Reason:** Best match score 56 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1540/r3c1.png`
 
 Top candidates:
-  - `Bea` — score 66.7
-  - `Leafeon` — score 60.0
-  - `Sneasel` — score 60.0
+  - `PokéStop` — score 55.6
+  - `Escape Rope` — score 47.6
+  - `Power Plant` — score 47.6
 
 ### `IMG_1540_r3c2` (row 3, col 2)
 
@@ -1881,17 +1755,17 @@ Top candidates:
 
 ### `IMG_1540_r3c3` (row 3, col 3)
 
-- **OCR guess:** `ey i AE` (conf 0.50)
-- **Best match:** `Avery` (score 57.1)
-- **Reason:** Best match score 57 < threshold 80
+- **OCR guess:** `Mawile w80` (conf 0.50)
+- **Best match:** `Mawile` (score 75.0)
+- **Reason:** Best match score 75 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1540/r3c3.png`
 
 Top candidates:
-  - `Avery` — score 57.1
-  - `Elgyem` — score 50.0
-  - `Melony` — score 50.0
+  - `Mawile` — score 75.0
+  - `Maxie` — score 53.3
+  - `Marill` — score 50.0
 
 ## IMG_1541.PNG
 
@@ -1982,28 +1856,28 @@ Top candidates:
 
 ### `IMG_1542_r1c1` (row 1, col 1)
 
-- **OCR guess:** `4a a ea` (conf 0.50)
-- **Best match:** `Mega Absol ex` (score 50.0)
-- **Reason:** Best match score 50 < threshold 80
+- **OCR guess:** `-` (conf 0.50)
+- **Best match:** `` (score 0)
+- **Reason:** Best match score 0 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1542/r1c1.png`
 
 Top candidates:
-  - `Mega Absol ex` — score 50.0
-  - `Dialga ex` — score 50.0
-  - `Heal Ball` — score 50.0
 
 ### `IMG_1542_r1c2` (row 1, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `setforry sat 1` (conf 0.50)
+- **Best match:** `Float Stone` (score 52.2)
+- **Reason:** Best match score 52 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1542/r1c2.png`
 
 Top candidates:
+  - `Float Stone` — score 52.2
+  - `Stantler` — score 50.0
+  - `Forest Seal Stone` — score 48.3
 
 ### `IMG_1542_r1c3` (row 1, col 3)
 
@@ -2018,14 +1892,17 @@ Top candidates:
 
 ### `IMG_1542_r2c1` (row 2, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.50)
-- **Best match:** `` (score 0)
-- **Reason:** Best match score 0 < threshold 80
+- **OCR guess:** `VY SF` (conf 0.50)
+- **Best match:** `Scrafty` (score 50.0)
+- **Reason:** Best match score 50 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1542/r2c1.png`
 
 Top candidates:
+  - `Scrafty` — score 50.0
+  - `Misty` — score 40.0
+  - `Avery` — score 40.0
 
 ### `IMG_1542_r2c2` (row 2, col 2)
 
@@ -2038,155 +1915,133 @@ Top candidates:
 
 Top candidates:
 
-### `IMG_1542_r2c3` (row 2, col 3)
+### `IMG_1542_r3c1` (row 3, col 1)
 
 - **OCR guess:** `(empty)` (conf 0.00)
 - **Best match:** `` (score 0)
 - **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1542/r2c3.png`
-
-Top candidates:
-
-### `IMG_1542_r3c1` (row 3, col 1)
-
-- **OCR guess:** `2 S- -ee ns - Gg i ae` (conf 0.50)
-- **Best match:** `Giant Cape` (score 58.8)
-- **Reason:** Best match score 59 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1542/r3c1.png`
 
 Top candidates:
-  - `Giant Cape` — score 58.8
-  - `Gengar ex` — score 50.0
-  - `Aegislash` — score 50.0
 
 ### `IMG_1542_r3c2` (row 3, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Castformsaairem 70` (conf 0.50)
+- **Best match:** `Starmie` (score 48.0)
+- **Reason:** Best match score 48 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1542/r3c2.png`
 
 Top candidates:
+  - `Starmie` — score 48.0
+  - `Caterpie` — score 46.2
+  - `Blastoise` — score 44.4
 
 ### `IMG_1542_r3c3` (row 3, col 3)
 
-- **OCR guess:** `a SS` (conf 0.50)
-- **Best match:** `Claw Fossil` (score 53.3)
-- **Reason:** Best match score 53 < threshold 80
+- **OCR guess:** `el` (conf 0.50)
+- **Best match:** `Seel` (score 66.7)
+- **Reason:** Best match score 67 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1542/r3c3.png`
 
 Top candidates:
-  - `Claw Fossil` — score 53.3
-  - `Armor Fossil` — score 50.0
-  - `Blastoise` — score 46.2
+  - `Seel` — score 66.7
+  - `Numel` — score 57.1
+  - `Elesa` — score 57.1
 
 ## IMG_1543.PNG
 
 ### `IMG_1543_r1c1` (row 1, col 1)
 
-- **OCR guess:** `om` (conf 0.50)
-- **Best match:** `Gloom` (score 57.1)
+- **OCR guess:** `Cubchoo 70 a ae` (conf 0.50)
+- **Best match:** `Rare Candy` (score 57.1)
 - **Reason:** Best match score 57 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1543/r1c1.png`
 
 Top candidates:
-  - `Gloom` — score 57.1
-  - `Rotom` — score 57.1
-  - `Golem` — score 57.1
+  - `Rare Candy` — score 57.1
+  - `Pansage` — score 54.5
+  - `Master Ball` — score 53.3
 
 ### `IMG_1543_r1c2` (row 1, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Sobbte INET 60` (conf 0.50)
+- **Best match:** `Sobble` (score 50.0)
+- **Reason:** Best match score 50 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1543/r1c2.png`
 
 Top candidates:
+  - `Sobble` — score 50.0
+  - `Brigette` — score 45.5
+  - `Antidote` — score 45.5
 
 ### `IMG_1543_r1c3` (row 1, col 3)
 
-- **OCR guess:** `le ae` (conf 0.50)
-- **Best match:** `Graveler` (score 61.5)
-- **Reason:** Best match score 62 < threshold 80
+- **OCR guess:** `soe Magnemite w60 4 ee a` (conf 0.50)
+- **Best match:** `Magnemite` (score 64.3)
+- **Reason:** Best match score 64 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1543/r1c3.png`
 
 Top candidates:
-  - `Graveler` — score 61.5
-  - `Life Dew` — score 61.5
-  - `Calem` — score 60.0
-
-### `IMG_1543_r2c1` (row 2, col 1)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1543/r2c1.png`
-
-Top candidates:
+  - `Magnemite` — score 64.3
+  - `Magneton` — score 51.9
+  - `Magnezone ex` — score 51.6
 
 ### `IMG_1543_r2c2` (row 2, col 2)
 
-- **OCR guess:** `M ae We K ee Ke` (conf 0.50)
-- **Best match:** `Eevee ex` (score 61.5)
-- **Reason:** Best match score 62 < threshold 80
+- **OCR guess:** `' Electrode 90 4` (conf 0.50)
+- **Best match:** `Electrode` (score 78.3)
+- **Reason:** Best match score 78 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1543/r2c2.png`
 
 Top candidates:
-  - `Eevee ex` — score 61.5
-  - `Elesa ex` — score 61.5
-  - `Eevee` — score 60.0
+  - `Electrode` — score 78.3
+  - `Electivire` — score 58.3
+  - `Electivire ex` — score 51.9
 
 ### `IMG_1543_r2c3` (row 2, col 3)
 
-- **OCR guess:** `e` (conf 0.50)
-- **Best match:** `Mew` (score 50.0)
-- **Reason:** Best match score 50 < threshold 80
+- **OCR guess:** `Morpeko w7Q 4 aoewllU` (conf 0.50)
+- **Best match:** `Axew` (score 54.5)
+- **Reason:** Best match score 54 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1543/r2c3.png`
 
 Top candidates:
-  - `Mew` — score 50.0
-  - `Bea` — score 50.0
-  - `Seel` — score 40.0
+  - `Axew` — score 54.5
+  - `Hawlucha` — score 53.3
+  - `Riolu` — score 50.0
 
 ### `IMG_1543_r3c1` (row 3, col 1)
 
-- **OCR guess:** `aq 2 wl` (conf 0.50)
-- **Best match:** `Mawile` (score 46.2)
-- **Reason:** Best match score 46 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.50)
+- **Best match:** `` (score 0)
+- **Reason:** Best match score 0 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1543/r3c1.png`
 
 Top candidates:
-  - `Mawile` — score 46.2
-  - `Hawlucha` — score 40.0
-  - `Cyndaquil` — score 37.5
 
 ### `IMG_1543_r3c2` (row 3, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.50)
+- **OCR guess:** `(empty)` (conf 0.00)
 - **Best match:** `` (score 0)
-- **Reason:** Best match score 0 < threshold 80
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1543/r3c2.png`
@@ -2208,51 +2063,42 @@ Top candidates:
 
 ### `IMG_1544_r1c1` (row 1, col 1)
 
-- **OCR guess:** `lings --` (conf 0.50)
-- **Best match:** `Deerling` (score 61.5)
-- **Reason:** Best match score 62 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1544/r1c1.png`
 
 Top candidates:
-  - `Deerling` — score 61.5
-  - `Klang` — score 60.0
-  - `Flint` — score 60.0
 
 ### `IMG_1544_r1c2` (row 1, col 2)
 
-- **OCR guess:** `S F ae ee` (conf 0.50)
-- **Best match:** `Hero's Cape` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1544/r1c2.png`
 
 Top candidates:
-  - `Hero's Cape` — score 60.0
-  - `Bayleef` — score 50.0
-  - `Eevee ex` — score 47.1
 
 ### `IMG_1544_r1c3` (row 1, col 3)
 
-- **OCR guess:** `J os a ee` (conf 0.50)
-- **Best match:** `Hero's Cape` (score 55.6)
-- **Reason:** Best match score 56 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1544/r1c3.png`
 
 Top candidates:
-  - `Hero's Cape` — score 55.6
-  - `Zapdos ex` — score 50.0
-  - `Elesa` — score 50.0
 
 ### `IMG_1544_r2c1` (row 2, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.00)
+- **OCR guess:** `- 10` (conf 0.50)
 - **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **Reason:** Best match score 0 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1544/r2c1.png`
@@ -2261,17 +2107,28 @@ Top candidates:
 
 ### `IMG_1544_r2c2` (row 2, col 2)
 
-- **OCR guess:** `ae` (conf 0.50)
-- **Best match:** `Axew` (score 66.7)
-- **Reason:** Best match score 67 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1544/r2c2.png`
 
 Top candidates:
-  - `Axew` — score 66.7
-  - `Cave` — score 66.7
-  - `Avery` — score 57.1
+
+### `IMG_1544_r2c3` (row 2, col 3)
+
+- **OCR guess:** `ii ua aie` (conf 0.50)
+- **Best match:** `Mimikyu ex` (score 52.6)
+- **Reason:** Best match score 53 < threshold 80
+
+**Action needed:** Open the crop file and confirm the card name:
+  `crops/IMG_1544/r2c3.png`
+
+Top candidates:
+  - `Mimikyu ex` — score 52.6
+  - `Max Elixir` — score 52.6
+  - `Giant Cape` — score 52.6
 
 ### `IMG_1544_r3c1` (row 3, col 1)
 
@@ -2286,20 +2143,23 @@ Top candidates:
 
 ### `IMG_1544_r3c2` (row 3, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Ss` (conf 0.50)
+- **Best match:** `Nessa` (score 57.1)
+- **Reason:** Best match score 57 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1544/r3c2.png`
 
 Top candidates:
+  - `Nessa` — score 57.1
+  - `Surskit` — score 44.4
+  - `Shellos` — score 44.4
 
 ### `IMG_1544_r3c3` (row 3, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.50)
+- **OCR guess:** `(empty)` (conf 0.00)
 - **Best match:** `` (score 0)
-- **Reason:** Best match score 0 < threshold 80
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1544/r3c3.png`
@@ -2310,125 +2170,131 @@ Top candidates:
 
 ### `IMG_1545_r1c1` (row 1, col 1)
 
-- **OCR guess:** `L a` (conf 0.50)
-- **Best match:** `Opal` (score 57.1)
-- **Reason:** Best match score 57 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1545/r1c1.png`
 
 Top candidates:
-  - `Opal` — score 57.1
-  - `Ralts` — score 50.0
-  - `Absol` — score 50.0
 
 ### `IMG_1545_r1c2` (row 1, col 2)
 
-- **OCR guess:** `EN aad` (conf 0.50)
-- **Best match:** `Drayden` (score 61.5)
-- **Reason:** Best match score 62 < threshold 80
+- **OCR guess:** `it a ep` (conf 0.50)
+- **Best match:** `Giant Cape` (score 58.8)
+- **Reason:** Best match score 59 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1545/r1c2.png`
 
 Top candidates:
-  - `Drayden` — score 61.5
-  - `Gardenia` — score 57.1
-  - `Charizard ex` — score 55.6
+  - `Giant Cape` — score 58.8
+  - `Repeat Ball` — score 55.6
+  - `Caterpie` — score 53.3
 
 ### `IMG_1545_r1c3` (row 1, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `e Seviper 70` (conf 0.50)
+- **Best match:** `Sceptile ex` (score 52.2)
+- **Reason:** Best match score 52 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1545/r1c3.png`
 
 Top candidates:
+  - `Sceptile ex` — score 52.2
+  - `Expert Belt` — score 52.2
+  - `Gardevoir ex` — score 50.0
 
 ### `IMG_1545_r2c1` (row 2, col 1)
 
-- **OCR guess:** `d TS BO` (conf 0.50)
-- **Best match:** `Dusk Ball` (score 50.0)
-- **Reason:** Best match score 50 < threshold 80
+- **OCR guess:** `(empty)` (conf 0.00)
+- **Best match:** `` (score 0)
+- **Reason:** OCR produced no text
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1545/r2c1.png`
 
 Top candidates:
-  - `Dusk Ball` — score 50.0
-  - `Super Rod` — score 50.0
-  - `Oddish` — score 46.2
 
 ### `IMG_1545_r2c2` (row 2, col 2)
 
-- **OCR guess:** `a - ae ll` (conf 0.50)
-- **Best match:** `Aero Ball` (score 62.5)
-- **Reason:** Best match score 62 < threshold 80
+- **OCR guess:** `pz 60 a` (conf 0.50)
+- **Best match:** `Poké Ball` (score 40.0)
+- **Reason:** Best match score 40 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1545/r2c2.png`
 
 Top candidates:
-  - `Aero Ball` — score 62.5
-  - `Air Balloon` — score 55.6
-  - `Azumarill` — score 50.0
+  - `Poké Ball` — score 40.0
+  - `Paralyze Heal` — score 40.0
+  - `Zapdos ex` — score 37.5
 
 ### `IMG_1545_r2c3` (row 2, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Bronzor 60` (conf 0.50)
+- **Best match:** `Byron` (score 53.3)
+- **Reason:** Best match score 53 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1545/r2c3.png`
 
 Top candidates:
+  - `Byron` — score 53.3
+  - `Turtonator` — score 50.0
+  - `Breloom` — score 47.1
 
 ### `IMG_1545_r3c1` (row 3, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `Chansey ue 100` (conf 0.50)
+- **Best match:** `Chansey` (score 66.7)
+- **Reason:** Best match score 67 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1545/r3c1.png`
 
 Top candidates:
+  - `Chansey` — score 66.7
+  - `Chandelure` — score 58.3
+  - `Rare Candy` — score 50.0
 
 ### `IMG_1545_r3c2` (row 3, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `2 Castform w70 we 4` (conf 0.50)
+- **Best match:** `Crasher Wake` (score 46.2)
+- **Reason:** Best match score 46 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1545/r3c2.png`
 
 Top candidates:
+  - `Crasher Wake` — score 46.2
+  - `Marshtomp` — score 43.5
+  - `Hard Charm` — score 41.7
 
 ### `IMG_1545_r3c3` (row 3, col 3)
 
-- **OCR guess:** `x sf bP` (conf 0.50)
-- **Best match:** `Absol ex` (score 53.3)
-- **Reason:** Best match score 53 < threshold 80
+- **OCR guess:** `5 - 4` (conf 0.50)
+- **Best match:** `Ho-Oh` (score 25.0)
+- **Reason:** Best match score 25 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1545/r3c3.png`
 
 Top candidates:
-  - `Absol ex` — score 53.3
-  - `X Sp. Def` — score 53.3
-  - `Blissey ex` — score 47.1
+  - `Ho-Oh` — score 25.0
+  - `Mew ex` — score 22.2
+  - `Mr. Mime` — score 20.0
 
 ## IMG_1546.PNG
 
 ### `IMG_1546_r1c1` (row 1, col 1)
 
-- **OCR guess:** `(empty)` (conf 0.00)
+- **OCR guess:** `(empty)` (conf 0.50)
 - **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **Reason:** Best match score 0 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1546/r1c1.png`
@@ -2437,100 +2303,73 @@ Top candidates:
 
 ### `IMG_1546_r1c2` (row 1, col 2)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `ae Minccino 50` (conf 0.50)
+- **Best match:** `Incineroar ex` (score 59.3)
+- **Reason:** Best match score 59 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1546/r1c2.png`
 
 Top candidates:
+  - `Incineroar ex` — score 59.3
+  - `Incineroar` — score 50.0
+  - `Scizor ex` — score 43.5
 
 ### `IMG_1546_r1c3` (row 1, col 3)
 
-- **OCR guess:** `Lee Saar al` (conf 0.50)
-- **Best match:** `Safari Ball` (score 72.7)
-- **Reason:** Best match score 73 < threshold 80
+- **OCR guess:** `2 Cinccino w9O Wal ''aae Sint` (conf 0.50)
+- **Best match:** `Sina` (score 75.0)
+- **Reason:** Best match score 75 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1546/r1c3.png`
 
 Top candidates:
-  - `Safari Ball` — score 72.7
-  - `Level Ball` — score 57.1
-  - `Malamar` — score 55.6
-
-### `IMG_1546_r2c1` (row 2, col 1)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1546/r2c1.png`
-
-Top candidates:
-
-### `IMG_1546_r2c2` (row 2, col 2)
-
-- **OCR guess:** `Ld bli a SY ee r y ait` (conf 0.50)
-- **Best match:** `Bill` (score 60.0)
-- **Reason:** Best match score 60 < threshold 80
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1546/r2c2.png`
-
-Top candidates:
-  - `Bill` — score 60.0
-  - `Hilda` — score 54.5
-  - `Lure Ball` — score 53.3
+  - `Sina` — score 75.0
+  - `Shinx` — score 66.7
+  - `Flint` — score 66.7
 
 ### `IMG_1546_r2c3` (row 2, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `item TRAINER Hand Scope` (conf 0.50)
+- **Best match:** `Choice Band` (score 66.7)
+- **Reason:** Best match score 67 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1546/r2c3.png`
 
 Top candidates:
+  - `Choice Band` — score 66.7
+  - `Muscle Band` — score 66.7
+  - `Chansey` — score 58.8
 
 ### `IMG_1546_r3c1` (row 3, col 1)
 
-- **OCR guess:** `re eS E x i ee E` (conf 0.50)
-- **Best match:** `Escape Rope` (score 62.5)
-- **Reason:** Best match score 62 < threshold 80
+- **OCR guess:** `fterm TRAINER Pokdex` (conf 0.50)
+- **Best match:** `Dexio` (score 66.7)
+- **Reason:** Best match score 67 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1546/r3c1.png`
 
 Top candidates:
-  - `Escape Rope` — score 62.5
-  - `Elesa ex` — score 61.5
-  - `Kyogre ex` — score 57.1
-
-### `IMG_1546_r3c2` (row 3, col 2)
-
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
-
-**Action needed:** Open the crop file and confirm the card name:
-  `crops/IMG_1546/r3c2.png`
-
-Top candidates:
+  - `Dexio` — score 66.7
+  - `Zapdos ex` — score 62.5
+  - `Pikachu ex` — score 58.8
 
 ### `IMG_1546_r3c3` (row 3, col 3)
 
-- **OCR guess:** `(empty)` (conf 0.00)
-- **Best match:** `` (score 0)
-- **Reason:** OCR produced no text
+- **OCR guess:** `iter TRAINER Red Card` (conf 0.50)
+- **Best match:** `Terrakion` (score 66.7)
+- **Reason:** Best match score 67 < threshold 80
 
 **Action needed:** Open the crop file and confirm the card name:
   `crops/IMG_1546/r3c3.png`
 
 Top candidates:
+  - `Terrakion` — score 66.7
+  - `Training Court` — score 53.8
+  - `Fletchinder` — score 52.2
 
 ## IMG_1547.PNG
 
