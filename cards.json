@@ -20,7 +20,14 @@
     "review_reason": "",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/67",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
   },
   {
     "id": "blaziken_unknown_unknown_v1",
@@ -89,7 +96,14 @@
     "review_reason": "Special type not determinable from partial crop; full card view needed to confirm special_type and rarity.",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/48",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "clemont_special_trainer_unknown_v1",
@@ -112,7 +126,14 @@
     "review_reason": "",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/68",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
   },
   {
     "id": "bulbasaur_unknown_unknown_v1",
@@ -181,7 +202,14 @@
     "review_reason": "Special type not determinable from partial crop; row 3 quantity chip falls outside crop window.",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/26",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "zekrom_unknown_unknown_v1",
@@ -204,7 +232,14 @@
     "review_reason": "Special type not determinable from partial crop; row 3 quantity chip falls outside crop window.",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/59",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "morpeko_unknown_unknown_v1",
@@ -247,7 +282,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/78",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "riolu_unknown_unknown_v1",
@@ -343,7 +385,14 @@
     "source_column": 3,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Deluxe Pack: ex"
+    ],
+    "source_expansion": "Deluxe Pack: ex",
+    "source_set_code": "A4b",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule EX: is_ex=True card; name 'Marowak' matched as 'Marowak ex' (set=A4b num=196 pack='Deluxe Pack: ex'). Name variant inferred from is_ex flag — visual confirmation recommended."
   },
   {
     "id": "incineroar_unknown_unknown_v1",
@@ -386,7 +435,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/4",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 3 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
   },
   {
     "id": "mega_charizard_y_ex_unknown_unknown_v1",
@@ -409,7 +465,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/14",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 3 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
   },
   {
     "id": "vaporeon_unknown_unknown_v1",
@@ -429,7 +492,14 @@
     "source_column": 1,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Deluxe Pack: ex"
+    ],
+    "source_expansion": "Deluxe Pack: ex",
+    "source_set_code": "A4b",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
   },
   {
     "id": "magnezone_unknown_unknown_v1",
@@ -482,7 +552,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/175",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Mega Blaziken"
+    ],
+    "source_expansion": "Mega Rising",
+    "source_set_code": "B1",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Mega Blaziken' (set(s)=['B1'] expansion='Mega Rising')"
   },
   {
     "id": "eelektross_unknown_unknown_v1",
@@ -525,7 +602,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/13",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
   },
   {
     "id": "genesect_unknown_unknown_v1",
@@ -608,7 +692,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B2/108",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Fantastical Parade"
+    ],
+    "source_expansion": "Fantastical Parade",
+    "source_set_code": "B2",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Fantastical Parade' (set(s)=['B2'] expansion='Fantastical Parade')"
   },
   {
     "id": "budew_unknown_unknown_v1",
@@ -631,7 +722,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/13",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "victini_unknown_unknown_v1",
@@ -933,7 +1031,14 @@
     "source_column": 1,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Deluxe Pack: ex"
+    ],
+    "source_expansion": "Deluxe Pack: ex",
+    "source_set_code": "A4b",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
   },
   {
     "id": "rare_candy_unknown_unknown_v1",
@@ -953,7 +1058,14 @@
     "source_column": 2,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed; notes indicate uncertainty: autofill_score_100; user_verify"
+    "review_reason": "special_type not confirmed; visual review needed; notes indicate uncertainty: autofill_score_100; user_verify",
+    "source_packs": [
+      "Deluxe Pack: ex"
+    ],
+    "source_expansion": "Deluxe Pack: ex",
+    "source_set_code": "A4b",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
   },
   {
     "id": "lillie_unknown_unknown_v1",
@@ -993,7 +1105,14 @@
     "source_column": 1,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed; notes indicate uncertainty: autofill_score_100; user_verify"
+    "review_reason": "special_type not confirmed; visual review needed; notes indicate uncertainty: autofill_score_100; user_verify",
+    "source_packs": [
+      "Deluxe Pack: ex"
+    ],
+    "source_expansion": "Deluxe Pack: ex",
+    "source_set_code": "A4b",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
   },
   {
     "id": "arcanine_unknown_unknown_v1",
@@ -1127,7 +1246,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/223",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Mega Blaziken"
+    ],
+    "source_expansion": "Mega Rising",
+    "source_set_code": "B1",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Mega Blaziken' (set(s)=['B1'] expansion='Mega Rising')"
   },
   {
     "id": "copycat_unknown_unknown_v1",
@@ -1150,7 +1276,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/225",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Mega Gyarados"
+    ],
+    "source_expansion": "Mega Rising",
+    "source_set_code": "B1",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Mega Gyarados' (set(s)=['B1'] expansion='Mega Rising')"
   },
   {
     "id": "ivysaur_unknown_unknown_v1",
@@ -1597,7 +1730,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/67",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
   },
   {
     "id": "clemont_unknown_unknown_v1",
@@ -1620,7 +1760,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/68",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
   },
   {
     "id": "serena_unknown_unknown_v1",
@@ -1643,7 +1790,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/69",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
   },
   {
     "id": "galarian_rapidash_unknown_unknown_v1",
@@ -1921,7 +2075,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/39",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "huntail_unknown_unknown_v1",
@@ -2223,7 +2384,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/112",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "bronzong_unknown_unknown_v1",
@@ -2276,7 +2444,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/120",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "magearna_unknown_unknown_v1",
@@ -2465,7 +2640,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/149",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "cheren_unknown_unknown_v1",
@@ -2488,7 +2670,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/151",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "arena_of_antiquity_unknown_unknown_v1",
@@ -2845,7 +3034,14 @@
     "source_column": 3,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Deluxe Pack: ex"
+    ],
+    "source_expansion": "Deluxe Pack: ex",
+    "source_set_code": "A4b",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
   },
   {
     "id": "dubwool_unknown_unknown_v1",
@@ -2895,7 +3091,14 @@
     "source_column": 2,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Deluxe Pack: ex"
+    ],
+    "source_expansion": "Deluxe Pack: ex",
+    "source_set_code": "A4b",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
   },
   {
     "id": "rockruff_unknown_unknown_v1",
@@ -3739,7 +3942,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/62",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
   },
   {
     "id": "roselia_unknown_unknown_v1",
@@ -3988,7 +4198,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/5",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "surskit_unknown_unknown_v1",
@@ -4244,7 +4461,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/26",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "darumaka_unknown_unknown_v1",
@@ -4470,7 +4694,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/48",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "magnemite_unknown_unknown_v2",
@@ -4885,7 +5116,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/97",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "koffing_unknown_unknown_v1",
@@ -4968,7 +5206,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/104",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "zorua_unknown_unknown_v1",
@@ -5074,7 +5319,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/127",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "castform_unknown_unknown_v1",
@@ -5097,7 +5349,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/133",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "medium",
+    "source_pack_notes": "Rule D: All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
   },
   {
     "id": "watchog_unknown_unknown_v1",

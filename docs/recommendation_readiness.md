@@ -19,7 +19,8 @@ recommendations can be made reliably, lists current blockers, and outlines the n
 | Readiness score | ~50% (see `review/collection_analytics.md` for current score) |
 | pack_sources.json | **Built** — 1483 records across 7 sets (A4b, B1, B1a, B2, B2a, B2b, B3) |
 | Owned pack coverage | 93/211 exact (44.1%); 36 agreed name-match; 62 ambiguous; 20 no match |
-| source_packs in cards.json | Added for 93 exact-match cards |
+| source_packs in cards.json | 130/211 (93 exact + 37 rule-resolved at medium confidence); 81 still unresolved |
+| Pack coverage resolution | `scripts/resolve_pack_coverage.py` applied Rule D (36) + Rule EX (1 — Marowak) |
 
 ### Pack Source Coverage Reports
 
@@ -84,14 +85,13 @@ See `review/pack_source_mapping_plan.md` for how to build it.
 
 ## Current Blockers
 
-1. **set_or_pack is unknown for all 211 cards** — `set_code` has been enriched for 93
-   cards and `source_packs` added, but `set_or_pack` (the human-readable set/pack name)
-   remains `unknown` in cards.json. For the remaining 118 cards without set_code,
-   pack source cannot be definitively determined from name alone (62 ambiguous, 20 no match).
+1. **set_or_pack is unknown for all 211 cards** — `set_code` enriched for 93 cards;
+   `source_packs` now set for 130/211. 81 cards still have no pack assignment:
+   62 are ambiguous (same name in multiple packs across sets) and 19 have no reference match.
 
-2. **Pack coverage is only 44% by exact match** — 118 owned cards still have no confirmed
-   pack assignment. Name-only matches add 36 more with medium confidence, but 62 are
-   ambiguous (same name appears in multiple packs across sets) and 20 have no reference match.
+2. **Pack coverage is 61.6% broad (130/211)** — 93 exact-match + 37 rule-resolved (medium
+   confidence). 62 remain ambiguous (B3 reprints and multi-set cards) and 19 have no
+   reference match (older sets A1–A4, trainers, Zygarde).
 
 3. **special_type is unknown for 209/211 cards** — Full art, illustration rare, special art,
    immersive, and crown/gold distinctions are not captured. Affects recommendation quality
