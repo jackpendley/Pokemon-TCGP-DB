@@ -1,54 +1,120 @@
 Arcanine
+Arena of Antiquity
+Audino
+Bewear
+Bisharp
 Blaziken
 Bonsly
+Bouffalant
+Breloom
+Bronzong
 Budew
 Bulbasaur
+Burmy
 Charizard
+Charmander
+Charmeleon
+Cheren
+Cherubi
 Clawitzer
 Clemont
+Clemont's Backpack
 Copycat
 Corviknight
+Corvisquire
 Crobat
+Cubone
 Cyrus
+Darmanitan
+Ditto
 Dodrio
+Doublade
+Dratini
+Dubwool
 Eelektross
-Example Card
+Farfetch'd
 Flame Patch
+Furfrou
+Galarian Rapidash
+Garbodor
 Genesect
 Giant Cape
 Giovanni
+Golbat
+Gorebyss
+Hariyama
+Hattrem
 Hearthflame Mask Ogerpon
 Heliolisk
+Herdier
+Hitmonchan
+Huntail
 Incineroar
 Ivysaur
+Jigglypuff
+Korrina
+Lanturn
 Leaf
+Leavanny
 Lillie
+Machamp
+Magearna
 Magneton
 Magnezone
+Malamar
+Mandibuzz
 Marowak
 May
 Mega Charizard Y ex
 Mega Venusaur ex
 Meloetta
 Meltan
+Mienfoo
 Mienshao
+Mismagius
 Moltres
 Morpeko
+Mothim
 Onix
+Paldean Tauros
 Palossand
+Pidgey
+Pignite
+Poliwhirl
+Porygon2
+Probopass
+Quagsire
 Quick-Grow Extract
 Rare Candy
+Raticate
+Rattata
 Riolu
+Rockruff
 Sabrina
+Sandaconda
+Sandshrew
 Sandslash
+Sandygast
+Seedot
+Serena
+Shellder
 Shroomish
+Silcoon
 Skrelp
 Sobble
+Spinarak
+Staraptor
+Steelix
 Stoutland
+Sunkern
 Tepig
+Toxicroak
 Turtonator
+Ursaring
 Urshifu
 Vaporeon
+Venonat
+Vibrava
 Victini
 Wartortle
 Yveltal

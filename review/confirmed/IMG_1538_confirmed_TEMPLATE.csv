@@ -1,0 +1,10 @@
+screenshot,row,column,card_name,quantity,special_type,is_ex,notes
+IMG_1538.PNG,1,1,,,unknown,,top3=Pineco(66); Finneon(61); Iono(60); user_identify
+IMG_1538.PNG,1,2,,,unknown,,top3=Houndoom(80); Houndoom ex(78); Houndour(60); user_identify; ref:stage=Stage 1; type=Fire; rarity=one_diamond; set=B1a
+IMG_1538.PNG,1,3,,,unknown,,top3=Cacturne(66); Arven(66); Mareep(60); user_identify
+IMG_1538.PNG,2,1,,,unknown,,top3=Clauncher(85); Haunter(52); Candice(52); user_identify; ref:stage=Basic; type=Water; rarity=one_diamond; set=B1a
+IMG_1538.PNG,2,2,,,unknown,,top3=Magnemite(62); Maintenance(51); Magneton(50); user_identify
+IMG_1538.PNG,2,3,,,unknown,,top3=Helioptile(87); Sceptile ex(58); Sceptile(57); user_identify; ref:stage=Basic; type=Lightning; rarity=one_diamond; set=B1a
+IMG_1538.PNG,3,1,,,unknown,,top3=Gastly(60); May(57); Chansey(54); user_identify
+IMG_1538.PNG,3,2,,,unknown,,top3=Drowzee(58); Colress(58); Dwebble(58); user_identify
+IMG_1538.PNG,3,3,,,unknown,,no_candidates; user_identify
