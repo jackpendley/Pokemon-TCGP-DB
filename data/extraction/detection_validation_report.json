@@ -1,0 +1,888 @@
+{
+  "generated_at": "2026-05-10T17:30:19.050103+00:00",
+  "confirmed_screenshots": [
+    "IMG_0000.PNG",
+    "IMG_1524.PNG",
+    "IMG_1525.PNG",
+    "IMG_1526.PNG",
+    "IMG_1527.PNG"
+  ],
+  "summary": {
+    "total_confirmed_positions": 37,
+    "top1_correct": 3,
+    "top1_accuracy": 0.081,
+    "top3_correct": 8,
+    "top3_accuracy": 0.216,
+    "ocr_empty_count": 5,
+    "ocr_empty_rate": 0.135,
+    "avg_score_when_correct": 94.4,
+    "avg_score_when_incorrect": 56.1
+  },
+  "threshold_analysis": [
+    {
+      "threshold": 70,
+      "tp": 6,
+      "fp": 1,
+      "fn": 30,
+      "precision": 0.857,
+      "recall": 0.167
+    },
+    {
+      "threshold": 75,
+      "tp": 3,
+      "fp": 0,
+      "fn": 34,
+      "precision": 1.0,
+      "recall": 0.081
+    },
+    {
+      "threshold": 80,
+      "tp": 3,
+      "fp": 0,
+      "fn": 34,
+      "precision": 1.0,
+      "recall": 0.081
+    },
+    {
+      "threshold": 85,
+      "tp": 2,
+      "fp": 0,
+      "fn": 35,
+      "precision": 1.0,
+      "recall": 0.054
+    },
+    {
+      "threshold": 90,
+      "tp": 2,
+      "fp": 0,
+      "fn": 35,
+      "precision": 1.0,
+      "recall": 0.054
+    },
+    {
+      "threshold": 95,
+      "tp": 2,
+      "fp": 0,
+      "fn": 35,
+      "precision": 1.0,
+      "recall": 0.054
+    }
+  ],
+  "per_screenshot": {
+    "IMG_0000.PNG": {
+      "total": 1,
+      "top1_correct": 0,
+      "top1_accuracy": 0.0,
+      "top3_correct": 0,
+      "top3_accuracy": 0.0,
+      "ocr_empty": 0
+    },
+    "IMG_1524.PNG": {
+      "total": 9,
+      "top1_correct": 2,
+      "top1_accuracy": 0.222,
+      "top3_correct": 3,
+      "top3_accuracy": 0.333,
+      "ocr_empty": 1
+    },
+    "IMG_1525.PNG": {
+      "total": 9,
+      "top1_correct": 1,
+      "top1_accuracy": 0.111,
+      "top3_correct": 2,
+      "top3_accuracy": 0.222,
+      "ocr_empty": 3
+    },
+    "IMG_1526.PNG": {
+      "total": 9,
+      "top1_correct": 0,
+      "top1_accuracy": 0.0,
+      "top3_correct": 2,
+      "top3_accuracy": 0.222,
+      "ocr_empty": 0
+    },
+    "IMG_1527.PNG": {
+      "total": 9,
+      "top1_correct": 0,
+      "top1_accuracy": 0.0,
+      "top3_correct": 1,
+      "top3_accuracy": 0.111,
+      "ocr_empty": 1
+    }
+  },
+  "per_crop": [
+    {
+      "crop_id": "IMG_1524_r1c1",
+      "confirmed_name": "Quick-Grow Extract",
+      "suggested": "Quick-Grow Extract",
+      "top1_correct": true,
+      "top3_correct": true,
+      "top1_score": 100.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Quick-Grow Extract",
+          "score": 100.0
+        },
+        {
+          "name": "Leaf Extract",
+          "score": 53.3
+        },
+        {
+          "name": "Quick Ball",
+          "score": 50.0
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1524_r1c2",
+      "confirmed_name": "Blaziken",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 57.1,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Aipom",
+          "score": 57.1
+        },
+        {
+          "name": "Tauros",
+          "score": 53.3
+        },
+        {
+          "name": "Arceus",
+          "score": 53.3
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1524_r1c3",
+      "confirmed_name": "Skrelp",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": true,
+      "top1_score": 70.6,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Skrelp",
+          "score": 70.6
+        },
+        {
+          "name": "Lt. Surge",
+          "score": 42.1
+        },
+        {
+          "name": "Seel",
+          "score": 40.0
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1524_r2c1",
+      "confirmed_name": "Sobble",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 57.1,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Inkay",
+          "score": 57.1
+        },
+        {
+          "name": "Misty",
+          "score": 57.1
+        },
+        {
+          "name": "Ivysaur",
+          "score": 44.4
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1524_r2c2",
+      "confirmed_name": "Clemont",
+      "suggested": "Clemont",
+      "top1_correct": true,
+      "top3_correct": true,
+      "top1_score": 100.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Clemont",
+          "score": 100.0
+        },
+        {
+          "name": "Calem",
+          "score": 66.7
+        },
+        {
+          "name": "Charmeleon",
+          "score": 58.8
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1524_r2c3",
+      "confirmed_name": "Bulbasaur",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 62.5,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Escape Rope",
+          "score": 62.5
+        },
+        {
+          "name": "Zekrom ex",
+          "score": 57.1
+        },
+        {
+          "name": "Zekrom",
+          "score": 54.5
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1524_r3c1",
+      "confirmed_name": "Shroomish",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 0,
+      "ocr_empty": true,
+      "top_matches": []
+    },
+    {
+      "crop_id": "IMG_1524_r3c2",
+      "confirmed_name": "Tepig",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 58.8,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Aegislash",
+          "score": 58.8
+        },
+        {
+          "name": "Gyarados ex",
+          "score": 52.6
+        },
+        {
+          "name": "Hero's Cape",
+          "score": 52.6
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1524_r3c3",
+      "confirmed_name": "Zekrom",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 57.1,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Magnemite",
+          "score": 57.1
+        },
+        {
+          "name": "Dragon's Peak",
+          "score": 56.0
+        },
+        {
+          "name": "Level Ball",
+          "score": 54.5
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1525_r1c1",
+      "confirmed_name": "Morpeko",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 0,
+      "ocr_empty": true,
+      "top_matches": []
+    },
+    {
+      "crop_id": "IMG_1525_r1c2",
+      "confirmed_name": "Bonsly",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 47.1,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Bunnelby",
+          "score": 47.1
+        },
+        {
+          "name": "Bagon",
+          "score": 42.9
+        },
+        {
+          "name": "Absol",
+          "score": 42.9
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1525_r1c3",
+      "confirmed_name": "Riolu",
+      "suggested": "Riolu",
+      "top1_correct": true,
+      "top3_correct": true,
+      "top1_score": 83.3,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Riolu",
+          "score": 83.3
+        },
+        {
+          "name": "Raikou",
+          "score": 61.5
+        },
+        {
+          "name": "Prinplup",
+          "score": 53.3
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1525_r2c1",
+      "confirmed_name": "Meltan",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 50.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Magmortar",
+          "score": 50.0
+        },
+        {
+          "name": "Training Court",
+          "score": 48.5
+        },
+        {
+          "name": "Rare Candy",
+          "score": 48.3
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1525_r2c2",
+      "confirmed_name": "Moltres",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 0,
+      "ocr_empty": true,
+      "top_matches": []
+    },
+    {
+      "crop_id": "IMG_1525_r2c3",
+      "confirmed_name": "Marowak",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": true,
+      "top1_score": 63.6,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Marowak",
+          "score": 63.6
+        },
+        {
+          "name": "Aromatisse",
+          "score": 48.0
+        },
+        {
+          "name": "Ampharos ex",
+          "score": 46.2
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1525_r3c1",
+      "confirmed_name": "Incineroar",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 0,
+      "ocr_empty": true,
+      "top_matches": []
+    },
+    {
+      "crop_id": "IMG_1525_r3c2",
+      "confirmed_name": "Mega Venusaur ex",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 44.4,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Pansage",
+          "score": 44.4
+        },
+        {
+          "name": "Blastoise ex",
+          "score": 43.8
+        },
+        {
+          "name": "Aegislash ex",
+          "score": 43.8
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1525_r3c3",
+      "confirmed_name": "Mega Charizard Y ex",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 41.4,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Pokémon League Headquarters",
+          "score": 41.4
+        },
+        {
+          "name": "Hippopotas",
+          "score": 39.0
+        },
+        {
+          "name": "Rescue Stretcher",
+          "score": 38.3
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1526_r1c1",
+      "confirmed_name": "Vaporeon",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 57.1,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Sneasel",
+          "score": 57.1
+        },
+        {
+          "name": "Absol ex",
+          "score": 53.3
+        },
+        {
+          "name": "Elesa ex",
+          "score": 53.3
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1526_r1c2",
+      "confirmed_name": "Magnezone",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": true,
+      "top1_score": 72.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Magnezone",
+          "score": 72.0
+        },
+        {
+          "name": "Magnezone ex",
+          "score": 71.4
+        },
+        {
+          "name": "Magneton",
+          "score": 58.3
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1526_r1c3",
+      "confirmed_name": "Corviknight",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 50.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Bea",
+          "score": 50.0
+        },
+        {
+          "name": "Hau",
+          "score": 50.0
+        },
+        {
+          "name": "May",
+          "score": 50.0
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1526_r2c1",
+      "confirmed_name": "Eelektross",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 60.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Seel",
+          "score": 60.0
+        },
+        {
+          "name": "Aero Ball",
+          "score": 53.3
+        },
+        {
+          "name": "Weepinbell",
+          "score": 50.0
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1526_r2c2",
+      "confirmed_name": "Charizard",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 46.2,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Sceptile ex",
+          "score": 46.2
+        },
+        {
+          "name": "Rescue Stretcher",
+          "score": 45.2
+        },
+        {
+          "name": "Forest Seal Stone",
+          "score": 43.8
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1526_r2c3",
+      "confirmed_name": "Genesect",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 72.7,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Eevee",
+          "score": 72.7
+        },
+        {
+          "name": "Eevee ex",
+          "score": 71.4
+        },
+        {
+          "name": "Beheeyem",
+          "score": 57.1
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1526_r3c1",
+      "confirmed_name": "Hearthflame Mask Ogerpon",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 55.6,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "X Attack",
+          "score": 55.6
+        },
+        {
+          "name": "Arceus ex",
+          "score": 52.6
+        },
+        {
+          "name": "Hugh",
+          "score": 42.9
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1526_r3c2",
+      "confirmed_name": "Yveltal",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 62.5,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Gothitelle",
+          "score": 62.5
+        },
+        {
+          "name": "Steelix",
+          "score": 61.5
+        },
+        {
+          "name": "Seel",
+          "score": 60.0
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1526_r3c3",
+      "confirmed_name": "Budew",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": true,
+      "top1_score": 66.7,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Budew",
+          "score": 66.7
+        },
+        {
+          "name": "Bede",
+          "score": 42.9
+        },
+        {
+          "name": "Buizel",
+          "score": 37.5
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1527_r1c1",
+      "confirmed_name": "Victini",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 54.5,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Mr. Mime",
+          "score": 54.5
+        },
+        {
+          "name": "Aipom",
+          "score": 44.4
+        },
+        {
+          "name": "Mimikyu ex",
+          "score": 42.9
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1527_r1c2",
+      "confirmed_name": "Meloetta",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 50.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Beheeyem",
+          "score": 50.0
+        },
+        {
+          "name": "Eevee ex",
+          "score": 50.0
+        },
+        {
+          "name": "X Defense",
+          "score": 47.1
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1527_r1c3",
+      "confirmed_name": "Crobat",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 40.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Crasher Wake",
+          "score": 40.0
+        },
+        {
+          "name": "Caterpie",
+          "score": 38.5
+        },
+        {
+          "name": "Croconaw",
+          "score": 38.5
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1527_r2c1",
+      "confirmed_name": "Urshifu",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 42.6,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Mysterious Fossil",
+          "score": 42.6
+        },
+        {
+          "name": "Silver Bangle",
+          "score": 41.9
+        },
+        {
+          "name": "Rescue Stretcher",
+          "score": 34.8
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1527_r2c2",
+      "confirmed_name": "Stoutland",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 42.9,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Seismitoad",
+          "score": 42.9
+        },
+        {
+          "name": "Float Stone",
+          "score": 41.4
+        },
+        {
+          "name": "Cape of Toughness",
+          "score": 40.0
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1527_r2c3",
+      "confirmed_name": "Sandslash",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 66.7,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Dratini",
+          "score": 66.7
+        },
+        {
+          "name": "Pinsir",
+          "score": 54.5
+        },
+        {
+          "name": "Marnie",
+          "score": 54.5
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1527_r3c1",
+      "confirmed_name": "Onix",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 0,
+      "ocr_empty": true,
+      "top_matches": []
+    },
+    {
+      "crop_id": "IMG_1527_r3c2",
+      "confirmed_name": "Mienshao",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": true,
+      "top1_score": 72.7,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Mienshao",
+          "score": 72.7
+        },
+        {
+          "name": "Mienfoo",
+          "score": 47.6
+        },
+        {
+          "name": "Metagross ex",
+          "score": 46.2
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_1527_r3c3",
+      "confirmed_name": "Dodrio",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 50.0,
+      "ocr_empty": false,
+      "top_matches": [
+        {
+          "name": "Duosion",
+          "score": 50.0
+        },
+        {
+          "name": "Dugtrio",
+          "score": 50.0
+        },
+        {
+          "name": "Old Rod",
+          "score": 50.0
+        }
+      ]
+    },
+    {
+      "crop_id": "IMG_0000_r1c1",
+      "confirmed_name": "Example Card",
+      "suggested": null,
+      "top1_correct": false,
+      "top3_correct": false,
+      "top1_score": 0,
+      "ocr_empty": true,
+      "note": "no candidate record"
+    }
+  ]
+}

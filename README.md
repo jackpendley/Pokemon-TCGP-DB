@@ -300,3 +300,73 @@ Fix any validation errors before proceeding to the next screenshot.
 | IMG_1526.PNG | `batches/cards_batch_003.json` |
 | … | … |
 | IMG_1547.PNG | `batches/cards_batch_024.json` |
+
+---
+
+## Automation Improvement / Active Learning
+
+As confirmed batches accumulate, use them to improve automation for the
+remaining screenshots. This loop tightens the review burden over time.
+
+### A. Build confirmed lexicon
+
+```bash
+python3 scripts/build_confirmed_lexicon.py
+```
+
+Reads all `batches/cards_batch_*.json` and produces:
+- `data/reference/confirmed_lexicon.json` — full card record with counts
+- `data/reference/confirmed_card_names.txt` — plain name list for matching
+
+The confirmed lexicon acts as a known-good mini reference.
+Re-run this after each new batch is created.
+
+### B. Evaluate detection accuracy
+
+```bash
+python3 scripts/evaluate_detection_against_confirmed.py
+```
+
+Compares OCR/fuzzy-match suggestions against confirmed ground truth.
+Outputs:
+- `data/extraction/detection_validation_report.json`
+- `detection_validation_report.md` — top-1/top-3 accuracy, threshold analysis
+
+Re-run after adding new confirmed batches to track accuracy trends.
+
+### C. Rerun matching with lexicon boost
+
+```bash
+python3 scripts/match_ocr_to_reference.py
+```
+
+If `data/reference/confirmed_card_names.txt` exists, confirmed card names
+act as tie-breakers within a 5-point score window. The output now includes
+a `match_source` field: `full_reference`, `confirmed_lexicon`, or `both`.
+
+### D. Generate autofill candidates
+
+```bash
+python3 scripts/generate_autofill_candidates.py
+```
+
+Outputs:
+- `review/autofill_candidates.csv` — all unconfirmed crops with autofill decision
+- `review/autofill_candidates.md` — human-readable summary
+
+**Autofill rules (conservative):**
+- `auto_fill=true` only if score ≥ 95
+- `auto_fill=true` if score ≥ 90 AND OCR source contains the suggested name exactly
+- `auto_fill=false` otherwise
+
+Autofill candidates are suggestions only — they must still be verified by
+the user before being written to confirmed CSV files. **Never auto-write
+to `cards.json` without validation.**
+
+### When to re-run this loop
+
+After each new group of confirmed batches, re-run steps A → D to:
+1. Expand the lexicon
+2. Measure whether accuracy improved
+3. Re-score unconfirmed crops with the updated reference
+4. Update the autofill candidate list

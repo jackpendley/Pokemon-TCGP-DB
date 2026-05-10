@@ -24,6 +24,7 @@ except ImportError:
     sys.exit(1)
 
 NAMES_FILE = Path("data/reference/card_names.txt")
+CONFIRMED_NAMES_FILE = Path("data/reference/confirmed_card_names.txt")
 OCR_FILE = Path("data/extraction/ocr_results.json")
 OUT_FILE = Path("data/extraction/match_candidates.json")
 
@@ -32,6 +33,10 @@ OUT_FILE = Path("data/extraction/match_candidates.json")
 # ---------------------------------------------------------------------------
 DEFAULT_THRESHOLD = 80   # minimum score (0–100) to auto-suggest a card name
 DEFAULT_TOP_N = 3        # number of candidate matches to include
+
+# Confirmed lexicon tie-breaker: if a confirmed name scores within this many
+# points of the top full-reference match, prefer the confirmed name.
+LEXICON_BOOST_WINDOW = 5
 
 
 def normalize(name: str) -> str:
@@ -78,6 +83,15 @@ def main():
 
     normalized_refs = [normalize(n) for n in reference_names]
 
+    # Load confirmed lexicon if available (used as tie-breaker only)
+    confirmed_name_set: set = set()
+    if CONFIRMED_NAMES_FILE.exists():
+        confirmed_name_set = {
+            line.strip() for line in CONFIRMED_NAMES_FILE.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        }
+        print(f"  Loaded {len(confirmed_name_set)} names from confirmed lexicon ({CONFIRMED_NAMES_FILE})")
+
     ocr_data = json.loads(OCR_FILE.read_text(encoding="utf-8"))
     ocr_results = ocr_data.get("results", [])
 
@@ -99,6 +113,47 @@ def main():
         score = top[0]["score"] if top else 0
         name = top[0]["name"] if score >= args.threshold else None
         return name, score, top
+
+    def apply_lexicon_boost(top_matches: list, threshold: int) -> tuple:
+        """
+        If a confirmed-lexicon name is within LEXICON_BOOST_WINDOW points of
+        the top full-reference match, prefer it as a tie-breaker.
+        Never overrides a match that is clearly better.
+        Returns (boosted_name, boosted_score, match_source).
+        """
+        if not top_matches or not confirmed_name_set:
+            top_score = top_matches[0]["score"] if top_matches else 0
+            top_name = top_matches[0]["name"] if top_matches else None
+            suggested = top_name if top_score >= threshold else None
+            return suggested, top_score, "full_reference"
+
+        top_score = top_matches[0]["score"]
+        top_name = top_matches[0]["name"]
+
+        # Check if any top match is from the confirmed lexicon
+        confirmed_in_top = [
+            m for m in top_matches if m["name"] in confirmed_name_set
+        ]
+        if not confirmed_in_top:
+            suggested = top_name if top_score >= threshold else None
+            return suggested, top_score, "full_reference"
+
+        best_confirmed = confirmed_in_top[0]
+        bc_score = best_confirmed["score"]
+        bc_name = best_confirmed["name"]
+
+        # Boost only if within the window and doesn't displace a clearly better match
+        if bc_name == top_name:
+            source = "both"
+            suggested = top_name if top_score >= threshold else None
+            return suggested, top_score, source
+
+        if (top_score - bc_score) <= LEXICON_BOOST_WINDOW and bc_score >= threshold:
+            # Tie-break: prefer confirmed name
+            return bc_name, bc_score, "confirmed_lexicon"
+
+        suggested = top_name if top_score >= threshold else None
+        return suggested, top_score, "full_reference"
 
     candidates = []
     for item in ocr_results:
@@ -125,29 +180,34 @@ def main():
                 "best_ocr_source": "",
                 "top_matches": [],
                 "suggested_card_name": None,
+                "match_source": "none",
                 "needs_review": True,
                 "reason": "OCR produced no text",
             })
             print(f"  {crop_id:30s}  (no OCR text)")
             continue
 
-        needs_review = best_score < args.threshold
-        reason = f"Best match score {best_score:.0f} < threshold {args.threshold}" if needs_review else ""
+        # Apply confirmed lexicon tie-breaker
+        final_name, final_score, match_source = apply_lexicon_boost(best_top, args.threshold)
+
+        needs_review = final_score < args.threshold or final_name is None
+        reason = f"Best match score {final_score:.0f} < threshold {args.threshold}" if needs_review else ""
 
         candidates.append({
             "crop_id": crop_id,
             "title_guess": raw_joined,
             "best_ocr_source": best_source,
             "top_matches": best_top,
-            "suggested_card_name": best_name,
+            "suggested_card_name": final_name,
+            "match_source": match_source,
             "needs_review": needs_review,
             "reason": reason,
         })
 
         status = (
-            f"→ {best_name!r} ({best_score:.0f})"
-            if best_name
-            else f"needs_review (best {best_score:.0f})"
+            f"→ {final_name!r} ({final_score:.0f}) [{match_source}]"
+            if final_name
+            else f"needs_review (best {final_score:.0f})"
         )
         print(f"  {crop_id:30s}  {status}")
 

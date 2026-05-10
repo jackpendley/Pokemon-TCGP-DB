@@ -1,0 +1,531 @@
+{
+  "generated_at": "2026-05-10T17:30:17.113433+00:00",
+  "total_unique_names": 37,
+  "source_batches": [
+    "batches/cards_batch_001.json",
+    "batches/cards_batch_002.json",
+    "batches/cards_batch_003.json",
+    "batches/cards_batch_004.json",
+    "batches/cards_batch_TEMPLATE.json"
+  ],
+  "entries": [
+    {
+      "card_name": "Blaziken",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1524.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Bonsly",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1525.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Budew",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1526.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Bulbasaur",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1524.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Charizard",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1526.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Clemont",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1524.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "special_trainer"
+      ]
+    },
+    {
+      "card_name": "Corviknight",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1526.PNG"
+      ],
+      "is_ex_values": [
+        true
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Crobat",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1527.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Dodrio",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1527.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Eelektross",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1526.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Example Card",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_0000.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "normal"
+      ]
+    },
+    {
+      "card_name": "Genesect",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1526.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Hearthflame Mask Ogerpon",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1526.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Incineroar",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1525.PNG"
+      ],
+      "is_ex_values": [
+        true
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Magnezone",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1526.PNG"
+      ],
+      "is_ex_values": [
+        true
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Marowak",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1525.PNG"
+      ],
+      "is_ex_values": [
+        true
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Mega Charizard Y ex",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1525.PNG"
+      ],
+      "is_ex_values": [
+        true
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Mega Venusaur ex",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1525.PNG"
+      ],
+      "is_ex_values": [
+        true
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Meloetta",
+      "count_seen": 1,
+      "total_quantity": 3,
+      "screenshots_seen": [
+        "IMG_1527.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Meltan",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1525.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Mienshao",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1527.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Moltres",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1525.PNG"
+      ],
+      "is_ex_values": [
+        true
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Morpeko",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1525.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Onix",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1527.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Quick-Grow Extract",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1524.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "special_trainer"
+      ]
+    },
+    {
+      "card_name": "Riolu",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1525.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Sandslash",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1527.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Shroomish",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1524.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Skrelp",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1524.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Sobble",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1524.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Stoutland",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1527.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Tepig",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1524.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Urshifu",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1527.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Vaporeon",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1526.PNG"
+      ],
+      "is_ex_values": [
+        true
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Victini",
+      "count_seen": 1,
+      "total_quantity": 2,
+      "screenshots_seen": [
+        "IMG_1527.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Yveltal",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1526.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    },
+    {
+      "card_name": "Zekrom",
+      "count_seen": 1,
+      "total_quantity": 1,
+      "screenshots_seen": [
+        "IMG_1524.PNG"
+      ],
+      "is_ex_values": [
+        false
+      ],
+      "special_type_values": [
+        "unknown"
+      ]
+    }
+  ]
+}
