@@ -33,7 +33,7 @@ try:
 except ImportError:
     TESS_AVAILABLE = False
 
-BATCHES_GLOB = "batches/cards_batch_*.json"
+BATCHES_GLOB = "batches/cards_batch_[0-9][0-9][0-9].json"
 OCR_FILE = Path("data/extraction/ocr_results.json")
 MATCH_FILE = Path("data/extraction/match_candidates.json")
 CROPS_DIR = Path("crops")

@@ -28,7 +28,7 @@ except ImportError:
     print("ERROR: rapidfuzz required.  Install: python3 -m pip install rapidfuzz")
     sys.exit(1)
 
-BATCHES_GLOB = "batches/cards_batch_*.json"
+BATCHES_GLOB = "batches/cards_batch_[0-9][0-9][0-9].json"
 MAIN_REF = Path("data/reference/card_reference.json")
 EXT_REF = Path("data/reference/external/external_card_reference.json")
 OUT_JSON = Path("data/reference/reference_coverage_report.json")

@@ -15,7 +15,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-BATCHES_GLOB = "batches/cards_batch_*.json"
+BATCHES_GLOB = "batches/cards_batch_[0-9][0-9][0-9].json"
 LEXICON_JSON = Path("data/reference/confirmed_lexicon.json")
 LEXICON_NAMES = Path("data/reference/confirmed_card_names.txt")
 

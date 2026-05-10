@@ -17,7 +17,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-BATCHES_GLOB = "batches/cards_batch_*.json"
+BATCHES_GLOB = "batches/cards_batch_[0-9][0-9][0-9].json"
 MATCH_FILE = Path("data/extraction/match_candidates.json")
 REPORT_JSON = Path("data/extraction/detection_validation_report.json")
 REPORT_MD = Path("detection_validation_report.md")

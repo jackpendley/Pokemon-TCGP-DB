@@ -25,7 +25,7 @@ from pathlib import Path
 
 MATCH_FILE = Path("data/extraction/match_candidates.json")
 VALIDATION_REPORT = Path("data/extraction/detection_validation_report.json")
-BATCHES_GLOB = "batches/cards_batch_*.json"
+BATCHES_GLOB = "batches/cards_batch_[0-9][0-9][0-9].json"
 OUT_CSV = Path("review/autofill_candidates.csv")
 OUT_MD = Path("review/autofill_candidates.md")
 

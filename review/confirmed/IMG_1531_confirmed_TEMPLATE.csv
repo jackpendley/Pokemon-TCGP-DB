@@ -1,0 +1,10 @@
+screenshot,row,column,card_name,quantity,special_type,is_ex,notes
+IMG_1531.PNG,1,1,,,unknown,,top3=Furfrou(63); Castform Snowy Form(47); Murkrow(45); user_identify
+IMG_1531.PNG,1,2,Clemont's Backpack,,unknown,false,autofill (score 100); user_verify; ref:category=Item; rarity=two_diamond; set=B1a
+IMG_1531.PNG,1,3,Quick-Grow Extract,,unknown,false,autofill (score 100); user_verify; ref:category=Item; rarity=two_diamond; set=B1a
+IMG_1531.PNG,2,1,Clemont,,unknown,false,autofill (score 100); user_verify; ref:category=Supporter; rarity=two_diamond; set=B1a
+IMG_1531.PNG,2,2,Serena,,unknown,false,autofill (score 100); user_verify; ref:category=Supporter; rarity=two_diamond; set=B1a
+IMG_1531.PNG,2,3,,,unknown,,top3=Abra(44); Lana(44); Hala(44); user_identify
+IMG_1531.PNG,3,1,,,unknown,,top3=Nessa(57); Surskit(44); Shellos(44); user_identify
+IMG_1531.PNG,3,2,,,unknown,,top3=Doublade(72); Mega Blaziken ex(46); Blastoise ex(46); user_identify
+IMG_1531.PNG,3,3,,,unknown,,top3=Misty(57); Scott(57); Staryu(50); user_identify
