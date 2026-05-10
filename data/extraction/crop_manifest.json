@@ -1,11 +1,14 @@
 {
-  "generated_at": "2026-05-10T03:39:15.585885+00:00",
-  "params": {
-    "top_y": 546,
-    "card_height": 499,
+  "generated_at": "2026-05-10T04:47:12.637765+00:00",
+  "global_defaults": {
     "left_x": 3,
-    "card_width": 392
+    "top_y": 546,
+    "card_width": 392,
+    "card_height_tile": 484,
+    "row_gap": 15,
+    "card_height_cell": 499
   },
+  "override_count": 0,
   "total_screenshots": 24,
   "total_crops": 216,
   "skipped_screenshots": 0,
@@ -13,6 +16,15 @@
     {
       "filename": "IMG_1524.PNG",
       "path": "screenshots/IMG_1524.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1524_r1c1",
@@ -182,6 +194,15 @@
     {
       "filename": "IMG_1525.PNG",
       "path": "screenshots/IMG_1525.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1525_r1c1",
@@ -351,6 +372,15 @@
     {
       "filename": "IMG_1526.PNG",
       "path": "screenshots/IMG_1526.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1526_r1c1",
@@ -520,6 +550,15 @@
     {
       "filename": "IMG_1527.PNG",
       "path": "screenshots/IMG_1527.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1527_r1c1",
@@ -689,6 +728,15 @@
     {
       "filename": "IMG_1528.PNG",
       "path": "screenshots/IMG_1528.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1528_r1c1",
@@ -858,6 +906,15 @@
     {
       "filename": "IMG_1529.PNG",
       "path": "screenshots/IMG_1529.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1529_r1c1",
@@ -1027,6 +1084,15 @@
     {
       "filename": "IMG_1530.PNG",
       "path": "screenshots/IMG_1530.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1530_r1c1",
@@ -1196,6 +1262,15 @@
     {
       "filename": "IMG_1531.PNG",
       "path": "screenshots/IMG_1531.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1531_r1c1",
@@ -1365,6 +1440,15 @@
     {
       "filename": "IMG_1532.PNG",
       "path": "screenshots/IMG_1532.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1532_r1c1",
@@ -1534,6 +1618,15 @@
     {
       "filename": "IMG_1533.PNG",
       "path": "screenshots/IMG_1533.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1533_r1c1",
@@ -1703,6 +1796,15 @@
     {
       "filename": "IMG_1534.PNG",
       "path": "screenshots/IMG_1534.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1534_r1c1",
@@ -1872,6 +1974,15 @@
     {
       "filename": "IMG_1535.PNG",
       "path": "screenshots/IMG_1535.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1535_r1c1",
@@ -2041,6 +2152,15 @@
     {
       "filename": "IMG_1536.PNG",
       "path": "screenshots/IMG_1536.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1536_r1c1",
@@ -2210,6 +2330,15 @@
     {
       "filename": "IMG_1537.PNG",
       "path": "screenshots/IMG_1537.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1537_r1c1",
@@ -2379,6 +2508,15 @@
     {
       "filename": "IMG_1538.PNG",
       "path": "screenshots/IMG_1538.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1538_r1c1",
@@ -2548,6 +2686,15 @@
     {
       "filename": "IMG_1539.PNG",
       "path": "screenshots/IMG_1539.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1539_r1c1",
@@ -2717,6 +2864,15 @@
     {
       "filename": "IMG_1540.PNG",
       "path": "screenshots/IMG_1540.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1540_r1c1",
@@ -2886,6 +3042,15 @@
     {
       "filename": "IMG_1541.PNG",
       "path": "screenshots/IMG_1541.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1541_r1c1",
@@ -3055,6 +3220,15 @@
     {
       "filename": "IMG_1542.PNG",
       "path": "screenshots/IMG_1542.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1542_r1c1",
@@ -3224,6 +3398,15 @@
     {
       "filename": "IMG_1543.PNG",
       "path": "screenshots/IMG_1543.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1543_r1c1",
@@ -3393,6 +3576,15 @@
     {
       "filename": "IMG_1544.PNG",
       "path": "screenshots/IMG_1544.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1544_r1c1",
@@ -3562,6 +3754,15 @@
     {
       "filename": "IMG_1545.PNG",
       "path": "screenshots/IMG_1545.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1545_r1c1",
@@ -3731,6 +3932,15 @@
     {
       "filename": "IMG_1546.PNG",
       "path": "screenshots/IMG_1546.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1546_r1c1",
@@ -3900,6 +4110,15 @@
     {
       "filename": "IMG_1547.PNG",
       "path": "screenshots/IMG_1547.PNG",
+      "calibration_source": "default",
+      "calibration_params": {
+        "left_x": 3,
+        "top_y": 546,
+        "card_width": 392,
+        "card_height_tile": 484,
+        "row_gap": 15,
+        "card_height_cell": 499
+      },
       "crops": [
         {
           "crop_id": "IMG_1547_r1c1",

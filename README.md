@@ -80,6 +80,61 @@ Card extraction processes one screenshot at a time, saving results to `batches/c
 python3 scripts/inventory_screenshots.py
 ```
 
+## Crop Calibration and QA
+
+Before running OCR or creating batch files, verify that all 216 card crops
+are correctly aligned.  Follow these steps:
+
+### A. Crop all screenshots
+
+```bash
+python3 scripts/crop_all_screenshots.py --force
+```
+
+Reads calibration from `config/crop_config.json` (global defaults plus optional
+per-screenshot overrides).  Outputs `crops/IMG_XXXX/r1c1.png … r3c3.png` and
+`data/extraction/crop_manifest.json` (records which calibration was used per screenshot).
+
+### B. Evaluate crop quality
+
+```bash
+python3 scripts/evaluate_crop_quality.py
+```
+
+Runs pixel-level heuristics on every crop and flags misaligned or clipped crops.
+Outputs:
+- `data/extraction/crop_quality_report.json`
+- `review/crop_quality_report.md` — lists screenshots needing override review
+
+### C. Inspect contact sheets
+
+```bash
+python3 scripts/create_contact_sheets.py
+```
+
+Outputs `review/contact_sheets/<stem>_contact.png`.  Each thumbnail is labeled
+with its row/column, actual dimensions, and QA status badge (PASS / WARN / FAIL)
+when the quality report is present.
+
+### D. Fix misaligned screenshots
+
+If a screenshot has bad crops, add a per-screenshot override in
+`config/crop_config.json` under `per_screenshot_overrides`:
+
+```json
+"IMG_1525.PNG": { "top_y": 548 }
+```
+
+Then re-run steps A–C for the affected screenshots.  See
+`crop_override_workflow.md` for the full procedure.
+
+### E. Proceed to OCR only after crop QA is acceptable
+
+Do not run OCR or create batch files until the contact sheets look correct
+(complete cards, no clipping, quantity chips visible in all row 3 crops).
+
+---
+
 ## Automated Extraction Pipeline
 
 The pipeline replaces manual Claude-vision extraction with a reproducible
@@ -110,8 +165,13 @@ Outputs:
 - `data/reference/card_reference.json`
 - `data/reference/card_names.txt`
 
-If the download fails, run with `--local path/to/cards.json` to supply a
-local file instead.
+If the download fails, use the bundled seed file:
+
+```bash
+python3 scripts/build_card_reference.py --seed data/reference/manual_card_names_seed.txt
+```
+
+Or supply a local JSON file: `--local path/to/cards.json`.
 
 ### C. Crop screenshots
 

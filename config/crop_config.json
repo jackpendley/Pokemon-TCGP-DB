@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "description": "Crop calibration config for Pokemon TCG Pocket binder screenshots (iPhone 15 Pro, 1179x2556 px). Edit per_screenshot_overrides to fix individual misaligned screenshots without reprocessing the full batch. See crop_override_workflow.md for the full procedure.",
+  "defaults": {
+    "left_x": 3,
+    "top_y": 546,
+    "card_width": 392,
+    "card_height_tile": 484,
+    "row_gap": 15,
+    "card_height_cell": 499
+  },
+  "notes": {
+    "left_x": "x-pixel where the left edge of column 1 begins",
+    "top_y": "y-pixel where the top of row 1 card content begins",
+    "card_width": "width of one card tile column in pixels",
+    "card_height_tile": "height of card tile content only, excluding separator",
+    "row_gap": "height of the binder separator strip between tile rows",
+    "card_height_cell": "step between row y-origins = card_height_tile + row_gap; if you set card_height_tile and row_gap, card_height_cell is recomputed automatically"
+  },
+  "per_screenshot_overrides": {
+  }
+}
