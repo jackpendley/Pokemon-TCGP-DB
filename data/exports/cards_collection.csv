@@ -4,37 +4,37 @@ blaziken_unknown_unknown_v1,Blaziken,1,unknown,False,Pokemon,Fire,Stage 2,140,un
 skrelp_unknown_unknown_v1,Skrelp,1,unknown,False,Pokemon,Darkness,Basic,60,unknown,unknown,IMG_1524.PNG,1,3,True,Sparkle art effects in crop suggest illustration_rare variant; full card view needed to confirm special_type and rarity.,Sparkle/star art effects in background visible in crop; likely illustration_rare. Attack: Razor Fin 40.
 sobble_unknown_unknown_v1,Sobble,1,unknown,False,Pokemon,Water,Basic,60,unknown,unknown,IMG_1524.PNG,2,1,True,Special type not determinable from partial crop; full card view needed to confirm special_type and rarity.,Illustrated water/pond scene; attack 'Find a Friend' confirmed in crop.
 clemont_special_trainer_unknown_v1,Clemont,1,special_trainer,False,Supporter,None,None,,unknown,unknown,IMG_1524.PNG,2,2,False,,Elaborate sparkle/full-art style confirmed in crop; Supporter trainer with clear special art treatment.
-bulbasaur_unknown_unknown_v1,Bulbasaur,1,unknown,False,Pokemon,Grass,Basic,70,unknown,unknown,IMG_1524.PNG,2,3,True,Special type not determinable from partial crop; full card view needed to confirm special_type and rarity.,Attack 'Vine Whip 40' confirmed in crop.
+bulbasaur_unknown_unknown_v1,Bulbasaur,1,unknown,False,Pokemon,Grass,Basic,70,one_diamond,unknown,IMG_1524.PNG,2,3,True,Special type not determinable from partial crop; full card view needed to confirm special_type and rarity.,Attack 'Vine Whip 40' confirmed in crop.
 shroomish_unknown_unknown_v1,Shroomish,1,unknown,False,Pokemon,Grass,Basic,60,unknown,unknown,IMG_1524.PNG,3,1,True,Special type not determinable from partial crop; row 3 quantity chip falls outside crop window.,
 tepig_unknown_unknown_v1,Tepig,1,unknown,False,Pokemon,Fire,Basic,60,unknown,unknown,IMG_1524.PNG,3,2,True,Special type not determinable from partial crop; row 3 quantity chip falls outside crop window.,
 zekrom_unknown_unknown_v1,Zekrom,1,unknown,False,Pokemon,Lightning,Basic,120,unknown,unknown,IMG_1524.PNG,3,3,True,Special type not determinable from partial crop; row 3 quantity chip falls outside crop window.,Dramatic dark art visible in crop.
 morpeko_unknown_unknown_v1,Morpeko,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1525.PNG,1,1,True,special_type not confirmed; visual review needed,
-bonsly_unknown_unknown_v1,Bonsly,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1525.PNG,1,2,True,special_type not confirmed; visual review needed,
-riolu_unknown_unknown_v1,Riolu,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1525.PNG,1,3,True,special_type not confirmed; visual review needed,
-meltan_unknown_unknown_v1,Meltan,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1525.PNG,2,1,True,special_type not confirmed; visual review needed,
-moltres_unknown_unknown_v1,Moltres,1,unknown,True,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1525.PNG,2,2,True,special_type not confirmed; visual review needed,
+bonsly_unknown_unknown_v1,Bonsly,1,unknown,False,Pokemon,Fighting,Basic,30,unknown,unknown,IMG_1525.PNG,1,2,True,special_type not confirmed; visual review needed,
+riolu_unknown_unknown_v1,Riolu,1,unknown,False,Pokemon,Fighting,Basic,60,unknown,unknown,IMG_1525.PNG,1,3,True,special_type not confirmed; visual review needed,
+meltan_unknown_unknown_v1,Meltan,1,unknown,False,Pokemon,Metal,Basic,,unknown,unknown,IMG_1525.PNG,2,1,True,special_type not confirmed; visual review needed,
+moltres_unknown_unknown_v1,Moltres,1,unknown,True,Pokemon,Fire,Basic,100,one_star,unknown,IMG_1525.PNG,2,2,True,special_type not confirmed; visual review needed,
 marowak_unknown_unknown_v1,Marowak,1,unknown,True,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1525.PNG,2,3,True,special_type not confirmed; visual review needed,
 incineroar_unknown_unknown_v1,Incineroar,1,unknown,True,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1525.PNG,3,1,True,special_type not confirmed; visual review needed,
-mega_venusaur_ex_unknown_unknown_v1,Mega Venusaur ex,2,unknown,True,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1525.PNG,3,2,True,special_type not confirmed; visual review needed,MEGA; user wrote Venosaur
-mega_charizard_y_ex_unknown_unknown_v1,Mega Charizard Y ex,2,unknown,True,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1525.PNG,3,3,True,special_type not confirmed; visual review needed,MEGA Charizard Y EX
+mega_venusaur_ex_unknown_unknown_v1,Mega Venusaur ex,2,unknown,True,Pokemon,Grass,Stage 2,240,unknown,unknown,IMG_1525.PNG,3,2,True,special_type not confirmed; visual review needed,MEGA; user wrote Venosaur
+mega_charizard_y_ex_unknown_unknown_v1,Mega Charizard Y ex,2,unknown,True,Pokemon,Fire,Stage 2,220,unknown,unknown,IMG_1525.PNG,3,3,True,special_type not confirmed; visual review needed,MEGA Charizard Y EX
 vaporeon_unknown_unknown_v1,Vaporeon,1,unknown,True,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1526.PNG,1,1,True,special_type not confirmed; visual review needed,
-magnezone_unknown_unknown_v1,Magnezone,1,unknown,True,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1526.PNG,1,2,True,special_type not confirmed; visual review needed,
-corviknight_unknown_unknown_v1,Corviknight,1,unknown,True,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1526.PNG,1,3,True,special_type not confirmed; visual review needed,
+magnezone_unknown_unknown_v1,Magnezone,1,unknown,True,Pokemon,Lightning,Stage 2,150,three_diamond,unknown,IMG_1526.PNG,1,2,True,special_type not confirmed; visual review needed,
+corviknight_unknown_unknown_v1,Corviknight,1,unknown,True,Pokemon,Metal,Stage 2,140,unknown,unknown,IMG_1526.PNG,1,3,True,special_type not confirmed; visual review needed,
 eelektross_unknown_unknown_v1,Eelektross,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1526.PNG,2,1,True,special_type not confirmed; visual review needed,user wrote Elektross
-charizard_unknown_unknown_v1,Charizard,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1526.PNG,2,2,True,special_type not confirmed; visual review needed,
-genesect_unknown_unknown_v1,Genesect,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1526.PNG,2,3,True,special_type not confirmed; visual review needed,
-hearthflame_mask_ogerpon_unknown_unknown_v1,Hearthflame Mask Ogerpon,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1526.PNG,3,1,True,special_type not confirmed; visual review needed,
-yveltal_unknown_unknown_v1,Yveltal,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1526.PNG,3,2,True,special_type not confirmed; visual review needed,
-budew_unknown_unknown_v1,Budew,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1526.PNG,3,3,True,special_type not confirmed; visual review needed,
-victini_unknown_unknown_v1,Victini,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1527.PNG,1,1,True,special_type not confirmed; visual review needed,
+charizard_unknown_unknown_v1,Charizard,1,unknown,False,Pokemon,Fire,Stage 2,150,unknown,unknown,IMG_1526.PNG,2,2,True,special_type not confirmed; visual review needed,
+genesect_unknown_unknown_v1,Genesect,1,unknown,False,Pokemon,Metal,Basic,110,three_diamond,unknown,IMG_1526.PNG,2,3,True,special_type not confirmed; visual review needed,
+hearthflame_mask_ogerpon_unknown_unknown_v1,Hearthflame Mask Ogerpon,1,unknown,False,Pokemon,Fire,Basic,80,three_diamond,unknown,IMG_1526.PNG,3,1,True,special_type not confirmed; visual review needed,
+yveltal_unknown_unknown_v1,Yveltal,1,unknown,False,Pokemon,Darkness,Basic,120,unknown,unknown,IMG_1526.PNG,3,2,True,special_type not confirmed; visual review needed,
+budew_unknown_unknown_v1,Budew,1,unknown,False,Pokemon,Grass,Basic,30,unknown,unknown,IMG_1526.PNG,3,3,True,special_type not confirmed; visual review needed,
+victini_unknown_unknown_v1,Victini,2,unknown,False,Pokemon,Fire,Basic,70,three_diamond,unknown,IMG_1527.PNG,1,1,True,special_type not confirmed; visual review needed,
 meloetta_unknown_unknown_v1,Meloetta,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1527.PNG,1,2,True,special_type not confirmed; visual review needed,
-crobat_unknown_unknown_v1,Crobat,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1527.PNG,1,3,True,special_type not confirmed; visual review needed,
+crobat_unknown_unknown_v1,Crobat,1,unknown,False,Pokemon,Darkness,Stage 2,130,unknown,unknown,IMG_1527.PNG,1,3,True,special_type not confirmed; visual review needed,
 urshifu_unknown_unknown_v1,Urshifu,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1527.PNG,2,1,True,special_type not confirmed; visual review needed,
-stoutland_unknown_unknown_v1,Stoutland,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1527.PNG,2,2,True,special_type not confirmed; visual review needed,
-sandslash_unknown_unknown_v1,Sandslash,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1527.PNG,2,3,True,special_type not confirmed; visual review needed,
-onix_unknown_unknown_v1,Onix,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1527.PNG,3,1,True,special_type not confirmed; visual review needed,
-mienshao_unknown_unknown_v1,Mienshao,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1527.PNG,3,2,True,special_type not confirmed; visual review needed,
-dodrio_unknown_unknown_v1,Dodrio,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1527.PNG,3,3,True,special_type not confirmed; visual review needed,
+stoutland_unknown_unknown_v1,Stoutland,1,unknown,False,Pokemon,Colorless,Stage 2,150,unknown,unknown,IMG_1527.PNG,2,2,True,special_type not confirmed; visual review needed,
+sandslash_unknown_unknown_v1,Sandslash,2,unknown,False,Pokemon,Fighting,Stage 1,90,unknown,unknown,IMG_1527.PNG,2,3,True,special_type not confirmed; visual review needed,
+onix_unknown_unknown_v1,Onix,1,unknown,False,Pokemon,Fighting,Basic,100,unknown,unknown,IMG_1527.PNG,3,1,True,special_type not confirmed; visual review needed,
+mienshao_unknown_unknown_v1,Mienshao,1,unknown,False,Pokemon,Fighting,Stage 1,90,one_diamond,unknown,IMG_1527.PNG,3,2,True,special_type not confirmed; visual review needed,
+dodrio_unknown_unknown_v1,Dodrio,1,unknown,False,Pokemon,Colorless,Stage 1,80,one_star,unknown,IMG_1527.PNG,3,3,True,special_type not confirmed; visual review needed,
 giovanni_unknown_unknown_v1,Giovanni,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1528.PNG,1,1,True,special_type not confirmed; visual review needed; notes indicate uncertainty: autofill_score_100; user_verify,autofill_score_100; user_verify
 sabrina_unknown_unknown_v1,Sabrina,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1528.PNG,1,2,True,special_type not confirmed; visual review needed; notes indicate uncertainty: autofill_score_100; user_verify,autofill_score_100; user_verify
 leaf_unknown_unknown_v1,Leaf,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1528.PNG,1,3,True,special_type not confirmed; visual review needed; notes indicate uncertainty: autofill_score_100; user_verify,autofill_score_100; user_verify
@@ -42,164 +42,164 @@ cyrus_unknown_unknown_v1,Cyrus,1,unknown,False,Unknown,Unknown,Unknown,,unknown,
 rare_candy_unknown_unknown_v1,Rare Candy,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1528.PNG,2,2,True,special_type not confirmed; visual review needed; notes indicate uncertainty: autofill_score_100; user_verify,autofill_score_100; user_verify
 lillie_unknown_unknown_v1,Lillie,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1528.PNG,2,3,True,special_type not confirmed; visual review needed; notes indicate uncertainty: autofill_score_100; user_verify,autofill_score_100; user_verify
 giant_cape_unknown_unknown_v1,Giant Cape,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1528.PNG,3,1,True,special_type not confirmed; visual review needed; notes indicate uncertainty: autofill_score_100; user_verify,autofill_score_100; user_verify
-arcanine_unknown_unknown_v1,Arcanine,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1528.PNG,3,2,True,special_type not confirmed; visual review needed,pokemon; user wrote Arcaniner
-turtonator_unknown_unknown_v1,Turtonator,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1528.PNG,3,3,True,special_type not confirmed; visual review needed,pokemon
-palossand_unknown_unknown_v1,Palossand,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1529.PNG,1,1,True,special_type not confirmed; visual review needed,
-flame_patch_unknown_unknown_v1,Flame Patch,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1529.PNG,1,2,True,special_type not confirmed; visual review needed,
-may_unknown_unknown_v1,May,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1529.PNG,1,3,True,special_type not confirmed; visual review needed,autofill candidate; user verified
-copycat_unknown_unknown_v1,Copycat,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1529.PNG,2,1,True,special_type not confirmed; visual review needed,
-ivysaur_unknown_unknown_v1,Ivysaur,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1529.PNG,2,2,True,special_type not confirmed; visual review needed,
-wartortle_unknown_unknown_v1,Wartortle,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1529.PNG,2,3,True,special_type not confirmed; visual review needed,
-clawitzer_unknown_unknown_v1,Clawitzer,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1529.PNG,3,1,True,special_type not confirmed; visual review needed,
-magneton_unknown_unknown_v1,Magneton,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1529.PNG,3,2,True,special_type not confirmed; visual review needed,
-heliolisk_unknown_unknown_v1,Heliolisk,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1529.PNG,3,3,True,special_type not confirmed; visual review needed,
-mismagius_unknown_unknown_v1,Mismagius,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1530.PNG,1,1,True,special_type not confirmed; visual review needed,
-hariyama_unknown_unknown_v1,Hariyama,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1530.PNG,1,2,True,special_type not confirmed; visual review needed,
-garbodor_unknown_unknown_v1,Garbodor,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1530.PNG,1,3,True,special_type not confirmed; visual review needed,
-steelix_unknown_unknown_v1,Steelix,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1530.PNG,2,1,True,special_type not confirmed; visual review needed,
-probopass_unknown_unknown_v1,Probopass,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1530.PNG,2,2,True,special_type not confirmed; visual review needed,
-ditto_unknown_unknown_v1,Ditto,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1530.PNG,2,3,True,special_type not confirmed; visual review needed,
-porygon2_unknown_unknown_v1,Porygon2,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1530.PNG,3,1,True,special_type not confirmed; visual review needed,
-staraptor_unknown_unknown_v1,Staraptor,5,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1530.PNG,3,2,True,special_type not confirmed; visual review needed,
-bouffalant_unknown_unknown_v1,Bouffalant,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1530.PNG,3,3,True,special_type not confirmed; visual review needed,
-furfrou_unknown_unknown_v1,Furfrou,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1531.PNG,1,1,True,special_type not confirmed; visual review needed,
-clemont_s_backpack_unknown_unknown_v1,Clemont's Backpack,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1531.PNG,1,2,True,special_type not confirmed; visual review needed,autofill verified
-quick_grow_extract_unknown_unknown_v1,Quick-Grow Extract,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1531.PNG,1,3,True,special_type not confirmed; visual review needed,autofill verified
-clemont_unknown_unknown_v1,Clemont,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1531.PNG,2,1,True,special_type not confirmed; visual review needed,autofill verified
-serena_unknown_unknown_v1,Serena,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1531.PNG,2,2,True,special_type not confirmed; visual review needed,autofill verified
-galarian_rapidash_unknown_unknown_v1,Galarian Rapidash,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1531.PNG,2,3,True,special_type not confirmed; visual review needed,
-machamp_unknown_unknown_v1,Machamp,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1531.PNG,3,1,True,special_type not confirmed; visual review needed,
-doublade_unknown_unknown_v1,Doublade,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1531.PNG,3,2,True,special_type not confirmed; visual review needed,
-charmeleon_unknown_unknown_v1,Charmeleon,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1531.PNG,3,3,True,special_type not confirmed; visual review needed,
-breloom_unknown_unknown_v1,Breloom,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1532.PNG,1,1,True,special_type not confirmed; visual review needed,
-leavanny_unknown_unknown_v1,Leavanny,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1532.PNG,1,2,True,special_type not confirmed; visual review needed,
-pignite_unknown_unknown_v1,Pignite,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1532.PNG,1,3,True,special_type not confirmed; visual review needed,
-darmanitan_unknown_unknown_v1,Darmanitan,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1532.PNG,2,1,True,special_type not confirmed; visual review needed,
-poliwhirl_unknown_unknown_v1,Poliwhirl,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1532.PNG,2,2,True,special_type not confirmed; visual review needed,
+arcanine_unknown_unknown_v1,Arcanine,1,unknown,False,Pokemon,Fire,Stage 1,120,two_diamond,unknown,IMG_1528.PNG,3,2,True,special_type not confirmed; visual review needed,pokemon; user wrote Arcaniner
+turtonator_unknown_unknown_v1,Turtonator,2,unknown,False,Pokemon,Fire,Basic,110,two_diamond,unknown,IMG_1528.PNG,3,3,True,special_type not confirmed; visual review needed,pokemon
+palossand_unknown_unknown_v1,Palossand,1,unknown,False,Pokemon,Fighting,Stage 1,140,two_diamond,unknown,IMG_1529.PNG,1,1,True,special_type not confirmed; visual review needed,
+flame_patch_unknown_unknown_v1,Flame Patch,2,unknown,False,Item,None,None,,unknown,unknown,IMG_1529.PNG,1,2,True,special_type not confirmed; visual review needed,
+may_unknown_unknown_v1,May,1,unknown,False,Supporter,None,None,,unknown,unknown,IMG_1529.PNG,1,3,True,special_type not confirmed; visual review needed,autofill candidate; user verified
+copycat_unknown_unknown_v1,Copycat,1,unknown,False,Supporter,None,None,,unknown,unknown,IMG_1529.PNG,2,1,True,special_type not confirmed; visual review needed,
+ivysaur_unknown_unknown_v1,Ivysaur,1,unknown,False,Pokemon,Grass,Stage 1,,two_diamond,unknown,IMG_1529.PNG,2,2,True,special_type not confirmed; visual review needed,
+wartortle_unknown_unknown_v1,Wartortle,1,unknown,False,Pokemon,Water,Stage 1,90,two_diamond,unknown,IMG_1529.PNG,2,3,True,special_type not confirmed; visual review needed,
+clawitzer_unknown_unknown_v1,Clawitzer,1,unknown,False,Pokemon,Water,Stage 1,100,two_diamond,unknown,IMG_1529.PNG,3,1,True,special_type not confirmed; visual review needed,
+magneton_unknown_unknown_v1,Magneton,1,unknown,False,Pokemon,Lightning,Stage 1,,two_diamond,unknown,IMG_1529.PNG,3,2,True,special_type not confirmed; visual review needed,
+heliolisk_unknown_unknown_v1,Heliolisk,2,unknown,False,Pokemon,Lightning,Stage 1,100,two_diamond,unknown,IMG_1529.PNG,3,3,True,special_type not confirmed; visual review needed,
+mismagius_unknown_unknown_v1,Mismagius,2,unknown,False,Pokemon,Psychic,Stage 1,90,two_diamond,unknown,IMG_1530.PNG,1,1,True,special_type not confirmed; visual review needed,
+hariyama_unknown_unknown_v1,Hariyama,2,unknown,False,Pokemon,Fighting,Stage 1,,two_diamond,unknown,IMG_1530.PNG,1,2,True,special_type not confirmed; visual review needed,
+garbodor_unknown_unknown_v1,Garbodor,3,unknown,False,Pokemon,Darkness,Stage 1,,unknown,unknown,IMG_1530.PNG,1,3,True,special_type not confirmed; visual review needed,
+steelix_unknown_unknown_v1,Steelix,3,unknown,False,Pokemon,Metal,Stage 1,150,unknown,unknown,IMG_1530.PNG,2,1,True,special_type not confirmed; visual review needed,
+probopass_unknown_unknown_v1,Probopass,1,unknown,False,Pokemon,Metal,Stage 1,130,two_diamond,unknown,IMG_1530.PNG,2,2,True,special_type not confirmed; visual review needed,
+ditto_unknown_unknown_v1,Ditto,1,unknown,False,Pokemon,Colorless,Basic,60,two_diamond,unknown,IMG_1530.PNG,2,3,True,special_type not confirmed; visual review needed,
+porygon2_unknown_unknown_v1,Porygon2,1,unknown,False,Pokemon,Colorless,Stage 1,90,unknown,unknown,IMG_1530.PNG,3,1,True,special_type not confirmed; visual review needed,
+staraptor_unknown_unknown_v1,Staraptor,5,unknown,False,Pokemon,Colorless,Stage 2,140,two_diamond,unknown,IMG_1530.PNG,3,2,True,special_type not confirmed; visual review needed,
+bouffalant_unknown_unknown_v1,Bouffalant,2,unknown,False,Pokemon,Colorless,Basic,100,two_diamond,unknown,IMG_1530.PNG,3,3,True,special_type not confirmed; visual review needed,
+furfrou_unknown_unknown_v1,Furfrou,1,unknown,False,Pokemon,Colorless,Basic,,two_diamond,unknown,IMG_1531.PNG,1,1,True,special_type not confirmed; visual review needed,
+clemont_s_backpack_unknown_unknown_v1,Clemont's Backpack,1,unknown,False,Item,None,None,,two_diamond,unknown,IMG_1531.PNG,1,2,True,special_type not confirmed; visual review needed,autofill verified
+quick_grow_extract_unknown_unknown_v1,Quick-Grow Extract,3,unknown,False,Item,None,None,,unknown,unknown,IMG_1531.PNG,1,3,True,special_type not confirmed; visual review needed,autofill verified
+clemont_unknown_unknown_v1,Clemont,1,unknown,False,Supporter,None,None,,unknown,unknown,IMG_1531.PNG,2,1,True,special_type not confirmed; visual review needed,autofill verified
+serena_unknown_unknown_v1,Serena,1,unknown,False,Supporter,None,None,,unknown,unknown,IMG_1531.PNG,2,2,True,special_type not confirmed; visual review needed,autofill verified
+galarian_rapidash_unknown_unknown_v1,Galarian Rapidash,1,unknown,False,Pokemon,Psychic,Stage 1,100,two_diamond,unknown,IMG_1531.PNG,2,3,True,special_type not confirmed; visual review needed,
+machamp_unknown_unknown_v1,Machamp,1,unknown,False,Pokemon,Fighting,Stage 2,150,two_diamond,unknown,IMG_1531.PNG,3,1,True,special_type not confirmed; visual review needed,
+doublade_unknown_unknown_v1,Doublade,1,unknown,False,Pokemon,Metal,Stage 1,90,two_diamond,unknown,IMG_1531.PNG,3,2,True,special_type not confirmed; visual review needed,
+charmeleon_unknown_unknown_v1,Charmeleon,2,unknown,False,Pokemon,Fire,Stage 1,80,unknown,unknown,IMG_1531.PNG,3,3,True,special_type not confirmed; visual review needed,
+breloom_unknown_unknown_v1,Breloom,1,unknown,False,Pokemon,Grass,Stage 1,,two_diamond,unknown,IMG_1532.PNG,1,1,True,special_type not confirmed; visual review needed,
+leavanny_unknown_unknown_v1,Leavanny,1,unknown,False,Pokemon,Grass,Stage 2,140,two_diamond,unknown,IMG_1532.PNG,1,2,True,special_type not confirmed; visual review needed,
+pignite_unknown_unknown_v1,Pignite,3,unknown,False,Pokemon,Fire,Stage 1,100,two_diamond,unknown,IMG_1532.PNG,1,3,True,special_type not confirmed; visual review needed,
+darmanitan_unknown_unknown_v1,Darmanitan,3,unknown,False,Pokemon,Fire,Stage 1,,two_diamond,unknown,IMG_1532.PNG,2,1,True,special_type not confirmed; visual review needed,
+poliwhirl_unknown_unknown_v1,Poliwhirl,2,unknown,False,Pokemon,Water,Stage 1,90,unknown,unknown,IMG_1532.PNG,2,2,True,special_type not confirmed; visual review needed,
 paldean_tauros_unknown_unknown_v1,Paldean Tauros,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1532.PNG,2,3,True,special_type not confirmed; visual review needed,
-quagsire_unknown_unknown_v1,Quagsire,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1532.PNG,3,1,True,special_type not confirmed; visual review needed,
-huntail_unknown_unknown_v1,Huntail,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1532.PNG,3,2,True,special_type not confirmed; visual review needed,
-gorebyss_unknown_unknown_v1,Gorebyss,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1532.PNG,3,3,True,special_type not confirmed; visual review needed,
-magneton_unknown_unknown_v2,Magneton,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1533.PNG,1,1,True,special_type not confirmed; visual review needed,
-lanturn_unknown_unknown_v1,Lanturn,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1533.PNG,1,2,True,special_type not confirmed; visual review needed,
-hattrem_unknown_unknown_v1,Hattrem,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1533.PNG,1,3,True,special_type not confirmed; visual review needed,
-toxicroak_unknown_unknown_v1,Toxicroak,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1533.PNG,2,1,True,special_type not confirmed; visual review needed,
-bewear_unknown_unknown_v1,Bewear,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1533.PNG,2,2,True,special_type not confirmed; visual review needed,
-sandaconda_unknown_unknown_v1,Sandaconda,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1533.PNG,2,3,True,special_type not confirmed; visual review needed,
-golbat_unknown_unknown_v1,Golbat,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1533.PNG,3,1,True,special_type not confirmed; visual review needed,
-mandibuzz_unknown_unknown_v1,Mandibuzz,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1533.PNG,3,2,True,special_type not confirmed; visual review needed,
-malamar_unknown_unknown_v1,Malamar,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1533.PNG,3,3,True,special_type not confirmed; visual review needed,
-bronzong_unknown_unknown_v1,Bronzong,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1534.PNG,1,1,True,special_type not confirmed; visual review needed,
-bisharp_unknown_unknown_v1,Bisharp,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1534.PNG,1,2,True,special_type not confirmed; visual review needed,user wrote Bishard
-magearna_unknown_unknown_v1,Magearna,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1534.PNG,1,3,True,special_type not confirmed; visual review needed,
-vibrava_unknown_unknown_v1,Vibrava,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1534.PNG,2,1,True,special_type not confirmed; visual review needed,
-ursaring_unknown_unknown_v1,Ursaring,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1534.PNG,2,2,True,special_type not confirmed; visual review needed,
-herdier_unknown_unknown_v1,Herdier,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1534.PNG,2,3,True,special_type not confirmed; visual review needed,
-audino_unknown_unknown_v1,Audino,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1534.PNG,3,1,True,special_type not confirmed; visual review needed,
-corvisquire_unknown_unknown_v1,Corvisquire,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1534.PNG,3,2,True,special_type not confirmed; visual review needed,
-korrina_unknown_unknown_v1,Korrina,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1534.PNG,3,3,True,special_type not confirmed; visual review needed,autofill verified
-cheren_unknown_unknown_v1,Cheren,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1535.PNG,1,1,True,special_type not confirmed; visual review needed,autofill verified
-arena_of_antiquity_unknown_unknown_v1,Arena of Antiquity,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1535.PNG,1,2,True,special_type not confirmed; visual review needed,autofill verified
-bulbasaur_unknown_unknown_v2,Bulbasaur,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1535.PNG,1,3,True,special_type not confirmed; visual review needed,
+quagsire_unknown_unknown_v1,Quagsire,1,unknown,False,Pokemon,Water,Stage 1,130,unknown,unknown,IMG_1532.PNG,3,1,True,special_type not confirmed; visual review needed,
+huntail_unknown_unknown_v1,Huntail,2,unknown,False,Pokemon,Water,Stage 1,100,two_diamond,unknown,IMG_1532.PNG,3,2,True,special_type not confirmed; visual review needed,
+gorebyss_unknown_unknown_v1,Gorebyss,1,unknown,False,Pokemon,Water,Stage 1,100,two_diamond,unknown,IMG_1532.PNG,3,3,True,special_type not confirmed; visual review needed,
+magneton_unknown_unknown_v2,Magneton,2,unknown,False,Pokemon,Lightning,Stage 1,,two_diamond,unknown,IMG_1533.PNG,1,1,True,special_type not confirmed; visual review needed,
+lanturn_unknown_unknown_v1,Lanturn,2,unknown,False,Pokemon,Lightning,Stage 1,110,two_diamond,unknown,IMG_1533.PNG,1,2,True,special_type not confirmed; visual review needed,
+hattrem_unknown_unknown_v1,Hattrem,2,unknown,False,Pokemon,Psychic,Stage 1,80,two_diamond,unknown,IMG_1533.PNG,1,3,True,special_type not confirmed; visual review needed,
+toxicroak_unknown_unknown_v1,Toxicroak,1,unknown,False,Pokemon,Fighting,Stage 1,90,two_diamond,unknown,IMG_1533.PNG,2,1,True,special_type not confirmed; visual review needed,
+bewear_unknown_unknown_v1,Bewear,2,unknown,False,Pokemon,Fighting,Stage 1,,two_diamond,unknown,IMG_1533.PNG,2,2,True,special_type not confirmed; visual review needed,
+sandaconda_unknown_unknown_v1,Sandaconda,1,unknown,False,Pokemon,Fighting,Stage 1,130,two_diamond,unknown,IMG_1533.PNG,2,3,True,special_type not confirmed; visual review needed,
+golbat_unknown_unknown_v1,Golbat,1,unknown,False,Pokemon,Darkness,Stage 1,80,unknown,unknown,IMG_1533.PNG,3,1,True,special_type not confirmed; visual review needed,
+mandibuzz_unknown_unknown_v1,Mandibuzz,1,unknown,False,Pokemon,Darkness,Stage 1,100,two_diamond,unknown,IMG_1533.PNG,3,2,True,special_type not confirmed; visual review needed,
+malamar_unknown_unknown_v1,Malamar,1,unknown,False,Pokemon,Darkness,Stage 1,100,unknown,unknown,IMG_1533.PNG,3,3,True,special_type not confirmed; visual review needed,
+bronzong_unknown_unknown_v1,Bronzong,1,unknown,False,Pokemon,Metal,Stage 1,120,two_diamond,unknown,IMG_1534.PNG,1,1,True,special_type not confirmed; visual review needed,
+bisharp_unknown_unknown_v1,Bisharp,1,unknown,False,Pokemon,Metal,Stage 1,90,unknown,unknown,IMG_1534.PNG,1,2,True,special_type not confirmed; visual review needed,user wrote Bishard
+magearna_unknown_unknown_v1,Magearna,1,unknown,False,Pokemon,Metal,Basic,90,two_diamond,unknown,IMG_1534.PNG,1,3,True,special_type not confirmed; visual review needed,
+vibrava_unknown_unknown_v1,Vibrava,1,unknown,False,Pokemon,Dragon,Stage 1,90,two_diamond,unknown,IMG_1534.PNG,2,1,True,special_type not confirmed; visual review needed,
+ursaring_unknown_unknown_v1,Ursaring,1,unknown,False,Pokemon,Colorless,Stage 1,110,two_diamond,unknown,IMG_1534.PNG,2,2,True,special_type not confirmed; visual review needed,
+herdier_unknown_unknown_v1,Herdier,1,unknown,False,Pokemon,Colorless,Stage 1,90,two_diamond,unknown,IMG_1534.PNG,2,3,True,special_type not confirmed; visual review needed,
+audino_unknown_unknown_v1,Audino,1,unknown,False,Pokemon,Colorless,Basic,80,two_diamond,unknown,IMG_1534.PNG,3,1,True,special_type not confirmed; visual review needed,
+corvisquire_unknown_unknown_v1,Corvisquire,1,unknown,False,Pokemon,Colorless,Stage 1,80,two_diamond,unknown,IMG_1534.PNG,3,2,True,special_type not confirmed; visual review needed,
+korrina_unknown_unknown_v1,Korrina,1,unknown,False,Supporter,None,None,,unknown,unknown,IMG_1534.PNG,3,3,True,special_type not confirmed; visual review needed,autofill verified
+cheren_unknown_unknown_v1,Cheren,1,unknown,False,Supporter,None,None,,unknown,unknown,IMG_1535.PNG,1,1,True,special_type not confirmed; visual review needed,autofill verified
+arena_of_antiquity_unknown_unknown_v1,Arena of Antiquity,1,unknown,False,Stadium,None,None,,two_diamond,unknown,IMG_1535.PNG,1,2,True,special_type not confirmed; visual review needed,autofill verified
+bulbasaur_unknown_unknown_v2,Bulbasaur,1,unknown,False,Pokemon,Grass,Basic,,one_diamond,unknown,IMG_1535.PNG,1,3,True,special_type not confirmed; visual review needed,
 venonat_unknown_unknown_v1,Venonat,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1535.PNG,2,1,True,special_type not confirmed; visual review needed,
-shellder_unknown_unknown_v1,Shellder,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1535.PNG,2,2,True,special_type not confirmed; visual review needed,
-sandshrew_unknown_unknown_v1,Sandshrew,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1535.PNG,2,3,True,special_type not confirmed; visual review needed,
-cubone_unknown_unknown_v1,Cubone,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1535.PNG,3,1,True,special_type not confirmed; visual review needed,
-hitmonchan_unknown_unknown_v1,Hitmonchan,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1535.PNG,3,2,True,special_type not confirmed; visual review needed,
-mienfoo_unknown_unknown_v1,Mienfoo,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1535.PNG,3,3,True,special_type not confirmed; visual review needed,
-dratini_unknown_unknown_v1,Dratini,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1536.PNG,1,1,True,special_type not confirmed; visual review needed,autofill verified
-pidgey_unknown_unknown_v1,Pidgey,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1536.PNG,1,2,True,special_type not confirmed; visual review needed,autofill verified
+shellder_unknown_unknown_v1,Shellder,1,unknown,False,Pokemon,Water,Basic,70,one_star,unknown,IMG_1535.PNG,2,2,True,special_type not confirmed; visual review needed,
+sandshrew_unknown_unknown_v1,Sandshrew,2,unknown,False,Pokemon,Fighting,Basic,60,unknown,unknown,IMG_1535.PNG,2,3,True,special_type not confirmed; visual review needed,
+cubone_unknown_unknown_v1,Cubone,2,unknown,False,Pokemon,Fighting,Basic,70,one_diamond,unknown,IMG_1535.PNG,3,1,True,special_type not confirmed; visual review needed,
+hitmonchan_unknown_unknown_v1,Hitmonchan,1,unknown,False,Pokemon,Fighting,Basic,80,one_star,unknown,IMG_1535.PNG,3,2,True,special_type not confirmed; visual review needed,
+mienfoo_unknown_unknown_v1,Mienfoo,2,unknown,False,Pokemon,Fighting,Basic,50,one_diamond,unknown,IMG_1535.PNG,3,3,True,special_type not confirmed; visual review needed,
+dratini_unknown_unknown_v1,Dratini,1,unknown,False,Pokemon,Dragon,Basic,60,unknown,unknown,IMG_1536.PNG,1,1,True,special_type not confirmed; visual review needed,autofill verified
+pidgey_unknown_unknown_v1,Pidgey,2,unknown,False,Pokemon,Colorless,Basic,60,one_diamond,unknown,IMG_1536.PNG,1,2,True,special_type not confirmed; visual review needed,autofill verified
 rattata_unknown_unknown_v1,Rattata,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1536.PNG,1,3,True,special_type not confirmed; visual review needed,
 raticate_unknown_unknown_v1,Raticate,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1536.PNG,2,1,True,special_type not confirmed; visual review needed,
-jigglypuff_unknown_unknown_v1,Jigglypuff,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1536.PNG,2,2,True,special_type not confirmed; visual review needed,
+jigglypuff_unknown_unknown_v1,Jigglypuff,1,unknown,False,Pokemon,Colorless,Basic,70,one_diamond,unknown,IMG_1536.PNG,2,2,True,special_type not confirmed; visual review needed,
 farfetch_d_unknown_unknown_v1,Farfetch'd,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1536.PNG,2,3,True,special_type not confirmed; visual review needed,
-dubwool_unknown_unknown_v1,Dubwool,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1536.PNG,3,1,True,special_type not confirmed; visual review needed,
+dubwool_unknown_unknown_v1,Dubwool,1,unknown,False,Pokemon,Colorless,Stage 1,130,two_diamond,unknown,IMG_1536.PNG,3,1,True,special_type not confirmed; visual review needed,
 cherubi_unknown_unknown_v1,Cherubi,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1536.PNG,3,2,True,special_type not confirmed; visual review needed,
-rockruff_unknown_unknown_v1,Rockruff,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1536.PNG,3,3,True,special_type not confirmed; visual review needed,
-silcoon_unknown_unknown_v1,Silcoon,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1537.PNG,1,1,True,special_type not confirmed; visual review needed,autofill verified
-seedot_unknown_unknown_v1,Seedot,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1537.PNG,1,2,True,special_type not confirmed; visual review needed,autofill verified
-sandygast_unknown_unknown_v1,Sandygast,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1537.PNG,1,3,True,special_type not confirmed; visual review needed,
-bulbasaur_unknown_unknown_v3,Bulbasaur,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1537.PNG,2,1,True,special_type not confirmed; visual review needed,
-spinarak_unknown_unknown_v1,Spinarak,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1537.PNG,2,2,True,special_type not confirmed; visual review needed,
-sunkern_unknown_unknown_v1,Sunkern,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1537.PNG,2,3,True,special_type not confirmed; visual review needed,
-burmy_unknown_unknown_v1,Burmy,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1537.PNG,3,1,True,special_type not confirmed; visual review needed,
-mothim_unknown_unknown_v1,Mothim,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1537.PNG,3,2,True,special_type not confirmed; visual review needed,
-charmander_unknown_unknown_v1,Charmander,4,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1537.PNG,3,3,True,special_type not confirmed; visual review needed,
-houndour_unknown_unknown_v1,Houndour,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1538.PNG,1,1,True,special_type not confirmed; visual review needed,
-houndoom_unknown_unknown_v1,Houndoom,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1538.PNG,1,2,True,special_type not confirmed; visual review needed,
-basculin_unknown_unknown_v1,Basculin,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1538.PNG,1,3,True,special_type not confirmed; visual review needed,
-clauncher_unknown_unknown_v1,Clauncher,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1538.PNG,2,1,True,special_type not confirmed; visual review needed,
-magnemite_unknown_unknown_v1,Magnemite,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1538.PNG,2,2,True,special_type not confirmed; visual review needed,
-helioptile_unknown_unknown_v1,Helioptile,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1538.PNG,2,3,True,special_type not confirmed; visual review needed,
-misdreavus_unknown_unknown_v1,Misdreavus,4,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1538.PNG,3,1,True,special_type not confirmed; visual review needed,
-solosis_unknown_unknown_v1,Solosis,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1538.PNG,3,2,True,special_type not confirmed; visual review needed,
-spritzee_unknown_unknown_v1,Spritzee,6,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1538.PNG,3,3,True,special_type not confirmed; visual review needed,
-aromatisse_unknown_unknown_v1,Aromatisse,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1539.PNG,1,1,True,special_type not confirmed; visual review needed,
-onix_unknown_unknown_v2,Onix,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1539.PNG,1,2,True,special_type not confirmed; visual review needed,
-makuhita_unknown_unknown_v1,Makuhita,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1539.PNG,1,3,True,special_type not confirmed; visual review needed,
-nosepass_unknown_unknown_v1,Nosepass,6,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1539.PNG,2,1,True,special_type not confirmed; visual review needed,autofill verified
-mienfoo_unknown_unknown_v2,Mienfoo,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1539.PNG,2,2,True,special_type not confirmed; visual review needed,
-mienshao_unknown_unknown_v2,Mienshao,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1539.PNG,2,3,True,special_type not confirmed; visual review needed,
-grimer_unknown_unknown_v1,Grimer,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1539.PNG,3,1,True,special_type not confirmed; visual review needed,
-trubbish_unknown_unknown_v1,Trubbish,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1539.PNG,3,2,True,special_type not confirmed; visual review needed,
-porygon_unknown_unknown_v1,Porygon,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1539.PNG,3,3,True,special_type not confirmed; visual review needed,
-starly_unknown_unknown_v1,Starly,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1540.PNG,1,1,True,special_type not confirmed; visual review needed,
-staravia_unknown_unknown_v1,Staravia,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1540.PNG,1,2,True,special_type not confirmed; visual review needed,
-buneary_unknown_unknown_v1,Buneary,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1540.PNG,1,3,True,special_type not confirmed; visual review needed,
-roselia_unknown_unknown_v1,Roselia,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1540.PNG,2,1,True,special_type not confirmed; visual review needed,
-sinistea_unknown_unknown_v1,Sinistea,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1540.PNG,2,2,True,special_type not confirmed; visual review needed,
-meditite_unknown_unknown_v1,Meditite,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1540.PNG,2,3,True,special_type not confirmed; visual review needed,
-roggenrola_unknown_unknown_v1,Roggenrola,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1540.PNG,3,1,True,special_type not confirmed; visual review needed,
-scraggy_unknown_unknown_v1,Scraggy,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1540.PNG,3,2,True,special_type not confirmed; visual review needed,
-mawile_unknown_unknown_v1,Mawile,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1540.PNG,3,3,True,special_type not confirmed; visual review needed,
-charmander_unknown_unknown_v2,Charmander,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1541.PNG,1,1,True,special_type not confirmed; visual review needed,
-tangela_unknown_unknown_v1,Tangela,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1541.PNG,1,2,True,special_type not confirmed; visual review needed,user wrote tangela
-treecko_unknown_unknown_v1,Treecko,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1541.PNG,1,3,True,special_type not confirmed; visual review needed,
-surskit_unknown_unknown_v1,Surskit,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1541.PNG,2,1,True,special_type not confirmed; visual review needed,user wrote SUrskit
-shroomish_unknown_unknown_v2,Shroomish,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1541.PNG,2,2,True,special_type not confirmed; visual review needed,
-carnivine_unknown_unknown_v1,Carnivine,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1541.PNG,2,3,True,special_type not confirmed; visual review needed,
-sewaddle_unknown_unknown_v1,Sewaddle,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1541.PNG,3,1,True,special_type not confirmed; visual review needed,
-swadloon_unknown_unknown_v1,Swadloon,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1541.PNG,3,2,True,special_type not confirmed; visual review needed,
-applin_unknown_unknown_v1,Applin,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1541.PNG,3,3,True,special_type not confirmed; visual review needed,
-numel_unknown_unknown_v1,Numel,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1542.PNG,1,1,True,special_type not confirmed; visual review needed,
-castform_sunny_form_unknown_unknown_v1,Castform Sunny Form,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1542.PNG,1,2,True,special_type not confirmed; visual review needed,user wrote Casstform Sunny Form
-tepig_unknown_unknown_v2,Tepig,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1542.PNG,1,3,True,special_type not confirmed; visual review needed,
-darumaka_unknown_unknown_v1,Darumaka,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1542.PNG,2,1,True,special_type not confirmed; visual review needed,
-larvesta_unknown_unknown_v1,Larvesta,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1542.PNG,2,2,True,special_type not confirmed; visual review needed,
-wooper_unknown_unknown_v1,Wooper,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1542.PNG,2,3,True,special_type not confirmed; visual review needed,
-castform_rainy_form_unknown_unknown_v1,Castform Rainy Form,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1542.PNG,3,1,True,special_type not confirmed; visual review needed,user wrote Casstform Rainy Form
-castform_snowy_form_unknown_unknown_v1,Castform Snowy Form,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1542.PNG,3,2,True,special_type not confirmed; visual review needed,user wrote Casstform Snowy form
-clamperl_unknown_unknown_v1,Clamperl,4,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1542.PNG,3,3,True,special_type not confirmed; visual review needed,
-cubchoo_unknown_unknown_v1,Cubchoo,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1543.PNG,1,1,True,special_type not confirmed; visual review needed,
-sobble_unknown_unknown_v2,Sobble,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1543.PNG,1,2,True,special_type not confirmed; visual review needed,user wrote SObble
-magnemite_unknown_unknown_v2,Magnemite,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1543.PNG,1,3,True,special_type not confirmed; visual review needed,
-voltorb_unknown_unknown_v1,Voltorb,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1543.PNG,2,1,True,special_type not confirmed; visual review needed,
-electrode_unknown_unknown_v1,Electrode,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1543.PNG,2,2,True,special_type not confirmed; visual review needed,user wrote ELectrode
+rockruff_unknown_unknown_v1,Rockruff,1,unknown,False,Pokemon,Fighting,Basic,60,one_star,unknown,IMG_1536.PNG,3,3,True,special_type not confirmed; visual review needed,
+silcoon_unknown_unknown_v1,Silcoon,1,unknown,False,Pokemon,Grass,Stage 1,80,one_diamond,unknown,IMG_1537.PNG,1,1,True,special_type not confirmed; visual review needed,autofill verified
+seedot_unknown_unknown_v1,Seedot,1,unknown,False,Pokemon,Grass,Basic,50,one_diamond,unknown,IMG_1537.PNG,1,2,True,special_type not confirmed; visual review needed,autofill verified
+sandygast_unknown_unknown_v1,Sandygast,1,unknown,False,Pokemon,Fighting,Basic,80,one_diamond,unknown,IMG_1537.PNG,1,3,True,special_type not confirmed; visual review needed,
+bulbasaur_unknown_unknown_v3,Bulbasaur,3,unknown,False,Pokemon,Grass,Basic,,one_diamond,unknown,IMG_1537.PNG,2,1,True,special_type not confirmed; visual review needed,
+spinarak_unknown_unknown_v1,Spinarak,2,unknown,False,Pokemon,Grass,Basic,50,one_diamond,unknown,IMG_1537.PNG,2,2,True,special_type not confirmed; visual review needed,
+sunkern_unknown_unknown_v1,Sunkern,1,unknown,False,Pokemon,Grass,Basic,50,one_diamond,unknown,IMG_1537.PNG,2,3,True,special_type not confirmed; visual review needed,
+burmy_unknown_unknown_v1,Burmy,1,unknown,False,Pokemon,Grass,Basic,60,one_diamond,unknown,IMG_1537.PNG,3,1,True,special_type not confirmed; visual review needed,
+mothim_unknown_unknown_v1,Mothim,3,unknown,False,Pokemon,Grass,Stage 1,100,one_diamond,unknown,IMG_1537.PNG,3,2,True,special_type not confirmed; visual review needed,
+charmander_unknown_unknown_v1,Charmander,4,unknown,False,Pokemon,Fire,Basic,,unknown,unknown,IMG_1537.PNG,3,3,True,special_type not confirmed; visual review needed,
+houndour_unknown_unknown_v1,Houndour,1,unknown,False,Pokemon,Fire,Basic,60,one_diamond,unknown,IMG_1538.PNG,1,1,True,special_type not confirmed; visual review needed,
+houndoom_unknown_unknown_v1,Houndoom,1,unknown,False,Pokemon,Fire,Stage 1,90,one_diamond,unknown,IMG_1538.PNG,1,2,True,special_type not confirmed; visual review needed,
+basculin_unknown_unknown_v1,Basculin,1,unknown,False,Pokemon,Water,Basic,80,one_diamond,unknown,IMG_1538.PNG,1,3,True,special_type not confirmed; visual review needed,
+clauncher_unknown_unknown_v1,Clauncher,2,unknown,False,Pokemon,Water,Basic,60,one_diamond,unknown,IMG_1538.PNG,2,1,True,special_type not confirmed; visual review needed,
+magnemite_unknown_unknown_v1,Magnemite,1,unknown,False,Pokemon,Lightning,Basic,,one_diamond,unknown,IMG_1538.PNG,2,2,True,special_type not confirmed; visual review needed,
+helioptile_unknown_unknown_v1,Helioptile,2,unknown,False,Pokemon,Lightning,Basic,60,one_diamond,unknown,IMG_1538.PNG,2,3,True,special_type not confirmed; visual review needed,
+misdreavus_unknown_unknown_v1,Misdreavus,4,unknown,False,Pokemon,Psychic,Basic,,one_diamond,unknown,IMG_1538.PNG,3,1,True,special_type not confirmed; visual review needed,
+solosis_unknown_unknown_v1,Solosis,2,unknown,False,Pokemon,Psychic,Basic,40,one_diamond,unknown,IMG_1538.PNG,3,2,True,special_type not confirmed; visual review needed,
+spritzee_unknown_unknown_v1,Spritzee,6,unknown,False,Pokemon,Psychic,Basic,60,one_diamond,unknown,IMG_1538.PNG,3,3,True,special_type not confirmed; visual review needed,
+aromatisse_unknown_unknown_v1,Aromatisse,2,unknown,False,Pokemon,Psychic,Stage 1,,unknown,unknown,IMG_1539.PNG,1,1,True,special_type not confirmed; visual review needed,
+onix_unknown_unknown_v2,Onix,2,unknown,False,Pokemon,Fighting,Basic,100,unknown,unknown,IMG_1539.PNG,1,2,True,special_type not confirmed; visual review needed,
+makuhita_unknown_unknown_v1,Makuhita,1,unknown,False,Pokemon,Fighting,Basic,80,unknown,unknown,IMG_1539.PNG,1,3,True,special_type not confirmed; visual review needed,
+nosepass_unknown_unknown_v1,Nosepass,6,unknown,False,Pokemon,Fighting,Basic,70,one_diamond,unknown,IMG_1539.PNG,2,1,True,special_type not confirmed; visual review needed,autofill verified
+mienfoo_unknown_unknown_v2,Mienfoo,1,unknown,False,Pokemon,Fighting,Basic,50,one_diamond,unknown,IMG_1539.PNG,2,2,True,special_type not confirmed; visual review needed,
+mienshao_unknown_unknown_v2,Mienshao,2,unknown,False,Pokemon,Fighting,Stage 1,90,one_diamond,unknown,IMG_1539.PNG,2,3,True,special_type not confirmed; visual review needed,
+grimer_unknown_unknown_v1,Grimer,3,unknown,False,Pokemon,Darkness,Basic,80,unknown,unknown,IMG_1539.PNG,3,1,True,special_type not confirmed; visual review needed,
+trubbish_unknown_unknown_v1,Trubbish,1,unknown,False,Pokemon,Darkness,Basic,70,unknown,unknown,IMG_1539.PNG,3,2,True,special_type not confirmed; visual review needed,
+porygon_unknown_unknown_v1,Porygon,3,unknown,False,Pokemon,Colorless,Basic,60,unknown,unknown,IMG_1539.PNG,3,3,True,special_type not confirmed; visual review needed,
+starly_unknown_unknown_v1,Starly,2,unknown,False,Pokemon,Colorless,Basic,60,one_diamond,unknown,IMG_1540.PNG,1,1,True,special_type not confirmed; visual review needed,
+staravia_unknown_unknown_v1,Staravia,1,unknown,False,Pokemon,Colorless,Stage 1,80,one_diamond,unknown,IMG_1540.PNG,1,2,True,special_type not confirmed; visual review needed,
+buneary_unknown_unknown_v1,Buneary,2,unknown,False,Pokemon,Colorless,Basic,60,unknown,unknown,IMG_1540.PNG,1,3,True,special_type not confirmed; visual review needed,
+roselia_unknown_unknown_v1,Roselia,1,unknown,False,Pokemon,Grass,Basic,60,one_diamond,unknown,IMG_1540.PNG,2,1,True,special_type not confirmed; visual review needed,
+sinistea_unknown_unknown_v1,Sinistea,1,unknown,False,Pokemon,Psychic,Basic,30,one_diamond,unknown,IMG_1540.PNG,2,2,True,special_type not confirmed; visual review needed,
+meditite_unknown_unknown_v1,Meditite,1,unknown,False,Pokemon,Fighting,Basic,60,one_diamond,unknown,IMG_1540.PNG,2,3,True,special_type not confirmed; visual review needed,
+roggenrola_unknown_unknown_v1,Roggenrola,1,unknown,False,Pokemon,Fighting,Basic,70,one_diamond,unknown,IMG_1540.PNG,3,1,True,special_type not confirmed; visual review needed,
+scraggy_unknown_unknown_v1,Scraggy,1,unknown,False,Pokemon,Darkness,Basic,60,one_diamond,unknown,IMG_1540.PNG,3,2,True,special_type not confirmed; visual review needed,
+mawile_unknown_unknown_v1,Mawile,1,unknown,False,Pokemon,Metal,Basic,80,one_diamond,unknown,IMG_1540.PNG,3,3,True,special_type not confirmed; visual review needed,
+charmander_unknown_unknown_v2,Charmander,2,unknown,False,Pokemon,Fire,Basic,,unknown,unknown,IMG_1541.PNG,1,1,True,special_type not confirmed; visual review needed,
+tangela_unknown_unknown_v1,Tangela,1,unknown,False,Pokemon,Grass,Basic,80,unknown,unknown,IMG_1541.PNG,1,2,True,special_type not confirmed; visual review needed,user wrote tangela
+treecko_unknown_unknown_v1,Treecko,2,unknown,False,Pokemon,Grass,Basic,60,unknown,unknown,IMG_1541.PNG,1,3,True,special_type not confirmed; visual review needed,
+surskit_unknown_unknown_v1,Surskit,1,unknown,False,Pokemon,Grass,Basic,50,one_diamond,unknown,IMG_1541.PNG,2,1,True,special_type not confirmed; visual review needed,user wrote SUrskit
+shroomish_unknown_unknown_v2,Shroomish,1,unknown,False,Pokemon,Grass,Basic,60,unknown,unknown,IMG_1541.PNG,2,2,True,special_type not confirmed; visual review needed,
+carnivine_unknown_unknown_v1,Carnivine,1,unknown,False,Pokemon,Grass,Basic,80,one_diamond,unknown,IMG_1541.PNG,2,3,True,special_type not confirmed; visual review needed,
+sewaddle_unknown_unknown_v1,Sewaddle,2,unknown,False,Pokemon,Grass,Basic,60,one_diamond,unknown,IMG_1541.PNG,3,1,True,special_type not confirmed; visual review needed,
+swadloon_unknown_unknown_v1,Swadloon,2,unknown,False,Pokemon,Grass,Stage 1,80,one_diamond,unknown,IMG_1541.PNG,3,2,True,special_type not confirmed; visual review needed,
+applin_unknown_unknown_v1,Applin,2,unknown,False,Pokemon,Grass,Basic,40,one_diamond,unknown,IMG_1541.PNG,3,3,True,special_type not confirmed; visual review needed,
+numel_unknown_unknown_v1,Numel,2,unknown,False,Pokemon,Fire,Basic,70,one_diamond,unknown,IMG_1542.PNG,1,1,True,special_type not confirmed; visual review needed,
+castform_sunny_form_unknown_unknown_v1,Castform Sunny Form,1,unknown,False,Pokemon,Fire,Basic,70,one_diamond,unknown,IMG_1542.PNG,1,2,True,special_type not confirmed; visual review needed,user wrote Casstform Sunny Form
+tepig_unknown_unknown_v2,Tepig,1,unknown,False,Pokemon,Fire,Basic,60,unknown,unknown,IMG_1542.PNG,1,3,True,special_type not confirmed; visual review needed,
+darumaka_unknown_unknown_v1,Darumaka,2,unknown,False,Pokemon,Fire,Basic,,one_diamond,unknown,IMG_1542.PNG,2,1,True,special_type not confirmed; visual review needed,
+larvesta_unknown_unknown_v1,Larvesta,3,unknown,False,Pokemon,Fire,Basic,80,one_diamond,unknown,IMG_1542.PNG,2,2,True,special_type not confirmed; visual review needed,
+wooper_unknown_unknown_v1,Wooper,2,unknown,False,Pokemon,Water,Basic,60,one_diamond,unknown,IMG_1542.PNG,2,3,True,special_type not confirmed; visual review needed,
+castform_rainy_form_unknown_unknown_v1,Castform Rainy Form,3,unknown,False,Pokemon,Water,Basic,70,one_diamond,unknown,IMG_1542.PNG,3,1,True,special_type not confirmed; visual review needed,user wrote Casstform Rainy Form
+castform_snowy_form_unknown_unknown_v1,Castform Snowy Form,1,unknown,False,Pokemon,Water,Basic,70,one_diamond,unknown,IMG_1542.PNG,3,2,True,special_type not confirmed; visual review needed,user wrote Casstform Snowy form
+clamperl_unknown_unknown_v1,Clamperl,4,unknown,False,Pokemon,Water,Basic,60,one_diamond,unknown,IMG_1542.PNG,3,3,True,special_type not confirmed; visual review needed,
+cubchoo_unknown_unknown_v1,Cubchoo,1,unknown,False,Pokemon,Water,Basic,70,one_diamond,unknown,IMG_1543.PNG,1,1,True,special_type not confirmed; visual review needed,
+sobble_unknown_unknown_v2,Sobble,2,unknown,False,Pokemon,Water,Basic,60,unknown,unknown,IMG_1543.PNG,1,2,True,special_type not confirmed; visual review needed,user wrote SObble
+magnemite_unknown_unknown_v2,Magnemite,2,unknown,False,Pokemon,Lightning,Basic,,one_diamond,unknown,IMG_1543.PNG,1,3,True,special_type not confirmed; visual review needed,
+voltorb_unknown_unknown_v1,Voltorb,3,unknown,False,Pokemon,Lightning,Basic,50,one_diamond,unknown,IMG_1543.PNG,2,1,True,special_type not confirmed; visual review needed,
+electrode_unknown_unknown_v1,Electrode,1,unknown,False,Pokemon,Lightning,Stage 1,90,one_diamond,unknown,IMG_1543.PNG,2,2,True,special_type not confirmed; visual review needed,user wrote ELectrode
 morpeko_unknown_unknown_v2,Morpeko,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1543.PNG,2,3,True,special_type not confirmed; visual review needed,
-espurr_unknown_unknown_v1,Espurr,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1543.PNG,3,1,True,special_type not confirmed; visual review needed,
+espurr_unknown_unknown_v1,Espurr,1,unknown,False,Pokemon,Psychic,Basic,60,one_diamond,unknown,IMG_1543.PNG,3,1,True,special_type not confirmed; visual review needed,
 oricorio_unknown_unknown_v1,Oricorio,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1543.PNG,3,2,True,special_type not confirmed; visual review needed,
 bramblin_unknown_unknown_v1,Bramblin,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1543.PNG,3,3,True,special_type not confirmed; visual review needed,
-trapinch_unknown_unknown_v1,Trapinch,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1544.PNG,1,1,True,special_type not confirmed; visual review needed,
-riolu_unknown_unknown_v2,Riolu,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1544.PNG,1,2,True,special_type not confirmed; visual review needed,
-croagunk_unknown_unknown_v1,Croagunk,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1544.PNG,1,3,True,special_type not confirmed; visual review needed,
-throh_unknown_unknown_v1,Throh,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1544.PNG,2,1,True,special_type not confirmed; visual review needed,user wrote Throah
-dwebble_unknown_unknown_v1,Dwebble,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1544.PNG,2,2,True,special_type not confirmed; visual review needed,user wrote Dweeble
-stufful_unknown_unknown_v1,Stufful,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1544.PNG,2,3,True,special_type not confirmed; visual review needed,
-rolycoly_unknown_unknown_v1,Rolycoly,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1544.PNG,3,1,True,special_type not confirmed; visual review needed,
-silicobra_unknown_unknown_v1,Silicobra,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1544.PNG,3,2,True,special_type not confirmed; visual review needed,user wrote Sillicobra
-kubfu_unknown_unknown_v1,Kubfu,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1544.PNG,3,3,True,special_type not confirmed; visual review needed,
-koffing_unknown_unknown_v1,Koffing,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1545.PNG,1,1,True,special_type not confirmed; visual review needed,
-qwilfish_unknown_unknown_v1,Qwilfish,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1545.PNG,1,2,True,special_type not confirmed; visual review needed,
-seviper_unknown_unknown_v1,Seviper,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1545.PNG,1,3,True,special_type not confirmed; visual review needed,
-zorua_unknown_unknown_v1,Zorua,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1545.PNG,2,1,True,special_type not confirmed; visual review needed,
-vullaby_unknown_unknown_v1,Vullaby,4,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1545.PNG,2,2,True,special_type not confirmed; visual review needed,user wrote Villaby
-bronzor_unknown_unknown_v1,Bronzor,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1545.PNG,2,3,True,special_type not confirmed; visual review needed,
-chansey_unknown_unknown_v1,Chansey,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1545.PNG,3,1,True,special_type not confirmed; visual review needed,
-castform_unknown_unknown_v1,Castform,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1545.PNG,3,2,True,special_type not confirmed; visual review needed,
-watchog_unknown_unknown_v1,Watchog,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1545.PNG,3,3,True,special_type not confirmed; visual review needed,
-lillipup_unknown_unknown_v1,Lillipup,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1546.PNG,1,1,True,special_type not confirmed; visual review needed,
-minccino_unknown_unknown_v1,Minccino,4,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1546.PNG,1,2,True,special_type not confirmed; visual review needed,
-cinccino_unknown_unknown_v1,Cinccino,2,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1546.PNG,1,3,True,special_type not confirmed; visual review needed,
+trapinch_unknown_unknown_v1,Trapinch,1,unknown,False,Pokemon,Fighting,Basic,60,one_diamond,unknown,IMG_1544.PNG,1,1,True,special_type not confirmed; visual review needed,
+riolu_unknown_unknown_v2,Riolu,2,unknown,False,Pokemon,Fighting,Basic,60,unknown,unknown,IMG_1544.PNG,1,2,True,special_type not confirmed; visual review needed,
+croagunk_unknown_unknown_v1,Croagunk,3,unknown,False,Pokemon,Fighting,Basic,60,one_diamond,unknown,IMG_1544.PNG,1,3,True,special_type not confirmed; visual review needed,
+throh_unknown_unknown_v1,Throh,1,unknown,False,Pokemon,Fighting,Basic,100,one_diamond,unknown,IMG_1544.PNG,2,1,True,special_type not confirmed; visual review needed,user wrote Throah
+dwebble_unknown_unknown_v1,Dwebble,1,unknown,False,Pokemon,Fighting,Basic,70,one_diamond,unknown,IMG_1544.PNG,2,2,True,special_type not confirmed; visual review needed,user wrote Dweeble
+stufful_unknown_unknown_v1,Stufful,1,unknown,False,Pokemon,Fighting,Basic,70,one_diamond,unknown,IMG_1544.PNG,2,3,True,special_type not confirmed; visual review needed,
+rolycoly_unknown_unknown_v1,Rolycoly,2,unknown,False,Pokemon,Fighting,Basic,,one_diamond,unknown,IMG_1544.PNG,3,1,True,special_type not confirmed; visual review needed,
+silicobra_unknown_unknown_v1,Silicobra,2,unknown,False,Pokemon,Fighting,Basic,70,one_diamond,unknown,IMG_1544.PNG,3,2,True,special_type not confirmed; visual review needed,user wrote Sillicobra
+kubfu_unknown_unknown_v1,Kubfu,1,unknown,False,Pokemon,Fighting,Basic,60,unknown,unknown,IMG_1544.PNG,3,3,True,special_type not confirmed; visual review needed,
+koffing_unknown_unknown_v1,Koffing,2,unknown,False,Pokemon,Darkness,Basic,70,one_diamond,unknown,IMG_1545.PNG,1,1,True,special_type not confirmed; visual review needed,
+qwilfish_unknown_unknown_v1,Qwilfish,1,unknown,False,Pokemon,Darkness,Basic,80,one_diamond,unknown,IMG_1545.PNG,1,2,True,special_type not confirmed; visual review needed,
+seviper_unknown_unknown_v1,Seviper,2,unknown,False,Pokemon,Darkness,Basic,70,unknown,unknown,IMG_1545.PNG,1,3,True,special_type not confirmed; visual review needed,
+zorua_unknown_unknown_v1,Zorua,1,unknown,False,Pokemon,Darkness,Basic,60,unknown,unknown,IMG_1545.PNG,2,1,True,special_type not confirmed; visual review needed,
+vullaby_unknown_unknown_v1,Vullaby,4,unknown,False,Pokemon,Darkness,Basic,60,one_diamond,unknown,IMG_1545.PNG,2,2,True,special_type not confirmed; visual review needed,user wrote Villaby
+bronzor_unknown_unknown_v1,Bronzor,1,unknown,False,Pokemon,Metal,Basic,60,one_diamond,unknown,IMG_1545.PNG,2,3,True,special_type not confirmed; visual review needed,
+chansey_unknown_unknown_v1,Chansey,1,unknown,False,Pokemon,Colorless,Basic,100,unknown,unknown,IMG_1545.PNG,3,1,True,special_type not confirmed; visual review needed,
+castform_unknown_unknown_v1,Castform,2,unknown,False,Pokemon,Colorless,Basic,70,unknown,unknown,IMG_1545.PNG,3,2,True,special_type not confirmed; visual review needed,
+watchog_unknown_unknown_v1,Watchog,2,unknown,False,Pokemon,Colorless,Stage 1,,unknown,unknown,IMG_1545.PNG,3,3,True,special_type not confirmed; visual review needed,
+lillipup_unknown_unknown_v1,Lillipup,2,unknown,False,Pokemon,Colorless,Basic,60,one_diamond,unknown,IMG_1546.PNG,1,1,True,special_type not confirmed; visual review needed,
+minccino_unknown_unknown_v1,Minccino,4,unknown,False,Pokemon,Colorless,Basic,,one_diamond,unknown,IMG_1546.PNG,1,2,True,special_type not confirmed; visual review needed,
+cinccino_unknown_unknown_v1,Cinccino,2,unknown,False,Pokemon,Colorless,Stage 1,90,unknown,unknown,IMG_1546.PNG,1,3,True,special_type not confirmed; visual review needed,
 potion_unknown_unknown_v1,Potion,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1546.PNG,2,1,True,special_type not confirmed; visual review needed,autofill verified
 x_speed_unknown_unknown_v1,X Speed,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1546.PNG,2,2,True,special_type not confirmed; visual review needed,autofill verified
 hand_scope_unknown_unknown_v1,Hand Scope,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1546.PNG,2,3,True,special_type not confirmed; visual review needed,
@@ -207,6 +207,6 @@ pok_dex_unknown_unknown_v1,Pokédex,1,unknown,False,Unknown,Unknown,Unknown,,unk
 pok_ball_unknown_unknown_v1,Poké Ball,4,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1546.PNG,3,2,True,special_type not confirmed; visual review needed,user wrote Poke Ball
 red_card_unknown_unknown_v1,Red Card,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1546.PNG,3,3,True,special_type not confirmed; visual review needed,
 professor_s_research_unknown_unknown_v1,Professor's Research,4,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1547.PNG,2,1,True,special_type not confirmed; visual review needed,
-victini_unknown_unknown_v2,Victini,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1547.PNG,2,2,True,special_type not confirmed; visual review needed,
+victini_unknown_unknown_v2,Victini,1,unknown,False,Pokemon,Fire,Basic,70,three_diamond,unknown,IMG_1547.PNG,2,2,True,special_type not confirmed; visual review needed,
 zygarde_unknown_unknown_v1,Zygarde,1,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1547.PNG,2,3,True,special_type not confirmed; visual review needed,
 zygarde_unknown_unknown_v2,Zygarde,3,unknown,False,Unknown,Unknown,Unknown,,unknown,unknown,IMG_1547.PNG,3,1,True,special_type not confirmed; visual review needed,

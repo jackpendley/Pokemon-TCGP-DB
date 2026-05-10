@@ -1,0 +1,1080 @@
+{
+  "generated_at": "2026-05-10 22:19 UTC",
+  "deferred_note": "This is analytics only. Pack-opening and deck-building recommendations are intentionally deferred until metadata enrichment is stronger.",
+  "baseline": {
+    "total_quantity": 329,
+    "unique_entries": 211,
+    "expected_total": 329,
+    "app_reported_total": 331,
+    "total_matches_expected": true,
+    "discrepancy_note": "App reported 331; provisional baseline is 329. 2-card discrepancy documented in review/. Not forced.",
+    "validation_status": "PASS"
+  },
+  "metadata_completeness": {
+    "set_or_pack": {
+      "total": 211,
+      "known": 0,
+      "unknown_or_blank": 211,
+      "blank_null": 0,
+      "pct_known": "0.0%"
+    },
+    "set_code": {
+      "total": 211,
+      "known": 93,
+      "unknown_or_blank": 118,
+      "blank_null": 118,
+      "pct_known": "44.1%"
+    },
+    "card_number": {
+      "total": 211,
+      "known": 93,
+      "unknown_or_blank": 118,
+      "blank_null": 118,
+      "pct_known": "44.1%"
+    },
+    "rarity": {
+      "total": 211,
+      "known": 117,
+      "unknown_or_blank": 94,
+      "blank_null": 0,
+      "pct_known": "55.5%"
+    },
+    "pokemon_type": {
+      "total": 211,
+      "known": 167,
+      "unknown_or_blank": 44,
+      "blank_null": 0,
+      "pct_known": "79.1%"
+    },
+    "card_category": {
+      "total": 211,
+      "known": 179,
+      "unknown_or_blank": 32,
+      "blank_null": 0,
+      "pct_known": "84.8%"
+    },
+    "is_ex": {
+      "total": 211,
+      "known": 211,
+      "unknown_or_blank": 0,
+      "blank_null": 0,
+      "pct_known": "100.0%"
+    },
+    "special_type": {
+      "total": 211,
+      "known": 2,
+      "unknown_or_blank": 209,
+      "blank_null": 0,
+      "pct_known": "0.9%"
+    },
+    "stage": {
+      "total": 211,
+      "known": 167,
+      "unknown_or_blank": 44,
+      "blank_null": 0,
+      "pct_known": "79.1%"
+    },
+    "source_reference": {
+      "total": 211,
+      "known": 179,
+      "unknown_or_blank": 32,
+      "blank_null": 32,
+      "pct_known": "84.8%"
+    },
+    "metadata_confidence": {
+      "total": 211,
+      "known": 179,
+      "unknown_or_blank": 32,
+      "blank_null": 32,
+      "pct_known": "84.8%"
+    }
+  },
+  "ex_inventory": [
+    {
+      "card_name": "Corviknight",
+      "quantity": 1,
+      "set_or_pack": "unknown",
+      "set_code": null,
+      "rarity": "unknown",
+      "card_number": null,
+      "source_screenshot": "IMG_1526.PNG",
+      "source_reference": "https://pocket.limitlesstcg.com/cards/B1/175"
+    },
+    {
+      "card_name": "Incineroar",
+      "quantity": 1,
+      "set_or_pack": "unknown",
+      "set_code": null,
+      "rarity": "unknown",
+      "card_number": null,
+      "source_screenshot": "IMG_1525.PNG",
+      "source_reference": null
+    },
+    {
+      "card_name": "Magnezone",
+      "quantity": 1,
+      "set_or_pack": "unknown",
+      "set_code": "B1a",
+      "rarity": "three_diamond",
+      "card_number": 26,
+      "source_screenshot": "IMG_1526.PNG",
+      "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/26"
+    },
+    {
+      "card_name": "Marowak",
+      "quantity": 1,
+      "set_or_pack": "unknown",
+      "set_code": null,
+      "rarity": "unknown",
+      "card_number": null,
+      "source_screenshot": "IMG_1525.PNG",
+      "source_reference": null
+    },
+    {
+      "card_name": "Mega Charizard Y ex",
+      "quantity": 2,
+      "set_or_pack": "unknown",
+      "set_code": null,
+      "rarity": "unknown",
+      "card_number": null,
+      "source_screenshot": "IMG_1525.PNG",
+      "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/14"
+    },
+    {
+      "card_name": "Mega Venusaur ex",
+      "quantity": 2,
+      "set_or_pack": "unknown",
+      "set_code": null,
+      "rarity": "unknown",
+      "card_number": null,
+      "source_screenshot": "IMG_1525.PNG",
+      "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/4"
+    },
+    {
+      "card_name": "Moltres",
+      "quantity": 1,
+      "set_or_pack": "unknown",
+      "set_code": "B1",
+      "rarity": "one_star",
+      "card_number": 292,
+      "source_screenshot": "IMG_1525.PNG",
+      "source_reference": "https://pocket.limitlesstcg.com/cards/B1/292"
+    },
+    {
+      "card_name": "Vaporeon",
+      "quantity": 1,
+      "set_or_pack": "unknown",
+      "set_code": null,
+      "rarity": "unknown",
+      "card_number": null,
+      "source_screenshot": "IMG_1526.PNG",
+      "source_reference": null
+    }
+  ],
+  "special_inventory": {
+    "items": [
+      {
+        "card_name": "Clemont",
+        "quantity": 1,
+        "special_type": "special_trainer",
+        "set_or_pack": "unknown",
+        "source_screenshot": "IMG_1524.PNG",
+        "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/68"
+      },
+      {
+        "card_name": "Quick-Grow Extract",
+        "quantity": 1,
+        "special_type": "special_trainer",
+        "set_or_pack": "unknown",
+        "source_screenshot": "IMG_1524.PNG",
+        "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/67"
+      }
+    ],
+    "unknown_special_type_count": 209
+  },
+  "type_coverage": {
+    "by_type": [
+      {
+        "pokemon_type": "Colorless",
+        "entries": 24,
+        "total_quantity": 41
+      },
+      {
+        "pokemon_type": "Darkness",
+        "entries": 15,
+        "total_quantity": 24
+      },
+      {
+        "pokemon_type": "Dragon",
+        "entries": 2,
+        "total_quantity": 2
+      },
+      {
+        "pokemon_type": "Fighting",
+        "entries": 33,
+        "total_quantity": 51
+      },
+      {
+        "pokemon_type": "Fire",
+        "entries": 22,
+        "total_quantity": 38
+      },
+      {
+        "pokemon_type": "Grass",
+        "entries": 24,
+        "total_quantity": 34
+      },
+      {
+        "pokemon_type": "Lightning",
+        "entries": 11,
+        "total_quantity": 18
+      },
+      {
+        "pokemon_type": "Metal",
+        "entries": 11,
+        "total_quantity": 13
+      },
+      {
+        "pokemon_type": "Psychic",
+        "entries": 9,
+        "total_quantity": 21
+      },
+      {
+        "pokemon_type": "Water",
+        "entries": 16,
+        "total_quantity": 26
+      }
+    ],
+    "unknown_or_none_entries": 44,
+    "unknown_or_none_quantity": 61
+  },
+  "category_breakdown": [
+    {
+      "card_category": "Pokemon",
+      "entries": 167,
+      "total_quantity": 268
+    },
+    {
+      "card_category": "Unknown",
+      "entries": 32,
+      "total_quantity": 46
+    },
+    {
+      "card_category": "Supporter",
+      "entries": 7,
+      "total_quantity": 7
+    },
+    {
+      "card_category": "Item",
+      "entries": 4,
+      "total_quantity": 7
+    },
+    {
+      "card_category": "Stadium",
+      "entries": 1,
+      "total_quantity": 1
+    }
+  ],
+  "duplicate_inventory": [
+    {
+      "card_name": "Nosepass",
+      "quantity": 6,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Spritzee",
+      "quantity": 6,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Staraptor",
+      "quantity": 5,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Charmander",
+      "quantity": 4,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Clamperl",
+      "quantity": 4,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Minccino",
+      "quantity": 4,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Misdreavus",
+      "quantity": 4,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Poké Ball",
+      "quantity": 4,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Professor's Research",
+      "quantity": 4,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1547.PNG"
+    },
+    {
+      "card_name": "Vullaby",
+      "quantity": 4,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Bulbasaur",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Castform Rainy Form",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Croagunk",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Darmanitan",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Garbodor",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Grimer",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Larvesta",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Meloetta",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Mothim",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Pignite",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Porygon",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Quick-Grow Extract",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1531.PNG"
+    },
+    {
+      "card_name": "Steelix",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Voltorb",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Zygarde",
+      "quantity": 3,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1547.PNG"
+    },
+    {
+      "card_name": "Applin",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Aromatisse",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Bewear",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Bouffalant",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Bramblin",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Buneary",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1540.PNG"
+    },
+    {
+      "card_name": "Castform",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Charmander",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Charmeleon",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1531.PNG"
+    },
+    {
+      "card_name": "Cinccino",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Clauncher",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Cubone",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Darumaka",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Flame Patch",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1529.PNG"
+    },
+    {
+      "card_name": "Hariyama",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Hattrem",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Heliolisk",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1529.PNG"
+    },
+    {
+      "card_name": "Helioptile",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Huntail",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Koffing",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Lanturn",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Lillipup",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1546.PNG"
+    },
+    {
+      "card_name": "Magnemite",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Magneton",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1533.PNG"
+    },
+    {
+      "card_name": "Mega Charizard Y ex",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1525.PNG"
+    },
+    {
+      "card_name": "Mega Venusaur ex",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1525.PNG"
+    },
+    {
+      "card_name": "Mienfoo",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Mienshao",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Mismagius",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1530.PNG"
+    },
+    {
+      "card_name": "Numel",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1542.PNG"
+    },
+    {
+      "card_name": "Onix",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1539.PNG"
+    },
+    {
+      "card_name": "Oricorio",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Paldean Tauros",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Pidgey",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1536.PNG"
+    },
+    {
+      "card_name": "Poliwhirl",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1532.PNG"
+    },
+    {
+      "card_name": "Rattata",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1536.PNG"
+    },
+    {
+      "card_name": "Riolu",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Rolycoly",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Sandshrew",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1535.PNG"
+    },
+    {
+      "card_name": "Sandslash",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Seviper",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Sewaddle",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Silicobra",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1544.PNG"
+    },
+    {
+      "card_name": "Sobble",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1543.PNG"
+    },
+    {
+      "card_name": "Solosis",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1538.PNG"
+    },
+    {
+      "card_name": "Spinarak",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1537.PNG"
+    },
+    {
+      "card_name": "Starly",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1540.PNG"
+    },
+    {
+      "card_name": "Swadloon",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Treecko",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1541.PNG"
+    },
+    {
+      "card_name": "Turtonator",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1528.PNG"
+    },
+    {
+      "card_name": "Victini",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1527.PNG"
+    },
+    {
+      "card_name": "Watchog",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1545.PNG"
+    },
+    {
+      "card_name": "Wooper",
+      "quantity": 2,
+      "special_type": "unknown",
+      "set_or_pack": "unknown",
+      "source_screenshot": "IMG_1542.PNG"
+    }
+  ],
+  "top_quantity_cards": [
+    {
+      "card_name": "Spritzee",
+      "quantity": 6,
+      "special_type": "unknown",
+      "card_category": "Pokemon",
+      "pokemon_type": "Psychic",
+      "set_or_pack": "unknown"
+    },
+    {
+      "card_name": "Nosepass",
+      "quantity": 6,
+      "special_type": "unknown",
+      "card_category": "Pokemon",
+      "pokemon_type": "Fighting",
+      "set_or_pack": "unknown"
+    },
+    {
+      "card_name": "Staraptor",
+      "quantity": 5,
+      "special_type": "unknown",
+      "card_category": "Pokemon",
+      "pokemon_type": "Colorless",
+      "set_or_pack": "unknown"
+    },
+    {
+      "card_name": "Charmander",
+      "quantity": 4,
+      "special_type": "unknown",
+      "card_category": "Pokemon",
+      "pokemon_type": "Fire",
+      "set_or_pack": "unknown"
+    },
+    {
+      "card_name": "Misdreavus",
+      "quantity": 4,
+      "special_type": "unknown",
+      "card_category": "Pokemon",
+      "pokemon_type": "Psychic",
+      "set_or_pack": "unknown"
+    },
+    {
+      "card_name": "Clamperl",
+      "quantity": 4,
+      "special_type": "unknown",
+      "card_category": "Pokemon",
+      "pokemon_type": "Water",
+      "set_or_pack": "unknown"
+    },
+    {
+      "card_name": "Vullaby",
+      "quantity": 4,
+      "special_type": "unknown",
+      "card_category": "Pokemon",
+      "pokemon_type": "Darkness",
+      "set_or_pack": "unknown"
+    },
+    {
+      "card_name": "Minccino",
+      "quantity": 4,
+      "special_type": "unknown",
+      "card_category": "Pokemon",
+      "pokemon_type": "Colorless",
+      "set_or_pack": "unknown"
+    },
+    {
+      "card_name": "Poké Ball",
+      "quantity": 4,
+      "special_type": "unknown",
+      "card_category": "Unknown",
+      "pokemon_type": "Unknown",
+      "set_or_pack": "unknown"
+    },
+    {
+      "card_name": "Professor's Research",
+      "quantity": 4,
+      "special_type": "unknown",
+      "card_category": "Unknown",
+      "pokemon_type": "Unknown",
+      "set_or_pack": "unknown"
+    }
+  ],
+  "cleanup_candidates": {
+    "unknown_special_type": {
+      "count": 209,
+      "examples": [
+        "Blaziken",
+        "Skrelp",
+        "Sobble",
+        "Bulbasaur",
+        "Shroomish",
+        "Tepig",
+        "Zekrom",
+        "Morpeko",
+        "Bonsly",
+        "Riolu",
+        "Meltan",
+        "Moltres",
+        "Marowak",
+        "Incineroar",
+        "Mega Venusaur ex",
+        "Mega Charizard Y ex",
+        "Vaporeon",
+        "Magnezone",
+        "Corviknight",
+        "Eelektross",
+        "Charizard",
+        "Genesect",
+        "Hearthflame Mask Ogerpon",
+        "Yveltal",
+        "Budew"
+      ]
+    },
+    "unknown_set": {
+      "count": 211,
+      "examples": [
+        "Quick-Grow Extract",
+        "Blaziken",
+        "Skrelp",
+        "Sobble",
+        "Clemont",
+        "Bulbasaur",
+        "Shroomish",
+        "Tepig",
+        "Zekrom",
+        "Morpeko",
+        "Bonsly",
+        "Riolu",
+        "Meltan",
+        "Moltres",
+        "Marowak",
+        "Incineroar",
+        "Mega Venusaur ex",
+        "Mega Charizard Y ex",
+        "Vaporeon",
+        "Magnezone",
+        "Corviknight",
+        "Eelektross",
+        "Charizard",
+        "Genesect",
+        "Hearthflame Mask Ogerpon"
+      ]
+    },
+    "unknown_pokemon_type_non_trainer": {
+      "count": 32,
+      "examples": [
+        "Morpeko",
+        "Marowak",
+        "Incineroar",
+        "Vaporeon",
+        "Eelektross",
+        "Meloetta",
+        "Urshifu",
+        "Giovanni",
+        "Sabrina",
+        "Leaf",
+        "Cyrus",
+        "Rare Candy",
+        "Lillie",
+        "Giant Cape",
+        "Paldean Tauros",
+        "Venonat",
+        "Rattata",
+        "Raticate",
+        "Farfetch'd",
+        "Cherubi",
+        "Morpeko",
+        "Oricorio",
+        "Bramblin",
+        "Potion",
+        "X Speed"
+      ]
+    },
+    "unknown_card_category": {
+      "count": 32,
+      "examples": [
+        "Morpeko",
+        "Marowak",
+        "Incineroar",
+        "Vaporeon",
+        "Eelektross",
+        "Meloetta",
+        "Urshifu",
+        "Giovanni",
+        "Sabrina",
+        "Leaf",
+        "Cyrus",
+        "Rare Candy",
+        "Lillie",
+        "Giant Cape",
+        "Paldean Tauros",
+        "Venonat",
+        "Rattata",
+        "Raticate",
+        "Farfetch'd",
+        "Cherubi",
+        "Morpeko",
+        "Oricorio",
+        "Bramblin",
+        "Potion",
+        "X Speed"
+      ]
+    },
+    "needs_review": {
+      "count": 209,
+      "examples": [
+        "Blaziken",
+        "Skrelp",
+        "Sobble",
+        "Bulbasaur",
+        "Shroomish",
+        "Tepig",
+        "Zekrom",
+        "Morpeko",
+        "Bonsly",
+        "Riolu",
+        "Meltan",
+        "Moltres",
+        "Marowak",
+        "Incineroar",
+        "Mega Venusaur ex",
+        "Mega Charizard Y ex",
+        "Vaporeon",
+        "Magnezone",
+        "Corviknight",
+        "Eelektross",
+        "Charizard",
+        "Genesect",
+        "Hearthflame Mask Ogerpon",
+        "Yveltal",
+        "Budew"
+      ]
+    }
+  },
+  "recommendation_readiness": {
+    "status": "Not ready",
+    "score_pct": 50.0,
+    "component_scores": {
+      "set_known_pct": 0.0,
+      "card_category_known_pct": 84.8,
+      "pokemon_type_known_pct": 79.1,
+      "special_type_known_pct": 0.9,
+      "rarity_known_pct": 55.5,
+      "source_reference_pct": 84.8
+    },
+    "blockers": [
+      "Set/pack known for only 0% of cards (need ≥50%)",
+      "special_type known for only 1% of cards (need ≥50%)"
+    ],
+    "next_improvements": [
+      "Enrich set_code and set_or_pack from external reference",
+      "Confirm special_type via screenshot review or external reference"
+    ]
+  }
+}

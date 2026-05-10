@@ -1,0 +1,342 @@
+{
+  "generated_at": "2026-05-10 22:21 UTC",
+  "mode": "DRY RUN",
+  "quantities_changed": false,
+  "sources_used": [
+    "external_card_reference.json (1171 entries, source: Limitless TCG Pocket)",
+    "card_reference.json (1144 entries, source: mixed)"
+  ],
+  "stats": {
+    "examined": 211,
+    "enriched": 12,
+    "fields_enriched": 24,
+    "unique_match": 108,
+    "multi_agree": 86,
+    "multi_disagree": 6,
+    "no_match": 11,
+    "unchanged": 199,
+    "warnings": []
+  },
+  "enriched_cards": [
+    {
+      "card_name": "Quick-Grow Extract",
+      "id": "quick_grow_extract_special_trainer_unknown_v1",
+      "outcome": "multi_agree",
+      "confidence": "medium",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "medium"
+        ]
+      ],
+      "notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    },
+    {
+      "card_name": "Clemont",
+      "id": "clemont_special_trainer_unknown_v1",
+      "outcome": "multi_agree",
+      "confidence": "medium",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "medium"
+        ]
+      ],
+      "notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    },
+    {
+      "card_name": "Flame Patch",
+      "id": "flame_patch_unknown_unknown_v1",
+      "outcome": "multi_agree",
+      "confidence": "medium",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "medium"
+        ]
+      ],
+      "notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    },
+    {
+      "card_name": "May",
+      "id": "may_unknown_unknown_v1",
+      "outcome": "multi_agree",
+      "confidence": "medium",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "medium"
+        ]
+      ],
+      "notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    },
+    {
+      "card_name": "Copycat",
+      "id": "copycat_unknown_unknown_v1",
+      "outcome": "multi_agree",
+      "confidence": "medium",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "medium"
+        ]
+      ],
+      "notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    },
+    {
+      "card_name": "Clemont's Backpack",
+      "id": "clemont_s_backpack_unknown_unknown_v1",
+      "outcome": "unique",
+      "confidence": "high",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "high"
+        ]
+      ],
+      "notes": "Unique match in external_card_reference"
+    },
+    {
+      "card_name": "Quick-Grow Extract",
+      "id": "quick_grow_extract_unknown_unknown_v1",
+      "outcome": "multi_agree",
+      "confidence": "medium",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "medium"
+        ]
+      ],
+      "notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    },
+    {
+      "card_name": "Clemont",
+      "id": "clemont_unknown_unknown_v1",
+      "outcome": "multi_agree",
+      "confidence": "medium",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "medium"
+        ]
+      ],
+      "notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    },
+    {
+      "card_name": "Serena",
+      "id": "serena_unknown_unknown_v1",
+      "outcome": "multi_agree",
+      "confidence": "medium",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "medium"
+        ]
+      ],
+      "notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    },
+    {
+      "card_name": "Korrina",
+      "id": "korrina_unknown_unknown_v1",
+      "outcome": "multi_agree",
+      "confidence": "medium",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "medium"
+        ]
+      ],
+      "notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    },
+    {
+      "card_name": "Cheren",
+      "id": "cheren_unknown_unknown_v1",
+      "outcome": "multi_agree",
+      "confidence": "medium",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "medium"
+        ]
+      ],
+      "notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    },
+    {
+      "card_name": "Arena of Antiquity",
+      "id": "arena_of_antiquity_unknown_unknown_v1",
+      "outcome": "unique",
+      "confidence": "high",
+      "fields_changed": [
+        [
+          "pokemon_type",
+          "None",
+          "None"
+        ],
+        [
+          "stage",
+          "None",
+          "None"
+        ],
+        [
+          "metadata_confidence",
+          "None",
+          "high"
+        ]
+      ],
+      "notes": "Unique match in external_card_reference"
+    }
+  ],
+  "ambiguous_cards": [
+    {
+      "card_name": "Morpeko",
+      "id": "morpeko_unknown_unknown_v1",
+      "reason": "4 matches in external_card_reference; disagreements: pokemon_type={'Lightning', 'Darkness'}"
+    },
+    {
+      "card_name": "Meloetta",
+      "id": "meloetta_unknown_unknown_v1",
+      "reason": "4 matches in external_card_reference; disagreements: pokemon_type={'Fighting', 'Psychic'}"
+    },
+    {
+      "card_name": "Paldean Tauros",
+      "id": "paldean_tauros_unknown_unknown_v1",
+      "reason": "3 matches in external_card_reference; disagreements: pokemon_type={'Fire', 'Water', 'Fighting'}"
+    },
+    {
+      "card_name": "Morpeko",
+      "id": "morpeko_unknown_unknown_v2",
+      "reason": "4 matches in external_card_reference; disagreements: pokemon_type={'Lightning', 'Darkness'}"
+    },
+    {
+      "card_name": "Oricorio",
+      "id": "oricorio_unknown_unknown_v1",
+      "reason": "5 matches in external_card_reference; disagreements: pokemon_type={'Fire', 'Lightning', 'Psychic'}"
+    },
+    {
+      "card_name": "Bramblin",
+      "id": "bramblin_unknown_unknown_v1",
+      "reason": "2 matches in external_card_reference; disagreements: pokemon_type={'Grass', 'Psychic'}"
+    }
+  ]
+}

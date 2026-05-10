@@ -1,6 +1,6 @@
 # Collection Summary
 
-Generated: 2026-05-10 20:18 UTC
+Generated: 2026-05-10 22:19 UTC
 
 ## Overview
 
@@ -34,22 +34,28 @@ Generated: 2026-05-10 20:18 UTC
 
 | Category | Count |
 |---|---|
-| Unknown | 202 |
-| Pokemon | 7 |
-| Item | 1 |
-| Supporter | 1 |
+| Pokemon | 167 |
+| Unknown | 32 |
+| Supporter | 7 |
+| Item | 4 |
+| Stadium | 1 |
 
 ## Counts by Pokémon Type
 
 | Type | Count |
 |---|---|
-| Unknown | 202 |
-| None | 2 |
-| Fire | 2 |
-| Grass | 2 |
-| Darkness | 1 |
-| Water | 1 |
-| Lightning | 1 |
+| Fighting | 33 |
+| Unknown | 32 |
+| Grass | 24 |
+| Colorless | 24 |
+| Fire | 22 |
+| Water | 16 |
+| Darkness | 15 |
+| None | 12 |
+| Lightning | 11 |
+| Metal | 11 |
+| Psychic | 9 |
+| Dragon | 2 |
 
 ## Entries by Source Screenshot
 
