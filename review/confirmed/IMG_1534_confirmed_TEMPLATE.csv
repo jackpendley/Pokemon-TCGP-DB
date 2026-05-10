@@ -1,0 +1,10 @@
+screenshot,row,column,card_name,quantity,special_type,is_ex,notes
+IMG_1534.PNG,1,1,,,unknown,,top3=Bronzong(59); Bronzor(53); Brionne(46); user_identify
+IMG_1534.PNG,1,2,,,unknown,,top3=Bisharp(70); Exp. Share(45); Bibarel ex(43); user_identify
+IMG_1534.PNG,1,3,,,unknown,,top3=Magearna(84); Magmar(58); Magneton(52); user_identify; ref:stage=Basic; type=Metal; rarity=two_diamond; set=B3
+IMG_1534.PNG,2,1,,,unknown,,top3=Vibrava(44); Braviary(42); Luxray ex(40); user_identify
+IMG_1534.PNG,2,2,,,unknown,,top3=Net Ball(62); Bramblin(62); Ralts(61); user_identify
+IMG_1534.PNG,2,3,,,unknown,,top3=Herdier(70); Rocky Helmet(48); Shellder(47); user_identify
+IMG_1534.PNG,3,1,,,unknown,,top3=Audino(75); Mega Audino ex(58); Deino(53); user_identify
+IMG_1534.PNG,3,2,,,unknown,,top3=Corvisquire(88); Squirtle(54); Corviknight ex(50); user_identify; ref:stage=Stage 1; type=Colorless; rarity=two_diamond; set=B1
+IMG_1534.PNG,3,3,Korrina,,unknown,false,autofill (score 100); user_verify; ref:category=Supporter; rarity=two_diamond; set=B3
