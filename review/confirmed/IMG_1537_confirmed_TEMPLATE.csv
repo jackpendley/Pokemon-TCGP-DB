@@ -1,0 +1,10 @@
+screenshot,row,column,card_name,quantity,special_type,is_ex,notes
+IMG_1537.PNG,1,1,,,unknown,,top3=Awakening(63); Greninja ex(57); Arcanine(55); user_identify
+IMG_1537.PNG,1,2,,,unknown,,top3=Seedot(80); X Speed(50); Sentret(50); user_identify; ref:stage=Basic; type=Grass; rarity=one_diamond; set=B1
+IMG_1537.PNG,1,3,,,unknown,,top3=Gyarados ex(40); Yamask(40); Chi-Yu(40); user_identify
+IMG_1537.PNG,2,1,,,unknown,,top3=Bulbasaur(75); Venusaur ex(46); Malamar(45); user_identify
+IMG_1537.PNG,2,2,,,unknown,,no_candidates; user_identify
+IMG_1537.PNG,2,3,,,unknown,,top3=Sunkern(82); Super Rod(52); Snover(50); user_identify; ref:stage=Basic; type=Grass; rarity=one_diamond; set=B1a
+IMG_1537.PNG,3,1,,,unknown,,top3=Burmy(76); Buneary(53); Luxray ex(47); user_identify
+IMG_1537.PNG,3,2,,,unknown,,top3=Hop(50); Hau(50); Hapu(40); user_identify
+IMG_1537.PNG,3,3,,,unknown,,no_candidates; user_identify
