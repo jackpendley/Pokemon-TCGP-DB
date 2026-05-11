@@ -18,10 +18,18 @@ recommendations can be made reliably, lists current blockers, and outlines the n
 | Metadata enrichment | 179 / 211 cards enriched from Limitless TCG Pocket reference |
 | Readiness score | ~50% (see `review/collection_analytics.md` for current score) |
 | pack_sources.json | **Expanded** — 3110 records across all 17 sets (A1–A4a, A4b, B1–B3) |
-| Owned pack coverage | 93/211 exact (44.1%); 27 agreed name-match; 83 ambiguous; 8 no-match |
-| source_packs in cards.json | 120/211 (93 exact-phase + 27 rule-resolved); 91 still unresolved |
-| Pack coverage resolution | Rule D: 27 cards (unanimous pack across all set records); Rule EX cleared (ambiguous with full data) |
-| New no-match (8) | Urshifu (form variant), Potion/X Speed/Hand Scope/Pokédex/Red Card (not in Limitless DB), Zygarde (set unknown) |
+| Owned pack coverage | **166/211 exact (78.7%)**; 27 agreed name-match; **10 ambiguous**; 8 no-match |
+| source_packs in cards.json | **193/211** (93 enrichment-phase + 27 rule-resolved + **73 user-confirmed**); 18 still unresolved |
+| Pack coverage resolution | Rule D: 27 cards; 73 user-confirmed via manual review CSV (2026-05-11) |
+| Remaining ambiguous (10) | Giovanni, Sabrina, Leaf, Cyrus, Rare Candy, Lillie, Giant Cape, Marowak, Bulbasaur (A1/A4b variant), Farfetch'd — each may be 2 owned versions; needs per-card quantity split to resolve |
+| No-match (8) | Urshifu (form variant), Potion/X Speed/Hand Scope/Pokédex/Red Card (not in Limitless DB), Zygarde (set unknown) |
+
+### Coverage Change Summary
+
+| Phase | Exact | Agreed | Ambiguous | No-match | Broad % |
+|---|---|---|---|---|---|
+| Before user confirmations | 93 | 27 | 83 | 8 | 56.9% |
+| After 73 user confirmations | 166 | 27 | 10 | 8 | **91.5%** |
 
 ### Pack Source Coverage Reports
 
@@ -102,14 +110,14 @@ See `review/pack_source_mapping_plan.md` for how to build it.
 
 ## Current Blockers
 
-1. **set_or_pack is unknown for all 211 cards** — `set_code` enriched for 93 cards;
-   `source_packs` now set for 120/211. 91 cards still have no pack assignment:
-   83 are ambiguous (same name in multiple packs across sets) and 8 have no reference match.
+1. **10 cards still have no definitive pack assignment** — 73 ambiguous resolved by user
+   confirmation (2026-05-11). Remaining 10 may represent 2 owned versions each (regular + special-art
+   A4b trainers, or A1/A4b variant Pokémon). Cannot split without per-card quantities.
+   8 have no Limitless reference (common trainer items, Urshifu form, Zygarde unidentified set).
 
-2. **Pack coverage is 56.9% broad (120/211)** — 93 exact-match + 27 rule-resolved (medium
-   confidence). 83 remain ambiguous (reprints, multi-set cards, trainer supporters with
-   older-set reprints). 8 have no Limitless reference (common trainer items not in Limitless,
-   Urshifu form variant, Zygarde unidentified set).
+2. **Pack coverage is 91.5% broad (193/211)** — 93 enrichment-phase exact + 27 rule-resolved +
+   73 user-confirmed. 10 remain ambiguous (Giovanni, Sabrina, Leaf, Cyrus, Rare Candy, Lillie,
+   Giant Cape, Marowak, Bulbasaur v2, Farfetch'd). 8 no Limitless reference.
 
 3. **special_type is unknown for 209/211 cards** — Full art, illustration rare, special art,
    immersive, and crown/gold distinctions are not captured. Affects recommendation quality

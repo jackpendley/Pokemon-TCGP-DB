@@ -1,6 +1,6 @@
 # Owned Pack Coverage Report
 
-Generated: 2026-05-11 00:15 UTC
+Generated: 2026-05-11 01:27 UTC
 
 > **Pack-opening recommendations are intentionally deferred. This report is coverage analysis only.**
 
@@ -10,12 +10,12 @@ Generated: 2026-05-11 00:15 UTC
 |---|---|
 | Total owned entries | 211 |
 | Total owned quantity | 329 |
-| Exact pack match (set+number) | 93 |
+| Exact pack match (set+number) | 166 |
 | Name-only match, pack agreed | 27 |
-| Name-only match, pack ambiguous | 83 |
+| Name-only match, pack ambiguous | 10 |
 | No match in pack_sources | 8 |
-| Exact coverage % | 44.1% |
-| Broad coverage % (exact + agreed) | 56.9% |
+| Exact coverage % | 78.7% |
+| Broad coverage % (exact + agreed) | 91.5% |
 
 ## Notes on Matching
 
@@ -28,24 +28,29 @@ Generated: 2026-05-11 00:15 UTC
 
 | Set Code | Owned Cards Resolved |
 |---|---|
-| B1 | 11 |
-| B1a | 28 |
-| B2 | 11 |
-| B2b | 1 |
-| B3 | 42 |
+| A1 | 8 |
+| A4b | 1 |
+| B1 | 12 |
+| B1a | 49 |
+| B2 | 12 |
+| B2b | 3 |
+| B3 | 81 |
 
 ## Coverage by Pack Name (Exact Matches)
 
 | Pack Name | Owned Cards |
 |---|---|
-| Pulsing Aura | 42 |
-| Crimson Blaze | 28 |
-| Fantastical Parade | 11 |
-| Mega Blaziken | 5 |
-| None | 3 |
+| Pulsing Aura | 81 |
+| Crimson Blaze | 49 |
+| Fantastical Parade | 12 |
+| None | 7 |
+| Mega Blaziken | 6 |
+| Mewtwo | 3 |
+| Mega Shine | 3 |
 | Mega Gyarados | 2 |
-| Mega Shine | 1 |
+| Pikachu | 1 |
 | Mega Altaria | 1 |
+| Deluxe Pack: ex | 1 |
 
 ## Name-Agreed Pack Assignments (Medium Confidence, up to 30)
 
@@ -87,22 +92,7 @@ _These cards match multiple records in pack_sources with different pack names. C
 
 | Card Name | Qty | Possible Packs | Sets |
 |---|---|---|---|
-| Blaziken | 1 | Mega Blaziken, Pulsing Aura | B1, B3 |
-| Skrelp | 1 | Mega Blaziken, Pulsing Aura, Secluded Springs | A4a, B1, B3 |
-| Bulbasaur | 1 | Crimson Blaze, Deluxe Pack: ex, Mewtwo, Solgaleo | A1, A3, A4b, B1a |
-| Shroomish | 1 | Pulsing Aura, None | B1, B3 |
-| Morpeko | 1 | Mega Shine, Pulsing Aura | B2b, B3 |
-| Riolu | 1 | Deluxe Pack: ex, Dialga, Pulsing Aura, Shining Revelry | A2, A2b, A4b, B3 |
-| Meltan | 1 | Charizard, Eevee Grove, Mega Gyarados, Pulsing Aura | A1, A3b, B1, B3 |
 | Marowak | 1 | Lunala, Mewtwo | A1, A3 |
-| Vaporeon | 1 | Deluxe Pack: ex, Eevee Grove, Lugia, Mew, Mewtwo | A1, A1a, A3b, A4, A4b |
-| Eelektross | 1 | Mewtwo, Secluded Springs | A1, A4a |
-| Charizard | 1 | Charizard, Crimson Blaze | A1, B1a |
-| Meloetta | 3 | Fantastical Parade, Pulsing Aura | B2, B3 |
-| Crobat | 1 | Arceus, Deluxe Pack: ex, Pulsing Aura | A2a, A4b, B3 |
-| Stoutland | 1 | Extradimensional Crisis, Mega Altaria, Pulsing Aura | A3a, B1, B3 |
-| Sandslash | 2 | Crimson Blaze, Fantastical Parade, None | A1, B1, B1a, B2 |
-| Onix | 1 | Crimson Blaze, Ho-Oh, Pikachu, Pulsing Aura | A1, A4, B1a, B3 |
 | Giovanni | 1 | Deluxe Pack: ex, Mewtwo | A1, A4b |
 | Sabrina | 1 | Charizard, Deluxe Pack: ex | A1, A4b |
 | Leaf | 1 | Deluxe Pack: ex, Mew | A1a, A4b |
@@ -110,15 +100,8 @@ _These cards match multiple records in pack_sources with different pack names. C
 | Rare Candy | 1 | Deluxe Pack: ex, None | A3, A4b |
 | Lillie | 1 | Deluxe Pack: ex, Solgaleo | A3, A4b |
 | Giant Cape | 1 | Deluxe Pack: ex, Dialga | A2, A4b |
-| Flame Patch | 2 | Mega Blaziken, None | B1 |
-| Ivysaur | 1 | Crimson Blaze, Deluxe Pack: ex, Mewtwo, Solgaleo | A1, A3, A4b, B1a |
-| Magneton | 1 | Arceus, Crimson Blaze, Deluxe Pack: ex, Lugia, Pikachu, Pulsing Aura, None | A1, A2, A2a, A4, A4b, B1a, B3 |
-| Mismagius | 2 | Crimson Blaze, Secluded Springs, None | A4a, B1, B1a |
-| Hariyama | 2 | Crimson Blaze, Mega Blaziken, None | A3, B1, B1a |
-| Garbodor | 3 | Crimson Blaze, Mega Shine, None | A3, B1a, B2b |
-| Steelix | 3 | Crimson Blaze, Ho-Oh, Pulsing Aura | A4, B1a, B3 |
-
-_...and 53 more_
+| Bulbasaur | 1 | Crimson Blaze, Deluxe Pack: ex, Mewtwo, Solgaleo | A1, A3, A4b, B1a |
+| Farfetch'd | 1 | Deluxe Pack: ex, Eevee Grove, Secluded Springs, None | A1, A3b, A4a, A4b |
 
 ## Unresolved Cards (No Match in pack_sources, up to 30)
 
@@ -135,7 +118,7 @@ _...and 53 more_
 
 ## Why Pack Recommendations Are Still Deferred
 
-- **91 owned cards** have no definitive pack assignment.
+- **18 owned cards** have no definitive pack assignment.
 - `set_or_pack` is still unknown for all 211 owned cards in cards.json.
 - Pack pull probability tables are not yet modeled.
 - Current meta tier list data is not integrated.

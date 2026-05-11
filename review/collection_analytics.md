@@ -1,6 +1,6 @@
 # Collection Analytics
 
-Generated: 2026-05-11 00:15 UTC
+Generated: 2026-05-11 01:28 UTC
 
 > **This is analytics only. Pack-opening and deck-building recommendations are intentionally deferred until metadata enrichment is stronger.**
 
@@ -21,8 +21,8 @@ Generated: 2026-05-11 00:15 UTC
 | Field | Total | Known | Unknown/Blank | % Known |
 |---|---|---|---|---|
 | set_or_pack | 211 | 0 | 211 | 0.0% |
-| set_code | 211 | 93 | 118 | 44.1% |
-| card_number | 211 | 93 | 118 | 44.1% |
+| set_code | 211 | 166 | 45 | 78.7% |
+| card_number | 211 | 166 | 45 | 78.7% |
 | rarity | 211 | 117 | 94 | 55.5% |
 | pokemon_type | 211 | 167 | 44 | 79.1% |
 | card_category | 211 | 179 | 32 | 84.8% |
@@ -43,7 +43,7 @@ Generated: 2026-05-11 00:15 UTC
 | Mega Charizard Y ex | 2 | unknown | unknown | unknown | IMG_1525.PNG | https://pocket.limitlesstcg.com/cards/B1a/14 |
 | Mega Venusaur ex | 2 | unknown | unknown | unknown | IMG_1525.PNG | https://pocket.limitlesstcg.com/cards/B1a/4 |
 | Moltres | 1 | B1 | one_star | 292 | IMG_1525.PNG | https://pocket.limitlesstcg.com/cards/B1/292 |
-| Vaporeon | 1 | unknown | unknown | unknown | IMG_1526.PNG | — |
+| Vaporeon | 1 | B3 | unknown | 37 | IMG_1526.PNG | — |
 
 ## D. Special Card Inventory
 

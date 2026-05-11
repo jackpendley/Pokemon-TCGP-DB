@@ -3,10 +3,11 @@
 Compares cards.json against pack_sources.json to report pack source coverage.
 
 Matching strategy (in priority order):
-    1. Exact match by set_code + card_number  (high confidence)
-    2. Name-only match with unanimous pack_name  (medium confidence — documented)
-    3. Name-only match with disagreeing pack_names  (ambiguous)
-    4. No match  (unresolved)
+    1. Exact match by set_code + card_number  (high confidence — from metadata enrichment)
+    2. User-confirmed match by source_set_code + source_card_number  (high confidence — from manual review)
+    3. Name-only match with unanimous pack_name  (medium confidence — documented)
+    4. Name-only match with disagreeing pack_names  (ambiguous)
+    5. No match  (unresolved)
 
 Outputs:
     review/owned_pack_coverage.md
@@ -80,10 +81,42 @@ def classify_card(card, by_key, by_name):
     Returns (outcome, pack_info_list, match_confidence, notes)
     outcome: 'exact' | 'name_agree' | 'name_ambiguous' | 'no_match'
     """
+    # Priority 1: enrichment-phase exact match
     key = (card.get("set_code"), card.get("card_number"))
     if key[0] and key[1] is not None and key in by_key:
         r = by_key[key]
         return "exact", [r], "high", f"Matched by set_code={key[0]} card_number={key[1]}"
+
+    # Priority 2: user-confirmed match (apply_ambiguous_confirmations.py)
+    if card.get("source_pack_confidence") == "user_confirmed":
+        src_key = (card.get("source_set_code"), None)
+        # Extract card number from source_pack_notes "Manually confirmed by user: SC/CN"
+        notes_str = card.get("source_pack_notes", "")
+        import re as _re
+        m = _re.search(r"/(\d+)$", notes_str)
+        src_cn = int(m.group(1)) if m else None
+        src_key = (card.get("source_set_code"), src_cn)
+        if src_key[0] and src_key[1] is not None and src_key in by_key:
+            r = by_key[src_key]
+            return "exact", [r], "high", (
+                f"User-confirmed: source_set_code={src_key[0]} card_number={src_key[1]}"
+            )
+        # Fallback if key not found: treat as exact using stored source_packs
+        sp = card.get("source_packs")
+        se = card.get("source_expansion")
+        if sp is not None:
+            pack_name = sp[0] if sp else None
+            synthetic = {
+                "set_code": card.get("source_set_code", ""),
+                "card_number": src_cn,
+                "card_name": card.get("card_name", ""),
+                "pack_name": pack_name,
+                "expansion": se or "",
+                "confidence": "user_confirmed",
+            }
+            return "exact", [synthetic], "high", (
+                f"User-confirmed: source_set_code={card.get('source_set_code')} (card_number not in index)"
+            )
 
     name = norm_name(card.get("card_name", ""))
     matches = by_name.get(name, [])

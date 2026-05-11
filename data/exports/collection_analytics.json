@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11 00:15 UTC",
+  "generated_at": "2026-05-11 01:28 UTC",
   "deferred_note": "This is analytics only. Pack-opening and deck-building recommendations are intentionally deferred until metadata enrichment is stronger.",
   "baseline": {
     "total_quantity": 329,
@@ -20,17 +20,17 @@
     },
     "set_code": {
       "total": 211,
-      "known": 93,
-      "unknown_or_blank": 118,
-      "blank_null": 118,
-      "pct_known": "44.1%"
+      "known": 166,
+      "unknown_or_blank": 45,
+      "blank_null": 45,
+      "pct_known": "78.7%"
     },
     "card_number": {
       "total": 211,
-      "known": 93,
-      "unknown_or_blank": 118,
-      "blank_null": 118,
-      "pct_known": "44.1%"
+      "known": 166,
+      "unknown_or_blank": 45,
+      "blank_null": 45,
+      "pct_known": "78.7%"
     },
     "rarity": {
       "total": 211,
@@ -164,9 +164,9 @@
       "card_name": "Vaporeon",
       "quantity": 1,
       "set_or_pack": "unknown",
-      "set_code": null,
+      "set_code": "B3",
       "rarity": "unknown",
-      "card_number": null,
+      "card_number": 37,
       "source_screenshot": "IMG_1526.PNG",
       "source_reference": null
     }

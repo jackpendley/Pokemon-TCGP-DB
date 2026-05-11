@@ -50,7 +50,16 @@
     "review_reason": "Special art effects visible in crop suggest illustration_rare or special_art variant; full card view needed to confirm special_type and rarity.",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/35",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/208",
+    "set_code": "B3",
+    "card_number": 208
   },
   {
     "id": "skrelp_unknown_unknown_v1",
@@ -73,7 +82,16 @@
     "review_reason": "Sparkle art effects in crop suggest illustration_rare variant; full card view needed to confirm special_type and rarity.",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/159",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/218",
+    "set_code": "B3",
+    "card_number": 218
   },
   {
     "id": "sobble_unknown_unknown_v1",
@@ -156,7 +174,16 @@
     "review_reason": "Special type not determinable from partial crop; full card view needed to confirm special_type and rarity.",
     "source_reference": "https://pocket.limitlesstcg.com/cards/A4b/1",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Mewtwo"
+    ],
+    "source_expansion": "Genetic Apex",
+    "source_set_code": "A1",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: A1/227",
+    "set_code": "A1",
+    "card_number": 227
   },
   {
     "id": "shroomish_unknown_unknown_v1",
@@ -179,7 +206,16 @@
     "review_reason": "Special type not determinable from partial crop; row 3 quantity chip falls outside crop window.",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/11",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/158",
+    "set_code": "B3",
+    "card_number": 158
   },
   {
     "id": "tepig_unknown_unknown_v1",
@@ -259,7 +295,16 @@
     "source_column": 1,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/164",
+    "set_code": "B3",
+    "card_number": 164
   },
   {
     "id": "bonsly_unknown_unknown_v1",
@@ -312,7 +357,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/79",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/169",
+    "set_code": "B3",
+    "card_number": 169
   },
   {
     "id": "meltan_unknown_unknown_v1",
@@ -335,7 +389,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/173",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/177",
+    "set_code": "B3",
+    "card_number": 177
   },
   {
     "id": "moltres_unknown_unknown_v1",
@@ -492,7 +555,16 @@
     "source_column": 1,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/37",
+    "set_code": "B3",
+    "card_number": 37
   },
   {
     "id": "magnezone_unknown_unknown_v1",
@@ -572,7 +644,16 @@
     "source_column": 1,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Mewtwo"
+    ],
+    "source_expansion": "Genetic Apex",
+    "source_set_code": "A1",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: A1/109",
+    "set_code": "A1",
+    "card_number": 109
   },
   {
     "id": "charizard_unknown_unknown_v1",
@@ -595,7 +676,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/13",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/13",
+    "set_code": "B1a",
+    "card_number": 13
   },
   {
     "id": "genesect_unknown_unknown_v1",
@@ -765,7 +855,16 @@
     "source_column": 2,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/89",
+    "set_code": "B3",
+    "card_number": 89
   },
   {
     "id": "crobat_unknown_unknown_v1",
@@ -788,7 +887,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/100",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/100",
+    "set_code": "B3",
+    "card_number": 100
   },
   {
     "id": "urshifu_unknown_unknown_v1",
@@ -831,7 +939,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/203",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/139",
+    "set_code": "B3",
+    "card_number": 139
   },
   {
     "id": "sandslash_unknown_unknown_v1",
@@ -854,7 +971,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/123",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 3 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 3 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [],
+    "source_expansion": "Genetic Apex",
+    "source_set_code": "A1",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: A1/138",
+    "set_code": "A1",
+    "card_number": 138
   },
   {
     "id": "onix_unknown_unknown_v1",
@@ -877,7 +1001,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/38",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pikachu"
+    ],
+    "source_expansion": "Genetic Apex",
+    "source_set_code": "A1",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: A1/150",
+    "set_code": "A1",
+    "card_number": 150
   },
   {
     "id": "mienshao_unknown_unknown_v1",
@@ -1188,7 +1321,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/217",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Mega Blaziken"
+    ],
+    "source_expansion": "Mega Rising",
+    "source_set_code": "B1",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1/217",
+    "set_code": "B1",
+    "card_number": 217
   },
   {
     "id": "may_unknown_unknown_v1",
@@ -1271,7 +1413,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/A4b/3",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/2",
+    "set_code": "B1a",
+    "card_number": 2
   },
   {
     "id": "wartortle_unknown_unknown_v1",
@@ -1354,7 +1505,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/25",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/25",
+    "set_code": "B1a",
+    "card_number": 25
   },
   {
     "id": "heliolisk_unknown_unknown_v1",
@@ -1407,7 +1567,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/100",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/31",
+    "set_code": "B1a",
+    "card_number": 31
   },
   {
     "id": "hariyama_unknown_unknown_v1",
@@ -1430,7 +1599,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/127",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/40",
+    "set_code": "B1a",
+    "card_number": 40
   },
   {
     "id": "garbodor_unknown_unknown_v1",
@@ -1453,7 +1631,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/50",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/50",
+    "set_code": "B1a",
+    "card_number": 50
   },
   {
     "id": "steelix_unknown_unknown_v1",
@@ -1476,7 +1663,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/51",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/51",
+    "set_code": "B1a",
+    "card_number": 51
   },
   {
     "id": "probopass_unknown_unknown_v1",
@@ -1559,7 +1755,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/57",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/57",
+    "set_code": "B1a",
+    "card_number": 57
   },
   {
     "id": "staraptor_unknown_unknown_v1",
@@ -1642,7 +1847,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/206",
     "metadata_confidence": "medium",
-    "metadata_notes": "7 matches in 5 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "7 matches in 5 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/65",
+    "set_code": "B1a",
+    "card_number": 65
   },
   {
     "id": "clemont_s_backpack_unknown_unknown_v1",
@@ -1845,7 +2059,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/171",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Fantastical Parade"
+    ],
+    "source_expansion": "Fantastical Parade",
+    "source_set_code": "B2",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B2/119",
+    "set_code": "B2",
+    "card_number": 119
   },
   {
     "id": "charmeleon_unknown_unknown_v1",
@@ -1868,7 +2091,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/12",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Mega Shine"
+    ],
+    "source_expansion": "Mega Shine",
+    "source_set_code": "B2b",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B2b/8",
+    "set_code": "B2b",
+    "card_number": 8
   },
   {
     "id": "breloom_unknown_unknown_v1",
@@ -1891,7 +2123,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/12",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/12",
+    "set_code": "B3",
+    "card_number": 12
   },
   {
     "id": "leavanny_unknown_unknown_v1",
@@ -1974,7 +2215,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/40",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/30",
+    "set_code": "B3",
+    "card_number": 30
   },
   {
     "id": "poliwhirl_unknown_unknown_v1",
@@ -1997,7 +2247,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/296",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/34",
+    "set_code": "B3",
+    "card_number": 34
   },
   {
     "id": "paldean_tauros_unknown_unknown_v1",
@@ -2017,7 +2276,16 @@
     "source_column": 3,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/36",
+    "set_code": "B3",
+    "card_number": 36
   },
   {
     "id": "quagsire_unknown_unknown_v1",
@@ -2040,7 +2308,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/39",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/39",
+    "set_code": "B3",
+    "card_number": 39
   },
   {
     "id": "huntail_unknown_unknown_v1",
@@ -2123,7 +2400,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/25",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/53",
+    "set_code": "B3",
+    "card_number": 53
   },
   {
     "id": "lanturn_unknown_unknown_v1",
@@ -2236,7 +2522,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/142",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/91",
+    "set_code": "B3",
+    "card_number": 91
   },
   {
     "id": "sandaconda_unknown_unknown_v1",
@@ -2289,7 +2584,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/99",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/99",
+    "set_code": "B3",
+    "card_number": 99
   },
   {
     "id": "mandibuzz_unknown_unknown_v1",
@@ -2342,7 +2646,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/112",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/112",
+    "set_code": "B3",
+    "card_number": 112
   },
   {
     "id": "bronzong_unknown_unknown_v1",
@@ -2395,7 +2708,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/120",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/120",
+    "set_code": "B3",
+    "card_number": 120
   },
   {
     "id": "magearna_unknown_unknown_v1",
@@ -2508,7 +2830,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/202",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/138",
+    "set_code": "B3",
+    "card_number": 138
   },
   {
     "id": "audino_unknown_unknown_v1",
@@ -2561,7 +2892,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/210",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/146",
+    "set_code": "B3",
+    "card_number": 146
   },
   {
     "id": "korrina_unknown_unknown_v1",
@@ -2754,7 +3094,14 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/122",
     "metadata_confidence": "medium",
-    "metadata_notes": "4 matches in 3 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "4 matches in 3 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [],
+    "source_expansion": "Genetic Apex",
+    "source_set_code": "A1",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: A1/137",
+    "set_code": "A1",
+    "card_number": 137
   },
   {
     "id": "cubone_unknown_unknown_v1",
@@ -2867,7 +3214,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B2b/51",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Mewtwo"
+    ],
+    "source_expansion": "Genetic Apex",
+    "source_set_code": "A1",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: A1/183",
+    "set_code": "A1",
+    "card_number": 183
   },
   {
     "id": "pidgey_unknown_unknown_v1",
@@ -2915,7 +3271,14 @@
     "source_column": 3,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [],
+    "source_expansion": "Genetic Apex",
+    "source_set_code": "A1",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: A1/189",
+    "set_code": "A1",
+    "card_number": 189
   },
   {
     "id": "raticate_unknown_unknown_v1",
@@ -2935,7 +3298,14 @@
     "source_column": 1,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [],
+    "source_expansion": "Genetic Apex",
+    "source_set_code": "A1",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: A1/190",
+    "set_code": "A1",
+    "card_number": 190
   },
   {
     "id": "jigglypuff_unknown_unknown_v1",
@@ -3035,7 +3405,16 @@
     "source_column": 2,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Deluxe Pack: ex"
+    ],
+    "source_expansion": "Deluxe Pack: ex",
+    "source_set_code": "A4b",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: A4b/26",
+    "set_code": "A4b",
+    "card_number": 26
   },
   {
     "id": "rockruff_unknown_unknown_v1",
@@ -3176,7 +3555,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/A4b/1",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/1",
+    "set_code": "B1a",
+    "card_number": 1
   },
   {
     "id": "spinarak_unknown_unknown_v1",
@@ -3319,7 +3707,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/11",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/11",
+    "set_code": "B1a",
+    "card_number": 11
   },
   {
     "id": "houndour_unknown_unknown_v1",
@@ -3462,7 +3859,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/24",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/24",
+    "set_code": "B1a",
+    "card_number": 24
   },
   {
     "id": "helioptile_unknown_unknown_v1",
@@ -3515,7 +3921,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/99",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/30",
+    "set_code": "B1a",
+    "card_number": 30
   },
   {
     "id": "solosis_unknown_unknown_v1",
@@ -3568,7 +3983,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/115",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/35",
+    "set_code": "B1a",
+    "card_number": 35
   },
   {
     "id": "aromatisse_unknown_unknown_v1",
@@ -3591,7 +4015,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/116",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/36",
+    "set_code": "B1a",
+    "card_number": 36
   },
   {
     "id": "onix_unknown_unknown_v2",
@@ -3614,7 +4047,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/38",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/38",
+    "set_code": "B1a",
+    "card_number": 38
   },
   {
     "id": "makuhita_unknown_unknown_v1",
@@ -3637,7 +4079,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/126",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/39",
+    "set_code": "B1a",
+    "card_number": 39
   },
   {
     "id": "nosepass_unknown_unknown_v1",
@@ -3750,7 +4201,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/45",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/45",
+    "set_code": "B1a",
+    "card_number": 45
   },
   {
     "id": "trubbish_unknown_unknown_v1",
@@ -3773,7 +4233,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/49",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/49",
+    "set_code": "B1a",
+    "card_number": 49
   },
   {
     "id": "porygon_unknown_unknown_v1",
@@ -3796,7 +4265,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/56",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/56",
+    "set_code": "B1a",
+    "card_number": 56
   },
   {
     "id": "starly_unknown_unknown_v1",
@@ -3879,7 +4357,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/62",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Crimson Blaze"
+    ],
+    "source_expansion": "Crimson Blaze",
+    "source_set_code": "B1a",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B1a/62",
+    "set_code": "B1a",
+    "card_number": 62
   },
   {
     "id": "roselia_unknown_unknown_v1",
@@ -4082,7 +4569,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/11",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Mega Shine"
+    ],
+    "source_expansion": "Mega Shine",
+    "source_set_code": "B2b",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B2b/7",
+    "set_code": "B2b",
+    "card_number": 7
   },
   {
     "id": "tangela_unknown_unknown_v1",
@@ -4105,7 +4601,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B2/205",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/1",
+    "set_code": "B3",
+    "card_number": 1
   },
   {
     "id": "treecko_unknown_unknown_v1",
@@ -4188,7 +4693,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/11",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/11",
+    "set_code": "B3",
+    "card_number": 11
   },
   {
     "id": "carnivine_unknown_unknown_v1",
@@ -4421,7 +4935,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/39",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/29",
+    "set_code": "B3",
+    "card_number": 29
   },
   {
     "id": "larvesta_unknown_unknown_v1",
@@ -4654,7 +5177,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1a/24",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/52",
+    "set_code": "B3",
+    "card_number": 52
   },
   {
     "id": "voltorb_unknown_unknown_v1",
@@ -4734,7 +5266,16 @@
     "source_column": 3,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/62",
+    "set_code": "B3",
+    "card_number": 62
   },
   {
     "id": "espurr_unknown_unknown_v1",
@@ -4784,7 +5325,16 @@
     "source_column": 2,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/68",
+    "set_code": "B3",
+    "card_number": 68
   },
   {
     "id": "bramblin_unknown_unknown_v1",
@@ -4804,7 +5354,16 @@
     "source_column": 3,
     "confidence": "medium",
     "needs_review": true,
-    "review_reason": "special_type not confirmed; visual review needed"
+    "review_reason": "special_type not confirmed; visual review needed",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/72",
+    "set_code": "B3",
+    "card_number": 72
   },
   {
     "id": "trapinch_unknown_unknown_v1",
@@ -4857,7 +5416,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/79",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/79",
+    "set_code": "B3",
+    "card_number": 79
   },
   {
     "id": "croagunk_unknown_unknown_v1",
@@ -4970,7 +5538,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/141",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/90",
+    "set_code": "B3",
+    "card_number": 90
   },
   {
     "id": "rolycoly_unknown_unknown_v1",
@@ -4993,7 +5570,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/145",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/92",
+    "set_code": "B3",
+    "card_number": 92
   },
   {
     "id": "silicobra_unknown_unknown_v1",
@@ -5136,7 +5722,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/104",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/104",
+    "set_code": "B3",
+    "card_number": 104
   },
   {
     "id": "zorua_unknown_unknown_v1",
@@ -5159,7 +5754,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B2b/43",
     "metadata_confidence": "medium",
-    "metadata_notes": "4 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "4 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/105",
+    "set_code": "B3",
+    "card_number": 105
   },
   {
     "id": "vullaby_unknown_unknown_v1",
@@ -5242,7 +5846,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B3/127",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 1 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/127",
+    "set_code": "B3",
+    "card_number": 127
   },
   {
     "id": "castform_unknown_unknown_v1",
@@ -5295,7 +5908,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/200",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/136",
+    "set_code": "B3",
+    "card_number": 136
   },
   {
     "id": "lillipup_unknown_unknown_v1",
@@ -5318,7 +5940,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B1/201",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/137",
+    "set_code": "B3",
+    "card_number": 137
   },
   {
     "id": "minccino_unknown_unknown_v1",
@@ -5341,7 +5972,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B2b/62",
     "metadata_confidence": "medium",
-    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "2 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/142",
+    "set_code": "B3",
+    "card_number": 142
   },
   {
     "id": "cinccino_unknown_unknown_v1",
@@ -5364,7 +6004,16 @@
     "review_reason": "special_type not confirmed; visual review needed",
     "source_reference": "https://pocket.limitlesstcg.com/cards/B2b/63",
     "metadata_confidence": "medium",
-    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous"
+    "metadata_notes": "3 matches in 2 set(s) in external_card_reference; core metadata unanimous",
+    "source_packs": [
+      "Pulsing Aura"
+    ],
+    "source_expansion": "Pulsing Aura",
+    "source_set_code": "B3",
+    "source_pack_confidence": "user_confirmed",
+    "source_pack_notes": "Manually confirmed by user: B3/143",
+    "set_code": "B3",
+    "card_number": 143
   },
   {
     "id": "potion_unknown_unknown_v1",

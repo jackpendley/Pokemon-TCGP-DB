@@ -168,9 +168,10 @@ def apply_confirmations(confirmed_rows, ps_index, cards, dry_run):
             cards[idx]["source_expansion"] = expansion
             cards[idx]["source_set_code"] = sc
             cards[idx]["source_pack_confidence"] = "user_confirmed"
-            cards[idx]["source_pack_notes"] = (
-                f"Manually confirmed by user: {sc}/{cn}"
-            )
+            cards[idx]["source_pack_notes"] = f"Manually confirmed by user: {sc}/{cn}"
+            # Also write set_code + card_number so owned_pack_coverage.py treats this as exact
+            cards[idx]["set_code"] = sc
+            cards[idx]["card_number"] = cn
 
         applied += 1
 
