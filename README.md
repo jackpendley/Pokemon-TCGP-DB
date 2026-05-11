@@ -2,7 +2,33 @@
 
 Builds and maintains an exact Pokémon TCG Pocket card collection database from app screenshots.
 
-## Current Baseline
+## Current Collection Baseline (Active)
+
+`collection.json` is the **active current collection** as of 2026-05-11.
+
+| File | Cards | Status |
+|---|---|---|
+| `collection.json` | 376 verified (380 declared in meta) | **Active — use for all recommendations** |
+| `deck-recommendations.jsx` | — | Deck recommendation prototype UI |
+| `cards.json` | 329 (211 entries) | Historical screenshot-ingestion baseline |
+
+> **Count note:** `collection.json` meta declares 380 but the actual sum of all `count` fields is 376. A 4-card discrepancy was detected by `scripts/validate_current_collection.py`. User should audit and update `collection.json` to resolve.
+
+Validate with:
+
+```bash
+python3 scripts/validate_current_collection.py --expected-total 380
+python3 scripts/normalize_current_collection.py
+python3 scripts/validate_deck_recommendations.py
+```
+
+Normalized outputs (for machine use): `data/current/collection_normalized.json`, `data/current/collection_summary.json`
+
+See `docs/current_collection_baseline.md` for full details.
+
+---
+
+## Historical Screenshot Baseline
 
 `cards.json` currently represents a **provisional 329-card baseline** (211 unique entries).
 

@@ -1,0 +1,550 @@
+{
+  "meta": {
+    "total_cards": 380,
+    "last_updated": "2026-05-11",
+    "format": "Pokemon TCG Pocket"
+  },
+  "total_quantity": 376,
+  "meta_total_cards": 380,
+  "count_matches_meta": false,
+  "unique_entries": 220,
+  "by_card_type": {
+    "Pokemon": 335,
+    "Trainer": 41
+  },
+  "by_pokemon_type": {
+    "Fire": 41,
+    "Grass": 43,
+    "Water": 36,
+    "Lightning": 24,
+    "Psychic": 30,
+    "Fighting": 64,
+    "Darkness": 30,
+    "Metal": 16,
+    "Dragon": 2,
+    "Colorless": 49
+  },
+  "by_stage": {
+    "Basic": 226,
+    "Stage 1": 89,
+    "Stage 2": 20
+  },
+  "ex_entries": 9,
+  "ex_quantity": 11,
+  "trainer_subtypes": {
+    "Item": 18,
+    "Pokemon Tool": 2,
+    "Supporter": 19,
+    "Stadium": 2
+  },
+  "top_cards_by_count": [
+    [
+      "Charmander",
+      6
+    ],
+    [
+      "Spritzee",
+      6
+    ],
+    [
+      "Nosepass",
+      6
+    ],
+    [
+      "Bulbasaur",
+      5
+    ],
+    [
+      "Clamperl",
+      5
+    ],
+    [
+      "Vullaby",
+      5
+    ],
+    [
+      "Staraptor",
+      5
+    ],
+    [
+      "Pignite",
+      4
+    ],
+    [
+      "Victini",
+      4
+    ],
+    [
+      "Applin",
+      4
+    ],
+    [
+      "Misdreavus",
+      4
+    ],
+    [
+      "Croagunk",
+      4
+    ],
+    [
+      "Minccino",
+      4
+    ],
+    [
+      "Quick-Grow Extract",
+      4
+    ],
+    [
+      "Poké Ball",
+      4
+    ]
+  ],
+  "variant_names": {
+    "Charmander": 2,
+    "Bulbasaur": 3,
+    "Magneton": 2,
+    "Magnemite": 2,
+    "Mienfoo": 2,
+    "Mienshao": 2,
+    "Riolu": 2,
+    "Onix": 2
+  },
+  "evolution_groups": [
+    {
+      "line": [
+        "Charmander",
+        "Charmeleon",
+        "Charizard"
+      ],
+      "owned": [
+        "Charmander",
+        "Charmeleon",
+        "Charizard"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Charmander",
+        "Charmeleon",
+        "Mega Charizard Y ex"
+      ],
+      "owned": [
+        "Charmander",
+        "Charmeleon",
+        "Mega Charizard Y ex"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Tepig",
+        "Pignite",
+        "Incineroar ex"
+      ],
+      "owned": [
+        "Tepig",
+        "Pignite",
+        "Incineroar ex"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Bulbasaur",
+        "Ivysaur",
+        "Mega Venusaur ex"
+      ],
+      "owned": [
+        "Bulbasaur",
+        "Ivysaur",
+        "Mega Venusaur ex"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Treecko",
+        "Grovyle",
+        "Sceptile"
+      ],
+      "owned": [
+        "Treecko"
+      ],
+      "missing": [
+        "Grovyle",
+        "Sceptile"
+      ],
+      "complete": false
+    },
+    {
+      "line": [
+        "Sewaddle",
+        "Swadloon",
+        "Leavanny"
+      ],
+      "owned": [
+        "Sewaddle",
+        "Swadloon",
+        "Leavanny"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Sobble",
+        "Drizzile",
+        "Inteleon"
+      ],
+      "owned": [
+        "Sobble"
+      ],
+      "missing": [
+        "Drizzile",
+        "Inteleon"
+      ],
+      "complete": false
+    },
+    {
+      "line": [
+        "Magnemite",
+        "Magneton",
+        "Magnezone ex"
+      ],
+      "owned": [
+        "Magnemite",
+        "Magneton",
+        "Magnezone ex"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Starly",
+        "Staravia",
+        "Staraptor"
+      ],
+      "owned": [
+        "Starly",
+        "Staravia",
+        "Staraptor"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Lillipup",
+        "Herdier",
+        "Stoutland"
+      ],
+      "owned": [
+        "Lillipup",
+        "Herdier",
+        "Stoutland"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Darumaka",
+        "Darmanitan"
+      ],
+      "owned": [
+        "Darumaka",
+        "Darmanitan"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Zubat",
+        "Golbat",
+        "Crobat"
+      ],
+      "owned": [
+        "Zubat",
+        "Golbat",
+        "Crobat"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Rattata",
+        "Raticate"
+      ],
+      "owned": [
+        "Rattata",
+        "Raticate"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Minccino",
+        "Cinccino"
+      ],
+      "owned": [
+        "Minccino",
+        "Cinccino"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Sandshrew",
+        "Sandslash"
+      ],
+      "owned": [
+        "Sandshrew",
+        "Sandslash"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Cubone",
+        "Marowak ex"
+      ],
+      "owned": [
+        "Cubone",
+        "Marowak ex"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Zygarde 10% Forme",
+        "Zygarde 50% Forme",
+        "Zygarde ex"
+      ],
+      "owned": [
+        "Zygarde 10% Forme",
+        "Zygarde 50% Forme",
+        "Zygarde ex"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Misdreavus",
+        "Mismagius"
+      ],
+      "owned": [
+        "Misdreavus",
+        "Mismagius"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Spritzee",
+        "Aromatisse"
+      ],
+      "owned": [
+        "Spritzee",
+        "Aromatisse"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Hatenna",
+        "Hattrem"
+      ],
+      "owned": [
+        "Hatenna",
+        "Hattrem"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Grimer",
+        "Garbodor"
+      ],
+      "owned": [
+        "Grimer",
+        "Garbodor"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Trubbish",
+        "Garbodor"
+      ],
+      "owned": [
+        "Trubbish",
+        "Garbodor"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Vullaby",
+        "Mandibuzz"
+      ],
+      "owned": [
+        "Vullaby",
+        "Mandibuzz"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Zorua",
+        "Zoroark"
+      ],
+      "owned": [
+        "Zorua"
+      ],
+      "missing": [
+        "Zoroark"
+      ],
+      "complete": false
+    },
+    {
+      "line": [
+        "Riolu",
+        "Lucario"
+      ],
+      "owned": [
+        "Riolu"
+      ],
+      "missing": [
+        "Lucario"
+      ],
+      "complete": false
+    },
+    {
+      "line": [
+        "Helioptile",
+        "Heliolisk"
+      ],
+      "owned": [
+        "Helioptile",
+        "Heliolisk"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Porygon",
+        "Porygon2"
+      ],
+      "owned": [
+        "Porygon",
+        "Porygon2"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Eevee",
+        "Vaporeon ex"
+      ],
+      "owned": [
+        "Eevee",
+        "Vaporeon ex"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Bronzor",
+        "Bronzong"
+      ],
+      "owned": [
+        "Bronzor",
+        "Bronzong"
+      ],
+      "missing": [],
+      "complete": true
+    },
+    {
+      "line": [
+        "Pawniard",
+        "Bisharp"
+      ],
+      "owned": [
+        "Pawniard",
+        "Bisharp"
+      ],
+      "missing": [],
+      "complete": true
+    }
+  ],
+  "deck_readiness": {
+    "notable_ex_cards": [
+      "Mega Charizard Y ex",
+      "Incineroar ex",
+      "Moltres ex",
+      "Mega Camerupt ex",
+      "Mega Venusaur ex",
+      "Vaporeon ex",
+      "Magnezone ex",
+      "Marowak ex",
+      "Zygarde ex"
+    ],
+    "strong_evolution_lines": [
+      "Charmander → Charmeleon → Charizard",
+      "Charmander → Charmeleon → Mega Charizard Y ex",
+      "Tepig → Pignite → Incineroar ex",
+      "Darumaka → Darmanitan",
+      "Bulbasaur → Ivysaur → Mega Venusaur ex",
+      "Sewaddle → Swadloon → Leavanny",
+      "Eevee → Vaporeon ex",
+      "Magnemite → Magneton → Magnezone ex",
+      "Helioptile → Heliolisk",
+      "Misdreavus → Mismagius",
+      "Hatenna → Hattrem",
+      "Spritzee → Aromatisse",
+      "Cubone → Marowak ex",
+      "Sandshrew → Sandslash",
+      "Zygarde 10% Forme → Zygarde 50% Forme → Zygarde ex",
+      "Zubat → Golbat → Crobat",
+      "Grimer → Garbodor",
+      "Vullaby → Mandibuzz",
+      "Trubbish → Garbodor",
+      "Bronzor → Bronzong",
+      "Pawniard → Bisharp",
+      "Lillipup → Herdier → Stoutland",
+      "Porygon → Porygon2",
+      "Starly → Staravia → Staraptor",
+      "Minccino → Cinccino",
+      "Rattata → Raticate"
+    ],
+    "partial_evolution_lines": [
+      "Treecko → Grovyle → Sceptile",
+      "Sobble → Drizzile → Inteleon",
+      "Riolu → Lucario",
+      "Zorua → Zoroark"
+    ],
+    "total_trainer_cards": 41
+  }
+}

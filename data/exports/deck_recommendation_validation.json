@@ -1,0 +1,922 @@
+{
+  "decks": [
+    {
+      "id": "charizard",
+      "name": "Mega Charizard Y ex",
+      "tier": "S",
+      "category": "buildable",
+      "cards": [
+        {
+          "name": "Charmander",
+          "required": 2,
+          "owned": 6,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Charmeleon",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Mega Charizard Y ex",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Moltres ex",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Victini",
+          "required": 1,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Poké Ball",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Professor's Research",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Serena",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Sabrina",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Giovanni",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Flame Patch",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Rare Candy",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Copycat",
+          "required": 1,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "X Speed",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        }
+      ],
+      "fully_buildable": true,
+      "missing_cards": [],
+      "questionable_names": [],
+      "stated_missing": [],
+      "have_note": null,
+      "discrepancies": []
+    },
+    {
+      "id": "victini",
+      "name": "Victini + Darmanitan",
+      "tier": "A",
+      "category": "buildable",
+      "cards": [
+        {
+          "name": "Victini",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Darumaka",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Darmanitan",
+          "required": 2,
+          "owned": 3,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Tepig",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Moltres ex",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Poké Ball",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Professor's Research",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Flame Patch",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Giovanni",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Sabrina",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Copycat",
+          "required": 1,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "May",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        }
+      ],
+      "fully_buildable": true,
+      "missing_cards": [],
+      "questionable_names": [],
+      "stated_missing": [],
+      "have_note": null,
+      "discrepancies": []
+    },
+    {
+      "id": "crobat",
+      "name": "Crobat Darkness Pivot",
+      "tier": "A",
+      "category": "buildable",
+      "cards": [
+        {
+          "name": "Zubat",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Golbat",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Crobat",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Single Strike Urshifu",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Yveltal",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Misdreavus",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Alolan Persian",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Giant Cape",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Poké Ball",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Professor's Research",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Giovanni",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Sabrina",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Cyrus",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Copycat",
+          "required": 1,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        }
+      ],
+      "fully_buildable": true,
+      "missing_cards": [],
+      "questionable_names": [],
+      "stated_missing": [],
+      "have_note": null,
+      "discrepancies": []
+    },
+    {
+      "id": "staraptor",
+      "name": "Staraptor Colorless Blitz",
+      "tier": "B+",
+      "category": "buildable",
+      "cards": [
+        {
+          "name": "Starly",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Staravia",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Staraptor",
+          "required": 2,
+          "owned": 5,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Bouffalant",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Furfrou",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Dodrio",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Poké Ball",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Professor's Research",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Giovanni",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Sabrina",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Copycat",
+          "required": 1,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Leaf",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Giant Cape",
+          "required": 1,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        }
+      ],
+      "fully_buildable": true,
+      "missing_cards": [],
+      "questionable_names": [],
+      "stated_missing": [],
+      "have_note": null,
+      "discrepancies": []
+    },
+    {
+      "id": "venusaur",
+      "name": "Mega Venusaur ex",
+      "tier": "S",
+      "category": "chase",
+      "cards": [
+        {
+          "name": "Bulbasaur",
+          "required": 2,
+          "owned": 5,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Ivysaur",
+          "required": 2,
+          "owned": 1,
+          "status": "short",
+          "match_type": "exact"
+        },
+        {
+          "name": "Mega Venusaur ex",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Shroomish",
+          "required": 1,
+          "owned": 3,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Breloom",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Poké Ball",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Professor's Research",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Quick-Grow Extract",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Serena",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Sabrina",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Giovanni",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Rare Candy",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Copycat",
+          "required": 1,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        }
+      ],
+      "fully_buildable": false,
+      "missing_cards": [
+        {
+          "name": "Ivysaur",
+          "required": 2,
+          "owned": 1,
+          "short_by": 1
+        }
+      ],
+      "questionable_names": [],
+      "stated_missing": [
+        "1× Ivysaur"
+      ],
+      "have_note": "Bulbasaur ×5+, Ivysaur ×1 (need ×2), Mega Venusaur ex ×2, Quick-Grow Extract ×4",
+      "discrepancies": []
+    },
+    {
+      "id": "incineroar",
+      "name": "Incineroar ex",
+      "tier": "A+",
+      "category": "chase",
+      "cards": [
+        {
+          "name": "Tepig",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Pignite",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Incineroar ex",
+          "required": 2,
+          "owned": 1,
+          "status": "short",
+          "match_type": "exact"
+        },
+        {
+          "name": "Charmeleon",
+          "required": 1,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Moltres ex",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Poké Ball",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Professor's Research",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Serena",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Giovanni",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Sabrina",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Flame Patch",
+          "required": 1,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Rare Candy",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Copycat",
+          "required": 1,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "May",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        }
+      ],
+      "fully_buildable": false,
+      "missing_cards": [
+        {
+          "name": "Incineroar ex",
+          "required": 2,
+          "owned": 1,
+          "short_by": 1
+        }
+      ],
+      "questionable_names": [],
+      "stated_missing": [
+        "1× Incineroar ex"
+      ],
+      "have_note": "Tepig ×2, Pignite ×4, Incineroar ex ×1",
+      "discrepancies": []
+    },
+    {
+      "id": "zygarde",
+      "name": "Zygarde ex Fighting",
+      "tier": "A",
+      "category": "chase",
+      "cards": [
+        {
+          "name": "Zygarde 50% Forme",
+          "required": 2,
+          "owned": 3,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Zygarde ex",
+          "required": 2,
+          "owned": 1,
+          "status": "short",
+          "match_type": "exact"
+        },
+        {
+          "name": "Cubone",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Marowak ex",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Poké Ball",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Professor's Research",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Korrina",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Arena of Antiquity",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Giovanni",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Sabrina",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Cyrus",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Copycat",
+          "required": 1,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        }
+      ],
+      "fully_buildable": false,
+      "missing_cards": [
+        {
+          "name": "Zygarde ex",
+          "required": 2,
+          "owned": 1,
+          "short_by": 1
+        }
+      ],
+      "questionable_names": [],
+      "stated_missing": [
+        "1× Zygarde ex"
+      ],
+      "have_note": "Zygarde 50% Forme ×3, Zygarde ex ×1, Korrina ×2, Arena of Antiquity ×1",
+      "discrepancies": []
+    },
+    {
+      "id": "magnezone",
+      "name": "Magnezone ex (Clemont Engine)",
+      "tier": "A",
+      "category": "chase",
+      "cards": [
+        {
+          "name": "Magnemite",
+          "required": 2,
+          "owned": 3,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Magneton",
+          "required": 2,
+          "owned": 3,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Magnezone ex",
+          "required": 2,
+          "owned": 1,
+          "status": "short",
+          "match_type": "exact"
+        },
+        {
+          "name": "Heliolisk",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Poké Ball",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Professor's Research",
+          "required": 2,
+          "owned": 4,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Clemont",
+          "required": 2,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Clemont's Backpack",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Rare Candy",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Sabrina",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Giovanni",
+          "required": 1,
+          "owned": 1,
+          "status": "owned_enough",
+          "match_type": "exact"
+        },
+        {
+          "name": "Copycat",
+          "required": 1,
+          "owned": 2,
+          "status": "owned_enough",
+          "match_type": "exact"
+        }
+      ],
+      "fully_buildable": false,
+      "missing_cards": [
+        {
+          "name": "Magnezone ex",
+          "required": 2,
+          "owned": 1,
+          "short_by": 1
+        }
+      ],
+      "questionable_names": [],
+      "stated_missing": [
+        "1× Magnezone ex"
+      ],
+      "have_note": "Magnemite ×3, Magneton ×3, Magnezone ex ×1, Clemont ×2, Clemont's Backpack ×1, Heliolisk ×2",
+      "discrepancies": []
+    }
+  ],
+  "pack_recommendations": [
+    {
+      "priority": 1,
+      "card": "Ivysaur",
+      "deck": "Mega Venusaur ex",
+      "note": "Grass-type packs from the Mega Evolution set",
+      "owned": 1,
+      "status": "⚠️ have 1, likely need 2"
+    },
+    {
+      "priority": 2,
+      "card": "Incineroar ex",
+      "deck": "Incineroar ex",
+      "note": "Fire-type packs from the Scarlet/Violet era set",
+      "owned": 1,
+      "status": "⚠️ have 1, likely need 2"
+    },
+    {
+      "priority": 3,
+      "card": "Zygarde ex",
+      "deck": "Zygarde ex Fighting",
+      "note": "Zygarde packs (special set — check Wonder Pick first)",
+      "owned": 1,
+      "status": "⚠️ have 1, likely need 2"
+    },
+    {
+      "priority": 4,
+      "card": "Magnezone ex",
+      "deck": "Magnezone ex",
+      "note": "Lightning packs from Genetic Apex (Pikachu pack)",
+      "owned": 1,
+      "status": "⚠️ have 1, likely need 2"
+    },
+    {
+      "priority": 5,
+      "card": "Marowak ex",
+      "deck": "Zygarde Fighting variant",
+      "note": "Same set as Zygarde ex",
+      "owned": 1,
+      "status": "⚠️ have 1, likely need 2"
+    }
+  ]
+}
