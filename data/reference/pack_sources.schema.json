@@ -23,8 +23,8 @@
         "properties": {
           "set_code": {
             "type": "string",
-            "description": "Set code as used by Limitless TCG Pocket (e.g. A4b, B1, B1a)",
-            "examples": ["A4b", "B1", "B1a", "B2", "B2a", "B2b", "B3"]
+            "description": "Set code as used by Limitless TCG Pocket (e.g. A1, A4b, B1, B3)",
+            "examples": ["A1", "A1a", "A2", "A2a", "A2b", "A3", "A3a", "A3b", "A4", "A4a", "A4b", "B1", "B1a", "B2", "B2a", "B2b", "B3"]
           },
           "card_number": {
             "type": "integer",

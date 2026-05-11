@@ -10,16 +10,17 @@ Output:
     data/reference/pack_sources.json
 
 Pack assignment rules derived from Limitless HTML:
-    - B1 (Mega Rising):     3 packs: Mega Blaziken, Mega Gyarados, Mega Altaria.
-                            Cards with a "· PackName pack" label are pack-specific.
-                            Cards without a pack label are shared across all packs (pack_name=null).
-    - A4b, B1a, B2, B2a, B2b, B3: single-pack expansions.
-                            All cards are in the one expansion pack.
-                            pack_name = cleaned expansion name.
+    Multi-pack sets (A1, A2, A3, A4, B1):
+        Cards with a "· PackName pack" label are pack-specific (confidence=high).
+        Cards without a pack label are shared across all packs (pack_name=null, confidence=medium).
+
+    Single-pack sets (A1a, A2a, A2b, A3a, A3b, A4a, A4b, B1a, B2, B2a, B2b, B3):
+        All cards are in the one expansion pack.
+        pack_name = cleaned expansion name (confidence=medium).
 
 Confidence rules:
     high   — pack_name comes directly from the "· PackName pack" HTML label.
-    medium — single-pack expansion: pack_name inferred from expansion, no per-card label.
+    medium — single-pack expansion or shared pool (pack_name inferred).
     low    — pack unknown / could not be determined.
 
 Usage:
@@ -58,11 +59,30 @@ RARITY_MAP = {
 }
 
 # Sets that are single-pack expansions (no per-card pack label in Limitless HTML).
-# The pack_name is the cleaned expansion name for these.
-SINGLE_PACK_SETS = {"A4b", "B1a", "B2", "B2a", "B2b", "B3"}
+# All cards in these sets belong to the one expansion pack.
+SINGLE_PACK_SETS = {
+    "A1a",  # Mythical Island (Mew pack)
+    "A2a",  # Triumphant Light
+    "A2b",  # Shining Revelry
+    "A3a",  # Extradimensional Crisis
+    "A3b",  # Eevee Grove
+    "A4a",  # Secluded Springs
+    "A4b",  # Deluxe Pack: ex
+    "B1a",  # Crimson Blaze
+    "B2",   # Fantastical Parade
+    "B2a",  # Paldean Wonders
+    "B2b",  # Mega Shine
+    "B3",   # Pulsing Aura
+}
 
-# Sets with multiple packs.
-MULTI_PACK_SETS = {"B1"}
+# Sets with multiple packs. Cards without a pack label are shared (pack_name=null).
+MULTI_PACK_SETS = {
+    "A1",   # Genetic Apex (Charizard, Pikachu, Mewtwo packs)
+    "A2",   # Space-Time Smackdown (Dialga, Palkia packs)
+    "A3",   # Celestial Guardians (Ho-Oh, Lugia packs)
+    "A4",   # Wisdom of Sea and Sky (Ho-Oh, Lugia packs)
+    "B1",   # Mega Rising (Mega Blaziken, Mega Gyarados, Mega Altaria packs)
+}
 
 
 def clean_expansion_name(raw: str) -> str:

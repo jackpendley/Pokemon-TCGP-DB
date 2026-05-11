@@ -1,391 +1,20 @@
 {
-  "generated_at": "2026-05-10 23:34 UTC",
-  "mode": "APPLIED",
+  "generated_at": "2026-05-11 00:17 UTC",
+  "mode": "DRY RUN",
   "quantities_changed": false,
   "stats": {
     "examined": 211,
-    "already_exact": 93,
-    "resolved_rule_d": 36,
-    "resolved_rule_ex": 1,
-    "still_ambiguous": 62,
-    "still_no_match": 18,
-    "skipped_multi_ex": 1,
+    "already_exact": 120,
+    "resolved_rule_d": 0,
+    "resolved_rule_ex": 0,
+    "still_ambiguous": 83,
+    "still_no_match": 8,
+    "skipped_multi_ex": 0,
     "skipped_multi_name": 0,
     "unchanged_already_medium": 0,
-    "total_newly_resolved": 37
+    "total_newly_resolved": 0
   },
-  "resolved": [
-    {
-      "card_name": "Quick-Grow Extract",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1a",
-      "card_number": 67,
-      "pack_name": "Crimson Blaze",
-      "expansion": "Crimson Blaze",
-      "notes": "All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
-    },
-    {
-      "card_name": "Sobble",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 48,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Clemont",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1a",
-      "card_number": 68,
-      "pack_name": "Crimson Blaze",
-      "expansion": "Crimson Blaze",
-      "notes": "All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
-    },
-    {
-      "card_name": "Tepig",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 26,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Zekrom",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 59,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Bonsly",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 78,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Marowak",
-      "rule": "EX",
-      "confidence": "medium",
-      "set_code": "A4b",
-      "card_number": 196,
-      "pack_name": "Deluxe Pack: ex",
-      "expansion": "Deluxe Pack: ex",
-      "notes": "is_ex=True card; name 'Marowak' matched as 'Marowak ex' (set=A4b num=196 pack='Deluxe Pack: ex'). Name variant inferred from is_ex flag — visual confirmation recommended."
-    },
-    {
-      "card_name": "Mega Venusaur ex",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1a",
-      "card_number": 4,
-      "pack_name": "Crimson Blaze",
-      "expansion": "Crimson Blaze",
-      "notes": "All 3 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
-    },
-    {
-      "card_name": "Mega Charizard Y ex",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1a",
-      "card_number": 14,
-      "pack_name": "Crimson Blaze",
-      "expansion": "Crimson Blaze",
-      "notes": "All 3 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
-    },
-    {
-      "card_name": "Vaporeon",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "A4b",
-      "card_number": 99,
-      "pack_name": "Deluxe Pack: ex",
-      "expansion": "Deluxe Pack: ex",
-      "notes": "All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
-    },
-    {
-      "card_name": "Corviknight",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1",
-      "card_number": 175,
-      "pack_name": "Mega Blaziken",
-      "expansion": "Mega Rising",
-      "notes": "All 2 pack_sources record(s) agree on pack='Mega Blaziken' (set(s)=['B1'] expansion='Mega Rising')"
-    },
-    {
-      "card_name": "Charizard",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1a",
-      "card_number": 13,
-      "pack_name": "Crimson Blaze",
-      "expansion": "Crimson Blaze",
-      "notes": "All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
-    },
-    {
-      "card_name": "Yveltal",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B2",
-      "card_number": 108,
-      "pack_name": "Fantastical Parade",
-      "expansion": "Fantastical Parade",
-      "notes": "All 2 pack_sources record(s) agree on pack='Fantastical Parade' (set(s)=['B2'] expansion='Fantastical Parade')"
-    },
-    {
-      "card_name": "Budew",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 13,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Cyrus",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "A4b",
-      "card_number": 326,
-      "pack_name": "Deluxe Pack: ex",
-      "expansion": "Deluxe Pack: ex",
-      "notes": "All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
-    },
-    {
-      "card_name": "Rare Candy",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "A4b",
-      "card_number": 314,
-      "pack_name": "Deluxe Pack: ex",
-      "expansion": "Deluxe Pack: ex",
-      "notes": "All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
-    },
-    {
-      "card_name": "Giant Cape",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "A4b",
-      "card_number": 320,
-      "pack_name": "Deluxe Pack: ex",
-      "expansion": "Deluxe Pack: ex",
-      "notes": "All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
-    },
-    {
-      "card_name": "May",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1",
-      "card_number": 223,
-      "pack_name": "Mega Blaziken",
-      "expansion": "Mega Rising",
-      "notes": "All 2 pack_sources record(s) agree on pack='Mega Blaziken' (set(s)=['B1'] expansion='Mega Rising')"
-    },
-    {
-      "card_name": "Copycat",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1",
-      "card_number": 225,
-      "pack_name": "Mega Gyarados",
-      "expansion": "Mega Rising",
-      "notes": "All 2 pack_sources record(s) agree on pack='Mega Gyarados' (set(s)=['B1'] expansion='Mega Rising')"
-    },
-    {
-      "card_name": "Quick-Grow Extract",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1a",
-      "card_number": 67,
-      "pack_name": "Crimson Blaze",
-      "expansion": "Crimson Blaze",
-      "notes": "All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
-    },
-    {
-      "card_name": "Clemont",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1a",
-      "card_number": 68,
-      "pack_name": "Crimson Blaze",
-      "expansion": "Crimson Blaze",
-      "notes": "All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
-    },
-    {
-      "card_name": "Serena",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1a",
-      "card_number": 69,
-      "pack_name": "Crimson Blaze",
-      "expansion": "Crimson Blaze",
-      "notes": "All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
-    },
-    {
-      "card_name": "Quagsire",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 39,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Malamar",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 112,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Bisharp",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 120,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Korrina",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 149,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Cheren",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 151,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Farfetch'd",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "A4b",
-      "card_number": 280,
-      "pack_name": "Deluxe Pack: ex",
-      "expansion": "Deluxe Pack: ex",
-      "notes": "All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
-    },
-    {
-      "card_name": "Cherubi",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "A4b",
-      "card_number": 25,
-      "pack_name": "Deluxe Pack: ex",
-      "expansion": "Deluxe Pack: ex",
-      "notes": "All 2 pack_sources record(s) agree on pack='Deluxe Pack: ex' (set(s)=['A4b'] expansion='Deluxe Pack: ex')"
-    },
-    {
-      "card_name": "Buneary",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B1a",
-      "card_number": 62,
-      "pack_name": "Crimson Blaze",
-      "expansion": "Crimson Blaze",
-      "notes": "All 2 pack_sources record(s) agree on pack='Crimson Blaze' (set(s)=['B1a'] expansion='Crimson Blaze')"
-    },
-    {
-      "card_name": "Treecko",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 5,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Tepig",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 26,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Sobble",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 48,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Kubfu",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 97,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Seviper",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 104,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Chansey",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 127,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    },
-    {
-      "card_name": "Castform",
-      "rule": "D",
-      "confidence": "medium",
-      "set_code": "B3",
-      "card_number": 133,
-      "pack_name": "Pulsing Aura",
-      "expansion": "Pulsing Aura",
-      "notes": "All 2 pack_sources record(s) agree on pack='Pulsing Aura' (set(s)=['B3'] expansion='Pulsing Aura')"
-    }
-  ],
+  "resolved": [],
   "skipped": [
     {
       "card_name": "Blaziken",
@@ -400,7 +29,8 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Mega Blaziken",
-        "Pulsing Aura"
+        "Pulsing Aura",
+        "Secluded Springs"
       ]
     },
     {
@@ -408,7 +38,9 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
-        "Deluxe Pack: ex"
+        "Deluxe Pack: ex",
+        "Mewtwo",
+        "Solgaleo"
       ]
     },
     {
@@ -432,24 +64,55 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Deluxe Pack: ex",
-        "Pulsing Aura"
+        "Dialga",
+        "Pulsing Aura",
+        "Shining Revelry"
       ]
     },
     {
       "card_name": "Meltan",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Charizard",
+        "Eevee Grove",
         "Mega Gyarados",
         "Pulsing Aura"
       ]
     },
     {
-      "card_name": "Incineroar",
-      "reason": "is_ex_but_multiple_ex_matches_ambiguous"
+      "card_name": "Marowak",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Lunala",
+        "Mewtwo"
+      ]
+    },
+    {
+      "card_name": "Vaporeon",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Deluxe Pack: ex",
+        "Eevee Grove",
+        "Lugia",
+        "Mew",
+        "Mewtwo"
+      ]
     },
     {
       "card_name": "Eelektross",
-      "reason": "no_match_in_pack_sources"
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Mewtwo",
+        "Secluded Springs"
+      ]
+    },
+    {
+      "card_name": "Charizard",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Charizard",
+        "Crimson Blaze"
+      ]
     },
     {
       "card_name": "Meloetta",
@@ -463,6 +126,7 @@
       "card_name": "Crobat",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Arceus",
         "Deluxe Pack: ex",
         "Pulsing Aura"
       ]
@@ -475,6 +139,7 @@
       "card_name": "Stoutland",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Extradimensional Crisis",
         "Mega Altaria",
         "Pulsing Aura"
       ]
@@ -493,24 +158,66 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
+        "Ho-Oh",
+        "Pikachu",
         "Pulsing Aura"
       ]
     },
     {
       "card_name": "Giovanni",
-      "reason": "no_match_in_pack_sources"
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Deluxe Pack: ex",
+        "Mewtwo"
+      ]
     },
     {
       "card_name": "Sabrina",
-      "reason": "no_match_in_pack_sources"
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Charizard",
+        "Deluxe Pack: ex"
+      ]
     },
     {
       "card_name": "Leaf",
-      "reason": "no_match_in_pack_sources"
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Deluxe Pack: ex",
+        "Mew"
+      ]
+    },
+    {
+      "card_name": "Cyrus",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Deluxe Pack: ex",
+        "Palkia"
+      ]
+    },
+    {
+      "card_name": "Rare Candy",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Deluxe Pack: ex",
+        "None"
+      ]
     },
     {
       "card_name": "Lillie",
-      "reason": "no_match_in_pack_sources"
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Deluxe Pack: ex",
+        "Solgaleo"
+      ]
+    },
+    {
+      "card_name": "Giant Cape",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Deluxe Pack: ex",
+        "Dialga"
+      ]
     },
     {
       "card_name": "Flame Patch",
@@ -525,15 +232,21 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
-        "Deluxe Pack: ex"
+        "Deluxe Pack: ex",
+        "Mewtwo",
+        "Solgaleo"
       ]
     },
     {
       "card_name": "Magneton",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Arceus",
         "Crimson Blaze",
         "Deluxe Pack: ex",
+        "Lugia",
+        "None",
+        "Pikachu",
         "Pulsing Aura"
       ]
     },
@@ -542,7 +255,8 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
-        "None"
+        "None",
+        "Secluded Springs"
       ]
     },
     {
@@ -550,7 +264,8 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
-        "Mega Blaziken"
+        "Mega Blaziken",
+        "None"
       ]
     },
     {
@@ -558,7 +273,8 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
-        "Mega Shine"
+        "Mega Shine",
+        "None"
       ]
     },
     {
@@ -566,6 +282,7 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
+        "Ho-Oh",
         "Pulsing Aura"
       ]
     },
@@ -574,6 +291,8 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
+        "Lugia",
+        "Palkia",
         "Pulsing Aura"
       ]
     },
@@ -602,9 +321,11 @@
       "card_name": "Charmeleon",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Charizard",
         "Crimson Blaze",
         "Deluxe Pack: ex",
-        "Mega Shine"
+        "Mega Shine",
+        "Shining Revelry"
       ]
     },
     {
@@ -620,6 +341,7 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Mega Gyarados",
+        "None",
         "Pulsing Aura"
       ]
     },
@@ -627,8 +349,11 @@
       "card_name": "Poliwhirl",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Charizard",
+        "Lugia",
         "Mega Gyarados",
-        "Pulsing Aura"
+        "Pulsing Aura",
+        "Secluded Springs"
       ]
     },
     {
@@ -637,6 +362,15 @@
       "packs": [
         "Mega Shine",
         "Paldean Wonders",
+        "Pulsing Aura",
+        "Shining Revelry"
+      ]
+    },
+    {
+      "card_name": "Quagsire",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Lugia",
         "Pulsing Aura"
       ]
     },
@@ -644,8 +378,12 @@
       "card_name": "Magneton",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Arceus",
         "Crimson Blaze",
         "Deluxe Pack: ex",
+        "Lugia",
+        "None",
+        "Pikachu",
         "Pulsing Aura"
       ]
     },
@@ -653,6 +391,8 @@
       "card_name": "Bewear",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Extradimensional Crisis",
+        "Lunala",
         "Mega Blaziken",
         "Pulsing Aura"
       ]
@@ -661,7 +401,26 @@
       "card_name": "Golbat",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Arceus",
         "Deluxe Pack: ex",
+        "Ho-Oh",
+        "Mewtwo",
+        "Pulsing Aura"
+      ]
+    },
+    {
+      "card_name": "Malamar",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Pulsing Aura",
+        "Secluded Springs"
+      ]
+    },
+    {
+      "card_name": "Bisharp",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "None",
         "Pulsing Aura"
       ]
     },
@@ -669,6 +428,7 @@
       "card_name": "Herdier",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Extradimensional Crisis",
         "Mega Altaria",
         "Pulsing Aura"
       ]
@@ -686,12 +446,10 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
-        "Deluxe Pack: ex"
+        "Deluxe Pack: ex",
+        "Mewtwo",
+        "Solgaleo"
       ]
-    },
-    {
-      "card_name": "Venonat",
-      "reason": "no_match_in_pack_sources"
     },
     {
       "card_name": "Sandshrew",
@@ -707,40 +465,77 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Deluxe Pack: ex",
-        "Mega Shine"
+        "Eevee Grove",
+        "Mega Shine",
+        "Mewtwo"
       ]
     },
     {
       "card_name": "Rattata",
-      "reason": "no_match_in_pack_sources"
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "None",
+        "Shining Revelry"
+      ]
     },
     {
       "card_name": "Raticate",
-      "reason": "no_match_in_pack_sources"
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "None",
+        "Shining Revelry"
+      ]
+    },
+    {
+      "card_name": "Farfetch'd",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Deluxe Pack: ex",
+        "Eevee Grove",
+        "None",
+        "Secluded Springs"
+      ]
+    },
+    {
+      "card_name": "Cherubi",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Arceus",
+        "Deluxe Pack: ex",
+        "None"
+      ]
     },
     {
       "card_name": "Bulbasaur",
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
-        "Deluxe Pack: ex"
+        "Deluxe Pack: ex",
+        "Mewtwo",
+        "Solgaleo"
       ]
     },
     {
       "card_name": "Charmander",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Charizard",
         "Crimson Blaze",
         "Deluxe Pack: ex",
-        "Mega Shine"
+        "Mega Shine",
+        "Shining Revelry"
       ]
     },
     {
       "card_name": "Magnemite",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Arceus",
         "Crimson Blaze",
         "Deluxe Pack: ex",
+        "Lugia",
+        "None",
+        "Pikachu",
         "Pulsing Aura"
       ]
     },
@@ -750,7 +545,10 @@
       "packs": [
         "Crimson Blaze",
         "Deluxe Pack: ex",
-        "None"
+        "Ho-Oh",
+        "None",
+        "Palkia",
+        "Secluded Springs"
       ]
     },
     {
@@ -774,6 +572,8 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
+        "Ho-Oh",
+        "Pikachu",
         "Pulsing Aura"
       ]
     },
@@ -782,7 +582,8 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
-        "Mega Blaziken"
+        "Mega Blaziken",
+        "None"
       ]
     },
     {
@@ -790,6 +591,7 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
+        "Mewtwo",
         "Pulsing Aura"
       ]
     },
@@ -798,7 +600,8 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
-        "Mega Shine"
+        "Mega Shine",
+        "None"
       ]
     },
     {
@@ -806,23 +609,40 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Crimson Blaze",
+        "Lugia",
+        "Mewtwo",
+        "Palkia",
         "Pulsing Aura"
+      ]
+    },
+    {
+      "card_name": "Buneary",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Crimson Blaze",
+        "Dialga",
+        "Shining Revelry"
       ]
     },
     {
       "card_name": "Charmander",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Charizard",
         "Crimson Blaze",
         "Deluxe Pack: ex",
-        "Mega Shine"
+        "Mega Shine",
+        "Shining Revelry"
       ]
     },
     {
       "card_name": "Tangela",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Charizard",
+        "Dialga",
         "Fantastical Parade",
+        "Ho-Oh",
         "Pulsing Aura"
       ]
     },
@@ -839,6 +659,7 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Mega Gyarados",
+        "None",
         "Pulsing Aura"
       ]
     },
@@ -846,8 +667,12 @@
       "card_name": "Magnemite",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Arceus",
         "Crimson Blaze",
         "Deluxe Pack: ex",
+        "Lugia",
+        "None",
+        "Pikachu",
         "Pulsing Aura"
       ]
     },
@@ -865,8 +690,10 @@
       "packs": [
         "Deluxe Pack: ex",
         "Fantastical Parade",
+        "Lunala",
         "Mega Gyarados",
-        "Pulsing Aura"
+        "Pulsing Aura",
+        "Solgaleo"
       ]
     },
     {
@@ -882,13 +709,17 @@
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Deluxe Pack: ex",
-        "Pulsing Aura"
+        "Dialga",
+        "Pulsing Aura",
+        "Shining Revelry"
       ]
     },
     {
       "card_name": "Stufful",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Extradimensional Crisis",
+        "Lunala",
         "Mega Blaziken",
         "Pulsing Aura"
       ]
@@ -902,10 +733,28 @@
       ]
     },
     {
+      "card_name": "Seviper",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Pulsing Aura",
+        "Secluded Springs"
+      ]
+    },
+    {
       "card_name": "Zorua",
       "reason": "multiple_packs_ambiguous",
       "packs": [
         "Mega Shine",
+        "Pulsing Aura",
+        "Secluded Springs"
+      ]
+    },
+    {
+      "card_name": "Chansey",
+      "reason": "multiple_packs_ambiguous",
+      "packs": [
+        "Ho-Oh",
+        "Pikachu",
         "Pulsing Aura"
       ]
     },
@@ -921,6 +770,7 @@
       "card_name": "Lillipup",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Extradimensional Crisis",
         "Mega Altaria",
         "Pulsing Aura"
       ]
@@ -929,7 +779,9 @@
       "card_name": "Minccino",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Eevee Grove",
         "Mega Shine",
+        "None",
         "Pulsing Aura"
       ]
     },
@@ -937,7 +789,9 @@
       "card_name": "Cinccino",
       "reason": "multiple_packs_ambiguous",
       "packs": [
+        "Eevee Grove",
         "Mega Shine",
+        "None",
         "Pulsing Aura"
       ]
     },
@@ -958,15 +812,7 @@
       "reason": "no_match_in_pack_sources"
     },
     {
-      "card_name": "Poké Ball",
-      "reason": "no_match_in_pack_sources"
-    },
-    {
       "card_name": "Red Card",
-      "reason": "no_match_in_pack_sources"
-    },
-    {
-      "card_name": "Professor's Research",
       "reason": "no_match_in_pack_sources"
     },
     {

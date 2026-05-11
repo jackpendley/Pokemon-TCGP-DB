@@ -1,6 +1,6 @@
 # Owned Pack Coverage Report
 
-Generated: 2026-05-10 23:34 UTC
+Generated: 2026-05-11 00:15 UTC
 
 > **Pack-opening recommendations are intentionally deferred. This report is coverage analysis only.**
 
@@ -11,11 +11,11 @@ Generated: 2026-05-10 23:34 UTC
 | Total owned entries | 211 |
 | Total owned quantity | 329 |
 | Exact pack match (set+number) | 93 |
-| Name-only match, pack agreed | 36 |
-| Name-only match, pack ambiguous | 62 |
-| No match in pack_sources | 20 |
+| Name-only match, pack agreed | 27 |
+| Name-only match, pack ambiguous | 83 |
+| No match in pack_sources | 8 |
 | Exact coverage % | 44.1% |
-| Broad coverage % (exact + agreed) | 61.1% |
+| Broad coverage % (exact + agreed) | 56.9% |
 
 ## Notes on Matching
 
@@ -59,32 +59,27 @@ _These cards have a unique pack assignment from name matching, but not confirmed
 | Tepig | 1 | Pulsing Aura | Pulsing Aura |
 | Zekrom | 1 | Pulsing Aura | Pulsing Aura |
 | Bonsly | 1 | Pulsing Aura | Pulsing Aura |
+| Incineroar | 1 | Eevee Grove | Eevee Grove |
 | Mega Venusaur ex | 2 | Crimson Blaze | Crimson Blaze |
 | Mega Charizard Y ex | 2 | Crimson Blaze | Crimson Blaze |
-| Vaporeon | 1 | Deluxe Pack: ex | Deluxe Pack: ex |
 | Corviknight | 1 | Mega Blaziken | Mega Rising |
-| Charizard | 1 | Crimson Blaze | Crimson Blaze |
 | Yveltal | 1 | Fantastical Parade | Fantastical Parade |
 | Budew | 1 | Pulsing Aura | Pulsing Aura |
-| Cyrus | 1 | Deluxe Pack: ex | Deluxe Pack: ex |
-| Rare Candy | 1 | Deluxe Pack: ex | Deluxe Pack: ex |
-| Giant Cape | 1 | Deluxe Pack: ex | Deluxe Pack: ex |
 | May | 1 | Mega Blaziken | Mega Rising |
 | Copycat | 1 | Mega Gyarados | Mega Rising |
 | Quick-Grow Extract | 3 | Crimson Blaze | Crimson Blaze |
 | Clemont | 1 | Crimson Blaze | Crimson Blaze |
 | Serena | 1 | Crimson Blaze | Crimson Blaze |
-| Quagsire | 1 | Pulsing Aura | Pulsing Aura |
-| Malamar | 1 | Pulsing Aura | Pulsing Aura |
-| Bisharp | 1 | Pulsing Aura | Pulsing Aura |
 | Korrina | 1 | Pulsing Aura | Pulsing Aura |
 | Cheren | 1 | Pulsing Aura | Pulsing Aura |
-| Farfetch'd | 1 | Deluxe Pack: ex | Deluxe Pack: ex |
-| Cherubi | 1 | Deluxe Pack: ex | Deluxe Pack: ex |
-| Buneary | 2 | Crimson Blaze | Crimson Blaze |
+| Venonat | 1 | Mewtwo | Genetic Apex |
 | Treecko | 2 | Pulsing Aura | Pulsing Aura |
-
-_...and 6 more_
+| Tepig | 1 | Pulsing Aura | Pulsing Aura |
+| Sobble | 2 | Pulsing Aura | Pulsing Aura |
+| Kubfu | 1 | Pulsing Aura | Pulsing Aura |
+| Castform | 2 | Pulsing Aura | Pulsing Aura |
+| Poké Ball | 4 | Shining Revelry | Shining Revelry |
+| Professor's Research | 4 | Deluxe Pack: ex | Deluxe Pack: ex |
 
 ## Ambiguous Pack Assignments (up to 30)
 
@@ -93,66 +88,54 @@ _These cards match multiple records in pack_sources with different pack names. C
 | Card Name | Qty | Possible Packs | Sets |
 |---|---|---|---|
 | Blaziken | 1 | Mega Blaziken, Pulsing Aura | B1, B3 |
-| Skrelp | 1 | Mega Blaziken, Pulsing Aura | B1, B3 |
-| Bulbasaur | 1 | Crimson Blaze, Deluxe Pack: ex | A4b, B1a |
+| Skrelp | 1 | Mega Blaziken, Pulsing Aura, Secluded Springs | A4a, B1, B3 |
+| Bulbasaur | 1 | Crimson Blaze, Deluxe Pack: ex, Mewtwo, Solgaleo | A1, A3, A4b, B1a |
 | Shroomish | 1 | Pulsing Aura, None | B1, B3 |
 | Morpeko | 1 | Mega Shine, Pulsing Aura | B2b, B3 |
-| Riolu | 1 | Deluxe Pack: ex, Pulsing Aura | A4b, B3 |
-| Meltan | 1 | Mega Gyarados, Pulsing Aura | B1, B3 |
+| Riolu | 1 | Deluxe Pack: ex, Dialga, Pulsing Aura, Shining Revelry | A2, A2b, A4b, B3 |
+| Meltan | 1 | Charizard, Eevee Grove, Mega Gyarados, Pulsing Aura | A1, A3b, B1, B3 |
+| Marowak | 1 | Lunala, Mewtwo | A1, A3 |
+| Vaporeon | 1 | Deluxe Pack: ex, Eevee Grove, Lugia, Mew, Mewtwo | A1, A1a, A3b, A4, A4b |
+| Eelektross | 1 | Mewtwo, Secluded Springs | A1, A4a |
+| Charizard | 1 | Charizard, Crimson Blaze | A1, B1a |
 | Meloetta | 3 | Fantastical Parade, Pulsing Aura | B2, B3 |
-| Crobat | 1 | Deluxe Pack: ex, Pulsing Aura | A4b, B3 |
-| Stoutland | 1 | Mega Altaria, Pulsing Aura | B1, B3 |
-| Sandslash | 2 | Crimson Blaze, Fantastical Parade, None | B1, B1a, B2 |
-| Onix | 1 | Crimson Blaze, Pulsing Aura | B1a, B3 |
+| Crobat | 1 | Arceus, Deluxe Pack: ex, Pulsing Aura | A2a, A4b, B3 |
+| Stoutland | 1 | Extradimensional Crisis, Mega Altaria, Pulsing Aura | A3a, B1, B3 |
+| Sandslash | 2 | Crimson Blaze, Fantastical Parade, None | A1, B1, B1a, B2 |
+| Onix | 1 | Crimson Blaze, Ho-Oh, Pikachu, Pulsing Aura | A1, A4, B1a, B3 |
+| Giovanni | 1 | Deluxe Pack: ex, Mewtwo | A1, A4b |
+| Sabrina | 1 | Charizard, Deluxe Pack: ex | A1, A4b |
+| Leaf | 1 | Deluxe Pack: ex, Mew | A1a, A4b |
+| Cyrus | 1 | Deluxe Pack: ex, Palkia | A2, A4b |
+| Rare Candy | 1 | Deluxe Pack: ex, None | A3, A4b |
+| Lillie | 1 | Deluxe Pack: ex, Solgaleo | A3, A4b |
+| Giant Cape | 1 | Deluxe Pack: ex, Dialga | A2, A4b |
 | Flame Patch | 2 | Mega Blaziken, None | B1 |
-| Ivysaur | 1 | Crimson Blaze, Deluxe Pack: ex | A4b, B1a |
-| Magneton | 1 | Crimson Blaze, Deluxe Pack: ex, Pulsing Aura | A4b, B1a, B3 |
-| Mismagius | 2 | Crimson Blaze, None | B1, B1a |
-| Hariyama | 2 | Crimson Blaze, Mega Blaziken | B1, B1a |
-| Garbodor | 3 | Crimson Blaze, Mega Shine | B1a, B2b |
-| Steelix | 3 | Crimson Blaze, Pulsing Aura | B1a, B3 |
-| Porygon2 | 1 | Crimson Blaze, Pulsing Aura | B1a, B3 |
-| Furfrou | 1 | Crimson Blaze, Fantastical Parade, Mega Altaria, Mega Blaziken, Mega Gyarados, Mega Shine, Pulsing Aura | B1, B1a, B2, B2b, B3 |
-| Doublade | 1 | Fantastical Parade, Mega Blaziken | B1, B2 |
-| Charmeleon | 2 | Crimson Blaze, Deluxe Pack: ex, Mega Shine | A4b, B1a, B2b |
-| Breloom | 1 | Pulsing Aura, None | B1, B3 |
-| Darmanitan | 3 | Mega Gyarados, Pulsing Aura | B1, B3 |
-| Poliwhirl | 2 | Mega Gyarados, Pulsing Aura | B1, B3 |
-| Paldean Tauros | 2 | Mega Shine, Paldean Wonders, Pulsing Aura | B2a, B2b, B3 |
-| Magneton | 2 | Crimson Blaze, Deluxe Pack: ex, Pulsing Aura | A4b, B1a, B3 |
-| Bewear | 2 | Mega Blaziken, Pulsing Aura | B1, B3 |
-| Golbat | 1 | Deluxe Pack: ex, Pulsing Aura | A4b, B3 |
+| Ivysaur | 1 | Crimson Blaze, Deluxe Pack: ex, Mewtwo, Solgaleo | A1, A3, A4b, B1a |
+| Magneton | 1 | Arceus, Crimson Blaze, Deluxe Pack: ex, Lugia, Pikachu, Pulsing Aura, None | A1, A2, A2a, A4, A4b, B1a, B3 |
+| Mismagius | 2 | Crimson Blaze, Secluded Springs, None | A4a, B1, B1a |
+| Hariyama | 2 | Crimson Blaze, Mega Blaziken, None | A3, B1, B1a |
+| Garbodor | 3 | Crimson Blaze, Mega Shine, None | A3, B1a, B2b |
+| Steelix | 3 | Crimson Blaze, Ho-Oh, Pulsing Aura | A4, B1a, B3 |
 
-_...and 32 more_
+_...and 53 more_
 
 ## Unresolved Cards (No Match in pack_sources, up to 30)
 
 | Card Name | Qty | Screenshot |
 |---|---|---|
-| Marowak | 1 | IMG_1525.PNG |
-| Incineroar | 1 | IMG_1525.PNG |
-| Eelektross | 1 | IMG_1526.PNG |
 | Urshifu | 1 | IMG_1527.PNG |
-| Giovanni | 1 | IMG_1528.PNG |
-| Sabrina | 1 | IMG_1528.PNG |
-| Leaf | 1 | IMG_1528.PNG |
-| Lillie | 1 | IMG_1528.PNG |
-| Venonat | 1 | IMG_1535.PNG |
-| Rattata | 2 | IMG_1536.PNG |
-| Raticate | 1 | IMG_1536.PNG |
 | Potion | 1 | IMG_1546.PNG |
 | X Speed | 1 | IMG_1546.PNG |
 | Hand Scope | 1 | IMG_1546.PNG |
 | Pokédex | 1 | IMG_1546.PNG |
-| Poké Ball | 4 | IMG_1546.PNG |
 | Red Card | 1 | IMG_1546.PNG |
-| Professor's Research | 4 | IMG_1547.PNG |
 | Zygarde | 1 | IMG_1547.PNG |
 | Zygarde | 3 | IMG_1547.PNG |
 
 ## Why Pack Recommendations Are Still Deferred
 
-- **82 owned cards** have no definitive pack assignment.
+- **91 owned cards** have no definitive pack assignment.
 - `set_or_pack` is still unknown for all 211 owned cards in cards.json.
 - Pack pull probability tables are not yet modeled.
 - Current meta tier list data is not integrated.

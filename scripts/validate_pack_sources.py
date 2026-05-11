@@ -17,7 +17,15 @@ ROOT = Path(__file__).resolve().parent.parent
 PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
 PACK_SOURCES_SCHEMA = ROOT / "data" / "reference" / "pack_sources.schema.json"
 
-VALID_SET_CODES = {"A4b", "B1", "B1a", "B2", "B2a", "B2b", "B3"}
+VALID_SET_CODES = {
+    "A1", "A1a",
+    "A2", "A2a", "A2b",
+    "A3", "A3a", "A3b",
+    "A4", "A4a", "A4b",
+    "B1", "B1a",
+    "B2", "B2a", "B2b",
+    "B3",
+}
 VALID_RARITIES = {
     "one_diamond", "two_diamond", "three_diamond", "four_diamond",
     "one_star", "double_star", "triple_star", "crown", "promo", None,

@@ -8,7 +8,7 @@ recommendations can be made reliably, lists current blockers, and outlines the n
 
 ---
 
-## Current Status (as of 2026-05-10)
+## Current Status (as of 2026-05-11)
 
 | Metric | Value |
 |---|---|
@@ -17,10 +17,11 @@ recommendations can be made reliably, lists current blockers, and outlines the n
 | Validation | PASS at 329 |
 | Metadata enrichment | 179 / 211 cards enriched from Limitless TCG Pocket reference |
 | Readiness score | ~50% (see `review/collection_analytics.md` for current score) |
-| pack_sources.json | **Built** — 1483 records across 7 sets (A4b, B1, B1a, B2, B2a, B2b, B3) |
-| Owned pack coverage | 93/211 exact (44.1%); 36 agreed name-match; 62 ambiguous; 20 no match |
-| source_packs in cards.json | 130/211 (93 exact + 37 rule-resolved at medium confidence); 81 still unresolved |
-| Pack coverage resolution | `scripts/resolve_pack_coverage.py` applied Rule D (36) + Rule EX (1 — Marowak) |
+| pack_sources.json | **Expanded** — 3110 records across all 17 sets (A1–A4a, A4b, B1–B3) |
+| Owned pack coverage | 93/211 exact (44.1%); 27 agreed name-match; 83 ambiguous; 8 no-match |
+| source_packs in cards.json | 120/211 (93 exact-phase + 27 rule-resolved); 91 still unresolved |
+| Pack coverage resolution | Rule D: 27 cards (unanimous pack across all set records); Rule EX cleared (ambiguous with full data) |
+| New no-match (8) | Urshifu (form variant), Potion/X Speed/Hand Scope/Pokédex/Red Card (not in Limitless DB), Zygarde (set unknown) |
 
 ### Pack Source Coverage Reports
 
@@ -86,12 +87,13 @@ See `review/pack_source_mapping_plan.md` for how to build it.
 ## Current Blockers
 
 1. **set_or_pack is unknown for all 211 cards** — `set_code` enriched for 93 cards;
-   `source_packs` now set for 130/211. 81 cards still have no pack assignment:
-   62 are ambiguous (same name in multiple packs across sets) and 19 have no reference match.
+   `source_packs` now set for 120/211. 91 cards still have no pack assignment:
+   83 are ambiguous (same name in multiple packs across sets) and 8 have no reference match.
 
-2. **Pack coverage is 61.6% broad (130/211)** — 93 exact-match + 37 rule-resolved (medium
-   confidence). 62 remain ambiguous (B3 reprints and multi-set cards) and 19 have no
-   reference match (older sets A1–A4, trainers, Zygarde).
+2. **Pack coverage is 56.9% broad (120/211)** — 93 exact-match + 27 rule-resolved (medium
+   confidence). 83 remain ambiguous (reprints, multi-set cards, trainer supporters with
+   older-set reprints). 8 have no Limitless reference (common trainer items not in Limitless,
+   Urshifu form variant, Zygarde unidentified set).
 
 3. **special_type is unknown for 209/211 cards** — Full art, illustration rare, special art,
    immersive, and crown/gold distinctions are not captured. Affects recommendation quality
