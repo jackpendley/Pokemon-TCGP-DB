@@ -52,6 +52,25 @@ python3 scripts/apply_ambiguous_confirmations.py --dry-run
 python3 scripts/apply_ambiguous_confirmations.py --apply
 ```
 
+### Skipped Multi-Value Review Package (10 cards)
+
+73 of 83 ambiguous cards were resolved. 10 were skipped because the filled CSV used
+multi-value format (e.g. `A1/A4b`). A focused review package exists for these:
+
+- `review/skipped_multi_value_review.md` — per-card analysis and fill instructions
+- `data/exports/skipped_multi_value_review.csv` — fill `confirmed_action` + relevant fields
+- `data/exports/skipped_multi_value_review.json` — full candidate data
+
+Apply after filling:
+
+```bash
+python3 scripts/apply_skipped_multi_value_confirmations.py --dry-run
+python3 scripts/apply_skipped_multi_value_confirmations.py --apply
+```
+
+Coverage remains **193/211 (91.5%)** until these 10 cards are resolved.
+Pull probability model will be most accurate after these are confirmed.
+
 ---
 
 ## What Data Is Required Before Pack Recommendations
