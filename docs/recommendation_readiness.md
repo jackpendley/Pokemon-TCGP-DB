@@ -28,6 +28,22 @@ recommendations can be made reliably, lists current blockers, and outlines the n
 - `review/owned_pack_coverage.md` — full coverage breakdown
 - `data/exports/owned_pack_coverage.json` — machine-readable
 
+### Ambiguous Pack Review Package
+
+- `review/ambiguous_cards_review.md` — grouped review with how-to instructions (83 cards)
+- `data/exports/ambiguous_cards_review.csv` — fill confirmed_set_code + confirmed_card_number + confirmed_yes_no
+- `data/exports/ambiguous_cards_review.json` — full candidate lists
+- `review/no_match_cards_review.md` — review guide for 8 no-match cards
+- `data/exports/no_match_cards_review.csv` — fill confirmed columns
+- `data/exports/no_match_cards_review.json` — no-match card details
+
+Apply confirmations after filling the CSV:
+
+```bash
+python3 scripts/apply_ambiguous_confirmations.py --dry-run
+python3 scripts/apply_ambiguous_confirmations.py --apply
+```
+
 ---
 
 ## What Data Is Required Before Pack Recommendations
