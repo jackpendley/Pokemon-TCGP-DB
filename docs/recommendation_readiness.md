@@ -58,10 +58,29 @@ python3 scripts/apply_current_pack_confirmations.py --dry-run
 python3 scripts/apply_current_pack_confirmations.py --apply
 ```
 
+### Screenshot-to-Collection Alignment (2026-05-11)
+
+| Metric | Value |
+|---|---|
+| Script | `scripts/build_screenshot_collection_alignment.py` |
+| Method | Order-only sequential mapping (no OCR) |
+| Aligned | **224/224 entries assigned** |
+| Surplus slots | **8** (likely IMG_1581 scroll-overlap + 1 trailing empty) |
+| Confidence (all aligned) | low (0.50–0.799) — no OCR name verification |
+| Max achievable (no-OCR) | 0.70 (r2 slot, non-final screenshot) |
+| Validation | `python3 scripts/validate_screenshot_collection_alignment.py` — **PASS** |
+
+Outputs:
+- `data/current/screenshot_collection_alignment.json`
+- `data/exports/screenshot_collection_alignment.csv`
+- `review/screenshot_collection_alignment.md`
+
+High-confidence assignment (≥ 0.95) requires OCR or image-name verification in a future phase.
+
 ### Remaining blockers before automated pack recommendations
 
-1. **Automated pack-source confidence model not built** — 67 unresolved entries (59 ambiguous cross-set, 3 Zygarde no-match, 5 trainer gaps) are the target set for automated scoring, not a manual CSV mandate.
-2. **Screenshot-to-collection alignment not built** — `scripts/build_screenshot_collection_alignment.py` and `scripts/score_pack_source_confidence.py` need to be created.
+1. **Pack-source confidence scoring not built** — `scripts/score_pack_source_confidence.py` not yet created. 67 unresolved entries (59 ambiguous cross-set, 3 Zygarde no-match, 5 trainer gaps) are targets for this.
+2. **No OCR name verification** — alignment is order-only; card identities are not confirmed from screenshots.
 3. **Pull probability model** — rarity tier pull rates by pack not yet modeled.
 4. **Pack-source mapping for Zygarde** — Zygarde 10%/50%/ex not in current Limitless data; needs external set reference.
 5. **Current meta/tier data** — deck recommendations are not yet meta-aware.
@@ -69,7 +88,7 @@ python3 scripts/apply_current_pack_confirmations.py --apply
 
 ### Recommended next phase
 
-Build automated screenshot-to-collection alignment (`scripts/build_screenshot_collection_alignment.py`) and pack-source confidence scoring (`scripts/score_pack_source_confidence.py`). These use `collection.json` + `screenshots/` + `pack_sources.json` as the basis. Only flag entries below the confidence threshold (< 0.80) for manual review. Manual CSV confirmation is a fallback tool, not the primary path forward.
+Build `scripts/score_pack_source_confidence.py` using `collection_normalized.json` + `pack_sources.json` + the existing coverage data. Produce `data/current/pack_source_confidence_scores.json` with per-entry best pack candidate and confidence score. Only flag entries below threshold (< 0.80) for manual review.
 
 ---
 

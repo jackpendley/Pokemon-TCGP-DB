@@ -33,7 +33,16 @@ python3 scripts/apply_current_pack_confirmations.py --dry-run   # only after fil
 python3 scripts/apply_current_pack_confirmations.py --apply
 ```
 
-Next active phase: build `scripts/build_screenshot_collection_alignment.py` and `scripts/score_pack_source_confidence.py` using `collection.json` + `screenshots/` + `pack_sources.json`.
+Screenshot-to-collection alignment (order-only, no OCR): 224/224 entries aligned, 8 surplus slots, max confidence 0.70.
+
+```bash
+python3 scripts/build_screenshot_collection_alignment.py
+python3 scripts/validate_screenshot_collection_alignment.py
+```
+
+Outputs: `data/current/screenshot_collection_alignment.json`, `data/exports/screenshot_collection_alignment.csv`, `review/screenshot_collection_alignment.md`
+
+Next active phase: build `scripts/score_pack_source_confidence.py` using `collection_normalized.json` + `pack_sources.json`.
 
 See `docs/current_collection_baseline.md` and `docs/recommendation_readiness.md` for full details.
 

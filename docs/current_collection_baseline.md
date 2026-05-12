@@ -60,8 +60,10 @@ Chase cards needed:
 | `scripts/inventory_screenshots.py` | Inventory new cropped grid screenshots |
 | `scripts/reconcile_current_collection_sources.py` | Structural reconciliation of collection vs screenshots |
 | `scripts/current_collection_pack_coverage.py` | Pack-source coverage for 380-card collection |
-| `scripts/create_current_pack_review.py` | Review package for unresolved pack mappings |
-| `scripts/apply_current_pack_confirmations.py` | Apply user-filled pack confirmations (dry-run default) |
+| `scripts/create_current_pack_review.py` | Review package for unresolved pack mappings (fallback report) |
+| `scripts/apply_current_pack_confirmations.py` | Apply user-filled pack confirmations (fallback, dry-run default) |
+| `scripts/build_screenshot_collection_alignment.py` | Order-based screenshot-to-collection alignment (no OCR) |
+| `scripts/validate_screenshot_collection_alignment.py` | Validate alignment output |
 
 ## Pack-Source Coverage
 
@@ -76,6 +78,18 @@ Chase cards needed:
 
 The 67 unresolved entries are the target set for automated confidence scoring. Manual CSV review (`data/exports/current_pack_source_review.csv`) is a fallback tool for below-threshold cases, not the primary next step.
 
+## Screenshot-to-Collection Alignment
+
+| Metric | Value |
+|---|---|
+| Method | Order-only sequential (no OCR) |
+| Aligned | 224/224 entries |
+| Surplus slots | 8 (likely IMG_1581 scroll-overlap) |
+| Confidence (aligned) | low (0.50–0.799) — max 0.70 without OCR |
+| Validation | PASS |
+
+The 67 unresolved entries are the target set for automated confidence scoring — not a mandate for manual CSV review.
+
 ## Generated Outputs
 
 | File | Description |
@@ -85,11 +99,14 @@ The 67 unresolved entries are the target set for automated confidence scoring. M
 | `data/current/screenshot_inventory.json` | Screenshot file list and slot counts |
 | `data/current/screenshot_manifest.json` | Slot-level manifest (card_name/quantity blank) |
 | `data/current/current_collection_reconciliation.json` | Structural reconciliation result |
+| `data/current/screenshot_collection_alignment.json` | Order-based slot→entry alignment with confidence scores |
 | `review/current_collection_summary.md` | Human-readable collection summary |
 | `review/screenshot_inventory.md` | Screenshot inventory table |
 | `review/screenshot_manifest.md` | Per-slot manifest (blank for future OCR or manual fill) |
 | `review/current_collection_reconciliation.md` | Reconciliation report |
+| `review/screenshot_collection_alignment.md` | Alignment report with confidence distribution |
 | `review/deck_recommendation_validation.md` | Deck-by-deck validation |
+| `data/exports/screenshot_collection_alignment.csv` | Full alignment table (one row per screenshot slot) |
 | `data/exports/deck_recommendation_validation.json` | Machine-readable deck validation |
 
 ## Old Screenshot Ingestion Pipeline (Historical)
