@@ -7,69 +7,81 @@
 | Source file | `collection.json` |
 | Date | 2026-05-11 |
 | Meta declared total | 380 |
-| Actual verified count | 376 |
-| Unique entries | 220 |
+| Actual verified count | **380 ✅** |
+| Unique entries | 224 |
 | Format | Pokemon TCG Pocket |
 
-> **Count discrepancy: 4 cards.** `collection.json` meta says 380 but the sum of all `count` fields is 376. This was detected by `scripts/validate_current_collection.py`. The file may be missing a few entries. User should audit and update `collection.json` directly before running pack recommendations that depend on exact totals.
+`collection.json` validates at exactly 380. No count discrepancy.
+
+## Screenshots
+
+| Field | Value |
+|---|---|
+| Source directory | `screenshots/` |
+| Files | 26 (IMG_1556–IMG_1581) |
+| Format | Manually cropped 3×3 card grid |
+| Total expected card slots | 232 (25 × 9 standard + 1 × 7 final) |
+| Unique collection entries | 224 |
+| Structural consistency | ✅ 232 slots ≥ 224 entries |
+
+The screenshots show the app's card collection grid. Each tile is a unique card entry with a quantity chip. The 232 slots exceed the 224 unique entries; extra slots may represent scrolling overlaps or empty positions.
 
 ## Relationship to Old Baseline
 
 | Baseline | File | Card Count | Status |
 |---|---|---|---|
-| **Current active** | `collection.json` | 376 verified (380 declared) | Use for all new recommendations |
+| **Current active** | `collection.json` | **380 validated** | Use for all new recommendations |
 | Historical/provisional | `cards.json` | 329 | Screenshot ingestion artifact — preserved for provenance |
 
 - `collection.json` is manually authored and represents the user's exact current Pokémon TCG Pocket collection as of 2026-05-11.
-- `cards.json` is the result of the screenshot-extraction pipeline (batches → merge → enrichment → pack-source resolution). It is preserved for provenance and future screenshot-driven updates.
-- The two files are **not expected to match exactly** in total count. The old 329 count reflects cards captured from app screenshots; the new 380 count reflects the user's full current collection at the time of manual entry.
+- `cards.json` is the result of the screenshot-extraction pipeline (batches → merge → enrichment → pack-source resolution). Preserved for provenance.
+- The two files are not expected to match. 329 came from screenshots (incomplete); 380 is the full manually entered collection.
 
-## Future Recommendations
+## Deck Recommendations Status
 
-All deck-building and pack-opening recommendations should be generated from:
-- `data/current/collection_normalized.json` — clean machine-readable output (no comments, generated fields added)
-- `data/current/collection_summary.json` — aggregated statistics
+`deck-recommendations.jsx` is a manually authored React prototype UI.
 
-Do **not** use `cards.json` (the old 329-card baseline) as the input for new recommendation generation.
+- 4 buildable decks: all fully buildable from current collection ✅
+- 4 chase decks: each exactly 1 ex Pokémon short (need 2, have 1)
 
-## Screenshot Ingestion Pipeline
+Chase cards needed:
+- Ivysaur (×1 more) — for Mega Venusaur ex deck
+- Incineroar ex (×1 more)
+- Zygarde ex (×1 more)
+- Magnezone ex (×1 more)
 
-The old ingestion pipeline remains useful for:
-- Tracking new cards from fresh screenshots
-- Auditing specific cards for set/rarity enrichment
-- Provenance: showing exactly which screenshots each card was identified from
-
-Scripts relevant to the old pipeline:
-- `scripts/validate_cards.py --expected-total 329`
-- `scripts/validate_pack_sources.py`
-- `scripts/owned_pack_coverage.py`
-- `scripts/apply_ambiguous_confirmations.py`
-
-## Deck Recommendations Prototype
-
-`deck-recommendations.jsx` is a manually authored React prototype UI for deck recommendations, based on the 380-card collection.
-
-- It references 8 decks: 4 buildable, 4 chase.
-- Validated by `scripts/validate_deck_recommendations.py`.
-- Validation output: `review/deck_recommendation_validation.md`
-
-**All 4 buildable decks are fully buildable** from the current collection.  
-**All 4 chase decks are 1 card short** of the key ex Pokémon needed for a second copy.
-
-## New Scripts Added in This Phase
+## Scripts
 
 | Script | Purpose |
 |---|---|
-| `scripts/validate_current_collection.py` | Validate `collection.json` (supports JSONC comments) |
-| `scripts/normalize_current_collection.py` | Output clean JSON + summary from `collection.json` |
+| `scripts/validate_current_collection.py` | Validate `collection.json` (JSONC-aware) |
+| `scripts/normalize_current_collection.py` | Generate clean JSON + summary from `collection.json` |
 | `scripts/validate_deck_recommendations.py` | Compare deck card lists against owned collection |
+| `scripts/inventory_screenshots.py` | Inventory new cropped grid screenshots |
+| `scripts/reconcile_current_collection_sources.py` | Structural reconciliation of collection vs screenshots |
 
 ## Generated Outputs
 
 | File | Description |
 |---|---|
-| `data/current/collection_normalized.json` | Clean JSON with no comments; generated fields added |
-| `data/current/collection_summary.json` | Aggregated statistics (by type, stage, ex count, etc.) |
+| `data/current/collection_normalized.json` | Clean JSON, no comments, generated fields |
+| `data/current/collection_summary.json` | Aggregated statistics |
+| `data/current/screenshot_inventory.json` | Screenshot file list and slot counts |
+| `data/current/screenshot_manifest.json` | Slot-level manifest (card_name/quantity blank) |
+| `data/current/current_collection_reconciliation.json` | Structural reconciliation result |
 | `review/current_collection_summary.md` | Human-readable collection summary |
-| `review/deck_recommendation_validation.md` | Deck-by-deck validation report |
+| `review/screenshot_inventory.md` | Screenshot inventory table |
+| `review/screenshot_manifest.md` | Per-slot manifest (blank for future OCR or manual fill) |
+| `review/current_collection_reconciliation.md` | Reconciliation report |
+| `review/deck_recommendation_validation.md` | Deck-by-deck validation |
 | `data/exports/deck_recommendation_validation.json` | Machine-readable deck validation |
+
+## Old Screenshot Ingestion Pipeline (Historical)
+
+The pipeline scripts remain for screenshot-driven updates and provenance:
+- `scripts/validate_cards.py --expected-total 329`
+- `scripts/validate_pack_sources.py`
+- `scripts/owned_pack_coverage.py`
+- `scripts/apply_ambiguous_confirmations.py`
+
+Do **not** use `cards.json` (329-card baseline) for new recommendation generation.

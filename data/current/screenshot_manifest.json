@@ -1,0 +1,1604 @@
+{
+  "manifest": [
+    {
+      "filename": "IMG_1556.jpg",
+      "index": 1,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1557.jpg",
+      "index": 2,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1558.jpg",
+      "index": 3,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1559.jpg",
+      "index": 4,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1560.jpg",
+      "index": 5,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1561.jpg",
+      "index": 6,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1562.jpg",
+      "index": 7,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1563.jpg",
+      "index": 8,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1564.jpg",
+      "index": 9,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1565.jpg",
+      "index": 10,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1566.jpg",
+      "index": 11,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1567.jpg",
+      "index": 12,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1568.jpg",
+      "index": 13,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1569.jpg",
+      "index": 14,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1570.jpg",
+      "index": 15,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1571.jpg",
+      "index": 16,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1572.jpg",
+      "index": 17,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1573.jpg",
+      "index": 18,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1574.jpg",
+      "index": 19,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1575.jpg",
+      "index": 20,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1576.jpg",
+      "index": 21,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1577.jpg",
+      "index": 22,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1578.jpg",
+      "index": 23,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1579.jpg",
+      "index": 24,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1580.jpg",
+      "index": 25,
+      "grid_type": "3x3_standard",
+      "expected_card_slots": 9,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "filename": "IMG_1581.jpg",
+      "index": 26,
+      "grid_type": "3x3_final_7",
+      "expected_card_slots": 7,
+      "slots": [
+        {
+          "position": "r1c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r1c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c2",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r2c3",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        },
+        {
+          "position": "r3c1",
+          "card_name": "",
+          "quantity": null,
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}

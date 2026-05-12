@@ -8,21 +8,22 @@ Builds and maintains an exact Pokémon TCG Pocket card collection database from 
 
 | File | Cards | Status |
 |---|---|---|
-| `collection.json` | 376 verified (380 declared in meta) | **Active — use for all recommendations** |
+| `collection.json` | **380 verified ✅** (224 unique entries) | **Active — use for all recommendations** |
 | `deck-recommendations.jsx` | — | Deck recommendation prototype UI |
 | `cards.json` | 329 (211 entries) | Historical screenshot-ingestion baseline |
+| `screenshots/` | 26 files (IMG_1556–IMG_1581) | Cropped 3×3 grid screenshots, 232 card slots |
 
-> **Count note:** `collection.json` meta declares 380 but the actual sum of all `count` fields is 376. A 4-card discrepancy was detected by `scripts/validate_current_collection.py`. User should audit and update `collection.json` to resolve.
-
-Validate with:
+Validate and normalize:
 
 ```bash
 python3 scripts/validate_current_collection.py --expected-total 380
 python3 scripts/normalize_current_collection.py
+python3 scripts/inventory_screenshots.py
+python3 scripts/reconcile_current_collection_sources.py
 python3 scripts/validate_deck_recommendations.py
 ```
 
-Normalized outputs (for machine use): `data/current/collection_normalized.json`, `data/current/collection_summary.json`
+Normalized outputs: `data/current/collection_normalized.json`, `data/current/collection_summary.json`
 
 See `docs/current_collection_baseline.md` for full details.
 

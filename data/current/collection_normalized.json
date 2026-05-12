@@ -5,8 +5,8 @@
     "format": "Pokemon TCG Pocket"
   },
   "generated_note": "Normalized output — do not edit. Source: collection.json",
-  "actual_total_quantity": 376,
-  "unique_entries": 220,
+  "actual_total_quantity": 380,
+  "unique_entries": 224,
   "collection": [
     {
       "name": "Charmander",
@@ -283,6 +283,19 @@
       "normalized_name": "mega_camerupt_ex",
       "entry_id": "mega_camerupt_ex",
       "stage_label": "Stage 1"
+    },
+    {
+      "name": "Blaziken",
+      "type": "Fire",
+      "stage": 2,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "attack": "Blaze Kick 100",
+      "count": 1,
+      "normalized_name": "blaziken",
+      "entry_id": "blaziken",
+      "is_ex": false,
+      "stage_label": "Stage 2"
     },
     {
       "name": "Bulbasaur",
@@ -1785,6 +1798,32 @@
       "stage_label": "Basic"
     },
     {
+      "name": "Krookodile",
+      "type": "Fighting",
+      "stage": 2,
+      "hp": 160,
+      "card_type": "Pokemon",
+      "attack": "Chomp Chomp Bite 90",
+      "count": 1,
+      "normalized_name": "krookodile",
+      "entry_id": "krookodile",
+      "is_ex": false,
+      "stage_label": "Stage 2"
+    },
+    {
+      "name": "Bonsly",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 30,
+      "card_type": "Pokemon",
+      "attack": "Teary Attack 10",
+      "count": 1,
+      "normalized_name": "bonsly",
+      "entry_id": "bonsly",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
       "name": "Yveltal",
       "type": "Darkness",
       "stage": 0,
@@ -2251,6 +2290,19 @@
       "entry_id": "corvisquire",
       "is_ex": false,
       "stage_label": "Stage 1"
+    },
+    {
+      "name": "Corviknight ex",
+      "type": "Colorless",
+      "stage": 2,
+      "hp": 180,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Air Crash 110",
+      "count": 1,
+      "normalized_name": "corviknight_ex",
+      "entry_id": "corviknight_ex",
+      "stage_label": "Stage 2"
     },
     {
       "name": "Porygon2",

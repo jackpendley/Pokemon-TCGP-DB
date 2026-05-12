@@ -7,32 +7,35 @@ recommendations can be made reliably, lists current blockers, and outlines the n
 
 ## Current 380-Card Recommendation Baseline (2026-05-11)
 
-A manually authored `collection.json` now provides the exact active collection.
+`collection.json` is the active exact collection. Validates at exactly 380 cards.
 
 | Metric | Value |
 |---|---|
 | Active collection file | `collection.json` |
 | Meta declared total | 380 |
-| Actual verified count | **376** (4-card discrepancy — user should audit) |
-| Unique entries | 220 |
+| Actual verified count | **380 ✅** |
+| Unique entries | 224 |
+| Screenshots | 26 files (IMG_1556–IMG_1581), 232 card slots |
+| Structural consistency | ✅ Screenshots structurally consistent with 224 unique entries |
 | Deck validation | 4/8 decks fully buildable; 4 chase decks each 1 card short |
 | Buildable decks | Mega Charizard Y ex (S), Victini + Darmanitan (A), Crobat Darkness Pivot (A), Staraptor Blitz (B+) |
 | Chase decks | Mega Venusaur ex (−1 Ivysaur), Incineroar ex (−1 ex), Zygarde ex (−1 ex), Magnezone ex (−1 ex) |
 
-Deck recommendations can now be validated against the 380-card collection:
+Run full validation suite:
 ```bash
 python3 scripts/validate_current_collection.py --expected-total 380
 python3 scripts/normalize_current_collection.py
+python3 scripts/inventory_screenshots.py
+python3 scripts/reconcile_current_collection_sources.py
 python3 scripts/validate_deck_recommendations.py
 ```
 
 ### Remaining blockers before automated pack recommendations
 
-1. **4-card count discrepancy** — meta says 380 but actual count is 376. User must audit `collection.json`.
-2. **Pull probability model** — rarity tier pull rates by pack not yet modeled.
-3. **Pack-source mapping for new cards** — `collection.json` contains cards not in the old `pack_sources.json` (built for 329-card set). New cards need pack-source mapping before EV calculation.
-4. **Current meta/tier data** — deck recommendations are not yet meta-aware (no tournament data integration).
-5. **Deck recommendations UI validation** — `deck-recommendations.jsx` is a manual prototype; no automated scorer yet.
+1. **Pull probability model** — rarity tier pull rates by pack not yet modeled.
+2. **Pack-source mapping for new cards** — `collection.json` contains cards not in the old `pack_sources.json` (built for 329-card set). New cards need pack-source mapping before EV calculation.
+3. **Current meta/tier data** — deck recommendations are not yet meta-aware (no tournament data integration).
+4. **Deck recommendations UI** — `deck-recommendations.jsx` is a manual prototype; no automated scorer yet.
 
 ### Recommended next phase
 
@@ -41,8 +44,8 @@ Build automated deck scorer and pack EV model from `collection_normalized.json`.
 ---
 
 > **Pack-opening and deck-building recommendations are intentionally deferred.**
-> Do not generate recommendations until all blockers below are resolved.
-> (This applies to the old screenshot pipeline. The new 380-card baseline enables manual deck validation now.)
+> Do not generate recommendations until all blockers above are resolved.
+> The 380-card baseline is now validated and ready for recommendation work.
 
 ---
 

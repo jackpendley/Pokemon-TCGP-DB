@@ -3,26 +3,24 @@
 **Last updated:** 2026-05-11  
 **Format:** Pokemon TCG Pocket  
 **Meta declared total:** 380  
-**Actual card count:** 376  
-**Unique entries:** 220  
-
-> **WARNING:** Actual count (376) does not match meta.total_cards (380). Difference: -4. User should verify collection.json is complete.
+**Actual card count:** 380  
+**Unique entries:** 224  
 
 ## By Card Type
 
 | Card Type | Count |
 |---|---|
-| Pokemon | 335 |
+| Pokemon | 339 |
 | Trainer | 41 |
 
 ## By Pokémon Type
 
 | Type | Count |
 |---|---|
-| Fighting | 64 |
-| Colorless | 49 |
+| Fighting | 66 |
+| Colorless | 50 |
 | Grass | 43 |
-| Fire | 41 |
+| Fire | 42 |
 | Water | 36 |
 | Psychic | 30 |
 | Darkness | 30 |
@@ -34,9 +32,9 @@
 
 | Stage | Count |
 |---|---|
-| Basic | 226 |
+| Basic | 227 |
 | Stage 1 | 89 |
-| Stage 2 | 20 |
+| Stage 2 | 23 |
 
 ## Trainer Cards
 
@@ -49,11 +47,12 @@
 
 ## Ex Pokémon
 
-- **Ex entries:** 9
-- **Ex card count:** 11
+- **Ex entries:** 10
+- **Ex card count:** 12
 
 | Ex Card |
 |---|
+| Corviknight ex |
 | Incineroar ex |
 | Magnezone ex |
 | Marowak ex |

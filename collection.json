@@ -5,252 +5,2014 @@
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
-
     // ─── FIRE ────────────────────────────────────────────────────────────────
-    { "name": "Charmander",              "type": "Fire",      "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Bite 40",                    "count": 4 },
-    { "name": "Charmander",              "type": "Fire",      "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Flame Tail 30",              "count": 2, "variant": "Flame Tail art" },
-    { "name": "Charmeleon",              "type": "Fire",      "stage": 1, "hp": 80,  "card_type": "Pokemon",  "ability": "Ignition", "attack": "Slash 40", "count": 2 },
-    { "name": "Charizard",               "type": "Fire",      "stage": 2, "hp": 150, "card_type": "Pokemon",  "attack": "Inferno Onrush 150",         "count": 1 },
-    { "name": "Mega Charizard Y ex",     "type": "Fire",      "stage": 2, "hp": 220, "card_type": "Pokemon",  "is_ex": true, "attack": "Crimson Dive 250", "count": 2 },
-    { "name": "Tepig",                   "type": "Fire",      "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Stoke",                      "count": 2 },
-    { "name": "Pignite",                 "type": "Fire",      "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Magma Punch 60",             "count": 4 },
-    { "name": "Incineroar ex",           "type": "Fire",      "stage": 2, "hp": 180, "card_type": "Pokemon",  "is_ex": true, "attack": "Scar-Charged Smash 80+", "count": 1 },
-    { "name": "Houndour",                "type": "Fire",      "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Roar",                       "count": 1 },
-    { "name": "Houndoom",                "type": "Fire",      "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Sharp Fang 50",              "count": 1 },
-    { "name": "Moltres ex",              "type": "Fire",      "stage": 0, "hp": 140, "card_type": "Pokemon",  "is_ex": true, "attack": "Heat Blast 70 / Inferno Dance", "count": 1 },
-    { "name": "Hearthflame Mask Ogerpon","type": "Fire",      "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Hearthflame Dance 40",       "count": 1 },
-    { "name": "Victini",                 "type": "Fire",      "stage": 0, "hp": 70,  "card_type": "Pokemon",  "ability": "Victory Star", "attack": "V-Flame 40", "count": 4 },
-    { "name": "Turtonator",              "type": "Fire",      "stage": 0, "hp": 110, "card_type": "Pokemon",  "attack": "Shell Trap 40",              "count": 2 },
-    { "name": "Arcanine",                "type": "Fire",      "stage": 1, "hp": 120, "card_type": "Pokemon",  "attack": "Fire Fang 50",               "count": 1 },
-    { "name": "Darumaka",                "type": "Fire",      "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Headbutt 10",                "count": 2 },
-    { "name": "Darmanitan",              "type": "Fire",      "stage": 1, "hp": 120, "card_type": "Pokemon",  "attack": "Double Smash 40+",           "count": 3 },
-    { "name": "Larvesta",                "type": "Fire",      "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Steady Firebreathing 20",    "count": 3 },
-    { "name": "Numel",                   "type": "Fire",      "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Knock Away 20+",             "count": 2 },
-    { "name": "Castform Sunny Form",     "type": "Fire",      "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Sunny Scorching 30",         "count": 1 },
-    { "name": "Mega Camerupt ex",        "type": "Fire",      "stage": 1, "hp": 210, "card_type": "Pokemon",  "is_ex": true, "attack": "Volcanic Kaboom 160", "count": 1 },
-
+    {
+      "name": "Charmander",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Bite 40",
+      "count": 4
+    },
+    {
+      "name": "Charmander",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Flame Tail 30",
+      "count": 2,
+      "variant": "Flame Tail art"
+    },
+    {
+      "name": "Charmeleon",
+      "type": "Fire",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "ability": "Ignition",
+      "attack": "Slash 40",
+      "count": 2
+    },
+    {
+      "name": "Charizard",
+      "type": "Fire",
+      "stage": 2,
+      "hp": 150,
+      "card_type": "Pokemon",
+      "attack": "Inferno Onrush 150",
+      "count": 1
+    },
+    {
+      "name": "Mega Charizard Y ex",
+      "type": "Fire",
+      "stage": 2,
+      "hp": 220,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Crimson Dive 250",
+      "count": 2
+    },
+    {
+      "name": "Tepig",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Stoke",
+      "count": 2
+    },
+    {
+      "name": "Pignite",
+      "type": "Fire",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Magma Punch 60",
+      "count": 4
+    },
+    {
+      "name": "Incineroar ex",
+      "type": "Fire",
+      "stage": 2,
+      "hp": 180,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Scar-Charged Smash 80+",
+      "count": 1
+    },
+    {
+      "name": "Houndour",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Roar",
+      "count": 1
+    },
+    {
+      "name": "Houndoom",
+      "type": "Fire",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Sharp Fang 50",
+      "count": 1
+    },
+    {
+      "name": "Moltres ex",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Heat Blast 70 / Inferno Dance",
+      "count": 1
+    },
+    {
+      "name": "Hearthflame Mask Ogerpon",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Hearthflame Dance 40",
+      "count": 1
+    },
+    {
+      "name": "Victini",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "ability": "Victory Star",
+      "attack": "V-Flame 40",
+      "count": 4
+    },
+    {
+      "name": "Turtonator",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 110,
+      "card_type": "Pokemon",
+      "attack": "Shell Trap 40",
+      "count": 2
+    },
+    {
+      "name": "Arcanine",
+      "type": "Fire",
+      "stage": 1,
+      "hp": 120,
+      "card_type": "Pokemon",
+      "attack": "Fire Fang 50",
+      "count": 1
+    },
+    {
+      "name": "Darumaka",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Headbutt 10",
+      "count": 2
+    },
+    {
+      "name": "Darmanitan",
+      "type": "Fire",
+      "stage": 1,
+      "hp": 120,
+      "card_type": "Pokemon",
+      "attack": "Double Smash 40+",
+      "count": 3
+    },
+    {
+      "name": "Larvesta",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Steady Firebreathing 20",
+      "count": 3
+    },
+    {
+      "name": "Numel",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Knock Away 20+",
+      "count": 2
+    },
+    {
+      "name": "Castform Sunny Form",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Sunny Scorching 30",
+      "count": 1
+    },
+    {
+      "name": "Mega Camerupt ex",
+      "type": "Fire",
+      "stage": 1,
+      "hp": 210,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Volcanic Kaboom 160",
+      "count": 1
+    },
+    {
+      "name": "Blaziken",
+      "type": "Fire",
+      "stage": 2,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "attack": "Blaze Kick 100",
+      "count": 1
+    },
     // ─── GRASS ───────────────────────────────────────────────────────────────
-    { "name": "Bulbasaur",               "type": "Grass",     "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Vine Whip 40",               "count": 1 },
-    { "name": "Bulbasaur",               "type": "Grass",     "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Vine Whip 40",               "count": 1, "variant": "alt art" },
-    { "name": "Bulbasaur",               "type": "Grass",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Tackle 20",                  "count": 3, "variant": "Tackle art" },
-    { "name": "Ivysaur",                 "type": "Grass",     "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Synthesis",                  "count": 1 },
-    { "name": "Mega Venusaur ex",        "type": "Grass",     "stage": 2, "hp": 240, "card_type": "Pokemon",  "is_ex": true, "attack": "Critical Bloom 120", "count": 2 },
-    { "name": "Shroomish",               "type": "Grass",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Spore",                      "count": 3 },
-    { "name": "Budew",                   "type": "Grass",     "stage": 0, "hp": 30,  "card_type": "Pokemon",  "attack": "Prickly Powder 10",          "count": 1 },
-    { "name": "Breloom",                 "type": "Grass",     "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Pre-Dawn Strike 30+",        "count": 1 },
-    { "name": "Treecko",                 "type": "Grass",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Pound 20",                   "count": 2 },
-    { "name": "Surskit",                 "type": "Grass",     "stage": 0, "hp": 50,  "card_type": "Pokemon",  "attack": "Firefighting 10",            "count": 1 },
-    { "name": "Masquerain",              "type": "Grass",     "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Gust 40",                    "count": 1 },
-    { "name": "Carnivine",               "type": "Grass",     "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Bite 30",                    "count": 1 },
-    { "name": "Sewaddle",                "type": "Grass",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Gnaw 20",                    "count": 2 },
-    { "name": "Swadloon",                "type": "Grass",     "stage": 1, "hp": 80,  "card_type": "Pokemon",  "attack": "Protect",                    "count": 2 },
-    { "name": "Applin",                  "type": "Grass",     "stage": 0, "hp": 40,  "card_type": "Pokemon",  "attack": "Share",                      "count": 4 },
-    { "name": "Leavanny",                "type": "Grass",     "stage": 2, "hp": 140, "card_type": "Pokemon",  "attack": "Razor Leaf 100",             "count": 1 },
-    { "name": "Silcoon",                 "type": "Grass",     "stage": 1, "hp": 80,  "card_type": "Pokemon",  "attack": "Harden",                     "count": 1 },
-    { "name": "Seedot",                  "type": "Grass",     "stage": 0, "hp": 50,  "card_type": "Pokemon",  "attack": "Rollout 20",                 "count": 1 },
-    { "name": "Mothim",                  "type": "Grass",     "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Cutting Wind 70",            "count": 3 },
-    { "name": "Burmy",                   "type": "Grass",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Hang Down 30",               "count": 1 },
-    { "name": "Tangela",                 "type": "Grass",     "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Bind 20",                    "count": 3 },
-    { "name": "Venonat",                 "type": "Grass",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Tackle 20",                  "count": 1 },
-    { "name": "Roselia",                 "type": "Grass",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Trip Over 10+",              "count": 2 },
-    { "name": "Spinarak",                "type": "Grass",     "stage": 0, "hp": 50,  "card_type": "Pokemon",  "attack": "Sting 20",                   "count": 2 },
-    { "name": "Sunkern",                 "type": "Grass",     "stage": 0, "hp": 50,  "card_type": "Pokemon",  "attack": "Seed Bomb 20",               "count": 1 },
-    { "name": "Cherubi",                 "type": "Grass",     "stage": 0, "hp": 50,  "card_type": "Pokemon",  "ability": "En-fruits-iastic", "attack": "Sweets Relay 10+", "count": 1 },
-
+    {
+      "name": "Bulbasaur",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Vine Whip 40",
+      "count": 1
+    },
+    {
+      "name": "Bulbasaur",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Vine Whip 40",
+      "count": 1,
+      "variant": "alt art"
+    },
+    {
+      "name": "Bulbasaur",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Tackle 20",
+      "count": 3,
+      "variant": "Tackle art"
+    },
+    {
+      "name": "Ivysaur",
+      "type": "Grass",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Synthesis",
+      "count": 1
+    },
+    {
+      "name": "Mega Venusaur ex",
+      "type": "Grass",
+      "stage": 2,
+      "hp": 240,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Critical Bloom 120",
+      "count": 2
+    },
+    {
+      "name": "Shroomish",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Spore",
+      "count": 3
+    },
+    {
+      "name": "Budew",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 30,
+      "card_type": "Pokemon",
+      "attack": "Prickly Powder 10",
+      "count": 1
+    },
+    {
+      "name": "Breloom",
+      "type": "Grass",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Pre-Dawn Strike 30+",
+      "count": 1
+    },
+    {
+      "name": "Treecko",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Pound 20",
+      "count": 2
+    },
+    {
+      "name": "Surskit",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Firefighting 10",
+      "count": 1
+    },
+    {
+      "name": "Masquerain",
+      "type": "Grass",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Gust 40",
+      "count": 1
+    },
+    {
+      "name": "Carnivine",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Bite 30",
+      "count": 1
+    },
+    {
+      "name": "Sewaddle",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Gnaw 20",
+      "count": 2
+    },
+    {
+      "name": "Swadloon",
+      "type": "Grass",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Protect",
+      "count": 2
+    },
+    {
+      "name": "Applin",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 40,
+      "card_type": "Pokemon",
+      "attack": "Share",
+      "count": 4
+    },
+    {
+      "name": "Leavanny",
+      "type": "Grass",
+      "stage": 2,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "attack": "Razor Leaf 100",
+      "count": 1
+    },
+    {
+      "name": "Silcoon",
+      "type": "Grass",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Harden",
+      "count": 1
+    },
+    {
+      "name": "Seedot",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Rollout 20",
+      "count": 1
+    },
+    {
+      "name": "Mothim",
+      "type": "Grass",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Cutting Wind 70",
+      "count": 3
+    },
+    {
+      "name": "Burmy",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Hang Down 30",
+      "count": 1
+    },
+    {
+      "name": "Tangela",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Bind 20",
+      "count": 3
+    },
+    {
+      "name": "Venonat",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Tackle 20",
+      "count": 1
+    },
+    {
+      "name": "Roselia",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Trip Over 10+",
+      "count": 2
+    },
+    {
+      "name": "Spinarak",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Sting 20",
+      "count": 2
+    },
+    {
+      "name": "Sunkern",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Seed Bomb 20",
+      "count": 1
+    },
+    {
+      "name": "Cherubi",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "ability": "En-fruits-iastic",
+      "attack": "Sweets Relay 10+",
+      "count": 1
+    },
     // ─── WATER ───────────────────────────────────────────────────────────────
-    { "name": "Sobble",                  "type": "Water",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Find a Friend",              "count": 3 },
-    { "name": "Wartortle",               "type": "Water",     "stage": 1, "hp": 90,  "card_type": "Pokemon",  "ability": "Shell Shield", "attack": "Waterfall 60", "count": 1 },
-    { "name": "Vaporeon ex",             "type": "Water",     "stage": 1, "hp": 160, "card_type": "Pokemon",  "is_ex": true, "ability": "Frozen Flow", "attack": "Wave Splash 80", "count": 1 },
-    { "name": "Clawitzer",               "type": "Water",     "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Aqua Shower",                "count": 2 },
-    { "name": "Huntail",                 "type": "Water",     "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Hydro Splash 70",            "count": 2 },
-    { "name": "Gorebyss",                "type": "Water",     "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Aqua Edge 40",               "count": 2 },
-    { "name": "Quagsire",                "type": "Water",     "stage": 1, "hp": 130, "card_type": "Pokemon",  "attack": "Muddy Headbutt 60+",         "count": 1 },
-    { "name": "Poliwhirl",               "type": "Water",     "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Hit Twice 30x",              "count": 3 },
-    { "name": "Paldean Tauros",          "type": "Water",     "stage": 0, "hp": 100, "card_type": "Pokemon",  "attack": "Smash Kick 50",              "count": 3 },
-    { "name": "Shellder",                "type": "Water",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Tongue Slap 20",             "count": 1 },
-    { "name": "Clauncher",               "type": "Water",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Water Gun 20",               "count": 2 },
-    { "name": "Basculin",                "type": "Water",     "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Surprise Strike 40+",        "count": 1 },
-    { "name": "Wooper",                  "type": "Water",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Tail Whap 30",               "count": 2 },
-    { "name": "Castform Rainy Form",     "type": "Water",     "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Rainy Absorbing 30",         "count": 3 },
-    { "name": "Castform Snowy Form",     "type": "Water",     "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Snowy Chilling 40",          "count": 1 },
-    { "name": "Clamperl",                "type": "Water",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Sparkling Pearl 20",         "count": 5 },
-    { "name": "Cubchoo",                 "type": "Water",     "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Icicle Punch 30",            "count": 1 },
-    { "name": "Frillish",                "type": "Water",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Water Gun 20",               "count": 1 },
-    { "name": "Chewtle",                 "type": "Water",     "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Wave Splash 40",             "count": 1 },
-
+    {
+      "name": "Sobble",
+      "type": "Water",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Find a Friend",
+      "count": 3
+    },
+    {
+      "name": "Wartortle",
+      "type": "Water",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "ability": "Shell Shield",
+      "attack": "Waterfall 60",
+      "count": 1
+    },
+    {
+      "name": "Vaporeon ex",
+      "type": "Water",
+      "stage": 1,
+      "hp": 160,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "ability": "Frozen Flow",
+      "attack": "Wave Splash 80",
+      "count": 1
+    },
+    {
+      "name": "Clawitzer",
+      "type": "Water",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Aqua Shower",
+      "count": 2
+    },
+    {
+      "name": "Huntail",
+      "type": "Water",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Hydro Splash 70",
+      "count": 2
+    },
+    {
+      "name": "Gorebyss",
+      "type": "Water",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Aqua Edge 40",
+      "count": 2
+    },
+    {
+      "name": "Quagsire",
+      "type": "Water",
+      "stage": 1,
+      "hp": 130,
+      "card_type": "Pokemon",
+      "attack": "Muddy Headbutt 60+",
+      "count": 1
+    },
+    {
+      "name": "Poliwhirl",
+      "type": "Water",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Hit Twice 30x",
+      "count": 3
+    },
+    {
+      "name": "Paldean Tauros",
+      "type": "Water",
+      "stage": 0,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Smash Kick 50",
+      "count": 3
+    },
+    {
+      "name": "Shellder",
+      "type": "Water",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Tongue Slap 20",
+      "count": 1
+    },
+    {
+      "name": "Clauncher",
+      "type": "Water",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Water Gun 20",
+      "count": 2
+    },
+    {
+      "name": "Basculin",
+      "type": "Water",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Surprise Strike 40+",
+      "count": 1
+    },
+    {
+      "name": "Wooper",
+      "type": "Water",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Tail Whap 30",
+      "count": 2
+    },
+    {
+      "name": "Castform Rainy Form",
+      "type": "Water",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Rainy Absorbing 30",
+      "count": 3
+    },
+    {
+      "name": "Castform Snowy Form",
+      "type": "Water",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Snowy Chilling 40",
+      "count": 1
+    },
+    {
+      "name": "Clamperl",
+      "type": "Water",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Sparkling Pearl 20",
+      "count": 5
+    },
+    {
+      "name": "Cubchoo",
+      "type": "Water",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Icicle Punch 30",
+      "count": 1
+    },
+    {
+      "name": "Frillish",
+      "type": "Water",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Water Gun 20",
+      "count": 1
+    },
+    {
+      "name": "Chewtle",
+      "type": "Water",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Wave Splash 40",
+      "count": 1
+    },
     // ─── LIGHTNING ───────────────────────────────────────────────────────────
-    { "name": "Zekrom",                  "type": "Lightning", "stage": 0, "hp": 120, "card_type": "Pokemon",  "attack": "Bolt Strike 110",            "count": 1 },
-    { "name": "Magnezone ex",            "type": "Lightning", "stage": 2, "hp": 180, "card_type": "Pokemon",  "is_ex": true, "attack": "Storm Blade 130", "count": 1 },
-    { "name": "Eelektross",              "type": "Lightning", "stage": 2, "hp": 140, "card_type": "Pokemon",  "attack": "Thunder Fang 80",            "count": 1 },
-    { "name": "Magneton",                "type": "Lightning", "stage": 1, "hp": 80,  "card_type": "Pokemon",  "attack": "Spark 20",                   "count": 1, "variant": "Spark art" },
-    { "name": "Magneton",                "type": "Lightning", "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Magnetic Blast 50",          "count": 2, "variant": "Magnetic Blast art" },
-    { "name": "Magnemite",               "type": "Lightning", "stage": 0, "hp": 50,  "card_type": "Pokemon",  "attack": "Electro Ball 30",            "count": 1, "variant": "Electro Ball art" },
-    { "name": "Magnemite",               "type": "Lightning", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Thunder Shock 20",           "count": 2, "variant": "Thunder Shock art" },
-    { "name": "Heliolisk",               "type": "Lightning", "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Thunderbolt 120",            "count": 2 },
-    { "name": "Helioptile",              "type": "Lightning", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Thunder Shock 10",           "count": 2 },
-    { "name": "Lanturn",                 "type": "Lightning", "stage": 1, "hp": 110, "card_type": "Pokemon",  "attack": "Electric Ball 70",           "count": 2 },
-    { "name": "Morpeko",                 "type": "Lightning", "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Full Belly Bolt 10+",        "count": 3 },
-    { "name": "Joltik",                  "type": "Lightning", "stage": 0, "hp": 30,  "card_type": "Pokemon",  "attack": "Attach 20",                  "count": 1 },
-    { "name": "Voltorb",                 "type": "Lightning", "stage": 0, "hp": 50,  "card_type": "Pokemon",  "attack": "Single Shot Blast 50",       "count": 3 },
-    { "name": "Electrode",               "type": "Lightning", "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Electroblast 20+",           "count": 1 },
-    { "name": "Pikachu",                 "type": "Lightning", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Spark 10",                   "count": 1 },
-
+    {
+      "name": "Zekrom",
+      "type": "Lightning",
+      "stage": 0,
+      "hp": 120,
+      "card_type": "Pokemon",
+      "attack": "Bolt Strike 110",
+      "count": 1
+    },
+    {
+      "name": "Magnezone ex",
+      "type": "Lightning",
+      "stage": 2,
+      "hp": 180,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Storm Blade 130",
+      "count": 1
+    },
+    {
+      "name": "Eelektross",
+      "type": "Lightning",
+      "stage": 2,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "attack": "Thunder Fang 80",
+      "count": 1
+    },
+    {
+      "name": "Magneton",
+      "type": "Lightning",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Spark 20",
+      "count": 1,
+      "variant": "Spark art"
+    },
+    {
+      "name": "Magneton",
+      "type": "Lightning",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Magnetic Blast 50",
+      "count": 2,
+      "variant": "Magnetic Blast art"
+    },
+    {
+      "name": "Magnemite",
+      "type": "Lightning",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Electro Ball 30",
+      "count": 1,
+      "variant": "Electro Ball art"
+    },
+    {
+      "name": "Magnemite",
+      "type": "Lightning",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Thunder Shock 20",
+      "count": 2,
+      "variant": "Thunder Shock art"
+    },
+    {
+      "name": "Heliolisk",
+      "type": "Lightning",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Thunderbolt 120",
+      "count": 2
+    },
+    {
+      "name": "Helioptile",
+      "type": "Lightning",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Thunder Shock 10",
+      "count": 2
+    },
+    {
+      "name": "Lanturn",
+      "type": "Lightning",
+      "stage": 1,
+      "hp": 110,
+      "card_type": "Pokemon",
+      "attack": "Electric Ball 70",
+      "count": 2
+    },
+    {
+      "name": "Morpeko",
+      "type": "Lightning",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Full Belly Bolt 10+",
+      "count": 3
+    },
+    {
+      "name": "Joltik",
+      "type": "Lightning",
+      "stage": 0,
+      "hp": 30,
+      "card_type": "Pokemon",
+      "attack": "Attach 20",
+      "count": 1
+    },
+    {
+      "name": "Voltorb",
+      "type": "Lightning",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Single Shot Blast 50",
+      "count": 3
+    },
+    {
+      "name": "Electrode",
+      "type": "Lightning",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Electroblast 20+",
+      "count": 1
+    },
+    {
+      "name": "Pikachu",
+      "type": "Lightning",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Spark 10",
+      "count": 1
+    },
     // ─── PSYCHIC ─────────────────────────────────────────────────────────────
-    { "name": "Meloetta",                "type": "Psychic",   "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Inspiring Dance 30",         "count": 3 },
-    { "name": "Mismagius",               "type": "Psychic",   "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Stored Power 60",            "count": 2 },
-    { "name": "Hattrem",                 "type": "Psychic",   "stage": 1, "hp": 80,  "card_type": "Pokemon",  "attack": "Disarming Voice 20",         "count": 2 },
-    { "name": "Aromatisse",              "type": "Psychic",   "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Perfume Blast 60",           "count": 2 },
-    { "name": "Galarian Rapidash",       "type": "Psychic",   "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Photon Laser 40+",           "count": 1 },
-    { "name": "Misdreavus",              "type": "Psychic",   "stage": 0, "hp": 50,  "card_type": "Pokemon",  "attack": "Lead",                       "count": 4 },
-    { "name": "Solosis",                 "type": "Psychic",   "stage": 0, "hp": 40,  "card_type": "Pokemon",  "attack": "Rollout 20",                 "count": 2 },
-    { "name": "Spritzee",                "type": "Psychic",   "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Sweet Scent",                "count": 6 },
-    { "name": "Ralts",                   "type": "Psychic",   "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Confuse Ray",                "count": 1 },
-    { "name": "Sinistea",                "type": "Psychic",   "stage": 0, "hp": 30,  "card_type": "Pokemon",  "attack": "Hide",                       "count": 1 },
-    { "name": "Espurr",                  "type": "Psychic",   "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Mumble 20",                  "count": 1 },
-    { "name": "Oricorio",                "type": "Psychic",   "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Pester the Dizzy 20+",       "count": 2 },
-    { "name": "Hatenna",                 "type": "Psychic",   "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Stampede 10",                "count": 1 },
-    { "name": "Bramblin",                "type": "Psychic",   "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Petty Grudge 20",            "count": 2 },
-
+    {
+      "name": "Meloetta",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Inspiring Dance 30",
+      "count": 3
+    },
+    {
+      "name": "Mismagius",
+      "type": "Psychic",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Stored Power 60",
+      "count": 2
+    },
+    {
+      "name": "Hattrem",
+      "type": "Psychic",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Disarming Voice 20",
+      "count": 2
+    },
+    {
+      "name": "Aromatisse",
+      "type": "Psychic",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Perfume Blast 60",
+      "count": 2
+    },
+    {
+      "name": "Galarian Rapidash",
+      "type": "Psychic",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Photon Laser 40+",
+      "count": 1
+    },
+    {
+      "name": "Misdreavus",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Lead",
+      "count": 4
+    },
+    {
+      "name": "Solosis",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 40,
+      "card_type": "Pokemon",
+      "attack": "Rollout 20",
+      "count": 2
+    },
+    {
+      "name": "Spritzee",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Sweet Scent",
+      "count": 6
+    },
+    {
+      "name": "Ralts",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Confuse Ray",
+      "count": 1
+    },
+    {
+      "name": "Sinistea",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 30,
+      "card_type": "Pokemon",
+      "attack": "Hide",
+      "count": 1
+    },
+    {
+      "name": "Espurr",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Mumble 20",
+      "count": 1
+    },
+    {
+      "name": "Oricorio",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Pester the Dizzy 20+",
+      "count": 2
+    },
+    {
+      "name": "Hatenna",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Stampede 10",
+      "count": 1
+    },
+    {
+      "name": "Bramblin",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Petty Grudge 20",
+      "count": 2
+    },
     // ─── FIGHTING ────────────────────────────────────────────────────────────
-    { "name": "Marowak ex",              "type": "Fighting",  "stage": 1, "hp": 140, "card_type": "Pokemon",  "is_ex": true, "attack": "Bonemerang 80+", "count": 1 },
-    { "name": "Single Strike Urshifu",   "type": "Darkness",  "stage": 0, "hp": 120, "card_type": "Pokemon",  "ability": "Double Type", "attack": "Power Blast 110", "count": 1 },
-    { "name": "Sandslash",               "type": "Fighting",  "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Slash 70",                   "count": 2 },
-    { "name": "Hariyama",                "type": "Fighting",  "stage": 1, "hp": 120, "card_type": "Pokemon",  "attack": "Megaton Slap Push 90",       "count": 2 },
-    { "name": "Machamp",                 "type": "Fighting",  "stage": 2, "hp": 150, "card_type": "Pokemon",  "attack": "Knocking Hammer 80",         "count": 1 },
-    { "name": "Machop",                  "type": "Fighting",  "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Shatter 10",                 "count": 1 },
-    { "name": "Makuhita",                "type": "Fighting",  "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Strength 40",                "count": 1 },
-    { "name": "Hitmonchan",              "type": "Fighting",  "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Jab 30",                     "count": 1 },
-    { "name": "Mienfoo",                 "type": "Fighting",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Pound 20",                   "count": 2, "variant": "Pound art" },
-    { "name": "Mienfoo",                 "type": "Fighting",  "stage": 0, "hp": 50,  "card_type": "Pokemon",  "attack": "Chop 30",                    "count": 1, "variant": "Chop art" },
-    { "name": "Mienshao",                "type": "Fighting",  "stage": 1, "hp": 80,  "card_type": "Pokemon",  "attack": "Spiral Kick 40",             "count": 1, "variant": "Spiral Kick art" },
-    { "name": "Mienshao",                "type": "Fighting",  "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Low Sweep 50",               "count": 2, "variant": "Low Sweep art" },
-    { "name": "Riolu",                   "type": "Fighting",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Fighting Fast 10+",          "count": 1, "variant": "Fighting Fast art" },
-    { "name": "Riolu",                   "type": "Fighting",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Fighting Fist 10+",          "count": 2, "variant": "Fighting Fist art" },
-    { "name": "Sandshrew",               "type": "Fighting",  "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Scratch 10",                 "count": 2 },
-    { "name": "Cubone",                  "type": "Fighting",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Growl",                      "count": 2 },
-    { "name": "Onix",                    "type": "Fighting",  "stage": 0, "hp": 110, "card_type": "Pokemon",  "attack": "Land Crush 70",              "count": 1, "variant": "Land Crush art" },
-    { "name": "Onix",                    "type": "Fighting",  "stage": 0, "hp": 100, "card_type": "Pokemon",  "attack": "Dig 30",                     "count": 2, "variant": "Dig art" },
-    { "name": "Nosepass",                "type": "Fighting",  "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Rising Lunge 10+",           "count": 6 },
-    { "name": "Sandygast",               "type": "Fighting",  "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Sand Attack 20",             "count": 1 },
-    { "name": "Palossand",               "type": "Fighting",  "stage": 1, "hp": 140, "card_type": "Pokemon",  "attack": "Life Sucker 70",             "count": 1 },
-    { "name": "Bewear",                  "type": "Fighting",  "stage": 1, "hp": 110, "card_type": "Pokemon",  "attack": "Triple Smash 50x",           "count": 2 },
-    { "name": "Sandaconda",              "type": "Fighting",  "stage": 1, "hp": 130, "card_type": "Pokemon",  "attack": "Super Sand Attack 70",       "count": 2 },
-    { "name": "Gligar",                  "type": "Fighting",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Lunge 40",                   "count": 1 },
-    { "name": "Trapinch",                "type": "Fighting",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Mud-Slap 10",                "count": 1 },
-    { "name": "Roggenrola",              "type": "Fighting",  "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Mud-Slap 30",                "count": 1 },
-    { "name": "Rockruff",                "type": "Fighting",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Rock Throw 40",              "count": 1 },
-    { "name": "Toxicroak",               "type": "Fighting",  "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Poison Jab 40",              "count": 2 },
-    { "name": "Croagunk",                "type": "Fighting",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Corkscrew Punch 20",         "count": 4 },
-    { "name": "Meditite",                "type": "Fighting",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Smack 10",                   "count": 1 },
-    { "name": "Throh",                   "type": "Fighting",  "stage": 0, "hp": 100, "card_type": "Pokemon",  "attack": "Circle Throw 70",            "count": 1 },
-    { "name": "Sawk",                    "type": "Fighting",  "stage": 0, "hp": 90,  "card_type": "Pokemon",  "attack": "Brick Break 30",             "count": 2 },
-    { "name": "Dwebble",                 "type": "Fighting",  "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Ram 20",                     "count": 1 },
-    { "name": "Stufful",                 "type": "Fighting",  "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Tackle 30",                  "count": 1 },
-    { "name": "Rolycoly",                "type": "Fighting",  "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Rolling Tackle 20",          "count": 3 },
-    { "name": "Silicobra",               "type": "Fighting",  "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Headbutt 30",                "count": 2 },
-    { "name": "Kubfu",                   "type": "Fighting",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Training",                   "count": 1 },
-    { "name": "Zygarde 10% Forme",       "type": "Fighting",  "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Bite 30",                    "count": 1 },
-    { "name": "Zygarde 50% Forme",       "type": "Fighting",  "stage": 0, "hp": 120, "card_type": "Pokemon",  "attack": "Cell Storm 60",              "count": 3 },
-    { "name": "Zygarde ex",              "type": "Fighting",  "stage": 0, "hp": 170, "card_type": "Pokemon",  "is_ex": true, "attack": "Land Laser 100+", "count": 1 },
-
+    {
+      "name": "Marowak ex",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Bonemerang 80+",
+      "count": 1
+    },
+    {
+      "name": "Single Strike Urshifu",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 120,
+      "card_type": "Pokemon",
+      "ability": "Double Type",
+      "attack": "Power Blast 110",
+      "count": 1
+    },
+    {
+      "name": "Sandslash",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Slash 70",
+      "count": 2
+    },
+    {
+      "name": "Hariyama",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 120,
+      "card_type": "Pokemon",
+      "attack": "Megaton Slap Push 90",
+      "count": 2
+    },
+    {
+      "name": "Machamp",
+      "type": "Fighting",
+      "stage": 2,
+      "hp": 150,
+      "card_type": "Pokemon",
+      "attack": "Knocking Hammer 80",
+      "count": 1
+    },
+    {
+      "name": "Machop",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Shatter 10",
+      "count": 1
+    },
+    {
+      "name": "Makuhita",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Strength 40",
+      "count": 1
+    },
+    {
+      "name": "Hitmonchan",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Jab 30",
+      "count": 1
+    },
+    {
+      "name": "Mienfoo",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Pound 20",
+      "count": 2,
+      "variant": "Pound art"
+    },
+    {
+      "name": "Mienfoo",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Chop 30",
+      "count": 1,
+      "variant": "Chop art"
+    },
+    {
+      "name": "Mienshao",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Spiral Kick 40",
+      "count": 1,
+      "variant": "Spiral Kick art"
+    },
+    {
+      "name": "Mienshao",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Low Sweep 50",
+      "count": 2,
+      "variant": "Low Sweep art"
+    },
+    {
+      "name": "Riolu",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Fighting Fast 10+",
+      "count": 1,
+      "variant": "Fighting Fast art"
+    },
+    {
+      "name": "Riolu",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Fighting Fist 10+",
+      "count": 2,
+      "variant": "Fighting Fist art"
+    },
+    {
+      "name": "Sandshrew",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Scratch 10",
+      "count": 2
+    },
+    {
+      "name": "Cubone",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Growl",
+      "count": 2
+    },
+    {
+      "name": "Onix",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 110,
+      "card_type": "Pokemon",
+      "attack": "Land Crush 70",
+      "count": 1,
+      "variant": "Land Crush art"
+    },
+    {
+      "name": "Onix",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Dig 30",
+      "count": 2,
+      "variant": "Dig art"
+    },
+    {
+      "name": "Nosepass",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Rising Lunge 10+",
+      "count": 6
+    },
+    {
+      "name": "Sandygast",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Sand Attack 20",
+      "count": 1
+    },
+    {
+      "name": "Palossand",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "attack": "Life Sucker 70",
+      "count": 1
+    },
+    {
+      "name": "Bewear",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 110,
+      "card_type": "Pokemon",
+      "attack": "Triple Smash 50x",
+      "count": 2
+    },
+    {
+      "name": "Sandaconda",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 130,
+      "card_type": "Pokemon",
+      "attack": "Super Sand Attack 70",
+      "count": 2
+    },
+    {
+      "name": "Gligar",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Lunge 40",
+      "count": 1
+    },
+    {
+      "name": "Trapinch",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Mud-Slap 10",
+      "count": 1
+    },
+    {
+      "name": "Roggenrola",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Mud-Slap 30",
+      "count": 1
+    },
+    {
+      "name": "Rockruff",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Rock Throw 40",
+      "count": 1
+    },
+    {
+      "name": "Toxicroak",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Poison Jab 40",
+      "count": 2
+    },
+    {
+      "name": "Croagunk",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Corkscrew Punch 20",
+      "count": 4
+    },
+    {
+      "name": "Meditite",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Smack 10",
+      "count": 1
+    },
+    {
+      "name": "Throh",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Circle Throw 70",
+      "count": 1
+    },
+    {
+      "name": "Sawk",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Brick Break 30",
+      "count": 2
+    },
+    {
+      "name": "Dwebble",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Ram 20",
+      "count": 1
+    },
+    {
+      "name": "Stufful",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Tackle 30",
+      "count": 1
+    },
+    {
+      "name": "Rolycoly",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Rolling Tackle 20",
+      "count": 3
+    },
+    {
+      "name": "Silicobra",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Headbutt 30",
+      "count": 2
+    },
+    {
+      "name": "Kubfu",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Training",
+      "count": 1
+    },
+    {
+      "name": "Zygarde 10% Forme",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Bite 30",
+      "count": 1
+    },
+    {
+      "name": "Zygarde 50% Forme",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 120,
+      "card_type": "Pokemon",
+      "attack": "Cell Storm 60",
+      "count": 3
+    },
+    {
+      "name": "Zygarde ex",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 170,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Land Laser 100+",
+      "count": 1
+    },
+    {
+      "name": "Krookodile",
+      "type": "Fighting",
+      "stage": 2,
+      "hp": 160,
+      "card_type": "Pokemon",
+      "attack": "Chomp Chomp Bite 90",
+      "count": 1
+    },
+    {
+      "name": "Bonsly",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 30,
+      "card_type": "Pokemon",
+      "attack": "Teary Attack 10",
+      "count": 1
+    },
     // ─── DARKNESS ────────────────────────────────────────────────────────────
-    { "name": "Yveltal",                 "type": "Darkness",  "stage": 0, "hp": 120, "card_type": "Pokemon",  "attack": "Evil Crash 90",              "count": 1 },
-    { "name": "Crobat",                  "type": "Darkness",  "stage": 2, "hp": 130, "card_type": "Pokemon",  "attack": "Surprise Strike 60+",        "count": 1 },
-    { "name": "Golbat",                  "type": "Darkness",  "stage": 1, "hp": 80,  "card_type": "Pokemon",  "attack": "Cutting Wind 40",            "count": 1 },
-    { "name": "Zubat",                   "type": "Darkness",  "stage": 0, "hp": 50,  "card_type": "Pokemon",  "attack": "Spin Turn 10",               "count": 1 },
-    { "name": "Alolan Persian",          "type": "Darkness",  "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Bite 40",                    "count": 1 },
-    { "name": "Garbodor",                "type": "Darkness",  "stage": 2, "hp": 130, "card_type": "Pokemon",  "attack": "Acid Spray 70",              "count": 3 },
-    { "name": "Skrelp",                  "type": "Darkness",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Razor Fin 40",               "count": 1 },
-    { "name": "Mandibuzz",               "type": "Darkness",  "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Blindside 60",               "count": 1 },
-    { "name": "Vullaby",                 "type": "Darkness",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Flap 20",                    "count": 5 },
-    { "name": "Malamar",                 "type": "Darkness",  "stage": 1, "hp": 100, "card_type": "Pokemon",  "attack": "Evolution Jammer 40",        "count": 1 },
-    { "name": "Grimer",                  "type": "Darkness",  "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Sludge Bomb 40",             "count": 3 },
-    { "name": "Trubbish",                "type": "Darkness",  "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Drool 30",                   "count": 1 },
-    { "name": "Zorua",                   "type": "Darkness",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Ascension",                  "count": 2 },
-    { "name": "Seviper",                 "type": "Darkness",  "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Poison Jab 20",              "count": 3 },
-    { "name": "Scraggy",                 "type": "Darkness",  "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Headbutt 20",                "count": 1 },
-    { "name": "Koffing",                 "type": "Darkness",  "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Gas Bomb 30",                "count": 2 },
-    { "name": "Qwilfish",                "type": "Darkness",  "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Spiny Rush 40+",             "count": 1 },
-
+    {
+      "name": "Yveltal",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 120,
+      "card_type": "Pokemon",
+      "attack": "Evil Crash 90",
+      "count": 1
+    },
+    {
+      "name": "Crobat",
+      "type": "Darkness",
+      "stage": 2,
+      "hp": 130,
+      "card_type": "Pokemon",
+      "attack": "Surprise Strike 60+",
+      "count": 1
+    },
+    {
+      "name": "Golbat",
+      "type": "Darkness",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Cutting Wind 40",
+      "count": 1
+    },
+    {
+      "name": "Zubat",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Spin Turn 10",
+      "count": 1
+    },
+    {
+      "name": "Alolan Persian",
+      "type": "Darkness",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Bite 40",
+      "count": 1
+    },
+    {
+      "name": "Garbodor",
+      "type": "Darkness",
+      "stage": 2,
+      "hp": 130,
+      "card_type": "Pokemon",
+      "attack": "Acid Spray 70",
+      "count": 3
+    },
+    {
+      "name": "Skrelp",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Razor Fin 40",
+      "count": 1
+    },
+    {
+      "name": "Mandibuzz",
+      "type": "Darkness",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Blindside 60",
+      "count": 1
+    },
+    {
+      "name": "Vullaby",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Flap 20",
+      "count": 5
+    },
+    {
+      "name": "Malamar",
+      "type": "Darkness",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Evolution Jammer 40",
+      "count": 1
+    },
+    {
+      "name": "Grimer",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Sludge Bomb 40",
+      "count": 3
+    },
+    {
+      "name": "Trubbish",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Drool 30",
+      "count": 1
+    },
+    {
+      "name": "Zorua",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Ascension",
+      "count": 2
+    },
+    {
+      "name": "Seviper",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Poison Jab 20",
+      "count": 3
+    },
+    {
+      "name": "Scraggy",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Headbutt 20",
+      "count": 1
+    },
+    {
+      "name": "Koffing",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Gas Bomb 30",
+      "count": 2
+    },
+    {
+      "name": "Qwilfish",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Spiny Rush 40+",
+      "count": 1
+    },
     // ─── METAL ───────────────────────────────────────────────────────────────
-    { "name": "Genesect",                "type": "Metal",     "stage": 0, "hp": 110, "card_type": "Pokemon",  "attack": "Metal Blast 10+",            "count": 1 },
-    { "name": "Magearna",                "type": "Metal",     "stage": 0, "hp": 90,  "card_type": "Pokemon",  "attack": "Windup Cannon 20+",          "count": 1 },
-    { "name": "Meltan",                  "type": "Metal",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Stampede 10",                "count": 2 },
-    { "name": "Steelix",                 "type": "Metal",     "stage": 1, "hp": 150, "card_type": "Pokemon",  "attack": "Metal Defender 100",         "count": 3 },
-    { "name": "Probopass",               "type": "Metal",     "stage": 1, "hp": 130, "card_type": "Pokemon",  "attack": "Metallic Turbo 40",          "count": 1 },
-    { "name": "Doublade",                "type": "Metal",     "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Dual Blades 40+",            "count": 1 },
-    { "name": "Bronzong",                "type": "Metal",     "stage": 1, "hp": 120, "card_type": "Pokemon",  "attack": "Psychic Resonance 50+",      "count": 1 },
-    { "name": "Bisharp",                 "type": "Metal",     "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Night Slash 60",             "count": 1 },
-    { "name": "Bronzor",                 "type": "Metal",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Speed Dive 20",              "count": 2 },
-    { "name": "Pawniard",                "type": "Metal",     "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Cut Up 10",                  "count": 1 },
-    { "name": "Mawile",                  "type": "Metal",     "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Cavernous Chomp 50",         "count": 1 },
-    { "name": "Varoom",                  "type": "Metal",     "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Suffocating Gas 40",         "count": 1 },
-
+    {
+      "name": "Genesect",
+      "type": "Metal",
+      "stage": 0,
+      "hp": 110,
+      "card_type": "Pokemon",
+      "attack": "Metal Blast 10+",
+      "count": 1
+    },
+    {
+      "name": "Magearna",
+      "type": "Metal",
+      "stage": 0,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Windup Cannon 20+",
+      "count": 1
+    },
+    {
+      "name": "Meltan",
+      "type": "Metal",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Stampede 10",
+      "count": 2
+    },
+    {
+      "name": "Steelix",
+      "type": "Metal",
+      "stage": 1,
+      "hp": 150,
+      "card_type": "Pokemon",
+      "attack": "Metal Defender 100",
+      "count": 3
+    },
+    {
+      "name": "Probopass",
+      "type": "Metal",
+      "stage": 1,
+      "hp": 130,
+      "card_type": "Pokemon",
+      "attack": "Metallic Turbo 40",
+      "count": 1
+    },
+    {
+      "name": "Doublade",
+      "type": "Metal",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Dual Blades 40+",
+      "count": 1
+    },
+    {
+      "name": "Bronzong",
+      "type": "Metal",
+      "stage": 1,
+      "hp": 120,
+      "card_type": "Pokemon",
+      "attack": "Psychic Resonance 50+",
+      "count": 1
+    },
+    {
+      "name": "Bisharp",
+      "type": "Metal",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Night Slash 60",
+      "count": 1
+    },
+    {
+      "name": "Bronzor",
+      "type": "Metal",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Speed Dive 20",
+      "count": 2
+    },
+    {
+      "name": "Pawniard",
+      "type": "Metal",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Cut Up 10",
+      "count": 1
+    },
+    {
+      "name": "Mawile",
+      "type": "Metal",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Cavernous Chomp 50",
+      "count": 1
+    },
+    {
+      "name": "Varoom",
+      "type": "Metal",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Suffocating Gas 40",
+      "count": 1
+    },
     // ─── DRAGON ──────────────────────────────────────────────────────────────
-    { "name": "Vibrava",                 "type": "Dragon",    "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Sand Wind",                  "count": 1 },
-    { "name": "Dratini",                 "type": "Dragon",    "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Ram 40",                     "count": 1 },
-
+    {
+      "name": "Vibrava",
+      "type": "Dragon",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Sand Wind",
+      "count": 1
+    },
+    {
+      "name": "Dratini",
+      "type": "Dragon",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Ram 40",
+      "count": 1
+    },
     // ─── COLORLESS ───────────────────────────────────────────────────────────
-    { "name": "Stoutland",               "type": "Colorless", "stage": 2, "hp": 150, "card_type": "Pokemon",  "attack": "Fighting Fangs 70+",         "count": 1 },
-    { "name": "Herdier",                 "type": "Colorless", "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Hammer In 50",               "count": 3 },
-    { "name": "Lillipup",                "type": "Colorless", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Puppy Pile 20x",             "count": 3 },
-    { "name": "Dodrio",                  "type": "Colorless", "stage": 1, "hp": 80,  "card_type": "Pokemon",  "attack": "Drill Peck 40",              "count": 1 },
-    { "name": "Corvisquire",             "type": "Colorless", "stage": 1, "hp": 80,  "card_type": "Pokemon",  "attack": "Joust 30",                   "count": 1 },
-    { "name": "Porygon2",                "type": "Colorless", "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Speed Attack 40",            "count": 1 },
-    { "name": "Porygon",                 "type": "Colorless", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Stiffen",                    "count": 3 },
-    { "name": "Staraptor",               "type": "Colorless", "stage": 2, "hp": 140, "card_type": "Pokemon",  "attack": "Hurricane Wing 50x",         "count": 5 },
-    { "name": "Staravia",                "type": "Colorless", "stage": 1, "hp": 80,  "card_type": "Pokemon",  "attack": "Quick Attack 30+",           "count": 1 },
-    { "name": "Starly",                  "type": "Colorless", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Call for Family",            "count": 2 },
-    { "name": "Bouffalant",              "type": "Colorless", "stage": 0, "hp": 100, "card_type": "Pokemon",  "attack": "Revenge 40+",                "count": 2 },
-    { "name": "Furfrou",                 "type": "Colorless", "stage": 0, "hp": 70,  "card_type": "Pokemon",  "ability": "Fur Coat", "attack": "Tackle 30", "count": 1 },
-    { "name": "Ditto",                   "type": "Colorless", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Copy a Friend",              "count": 1 },
-    { "name": "Ursaring",                "type": "Colorless", "stage": 1, "hp": 110, "card_type": "Pokemon",  "attack": "Raging Claws 40+",           "count": 1 },
-    { "name": "Audino",                  "type": "Colorless", "stage": 0, "hp": 80,  "card_type": "Pokemon",  "attack": "Healing Light 40",           "count": 1 },
-    { "name": "Chansey",                 "type": "Colorless", "stage": 0, "hp": 100, "card_type": "Pokemon",  "attack": "Bind Wound",                 "count": 1 },
-    { "name": "Dubwool",                 "type": "Colorless", "stage": 1, "hp": 120, "card_type": "Pokemon",  "attack": "Rolling Tackle 80",          "count": 1 },
-    { "name": "Cinccino",                "type": "Colorless", "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Knock Away 30+",             "count": 2 },
-    { "name": "Minccino",                "type": "Colorless", "stage": 0, "hp": 50,  "card_type": "Pokemon",  "attack": "Fluffy Tail",                "count": 4 },
-    { "name": "Watchog",                 "type": "Colorless", "stage": 1, "hp": 90,  "card_type": "Pokemon",  "attack": "Psych Up 30",                "count": 2 },
-    { "name": "Eevee",                   "type": "Colorless", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Jumping Kick",               "count": 1 },
-    { "name": "Castform",                "type": "Colorless", "stage": 0, "hp": 70,  "card_type": "Pokemon",  "attack": "Blow Through 20+",           "count": 2 },
-    { "name": "Raticate",                "type": "Colorless", "stage": 1, "hp": 80,  "card_type": "Pokemon",  "attack": "Bite 40",                    "count": 1 },
-    { "name": "Rattata",                 "type": "Colorless", "stage": 0, "hp": 40,  "card_type": "Pokemon",  "attack": "Gnaw 20",                    "count": 2 },
-    { "name": "Jigglypuff",              "type": "Colorless", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Pound 30",                   "count": 1 },
-    { "name": "Farfetch'd",              "type": "Colorless", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Leek Slap 40",               "count": 1 },
-    { "name": "Buneary",                 "type": "Colorless", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Double Kick 20x",            "count": 2 },
-    { "name": "Pidgey",                  "type": "Colorless", "stage": 0, "hp": 60,  "card_type": "Pokemon",  "attack": "Gust 10",                    "count": 2 },
-
+    {
+      "name": "Stoutland",
+      "type": "Colorless",
+      "stage": 2,
+      "hp": 150,
+      "card_type": "Pokemon",
+      "attack": "Fighting Fangs 70+",
+      "count": 1
+    },
+    {
+      "name": "Herdier",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Hammer In 50",
+      "count": 3
+    },
+    {
+      "name": "Lillipup",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Puppy Pile 20x",
+      "count": 3
+    },
+    {
+      "name": "Dodrio",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Drill Peck 40",
+      "count": 1
+    },
+    {
+      "name": "Corvisquire",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Joust 30",
+      "count": 1
+    },
+    {
+      "name": "Corviknight ex",
+      "type": "Colorless",
+      "stage": 2,
+      "hp": 180,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Air Crash 110",
+      "count": 1
+    },
+    {
+      "name": "Porygon2",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Speed Attack 40",
+      "count": 1
+    },
+    {
+      "name": "Porygon",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Stiffen",
+      "count": 3
+    },
+    {
+      "name": "Staraptor",
+      "type": "Colorless",
+      "stage": 2,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "attack": "Hurricane Wing 50x",
+      "count": 5
+    },
+    {
+      "name": "Staravia",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Quick Attack 30+",
+      "count": 1
+    },
+    {
+      "name": "Starly",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Call for Family",
+      "count": 2
+    },
+    {
+      "name": "Bouffalant",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Revenge 40+",
+      "count": 2
+    },
+    {
+      "name": "Furfrou",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "ability": "Fur Coat",
+      "attack": "Tackle 30",
+      "count": 1
+    },
+    {
+      "name": "Ditto",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Copy a Friend",
+      "count": 1
+    },
+    {
+      "name": "Ursaring",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 110,
+      "card_type": "Pokemon",
+      "attack": "Raging Claws 40+",
+      "count": 1
+    },
+    {
+      "name": "Audino",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Healing Light 40",
+      "count": 1
+    },
+    {
+      "name": "Chansey",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "attack": "Bind Wound",
+      "count": 1
+    },
+    {
+      "name": "Dubwool",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 120,
+      "card_type": "Pokemon",
+      "attack": "Rolling Tackle 80",
+      "count": 1
+    },
+    {
+      "name": "Cinccino",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Knock Away 30+",
+      "count": 2
+    },
+    {
+      "name": "Minccino",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Fluffy Tail",
+      "count": 4
+    },
+    {
+      "name": "Watchog",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Psych Up 30",
+      "count": 2
+    },
+    {
+      "name": "Eevee",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Jumping Kick",
+      "count": 1
+    },
+    {
+      "name": "Castform",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Blow Through 20+",
+      "count": 2
+    },
+    {
+      "name": "Raticate",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Bite 40",
+      "count": 1
+    },
+    {
+      "name": "Rattata",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 40,
+      "card_type": "Pokemon",
+      "attack": "Gnaw 20",
+      "count": 2
+    },
+    {
+      "name": "Jigglypuff",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Pound 30",
+      "count": 1
+    },
+    {
+      "name": "Farfetch'd",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Leek Slap 40",
+      "count": 1
+    },
+    {
+      "name": "Buneary",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Double Kick 20x",
+      "count": 2
+    },
+    {
+      "name": "Pidgey",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Gust 10",
+      "count": 2
+    },
     // ─── TRAINERS: ITEMS ─────────────────────────────────────────────────────
-    { "name": "Quick-Grow Extract",      "card_type": "Trainer", "trainer_subtype": "Item",         "effect": "Evolve a Grass Pokemon, skipping Stage 1", "count": 4 },
-    { "name": "Flame Patch",             "card_type": "Trainer", "trainer_subtype": "Item",         "effect": "Attach Fire Energy from discard to Active Fire Pokemon", "count": 2 },
-    { "name": "Rare Candy",              "card_type": "Trainer", "trainer_subtype": "Item",         "effect": "Evolve Basic to Stage 2, skipping Stage 1", "count": 1 },
-    { "name": "Field Blower",            "card_type": "Trainer", "trainer_subtype": "Item",         "effect": "Discard a Pokemon Tool or Stadium", "count": 1 },
-    { "name": "Giant Cape",              "card_type": "Trainer", "trainer_subtype": "Pokemon Tool", "effect": "Attached Pokemon gets +20 HP", "count": 2 },
-    { "name": "Clemont's Backpack",      "card_type": "Trainer", "trainer_subtype": "Item",         "effect": "Magneton and Heliolisk attacks do +20 this turn", "count": 1 },
-    { "name": "Red Card",                "card_type": "Trainer", "trainer_subtype": "Item",         "effect": "Opponent shuffles hand and draws 3", "count": 1 },
-    { "name": "Potion",                  "card_type": "Trainer", "trainer_subtype": "Item",         "effect": "Heal 20 from 1 Pokemon", "count": 1 },
-    { "name": "X Speed",                 "card_type": "Trainer", "trainer_subtype": "Item",         "effect": "Active Pokemon Retreat Cost -1 this turn", "count": 1 },
-    { "name": "Hand Scope",              "card_type": "Trainer", "trainer_subtype": "Item",         "effect": "Opponent reveals their hand", "count": 1 },
-    { "name": "Pokédex",                 "card_type": "Trainer", "trainer_subtype": "Item",         "effect": "Look at top 3 cards of deck", "count": 1 },
-    { "name": "Poké Ball",               "card_type": "Trainer", "trainer_subtype": "Item",         "effect": "Put a random Basic Pokemon from deck into hand", "count": 4 },
-
+    {
+      "name": "Quick-Grow Extract",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "effect": "Evolve a Grass Pokemon, skipping Stage 1",
+      "count": 4
+    },
+    {
+      "name": "Flame Patch",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "effect": "Attach Fire Energy from discard to Active Fire Pokemon",
+      "count": 2
+    },
+    {
+      "name": "Rare Candy",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "effect": "Evolve Basic to Stage 2, skipping Stage 1",
+      "count": 1
+    },
+    {
+      "name": "Field Blower",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "effect": "Discard a Pokemon Tool or Stadium",
+      "count": 1
+    },
+    {
+      "name": "Giant Cape",
+      "card_type": "Trainer",
+      "trainer_subtype": "Pokemon Tool",
+      "effect": "Attached Pokemon gets +20 HP",
+      "count": 2
+    },
+    {
+      "name": "Clemont's Backpack",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "effect": "Magneton and Heliolisk attacks do +20 this turn",
+      "count": 1
+    },
+    {
+      "name": "Red Card",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "effect": "Opponent shuffles hand and draws 3",
+      "count": 1
+    },
+    {
+      "name": "Potion",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "effect": "Heal 20 from 1 Pokemon",
+      "count": 1
+    },
+    {
+      "name": "X Speed",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "effect": "Active Pokemon Retreat Cost -1 this turn",
+      "count": 1
+    },
+    {
+      "name": "Hand Scope",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "effect": "Opponent reveals their hand",
+      "count": 1
+    },
+    {
+      "name": "Pokédex",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "effect": "Look at top 3 cards of deck",
+      "count": 1
+    },
+    {
+      "name": "Poké Ball",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "effect": "Put a random Basic Pokemon from deck into hand",
+      "count": 4
+    },
     // ─── TRAINERS: SUPPORTERS ────────────────────────────────────────────────
-    { "name": "Clemont",                 "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Tutor 2 random cards from: Magneton, Heliolisk, Clemont's Backpack", "count": 2 },
-    { "name": "Serena",                  "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Put a random Mega Evolution Pokemon ex from deck into hand", "count": 1 },
-    { "name": "Giovanni",                "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Your Pokemon do +10 damage this turn", "count": 1 },
-    { "name": "Sabrina",                 "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Switch opponent's Active to Bench", "count": 1 },
-    { "name": "Leaf",                    "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Active Pokemon Retreat Cost -2 this turn", "count": 1 },
-    { "name": "Cyrus",                   "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Switch in an opponent's damaged Bench Pokemon to Active", "count": 1 },
-    { "name": "Korrina",                 "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Fighting Pokemon do +30 damage vs opponent's Active ex this turn", "count": 2 },
-    { "name": "Cheren",                  "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Next turn, Watchog and Stoutland take -100 from opponent's ex attacks", "count": 2 },
-    { "name": "May",                     "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Put 2 random Pokemon from deck into hand; shuffle 1 Pokemon back per", "count": 1 },
-    { "name": "Copycat",                 "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Shuffle hand into deck, draw equal to opponent's hand size", "count": 2 },
-    { "name": "Lillie",                  "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Heal 60 from 1 of your Stage 2 Pokemon", "count": 1 },
-    { "name": "Professor's Research",    "card_type": "Trainer", "trainer_subtype": "Supporter", "effect": "Draw 2 cards", "count": 4 },
-
+    {
+      "name": "Clemont",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Tutor 2 random cards from: Magneton, Heliolisk, Clemont's Backpack",
+      "count": 2
+    },
+    {
+      "name": "Serena",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Put a random Mega Evolution Pokemon ex from deck into hand",
+      "count": 1
+    },
+    {
+      "name": "Giovanni",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Your Pokemon do +10 damage this turn",
+      "count": 1
+    },
+    {
+      "name": "Sabrina",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Switch opponent's Active to Bench",
+      "count": 1
+    },
+    {
+      "name": "Leaf",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Active Pokemon Retreat Cost -2 this turn",
+      "count": 1
+    },
+    {
+      "name": "Cyrus",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Switch in an opponent's damaged Bench Pokemon to Active",
+      "count": 1
+    },
+    {
+      "name": "Korrina",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Fighting Pokemon do +30 damage vs opponent's Active ex this turn",
+      "count": 2
+    },
+    {
+      "name": "Cheren",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Next turn, Watchog and Stoutland take -100 from opponent's ex attacks",
+      "count": 2
+    },
+    {
+      "name": "May",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Put 2 random Pokemon from deck into hand; shuffle 1 Pokemon back per",
+      "count": 1
+    },
+    {
+      "name": "Copycat",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Shuffle hand into deck, draw equal to opponent's hand size",
+      "count": 2
+    },
+    {
+      "name": "Lillie",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Heal 60 from 1 of your Stage 2 Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Professor's Research",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "effect": "Draw 2 cards",
+      "count": 4
+    },
     // ─── TRAINERS: STADIUMS ──────────────────────────────────────────────────
-    { "name": "Starting Plains",         "card_type": "Trainer", "trainer_subtype": "Stadium", "effect": "Each Basic Pokemon in play gets +20 HP", "count": 1 },
-    { "name": "Arena of Antiquity",      "card_type": "Trainer", "trainer_subtype": "Stadium", "effect": "Each Fighting Pokemon's attacks do +20 vs opponent's Active ex", "count": 1 }
-
+    {
+      "name": "Starting Plains",
+      "card_type": "Trainer",
+      "trainer_subtype": "Stadium",
+      "effect": "Each Basic Pokemon in play gets +20 HP",
+      "count": 1
+    },
+    {
+      "name": "Arena of Antiquity",
+      "card_type": "Trainer",
+      "trainer_subtype": "Stadium",
+      "effect": "Each Fighting Pokemon's attacks do +20 vs opponent's Active ex",
+      "count": 1
+    }
   ]
 }

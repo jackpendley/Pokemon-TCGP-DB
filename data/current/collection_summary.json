@@ -4,33 +4,33 @@
     "last_updated": "2026-05-11",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 376,
+  "total_quantity": 380,
   "meta_total_cards": 380,
-  "count_matches_meta": false,
-  "unique_entries": 220,
+  "count_matches_meta": true,
+  "unique_entries": 224,
   "by_card_type": {
-    "Pokemon": 335,
+    "Pokemon": 339,
     "Trainer": 41
   },
   "by_pokemon_type": {
-    "Fire": 41,
+    "Fire": 42,
     "Grass": 43,
     "Water": 36,
     "Lightning": 24,
     "Psychic": 30,
-    "Fighting": 64,
+    "Fighting": 66,
     "Darkness": 30,
     "Metal": 16,
     "Dragon": 2,
-    "Colorless": 49
+    "Colorless": 50
   },
   "by_stage": {
-    "Basic": 226,
+    "Basic": 227,
     "Stage 1": 89,
-    "Stage 2": 20
+    "Stage 2": 23
   },
-  "ex_entries": 9,
-  "ex_quantity": 11,
+  "ex_entries": 10,
+  "ex_quantity": 12,
   "trainer_subtypes": {
     "Item": 18,
     "Pokemon Tool": 2,
@@ -509,7 +509,8 @@
       "Vaporeon ex",
       "Magnezone ex",
       "Marowak ex",
-      "Zygarde ex"
+      "Zygarde ex",
+      "Corviknight ex"
     ],
     "strong_evolution_lines": [
       "Charmander → Charmeleon → Charizard",
