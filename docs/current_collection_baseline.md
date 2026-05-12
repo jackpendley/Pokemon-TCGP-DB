@@ -59,6 +59,22 @@ Chase cards needed:
 | `scripts/validate_deck_recommendations.py` | Compare deck card lists against owned collection |
 | `scripts/inventory_screenshots.py` | Inventory new cropped grid screenshots |
 | `scripts/reconcile_current_collection_sources.py` | Structural reconciliation of collection vs screenshots |
+| `scripts/current_collection_pack_coverage.py` | Pack-source coverage for 380-card collection |
+| `scripts/create_current_pack_review.py` | Review package for unresolved pack mappings |
+| `scripts/apply_current_pack_confirmations.py` | Apply user-filled pack confirmations (dry-run default) |
+
+## Pack-Source Coverage
+
+| Metric | Value |
+|---|---|
+| Entries resolved | 157/224 (70%) |
+| Exact match | 108 entries |
+| Unanimous pack | 49 entries |
+| Ambiguous (cross-expansion) | 59 entries |
+| No match | 3 (Zygarde forms) |
+| Known trainer gap | 5 (common items) |
+
+Resolve ambiguous entries: fill `data/exports/current_pack_source_review.csv`, then run apply script.
 
 ## Generated Outputs
 

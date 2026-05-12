@@ -30,22 +30,51 @@ python3 scripts/reconcile_current_collection_sources.py
 python3 scripts/validate_deck_recommendations.py
 ```
 
+### Pack-Source Coverage (2026-05-11)
+
+| Metric | Value |
+|---|---|
+| Pack-source DB | `pack_sources.json` (3110 records, 17 expansions) |
+| Entries resolved | **157/224 (70%)** |
+| Exact match | 108 entries |
+| Unanimous pack | 49 entries |
+| Ambiguous cross-expansion | 59 entries — need set/card-number confirmation |
+| No match in pack_sources | 3 entries (Zygarde forms — not in Limitless DB) |
+| Known trainer gap | 5 entries (Potion, X Speed, Red Card, Hand Scope, Pokédex) |
+
+Coverage reports:
+- `review/current_collection_pack_coverage.md`
+- `data/current/current_collection_pack_coverage.json`
+- `data/exports/current_collection_pack_coverage.csv`
+
+Manual review package (67 unresolved entries):
+- `review/current_pack_source_review.md` — per-card candidate list with app lookup instructions
+- `data/exports/current_pack_source_review.csv` — fill `confirmed_set_code`, `confirmed_card_number`, `confirmed_yes_no`
+- `data/exports/current_pack_source_review.json` — machine-readable review data
+
+Apply after filling CSV:
+```bash
+python3 scripts/apply_current_pack_confirmations.py --dry-run
+python3 scripts/apply_current_pack_confirmations.py --apply
+```
+
 ### Remaining blockers before automated pack recommendations
 
-1. **Pull probability model** — rarity tier pull rates by pack not yet modeled.
-2. **Pack-source mapping for new cards** — `collection.json` contains cards not in the old `pack_sources.json` (built for 329-card set). New cards need pack-source mapping before EV calculation.
-3. **Current meta/tier data** — deck recommendations are not yet meta-aware (no tournament data integration).
-4. **Deck recommendations UI** — `deck-recommendations.jsx` is a manual prototype; no automated scorer yet.
+1. **67 unresolved pack-source mappings** — 59 ambiguous (cross-expansion), 3 Zygarde no-match, 5 known trainer gaps. Resolve via review CSV to enable accurate pack EV.
+2. **Pull probability model** — rarity tier pull rates by pack not yet modeled.
+3. **Pack-source mapping for Zygarde** — Zygarde 10%/50%/ex not in current Limitless data; needs external set reference.
+4. **Current meta/tier data** — deck recommendations are not yet meta-aware.
+5. **Automated deck scorer** — `deck-recommendations.jsx` is a manual prototype.
 
 ### Recommended next phase
 
-Build automated deck scorer and pack EV model from `collection_normalized.json`.
+Fill `data/exports/current_pack_source_review.csv` with confirmed set_code + card_number for each ambiguous card, then run the apply script. Once coverage is ≥90%, build the pull probability model and pack EV scorer.
 
 ---
 
 > **Pack-opening and deck-building recommendations are intentionally deferred.**
-> Do not generate recommendations until all blockers above are resolved.
-> The 380-card baseline is now validated and ready for recommendation work.
+> Do not generate recommendations until pack-source coverage is substantially resolved.
+> The 380-card baseline is validated; 70% of cards already have clear pack assignments.
 
 ---
 
