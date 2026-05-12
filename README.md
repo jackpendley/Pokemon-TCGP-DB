@@ -71,7 +71,18 @@ python3 scripts/build_pack_ev.py --validate
 
 Outputs: `data/current/pack_ev.json`, `data/exports/pack_ev.csv`, `review/pack_ev.md`
 
-Next active phase: verify slot rates in-app (PTCGP app → Pack details → Offering Rates), then re-run EV calculator at verified confidence.
+Inferred pack recommendation report: ranks all 24 packs across 5 metrics, provides chase-deck pack guide, 3 planning scenarios, blocker table. Top recommendation: **Paldean Wonders** (adj EV=4.20).
+
+```bash
+python3 scripts/generate_pack_recommendation_report.py
+python3 scripts/generate_pack_recommendation_report.py --validate
+```
+
+Outputs: `review/inferred_pack_recommendations.md`, `data/current/inferred_pack_recommendations.json`, `data/exports/inferred_pack_recommendations.csv`
+
+See `review/inferred_pack_recommendations.md` for the full planning report with caveats.
+
+Next active phase: verify slot rates in-app (PTCGP app → Pack details → Offering Rates), then re-run EV calculator and recommendation report at verified confidence.
 
 See `docs/current_collection_baseline.md` and `docs/recommendation_readiness.md` for full details.
 

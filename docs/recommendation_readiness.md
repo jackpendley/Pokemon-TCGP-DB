@@ -157,19 +157,39 @@ python3 scripts/build_pack_ev.py
 python3 scripts/build_pack_ev.py --validate
 ```
 
-### Remaining blockers before automated pack recommendations
+### Inferred Pack Recommendation Report (2026-05-12)
 
-1. **Slot rates not yet verified in-app** — `slot_rates` are confidence=inferred from external sources. Must be confirmed against the PTCGP app Offering Rates screen before any recommendations are published. `rarity_probabilities` (aggregate per-pack rates) are still null.
+| Metric | Value |
+|---|---|
+| Script | `scripts/generate_pack_recommendation_report.py` |
+| Output MD | `review/inferred_pack_recommendations.md` |
+| Output JSON | `data/current/inferred_pack_recommendations.json` |
+| Output CSV | `data/exports/inferred_pack_recommendations.csv` |
+| Model confidence | **inferred** — NOT verified in-app |
+| Top recommendation | **Paldean Wonders** (adj EV=4.2019) |
+| Validation | `python3 scripts/generate_pack_recommendation_report.py --validate` — **PASS** |
+
+Report includes: ranked pack tables (adj EV, new-card EV, deck-target EV, EX EV), per-pack detail for top 5, chase-deck pack guide (Ivysaur→Crimson Blaze, Incineroar ex→Solgaleo, Magnezone ex→Pulsing Aura, Zygarde ex→unknown), three planning scenarios (conservative/moderate/aggressive), blocker table, and next-action checklist.
+
+```bash
+python3 scripts/generate_pack_recommendation_report.py
+python3 scripts/generate_pack_recommendation_report.py --validate
+```
+
+### Remaining blockers before verified pack recommendations
+
+1. **Slot rates not yet verified in-app** — `slot_rates` are confidence=inferred from external sources. Must be confirmed against the PTCGP app Offering Rates screen before recommendations are verified. `rarity_probabilities` (aggregate per-pack rates) are still null.
 2. **59 ambiguous cross-set entries at low confidence (0.50–0.799)** — card appears in multiple expansions; the correct version cannot be determined without OCR or user confirmation.
 3. **8 unresolved entries (< 0.50)** — 3 Zygarde forms not in pack_sources; 5 common trainers not indexed in Limitless DB.
-4. **No OCR name verification** — alignment is order-only; card identities are not confirmed from screenshots.
-5. **Pack-source mapping for Zygarde** — Zygarde forms not in current Limitless data; needs external set reference.
-6. **Current meta/tier data** — deck recommendations are not yet meta-aware.
-7. **Automated deck scorer** — `deck-recommendations.jsx` is a manual prototype.
+4. **Pack-source mapping for Zygarde** — Zygarde ex not in pack_sources; pack unknown. Blocks Zygarde ex Fighting deck targeting.
+5. **Current meta/tier data** — deck recommendations are not yet meta-aware.
+6. **Automated deck scorer** — `deck-recommendations.jsx` is a manual prototype.
 
 ### Recommended next phase
 
-Verify inferred slot rates in-app (PTCGP app → any pack → Offering Rates), then re-run EV calculator at verified confidence. Alternatively, resolve the 59 ambiguous cross-set entries to expand EV-ready coverage from 157 to ~216/224.
+1. **Verify slot rates in-app** — open PTCGP → any pack → Offering Rates. If values match `slot_rates` in `pull_probability_model.json`, set confidence=verified, re-run `build_pack_ev.py` and `generate_pack_recommendation_report.py` to upgrade to verified confidence.
+2. **OR accept inferred confidence** and use the three planning scenarios in `review/inferred_pack_recommendations.md` for immediate pack decisions.
+3. **Resolve 59 ambiguous entries** — expands EV-ready coverage to ~216/224.
 
 ---
 

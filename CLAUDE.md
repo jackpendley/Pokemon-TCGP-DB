@@ -211,16 +211,19 @@ Completed phases (do not rebuild):
 - Pull probability model scaffold + inferred rates (`scripts/build_pull_probability_model.py`) — 24 packs, slot_rates=inferred, PASS
 - External pull rate lookup (`review/pull_probability_external_lookup.md`) — inferred rates from Game8 + corroborating sources, documented
 - Pack EV calculator (`scripts/build_pack_ev.py`) — 24 packs ranked, 0 blocked, top pack: Paldean Wonders (ev=4.94, adj=4.20), PASS
+- Inferred pack recommendation report (`scripts/generate_pack_recommendation_report.py`) — 5-metric ranking, chase-deck guide, 3 planning scenarios, PASS
 
 Next steps in order:
 
-1. **Verify slot rates in-app** — open PTCGP app → any pack → Offering Rates. Compare values against `slot_rates` in `pull_probability_model.json`. If they match, set confidence=verified and re-run `build_pack_ev.py`. This upgrades EV output to verified confidence.
+1. **Verify slot rates in-app** — open PTCGP app → any pack → Offering Rates. Compare values against `slot_rates` in `pull_probability_model.json`. If they match, set confidence=verified and re-run `build_pack_ev.py` then `generate_pack_recommendation_report.py`. This upgrades output to verified confidence.
 
-2. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers to expand EV-ready coverage from 157 to up to 216/224 entries.
+2. **OR generate final hourglass spending plan** — if user explicitly accepts inferred confidence, build a final spend-plan prompt: how many pulls to prioritize, in what pack order, for which goal (collection completion vs. specific chase decks). This is the next scripted phase if in-app verification is skipped.
 
-3. **Rebuild EV after verification** — re-run `python3 scripts/build_pack_ev.py` after any rate or coverage update.
+3. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers to expand EV-ready coverage from 157 to up to 216/224 entries.
 
-**Do not issue pack-opening recommendations until slot rates are verified in-app. EV calculations at inferred confidence are for informational/planning purposes only.**
+4. **Rebuild EV and report after any update** — re-run `python3 scripts/build_pack_ev.py` then `python3 scripts/generate_pack_recommendation_report.py` after any rate or coverage change.
+
+**Do not issue final pack-opening recommendations until slot rates are verified in-app, OR the user explicitly accepts inferred-confidence planning. `review/inferred_pack_recommendations.md` is the current decision-support document.**
 
 ## 12. Anti-Overengineering Principle
 
