@@ -60,9 +60,18 @@ python3 scripts/validate_pull_probability_model.py
 
 Outputs: `data/reference/pull_probability_model.json`, `review/pull_probability_model.md`, `review/pack_ev_readiness.md`, `review/pull_probability_external_lookup.md`, `data/current/pack_ev_readiness.json`
 
-EV status: **PARTIALLY READY** — slot rates inferred from external sources for all 24 packs. 157/224 entries have confirmed pack assignments. EV calculator can be built at inferred confidence.
+EV status: **PARTIALLY READY** — slot rates inferred for all 24 packs. EV calculator built and validated.
 
-Next active phase: verify slot rates in-app (PTCGP app → Pack details → Offering Rates) then build pack EV calculator, OR build calculator immediately at inferred confidence.
+Pack EV calculator: ranks all 24 packs by expected new-card value. Top pack: **Paldean Wonders** (total EV=4.94, adj=4.20 at inferred confidence).
+
+```bash
+python3 scripts/build_pack_ev.py
+python3 scripts/build_pack_ev.py --validate
+```
+
+Outputs: `data/current/pack_ev.json`, `data/exports/pack_ev.csv`, `review/pack_ev.md`
+
+Next active phase: verify slot rates in-app (PTCGP app → Pack details → Offering Rates), then re-run EV calculator at verified confidence.
 
 See `docs/current_collection_baseline.md` and `docs/recommendation_readiness.md` for full details.
 

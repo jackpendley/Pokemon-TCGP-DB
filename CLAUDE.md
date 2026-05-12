@@ -203,21 +203,22 @@ python3 scripts/reconcile_current_collection_sources.py
 
 ## 11. Next Recommended Phase
 
-Build the pack EV calculator. All prerequisites are now in place at inferred confidence.
+Verify inferred slot rates in-app, then re-run the EV calculator at verified confidence.
 
 Completed phases (do not rebuild):
 - Screenshot-to-collection alignment (`scripts/build_screenshot_collection_alignment.py`) — 224/224 entries, PASS
 - Pack-source confidence scoring (`scripts/score_pack_source_confidence.py`) — 108 auto-accept, 49 secondary, 59 low, 8 unresolved, avg 0.8204, PASS
 - Pull probability model scaffold + inferred rates (`scripts/build_pull_probability_model.py`) — 24 packs, slot_rates=inferred, PASS
 - External pull rate lookup (`review/pull_probability_external_lookup.md`) — inferred rates from Game8 + corroborating sources, documented
+- Pack EV calculator (`scripts/build_pack_ev.py`) — 24 packs ranked, 0 blocked, top pack: Paldean Wonders (ev=4.94, adj=4.20), PASS
 
 Next steps in order:
 
-1. **Build EV calculator** — build `scripts/build_pack_ev.py` that computes expected new card value per pack opened, ranking packs for the 157 EV-ready collection entries. Input: `pull_probability_model.json` slot_rates + `pack_source_confidence_scores.json` + `collection.json`. Output: `data/current/pack_ev.json` + `review/pack_ev.md`. Use inferred rates; note confidence clearly in output.
+1. **Verify slot rates in-app** — open PTCGP app → any pack → Offering Rates. Compare values against `slot_rates` in `pull_probability_model.json`. If they match, set confidence=verified and re-run `build_pack_ev.py`. This upgrades EV output to verified confidence.
 
-2. **Verify slot rates in-app** (optional first) — open PTCGP app → any pack → Offering Rates. If rates match inferred values, set confidence=verified. This upgrades EV calculator output to verified confidence.
+2. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers to expand EV-ready coverage from 157 to up to 216/224 entries.
 
-3. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers to expand EV-ready coverage from 157 to up to 216/224 entries.
+3. **Rebuild EV after verification** — re-run `python3 scripts/build_pack_ev.py` after any rate or coverage update.
 
 **Do not issue pack-opening recommendations until slot rates are verified in-app. EV calculations at inferred confidence are for informational/planning purposes only.**
 

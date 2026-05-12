@@ -121,6 +121,42 @@ Outputs:
 - `review/pull_probability_external_lookup.md`
 - `data/current/pack_ev_readiness.json`
 
+### Pack EV Calculator (2026-05-12)
+
+| Metric | Value |
+|---|---|
+| Script | `scripts/build_pack_ev.py` |
+| Output JSON | `data/current/pack_ev.json` |
+| Output CSV | `data/exports/pack_ev.csv` |
+| Output report | `review/pack_ev.md` |
+| Packs ranked | **24** (all modeled packs) |
+| Packs blocked | **0** |
+| Model confidence | **inferred** — rates not yet verified in-app |
+| Collection used | `collection_normalized.json` (380 cards, 224 entries) |
+| EV-ready entries | **157/224** (108 auto-accept + 49 secondary evidence) |
+| Excluded entries | **67/224** (59 low-confidence + 8 unresolved) |
+| Deck targets | **4** (Ivysaur, Incineroar ex, Zygarde ex, Magnezone ex) |
+| Validation | `python3 scripts/build_pack_ev.py --validate` — **PASS** |
+| Top pack (total EV) | **Paldean Wonders** (ev=4.9435, adj=4.2019) |
+
+EV scoring weights: new_card=1.0, copy_up_to_2=0.4, ex_missing=1.0, deck_target=2.0, inferred_adj=0.85.
+
+Top 5 packs by total inferred EV:
+
+| Rank | Pack | Total EV | Adj. EV |
+|---|---|---|---|
+| 1 | Paldean Wonders | 4.9435 | 4.2019 |
+| 2 | Fantastical Parade | 4.4948 | 3.8206 |
+| 3 | Mew | 4.4512 | 3.7835 |
+| 4 | Extradimensional Crisis | 4.3602 | 3.7062 |
+| 5 | Mega Altaria | 4.3240 | 3.6754 |
+
+Validation run:
+```bash
+python3 scripts/build_pack_ev.py
+python3 scripts/build_pack_ev.py --validate
+```
+
 ### Remaining blockers before automated pack recommendations
 
 1. **Slot rates not yet verified in-app** — `slot_rates` are confidence=inferred from external sources. Must be confirmed against the PTCGP app Offering Rates screen before any recommendations are published. `rarity_probabilities` (aggregate per-pack rates) are still null.
@@ -133,7 +169,7 @@ Outputs:
 
 ### Recommended next phase
 
-Build the pack EV calculator. Slot rates exist for all 24 packs (inferred). Pack-source assignments exist for 157/224 entries. A working EV calculator would rank packs by expected new card value per opening, enabling informed recommendations at inferred confidence. Alternatively, verify slot_rates in-app first (PTCGP app → Pack details → Offering Rates) to upgrade to verified confidence before building the calculator.
+Verify inferred slot rates in-app (PTCGP app → any pack → Offering Rates), then re-run EV calculator at verified confidence. Alternatively, resolve the 59 ambiguous cross-set entries to expand EV-ready coverage from 157 to ~216/224.
 
 ---
 
