@@ -17,6 +17,8 @@ Everything added to this project must serve the collection tracking and recommen
 
 - `collection.json` is the **active source of truth** for all new recommendation work.
 - `data/current/collection_normalized.json` is the generated machine-readable normalized version.
+- `screenshots/` is the **visual evidence source** for training, alignment, and confidence validation.
+- For current work, `collection.json` + `screenshots/` together are sufficient to train and validate automated matching and confidence scoring.
 - `cards.json` is **historical/provenance only**. Do not use it for current recommendations.
 - Do not try to reconcile `cards.json` up to 380 by guessing.
 - Do not continue the old skipped multi-value confirmation workflow unless explicitly requested by the user.
@@ -51,9 +53,16 @@ python3 scripts/reconcile_current_collection_sources.py
 
 ```bash
 python3 scripts/current_collection_pack_coverage.py
-python3 scripts/create_current_pack_review.py
-python3 scripts/apply_current_pack_confirmations.py --dry-run
+python3 scripts/create_current_pack_review.py   # report generator — not a mandatory manual step
+python3 scripts/apply_current_pack_confirmations.py --dry-run   # only when user has filled CSV
 python3 scripts/apply_current_pack_confirmations.py --apply
+```
+
+### Automated confidence scoring (next phase to build)
+
+```bash
+python3 scripts/build_screenshot_collection_alignment.py
+python3 scripts/score_pack_source_confidence.py
 ```
 
 ### Deck validation
@@ -86,12 +95,20 @@ python3 scripts/owned_pack_coverage.py
 | `data/current/current_collection_pack_coverage.json` | Pack-source match results per entry |
 | `data/exports/current_collection_pack_coverage.csv` | CSV version of coverage |
 | `review/current_collection_pack_coverage.md` | Human-readable coverage report |
-| `data/exports/current_pack_source_review.csv` | **Fill this** to confirm ambiguous pack assignments |
+| `data/exports/current_pack_source_review.csv` | Fallback: manual confirmation for below-threshold entries |
 | `data/exports/current_pack_source_review.json` | Machine-readable review data |
-| `review/current_pack_source_review.md` | Per-card candidate tables for manual review |
+| `review/current_pack_source_review.md` | Per-card candidate tables (fallback/debugging reference) |
 | `data/current/current_collection_pack_confirmations.json` | Applied confirmations (written by apply script) |
 | `data/exports/deck_recommendation_validation.json` | Machine-readable deck validation |
 | `review/deck_recommendation_validation.md` | Deck-by-deck validation report |
+
+Planned automated confidence outputs (to be built):
+
+| File | Description |
+|---|---|
+| `data/current/screenshot_collection_alignment.json` | Screenshot slot → collection entry mapping |
+| `data/current/pack_source_confidence_scores.json` | Per-entry confidence scores from automated matching |
+| `review/automated_confidence_readiness.md` | Human-readable confidence report |
 
 ## 6. Current Pack-Source Coverage
 
@@ -105,9 +122,50 @@ python3 scripts/owned_pack_coverage.py
 | No match (Zygarde forms) | 3 entries — not in Limitless DB |
 | Known trainer gap | 5 entries (Potion, X Speed, Red Card, Hand Scope, Pokédex) |
 
-**Next data task:** Fill `data/exports/current_pack_source_review.csv` with `confirmed_set_code`, `confirmed_card_number`, and `confirmed_yes_no=yes` for each ambiguous card. Then run the apply script.
+These 67 unresolved entries are the **target set for automated confidence scoring and screenshot/collection alignment** — not a mandate for manual CSV review.
 
-## 7. Current Recommendation Status
+Manual CSV review (`data/exports/current_pack_source_review.csv`) is a **fallback tool only**, used when:
+- Automated confidence scores fall below threshold for a specific entry
+- Conflicting high-confidence candidates cannot be resolved automatically
+- The user explicitly requests manual confirmation
+
+## 7. Confidence Threshold Policy
+
+Automated matching is allowed when confidence is high enough and evidence is traceable.
+
+Suggested thresholds:
+
+| Tier | Confidence | Action |
+|---|---|---|
+| Auto-accept | ≥ 0.95 | Apply without manual review |
+| Secondary evidence needed | 0.80 – 0.949 | Require corroborating signal (e.g. screenshot position, HP, type) |
+| Below threshold — unresolved | < 0.80 | Flag for manual review or leave as unresolved |
+
+Manual review is only required for:
+- Entries with no candidate reaching the auto-accept threshold
+- Conflicting high-confidence candidates that cannot be disambiguated
+- Cards where `collection.json` and screenshot evidence disagree
+- Cards with no reliable `pack_sources` candidate (e.g. Zygarde forms)
+
+**Do not ask the user to manually confirm every ambiguous row by default.**
+
+## 8. Current Automation Direction
+
+Build tooling to align screenshot grid slots with `collection.json` entries.
+
+- Use `collection.json` quantities as labels.
+- Use screenshot position/order, card names, type/category metadata, HP/attack/ability, and `pack_sources` candidates as evidence.
+- No OCR-heavy pipeline unless needed; prefer deterministic parsing from `collection.json` and the structural screenshot manifest first.
+- If using vision/OCR later, treat it as validation evidence — not the canonical source.
+- Generate confidence reports before applying any changes.
+- Do not mutate `collection.json`; write generated mappings under `data/current/`.
+
+Next scripts to build:
+- `scripts/build_screenshot_collection_alignment.py` — align screenshot slots to collection entries
+- `scripts/score_pack_source_confidence.py` — score each entry's best pack candidate
+- These produce: `data/current/screenshot_collection_alignment.json`, `data/current/pack_source_confidence_scores.json`, `review/automated_confidence_readiness.md`
+
+## 9. Current Recommendation Status
 
 - Deck recommendations are currently **manual/prototype** via `deck-recommendations.jsx`.
 - `validate_deck_recommendations.py` found **4 buildable decks** and **4 chase decks** (each 1 ex card short).
@@ -115,25 +173,16 @@ python3 scripts/owned_pack_coverage.py
 - Chase (need 1 more ex each): Mega Venusaur ex, Incineroar ex, Zygarde ex, Magnezone ex.
 - **Do not make final automated pack-opening recommendations yet.**
 
-Automated pack EV requires:
-- Pack-source coverage substantially resolved (target ≥ 90%)
-- Pull probability model by rarity tier and pack
-- Target value / deck scoring model
-- Optional meta/tier integration
+Current blockers before automated pack recommendations:
+- Automated pack-source confidence model not built
+- Screenshot-to-collection alignment not built
+- Pull probability model not built
+- Deck scoring model not built
+- Optional meta/tier data not integrated
 
-## 8. Safe Operating Rules
+Manual CSV confirmation is **not** required before these phases can proceed.
 
-- Use `python3`, not `python`.
-- Never invent cards.
-- Never invent pack sources or set/card numbers.
-- Never change card quantities unless the user explicitly confirms.
-- Do not mutate `collection.json` unless explicitly asked.
-- Prefer generated files under `data/current/` for normalized outputs.
-- Preserve `cards.json` and old batch files as historical provenance.
-- Do not stage: raw HTML caches, image caches, `__pycache__`, `.DS_Store`, `node_modules`, `.env`, secrets, or large binary files.
-- If validation fails, stop and document the blocker. Do not proceed.
-
-## 9. Standard Validation Checklist
+## 10. Standard Validation Checklist
 
 Run this before and after any meaningful change:
 
@@ -141,8 +190,8 @@ Run this before and after any meaningful change:
 python3 scripts/validate_current_collection.py --expected-total 380
 python3 scripts/normalize_current_collection.py
 python3 scripts/current_collection_pack_coverage.py
-python3 scripts/create_current_pack_review.py
-python3 scripts/apply_current_pack_confirmations.py --dry-run
+python3 scripts/create_current_pack_review.py        # generates report — not a required manual step
+python3 scripts/apply_current_pack_confirmations.py --dry-run   # only if CSV has been filled
 python3 scripts/validate_deck_recommendations.py
 python3 scripts/validate_pack_sources.py
 python3 scripts/validate_cards.py --expected-total 329
@@ -150,15 +199,26 @@ python3 scripts/inventory_screenshots.py
 python3 scripts/reconcile_current_collection_sources.py
 ```
 
-## 10. Next Recommended Phase
+## 11. Next Recommended Phase
 
-1. User fills `data/exports/current_pack_source_review.csv` for the 59 ambiguous cross-set entries.
-2. Run `python3 scripts/apply_current_pack_confirmations.py --dry-run` to preview.
-3. Run `python3 scripts/apply_current_pack_confirmations.py --apply` to persist.
-4. Re-run `python3 scripts/current_collection_pack_coverage.py` to verify improved coverage.
-5. Once coverage is ≥ 90%, build the pull probability model and pack EV scorer.
+Build automated screenshot-to-collection alignment and pack-source confidence scoring.
 
-## 11. Anti-Overengineering Principle
+Concretely:
+
+1. Create `scripts/build_screenshot_collection_alignment.py`
+   - Inputs: `data/current/screenshot_manifest.json`, `data/current/collection_normalized.json`
+   - Output: `data/current/screenshot_collection_alignment.json` — slot → entry mapping with confidence
+
+2. Create `scripts/score_pack_source_confidence.py`
+   - Inputs: `data/current/collection_normalized.json`, `data/reference/pack_sources.json`, alignment output
+   - Output: `data/current/pack_source_confidence_scores.json` — per-entry best candidate + score
+   - Output: `review/automated_confidence_readiness.md` — readable confidence report
+
+3. Only flag entries below threshold (< 0.80) as needing manual review.
+
+**Do not require the user to fill `current_pack_source_review.csv` before this phase proceeds.**
+
+## 12. Anti-Overengineering Principle
 
 Do not add infrastructure that does not measurably reduce manual confirmation work or improve recommendation quality.
 
@@ -170,7 +230,7 @@ Do not add infrastructure that does not measurably reduce manual confirmation wo
 - User verification is always required before applying confirmations.
 - The shortest path to a validated collection DB and recommendation engine is always preferred.
 
-## 12. Operating Principle
+## 13. Operating Principle
 
 Act like a senior engineer maintaining a clean, durable repo.
 
@@ -184,7 +244,7 @@ Expected proactive behavior:
 - Validate before and after meaningful changes.
 - Stop before high-risk or scope-expanding work.
 
-## 13. Critical Workflow Rule
+## 14. Critical Workflow Rule
 
 Work in small phases.
 
@@ -192,7 +252,7 @@ Work in small phases.
 - Always stop after completing the exact requested phase.
 - If the user asks for general improvement, proactively inspect the current phase for obvious repo hygiene issues.
 
-## 14. Hard Stop Behavior
+## 15. Hard Stop Behavior
 
 At the end of every response, stop and report only:
 
@@ -205,7 +265,7 @@ At the end of every response, stop and report only:
 
 Do not continue into the next phase unless explicitly instructed.
 
-## 15. Git and Repository Best Practices
+## 16. Git and Repository Best Practices
 
 Before each phase:
 1. Run `git status`.
@@ -231,7 +291,19 @@ Remote: `git@github.com:jackpendley/Pokemon-TCGP-DB.git`
 
 If SSH authentication fails: check public key exists, check key is loaded in agent, test `ssh -T git@github.com`. Do not switch to HTTPS unless the user explicitly chooses that option.
 
-## 16. Forbidden Behaviors
+## 17. Safe Operating Rules
+
+- Use `python3`, not `python`.
+- Never invent cards.
+- Never invent pack sources or set/card numbers.
+- Never change card quantities unless the user explicitly confirms.
+- Do not mutate `collection.json` unless explicitly asked.
+- Prefer generated files under `data/current/` for normalized outputs.
+- Preserve `cards.json` and old batch files as historical provenance.
+- Do not stage: raw HTML caches, image caches, `__pycache__`, `.DS_Store`, `node_modules`, `.env`, secrets, or large binary files.
+- If validation fails, stop and document the blocker. Do not proceed.
+
+## 18. Forbidden Behaviors
 
 Do not:
 - Claim the database is exact unless `collection.json` validates at 380 and all ambiguous entries are resolved or clearly flagged.
@@ -239,6 +311,7 @@ Do not:
 - Invent cards, pack sources, set codes, or card numbers.
 - Change card quantities without explicit user confirmation.
 - Mutate `collection.json` without explicit instruction.
+- Ask the user to fill `current_pack_source_review.csv` as the default next task — manual CSV confirmation is a fallback, not the primary workflow.
 - Continue the old 329-card skipped multi-value confirmation workflow unless explicitly requested.
 - Commit large binaries, image files, or generated temp files.
 - Force push.

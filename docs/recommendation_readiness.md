@@ -60,15 +60,16 @@ python3 scripts/apply_current_pack_confirmations.py --apply
 
 ### Remaining blockers before automated pack recommendations
 
-1. **67 unresolved pack-source mappings** — 59 ambiguous (cross-expansion), 3 Zygarde no-match, 5 known trainer gaps. Resolve via review CSV to enable accurate pack EV.
-2. **Pull probability model** — rarity tier pull rates by pack not yet modeled.
-3. **Pack-source mapping for Zygarde** — Zygarde 10%/50%/ex not in current Limitless data; needs external set reference.
-4. **Current meta/tier data** — deck recommendations are not yet meta-aware.
-5. **Automated deck scorer** — `deck-recommendations.jsx` is a manual prototype.
+1. **Automated pack-source confidence model not built** — 67 unresolved entries (59 ambiguous cross-set, 3 Zygarde no-match, 5 trainer gaps) are the target set for automated scoring, not a manual CSV mandate.
+2. **Screenshot-to-collection alignment not built** — `scripts/build_screenshot_collection_alignment.py` and `scripts/score_pack_source_confidence.py` need to be created.
+3. **Pull probability model** — rarity tier pull rates by pack not yet modeled.
+4. **Pack-source mapping for Zygarde** — Zygarde 10%/50%/ex not in current Limitless data; needs external set reference.
+5. **Current meta/tier data** — deck recommendations are not yet meta-aware.
+6. **Automated deck scorer** — `deck-recommendations.jsx` is a manual prototype.
 
 ### Recommended next phase
 
-Fill `data/exports/current_pack_source_review.csv` with confirmed set_code + card_number for each ambiguous card, then run the apply script. Once coverage is ≥90%, build the pull probability model and pack EV scorer.
+Build automated screenshot-to-collection alignment (`scripts/build_screenshot_collection_alignment.py`) and pack-source confidence scoring (`scripts/score_pack_source_confidence.py`). These use `collection.json` + `screenshots/` + `pack_sources.json` as the basis. Only flag entries below the confidence threshold (< 0.80) for manual review. Manual CSV confirmation is a fallback tool, not the primary path forward.
 
 ---
 

@@ -14,6 +14,7 @@ Builds and maintains an exact Pokémon TCG Pocket card collection database from 
 | `screenshots/` | 26 files (IMG_1556–IMG_1581) | Cropped 3×3 grid screenshots, 232 card slots |
 
 Pack-source coverage: **157/224 entries resolved (70%)** — 59 ambiguous, 3 Zygarde no-match, 5 known gaps.
+The 67 unresolved entries are the target set for automated confidence scoring (next active phase).
 
 Validate and normalize:
 
@@ -21,16 +22,18 @@ Validate and normalize:
 python3 scripts/validate_current_collection.py --expected-total 380
 python3 scripts/normalize_current_collection.py
 python3 scripts/current_collection_pack_coverage.py
-python3 scripts/create_current_pack_review.py
+python3 scripts/create_current_pack_review.py   # generates fallback/debugging report only
 python3 scripts/validate_deck_recommendations.py
 ```
 
-Resolve ambiguous pack mappings: fill `data/exports/current_pack_source_review.csv`, then:
+Manual confirmation scripts exist as a fallback when automated confidence falls below threshold:
 
 ```bash
-python3 scripts/apply_current_pack_confirmations.py --dry-run
+python3 scripts/apply_current_pack_confirmations.py --dry-run   # only after filling CSV manually
 python3 scripts/apply_current_pack_confirmations.py --apply
 ```
+
+Next active phase: build `scripts/build_screenshot_collection_alignment.py` and `scripts/score_pack_source_confidence.py` using `collection.json` + `screenshots/` + `pack_sources.json`.
 
 See `docs/current_collection_baseline.md` and `docs/recommendation_readiness.md` for full details.
 

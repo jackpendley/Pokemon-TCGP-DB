@@ -74,7 +74,7 @@ Chase cards needed:
 | No match | 3 (Zygarde forms) |
 | Known trainer gap | 5 (common items) |
 
-Resolve ambiguous entries: fill `data/exports/current_pack_source_review.csv`, then run apply script.
+The 67 unresolved entries are the target set for automated confidence scoring. Manual CSV review (`data/exports/current_pack_source_review.csv`) is a fallback tool for below-threshold cases, not the primary next step.
 
 ## Generated Outputs
 
