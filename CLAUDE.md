@@ -1,73 +1,198 @@
 # Claude Code Project Instructions
 
-## Project Goal
+## 1. Project Overview
 
-This project builds and maintains an exact Pokémon TCG Pocket card collection database from app screenshots.
+Pokemon-TCGP-DB tracks the user's Pokémon TCG Pocket collection.
 
-The database must track cards the way the Pokémon TCG Pocket app does. This means visually distinct cards, special variants, alternate art cards, ex cards, promo cards, shiny cards, immersive cards, crown/gold cards, and other special versions must be tracked as separate entries when the app treats them as separate collection cards.
+The active goal is to support accurate deck-building and pack-opening decisions.
 
-The user's current collection total is expected to equal exactly 331 cards.
+The project has two baselines:
 
-The user currently has 383 pack hourglasses and wants to save 240, meaning they can spend 143. Since a 10-pack costs 120, they can open one 10-pack and still have 263 saved.
+- **Active current collection baseline:** `collection.json` — 380 cards, 224 unique entries, manually authored, validated.
+- **Historical screenshot-ingestion baseline:** `cards.json` — 329 cards, 211 entries, screenshot pipeline artifact. Preserved for provenance only.
 
-## Ultimate Product Goal
+Everything added to this project must serve the collection tracking and recommendation goal.
 
-Build a practical collection database that enables:
-1. Tracking owned cards and quantities
-2. Set/variant/collection progress tracking
-3. Precise pack-opening recommendations (which pack to open, when, and why)
-4. Meta deck recommendations (which current decks can be built or pursued)
-5. Easy future updates via screenshot uploads
+## 2. Source of Truth
 
-Everything added to this project must serve one of these goals.
+- `collection.json` is the **active source of truth** for all new recommendation work.
+- `data/current/collection_normalized.json` is the generated machine-readable normalized version.
+- `cards.json` is **historical/provenance only**. Do not use it for current recommendations.
+- Do not try to reconcile `cards.json` up to 380 by guessing.
+- Do not continue the old skipped multi-value confirmation workflow unless explicitly requested by the user.
 
-## Anti-Overengineering Principle
+## 3. Current Validated State
 
-Do not add infrastructure that does not measurably reduce manual confirmation work
-or improve recommendation quality.
+| Item | Status |
+|---|---|
+| `collection.json` total | **380 validated ✅** |
+| `collection.json` unique entries | 224 |
+| `cards.json` total (historical) | **329 validated ✅** |
+| `pack_sources.json` records | **3110 validated ✅** |
+| Screenshots | 26 cropped grid images, `IMG_1556–IMG_1581` |
+| Screenshot slots | 232 (25 × 9 standard + 1 × 7 final) |
+| Structural reconciliation | **PASS** — 232 slots ≥ 224 unique entries |
+| Pack-source coverage | **157/224 entries resolved (70%)** |
 
-Specifically:
+Screenshots are local user-provided evidence under `screenshots/`. They are gitignored. Do not delete them.
+
+## 4. Important Scripts
+
+### Active collection
+
+```bash
+python3 scripts/validate_current_collection.py --expected-total 380
+python3 scripts/normalize_current_collection.py
+python3 scripts/inventory_screenshots.py
+python3 scripts/reconcile_current_collection_sources.py
+```
+
+### Pack-source readiness
+
+```bash
+python3 scripts/current_collection_pack_coverage.py
+python3 scripts/create_current_pack_review.py
+python3 scripts/apply_current_pack_confirmations.py --dry-run
+python3 scripts/apply_current_pack_confirmations.py --apply
+```
+
+### Deck validation
+
+```bash
+python3 scripts/validate_deck_recommendations.py
+```
+
+### Historical baseline (provenance only)
+
+```bash
+python3 scripts/validate_cards.py --expected-total 329
+python3 scripts/validate_pack_sources.py
+python3 scripts/owned_pack_coverage.py
+```
+
+## 5. Generated Outputs
+
+| File | Description |
+|---|---|
+| `data/current/collection_normalized.json` | Clean JSON, no comments, generated fields |
+| `data/current/collection_summary.json` | Aggregated statistics |
+| `review/current_collection_summary.md` | Human-readable collection summary |
+| `data/current/screenshot_inventory.json` | Screenshot file list and slot counts |
+| `data/current/screenshot_manifest.json` | Slot-level manifest |
+| `review/screenshot_inventory.md` | Screenshot inventory table |
+| `review/screenshot_manifest.md` | Per-slot manifest |
+| `data/current/current_collection_reconciliation.json` | Structural reconciliation result |
+| `review/current_collection_reconciliation.md` | Reconciliation report |
+| `data/current/current_collection_pack_coverage.json` | Pack-source match results per entry |
+| `data/exports/current_collection_pack_coverage.csv` | CSV version of coverage |
+| `review/current_collection_pack_coverage.md` | Human-readable coverage report |
+| `data/exports/current_pack_source_review.csv` | **Fill this** to confirm ambiguous pack assignments |
+| `data/exports/current_pack_source_review.json` | Machine-readable review data |
+| `review/current_pack_source_review.md` | Per-card candidate tables for manual review |
+| `data/current/current_collection_pack_confirmations.json` | Applied confirmations (written by apply script) |
+| `data/exports/deck_recommendation_validation.json` | Machine-readable deck validation |
+| `review/deck_recommendation_validation.md` | Deck-by-deck validation report |
+
+## 6. Current Pack-Source Coverage
+
+| Metric | Value |
+|---|---|
+| Entries resolved | **157/224 (70%)** |
+| Exact match | 108 entries |
+| Unanimous pack | 49 entries |
+| Unresolved total | 67 entries |
+| Ambiguous cross-set | 59 entries |
+| No match (Zygarde forms) | 3 entries — not in Limitless DB |
+| Known trainer gap | 5 entries (Potion, X Speed, Red Card, Hand Scope, Pokédex) |
+
+**Next data task:** Fill `data/exports/current_pack_source_review.csv` with `confirmed_set_code`, `confirmed_card_number`, and `confirmed_yes_no=yes` for each ambiguous card. Then run the apply script.
+
+## 7. Current Recommendation Status
+
+- Deck recommendations are currently **manual/prototype** via `deck-recommendations.jsx`.
+- `validate_deck_recommendations.py` found **4 buildable decks** and **4 chase decks** (each 1 ex card short).
+- Buildable: Mega Charizard Y ex, Victini + Darmanitan, Crobat Darkness Pivot, Staraptor Blitz.
+- Chase (need 1 more ex each): Mega Venusaur ex, Incineroar ex, Zygarde ex, Magnezone ex.
+- **Do not make final automated pack-opening recommendations yet.**
+
+Automated pack EV requires:
+- Pack-source coverage substantially resolved (target ≥ 90%)
+- Pull probability model by rarity tier and pack
+- Target value / deck scoring model
+- Optional meta/tier integration
+
+## 8. Safe Operating Rules
+
+- Use `python3`, not `python`.
+- Never invent cards.
+- Never invent pack sources or set/card numbers.
+- Never change card quantities unless the user explicitly confirms.
+- Do not mutate `collection.json` unless explicitly asked.
+- Prefer generated files under `data/current/` for normalized outputs.
+- Preserve `cards.json` and old batch files as historical provenance.
+- Do not stage: raw HTML caches, image caches, `__pycache__`, `.DS_Store`, `node_modules`, `.env`, secrets, or large binary files.
+- If validation fails, stop and document the blocker. Do not proceed.
+
+## 9. Standard Validation Checklist
+
+Run this before and after any meaningful change:
+
+```bash
+python3 scripts/validate_current_collection.py --expected-total 380
+python3 scripts/normalize_current_collection.py
+python3 scripts/current_collection_pack_coverage.py
+python3 scripts/create_current_pack_review.py
+python3 scripts/apply_current_pack_confirmations.py --dry-run
+python3 scripts/validate_deck_recommendations.py
+python3 scripts/validate_pack_sources.py
+python3 scripts/validate_cards.py --expected-total 329
+python3 scripts/inventory_screenshots.py
+python3 scripts/reconcile_current_collection_sources.py
+```
+
+## 10. Next Recommended Phase
+
+1. User fills `data/exports/current_pack_source_review.csv` for the 59 ambiguous cross-set entries.
+2. Run `python3 scripts/apply_current_pack_confirmations.py --dry-run` to preview.
+3. Run `python3 scripts/apply_current_pack_confirmations.py --apply` to persist.
+4. Re-run `python3 scripts/current_collection_pack_coverage.py` to verify improved coverage.
+5. Once coverage is ≥ 90%, build the pull probability model and pack EV scorer.
+
+## 11. Anti-Overengineering Principle
+
+Do not add infrastructure that does not measurably reduce manual confirmation work or improve recommendation quality.
+
 - Do not build image matching or ML training pipelines.
-- Do not chase perfect quantity OCR — users read quantity chips from the app.
-- Do not build complex Game8 or Pokémon.com scrapers unless trivially available.
+- Do not chase perfect quantity OCR.
+- Do not build complex scrapers unless trivially available.
 - Do not add automation layers that require more debugging than manual work saves.
-- External references are name/metadata hints only; they never write to cards.json.
-- User verification is always required before any batch file is created.
-- Stop before any step that is harder than "copy template → fill names+quantities → run one script".
+- External references are name/metadata hints only — they never write to `collection.json`.
+- User verification is always required before applying confirmations.
+- The shortest path to a validated collection DB and recommendation engine is always preferred.
 
-The shortest path to a validated collection DB and recommendation engine is always preferred.
-
-## Operating Principle
+## 12. Operating Principle
 
 Act like a senior engineer maintaining a clean, durable repo.
 
 Do not blindly follow narrow task wording if there is an obvious best-practice repo hygiene issue that should be addressed before moving forward. If a cleanup, validation, or organization step is clearly necessary to achieve the project goal safely, propose or perform it within the current phase if it does not violate hard constraints.
 
-Examples of expected proactive behavior:
-
-- Remove redundant local artifacts once they are proven unnecessary.
-- Keep only the optimal working source files.
+Expected proactive behavior:
+- Remove redundant local artifacts once proven unnecessary.
 - Avoid committing large binaries, screenshots, caches, zip files, generated temp files, or local IDE metadata.
 - Keep scripts modular and reusable.
 - Prefer deterministic, auditable workflows over ad hoc manual edits.
 - Validate before and after meaningful changes.
 - Stop before high-risk or scope-expanding work.
 
-## Critical Workflow Rule
+## 13. Critical Workflow Rule
 
 Work in small phases.
 
-Do not attempt to complete the entire project in one run.
+- Do not attempt to complete the entire project in one run.
+- Always stop after completing the exact requested phase.
+- If the user asks for general improvement, proactively inspect the current phase for obvious repo hygiene issues.
 
-Never process more than one screenshot per prompt unless the user explicitly instructs otherwise.
-
-Never do card extraction, database merging, validation, and deck recommendations in the same prompt.
-
-Always stop after completing the exact requested phase.
-
-If the user asks for general improvement, optimization, organization, or best practices, proactively inspect the current phase for obvious repo hygiene issues and address them if safe.
-
-## Hard Stop Behavior
+## 14. Hard Stop Behavior
 
 At the end of every response, stop and report only:
 
@@ -80,441 +205,42 @@ At the end of every response, stop and report only:
 
 Do not continue into the next phase unless explicitly instructed.
 
-## Git and Repository Best Practices
-
-Use git carefully and consistently.
+## 15. Git and Repository Best Practices
 
 Before each phase:
-
 1. Run `git status`.
 2. Confirm the current branch.
-3. Confirm whether the working tree is clean.
-4. Do not start new work on a dirty tree unless the dirty changes are intentional and understood.
+3. Confirm the working tree is clean.
 
 During each phase:
-
 1. Make focused, minimal changes.
 2. Commit only logically related changes.
 3. Do not mix unrelated work into one commit.
-4. Do not commit screenshots, zip files, caches, temporary files, virtual environments, local Claude config, or IDE metadata.
+4. Do not commit screenshots, zip files, caches, temp files, virtual environments, local Claude config, or IDE metadata.
 5. Do not force push.
-6. Do not rewrite commit history unless the user explicitly asks.
+6. Do not rewrite commit history unless explicitly asked.
 7. Use descriptive commit messages.
-8. Prefer text/code artifacts that can be diffed and reviewed.
 
 After each phase:
-
 1. Run relevant validation commands.
 2. Run `git status`.
 3. Commit if appropriate.
-4. Push only when explicitly instructed or when the user has established that pushes should happen after commits.
-5. If push fails due to authentication, clearly explain the blocker and do not attempt unsafe credential changes.
+4. Push only when explicitly instructed.
 
-The intended remote is:
+Remote: `git@github.com:jackpendley/Pokemon-TCGP-DB.git`
 
-git@github.com:jackpendley/Pokemon-TCGP-DB.git
+If SSH authentication fails: check public key exists, check key is loaded in agent, test `ssh -T git@github.com`. Do not switch to HTTPS unless the user explicitly chooses that option.
 
-If SSH authentication fails:
-
-1. Check whether a public key exists.
-2. Check whether the key is loaded in the SSH agent.
-3. Test `ssh -T git@github.com`.
-4. If GitHub rejects the key, stop and tell the user to add the public key to GitHub.
-5. Do not switch to HTTPS unless the user explicitly chooses that option.
-
-## Local File Hygiene
-
-The repo should stay clean and modular.
-
-Allowed tracked files include:
-
-- Markdown documentation
-- JSON database files
-- JSON schema files
-- CSV exports generated from tracked JSON
-- Python scripts
-- Batch JSON files after they are intentionally created
-- Manifest and audit reports
-
-Do not track:
-
-- Raw screenshot image files
-- Zip archives
-- macOS metadata folders such as `__MACOSX`
-- `.DS_Store`
-- Python caches
-- virtual environments
-- local `.env` files
-- Claude local config
-- temporary logs
-- crop images unless the user explicitly requests they be tracked
-
-The active local screenshot source should be:
-
-screenshots/IMG_1524.PNG through screenshots/IMG_1547.PNG
-
-These screenshots are used for local extraction but are gitignored.
-
-Redundant files such as `Archive.zip` and `screenshots/__MACOSX/` should be removed after verifying that the 24 real PNG screenshots are intact.
-
-## Database Philosophy
-
-Accuracy matters more than speed.
-
-Do not guess.
-
-If a card is uncertain, mark it as needing review rather than pretending it is known.
-
-If two cards have the same name but different artwork, rarity, special treatment, border, set, or collector entry, they must be separate database entries.
-
-Do not merge same-name cards unless you are confident they are the exact same app card.
-
-## Canonical Database File
-
-`cards.json` is the canonical database.
-
-It should contain an array of card objects.
-
-Each card entry must use this schema:
-
-{
-  "id": "unique_stable_id",
-  "card_name": "",
-  "quantity": 0,
-  "card_category": "Pokemon | Trainer | Item | Supporter | Tool | Stadium | Fossil | Unknown",
-  "pokemon_type": "Grass | Fire | Water | Lightning | Psychic | Fighting | Darkness | Metal | Dragon | Colorless | None | Unknown",
-  "stage": "Basic | Stage 1 | Stage 2 | None | Unknown",
-  "hp": null,
-  "is_ex": false,
-  "special_type": "normal | full_art | illustration_rare | special_art | immersive | crown_gold | shiny | rainbow | promo | special_trainer | alternate_art | unknown",
-  "rarity": "visible rarity if known, otherwise unknown",
-  "set_or_pack": "visible set/pack if known, otherwise unknown",
-  "variant_notes": "",
-  "source_screenshot": "",
-  "source_row": null,
-  "source_column": null,
-  "confidence": "high | medium | low",
-  "needs_review": false,
-  "review_reason": ""
-}
-
-## Stable ID Rules
-
-Use deterministic IDs.
-
-Format:
-
-normalized_card_name + "_" + normalized_special_type + "_" + normalized_set_or_pack + "_vN
-
-Examples:
-
-bulbasaur_normal_unknown_v1
-bulbasaur_special_art_unknown_v1
-mega_charizard_y_ex_normal_crimson_blaze_b1a_v1
-quick_grow_extract_special_trainer_unknown_v1
-
-Rules:
-
-- Use lowercase.
-- Replace spaces and punctuation with underscores.
-- Remove duplicate underscores.
-- Use `unknown` if set/pack is not visible.
-- Use `v1`, `v2`, etc. only when needed to distinguish variants.
-
-## Extraction Rules
-
-When extracting from screenshots:
-
-1. Process only the screenshot requested.
-2. Do not edit `cards.json` during extraction.
-3. Save extracted cards into `batches/cards_batch_XXX.json`.
-4. Include `source_screenshot`, `source_row`, and `source_column`.
-5. Use the visible quantity shown in the app grid.
-6. If quantity is unclear, set quantity to 0, confidence to low, and needs_review to true.
-7. If card name is unclear, use `card_name: "unknown"`.
-8. If special type is unclear, use `special_type: "unknown"`.
-9. If the card appears special but exact category is unclear, use `needs_review: true`.
-10. Do not infer set, rarity, HP, type, or stage unless visible or confidently known from the card image.
-
-## Screenshot Extraction Scope
-
-For each screenshot, extract only the completely visible cards in the main 3×3 grid (3 columns × 3 rows = 9 cards) that have visible quantity chips.
-
-Rules:
-
-- For normal screenshots, extract only the 9 completely visible cards in the main 3×3 grid.
-- A card counts as extractable only if the full card tile and its quantity chip are visible.
-- Do not create entries for partial cards at the top or bottom edge of the screenshot.
-- Do not create placeholder entries for cards that will be fully visible in a later screenshot.
-- Do not guess names from unclear artwork.
-- If a fully visible card has a visible quantity but an unclear name, create an unknown entry with `needs_review: true`.
-- If a card is not fully visible or its quantity chip is not visible, skip it entirely.
-- The final screenshot may contain fewer than 9 fully visible cards; extract only those fully visible cards.
-
-## Primary and Secondary Extraction Fields
-
-Primary fields must be populated for every entry:
-
-- `card_name`
-- `quantity`
-- `special_type`
-- `is_ex`
-- `variant_notes`
-- `source_screenshot`
-- `source_row`
-- `source_column`
-- `confidence`
-- `needs_review`
-- `review_reason`
-
-Secondary fields may use `"unknown"`, `"Unknown"`, `"None"`, `false`, or `null` when not clearly visible:
-
-- `card_category`
-- `pokemon_type`
-- `stage`
-- `hp`
-- `rarity`
-- `set_or_pack`
-
-## One-Screenshot Extraction Workflow
-
-For each screenshot:
-
-1. Read `CLAUDE.md`.
-2. Read `extraction_checklist.md`.
-3. Process exactly one screenshot.
-4. Create exactly one batch file.
-5. Do not edit `cards.json`.
-6. Run `python3 scripts/validate_batch.py <batch_file>`.
-7. Update `ambiguous_cards.md` only for uncertain cards.
-8. Stop and report results.
-
-Never process the next screenshot automatically.
-
-## Special Type Categories
-
-Each card must have one of these `special_type` values:
-
-- `normal`
-- `full_art`
-- `illustration_rare`
-- `special_art`
-- `immersive`
-- `crown_gold`
-- `shiny`
-- `rainbow`
-- `promo`
-- `special_trainer`
-- `alternate_art`
-- `unknown`
-
-If uncertain, use `unknown` and mark `needs_review: true`.
-
-## Card Category Values
-
-Use one of:
-
-- `Pokemon`
-- `Trainer`
-- `Item`
-- `Supporter`
-- `Tool`
-- `Stadium`
-- `Fossil`
-- `Unknown`
-
-If unsure, use `Unknown`.
-
-## Pokémon Type Values
-
-Use one of:
-
-- `Grass`
-- `Fire`
-- `Water`
-- `Lightning`
-- `Psychic`
-- `Fighting`
-- `Darkness`
-- `Metal`
-- `Dragon`
-- `Colorless`
-- `None`
-- `Unknown`
-
-Trainer cards should use `None`.
-
-## Confidence Rules
-
-Use `high` only when the card name, quantity, and variant/special type are clear.
-
-Use `medium` when the card name and quantity are clear but some metadata is uncertain.
-
-Use `low` when the card name, quantity, or variant identity is uncertain.
-
-Every `low` confidence card must have `needs_review: true`.
-
-## Review Rules
-
-Every card with `needs_review: true` must include a clear `review_reason`.
-
-Also add the card to `ambiguous_cards.md` with:
-
-- source screenshot filename
-- approximate row and column
-- suspected card name
-- suspected quantity
-- why it is ambiguous
-- what crop or screenshot the user should provide to confirm it
-
-## Batch Files
-
-Use batch files during extraction.
-
-Example:
-
-batches/cards_batch_001.json
-batches/cards_batch_002.json
-batches/cards_batch_003.json
-
-Each batch should be a JSON array of card objects using the canonical schema.
-
-Do not merge batches into `cards.json` until explicitly asked.
-
-## Merging Rules
-
-When merging batches:
-
-Deduplicate only when all of these match or are confidently equivalent:
-
-- `card_name`
-- `special_type`
-- `set_or_pack`
-- `variant_notes`
-- visual identity
-- app-style card identity
-
-If unsure, keep entries separate and mark both as needing review.
-
-During merge, sum quantities for confirmed duplicate entries.
-
-Create or update `merge_report.md`.
-
-## Validation Requirements
-
-The validation script should check:
-
-1. `cards.json` exists.
-2. `cards.json` is valid JSON.
-3. Top-level value is an array.
-4. Every card has required fields.
-5. Every ID is unique.
-6. Every quantity is a non-negative integer.
-7. Every card has a valid `special_type`.
-8. Every card has valid `confidence`.
-9. Every card has valid `needs_review`.
-10. Every `needs_review: true` card has a non-empty `review_reason`.
-11. Every low-confidence card has `needs_review: true`.
-12. Total quantity equals the expected total passed as an argument.
-13. No blank card names unless marked `"unknown"`.
-14. Every low-confidence or review-needed card appears in `ambiguous_cards.md`.
-
-Run validation with:
-
-python3 scripts/validate_cards.py --expected-total 331
-
-## CSV Export
-
-`cards.csv` should mirror `cards.json`.
-
-Do not manually maintain `cards.csv`.
-
-Create a script that exports `cards.json` to `cards.csv`.
-
-Run CSV export with:
-
-python3 scripts/export_cards_csv.py
-
-## Files to Maintain
-
-Expected project files:
-
-CLAUDE.md
-README.md
-cards.schema.json
-cards.json
-cards.csv
-ambiguous_cards.md
-screenshots_manifest.md
-screenshots_inventory.json
-extraction_checklist.md
-merge_report.md
-deck_recommendations.md
-batches/
-scripts/validate_cards.py
-scripts/validate_batch.py
-scripts/export_cards_csv.py
-scripts/merge_batches.py
-scripts/inventory_screenshots.py
-
-## Deck Recommendation Rules
-
-Do not make deck recommendations until the database has been extracted, merged, and validated.
-
-Deck recommendations must be based on `cards.json`.
-
-When creating deck recommendations, include:
-
-1. Best immediate deck from the user's collection
-2. Why that deck is closest
-3. Missing cards
-4. Best next 10-pack to open
-5. Whether spending exactly 120 hourglasses is justified
-6. Whether saving all hourglasses is better
-7. Alternative deck paths
-8. Cards that should be prioritized because they support meta archetypes
-
-Current deck candidates to consider include:
-
-- Fire / Mega Charizard Y ex
-- Mega Charizard X ex
-- Suicune ex / Greninja
-- Mega Sceptile ex
-- Mega Lucario ex
-- Mega Altaria ex
-- Mega Absol ex
-- Any stronger archetype clearly supported by `cards.json`
-
-If current meta information is required but unavailable locally, state what external data should be checked rather than guessing.
-
-## Proactive Quality Checks
-
-Before suggesting the next phase, check whether any of these should happen first:
-
-- Is the git working tree clean?
-- Are generated files up to date?
-- Are ignored local artifacts cluttering the working directory?
-- Are there redundant source files?
-- Are validation scripts still passing/failing only for expected reasons?
-- Is the next step too broad?
-- Would the next step risk burning excessive context?
-- Should the next step be split smaller?
-
-If the next step is too broad, propose a smaller safer prompt.
-
-## Forbidden Behaviors
+## 16. Forbidden Behaviors
 
 Do not:
-
-- Process all screenshots at once.
-- Edit `cards.json` during individual screenshot extraction.
-- Guess unknown cards or include speculative names in card_name or review_reason.
-- Merge same-name variants carelessly.
-- Create deck recommendations before validation.
-- Run long exploratory loops.
-- Reprocess previous screenshots unless asked.
-- Continue to the next phase without instruction.
-- Claim the database is exact unless the total validates to 331 and all ambiguous cards are resolved or clearly flagged.
-- Commit large binaries or image files.
+- Claim the database is exact unless `collection.json` validates at 380 and all ambiguous entries are resolved or clearly flagged.
+- Use `cards.json` for current recommendations.
+- Invent cards, pack sources, set codes, or card numbers.
+- Change card quantities without explicit user confirmation.
+- Mutate `collection.json` without explicit instruction.
+- Continue the old 329-card skipped multi-value confirmation workflow unless explicitly requested.
+- Commit large binaries, image files, or generated temp files.
 - Force push.
 - Switch remote authentication methods without user approval.
+- Continue to the next phase without instruction.
