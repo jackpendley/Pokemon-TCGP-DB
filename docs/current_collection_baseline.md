@@ -64,6 +64,7 @@ Chase cards needed:
 | `scripts/apply_current_pack_confirmations.py` | Apply user-filled pack confirmations (fallback, dry-run default) |
 | `scripts/build_screenshot_collection_alignment.py` | Order-based screenshot-to-collection alignment (no OCR) |
 | `scripts/validate_screenshot_collection_alignment.py` | Validate alignment output |
+| `scripts/score_pack_source_confidence.py` | Per-entry pack-source confidence scoring |
 
 ## Pack-Source Coverage
 
@@ -88,7 +89,17 @@ The 67 unresolved entries are the target set for automated confidence scoring. M
 | Confidence (aligned) | low (0.50–0.799) — max 0.70 without OCR |
 | Validation | PASS |
 
-The 67 unresolved entries are the target set for automated confidence scoring — not a mandate for manual CSV review.
+## Pack-Source Confidence Scoring
+
+| Metric | Value |
+|---|---|
+| Entries scored | 224 |
+| Average score | 0.8204 |
+| Auto-accept (≥ 0.95) | **108** |
+| Secondary evidence (0.80–0.949) | **49** |
+| Low confidence (0.50–0.799) | **59** (ambiguous cross-set) |
+| Unresolved (< 0.50) | **8** (Zygarde + trainer gaps) |
+| Validation | PASS |
 
 ## Generated Outputs
 
@@ -100,13 +111,16 @@ The 67 unresolved entries are the target set for automated confidence scoring �
 | `data/current/screenshot_manifest.json` | Slot-level manifest (card_name/quantity blank) |
 | `data/current/current_collection_reconciliation.json` | Structural reconciliation result |
 | `data/current/screenshot_collection_alignment.json` | Order-based slot→entry alignment with confidence scores |
+| `data/current/pack_source_confidence_scores.json` | Per-entry pack-source confidence scores and best candidates |
 | `review/current_collection_summary.md` | Human-readable collection summary |
 | `review/screenshot_inventory.md` | Screenshot inventory table |
 | `review/screenshot_manifest.md` | Per-slot manifest (blank for future OCR or manual fill) |
 | `review/current_collection_reconciliation.md` | Reconciliation report |
 | `review/screenshot_collection_alignment.md` | Alignment report with confidence distribution |
+| `review/pack_source_confidence_scores.md` | Per-entry pack-source confidence report |
 | `review/deck_recommendation_validation.md` | Deck-by-deck validation |
 | `data/exports/screenshot_collection_alignment.csv` | Full alignment table (one row per screenshot slot) |
+| `data/exports/pack_source_confidence_scores.csv` | Per-entry confidence scores, best candidates, next actions |
 | `data/exports/deck_recommendation_validation.json` | Machine-readable deck validation |
 
 ## Old Screenshot Ingestion Pipeline (Historical)

@@ -77,18 +77,37 @@ Outputs:
 
 High-confidence assignment (≥ 0.95) requires OCR or image-name verification in a future phase.
 
+### Pack-Source Confidence Scoring (2026-05-11)
+
+| Metric | Value |
+|---|---|
+| Script | `scripts/score_pack_source_confidence.py` |
+| Total entries scored | **224** |
+| Average confidence score | **0.8204** |
+| Auto-accept (≥ 0.95) | **108** |
+| Secondary evidence (0.80–0.949) | **49** |
+| Low confidence (0.50–0.799) | **59** (ambiguous cross-set) |
+| Unresolved (< 0.50) | **8** (3 Zygarde no-match + 5 trainer gaps) |
+| Validation | `python3 scripts/score_pack_source_confidence.py --validate` — **PASS** |
+
+Outputs:
+- `data/current/pack_source_confidence_scores.json`
+- `data/exports/pack_source_confidence_scores.csv`
+- `review/pack_source_confidence_scores.md`
+
 ### Remaining blockers before automated pack recommendations
 
-1. **Pack-source confidence scoring not built** — `scripts/score_pack_source_confidence.py` not yet created. 67 unresolved entries (59 ambiguous cross-set, 3 Zygarde no-match, 5 trainer gaps) are targets for this.
-2. **No OCR name verification** — alignment is order-only; card identities are not confirmed from screenshots.
-3. **Pull probability model** — rarity tier pull rates by pack not yet modeled.
-4. **Pack-source mapping for Zygarde** — Zygarde 10%/50%/ex not in current Limitless data; needs external set reference.
-5. **Current meta/tier data** — deck recommendations are not yet meta-aware.
-6. **Automated deck scorer** — `deck-recommendations.jsx` is a manual prototype.
+1. **59 ambiguous cross-set entries at low confidence (0.50–0.799)** — card appears in multiple expansions; the correct version cannot be determined without OCR or user confirmation.
+2. **8 unresolved entries (< 0.50)** — 3 Zygarde forms not in pack_sources; 5 common trainers not indexed in Limitless DB.
+3. **No OCR name verification** — alignment is order-only; card identities are not confirmed from screenshots.
+4. **Pull probability model** — rarity tier pull rates by pack not yet modeled.
+5. **Pack-source mapping for Zygarde** — Zygarde forms not in current Limitless data; needs external set reference.
+6. **Current meta/tier data** — deck recommendations are not yet meta-aware.
+7. **Automated deck scorer** — `deck-recommendations.jsx` is a manual prototype.
 
 ### Recommended next phase
 
-Build `scripts/score_pack_source_confidence.py` using `collection_normalized.json` + `pack_sources.json` + the existing coverage data. Produce `data/current/pack_source_confidence_scores.json` with per-entry best pack candidate and confidence score. Only flag entries below threshold (< 0.80) for manual review.
+Build the pull probability model scaffold (`scripts/build_pull_probability_model.py`) using `pack_sources.json` rarity data and known PTCGP pack probability tables. This unlocks pack EV calculations for the 157 already-resolved entries (108 auto-accept + 49 secondary evidence). Alternatively, improve the 59 ambiguous entries via automated reference enrichment (scraping set/card numbers from Limitless to narrow candidates).
 
 ---
 

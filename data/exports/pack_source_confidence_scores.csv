@@ -1,0 +1,225 @@
+entry_id,name,count,card_type,type,is_ex,match_status,candidate_count,best_set_code,best_card_number,best_pack_name,best_expansion,base_score,final_score,confidence_tier,next_action,blockers
+charmander,Charmander,4,Pokemon,Fire,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+charmander_flame_tail_art,Charmander,2,Pokemon,Fire,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+charmeleon,Charmeleon,2,Pokemon,Fire,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+charizard,Charizard,1,Pokemon,Fire,False,unanimous_pack,2,B1a,13,Crimson Blaze,Crimson Blaze,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+mega_charizard_y_ex,Mega Charizard Y ex,2,Pokemon,Fire,True,unanimous_pack,3,B1a,14,Crimson Blaze,Crimson Blaze,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+tepig,Tepig,2,Pokemon,Fire,False,unanimous_pack,2,B3,26,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+pignite,Pignite,4,Pokemon,Fire,False,exact_match,1,B3,27,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+incineroar_ex,Incineroar ex,1,Pokemon,Fire,True,exact_match,1,B1,318,Mega Gyarados,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+houndour,Houndour,1,Pokemon,Fire,False,exact_match,1,B1a,15,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+houndoom,Houndoom,1,Pokemon,Fire,False,exact_match,1,B1a,16,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+moltres_ex,Moltres ex,1,Pokemon,Fire,True,ambiguous_cross_set,5,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+hearthflame_mask_ogerpon,Hearthflame Mask Ogerpon,1,Pokemon,Fire,False,exact_match,1,B2,27,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+victini,Victini,4,Pokemon,Fire,False,exact_match,1,B3,25,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+turtonator,Turtonator,2,Pokemon,Fire,False,exact_match,1,B1,47,Mega Gyarados,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+arcanine,Arcanine,1,Pokemon,Fire,False,exact_match,1,B1,29,Mega Blaziken,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+darumaka,Darumaka,2,Pokemon,Fire,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+darmanitan,Darmanitan,3,Pokemon,Fire,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+larvesta,Larvesta,3,Pokemon,Fire,False,exact_match,1,B3,31,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+numel,Numel,2,Pokemon,Fire,False,exact_match,1,B3,21,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+castform_sunny_form,Castform Sunny Form,1,Pokemon,Fire,False,exact_match,1,B3,24,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+mega_camerupt_ex,Mega Camerupt ex,1,Pokemon,Fire,True,unanimous_pack,3,B3,23,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+blaziken,Blaziken,1,Pokemon,Fire,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+bulbasaur,Bulbasaur,1,Pokemon,Grass,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+bulbasaur_alt_art,Bulbasaur,1,Pokemon,Grass,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+bulbasaur_tackle_art,Bulbasaur,3,Pokemon,Grass,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+ivysaur,Ivysaur,1,Pokemon,Grass,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+mega_venusaur_ex,Mega Venusaur ex,2,Pokemon,Grass,True,unanimous_pack,3,B1a,4,Crimson Blaze,Crimson Blaze,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+shroomish,Shroomish,3,Pokemon,Grass,False,unanimous_pack,3,B1,11,,Mega Rising,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+budew,Budew,1,Pokemon,Grass,False,unanimous_pack,2,B3,13,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+breloom,Breloom,1,Pokemon,Grass,False,unanimous_pack,2,B1,12,,Mega Rising,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+treecko,Treecko,2,Pokemon,Grass,False,unanimous_pack,2,B3,5,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+surskit,Surskit,1,Pokemon,Grass,False,exact_match,1,B3,9,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+masquerain,Masquerain,1,Pokemon,Grass,False,exact_match,1,B3,10,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+carnivine,Carnivine,1,Pokemon,Grass,False,exact_match,1,B3,14,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+sewaddle,Sewaddle,2,Pokemon,Grass,False,exact_match,1,B3,15,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+swadloon,Swadloon,2,Pokemon,Grass,False,exact_match,1,B3,16,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+applin,Applin,4,Pokemon,Grass,False,exact_match,1,B3,19,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+leavanny,Leavanny,1,Pokemon,Grass,False,exact_match,1,B3,17,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+silcoon,Silcoon,1,Pokemon,Grass,False,exact_match,1,B1,4,Mega Blaziken,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+seedot,Seedot,1,Pokemon,Grass,False,exact_match,1,B1,8,Mega Blaziken,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+mothim,Mothim,3,Pokemon,Grass,False,exact_match,1,B1a,10,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+burmy,Burmy,1,Pokemon,Grass,False,exact_match,1,B1a,9,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+tangela,Tangela,3,Pokemon,Grass,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+venonat,Venonat,1,Pokemon,Grass,False,exact_match,1,A1,16,Mewtwo,Genetic Apex,0.95,0.97,auto_accept,no_action_needed,
+roselia,Roselia,2,Pokemon,Grass,False,exact_match,1,B2,4,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+spinarak,Spinarak,2,Pokemon,Grass,False,exact_match,1,B1a,5,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+sunkern,Sunkern,1,Pokemon,Grass,False,exact_match,1,B1a,7,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+cherubi,Cherubi,1,Pokemon,Grass,False,ambiguous_cross_set,4,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+sobble,Sobble,3,Pokemon,Water,False,unanimous_pack,2,B3,48,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+wartortle,Wartortle,1,Pokemon,Water,False,exact_match,1,B1a,18,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+vaporeon_ex,Vaporeon ex,1,Pokemon,Water,True,unanimous_pack,3,B3,37,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+clawitzer,Clawitzer,2,Pokemon,Water,False,exact_match,1,B1a,23,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+huntail,Huntail,2,Pokemon,Water,False,exact_match,1,B3,43,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+gorebyss,Gorebyss,2,Pokemon,Water,False,exact_match,1,B3,44,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+quagsire,Quagsire,1,Pokemon,Water,False,unanimous_pack,2,B3,39,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+poliwhirl,Poliwhirl,3,Pokemon,Water,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+paldean_tauros,Paldean Tauros,3,Pokemon,Water,False,exact_match,1,B3,36,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+shellder,Shellder,1,Pokemon,Water,False,exact_match,1,B1a,92,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+clauncher,Clauncher,2,Pokemon,Water,False,exact_match,1,B1a,22,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+basculin,Basculin,1,Pokemon,Water,False,exact_match,1,B1a,21,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+wooper,Wooper,2,Pokemon,Water,False,exact_match,1,B3,38,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+castform_rainy_form,Castform Rainy Form,3,Pokemon,Water,False,exact_match,1,B3,40,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+castform_snowy_form,Castform Snowy Form,1,Pokemon,Water,False,exact_match,1,B3,41,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+clamperl,Clamperl,5,Pokemon,Water,False,exact_match,1,B3,42,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+cubchoo,Cubchoo,1,Pokemon,Water,False,exact_match,1,B3,46,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+frillish,Frillish,1,Pokemon,Water,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+chewtle,Chewtle,1,Pokemon,Water,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+zekrom,Zekrom,1,Pokemon,Lightning,False,unanimous_pack,2,B3,59,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+magnezone_ex,Magnezone ex,1,Pokemon,Lightning,True,unanimous_pack,3,B3,54,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+eelektross,Eelektross,1,Pokemon,Lightning,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+magneton_spark_art,Magneton,1,Pokemon,Lightning,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+magneton_magnetic_blast_art,Magneton,2,Pokemon,Lightning,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+magnemite_electro_ball_art,Magnemite,1,Pokemon,Lightning,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+magnemite_thunder_shock_art,Magnemite,2,Pokemon,Lightning,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+heliolisk,Heliolisk,2,Pokemon,Lightning,False,exact_match,1,B1a,29,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+helioptile,Helioptile,2,Pokemon,Lightning,False,exact_match,1,B1a,28,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+lanturn,Lanturn,2,Pokemon,Lightning,False,exact_match,1,B3,58,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+morpeko,Morpeko,3,Pokemon,Lightning,False,unanimous_pack,2,B3,62,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+joltik,Joltik,1,Pokemon,Lightning,False,exact_match,1,B1,92,,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+voltorb,Voltorb,3,Pokemon,Lightning,False,exact_match,1,B3,55,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+electrode,Electrode,1,Pokemon,Lightning,False,exact_match,1,B3,56,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+pikachu,Pikachu,1,Pokemon,Lightning,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+meloetta,Meloetta,3,Pokemon,Psychic,False,unanimous_pack,2,B2,70,Fantastical Parade,Fantastical Parade,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+mismagius,Mismagius,2,Pokemon,Psychic,False,unanimous_pack,2,B1,100,,Mega Rising,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+hattrem,Hattrem,2,Pokemon,Psychic,False,exact_match,1,B3,70,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+aromatisse,Aromatisse,2,Pokemon,Psychic,False,unanimous_pack,2,B1,116,,Mega Rising,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+galarian_rapidash,Galarian Rapidash,1,Pokemon,Psychic,False,exact_match,1,B2,59,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+misdreavus,Misdreavus,4,Pokemon,Psychic,False,unanimous_pack,2,B1,99,,Mega Rising,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+solosis,Solosis,2,Pokemon,Psychic,False,exact_match,1,B1a,32,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+spritzee,Spritzee,6,Pokemon,Psychic,False,unanimous_pack,2,B1,115,,Mega Rising,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+ralts,Ralts,1,Pokemon,Psychic,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+sinistea,Sinistea,1,Pokemon,Psychic,False,exact_match,1,B2,74,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+espurr,Espurr,1,Pokemon,Psychic,False,exact_match,1,B3,65,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+oricorio,Oricorio,2,Pokemon,Psychic,False,unanimous_pack,2,B3,68,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+hatenna,Hatenna,1,Pokemon,Psychic,False,exact_match,1,B3,69,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+bramblin,Bramblin,2,Pokemon,Psychic,False,exact_match,1,B3,72,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+marowak_ex,Marowak ex,1,Pokemon,Fighting,True,ambiguous_cross_set,4,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+single_strike_urshifu,Single Strike Urshifu,1,Pokemon,Darkness,False,exact_match,1,B3,113,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+sandslash,Sandslash,2,Pokemon,Fighting,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+hariyama,Hariyama,2,Pokemon,Fighting,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+machamp,Machamp,1,Pokemon,Fighting,False,exact_match,1,B2,81,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+machop,Machop,1,Pokemon,Fighting,False,exact_match,1,B2,79,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+makuhita,Makuhita,1,Pokemon,Fighting,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+hitmonchan,Hitmonchan,1,Pokemon,Fighting,False,exact_match,1,B2,219,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+mienfoo_pound_art,Mienfoo,2,Pokemon,Fighting,False,exact_match,1,B1a,43,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+mienfoo_chop_art,Mienfoo,1,Pokemon,Fighting,False,exact_match,1,B1a,43,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+mienshao_spiral_kick_art,Mienshao,1,Pokemon,Fighting,False,exact_match,1,B1a,44,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+mienshao_low_sweep_art,Mienshao,2,Pokemon,Fighting,False,exact_match,1,B1a,44,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+riolu_fighting_fast_art,Riolu,1,Pokemon,Fighting,False,unanimous_pack,2,B3,79,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+riolu_fighting_fist_art,Riolu,2,Pokemon,Fighting,False,unanimous_pack,2,B3,79,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+sandshrew,Sandshrew,2,Pokemon,Fighting,False,ambiguous_cross_set,4,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+cubone,Cubone,2,Pokemon,Fighting,False,exact_match,1,B2,82,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+onix_land_crush_art,Onix,1,Pokemon,Fighting,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+onix_dig_art,Onix,2,Pokemon,Fighting,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+nosepass,Nosepass,6,Pokemon,Fighting,False,exact_match,1,B1a,41,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+sandygast,Sandygast,1,Pokemon,Fighting,False,exact_match,1,B1,143,,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+palossand,Palossand,1,Pokemon,Fighting,False,exact_match,1,B1,144,,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+bewear,Bewear,2,Pokemon,Fighting,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+sandaconda,Sandaconda,2,Pokemon,Fighting,False,exact_match,1,B3,96,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+gligar,Gligar,1,Pokemon,Fighting,False,exact_match,1,B3,74,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+trapinch,Trapinch,1,Pokemon,Fighting,False,exact_match,1,B3,76,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+roggenrola,Roggenrola,1,Pokemon,Fighting,False,exact_match,1,B2,85,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+rockruff,Rockruff,1,Pokemon,Fighting,False,exact_match,1,B1,310,Mega Gyarados,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+toxicroak,Toxicroak,2,Pokemon,Fighting,False,exact_match,1,B3,83,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+croagunk,Croagunk,4,Pokemon,Fighting,False,exact_match,1,B3,82,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+meditite,Meditite,1,Pokemon,Fighting,False,exact_match,1,B2,83,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+throh,Throh,1,Pokemon,Fighting,False,exact_match,1,B3,85,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+sawk,Sawk,2,Pokemon,Fighting,False,exact_match,1,B3,86,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+dwebble,Dwebble,1,Pokemon,Fighting,False,exact_match,1,B3,87,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+stufful,Stufful,1,Pokemon,Fighting,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+rolycoly,Rolycoly,3,Pokemon,Fighting,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+silicobra,Silicobra,2,Pokemon,Fighting,False,exact_match,1,B3,95,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+kubfu,Kubfu,1,Pokemon,Fighting,False,unanimous_pack,2,B3,97,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+zygarde_10_forme,Zygarde 10% Forme,1,Pokemon,Fighting,False,no_match,0,,,,,0.1,0.12,unresolved,needs_reference_expansion_or_manual_fallback,card_not_in_pack_sources_database
+zygarde_50_forme,Zygarde 50% Forme,3,Pokemon,Fighting,False,no_match,0,,,,,0.1,0.12,unresolved,needs_reference_expansion_or_manual_fallback,card_not_in_pack_sources_database
+zygarde_ex,Zygarde ex,1,Pokemon,Fighting,True,no_match,0,,,,,0.1,0.12,unresolved,needs_reference_expansion_or_manual_fallback,card_not_in_pack_sources_database
+krookodile,Krookodile,1,Pokemon,Fighting,False,exact_match,1,B1,132,Mega Gyarados,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+bonsly,Bonsly,1,Pokemon,Fighting,False,unanimous_pack,2,B3,78,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+yveltal,Yveltal,1,Pokemon,Darkness,False,unanimous_pack,2,B2,108,Fantastical Parade,Fantastical Parade,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+crobat,Crobat,1,Pokemon,Darkness,False,unanimous_pack,2,B3,100,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+golbat,Golbat,1,Pokemon,Darkness,False,unanimous_pack,2,B3,99,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+zubat,Zubat,1,Pokemon,Darkness,False,unanimous_pack,2,B3,98,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+alolan_persian,Alolan Persian,1,Pokemon,Darkness,False,exact_match,1,B2,95,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+garbodor,Garbodor,3,Pokemon,Darkness,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+skrelp,Skrelp,1,Pokemon,Darkness,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+mandibuzz,Mandibuzz,1,Pokemon,Darkness,False,exact_match,1,B3,110,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+vullaby,Vullaby,5,Pokemon,Darkness,False,exact_match,1,B3,109,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+malamar,Malamar,1,Pokemon,Darkness,False,unanimous_pack,2,B3,112,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+grimer,Grimer,3,Pokemon,Darkness,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+trubbish,Trubbish,1,Pokemon,Darkness,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+zorua,Zorua,2,Pokemon,Darkness,False,ambiguous_cross_set,4,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+seviper,Seviper,3,Pokemon,Darkness,False,unanimous_pack,2,B3,104,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+scraggy,Scraggy,1,Pokemon,Darkness,False,exact_match,1,B2,106,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+koffing,Koffing,2,Pokemon,Darkness,False,exact_match,1,B3,101,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+qwilfish,Qwilfish,1,Pokemon,Darkness,False,exact_match,1,B3,103,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+genesect,Genesect,1,Pokemon,Metal,False,exact_match,1,B1a,54,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+magearna,Magearna,1,Pokemon,Metal,False,exact_match,1,B3,121,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+meltan,Meltan,2,Pokemon,Metal,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+steelix,Steelix,3,Pokemon,Metal,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+probopass,Probopass,1,Pokemon,Metal,False,exact_match,1,B1a,53,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+doublade,Doublade,1,Pokemon,Metal,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+bronzong,Bronzong,1,Pokemon,Metal,False,exact_match,1,B3,118,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+bisharp,Bisharp,1,Pokemon,Metal,False,unanimous_pack,2,B3,120,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+bronzor,Bronzor,2,Pokemon,Metal,False,exact_match,1,B3,117,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+pawniard,Pawniard,1,Pokemon,Metal,False,exact_match,1,B3,119,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+mawile,Mawile,1,Pokemon,Metal,False,exact_match,1,B2,112,Fantastical Parade,Fantastical Parade,0.95,1.0,auto_accept,no_action_needed,
+varoom,Varoom,1,Pokemon,Metal,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+vibrava,Vibrava,1,Pokemon,Dragon,False,exact_match,1,B3,125,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+dratini,Dratini,1,Pokemon,Dragon,False,unanimous_pack,2,B2b,51,Mega Shine,Mega Shine,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+stoutland,Stoutland,1,Pokemon,Colorless,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+herdier,Herdier,3,Pokemon,Colorless,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+lillipup,Lillipup,3,Pokemon,Colorless,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+dodrio,Dodrio,1,Pokemon,Colorless,False,exact_match,1,B1,315,Mega Blaziken,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+corvisquire,Corvisquire,1,Pokemon,Colorless,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+corviknight_ex,Corviknight ex,1,Pokemon,Colorless,True,unanimous_pack,3,B3,124,Pulsing Aura,Pulsing Aura,0.85,0.86,secondary_evidence,needs_secondary_evidence,pokemon_type_mismatch_between_collection_and_pack_sources
+porygon2,Porygon2,1,Pokemon,Colorless,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+porygon,Porygon,3,Pokemon,Colorless,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+staraptor,Staraptor,5,Pokemon,Colorless,False,exact_match,1,B1a,61,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+staravia,Staravia,1,Pokemon,Colorless,False,exact_match,1,B1a,60,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+starly,Starly,2,Pokemon,Colorless,False,exact_match,1,B1a,59,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+bouffalant,Bouffalant,2,Pokemon,Colorless,False,exact_match,1,B1a,64,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+furfrou,Furfrou,1,Pokemon,Colorless,False,ambiguous_cross_set,7,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+ditto,Ditto,1,Pokemon,Colorless,False,exact_match,1,B1a,55,Crimson Blaze,Crimson Blaze,0.95,1.0,auto_accept,no_action_needed,
+ursaring,Ursaring,1,Pokemon,Colorless,False,exact_match,1,B3,132,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+audino,Audino,1,Pokemon,Colorless,False,exact_match,1,B3,140,Pulsing Aura,Pulsing Aura,0.95,1.0,auto_accept,no_action_needed,
+chansey,Chansey,1,Pokemon,Colorless,False,unanimous_pack,2,B3,127,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+dubwool,Dubwool,1,Pokemon,Colorless,False,exact_match,1,B1,212,Mega Altaria,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+cinccino,Cinccino,2,Pokemon,Colorless,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+minccino,Minccino,4,Pokemon,Colorless,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+watchog,Watchog,2,Pokemon,Colorless,False,unanimous_pack,2,B1,200,,Mega Rising,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+eevee,Eevee,1,Pokemon,Colorless,False,ambiguous_cross_set,2,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+castform,Castform,2,Pokemon,Colorless,False,unanimous_pack,2,B3,133,Pulsing Aura,Pulsing Aura,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+raticate,Raticate,1,Pokemon,Colorless,False,unanimous_pack,2,A1,190,,Genetic Apex,0.85,0.87,secondary_evidence,needs_secondary_evidence,
+rattata,Rattata,2,Pokemon,Colorless,False,unanimous_pack,2,A1,189,,Genetic Apex,0.85,0.87,secondary_evidence,needs_secondary_evidence,
+jigglypuff,Jigglypuff,1,Pokemon,Colorless,False,exact_match,1,B2b,58,Mega Shine,Mega Shine,0.95,1.0,auto_accept,no_action_needed,
+farfetch_d,Farfetch'd,1,Pokemon,Colorless,False,ambiguous_cross_set,6,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+buneary,Buneary,2,Pokemon,Colorless,False,unanimous_pack,2,B1a,62,Crimson Blaze,Crimson Blaze,0.85,0.91,secondary_evidence,needs_secondary_evidence,
+pidgey,Pidgey,2,Pokemon,Colorless,False,exact_match,1,B1,180,,Mega Rising,0.95,1.0,auto_accept,no_action_needed,
+quick_grow_extract,Quick-Grow Extract,4,Trainer,,False,unanimous_pack,2,B1a,67,Crimson Blaze,Crimson Blaze,0.85,0.89,secondary_evidence,needs_secondary_evidence,
+flame_patch,Flame Patch,2,Trainer,,False,unanimous_pack,2,B1,217,Mega Blaziken,Mega Rising,0.85,0.89,secondary_evidence,needs_secondary_evidence,
+rare_candy,Rare Candy,1,Trainer,,False,unanimous_pack,4,A3,144,,Celestial Guardians,0.85,0.87,secondary_evidence,needs_secondary_evidence,
+field_blower,Field Blower,1,Trainer,,False,exact_match,1,B3,147,Pulsing Aura,Pulsing Aura,0.95,0.99,auto_accept,no_action_needed,
+giant_cape,Giant Cape,2,Trainer,,False,ambiguous_cross_set,3,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+clemont_s_backpack,Clemont's Backpack,1,Trainer,,False,exact_match,1,B1a,66,Crimson Blaze,Crimson Blaze,0.95,0.99,auto_accept,no_action_needed,
+red_card,Red Card,1,Trainer,,False,no_match_known_gap,0,,,,,0.1,0.12,unresolved,not_in_limitless_db_skip_or_manual,common_trainer_not_indexed_in_limitless_db
+potion,Potion,1,Trainer,,False,no_match_known_gap,0,,,,,0.1,0.12,unresolved,not_in_limitless_db_skip_or_manual,common_trainer_not_indexed_in_limitless_db
+x_speed,X Speed,1,Trainer,,False,no_match_known_gap,0,,,,,0.1,0.12,unresolved,not_in_limitless_db_skip_or_manual,common_trainer_not_indexed_in_limitless_db
+hand_scope,Hand Scope,1,Trainer,,False,no_match_known_gap,0,,,,,0.1,0.12,unresolved,not_in_limitless_db_skip_or_manual,common_trainer_not_indexed_in_limitless_db
+pok_dex,Pokédex,1,Trainer,,False,no_match_known_gap,0,,,,,0.1,0.12,unresolved,not_in_limitless_db_skip_or_manual,common_trainer_not_indexed_in_limitless_db
+pok_ball,Poké Ball,4,Trainer,,False,exact_match,1,A2b,111,Shining Revelry,Shining Revelry,0.95,0.97,auto_accept,no_action_needed,
+clemont,Clemont,2,Trainer,,False,unanimous_pack,2,B1a,68,Crimson Blaze,Crimson Blaze,0.85,0.89,secondary_evidence,needs_secondary_evidence,
+serena,Serena,1,Trainer,,False,unanimous_pack,2,B1a,69,Crimson Blaze,Crimson Blaze,0.85,0.89,secondary_evidence,needs_secondary_evidence,
+giovanni,Giovanni,1,Trainer,,False,ambiguous_cross_set,4,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+sabrina,Sabrina,1,Trainer,,False,ambiguous_cross_set,4,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+leaf,Leaf,1,Trainer,,False,ambiguous_cross_set,4,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+cyrus,Cyrus,1,Trainer,,False,ambiguous_cross_set,4,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+korrina,Korrina,2,Trainer,,False,unanimous_pack,2,B3,149,Pulsing Aura,Pulsing Aura,0.85,0.89,secondary_evidence,needs_secondary_evidence,
+cheren,Cheren,2,Trainer,,False,unanimous_pack,2,B3,151,Pulsing Aura,Pulsing Aura,0.85,0.89,secondary_evidence,needs_secondary_evidence,
+may,May,1,Trainer,,False,unanimous_pack,2,B1,223,Mega Blaziken,Mega Rising,0.85,0.89,secondary_evidence,needs_secondary_evidence,
+copycat,Copycat,2,Trainer,,False,unanimous_pack,2,B1,225,Mega Gyarados,Mega Rising,0.85,0.89,secondary_evidence,needs_secondary_evidence,
+lillie,Lillie,1,Trainer,,False,ambiguous_cross_set,6,,,,,0.5,0.52,low_confidence,needs_candidate_disambiguation,card_appears_in_multiple_expansions_cannot_determine_which
+professor_s_research,Professor's Research,4,Trainer,,False,exact_match,1,A4b,373,Deluxe Pack: ex,Deluxe Pack: ex,0.95,0.97,auto_accept,no_action_needed,
+starting_plains,Starting Plains,1,Trainer,,False,exact_match,1,B2,154,Fantastical Parade,Fantastical Parade,0.95,0.99,auto_accept,no_action_needed,
+arena_of_antiquity,Arena of Antiquity,1,Trainer,,False,exact_match,1,B3,154,Pulsing Aura,Pulsing Aura,0.95,0.99,auto_accept,no_action_needed,

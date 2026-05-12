@@ -42,7 +42,16 @@ python3 scripts/validate_screenshot_collection_alignment.py
 
 Outputs: `data/current/screenshot_collection_alignment.json`, `data/exports/screenshot_collection_alignment.csv`, `review/screenshot_collection_alignment.md`
 
-Next active phase: build `scripts/score_pack_source_confidence.py` using `collection_normalized.json` + `pack_sources.json`.
+Pack-source confidence scoring: 108 auto-accept, 49 secondary evidence, 59 low-confidence, 8 unresolved. Avg score 0.82.
+
+```bash
+python3 scripts/score_pack_source_confidence.py
+python3 scripts/score_pack_source_confidence.py --validate
+```
+
+Outputs: `data/current/pack_source_confidence_scores.json`, `data/exports/pack_source_confidence_scores.csv`, `review/pack_source_confidence_scores.md`
+
+Next active phase: build pull probability model scaffold or improve 59 ambiguous cross-set entries via automated reference enrichment.
 
 See `docs/current_collection_baseline.md` and `docs/recommendation_readiness.md` for full details.
 
