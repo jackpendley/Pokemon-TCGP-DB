@@ -177,3 +177,13 @@ Low priority, future pass only:
 - **No source-of-truth files modified**
 - **No active generated outputs removed**
 - **collection.json unchanged, cards.json unchanged**
+
+---
+
+## Standing Workflow (added 2026-05-12)
+
+The repo cleanup and organization review is now a **permanent required phase** for every major development prompt. The full workflow, preservation rules, decision criteria, and documentation requirements are documented in:
+
+**`CLAUDE.md` — Section 19: Repo Hygiene / Cleanup Review**
+
+This audit file (`review/repo_cleanup_audit.md`) records per-pass results. Section 19 of CLAUDE.md is the standing policy.

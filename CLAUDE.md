@@ -323,3 +323,72 @@ Do not:
 - Force push.
 - Switch remote authentication methods without user approval.
 - Continue to the next phase without instruction.
+
+## 19. Repo Hygiene / Cleanup Review
+
+Every major development phase must include a repo cleanup and organization review before committing.
+
+### Standing requirement
+
+Run the following scan at the start or end of every major phase:
+
+```bash
+git status
+find . -name "__pycache__" -o -name ".DS_Store" -o -name "*.tmp" -o -name "*.bak" -o -name "*~"
+find . -maxdepth 3 -type f | sort
+```
+
+### What to look for
+
+- `__pycache__/` directories and `.pyc` files
+- `.DS_Store` and other OS metadata files
+- Temporary scratch files, debug outputs, one-off exports
+- Duplicate or redundant report files superseded by newer equivalents
+- DRAFT files where confirmed/final versions exist
+- TEMPLATE placeholder files after their pipeline is complete
+- Empty directories
+- Files that belong in `.gitignore` but are currently tracked
+- Timestamp-only generated changes that add no information
+
+### What to preserve — always
+
+Never delete without explicit instruction:
+
+- `collection.json` — active collection source of truth
+- `cards.json` — historical 329-card baseline (provenance)
+- `data/reference/pack_sources.json` — pack source database
+- `data/reference/pull_probability_model.json` — pull probability model
+- `screenshots/` — visual evidence for collection alignment
+- All active generated outputs referenced by `README.md`, `CLAUDE.md`, `docs/`, `scripts/`, or current reports
+- Historical and provenance files that cannot be regenerated
+
+### Decision rule for uncertain files
+
+If unsure whether a file is safe to delete:
+
+1. Check whether any active script, doc, or report references it by name.
+2. Check whether a confirmed/final equivalent already exists (for DRAFT files).
+3. If still uncertain — **keep the file** and add it to `review/repo_cleanup_audit.md` under "Deferred — human decision required."
+
+Do not delete files that preserve reproducibility or pipeline provenance, even if they appear old.
+
+### Cleanup documentation
+
+All deletions must be documented in `review/repo_cleanup_audit.md`:
+- File path
+- Reason for deletion
+- What supersedes it (if applicable)
+
+Files kept after review must also be listed with the reason kept.
+
+### Commit hygiene
+
+- Do not stage timestamp-only generated changes (e.g. `screenshot_inventory.json` touched by a validation run) unless they are relevant to the current phase.
+- Run `git status` and `git diff --stat` before every commit.
+- Stage only files intentionally changed in the current phase.
+
+### Audit record
+
+The current cleanup audit lives at: `review/repo_cleanup_audit.md`
+
+Update it whenever a new cleanup pass is performed. The standing workflow is documented here in section 19 — the audit file records the per-pass results.

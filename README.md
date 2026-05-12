@@ -836,3 +836,11 @@ Quantity is always left blank — read it from the quantity chip visually.
 
 **User verification is always required** before running
 `create_batch_from_confirmation.py` on any template.
+
+---
+
+## Repo Hygiene
+
+Every major development phase includes a cleanup and organization review. The standing policy is in **`CLAUDE.md` section 19 — Repo Hygiene / Cleanup Review**.
+
+Per-pass results are recorded in `review/repo_cleanup_audit.md`.
