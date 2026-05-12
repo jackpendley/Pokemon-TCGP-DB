@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Pokemon TCG Pocket Pull Probability Model",
-  "description": "Per-pack pull probability model for PTCGP. Probabilities are null until populated from verified in-app offering rates.",
+  "description": "Per-pack pull probability model for PTCGP. rarity_probabilities are null until populated from verified in-app offering rates. slot_rates may be populated from trusted external sources with confidence=inferred.",
   "type": "object",
   "required": ["meta", "packs"],
   "properties": {
@@ -34,6 +34,7 @@
           },
           "source_url": { "type": ["string", "null"] },
           "source_name": { "type": ["string", "null"] },
+          "source_accessed_at": { "type": ["string", "null"] },
           "confidence": {
             "type": "string",
             "enum": ["verified", "inferred", "unknown"]
@@ -44,6 +45,46 @@
               "cards_per_pack": { "type": ["integer", "null"] },
               "slot_count": { "type": ["integer", "null"] },
               "notes": { "type": ["string", "null"] }
+            }
+          },
+          "slot_rates": {
+            "type": ["object", "null"],
+            "description": "Per-slot pull probability tables. Populated from trusted external sources (confidence=inferred) or in-app Offering Rates (confidence=verified). Slots 1-3 are always one_diamond in regular packs. Slot 4 and slot 5 have different rarity distributions. Rare/god packs apply one distribution across all 5 slots.",
+            "properties": {
+              "regular_pack_probability": {
+                "type": ["number", "null"],
+                "minimum": 0, "maximum": 1,
+                "description": "Probability that a given pack opening is a regular (non-rare) pack"
+              },
+              "rare_pack_probability": {
+                "type": ["number", "null"],
+                "minimum": 0, "maximum": 1,
+                "description": "Probability that a given pack opening is a rare/god pack"
+              },
+              "slots_1_3": {
+                "type": ["object", "null"],
+                "description": "Rarity distribution for slots 1, 2, and 3 in a regular pack (always one_diamond)"
+              },
+              "slot_4": {
+                "type": ["object", "null"],
+                "description": "Rarity distribution for slot 4 in a regular pack (guaranteed 2-diamond or better)"
+              },
+              "slot_5": {
+                "type": ["object", "null"],
+                "description": "Rarity distribution for slot 5 in a regular pack (the rare slot, never below 2-diamond)"
+              },
+              "rare_pack_all_5_slots": {
+                "type": ["object", "null"],
+                "description": "Rarity distribution applied uniformly to all 5 slots in a rare/god pack"
+              },
+              "confidence": {
+                "type": ["string", "null"],
+                "enum": ["verified", "inferred", "unknown", null]
+              },
+              "source_name": { "type": ["string", "null"] },
+              "source_url": { "type": ["string", "null"] },
+              "source_accessed_at": { "type": ["string", "null"] },
+              "source_notes": { "type": ["string", "null"] }
             }
           },
           "card_pool": {
@@ -60,7 +101,7 @@
           },
           "rarity_probabilities": {
             "type": "object",
-            "description": "Pull probability per rarity tier. All values null until populated from verified in-app offering rates.",
+            "description": "Aggregate per-pack pull probability per rarity tier (P(at least one of this rarity in a 5-card pack)). All values null until populated from verified in-app offering rates or computed from slot_rates.",
             "properties": {
               "one_diamond":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "two_diamond":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },

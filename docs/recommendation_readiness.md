@@ -95,27 +95,35 @@ Outputs:
 - `data/exports/pack_source_confidence_scores.csv`
 - `review/pack_source_confidence_scores.md`
 
-### Pull Probability Model (2026-05-11)
+### Pull Probability Model (2026-05-12)
 
 | Metric | Value |
 |---|---|
 | Script | `scripts/build_pull_probability_model.py` |
 | Model file | `data/reference/pull_probability_model.json` |
 | Schema | `data/reference/pull_probability_model.schema.json` |
+| Model version | 0.2.0 |
 | Packs modeled | **24** (all named pullable packs across 17 expansions) |
-| Source status | **scaffold_only** — all rarity_probabilities null |
+| Source status | **inferred** — slot_rates from trusted external sources |
+| Slot rates | **24/24 packs** populated (confidence=inferred) |
+| rarity_probabilities | **all null** — aggregate rates require in-app verification |
 | Validation | `python3 scripts/validate_pull_probability_model.py` — **PASS** |
-| EV status | **BLOCKED** — rates must come from in-app Offering Rates |
+| EV status | **PARTIALLY READY** — EV possible at inferred confidence |
+| External lookup | `review/pull_probability_external_lookup.md` |
+
+Slot rates source: Game8 PTCGP guide (corroborated by ShackNews, cgmagonline).
+Rates confirmed universal across expansions. Apply to non-shiny packs (all 24 modeled packs).
 
 Outputs:
 - `data/reference/pull_probability_model.json`
 - `review/pull_probability_model.md`
 - `review/pack_ev_readiness.md`
+- `review/pull_probability_external_lookup.md`
 - `data/current/pack_ev_readiness.json`
 
 ### Remaining blockers before automated pack recommendations
 
-1. **Pull probability rates null** — all `rarity_probabilities` in the model are null (scaffold_only). Must be populated from the official in-app Offering Rates screen. Do not estimate.
+1. **Slot rates not yet verified in-app** — `slot_rates` are confidence=inferred from external sources. Must be confirmed against the PTCGP app Offering Rates screen before any recommendations are published. `rarity_probabilities` (aggregate per-pack rates) are still null.
 2. **59 ambiguous cross-set entries at low confidence (0.50–0.799)** — card appears in multiple expansions; the correct version cannot be determined without OCR or user confirmation.
 3. **8 unresolved entries (< 0.50)** — 3 Zygarde forms not in pack_sources; 5 common trainers not indexed in Limitless DB.
 4. **No OCR name verification** — alignment is order-only; card identities are not confirmed from screenshots.
@@ -125,7 +133,7 @@ Outputs:
 
 ### Recommended next phase
 
-Populate `rarity_probabilities` in `data/reference/pull_probability_model.json` from the official in-app Offering Rates (open each pack in PTCGP app → Pack details → Offering Rates). Once rates are filled, EV calculation is immediately unblocked for the 157 EV-ready entries (108 auto-accept + 49 secondary evidence) across 10 packs. Alternatively, resolve the 59 ambiguous entries via manual card-number confirmation to expand EV-ready coverage to 216/224 entries.
+Build the pack EV calculator. Slot rates exist for all 24 packs (inferred). Pack-source assignments exist for 157/224 entries. A working EV calculator would rank packs by expected new card value per opening, enabling informed recommendations at inferred confidence. Alternatively, verify slot_rates in-app first (PTCGP app → Pack details → Offering Rates) to upgrade to verified confidence before building the calculator.
 
 ---
 

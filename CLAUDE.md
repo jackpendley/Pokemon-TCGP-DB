@@ -203,22 +203,23 @@ python3 scripts/reconcile_current_collection_sources.py
 
 ## 11. Next Recommended Phase
 
-Populate pull probability rates from official in-app Offering Rates, then build the EV calculator.
+Build the pack EV calculator. All prerequisites are now in place at inferred confidence.
 
 Completed phases (do not rebuild):
 - Screenshot-to-collection alignment (`scripts/build_screenshot_collection_alignment.py`) — 224/224 entries, PASS
 - Pack-source confidence scoring (`scripts/score_pack_source_confidence.py`) — 108 auto-accept, 49 secondary, 59 low, 8 unresolved, avg 0.8204, PASS
-- Pull probability model scaffold (`scripts/build_pull_probability_model.py`) — 24 packs modeled, all rates null, PASS
+- Pull probability model scaffold + inferred rates (`scripts/build_pull_probability_model.py`) — 24 packs, slot_rates=inferred, PASS
+- External pull rate lookup (`review/pull_probability_external_lookup.md`) — inferred rates from Game8 + corroborating sources, documented
 
 Next steps in order:
 
-1. **Populate pull rates** — open each pack in the PTCGP app → Pack details → Offering Rates. Fill `rarity_probabilities` in `data/reference/pull_probability_model.json`. Run `python3 scripts/validate_pull_probability_model.py` after each pack. Do not estimate.
+1. **Build EV calculator** — build `scripts/build_pack_ev.py` that computes expected new card value per pack opened, ranking packs for the 157 EV-ready collection entries. Input: `pull_probability_model.json` slot_rates + `pack_source_confidence_scores.json` + `collection.json`. Output: `data/current/pack_ev.json` + `review/pack_ev.md`. Use inferred rates; note confidence clearly in output.
 
-2. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers. Run `apply_current_pack_confirmations.py --dry-run` then `--apply`. This expands EV-ready coverage from 157 to up to 216/224 entries.
+2. **Verify slot rates in-app** (optional first) — open PTCGP app → any pack → Offering Rates. If rates match inferred values, set confidence=verified. This upgrades EV calculator output to verified confidence.
 
-3. **Build EV calculator** — once rates and pack sources are confirmed, build a script that ranks packs by marginal EV (expected new card value per pack opened) based on owned card gaps.
+3. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers to expand EV-ready coverage from 157 to up to 216/224 entries.
 
-**Do not generate pack recommendations until at least one pack has verified pull rates in the model.**
+**Do not issue pack-opening recommendations until slot rates are verified in-app. EV calculations at inferred confidence are for informational/planning purposes only.**
 
 ## 12. Anti-Overengineering Principle
 

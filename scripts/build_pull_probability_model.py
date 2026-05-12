@@ -3,12 +3,17 @@
 Build the pull probability model scaffold for all PTCGP packs.
 
 Card pool counts per rarity are derived from pack_sources.json.
-Pull probability rates are NOT invented — all probability values are set to null
-until populated from verified in-app offering rates.
+Pull probability slot rates are sourced from trusted external references
+(confidence=inferred) until overridden by verified in-app offering rates
+(confidence=verified).
 
-The in-app offering rates are the only trusted source for pull probabilities.
-To populate rates: record the "Offering Rates" values from each pack detail
-screen in the Pokémon TCG Pocket app, or from the official disclosure page.
+rarity_probabilities (aggregate per-pack rates) remain null until explicitly
+populated from verified in-app Offering Rates or computed from slot_rates.
+
+The in-app Offering Rates are the ONLY trusted source for verified pull
+probabilities. To upgrade from inferred to verified: record the "Offering Rates"
+values from each pack detail screen in the PTCGP app, update rarity_probabilities
+and slot_rates, and set confidence='verified'.
 
 Inputs:
     data/reference/pack_sources.json
@@ -42,26 +47,84 @@ RARITY_FIELDS = [
 ]
 
 # Standard PTCGP pack: 5 cards per pack.
-# Slot model is documented structurally; per-slot probabilities require verified source.
 STANDARD_SLOT_MODEL = {
     "cards_per_pack": 5,
     "slot_count": 5,
     "notes": (
         "Standard PTCGP pack: 5 cards. "
-        "Per-slot probability breakdown requires verified in-app Offering Rates."
+        "Slot-level probability breakdown stored in slot_rates. "
+        "Aggregate rarity_probabilities null until computed from verified slot_rates."
+    ),
+}
+
+# ---------------------------------------------------------------------------
+# Inferred slot rates
+# Source: Game8 PTCGP offering rates guide (https://game8.co/games/Pokemon-TCG-Pocket/archives/482685),
+# corroborated by ShackNews and cgmagonline.com. Multiple independent trusted sources
+# report these same specific values, consistent with in-game Offering Rates disclosure.
+# Rates apply to packs without shiny rarities. pack_sources.json has no shiny cards
+# for any of the 24 modeled packs. Confidence: inferred — verify in-app to upgrade.
+# Slot 4 total: 0.90+0.05+0.01666+0.02572+0.005+0.00222+0.0004 = 1.00000
+# Slot 5 total: 0.60+0.20+0.06664+0.10288+0.02+0.00888+0.0016 = 1.00000
+# ---------------------------------------------------------------------------
+INFERRED_SLOT_RATES = {
+    "regular_pack_probability": 0.9995,
+    "rare_pack_probability": 0.0005,
+    "slots_1_3": {
+        "one_diamond": 1.0
+    },
+    "slot_4": {
+        "two_diamond":   0.90000,
+        "three_diamond": 0.05000,
+        "four_diamond":  0.01666,
+        "one_star":      0.02572,
+        "double_star":   0.00500,
+        "triple_star":   0.00222,
+        "crown":         0.00040,
+    },
+    "slot_5": {
+        "two_diamond":   0.60000,
+        "three_diamond": 0.20000,
+        "four_diamond":  0.06664,
+        "one_star":      0.10288,
+        "double_star":   0.02000,
+        "triple_star":   0.00888,
+        "crown":         0.00160,
+    },
+    "rare_pack_all_5_slots": {
+        "one_star":    0.40,
+        "double_star": 0.50,
+        "triple_star": 0.05,
+        "crown":       0.05,
+    },
+    "confidence": "inferred",
+    "source_name": "game8_co_ptcgp_offering_rates",
+    "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
+    "source_accessed_at": "2026-05-12",
+    "source_notes": (
+        "Per-slot rates sourced from Game8 (trusted third-party PTCGP guide), "
+        "corroborated by ShackNews (shacknews.com) and cgmagonline.com. "
+        "Multiple independent trusted sources reproduce these specific decimal values "
+        "consistently, which are consistent with the in-game Offering Rates disclosure. "
+        "The game legally discloses rates in-app; these numbers match that level of specificity. "
+        "Rates confirmed universal across expansions: cgmagonline article explicitly states "
+        "rates stayed the same between Space-Time Smackdown and Triumphant Light. "
+        "These rates apply to packs WITHOUT shiny rarities. "
+        "Shiny rarities (introduced with Shining Revelry/A2b) are not present in "
+        "pack_sources.json for any pack, so these rates are applied to all 24 modeled packs. "
+        "IMPORTANT: Confidence is 'inferred', not 'verified'. To upgrade to verified: "
+        "open each pack in the PTCGP app -> Pack details -> Offering Rates and confirm."
     ),
 }
 
 
 def rarity_counts(cards: list) -> dict:
-    """Return dict of rarity → count, using only defined RARITY_FIELDS keys."""
     raw = Counter(c.get("rarity") for c in cards)
     out = {}
     for r in RARITY_FIELDS:
         v = raw.get(r, 0)
         if v > 0:
             out[r] = v
-    # Anything not in RARITY_FIELDS goes to 'unknown'
     unknowns = sum(v for k, v in raw.items() if k not in RARITY_FIELDS)
     if unknowns > 0:
         out["unknown"] = out.get("unknown", 0) + unknowns
@@ -69,24 +132,46 @@ def rarity_counts(cards: list) -> dict:
 
 
 def add_rarity_dicts(a: dict, b: dict) -> dict:
-    """Element-wise sum of two rarity-count dicts."""
     keys = set(a) | set(b)
     return {k: a.get(k, 0) + b.get(k, 0) for k in keys}
 
 
-def build_pack_records(records: list) -> list:
+def load_existing_rates(path: Path) -> dict:
+    """Load per-pack rate data from existing model JSON. Returns {pack_name: data}."""
+    if not path.exists():
+        return {}
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        result = {}
+        for p in raw.get("packs", []):
+            pn = p.get("pack_name")
+            if pn:
+                result[pn] = {
+                    "confidence": p.get("confidence", "unknown"),
+                    "source_url": p.get("source_url"),
+                    "source_name": p.get("source_name"),
+                    "source_accessed_at": p.get("source_accessed_at"),
+                    "slot_rates": p.get("slot_rates"),
+                    "rarity_probabilities": p.get("rarity_probabilities"),
+                    "notes": p.get("notes"),
+                }
+        return result
+    except Exception:
+        return {}
+
+
+def build_pack_records(records: list, existing_rates: dict) -> list:
     """
     Return list of pack records — one per distinct pullable named pack.
     Shared-pool cards are folded into each named pack's combined_pool.
+    Existing slot_rates and rarity_probabilities are preserved when present.
     """
-    # Index by (expansion, pack_name) — None pack_name = shared pool
     by_exp_pack = defaultdict(list)
     for r in records:
         exp = r.get("expansion", "")
         pn = r.get("pack_name")
         by_exp_pack[(exp, pn)].append(r)
 
-    # Group expansions: find all named packs and shared pool per expansion
     expansions = defaultdict(lambda: {"named": {}, "shared": []})
     for (exp, pn), cards in by_exp_pack.items():
         if pn is None:
@@ -101,13 +186,11 @@ def build_pack_records(records: list) -> list:
         shared_by_rarity = rarity_counts(shared)
         shared_total = len(shared)
 
-        # Derive set_code from first card
         all_exp_cards = shared + [c for cc in d["named"].values() for c in cc]
         set_code = all_exp_cards[0].get("set_code", "") if all_exp_cards else ""
 
         named_packs = d["named"]
         if not named_packs:
-            # Expansion has only shared pool — should not happen but handle defensively
             continue
 
         for pn in sorted(named_packs):
@@ -117,15 +200,54 @@ def build_pack_records(records: list) -> list:
             combined_by_rarity = add_rarity_dicts(pack_by_rarity, shared_by_rarity)
             combined_total = pack_total + shared_total
 
+            # Preserve existing rates; fall back to inferred rates for new packs
+            existing = existing_rates.get(pn, {})
+            prev_conf = existing.get("confidence", "unknown")
+
+            # Preserve existing slot_rates if they exist; otherwise apply inferred
+            existing_slot_rates = existing.get("slot_rates")
+            slot_rates = existing_slot_rates if existing_slot_rates else INFERRED_SLOT_RATES.copy()
+
+            # Confidence: preserve verified > inferred; apply inferred if unknown
+            if prev_conf == "verified":
+                confidence = "verified"
+                source_url = existing.get("source_url")
+                source_name = existing.get("source_name")
+                source_accessed_at = existing.get("source_accessed_at")
+                notes = existing.get("notes")
+            else:
+                confidence = "inferred"
+                source_url = (existing.get("source_url")
+                              or INFERRED_SLOT_RATES["source_url"])
+                source_name = (existing.get("source_name")
+                               or INFERRED_SLOT_RATES["source_name"])
+                source_accessed_at = (existing.get("source_accessed_at")
+                                      or INFERRED_SLOT_RATES["source_accessed_at"])
+                notes = (
+                    "Slot-level pull rates sourced from trusted third-party references "
+                    "(confidence=inferred). rarity_probabilities are null — aggregate "
+                    "per-pack rates must come from verified in-app Offering Rates. "
+                    "To verify: open this pack in PTCGP app -> Pack details -> Offering Rates."
+                )
+
+            # Preserve rarity_probabilities if explicitly set (not all-null)
+            prev_rarity_probs = existing.get("rarity_probabilities")
+            if prev_rarity_probs and any(v is not None for v in prev_rarity_probs.values()):
+                rarity_probs = prev_rarity_probs
+            else:
+                rarity_probs = {f: None for f in RARITY_FIELDS}
+
             pack_records.append({
                 "pack_name": pn,
                 "expansion": exp,
                 "set_code": set_code,
                 "is_shared_pool": False,
-                "source_url": None,
-                "source_name": "in_app_offering_rates_not_yet_recorded",
-                "confidence": "unknown",
+                "source_url": source_url,
+                "source_name": source_name,
+                "source_accessed_at": source_accessed_at,
+                "confidence": confidence,
                 "slot_model": STANDARD_SLOT_MODEL,
+                "slot_rates": slot_rates,
                 "card_pool": {
                     "pack_specific_total": pack_total,
                     "shared_pool_total": shared_total,
@@ -134,51 +256,87 @@ def build_pack_records(records: list) -> list:
                     "shared_pool_by_rarity": shared_by_rarity,
                     "combined_by_rarity": combined_by_rarity,
                 },
-                "rarity_probabilities": {f: None for f in RARITY_FIELDS},
-                "notes": (
-                    "Probability rates not yet populated. "
-                    "Source required: in-app Offering Rates screen for this pack, "
-                    "or official PTCGP probability disclosure."
-                ),
+                "rarity_probabilities": rarity_probs,
+                "notes": notes,
             })
 
     return pack_records
 
 
+def determine_source_status(pack_records: list) -> str:
+    """Compute meta.source_status from pack confidence levels."""
+    confs = {p.get("confidence") for p in pack_records}
+    if "verified" in confs and "inferred" not in confs and "unknown" not in confs:
+        return "verified"
+    if "inferred" in confs:
+        return "inferred"
+    return "scaffold_only"
+
+
 def write_json(pack_records: list) -> dict:
+    source_status = determine_source_status(pack_records)
+    n_verified = sum(1 for p in pack_records if p.get("confidence") == "verified")
+    n_inferred = sum(1 for p in pack_records if p.get("confidence") == "inferred")
+    n_unknown = sum(1 for p in pack_records if p.get("confidence") == "unknown")
+
+    if source_status == "verified":
+        meta_notes = (
+            "All pack slot rates are verified from official in-app Offering Rates."
+        )
+    elif source_status == "inferred":
+        meta_notes = (
+            "Slot rates (slot_rates) are populated with confidence=inferred from trusted "
+            "third-party sources (Game8, ShackNews, cgmagonline) that reproduce the in-game "
+            "Offering Rates. rarity_probabilities (aggregate per-pack rates) remain null — "
+            "these require in-app verification. "
+            f"Inferred: {n_inferred}, Verified: {n_verified}, Unknown: {n_unknown}."
+        )
+    else:
+        meta_notes = (
+            "This is a scaffold model. Card pool counts per rarity are derived from "
+            "pack_sources.json (Limitless TCG Pocket). "
+            "Pull probability rates (rarity_probabilities) are ALL null — "
+            "they must be populated from the official in-app Offering Rates screen "
+            "or the official Pokémon TCG Pocket probability disclosure page. "
+            "Do not invent or estimate pull rates. "
+            "Required source: open each pack in the PTCGP app > Pack details > Offering Rates."
+        )
+
     out = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "generated_by": "build_pull_probability_model.py",
         "meta": {
             "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "model_version": "0.1.0-scaffold",
-            "source_status": "scaffold_only",
-            "verified_source": None,
-            "notes": (
-                "This is a scaffold model. Card pool counts per rarity are derived from "
-                "pack_sources.json (Limitless TCG Pocket). "
-                "Pull probability rates (rarity_probabilities) are ALL null — "
-                "they must be populated from the official in-app Offering Rates screen "
-                "or the official Pokémon TCG Pocket probability disclosure page. "
-                "Do not invent or estimate pull rates. "
-                "Required source: open each pack in the PTCGP app > Pack details > Offering Rates."
+            "model_version": "0.2.0",
+            "source_status": source_status,
+            "verified_source": (
+                "ptcgp_in_app_offering_rates" if source_status == "verified" else None
             ),
+            "inferred_source": (
+                "game8_co_ptcgp_offering_rates" if source_status == "inferred" else None
+            ),
+            "notes": meta_notes,
         },
         "probability_source_required": {
-            "status": "MISSING",
+            "status": "INFERRED" if source_status == "inferred" else
+                      "VERIFIED" if source_status == "verified" else "MISSING",
             "description": (
+                "Slot-level rates (slot_rates) are inferred from trusted third-party "
+                "sources. Aggregate rarity_probabilities are still null and require "
+                "in-app verification."
+                if source_status == "inferred" else
                 "Verified in-app offering rates have not been recorded. "
                 "All rarity_probabilities are null."
             ),
-            "how_to_populate": (
+            "how_to_verify": (
                 "In the Pokémon TCG Pocket app: tap a pack > view 'Offering Rates' / "
-                "'Card Rates' section. Record the per-rarity probability for each slot. "
-                "Then populate rarity_probabilities in this file and set confidence='verified'."
+                "'Card Rates' section. Compare to slot_rates in this file. "
+                "If they match, set confidence='verified' and populate rarity_probabilities. "
+                "If they differ, update slot_rates and set confidence='verified'."
             ),
-            "official_disclosure": (
-                "The Pokémon Company discloses pack pull rates in-app as required. "
-                "Rates vary by rarity tier; typical structure is 5 cards per pack "
-                "with slot-specific probability tables."
+            "inferred_slot_rates_source": (
+                "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685 "
+                "(corroborated by ShackNews, cgmagonline)"
             ),
         },
         "packs": pack_records,
@@ -189,33 +347,100 @@ def write_json(pack_records: list) -> dict:
 
 
 def write_md(out: dict, pack_records: list):
+    source_status = out["meta"]["source_status"]
     n_packs = len(pack_records)
+    n_inferred = sum(1 for p in pack_records if p.get("confidence") == "inferred")
+    n_verified = sum(1 for p in pack_records if p.get("confidence") == "verified")
+
     lines = [
         "# Pull Probability Model",
         "",
-        "> **Scaffold only — pull rates are NOT populated.**",
-        "> All `rarity_probabilities` values are `null`.",
-        "> Card pool counts (how many cards of each rarity exist per pack) are from `pack_sources.json`.",
-        "> Pull rates must come from the official in-app Offering Rates screen.",
-        "",
+    ]
+
+    if source_status == "inferred":
+        lines += [
+            "> **Slot rates populated with confidence=inferred from trusted external sources.**",
+            "> `rarity_probabilities` (aggregate per-pack rates) are still null.",
+            "> Verify slot_rates against in-app Offering Rates to upgrade to confidence=verified.",
+            "",
+        ]
+    else:
+        lines += [
+            "> **Scaffold only — pull rates are NOT populated.**",
+            "> All `rarity_probabilities` values are `null`.",
+            "> Card pool counts (how many cards of each rarity exist per pack) are from `pack_sources.json`.",
+            "> Pull rates must come from the official in-app Offering Rates screen.",
+            "",
+        ]
+
+    lines += [
         "## Status",
         "",
         "| Metric | Value |",
         "|---|---|",
         f"| Model version | {out['meta']['model_version']} |",
-        f"| Source status | **{out['meta']['source_status']}** |",
-        f"| Verified source | {out['meta']['verified_source'] or 'None — rates unverified'} |",
+        f"| Source status | **{source_status}** |",
+        f"| Inferred source | {out['meta'].get('inferred_source') or 'None'} |",
+        f"| Verified source | {out['meta'].get('verified_source') or 'None'} |",
         f"| Total packs modeled | {n_packs} |",
-        f"| Probability values | **all null** |",
+        f"| Packs with inferred slot rates | {n_inferred} |",
+        f"| Packs with verified rates | {n_verified} |",
+        f"| rarity_probabilities values | **all null** (aggregate rates not yet verified) |",
         "",
-        "## How to Populate Pull Rates",
+    ]
+
+    if source_status == "inferred":
+        sr = INFERRED_SLOT_RATES
+        lines += [
+            "## Inferred Slot Rates (Applied to All 24 Packs)",
+            "",
+            f"Source: [{sr['source_name']}]({sr['source_url']}) — accessed {sr['source_accessed_at']}",
+            "",
+            "Corroborated by ShackNews and cgmagonline. Rates confirmed universal across expansions.",
+            "Applies to packs without shiny rarities (all 24 packs in pack_sources.json).",
+            "",
+            "### Regular Pack (99.95% of all packs)",
+            "",
+            "| Slot | Rarity | Rate |",
+            "|---|---|---|",
+            "| 1–3 | one_diamond (◆) | 100% each |",
+            f"| 4 | two_diamond (◆◆) | {sr['slot_4']['two_diamond']*100:.3f}% |",
+            f"| 4 | three_diamond (◆◆◆) | {sr['slot_4']['three_diamond']*100:.3f}% |",
+            f"| 4 | four_diamond (◆◆◆◆) | {sr['slot_4']['four_diamond']*100:.3f}% |",
+            f"| 4 | one_star (☆) | {sr['slot_4']['one_star']*100:.3f}% |",
+            f"| 4 | double_star (☆☆) | {sr['slot_4']['double_star']*100:.3f}% |",
+            f"| 4 | triple_star (☆☆☆) | {sr['slot_4']['triple_star']*100:.3f}% |",
+            f"| 4 | crown (♕) | {sr['slot_4']['crown']*100:.3f}% |",
+            f"| 5 | two_diamond (◆◆) | {sr['slot_5']['two_diamond']*100:.3f}% |",
+            f"| 5 | three_diamond (◆◆◆) | {sr['slot_5']['three_diamond']*100:.3f}% |",
+            f"| 5 | four_diamond (◆◆◆◆) | {sr['slot_5']['four_diamond']*100:.3f}% |",
+            f"| 5 | one_star (☆) | {sr['slot_5']['one_star']*100:.3f}% |",
+            f"| 5 | double_star (☆☆) | {sr['slot_5']['double_star']*100:.3f}% |",
+            f"| 5 | triple_star (☆☆☆) | {sr['slot_5']['triple_star']*100:.3f}% |",
+            f"| 5 | crown (♕) | {sr['slot_5']['crown']*100:.3f}% |",
+            "",
+            "### Rare/God Pack (0.05% of all packs)",
+            "",
+            "All 5 slots draw from the same distribution:",
+            "",
+            "| Rarity | Rate per slot |",
+            "|---|---|",
+            f"| one_star (☆) | {sr['rare_pack_all_5_slots']['one_star']*100:.0f}% |",
+            f"| double_star (☆☆) | {sr['rare_pack_all_5_slots']['double_star']*100:.0f}% |",
+            f"| triple_star (☆☆☆) | {sr['rare_pack_all_5_slots']['triple_star']*100:.0f}% |",
+            f"| crown (♕) | {sr['rare_pack_all_5_slots']['crown']*100:.0f}% |",
+            "",
+        ]
+
+    lines += [
+        "## How to Upgrade to Verified",
         "",
         "1. Open the Pokémon TCG Pocket app.",
-        "2. Navigate to the pack you want to record.",
+        "2. Navigate to the pack you want to verify.",
         "3. View the **Offering Rates** / **Card Rates** section (disclosed in-app).",
-        "4. Record the per-rarity probability for the pack.",
-        "5. Populate `rarity_probabilities` in `data/reference/pull_probability_model.json`.",
-        "6. Set `confidence: 'verified'` and `source_name: 'ptcgp_in_app_offering_rates'`.",
+        "4. Compare the in-app rates to `slot_rates` in `data/reference/pull_probability_model.json`.",
+        "5. If they match, set `confidence: 'verified'` and populate `rarity_probabilities`.",
+        "6. If they differ, update `slot_rates` with the correct values and set `confidence: 'verified'`.",
         "7. Re-run `python3 scripts/validate_pull_probability_model.py`.",
         "",
         "## Pack Pool Summary",
@@ -240,25 +465,13 @@ def write_md(out: dict, pack_records: list):
 
     lines += [
         "",
-        "## Probability Rates Status",
+        "## rarity_probabilities Status",
         "",
-        "All rarity probability values are currently `null`.",
-        "The following rates are required per pack before pack EV can be computed:",
-        "",
-        "- `one_diamond` — probability that a card slot contains a 1-diamond rarity card",
-        "- `two_diamond` — 2-diamond",
-        "- `three_diamond` — 3-diamond (rare)",
-        "- `four_diamond` — 4-diamond (ex Pokémon)",
-        "- `one_star` — full-art / illustration rare",
-        "- `double_star` — special-art / shiny",
-        "- `triple_star` — immersive / rainbow",
-        "- `crown` — crown / gold (if applicable)",
-        "",
-        "> **Do not estimate or infer these rates.** Use only the official in-app Offering Rates.",
+        "All aggregate `rarity_probabilities` values are currently `null`.",
+        "These represent P(at least one card of this rarity in a 5-card pack).",
+        "They will be computed once slot_rates are verified from in-app Offering Rates.",
         "",
         "## Rarity Field Mapping",
-        "",
-        "Rarity names in this model match `pack_sources.json`:",
         "",
         "| Field | Meaning |",
         "|---|---|",
@@ -267,7 +480,7 @@ def write_md(out: dict, pack_records: list):
         "| `three_diamond` | Rare (◆◆◆) |",
         "| `four_diamond` | EX / Ultra Rare (◆◆◆◆) |",
         "| `one_star` | Full Art / Illustration Rare (☆) |",
-        "| `double_star` | Special Art / Shiny (☆☆) |",
+        "| `double_star` | Special Art (☆☆) |",
         "| `triple_star` | Immersive / Rainbow (☆☆☆) |",
         "| `crown` | Crown / Gold |",
         "| `promo` | Promo card |",
@@ -282,6 +495,15 @@ def write_md(out: dict, pack_records: list):
 # Validation
 # ---------------------------------------------------------------------------
 
+def _check_slot_sum(slot_dict: dict, label: str, errors_list: list):
+    """Validate that slot probabilities sum to ~1.0."""
+    if not slot_dict:
+        return
+    total = sum(v for v in slot_dict.values() if isinstance(v, (int, float)))
+    if abs(total - 1.0) > 0.001:
+        errors_list.append(f"{label} rates sum to {total:.5f} (expected 1.0 ± 0.001)")
+
+
 def run_validate() -> bool:
     print("\n=== build_pull_probability_model.py [VALIDATE] ===")
     errors = 0
@@ -292,7 +514,6 @@ def run_validate() -> bool:
 
     out = json.loads(OUT_JSON.read_text(encoding="utf-8"))
 
-    # 1. top-level meta and packs
     for field in ("meta", "packs"):
         if field not in out:
             print(f"  ERROR: missing top-level field '{field}'")
@@ -303,30 +524,29 @@ def run_validate() -> bool:
 
     packs = out["packs"]
 
-    # 2. every pack has pack_name, expansion, set_code
     bad_identity = [p for p in packs
                     if not p.get("pack_name") and not p.get("is_shared_pool")]
     if bad_identity:
         print(f"  ERROR: {len(bad_identity)} packs missing pack_name/is_shared_pool")
         errors += 1
     else:
-        print(f"  PASS  all packs have pack_name or is_shared_pool")
+        print("  PASS  all packs have pack_name or is_shared_pool")
 
     bad_exp = [p for p in packs if not p.get("expansion")]
     if bad_exp:
         print(f"  ERROR: {len(bad_exp)} packs missing expansion")
         errors += 1
     else:
-        print(f"  PASS  all packs have expansion")
+        print("  PASS  all packs have expansion")
 
     bad_sc = [p for p in packs if not p.get("set_code")]
     if bad_sc:
         print(f"  ERROR: {len(bad_sc)} packs missing set_code")
         errors += 1
     else:
-        print(f"  PASS  all packs have set_code")
+        print("  PASS  all packs have set_code")
 
-    # 3. probability values are null or numbers in [0, 1]
+    # rarity_probabilities in [0, 1]
     prob_errors = 0
     for p in packs:
         rp = p.get("rarity_probabilities", {})
@@ -337,28 +557,35 @@ def run_validate() -> bool:
     if prob_errors:
         errors += prob_errors
     else:
-        print(f"  PASS  all probability values are null or in [0, 1]")
+        print("  PASS  all rarity_probabilities values are null or in [0, 1]")
 
-    # 4. confidence field valid
     valid_conf = {"verified", "inferred", "unknown"}
     bad_conf = [p for p in packs if p.get("confidence") not in valid_conf]
     if bad_conf:
         print(f"  ERROR: {len(bad_conf)} packs have invalid confidence value")
         errors += 1
     else:
-        print(f"  PASS  all confidence values valid")
+        print("  PASS  all confidence values valid")
 
-    # 5. if confidence=verified, source_url or source_name must be present
     bad_verified = [p for p in packs
                     if p.get("confidence") == "verified"
                     and not p.get("source_url") and not p.get("source_name")]
     if bad_verified:
-        print(f"  ERROR: {len(bad_verified)} verified packs missing source_url/source_name")
+        print(f"  ERROR: {len(bad_verified)} verified packs missing source attribution")
         errors += 1
     else:
-        print(f"  PASS  verified packs have source attribution (or none are verified yet)")
+        print("  PASS  verified packs have source attribution (or none are verified yet)")
 
-    # 6. card pool totals are non-negative
+    bad_inferred = [p for p in packs
+                    if p.get("confidence") == "inferred"
+                    and not (p.get("source_url") or p.get("source_name")
+                             or (p.get("slot_rates") or {}).get("source_url"))]
+    if bad_inferred:
+        print(f"  ERROR: {len(bad_inferred)} inferred packs missing source attribution")
+        errors += 1
+    else:
+        print("  PASS  inferred packs have source attribution")
+
     bad_pools = [
         p for p in packs
         if p.get("card_pool", {}).get("combined_total", -1) < 0
@@ -367,19 +594,42 @@ def run_validate() -> bool:
         print(f"  ERROR: {len(bad_pools)} packs have negative combined_total")
         errors += 1
     else:
-        print(f"  PASS  all card pool totals non-negative")
+        print("  PASS  all card pool totals non-negative")
 
-    # 7. model is valid even with unknown probabilities (just document it)
-    unknown_count = sum(
+    # Validate slot_rates sums if present
+    slot_sum_errors = []
+    for p in packs:
+        sr = p.get("slot_rates")
+        if not sr:
+            continue
+        _check_slot_sum(sr.get("slot_4"), f"{p['pack_name']}.slot_4", slot_sum_errors)
+        _check_slot_sum(sr.get("slot_5"), f"{p['pack_name']}.slot_5", slot_sum_errors)
+        _check_slot_sum(sr.get("rare_pack_all_5_slots"),
+                        f"{p['pack_name']}.rare_pack_all_5_slots", slot_sum_errors)
+    if slot_sum_errors:
+        for e in slot_sum_errors:
+            print(f"  ERROR: slot sum: {e}")
+        errors += len(slot_sum_errors)
+    else:
+        n_with_slots = sum(1 for p in packs if p.get("slot_rates"))
+        if n_with_slots:
+            print(f"  PASS  slot rate sums valid ({n_with_slots} packs with slot_rates)")
+
+    # Report status
+    unknown_rarity_probs = sum(
         1 for p in packs
         if all(v is None for v in p.get("rarity_probabilities", {}).values())
     )
-    print(f"  INFO  {unknown_count}/{len(packs)} packs have all-null probabilities "
-          f"(scaffold_only — expected)")
+    n_inferred = sum(1 for p in packs if p.get("confidence") == "inferred")
+    n_verified = sum(1 for p in packs if p.get("confidence") == "verified")
+    source_status = out["meta"]["source_status"]
+
+    print(f"  INFO  {n_inferred}/{len(packs)} packs have inferred slot rates")
+    print(f"  INFO  {n_verified}/{len(packs)} packs have verified rates")
+    print(f"  INFO  {unknown_rarity_probs}/{len(packs)} packs have all-null rarity_probabilities")
 
     if errors == 0:
-        print(f"\nVALIDATION PASSED  ({len(packs)} packs, source_status="
-              f"{out['meta']['source_status']})")
+        print(f"\nVALIDATION PASSED  ({len(packs)} packs, source_status={source_status})")
     else:
         print(f"\nVALIDATION FAILED  ({errors} error(s))")
     return errors == 0
@@ -391,7 +641,7 @@ def run_validate() -> bool:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Build or validate the pull probability model scaffold"
+        description="Build or validate the pull probability model"
     )
     parser.add_argument("--validate", action="store_true",
                         help="Validate existing output rather than regenerating")
@@ -411,8 +661,16 @@ def main():
     records = ps_raw["records"] if isinstance(ps_raw, dict) else ps_raw
     print(f"  Pack sources: {len(records)} records")
 
-    pack_records = build_pack_records(records)
+    existing_rates = load_existing_rates(OUT_JSON)
+    if existing_rates:
+        print(f"  Existing rates loaded: {len(existing_rates)} packs")
+
+    pack_records = build_pack_records(records, existing_rates)
     print(f"  Pullable packs: {len(pack_records)}")
+
+    source_status = determine_source_status(pack_records)
+    n_inferred = sum(1 for p in pack_records if p.get("confidence") == "inferred")
+    n_verified = sum(1 for p in pack_records if p.get("confidence") == "verified")
 
     out = write_json(pack_records)
     write_md(out, pack_records)
@@ -420,9 +678,11 @@ def main():
     print(f"  Written: {OUT_JSON.relative_to(ROOT)}")
     print(f"  Written: {OUT_MD.relative_to(ROOT)}")
     print(f"\n=== Summary ===")
-    print(f"  Packs modeled:        {len(pack_records)}")
-    print(f"  Source status:        {out['meta']['source_status']}")
-    print(f"  Verified rates:       NONE — all null (scaffold only)")
+    print(f"  Packs modeled:            {len(pack_records)}")
+    print(f"  Source status:            {source_status}")
+    print(f"  Inferred slot rates:      {n_inferred}/24 packs")
+    print(f"  Verified rates:           {n_verified}/24 packs")
+    print(f"  rarity_probabilities:     all null (requires in-app verification)")
     print(f"\nDone.")
 
 

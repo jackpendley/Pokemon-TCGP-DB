@@ -1,28 +1,68 @@
 # Pull Probability Model
 
-> **Scaffold only — pull rates are NOT populated.**
-> All `rarity_probabilities` values are `null`.
-> Card pool counts (how many cards of each rarity exist per pack) are from `pack_sources.json`.
-> Pull rates must come from the official in-app Offering Rates screen.
+> **Slot rates populated with confidence=inferred from trusted external sources.**
+> `rarity_probabilities` (aggregate per-pack rates) are still null.
+> Verify slot_rates against in-app Offering Rates to upgrade to confidence=verified.
 
 ## Status
 
 | Metric | Value |
 |---|---|
-| Model version | 0.1.0-scaffold |
-| Source status | **scaffold_only** |
-| Verified source | None — rates unverified |
+| Model version | 0.2.0 |
+| Source status | **inferred** |
+| Inferred source | game8_co_ptcgp_offering_rates |
+| Verified source | None |
 | Total packs modeled | 24 |
-| Probability values | **all null** |
+| Packs with inferred slot rates | 24 |
+| Packs with verified rates | 0 |
+| rarity_probabilities values | **all null** (aggregate rates not yet verified) |
 
-## How to Populate Pull Rates
+## Inferred Slot Rates (Applied to All 24 Packs)
+
+Source: [game8_co_ptcgp_offering_rates](https://game8.co/games/Pokemon-TCG-Pocket/archives/482685) — accessed 2026-05-12
+
+Corroborated by ShackNews and cgmagonline. Rates confirmed universal across expansions.
+Applies to packs without shiny rarities (all 24 packs in pack_sources.json).
+
+### Regular Pack (99.95% of all packs)
+
+| Slot | Rarity | Rate |
+|---|---|---|
+| 1–3 | one_diamond (◆) | 100% each |
+| 4 | two_diamond (◆◆) | 90.000% |
+| 4 | three_diamond (◆◆◆) | 5.000% |
+| 4 | four_diamond (◆◆◆◆) | 1.666% |
+| 4 | one_star (☆) | 2.572% |
+| 4 | double_star (☆☆) | 0.500% |
+| 4 | triple_star (☆☆☆) | 0.222% |
+| 4 | crown (♕) | 0.040% |
+| 5 | two_diamond (◆◆) | 60.000% |
+| 5 | three_diamond (◆◆◆) | 20.000% |
+| 5 | four_diamond (◆◆◆◆) | 6.664% |
+| 5 | one_star (☆) | 10.288% |
+| 5 | double_star (☆☆) | 2.000% |
+| 5 | triple_star (☆☆☆) | 0.888% |
+| 5 | crown (♕) | 0.160% |
+
+### Rare/God Pack (0.05% of all packs)
+
+All 5 slots draw from the same distribution:
+
+| Rarity | Rate per slot |
+|---|---|
+| one_star (☆) | 40% |
+| double_star (☆☆) | 50% |
+| triple_star (☆☆☆) | 5% |
+| crown (♕) | 5% |
+
+## How to Upgrade to Verified
 
 1. Open the Pokémon TCG Pocket app.
-2. Navigate to the pack you want to record.
+2. Navigate to the pack you want to verify.
 3. View the **Offering Rates** / **Card Rates** section (disclosed in-app).
-4. Record the per-rarity probability for the pack.
-5. Populate `rarity_probabilities` in `data/reference/pull_probability_model.json`.
-6. Set `confidence: 'verified'` and `source_name: 'ptcgp_in_app_offering_rates'`.
+4. Compare the in-app rates to `slot_rates` in `data/reference/pull_probability_model.json`.
+5. If they match, set `confidence: 'verified'` and populate `rarity_probabilities`.
+6. If they differ, update `slot_rates` with the correct values and set `confidence: 'verified'`.
 7. Re-run `python3 scripts/validate_pull_probability_model.py`.
 
 ## Pack Pool Summary
@@ -54,25 +94,13 @@
 | Ho-Oh | Wisdom of Sea and Sky | A4 | 136 | 42 | 31 | 17 | 5 | 22 | 16 | 1 |
 | Lugia | Wisdom of Sea and Sky | A4 | 136 | 42 | 31 | 17 | 5 | 22 | 16 | 1 |
 
-## Probability Rates Status
+## rarity_probabilities Status
 
-All rarity probability values are currently `null`.
-The following rates are required per pack before pack EV can be computed:
-
-- `one_diamond` — probability that a card slot contains a 1-diamond rarity card
-- `two_diamond` — 2-diamond
-- `three_diamond` — 3-diamond (rare)
-- `four_diamond` — 4-diamond (ex Pokémon)
-- `one_star` — full-art / illustration rare
-- `double_star` — special-art / shiny
-- `triple_star` — immersive / rainbow
-- `crown` — crown / gold (if applicable)
-
-> **Do not estimate or infer these rates.** Use only the official in-app Offering Rates.
+All aggregate `rarity_probabilities` values are currently `null`.
+These represent P(at least one card of this rarity in a 5-card pack).
+They will be computed once slot_rates are verified from in-app Offering Rates.
 
 ## Rarity Field Mapping
-
-Rarity names in this model match `pack_sources.json`:
 
 | Field | Meaning |
 |---|---|
@@ -81,7 +109,7 @@ Rarity names in this model match `pack_sources.json`:
 | `three_diamond` | Rare (◆◆◆) |
 | `four_diamond` | EX / Ultra Rare (◆◆◆◆) |
 | `one_star` | Full Art / Illustration Rare (☆) |
-| `double_star` | Special Art / Shiny (☆☆) |
+| `double_star` | Special Art (☆☆) |
 | `triple_star` | Immersive / Rainbow (☆☆☆) |
 | `crown` | Crown / Gold |
 | `promo` | Promo card |

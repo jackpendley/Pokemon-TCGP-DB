@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-05-11",
-  "model_version": "0.1.0-scaffold",
-  "overall_status": "blocked",
-  "blocked_reason": "pull_probability_rates_are_null",
-  "blocked_until": "in-app Offering Rates populated in pull_probability_model.json",
+  "generated_at": "2026-05-12",
+  "model_version": "0.2.0",
+  "overall_status": "partially_ready",
+  "ev_calculation_possible": true,
+  "ev_confidence": "inferred",
+  "ev_confidence_note": "Slot rates from trusted external sources — not yet verified from in-app Offering Rates",
   "collection": {
     "source": "collection.json",
     "total_cards": 380,
@@ -13,8 +14,16 @@
   "pull_probability_model": {
     "file": "data/reference/pull_probability_model.json",
     "packs_modeled": 24,
-    "source_status": "scaffold_only",
-    "rates_populated": false
+    "source_status": "inferred",
+    "slot_rates_populated": true,
+    "slot_rates_confidence": "inferred",
+    "rarity_probabilities_populated": false,
+    "inferred_source": "game8_co_ptcgp_offering_rates",
+    "inferred_source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
+    "corroborating_sources": [
+      "shacknews.com/article/142035/pokemon-trading-card-game-pocket-card-drop-chance-rate",
+      "cgmagonline.com/news/pokemon-tcg-pocket-pull-rates-lowered"
+    ]
   },
   "pack_source_coverage": {
     "total_entries": 224,
@@ -69,8 +78,9 @@
     ]
   },
   "unblock_steps": [
-    "Populate rarity_probabilities in pull_probability_model.json from in-app Offering Rates",
-    "Resolve 59 ambiguous cross-expansion entries (see data/exports/current_pack_source_review.csv)",
+    "Verify inferred slot_rates against in-app Offering Rates (PTCGP app -> Pack details -> Offering Rates)",
+    "Set confidence=verified and populate rarity_probabilities for at least one pack",
+    "Resolve 59 ambiguous cross-expansion entries (data/exports/current_pack_source_review.csv)",
     "Build EV calculator script once rates and pack sources are confirmed"
   ]
 }
