@@ -1,59 +1,25 @@
 # Pull Probability Model
 
-> **Slot rates populated with confidence=inferred from trusted external sources.**
+> **Slot rates confirmed by multiple independent third-party sources (third_party_verified).**
+> Sources: Game8, ONE Esports, CGMagazine, ShackNews.
+> NOT official in-app verified.
 > `rarity_probabilities` (aggregate per-pack rates) are still null.
-> Verify slot_rates against in-app Offering Rates to upgrade to confidence=verified.
+> To officially verify: PTCGP app → any pack → Pack details → Offering Rates.
 
 ## Status
 
 | Metric | Value |
 |---|---|
-| Model version | 0.2.0 |
-| Source status | **inferred** |
-| Inferred source | game8_co_ptcgp_offering_rates |
+| Model version | 0.3.0 |
+| Source status | **third_party_verified** |
+| Inferred source | None |
 | Verified source | None |
+| Third-party verified sources | game8_co, one_esports_gg, cgmagonline_com, shacknews_com |
 | Total packs modeled | 24 |
-| Packs with inferred slot rates | 24 |
+| Packs with third_party_verified rates | 24 |
+| Packs with inferred slot rates | 0 |
 | Packs with verified rates | 0 |
 | rarity_probabilities values | **all null** (aggregate rates not yet verified) |
-
-## Inferred Slot Rates (Applied to All 24 Packs)
-
-Source: [game8_co_ptcgp_offering_rates](https://game8.co/games/Pokemon-TCG-Pocket/archives/482685) — accessed 2026-05-12
-
-Corroborated by ShackNews and cgmagonline. Rates confirmed universal across expansions.
-Applies to packs without shiny rarities (all 24 packs in pack_sources.json).
-
-### Regular Pack (99.95% of all packs)
-
-| Slot | Rarity | Rate |
-|---|---|---|
-| 1–3 | one_diamond (◆) | 100% each |
-| 4 | two_diamond (◆◆) | 90.000% |
-| 4 | three_diamond (◆◆◆) | 5.000% |
-| 4 | four_diamond (◆◆◆◆) | 1.666% |
-| 4 | one_star (☆) | 2.572% |
-| 4 | double_star (☆☆) | 0.500% |
-| 4 | triple_star (☆☆☆) | 0.222% |
-| 4 | crown (♕) | 0.040% |
-| 5 | two_diamond (◆◆) | 60.000% |
-| 5 | three_diamond (◆◆◆) | 20.000% |
-| 5 | four_diamond (◆◆◆◆) | 6.664% |
-| 5 | one_star (☆) | 10.288% |
-| 5 | double_star (☆☆) | 2.000% |
-| 5 | triple_star (☆☆☆) | 0.888% |
-| 5 | crown (♕) | 0.160% |
-
-### Rare/God Pack (0.05% of all packs)
-
-All 5 slots draw from the same distribution:
-
-| Rarity | Rate per slot |
-|---|---|
-| one_star (☆) | 40% |
-| double_star (☆☆) | 50% |
-| triple_star (☆☆☆) | 5% |
-| crown (♕) | 5% |
 
 ## How to Upgrade to Verified
 

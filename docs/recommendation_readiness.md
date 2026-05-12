@@ -102,24 +102,26 @@ Outputs:
 | Script | `scripts/build_pull_probability_model.py` |
 | Model file | `data/reference/pull_probability_model.json` |
 | Schema | `data/reference/pull_probability_model.schema.json` |
-| Model version | 0.2.0 |
+| Model version | 0.3.0 |
 | Packs modeled | **24** (all named pullable packs across 17 expansions) |
-| Source status | **inferred** — slot_rates from trusted external sources |
-| Slot rates | **24/24 packs** populated (confidence=inferred) |
+| Source status | **third_party_verified** — confirmed by 4 independent reputable sources |
+| Slot rates | **24/24 packs** populated (confidence=third_party_verified) |
 | rarity_probabilities | **all null** — aggregate rates require in-app verification |
 | Validation | `python3 scripts/validate_pull_probability_model.py` — **PASS** |
-| EV status | **PARTIALLY READY** — EV possible at inferred confidence |
+| EV status | **PARTIALLY READY** — EV possible at third_party_verified confidence |
 | External lookup | `review/pull_probability_external_lookup.md` |
+| Cross-check | `review/pull_rate_cross_check.md` — CONFIRMED, upgraded to third_party_verified |
 
-Slot rates source: Game8 PTCGP guide (corroborated by ShackNews, cgmagonline).
-Rates confirmed universal across expansions. Apply to non-shiny packs (all 24 modeled packs).
+Slot rates source: Game8 PTCGP guide (primary). Cross-checked and confirmed by ONE Esports, CGMagazine, ShackNews (4 total independent sources). Rates confirmed universal across expansions.
 
 Outputs:
 - `data/reference/pull_probability_model.json`
 - `review/pull_probability_model.md`
 - `review/pack_ev_readiness.md`
 - `review/pull_probability_external_lookup.md`
+- `review/pull_rate_cross_check.md`
 - `data/current/pack_ev_readiness.json`
+- `data/current/pull_rate_cross_check.json`
 
 ### Pack EV Calculator (2026-05-12)
 
@@ -131,7 +133,7 @@ Outputs:
 | Output report | `review/pack_ev.md` |
 | Packs ranked | **24** (all modeled packs) |
 | Packs blocked | **0** |
-| Model confidence | **inferred** — rates not yet verified in-app |
+| Model confidence | **third_party_verified** — confirmed by 4 independent sources, not yet official in-app |
 | Collection used | `collection_normalized.json` (380 cards, 224 entries) |
 | EV-ready entries | **157/224** (108 auto-accept + 49 secondary evidence) |
 | Excluded entries | **67/224** (59 low-confidence + 8 unresolved) |
@@ -139,7 +141,7 @@ Outputs:
 | Validation | `python3 scripts/build_pack_ev.py --validate` — **PASS** |
 | Top pack (total EV) | **Paldean Wonders** (ev=4.9435, adj=4.2019) |
 
-EV scoring weights: new_card=1.0, copy_up_to_2=0.4, ex_missing=1.0, deck_target=2.0, inferred_adj=0.85.
+EV scoring weights: new_card=1.0, copy_up_to_2=0.4, ex_missing=1.0, deck_target=2.0, confidence_adj=0.85 (third_party_verified).
 
 Top 5 packs by total inferred EV:
 
@@ -165,7 +167,7 @@ python3 scripts/build_pack_ev.py --validate
 | Output MD | `review/inferred_pack_recommendations.md` |
 | Output JSON | `data/current/inferred_pack_recommendations.json` |
 | Output CSV | `data/exports/inferred_pack_recommendations.csv` |
-| Model confidence | **inferred** — NOT verified in-app |
+| Model confidence | **third_party_verified** — NOT verified in-app |
 | Top recommendation | **Paldean Wonders** (adj EV=4.2019) |
 | Validation | `python3 scripts/generate_pack_recommendation_report.py --validate` — **PASS** |
 
@@ -176,9 +178,45 @@ python3 scripts/generate_pack_recommendation_report.py
 python3 scripts/generate_pack_recommendation_report.py --validate
 ```
 
+### Pull Rate Cross-Check (2026-05-12)
+
+| Metric | Value |
+|---|---|
+| Script | _(manual web research + documentation)_ |
+| Result | **CONFIRMED — upgraded to third_party_verified** |
+| Primary source | Game8 PTCGP pull rates (original inferred source) |
+| Independent confirming source | ONE Esports — full match on all slot rates |
+| Corroborating sources | CGMagazine, ShackNews |
+| Total confirming sources | **4 independent reputable sources** |
+| Discrepancies found | ONE Esports 1☆ slot4 typo (2.2572% → correct 2.572%); not a model error |
+| Official in-app verified | **No** — still requires PTCGP app Offering Rates screen check |
+| Cross-check report | `review/pull_rate_cross_check.md` |
+| Machine-readable results | `data/current/pull_rate_cross_check.json` |
+
+### Hourglass Spending Plan (2026-05-12)
+
+| Metric | Value |
+|---|---|
+| Script | `scripts/generate_hourglass_spending_plan.py` |
+| Output MD | `review/final_hourglass_spending_plan.md` |
+| Output JSON | `data/current/final_hourglass_spending_plan.json` |
+| Output CSV | `data/exports/final_hourglass_spending_plan.csv` |
+| Scenarios | **3** — conservative (1 batch), moderate (3 batches), aggressive (5 batches) |
+| Batch size | **10 packs per batch** — no hourglass count assumed |
+| Top pack (all scenarios) | **Paldean Wonders** (adj EV=4.2019) |
+| Model confidence | **third_party_verified** — NOT officially in-app verified |
+| Validation | `python3 scripts/generate_hourglass_spending_plan.py --validate` — **PASS** |
+
+Plan includes: per-batch stopping conditions, rerun triggers, deck-target variant for moderate scenario, global rerun checklist.
+
+```bash
+python3 scripts/generate_hourglass_spending_plan.py
+python3 scripts/generate_hourglass_spending_plan.py --validate
+```
+
 ### Remaining blockers before verified pack recommendations
 
-1. **Slot rates not yet verified in-app** — `slot_rates` are confidence=inferred from external sources. Must be confirmed against the PTCGP app Offering Rates screen before recommendations are verified. `rarity_probabilities` (aggregate per-pack rates) are still null.
+1. **Slot rates not yet officially in-app verified** — `slot_rates` are confidence=third_party_verified (confirmed by 4 sources). Must be confirmed against the PTCGP app Offering Rates screen to reach `verified` confidence. `rarity_probabilities` (aggregate per-pack rates) are still null.
 2. **59 ambiguous cross-set entries at low confidence (0.50–0.799)** — card appears in multiple expansions; the correct version cannot be determined without OCR or user confirmation.
 3. **8 unresolved entries (< 0.50)** — 3 Zygarde forms not in pack_sources; 5 common trainers not indexed in Limitless DB.
 4. **Pack-source mapping for Zygarde** — Zygarde ex not in pack_sources; pack unknown. Blocks Zygarde ex Fighting deck targeting.
@@ -187,9 +225,9 @@ python3 scripts/generate_pack_recommendation_report.py --validate
 
 ### Recommended next phase
 
-1. **Verify slot rates in-app** — open PTCGP → any pack → Offering Rates. If values match `slot_rates` in `pull_probability_model.json`, set confidence=verified, re-run `build_pack_ev.py` and `generate_pack_recommendation_report.py` to upgrade to verified confidence.
-2. **OR accept inferred confidence** and use the three planning scenarios in `review/inferred_pack_recommendations.md` for immediate pack decisions.
-3. **Resolve 59 ambiguous entries** — expands EV-ready coverage to ~216/224.
+1. **Verify slot rates in-app** — open PTCGP → any pack → Pack details → Offering Rates. If values match `slot_rates` in `pull_probability_model.json`, set confidence=verified, re-run `build_pack_ev.py` and `generate_pack_recommendation_report.py` to upgrade to verified confidence.
+2. **Use the hourglass spending plan** — `review/final_hourglass_spending_plan.md` has conservative/moderate/aggressive scenarios for immediate pack decisions at third_party_verified confidence.
+3. **Resolve 59 ambiguous entries** — expands EV-ready coverage to ~216/224, improving EV accuracy.
 
 ---
 

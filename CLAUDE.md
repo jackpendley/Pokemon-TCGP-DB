@@ -176,9 +176,8 @@ Scripts built (do not rebuild):
 - **Do not make final automated pack-opening recommendations yet.**
 
 Current blockers before automated pack recommendations:
-- Automated pack-source confidence model not built
-- Screenshot-to-collection alignment not built
-- Pull probability model not built
+- Slot rates not officially in-app verified (third_party_verified only — 4 independent sources confirmed)
+- 59 ambiguous pack-source entries at low confidence (< 0.80) — reduce EV accuracy
 - Deck scoring model not built
 - Optional meta/tier data not integrated
 
@@ -203,7 +202,7 @@ python3 scripts/reconcile_current_collection_sources.py
 
 ## 11. Next Recommended Phase
 
-Verify inferred slot rates in-app, then re-run the EV calculator at verified confidence.
+Verify slot rates in-app to upgrade from third_party_verified → verified confidence.
 
 Completed phases (do not rebuild):
 - Screenshot-to-collection alignment (`scripts/build_screenshot_collection_alignment.py`) — 224/224 entries, PASS
@@ -212,18 +211,18 @@ Completed phases (do not rebuild):
 - External pull rate lookup (`review/pull_probability_external_lookup.md`) — inferred rates from Game8 + corroborating sources, documented
 - Pack EV calculator (`scripts/build_pack_ev.py`) — 24 packs ranked, 0 blocked, top pack: Paldean Wonders (ev=4.94, adj=4.20), PASS
 - Inferred pack recommendation report (`scripts/generate_pack_recommendation_report.py`) — 5-metric ranking, chase-deck guide, 3 planning scenarios, PASS
+- Pull rate cross-check (`review/pull_rate_cross_check.md`) — confirmed by ONE Esports (full match) + 3 other sources, confidence upgraded to third_party_verified, model_version=0.3.0, PASS
+- Hourglass spending plan (`scripts/generate_hourglass_spending_plan.py`) — conservative/moderate/aggressive, 10-pack batches, stopping points, rerun checklist, PASS
 
 Next steps in order:
 
-1. **Verify slot rates in-app** — open PTCGP app → any pack → Offering Rates. Compare values against `slot_rates` in `pull_probability_model.json`. If they match, set confidence=verified and re-run `build_pack_ev.py` then `generate_pack_recommendation_report.py`. This upgrades output to verified confidence.
+1. **Verify slot rates in-app** — open PTCGP app → any pack → Pack details → Offering Rates. Compare displayed percentages against `slot_rates` in `pull_probability_model.json`. If they match, set confidence=verified and re-run `build_pack_ev.py`, `generate_pack_recommendation_report.py`, and `generate_hourglass_spending_plan.py` to upgrade output to verified confidence.
 
-2. **OR generate final hourglass spending plan** — if user explicitly accepts inferred confidence, build a final spend-plan prompt: how many pulls to prioritize, in what pack order, for which goal (collection completion vs. specific chase decks). This is the next scripted phase if in-app verification is skipped.
+2. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers to expand EV-ready coverage from 157 to up to 216/224 entries.
 
-3. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers to expand EV-ready coverage from 157 to up to 216/224 entries.
+3. **Rebuild EV and reports after any update** — re-run `python3 scripts/build_pack_ev.py`, `python3 scripts/generate_pack_recommendation_report.py`, and `python3 scripts/generate_hourglass_spending_plan.py` after any rate or coverage change.
 
-4. **Rebuild EV and report after any update** — re-run `python3 scripts/build_pack_ev.py` then `python3 scripts/generate_pack_recommendation_report.py` after any rate or coverage change.
-
-**Do not issue final pack-opening recommendations until slot rates are verified in-app, OR the user explicitly accepts inferred-confidence planning. `review/inferred_pack_recommendations.md` is the current decision-support document.**
+**Do not issue final pack-opening recommendations until slot rates are verified in-app. Current status: third_party_verified (confirmed by 4 sources, not official). `review/final_hourglass_spending_plan.md` is the current decision-support document for pack-opening planning.**
 
 ## 12. Anti-Overengineering Principle
 

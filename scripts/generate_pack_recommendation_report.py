@@ -174,7 +174,7 @@ def write_json(ev_data: dict, buckets: dict, conf_meta: dict, ev_readiness: dict
             "Rates screen. Rankings are for planning purposes only. Verify in-app before "
             "acting on any recommendation."
         ),
-        "model_confidence": "inferred",
+        "model_confidence": ev_data["meta"]["model_confidence"],
         "collection_total": ev_data["meta"]["collection_total"],
         "collection_mutated": False,
         "ev_ready_entries": {
@@ -401,7 +401,7 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         "| Metric | Value |",
         "|---|---|",
         f"| Report generated | {out_data['generated_at']} |",
-        f"| Model confidence | **inferred** (not verified) |",
+        f"| Model confidence | **{out_data['model_confidence']}** (not official in-app verified) |",
         f"| Collection total | {out_data['collection_total']} cards (380 validated) |",
         f"| EV-ready entries | 157/224 (108 auto-accept + 49 secondary evidence) |",
         f"| Excluded from EV | 67/224 (59 low-confidence + 8 unresolved) |",
@@ -690,13 +690,14 @@ def run_validate() -> bool:
 
     out = json.loads(OUT_JSON.read_text(encoding="utf-8"))
 
-    # model_confidence must be inferred
+    # model_confidence must be a valid confidence level
     mc = out.get("model_confidence")
-    if mc != "inferred":
-        print(f"  ERROR: model_confidence='{mc}', expected 'inferred'")
+    valid_mc = ("inferred", "third_party_verified", "verified")
+    if mc not in valid_mc:
+        print(f"  ERROR: model_confidence='{mc}' not in {valid_mc}")
         errors += 1
     else:
-        print(f"  PASS  model_confidence=inferred")
+        print(f"  PASS  model_confidence={mc}")
 
     # disclaimer must be present
     disclaimer = out.get("disclaimer", "")
@@ -826,9 +827,14 @@ def main():
     print("  Top packs by adjusted EV:")
     for i, p in enumerate(top5, 1):
         print(f"    {i}. {p['pack_name']:30s} adj={p['confidence_adjusted_ev']:.4f}  total={p['pack_total_ev']:.4f}")
+    mc = out_data.get("model_confidence", "inferred")
     print(f"\n  Top recommendation: {top5[0]['pack_name']} (adj EV={top5[0]['confidence_adjusted_ev']:.4f})")
-    print(f"  Model confidence: inferred (×0.85 adjustment applied)")
-    print("\n  ⚠ Slot rates are INFERRED. Verify in-app before acting on these rankings.")
+    print(f"  Model confidence: {mc} (×0.85 adjustment applied)")
+    if mc == "third_party_verified":
+        print("\n  ⚠ Rates are THIRD_PARTY_VERIFIED (Game8, ONE Esports, CGMagazine, ShackNews).")
+        print("  NOT official in-app verified. Verify in PTCGP app for official confirmation.")
+    else:
+        print("\n  ⚠ Slot rates are INFERRED. Verify in-app before acting on these rankings.")
     print("\nDone.")
 
 

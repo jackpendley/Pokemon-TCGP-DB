@@ -1,0 +1,193 @@
+{
+  "generated_at": "2026-05-12",
+  "generated_by": "scripts/generate_hourglass_spending_plan.py",
+  "disclaimer": "IMPORTANT — NOT OFFICIAL: Slot rates are third_party_verified (confirmed by 4 independent sources: Game8, ONE Esports, CGMagazine, ShackNews) but NOT officially verified from the in-app Offering Rates screen. EV calculations are for planning purposes only. Do not treat these as guaranteed outcomes. Verify slot rates in PTCGP app (any pack → Pack details → Offering Rates) before committing large resources.",
+  "model_confidence": "third_party_verified",
+  "collection_total": 380,
+  "collection_mutated": false,
+  "batch_size": 10,
+  "model_version": "0.3.0",
+  "ev_source": "data/current/pack_ev.json",
+  "scenarios": [
+    {
+      "label": "conservative",
+      "description": "Open 1 batch (10 packs) from the highest adj-EV pack only. Stop immediately after. Verify slot rates in-app before any further resource commitment.",
+      "rationale": "Rates are third_party_verified — confirmed across 4 independent sources but not from the official in-app Offering Rates screen. One batch at the top adj-EV pack captures maximum expected value per 10 packs while keeping total exposure minimal. In-app verification takes ~5 minutes and could confirm or revise rankings.",
+      "batches": [
+        {
+          "batch_number": 1,
+          "pack_name": "Paldean Wonders",
+          "expansion": "Paldean Wonders",
+          "set_code": "B2a",
+          "packs_to_open": 10,
+          "adj_ev_per_pack": 4.201944,
+          "expected_value_this_batch": 42.0194,
+          "expected_value_note": "First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired.",
+          "missing_in_pool": 128,
+          "stopping_condition": "STOP after this batch regardless of results. Do not open further packs until slot rates are verified in PTCGP app.",
+          "rerun_trigger": true,
+          "rerun_reason": "Mandatory post-conservative check: open PTCGP app → any pack → Pack details → Offering Rates. If rates match model, upgrade to verified confidence."
+        }
+      ],
+      "total_batches": 1,
+      "total_packs": 10,
+      "rerun_checklist": [
+        "After batch 1: open PTCGP app → any pack → Pack details → Offering Rates.",
+        "Compare displayed percentages to slot_rates in data/reference/pull_probability_model.json.",
+        "If they match: update confidence=verified in the model JSON, then re-run python3 scripts/build_pack_ev.py.",
+        "Re-run python3 scripts/generate_hourglass_spending_plan.py to refresh this plan at verified confidence."
+      ]
+    },
+    {
+      "label": "moderate",
+      "description": "Open 3 batches: 2 from the top adj-EV pack, then 1 from the #2 adj-EV pack. Re-run the EV calculator after batch 2 (20 packs from same pool). Stop after each batch to check progress.",
+      "rationale": "Accepts third_party_verified confidence risk (~15% adjustment applied to all EVs). Prioritizes collection expansion at the highest expected value. Re-run after 20 packs prevents over-committing to a pack whose EV has dropped as new cards were pulled. Switching to #2 after re-run hedges against pool depletion.",
+      "deck_target_variant": "Deck-target variant: if completing a specific chase deck is the priority goal, replace batch 3 with Crimson Blaze (Crimson Blaze, adj_ev=1.5145, deck_target_ev=0.1499). This pack has the highest deck_target_ev per 10 packs. Note: overall adj_ev is lower than the top collection-expansion packs.",
+      "batches": [
+        {
+          "batch_number": 1,
+          "pack_name": "Paldean Wonders",
+          "expansion": "Paldean Wonders",
+          "set_code": "B2a",
+          "packs_to_open": 10,
+          "adj_ev_per_pack": 4.201944,
+          "expected_value_this_batch": 42.0194,
+          "expected_value_note": "First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired.",
+          "missing_in_pool": 128,
+          "stopping_condition": "Pause after this batch. Count new unique cards acquired from this pool.",
+          "rerun_trigger": false,
+          "rerun_reason": null
+        },
+        {
+          "batch_number": 2,
+          "pack_name": "Paldean Wonders",
+          "expansion": "Paldean Wonders",
+          "set_code": "B2a",
+          "packs_to_open": 10,
+          "adj_ev_per_pack": 4.201944,
+          "expected_value_this_batch": 42.0194,
+          "expected_value_note": "EV per pack is lower than batch 1 — cards already acquired reduce the effective pool. Actual expected value for this batch is less than the static estimate.",
+          "missing_in_pool": 128,
+          "stopping_condition": "STOP after this batch. Re-run EV calculator — 20 packs opened from this pool.",
+          "rerun_trigger": true,
+          "rerun_reason": "20 packs from same pool. EV will have dropped. Re-run before continuing."
+        },
+        {
+          "batch_number": 3,
+          "pack_name": "Fantastical Parade",
+          "expansion": "Fantastical Parade",
+          "set_code": "B2",
+          "packs_to_open": 10,
+          "adj_ev_per_pack": 3.820614,
+          "expected_value_this_batch": 38.2061,
+          "expected_value_note": "First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired.",
+          "missing_in_pool": 205,
+          "stopping_condition": "Stop after batch 3 and re-assess. If a deck target was pulled, re-run EV. If top pack changed after re-run, adjust batch 4 accordingly.",
+          "rerun_trigger": true,
+          "rerun_reason": "Switching packs after re-run. Re-run EV to confirm rankings after collection update."
+        }
+      ],
+      "total_batches": 3,
+      "total_packs": 30,
+      "rerun_checklist": [
+        "After batch 2: re-run python3 scripts/build_pack_ev.py.",
+        "Check if top1 pack is still the highest adj-EV. If not, update batch 3 target.",
+        "After batch 3: re-run python3 scripts/generate_hourglass_spending_plan.py to update this plan.",
+        "If a deck target is completed after any batch: re-run python3 scripts/build_pack_ev.py."
+      ]
+    },
+    {
+      "label": "aggressive",
+      "description": "Open 5 batches across the top 3 adj-EV packs plus the top deck-target pack (Crimson Blaze). Re-run EV after every 20+ packs from the same pool. Accept third_party_verified confidence risk on all decisions.",
+      "rationale": "Maximizes collection expansion rate by rotating across the top EV packs, avoiding diminishing returns on a single pool. A deck-target batch is included for chase deck progress. Higher resource commitment — verify in-app rates as early as possible to lock in confidence.",
+      "batches": [
+        {
+          "batch_number": 1,
+          "pack_name": "Paldean Wonders",
+          "expansion": "Paldean Wonders",
+          "set_code": "B2a",
+          "packs_to_open": 10,
+          "adj_ev_per_pack": 4.201944,
+          "expected_value_this_batch": 42.0194,
+          "expected_value_note": "First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired.",
+          "missing_in_pool": 128,
+          "stopping_condition": "Pause after batch 1. Count new cards from this pool.",
+          "rerun_trigger": false,
+          "rerun_reason": null
+        },
+        {
+          "batch_number": 2,
+          "pack_name": "Paldean Wonders",
+          "expansion": "Paldean Wonders",
+          "set_code": "B2a",
+          "packs_to_open": 10,
+          "adj_ev_per_pack": 4.201944,
+          "expected_value_this_batch": 42.0194,
+          "expected_value_note": "EV lower than batch 1 — cards already acquired reduce the pool.",
+          "missing_in_pool": 128,
+          "stopping_condition": "STOP after batch 2 and re-run EV calculator. 20 packs opened from this pool.",
+          "rerun_trigger": true,
+          "rerun_reason": "20 packs from same pool. Re-run EV before committing further."
+        },
+        {
+          "batch_number": 3,
+          "pack_name": "Fantastical Parade",
+          "expansion": "Fantastical Parade",
+          "set_code": "B2",
+          "packs_to_open": 10,
+          "adj_ev_per_pack": 3.820614,
+          "expected_value_this_batch": 38.2061,
+          "expected_value_note": "First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired.",
+          "missing_in_pool": 205,
+          "stopping_condition": "Pause after switching to pack #2. First batch from new pool.",
+          "rerun_trigger": false,
+          "rerun_reason": null
+        },
+        {
+          "batch_number": 4,
+          "pack_name": "Mew",
+          "expansion": "Mythical Island",
+          "set_code": "A1a",
+          "packs_to_open": 10,
+          "adj_ev_per_pack": 3.783515,
+          "expected_value_this_batch": 37.8351,
+          "expected_value_note": "First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired.",
+          "missing_in_pool": 77,
+          "stopping_condition": "Pause after switching to pack #3. First batch from new pool.",
+          "rerun_trigger": false,
+          "rerun_reason": null
+        },
+        {
+          "batch_number": 5,
+          "pack_name": "Crimson Blaze",
+          "expansion": "Crimson Blaze",
+          "set_code": "B1a",
+          "packs_to_open": 10,
+          "adj_ev_per_pack": 1.514479,
+          "expected_value_this_batch": 15.1448,
+          "expected_value_note": "deck_target_ev=0.1499 — per-pack deck completion value.",
+          "missing_in_pool": 39,
+          "stopping_condition": "Deck-target batch: Crimson Blaze has highest deck_target_ev per pack. Stop immediately if chase deck card is pulled.",
+          "rerun_trigger": true,
+          "rerun_reason": "Final aggressive batch. Re-run EV for updated plan after deck-target batch."
+        }
+      ],
+      "total_batches": 5,
+      "total_packs": 50,
+      "rerun_checklist": [
+        "After batch 2 (20 packs from top1 pool): re-run python3 scripts/build_pack_ev.py.",
+        "After completing any deck target: re-run python3 scripts/build_pack_ev.py.",
+        "After verifying in-app rates: upgrade confidence and re-run both EV scripts.",
+        "After resolving 59 ambiguous collection entries: re-run for more accurate coverage."
+      ]
+    }
+  ],
+  "global_rerun_checklist": [
+    "After every 20+ pack opens from the same pool: re-run python3 scripts/build_pack_ev.py",
+    "After completing any deck target: re-run python3 scripts/build_pack_ev.py (deck_target_ev drops to zero)",
+    "After official in-app rate verification: set confidence=verified and re-run python3 scripts/build_pack_ev.py",
+    "After resolving 59 ambiguous collection entries: re-run python3 scripts/build_pack_ev.py for more accurate coverage",
+    "After any new expansion releases: re-run python3 scripts/build_pull_probability_model.py then python3 scripts/build_pack_ev.py",
+    "After updating collection.json with new cards: re-run python3 scripts/normalize_current_collection.py then python3 scripts/build_pack_ev.py"
+  ]
+}

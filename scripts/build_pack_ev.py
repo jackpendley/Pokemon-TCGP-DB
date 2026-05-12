@@ -351,19 +351,41 @@ def summarize(records: list) -> dict:
 # Writers
 # ---------------------------------------------------------------------------
 
+def _read_model_confidence(path: Path) -> str:
+    """Read source_status from pull_probability_model.json."""
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        return raw.get("meta", {}).get("source_status", "inferred")
+    except Exception:
+        return "inferred"
+
+
 def write_json(pack_ev_records, blocked, deck_targets, collection_total):
+    model_confidence = _read_model_confidence(PULL_MODEL_JSON)
     summary = summarize(pack_ev_records)
+
+    if model_confidence == "third_party_verified":
+        warning = (
+            "Slot rates are THIRD_PARTY_VERIFIED — confirmed across 4 independent sources "
+            "(Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. "
+            "EV rankings are suitable for planning but not final recommendations."
+        )
+    else:
+        warning = (
+            "Slot rates are INFERRED from external sources. "
+            "Not verified from in-app Offering Rates. "
+            "EV rankings are for informational/planning purposes only."
+        )
+
     out = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "generated_by": "build_pack_ev.py",
         "meta": {
-            "model_confidence": "inferred",
+            "model_confidence": model_confidence,
             "collection_total": collection_total,
             "collection_mutated": False,
             "warnings": [
-                "Slot rates are INFERRED from external sources (Game8, ShackNews). "
-                "Not verified from in-app Offering Rates. "
-                "EV rankings are for informational/planning purposes only.",
+                warning,
                 "Low-confidence and unresolved collection entries (67/224) are excluded "
                 "from EV computation. exploratory_ev is 0.0 (not computed).",
                 "Card-name matching is case-insensitive by name only — "
@@ -373,7 +395,7 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total):
         },
         "scoring_weights": SCORING_WEIGHTS,
         "confidence_weights": {
-            "slot_rates": "inferred — apply 0.85 global adjustment",
+            "slot_rates": f"{model_confidence} — apply 0.85 global adjustment",
             "inferred_adjustment": INFERRED_CONFIDENCE_WEIGHT,
             "auto_accept": 1.0,
             "secondary_evidence": 0.85,
@@ -388,10 +410,10 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total):
         "packs": pack_ev_records,
         "blocked_packs": blocked,
         "next_steps": [
-            "Verify inferred slot_rates in PTCGP app (Pack details > Offering Rates).",
-            "Set confidence=verified in pull_probability_model.json once confirmed.",
+            "Verify slot_rates in PTCGP app (Pack details > Offering Rates) for official verification.",
+            "Set confidence=verified in pull_probability_model.json once confirmed in-app.",
             "Resolve 59 ambiguous cross-set entries to expand EV-ready coverage.",
-            "Review top-EV packs as planning input (not final recommendation).",
+            "Review top-EV packs as planning input — see review/inferred_pack_recommendations.md.",
         ],
     }
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
@@ -629,10 +651,11 @@ def run_validate() -> bool:
         return False
     print(f"  PASS  {len(packs)} pack EV records present")
 
-    # model_confidence must be inferred or verified
+    # model_confidence must be a valid confidence level
     mc = out.get("meta", {}).get("model_confidence")
-    if mc not in ("inferred", "verified"):
-        print(f"  ERROR: model_confidence='{mc}' is not inferred or verified")
+    valid_mc = ("inferred", "third_party_verified", "verified")
+    if mc not in valid_mc:
+        print(f"  ERROR: model_confidence='{mc}' not in {valid_mc}")
         errors += 1
     else:
         print(f"  PASS  model_confidence={mc}")
@@ -764,7 +787,7 @@ def main():
     print("\n=== Summary ===")
     print(f"  Packs scored:    {len(pack_ev_records)}")
     print(f"  Packs blocked:   {len(blocked)}")
-    print(f"  Model confidence: inferred")
+    print(f"  Model confidence: {out['meta']['model_confidence']}")
     print("  Top packs by total EV:")
     for p in summary["top_packs_by_total_ev"]:
         print(f"    {p['pack_name']:30s} ev={p['pack_total_ev']:.4f}  "

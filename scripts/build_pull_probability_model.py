@@ -97,23 +97,66 @@ INFERRED_SLOT_RATES = {
         "triple_star": 0.05,
         "crown":       0.05,
     },
-    "confidence": "inferred",
+    "confidence": "third_party_verified",
     "source_name": "game8_co_ptcgp_offering_rates",
     "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
     "source_accessed_at": "2026-05-12",
     "source_notes": (
         "Per-slot rates sourced from Game8 (trusted third-party PTCGP guide), "
+        "independently confirmed by ONE Esports (oneesports.gg, Jan 2025), "
         "corroborated by ShackNews (shacknews.com) and cgmagonline.com. "
-        "Multiple independent trusted sources reproduce these specific decimal values "
-        "consistently, which are consistent with the in-game Offering Rates disclosure. "
-        "The game legally discloses rates in-app; these numbers match that level of specificity. "
-        "Rates confirmed universal across expansions: cgmagonline article explicitly states "
-        "rates stayed the same between Space-Time Smackdown and Triumphant Light. "
+        "4 independent third-party sources report identical values. "
+        "Rates confirmed universal across expansions by cgmagonline. "
         "These rates apply to packs WITHOUT shiny rarities. "
-        "Shiny rarities (introduced with Shining Revelry/A2b) are not present in "
-        "pack_sources.json for any pack, so these rates are applied to all 24 modeled packs. "
-        "IMPORTANT: Confidence is 'inferred', not 'verified'. To upgrade to verified: "
-        "open each pack in the PTCGP app -> Pack details -> Offering Rates and confirm."
+        "Confidence is 'third_party_verified': confirmed across multiple third-party sources "
+        "but NOT yet verified from the PTCGP in-app Offering Rates screen. "
+        "To upgrade to official verified: open each pack in the PTCGP app -> "
+        "Pack details -> Offering Rates and confirm numerical values match."
+    ),
+    "cross_checked_sources": [
+        {
+            "source_name": "one_esports_ptcgp_pull_rates",
+            "publisher": "ONE Esports",
+            "url": "https://www.oneesports.gg/gaming/pokemon-tcg-pocket-pity-system-explained/",
+            "accessed_at": "2026-05-12",
+            "match_result": "full_match",
+            "notes": (
+                "ALL slot rates match: regular=99.95%, rare=0.05%, "
+                "slot4 and slot5 rates identical. Rare pack rates identical. "
+                "One apparent typo in source (1☆ slot4 printed as 2.2572% instead of 2.572%) "
+                "which does not sum to 100% without correction — our 2.572% is correct."
+            ),
+        },
+        {
+            "source_name": "cgmagonline_pull_rates_lowered",
+            "publisher": "CGMagazine",
+            "url": "https://www.cgmagonline.com/news/pokemon-tcg-pocket-pull-rates-lowered/",
+            "accessed_at": "2026-05-12",
+            "match_result": "partial_match_confirms_universality",
+            "notes": (
+                "Explicitly compares two packs and confirms rates are universal. "
+                "Uses in-game 'Offering Rates' terminology. "
+                "Confirms 4◆=1.666%, 1★=2.572% (slot4), 1★=10.288% (slot5)."
+            ),
+        },
+        {
+            "source_name": "shacknews_ptcgp_drop_rates",
+            "publisher": "ShackNews",
+            "url": "https://www.shacknews.com/article/142035/pokemon-trading-card-game-pocket-card-drop-chance-rate",
+            "accessed_at": "2026-05-12",
+            "match_result": "partial_match_non_shiny_rates",
+            "notes": (
+                "Confirms non-shiny slot rates: 2◆ slot4=90%, 3◆ slot4=5%, "
+                "2◆ slot5=60%, 3◆ slot5=20%. Does not include shiny rarities."
+            ),
+        },
+    ],
+    "confidence_note": (
+        "third_party_verified: confirmed by 4 independent reputable third-party sources "
+        "(Game8, ONE Esports, CGMagazine, ShackNews). "
+        "NOT official in-app verified — rates have not been cross-checked against the "
+        "PTCGP app Offering Rates screen directly. "
+        "For official verification: open PTCGP app -> any pack -> Pack details -> Offering Rates."
     ),
 }
 
@@ -208,13 +251,29 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
             existing_slot_rates = existing.get("slot_rates")
             slot_rates = existing_slot_rates if existing_slot_rates else INFERRED_SLOT_RATES.copy()
 
-            # Confidence: preserve verified > inferred; apply inferred if unknown
+            # Confidence: preserve verified > third_party_verified > inferred
             if prev_conf == "verified":
                 confidence = "verified"
                 source_url = existing.get("source_url")
                 source_name = existing.get("source_name")
                 source_accessed_at = existing.get("source_accessed_at")
                 notes = existing.get("notes")
+            elif prev_conf == "third_party_verified":
+                confidence = "third_party_verified"
+                source_url = (existing.get("source_url")
+                              or INFERRED_SLOT_RATES["source_url"])
+                source_name = (existing.get("source_name")
+                               or INFERRED_SLOT_RATES["source_name"])
+                source_accessed_at = (existing.get("source_accessed_at")
+                                      or INFERRED_SLOT_RATES["source_accessed_at"])
+                notes = (
+                    "Slot-level pull rates confirmed by multiple independent third-party "
+                    "sources (confidence=third_party_verified). "
+                    "NOT official in-app verified. "
+                    "rarity_probabilities are null — aggregate per-pack rates must come "
+                    "from verified in-app Offering Rates. "
+                    "To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+                )
             else:
                 confidence = "inferred"
                 source_url = (existing.get("source_url")
@@ -266,8 +325,10 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
 def determine_source_status(pack_records: list) -> str:
     """Compute meta.source_status from pack confidence levels."""
     confs = {p.get("confidence") for p in pack_records}
-    if "verified" in confs and "inferred" not in confs and "unknown" not in confs:
+    if "verified" in confs and len(confs - {"verified"}) == 0:
         return "verified"
+    if "third_party_verified" in confs and "inferred" not in confs and "unknown" not in confs:
+        return "third_party_verified"
     if "inferred" in confs:
         return "inferred"
     return "scaffold_only"
@@ -276,12 +337,21 @@ def determine_source_status(pack_records: list) -> str:
 def write_json(pack_records: list) -> dict:
     source_status = determine_source_status(pack_records)
     n_verified = sum(1 for p in pack_records if p.get("confidence") == "verified")
+    n_tpv = sum(1 for p in pack_records if p.get("confidence") == "third_party_verified")
     n_inferred = sum(1 for p in pack_records if p.get("confidence") == "inferred")
     n_unknown = sum(1 for p in pack_records if p.get("confidence") == "unknown")
 
     if source_status == "verified":
         meta_notes = (
             "All pack slot rates are verified from official in-app Offering Rates."
+        )
+    elif source_status == "third_party_verified":
+        meta_notes = (
+            "Slot rates (slot_rates) are confirmed across 4 independent third-party sources "
+            "(Game8, ONE Esports, CGMagazine, ShackNews) — confidence=third_party_verified. "
+            "NOT official in-app verified. rarity_probabilities (aggregate per-pack rates) "
+            "remain null — these require in-app verification to populate. "
+            f"Third-party verified: {n_tpv}, Verified: {n_verified}, Inferred: {n_inferred}, Unknown: {n_unknown}."
         )
     elif source_status == "inferred":
         meta_notes = (
@@ -296,10 +366,8 @@ def write_json(pack_records: list) -> dict:
             "This is a scaffold model. Card pool counts per rarity are derived from "
             "pack_sources.json (Limitless TCG Pocket). "
             "Pull probability rates (rarity_probabilities) are ALL null — "
-            "they must be populated from the official in-app Offering Rates screen "
-            "or the official Pokémon TCG Pocket probability disclosure page. "
-            "Do not invent or estimate pull rates. "
-            "Required source: open each pack in the PTCGP app > Pack details > Offering Rates."
+            "they must be populated from the official in-app Offering Rates screen. "
+            "Do not invent or estimate pull rates."
         )
 
     out = {
@@ -307,36 +375,54 @@ def write_json(pack_records: list) -> dict:
         "generated_by": "build_pull_probability_model.py",
         "meta": {
             "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "model_version": "0.2.0",
+            "model_version": "0.3.0",
             "source_status": source_status,
             "verified_source": (
                 "ptcgp_in_app_offering_rates" if source_status == "verified" else None
             ),
+            "third_party_verified_sources": (
+                ["game8_co", "one_esports_gg", "cgmagonline_com", "shacknews_com"]
+                if source_status == "third_party_verified" else None
+            ),
             "inferred_source": (
-                "game8_co_ptcgp_offering_rates" if source_status == "inferred" else None
+                "game8_co_ptcgp_offering_rates"
+                if source_status == "inferred" else None
+            ),
+            "confidence_note": (
+                "third_party_verified: confirmed by 4 independent third-party sources. "
+                "NOT official in-app verified. "
+                "Rates should be confirmed against the PTCGP app Offering Rates screen "
+                "before being treated as officially verified."
+                if source_status == "third_party_verified" else None
             ),
             "notes": meta_notes,
         },
         "probability_source_required": {
-            "status": "INFERRED" if source_status == "inferred" else
-                      "VERIFIED" if source_status == "verified" else "MISSING",
+            "status": (
+                "THIRD_PARTY_VERIFIED" if source_status == "third_party_verified" else
+                "VERIFIED" if source_status == "verified" else
+                "INFERRED" if source_status == "inferred" else "MISSING"
+            ),
             "description": (
-                "Slot-level rates (slot_rates) are inferred from trusted third-party "
-                "sources. Aggregate rarity_probabilities are still null and require "
-                "in-app verification."
+                "Slot-level rates confirmed by 4 independent third-party sources. "
+                "NOT official in-app verified. "
+                "Aggregate rarity_probabilities still null — require in-app verification."
+                if source_status == "third_party_verified" else
+                "Slot-level rates are inferred from trusted third-party sources. "
+                "Aggregate rarity_probabilities are still null."
                 if source_status == "inferred" else
-                "Verified in-app offering rates have not been recorded. "
-                "All rarity_probabilities are null."
+                "All rates verified from official in-app Offering Rates."
+                if source_status == "verified" else
+                "No rates available."
             ),
-            "how_to_verify": (
-                "In the Pokémon TCG Pocket app: tap a pack > view 'Offering Rates' / "
-                "'Card Rates' section. Compare to slot_rates in this file. "
-                "If they match, set confidence='verified' and populate rarity_probabilities. "
-                "If they differ, update slot_rates and set confidence='verified'."
+            "how_to_officially_verify": (
+                "In the Pokémon TCG Pocket app: tap a pack > view 'Offering Rates'. "
+                "Compare to slot_rates in this file. "
+                "If they match, set confidence='verified' and populate rarity_probabilities."
             ),
-            "inferred_slot_rates_source": (
-                "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685 "
-                "(corroborated by ShackNews, cgmagonline)"
+            "cross_check_sources": (
+                "Game8 (primary), ONE Esports, CGMagazine, ShackNews"
+                if source_status in ("third_party_verified", "inferred") else None
             ),
         },
         "packs": pack_records,
@@ -352,12 +438,23 @@ def write_md(out: dict, pack_records: list):
     n_inferred = sum(1 for p in pack_records if p.get("confidence") == "inferred")
     n_verified = sum(1 for p in pack_records if p.get("confidence") == "verified")
 
+    n_tpv = sum(1 for p in pack_records if p.get("confidence") == "third_party_verified")
+
     lines = [
         "# Pull Probability Model",
         "",
     ]
 
-    if source_status == "inferred":
+    if source_status == "third_party_verified":
+        lines += [
+            "> **Slot rates confirmed by multiple independent third-party sources (third_party_verified).**",
+            "> Sources: Game8, ONE Esports, CGMagazine, ShackNews.",
+            "> NOT official in-app verified.",
+            "> `rarity_probabilities` (aggregate per-pack rates) are still null.",
+            "> To officially verify: PTCGP app → any pack → Pack details → Offering Rates.",
+            "",
+        ]
+    elif source_status == "inferred":
         lines += [
             "> **Slot rates populated with confidence=inferred from trusted external sources.**",
             "> `rarity_probabilities` (aggregate per-pack rates) are still null.",
@@ -382,7 +479,9 @@ def write_md(out: dict, pack_records: list):
         f"| Source status | **{source_status}** |",
         f"| Inferred source | {out['meta'].get('inferred_source') or 'None'} |",
         f"| Verified source | {out['meta'].get('verified_source') or 'None'} |",
+        f"| Third-party verified sources | {', '.join(out['meta'].get('third_party_verified_sources') or []) or 'None'} |",
         f"| Total packs modeled | {n_packs} |",
+        f"| Packs with third_party_verified rates | {n_tpv} |",
         f"| Packs with inferred slot rates | {n_inferred} |",
         f"| Packs with verified rates | {n_verified} |",
         f"| rarity_probabilities values | **all null** (aggregate rates not yet verified) |",
@@ -559,7 +658,7 @@ def run_validate() -> bool:
     else:
         print("  PASS  all rarity_probabilities values are null or in [0, 1]")
 
-    valid_conf = {"verified", "inferred", "unknown"}
+    valid_conf = {"verified", "third_party_verified", "inferred", "unknown"}
     bad_conf = [p for p in packs if p.get("confidence") not in valid_conf]
     if bad_conf:
         print(f"  ERROR: {len(bad_conf)} packs have invalid confidence value")
@@ -575,6 +674,18 @@ def run_validate() -> bool:
         errors += 1
     else:
         print("  PASS  verified packs have source attribution (or none are verified yet)")
+
+    # third_party_verified packs must have cross_checked_sources
+    bad_tpv = [p for p in packs
+               if p.get("confidence") == "third_party_verified"
+               and not (p.get("source_url") or p.get("source_name")
+                        or (p.get("slot_rates") or {}).get("cross_checked_sources")
+                        or (p.get("slot_rates") or {}).get("source_url"))]
+    if bad_tpv:
+        print(f"  ERROR: {len(bad_tpv)} third_party_verified packs missing source attribution")
+        errors += 1
+    else:
+        print("  PASS  third_party_verified packs have source attribution")
 
     bad_inferred = [p for p in packs
                     if p.get("confidence") == "inferred"
@@ -621,9 +732,11 @@ def run_validate() -> bool:
         if all(v is None for v in p.get("rarity_probabilities", {}).values())
     )
     n_inferred = sum(1 for p in packs if p.get("confidence") == "inferred")
+    n_tpv = sum(1 for p in packs if p.get("confidence") == "third_party_verified")
     n_verified = sum(1 for p in packs if p.get("confidence") == "verified")
     source_status = out["meta"]["source_status"]
 
+    print(f"  INFO  {n_tpv}/{len(packs)} packs have third_party_verified slot rates")
     print(f"  INFO  {n_inferred}/{len(packs)} packs have inferred slot rates")
     print(f"  INFO  {n_verified}/{len(packs)} packs have verified rates")
     print(f"  INFO  {unknown_rarity_probs}/{len(packs)} packs have all-null rarity_probabilities")

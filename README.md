@@ -51,7 +51,7 @@ python3 scripts/score_pack_source_confidence.py --validate
 
 Outputs: `data/current/pack_source_confidence_scores.json`, `data/exports/pack_source_confidence_scores.csv`, `review/pack_source_confidence_scores.md`
 
-Pull probability model: 24 packs, slot-level rates populated (confidence=inferred, source: Game8 + corroborating sites). `rarity_probabilities` (aggregate rates) still null.
+Pull probability model: 24 packs, slot-level rates populated (confidence=**third_party_verified**, confirmed by 4 independent sources: Game8, ONE Esports, CGMagazine, ShackNews). `rarity_probabilities` (aggregate rates) still null.
 
 ```bash
 python3 scripts/build_pull_probability_model.py
@@ -60,9 +60,11 @@ python3 scripts/validate_pull_probability_model.py
 
 Outputs: `data/reference/pull_probability_model.json`, `review/pull_probability_model.md`, `review/pack_ev_readiness.md`, `review/pull_probability_external_lookup.md`, `data/current/pack_ev_readiness.json`
 
-EV status: **PARTIALLY READY** — slot rates inferred for all 24 packs. EV calculator built and validated.
+Pull rate cross-check: rates independently confirmed by ONE Esports (full match) + CGMagazine + ShackNews. Confidence upgraded from `inferred` → `third_party_verified`. Full cross-check report: `review/pull_rate_cross_check.md`.
 
-Pack EV calculator: ranks all 24 packs by expected new-card value. Top pack: **Paldean Wonders** (total EV=4.94, adj=4.20 at inferred confidence).
+EV status: **PARTIALLY READY** — slot rates third_party_verified for all 24 packs. EV calculator built and validated.
+
+Pack EV calculator: ranks all 24 packs by expected new-card value. Top pack: **Paldean Wonders** (total EV=4.94, adj=4.20 at third_party_verified confidence).
 
 ```bash
 python3 scripts/build_pack_ev.py
@@ -80,7 +82,16 @@ python3 scripts/generate_pack_recommendation_report.py --validate
 
 Outputs: `review/inferred_pack_recommendations.md`, `data/current/inferred_pack_recommendations.json`, `data/exports/inferred_pack_recommendations.csv`
 
-See `review/inferred_pack_recommendations.md` for the full planning report with caveats.
+Hourglass spending plan: conservative/moderate/aggressive scenarios in 10-pack-batch format. No hourglass count assumed. Top pack across all scenarios: **Paldean Wonders**.
+
+```bash
+python3 scripts/generate_hourglass_spending_plan.py
+python3 scripts/generate_hourglass_spending_plan.py --validate
+```
+
+Outputs: `review/final_hourglass_spending_plan.md`, `data/current/final_hourglass_spending_plan.json`, `data/exports/final_hourglass_spending_plan.csv`
+
+See `review/final_hourglass_spending_plan.md` for the full spending plan. See `review/inferred_pack_recommendations.md` for the full recommendation report.
 
 Next active phase: verify slot rates in-app (PTCGP app → Pack details → Offering Rates), then re-run EV calculator and recommendation report at verified confidence.
 
