@@ -95,19 +95,37 @@ Outputs:
 - `data/exports/pack_source_confidence_scores.csv`
 - `review/pack_source_confidence_scores.md`
 
+### Pull Probability Model (2026-05-11)
+
+| Metric | Value |
+|---|---|
+| Script | `scripts/build_pull_probability_model.py` |
+| Model file | `data/reference/pull_probability_model.json` |
+| Schema | `data/reference/pull_probability_model.schema.json` |
+| Packs modeled | **24** (all named pullable packs across 17 expansions) |
+| Source status | **scaffold_only** — all rarity_probabilities null |
+| Validation | `python3 scripts/validate_pull_probability_model.py` — **PASS** |
+| EV status | **BLOCKED** — rates must come from in-app Offering Rates |
+
+Outputs:
+- `data/reference/pull_probability_model.json`
+- `review/pull_probability_model.md`
+- `review/pack_ev_readiness.md`
+- `data/current/pack_ev_readiness.json`
+
 ### Remaining blockers before automated pack recommendations
 
-1. **59 ambiguous cross-set entries at low confidence (0.50–0.799)** — card appears in multiple expansions; the correct version cannot be determined without OCR or user confirmation.
-2. **8 unresolved entries (< 0.50)** — 3 Zygarde forms not in pack_sources; 5 common trainers not indexed in Limitless DB.
-3. **No OCR name verification** — alignment is order-only; card identities are not confirmed from screenshots.
-4. **Pull probability model** — rarity tier pull rates by pack not yet modeled.
+1. **Pull probability rates null** — all `rarity_probabilities` in the model are null (scaffold_only). Must be populated from the official in-app Offering Rates screen. Do not estimate.
+2. **59 ambiguous cross-set entries at low confidence (0.50–0.799)** — card appears in multiple expansions; the correct version cannot be determined without OCR or user confirmation.
+3. **8 unresolved entries (< 0.50)** — 3 Zygarde forms not in pack_sources; 5 common trainers not indexed in Limitless DB.
+4. **No OCR name verification** — alignment is order-only; card identities are not confirmed from screenshots.
 5. **Pack-source mapping for Zygarde** — Zygarde forms not in current Limitless data; needs external set reference.
 6. **Current meta/tier data** — deck recommendations are not yet meta-aware.
 7. **Automated deck scorer** — `deck-recommendations.jsx` is a manual prototype.
 
 ### Recommended next phase
 
-Build the pull probability model scaffold (`scripts/build_pull_probability_model.py`) using `pack_sources.json` rarity data and known PTCGP pack probability tables. This unlocks pack EV calculations for the 157 already-resolved entries (108 auto-accept + 49 secondary evidence). Alternatively, improve the 59 ambiguous entries via automated reference enrichment (scraping set/card numbers from Limitless to narrow candidates).
+Populate `rarity_probabilities` in `data/reference/pull_probability_model.json` from the official in-app Offering Rates (open each pack in PTCGP app → Pack details → Offering Rates). Once rates are filled, EV calculation is immediately unblocked for the 157 EV-ready entries (108 auto-accept + 49 secondary evidence) across 10 packs. Alternatively, resolve the 59 ambiguous entries via manual card-number confirmation to expand EV-ready coverage to 216/224 entries.
 
 ---
 

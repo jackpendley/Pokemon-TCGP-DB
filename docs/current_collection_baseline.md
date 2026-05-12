@@ -65,6 +65,8 @@ Chase cards needed:
 | `scripts/build_screenshot_collection_alignment.py` | Order-based screenshot-to-collection alignment (no OCR) |
 | `scripts/validate_screenshot_collection_alignment.py` | Validate alignment output |
 | `scripts/score_pack_source_confidence.py` | Per-entry pack-source confidence scoring |
+| `scripts/build_pull_probability_model.py` | Build pull probability model scaffold (card pool counts) |
+| `scripts/validate_pull_probability_model.py` | Validate pull probability model output |
 
 ## Pack-Source Coverage
 
@@ -112,6 +114,8 @@ The 67 unresolved entries are the target set for automated confidence scoring. M
 | `data/current/current_collection_reconciliation.json` | Structural reconciliation result |
 | `data/current/screenshot_collection_alignment.json` | Order-based slot→entry alignment with confidence scores |
 | `data/current/pack_source_confidence_scores.json` | Per-entry pack-source confidence scores and best candidates |
+| `data/reference/pull_probability_model.json` | Pull probability model (24 packs, scaffold — all rates null) |
+| `data/current/pack_ev_readiness.json` | Machine-readable EV readiness status |
 | `review/current_collection_summary.md` | Human-readable collection summary |
 | `review/screenshot_inventory.md` | Screenshot inventory table |
 | `review/screenshot_manifest.md` | Per-slot manifest (blank for future OCR or manual fill) |
@@ -122,6 +126,8 @@ The 67 unresolved entries are the target set for automated confidence scoring. M
 | `data/exports/screenshot_collection_alignment.csv` | Full alignment table (one row per screenshot slot) |
 | `data/exports/pack_source_confidence_scores.csv` | Per-entry confidence scores, best candidates, next actions |
 | `data/exports/deck_recommendation_validation.json` | Machine-readable deck validation |
+| `review/pull_probability_model.md` | Human-readable pack pool summary (card counts by rarity) |
+| `review/pack_ev_readiness.md` | EV readiness report — status, blockers, unblock steps |
 
 ## Old Screenshot Ingestion Pipeline (Historical)
 

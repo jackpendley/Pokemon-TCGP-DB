@@ -51,7 +51,18 @@ python3 scripts/score_pack_source_confidence.py --validate
 
 Outputs: `data/current/pack_source_confidence_scores.json`, `data/exports/pack_source_confidence_scores.csv`, `review/pack_source_confidence_scores.md`
 
-Next active phase: build pull probability model scaffold or improve 59 ambiguous cross-set entries via automated reference enrichment.
+Pull probability model scaffold: 24 packs modeled, card pool counts by rarity, all pull rates null (scaffold_only).
+
+```bash
+python3 scripts/build_pull_probability_model.py
+python3 scripts/validate_pull_probability_model.py
+```
+
+Outputs: `data/reference/pull_probability_model.json`, `review/pull_probability_model.md`, `review/pack_ev_readiness.md`, `data/current/pack_ev_readiness.json`
+
+EV status: **BLOCKED** — pull rates must come from in-app Offering Rates. 157/224 entries are EV-ready once rates are filled.
+
+Next active phase: populate pull rates from in-app Offering Rates (PTCGP app → Pack details → Offering Rates) or resolve 59 ambiguous cross-set entries via manual card-number confirmation.
 
 See `docs/current_collection_baseline.md` and `docs/recommendation_readiness.md` for full details.
 

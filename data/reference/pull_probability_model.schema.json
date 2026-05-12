@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pokemon TCG Pocket Pull Probability Model",
+  "description": "Per-pack pull probability model for PTCGP. Probabilities are null until populated from verified in-app offering rates.",
+  "type": "object",
+  "required": ["meta", "packs"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["generated_at", "model_version", "source_status"],
+      "properties": {
+        "generated_at": { "type": "string" },
+        "model_version": { "type": "string" },
+        "source_status": {
+          "type": "string",
+          "enum": ["verified", "inferred", "scaffold_only"]
+        },
+        "verified_source": { "type": ["string", "null"] },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "packs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pack_name", "expansion", "set_code", "confidence", "rarity_probabilities"],
+        "properties": {
+          "pack_name": { "type": "string" },
+          "expansion": { "type": "string" },
+          "set_code": { "type": "string" },
+          "is_shared_pool": {
+            "type": "boolean",
+            "description": "True if this represents the shared pool of an expansion, not a directly pullable pack"
+          },
+          "source_url": { "type": ["string", "null"] },
+          "source_name": { "type": ["string", "null"] },
+          "confidence": {
+            "type": "string",
+            "enum": ["verified", "inferred", "unknown"]
+          },
+          "slot_model": {
+            "type": ["object", "null"],
+            "properties": {
+              "cards_per_pack": { "type": ["integer", "null"] },
+              "slot_count": { "type": ["integer", "null"] },
+              "notes": { "type": ["string", "null"] }
+            }
+          },
+          "card_pool": {
+            "type": "object",
+            "description": "Card counts by rarity in this pack's pullable pool (pack-specific + shared pool combined).",
+            "properties": {
+              "pack_specific_total": { "type": "integer" },
+              "shared_pool_total": { "type": "integer" },
+              "combined_total": { "type": "integer" },
+              "pack_specific_by_rarity": { "type": "object" },
+              "shared_pool_by_rarity": { "type": "object" },
+              "combined_by_rarity": { "type": "object" }
+            }
+          },
+          "rarity_probabilities": {
+            "type": "object",
+            "description": "Pull probability per rarity tier. All values null until populated from verified in-app offering rates.",
+            "properties": {
+              "one_diamond":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "two_diamond":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "three_diamond": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "four_diamond":  { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "one_star":      { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "double_star":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "triple_star":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "crown":         { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "promo":         { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "unknown":       { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+            }
+          },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

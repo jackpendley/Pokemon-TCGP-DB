@@ -160,10 +160,12 @@ Build tooling to align screenshot grid slots with `collection.json` entries.
 - Generate confidence reports before applying any changes.
 - Do not mutate `collection.json`; write generated mappings under `data/current/`.
 
-Next scripts to build:
-- `scripts/build_screenshot_collection_alignment.py` — align screenshot slots to collection entries
-- `scripts/score_pack_source_confidence.py` — score each entry's best pack candidate
-- These produce: `data/current/screenshot_collection_alignment.json`, `data/current/pack_source_confidence_scores.json`, `review/automated_confidence_readiness.md`
+Scripts built (do not rebuild):
+- `scripts/build_screenshot_collection_alignment.py` — align screenshot slots to collection entries (DONE)
+- `scripts/validate_screenshot_collection_alignment.py` — validate alignment output (DONE)
+- `scripts/score_pack_source_confidence.py` — score each entry's best pack candidate (DONE)
+- `scripts/build_pull_probability_model.py` — build pull probability model scaffold from pack_sources.json (DONE)
+- `scripts/validate_pull_probability_model.py` — validate pull probability model output (DONE)
 
 ## 9. Current Recommendation Status
 
@@ -201,22 +203,22 @@ python3 scripts/reconcile_current_collection_sources.py
 
 ## 11. Next Recommended Phase
 
-Build automated screenshot-to-collection alignment and pack-source confidence scoring.
+Populate pull probability rates from official in-app Offering Rates, then build the EV calculator.
 
-Concretely:
+Completed phases (do not rebuild):
+- Screenshot-to-collection alignment (`scripts/build_screenshot_collection_alignment.py`) — 224/224 entries, PASS
+- Pack-source confidence scoring (`scripts/score_pack_source_confidence.py`) — 108 auto-accept, 49 secondary, 59 low, 8 unresolved, avg 0.8204, PASS
+- Pull probability model scaffold (`scripts/build_pull_probability_model.py`) — 24 packs modeled, all rates null, PASS
 
-1. Create `scripts/build_screenshot_collection_alignment.py`
-   - Inputs: `data/current/screenshot_manifest.json`, `data/current/collection_normalized.json`
-   - Output: `data/current/screenshot_collection_alignment.json` — slot → entry mapping with confidence
+Next steps in order:
 
-2. Create `scripts/score_pack_source_confidence.py`
-   - Inputs: `data/current/collection_normalized.json`, `data/reference/pack_sources.json`, alignment output
-   - Output: `data/current/pack_source_confidence_scores.json` — per-entry best candidate + score
-   - Output: `review/automated_confidence_readiness.md` — readable confidence report
+1. **Populate pull rates** — open each pack in the PTCGP app → Pack details → Offering Rates. Fill `rarity_probabilities` in `data/reference/pull_probability_model.json`. Run `python3 scripts/validate_pull_probability_model.py` after each pack. Do not estimate.
 
-3. Only flag entries below threshold (< 0.80) as needing manual review.
+2. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers. Run `apply_current_pack_confirmations.py --dry-run` then `--apply`. This expands EV-ready coverage from 157 to up to 216/224 entries.
 
-**Do not require the user to fill `current_pack_source_review.csv` before this phase proceeds.**
+3. **Build EV calculator** — once rates and pack sources are confirmed, build a script that ranks packs by marginal EV (expected new card value per pack opened) based on owned card gaps.
+
+**Do not generate pack recommendations until at least one pack has verified pull rates in the model.**
 
 ## 12. Anti-Overengineering Principle
 

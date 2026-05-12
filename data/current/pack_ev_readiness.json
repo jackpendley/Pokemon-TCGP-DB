@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-05-11",
+  "model_version": "0.1.0-scaffold",
+  "overall_status": "blocked",
+  "blocked_reason": "pull_probability_rates_are_null",
+  "blocked_until": "in-app Offering Rates populated in pull_probability_model.json",
+  "collection": {
+    "source": "collection.json",
+    "total_cards": 380,
+    "unique_entries": 224,
+    "validated": true
+  },
+  "pull_probability_model": {
+    "file": "data/reference/pull_probability_model.json",
+    "packs_modeled": 24,
+    "source_status": "scaffold_only",
+    "rates_populated": false
+  },
+  "pack_source_coverage": {
+    "total_entries": 224,
+    "ev_ready": {
+      "count": 157,
+      "pct": 70.1,
+      "breakdown": {
+        "auto_accept": 108,
+        "secondary_evidence": 49
+      }
+    },
+    "blocked": {
+      "count": 67,
+      "breakdown": {
+        "low_confidence": 59,
+        "unresolved": 8
+      }
+    }
+  },
+  "packs_with_ev_ready_entries": {
+    "count": 10,
+    "packs": [
+      "Crimson Blaze",
+      "Deluxe Pack: ex",
+      "Fantastical Parade",
+      "Mega Altaria",
+      "Mega Blaziken",
+      "Mega Gyarados",
+      "Mega Shine",
+      "Mewtwo",
+      "Pulsing Aura",
+      "Shining Revelry"
+    ]
+  },
+  "packs_no_ev_ready_entries": {
+    "count": 14,
+    "packs": [
+      "Arceus",
+      "Charizard",
+      "Dialga",
+      "Eevee Grove",
+      "Extradimensional Crisis",
+      "Ho-Oh",
+      "Lugia",
+      "Lunala",
+      "Mew",
+      "Paldean Wonders",
+      "Palkia",
+      "Pikachu",
+      "Secluded Springs",
+      "Solgaleo"
+    ]
+  },
+  "unblock_steps": [
+    "Populate rarity_probabilities in pull_probability_model.json from in-app Offering Rates",
+    "Resolve 59 ambiguous cross-expansion entries (see data/exports/current_pack_source_review.csv)",
+    "Build EV calculator script once rates and pack sources are confirmed"
+  ]
+}
