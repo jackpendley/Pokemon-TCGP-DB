@@ -58,18 +58,24 @@ STANDARD_SLOT_MODEL = {
 }
 
 # ---------------------------------------------------------------------------
-# Inferred slot rates
+# Inferred slot rates (two-branch model)
 # Source: Game8 PTCGP offering rates guide (https://game8.co/games/Pokemon-TCG-Pocket/archives/482685),
 # corroborated by ShackNews and cgmagonline.com. Multiple independent trusted sources
 # report these same specific values, consistent with in-game Offering Rates disclosure.
-# Rates apply to packs without shiny rarities. pack_sources.json has no shiny cards
-# for any of the 24 modeled packs. Confidence: inferred — verify in-app to upgrade.
+#
+# WARNING: User in-app verification of Pulsing Aura (B3, 2026-05-13) revealed a
+# three-branch model (regular 94.711% + rare 0.050% + regular+1 5.238%). This two-branch
+# version (regular 99.950% + rare 0.050%) is retained for all non-B3 packs because no
+# reputable external source has confirmed the three-branch model generalizes to other packs.
+# Add stale_model_warning to all packs using this model to flag the structural gap.
+#
 # Slot 4 total: 0.90+0.05+0.01666+0.02572+0.005+0.00222+0.0004 = 1.00000
 # Slot 5 total: 0.60+0.20+0.06664+0.10288+0.02+0.00888+0.0016 = 1.00000
 # ---------------------------------------------------------------------------
 INFERRED_SLOT_RATES = {
     "regular_pack_probability": 0.9995,
     "rare_pack_probability": 0.0005,
+    "regular_pack_plus_one_probability": None,
     "slots_1_3": {
         "one_diamond": 1.0
     },
@@ -156,9 +162,99 @@ INFERRED_SLOT_RATES = {
         "(Game8, ONE Esports, CGMagazine, ShackNews). "
         "NOT official in-app verified — rates have not been cross-checked against the "
         "PTCGP app Offering Rates screen directly. "
-        "For official verification: open PTCGP app -> any pack -> Pack details -> Offering Rates."
+        "STALE MODEL WARNING: User in-app verification of Pulsing Aura (B3, 2026-05-13) "
+        "revealed a three-branch model. This two-branch version may be missing the "
+        "regular_pack_plus_one branch (~5% probability). Verify in-app for each pack."
     ),
 }
+
+# stale_model_warning applied to all non-B3 packs
+STALE_MODEL_WARNING = (
+    "This pack uses the prior two-branch model (regular_pack + rare_pack). "
+    "User in-app verification of Pulsing Aura (B3) revealed a three-branch model "
+    "(regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). "
+    "The three-branch model has NOT been confirmed via external sources for other packs. "
+    "To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check "
+    "for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates."
+)
+
+# ---------------------------------------------------------------------------
+# Pulsing Aura (B3) in-app verified slot rates — three-branch model
+# Source: User-provided in-app Offering Rates screenshots, shared in ChatGPT conversation.
+# Screenshots are NOT stored in this repository.
+# Verified: 2026-05-13
+#
+# Corrections from prior model:
+#   - Branch model: two-branch (99.95%+0.05%) → three-branch (94.711%+0.050%+5.238%)
+#   - Rare pack distribution: 40/50/5/5 → 47.058/45.098/3.921/3.921
+#   - Card 6: new (one_shiny 68.18%, two_shiny 31.82%) — not computable yet (no shiny in pack_sources.json)
+#   - Slots 4-5: unchanged from prior model (within display rounding)
+# ---------------------------------------------------------------------------
+PULSING_AURA_IN_APP_VERIFIED_SLOT_RATES = {
+    "regular_pack_probability": 0.94711,
+    "rare_pack_probability": 0.00050,
+    "regular_pack_plus_one_probability": 0.05238,
+    "slots_1_3": {
+        "one_diamond": 1.0
+    },
+    "slot_4": {
+        "two_diamond":   0.90000,
+        "three_diamond": 0.05000,
+        "four_diamond":  0.01667,
+        "one_star":      0.02572,
+        "double_star":   0.00500,
+        "triple_star":   0.00222,
+        "crown":         0.00040,
+    },
+    "slot_5": {
+        "two_diamond":   0.59998,
+        "three_diamond": 0.20000,
+        "four_diamond":  0.06667,
+        "one_star":      0.10286,
+        "double_star":   0.02000,
+        "triple_star":   0.00889,
+        "crown":         0.00160,
+    },
+    "slot_6": {
+        "one_shiny": 0.68180,
+        "two_shiny": 0.31820,
+        "note": (
+            "Card 6 appears only in Regular Pack + 1 Card openings (5.238% of packs). "
+            "Shiny cards are NOT in pack_sources.json — card 6 EV contribution is "
+            "pending addition of one_shiny/two_shiny card pool data."
+        ),
+    },
+    "rare_pack_all_5_slots": {
+        "one_star":             0.47058,
+        "double_star":          0.45098,
+        "triple_star":          0.03921,
+        "crown_or_highest_rare": 0.03921,
+    },
+    "confidence": "user_in_app_verified",
+    "source_name": "user_provided_in_app_offering_rates_chatgpt_conversation",
+    "source_url": None,
+    "source_accessed_at": "2026-05-13",
+    "source_notes": (
+        "User manually verified Pulsing Aura Offering Rates in the Pokémon TCG Pocket app "
+        "and provided values in a ChatGPT conversation. Screenshots are NOT stored in this "
+        "repository. Source: 'User-provided in-app Offering Rates screenshots, ChatGPT conversation'. "
+        "This is treated as user_in_app_verified evidence — more authoritative than third_party_verified "
+        "but distinct from official/automated in-app verification. "
+        "No reputable external source was found that independently confirms these three-branch rates "
+        "or the corrected rare pack distribution (47.058/45.098/3.921/3.921) for any pack. "
+        "Generalization to other packs requires per-pack in-app verification."
+    ),
+    "cross_checked_sources": [],
+    "confidence_note": (
+        "user_in_app_verified: rates provided by user directly from in-app Offering Rates screen. "
+        "Screenshots are in ChatGPT conversation, not in this repository. "
+        "Three-branch model confirmed for Pulsing Aura (B3) only. "
+        "Other packs retain the prior two-branch model with stale_model_warning."
+    ),
+}
+
+# Set codes that have been corrected to the three-branch model
+THREE_BRANCH_CORRECTED_SET_CODES = {"B3"}
 
 
 def rarity_counts(cards: list) -> dict:
@@ -243,22 +339,46 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
             combined_by_rarity = add_rarity_dicts(pack_by_rarity, shared_by_rarity)
             combined_total = pack_total + shared_total
 
-            # Preserve existing rates; fall back to inferred rates for new packs
+            # Determine if this pack has been corrected to the three-branch model
+            is_three_branch_corrected = set_code in THREE_BRANCH_CORRECTED_SET_CODES
+
             existing = existing_rates.get(pn, {})
             prev_conf = existing.get("confidence", "unknown")
 
-            # Preserve existing slot_rates if they exist; otherwise apply inferred
-            existing_slot_rates = existing.get("slot_rates")
-            slot_rates = existing_slot_rates if existing_slot_rates else INFERRED_SLOT_RATES.copy()
-
-            # Confidence: preserve verified > third_party_verified > inferred
-            if prev_conf == "verified":
+            if is_three_branch_corrected:
+                # Apply user in-app verified three-branch model
+                slot_rates = PULSING_AURA_IN_APP_VERIFIED_SLOT_RATES.copy()
+                confidence = "user_in_app_verified"
+                source_url = None
+                source_name = PULSING_AURA_IN_APP_VERIFIED_SLOT_RATES["source_name"]
+                source_accessed_at = PULSING_AURA_IN_APP_VERIFIED_SLOT_RATES["source_accessed_at"]
+                stale_warning = None
+                notes = (
+                    "Three-branch model applied: regular_pack (94.711%) + rare_pack (0.050%) "
+                    "+ regular_pack_plus_one (5.238%). Source: user-provided in-app "
+                    "Offering Rates screenshots (ChatGPT conversation, not in repo). "
+                    "Rare pack distribution corrected: 47.058/45.098/3.921/3.921 "
+                    "(was 40/50/5/5). Card 6 shiny rates documented but EV not yet "
+                    "computable (shiny cards not in pack_sources.json)."
+                )
+                user_in_app_evidence_note = (
+                    "User manually read Pulsing Aura Offering Rates from the PTCGP app "
+                    "and provided values in a ChatGPT conversation on 2026-05-13. "
+                    "Screenshots are NOT stored in this repository."
+                )
+            elif prev_conf == "verified":
+                existing_slot_rates = existing.get("slot_rates")
+                slot_rates = existing_slot_rates if existing_slot_rates else INFERRED_SLOT_RATES.copy()
                 confidence = "verified"
                 source_url = existing.get("source_url")
                 source_name = existing.get("source_name")
                 source_accessed_at = existing.get("source_accessed_at")
+                stale_warning = None
                 notes = existing.get("notes")
+                user_in_app_evidence_note = None
             elif prev_conf == "third_party_verified":
+                existing_slot_rates = existing.get("slot_rates")
+                slot_rates = existing_slot_rates if existing_slot_rates else INFERRED_SLOT_RATES.copy()
                 confidence = "third_party_verified"
                 source_url = (existing.get("source_url")
                               or INFERRED_SLOT_RATES["source_url"])
@@ -266,15 +386,21 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
                                or INFERRED_SLOT_RATES["source_name"])
                 source_accessed_at = (existing.get("source_accessed_at")
                                       or INFERRED_SLOT_RATES["source_accessed_at"])
+                stale_warning = STALE_MODEL_WARNING
                 notes = (
                     "Slot-level pull rates confirmed by multiple independent third-party "
                     "sources (confidence=third_party_verified). "
                     "NOT official in-app verified. "
                     "rarity_probabilities are null — aggregate per-pack rates must come "
                     "from verified in-app Offering Rates. "
-                    "To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+                    "To officially verify: open PTCGP app -> Pack details -> Offering Rates. "
+                    "STALE MODEL: may be missing regular_pack_plus_one branch discovered "
+                    "via Pulsing Aura (B3) in-app verification (2026-05-13)."
                 )
+                user_in_app_evidence_note = None
             else:
+                existing_slot_rates = existing.get("slot_rates")
+                slot_rates = existing_slot_rates if existing_slot_rates else INFERRED_SLOT_RATES.copy()
                 confidence = "inferred"
                 source_url = (existing.get("source_url")
                               or INFERRED_SLOT_RATES["source_url"])
@@ -282,12 +408,15 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
                                or INFERRED_SLOT_RATES["source_name"])
                 source_accessed_at = (existing.get("source_accessed_at")
                                       or INFERRED_SLOT_RATES["source_accessed_at"])
+                stale_warning = STALE_MODEL_WARNING
                 notes = (
                     "Slot-level pull rates sourced from trusted third-party references "
                     "(confidence=inferred). rarity_probabilities are null — aggregate "
                     "per-pack rates must come from verified in-app Offering Rates. "
-                    "To verify: open this pack in PTCGP app -> Pack details -> Offering Rates."
+                    "To verify: open this pack in PTCGP app -> Pack details -> Offering Rates. "
+                    "STALE MODEL: may be missing regular_pack_plus_one branch."
                 )
+                user_in_app_evidence_note = None
 
             # Preserve rarity_probabilities if explicitly set (not all-null)
             prev_rarity_probs = existing.get("rarity_probabilities")
@@ -295,6 +424,11 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
                 rarity_probs = prev_rarity_probs
             else:
                 rarity_probs = {f: None for f in RARITY_FIELDS}
+
+            slot_model = {
+                **STANDARD_SLOT_MODEL,
+                "branch_model": "three_branch" if is_three_branch_corrected else "two_branch",
+            }
 
             pack_records.append({
                 "pack_name": pn,
@@ -305,7 +439,12 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
                 "source_name": source_name,
                 "source_accessed_at": source_accessed_at,
                 "confidence": confidence,
-                "slot_model": STANDARD_SLOT_MODEL,
+                "stale_model_warning": stale_warning,
+                "user_in_app_evidence_note": user_in_app_evidence_note if is_three_branch_corrected else None,
+                "official_verification_status": (
+                    "user_in_app_verified" if is_three_branch_corrected else "not_verified"
+                ),
+                "slot_model": slot_model,
                 "slot_rates": slot_rates,
                 "card_pool": {
                     "pack_specific_total": pack_total,
@@ -327,6 +466,11 @@ def determine_source_status(pack_records: list) -> str:
     confs = {p.get("confidence") for p in pack_records}
     if "verified" in confs and len(confs - {"verified"}) == 0:
         return "verified"
+    # Mixed: user_in_app_verified + third_party_verified = in_app_verified_partial
+    if "user_in_app_verified" in confs and "third_party_verified" in confs:
+        return "in_app_verified_partial"
+    if "user_in_app_verified" in confs and len(confs - {"user_in_app_verified"}) == 0:
+        return "user_in_app_verified"
     if "third_party_verified" in confs and "inferred" not in confs and "unknown" not in confs:
         return "third_party_verified"
     if "inferred" in confs:
@@ -338,36 +482,37 @@ def write_json(pack_records: list) -> dict:
     source_status = determine_source_status(pack_records)
     n_verified = sum(1 for p in pack_records if p.get("confidence") == "verified")
     n_tpv = sum(1 for p in pack_records if p.get("confidence") == "third_party_verified")
+    n_inapp = sum(1 for p in pack_records if p.get("confidence") == "user_in_app_verified")
     n_inferred = sum(1 for p in pack_records if p.get("confidence") == "inferred")
     n_unknown = sum(1 for p in pack_records if p.get("confidence") == "unknown")
 
     if source_status == "verified":
+        meta_notes = "All pack slot rates are verified from official in-app Offering Rates."
+    elif source_status == "in_app_verified_partial":
         meta_notes = (
-            "All pack slot rates are verified from official in-app Offering Rates."
+            f"Mixed model: {n_inapp} pack(s) use user_in_app_verified three-branch model "
+            f"(Pulsing Aura B3, 2026-05-13). {n_tpv} packs retain prior two-branch "
+            "third_party_verified model with stale_model_warning. "
+            "The three-branch correction has not been confirmed for other packs via external "
+            "sources — all non-B3 packs marked with stale_model_warning. "
+            "rarity_probabilities remain null for all packs."
         )
     elif source_status == "third_party_verified":
         meta_notes = (
-            "Slot rates (slot_rates) are confirmed across 4 independent third-party sources "
+            "Slot rates confirmed across 4 independent third-party sources "
             "(Game8, ONE Esports, CGMagazine, ShackNews) — confidence=third_party_verified. "
-            "NOT official in-app verified. rarity_probabilities (aggregate per-pack rates) "
-            "remain null — these require in-app verification to populate. "
-            f"Third-party verified: {n_tpv}, Verified: {n_verified}, Inferred: {n_inferred}, Unknown: {n_unknown}."
+            "NOT official in-app verified. rarity_probabilities remain null. "
+            f"Third-party verified: {n_tpv}, Verified: {n_verified}, Inferred: {n_inferred}."
         )
     elif source_status == "inferred":
         meta_notes = (
-            "Slot rates (slot_rates) are populated with confidence=inferred from trusted "
-            "third-party sources (Game8, ShackNews, cgmagonline) that reproduce the in-game "
-            "Offering Rates. rarity_probabilities (aggregate per-pack rates) remain null — "
-            "these require in-app verification. "
+            "Slot rates populated with confidence=inferred from trusted third-party sources. "
             f"Inferred: {n_inferred}, Verified: {n_verified}, Unknown: {n_unknown}."
         )
     else:
         meta_notes = (
-            "This is a scaffold model. Card pool counts per rarity are derived from "
-            "pack_sources.json (Limitless TCG Pocket). "
-            "Pull probability rates (rarity_probabilities) are ALL null — "
-            "they must be populated from the official in-app Offering Rates screen. "
-            "Do not invent or estimate pull rates."
+            "Scaffold model — pull probability rates are ALL null. "
+            "Card pool counts are from pack_sources.json."
         )
 
     out = {
@@ -375,24 +520,35 @@ def write_json(pack_records: list) -> dict:
         "generated_by": "build_pull_probability_model.py",
         "meta": {
             "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "model_version": "0.3.0",
+            "model_version": "0.4.0",
             "source_status": source_status,
             "verified_source": (
                 "ptcgp_in_app_offering_rates" if source_status == "verified" else None
             ),
+            "user_in_app_verified_packs": (
+                ["Pulsing Aura (B3)"] if n_inapp > 0 else None
+            ),
+            "user_in_app_evidence_note": (
+                "Pulsing Aura (B3) rates verified by user from in-app Offering Rates screen. "
+                "Screenshots in ChatGPT conversation, NOT stored in repo."
+                if n_inapp > 0 else None
+            ),
             "third_party_verified_sources": (
                 ["game8_co", "one_esports_gg", "cgmagonline_com", "shacknews_com"]
-                if source_status == "third_party_verified" else None
+                if n_tpv > 0 else None
             ),
             "inferred_source": (
-                "game8_co_ptcgp_offering_rates"
-                if source_status == "inferred" else None
+                "game8_co_ptcgp_offering_rates" if n_inferred > 0 else None
             ),
             "confidence_note": (
+                "in_app_verified_partial: Pulsing Aura (B3) corrected to three-branch model "
+                "from user in-app verification. All other packs retain two-branch "
+                "third_party_verified model. The three-branch model was NOT confirmed "
+                "by reputable external sources for other packs. Per-pack in-app verification "
+                "required to expand the corrected model."
+                if source_status == "in_app_verified_partial" else
                 "third_party_verified: confirmed by 4 independent third-party sources. "
-                "NOT official in-app verified. "
-                "Rates should be confirmed against the PTCGP app Offering Rates screen "
-                "before being treated as officially verified."
+                "NOT official in-app verified."
                 if source_status == "third_party_verified" else None
             ),
             "notes": meta_notes,
@@ -658,7 +814,11 @@ def run_validate() -> bool:
     else:
         print("  PASS  all rarity_probabilities values are null or in [0, 1]")
 
-    valid_conf = {"verified", "third_party_verified", "inferred", "unknown"}
+    valid_conf = {
+        "verified", "third_party_verified", "user_in_app_verified",
+        "third_party_verified_with_in_app_anchor", "in_app_verified_partial",
+        "pending_verification", "inferred", "unknown",
+    }
     bad_conf = [p for p in packs if p.get("confidence") not in valid_conf]
     if bad_conf:
         print(f"  ERROR: {len(bad_conf)} packs have invalid confidence value")

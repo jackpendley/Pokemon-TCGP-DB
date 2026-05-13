@@ -147,33 +147,47 @@ def card_pull_ev(rarity: str, combined_by_rarity: dict, slot_rates: dict) -> flo
     """
     E[copies of a specific card of this rarity per pack opening].
 
-    For one_diamond: appears in slots 1-3 of regular packs only (100% each).
-    For other rarities: appears in slot 4 and/or slot 5 of regular packs,
-    and in all 5 slots of rare packs (if that rarity is in the rare pack pool).
+    Supports two-branch model (regular + rare) and three-branch model
+    (regular + rare + regular_pack_plus_one). In the three-branch model,
+    slots 1-5 are identical across regular and plus_one branches, so
+    combined probability = P_regular + P_plus_one is used for those slots.
+    Card 6 (shiny only) is omitted unless shiny cards appear in combined_by_rarity.
     """
     N_R = combined_by_rarity.get(rarity, 0)
     if N_R <= 0:
         return 0.0
 
-    P_regular = slot_rates.get("regular_pack_probability", 0.9995)
-    P_rare    = slot_rates.get("rare_pack_probability", 0.0005)
-    slot_4    = slot_rates.get("slot_4", {})
-    slot_5    = slot_rates.get("slot_5", {})
-    rare_dist = slot_rates.get("rare_pack_all_5_slots", {})
+    P_regular  = slot_rates.get("regular_pack_probability", 0.9995)
+    P_plus_one = slot_rates.get("regular_pack_plus_one_probability") or 0.0
+    P_rare     = slot_rates.get("rare_pack_probability", 0.0005)
+    # Combined probability for slots 1-5 (same rates in both regular branches)
+    P_combined = P_regular + P_plus_one
+
+    slot_4    = slot_rates.get("slot_4") or {}
+    slot_5    = slot_rates.get("slot_5") or {}
+    slot_6    = slot_rates.get("slot_6") or {}
+    rare_dist = slot_rates.get("rare_pack_all_5_slots") or {}
 
     if rarity == "one_diamond":
-        # 3 guaranteed slots in regular packs; never in rare packs
-        return P_regular * 3.0 / N_R
+        return P_combined * 3.0 / N_R
 
     p4 = slot_4.get(rarity, 0.0)
     p5 = slot_5.get(rarity, 0.0)
-    regular_contrib = P_regular * (p4 + p5) / N_R
+    regular_contrib = P_combined * (p4 + p5) / N_R
 
-    # Rare pack: 5 slots each with rare_dist probability
+    # Rare pack: 5 slots each with rare_dist probability.
+    # crown_or_highest_rare is an alias for crown used in some pack models.
     p_rare_per_slot = rare_dist.get(rarity, 0.0)
+    if rarity == "crown" and p_rare_per_slot == 0.0:
+        p_rare_per_slot = rare_dist.get("crown_or_highest_rare", 0.0)
     rare_contrib = P_rare * 5 * p_rare_per_slot / N_R
 
-    return regular_contrib + rare_contrib
+    # Card 6 (regular_pack_plus_one branch only, shiny rarities).
+    # Currently 0 for all packs since shiny cards are not in pack_sources.json.
+    p6 = slot_6.get(rarity, 0.0)
+    plus_one_card6_contrib = P_plus_one * p6 / N_R if p6 > 0 else 0.0
+
+    return regular_contrib + rare_contrib + plus_one_card6_contrib
 
 
 def value_of_next_copy(owned: int, is_ex: bool,
@@ -400,7 +414,14 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total, resolut
     model_confidence = _read_model_confidence(PULL_MODEL_JSON)
     summary = summarize(pack_ev_records)
 
-    if model_confidence == "third_party_verified":
+    if model_confidence == "in_app_verified_partial":
+        warning = (
+            "Slot rates are IN_APP_VERIFIED_PARTIAL — Pulsing Aura (B3) user-in-app-verified "
+            "(three-branch model, corrected rare pack rates). All other packs retain prior "
+            "third_party_verified two-branch model (may be missing regular_pack_plus_one branch). "
+            "EV rankings are suitable for planning but not fully verified."
+        )
+    elif model_confidence == "third_party_verified":
         warning = (
             "Slot rates are THIRD_PARTY_VERIFIED — confirmed across 4 independent sources "
             "(Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. "
@@ -713,7 +734,11 @@ def run_validate() -> bool:
 
     # model_confidence must be a valid confidence level
     mc = out.get("meta", {}).get("model_confidence")
-    valid_mc = ("inferred", "third_party_verified", "verified")
+    valid_mc = (
+        "inferred", "third_party_verified", "verified",
+        "user_in_app_verified", "in_app_verified_partial",
+        "third_party_verified_with_in_app_anchor", "pending_verification",
+    )
     if mc not in valid_mc:
         print(f"  ERROR: model_confidence='{mc}' not in {valid_mc}")
         errors += 1

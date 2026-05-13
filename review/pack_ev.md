@@ -48,7 +48,7 @@
 | 2 | Mewtwo | Genetic Apex | 0.1028 | Ivysaur |
 | 3 | Deluxe Pack: ex | Deluxe Pack: ex | 0.0746 | Ivysaur, Ivysaur |
 | 4 | Solgaleo | Celestial Guardians | 0.0611 | none |
-| 5 | Pulsing Aura | Pulsing Aura | 0.0341 | none |
+| 5 | Pulsing Aura | Pulsing Aura | 0.0340 | none |
 
 ## All Packs — EV Summary
 
@@ -76,7 +76,7 @@
 | Pikachu | Genetic Apex | A1 | 127 | 28 | 99 | 3.9184 | 3.3306 |
 | Mewtwo | Genetic Apex | A1 | 126 | 38 | 88 | 3.7641 | 3.1995 |
 | Arceus | Triumphant Light | A2a | 96 | 25 | 71 | 3.5374 | 3.0068 |
-| Pulsing Aura | Pulsing Aura | B3 | 234 | 141 | 93 | 2.0274 | 1.7233 |
+| Pulsing Aura | Pulsing Aura | B3 | 234 | 141 | 93 | 2.0273 | 1.7232 |
 | Crimson Blaze | Crimson Blaze | B1a | 103 | 64 | 39 | 1.7817 | 1.5145 |
 
 ## Top EV Cards per Pack (Top 5 Packs)

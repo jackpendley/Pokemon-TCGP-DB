@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Pokemon TCG Pocket Pull Probability Model",
-  "description": "Per-pack pull probability model for PTCGP. rarity_probabilities are null until populated from verified in-app offering rates. slot_rates may be populated from trusted external sources with confidence=inferred.",
+  "description": "Per-pack pull probability model for PTCGP. Supports two-branch model (regular+rare) and three-branch model (regular+rare+regular_plus_one). rarity_probabilities are null until populated from verified in-app offering rates.",
   "type": "object",
   "required": ["meta", "packs"],
   "properties": {
@@ -13,7 +13,16 @@
         "model_version": { "type": "string" },
         "source_status": {
           "type": "string",
-          "enum": ["verified", "third_party_verified", "inferred", "scaffold_only"]
+          "enum": [
+            "verified",
+            "third_party_verified",
+            "user_in_app_verified",
+            "third_party_verified_with_in_app_anchor",
+            "in_app_verified_partial",
+            "pending_verification",
+            "inferred",
+            "scaffold_only"
+          ]
         },
         "verified_source": { "type": ["string", "null"] },
         "notes": { "type": ["string", "null"] }
@@ -37,49 +46,124 @@
           "source_accessed_at": { "type": ["string", "null"] },
           "confidence": {
             "type": "string",
-            "enum": ["verified", "third_party_verified", "inferred", "unknown"]
+            "enum": [
+              "verified",
+              "third_party_verified",
+              "user_in_app_verified",
+              "third_party_verified_with_in_app_anchor",
+              "in_app_verified_partial",
+              "pending_verification",
+              "inferred",
+              "unknown"
+            ]
+          },
+          "stale_model_warning": {
+            "type": ["string", "null"],
+            "description": "Warning note when this pack's slot_rates use an older model structure that may be missing branches (e.g. regular_pack_plus_one) discovered via in-app verification of other packs."
+          },
+          "user_in_app_evidence_note": {
+            "type": ["string", "null"],
+            "description": "Note describing the source of user-provided in-app verification evidence (e.g. location of screenshots)."
+          },
+          "external_matching_sources": {
+            "type": ["array", "null"],
+            "description": "External reputable sources that match or corroborate this pack's rates.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_name": { "type": "string" },
+                "url": { "type": "string" },
+                "match_result": { "type": "string" },
+                "notes": { "type": ["string", "null"] }
+              }
+            }
+          },
+          "generalization_status": {
+            "type": ["string", "null"],
+            "description": "Whether the corrected three-branch model has been generalized to this pack from another verified pack.",
+            "enum": ["generalized_from_anchor", "pack_specific_verified", "pending", "not_applicable", null]
+          },
+          "official_verification_status": {
+            "type": ["string", "null"],
+            "description": "Whether official in-app verification has been completed for this pack.",
+            "enum": ["verified", "user_in_app_verified", "pending", "not_verified", null]
           },
           "slot_model": {
             "type": ["object", "null"],
             "properties": {
               "cards_per_pack": { "type": ["integer", "null"] },
               "slot_count": { "type": ["integer", "null"] },
+              "branch_model": {
+                "type": ["string", "null"],
+                "enum": ["two_branch", "three_branch", null],
+                "description": "two_branch: regular+rare only. three_branch: regular+rare+regular_plus_one."
+              },
               "notes": { "type": ["string", "null"] }
             }
           },
           "slot_rates": {
             "type": ["object", "null"],
-            "description": "Per-slot pull probability tables. Populated from trusted external sources (confidence=inferred) or in-app Offering Rates (confidence=verified). Slots 1-3 are always one_diamond in regular packs. Slot 4 and slot 5 have different rarity distributions. Rare/god packs apply one distribution across all 5 slots.",
+            "description": "Per-slot pull probability tables. Slots 1-3 always one_diamond in regular packs. Slot 4 and slot 5 have rarity distributions. Rare packs apply one distribution to all 5 slots. regular_pack_plus_one adds a 6th card with shiny rarities.",
             "properties": {
               "regular_pack_probability": {
                 "type": ["number", "null"],
                 "minimum": 0, "maximum": 1,
-                "description": "Probability that a given pack opening is a regular (non-rare) pack"
+                "description": "Probability that a given pack opening is a regular (non-rare, non-plus-one) pack. In two-branch model this absorbs the plus-one probability."
               },
               "rare_pack_probability": {
                 "type": ["number", "null"],
                 "minimum": 0, "maximum": 1,
-                "description": "Probability that a given pack opening is a rare/god pack"
+                "description": "Probability that a given pack opening is a rare/god pack."
+              },
+              "regular_pack_plus_one_probability": {
+                "type": ["number", "null"],
+                "minimum": 0, "maximum": 1,
+                "description": "Probability of a Regular Pack + 1 Card opening (6-card pack; card 6 is shiny rarity). Null for packs using two-branch model."
               },
               "slots_1_3": {
                 "type": ["object", "null"],
-                "description": "Rarity distribution for slots 1, 2, and 3 in a regular pack (always one_diamond)"
+                "description": "Rarity distribution for slots 1, 2, and 3 in a regular or regular+1 pack (always one_diamond)"
               },
               "slot_4": {
                 "type": ["object", "null"],
-                "description": "Rarity distribution for slot 4 in a regular pack (guaranteed 2-diamond or better)"
+                "description": "Rarity distribution for slot 4 in a regular or regular+1 pack"
               },
               "slot_5": {
                 "type": ["object", "null"],
-                "description": "Rarity distribution for slot 5 in a regular pack (the rare slot, never below 2-diamond)"
+                "description": "Rarity distribution for slot 5 in a regular or regular+1 pack"
+              },
+              "slot_6": {
+                "type": ["object", "null"],
+                "description": "Rarity distribution for slot 6 in a regular+1 pack (shiny rarities only: one_shiny, two_shiny). Null for two-branch packs.",
+                "properties": {
+                  "one_shiny":  { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "two_shiny":  { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+                }
               },
               "rare_pack_all_5_slots": {
                 "type": ["object", "null"],
-                "description": "Rarity distribution applied uniformly to all 5 slots in a rare/god pack"
+                "description": "Rarity distribution applied uniformly to all 5 slots in a rare/god pack. May include crown_or_highest_rare for packs where the highest rarity is not standard crown.",
+                "properties": {
+                  "one_star":             { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "double_star":          { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "triple_star":          { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "crown":                { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "crown_or_highest_rare":{ "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+                }
               },
               "confidence": {
                 "type": ["string", "null"],
-                "enum": ["verified", "third_party_verified", "inferred", "unknown", null]
+                "enum": [
+                  "verified",
+                  "third_party_verified",
+                  "user_in_app_verified",
+                  "third_party_verified_with_in_app_anchor",
+                  "in_app_verified_partial",
+                  "pending_verification",
+                  "inferred",
+                  "unknown",
+                  null
+                ]
               },
               "source_name": { "type": ["string", "null"] },
               "source_url": { "type": ["string", "null"] },
@@ -87,7 +171,6 @@
               "source_notes": { "type": ["string", "null"] },
               "cross_checked_sources": {
                 "type": ["array", "null"],
-                "description": "Independent third-party sources that confirm these rates",
                 "items": {
                   "type": "object",
                   "properties": {
@@ -105,7 +188,7 @@
           },
           "card_pool": {
             "type": "object",
-            "description": "Card counts by rarity in this pack's pullable pool (pack-specific + shared pool combined).",
+            "description": "Card counts by rarity in this pack's pullable pool. Does not include shiny cards (one_shiny/two_shiny) which are not in pack_sources.json.",
             "properties": {
               "pack_specific_total": { "type": "integer" },
               "shared_pool_total": { "type": "integer" },
@@ -117,7 +200,7 @@
           },
           "rarity_probabilities": {
             "type": "object",
-            "description": "Aggregate per-pack pull probability per rarity tier (P(at least one of this rarity in a 5-card pack)). All values null until populated from verified in-app offering rates or computed from slot_rates.",
+            "description": "Aggregate per-pack pull probability per rarity tier. All values null until computed from verified slot_rates.",
             "properties": {
               "one_diamond":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "two_diamond":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
@@ -127,6 +210,8 @@
               "double_star":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "triple_star":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "crown":         { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "one_shiny":     { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "two_shiny":     { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "promo":         { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "unknown":       { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
             }

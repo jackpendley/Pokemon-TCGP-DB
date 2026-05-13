@@ -176,8 +176,8 @@ Scripts built (do not rebuild):
 - **Do not make final automated pack-opening recommendations yet.**
 
 Current blockers before automated pack recommendations:
-- Slot rates not officially in-app verified (third_party_verified only — 4 independent sources confirmed)
-- 59 ambiguous pack-source entries at low confidence (< 0.80) — reduce EV accuracy
+- Slot rates partially in-app verified — Pulsing Aura (B3) user_in_app_verified (three-branch model); 23 other packs remain third_party_verified with stale_model_warning
+- 59 ambiguous pack-source entries at low confidence (< 0.80) — reduce EV accuracy (192/224 EV-ready after 35 resolved)
 - Deck scoring model not built
 - Optional meta/tier data not integrated
 
@@ -202,7 +202,7 @@ python3 scripts/reconcile_current_collection_sources.py
 
 ## 11. Next Recommended Phase
 
-Verify slot rates in-app to upgrade from third_party_verified → verified confidence.
+Continue in-app verification for remaining packs to upgrade all packs from third_party_verified → verified confidence.
 
 Completed phases (do not rebuild):
 - Screenshot-to-collection alignment (`scripts/build_screenshot_collection_alignment.py`) — 224/224 entries, PASS
@@ -213,16 +213,17 @@ Completed phases (do not rebuild):
 - Inferred pack recommendation report (`scripts/generate_pack_recommendation_report.py`) — 5-metric ranking, chase-deck guide, 3 planning scenarios, PASS
 - Pull rate cross-check (`review/pull_rate_cross_check.md`) — confirmed by ONE Esports (full match) + 3 other sources, confidence upgraded to third_party_verified, model_version=0.3.0, PASS
 - Hourglass spending plan (`scripts/generate_hourglass_spending_plan.py`) — conservative/moderate/aggressive, 10-pack batches, stopping points, rerun checklist, PASS
+- **Pulsing Aura (B3) in-app verification** — user verified three-branch model in-app 2026-05-13 (screenshots in ChatGPT, not in repo). Corrected rare pack rates (47.058/45.098/3.921/3.921). Schema updated, model rebuilt at v0.4.0, confidence=in_app_verified_partial. See `review/in_app_rate_verification.md`.
 
 Next steps in order:
 
-1. **Verify slot rates in-app** — open PTCGP app → any pack → Pack details → Offering Rates. Compare displayed percentages against `slot_rates` in `pull_probability_model.json`. If they match, set confidence=verified and re-run `build_pack_ev.py`, `generate_pack_recommendation_report.py`, and `generate_hourglass_spending_plan.py` to upgrade output to verified confidence.
+1. **Continue in-app verification for other packs** — open PTCGP app → any pack → Pack details → Offering Rates. Compare branch probabilities against `slot_rates` in `pull_probability_model.json`. Three-branch structure (regular/rare/plus_one) expected to be universal. For each pack verified, update `pull_probability_model.json` and add a record to `data/current/in_app_rate_verification.json`.
 
-2. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers to expand EV-ready coverage from 157 to up to 216/224 entries.
+2. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers to expand EV-ready coverage from 192 to up to 216/224 entries.
 
 3. **Rebuild EV and reports after any update** — re-run `python3 scripts/build_pack_ev.py`, `python3 scripts/generate_pack_recommendation_report.py`, and `python3 scripts/generate_hourglass_spending_plan.py` after any rate or coverage change.
 
-**Do not issue final pack-opening recommendations until slot rates are verified in-app. Current status: third_party_verified (confirmed by 4 sources, not official). `review/final_hourglass_spending_plan.md` is the current decision-support document for pack-opening planning.**
+**Do not issue final pack-opening recommendations until all slot rates are verified in-app. Current status: in_app_verified_partial (Pulsing Aura verified; 23 packs third_party_verified). `review/final_hourglass_spending_plan.md` is the current decision-support document for pack-opening planning.**
 
 ## 12. Anti-Overengineering Principle
 

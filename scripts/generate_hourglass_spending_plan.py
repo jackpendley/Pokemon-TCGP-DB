@@ -505,7 +505,11 @@ def run_validate():
             "model_confidence=verified — this plan was generated after in-app verification. "
             "Confirm this is intentional."
         )
-    if model_conf not in ("inferred", "third_party_verified", "verified"):
+    if model_conf not in (
+        "inferred", "third_party_verified", "verified",
+        "user_in_app_verified", "in_app_verified_partial",
+        "third_party_verified_with_in_app_anchor", "pending_verification",
+    ):
         errors.append(f"Unexpected model_confidence: {model_conf}")
 
     # Check 8: Top pack in this plan matches pack_ev.json top pack
@@ -586,7 +590,11 @@ def main():
     coll_total = collection_data.get("actual_total_quantity", "?")
     print(f"  Collection total: {coll_total}")
 
-    if mc not in ("inferred", "third_party_verified", "verified"):
+    if mc not in (
+        "inferred", "third_party_verified", "verified",
+        "user_in_app_verified", "in_app_verified_partial",
+        "third_party_verified_with_in_app_anchor", "pending_verification",
+    ):
         print(f"ERROR: Unexpected model_confidence: {mc}", file=sys.stderr)
         sys.exit(1)
 

@@ -692,7 +692,11 @@ def run_validate() -> bool:
 
     # model_confidence must be a valid confidence level
     mc = out.get("model_confidence")
-    valid_mc = ("inferred", "third_party_verified", "verified")
+    valid_mc = (
+        "inferred", "third_party_verified", "verified",
+        "user_in_app_verified", "in_app_verified_partial",
+        "third_party_verified_with_in_app_anchor", "pending_verification",
+    )
     if mc not in valid_mc:
         print(f"  ERROR: model_confidence='{mc}' not in {valid_mc}")
         errors += 1

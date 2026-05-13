@@ -95,24 +95,27 @@ Outputs:
 - `data/exports/pack_source_confidence_scores.csv`
 - `review/pack_source_confidence_scores.md`
 
-### Pull Probability Model (2026-05-12)
+### Pull Probability Model (2026-05-13)
 
 | Metric | Value |
 |---|---|
 | Script | `scripts/build_pull_probability_model.py` |
 | Model file | `data/reference/pull_probability_model.json` |
 | Schema | `data/reference/pull_probability_model.schema.json` |
-| Model version | 0.3.0 |
+| Model version | **0.4.0** |
 | Packs modeled | **24** (all named pullable packs across 17 expansions) |
-| Source status | **third_party_verified** — confirmed by 4 independent reputable sources |
-| Slot rates | **24/24 packs** populated (confidence=third_party_verified) |
+| Source status | **in_app_verified_partial** — Pulsing Aura (B3) user-in-app-verified; 23 others third_party_verified |
+| Slot rates | **24/24 packs** populated |
 | rarity_probabilities | **all null** — aggregate rates require in-app verification |
 | Validation | `python3 scripts/validate_pull_probability_model.py` — **PASS** |
-| EV status | **PARTIALLY READY** — EV possible at third_party_verified confidence |
+| EV status | **PARTIALLY READY** — EV possible at in_app_verified_partial confidence |
 | External lookup | `review/pull_probability_external_lookup.md` |
 | Cross-check | `review/pull_rate_cross_check.md` — CONFIRMED, upgraded to third_party_verified |
+| In-app verification | `review/in_app_rate_verification.md` — Pulsing Aura (B3) user-in-app-verified 2026-05-13 |
 
-Slot rates source: Game8 PTCGP guide (primary). Cross-checked and confirmed by ONE Esports, CGMagazine, ShackNews (4 total independent sources). Rates confirmed universal across expansions.
+**Three-branch model discovered:** User verified Pulsing Aura (B3) in-app on 2026-05-13. Prior model was two-branch (regular_pack=99.950%, rare_pack=0.050%). Correct model is three-branch: regular_pack=94.711%, rare_pack=0.050%, regular_pack_plus_one=5.238%. Rare pack distribution corrected to 47.058/45.098/3.921/3.921 (was 40/50/5/5). No reputable external source found documenting the three-branch model — correction applied to B3 only; all 23 other packs retain the two-branch model with a `stale_model_warning`.
+
+Slot rates source: Game8 PTCGP guide (primary). Cross-checked and confirmed by ONE Esports, CGMagazine, ShackNews (4 total independent sources) for two-branch rates. Pulsing Aura corrected via user in-app verification (screenshots shared in ChatGPT conversation, not stored in this repo).
 
 Outputs:
 - `data/reference/pull_probability_model.json`
@@ -133,15 +136,15 @@ Outputs:
 | Output report | `review/pack_ev.md` |
 | Packs ranked | **24** (all modeled packs) |
 | Packs blocked | **0** |
-| Model confidence | **third_party_verified** — confirmed by 4 independent sources, not yet official in-app |
+| Model confidence | **in_app_verified_partial** — Pulsing Aura user-in-app-verified; 23 others third_party_verified |
 | Collection used | `collection_normalized.json` (380 cards, 224 entries) |
-| EV-ready entries | **157/224** (108 auto-accept + 49 secondary evidence) |
-| Excluded entries | **67/224** (59 low-confidence + 8 unresolved) |
+| EV-ready entries | **192/224** (35 newly resolved from ambiguous set) |
+| Excluded entries | **32/224** |
 | Deck targets | **4** (Ivysaur, Incineroar ex, Zygarde ex, Magnezone ex) |
 | Validation | `python3 scripts/build_pack_ev.py --validate` — **PASS** |
 | Top pack (total EV) | **Paldean Wonders** (ev=4.9435, adj=4.2019) |
 
-EV scoring weights: new_card=1.0, copy_up_to_2=0.4, ex_missing=1.0, deck_target=2.0, confidence_adj=0.85 (third_party_verified).
+EV scoring weights: new_card=1.0, copy_up_to_2=0.4, ex_missing=1.0, deck_target=2.0, confidence_adj=0.85 (in_app_verified_partial). Three-branch model support added: P_combined=P_regular+P_plus_one for slots 1–5; card 6 EV=0 (shiny pool not in pack_sources.json).
 
 Top 5 packs by total inferred EV:
 
@@ -167,7 +170,7 @@ python3 scripts/build_pack_ev.py --validate
 | Output MD | `review/inferred_pack_recommendations.md` |
 | Output JSON | `data/current/inferred_pack_recommendations.json` |
 | Output CSV | `data/exports/inferred_pack_recommendations.csv` |
-| Model confidence | **third_party_verified** — NOT verified in-app |
+| Model confidence | **in_app_verified_partial** — Pulsing Aura user-in-app-verified; 23 others third_party_verified |
 | Top recommendation | **Paldean Wonders** (adj EV=4.2019) |
 | Validation | `python3 scripts/generate_pack_recommendation_report.py --validate` — **PASS** |
 
@@ -204,7 +207,7 @@ python3 scripts/generate_pack_recommendation_report.py --validate
 | Scenarios | **3** — conservative (1 batch), moderate (3 batches), aggressive (5 batches) |
 | Batch size | **10 packs per batch** — no hourglass count assumed |
 | Top pack (all scenarios) | **Paldean Wonders** (adj EV=4.2019) |
-| Model confidence | **third_party_verified** — NOT officially in-app verified |
+| Model confidence | **in_app_verified_partial** — Pulsing Aura user-in-app-verified; 23 others third_party_verified |
 | Validation | `python3 scripts/generate_hourglass_spending_plan.py --validate` — **PASS** |
 
 Plan includes: per-batch stopping conditions, rerun triggers, deck-target variant for moderate scenario, global rerun checklist.
@@ -216,7 +219,7 @@ python3 scripts/generate_hourglass_spending_plan.py --validate
 
 ### Remaining blockers before verified pack recommendations
 
-1. **Slot rates not yet officially in-app verified** — `slot_rates` are confidence=third_party_verified (confirmed by 4 sources). Must be confirmed against the PTCGP app Offering Rates screen to reach `verified` confidence. `rarity_probabilities` (aggregate per-pack rates) are still null.
+1. **Slot rates partially in-app verified** — Pulsing Aura (B3) is user_in_app_verified (three-branch model, corrected rare pack rates). All other 23 packs remain third_party_verified with a `stale_model_warning` (two-branch model; may be missing regular_pack_plus_one branch). Must verify each pack against the PTCGP app Offering Rates screen to reach `verified` confidence. `rarity_probabilities` (aggregate per-pack rates) are still null.
 2. **59 ambiguous cross-set entries at low confidence (0.50–0.799)** — card appears in multiple expansions; the correct version cannot be determined without OCR or user confirmation.
 3. **8 unresolved entries (< 0.50)** — 3 Zygarde forms not in pack_sources; 5 common trainers not indexed in Limitless DB.
 4. **Pack-source mapping for Zygarde** — Zygarde ex not in pack_sources; pack unknown. Blocks Zygarde ex Fighting deck targeting.
@@ -225,7 +228,7 @@ python3 scripts/generate_hourglass_spending_plan.py --validate
 
 ### Recommended next phase
 
-1. **Verify slot rates in-app** — open PTCGP → any pack → Pack details → Offering Rates. If values match `slot_rates` in `pull_probability_model.json`, set confidence=verified, re-run `build_pack_ev.py` and `generate_pack_recommendation_report.py` to upgrade to verified confidence.
+1. **Continue in-app verification for other packs** — Pulsing Aura (B3) is done. Open PTCGP → any other pack → Pack details → Offering Rates. If branch probabilities match (three-branch structure expected), update `pull_probability_model.json` and re-run downstream scripts. See `review/in_app_rate_verification.md` for the verification record format.
 2. **Use the hourglass spending plan** — `review/final_hourglass_spending_plan.md` has conservative/moderate/aggressive scenarios for immediate pack decisions at third_party_verified confidence.
 3. **Resolve 59 ambiguous entries** — expands EV-ready coverage to ~216/224, improving EV accuracy.
 

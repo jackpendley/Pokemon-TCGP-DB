@@ -18,8 +18,8 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-05-12T18:44:57+00:00 |
-| Model confidence | **third_party_verified** (not official in-app verified) |
+| Report generated | 2026-05-13T03:10:56+00:00 |
+| Model confidence | **in_app_verified_partial** (not official in-app verified) |
 | Collection total | 380 cards (380 validated) |
 | EV-ready entries | 157/224 (108 auto-accept + 49 secondary evidence) |
 | Excluded from EV | 67/224 (59 low-confidence + 8 unresolved) |
@@ -80,7 +80,7 @@ Zygarde ex has **no known pack** — not in pack_sources.json.
 | 2 | Mewtwo | 0.1028 | Contains Ivysaur (two_diamond) — alternative Mega Venusaur ex route |
 | 3 | Deluxe Pack: ex | 0.0746 | Contains Ivysaur but low per-card rate (large pool, 379 cards) |
 | 4 | Solgaleo | 0.0611 | Contains Incineroar ex (four_diamond) — best for Incineroar ex chase deck |
-| 5 | Pulsing Aura | 0.0341 | Contains Magnezone ex — best for Magnezone ex chase deck |
+| 5 | Pulsing Aura | 0.0340 | Contains Magnezone ex — best for Magnezone ex chase deck |
 
 ### Best for EX / Card Power
 
@@ -101,7 +101,7 @@ These packs have the lowest adjusted EV — most cards in the pool are already o
 | Rank | Pack | Adj. EV | Owned/Pool | Notes |
 |---|---|---|---|---|
 | 1 | Crimson Blaze | 1.5145 | 64/103 | High deck-target value offsets low general EV — open only if chasing Ivysaur |
-| 2 | Pulsing Aura | 1.7233 | 141/234 | Contains Magnezone ex — open only if chasing that deck |
+| 2 | Pulsing Aura | 1.7232 | 141/234 | Contains Magnezone ex — open only if chasing that deck |
 | 3 | Arceus | 3.0068 | 25/96 | Mid-range owned ratio |
 | 4 | Mewtwo | 3.1995 | 38/126 | Higher EV than Crimson Blaze/Pulsing Aura; only deprioritized vs top packs |
 | 5 | Pikachu | 3.3306 | 28/127 | Low new-card return relative to pool |
@@ -319,7 +319,7 @@ If completing a specific chase deck matters more, see Scenario B.
 | 20 | Pikachu | Genetic Apex | 3.3306 | 3.9184 | 3.6447 | 99 | 0.0000 | 0.0000 |
 | 21 | Mewtwo | Genetic Apex | 3.1995 | 3.7641 | 3.3167 | 88 | 0.1028 | 0.0000 |
 | 22 | Arceus | Triumphant Light | 3.0068 | 3.5374 | 3.0803 | 71 | 0.0000 | 0.0000 |
-| 23 | Pulsing Aura | Pulsing Aura | 1.7233 | 2.0274 | 1.3673 | 93 | 0.0341 | 0.1894 |
+| 23 | Pulsing Aura | Pulsing Aura | 1.7232 | 2.0273 | 1.3672 | 93 | 0.0340 | 0.1892 |
 | 24 | Crimson Blaze | Crimson Blaze | 1.5145 | 1.7817 | 1.1217 | 39 | 0.1499 | 0.1349 |
 
 ---

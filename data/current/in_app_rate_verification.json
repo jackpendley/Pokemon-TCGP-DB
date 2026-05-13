@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "generated": "2026-05-13",
+    "source_script": "manual — user-provided in-app Offering Rates",
+    "version": "1.0.0",
+    "note": "Rates provided by user who manually verified the in-app Offering Rates screen in the Pokémon TCG Pocket app. Screenshots were shared in ChatGPT conversation and are NOT stored in this repository."
+  },
+  "verifications": [
+    {
+      "pack_name": "Pulsing Aura",
+      "set_code": "B3",
+      "expansion": "Pulsing Aura",
+      "verification_status": "user_in_app_verified",
+      "verified_date": "2026-05-13",
+      "source_location": "User-provided in-app Offering Rates screenshots, shared in ChatGPT conversation. Screenshots are NOT stored in this repository.",
+      "source_type": "user_in_app_verified",
+      "branch_selection": {
+        "note": "Displayed rates may sum to 99.999% due to app rounding.",
+        "regular_pack": {
+          "probability": 0.94711,
+          "display_percent": "94.711%"
+        },
+        "rare_pack": {
+          "probability": 0.00050,
+          "display_percent": "0.050%"
+        },
+        "regular_pack_plus_one": {
+          "probability": 0.05238,
+          "display_percent": "5.238%",
+          "description": "Pack opens with 6 cards; card 6 is always shiny rarity"
+        },
+        "sum_check": "94.711 + 0.050 + 5.238 = 99.999 (rounding; effectively 100%)"
+      },
+      "regular_pack_slot_model": {
+        "cards_1_to_3": {
+          "one_diamond": 1.0,
+          "note": "100% one_diamond for each of slots 1-3. Individual card example: 1.538% (for one specific ♦ card)."
+        },
+        "card_4": {
+          "two_diamond": 0.90000,
+          "three_diamond": 0.05000,
+          "four_diamond": 0.01667,
+          "one_star": 0.02572,
+          "double_star": 0.00500,
+          "triple_star": 0.00222,
+          "crown": 0.00040,
+          "sum_check": "0.90000+0.05000+0.01667+0.02572+0.00500+0.00222+0.00040 = 1.00001 (display rounding)"
+        },
+        "card_5": {
+          "two_diamond": 0.59998,
+          "three_diamond": 0.20000,
+          "four_diamond": 0.06667,
+          "one_star": 0.10286,
+          "double_star": 0.02000,
+          "triple_star": 0.00889,
+          "crown": 0.00160,
+          "sum_check": "displayed as ~60.000% in app; recorded as 59.998% per app display",
+          "note": "App displayed approximately 60.000% for two_diamond slot 5; 59.998% captured from display."
+        }
+      },
+      "rare_pack_slot_model": {
+        "note": "All 5 slots in a rare pack use this distribution. Old model (40/50/5/5) was INCORRECT for Pulsing Aura.",
+        "cards_1_to_5_each": {
+          "one_star": 0.47058,
+          "double_star": 0.45098,
+          "triple_star": 0.03921,
+          "crown_or_highest_rare": 0.03921,
+          "sum_check": "0.47058+0.45098+0.03921+0.03921 = 0.99998 (display rounding; effectively 1.0)"
+        }
+      },
+      "regular_pack_plus_one_slot_model": {
+        "cards_1_to_3": "same as regular_pack",
+        "card_4": "same as regular_pack card_4",
+        "card_5": "same as regular_pack card_5",
+        "card_6": {
+          "note": "Card 6 is always a shiny rarity. one_shiny and two_shiny are separate from the standard ☆/☆☆ rarities.",
+          "one_shiny": 0.68180,
+          "two_shiny": 0.31820,
+          "individual_card_examples": {
+            "one_shiny_example": "3.409% per specific one_shiny card",
+            "two_shiny_example": "3.977% per specific two_shiny card"
+          },
+          "sum_check": "0.68180 + 0.31820 = 1.00000"
+        }
+      },
+      "model_corrections_from_prior_model": {
+        "branch_model": "CORRECTED — old model was two-branch (regular 99.950% + rare 0.050%). Correct model is three-branch (regular 94.711% + rare 0.050% + regular+1 5.238%).",
+        "rare_pack_distribution": "CORRECTED — old model used 40/50/5/5 (one_star/double_star/triple_star/crown). Correct for Pulsing Aura is 47.058/45.098/3.921/3.921.",
+        "card_6": "NEW — regular_pack_plus_one branch adds a 6th card (shiny only) not in old model.",
+        "slots_1_to_5": "UNCHANGED — per-slot rates for one_diamond through crown in slots 1-5 match the prior third_party_verified model."
+      }
+    }
+  ]
+}

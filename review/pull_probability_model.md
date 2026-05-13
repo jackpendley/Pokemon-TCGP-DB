@@ -1,22 +1,21 @@
 # Pull Probability Model
 
-> **Slot rates confirmed by multiple independent third-party sources (third_party_verified).**
-> Sources: Game8, ONE Esports, CGMagazine, ShackNews.
-> NOT official in-app verified.
-> `rarity_probabilities` (aggregate per-pack rates) are still null.
-> To officially verify: PTCGP app → any pack → Pack details → Offering Rates.
+> **Scaffold only — pull rates are NOT populated.**
+> All `rarity_probabilities` values are `null`.
+> Card pool counts (how many cards of each rarity exist per pack) are from `pack_sources.json`.
+> Pull rates must come from the official in-app Offering Rates screen.
 
 ## Status
 
 | Metric | Value |
 |---|---|
-| Model version | 0.3.0 |
-| Source status | **third_party_verified** |
+| Model version | 0.4.0 |
+| Source status | **in_app_verified_partial** |
 | Inferred source | None |
 | Verified source | None |
 | Third-party verified sources | game8_co, one_esports_gg, cgmagonline_com, shacknews_com |
 | Total packs modeled | 24 |
-| Packs with third_party_verified rates | 24 |
+| Packs with third_party_verified rates | 23 |
 | Packs with inferred slot rates | 0 |
 | Packs with verified rates | 0 |
 | rarity_probabilities values | **all null** (aggregate rates not yet verified) |

@@ -1,11 +1,15 @@
 {
-  "generated_at": "2026-05-12T18:43:58+00:00",
+  "generated_at": "2026-05-13T03:06:59+00:00",
   "generated_by": "build_pull_probability_model.py",
   "meta": {
-    "generated_at": "2026-05-12T18:43:58+00:00",
-    "model_version": "0.3.0",
-    "source_status": "third_party_verified",
+    "generated_at": "2026-05-13T03:06:59+00:00",
+    "model_version": "0.4.0",
+    "source_status": "in_app_verified_partial",
     "verified_source": null,
+    "user_in_app_verified_packs": [
+      "Pulsing Aura (B3)"
+    ],
+    "user_in_app_evidence_note": "Pulsing Aura (B3) rates verified by user from in-app Offering Rates screen. Screenshots in ChatGPT conversation, NOT stored in repo.",
     "third_party_verified_sources": [
       "game8_co",
       "one_esports_gg",
@@ -13,14 +17,14 @@
       "shacknews_com"
     ],
     "inferred_source": null,
-    "confidence_note": "third_party_verified: confirmed by 4 independent third-party sources. NOT official in-app verified. Rates should be confirmed against the PTCGP app Offering Rates screen before being treated as officially verified.",
-    "notes": "Slot rates (slot_rates) are confirmed across 4 independent third-party sources (Game8, ONE Esports, CGMagazine, ShackNews) — confidence=third_party_verified. NOT official in-app verified. rarity_probabilities (aggregate per-pack rates) remain null — these require in-app verification to populate. Third-party verified: 24, Verified: 0, Inferred: 0, Unknown: 0."
+    "confidence_note": "in_app_verified_partial: Pulsing Aura (B3) corrected to three-branch model from user in-app verification. All other packs retain two-branch third_party_verified model. The three-branch model was NOT confirmed by reputable external sources for other packs. Per-pack in-app verification required to expand the corrected model.",
+    "notes": "Mixed model: 1 pack(s) use user_in_app_verified three-branch model (Pulsing Aura B3, 2026-05-13). 23 packs retain prior two-branch third_party_verified model with stale_model_warning. The three-branch correction has not been confirmed for other packs via external sources — all non-B3 packs marked with stale_model_warning. rarity_probabilities remain null for all packs."
   },
   "probability_source_required": {
-    "status": "THIRD_PARTY_VERIFIED",
-    "description": "Slot-level rates confirmed by 4 independent third-party sources. NOT official in-app verified. Aggregate rarity_probabilities still null — require in-app verification.",
+    "status": "MISSING",
+    "description": "No rates available.",
     "how_to_officially_verify": "In the Pokémon TCG Pocket app: tap a pack > view 'Offering Rates'. Compare to slot_rates in this file. If they match, set confidence='verified' and populate rarity_probabilities.",
-    "cross_check_sources": "Game8 (primary), ONE Esports, CGMagazine, ShackNews"
+    "cross_check_sources": null
   },
   "packs": [
     {
@@ -32,10 +36,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -120,13 +128,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 44,
-          "double_star": 18,
-          "four_diamond": 5,
-          "two_diamond": 34,
           "three_diamond": 14,
           "triple_star": 1,
           "one_star": 22,
-          "unknown": 2
+          "four_diamond": 5,
+          "two_diamond": 34,
+          "unknown": 2,
+          "double_star": 18
         }
       },
       "rarity_probabilities": {
@@ -141,7 +149,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Solgaleo",
@@ -152,10 +160,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -240,13 +252,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 44,
-          "double_star": 18,
-          "four_diamond": 5,
-          "two_diamond": 34,
           "three_diamond": 14,
           "triple_star": 1,
           "one_star": 22,
-          "unknown": 2
+          "four_diamond": 5,
+          "two_diamond": 34,
+          "unknown": 2,
+          "double_star": 18
         }
       },
       "rarity_probabilities": {
@@ -261,7 +273,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Crimson Blaze",
@@ -272,10 +284,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -357,13 +373,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "double_star": 15,
-          "four_diamond": 5,
-          "two_diamond": 24,
           "three_diamond": 8,
-          "triple_star": 1,
           "one_star": 16,
-          "unknown": 2
+          "four_diamond": 5,
+          "triple_star": 1,
+          "two_diamond": 24,
+          "unknown": 2,
+          "double_star": 15
         }
       },
       "rarity_probabilities": {
@@ -378,7 +394,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Deluxe Pack: ex",
@@ -389,10 +405,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -474,13 +494,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 128,
-          "double_star": 18,
-          "four_diamond": 75,
-          "two_diamond": 100,
           "three_diamond": 50,
-          "triple_star": 1,
           "one_star": 6,
-          "unknown": 1
+          "four_diamond": 75,
+          "triple_star": 1,
+          "two_diamond": 100,
+          "unknown": 1,
+          "double_star": 18
         }
       },
       "rarity_probabilities": {
@@ -495,7 +515,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Eevee Grove",
@@ -506,10 +526,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -591,13 +615,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "double_star": 17,
-          "four_diamond": 6,
-          "two_diamond": 23,
           "three_diamond": 8,
-          "triple_star": 1,
           "one_star": 19,
-          "unknown": 1
+          "four_diamond": 6,
+          "triple_star": 1,
+          "two_diamond": 23,
+          "unknown": 1,
+          "double_star": 17
         }
       },
       "rarity_probabilities": {
@@ -612,7 +636,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Extradimensional Crisis",
@@ -623,10 +647,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -708,13 +736,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "double_star": 16,
-          "four_diamond": 5,
-          "two_diamond": 24,
           "three_diamond": 8,
-          "triple_star": 1,
           "one_star": 16,
-          "unknown": 1
+          "four_diamond": 5,
+          "triple_star": 1,
+          "two_diamond": 24,
+          "unknown": 1,
+          "double_star": 16
         }
       },
       "rarity_probabilities": {
@@ -729,7 +757,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Fantastical Parade",
@@ -740,10 +768,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -825,13 +857,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 66,
-          "double_star": 31,
-          "four_diamond": 10,
-          "two_diamond": 51,
           "three_diamond": 28,
-          "triple_star": 2,
           "one_star": 44,
-          "unknown": 2
+          "four_diamond": 10,
+          "triple_star": 2,
+          "two_diamond": 51,
+          "unknown": 2,
+          "double_star": 31
         }
       },
       "rarity_probabilities": {
@@ -846,7 +878,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Charizard",
@@ -857,10 +889,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -946,13 +982,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 50,
-          "double_star": 10,
-          "four_diamond": 5,
-          "two_diamond": 35,
           "three_diamond": 14,
           "triple_star": 2,
           "one_star": 8,
-          "unknown": 3
+          "four_diamond": 5,
+          "two_diamond": 35,
+          "unknown": 3,
+          "double_star": 10
         }
       },
       "rarity_probabilities": {
@@ -967,7 +1003,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Mewtwo",
@@ -978,10 +1014,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -1067,13 +1107,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 50,
-          "double_star": 9,
-          "four_diamond": 5,
-          "two_diamond": 35,
           "three_diamond": 14,
           "triple_star": 2,
           "one_star": 8,
-          "unknown": 3
+          "four_diamond": 5,
+          "two_diamond": 35,
+          "unknown": 3,
+          "double_star": 9
         }
       },
       "rarity_probabilities": {
@@ -1088,7 +1128,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Pikachu",
@@ -1099,10 +1139,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -1188,13 +1232,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 50,
-          "double_star": 10,
-          "four_diamond": 5,
-          "two_diamond": 35,
           "three_diamond": 14,
           "triple_star": 2,
           "one_star": 8,
-          "unknown": 3
+          "four_diamond": 5,
+          "two_diamond": 35,
+          "unknown": 3,
+          "double_star": 10
         }
       },
       "rarity_probabilities": {
@@ -1209,7 +1253,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Mega Altaria",
@@ -1220,10 +1264,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -1309,13 +1357,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 49,
-          "double_star": 15,
-          "four_diamond": 5,
-          "two_diamond": 33,
           "three_diamond": 15,
           "triple_star": 1,
           "one_star": 18,
-          "unknown": 3
+          "four_diamond": 5,
+          "two_diamond": 33,
+          "unknown": 3,
+          "double_star": 15
         }
       },
       "rarity_probabilities": {
@@ -1330,7 +1378,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Mega Blaziken",
@@ -1341,10 +1389,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -1430,13 +1482,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 49,
-          "double_star": 15,
-          "four_diamond": 5,
-          "two_diamond": 33,
           "three_diamond": 15,
           "triple_star": 1,
           "one_star": 18,
-          "unknown": 3
+          "four_diamond": 5,
+          "two_diamond": 33,
+          "unknown": 3,
+          "double_star": 15
         }
       },
       "rarity_probabilities": {
@@ -1451,7 +1503,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Mega Gyarados",
@@ -1462,10 +1514,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -1551,13 +1607,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 49,
-          "double_star": 15,
-          "four_diamond": 5,
-          "two_diamond": 33,
           "three_diamond": 15,
           "triple_star": 1,
           "one_star": 18,
-          "unknown": 3
+          "four_diamond": 5,
+          "two_diamond": 33,
+          "unknown": 3,
+          "double_star": 15
         }
       },
       "rarity_probabilities": {
@@ -1572,7 +1628,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Mega Shine",
@@ -1583,10 +1639,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -1668,13 +1728,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 33,
-          "double_star": 14,
-          "four_diamond": 5,
-          "two_diamond": 23,
           "three_diamond": 8,
-          "triple_star": 2,
           "one_star": 30,
-          "unknown": 2
+          "four_diamond": 5,
+          "triple_star": 2,
+          "two_diamond": 23,
+          "unknown": 2,
+          "double_star": 14
         }
       },
       "rarity_probabilities": {
@@ -1689,7 +1749,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Mew",
@@ -1700,10 +1760,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -1785,13 +1849,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "double_star": 10,
-          "four_diamond": 5,
-          "two_diamond": 23,
           "three_diamond": 8,
-          "triple_star": 1,
           "one_star": 6,
-          "unknown": 1
+          "four_diamond": 5,
+          "triple_star": 1,
+          "two_diamond": 23,
+          "unknown": 1,
+          "double_star": 10
         }
       },
       "rarity_probabilities": {
@@ -1806,7 +1870,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Paldean Wonders",
@@ -1817,10 +1881,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -1902,13 +1970,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 43,
-          "double_star": 19,
-          "four_diamond": 5,
-          "two_diamond": 33,
           "three_diamond": 12,
-          "triple_star": 1,
           "one_star": 16,
-          "unknown": 2
+          "four_diamond": 5,
+          "triple_star": 1,
+          "two_diamond": 33,
+          "unknown": 2,
+          "double_star": 19
         }
       },
       "rarity_probabilities": {
@@ -1923,84 +1991,69 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Pulsing Aura",
       "expansion": "Pulsing Aura",
       "set_code": "B3",
       "is_shared_pool": false,
-      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
-      "source_name": "in_app_offering_rates_not_yet_recorded",
-      "source_accessed_at": "2026-05-12",
-      "confidence": "third_party_verified",
+      "source_url": null,
+      "source_name": "user_provided_in_app_offering_rates_chatgpt_conversation",
+      "source_accessed_at": "2026-05-13",
+      "confidence": "user_in_app_verified",
+      "stale_model_warning": null,
+      "user_in_app_evidence_note": "User manually read Pulsing Aura Offering Rates from the PTCGP app and provided values in a ChatGPT conversation on 2026-05-13. Screenshots are NOT stored in this repository.",
+      "official_verification_status": "user_in_app_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "three_branch"
       },
       "slot_rates": {
-        "regular_pack_probability": 0.9995,
+        "regular_pack_probability": 0.94711,
         "rare_pack_probability": 0.0005,
+        "regular_pack_plus_one_probability": 0.05238,
         "slots_1_3": {
           "one_diamond": 1.0
         },
         "slot_4": {
           "two_diamond": 0.9,
           "three_diamond": 0.05,
-          "four_diamond": 0.01666,
+          "four_diamond": 0.01667,
           "one_star": 0.02572,
           "double_star": 0.005,
           "triple_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
+          "two_diamond": 0.59998,
           "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
+          "four_diamond": 0.06667,
+          "one_star": 0.10286,
           "double_star": 0.02,
-          "triple_star": 0.00888,
+          "triple_star": 0.00889,
           "crown": 0.0016
         },
-        "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
-          "crown": 0.05
+        "slot_6": {
+          "one_shiny": 0.6818,
+          "two_shiny": 0.3182,
+          "note": "Card 6 appears only in Regular Pack + 1 Card openings (5.238% of packs). Shiny cards are NOT in pack_sources.json — card 6 EV contribution is pending addition of one_shiny/two_shiny card pool data."
         },
-        "confidence": "third_party_verified",
-        "source_name": "game8_co_ptcgp_offering_rates",
-        "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
-        "source_accessed_at": "2026-05-12",
-        "source_notes": "Per-slot rates sourced from Game8 (trusted third-party PTCGP guide), corroborated by ShackNews (shacknews.com) and cgmagonline.com. Multiple independent trusted sources reproduce these specific decimal values consistently, which are consistent with the in-game Offering Rates disclosure. The game legally discloses rates in-app; these numbers match that level of specificity. Rates confirmed universal across expansions: cgmagonline article explicitly states rates stayed the same between Space-Time Smackdown and Triumphant Light. These rates apply to packs WITHOUT shiny rarities. Shiny rarities (introduced with Shining Revelry/A2b) are not present in pack_sources.json for any pack, so these rates are applied to all 24 modeled packs. IMPORTANT: Confidence is 'inferred', not 'verified'. To upgrade to verified: open each pack in the PTCGP app -> Pack details -> Offering Rates and confirm.",
-        "cross_checked_sources": [
-          {
-            "source_name": "one_esports_ptcgp_pull_rates",
-            "publisher": "ONE Esports",
-            "url": "https://www.oneesports.gg/gaming/pokemon-tcg-pocket-pity-system-explained/",
-            "accessed_at": "2026-05-12",
-            "match_result": "full_match",
-            "notes": "ALL slot rates match. One typo in source (1star slot4=2.2572% printed, corrected to 2.572% based on sum requirement)."
-          },
-          {
-            "source_name": "cgmagonline_pull_rates_lowered",
-            "publisher": "CGMagazine",
-            "url": "https://www.cgmagonline.com/news/pokemon-tcg-pocket-pull-rates-lowered/",
-            "accessed_at": "2026-05-12",
-            "match_result": "partial_match_confirms_universality",
-            "notes": "Explicitly confirms rates universal across packs using in-game Offering Rates terminology."
-          },
-          {
-            "source_name": "shacknews_ptcgp_drop_rates",
-            "publisher": "ShackNews",
-            "url": "https://www.shacknews.com/article/142035/pokemon-trading-card-game-pocket-card-drop-chance-rate",
-            "accessed_at": "2026-05-12",
-            "match_result": "partial_match_non_shiny_rates",
-            "notes": "Confirms non-shiny slot rates match (90%/60%)."
-          }
-        ],
-        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified — rates have not been checked against the PTCGP in-app Offering Rates screen directly."
+        "rare_pack_all_5_slots": {
+          "one_star": 0.47058,
+          "double_star": 0.45098,
+          "triple_star": 0.03921,
+          "crown_or_highest_rare": 0.03921
+        },
+        "confidence": "user_in_app_verified",
+        "source_name": "user_provided_in_app_offering_rates_chatgpt_conversation",
+        "source_url": null,
+        "source_accessed_at": "2026-05-13",
+        "source_notes": "User manually verified Pulsing Aura Offering Rates in the Pokémon TCG Pocket app and provided values in a ChatGPT conversation. Screenshots are NOT stored in this repository. Source: 'User-provided in-app Offering Rates screenshots, ChatGPT conversation'. This is treated as user_in_app_verified evidence — more authoritative than third_party_verified but distinct from official/automated in-app verification. No reputable external source was found that independently confirms these three-branch rates or the corrected rare pack distribution (47.058/45.098/3.921/3.921) for any pack. Generalization to other packs requires per-pack in-app verification.",
+        "cross_checked_sources": [],
+        "confidence_note": "user_in_app_verified: rates provided by user directly from in-app Offering Rates screen. Screenshots are in ChatGPT conversation, not in this repository. Three-branch model confirmed for Pulsing Aura (B3) only. Other packs retain the prior two-branch model with stale_model_warning."
       },
       "card_pool": {
         "pack_specific_total": 234,
@@ -2019,13 +2072,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 65,
-          "double_star": 31,
-          "four_diamond": 10,
-          "two_diamond": 51,
           "three_diamond": 29,
-          "triple_star": 2,
           "one_star": 44,
-          "unknown": 2
+          "four_diamond": 10,
+          "triple_star": 2,
+          "two_diamond": 51,
+          "unknown": 2,
+          "double_star": 31
         }
       },
       "rarity_probabilities": {
@@ -2040,7 +2093,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Three-branch model applied: regular_pack (94.711%) + rare_pack (0.050%) + regular_pack_plus_one (5.238%). Source: user-provided in-app Offering Rates screenshots (ChatGPT conversation, not in repo). Rare pack distribution corrected: 47.058/45.098/3.921/3.921 (was 40/50/5/5). Card 6 shiny rates documented but EV not yet computable (shiny cards not in pack_sources.json)."
     },
     {
       "pack_name": "Secluded Springs",
@@ -2051,10 +2104,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -2136,13 +2193,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "double_star": 16,
-          "four_diamond": 5,
-          "two_diamond": 23,
           "three_diamond": 11,
-          "triple_star": 1,
           "one_star": 16,
-          "unknown": 1
+          "four_diamond": 5,
+          "triple_star": 1,
+          "two_diamond": 23,
+          "unknown": 1,
+          "double_star": 16
         }
       },
       "rarity_probabilities": {
@@ -2157,7 +2214,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Shining Revelry",
@@ -2168,10 +2225,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -2253,13 +2314,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "double_star": 21,
-          "four_diamond": 9,
-          "two_diamond": 22,
           "three_diamond": 9,
-          "triple_star": 1,
           "one_star": 16,
-          "unknown": 1
+          "four_diamond": 9,
+          "triple_star": 1,
+          "two_diamond": 22,
+          "unknown": 1,
+          "double_star": 21
         }
       },
       "rarity_probabilities": {
@@ -2274,7 +2335,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Dialga",
@@ -2285,10 +2346,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -2374,13 +2439,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 46,
-          "double_star": 12,
-          "four_diamond": 5,
-          "two_diamond": 34,
           "three_diamond": 14,
           "triple_star": 1,
           "one_star": 12,
-          "unknown": 2
+          "four_diamond": 5,
+          "two_diamond": 34,
+          "unknown": 2,
+          "double_star": 12
         }
       },
       "rarity_probabilities": {
@@ -2395,7 +2460,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Palkia",
@@ -2406,10 +2471,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -2495,13 +2564,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 44,
-          "double_star": 12,
-          "four_diamond": 5,
-          "two_diamond": 36,
           "three_diamond": 14,
           "triple_star": 1,
           "one_star": 12,
-          "unknown": 2
+          "four_diamond": 5,
+          "two_diamond": 36,
+          "unknown": 2,
+          "double_star": 12
         }
       },
       "rarity_probabilities": {
@@ -2516,7 +2585,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Arceus",
@@ -2527,10 +2596,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -2612,13 +2685,13 @@
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 31,
-          "double_star": 13,
-          "four_diamond": 5,
-          "two_diamond": 26,
           "three_diamond": 13,
-          "triple_star": 1,
           "one_star": 6,
-          "unknown": 1
+          "four_diamond": 5,
+          "triple_star": 1,
+          "two_diamond": 26,
+          "unknown": 1,
+          "double_star": 13
         }
       },
       "rarity_probabilities": {
@@ -2633,7 +2706,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Ho-Oh",
@@ -2644,10 +2717,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -2732,13 +2809,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 42,
-          "double_star": 16,
-          "four_diamond": 5,
-          "two_diamond": 31,
           "three_diamond": 17,
           "triple_star": 1,
           "one_star": 22,
-          "unknown": 2
+          "four_diamond": 5,
+          "two_diamond": 31,
+          "unknown": 2,
+          "double_star": 16
         }
       },
       "rarity_probabilities": {
@@ -2753,7 +2830,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     },
     {
       "pack_name": "Lugia",
@@ -2764,10 +2841,14 @@
       "source_name": "in_app_offering_rates_not_yet_recorded",
       "source_accessed_at": "2026-05-12",
       "confidence": "third_party_verified",
+      "stale_model_warning": "This pack uses the prior two-branch model (regular_pack + rare_pack). User in-app verification of Pulsing Aura (B3) revealed a three-branch model (regular_pack 94.711% + rare_pack 0.050% + regular_pack_plus_one 5.238%). The three-branch model has NOT been confirmed via external sources for other packs. To verify: open this pack in the PTCGP app → Pack details → Offering Rates and check for a 'Regular Pack + 1 Card' branch. If present, update this pack's slot_rates.",
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "notes": "Standard PTCGP pack: 5 cards. Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "branch_model": "two_branch"
       },
       "slot_rates": {
         "regular_pack_probability": 0.9995,
@@ -2852,13 +2933,13 @@
         },
         "combined_by_rarity": {
           "one_diamond": 42,
-          "double_star": 16,
-          "four_diamond": 5,
-          "two_diamond": 31,
           "three_diamond": 17,
           "triple_star": 1,
           "one_star": 22,
-          "unknown": 2
+          "four_diamond": 5,
+          "two_diamond": 31,
+          "unknown": 2,
+          "double_star": 16
         }
       },
       "rarity_probabilities": {
@@ -2873,7 +2954,7 @@
         "promo": null,
         "unknown": null
       },
-      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates."
+      "notes": "Slot-level pull rates confirmed by multiple independent third-party sources (confidence=third_party_verified). NOT official in-app verified. rarity_probabilities are null — aggregate per-pack rates must come from verified in-app Offering Rates. To officially verify: open PTCGP app -> Pack details -> Offering Rates. STALE MODEL: may be missing regular_pack_plus_one branch discovered via Pulsing Aura (B3) in-app verification (2026-05-13)."
     }
   ]
 }

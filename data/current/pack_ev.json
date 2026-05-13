@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-13T02:44:15+00:00",
+  "generated_at": "2026-05-13T03:10:53+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
-    "model_confidence": "third_party_verified",
+    "model_confidence": "in_app_verified_partial",
     "collection_total": 380,
     "collection_mutated": false,
     "warnings": [
-      "Slot rates are THIRD_PARTY_VERIFIED — confirmed across 4 independent sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. EV rankings are suitable for planning but not final recommendations.",
+      "Slot rates are IN_APP_VERIFIED_PARTIAL — Pulsing Aura (B3) user-in-app-verified (three-branch model, corrected rare pack rates). All other packs retain prior third_party_verified two-branch model (may be missing regular_pack_plus_one branch). EV rankings are suitable for planning but not fully verified.",
       "EV-ready coverage: 192/224 entries resolved (108 auto-accept + 49 secondary + 35 newly resolved). 32 entries still excluded from EV computation.",
       "Card-name matching is case-insensitive by name only — multi-set cards (same name, different sets) may be counted as owned across all packs they appear in."
     ]
@@ -18,7 +18,7 @@
     "deck_target": 2.0
   },
   "confidence_weights": {
-    "slot_rates": "third_party_verified — apply 0.85 global adjustment",
+    "slot_rates": "in_app_verified_partial — apply 0.85 global adjustment",
     "inferred_adjustment": 0.85,
     "auto_accept": 1.0,
     "secondary_evidence": 0.85,
@@ -155,10 +155,10 @@
       {
         "pack_name": "Pulsing Aura",
         "expansion": "Pulsing Aura",
-        "pack_total_ev": 2.027387,
-        "new_card_ev": 1.367318,
-        "deck_target_ev": 0.034063,
-        "confidence_adjusted_ev": 1.723279
+        "pack_total_ev": 2.027278,
+        "new_card_ev": 1.367216,
+        "deck_target_ev": 0.03405,
+        "confidence_adjusted_ev": 1.723187
       }
     ],
     "highest_ev_pack": "Paldean Wonders",
@@ -1631,20 +1631,20 @@
       "expansion": "Pulsing Aura",
       "set_code": "B3",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "user_in_app_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 234,
       "owned_in_pool": 141,
       "missing_in_pool": 93,
-      "collection_completion_ev": 2.027387,
-      "new_card_ev": 1.367318,
-      "copy_ev": 0.660068,
-      "ex_card_ev": 0.189377,
-      "deck_target_ev": 0.034063,
+      "collection_completion_ev": 2.027278,
+      "new_card_ev": 1.367216,
+      "copy_ev": 0.660063,
+      "ex_card_ev": 0.189238,
+      "deck_target_ev": 0.03405,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 2.027387,
-      "confidence_adjusted_ev": 1.723279,
+      "pack_total_ev": 2.027278,
+      "confidence_adjusted_ev": 1.723187,
       "top_ev_cards": [
         {
           "name": "Durant",
@@ -1652,9 +1652,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0461308,
+          "pull_prob": 0.0461303,
           "value": 1.0,
-          "ev_contribution": 0.0461308
+          "ev_contribution": 0.0461303
         },
         {
           "name": "Poliwag",
@@ -1662,9 +1662,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0461308,
+          "pull_prob": 0.0461303,
           "value": 1.0,
-          "ev_contribution": 0.0461308
+          "ev_contribution": 0.0461303
         },
         {
           "name": "Chinchou",
@@ -1672,9 +1672,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0461308,
+          "pull_prob": 0.0461303,
           "value": 1.0,
-          "ev_contribution": 0.0461308
+          "ev_contribution": 0.0461303
         },
         {
           "name": "Toxel",
@@ -1682,9 +1682,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0461308,
+          "pull_prob": 0.0461303,
           "value": 1.0,
-          "ev_contribution": 0.0461308
+          "ev_contribution": 0.0461303
         },
         {
           "name": "Foongus",
@@ -1692,9 +1692,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0461308,
+          "pull_prob": 0.0461303,
           "value": 1.0,
-          "ev_contribution": 0.0461308
+          "ev_contribution": 0.0461303
         }
       ],
       "notes": "slot_rates=inferred. 141/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."

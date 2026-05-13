@@ -13,8 +13,7 @@ Builds and maintains an exact Pokémon TCG Pocket card collection database from 
 | `cards.json` | 329 (211 entries) | Historical screenshot-ingestion baseline |
 | `screenshots/` | 26 files (IMG_1556–IMG_1581) | Cropped 3×3 grid screenshots, 232 card slots |
 
-Pack-source coverage: **157/224 entries resolved (70%)** — 59 ambiguous, 3 Zygarde no-match, 5 known gaps.
-The 67 unresolved entries are the target set for automated confidence scoring (next active phase).
+Pack-source coverage: **192/224 entries EV-ready** — 35 previously-ambiguous entries resolved; 32 remaining unresolved.
 
 Validate and normalize:
 
@@ -51,20 +50,20 @@ python3 scripts/score_pack_source_confidence.py --validate
 
 Outputs: `data/current/pack_source_confidence_scores.json`, `data/exports/pack_source_confidence_scores.csv`, `review/pack_source_confidence_scores.md`
 
-Pull probability model: 24 packs, slot-level rates populated (confidence=**third_party_verified**, confirmed by 4 independent sources: Game8, ONE Esports, CGMagazine, ShackNews). `rarity_probabilities` (aggregate rates) still null.
+Pull probability model: 24 packs, model v0.4.0, confidence=**in_app_verified_partial**. Pulsing Aura (B3) user-in-app-verified 2026-05-13 — three-branch model discovered (regular_pack=94.711%, rare_pack=0.050%, regular_pack_plus_one=5.238%), corrected rare pack rates (47.058/45.098/3.921/3.921). All other 23 packs retain two-branch third_party_verified model with `stale_model_warning`. See `review/in_app_rate_verification.md`. `rarity_probabilities` (aggregate rates) still null.
 
 ```bash
 python3 scripts/build_pull_probability_model.py
 python3 scripts/validate_pull_probability_model.py
 ```
 
-Outputs: `data/reference/pull_probability_model.json`, `review/pull_probability_model.md`, `review/pack_ev_readiness.md`, `review/pull_probability_external_lookup.md`, `data/current/pack_ev_readiness.json`
+Outputs: `data/reference/pull_probability_model.json`, `review/pull_probability_model.md`, `review/pack_ev_readiness.md`, `review/pull_probability_external_lookup.md`, `data/current/pack_ev_readiness.json`, `review/in_app_rate_verification.md`, `data/current/in_app_rate_verification.json`
 
-Pull rate cross-check: rates independently confirmed by ONE Esports (full match) + CGMagazine + ShackNews. Confidence upgraded from `inferred` → `third_party_verified`. Full cross-check report: `review/pull_rate_cross_check.md`.
+Pull rate cross-check: rates independently confirmed by ONE Esports (full match) + CGMagazine + ShackNews. Cross-check report: `review/pull_rate_cross_check.md`.
 
-EV status: **PARTIALLY READY** — slot rates third_party_verified for all 24 packs. EV calculator built and validated.
+EV status: **PARTIALLY READY** — model confidence=in_app_verified_partial. EV calculator supports three-branch model; card 6 EV=0 (shiny cards not in pack_sources.json).
 
-Pack EV calculator: ranks all 24 packs by expected new-card value. Top pack: **Paldean Wonders** (total EV=4.94, adj=4.20 at third_party_verified confidence).
+Pack EV calculator: ranks all 24 packs by expected new-card value. Top pack: **Paldean Wonders** (total EV=4.94, adj=4.20 at in_app_verified_partial confidence).
 
 ```bash
 python3 scripts/build_pack_ev.py
