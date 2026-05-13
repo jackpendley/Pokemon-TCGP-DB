@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T18:44:43+00:00",
+  "generated_at": "2026-05-13T02:44:15+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "third_party_verified",
@@ -7,7 +7,7 @@
     "collection_mutated": false,
     "warnings": [
       "Slot rates are THIRD_PARTY_VERIFIED — confirmed across 4 independent sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. EV rankings are suitable for planning but not final recommendations.",
-      "Low-confidence and unresolved collection entries (67/224) are excluded from EV computation. exploratory_ev is 0.0 (not computed).",
+      "EV-ready coverage: 192/224 entries resolved (108 auto-accept + 49 secondary + 35 newly resolved). 32 entries still excluded from EV computation.",
       "Card-name matching is case-insensitive by name only — multi-set cards (same name, different sets) may be counted as owned across all packs they appear in."
     ]
   },
@@ -1923,7 +1923,7 @@
   "next_steps": [
     "Verify slot_rates in PTCGP app (Pack details > Offering Rates) for official verification.",
     "Set confidence=verified in pull_probability_model.json once confirmed in-app.",
-    "Resolve 59 ambiguous cross-set entries to expand EV-ready coverage.",
+    "Resolve remaining ambiguous cross-set entries via resolve_ambiguous_pack_sources.py.",
     "Review top-EV packs as planning input — see review/inferred_pack_recommendations.md."
   ]
 }

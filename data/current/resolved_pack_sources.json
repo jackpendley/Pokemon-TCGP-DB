@@ -1,0 +1,581 @@
+{
+  "_meta": {
+    "generated": "2026-05-13T02:42:19.303411+00:00",
+    "source_script": "scripts/resolve_ambiguous_pack_sources.py",
+    "version": "1.0.0",
+    "passes": [
+      "hp_match",
+      "evo_chain",
+      "rarity_count"
+    ],
+    "input_low_confidence": 59,
+    "total_new_resolved": 35,
+    "total_still_unresolved": 24,
+    "ev_ready_before": 157,
+    "ev_ready_after": 192,
+    "ev_ready_total": 224
+  },
+  "resolved": {
+    "charmander": {
+      "name": "Charmander",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=60 uniquely matches B1a in external reference"
+    },
+    "charmander_flame_tail_art": {
+      "name": "Charmander",
+      "set_code": "B2b",
+      "pack_name": "Mega Shine",
+      "expansion": "Mega Shine",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=70 uniquely matches B2b in external reference"
+    },
+    "darumaka": {
+      "name": "Darumaka",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=60 uniquely matches B3 in external reference"
+    },
+    "darmanitan": {
+      "name": "Darmanitan",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=120 uniquely matches B3 in external reference"
+    },
+    "bulbasaur": {
+      "name": "Bulbasaur",
+      "set_code": "A4b",
+      "pack_name": "Deluxe Pack: ex",
+      "expansion": "Deluxe Pack: ex",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=70 uniquely matches A4b in external reference"
+    },
+    "bulbasaur_alt_art": {
+      "name": "Bulbasaur",
+      "set_code": "A4b",
+      "pack_name": "Deluxe Pack: ex",
+      "expansion": "Deluxe Pack: ex",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=70 uniquely matches A4b in external reference"
+    },
+    "bulbasaur_tackle_art": {
+      "name": "Bulbasaur",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=60 uniquely matches B1a in external reference"
+    },
+    "ivysaur": {
+      "name": "Ivysaur",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=100 uniquely matches B1a in external reference"
+    },
+    "magneton_spark_art": {
+      "name": "Magneton",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=80 uniquely matches B1a in external reference"
+    },
+    "magneton_magnetic_blast_art": {
+      "name": "Magneton",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=90 uniquely matches B3 in external reference"
+    },
+    "magnemite_electro_ball_art": {
+      "name": "Magnemite",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=50 uniquely matches B1a in external reference"
+    },
+    "magnemite_thunder_shock_art": {
+      "name": "Magnemite",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=60 uniquely matches B3 in external reference"
+    },
+    "pikachu": {
+      "name": "Pikachu",
+      "set_code": "B2",
+      "pack_name": "Fantastical Parade",
+      "expansion": "Fantastical Parade",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=60 uniquely matches B2 in external reference"
+    },
+    "ralts": {
+      "name": "Ralts",
+      "set_code": "B2",
+      "pack_name": "Fantastical Parade",
+      "expansion": "Fantastical Parade",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=60 uniquely matches B2 in external reference"
+    },
+    "hariyama": {
+      "name": "Hariyama",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=120 uniquely matches B1a in external reference"
+    },
+    "bewear": {
+      "name": "Bewear",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=110 uniquely matches B3 in external reference"
+    },
+    "rolycoly": {
+      "name": "Rolycoly",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=80 uniquely matches B3 in external reference"
+    },
+    "garbodor": {
+      "name": "Garbodor",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=130 uniquely matches B1a in external reference"
+    },
+    "meltan": {
+      "name": "Meltan",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=60 uniquely matches B3 in external reference"
+    },
+    "varoom": {
+      "name": "Varoom",
+      "set_code": "B2b",
+      "pack_name": "Mega Shine",
+      "expansion": "Mega Shine",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=70 uniquely matches B2b in external reference"
+    },
+    "furfrou": {
+      "name": "Furfrou",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=70 uniquely matches B1a in external reference"
+    },
+    "minccino": {
+      "name": "Minccino",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=50 uniquely matches B3 in external reference"
+    },
+    "eevee": {
+      "name": "Eevee",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "hp_match",
+      "confidence": 0.88,
+      "evidence": "collection hp=60 uniquely matches B3 in external reference"
+    },
+    "makuhita": {
+      "name": "Makuhita",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "evo_chain",
+      "confidence": 0.82,
+      "evidence": "evolution partner 'hariyama' confirmed in B1a"
+    },
+    "stufful": {
+      "name": "Stufful",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "evo_chain",
+      "confidence": 0.82,
+      "evidence": "evolution partner 'bewear' confirmed in B3"
+    },
+    "trubbish": {
+      "name": "Trubbish",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "evo_chain",
+      "confidence": 0.82,
+      "evidence": "evolution partner 'garbodor' confirmed in B1a"
+    },
+    "cinccino": {
+      "name": "Cinccino",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "evo_chain",
+      "confidence": 0.82,
+      "evidence": "evolution partner 'minccino' confirmed in B3"
+    },
+    "charmeleon": {
+      "name": "Charmeleon",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "rarity_count",
+      "confidence": 0.85,
+      "evidence": "count=2 with B1a=two_diamond; one_star candidate(s) B2b=one_star implausible at this count"
+    },
+    "tangela": {
+      "name": "Tangela",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "rarity_count",
+      "confidence": 0.9,
+      "evidence": "count=3 with B3=one_diamond; one_star candidate(s) B2=one_star implausible at this count"
+    },
+    "poliwhirl": {
+      "name": "Poliwhirl",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "rarity_count",
+      "confidence": 0.9,
+      "evidence": "count=3 with B3=two_diamond; one_star candidate(s) B1=one_star implausible at this count"
+    },
+    "sandshrew": {
+      "name": "Sandshrew",
+      "set_code": "B1",
+      "pack_name": null,
+      "expansion": "Mega Rising",
+      "method": "rarity_count",
+      "confidence": 0.85,
+      "evidence": "count=2 with B1=one_diamond; one_star candidate(s) B1a=one_star, B2=one_star implausible at this count"
+    },
+    "onix_dig_art": {
+      "name": "Onix",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "rarity_count",
+      "confidence": 0.85,
+      "evidence": "count=2 with B1a=one_diamond; one_star candidate(s) B3=one_star implausible at this count"
+    },
+    "grimer": {
+      "name": "Grimer",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "rarity_count",
+      "confidence": 0.9,
+      "evidence": "count=3 with B1a=one_diamond; one_star candidate(s) B3=one_star implausible at this count"
+    },
+    "steelix": {
+      "name": "Steelix",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "rarity_count",
+      "confidence": 0.9,
+      "evidence": "count=3 with B1a=two_diamond; one_star candidate(s) B3=one_star implausible at this count"
+    },
+    "porygon": {
+      "name": "Porygon",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "rarity_count",
+      "confidence": 0.9,
+      "evidence": "count=3 with B1a=one_diamond; one_star candidate(s) B3=one_star implausible at this count"
+    }
+  },
+  "unresolved": [
+    {
+      "entry_id": "moltres_ex",
+      "name": "Moltres ex",
+      "candidates": [
+        "A1",
+        "A1",
+        "A1",
+        "A3b",
+        "A4b"
+      ],
+      "reason": "a_series_no_external_ref"
+    },
+    {
+      "entry_id": "blaziken",
+      "name": "Blaziken",
+      "candidates": [
+        "B1",
+        "B3"
+      ],
+      "reason": "hp_ties_multiple_sets"
+    },
+    {
+      "entry_id": "cherubi",
+      "name": "Cherubi",
+      "candidates": [
+        "A2a",
+        "A4",
+        "A4b",
+        "A4b"
+      ],
+      "reason": "a_series_no_external_ref"
+    },
+    {
+      "entry_id": "frillish",
+      "name": "Frillish",
+      "candidates": [
+        "B1",
+        "B3"
+      ],
+      "reason": "hp_ties_multiple_sets"
+    },
+    {
+      "entry_id": "chewtle",
+      "name": "Chewtle",
+      "candidates": [
+        "B1",
+        "B2"
+      ],
+      "reason": "hp_ties_multiple_sets"
+    },
+    {
+      "entry_id": "eelektross",
+      "name": "Eelektross",
+      "candidates": [
+        "A1",
+        "A4a"
+      ],
+      "reason": "a_series_no_external_ref"
+    },
+    {
+      "entry_id": "marowak_ex",
+      "name": "Marowak ex",
+      "candidates": [
+        "A1",
+        "A1",
+        "A3",
+        "A4b"
+      ],
+      "reason": "a_series_no_external_ref"
+    },
+    {
+      "entry_id": "sandslash",
+      "name": "Sandslash",
+      "candidates": [
+        "B1",
+        "B1a",
+        "B2"
+      ],
+      "reason": "hp_not_in_external_ref"
+    },
+    {
+      "entry_id": "onix_land_crush_art",
+      "name": "Onix",
+      "candidates": [
+        "B1a",
+        "B3"
+      ],
+      "reason": "hp_not_in_external_ref"
+    },
+    {
+      "entry_id": "skrelp",
+      "name": "Skrelp",
+      "candidates": [
+        "B1",
+        "B3"
+      ],
+      "reason": "hp_ties_multiple_sets"
+    },
+    {
+      "entry_id": "zorua",
+      "name": "Zorua",
+      "candidates": [
+        "B2b",
+        "B2b",
+        "B3",
+        "B3"
+      ],
+      "reason": "hp_ties_multiple_sets"
+    },
+    {
+      "entry_id": "doublade",
+      "name": "Doublade",
+      "candidates": [
+        "B1",
+        "B2"
+      ],
+      "reason": "hp_ties_multiple_sets"
+    },
+    {
+      "entry_id": "stoutland",
+      "name": "Stoutland",
+      "candidates": [
+        "B1",
+        "B1",
+        "B3"
+      ],
+      "reason": "hp_ties_multiple_sets"
+    },
+    {
+      "entry_id": "herdier",
+      "name": "Herdier",
+      "candidates": [
+        "B1",
+        "B3"
+      ],
+      "reason": "hp_ties_multiple_sets"
+    },
+    {
+      "entry_id": "lillipup",
+      "name": "Lillipup",
+      "candidates": [
+        "B1",
+        "B3"
+      ],
+      "reason": "hp_ties_multiple_sets"
+    },
+    {
+      "entry_id": "corvisquire",
+      "name": "Corvisquire",
+      "candidates": [
+        "B1",
+        "B3"
+      ],
+      "reason": "hp_ties_multiple_sets"
+    },
+    {
+      "entry_id": "porygon2",
+      "name": "Porygon2",
+      "candidates": [
+        "B1a",
+        "B3"
+      ],
+      "reason": "hp_ties_multiple_sets"
+    },
+    {
+      "entry_id": "farfetch_d",
+      "name": "Farfetch'd",
+      "candidates": [
+        "A1",
+        "A3b",
+        "A4a",
+        "A4b",
+        "A4b",
+        "A4b"
+      ],
+      "reason": "a_series_no_external_ref"
+    },
+    {
+      "entry_id": "giant_cape",
+      "name": "Giant Cape",
+      "candidates": [
+        "A2",
+        "A4b",
+        "A4b"
+      ],
+      "reason": "trainer_card_no_hp"
+    },
+    {
+      "entry_id": "giovanni",
+      "name": "Giovanni",
+      "candidates": [
+        "A1",
+        "A1",
+        "A4b",
+        "A4b"
+      ],
+      "reason": "trainer_card_no_hp"
+    },
+    {
+      "entry_id": "sabrina",
+      "name": "Sabrina",
+      "candidates": [
+        "A1",
+        "A1",
+        "A4b",
+        "A4b"
+      ],
+      "reason": "trainer_card_no_hp"
+    },
+    {
+      "entry_id": "leaf",
+      "name": "Leaf",
+      "candidates": [
+        "A1a",
+        "A1a",
+        "A4b",
+        "A4b"
+      ],
+      "reason": "trainer_card_no_hp"
+    },
+    {
+      "entry_id": "cyrus",
+      "name": "Cyrus",
+      "candidates": [
+        "A2",
+        "A2",
+        "A4b",
+        "A4b"
+      ],
+      "reason": "trainer_card_no_hp"
+    },
+    {
+      "entry_id": "lillie",
+      "name": "Lillie",
+      "candidates": [
+        "A3",
+        "A3",
+        "A3",
+        "A4b",
+        "A4b",
+        "A4b"
+      ],
+      "reason": "trainer_card_no_hp"
+    }
+  ]
+}

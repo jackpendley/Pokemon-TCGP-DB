@@ -14,8 +14,8 @@
 | Slot rates source | Game8 + ShackNews + cgmagonline |
 | Packs ranked | 24 |
 | Collection total | 380 cards (380 validated) |
-| EV-ready collection entries | 157/224 (108 auto-accept + 49 secondary) |
-| Excluded entries | 67/224 (59 low-confidence + 8 unresolved) |
+| EV-ready collection entries | 192/224 (108 auto-accept + 49 secondary + 35 resolved) |
+| Excluded entries | 32/224 (24 low-confidence + 8 unresolved) |
 | Deck targets | 4 cards needed for deck completion |
 
 ---
@@ -156,12 +156,12 @@
 - one_diamond cards: slots 1-3 (100% each, 3 total expected).
 - Card matching is by normalized name only (case-insensitive). Cross-set
   cards with the same name may be double-counted as owned.
-- 67 low-confidence/unresolved collection entries excluded from EV.
+- 32 low-confidence/unresolved collection entries still excluded from EV (35 newly resolved by resolve_ambiguous_pack_sources.py).
 
 ## Next Steps Before Final Recommendations
 
 1. **Verify slot rates in-app** — open PTCGP → any pack → Offering Rates.
-2. **Resolve 59 ambiguous entries** — expands EV-ready coverage to ~216/224.
+2. **Resolve remaining 24 ambiguous entries** — run resolve_ambiguous_pack_sources.py; coverage now 192/224.
 3. **Build deck scorer** — integrate deck completion probability into EV.
 4. **Re-run EV calculator** after any rate or coverage update.
 

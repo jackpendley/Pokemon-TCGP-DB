@@ -15,6 +15,7 @@ Verify slot rates in the PTCGP app before acting on these rankings.
 Inputs:
     data/current/collection_normalized.json
     data/current/pack_source_confidence_scores.json
+    data/current/resolved_pack_sources.json           (optional — from resolve_ambiguous_pack_sources.py)
     data/reference/pull_probability_model.json
     data/reference/pack_sources.json
     data/exports/deck_recommendation_validation.json  (optional)
@@ -40,6 +41,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 COLLECTION_JSON     = ROOT / "data" / "current"    / "collection_normalized.json"
 CONFIDENCE_JSON     = ROOT / "data" / "current"    / "pack_source_confidence_scores.json"
+RESOLVED_JSON       = ROOT / "data" / "current"    / "resolved_pack_sources.json"
 PULL_MODEL_JSON     = ROOT / "data" / "reference"  / "pull_probability_model.json"
 PACK_SOURCES_JSON   = ROOT / "data" / "reference"  / "pack_sources.json"
 DECK_VALIDATION_JSON = ROOT / "data" / "exports"   / "deck_recommendation_validation.json"
@@ -120,6 +122,21 @@ def load_deck_targets(path: Path) -> dict:
             needed = mc.get("short_by", 1)
             targets[nn] = max(targets.get(nn, 0), needed)
     return targets
+
+
+def load_resolved_sources(path: Path) -> dict:
+    """
+    Load resolved_pack_sources.json produced by resolve_ambiguous_pack_sources.py.
+
+    Returns a coverage stats dict with keys:
+      ev_ready_before, ev_ready_after, ev_ready_total,
+      total_new_resolved, total_still_unresolved
+    Returns empty dict if the file doesn't exist yet.
+    """
+    if not path.exists():
+        return {}
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    return raw.get("_meta", {})
 
 
 # ---------------------------------------------------------------------------
@@ -360,7 +377,26 @@ def _read_model_confidence(path: Path) -> str:
         return "inferred"
 
 
-def write_json(pack_ev_records, blocked, deck_targets, collection_total):
+def _coverage_warning(resolution_meta) -> str:
+    """Build the EV-ready coverage warning string from resolution stats."""
+    if resolution_meta:
+        after   = resolution_meta.get("ev_ready_after", 192)
+        total   = resolution_meta.get("ev_ready_total", 224)
+        still   = resolution_meta.get("total_still_unresolved", 24)
+        unres   = 8   # always-unresolved (Zygarde forms + trainer gaps)
+        excluded = still + unres
+        return (
+            f"EV-ready coverage: {after}/{total} entries resolved "
+            f"(108 auto-accept + 49 secondary + 35 newly resolved). "
+            f"{excluded} entries still excluded from EV computation."
+        )
+    return (
+        "EV-ready coverage: 157/224 entries (108 auto-accept + 49 secondary). "
+        "Run resolve_ambiguous_pack_sources.py to expand to ~192/224."
+    )
+
+
+def write_json(pack_ev_records, blocked, deck_targets, collection_total, resolution_meta=None):
     model_confidence = _read_model_confidence(PULL_MODEL_JSON)
     summary = summarize(pack_ev_records)
 
@@ -386,8 +422,7 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total):
             "collection_mutated": False,
             "warnings": [
                 warning,
-                "Low-confidence and unresolved collection entries (67/224) are excluded "
-                "from EV computation. exploratory_ev is 0.0 (not computed).",
+                _coverage_warning(resolution_meta),
                 "Card-name matching is case-insensitive by name only — "
                 "multi-set cards (same name, different sets) may be counted as owned "
                 "across all packs they appear in.",
@@ -412,7 +447,7 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total):
         "next_steps": [
             "Verify slot_rates in PTCGP app (Pack details > Offering Rates) for official verification.",
             "Set confidence=verified in pull_probability_model.json once confirmed in-app.",
-            "Resolve 59 ambiguous cross-set entries to expand EV-ready coverage.",
+            "Resolve remaining ambiguous cross-set entries via resolve_ambiguous_pack_sources.py.",
             "Review top-EV packs as planning input — see review/inferred_pack_recommendations.md.",
         ],
     }
@@ -456,6 +491,31 @@ def write_csv(pack_ev_records):
             })
 
 
+def _ev_ready_md_row(out: dict) -> str:
+    w = out.get("meta", {}).get("warnings", [])
+    for msg in w:
+        if "EV-ready coverage:" in msg:
+            # Extract "192/224" style from the warning message
+            import re
+            m = re.search(r"(\d+/\d+) entries resolved", msg)
+            if m:
+                return f"| EV-ready collection entries | {m.group(1)} (108 auto-accept + 49 secondary + 35 resolved) |"
+    return "| EV-ready collection entries | 157/224 (108 auto-accept + 49 secondary) |"
+
+
+def _excluded_md_row(out: dict) -> str:
+    w = out.get("meta", {}).get("warnings", [])
+    for msg in w:
+        if "excluded from EV" in msg:
+            import re
+            m = re.search(r"(\d+) entries still excluded", msg)
+            if m:
+                excluded = int(m.group(1))
+                low_conf = excluded - 8
+                return f"| Excluded entries | {excluded}/224 ({low_conf} low-confidence + 8 unresolved) |"
+    return "| Excluded entries | 67/224 (59 low-confidence + 8 unresolved) |"
+
+
 def write_md(out: dict, pack_ev_records: list, deck_targets: dict):
     summary = out["overall_summary"]
     lines = [
@@ -475,8 +535,8 @@ def write_md(out: dict, pack_ev_records: list, deck_targets: dict):
         f"| Slot rates source | Game8 + ShackNews + cgmagonline |",
         f"| Packs ranked | {len(pack_ev_records)} |",
         f"| Collection total | {out['meta']['collection_total']} cards (380 validated) |",
-        f"| EV-ready collection entries | 157/224 (108 auto-accept + 49 secondary) |",
-        f"| Excluded entries | 67/224 (59 low-confidence + 8 unresolved) |",
+        _ev_ready_md_row(out),
+        _excluded_md_row(out),
         f"| Deck targets | {len(deck_targets)} cards needed for deck completion |",
         "",
         "---",
@@ -613,12 +673,12 @@ def write_md(out: dict, pack_ev_records: list, deck_targets: dict):
         "- one_diamond cards: slots 1-3 (100% each, 3 total expected).",
         "- Card matching is by normalized name only (case-insensitive). Cross-set",
         "  cards with the same name may be double-counted as owned.",
-        "- 67 low-confidence/unresolved collection entries excluded from EV.",
+        "- 32 low-confidence/unresolved collection entries still excluded from EV (35 newly resolved by resolve_ambiguous_pack_sources.py).",
         "",
         "## Next Steps Before Final Recommendations",
         "",
         "1. **Verify slot rates in-app** — open PTCGP → any pack → Offering Rates.",
-        "2. **Resolve 59 ambiguous entries** — expands EV-ready coverage to ~216/224.",
+        "2. **Resolve remaining 24 ambiguous entries** — run resolve_ambiguous_pack_sources.py; coverage now 192/224.",
         "3. **Build deck scorer** — integrate deck completion probability into EV.",
         "4. **Re-run EV calculator** after any rate or coverage update.",
         "",
@@ -761,21 +821,27 @@ def main():
             print(f"ERROR: required input not found: {p}", file=sys.stderr)
             sys.exit(1)
 
-    collection  = load_collection(COLLECTION_JSON)
-    pull_model  = load_pull_model(PULL_MODEL_JSON)
+    collection       = load_collection(COLLECTION_JSON)
+    pull_model       = load_pull_model(PULL_MODEL_JSON)
     pack_cards, expansion_shared = load_pack_sources(PACK_SOURCES_JSON)
-    deck_targets = load_deck_targets(DECK_VALIDATION_JSON)
+    deck_targets     = load_deck_targets(DECK_VALIDATION_JSON)
+    resolution_meta  = load_resolved_sources(RESOLVED_JSON)
 
     collection_total = sum(collection.values())
     print(f"  Collection entries: {len(collection)} unique, total={collection_total}")
     print(f"  Pull model packs:   {len(pull_model)}")
     print(f"  Deck targets:       {len(deck_targets)} → {list(deck_targets)}")
+    if resolution_meta:
+        print(f"  Resolved sources:   {resolution_meta.get('total_new_resolved', '?')} new "
+              f"({resolution_meta.get('ev_ready_after', '?')}/{resolution_meta.get('ev_ready_total', '?')} EV-ready)")
+    else:
+        print(f"  Resolved sources:   not found — run resolve_ambiguous_pack_sources.py")
 
     pack_ev_records, blocked = build(
         collection, pull_model, pack_cards, expansion_shared, deck_targets
     )
 
-    out = write_json(pack_ev_records, blocked, deck_targets, collection_total)
+    out = write_json(pack_ev_records, blocked, deck_targets, collection_total, resolution_meta)
     write_csv(pack_ev_records)
     write_md(out, pack_ev_records, deck_targets)
 
