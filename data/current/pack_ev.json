@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T02:33:38+00:00",
+  "generated_at": "2026-05-14T19:29:07+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "third_party_verified_with_in_app_anchor",
@@ -61,20 +61,20 @@
         "confidence_adjusted_ev": 3.783515
       },
       {
+        "pack_name": "Lugia",
+        "expansion": "Wisdom of Sea and Sky",
+        "pack_total_ev": 4.37508,
+        "new_card_ev": 4.152364,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 3.718818
+      },
+      {
         "pack_name": "Extradimensional Crisis",
         "expansion": "Extradimensional Crisis",
         "pack_total_ev": 4.360235,
         "new_card_ev": 4.107122,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 3.7062
-      },
-      {
-        "pack_name": "Mega Altaria",
-        "expansion": "Mega Rising",
-        "pack_total_ev": 4.323946,
-        "new_card_ev": 4.192759,
-        "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.675354
       }
     ],
     "top_packs_by_new_card_ev": [
@@ -111,12 +111,12 @@
         "confidence_adjusted_ev": 3.675354
       },
       {
-        "pack_name": "Extradimensional Crisis",
-        "expansion": "Extradimensional Crisis",
-        "pack_total_ev": 4.360235,
-        "new_card_ev": 4.107122,
+        "pack_name": "Lugia",
+        "expansion": "Wisdom of Sea and Sky",
+        "pack_total_ev": 4.37508,
+        "new_card_ev": 4.152364,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.7062
+        "confidence_adjusted_ev": 3.718818
       }
     ],
     "top_packs_by_deck_target_ev": [
@@ -755,20 +755,20 @@
       "expansion": "Wisdom of Sea and Sky",
       "set_code": "A4",
       "source_status": "inferred",
-      "slot_rates_confidence": "pending_verification",
+      "slot_rates_confidence": "user_in_app_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 136,
       "owned_in_pool": 22,
       "missing_in_pool": 114,
-      "collection_completion_ev": 4.1523,
-      "new_card_ev": 3.861097,
-      "copy_ev": 0.291203,
+      "collection_completion_ev": 4.229769,
+      "new_card_ev": 3.938175,
+      "copy_ev": 0.291594,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 4.1523,
-      "confidence_adjusted_ev": 3.529455,
+      "pack_total_ev": 4.229769,
+      "confidence_adjusted_ev": 3.595304,
       "top_ev_cards": [
         {
           "name": "Hoppip",
@@ -828,20 +828,20 @@
       "expansion": "Wisdom of Sea and Sky",
       "set_code": "A4",
       "source_status": "inferred",
-      "slot_rates_confidence": "pending_verification",
+      "slot_rates_confidence": "user_in_app_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 136,
       "owned_in_pool": 18,
       "missing_in_pool": 118,
-      "collection_completion_ev": 4.29305,
-      "new_card_ev": 4.070529,
-      "copy_ev": 0.222522,
+      "collection_completion_ev": 4.37508,
+      "new_card_ev": 4.152364,
+      "copy_ev": 0.222717,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 4.29305,
-      "confidence_adjusted_ev": 3.649093,
+      "pack_total_ev": 4.37508,
+      "confidence_adjusted_ev": 3.718818,
       "top_ev_cards": [
         {
           "name": "Oddish",

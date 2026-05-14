@@ -102,24 +102,27 @@ Outputs:
 | Script | `scripts/build_pull_probability_model.py` |
 | Model file | `data/reference/pull_probability_model.json` |
 | Schema | `data/reference/pull_probability_model.schema.json` |
-| Model version | **0.5.0** |
+| Model version | **0.6.0** |
 | Packs modeled | **24** (all named pullable packs across 17 expansions) |
 | Source status | **third_party_verified_with_in_app_anchor** |
-| bulbapedia_branch_verified | **12/24 packs** — branch percentages confirmed from Bulbapedia offering rates |
+| user_in_app_verified | **2/24 packs** — Ho-Oh (A4), Lugia (A4): in-repo screenshots 2026-05-14 |
 | user_in_app_verified_plus_bulbapedia | **1/24 packs** — Pulsing Aura (B3): user in-app verified + Bulbapedia corroborated |
+| bulbapedia_branch_verified | **12/24 packs** — branch percentages confirmed from Bulbapedia offering rates |
 | third_party_verified | **8/24 packs** — A-series packs, pattern-consistent two-branch, not yet individually page-confirmed |
-| pending_verification | **3/24 packs** — A4, A4b (Celestial Guardians/Extradimensional Crisis packs) |
+| pending_verification | **1/24 packs** — A4b (Deluxe Pack: ex): pack unavailable in app, 4 cards/pack |
 | Slot rates | **24/24 packs** populated |
 | rarity_probabilities | **all null** — aggregate rates require in-app verification |
 | Validation | `python3 scripts/validate_pull_probability_model.py` — **PASS** |
 | EV status | **READY** — EV computed at third_party_verified_with_in_app_anchor confidence |
 | External lookup | `review/pull_probability_external_lookup.md` |
 | Cross-check | `review/pull_rate_cross_check.md` — CONFIRMED, bulbapedia_branch_verified |
-| In-app verification | `review/in_app_rate_verification.md` — Pulsing Aura (B3) user-in-app-verified 2026-05-13 |
+| In-app verification | `review/in_app_rate_verification.md` — A4 verified 2026-05-14 (in-repo screenshots); B3 verified 2026-05-13 |
+
+**Branch model update (v0.6.0):** Ho-Oh and Lugia (A4, Wisdom of Sea and Sky) verified from in-repo Offering Rates screenshots (IMG_1692–IMG_1722, `Offering Rates screenshots/`). Three-branch model confirmed: regular=91.620%, rare=0.050%, regular+1=8.330% (matches Secluded Springs A4a). Slot_6 confirmed: one_star=12.900%, three_diamond=87.100% — standard rarity, NOT shiny (unlike B-series slot_6 which uses shiny rarities). Schema extended to allow one_star and three_diamond in slot_6. A4b (Deluxe Pack: ex) remains pending — pack unavailable, Offering Rates inaccessible, 4 cards/pack confirmed.
 
 **Branch model correction (v0.5.0):** Bulbapedia offering rates pages confirm per-expansion branch structure. A-series packs (A1a, A2a, A3a, A3b confirmed) are correctly two-branch (regular/rare only). B-series packs (B1, B1a, B2, B2a, B3) are three-branch (regular/rare/regular_plus_one): regular_pack=94.711%, rare_pack=0.050%, regular_pack_plus_one=5.238%. Secluded Springs (A4a) has unique three-branch rates: 91.620%/0.050%/8.330%. Mega Shine (B2b) is four-branch (adds themed_rare_pack=0.005% guaranteeing Mega Evolution ex). Pulsing Aura (B3) retains corrected rare pack distribution (47.058/45.098/3.921/3.921) from user in-app verification; Bulbapedia corroborates branch percentages. All stale_model_warnings removed from correctly-modeled A-series packs.
 
-Slot rates source: Bulbapedia offering rates pages (branch percentages). Rarity distributions within slots: Game8 PTCGP guide (primary), cross-checked by ONE Esports, CGMagazine, ShackNews. Pulsing Aura rare pack rates from user in-app verification (2026-05-13).
+Slot rates source: Bulbapedia offering rates pages (branch percentages). Rarity distributions within slots: Game8 PTCGP guide (primary), cross-checked by ONE Esports, CGMagazine, ShackNews. Pulsing Aura rare pack rates from user in-app verification (2026-05-13). A4 branch + slot_6 from in-repo screenshots (2026-05-14).
 
 Outputs:
 - `data/reference/pull_probability_model.json`
@@ -223,8 +226,8 @@ python3 scripts/generate_hourglass_spending_plan.py --validate
 
 ### Remaining blockers before verified pack recommendations
 
-1. **Branch percentages bulbapedia_branch_verified; rarity distributions remain third_party_verified** — Branch selection (regular/rare/plus_one) is confirmed from Bulbapedia for 12 packs + user in-app for Pulsing Aura. Rarity distributions within slots (slot_4, slot_5, rare_pack_all_5_slots) are still third_party_verified (Game8/ONE Esports/CGMagazine/ShackNews). Must verify each pack against PTCGP app Offering Rates screen to reach `verified` confidence. `rarity_probabilities` (aggregate per-pack rates) are still null.
-2. **3 packs pending_verification** — Ho-Oh, Lugia (A4 Wisdom of Sea and Sky) and Deluxe Pack: ex (A4b): slot_rates unconfirmed; using two-branch scaffold. Verify in-app before treating EV for these packs as reliable. Checklist: `review/pending_pack_in_app_verification_checklist.md`.
+1. **Branch percentages verified for most packs; rarity distributions remain third_party_verified** — A4 (Ho-Oh/Lugia) user_in_app_verified (2026-05-14, in-repo screenshots). B3 (Pulsing Aura) user_in_app_verified_plus_bulbapedia (2026-05-13). 12 packs bulbapedia_branch_verified. Rarity distributions within slots (slot_4, slot_5, rare_pack_all_5_slots) are still third_party_verified. `rarity_probabilities` (aggregate per-pack rates) still null.
+2. **1 pack pending_verification** — Deluxe Pack: ex (A4b): pack unavailable in app ("cannot be obtained right now"), Offering Rates inaccessible. 4 cards/pack confirmed (non-standard). Checklist: `review/pending_pack_in_app_verification_checklist.md`.
 3. **59 ambiguous cross-set entries at low confidence (0.50–0.799)** — card appears in multiple expansions; the correct version cannot be determined without OCR or user confirmation.
 4. **8 unresolved entries (< 0.50)** — 3 Zygarde forms not in pack_sources; 5 common trainers not indexed in Limitless DB.
 5. **Pack-source mapping for Zygarde** — Zygarde ex not in pack_sources; pack unknown. Blocks Zygarde ex Fighting deck targeting.
@@ -233,7 +236,7 @@ python3 scripts/generate_hourglass_spending_plan.py --validate
 
 ### Recommended next phase
 
-1. **Verify the 3 pending packs** — Use `review/pending_pack_in_app_verification_checklist.md` (Ho-Oh, Lugia, Deluxe Pack: ex). Open PTCGP → pack → Pack details → Offering Rates and record branch probabilities + slot tables. Report values to update `pull_probability_model.json` and re-run downstream scripts.
+1. **Verify A4b when available** — Deluxe Pack: ex currently unavailable in app. When available: PTCGP → Deluxe Pack: ex → Pack details → Offering Rates. Record all branch rows (may be non-standard; 4 cards/pack). Update `pull_probability_model.json` and re-run downstream scripts.
 2. **Use the hourglass spending plan** — `review/final_hourglass_spending_plan.md` has conservative/moderate/aggressive scenarios for immediate pack decisions at third_party_verified_with_in_app_anchor confidence.
 3. **Resolve 59 ambiguous entries** — expands EV-ready coverage to ~216/224, improving EV accuracy.
 

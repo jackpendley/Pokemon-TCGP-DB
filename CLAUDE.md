@@ -176,8 +176,8 @@ Scripts built (do not rebuild):
 - **Do not make final automated pack-opening recommendations yet.**
 
 Current blockers before automated pack recommendations:
-- Branch percentages bulbapedia_branch_verified (12 packs) + user_in_app_verified_plus_bulbapedia (Pulsing Aura B3); rarity distributions remain third_party_verified. Model v0.5.0, source_status=third_party_verified_with_in_app_anchor
-- 3 packs pending_verification (A4, A4b) — slot_rates unconfirmed; using two-branch scaffold
+- Branch percentages: A4 (Ho-Oh/Lugia) user_in_app_verified + Pulsing Aura (B3) user_in_app_verified_plus_bulbapedia + 12 packs bulbapedia_branch_verified; rarity distributions remain third_party_verified. Model v0.6.0, source_status=third_party_verified_with_in_app_anchor
+- 1 pack pending_verification (A4b Deluxe Pack: ex) — pack unavailable in app, 4 cards/pack, Offering Rates inaccessible
 - 59 ambiguous pack-source entries at low confidence (< 0.80) — reduce EV accuracy (192/224 EV-ready after 35 resolved)
 - Deck scoring model not built
 - Optional meta/tier data not integrated
@@ -216,16 +216,17 @@ Completed phases (do not rebuild):
 - Hourglass spending plan (`scripts/generate_hourglass_spending_plan.py`) — conservative/moderate/aggressive, 10-pack batches, stopping points, rerun checklist, PASS
 - **Pulsing Aura (B3) in-app verification** — user verified three-branch model in-app 2026-05-13 (screenshots in ChatGPT, not in repo). Corrected rare pack rates (47.058/45.098/3.921/3.921). Schema updated, model rebuilt at v0.4.0, confidence=in_app_verified_partial. See `review/in_app_rate_verification.md`.
 - **Bulbapedia branch-verified pack rates (v0.5.0)** — per-pack Bulbapedia offering rate pages confirm branch structure for 12 packs (bulbapedia_branch_verified) + Secluded Springs (A4a) unique three-branch + Mega Shine (B2b) four-branch. Pulsing Aura upgraded to user_in_app_verified_plus_bulbapedia. A-series packs confirmed two-branch; stale_model_warnings removed. Schema extended for four_branch and themed_rare. model_version=0.5.0, source_status=third_party_verified_with_in_app_anchor. PASS.
+- **A4 (Wisdom of Sea and Sky) in-app verification (v0.6.0)** — Ho-Oh verified from in-repo screenshots (`Offering Rates screenshots/`, IMG_1692–IMG_1722, 2026-05-14). Three-branch model confirmed: regular=91.620%, rare=0.050%, regular+1=8.330% (matches A4a). Slot_6 confirmed: one_star=12.900%, three_diamond=87.100% (standard rarity, NOT shiny). Schema extended for slot_6 standard rarities. Lugia inferred from shared expansion. A4b (Deluxe Pack: ex) remains pending (pack unavailable, 4 cards/pack). model_version=0.6.0. EV pipeline rebuilt; Lugia now in top 5 (adj=3.72). PASS.
 
 Next steps in order:
 
-1. **Continue in-app verification for other packs** — open PTCGP app → any pack → Pack details → Offering Rates. Priority: A4/A4b pending packs, then remaining third_party_verified packs. For each pack verified, update `pull_probability_model.json` and add a record to `data/current/in_app_rate_verification.json`.
+1. **Continue in-app verification for other packs** — open PTCGP app → any pack → Pack details → Offering Rates. Priority: A4b once pack becomes available; then remaining third_party_verified packs. For each pack verified, update `pull_probability_model.json` and add a record to `data/current/in_app_rate_verification.json`.
 
 2. **Resolve 59 ambiguous entries** — fill `data/exports/current_pack_source_review.csv` with confirmed set/card numbers to expand EV-ready coverage from 192 to up to 216/224 entries.
 
 3. **Rebuild EV and reports after any update** — re-run `python3 scripts/build_pack_ev.py`, `python3 scripts/generate_pack_recommendation_report.py`, and `python3 scripts/generate_hourglass_spending_plan.py` after any rate or coverage change.
 
-**Do not issue final pack-opening recommendations until all slot rates are verified in-app. Current status: third_party_verified_with_in_app_anchor (branch percentages Bulbapedia-verified for 12 packs; rarity distributions third_party_verified). `review/final_hourglass_spending_plan.md` is the current decision-support document for pack-opening planning.**
+**Do not issue final pack-opening recommendations until all slot rates are verified in-app. Current status: third_party_verified_with_in_app_anchor (A4 user_in_app_verified; B3 user_in_app_verified_plus_bulbapedia; 12 packs bulbapedia_branch_verified; rarity distributions third_party_verified; A4b pending). `review/final_hourglass_spending_plan.md` is the current decision-support document for pack-opening planning.**
 
 ## 12. Anti-Overengineering Principle
 

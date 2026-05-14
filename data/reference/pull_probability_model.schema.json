@@ -166,10 +166,12 @@
               },
               "slot_6": {
                 "type": ["object", "null"],
-                "description": "Rarity distribution for slot 6 in a regular+1 pack (shiny rarities only: one_shiny, two_shiny). Null for two-branch packs or when unknown.",
+                "description": "Rarity distribution for slot 6 in a regular+1 pack. B-series packs use shiny rarities (one_shiny, two_shiny); A4 packs use standard rarities (one_star, three_diamond). Null for two-branch packs or when unknown.",
                 "properties": {
-                  "one_shiny":  { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "two_shiny":  { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+                  "one_shiny":      { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "two_shiny":      { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "one_star":       { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "three_diamond":  { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
                 }
               },
               "rare_pack_all_5_slots": {

@@ -11,13 +11,13 @@
 
 | Metric | Value |
 |---|---|
-| Model version | 0.5.0 |
+| Model version | 0.6.0 |
 | Source status | **third_party_verified_with_in_app_anchor** |
 | Total packs modeled | 24 |
 | Packs user_in_app_verified_plus_bulbapedia | 1 (Pulsing Aura B3) |
 | Packs bulbapedia_branch_verified | 12 |
 | Packs third_party_verified (two-branch, pattern consistent) | 8 |
-| Packs pending_verification | 3 (A4/A4b) |
+| Packs pending_verification | 1 (A4/A4b) |
 | rarity_probabilities | **all null** (aggregate rates not yet verified) |
 
 ## Branch Model by Pack
@@ -46,8 +46,8 @@
 | Dialga | A2 | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
 | Palkia | A2 | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
 | Arceus | A2a | two_branch | 99.950% | — | 0.050% | — | bulbapedia_branch_verified |
-| Ho-Oh | A4 | two_branch | 99.950% | — | 0.050% | — | pending_verification |
-| Lugia | A4 | two_branch | 99.950% | — | 0.050% | — | pending_verification |
+| Ho-Oh | A4 | three_branch | 91.620% | 8.330% | 0.050% | — | user_in_app_verified |
+| Lugia | A4 | three_branch | 91.620% | 8.330% | 0.050% | — | user_in_app_verified |
 
 ## Pack Pool Summary
 

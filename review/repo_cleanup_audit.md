@@ -205,3 +205,31 @@ This audit file (`review/repo_cleanup_audit.md`) records per-pass results. Secti
 - `data/current/pending_pack_in_app_verification_checklist.json` — machine-readable version with fill-in verification_record fields
 
 **Repo state:** Clean. No new gitignore additions needed.
+
+---
+
+## Pass: 2026-05-14 (A4 in-app verification phase)
+
+**Scan findings:**
+- `.DS_Store` (root + `data/`) — gitignored, not tracked. No action.
+- `scripts/__pycache__/` — gitignored, not tracked. No action.
+- `data/current/resolved_pack_sources.json` — timestamp-only modification. Not staged.
+- `data/current/screenshot_inventory.json` — timestamp-only modification. Not staged.
+- `Offering Rates screenshots/` (untracked) — 31 user-captured PTCGP app screenshots (IMG_1692–IMG_1722 + IMG_1723). **Staged per user instruction.** Gitignore does not cover this folder (screenshots/ covers `screenshots/` only); these files are intentionally tracked as verification evidence.
+
+**No deletions performed.**
+
+**Files modified this phase:**
+- `scripts/build_pull_probability_model.py` — v0.6.0: A4 user_in_app_verified routing, A4_WISDOM_SLOT_RATES, _A4_SLOT_6 constants
+- `data/reference/pull_probability_model.schema.json` — slot_6 extended with one_star and three_diamond properties
+- `data/reference/pull_probability_model.json` — rebuilt at v0.6.0 (A4 three-branch, slot_6 confirmed)
+- `data/current/in_app_rate_verification.json` — A4 (Ho-Oh, Lugia) verification records added
+- `review/in_app_rate_verification.md` — A4 section added
+- `review/pending_pack_in_app_verification_checklist.md` — Ho-Oh/Lugia marked verified; A4b marked pending/unavailable
+- `data/current/pack_ev.json`, `data/exports/pack_ev.csv`, `review/pack_ev.md` — EV rebuilt
+- `data/current/inferred_pack_recommendations.json`, `data/exports/inferred_pack_recommendations.csv`, `review/inferred_pack_recommendations.md` — recommendations rebuilt (Lugia now top 5)
+- `data/current/final_hourglass_spending_plan.json`, `review/final_hourglass_spending_plan.md`, `data/exports/final_hourglass_spending_plan.csv` — spending plan rebuilt
+- `CLAUDE.md` — model version updated, completed phase added
+- `docs/recommendation_readiness.md` — model v0.6.0 stats and blockers updated
+
+**Repo state:** Clean. No new gitignore additions needed.

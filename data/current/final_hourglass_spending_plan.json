@@ -6,7 +6,7 @@
   "collection_total": 380,
   "collection_mutated": false,
   "batch_size": 10,
-  "model_version": "0.5.0",
+  "model_version": "0.6.0",
   "ev_source": "data/current/pack_ev.json",
   "scenarios": [
     {

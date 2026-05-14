@@ -28,8 +28,8 @@
 | 1 | Paldean Wonders | Paldean Wonders | 4.9434 | 4.9155 | 0.0000 | 4.2019 |
 | 2 | Fantastical Parade | Fantastical Parade | 4.4948 | 4.2512 | 0.0000 | 3.8206 |
 | 3 | Mew | Mythical Island | 4.4512 | 4.2741 | 0.0000 | 3.7835 |
-| 4 | Extradimensional Crisis | Extradimensional Crisis | 4.3602 | 4.1071 | 0.0000 | 3.7062 |
-| 5 | Mega Altaria | Mega Rising | 4.3239 | 4.1928 | 0.0000 | 3.6754 |
+| 4 | Lugia | Wisdom of Sea and Sky | 4.3751 | 4.1524 | 0.0000 | 3.7188 |
+| 5 | Extradimensional Crisis | Extradimensional Crisis | 4.3602 | 4.1071 | 0.0000 | 3.7062 |
 
 ## Top 5 Packs by New-Card EV
 
@@ -39,7 +39,7 @@
 | 2 | Mew | Mythical Island | 4.2741 | 77 |
 | 3 | Fantastical Parade | Fantastical Parade | 4.2512 | 205 |
 | 4 | Mega Altaria | Mega Rising | 4.1928 | 119 |
-| 5 | Extradimensional Crisis | Extradimensional Crisis | 4.1071 | 90 |
+| 5 | Lugia | Wisdom of Sea and Sky | 4.1524 | 118 |
 
 ## Top 5 Packs by Deck Target EV
 
@@ -58,15 +58,15 @@
 | Paldean Wonders | Paldean Wonders | B2a | 131 | 3 | 128 | 4.9434 | 4.2019 |
 | Fantastical Parade | Fantastical Parade | B2 | 234 | 29 | 205 | 4.4948 | 3.8206 |
 | Mew | Mythical Island | A1a | 86 | 9 | 77 | 4.4512 | 3.7835 |
+| Lugia | Wisdom of Sea and Sky | A4 | 136 | 18 | 118 | 4.3751 | 3.7188 |
 | Extradimensional Crisis | Extradimensional Crisis | A3a | 103 | 13 | 90 | 4.3602 | 3.7062 |
 | Mega Altaria | Mega Rising | B1 | 139 | 20 | 119 | 4.3239 | 3.6754 |
-| Lugia | Wisdom of Sea and Sky | A4 | 136 | 18 | 118 | 4.2931 | 3.6491 |
 | Solgaleo | Celestial Guardians | A3 | 140 | 34 | 106 | 4.2823 | 3.6400 |
 | Lunala | Celestial Guardians | A3 | 140 | 22 | 118 | 4.2755 | 3.6341 |
+| Ho-Oh | Wisdom of Sea and Sky | A4 | 136 | 22 | 114 | 4.2298 | 3.5953 |
 | Secluded Springs | Secluded Springs | A4a | 105 | 13 | 92 | 4.1880 | 3.5598 |
 | Eevee Grove | Eevee Grove | A3b | 107 | 17 | 90 | 4.1875 | 3.5594 |
 | Palkia | Space-Time Smackdown | A2 | 126 | 20 | 106 | 4.1714 | 3.5457 |
-| Ho-Oh | Wisdom of Sea and Sky | A4 | 136 | 22 | 114 | 4.1523 | 3.5295 |
 | Deluxe Pack: ex | Deluxe Pack: ex | A4b | 379 | 75 | 304 | 4.0962 | 3.4818 |
 | Mega Shine | Mega Shine | B2b | 117 | 20 | 97 | 4.0680 | 3.4578 |
 | Dialga | Space-Time Smackdown | A2 | 126 | 20 | 106 | 4.0323 | 3.4275 |
@@ -112,6 +112,16 @@
 | Ponyta  | one_diamond | 0 | 0.09370 | 1.00 | 0.09370 |
 | Salandit  | one_diamond | 0 | 0.09370 | 1.00 | 0.09370 |
 
+### Lugia (Wisdom of Sea and Sky)
+
+| Card | Rarity | Owned | Pull P | Value | EV |
+|---|---|---|---|---|---|
+| Oddish  | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Scyther  | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Pinsir  | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Chikorita  | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Ledyba  | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+
 ### Extradimensional Crisis (Extradimensional Crisis)
 
 | Card | Rarity | Owned | Pull P | Value | EV |
@@ -121,16 +131,6 @@
 | Rowlet  | one_diamond | 0 | 0.09370 | 1.00 | 0.09370 |
 | Kartana  | one_diamond | 0 | 0.09370 | 1.00 | 0.09370 |
 | Mantine  | one_diamond | 0 | 0.09370 | 1.00 | 0.09370 |
-
-### Mega Altaria (Mega Rising)
-
-| Card | Rarity | Owned | Pull P | Value | EV |
-|---|---|---|---|---|---|
-| Cottonee  | one_diamond | 0 | 0.06119 | 1.00 | 0.06119 |
-| Petilil  | one_diamond | 0 | 0.06119 | 1.00 | 0.06119 |
-| Skiddo  | one_diamond | 0 | 0.06119 | 1.00 | 0.06119 |
-| Gogoat  | one_diamond | 0 | 0.06119 | 1.00 | 0.06119 |
-| Grookey  | one_diamond | 0 | 0.06119 | 1.00 | 0.06119 |
 
 ## Deck Targets
 

@@ -1,6 +1,6 @@
 # In-App Rate Verification Record
 
-Generated: 2026-05-13  
+Generated: 2026-05-14  
 Source: User-provided in-app Offering Rates screenshots  
 Machine-readable: `data/current/in_app_rate_verification.json`
 
@@ -10,13 +10,75 @@ Machine-readable: `data/current/in_app_rate_verification.json`
 
 | Pack | Set | Status | Date | Source |
 |---|---|---|---|---|
+| Ho-Oh | A4 | **user_in_app_verified** | 2026-05-14 | In-repo screenshots (`Offering Rates screenshots/IMG_1692–IMG_1722`) |
+| Lugia | A4 | **user_in_app_verified** *(inferred)* | 2026-05-14 | Inferred from Ho-Oh — same expansion |
 | Pulsing Aura | B3 | **user_in_app_verified** | 2026-05-13 | ChatGPT conversation (not in repo) |
 
 ---
 
-## Important Note on Source
+## Important Note on Sources
 
-The user manually verified Pulsing Aura's Offering Rates directly in the Pokémon TCG Pocket app and provided the values in a ChatGPT conversation. **Screenshots are not stored in this repository.** These values are treated as authoritative user-provided in-app evidence.
+**Ho-Oh / Lugia (A4, 2026-05-14):** In-app Offering Rates screenshots captured directly from the PTCGP app and stored in the repository under `Offering Rates screenshots/` (31 PNG files, IMG_1692–IMG_1722; gitignored, not committed). Ho-Oh verified directly; Lugia rates are inferred from the shared expansion.
+
+**Pulsing Aura (B3, 2026-05-13):** The user manually verified Pulsing Aura's Offering Rates in the app and provided the values in a ChatGPT conversation. **Screenshots are not stored in this repository.** These values are treated as authoritative user-provided in-app evidence.
+
+**A4b (Deluxe Pack: ex):** Pack was unavailable in app ("cannot be obtained right now"). Offering Rates screen is inaccessible. Pack uses 4 cards/pack (non-standard). Remains `pending_verification`.
+
+---
+
+## Ho-Oh / Lugia (A4) — User In-App Verified Rates
+
+### Pack Branch Selection
+
+| Branch | Probability | Display | Screenshot |
+|---|---|---|---|
+| Regular pack | 91.620% | 91.620% | IMG_1692 2.PNG |
+| Rare pack | 0.050% | 0.050% | IMG_1705 2.PNG |
+| Regular pack + 1 card | 8.330% | 8.330% | IMG_1709 2.PNG |
+| **Sum** | **100.000%** | | |
+
+### Model Correction
+
+The prior placeholder was **two-branch** (regular=99.950%, rare=0.050%). Correct model is **three-branch**. Branch probabilities match Secluded Springs (A4a) exactly.
+
+### Regular Pack — Slot Model
+
+| Slot | Rarity | Probability |
+|---|---|---|
+| Cards 1–3 | ♦ (one_diamond) | 100.000% each |
+| Card 4 | ♦♦ (two_diamond) | 90.000% |
+| Card 4 | ♦♦♦ (three_diamond) | 5.000% |
+| Card 4 | ♦♦♦♦ (four_diamond) | 1.666% |
+| Card 4 | ☆ (one_star) | 2.572% |
+| Card 4 | ☆☆ (double_star) | 0.500% |
+| Card 4 | ☆☆☆ (triple_star) | 0.222% |
+| Card 4 | Crown | 0.040% |
+| Card 5 | ♦♦ (two_diamond) | 60.000% |
+| Card 5 | ♦♦♦ (three_diamond) | 20.000% |
+| Card 5 | ♦♦♦♦ (four_diamond) | 6.664% |
+| Card 5 | ☆ (one_star) | 10.288% |
+| Card 5 | ☆☆ (double_star) | 2.000% |
+| Card 5 | ☆☆☆ (triple_star) | 0.888% |
+| Card 5 | Crown | 0.160% |
+
+**Note:** Slots 1–5 rates match the prior third_party_verified standard model.
+
+### Rare Pack Distribution
+
+Standard 40/50/5/5 tier placeholder retained. Screenshots (IMG_1705–1708) show apparent uniform distribution (~2.564% = 1/39 pool cards). Pending explicit confirmation before updating.
+
+### Regular Pack + 1 Card — Card 6 (Standard Rarity — NOT Shiny)
+
+**Key finding: A4 card 6 uses standard rarity, unlike Pulsing Aura (B3) which uses shiny rarity.**
+
+| Rarity | Probability | Example cards | Screenshot |
+|---|---|---|---|
+| ☆ (one_star) | 12.900% | Magby | IMG_1722 2.PNG |
+| ♦♦♦ (three_diamond) | 87.100% | Magby, Smoochum, Tyrogue | IMG_1722 2.PNG |
+
+Card 6 EV contribution is included in model (cards are in pack_sources.json as standard rarities).
+
+---
 
 ---
 

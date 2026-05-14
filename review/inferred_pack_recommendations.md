@@ -18,7 +18,7 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-05-14T02:34:06+00:00 |
+| Report generated | 2026-05-14T19:29:13+00:00 |
 | Model confidence | **third_party_verified_with_in_app_anchor** (not official in-app verified) |
 | Collection total | 380 cards (380 validated) |
 | EV-ready entries | 157/224 (108 auto-accept + 49 secondary evidence) |
@@ -35,8 +35,8 @@
 | 1 | **Paldean Wonders** | Paldean Wonders | 4.2019 | 4.9434 | 4.9155 | 0.0000 | 0.2052 | 128 |
 | 2 | **Fantastical Parade** | Fantastical Parade | 3.8206 | 4.4948 | 4.2512 | 0.0000 | 0.2234 | 205 |
 | 3 | **Mew** | Mythical Island | 3.7835 | 4.4512 | 4.2741 | 0.0000 | 0.0000 | 77 |
-| 4 | **Extradimensional Crisis** | Extradimensional Crisis | 3.7062 | 4.3602 | 4.1071 | 0.0000 | 0.0000 | 90 |
-| 5 | **Mega Altaria** | Mega Rising | 3.6754 | 4.3239 | 4.1928 | 0.0000 | 0.2344 | 119 |
+| 4 | **Lugia** | Wisdom of Sea and Sky | 3.7188 | 4.3751 | 4.1524 | 0.0000 | 0.0000 | 118 |
+| 5 | **Extradimensional Crisis** | Extradimensional Crisis | 3.7062 | 4.3602 | 4.1071 | 0.0000 | 0.0000 | 90 |
 
 ---
 
@@ -52,8 +52,8 @@ adjusted for inferred-rate uncertainty.
 | 1 | Paldean Wonders | 4.2019 | Large pool, very few owned (3/131). Almost every pull is new. |
 | 2 | Fantastical Parade | 3.8206 | Largest pool (234 cards), 205 missing. Highest raw volume of new cards. |
 | 3 | Mew | 3.7835 | Small dense pool (86 cards), 77 missing — high hit rate per pull. |
-| 4 | Extradimensional Crisis | 3.7062 | Medium pool, low ownership (13/103). Consistent new-card rate. |
-| 5 | Mega Altaria | 3.6754 | Large pool (139), 119 missing. Strong EX cards present. |
+| 4 | Lugia | 3.7188 | High new-card EV relative to pool size. |
+| 5 | Extradimensional Crisis | 3.7062 | Medium pool, low ownership (13/103). Consistent new-card rate. |
 
 ### Best for Collection Completion
 
@@ -65,7 +65,7 @@ Ranked by new_card_ev — these packs return the most new unique cards per pull.
 | 2 | Mew | 4.2741 | 77 |
 | 3 | Fantastical Parade | 4.2512 | 205 |
 | 4 | Mega Altaria | 4.1928 | 119 |
-| 5 | Extradimensional Crisis | 4.1071 | 90 |
+| 5 | Lugia | 4.1524 | 118 |
 
 ### Best for Deck Targets
 
@@ -185,6 +185,31 @@ Top EV cards in this pack:
 
 ---
 
+**Lugia** (Wisdom of Sea and Sky)
+
+| Metric | Value |
+|---|---|
+| Adjusted EV (×0.85) | **3.7188** |
+| Total EV (raw) | 4.3751 |
+| New-card EV | 4.1524 |
+| EX-card EV | 0.0000 |
+| Deck target EV | 0.0000 |
+| Pool size | 136 cards |
+| Already owned in pool | 18 |
+| Missing from pool | **118** |
+
+Top EV cards in this pack:
+
+| Card | Rarity | Owned | Pull P | Value | EV |
+|---|---|---|---|---|---|
+| Oddish | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Scyther | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Pinsir | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Chikorita | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Ledyba | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+
+---
+
 **Extradimensional Crisis** (Extradimensional Crisis)
 
 | Metric | Value |
@@ -207,31 +232,6 @@ Top EV cards in this pack:
 | Rowlet | one_diamond | 0 | 0.09370 | 1.00 | 0.09370 |
 | Kartana | one_diamond | 0 | 0.09370 | 1.00 | 0.09370 |
 | Mantine | one_diamond | 0 | 0.09370 | 1.00 | 0.09370 |
-
----
-
-**Mega Altaria** (Mega Rising)
-
-| Metric | Value |
-|---|---|
-| Adjusted EV (×0.85) | **3.6754** |
-| Total EV (raw) | 4.3239 |
-| New-card EV | 4.1928 |
-| EX-card EV | 0.2344 |
-| Deck target EV | 0.0000 |
-| Pool size | 139 cards |
-| Already owned in pool | 20 |
-| Missing from pool | **119** |
-
-Top EV cards in this pack:
-
-| Card | Rarity | Owned | Pull P | Value | EV |
-|---|---|---|---|---|---|
-| Cottonee | one_diamond | 0 | 0.06119 | 1.00 | 0.06119 |
-| Petilil | one_diamond | 0 | 0.06119 | 1.00 | 0.06119 |
-| Skiddo | one_diamond | 0 | 0.06119 | 1.00 | 0.06119 |
-| Gogoat | one_diamond | 0 | 0.06119 | 1.00 | 0.06119 |
-| Grookey | one_diamond | 0 | 0.06119 | 1.00 | 0.06119 |
 
 ---
 
@@ -300,15 +300,15 @@ If completing a specific chase deck matters more, see Scenario B.
 | 1 | Paldean Wonders | Paldean Wonders | 4.2019 | 4.9434 | 4.9155 | 128 | 0.0000 | 0.2052 |
 | 2 | Fantastical Parade | Fantastical Parade | 3.8206 | 4.4948 | 4.2512 | 205 | 0.0000 | 0.2234 |
 | 3 | Mew | Mythical Island | 3.7835 | 4.4512 | 4.2741 | 77 | 0.0000 | 0.0000 |
-| 4 | Extradimensional Crisis | Extradimensional Crisis | 3.7062 | 4.3602 | 4.1071 | 90 | 0.0000 | 0.0000 |
-| 5 | Mega Altaria | Mega Rising | 3.6754 | 4.3239 | 4.1928 | 119 | 0.0000 | 0.2344 |
-| 6 | Lugia | Wisdom of Sea and Sky | 3.6491 | 4.2931 | 4.0705 | 118 | 0.0000 | 0.0000 |
+| 4 | Lugia | Wisdom of Sea and Sky | 3.7188 | 4.3751 | 4.1524 | 118 | 0.0000 | 0.0000 |
+| 5 | Extradimensional Crisis | Extradimensional Crisis | 3.7062 | 4.3602 | 4.1071 | 90 | 0.0000 | 0.0000 |
+| 6 | Mega Altaria | Mega Rising | 3.6754 | 4.3239 | 4.1928 | 119 | 0.0000 | 0.2344 |
 | 7 | Solgaleo | Celestial Guardians | 3.6400 | 4.2823 | 3.9192 | 106 | 0.0611 | 0.0000 |
 | 8 | Lunala | Celestial Guardians | 3.6341 | 4.2755 | 4.0833 | 118 | 0.0000 | 0.0000 |
-| 9 | Secluded Springs | Secluded Springs | 3.5598 | 4.1880 | 3.9223 | 92 | 0.0000 | 0.0000 |
-| 10 | Eevee Grove | Eevee Grove | 3.5594 | 4.1875 | 3.9885 | 90 | 0.0000 | 0.0000 |
-| 11 | Palkia | Space-Time Smackdown | 3.5457 | 4.1714 | 4.0011 | 106 | 0.0000 | 0.0000 |
-| 12 | Ho-Oh | Wisdom of Sea and Sky | 3.5295 | 4.1523 | 3.8611 | 114 | 0.0000 | 0.0000 |
+| 9 | Ho-Oh | Wisdom of Sea and Sky | 3.5953 | 4.2298 | 3.9382 | 114 | 0.0000 | 0.0000 |
+| 10 | Secluded Springs | Secluded Springs | 3.5598 | 4.1880 | 3.9223 | 92 | 0.0000 | 0.0000 |
+| 11 | Eevee Grove | Eevee Grove | 3.5594 | 4.1875 | 3.9885 | 90 | 0.0000 | 0.0000 |
+| 12 | Palkia | Space-Time Smackdown | 3.5457 | 4.1714 | 4.0011 | 106 | 0.0000 | 0.0000 |
 | 13 | Deluxe Pack: ex | Deluxe Pack: ex | 3.4818 | 4.0962 | 3.7134 | 304 | 0.0746 | 0.0067 |
 | 14 | Mega Shine | Mega Shine | 3.4578 | 4.0680 | 3.8568 | 97 | 0.0000 | 0.2115 |
 | 15 | Dialga | Space-Time Smackdown | 3.4275 | 4.0323 | 3.8751 | 106 | 0.0000 | 0.0000 |

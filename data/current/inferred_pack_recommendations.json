@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T02:34:06+00:00",
+  "generated_at": "2026-05-14T19:29:13+00:00",
   "generated_by": "generate_pack_recommendation_report.py",
   "disclaimer": "INFERRED CONFIDENCE ONLY. Slot rates are from trusted external sources (Game8, ShackNews, cgmagonline) — NOT verified from the in-app Offering Rates screen. Rankings are for planning purposes only. Verify in-app before acting on any recommendation.",
   "model_confidence": "third_party_verified_with_in_app_anchor",
@@ -77,6 +77,27 @@
       "notes": "slot_rates=inferred. 9/86 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
+      "pack_name": "Lugia",
+      "expansion": "Wisdom of Sea and Sky",
+      "set_code": "A4",
+      "source_status": "inferred",
+      "slot_rates_confidence": "user_in_app_verified",
+      "blocked": false,
+      "blocked_reason": null,
+      "cards_in_pool": 136,
+      "owned_in_pool": 18,
+      "missing_in_pool": 118,
+      "collection_completion_ev": 4.37508,
+      "new_card_ev": 4.152364,
+      "copy_ev": 0.222717,
+      "ex_card_ev": 0.0,
+      "deck_target_ev": 0.0,
+      "exploratory_ev": 0.0,
+      "pack_total_ev": 4.37508,
+      "confidence_adjusted_ev": 3.718818,
+      "notes": "slot_rates=inferred. 18/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+    },
+    {
       "pack_name": "Extradimensional Crisis",
       "expansion": "Extradimensional Crisis",
       "set_code": "A3a",
@@ -96,27 +117,6 @@
       "pack_total_ev": 4.360235,
       "confidence_adjusted_ev": 3.7062,
       "notes": "slot_rates=inferred. 13/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
-    },
-    {
-      "pack_name": "Mega Altaria",
-      "expansion": "Mega Rising",
-      "set_code": "B1",
-      "source_status": "inferred",
-      "slot_rates_confidence": "bulbapedia_branch_verified",
-      "blocked": false,
-      "blocked_reason": null,
-      "cards_in_pool": 139,
-      "owned_in_pool": 20,
-      "missing_in_pool": 119,
-      "collection_completion_ev": 4.323946,
-      "new_card_ev": 4.192759,
-      "copy_ev": 0.131187,
-      "ex_card_ev": 0.234432,
-      "deck_target_ev": 0.0,
-      "exploratory_ev": 0.0,
-      "pack_total_ev": 4.323946,
-      "confidence_adjusted_ev": 3.675354,
-      "notes": "slot_rates=inferred. 20/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     }
   ],
   "top_5_by_new_card_ev": [
@@ -205,25 +205,25 @@
       "notes": "slot_rates=inferred. 20/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
-      "pack_name": "Extradimensional Crisis",
-      "expansion": "Extradimensional Crisis",
-      "set_code": "A3a",
+      "pack_name": "Lugia",
+      "expansion": "Wisdom of Sea and Sky",
+      "set_code": "A4",
       "source_status": "inferred",
-      "slot_rates_confidence": "bulbapedia_branch_verified",
+      "slot_rates_confidence": "user_in_app_verified",
       "blocked": false,
       "blocked_reason": null,
-      "cards_in_pool": 103,
-      "owned_in_pool": 13,
-      "missing_in_pool": 90,
-      "collection_completion_ev": 4.360235,
-      "new_card_ev": 4.107122,
-      "copy_ev": 0.253113,
+      "cards_in_pool": 136,
+      "owned_in_pool": 18,
+      "missing_in_pool": 118,
+      "collection_completion_ev": 4.37508,
+      "new_card_ev": 4.152364,
+      "copy_ev": 0.222717,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 4.360235,
-      "confidence_adjusted_ev": 3.7062,
-      "notes": "slot_rates=inferred. 13/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "pack_total_ev": 4.37508,
+      "confidence_adjusted_ev": 3.718818,
+      "notes": "slot_rates=inferred. 18/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     }
   ],
   "top_5_by_deck_target_ev": [

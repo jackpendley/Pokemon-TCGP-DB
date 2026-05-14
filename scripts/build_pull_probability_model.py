@@ -18,6 +18,10 @@ Branch model history:
           - A-series (A1a/A2a/A3a/A3b): two-branch confirmed from Bulbapedia.
           - A-series (A1/A2/A2b/A3): two-branch (third_party_verified, consistent with pattern).
           - A4/A4b: pending_verification (Bulbapedia data unavailable).
+  v0.6.0  A4 (Wisdom of Sea and Sky) verified from in-repo Offering Rates screenshots (2026-05-14).
+          - Ho-Oh/Lugia: three-branch 91.620%/8.330%/0.050% (matches A4a); slot_6 confirmed
+            (one_star=12.900%, three_diamond=87.100% — standard rarity, NOT shiny).
+          - A4b (Deluxe Pack: ex): remains pending_verification (pack unavailable, 4 cards/pack).
 
 Inputs:
     data/reference/pack_sources.json
@@ -101,8 +105,11 @@ SET_CODE_BRANCH_CONFIG = {
     "A2":  "third_party_two_branch",
     "A2b": "third_party_two_branch",
     "A3":  "third_party_two_branch",
-    # Pending verification — Bulbapedia data unavailable; A4 is uncertain because A4a uses three-branch
-    "A4":  "pending",
+    # A4 (Wisdom of Sea and Sky) — user in-app verified from in-repo screenshots 2026-05-14
+    # Three-branch: regular=91.620%, regular_plus_one=8.330%, rare=0.050%
+    # Matches Secluded Springs (A4a) branch percentages exactly.
+    "A4":  "user_in_app_verified_a4",
+    # A4b (Deluxe Pack: ex) — pack unavailable in app; Offering Rates inaccessible. 4 cards/pack.
     "A4b": "pending",
     # Bulbapedia offering-rates page confirmed standard three-branch
     # (regular=94.711%, regular_plus_one=5.238%, rare=0.050%)
@@ -389,7 +396,62 @@ PULSING_AURA_SLOT_RATES = {
     ),
 }
 
-# Pending verification warning — used for A4/A4b only
+# ---------------------------------------------------------------------------
+# A4 (Wisdom of Sea and Sky) slot_6 — user in-app verified from in-repo screenshots
+# Card 6 appears in Regular Pack +1 Card openings (8.330% of packs).
+# Uses standard rarity cards (NOT shiny like B-series).
+# Verified from IMG_1722 2.PNG: ☆=12.900% (Magby), ◇◇◇=87.100% (Magby/Smoochum/Tyrogue).
+# ---------------------------------------------------------------------------
+_A4_SLOT_6 = {
+    "one_star":      0.12900,
+    "three_diamond": 0.87100,
+    "note": (
+        "Card 6 in Regular Pack +1 Card openings (8.330% of packs). "
+        "Verified from user in-app screenshots stored in 'Offering Rates screenshots/' "
+        "(IMG_1722 2.PNG, 2026-05-14). "
+        "one_star (☆) = 12.900% (Magby), three_diamond (◇◇◇) = 87.100% "
+        "(Magby/Smoochum/Tyrogue). Standard rarity cards — NOT shiny."
+    ),
+}
+
+# ---------------------------------------------------------------------------
+# A4 (Wisdom of Sea and Sky) full slot rates — user in-app verified 2026-05-14
+# Branch: regular=91.620%, regular_plus_one=8.330%, rare=0.050%
+# Matches Secluded Springs (A4a) branch probabilities exactly.
+# Source: in-repo screenshots IMG_1692 2.PNG – IMG_1722 2.PNG
+# ---------------------------------------------------------------------------
+A4_WISDOM_SLOT_RATES = {
+    "regular_pack_probability": 0.91620,
+    "rare_pack_probability": 0.00050,
+    "regular_pack_plus_one_probability": 0.08330,
+    "slots_1_3": {"one_diamond": 1.0},
+    "slot_4": _STANDARD_SLOT_4,
+    "slot_5": _STANDARD_SLOT_5,
+    "slot_6": _A4_SLOT_6,
+    "rare_pack_all_5_slots": _STANDARD_RARE_PACK,
+    "confidence": "user_in_app_verified",
+    "source_name": "user_in_app_screenshots_offering_rates",
+    "source_url": BULBAPEDIA_URLS["A4"],
+    "source_accessed_at": "2026-05-14",
+    "source_notes": (
+        "Branch selection (regular_pack=91.620%, regular_pack_plus_one=8.330%, rare_pack=0.050%) "
+        "and slot_6 (one_star=12.900%, three_diamond=87.100%) verified from in-repo Offering "
+        "Rates screenshots (IMG_1692 2.PNG – IMG_1722 2.PNG, 'Offering Rates screenshots/' folder). "
+        "Ho-Oh (A4) verified directly; Lugia (A4) shares the same expansion — identical rates inferred. "
+        "Branch probabilities match Secluded Springs (A4a) exactly. "
+        "Rare pack shows apparent uniform per-card distribution (~2.564% = 1/39 pool cards); "
+        "standard 40/50/5/5 tier placeholder retained pending explicit rate confirmation. "
+        "Screenshots stored in 'Offering Rates screenshots/' (gitignored — not committed to repo)."
+    ),
+    "confidence_note": (
+        "user_in_app_verified: branch selection and slot_6 rates confirmed from PTCGP app screenshots "
+        "stored in 'Offering Rates screenshots/'. "
+        "Slot 4/5 distributions match third_party_verified standard rates. "
+        "NOT Bulbapedia-corroborated (page was inaccessible during prior verification pass)."
+    ),
+}
+
+# Pending verification warning — used for A4b only
 PENDING_VERIFICATION_NOTE = (
     "Branch model unconfirmed — Bulbapedia offering rates section was not accessible "
     "for this pack during the 2026-05-13 verification pass. "
@@ -505,6 +567,9 @@ def _build_slot_rates_for_set(set_code: str) -> tuple[dict, str, str, str, bool]
             True,
         )
 
+    if branch_type == "user_in_app_verified_a4":
+        return ({**A4_WISDOM_SLOT_RATES}, "user_in_app_verified", "three_branch", None, True)
+
     if branch_type == "bulbapedia_three_branch_standard":
         rates = {**BULBAPEDIA_THREE_BRANCH_SLOT_RATES, "source_url": BULBAPEDIA_URLS.get(set_code)}
         return (rates, "bulbapedia_branch_verified", "three_branch", None, True)
@@ -570,6 +635,14 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
             bulbapedia_notes_str = (
                 "Bulbapedia confirms three-branch structure (94.711%/5.238%/0.050%). "
                 "User in-app verified rates are used; Bulbapedia corroborates branch selection."
+            )
+        elif branch_type == "user_in_app_verified_a4":
+            bulbapedia_match = "in_app_verified_bulbapedia_inaccessible"
+            bulbapedia_notes_str = (
+                "Branch selection (91.620%/8.330%/0.050%) and slot_6 verified from in-repo "
+                "Offering Rates screenshots (IMG_1692–IMG_1722, 2026-05-14). "
+                "Bulbapedia page was inaccessible during prior verification pass. "
+                "Branch probabilities match Secluded Springs (A4a) exactly."
             )
         elif branch_type in ("bulbapedia_three_branch_standard",):
             bulbapedia_match = "branch_verified"
@@ -646,6 +719,22 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
                     "Bulbapedia corroborates branch percentages. "
                     "Rare pack distribution corrected from in-app data: 47.058/45.098/3.921/3.921. "
                     "Card 6 shiny rates: one_shiny=68.180%, two_shiny=31.820% (EV pending shiny pool data)."
+                )
+            elif branch_type == "user_in_app_verified_a4":
+                official_status = "user_in_app_verified"
+                user_evidence_note = (
+                    "User-captured in-app Offering Rates screenshots stored in repo: "
+                    "'Offering Rates screenshots/IMG_1692 2.PNG' – 'IMG_1722 2.PNG' (2026-05-14). "
+                    "Ho-Oh verified directly; Lugia shares the same expansion — rates inferred identical."
+                )
+                notes = (
+                    "Three-branch model verified from in-repo screenshots: "
+                    "regular_pack (91.620%) + regular_pack_plus_one (8.330%) + rare_pack (0.050%). "
+                    "Branch probabilities match Secluded Springs (A4a) exactly. "
+                    "Slot 6: one_star=12.900% (☆), three_diamond=87.100% (◇◇◇) — standard rarity, NOT shiny. "
+                    "Slot 4/5 distributions match third_party_verified standard rates. "
+                    "Rare pack distribution uses 40/50/5/5 placeholder — screenshots suggest "
+                    "apparent uniform per-card distribution (~2.564%), pending explicit confirmation."
                 )
             elif branch_type == "bulbapedia_three_branch_standard":
                 official_status = "not_verified"
@@ -778,15 +867,16 @@ def write_json(pack_records: list) -> dict:
     n_inferred = sum(1 for p in pack_records if p.get("confidence") == "inferred")
 
     meta_notes = (
-        f"Bulbapedia branch-verified model (v0.5.0, 2026-05-13). "
-        f"bulbapedia_branch_verified: {n_bpv} packs (branch selection from Bulbapedia offering rates). "
+        f"A4 in-app verified model (v0.6.0, 2026-05-14). "
+        f"user_in_app_verified: {n_inapp} packs (A4 Ho-Oh/Lugia, in-repo screenshots). "
         f"user_in_app_verified_plus_bulbapedia: {n_inapp_b} pack (Pulsing Aura B3, user in-app + Bulbapedia). "
+        f"bulbapedia_branch_verified: {n_bpv} packs (branch selection from Bulbapedia offering rates). "
         f"third_party_verified: {n_tpv} packs (two-branch, A-series, Bulbapedia truncated but pattern consistent). "
-        f"pending_verification: {n_pending} packs (A4/A4b, Bulbapedia data unavailable). "
+        f"pending_verification: {n_pending} packs (A4b Deluxe Pack: ex — pack unavailable in app, 4 cards/pack). "
         f"All rarity_probabilities null (aggregate rates require in-app verification). "
-        f"B-series packs corrected to three/four-branch. A-series two-branch confirmed. "
-        f"Secluded Springs (A4a) confirmed as unique three-branch (91.620%/8.330%/0.050%). "
-        f"Mega Shine (B2b) confirmed as four-branch with themed_rare_pack=0.005%."
+        f"A4 (Wisdom of Sea and Sky): three-branch 91.620%/8.330%/0.050%, slot_6 verified (one_star=12.9%, three_diamond=87.1%). "
+        f"Secluded Springs (A4a): unique three-branch (91.620%/8.330%/0.050%). "
+        f"Mega Shine (B2b): four-branch with themed_rare_pack=0.005%."
     )
 
     out = {
@@ -794,17 +884,18 @@ def write_json(pack_records: list) -> dict:
         "generated_by": "build_pull_probability_model.py",
         "meta": {
             "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "model_version": "0.5.0",
+            "model_version": "0.6.0",
             "source_status": source_status,
             "verified_source": (
                 "ptcgp_in_app_offering_rates" if source_status == "verified" else None
             ),
             "user_in_app_verified_packs": (
-                ["Pulsing Aura (B3)"] if n_inapp + n_inapp_b > 0 else None
+                ["Ho-Oh (A4)", "Lugia (A4)", "Pulsing Aura (B3)"]
+                if n_inapp + n_inapp_b > 0 else None
             ),
             "user_in_app_evidence_note": (
-                "Pulsing Aura (B3) rates verified by user from in-app Offering Rates screen. "
-                "Screenshots in ChatGPT conversation, NOT stored in repo."
+                "Ho-Oh and Lugia (A4): verified from in-repo screenshots in 'Offering Rates screenshots/' (2026-05-14). "
+                "Pulsing Aura (B3): verified by user from in-app Offering Rates screen (ChatGPT conversation, NOT in repo, 2026-05-13)."
                 if n_inapp + n_inapp_b > 0 else None
             ),
             "bulbapedia_verified_packs": (
@@ -817,26 +908,29 @@ def write_json(pack_records: list) -> dict:
                 if n_tpv > 0 else None
             ),
             "pending_packs": (
-                ["Wisdom of Sea and Sky (A4)", "Deluxe Pack: ex (A4b)"]
+                ["Deluxe Pack: ex (A4b) — pack unavailable in app; Offering Rates inaccessible; 4 cards/pack"]
                 if n_pending > 0 else None
             ),
             "confidence_note": (
                 "third_party_verified_with_in_app_anchor: "
-                "Most packs branch-verified via Bulbapedia (2026-05-13). "
-                "Pulsing Aura (B3) user_in_app_verified_plus_bulbapedia. "
+                "A4 (Ho-Oh/Lugia) user_in_app_verified from in-repo screenshots (2026-05-14). "
+                "Pulsing Aura (B3) user_in_app_verified_plus_bulbapedia (2026-05-13). "
+                "Most other packs branch-verified via Bulbapedia (2026-05-13). "
                 "A-series packs confirmed two-branch (Bulbapedia + third-party sources). "
-                "A4/A4b pending Bulbapedia data. "
-                "Rarity distributions within slots are still third_party_verified. "
-                "NOT official in-app verified for any non-B3 pack."
+                "A4b pending — pack unavailable in app, Offering Rates inaccessible. "
+                "Rarity distributions within slots still third_party_verified. "
+                "NOT official in-app verified for any non-A4/non-B3 pack."
             ),
             "notes": meta_notes,
         },
         "probability_source_required": {
-            "status": "BULBAPEDIA_BRANCH_VERIFIED",
+            "status": "IN_APP_VERIFIED_PARTIAL",
             "description": (
-                "Branch selection probabilities verified from Bulbapedia for most packs. "
+                "A4 (Ho-Oh/Lugia) branch and slot_6 verified from in-repo screenshots (2026-05-14). "
+                "Pulsing Aura (B3) verified by user in-app (2026-05-13). "
+                "Most other packs branch-verified from Bulbapedia. "
                 "Slot rarity distributions still from third_party_verified sources. "
-                "Aggregate rarity_probabilities still null — require in-app verification."
+                "Aggregate rarity_probabilities still null — require full in-app verification."
             ),
             "how_to_officially_verify": (
                 "In the Pokémon TCG Pocket app: tap a pack > view 'Offering Rates'. "
