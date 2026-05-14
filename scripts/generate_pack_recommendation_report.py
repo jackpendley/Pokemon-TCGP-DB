@@ -696,6 +696,8 @@ def run_validate() -> bool:
         "inferred", "third_party_verified", "verified",
         "user_in_app_verified", "in_app_verified_partial",
         "third_party_verified_with_in_app_anchor", "pending_verification",
+        "bulbapedia_branch_verified", "bulbapedia_verified",
+        "user_in_app_verified_plus_bulbapedia",
     )
     if mc not in valid_mc:
         print(f"  ERROR: model_confidence='{mc}' not in {valid_mc}")

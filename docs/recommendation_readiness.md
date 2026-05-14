@@ -102,20 +102,24 @@ Outputs:
 | Script | `scripts/build_pull_probability_model.py` |
 | Model file | `data/reference/pull_probability_model.json` |
 | Schema | `data/reference/pull_probability_model.schema.json` |
-| Model version | **0.4.0** |
+| Model version | **0.5.0** |
 | Packs modeled | **24** (all named pullable packs across 17 expansions) |
-| Source status | **in_app_verified_partial** — Pulsing Aura (B3) user-in-app-verified; 23 others third_party_verified |
+| Source status | **third_party_verified_with_in_app_anchor** |
+| bulbapedia_branch_verified | **12/24 packs** — branch percentages confirmed from Bulbapedia offering rates |
+| user_in_app_verified_plus_bulbapedia | **1/24 packs** — Pulsing Aura (B3): user in-app verified + Bulbapedia corroborated |
+| third_party_verified | **8/24 packs** — A-series packs, pattern-consistent two-branch, not yet individually page-confirmed |
+| pending_verification | **3/24 packs** — A4, A4b (Celestial Guardians/Extradimensional Crisis packs) |
 | Slot rates | **24/24 packs** populated |
 | rarity_probabilities | **all null** — aggregate rates require in-app verification |
 | Validation | `python3 scripts/validate_pull_probability_model.py` — **PASS** |
-| EV status | **PARTIALLY READY** — EV possible at in_app_verified_partial confidence |
+| EV status | **READY** — EV computed at third_party_verified_with_in_app_anchor confidence |
 | External lookup | `review/pull_probability_external_lookup.md` |
-| Cross-check | `review/pull_rate_cross_check.md` — CONFIRMED, upgraded to third_party_verified |
+| Cross-check | `review/pull_rate_cross_check.md` — CONFIRMED, bulbapedia_branch_verified |
 | In-app verification | `review/in_app_rate_verification.md` — Pulsing Aura (B3) user-in-app-verified 2026-05-13 |
 
-**Three-branch model discovered:** User verified Pulsing Aura (B3) in-app on 2026-05-13. Prior model was two-branch (regular_pack=99.950%, rare_pack=0.050%). Correct model is three-branch: regular_pack=94.711%, rare_pack=0.050%, regular_pack_plus_one=5.238%. Rare pack distribution corrected to 47.058/45.098/3.921/3.921 (was 40/50/5/5). No reputable external source found documenting the three-branch model — correction applied to B3 only; all 23 other packs retain the two-branch model with a `stale_model_warning`.
+**Branch model correction (v0.5.0):** Bulbapedia offering rates pages confirm per-expansion branch structure. A-series packs (A1a, A2a, A3a, A3b confirmed) are correctly two-branch (regular/rare only). B-series packs (B1, B1a, B2, B2a, B3) are three-branch (regular/rare/regular_plus_one): regular_pack=94.711%, rare_pack=0.050%, regular_pack_plus_one=5.238%. Secluded Springs (A4a) has unique three-branch rates: 91.620%/0.050%/8.330%. Mega Shine (B2b) is four-branch (adds themed_rare_pack=0.005% guaranteeing Mega Evolution ex). Pulsing Aura (B3) retains corrected rare pack distribution (47.058/45.098/3.921/3.921) from user in-app verification; Bulbapedia corroborates branch percentages. All stale_model_warnings removed from correctly-modeled A-series packs.
 
-Slot rates source: Game8 PTCGP guide (primary). Cross-checked and confirmed by ONE Esports, CGMagazine, ShackNews (4 total independent sources) for two-branch rates. Pulsing Aura corrected via user in-app verification (screenshots shared in ChatGPT conversation, not stored in this repo).
+Slot rates source: Bulbapedia offering rates pages (branch percentages). Rarity distributions within slots: Game8 PTCGP guide (primary), cross-checked by ONE Esports, CGMagazine, ShackNews. Pulsing Aura rare pack rates from user in-app verification (2026-05-13).
 
 Outputs:
 - `data/reference/pull_probability_model.json`
@@ -136,17 +140,17 @@ Outputs:
 | Output report | `review/pack_ev.md` |
 | Packs ranked | **24** (all modeled packs) |
 | Packs blocked | **0** |
-| Model confidence | **in_app_verified_partial** — Pulsing Aura user-in-app-verified; 23 others third_party_verified |
+| Model confidence | **third_party_verified_with_in_app_anchor** |
 | Collection used | `collection_normalized.json` (380 cards, 224 entries) |
 | EV-ready entries | **192/224** (35 newly resolved from ambiguous set) |
 | Excluded entries | **32/224** |
 | Deck targets | **4** (Ivysaur, Incineroar ex, Zygarde ex, Magnezone ex) |
 | Validation | `python3 scripts/build_pack_ev.py --validate` — **PASS** |
-| Top pack (total EV) | **Paldean Wonders** (ev=4.9435, adj=4.2019) |
+| Top pack (total EV) | **Paldean Wonders** (ev=4.9434, adj=4.2019) |
 
-EV scoring weights: new_card=1.0, copy_up_to_2=0.4, ex_missing=1.0, deck_target=2.0, confidence_adj=0.85 (in_app_verified_partial). Three-branch model support added: P_combined=P_regular+P_plus_one for slots 1–5; card 6 EV=0 (shiny pool not in pack_sources.json).
+EV scoring weights: new_card=1.0, copy_up_to_2=0.4, ex_missing=1.0, deck_target=2.0, confidence_adj=0.85. Three-branch and four-branch model support: P_combined=P_regular+P_plus_one for slots 1–5; themed_rare EV=0 (card pool not in pack_sources.json); card 6 EV=0 (shiny pool not in pack_sources.json).
 
-Top 5 packs by total inferred EV:
+Top 5 packs by total EV:
 
 | Rank | Pack | Total EV | Adj. EV |
 |---|---|---|---|
@@ -170,7 +174,7 @@ python3 scripts/build_pack_ev.py --validate
 | Output MD | `review/inferred_pack_recommendations.md` |
 | Output JSON | `data/current/inferred_pack_recommendations.json` |
 | Output CSV | `data/exports/inferred_pack_recommendations.csv` |
-| Model confidence | **in_app_verified_partial** — Pulsing Aura user-in-app-verified; 23 others third_party_verified |
+| Model confidence | **third_party_verified_with_in_app_anchor** |
 | Top recommendation | **Paldean Wonders** (adj EV=4.2019) |
 | Validation | `python3 scripts/generate_pack_recommendation_report.py --validate` — **PASS** |
 
@@ -207,7 +211,7 @@ python3 scripts/generate_pack_recommendation_report.py --validate
 | Scenarios | **3** — conservative (1 batch), moderate (3 batches), aggressive (5 batches) |
 | Batch size | **10 packs per batch** — no hourglass count assumed |
 | Top pack (all scenarios) | **Paldean Wonders** (adj EV=4.2019) |
-| Model confidence | **in_app_verified_partial** — Pulsing Aura user-in-app-verified; 23 others third_party_verified |
+| Model confidence | **third_party_verified_with_in_app_anchor** |
 | Validation | `python3 scripts/generate_hourglass_spending_plan.py --validate` — **PASS** |
 
 Plan includes: per-batch stopping conditions, rerun triggers, deck-target variant for moderate scenario, global rerun checklist.
@@ -219,17 +223,18 @@ python3 scripts/generate_hourglass_spending_plan.py --validate
 
 ### Remaining blockers before verified pack recommendations
 
-1. **Slot rates partially in-app verified** — Pulsing Aura (B3) is user_in_app_verified (three-branch model, corrected rare pack rates). All other 23 packs remain third_party_verified with a `stale_model_warning` (two-branch model; may be missing regular_pack_plus_one branch). Must verify each pack against the PTCGP app Offering Rates screen to reach `verified` confidence. `rarity_probabilities` (aggregate per-pack rates) are still null.
-2. **59 ambiguous cross-set entries at low confidence (0.50–0.799)** — card appears in multiple expansions; the correct version cannot be determined without OCR or user confirmation.
-3. **8 unresolved entries (< 0.50)** — 3 Zygarde forms not in pack_sources; 5 common trainers not indexed in Limitless DB.
-4. **Pack-source mapping for Zygarde** — Zygarde ex not in pack_sources; pack unknown. Blocks Zygarde ex Fighting deck targeting.
-5. **Current meta/tier data** — deck recommendations are not yet meta-aware.
-6. **Automated deck scorer** — `deck-recommendations.jsx` is a manual prototype.
+1. **Branch percentages bulbapedia_branch_verified; rarity distributions remain third_party_verified** — Branch selection (regular/rare/plus_one) is confirmed from Bulbapedia for 12 packs + user in-app for Pulsing Aura. Rarity distributions within slots (slot_4, slot_5, rare_pack_all_5_slots) are still third_party_verified (Game8/ONE Esports/CGMagazine/ShackNews). Must verify each pack against PTCGP app Offering Rates screen to reach `verified` confidence. `rarity_probabilities` (aggregate per-pack rates) are still null.
+2. **3 packs pending_verification** — A4, A4b (Celestial Guardians/Extradimensional Crisis packs): slot_rates unconfirmed; using two-branch scaffold. Verify in-app before treating EV for these packs as reliable.
+3. **59 ambiguous cross-set entries at low confidence (0.50–0.799)** — card appears in multiple expansions; the correct version cannot be determined without OCR or user confirmation.
+4. **8 unresolved entries (< 0.50)** — 3 Zygarde forms not in pack_sources; 5 common trainers not indexed in Limitless DB.
+5. **Pack-source mapping for Zygarde** — Zygarde ex not in pack_sources; pack unknown. Blocks Zygarde ex Fighting deck targeting.
+6. **Current meta/tier data** — deck recommendations are not yet meta-aware.
+7. **Automated deck scorer** — `deck-recommendations.jsx` is a manual prototype.
 
 ### Recommended next phase
 
-1. **Continue in-app verification for other packs** — Pulsing Aura (B3) is done. Open PTCGP → any other pack → Pack details → Offering Rates. If branch probabilities match (three-branch structure expected), update `pull_probability_model.json` and re-run downstream scripts. See `review/in_app_rate_verification.md` for the verification record format.
-2. **Use the hourglass spending plan** — `review/final_hourglass_spending_plan.md` has conservative/moderate/aggressive scenarios for immediate pack decisions at third_party_verified confidence.
+1. **Continue in-app verification for other packs** — Open PTCGP → any pack → Pack details → Offering Rates. Priority: A4/A4b pending packs, then remaining third_party_verified packs. Update `pull_probability_model.json` and re-run downstream scripts after each verified pack. See `review/in_app_rate_verification.md` for the verification record format.
+2. **Use the hourglass spending plan** — `review/final_hourglass_spending_plan.md` has conservative/moderate/aggressive scenarios for immediate pack decisions at third_party_verified_with_in_app_anchor confidence.
 3. **Resolve 59 ambiguous entries** — expands EV-ready coverage to ~216/224, improving EV accuracy.
 
 ---

@@ -414,7 +414,16 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total, resolut
     model_confidence = _read_model_confidence(PULL_MODEL_JSON)
     summary = summarize(pack_ev_records)
 
-    if model_confidence == "in_app_verified_partial":
+    if model_confidence == "third_party_verified_with_in_app_anchor":
+        warning = (
+            "Slot rates are THIRD_PARTY_VERIFIED_WITH_IN_APP_ANCHOR — 12 packs bulbapedia_branch_verified "
+            "(branch percentages confirmed from Bulbapedia offering rates), 1 pack user_in_app_verified_plus_bulbapedia "
+            "(Pulsing Aura B3: in-app verified + Bulbapedia corroborated), 8 packs third_party_verified "
+            "(pattern-consistent two-branch), 3 packs pending_verification (A4/A4b). "
+            "Rarity distributions within slots remain third_party_verified. "
+            "EV rankings are suitable for planning but not final recommendations."
+        )
+    elif model_confidence == "in_app_verified_partial":
         warning = (
             "Slot rates are IN_APP_VERIFIED_PARTIAL — Pulsing Aura (B3) user-in-app-verified "
             "(three-branch model, corrected rare pack rates). All other packs retain prior "
@@ -539,21 +548,23 @@ def _excluded_md_row(out: dict) -> str:
 
 def write_md(out: dict, pack_ev_records: list, deck_targets: dict):
     summary = out["overall_summary"]
+    model_confidence = out["meta"]["model_confidence"]
     lines = [
-        "# Pack EV Analysis (Inferred Confidence)",
+        f"# Pack EV Analysis ({model_confidence.replace('_', ' ').title()} Confidence)",
         "",
-        "> **IMPORTANT — Inferred Rates**",
-        "> Slot rates are from trusted external sources (Game8, ShackNews), not verified",
-        "> from the in-app Offering Rates screen. This is planning analysis only.",
+        "> **IMPORTANT — Partially Verified Rates**",
+        "> Branch structure (regular/rare/plus_one percentages) confirmed from Bulbapedia offering rates",
+        "> for 12 packs; rarity distributions within slots remain third_party_verified.",
+        "> Pulsing Aura (B3) is user-in-app-verified with Bulbapedia corroboration.",
         "> Do NOT treat these rankings as final pack-opening recommendations.",
-        "> Verify in PTCGP app → Pack details → Offering Rates before acting.",
+        "> Verify remaining packs in PTCGP app → Pack details → Offering Rates before acting.",
         "",
         "## Status",
         "",
         "| Metric | Value |",
         "|---|---|",
-        f"| Model confidence | **inferred** |",
-        f"| Slot rates source | Game8 + ShackNews + cgmagonline |",
+        f"| Model confidence | **{model_confidence}** |",
+        f"| Slot rates source | Bulbapedia (branch) + Game8/ShackNews (rarity dist.) |",
         f"| Packs ranked | {len(pack_ev_records)} |",
         f"| Collection total | {out['meta']['collection_total']} cards (380 validated) |",
         _ev_ready_md_row(out),
@@ -562,7 +573,7 @@ def write_md(out: dict, pack_ev_records: list, deck_targets: dict):
         "",
         "---",
         "",
-        "## Top 5 Packs by Total Inferred EV",
+        "## Top 5 Packs by Total EV",
         "",
         "| Rank | Pack | Expansion | Total EV | New Card EV | Deck Target EV | Adj. EV |",
         "|---|---|---|---|---|---|---|",
@@ -738,6 +749,8 @@ def run_validate() -> bool:
         "inferred", "third_party_verified", "verified",
         "user_in_app_verified", "in_app_verified_partial",
         "third_party_verified_with_in_app_anchor", "pending_verification",
+        "bulbapedia_branch_verified", "bulbapedia_verified",
+        "user_in_app_verified_plus_bulbapedia",
     )
     if mc not in valid_mc:
         print(f"  ERROR: model_confidence='{mc}' not in {valid_mc}")

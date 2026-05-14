@@ -1,34 +1,53 @@
 # Pull Probability Model
 
-> **Scaffold only — pull rates are NOT populated.**
-> All `rarity_probabilities` values are `null`.
-> Card pool counts (how many cards of each rarity exist per pack) are from `pack_sources.json`.
-> Pull rates must come from the official in-app Offering Rates screen.
+> **Bulbapedia branch-verified model (v0.5.0, 2026-05-13).**
+> Branch selection probabilities verified per-pack from Bulbapedia Offering Rates sections.
+> B-series packs corrected to three/four-branch. A-series packs confirmed two-branch.
+> Pulsing Aura (B3) is user_in_app_verified_plus_bulbapedia.
+> `rarity_probabilities` (aggregate per-pack rates) are still null.
+> Bulbapedia is a third-party wiki, NOT official in-app verification.
 
 ## Status
 
 | Metric | Value |
 |---|---|
-| Model version | 0.4.0 |
-| Source status | **in_app_verified_partial** |
-| Inferred source | None |
-| Verified source | None |
-| Third-party verified sources | game8_co, one_esports_gg, cgmagonline_com, shacknews_com |
+| Model version | 0.5.0 |
+| Source status | **third_party_verified_with_in_app_anchor** |
 | Total packs modeled | 24 |
-| Packs with third_party_verified rates | 23 |
-| Packs with inferred slot rates | 0 |
-| Packs with verified rates | 0 |
-| rarity_probabilities values | **all null** (aggregate rates not yet verified) |
+| Packs user_in_app_verified_plus_bulbapedia | 1 (Pulsing Aura B3) |
+| Packs bulbapedia_branch_verified | 12 |
+| Packs third_party_verified (two-branch, pattern consistent) | 8 |
+| Packs pending_verification | 3 (A4/A4b) |
+| rarity_probabilities | **all null** (aggregate rates not yet verified) |
 
-## How to Upgrade to Verified
+## Branch Model by Pack
 
-1. Open the Pokémon TCG Pocket app.
-2. Navigate to the pack you want to verify.
-3. View the **Offering Rates** / **Card Rates** section (disclosed in-app).
-4. Compare the in-app rates to `slot_rates` in `data/reference/pull_probability_model.json`.
-5. If they match, set `confidence: 'verified'` and populate `rarity_probabilities`.
-6. If they differ, update `slot_rates` with the correct values and set `confidence: 'verified'`.
-7. Re-run `python3 scripts/validate_pull_probability_model.py`.
+| Pack | Set | Branch Model | Regular % | Plus-One % | Rare % | Themed % | Confidence |
+|---|---|---|---|---|---|---|---|
+| Lunala | A3 | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
+| Solgaleo | A3 | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
+| Crimson Blaze | B1a | three_branch | 94.711% | 5.238% | 0.050% | — | bulbapedia_branch_verified |
+| Deluxe Pack: ex | A4b | two_branch | 99.950% | — | 0.050% | — | pending_verification |
+| Eevee Grove | A3b | two_branch | 99.950% | — | 0.050% | — | bulbapedia_branch_verified |
+| Extradimensional Crisis | A3a | two_branch | 99.950% | — | 0.050% | — | bulbapedia_branch_verified |
+| Fantastical Parade | B2 | three_branch | 94.711% | 5.238% | 0.050% | — | bulbapedia_branch_verified |
+| Charizard | A1 | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
+| Mewtwo | A1 | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
+| Pikachu | A1 | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
+| Mega Altaria | B1 | three_branch | 94.711% | 5.238% | 0.050% | — | bulbapedia_branch_verified |
+| Mega Blaziken | B1 | three_branch | 94.711% | 5.238% | 0.050% | — | bulbapedia_branch_verified |
+| Mega Gyarados | B1 | three_branch | 94.711% | 5.238% | 0.050% | — | bulbapedia_branch_verified |
+| Mega Shine | B2b | four_branch | 94.706% | 5.238% | 0.050% | 0.005% | bulbapedia_branch_verified |
+| Mew | A1a | two_branch | 99.950% | — | 0.050% | — | bulbapedia_branch_verified |
+| Paldean Wonders | B2a | three_branch | 94.711% | 5.238% | 0.050% | — | bulbapedia_branch_verified |
+| Pulsing Aura | B3 | three_branch | 94.711% | 5.238% | 0.050% | — | user_in_app_verified_plus_bulbapedia |
+| Secluded Springs | A4a | three_branch | 91.620% | 8.330% | 0.050% | — | bulbapedia_branch_verified |
+| Shining Revelry | A2b | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
+| Dialga | A2 | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
+| Palkia | A2 | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
+| Arceus | A2a | two_branch | 99.950% | — | 0.050% | — | bulbapedia_branch_verified |
+| Ho-Oh | A4 | two_branch | 99.950% | — | 0.050% | — | pending_verification |
+| Lugia | A4 | two_branch | 99.950% | — | 0.050% | — | pending_verification |
 
 ## Pack Pool Summary
 
@@ -59,23 +78,17 @@
 | Ho-Oh | Wisdom of Sea and Sky | A4 | 136 | 42 | 31 | 17 | 5 | 22 | 16 | 1 |
 | Lugia | Wisdom of Sea and Sky | A4 | 136 | 42 | 31 | 17 | 5 | 22 | 16 | 1 |
 
+## How to Upgrade to Verified
+
+1. Open the Pokémon TCG Pocket app.
+2. Navigate to the pack you want to verify.
+3. View the **Offering Rates** section (disclosed in-app).
+4. Compare branch percentages to `slot_rates` in `data/reference/pull_probability_model.json`.
+5. Update `slot_rates`, set `confidence: 'verified'`, bump model_version.
+6. Re-run `python3 scripts/validate_pull_probability_model.py`.
+
 ## rarity_probabilities Status
 
 All aggregate `rarity_probabilities` values are currently `null`.
-These represent P(at least one card of this rarity in a 5-card pack).
-They will be computed once slot_rates are verified from in-app Offering Rates.
-
-## Rarity Field Mapping
-
-| Field | Meaning |
-|---|---|
-| `one_diamond` | Common (◆) |
-| `two_diamond` | Uncommon (◆◆) |
-| `three_diamond` | Rare (◆◆◆) |
-| `four_diamond` | EX / Ultra Rare (◆◆◆◆) |
-| `one_star` | Full Art / Illustration Rare (☆) |
-| `double_star` | Special Art (☆☆) |
-| `triple_star` | Immersive / Rainbow (☆☆☆) |
-| `crown` | Crown / Gold |
-| `promo` | Promo card |
+These will be computed once slot_rates are verified from official in-app Offering Rates.
 

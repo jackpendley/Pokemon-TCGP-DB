@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-13T03:10:53+00:00",
+  "generated_at": "2026-05-14T02:33:38+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
-    "model_confidence": "in_app_verified_partial",
+    "model_confidence": "third_party_verified_with_in_app_anchor",
     "collection_total": 380,
     "collection_mutated": false,
     "warnings": [
-      "Slot rates are IN_APP_VERIFIED_PARTIAL — Pulsing Aura (B3) user-in-app-verified (three-branch model, corrected rare pack rates). All other packs retain prior third_party_verified two-branch model (may be missing regular_pack_plus_one branch). EV rankings are suitable for planning but not fully verified.",
+      "Slot rates are THIRD_PARTY_VERIFIED_WITH_IN_APP_ANCHOR — 12 packs bulbapedia_branch_verified (branch percentages confirmed from Bulbapedia offering rates), 1 pack user_in_app_verified_plus_bulbapedia (Pulsing Aura B3: in-app verified + Bulbapedia corroborated), 8 packs third_party_verified (pattern-consistent two-branch), 3 packs pending_verification (A4/A4b). Rarity distributions within slots remain third_party_verified. EV rankings are suitable for planning but not final recommendations.",
       "EV-ready coverage: 192/224 entries resolved (108 auto-accept + 49 secondary + 35 newly resolved). 32 entries still excluded from EV computation.",
       "Card-name matching is case-insensitive by name only — multi-set cards (same name, different sets) may be counted as owned across all packs they appear in."
     ]
@@ -18,7 +18,7 @@
     "deck_target": 2.0
   },
   "confidence_weights": {
-    "slot_rates": "in_app_verified_partial — apply 0.85 global adjustment",
+    "slot_rates": "third_party_verified_with_in_app_anchor — apply 0.85 global adjustment",
     "inferred_adjustment": 0.85,
     "auto_accept": 1.0,
     "secondary_evidence": 0.85,
@@ -39,18 +39,18 @@
       {
         "pack_name": "Paldean Wonders",
         "expansion": "Paldean Wonders",
-        "pack_total_ev": 4.943463,
-        "new_card_ev": 4.91557,
+        "pack_total_ev": 4.943414,
+        "new_card_ev": 4.915521,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.201944
+        "confidence_adjusted_ev": 4.201902
       },
       {
         "pack_name": "Fantastical Parade",
         "expansion": "Fantastical Parade",
-        "pack_total_ev": 4.49484,
-        "new_card_ev": 4.251238,
+        "pack_total_ev": 4.494795,
+        "new_card_ev": 4.251195,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.820614
+        "confidence_adjusted_ev": 3.820576
       },
       {
         "pack_name": "Mew",
@@ -71,20 +71,20 @@
       {
         "pack_name": "Mega Altaria",
         "expansion": "Mega Rising",
-        "pack_total_ev": 4.323989,
-        "new_card_ev": 4.192801,
+        "pack_total_ev": 4.323946,
+        "new_card_ev": 4.192759,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.67539
+        "confidence_adjusted_ev": 3.675354
       }
     ],
     "top_packs_by_new_card_ev": [
       {
         "pack_name": "Paldean Wonders",
         "expansion": "Paldean Wonders",
-        "pack_total_ev": 4.943463,
-        "new_card_ev": 4.91557,
+        "pack_total_ev": 4.943414,
+        "new_card_ev": 4.915521,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.201944
+        "confidence_adjusted_ev": 4.201902
       },
       {
         "pack_name": "Mew",
@@ -97,18 +97,18 @@
       {
         "pack_name": "Fantastical Parade",
         "expansion": "Fantastical Parade",
-        "pack_total_ev": 4.49484,
-        "new_card_ev": 4.251238,
+        "pack_total_ev": 4.494795,
+        "new_card_ev": 4.251195,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.820614
+        "confidence_adjusted_ev": 3.820576
       },
       {
         "pack_name": "Mega Altaria",
         "expansion": "Mega Rising",
-        "pack_total_ev": 4.323989,
-        "new_card_ev": 4.192801,
+        "pack_total_ev": 4.323946,
+        "new_card_ev": 4.192759,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.67539
+        "confidence_adjusted_ev": 3.675354
       },
       {
         "pack_name": "Extradimensional Crisis",
@@ -123,10 +123,10 @@
       {
         "pack_name": "Crimson Blaze",
         "expansion": "Crimson Blaze",
-        "pack_total_ev": 1.78174,
-        "new_card_ev": 1.12165,
-        "deck_target_ev": 0.149925,
-        "confidence_adjusted_ev": 1.514479
+        "pack_total_ev": 1.781722,
+        "new_card_ev": 1.121639,
+        "deck_target_ev": 0.149924,
+        "confidence_adjusted_ev": 1.514464
       },
       {
         "pack_name": "Mewtwo",
@@ -171,7 +171,7 @@
       "expansion": "Triumphant Light",
       "set_code": "A2a",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 96,
@@ -317,20 +317,20 @@
       "expansion": "Crimson Blaze",
       "set_code": "B1a",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 103,
       "owned_in_pool": 64,
       "missing_in_pool": 39,
-      "collection_completion_ev": 1.78174,
-      "new_card_ev": 1.12165,
-      "copy_ev": 0.66009,
-      "ex_card_ev": 0.134893,
-      "deck_target_ev": 0.149925,
+      "collection_completion_ev": 1.781722,
+      "new_card_ev": 1.121639,
+      "copy_ev": 0.660083,
+      "ex_card_ev": 0.134892,
+      "deck_target_ev": 0.149924,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 1.78174,
-      "confidence_adjusted_ev": 1.514479,
+      "pack_total_ev": 1.781722,
+      "confidence_adjusted_ev": 1.514464,
       "top_ev_cards": [
         {
           "name": "Ivysaur",
@@ -338,9 +338,9 @@
           "is_ex": false,
           "is_deck_target": true,
           "owned": 1,
-          "pull_prob": 0.0624687,
+          "pull_prob": 0.0624681,
           "value": 2.4,
-          "ev_contribution": 0.149925
+          "ev_contribution": 0.1499235
         },
         {
           "name": "Squirtle",
@@ -348,9 +348,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0937031,
+          "pull_prob": 0.0937022,
           "value": 1.0,
-          "ev_contribution": 0.0937031
+          "ev_contribution": 0.0937022
         },
         {
           "name": "Emolga",
@@ -358,9 +358,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0937031,
+          "pull_prob": 0.0937022,
           "value": 1.0,
-          "ev_contribution": 0.0937031
+          "ev_contribution": 0.0937022
         },
         {
           "name": "Duosion",
@@ -368,9 +368,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0937031,
+          "pull_prob": 0.0937022,
           "value": 1.0,
-          "ev_contribution": 0.0937031
+          "ev_contribution": 0.0937022
         },
         {
           "name": "Muk",
@@ -378,9 +378,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0937031,
+          "pull_prob": 0.0937022,
           "value": 1.0,
-          "ev_contribution": 0.0937031
+          "ev_contribution": 0.0937022
         }
       ],
       "notes": "slot_rates=inferred. 64/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
@@ -390,7 +390,7 @@
       "expansion": "Deluxe Pack: ex",
       "set_code": "A4b",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "pending_verification",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 379,
@@ -536,7 +536,7 @@
       "expansion": "Eevee Grove",
       "set_code": "A3b",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 107,
@@ -609,7 +609,7 @@
       "expansion": "Extradimensional Crisis",
       "set_code": "A3a",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 103,
@@ -682,20 +682,20 @@
       "expansion": "Fantastical Parade",
       "set_code": "B2",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 234,
       "owned_in_pool": 29,
       "missing_in_pool": 205,
-      "collection_completion_ev": 4.49484,
-      "new_card_ev": 4.251238,
-      "copy_ev": 0.243602,
-      "ex_card_ev": 0.22344,
+      "collection_completion_ev": 4.494795,
+      "new_card_ev": 4.251195,
+      "copy_ev": 0.2436,
+      "ex_card_ev": 0.223438,
       "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 4.49484,
-      "confidence_adjusted_ev": 3.820614,
+      "pack_total_ev": 4.494795,
+      "confidence_adjusted_ev": 3.820576,
       "top_ev_cards": [
         {
           "name": "Ledyba",
@@ -703,9 +703,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0454318,
+          "pull_prob": 0.0454314,
           "value": 1.0,
-          "ev_contribution": 0.0454318
+          "ev_contribution": 0.0454314
         },
         {
           "name": "Ledian",
@@ -713,9 +713,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0454318,
+          "pull_prob": 0.0454314,
           "value": 1.0,
-          "ev_contribution": 0.0454318
+          "ev_contribution": 0.0454314
         },
         {
           "name": "Shuckle",
@@ -723,9 +723,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0454318,
+          "pull_prob": 0.0454314,
           "value": 1.0,
-          "ev_contribution": 0.0454318
+          "ev_contribution": 0.0454314
         },
         {
           "name": "Cacnea",
@@ -733,9 +733,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0454318,
+          "pull_prob": 0.0454314,
           "value": 1.0,
-          "ev_contribution": 0.0454318
+          "ev_contribution": 0.0454314
         },
         {
           "name": "Chespin",
@@ -743,9 +743,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0454318,
+          "pull_prob": 0.0454314,
           "value": 1.0,
-          "ev_contribution": 0.0454318
+          "ev_contribution": 0.0454314
         }
       ],
       "notes": "slot_rates=inferred. 29/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
@@ -755,7 +755,7 @@
       "expansion": "Wisdom of Sea and Sky",
       "set_code": "A4",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "pending_verification",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 136,
@@ -828,7 +828,7 @@
       "expansion": "Wisdom of Sea and Sky",
       "set_code": "A4",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "pending_verification",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 136,
@@ -974,20 +974,20 @@
       "expansion": "Mega Rising",
       "set_code": "B1",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 139,
       "owned_in_pool": 20,
       "missing_in_pool": 119,
-      "collection_completion_ev": 4.323989,
-      "new_card_ev": 4.192801,
-      "copy_ev": 0.131188,
-      "ex_card_ev": 0.234434,
+      "collection_completion_ev": 4.323946,
+      "new_card_ev": 4.192759,
+      "copy_ev": 0.131187,
+      "ex_card_ev": 0.234432,
       "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 4.323989,
-      "confidence_adjusted_ev": 3.67539,
+      "pack_total_ev": 4.323946,
+      "confidence_adjusted_ev": 3.675354,
       "top_ev_cards": [
         {
           "name": "Cottonee",
@@ -995,9 +995,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Petilil",
@@ -1005,9 +1005,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Skiddo",
@@ -1015,9 +1015,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Gogoat",
@@ -1025,9 +1025,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Grookey",
@@ -1035,9 +1035,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         }
       ],
       "notes": "slot_rates=inferred. 20/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
@@ -1047,20 +1047,20 @@
       "expansion": "Mega Rising",
       "set_code": "B1",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 139,
       "owned_in_pool": 31,
       "missing_in_pool": 108,
-      "collection_completion_ev": 4.023593,
-      "new_card_ev": 3.711921,
-      "copy_ev": 0.311672,
-      "ex_card_ev": 0.234434,
+      "collection_completion_ev": 4.023552,
+      "new_card_ev": 3.711884,
+      "copy_ev": 0.311669,
+      "ex_card_ev": 0.234432,
       "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 4.023593,
-      "confidence_adjusted_ev": 3.420054,
+      "pack_total_ev": 4.023552,
+      "confidence_adjusted_ev": 3.42002,
       "top_ev_cards": [
         {
           "name": "Pinsir",
@@ -1068,9 +1068,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Wurmple",
@@ -1078,9 +1078,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Cascoon",
@@ -1088,9 +1088,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Growlithe",
@@ -1098,9 +1098,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Ponyta",
@@ -1108,9 +1108,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         }
       ],
       "notes": "slot_rates=inferred. 31/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
@@ -1120,20 +1120,20 @@
       "expansion": "Mega Rising",
       "set_code": "B1",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 139,
       "owned_in_pool": 30,
       "missing_in_pool": 109,
-      "collection_completion_ev": 4.014154,
-      "new_card_ev": 3.821759,
-      "copy_ev": 0.192395,
-      "ex_card_ev": 0.236883,
+      "collection_completion_ev": 4.014114,
+      "new_card_ev": 3.821721,
+      "copy_ev": 0.192393,
+      "ex_card_ev": 0.23688,
       "deck_target_ev": 0.005947,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 4.014154,
-      "confidence_adjusted_ev": 3.412031,
+      "pack_total_ev": 4.014114,
+      "confidence_adjusted_ev": 3.411997,
       "top_ev_cards": [
         {
           "name": "Pansage",
@@ -1141,9 +1141,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Simisage",
@@ -1151,9 +1151,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Magikarp",
@@ -1161,9 +1161,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Wailmer",
@@ -1171,9 +1171,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         },
         {
           "name": "Froakie",
@@ -1181,9 +1181,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0611939,
+          "pull_prob": 0.0611933,
           "value": 1.0,
-          "ev_contribution": 0.0611939
+          "ev_contribution": 0.0611933
         }
       ],
       "notes": "slot_rates=inferred. 30/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
@@ -1193,20 +1193,20 @@
       "expansion": "Mega Shine",
       "set_code": "B2b",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 117,
       "owned_in_pool": 20,
       "missing_in_pool": 97,
-      "collection_completion_ev": 4.068239,
-      "new_card_ev": 3.856983,
-      "copy_ev": 0.211255,
-      "ex_card_ev": 0.211495,
+      "collection_completion_ev": 4.067995,
+      "new_card_ev": 3.856752,
+      "copy_ev": 0.211243,
+      "ex_card_ev": 0.211483,
       "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 4.068239,
-      "confidence_adjusted_ev": 3.458003,
+      "pack_total_ev": 4.067995,
+      "confidence_adjusted_ev": 3.457796,
       "top_ev_cards": [
         {
           "name": "Scyther",
@@ -1214,9 +1214,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0908636,
+          "pull_prob": 0.0908582,
           "value": 1.0,
-          "ev_contribution": 0.0908636
+          "ev_contribution": 0.0908582
         },
         {
           "name": "Pineco",
@@ -1224,9 +1224,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0908636,
+          "pull_prob": 0.0908582,
           "value": 1.0,
-          "ev_contribution": 0.0908636
+          "ev_contribution": 0.0908582
         },
         {
           "name": "Volbeat",
@@ -1234,9 +1234,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0908636,
+          "pull_prob": 0.0908582,
           "value": 1.0,
-          "ev_contribution": 0.0908636
+          "ev_contribution": 0.0908582
         },
         {
           "name": "Illumise",
@@ -1244,9 +1244,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0908636,
+          "pull_prob": 0.0908582,
           "value": 1.0,
-          "ev_contribution": 0.0908636
+          "ev_contribution": 0.0908582
         },
         {
           "name": "Phantump",
@@ -1254,9 +1254,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0908636,
+          "pull_prob": 0.0908582,
           "value": 1.0,
-          "ev_contribution": 0.0908636
+          "ev_contribution": 0.0908582
         }
       ],
       "notes": "slot_rates=inferred. 20/117 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
@@ -1266,7 +1266,7 @@
       "expansion": "Mythical Island",
       "set_code": "A1a",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 86,
@@ -1412,20 +1412,20 @@
       "expansion": "Paldean Wonders",
       "set_code": "B2a",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 131,
       "owned_in_pool": 3,
       "missing_in_pool": 128,
-      "collection_completion_ev": 4.943463,
-      "new_card_ev": 4.91557,
+      "collection_completion_ev": 4.943414,
+      "new_card_ev": 4.915521,
       "copy_ev": 0.027893,
-      "ex_card_ev": 0.205182,
+      "ex_card_ev": 0.20518,
       "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 4.943463,
-      "confidence_adjusted_ev": 4.201944,
+      "pack_total_ev": 4.943414,
+      "confidence_adjusted_ev": 4.201902,
       "top_ev_cards": [
         {
           "name": "Sprigatito",
@@ -1433,9 +1433,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0697326,
+          "pull_prob": 0.0697319,
           "value": 1.0,
-          "ev_contribution": 0.0697326
+          "ev_contribution": 0.0697319
         },
         {
           "name": "Floragato",
@@ -1443,9 +1443,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0697326,
+          "pull_prob": 0.0697319,
           "value": 1.0,
-          "ev_contribution": 0.0697326
+          "ev_contribution": 0.0697319
         },
         {
           "name": "Tarountula",
@@ -1453,9 +1453,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0697326,
+          "pull_prob": 0.0697319,
           "value": 1.0,
-          "ev_contribution": 0.0697326
+          "ev_contribution": 0.0697319
         },
         {
           "name": "Nymble",
@@ -1463,9 +1463,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0697326,
+          "pull_prob": 0.0697319,
           "value": 1.0,
-          "ev_contribution": 0.0697326
+          "ev_contribution": 0.0697319
         },
         {
           "name": "Smoliv",
@@ -1473,9 +1473,9 @@
           "is_ex": false,
           "is_deck_target": false,
           "owned": 0,
-          "pull_prob": 0.0697326,
+          "pull_prob": 0.0697319,
           "value": 1.0,
-          "ev_contribution": 0.0697326
+          "ev_contribution": 0.0697319
         }
       ],
       "notes": "slot_rates=inferred. 3/131 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
@@ -1631,7 +1631,7 @@
       "expansion": "Pulsing Aura",
       "set_code": "B3",
       "source_status": "inferred",
-      "slot_rates_confidence": "user_in_app_verified",
+      "slot_rates_confidence": "user_in_app_verified_plus_bulbapedia",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 234,
@@ -1704,7 +1704,7 @@
       "expansion": "Secluded Springs",
       "set_code": "A4a",
       "source_status": "inferred",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "bulbapedia_branch_verified",
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 105,

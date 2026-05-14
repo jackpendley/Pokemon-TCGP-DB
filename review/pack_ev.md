@@ -1,17 +1,18 @@
-# Pack EV Analysis (Inferred Confidence)
+# Pack EV Analysis (Third Party Verified With In App Anchor Confidence)
 
-> **IMPORTANT — Inferred Rates**
-> Slot rates are from trusted external sources (Game8, ShackNews), not verified
-> from the in-app Offering Rates screen. This is planning analysis only.
+> **IMPORTANT — Partially Verified Rates**
+> Branch structure (regular/rare/plus_one percentages) confirmed from Bulbapedia offering rates
+> for 12 packs; rarity distributions within slots remain third_party_verified.
+> Pulsing Aura (B3) is user-in-app-verified with Bulbapedia corroboration.
 > Do NOT treat these rankings as final pack-opening recommendations.
-> Verify in PTCGP app → Pack details → Offering Rates before acting.
+> Verify remaining packs in PTCGP app → Pack details → Offering Rates before acting.
 
 ## Status
 
 | Metric | Value |
 |---|---|
-| Model confidence | **inferred** |
-| Slot rates source | Game8 + ShackNews + cgmagonline |
+| Model confidence | **third_party_verified_with_in_app_anchor** |
+| Slot rates source | Bulbapedia (branch) + Game8/ShackNews (rarity dist.) |
 | Packs ranked | 24 |
 | Collection total | 380 cards (380 validated) |
 | EV-ready collection entries | 192/224 (108 auto-accept + 49 secondary + 35 resolved) |
@@ -20,21 +21,21 @@
 
 ---
 
-## Top 5 Packs by Total Inferred EV
+## Top 5 Packs by Total EV
 
 | Rank | Pack | Expansion | Total EV | New Card EV | Deck Target EV | Adj. EV |
 |---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | Paldean Wonders | 4.9435 | 4.9156 | 0.0000 | 4.2019 |
+| 1 | Paldean Wonders | Paldean Wonders | 4.9434 | 4.9155 | 0.0000 | 4.2019 |
 | 2 | Fantastical Parade | Fantastical Parade | 4.4948 | 4.2512 | 0.0000 | 3.8206 |
 | 3 | Mew | Mythical Island | 4.4512 | 4.2741 | 0.0000 | 3.7835 |
 | 4 | Extradimensional Crisis | Extradimensional Crisis | 4.3602 | 4.1071 | 0.0000 | 3.7062 |
-| 5 | Mega Altaria | Mega Rising | 4.3240 | 4.1928 | 0.0000 | 3.6754 |
+| 5 | Mega Altaria | Mega Rising | 4.3239 | 4.1928 | 0.0000 | 3.6754 |
 
 ## Top 5 Packs by New-Card EV
 
 | Rank | Pack | Expansion | New Card EV | Missing in Pool |
 |---|---|---|---|---|
-| 1 | Paldean Wonders | Paldean Wonders | 4.9156 | 128 |
+| 1 | Paldean Wonders | Paldean Wonders | 4.9155 | 128 |
 | 2 | Mew | Mythical Island | 4.2741 | 77 |
 | 3 | Fantastical Parade | Fantastical Parade | 4.2512 | 205 |
 | 4 | Mega Altaria | Mega Rising | 4.1928 | 119 |
@@ -54,11 +55,11 @@
 
 | Pack | Expansion | Set | Pool | Owned | Missing | Total EV | Adj. EV |
 |---|---|---|---|---|---|---|---|
-| Paldean Wonders | Paldean Wonders | B2a | 131 | 3 | 128 | 4.9435 | 4.2019 |
+| Paldean Wonders | Paldean Wonders | B2a | 131 | 3 | 128 | 4.9434 | 4.2019 |
 | Fantastical Parade | Fantastical Parade | B2 | 234 | 29 | 205 | 4.4948 | 3.8206 |
 | Mew | Mythical Island | A1a | 86 | 9 | 77 | 4.4512 | 3.7835 |
 | Extradimensional Crisis | Extradimensional Crisis | A3a | 103 | 13 | 90 | 4.3602 | 3.7062 |
-| Mega Altaria | Mega Rising | B1 | 139 | 20 | 119 | 4.3240 | 3.6754 |
+| Mega Altaria | Mega Rising | B1 | 139 | 20 | 119 | 4.3239 | 3.6754 |
 | Lugia | Wisdom of Sea and Sky | A4 | 136 | 18 | 118 | 4.2931 | 3.6491 |
 | Solgaleo | Celestial Guardians | A3 | 140 | 34 | 106 | 4.2823 | 3.6400 |
 | Lunala | Celestial Guardians | A3 | 140 | 22 | 118 | 4.2755 | 3.6341 |
@@ -67,11 +68,11 @@
 | Palkia | Space-Time Smackdown | A2 | 126 | 20 | 106 | 4.1714 | 3.5457 |
 | Ho-Oh | Wisdom of Sea and Sky | A4 | 136 | 22 | 114 | 4.1523 | 3.5295 |
 | Deluxe Pack: ex | Deluxe Pack: ex | A4b | 379 | 75 | 304 | 4.0962 | 3.4818 |
-| Mega Shine | Mega Shine | B2b | 117 | 20 | 97 | 4.0682 | 3.4580 |
+| Mega Shine | Mega Shine | B2b | 117 | 20 | 97 | 4.0680 | 3.4578 |
 | Dialga | Space-Time Smackdown | A2 | 126 | 20 | 106 | 4.0323 | 3.4275 |
 | Shining Revelry | Shining Revelry | A2b | 111 | 19 | 92 | 4.0253 | 3.4215 |
-| Mega Blaziken | Mega Rising | B1 | 139 | 31 | 108 | 4.0236 | 3.4201 |
-| Mega Gyarados | Mega Rising | B1 | 139 | 30 | 109 | 4.0142 | 3.4120 |
+| Mega Blaziken | Mega Rising | B1 | 139 | 31 | 108 | 4.0236 | 3.4200 |
+| Mega Gyarados | Mega Rising | B1 | 139 | 30 | 109 | 4.0141 | 3.4120 |
 | Charizard | Genetic Apex | A1 | 127 | 30 | 97 | 3.9295 | 3.3401 |
 | Pikachu | Genetic Apex | A1 | 127 | 28 | 99 | 3.9184 | 3.3306 |
 | Mewtwo | Genetic Apex | A1 | 126 | 38 | 88 | 3.7641 | 3.1995 |
@@ -136,7 +137,7 @@
 | Card | Still Needed | Deck Target EV Impact |
 |---|---|---|
 | Incineroar Ex | 1 | best in not in top cards (ev=0.00000) |
-| Ivysaur | 1 | best in Crimson Blaze (ev=0.14993) |
+| Ivysaur | 1 | best in Crimson Blaze (ev=0.14992) |
 | Magnezone Ex | 1 | best in not in top cards (ev=0.00000) |
 | Zygarde Ex | 1 | best in not in top cards (ev=0.00000) |
 

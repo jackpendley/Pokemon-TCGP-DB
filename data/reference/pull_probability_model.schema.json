@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Pokemon TCG Pocket Pull Probability Model",
-  "description": "Per-pack pull probability model for PTCGP. Supports two-branch model (regular+rare) and three-branch model (regular+rare+regular_plus_one). rarity_probabilities are null until populated from verified in-app offering rates.",
+  "description": "Per-pack pull probability model for PTCGP. Supports two-branch (regular+rare), three-branch (regular+rare+regular_plus_one), and four-branch (regular+rare+regular_plus_one+themed_rare) models. rarity_probabilities are null until populated from verified in-app offering rates.",
   "type": "object",
   "required": ["meta", "packs"],
   "properties": {
@@ -15,6 +15,9 @@
           "type": "string",
           "enum": [
             "verified",
+            "bulbapedia_verified",
+            "bulbapedia_branch_verified",
+            "user_in_app_verified_plus_bulbapedia",
             "third_party_verified",
             "user_in_app_verified",
             "third_party_verified_with_in_app_anchor",
@@ -48,6 +51,9 @@
             "type": "string",
             "enum": [
               "verified",
+              "bulbapedia_verified",
+              "bulbapedia_branch_verified",
+              "user_in_app_verified_plus_bulbapedia",
               "third_party_verified",
               "user_in_app_verified",
               "third_party_verified_with_in_app_anchor",
@@ -57,9 +63,30 @@
               "unknown"
             ]
           },
+          "bulbapedia_url": {
+            "type": ["string", "null"],
+            "description": "URL of the Bulbapedia TCG Pocket expansion page used for branch verification."
+          },
+          "bulbapedia_match_status": {
+            "type": ["string", "null"],
+            "description": "Result of cross-checking this pack against the Bulbapedia offering rates section.",
+            "enum": [
+              "branch_verified",
+              "branch_verified_special_case",
+              "two_branch_confirmed",
+              "truncated_pending",
+              "not_found",
+              "rejected",
+              null
+            ]
+          },
+          "bulbapedia_notes": {
+            "type": ["string", "null"],
+            "description": "Notes from the Bulbapedia offering rates cross-check for this pack."
+          },
           "stale_model_warning": {
             "type": ["string", "null"],
-            "description": "Warning note when this pack's slot_rates use an older model structure that may be missing branches (e.g. regular_pack_plus_one) discovered via in-app verification of other packs."
+            "description": "Warning note when this pack's slot_rates use an unconfirmed branch structure."
           },
           "user_in_app_evidence_note": {
             "type": ["string", "null"],
@@ -80,7 +107,7 @@
           },
           "generalization_status": {
             "type": ["string", "null"],
-            "description": "Whether the corrected three-branch model has been generalized to this pack from another verified pack.",
+            "description": "Whether the branch model was independently verified or generalized from another pack.",
             "enum": ["generalized_from_anchor", "pack_specific_verified", "pending", "not_applicable", null]
           },
           "official_verification_status": {
@@ -95,20 +122,20 @@
               "slot_count": { "type": ["integer", "null"] },
               "branch_model": {
                 "type": ["string", "null"],
-                "enum": ["two_branch", "three_branch", null],
-                "description": "two_branch: regular+rare only. three_branch: regular+rare+regular_plus_one."
+                "enum": ["two_branch", "three_branch", "four_branch", null],
+                "description": "two_branch: regular+rare only. three_branch: regular+rare+regular_plus_one. four_branch: regular+rare+regular_plus_one+themed_rare."
               },
               "notes": { "type": ["string", "null"] }
             }
           },
           "slot_rates": {
             "type": ["object", "null"],
-            "description": "Per-slot pull probability tables. Slots 1-3 always one_diamond in regular packs. Slot 4 and slot 5 have rarity distributions. Rare packs apply one distribution to all 5 slots. regular_pack_plus_one adds a 6th card with shiny rarities.",
+            "description": "Per-slot pull probability tables.",
             "properties": {
               "regular_pack_probability": {
                 "type": ["number", "null"],
                 "minimum": 0, "maximum": 1,
-                "description": "Probability that a given pack opening is a regular (non-rare, non-plus-one) pack. In two-branch model this absorbs the plus-one probability."
+                "description": "Probability that a given pack opening is a regular (non-rare, non-plus-one) pack."
               },
               "rare_pack_probability": {
                 "type": ["number", "null"],
@@ -118,7 +145,12 @@
               "regular_pack_plus_one_probability": {
                 "type": ["number", "null"],
                 "minimum": 0, "maximum": 1,
-                "description": "Probability of a Regular Pack + 1 Card opening (6-card pack; card 6 is shiny rarity). Null for packs using two-branch model."
+                "description": "Probability of a Regular Pack + 1 Card opening (6-card pack; card 6 is shiny rarity). Null for two-branch packs."
+              },
+              "themed_rare_pack_probability": {
+                "type": ["number", "null"],
+                "minimum": 0, "maximum": 1,
+                "description": "Probability of a Themed Rare Pack opening (guarantees specific featured cards). Only present in four-branch packs (e.g. Mega Shine). Null otherwise."
               },
               "slots_1_3": {
                 "type": ["object", "null"],
@@ -134,7 +166,7 @@
               },
               "slot_6": {
                 "type": ["object", "null"],
-                "description": "Rarity distribution for slot 6 in a regular+1 pack (shiny rarities only: one_shiny, two_shiny). Null for two-branch packs.",
+                "description": "Rarity distribution for slot 6 in a regular+1 pack (shiny rarities only: one_shiny, two_shiny). Null for two-branch packs or when unknown.",
                 "properties": {
                   "one_shiny":  { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
                   "two_shiny":  { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
@@ -142,19 +174,26 @@
               },
               "rare_pack_all_5_slots": {
                 "type": ["object", "null"],
-                "description": "Rarity distribution applied uniformly to all 5 slots in a rare/god pack. May include crown_or_highest_rare for packs where the highest rarity is not standard crown.",
+                "description": "Rarity distribution applied uniformly to all 5 slots in a rare/god pack.",
                 "properties": {
-                  "one_star":             { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "double_star":          { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "triple_star":          { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "crown":                { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "crown_or_highest_rare":{ "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+                  "one_star":              { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "double_star":           { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "triple_star":           { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "crown":                 { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "crown_or_highest_rare": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
                 }
+              },
+              "themed_rare_pack_all_5_slots": {
+                "type": ["object", "null"],
+                "description": "Rarity distribution for all 5 slots in a themed rare pack (e.g. Mega Shine guarantees Mega Evolution ex). Null when not modeled."
               },
               "confidence": {
                 "type": ["string", "null"],
                 "enum": [
                   "verified",
+                  "bulbapedia_verified",
+                  "bulbapedia_branch_verified",
+                  "user_in_app_verified_plus_bulbapedia",
                   "third_party_verified",
                   "user_in_app_verified",
                   "third_party_verified_with_in_app_anchor",

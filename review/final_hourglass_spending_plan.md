@@ -1,7 +1,7 @@
 # Final Hourglass Spending Plan
 
 Generated: 2026-05-12  
-Model confidence: **IN APP VERIFIED PARTIAL**  
+Model confidence: **THIRD PARTY VERIFIED WITH IN APP ANCHOR**  
 Collection total: 380 cards  
 Batch size: 10 packs per batch  
 

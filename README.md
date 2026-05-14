@@ -50,7 +50,7 @@ python3 scripts/score_pack_source_confidence.py --validate
 
 Outputs: `data/current/pack_source_confidence_scores.json`, `data/exports/pack_source_confidence_scores.csv`, `review/pack_source_confidence_scores.md`
 
-Pull probability model: 24 packs, model v0.4.0, confidence=**in_app_verified_partial**. Pulsing Aura (B3) user-in-app-verified 2026-05-13 — three-branch model discovered (regular_pack=94.711%, rare_pack=0.050%, regular_pack_plus_one=5.238%), corrected rare pack rates (47.058/45.098/3.921/3.921). All other 23 packs retain two-branch third_party_verified model with `stale_model_warning`. See `review/in_app_rate_verification.md`. `rarity_probabilities` (aggregate rates) still null.
+Pull probability model: 24 packs, model v0.5.0, source_status=**third_party_verified_with_in_app_anchor**. Bulbapedia offering rate pages confirm branch structure for 12 packs (bulbapedia_branch_verified); Pulsing Aura (B3) user_in_app_verified_plus_bulbapedia; 8 packs third_party_verified (two-branch, pattern-consistent); 3 packs pending_verification (A4/A4b). Secluded Springs (A4a): unique three-branch 91.620%/8.330%/0.050%. Mega Shine (B2b): four-branch (adds themed_rare_pack=0.005%). A-series packs confirmed two-branch; stale_model_warnings removed. `rarity_probabilities` (aggregate rates) still null. See `review/in_app_rate_verification.md`.
 
 ```bash
 python3 scripts/build_pull_probability_model.py
@@ -61,9 +61,9 @@ Outputs: `data/reference/pull_probability_model.json`, `review/pull_probability_
 
 Pull rate cross-check: rates independently confirmed by ONE Esports (full match) + CGMagazine + ShackNews. Cross-check report: `review/pull_rate_cross_check.md`.
 
-EV status: **PARTIALLY READY** — model confidence=in_app_verified_partial. EV calculator supports three-branch model; card 6 EV=0 (shiny cards not in pack_sources.json).
+EV status: **READY** — model confidence=third_party_verified_with_in_app_anchor. EV calculator supports two/three/four-branch models; P_combined=P_regular+P_plus_one; themed_rare and card 6 EV=0 (pools not in pack_sources.json).
 
-Pack EV calculator: ranks all 24 packs by expected new-card value. Top pack: **Paldean Wonders** (total EV=4.94, adj=4.20 at in_app_verified_partial confidence).
+Pack EV calculator: ranks all 24 packs by expected new-card value. Top pack: **Paldean Wonders** (total EV=4.94, adj=4.20 at third_party_verified_with_in_app_anchor confidence).
 
 ```bash
 python3 scripts/build_pack_ev.py
