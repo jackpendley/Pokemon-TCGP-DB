@@ -224,7 +224,7 @@ python3 scripts/generate_hourglass_spending_plan.py --validate
 ### Remaining blockers before verified pack recommendations
 
 1. **Branch percentages bulbapedia_branch_verified; rarity distributions remain third_party_verified** — Branch selection (regular/rare/plus_one) is confirmed from Bulbapedia for 12 packs + user in-app for Pulsing Aura. Rarity distributions within slots (slot_4, slot_5, rare_pack_all_5_slots) are still third_party_verified (Game8/ONE Esports/CGMagazine/ShackNews). Must verify each pack against PTCGP app Offering Rates screen to reach `verified` confidence. `rarity_probabilities` (aggregate per-pack rates) are still null.
-2. **3 packs pending_verification** — A4, A4b (Celestial Guardians/Extradimensional Crisis packs): slot_rates unconfirmed; using two-branch scaffold. Verify in-app before treating EV for these packs as reliable.
+2. **3 packs pending_verification** — Ho-Oh, Lugia (A4 Wisdom of Sea and Sky) and Deluxe Pack: ex (A4b): slot_rates unconfirmed; using two-branch scaffold. Verify in-app before treating EV for these packs as reliable. Checklist: `review/pending_pack_in_app_verification_checklist.md`.
 3. **59 ambiguous cross-set entries at low confidence (0.50–0.799)** — card appears in multiple expansions; the correct version cannot be determined without OCR or user confirmation.
 4. **8 unresolved entries (< 0.50)** — 3 Zygarde forms not in pack_sources; 5 common trainers not indexed in Limitless DB.
 5. **Pack-source mapping for Zygarde** — Zygarde ex not in pack_sources; pack unknown. Blocks Zygarde ex Fighting deck targeting.
@@ -233,7 +233,7 @@ python3 scripts/generate_hourglass_spending_plan.py --validate
 
 ### Recommended next phase
 
-1. **Continue in-app verification for other packs** — Open PTCGP → any pack → Pack details → Offering Rates. Priority: A4/A4b pending packs, then remaining third_party_verified packs. Update `pull_probability_model.json` and re-run downstream scripts after each verified pack. See `review/in_app_rate_verification.md` for the verification record format.
+1. **Verify the 3 pending packs** — Use `review/pending_pack_in_app_verification_checklist.md` (Ho-Oh, Lugia, Deluxe Pack: ex). Open PTCGP → pack → Pack details → Offering Rates and record branch probabilities + slot tables. Report values to update `pull_probability_model.json` and re-run downstream scripts.
 2. **Use the hourglass spending plan** — `review/final_hourglass_spending_plan.md` has conservative/moderate/aggressive scenarios for immediate pack decisions at third_party_verified_with_in_app_anchor confidence.
 3. **Resolve 59 ambiguous entries** — expands EV-ready coverage to ~216/224, improving EV accuracy.
 

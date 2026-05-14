@@ -187,3 +187,21 @@ The repo cleanup and organization review is now a **permanent required phase** f
 **`CLAUDE.md` — Section 19: Repo Hygiene / Cleanup Review**
 
 This audit file (`review/repo_cleanup_audit.md`) records per-pass results. Section 19 of CLAUDE.md is the standing policy.
+
+---
+
+## Pass: 2026-05-13 (pending pack checklist phase)
+
+**Scan findings:**
+- `.DS_Store` (root + `data/`) — gitignored, not tracked. No action.
+- `scripts/__pycache__/` — gitignored, not tracked. No action.
+- `data/current/resolved_pack_sources.json` — timestamp-only modification from validation run. Not staged.
+- `data/current/screenshot_inventory.json` — timestamp-only modification from inventory run. Not staged.
+
+**No deletions performed.**
+
+**New files added this phase:**
+- `review/pending_pack_in_app_verification_checklist.md` — user-facing in-app verification guide for 3 pending packs
+- `data/current/pending_pack_in_app_verification_checklist.json` — machine-readable version with fill-in verification_record fields
+
+**Repo state:** Clean. No new gitignore additions needed.
