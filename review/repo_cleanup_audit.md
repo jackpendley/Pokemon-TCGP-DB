@@ -233,3 +233,29 @@ This audit file (`review/repo_cleanup_audit.md`) records per-pass results. Secti
 - `docs/recommendation_readiness.md` — model v0.6.0 stats and blockers updated
 
 **Repo state:** Clean. No new gitignore additions needed.
+
+---
+
+## Pass: 2026-05-15 (ambiguous pack-source resolution phase)
+
+**Scan findings:**
+- `.DS_Store` (root + `data/`) — gitignored, not tracked. No action.
+- `scripts/__pycache__/` — gitignored, not tracked. No action.
+- `data/current/screenshot_inventory.json` — timestamp-only modification from validation run. Not staged.
+
+**No deletions performed.**
+
+**New files added this phase:**
+- `data/current/current_collection_pack_confirmations.json` — 38 user-confirmed pack-source resolutions (Limitless HP/attack analysis, 2026-05-15)
+
+**Files modified this phase:**
+- `data/exports/current_pack_source_review.csv` — 38 confirmed rows filled (confirmed_set_code, confirmed_card_number, confirmed_yes_no=yes)
+- `scripts/resolve_ambiguous_pack_sources.py` — PASS 0 added (user_confirmation ingestion from current_collection_pack_confirmations.json); version 1.0.0 → 1.1.0
+- `scripts/build_pack_ev.py` — coverage counts updated (35 → 46 newly resolved, 32 → 21 excluded)
+- `data/current/resolved_pack_sources.json` — rebuilt at 46/59 resolved (was 35/59)
+- `review/resolved_pack_sources.md` — rebuilt with PASS 0 section
+- `data/current/pack_ev.json`, `data/exports/pack_ev.csv`, `review/pack_ev.md` — EV rebuilt (coverage 192/224 → 203/224)
+- `data/current/inferred_pack_recommendations.json`, `data/exports/inferred_pack_recommendations.csv`, `review/inferred_pack_recommendations.md` — recommendations rebuilt (unchanged rankings)
+- `CLAUDE.md` — coverage table updated, completed phase added, blockers updated
+
+**Repo state:** Clean. No new gitignore additions needed.

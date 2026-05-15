@@ -2,15 +2,21 @@
 """
 Resolve the 59 low-confidence pack-source entries using automated evidence.
 
-Three resolution passes are applied in order:
+Four resolution passes are applied in order:
+
+  PASS 0 — User confirmations
+    Read data/current/current_collection_pack_confirmations.json (written by
+    apply_current_pack_confirmations.py). These are authoritative user-verified
+    resolutions with confidence 0.99. They override any automated result.
 
   PASS 1 — HP match
     Cross-reference collection.json HP values against external_card_reference.json.
     If the user's HP uniquely intersects with exactly one candidate set, resolve it.
 
   PASS 2 — Evolution chain
-    If an evolution partner is already resolved (by PASS 1 or higher tiers), inherit
-    its set assignment for same-set evolution chains. Each link uses a confirmed anchor.
+    If an evolution partner is already resolved (by PASS 0, PASS 1, or higher tiers),
+    inherit its set assignment for same-set evolution chains. Each link uses a confirmed
+    anchor.
 
   PASS 3 — Rarity/count inference
     When HP ties across candidates, compare rarity (one_diamond vs one_star) with
@@ -22,6 +28,7 @@ No mutations to collection.json. All output goes to data/current/.
 Inputs:
     data/current/pack_source_confidence_scores.json
     data/current/collection_normalized.json
+    data/current/current_collection_pack_confirmations.json  (optional — PASS 0)
     data/reference/external/external_card_reference.json
     data/reference/pack_sources.json
 
@@ -42,13 +49,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-CONFIDENCE_JSON  = ROOT / "data" / "current"   / "pack_source_confidence_scores.json"
-COLLECTION_JSON  = ROOT / "data" / "current"   / "collection_normalized.json"
-EXT_REF_JSON     = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
-PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
+CONFIDENCE_JSON      = ROOT / "data" / "current"   / "pack_source_confidence_scores.json"
+COLLECTION_JSON      = ROOT / "data" / "current"   / "collection_normalized.json"
+CONFIRMATIONS_JSON   = ROOT / "data" / "current"   / "current_collection_pack_confirmations.json"
+EXT_REF_JSON         = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
+PACK_SOURCES_JSON    = ROOT / "data" / "reference" / "pack_sources.json"
 
 OUT_JSON = ROOT / "data" / "current" / "resolved_pack_sources.json"
 OUT_MD   = ROOT / "review"           / "resolved_pack_sources.md"
+
+USER_CONFIRMATION_CONFIDENCE = 0.99
 
 # Confidence thresholds
 HP_MATCH_CONFIDENCE   = 0.88
@@ -111,6 +121,48 @@ def best_pack_rec(pack_sources, set_code, name):
     nl = name.lower()
     return next((r for r in pack_sources
                  if r["set_code"] == set_code and r["card_name"].lower() == nl), None)
+
+
+def pass0_user_confirmations(low_entries, pack_sources):
+    """
+    Apply user-verified confirmations from current_collection_pack_confirmations.json.
+    These are authoritative — confidence 0.99, method='user_confirmation'.
+    Only applies to low_confidence entries (others are already resolved upstream).
+    """
+    if not CONFIRMATIONS_JSON.exists():
+        return {}
+
+    raw = json.loads(CONFIRMATIONS_JSON.read_text(encoding="utf-8"))
+    conf_map = raw.get("confirmations", {})
+    low_ids  = {e["entry_id"] for e in low_entries}
+
+    resolved = {}
+    for eid, c in conf_map.items():
+        if eid not in low_ids:
+            continue
+        sc = c.get("confirmed_set_code")
+        cn = c.get("confirmed_card_number")
+        if not sc or cn is None:
+            continue
+        pack_name  = c.get("pack_name") or best_pack_rec_by_key(pack_sources, sc, cn)
+        expansion  = c.get("expansion", "")
+        resolved[eid] = {
+            "name":       c.get("name", eid),
+            "set_code":   sc,
+            "pack_name":  pack_name,
+            "expansion":  expansion,
+            "method":     "user_confirmation",
+            "confidence": USER_CONFIRMATION_CONFIDENCE,
+            "evidence":   f"user confirmed via apply_current_pack_confirmations.py: ({sc}, {cn})",
+        }
+    return resolved
+
+
+def best_pack_rec_by_key(pack_sources, set_code, card_number):
+    """Return pack_name for exact (set_code, card_number) match."""
+    r = next((r for r in pack_sources
+              if r.get("set_code") == set_code and r.get("card_number") == card_number), None)
+    return r["pack_name"] if r else None
 
 
 def build_all_resolved(scores, coll_map, ext, pack_sources, ext_idx):
@@ -370,14 +422,22 @@ def run():
     # Build anchor pool (auto_accept + secondary + PASS 1)
     all_resolved_pool = build_all_resolved(scores, coll_map, ext, pack_sources, ext_idx)
 
+    # --- PASS 0 ---
+    p0 = pass0_user_confirmations(low_entries, pack_sources)
+    print(f"PASS 0 (user_conf):    {len(p0):3d} resolved")
+
+    # Include PASS 0 in anchor pool before automated passes
+    all_resolved_pool = {**all_resolved_pool, **p0}
+
     # --- PASS 1 ---
-    p1 = pass1_hp_match(low_entries, coll_map, ext_idx, pack_sources)
+    remaining_after_p0 = [e for e in low_entries if e["entry_id"] not in p0]
+    p1 = pass1_hp_match(remaining_after_p0, coll_map, ext_idx, pack_sources)
     print(f"PASS 1 (hp_match):      {len(p1):3d} resolved")
 
     # --- PASS 2 ---
-    # Include PASS 1 results in the anchor pool before chaining
+    # Include PASS 0 + PASS 1 results in the anchor pool before chaining
     combined_pool = {**all_resolved_pool, **p1}
-    remaining_after_p1 = [e for e in low_entries if e["entry_id"] not in p1]
+    remaining_after_p1 = [e for e in remaining_after_p0 if e["entry_id"] not in p1]
     p2 = pass2_evo_chain(remaining_after_p1, combined_pool, pack_sources)
     print(f"PASS 2 (evo_chain):     {len(p2):3d} resolved")
 
@@ -386,8 +446,8 @@ def run():
     p3 = pass3_rarity_count(remaining_after_p2, coll_map, pack_sources, scores_map)
     print(f"PASS 3 (rarity_count):  {len(p3):3d} resolved")
 
-    # Merge all resolved (P1 takes precedence, then P2, then P3 for same eid)
-    new_resolved = {**p1, **p2, **p3}
+    # Merge all resolved (P0 highest priority, then P1, P2, P3)
+    new_resolved = {**p1, **p2, **p3, **p0}
     total_new = len(new_resolved)
 
     remaining_final = [e for e in low_entries if e["entry_id"] not in new_resolved]
@@ -416,8 +476,8 @@ def run():
         "_meta": {
             "generated":       datetime.now(timezone.utc).isoformat(),
             "source_script":   "scripts/resolve_ambiguous_pack_sources.py",
-            "version":         "1.0.0",
-            "passes":          ["hp_match", "evo_chain", "rarity_count"],
+            "version":         "1.1.0",
+            "passes":          ["user_confirmation", "hp_match", "evo_chain", "rarity_count"],
             "input_low_confidence": len(low_entries),
             "total_new_resolved": total_new,
             "total_still_unresolved": len(remaining_final),
@@ -433,13 +493,13 @@ def run():
     OUT_JSON.write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print(f"\nWrote {OUT_JSON}")
 
-    _write_markdown(out, new_resolved, unresolved_list, p1, p2, p3)
+    _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p3)
     print(f"Wrote {OUT_MD}")
 
     return out
 
 
-def _write_markdown(out, new_resolved, unresolved_list, p1, p2, p3):
+def _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p3):
     meta = out["_meta"]
     ts   = meta["generated"]
 
@@ -456,6 +516,7 @@ def _write_markdown(out, new_resolved, unresolved_list, p1, p2, p3):
         f"| Metric | Value |",
         f"|---|---|",
         f"| Low-confidence input | {meta['input_low_confidence']} |",
+        f"| PASS 0 — user_confirmation | {len(p0)} |",
         f"| PASS 1 — hp_match | {len(p1)} |",
         f"| PASS 2 — evo_chain | {len(p2)} |",
         f"| PASS 3 — rarity_count | {len(p3)} |",
@@ -465,6 +526,16 @@ def _write_markdown(out, new_resolved, unresolved_list, p1, p2, p3):
         f"| EV-ready after  | {meta['ev_ready_after']}/{meta['ev_ready_total']} ({meta['ev_ready_after']/meta['ev_ready_total']*100:.0f}%) |",
         "",
         "---",
+        "",
+        "## PASS 0: User Confirmations",
+        "",
+        "| Entry | Set | Pack | Evidence |",
+        "|---|---|---|---|",
+    ]
+    for eid, r in sorted(p0.items()):
+        lines.append(f"| {eid} | {r['set_code']} | {r['pack_name']} | {r['evidence']} |")
+
+    lines += [
         "",
         "## PASS 1: HP Match",
         "",
@@ -524,6 +595,7 @@ def _write_markdown(out, new_resolved, unresolved_list, p1, p2, p3):
         "",
         "| Method | Confidence | Tier |",
         "|---|---|---|",
+        "| user_confirmation | 0.99 | auto_accept |",
         "| hp_match | 0.88 | secondary |",
         "| evo_chain | 0.82 | secondary |",
         "| rarity_count (count≥3) | 0.90 | secondary |",
@@ -556,7 +628,7 @@ def validate(out):
         if r.get("confidence", 0) < 0.80:
             errors.append(f"resolved entry '{eid}' confidence={r['confidence']} < 0.80 threshold")
 
-    expected_min = 30   # conservative floor given known pass results
+    expected_min = 38   # conservative floor: 35 automated + at least some user confirmations
     if meta["total_new_resolved"] < expected_min:
         errors.append(
             f"total_new_resolved={meta['total_new_resolved']} < expected_min={expected_min}")

@@ -15,8 +15,8 @@
 | Slot rates source | Bulbapedia (branch) + Game8/ShackNews (rarity dist.) |
 | Packs ranked | 24 |
 | Collection total | 380 cards (380 validated) |
-| EV-ready collection entries | 192/224 (108 auto-accept + 49 secondary + 35 resolved) |
-| Excluded entries | 32/224 (24 low-confidence + 8 unresolved) |
+| EV-ready collection entries | 203/224 (108 auto-accept + 49 secondary + 46 resolved) |
+| Excluded entries | 21/224 (13 low-confidence + 8 unresolved) |
 | Deck targets | 4 cards needed for deck completion |
 
 ---
@@ -157,7 +157,7 @@
 - one_diamond cards: slots 1-3 (100% each, 3 total expected).
 - Card matching is by normalized name only (case-insensitive). Cross-set
   cards with the same name may be double-counted as owned.
-- 32 low-confidence/unresolved collection entries still excluded from EV (35 newly resolved by resolve_ambiguous_pack_sources.py).
+- 21 low-confidence/unresolved collection entries still excluded from EV (46 newly resolved by resolve_ambiguous_pack_sources.py).
 
 ## Next Steps Before Final Recommendations
 

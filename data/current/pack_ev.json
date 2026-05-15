@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T19:29:07+00:00",
+  "generated_at": "2026-05-15T13:48:43+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "third_party_verified_with_in_app_anchor",
@@ -7,7 +7,7 @@
     "collection_mutated": false,
     "warnings": [
       "Slot rates are THIRD_PARTY_VERIFIED_WITH_IN_APP_ANCHOR — 12 packs bulbapedia_branch_verified (branch percentages confirmed from Bulbapedia offering rates), 1 pack user_in_app_verified_plus_bulbapedia (Pulsing Aura B3: in-app verified + Bulbapedia corroborated), 8 packs third_party_verified (pattern-consistent two-branch), 3 packs pending_verification (A4/A4b). Rarity distributions within slots remain third_party_verified. EV rankings are suitable for planning but not final recommendations.",
-      "EV-ready coverage: 192/224 entries resolved (108 auto-accept + 49 secondary + 35 newly resolved). 32 entries still excluded from EV computation.",
+      "EV-ready coverage: 203/224 entries resolved (108 auto-accept + 49 secondary + 46 newly resolved). 21 entries still excluded from EV computation.",
       "Card-name matching is case-insensitive by name only — multi-set cards (same name, different sets) may be counted as owned across all packs they appear in."
     ]
   },

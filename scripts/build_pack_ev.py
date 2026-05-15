@@ -399,9 +399,10 @@ def _coverage_warning(resolution_meta) -> str:
         still   = resolution_meta.get("total_still_unresolved", 24)
         unres   = 8   # always-unresolved (Zygarde forms + trainer gaps)
         excluded = still + unres
+        newly = resolution_meta.get("total_new_resolved", 46)
         return (
             f"EV-ready coverage: {after}/{total} entries resolved "
-            f"(108 auto-accept + 49 secondary + 35 newly resolved). "
+            f"(108 auto-accept + 49 secondary + {newly} newly resolved). "
             f"{excluded} entries still excluded from EV computation."
         )
     return (
@@ -529,7 +530,9 @@ def _ev_ready_md_row(out: dict) -> str:
             import re
             m = re.search(r"(\d+/\d+) entries resolved", msg)
             if m:
-                return f"| EV-ready collection entries | {m.group(1)} (108 auto-accept + 49 secondary + 35 resolved) |"
+                n = re.search(r"(\d+) newly resolved", msg)
+                newly = n.group(1) if n else "46"
+                return f"| EV-ready collection entries | {m.group(1)} (108 auto-accept + 49 secondary + {newly} resolved) |"
     return "| EV-ready collection entries | 157/224 (108 auto-accept + 49 secondary) |"
 
 
@@ -705,7 +708,7 @@ def write_md(out: dict, pack_ev_records: list, deck_targets: dict):
         "- one_diamond cards: slots 1-3 (100% each, 3 total expected).",
         "- Card matching is by normalized name only (case-insensitive). Cross-set",
         "  cards with the same name may be double-counted as owned.",
-        "- 32 low-confidence/unresolved collection entries still excluded from EV (35 newly resolved by resolve_ambiguous_pack_sources.py).",
+        "- 21 low-confidence/unresolved collection entries still excluded from EV (46 newly resolved by resolve_ambiguous_pack_sources.py).",
         "",
         "## Next Steps Before Final Recommendations",
         "",
