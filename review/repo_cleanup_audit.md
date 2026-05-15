@@ -291,3 +291,45 @@ Groups 1+2 (A-series trainers + Pokémon — 9 entries):
 **Final coverage: 203/224 EV-ready (91%). 13 entries remain unresolved.**
 
 **Repo state:** Clean. No new gitignore additions needed.
+
+---
+
+## Pass: 2026-05-15 (external research + PASS 2B + in-game verification prep)
+
+**Scan findings:**
+- `.DS_Store` (root + `data/`) — gitignored, not tracked. No action.
+- `scripts/__pycache__/` — gitignored, not tracked. No action.
+
+**No deletions performed.**
+
+**Findings from external research (Limitless + Game8 + web, 2026-05-15):**
+
+1. **B-series shinies (blaziken, frillish, skrelp):** B3 versions (B3/208, B3/209, B3/218) are all one_star SHINY cards. Limitless confirms IDENTICAL HP and attacks to their B1 counterparts. Cannot resolve by stats; require in-game shiny visual check.
+
+2. **farfetch_d A4a/56 ELIMINATED:** Limitless confirms A4a/56 = HP 70, Leek Slam 60. Collection has HP=60, Leek Slap 40. HP and attack mismatch → definitively excluded. Added to KNOWN_INVALID_CANDIDATES pre-pass in resolve script.
+
+3. **farfetch_d A1/198:** Confirmed "Any Pack" card (available in all three A1 Genetic Apex packs). Explains null pack_name in pack_sources.
+
+4. **Starter pack research:** PTCGP tutorial gives players one choice from three Genetic Apex packs (Charizard/Pikachu/Mewtwo). Specific cards: Exeggutor EX (Charizard), Arcanine EX (Pikachu), Marowak EX (Mewtwo). Trainer cards (giovanni, sabrina, leaf, cyrus, lillie, giant_cape) are NOT starter pack rewards — pulled from regular packs.
+
+5. **moltres_ex and marowak_ex:** A4b versions (A4b/67, A4b/196) confirmed to have identical HP and attacks to A1 versions. Cannot resolve by stats; require in-game card number check.
+
+**Files modified this phase:**
+- `scripts/resolve_ambiguous_pack_sources.py` — PASS 2B added (evo_chain re-run post-PASS 3); KNOWN_INVALID_CANDIDATES pre-pass added (farfetch_d A4a/56 elimination); version 1.1.0 → 1.2.0
+- `data/current/resolved_pack_sources.json` — rebuilt: porygon2 resolved by PASS 2B; farfetch_d A4a candidate eliminated. Total: 47 resolved, 12 unresolved.
+- `review/resolved_pack_sources.md` — rebuilt with PASS 2B section
+- `data/current/pack_ev.json`, `data/exports/pack_ev.csv`, `review/pack_ev.md` — EV rebuilt (204/224)
+- `data/current/inferred_pack_recommendations.json`, `data/exports/inferred_pack_recommendations.csv`, `review/inferred_pack_recommendations.md` — recommendations rebuilt
+- `data/current/final_hourglass_spending_plan.json`, `review/final_hourglass_spending_plan.md`, `data/exports/final_hourglass_spending_plan.csv` — spending plan rebuilt
+- `CLAUDE.md` — coverage updated (204/224), 12 unresolved, blockers updated
+
+**Coverage: 204/224 EV-ready (91%). 12 entries require in-game verification.**
+
+Remaining 12 breakdown:
+- 3 B-series shiny ties: blaziken (B1 vs B3 shiny), frillish (B1 vs B3 shiny), skrelp (B1 vs B3 shiny)
+- 3 A-series Pokémon: moltres_ex (A1/47 vs A4b/67), marowak_ex (A1/153 vs A4b/196), farfetch_d (A1/198 vs A3b/102 vs A4b/280-281-359)
+- 6 trainer cards: giovanni (A1 vs A4b), sabrina (A1 vs A4b), leaf (A1a vs A4b), cyrus (A2 vs A4b), lillie (A3 vs A4b), giant_cape (A2 vs A4b)
+
+All 12 require checking cards in-game: shininess, card number, or pack icon.
+
+**Repo state:** Clean. No new gitignore additions needed.

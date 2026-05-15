@@ -2,7 +2,8 @@
 """
 Resolve the 59 low-confidence pack-source entries using automated evidence.
 
-Four resolution passes are applied in order:
+A pre-pass removes candidates with confirmed HP/attack mismatches found via external
+research (KNOWN_INVALID_CANDIDATES). Then four resolution passes are applied in order:
 
   PASS 0 — User confirmations
     Read data/current/current_collection_pack_confirmations.json (written by
@@ -59,6 +60,12 @@ OUT_JSON = ROOT / "data" / "current" / "resolved_pack_sources.json"
 OUT_MD   = ROOT / "review"           / "resolved_pack_sources.md"
 
 USER_CONFIRMATION_CONFIDENCE = 0.99
+
+# Candidates definitively excluded by external HP/attack research (not in ext_ref).
+# Evidence: Limitless pages fetched 2026-05-15 show HP or attack mismatch vs collection.
+KNOWN_INVALID_CANDIDATES = {
+    "farfetch_d": [("A4a", 56)],   # A4a/56 = HP 70, Leek Slam 60 ≠ collection HP 60, Leek Slap 40
+}
 
 # Confidence thresholds
 HP_MATCH_CONFIDENCE   = 0.88
@@ -419,6 +426,20 @@ def run():
     low_entries = [e for e in scores["entries"] if e["confidence_tier"] == "low_confidence"]
     print(f"Low-confidence entries to resolve: {len(low_entries)}")
 
+    # Pre-pass: remove candidates with confirmed HP/attack mismatch from external research
+    for entry in low_entries:
+        eid = entry["entry_id"]
+        if eid in KNOWN_INVALID_CANDIDATES:
+            exclude = set(tuple(pair) for pair in KNOWN_INVALID_CANDIDATES[eid])
+            before = len(entry.get("candidates", []))
+            entry["candidates"] = [
+                c for c in entry.get("candidates", [])
+                if (c.get("set_code"), c.get("card_number")) not in exclude
+            ]
+            removed = before - len(entry["candidates"])
+            if removed:
+                print(f"  Pre-pass: excluded {removed} invalid candidate(s) for {eid}")
+
     # Build anchor pool (auto_accept + secondary + PASS 1)
     all_resolved_pool = build_all_resolved(scores, coll_map, ext, pack_sources, ext_idx)
 
@@ -446,8 +467,15 @@ def run():
     p3 = pass3_rarity_count(remaining_after_p2, coll_map, pack_sources, scores_map)
     print(f"PASS 3 (rarity_count):  {len(p3):3d} resolved")
 
-    # Merge all resolved (P0 highest priority, then P1, P2, P3)
-    new_resolved = {**p1, **p2, **p3, **p0}
+    # --- PASS 2B (evo_chain re-run with PASS 3 anchors) ---
+    # porygon2 needs porygon (resolved by PASS 3) as evo anchor
+    combined_pool_2b = {**combined_pool, **p2, **p3}
+    remaining_after_p3 = [e for e in remaining_after_p2 if e["entry_id"] not in p3]
+    p2b = pass2_evo_chain(remaining_after_p3, combined_pool_2b, pack_sources)
+    print(f"PASS 2B (evo_chain+):   {len(p2b):3d} resolved")
+
+    # Merge all resolved (P0 highest priority, then P1, P2, P2B, P3)
+    new_resolved = {**p1, **p2, **p2b, **p3, **p0}
     total_new = len(new_resolved)
 
     remaining_final = [e for e in low_entries if e["entry_id"] not in new_resolved]
@@ -476,8 +504,8 @@ def run():
         "_meta": {
             "generated":       datetime.now(timezone.utc).isoformat(),
             "source_script":   "scripts/resolve_ambiguous_pack_sources.py",
-            "version":         "1.1.0",
-            "passes":          ["user_confirmation", "hp_match", "evo_chain", "rarity_count"],
+            "version":         "1.2.0",
+            "passes":          ["user_confirmation", "hp_match", "evo_chain", "rarity_count", "evo_chain_2b"],
             "input_low_confidence": len(low_entries),
             "total_new_resolved": total_new,
             "total_still_unresolved": len(remaining_final),
@@ -493,13 +521,13 @@ def run():
     OUT_JSON.write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print(f"\nWrote {OUT_JSON}")
 
-    _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p3)
+    _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p2b, p3)
     print(f"Wrote {OUT_MD}")
 
     return out
 
 
-def _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p3):
+def _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p2b, p3):
     meta = out["_meta"]
     ts   = meta["generated"]
 
@@ -520,6 +548,7 @@ def _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p3):
         f"| PASS 1 — hp_match | {len(p1)} |",
         f"| PASS 2 — evo_chain | {len(p2)} |",
         f"| PASS 3 — rarity_count | {len(p3)} |",
+        f"| PASS 2B — evo_chain (post-P3) | {len(p2b)} |",
         f"| **Total new resolved** | **{meta['total_new_resolved']}** |",
         f"| Still unresolved | {meta['total_still_unresolved']} |",
         f"| EV-ready before | {meta['ev_ready_before']}/{meta['ev_ready_total']} ({meta['ev_ready_before']/meta['ev_ready_total']*100:.0f}%) |",
@@ -564,6 +593,16 @@ def _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p3):
     ]
     for eid, r in sorted(p3.items()):
         lines.append(f"| {eid} | {r['set_code']} | {r['pack_name']} | — | {r['confidence']} | {r['evidence']} |")
+
+    lines += [
+        "",
+        "## PASS 2B: Evolution Chain (post-PASS 3)",
+        "",
+        "| Entry | Set | Pack | Confidence | Evidence |",
+        "|---|---|---|---|---|",
+    ]
+    for eid, r in sorted(p2b.items()):
+        lines.append(f"| {eid} | {r['set_code']} | {r['pack_name']} | {r['confidence']} | {r['evidence']} |")
 
     lines += [
         "",

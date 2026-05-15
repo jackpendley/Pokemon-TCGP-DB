@@ -14,10 +14,11 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 | PASS 1 — hp_match | 4 |
 | PASS 2 — evo_chain | 0 |
 | PASS 3 — rarity_count | 4 |
-| **Total new resolved** | **46** |
-| Still unresolved | 13 |
+| PASS 2B — evo_chain (post-P3) | 1 |
+| **Total new resolved** | **47** |
+| Still unresolved | 12 |
 | EV-ready before | 157/224 (70%) |
-| EV-ready after  | 203/224 (91%) |
+| EV-ready after  | 204/224 (91%) |
 
 ---
 
@@ -87,13 +88,19 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 | porygon | B1a | Crimson Blaze | — | 0.9 | count=3 with B1a=one_diamond; one_star candidate(s) B3=one_star implausible at this count |
 | steelix | B1a | Crimson Blaze | — | 0.9 | count=3 with B1a=two_diamond; one_star candidate(s) B3=one_star implausible at this count |
 
+## PASS 2B: Evolution Chain (post-PASS 3)
+
+| Entry | Set | Pack | Confidence | Evidence |
+|---|---|---|---|---|
+| porygon2 | B1a | Crimson Blaze | 0.82 | evolution partner 'porygon' confirmed in B1a |
+
 ## Unresolved (manual review or leave as ambiguous)
 
 | Entry | Candidates | Reason |
 |---|---|---|
 | blaziken | B1, B3 | HP matches same value across all candidate sets — no unique disambiguation |
 | cyrus | A2, A4b | trainer — no HP field, candidates span A1/A4b reprint |
-| farfetch_d | A1, A3b, A4a, A4b | A-series card — not in external_card_reference.json |
+| farfetch_d | A1, A3b, A4b | A-series card — not in external_card_reference.json |
 | frillish | B1, B3 | HP matches same value across all candidate sets — no unique disambiguation |
 | giant_cape | A2, A4b | trainer — no HP field, candidates span A1/A4b reprint |
 | giovanni | A1, A4b | trainer — no HP field, candidates span A1/A4b reprint |
@@ -101,7 +108,6 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 | lillie | A3, A4b | trainer — no HP field, candidates span A1/A4b reprint |
 | marowak_ex | A1, A3, A4b | A-series card — not in external_card_reference.json |
 | moltres_ex | A1, A3b, A4b | A-series card — not in external_card_reference.json |
-| porygon2 | B1a, B3 | HP matches same value across all candidate sets — no unique disambiguation |
 | sabrina | A1, A4b | trainer — no HP field, candidates span A1/A4b reprint |
 | skrelp | B1, B3 | HP matches same value across all candidate sets — no unique disambiguation |
 

@@ -1,19 +1,20 @@
 {
   "_meta": {
-    "generated": "2026-05-15T13:47:29.406872+00:00",
+    "generated": "2026-05-15T21:35:41.037966+00:00",
     "source_script": "scripts/resolve_ambiguous_pack_sources.py",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "passes": [
       "user_confirmation",
       "hp_match",
       "evo_chain",
-      "rarity_count"
+      "rarity_count",
+      "evo_chain_2b"
     ],
     "input_low_confidence": 59,
-    "total_new_resolved": 46,
-    "total_still_unresolved": 13,
+    "total_new_resolved": 47,
+    "total_still_unresolved": 12,
     "ev_ready_before": 157,
-    "ev_ready_after": 203,
+    "ev_ready_after": 204,
     "ev_ready_total": 224
   },
   "resolved": {
@@ -52,6 +53,15 @@
       "method": "hp_match",
       "confidence": 0.88,
       "evidence": "collection hp=70 uniquely matches B1a in external reference"
+    },
+    "porygon2": {
+      "name": "Porygon2",
+      "set_code": "B1a",
+      "pack_name": "Crimson Blaze",
+      "expansion": "Crimson Blaze",
+      "method": "evo_chain",
+      "confidence": 0.82,
+      "evidence": "evolution partner 'porygon' confirmed in B1a"
     },
     "onix_dig_art": {
       "name": "Onix",
@@ -484,21 +494,11 @@
       "reason": "hp_ties_multiple_sets"
     },
     {
-      "entry_id": "porygon2",
-      "name": "Porygon2",
-      "candidates": [
-        "B1a",
-        "B3"
-      ],
-      "reason": "hp_ties_multiple_sets"
-    },
-    {
       "entry_id": "farfetch_d",
       "name": "Farfetch'd",
       "candidates": [
         "A1",
         "A3b",
-        "A4a",
         "A4b",
         "A4b",
         "A4b"
