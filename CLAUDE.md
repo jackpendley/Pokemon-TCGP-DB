@@ -183,7 +183,7 @@ Scripts built (do not rebuild):
 Current blockers before automated pack recommendations:
 - Branch percentages: A4 (Ho-Oh/Lugia) user_in_app_verified + Pulsing Aura (B3) user_in_app_verified_plus_bulbapedia + 12 packs bulbapedia_branch_verified; rarity distributions remain third_party_verified. Model v0.6.0, source_status=third_party_verified_with_in_app_anchor
 - 1 pack pending_verification (A4b Deluxe Pack: ex) — pack unavailable in app, 4 cards/pack, Offering Rates inaccessible
-- 13 ambiguous pack-source entries still unresolved (same HP/attack across candidates, or trainer rarity ambiguity) — EV-ready is now 203/224 after resolving 46/59 ambiguous entries
+- 13 ambiguous pack-source entries still unresolved — EV-ready is now 203/224 after resolving 46/59 ambiguous entries. Unresolvable without screenshot evidence: (a) 4 B-series HP ties (blaziken, frillish, skrelp, porygon2) with count=1 preventing rarity_count inference; (b) 9 A-series entries (giovanni, sabrina, leaf, cyrus, lillie, giant_cape, moltres_ex, marowak_ex, farfetch_d) where A4b is confirmed present in collection (professor_s_research confirmed A4b) so A4b cannot be excluded
 - Deck scoring model not built
 - Optional meta/tier data not integrated
 

@@ -259,3 +259,35 @@ This audit file (`review/repo_cleanup_audit.md`) records per-pass results. Secti
 - `CLAUDE.md` — coverage table updated, completed phase added, blockers updated
 
 **Repo state:** Clean. No new gitignore additions needed.
+
+---
+
+## Pass: 2026-05-15 (final 13 ambiguous entry investigation)
+
+**Scan findings:**
+- `.DS_Store` (root + `data/`) — gitignored, not tracked. No action.
+- `scripts/__pycache__/` — gitignored, not tracked. No action.
+
+**No deletions performed. No files modified.**
+
+**Findings:**
+
+Group 3 (B-series HP ties — 4 entries: blaziken, frillish, skrelp, porygon2):
+- All have distinct rarities (B1/B1a = common; B3 = one_star) but count=1 for all four.
+- rarity_count rule requires count ≥ 2; cannot resolve.
+- Unresolvable without screenshot evidence of the card art.
+
+Groups 1+2 (A-series trainers + Pokémon — 9 entries):
+- A4b exclusion cannot be applied: user confirmed they sometimes receive A4b packs as rewards.
+- Confirmed: `professor_s_research` is auto-accepted to A4b (Deluxe Pack: ex), proving A4b cards ARE in the collection.
+- Therefore giovanni, sabrina, leaf, cyrus, lillie, giant_cape, moltres_ex, marowak_ex, farfetch_d remain ambiguous.
+- Circumstantial evidence: 0 confirmed A3b (Eevee Grove) and 0 confirmed A3/Lunala cards in collection, suggesting moltres_ex likely A1/Charizard and marowak_ex likely A1/Mewtwo — but cannot apply without explicit confirmation.
+
+**Resolution path for future:**
+- For trainers/giant_cape: check in-game if the card art shown is standard (two_diamond) or full art (double_star). Standard → older set two_diamond version confirmed.
+- For blaziken/frillish/skrelp/porygon2: screenshot evidence needed (or in-game set display).
+- For moltres_ex/marowak_ex: check in-game card detail screen — it may show the set/card number.
+
+**Final coverage: 203/224 EV-ready (91%). 13 entries remain unresolved.**
+
+**Repo state:** Clean. No new gitignore additions needed.
