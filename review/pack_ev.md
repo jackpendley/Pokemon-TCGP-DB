@@ -15,8 +15,8 @@
 | Slot rates source | Bulbapedia (branch) + Game8/ShackNews (rarity dist.) |
 | Packs ranked | 24 |
 | Collection total | 380 cards (380 validated) |
-| EV-ready collection entries | 204/224 (108 auto-accept + 49 secondary + 47 resolved) |
-| Excluded entries | 20/224 (12 low-confidence + 8 unresolved) |
+| EV-ready collection entries | 207/224 (108 auto-accept + 49 secondary + 50 resolved) |
+| Excluded entries | 17/224 (9 low-confidence + 8 unresolved) |
 | Deck targets | 4 cards needed for deck completion |
 
 ---

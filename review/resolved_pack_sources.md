@@ -10,15 +10,15 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 | Metric | Value |
 |---|---|
 | Low-confidence input | 59 |
-| PASS 0 — user_confirmation | 38 |
+| PASS 0 — user_confirmation | 41 |
 | PASS 1 — hp_match | 4 |
 | PASS 2 — evo_chain | 0 |
 | PASS 3 — rarity_count | 4 |
 | PASS 2B — evo_chain (post-P3) | 1 |
-| **Total new resolved** | **47** |
-| Still unresolved | 12 |
+| **Total new resolved** | **50** |
+| Still unresolved | 9 |
 | EV-ready before | 157/224 (70%) |
-| EV-ready after  | 204/224 (91%) |
+| EV-ready after  | 207/224 (92%) |
 
 ---
 
@@ -27,6 +27,7 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 | Entry | Set | Pack | Evidence |
 |---|---|---|---|
 | bewear | B3 | Pulsing Aura | user confirmed via apply_current_pack_confirmations.py: (B3, 91) |
+| blaziken | B3 | Pulsing Aura | user confirmed via apply_current_pack_confirmations.py: (B3, 208) |
 | bulbasaur_tackle_art | B1a | Crimson Blaze | user confirmed via apply_current_pack_confirmations.py: (B1a, 1) |
 | charmander | B1a | Crimson Blaze | user confirmed via apply_current_pack_confirmations.py: (B1a, 11) |
 | charmander_flame_tail_art | B2b | Mega Shine | user confirmed via apply_current_pack_confirmations.py: (B2b, 7) |
@@ -40,6 +41,7 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 | doublade | B2 | Fantastical Parade | user confirmed via apply_current_pack_confirmations.py: (B2, 119) |
 | eelektross | A1 | Mewtwo | user confirmed via apply_current_pack_confirmations.py: (A1, 109) |
 | eevee | B3 | Pulsing Aura | user confirmed via apply_current_pack_confirmations.py: (B3, 129) |
+| frillish | B1 | Mega Gyarados | user confirmed via apply_current_pack_confirmations.py: (B1, 68) |
 | garbodor | B1a | Crimson Blaze | user confirmed via apply_current_pack_confirmations.py: (B1a, 50) |
 | hariyama | B1a | Crimson Blaze | user confirmed via apply_current_pack_confirmations.py: (B1a, 40) |
 | herdier | B3 | Pulsing Aura | user confirmed via apply_current_pack_confirmations.py: (B3, 138) |
@@ -58,6 +60,7 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 | rolycoly | B3 | Pulsing Aura | user confirmed via apply_current_pack_confirmations.py: (B3, 92) |
 | sandshrew | A1 | None | user confirmed via apply_current_pack_confirmations.py: (A1, 137) |
 | sandslash | A1 | None | user confirmed via apply_current_pack_confirmations.py: (A1, 138) |
+| skrelp | B3 | Pulsing Aura | user confirmed via apply_current_pack_confirmations.py: (B3, 218) |
 | stoutland | B3 | Pulsing Aura | user confirmed via apply_current_pack_confirmations.py: (B3, 139) |
 | stufful | B3 | Pulsing Aura | user confirmed via apply_current_pack_confirmations.py: (B3, 90) |
 | tangela | B3 | Pulsing Aura | user confirmed via apply_current_pack_confirmations.py: (B3, 1) |
@@ -98,18 +101,15 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 
 | Entry | Candidates | Reason |
 |---|---|---|
-| blaziken | B1, B3 | HP matches same value across all candidate sets — no unique disambiguation |
 | cyrus | A2, A4b | trainer — no HP field, candidates span A1/A4b reprint |
-| farfetch_d | A1, A3b, A4b | A-series card — not in external_card_reference.json |
-| frillish | B1, B3 | HP matches same value across all candidate sets — no unique disambiguation |
+| farfetch_d | A1, A4b | A-series card — not in external_card_reference.json |
 | giant_cape | A2, A4b | trainer — no HP field, candidates span A1/A4b reprint |
 | giovanni | A1, A4b | trainer — no HP field, candidates span A1/A4b reprint |
 | leaf | A1a, A4b | trainer — no HP field, candidates span A1/A4b reprint |
 | lillie | A3, A4b | trainer — no HP field, candidates span A1/A4b reprint |
-| marowak_ex | A1, A3, A4b | A-series card — not in external_card_reference.json |
-| moltres_ex | A1, A3b, A4b | A-series card — not in external_card_reference.json |
+| marowak_ex | A1, A4b | A-series card — not in external_card_reference.json |
+| moltres_ex | A1, A4b | A-series card — not in external_card_reference.json |
 | sabrina | A1, A4b | trainer — no HP field, candidates span A1/A4b reprint |
-| skrelp | B1, B3 | HP matches same value across all candidate sets — no unique disambiguation |
 
 ---
 

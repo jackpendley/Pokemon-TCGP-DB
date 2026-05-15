@@ -116,11 +116,11 @@ Planned automated confidence outputs (to be built):
 | Metric | Value |
 |---|---|
 | Base entries resolved | **157/224 (70%)** — exact_match + unanimous_pack |
-| EV-ready after resolution | **204/224 (91%)** — +47 via resolve_ambiguous_pack_sources.py |
+| EV-ready after resolution | **207/224 (92%)** — +50 via resolve_ambiguous_pack_sources.py |
 | Exact match | 108 entries |
 | Unanimous pack | 49 entries |
-| Newly resolved (resolve script) | 47 entries (38 user-confirmed + 9 automated) |
-| Still unresolved | 12 ambiguous cross-set entries |
+| Newly resolved (resolve script) | 50 entries (41 user-confirmed + 9 automated) |
+| Still unresolved | 9 ambiguous cross-set entries |
 | No match (Zygarde forms) | 3 entries — not in Limitless DB |
 | Known trainer gap | 5 entries (Potion, X Speed, Red Card, Hand Scope, Pokédex) |
 
@@ -128,8 +128,9 @@ The 59 original ambiguous entries are now resolved as follows:
 - 38 resolved via user confirmations (Limitless HP/attack analysis, 2026-05-15) stored in `data/current/current_collection_pack_confirmations.json`
 - 8 resolved by automated passes (rarity_count inference, PASS 3)
 - 1 resolved by PASS 2B (evo_chain re-run post-PASS 3): porygon2 → B1a/57 via porygon anchor
-- 1 candidate eliminated by pre-pass (farfetch_d A4a/56: HP 70 ≠ collection HP 60, 2026-05-15)
-- 12 still unresolved (same HP/attack across all candidates; or trainers needing rarity; or A4b ambiguity)
+- 3 resolved by user in-game shiny check: blaziken→B3/208, frillish→B1/68, skrelp→B3/218
+- Multiple candidates eliminated by pre-pass: A4a farfetch_d (HP mismatch); double_star/triple_star variants (rarity confirmed from in-game screenshots)
+- 9 still unresolved: PTCGP interface cannot distinguish same-rarity reprints from different sets
 
 Manual CSV review (`data/exports/current_pack_source_review.csv`) is a **fallback tool only**, used when:
 - Automated confidence scores fall below threshold for a specific entry
@@ -185,7 +186,7 @@ Scripts built (do not rebuild):
 Current blockers before automated pack recommendations:
 - Branch percentages: A4 (Ho-Oh/Lugia) user_in_app_verified + Pulsing Aura (B3) user_in_app_verified_plus_bulbapedia + 12 packs bulbapedia_branch_verified; rarity distributions remain third_party_verified. Model v0.6.0, source_status=third_party_verified_with_in_app_anchor
 - 1 pack pending_verification (A4b Deluxe Pack: ex) — pack unavailable in app, 4 cards/pack, Offering Rates inaccessible
-- 12 ambiguous pack-source entries still unresolved — EV-ready 204/224. porygon2 resolved by PASS 2B. A4a farfetch_d eliminated (HP mismatch). Remaining 12 require in-game card lookup: (a) 3 B-series shiny ties (blaziken, frillish, skrelp — B1 non-shiny vs B3 shiny, identical stats); (b) 3 A-series Pokémon (moltres_ex A1 vs A4b, marowak_ex A1 vs A4b, farfetch_d A1/A3b/A4b — check card number in-game); (c) 6 trainer cards (giovanni, sabrina, leaf, cyrus, lillie, giant_cape — A-series vs A4b, check pack icon in-game)
+- 9 ambiguous pack-source entries still unresolved — EV-ready 207/224 (92%). PTCGP's card detail screen shows ALL same-rarity printings of a card together; it does not record which set a specific copy was pulled from. Remaining 9 are all original-set vs A4b (Deluxe Pack: ex) at identical rarity: moltres_ex (A1/A4b four_diamond), marowak_ex (A1/A4b four_diamond), farfetch_d (A1/A4b one_diamond), giovanni (A1/A4b two_diamond), sabrina (A1/A4b two_diamond), leaf (A1a/A4b two_diamond), cyrus (A2/A4b two_diamond), lillie (A3/A4b two_diamond), giant_cape (A2/A4b two_diamond). Functionally unresolvable by in-game means without pack opening history.
 - Deck scoring model not built
 - Optional meta/tier data not integrated
 

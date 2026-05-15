@@ -323,7 +323,7 @@ Groups 1+2 (A-series trainers + Pokémon — 9 entries):
 - `data/current/final_hourglass_spending_plan.json`, `review/final_hourglass_spending_plan.md`, `data/exports/final_hourglass_spending_plan.csv` — spending plan rebuilt
 - `CLAUDE.md` — coverage updated (204/224), 12 unresolved, blockers updated
 
-**Coverage: 204/224 EV-ready (91%). 12 entries require in-game verification.**
+**Coverage: 207/224 EV-ready (92%). 9 entries remain — PTCGP interface limitation.**
 
 Remaining 12 breakdown:
 - 3 B-series shiny ties: blaziken (B1 vs B3 shiny), frillish (B1 vs B3 shiny), skrelp (B1 vs B3 shiny)

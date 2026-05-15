@@ -61,10 +61,24 @@ OUT_MD   = ROOT / "review"           / "resolved_pack_sources.md"
 
 USER_CONFIRMATION_CONFIDENCE = 0.99
 
-# Candidates definitively excluded by external HP/attack research (not in ext_ref).
-# Evidence: Limitless pages fetched 2026-05-15 show HP or attack mismatch vs collection.
+# Candidates definitively excluded by external research (HP/attack mismatch or rarity mismatch).
+# Evidence sources noted per entry; dates are 2026-05-15.
 KNOWN_INVALID_CANDIDATES = {
-    "farfetch_d": [("A4a", 56)],   # A4a/56 = HP 70, Leek Slam 60 ≠ collection HP 60, Leek Slap 40
+    # HP/attack mismatch (Limitless fetch 2026-05-15):
+    # A4a/56 = HP 70, Leek Slam 60 ≠ collection HP 60, Leek Slap 40
+    # Screenshot confirmed one_diamond; A3b/102 and A4b/359 are one_star (shiny):
+    "farfetch_d":  [("A4a", 56), ("A3b", 102), ("A4b", 359)],
+
+    # Screenshot confirmed four_diamond; these candidates are double_star:
+    "moltres_ex":  [("A1", 255), ("A1", 274), ("A3b", 103)],
+    "marowak_ex":  [("A1", 264), ("A3",  236)],
+
+    # Screenshot confirmed two_diamond; these candidates are double_star or triple_star:
+    "giovanni":    [("A1", 270)],
+    "sabrina":     [("A1", 272)],
+    "leaf":        [("A1a", 82)],
+    "cyrus":       [("A2", 190)],
+    "lillie":      [("A3", 197), ("A3", 209)],
 }
 
 # Confidence thresholds

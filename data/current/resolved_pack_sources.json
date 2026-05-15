@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated": "2026-05-15T21:35:41.037966+00:00",
+    "generated": "2026-05-15T22:15:03.538092+00:00",
     "source_script": "scripts/resolve_ambiguous_pack_sources.py",
     "version": "1.2.0",
     "passes": [
@@ -11,10 +11,10 @@
       "evo_chain_2b"
     ],
     "input_low_confidence": 59,
-    "total_new_resolved": 47,
-    "total_still_unresolved": 12,
+    "total_new_resolved": 50,
+    "total_still_unresolved": 9,
     "ev_ready_before": 157,
-    "ev_ready_after": 204,
+    "ev_ready_after": 207,
     "ev_ready_total": 224
   },
   "resolved": {
@@ -440,6 +440,33 @@
       "method": "user_confirmation",
       "confidence": 0.99,
       "evidence": "user confirmed via apply_current_pack_confirmations.py: (B3, 105)"
+    },
+    "blaziken": {
+      "name": "Blaziken",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "user_confirmation",
+      "confidence": 0.99,
+      "evidence": "user confirmed via apply_current_pack_confirmations.py: (B3, 208)"
+    },
+    "frillish": {
+      "name": "Frillish",
+      "set_code": "B1",
+      "pack_name": "Mega Gyarados",
+      "expansion": "Mega Rising",
+      "method": "user_confirmation",
+      "confidence": 0.99,
+      "evidence": "user confirmed via apply_current_pack_confirmations.py: (B1, 68)"
+    },
+    "skrelp": {
+      "name": "Skrelp",
+      "set_code": "B3",
+      "pack_name": "Pulsing Aura",
+      "expansion": "Pulsing Aura",
+      "method": "user_confirmation",
+      "confidence": 0.99,
+      "evidence": "user confirmed via apply_current_pack_confirmations.py: (B3, 218)"
     }
   },
   "unresolved": [
@@ -448,58 +475,24 @@
       "name": "Moltres ex",
       "candidates": [
         "A1",
-        "A1",
-        "A1",
-        "A3b",
         "A4b"
       ],
       "reason": "a_series_no_external_ref"
-    },
-    {
-      "entry_id": "blaziken",
-      "name": "Blaziken",
-      "candidates": [
-        "B1",
-        "B3"
-      ],
-      "reason": "hp_ties_multiple_sets"
-    },
-    {
-      "entry_id": "frillish",
-      "name": "Frillish",
-      "candidates": [
-        "B1",
-        "B3"
-      ],
-      "reason": "hp_ties_multiple_sets"
     },
     {
       "entry_id": "marowak_ex",
       "name": "Marowak ex",
       "candidates": [
         "A1",
-        "A1",
-        "A3",
         "A4b"
       ],
       "reason": "a_series_no_external_ref"
-    },
-    {
-      "entry_id": "skrelp",
-      "name": "Skrelp",
-      "candidates": [
-        "B1",
-        "B3"
-      ],
-      "reason": "hp_ties_multiple_sets"
     },
     {
       "entry_id": "farfetch_d",
       "name": "Farfetch'd",
       "candidates": [
         "A1",
-        "A3b",
-        "A4b",
         "A4b",
         "A4b"
       ],
@@ -520,7 +513,6 @@
       "name": "Giovanni",
       "candidates": [
         "A1",
-        "A1",
         "A4b",
         "A4b"
       ],
@@ -530,7 +522,6 @@
       "entry_id": "sabrina",
       "name": "Sabrina",
       "candidates": [
-        "A1",
         "A1",
         "A4b",
         "A4b"
@@ -542,7 +533,6 @@
       "name": "Leaf",
       "candidates": [
         "A1a",
-        "A1a",
         "A4b",
         "A4b"
       ],
@@ -553,7 +543,6 @@
       "name": "Cyrus",
       "candidates": [
         "A2",
-        "A2",
         "A4b",
         "A4b"
       ],
@@ -563,8 +552,6 @@
       "entry_id": "lillie",
       "name": "Lillie",
       "candidates": [
-        "A3",
-        "A3",
         "A3",
         "A4b",
         "A4b",
