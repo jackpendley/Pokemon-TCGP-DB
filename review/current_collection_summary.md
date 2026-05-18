@@ -1,30 +1,30 @@
 # Current Collection Summary
 
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-05-18  
 **Format:** Pokemon TCG Pocket  
-**Meta declared total:** 380  
-**Actual card count:** 380  
+**Meta declared total:** 483  
+**Actual card count:** 483  
 **Unique entries:** 224  
 
 ## By Card Type
 
 | Card Type | Count |
 |---|---|
-| Pokemon | 339 |
-| Trainer | 41 |
+| Pokemon | 432 |
+| Trainer | 51 |
 
 ## By Pokémon Type
 
 | Type | Count |
 |---|---|
-| Fighting | 66 |
-| Colorless | 50 |
-| Grass | 43 |
-| Fire | 42 |
-| Water | 36 |
-| Psychic | 30 |
-| Darkness | 30 |
-| Lightning | 24 |
+| Fighting | 85 |
+| Fire | 61 |
+| Grass | 59 |
+| Colorless | 59 |
+| Water | 41 |
+| Darkness | 38 |
+| Lightning | 36 |
+| Psychic | 35 |
 | Metal | 16 |
 | Dragon | 2 |
 
@@ -32,18 +32,18 @@
 
 | Stage | Count |
 |---|---|
-| Basic | 227 |
-| Stage 1 | 89 |
-| Stage 2 | 23 |
+| Basic | 294 |
+| Stage 1 | 113 |
+| Stage 2 | 25 |
 
 ## Trainer Cards
 
 | Subtype | Count |
 |---|---|
-| Supporter | 19 |
-| Item | 18 |
+| Supporter | 24 |
+| Item | 22 |
+| Stadium | 3 |
 | Pokemon Tool | 2 |
-| Stadium | 2 |
 
 ## Ex Pokémon
 
@@ -67,21 +67,21 @@
 
 | Card | Total Count |
 |---|---|
+| Tepig | 10 |
+| Electrode | 7 |
+| Riolu | 7 |
 | Charmander | 6 |
+| Pignite | 6 |
+| Shroomish | 6 |
+| Swadloon | 6 |
 | Spritzee | 6 |
 | Nosepass | 6 |
-| Bulbasaur | 5 |
-| Clamperl | 5 |
-| Vullaby | 5 |
-| Staraptor | 5 |
-| Pignite | 4 |
-| Victini | 4 |
-| Applin | 4 |
-| Misdreavus | 4 |
-| Croagunk | 4 |
-| Minccino | 4 |
-| Quick-Grow Extract | 4 |
-| Poké Ball | 4 |
+| Dwebble | 6 |
+| Lillipup | 6 |
+| Korrina | 6 |
+| Victini | 5 |
+| Larvesta | 5 |
+| Castform Sunny Form | 5 |
 
 ## Variant Cards (Same Name, Different Version)
 

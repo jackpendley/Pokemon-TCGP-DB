@@ -1,45 +1,69 @@
 {
   "meta": {
-    "total_cards": 380,
-    "last_updated": "2026-05-11",
+    "total_cards": 483,
+    "last_updated": "2026-05-18",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 380,
-  "meta_total_cards": 380,
+  "total_quantity": 483,
+  "meta_total_cards": 483,
   "count_matches_meta": true,
   "unique_entries": 224,
   "by_card_type": {
-    "Pokemon": 339,
-    "Trainer": 41
+    "Pokemon": 432,
+    "Trainer": 51
   },
   "by_pokemon_type": {
-    "Fire": 42,
-    "Grass": 43,
-    "Water": 36,
-    "Lightning": 24,
-    "Psychic": 30,
-    "Fighting": 66,
-    "Darkness": 30,
+    "Fire": 61,
+    "Grass": 59,
+    "Water": 41,
+    "Lightning": 36,
+    "Psychic": 35,
+    "Fighting": 85,
+    "Darkness": 38,
     "Metal": 16,
     "Dragon": 2,
-    "Colorless": 50
+    "Colorless": 59
   },
   "by_stage": {
-    "Basic": 227,
-    "Stage 1": 89,
-    "Stage 2": 23
+    "Basic": 294,
+    "Stage 1": 113,
+    "Stage 2": 25
   },
   "ex_entries": 10,
   "ex_quantity": 12,
   "trainer_subtypes": {
-    "Item": 18,
+    "Item": 22,
     "Pokemon Tool": 2,
-    "Supporter": 19,
-    "Stadium": 2
+    "Supporter": 24,
+    "Stadium": 3
   },
   "top_cards_by_count": [
     [
+      "Tepig",
+      10
+    ],
+    [
+      "Electrode",
+      7
+    ],
+    [
+      "Riolu",
+      7
+    ],
+    [
       "Charmander",
+      6
+    ],
+    [
+      "Pignite",
+      6
+    ],
+    [
+      "Shroomish",
+      6
+    ],
+    [
+      "Swadloon",
       6
     ],
     [
@@ -51,52 +75,28 @@
       6
     ],
     [
-      "Bulbasaur",
-      5
+      "Dwebble",
+      6
     ],
     [
-      "Clamperl",
-      5
+      "Lillipup",
+      6
     ],
     [
-      "Vullaby",
-      5
-    ],
-    [
-      "Staraptor",
-      5
-    ],
-    [
-      "Pignite",
-      4
+      "Korrina",
+      6
     ],
     [
       "Victini",
-      4
+      5
     ],
     [
-      "Applin",
-      4
+      "Larvesta",
+      5
     ],
     [
-      "Misdreavus",
-      4
-    ],
-    [
-      "Croagunk",
-      4
-    ],
-    [
-      "Minccino",
-      4
-    ],
-    [
-      "Quick-Grow Extract",
-      4
-    ],
-    [
-      "Poké Ball",
-      4
+      "Castform Sunny Form",
+      5
     ]
   ],
   "variant_names": {
@@ -546,6 +546,6 @@
       "Riolu → Lucario",
       "Zorua → Zoroark"
     ],
-    "total_trainer_cards": 41
+    "total_trainer_cards": 51
   }
 }

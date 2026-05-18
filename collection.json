@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 380,
-    "last_updated": "2026-05-11",
+    "total_cards": 483,
+    "last_updated": "2026-05-18",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -61,7 +61,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Stoke",
-      "count": 2
+      "count": 10
     },
     {
       "name": "Pignite",
@@ -70,7 +70,7 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Magma Punch 60",
-      "count": 4
+      "count": 6
     },
     {
       "name": "Incineroar ex",
@@ -127,7 +127,7 @@
       "card_type": "Pokemon",
       "ability": "Victory Star",
       "attack": "V-Flame 40",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Turtonator",
@@ -154,7 +154,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Headbutt 10",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Darmanitan",
@@ -163,7 +163,7 @@
       "hp": 120,
       "card_type": "Pokemon",
       "attack": "Double Smash 40+",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Larvesta",
@@ -172,7 +172,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Steady Firebreathing 20",
-      "count": 3
+      "count": 5
     },
     {
       "name": "Numel",
@@ -190,7 +190,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Sunny Scorching 30",
-      "count": 1
+      "count": 5
     },
     {
       "name": "Mega Camerupt ex",
@@ -267,7 +267,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Spore",
-      "count": 3
+      "count": 6
     },
     {
       "name": "Budew",
@@ -285,7 +285,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Pre-Dawn Strike 30+",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Treecko",
@@ -294,7 +294,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Pound 20",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Surskit",
@@ -312,7 +312,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Gust 40",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Carnivine",
@@ -330,7 +330,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Gnaw 20",
-      "count": 2
+      "count": 5
     },
     {
       "name": "Swadloon",
@@ -339,7 +339,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Protect",
-      "count": 2
+      "count": 6
     },
     {
       "name": "Applin",
@@ -348,7 +348,7 @@
       "hp": 40,
       "card_type": "Pokemon",
       "attack": "Share",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Leavanny",
@@ -357,7 +357,7 @@
       "hp": 140,
       "card_type": "Pokemon",
       "attack": "Razor Leaf 100",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Silcoon",
@@ -402,7 +402,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Bind 20",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Venonat",
@@ -458,7 +458,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Find a Friend",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Wartortle",
@@ -497,7 +497,7 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Hydro Splash 70",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Gorebyss",
@@ -515,7 +515,7 @@
       "hp": 130,
       "card_type": "Pokemon",
       "attack": "Muddy Headbutt 60+",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Poliwhirl",
@@ -578,7 +578,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Rainy Absorbing 30",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Castform Snowy Form",
@@ -605,7 +605,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Icicle Punch 30",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Frillish",
@@ -691,7 +691,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Thunder Shock 20",
-      "count": 2,
+      "count": 4,
       "variant": "Thunder Shock art"
     },
     {
@@ -719,7 +719,7 @@
       "hp": 110,
       "card_type": "Pokemon",
       "attack": "Electric Ball 70",
-      "count": 2
+      "count": 5
     },
     {
       "name": "Morpeko",
@@ -728,7 +728,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Full Belly Bolt 10+",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Joltik",
@@ -755,7 +755,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Electroblast 20+",
-      "count": 1
+      "count": 7
     },
     {
       "name": "Pikachu",
@@ -774,7 +774,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Inspiring Dance 30",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Mismagius",
@@ -846,7 +846,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Confuse Ray",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Sinistea",
@@ -864,7 +864,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Mumble 20",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Oricorio",
@@ -873,7 +873,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Pester the Dizzy 20+",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Hatenna",
@@ -891,7 +891,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Petty Grudge 20",
-      "count": 2
+      "count": 3
     },
     // ─── FIGHTING ────────────────────────────────────────────────────────────
     {
@@ -1015,7 +1015,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Fighting Fast 10+",
-      "count": 1,
+      "count": 5,
       "variant": "Fighting Fast art"
     },
     {
@@ -1035,7 +1035,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Scratch 10",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Cubone",
@@ -1044,7 +1044,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Growl",
-      "count": 2
+      "count": 1
     },
     {
       "name": "Onix",
@@ -1100,7 +1100,7 @@
       "hp": 110,
       "card_type": "Pokemon",
       "attack": "Triple Smash 50x",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Sandaconda",
@@ -1127,7 +1127,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Mud-Slap 10",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Roggenrola",
@@ -1154,7 +1154,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Poison Jab 40",
-      "count": 2
+      "count": 4
     },
     {
       "name": "Croagunk",
@@ -1163,7 +1163,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Corkscrew Punch 20",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Meditite",
@@ -1181,7 +1181,7 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Circle Throw 70",
-      "count": 1
+      "count": 3
     },
     {
       "name": "Sawk",
@@ -1190,7 +1190,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Brick Break 30",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Dwebble",
@@ -1199,7 +1199,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Ram 20",
-      "count": 1
+      "count": 6
     },
     {
       "name": "Stufful",
@@ -1208,7 +1208,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Tackle 30",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Rolycoly",
@@ -1226,7 +1226,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Headbutt 30",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Kubfu",
@@ -1318,7 +1318,7 @@
       "hp": 50,
       "card_type": "Pokemon",
       "attack": "Spin Turn 10",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Alolan Persian",
@@ -1372,7 +1372,7 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Evolution Jammer 40",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Grimer",
@@ -1381,7 +1381,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Sludge Bomb 40",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Trubbish",
@@ -1426,7 +1426,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Gas Bomb 30",
-      "count": 2
+      "count": 4
     },
     {
       "name": "Qwilfish",
@@ -1435,7 +1435,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Spiny Rush 40+",
-      "count": 1
+      "count": 4
     },
     // ─── METAL ───────────────────────────────────────────────────────────────
     {
@@ -1573,7 +1573,7 @@
       "hp": 150,
       "card_type": "Pokemon",
       "attack": "Fighting Fangs 70+",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Herdier",
@@ -1591,7 +1591,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Puppy Pile 20x",
-      "count": 3
+      "count": 6
     },
     {
       "name": "Dodrio",
@@ -1710,7 +1710,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Healing Light 40",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Chansey",
@@ -1764,7 +1764,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Jumping Kick",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Castform",
@@ -1773,7 +1773,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Blow Through 20+",
-      "count": 2
+      "count": 5
     },
     {
       "name": "Raticate",
@@ -1884,7 +1884,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "effect": "Heal 20 from 1 Pokemon",
-      "count": 1
+      "count": 2
     },
     {
       "name": "X Speed",
@@ -1898,14 +1898,14 @@
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "effect": "Opponent reveals their hand",
-      "count": 1
+      "count": 3
     },
     {
       "name": "Pokédex",
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "effect": "Look at top 3 cards of deck",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Poké Ball",
@@ -1962,14 +1962,14 @@
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "effect": "Fighting Pokemon do +30 damage vs opponent's Active ex this turn",
-      "count": 2
+      "count": 6
     },
     {
       "name": "Cheren",
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "effect": "Next turn, Watchog and Stoutland take -100 from opponent's ex attacks",
-      "count": 2
+      "count": 3
     },
     {
       "name": "May",
@@ -2012,7 +2012,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Stadium",
       "effect": "Each Fighting Pokemon's attacks do +20 vs opponent's Active ex",
-      "count": 1
+      "count": 2
     }
   ]
 }

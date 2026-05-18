@@ -1,0 +1,521 @@
+{
+  "generated_at": "2026-05-18",
+  "resolved": false,
+  "new_cards": [
+    {
+      "set_code": "A1",
+      "card_number": 67,
+      "raw_name": "Moltres ex",
+      "canonical_name": "Cloyster",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A4B",
+      "card_number": 110,
+      "raw_name": "Froakie",
+      "canonical_name": "Froakie",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A1",
+      "card_number": 194,
+      "raw_name": "Cubone",
+      "canonical_name": "Wigglytuff",
+      "count": 2,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A1",
+      "card_number": 196,
+      "raw_name": "Marowak ex",
+      "canonical_name": "Meowth",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A1",
+      "card_number": 277,
+      "raw_name": "Jigglypuff",
+      "canonical_name": "Gengar ex",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A1",
+      "card_number": 280,
+      "raw_name": "Farfetch’d",
+      "canonical_name": "Charizard ex",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A4B",
+      "card_number": 274,
+      "raw_name": "Pidgeotto",
+      "canonical_name": "Pidgeotto",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A4B",
+      "card_number": 243,
+      "raw_name": "Sneasel",
+      "canonical_name": "Sneasel",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A4B",
+      "card_number": 297,
+      "raw_name": "Shaymin",
+      "canonical_name": "Shaymin",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A4B",
+      "card_number": 78,
+      "raw_name": "Litten",
+      "canonical_name": "Litten",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A4B",
+      "card_number": 288,
+      "raw_name": "Snorlax ex",
+      "canonical_name": "Snorlax ex",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A4B",
+      "card_number": 241,
+      "raw_name": "Umbreon ex",
+      "canonical_name": "Umbreon ex",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 39,
+      "raw_name": "Vanilluxe",
+      "canonical_name": "Vanilluxe",
+      "count": 2,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 40,
+      "raw_name": "Cryogonal",
+      "canonical_name": "Cryogonal",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 58,
+      "raw_name": "Galarian Ponyta",
+      "canonical_name": "Galarian Ponyta",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 76,
+      "raw_name": "Indeedee",
+      "canonical_name": "Indeedee",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 137,
+      "raw_name": "Spinda",
+      "canonical_name": "Spinda",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B2B",
+      "card_number": 29,
+      "raw_name": "Hypno",
+      "canonical_name": "Hypno",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B2B",
+      "card_number": 54,
+      "raw_name": "Axew",
+      "canonical_name": "Axew",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 3,
+      "raw_name": "Heracross",
+      "canonical_name": "Heracross",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 7,
+      "raw_name": "Sceptile",
+      "canonical_name": "Sceptile",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 22,
+      "raw_name": "Camerupt",
+      "canonical_name": "Camerupt",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 32,
+      "raw_name": "Volcarona",
+      "canonical_name": "Volcarona",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 45,
+      "raw_name": "Regice",
+      "canonical_name": "Regice",
+      "count": 2,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 47,
+      "raw_name": "Beartic",
+      "canonical_name": "Beartic",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 50,
+      "raw_name": "Inteleon",
+      "canonical_name": "Inteleon",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 60,
+      "raw_name": "Toxel",
+      "canonical_name": "Toxel",
+      "count": 4,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 64,
+      "raw_name": "Kirlia",
+      "canonical_name": "Kirlia",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 67,
+      "raw_name": "Diancie",
+      "canonical_name": "Diancie",
+      "count": 2,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 80,
+      "raw_name": "Lucario",
+      "canonical_name": "Lucario",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 107,
+      "raw_name": "Foongus",
+      "canonical_name": "Foongus",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 111,
+      "raw_name": "Inkay",
+      "canonical_name": "Inkay",
+      "count": 3,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 114,
+      "raw_name": "Zarude",
+      "canonical_name": "Zarude",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 135,
+      "raw_name": "Patrat",
+      "canonical_name": "Patrat",
+      "count": 2,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 204,
+      "raw_name": "Meowth",
+      "canonical_name": "Meowth",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 160,
+      "raw_name": "Flapple",
+      "canonical_name": "Flapple",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 185,
+      "raw_name": "Crustle ex",
+      "canonical_name": "Crustle ex",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "PROMO-B",
+      "card_number": 60,
+      "raw_name": "Zarude",
+      "canonical_name": "Zarude",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "PROMO-B",
+      "card_number": 51,
+      "raw_name": "Zygarde",
+      "canonical_name": null,
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "PROMO-B",
+      "card_number": 52,
+      "raw_name": "Zygarde",
+      "canonical_name": null,
+      "count": 3,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "PROMO-B",
+      "card_number": 53,
+      "raw_name": "Zygarde ex",
+      "canonical_name": "Mew ex",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "PROMO-B",
+      "card_number": 56,
+      "raw_name": "Mega Heracross ex",
+      "canonical_name": "Heracross",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "A4B",
+      "card_number": 332,
+      "raw_name": "Lyra",
+      "canonical_name": "Lyra",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 155,
+      "raw_name": "Peculiar Plaza",
+      "canonical_name": "Peculiar Plaza",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 148,
+      "raw_name": "Lucky Egg",
+      "canonical_name": "Lucky Egg",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 150,
+      "raw_name": "Cabbie",
+      "canonical_name": "Cabbie",
+      "count": 1,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "PROMO-A",
+      "card_number": 2,
+      "raw_name": "X Speed",
+      "canonical_name": "Mega Charizard X ex",
+      "count": 2,
+      "action_needed": "Add this card to collection.json manually"
+    },
+    {
+      "set_code": "PROMO-A",
+      "card_number": 6,
+      "raw_name": "Red Card",
+      "canonical_name": "Red",
+      "count": 2,
+      "action_needed": "Add this card to collection.json manually"
+    }
+  ],
+  "ambiguous_matches": [
+    {
+      "raw_name": "Bulbasaur",
+      "canonical_name": "Bulbasaur",
+      "pz_count": 1,
+      "candidate_names": [
+        "Bulbasaur (hp=70, variant=)",
+        "Bulbasaur (hp=70, variant=alt art)",
+        "Bulbasaur (hp=60, variant=Tackle art)"
+      ],
+      "action_needed": "Resolve variant manually, then re-run sync"
+    },
+    {
+      "raw_name": "Onix",
+      "canonical_name": "Onix",
+      "pz_count": 1,
+      "candidate_names": [
+        "Onix (hp=110, variant=Land Crush art)",
+        "Onix (hp=100, variant=Dig art)"
+      ],
+      "action_needed": "Resolve variant manually, then re-run sync"
+    },
+    {
+      "raw_name": "Mienfoo",
+      "canonical_name": "Mienfoo",
+      "pz_count": 2,
+      "candidate_names": [
+        "Mienfoo (hp=60, variant=Pound art)",
+        "Mienfoo (hp=50, variant=Chop art)"
+      ],
+      "action_needed": "Resolve variant manually, then re-run sync"
+    },
+    {
+      "raw_name": "Mienshao",
+      "canonical_name": "Mienshao",
+      "pz_count": 1,
+      "candidate_names": [
+        "Mienshao (hp=80, variant=Spiral Kick art)",
+        "Mienshao (hp=90, variant=Low Sweep art)"
+      ],
+      "action_needed": "Resolve variant manually, then re-run sync"
+    },
+    {
+      "raw_name": "Bulbasaur",
+      "canonical_name": "Bulbasaur",
+      "pz_count": 1,
+      "candidate_names": [
+        "Bulbasaur (hp=70, variant=)",
+        "Bulbasaur (hp=70, variant=alt art)",
+        "Bulbasaur (hp=60, variant=Tackle art)"
+      ],
+      "action_needed": "Resolve variant manually, then re-run sync"
+    }
+  ],
+  "missing_from_pz": [
+    {
+      "name": "Moltres ex",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Bulbasaur",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Bulbasaur",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Marowak ex",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Mienfoo",
+      "current_count": 2,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Mienshao",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Riolu",
+      "current_count": 2,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Onix",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Zygarde 10% Forme",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Zygarde 50% Forme",
+      "current_count": 3,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Zygarde ex",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Jigglypuff",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Farfetch'd",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "Red Card",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    },
+    {
+      "name": "X Speed",
+      "current_count": 1,
+      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+    }
+  ]
+}

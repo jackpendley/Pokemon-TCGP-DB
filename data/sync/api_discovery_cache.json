@@ -1,0 +1,7 @@
+{
+  "discovered_at": "2026-05-18T23:32:20.915313+00:00",
+  "api_url": "https://www.pokemon-zone.com/api/players/mine/",
+  "collection_array_key": "data.cards",
+  "import_source": "har",
+  "element_count": 280
+}
