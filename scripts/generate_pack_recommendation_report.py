@@ -768,15 +768,7 @@ def run_validate() -> bool:
     else:
         print("  PASS  collection_mutated=False")
 
-    # cards.json unchanged (329)
-    if CARDS_SOURCE.exists():
-        cards_raw = json.loads(CARDS_SOURCE.read_text(encoding="utf-8"))
-        cards_total = sum(c.get("quantity", 0) for c in cards_raw if isinstance(c, dict))
-        if cards_total != 329:
-            print(f"  ERROR: cards.json total={cards_total}, expected 329")
-            errors += 1
-        else:
-            print("  PASS  cards.json total=329 (unchanged)")
+    # cards.json check removed — historical file deleted in 2026-05-18 cleanup
 
     if errors == 0:
         print(f"\nVALIDATION PASSED  (model_confidence={mc}, top_rec={top5[0]['pack_name']})")

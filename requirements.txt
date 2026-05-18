@@ -6,3 +6,6 @@ pytesseract
 imagehash
 beautifulsoup4
 lxml
+# Browser automation for Pokemon Zone sync
+playwright
+# After installing: run `playwright install chromium`

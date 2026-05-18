@@ -26,3 +26,8 @@ data/reference/images/
 data/reference/external/html_cache/
 # Scrape process log (ephemeral)
 data/reference/external/scrape_log.txt
+
+# Pokemon Zone sync — browser session, raw API response, stored auth
+.browser_session/
+data/sync/last_sync_raw.json
+data/sync/.auth.json

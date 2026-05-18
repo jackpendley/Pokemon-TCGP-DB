@@ -33,7 +33,38 @@ Screenshots are local user-provided evidence under `screenshots/`. They are giti
 
 ## 4. Important Scripts
 
-### Active collection
+### Collection sync from Pokemon Zone (primary update path)
+
+**First-time setup (Cloudflare-safe — recommended):**
+```bash
+python3 scripts/sync_collection.py --curl-import
+# Opens instructions; paste a cURL from browser DevTools once.
+# Auth is saved to data/sync/.auth.json (gitignored). Expires in hours–days.
+```
+
+**When auth expires, re-run the same command.**
+
+**Subsequent syncs (headless, no browser needed):**
+```bash
+python3 scripts/sync_collection.py           # headless sync using stored auth
+python3 scripts/sync_collection.py --dry-run # preview changes, no writes
+```
+
+**Fallback (may hit Cloudflare CAPTCHA):**
+```bash
+python3 scripts/sync_collection.py --login   # headed Playwright browser login
+python3 scripts/sync_collection.py --discover # inspect all Playwright-captured responses
+```
+
+### Full recommendation pipeline (sync + EV + reports)
+
+```bash
+python3 scripts/run_recommendations.py             # sync → validate → EV → all reports
+python3 scripts/run_recommendations.py --skip-sync # skip sync, use current collection.json
+python3 scripts/run_recommendations.py --login     # re-auth via Playwright before sync
+```
+
+### Active collection (manual validation)
 
 ```bash
 python3 scripts/validate_current_collection.py --expected-total 380
@@ -65,7 +96,7 @@ python3 scripts/resolve_ambiguous_pack_sources.py
 python3 scripts/validate_deck_recommendations.py
 ```
 
-### EV pipeline
+### EV pipeline (individual steps)
 
 ```bash
 python3 scripts/resolve_ambiguous_pack_sources.py

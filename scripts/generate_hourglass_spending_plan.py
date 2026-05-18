@@ -546,10 +546,9 @@ def run_validate():
                 f"CSV batch count mismatch for '{label}': expected {expected_count}, got {actual}"
             )
 
-    # Check 11: collection_normalized.json and cards.json exist (load check)
-    for path in (COLLECTION_NORMALIZED_JSON, BASE / "cards.json"):
-        if not path.exists():
-            errors.append(f"Required file missing: {path.relative_to(BASE)}")
+    # Check 11: collection_normalized.json exists (load check)
+    if not COLLECTION_NORMALIZED_JSON.exists():
+        errors.append(f"Required file missing: {COLLECTION_NORMALIZED_JSON.relative_to(BASE)}")
 
     # Check 12: batch_size is 10
     if plan.get("batch_size") != 10:
