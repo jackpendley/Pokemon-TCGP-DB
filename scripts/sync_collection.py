@@ -244,11 +244,18 @@ def _match_one(
         if ref:
             canonical_name = ref["card_name"]
 
-    # Fallback: fuzzy match raw name against pack_sources card_name list
+    # Step 2: fuzzy match raw name against pack_sources card_name list
     if not canonical_name:
         hit = fuzz_process.extractOne(pz.raw_name, pack_name_list, score_cutoff=85)
         if hit:
             canonical_name = hit[0]
+
+    # Step 3: direct normalized-name match against collection.json
+    # (catches trainers and cards from sets not in pack_sources)
+    if not canonical_name:
+        nn_direct = _normalize(pz.raw_name)
+        if nn_direct in name_index:
+            canonical_name = pz.raw_name
 
     if not canonical_name:
         return MatchResult(status="UNMATCHED", pz_card=pz, canonical_name=None)
@@ -603,6 +610,8 @@ def _read_curl_from_stdin() -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Sync collection.json from Pokemon Zone.")
+    parser.add_argument("--har-import",  metavar="FILE",
+                        help="Import collection from a browser HAR file (no auth stored; run --curl-import afterwards for ongoing syncs)")
     parser.add_argument("--curl-import", action="store_true",
                         help="Paste a browser DevTools cURL to set up / refresh auth (Cloudflare-safe)")
     parser.add_argument("--login",       action="store_true",
@@ -622,8 +631,24 @@ def main() -> int:
 
     # ── Phase 0: Pre-flight ───────────────────────────────────────────────
 
+    # --har-import: parse a HAR file directly (one-shot; no auth stored)
+    if args.har_import:
+        print(f"Importing collection from HAR file: {args.har_import}")
+        try:
+            raw_cards, _cache = pz.import_har(args.har_import)
+        except (ValueError, FileNotFoundError) as e:
+            print(f"\nERROR: {e}", file=sys.stderr)
+            return 1
+        print()
+        print("NOTE: HAR import does not save auth credentials (browser cookies are")
+        print("      not included in HAR exports). For automatic future syncs, run:")
+        print("       python3 scripts/sync_collection.py --curl-import")
+        print("      Go to pokemon-zone.com/collection-tracker/ → DevTools → Network →")
+        print("      right-click the /api/players/mine/ request → Copy as cURL.")
+        print()
+
     # --curl-import: read a pasted cURL, discover API, save auth, then sync
-    if args.curl_import:
+    elif args.curl_import:
         curl_str = _read_curl_from_stdin()
         if not curl_str:
             return 1
@@ -633,7 +658,8 @@ def main() -> int:
         except (ValueError, pz.APIDiscoveryFailedError) as e:
             print(f"\nERROR: {e}", file=sys.stderr)
             return 1
-        # Fall through to matching/sync below with raw_cards already fetched
+
+    # Normal headless sync using stored auth or Playwright session
     else:
         # Check auth availability before doing anything else
         has_stored_auth  = AUTH_CACHE.exists()
@@ -718,16 +744,23 @@ def main() -> int:
     ]
 
     # ── Phase 4: Compute diff ─────────────────────────────────────────────
-    changes: list[CountChange] = []
+    # Aggregate counts: the same card may appear in multiple sets in PZ
+    # (e.g. Shroomish in B2 + B3); sum all copies into one collection entry.
+    entry_pz_total: dict[int, int] = {}
     for r in matched:
-        old = r.entry.get("count", 0)
-        new = r.pz_card.count
-        if old != new:
+        idx = r.entry_index
+        entry_pz_total[idx] = entry_pz_total.get(idx, 0) + r.pz_card.count
+
+    changes: list[CountChange] = []
+    for idx, new_count in entry_pz_total.items():
+        entry = collection_entries[idx]
+        old_count = entry.get("count", 0)
+        if old_count != new_count:
             changes.append(CountChange(
-                entry=r.entry,
-                entry_index=r.entry_index,
-                old_count=old,
-                new_count=new,
+                entry=entry,
+                entry_index=idx,
+                old_count=old_count,
+                new_count=new_count,
             ))
 
     print_diff(changes, new_cards, ambiguous, missing_from_pz)

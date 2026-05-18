@@ -601,6 +601,174 @@ async def _run_playwright(login: bool, discover: bool) -> tuple[list, dict]:
 
 
 # ---------------------------------------------------------------------------
+# HAR import (one-shot; no stored auth extracted)
+# ---------------------------------------------------------------------------
+
+_PZ_HOST = "pokemon-zone.com"
+_PLAYERS_MINE_PATH = "players/mine"
+_CARDS_SEARCH_PATH = "cards/search/"
+_API_BASE = "https://www.pokemon-zone.com/api/players/mine/"
+
+
+def _parse_cn_from_url(url: str) -> int | None:
+    """Extract card number from a URL like /cards/a1/1/bulbasaur/ → 1."""
+    m = re.search(r"/cards/[^/]+/(\d+)/", url)
+    if m:
+        try:
+            return int(m.group(1))
+        except ValueError:
+            pass
+    return None
+
+
+def import_har(har_path: str | Path) -> tuple[list, dict]:
+    """
+    Parse a browser-exported HAR file and extract the user's collection.
+
+    Looks for two responses inside the HAR:
+      - /api/cards/search/   → card catalog: internal ID → name, set, number
+      - /api/players/mine/   → owned cards: internal ID + amount
+
+    Returns (normalized_card_list, discovery_cache) where each item in
+    card_list is a dict ready for normalize_pz_record():
+      {"cardName": str, "setCode": str, "cardNumber": int, "ownedCount": int}
+
+    Raises ValueError if either required endpoint is missing from the HAR.
+    """
+    har_path = Path(har_path)
+    size_kb = har_path.stat().st_size // 1024
+    print(f"  Parsing HAR: {har_path.name} ({size_kb:,} KB)")
+
+    with har_path.open(encoding="utf-8") as f:
+        har = json.load(f)
+
+    entries = har["log"]["entries"]
+
+    # ── Step 1: card catalog from /api/cards/search/ ─────────────────────
+    # Maps internal cardDefKey → {name, set_code, card_number}
+    catalog: dict[str, dict] = {}
+
+    for e in entries:
+        url = e["request"]["url"]
+        if _PZ_HOST not in url or _CARDS_SEARCH_PATH not in url:
+            continue
+        text = e["response"]["content"].get("text", "")
+        if not text:
+            continue
+        try:
+            body = json.loads(text)
+        except ValueError:
+            continue
+
+        # Unwrap nested structure: body.data.results or body.data (list)
+        data = body.get("data", [])
+        if isinstance(data, dict):
+            data = data.get("results", [])
+        if not isinstance(data, list):
+            continue
+
+        for item in data:
+            if not isinstance(item, dict):
+                continue
+            key  = item.get("cardDefKey", "")
+            name = item.get("name", "")
+            exp  = item.get("expansionId", "")
+            cn   = _parse_cn_from_url(item.get("url", ""))
+            if key and name:
+                catalog[key] = {
+                    "name":        name,
+                    "set_code":    exp,
+                    "card_number": cn,
+                }
+
+        if catalog:
+            break  # Found the real catalog — stop searching
+
+    if not catalog:
+        raise ValueError(
+            "Card catalog (/api/cards/search/) not found in HAR.\n"
+            "Make sure you exported the HAR from the collection-tracker page\n"
+            "while all card data had loaded."
+        )
+
+    print(f"  Card catalog: {len(catalog):,} entries.")
+
+    # ── Step 2: owned cards from /api/players/mine/ ───────────────────────
+    raw_cards: list[dict] = []
+    api_url: str = _API_BASE
+
+    for e in entries:
+        url = e["request"]["url"]
+        if _PZ_HOST not in url or _PLAYERS_MINE_PATH not in url:
+            continue
+        text = e["response"]["content"].get("text", "")
+        if not text:
+            continue
+        try:
+            body = json.loads(text)
+        except ValueError:
+            continue
+
+        owned = body.get("data", {}).get("cards", [])
+        if not owned:
+            continue
+
+        api_url = url
+        skipped_unknown = 0
+
+        for card in owned:
+            card_id    = card.get("cardId", "")
+            amount     = int(card.get("amount") or card.get("amountLang_EN") or 0)
+            player_exp = (card.get("expansionIds") or [""])[0]
+
+            if amount <= 0:
+                continue
+
+            info = catalog.get(card_id)
+            if not info:
+                skipped_unknown += 1
+                continue
+
+            # Prefer the expansion the player data says, fall back to catalog URL
+            set_code = player_exp if player_exp else info["set_code"]
+
+            raw_cards.append({
+                "cardName":   info["name"],
+                "setCode":    set_code,
+                "cardNumber": info["card_number"],
+                "ownedCount": amount,
+            })
+
+        if skipped_unknown:
+            print(f"  WARNING: {skipped_unknown} card(s) had unknown internal IDs — skipped.")
+        break
+
+    if not raw_cards:
+        raise ValueError(
+            "Owned card data (/api/players/mine/) not found in HAR.\n"
+            "Make sure you were logged in and on the collection-tracker page\n"
+            "when the HAR was exported."
+        )
+
+    total_count = sum(c["ownedCount"] for c in raw_cards)
+    print(f"  Owned: {len(raw_cards)} unique entries, {total_count} total count.")
+
+    # ── Persist discovery cache and raw data ──────────────────────────────
+    cache = {
+        "discovered_at":        datetime.now(timezone.utc).isoformat(),
+        "api_url":              api_url,
+        "collection_array_key": "data.cards",
+        "import_source":        "har",
+        "element_count":        len(raw_cards),
+    }
+    DISCOVERY_CACHE.parent.mkdir(parents=True, exist_ok=True)
+    DISCOVERY_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
+    RAW_CACHE.write_text(json.dumps(raw_cards, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    return raw_cards, cache
+
+
+# ---------------------------------------------------------------------------
 # Public entry points
 # ---------------------------------------------------------------------------
 
