@@ -333,3 +333,38 @@ Remaining 12 breakdown:
 All 12 require checking cards in-game: shininess, card number, or pack icon.
 
 **Repo state:** Clean. No new gitignore additions needed.
+
+---
+
+## Pass: 2026-05-18 (deep repo cleanup — remove historical pipeline)
+
+**Scope:** Full audit and deletion of all files tied to the historical screenshot OCR / batch ingestion pipeline (cards.json, batches/, confirmed CSVs, extraction outputs, crop scripts, OCR scripts, reference builders, etc.). This pipeline was fully superseded by the collection.json-based workflow. 186 files deleted, 82 files remain.
+
+**Files deleted:**
+
+| Category | Count | Files |
+|---|---|---|
+| Historical batch files | 27 | `batches/cards_batch_001–024.json`, `cards_batch_TEMPLATE.json`, `.gitkeep` |
+| Confirmed screenshot CSVs | 45 | `review/confirmed/IMG_1525–IMG_1547_confirmed*.csv`, `.gitkeep` |
+| Screenshot review notes | 19 | `review/screenshot_reviews/IMG_1525–IMG_1547_review.md` |
+| OCR extraction outputs | 6 | `data/extraction/crop_manifest.json`, `crop_quality_report.json`, `detection_validation_report.json`, `field_detection_report.json`, `match_candidates.json`, `ocr_results.json` |
+| Historical root-level docs | 16 | `ambiguous_cards.md`, `cards.csv`, `cards.json`, `cards.schema.json`, `crop_calibration_report.md`, `crop_override_report.md`, `crop_override_workflow.md`, `detection_validation_report.md`, `external_reference_integration_report.md`, `extraction_checklist.md`, `field_detection_report.md`, `merge_report.md`, `pipeline_detection_report.md`, `reference_coverage_report.md`, `screenshots_inventory.json`, `screenshots_manifest.md` |
+| Historical config | 1 | `config/crop_config.json` |
+| Historical reference files | 9 | `data/reference/card_names.txt`, `card_reference.json`, `confirmed_card_names.txt`, `confirmed_lexicon.json`, `manual_card_names_seed.txt`, `reference_coverage_report.json`, `external/external_card_names.txt`, `external/reference_source_report.md` |
+| Historical exports | 12 | `data/exports/ambiguous_cards_review.csv/.json`, `cards_collection.csv`, `collection_analytics.json`, `collection_summary.json`, `metadata_enrichment_report.json`, `no_match_cards_review.csv/.json`, `owned_pack_coverage.json`, `pack_coverage_resolution_report.json`, `skipped_multi_value_review.csv/.json` |
+| Historical review files | 21 | `review/ambiguous_cards_review.md`, `autofill_candidates.csv/.md`, `collection_analytics.md`, `collection_summary.md`, `crop_quality_report.md`, `draft_batch_summary.md`, `extraction_candidates.csv`, `final_ingestion_reconciliation.md`, `manual_confirmation_instructions.md`, `manual_confirmation_template.csv`, `missing_set_coverage_analysis.md`, `no_match_cards_review.md`, `owned_pack_coverage.md`, `pack_coverage_gap_analysis.md`, `pack_coverage_resolution_report.md`, `pack_source_mapping_plan.md`, `provisional_baseline.md`, `review_needed.md`, `skipped_multi_value_review.md`, `metadata_enrichment_report.md` |
+| Historical scripts | 35 | `apply_ambiguous_confirmations.py`, `apply_skipped_multi_value_confirmations.py`, `build_card_reference.py`, `build_confirmed_lexicon.py`, `build_external_reference.py`, `collection_analytics.py`, `collection_summary.py`, `create_ambiguous_review_package.py`, `create_batch_from_confirmation.py`, `create_contact_sheets.py`, `create_draft_batch_from_template.py`, `create_screenshot_review_package.py`, `create_skipped_multi_value_review.py`, `crop_3x3_cards.py`, `crop_all_screenshots.py`, `enrich_metadata.py`, `evaluate_crop_quality.py`, `evaluate_detection_against_confirmed.py`, `evaluate_field_detection.py`, `evaluate_reference_coverage.py`, `export_cards_csv.py`, `fetch_missing_html.py`, `generate_autofill_candidates.py`, `generate_next_review_template.py`, `generate_reference_backed_template.py`, `generate_review_report.py`, `match_ocr_to_reference.py`, `merge_batches.py`, `ocr_card_crops.py`, `owned_pack_coverage.py`, `resolve_pack_coverage.py`, `summarize_draft_batches.py`, `validate_batch.py`, `validate_cards.py`, `validate_confirmed_csv_against_reference.py` |
+
+**Files kept (active):**
+
+All 82 remaining files are either:
+- Source-of-truth data: `collection.json`, `data/reference/pack_sources.json`, `data/reference/pull_probability_model.json`, `data/reference/external/external_card_reference.json`
+- Active scripts (19): collection validation, normalization, EV pipeline, deck validation, pack sources
+- Active generated outputs: all files under `data/current/`, `data/exports/` (current pipeline), `review/` (current pipeline)
+- Project docs: `docs/`, `CLAUDE.md`, `README.md`, `.gitignore`, `requirements.txt`, `deck-recommendations.jsx`
+
+**Documents updated:**
+- `README.md` — fully rewritten to reflect current active pipeline (removed all historical pipeline documentation)
+- `CLAUDE.md` — updated sections 1, 2, 3, 4, 10, 17, 18, 19 to remove historical references; added EV pipeline section
+
+**Repo state after cleanup:** 82 tracked files. Clean. All active scripts validated against remaining file structure.

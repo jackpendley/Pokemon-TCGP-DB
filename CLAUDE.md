@@ -6,10 +6,7 @@ Pokemon-TCGP-DB tracks the user's Pokémon TCG Pocket collection.
 
 The active goal is to support accurate deck-building and pack-opening decisions.
 
-The project has two baselines:
-
-- **Active current collection baseline:** `collection.json` — 380 cards, 224 unique entries, manually authored, validated.
-- **Historical screenshot-ingestion baseline:** `cards.json` — 329 cards, 211 entries, screenshot pipeline artifact. Preserved for provenance only.
+- **Active collection baseline:** `collection.json` — 380 cards, 224 unique entries, manually authored, validated.
 
 Everything added to this project must serve the collection tracking and recommendation goal.
 
@@ -19,9 +16,6 @@ Everything added to this project must serve the collection tracking and recommen
 - `data/current/collection_normalized.json` is the generated machine-readable normalized version.
 - `screenshots/` is the **visual evidence source** for training, alignment, and confidence validation.
 - For current work, `collection.json` + `screenshots/` together are sufficient to train and validate automated matching and confidence scoring.
-- `cards.json` is **historical/provenance only**. Do not use it for current recommendations.
-- Do not try to reconcile `cards.json` up to 380 by guessing.
-- Do not continue the old skipped multi-value confirmation workflow unless explicitly requested by the user.
 
 ## 3. Current Validated State
 
@@ -29,12 +23,11 @@ Everything added to this project must serve the collection tracking and recommen
 |---|---|
 | `collection.json` total | **380 validated ✅** |
 | `collection.json` unique entries | 224 |
-| `cards.json` total (historical) | **329 validated ✅** |
 | `pack_sources.json` records | **3110 validated ✅** |
 | Screenshots | 26 cropped grid images, `IMG_1556–IMG_1581` |
 | Screenshot slots | 232 (25 × 9 standard + 1 × 7 final) |
 | Structural reconciliation | **PASS** — 232 slots ≥ 224 unique entries |
-| Pack-source coverage | **157/224 entries resolved (70%)** |
+| Pack-source coverage | **207/224 entries resolved (92%)** |
 
 Screenshots are local user-provided evidence under `screenshots/`. They are gitignored. Do not delete them.
 
@@ -72,12 +65,13 @@ python3 scripts/resolve_ambiguous_pack_sources.py
 python3 scripts/validate_deck_recommendations.py
 ```
 
-### Historical baseline (provenance only)
+### EV pipeline
 
 ```bash
-python3 scripts/validate_cards.py --expected-total 329
-python3 scripts/validate_pack_sources.py
-python3 scripts/owned_pack_coverage.py
+python3 scripts/resolve_ambiguous_pack_sources.py
+python3 scripts/build_pack_ev.py
+python3 scripts/generate_pack_recommendation_report.py
+python3 scripts/generate_hourglass_spending_plan.py
 ```
 
 ## 5. Generated Outputs
@@ -103,13 +97,20 @@ python3 scripts/owned_pack_coverage.py
 | `data/exports/deck_recommendation_validation.json` | Machine-readable deck validation |
 | `review/deck_recommendation_validation.md` | Deck-by-deck validation report |
 
-Planned automated confidence outputs (to be built):
+Additional active outputs (EV pipeline):
 
 | File | Description |
 |---|---|
 | `data/current/screenshot_collection_alignment.json` | Screenshot slot → collection entry mapping |
 | `data/current/pack_source_confidence_scores.json` | Per-entry confidence scores from automated matching |
-| `review/automated_confidence_readiness.md` | Human-readable confidence report |
+| `data/current/resolved_pack_sources.json` | Final resolved pack sources (50 resolved, 9 unresolvable) |
+| `data/current/pack_ev.json` | EV scores for all 24 packs |
+| `data/current/pack_ev_readiness.json` | EV readiness status per pack |
+| `data/current/inferred_pack_recommendations.json` | 5-metric pack ranking |
+| `data/current/final_hourglass_spending_plan.json` | Conservative/moderate/aggressive scenarios |
+| `data/current/in_app_rate_verification.json` | In-app verified pull rate records |
+| `data/current/pull_rate_cross_check.json` | Cross-check verification results |
+| `data/current/pending_pack_in_app_verification_checklist.json` | Packs awaiting in-app verification |
 
 ## 6. Current Pack-Source Coverage
 
@@ -206,7 +207,6 @@ python3 scripts/create_current_pack_review.py        # generates report — not 
 python3 scripts/apply_current_pack_confirmations.py --dry-run   # only if CSV has been filled
 python3 scripts/validate_deck_recommendations.py
 python3 scripts/validate_pack_sources.py
-python3 scripts/validate_cards.py --expected-total 329
 python3 scripts/inventory_screenshots.py
 python3 scripts/reconcile_current_collection_sources.py
 ```
@@ -233,7 +233,7 @@ Next steps in order:
 
 1. **Continue in-app verification for other packs** — open PTCGP app → any pack → Pack details → Offering Rates. Priority: A4b once pack becomes available; then remaining third_party_verified packs. For each pack verified, update `pull_probability_model.json` and add a record to `data/current/in_app_rate_verification.json`.
 
-2. **Resolve remaining 13 ambiguous entries** — same HP/attack candidates require screenshot or rarity evidence not currently available. Trainer card variants (giovanni, sabrina, leaf, cyrus, lillie) need rarity to distinguish two_diamond from double_star; blaziken/frillish/steelix/skrelp/grimer/onix_dig_art/porygon/porygon2 have identical stats across all candidates.
+2. **Remaining 9 entries are provenance-only gaps** — same-rarity reprints in both original set and A4b; PTCGP UI cannot distinguish which set a copy came from. Zero EV impact.
 
 3. **Rebuild EV and reports after any update** — re-run `python3 scripts/resolve_ambiguous_pack_sources.py && python3 scripts/build_pack_ev.py && python3 scripts/generate_pack_recommendation_report.py && python3 scripts/generate_hourglass_spending_plan.py` after any rate or coverage change.
 
@@ -320,7 +320,6 @@ If SSH authentication fails: check public key exists, check key is loaded in age
 - Never change card quantities unless the user explicitly confirms.
 - Do not mutate `collection.json` unless explicitly asked.
 - Prefer generated files under `data/current/` for normalized outputs.
-- Preserve `cards.json` and old batch files as historical provenance.
 - Do not stage: raw HTML caches, image caches, `__pycache__`, `.DS_Store`, `node_modules`, `.env`, secrets, or large binary files.
 - If validation fails, stop and document the blocker. Do not proceed.
 
@@ -328,12 +327,10 @@ If SSH authentication fails: check public key exists, check key is loaded in age
 
 Do not:
 - Claim the database is exact unless `collection.json` validates at 380 and all ambiguous entries are resolved or clearly flagged.
-- Use `cards.json` for current recommendations.
 - Invent cards, pack sources, set codes, or card numbers.
 - Change card quantities without explicit user confirmation.
 - Mutate `collection.json` without explicit instruction.
 - Ask the user to fill `current_pack_source_review.csv` as the default next task — manual CSV confirmation is a fallback, not the primary workflow.
-- Continue the old 329-card skipped multi-value confirmation workflow unless explicitly requested.
 - Commit large binaries, image files, or generated temp files.
 - Force push.
 - Switch remote authentication methods without user approval.
@@ -370,12 +367,11 @@ find . -maxdepth 3 -type f | sort
 Never delete without explicit instruction:
 
 - `collection.json` — active collection source of truth
-- `cards.json` — historical 329-card baseline (provenance)
 - `data/reference/pack_sources.json` — pack source database
 - `data/reference/pull_probability_model.json` — pull probability model
+- `data/reference/external/external_card_reference.json` — used by resolve_ambiguous_pack_sources.py
 - `screenshots/` — visual evidence for collection alignment
 - All active generated outputs referenced by `README.md`, `CLAUDE.md`, `docs/`, `scripts/`, or current reports
-- Historical and provenance files that cannot be regenerated
 
 ### Decision rule for uncertain files
 
