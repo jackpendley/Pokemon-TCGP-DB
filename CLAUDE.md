@@ -50,6 +50,14 @@ python3 scripts/sync_collection.py           # headless sync using stored auth
 python3 scripts/sync_collection.py --dry-run # preview changes, no writes
 ```
 
+**One-shot HAR import (no persistent auth):**
+```bash
+# 1. Open pokemon-zone.com/collection-tracker/ in your browser
+# 2. DevTools → Network → Export as HAR
+# 3. Run:
+python3 scripts/sync_collection.py --har-import www.pokemon-zone.com.har
+```
+
 **Fallback (may hit Cloudflare CAPTCHA):**
 ```bash
 python3 scripts/sync_collection.py --login   # headed Playwright browser login
