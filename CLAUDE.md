@@ -113,14 +113,16 @@ Planned automated confidence outputs (to be built):
 
 ## 6. Current Pack-Source Coverage
 
+**Important model alignment note:** PTCGP tracks cards by name + count, not by which pack they were pulled from. Same-rarity reprints of a card are grouped together in the game's UI and treated as interchangeable. Our EV model mirrors this exactly — `build_pack_ev.py` matches owned cards by normalized name only (`collection.get(nn, 0)`), so all 224 entries are EV-correct regardless of pack source resolution status. Pack-source resolution is **provenance metadata only**, not required for EV accuracy or deck recommendations.
+
 | Metric | Value |
 |---|---|
-| Base entries resolved | **157/224 (70%)** — exact_match + unanimous_pack |
-| EV-ready after resolution | **207/224 (92%)** — +50 via resolve_ambiguous_pack_sources.py |
+| Base entries with known source | **157/224 (70%)** — exact_match + unanimous_pack |
+| Entries with resolved source | **207/224 (92%)** — +50 via resolve_ambiguous_pack_sources.py |
 | Exact match | 108 entries |
 | Unanimous pack | 49 entries |
 | Newly resolved (resolve script) | 50 entries (41 user-confirmed + 9 automated) |
-| Still unresolved | 9 ambiguous cross-set entries |
+| Source-ambiguous (provenance gap only) | 9 entries — original set vs A4b reprint at identical rarity; PTCGP UI cannot distinguish |
 | No match (Zygarde forms) | 3 entries — not in Limitless DB |
 | Known trainer gap | 5 entries (Potion, X Speed, Red Card, Hand Scope, Pokédex) |
 
@@ -130,7 +132,7 @@ The 59 original ambiguous entries are now resolved as follows:
 - 1 resolved by PASS 2B (evo_chain re-run post-PASS 3): porygon2 → B1a/57 via porygon anchor
 - 3 resolved by user in-game shiny check: blaziken→B3/208, frillish→B1/68, skrelp→B3/218
 - Multiple candidates eliminated by pre-pass: A4a farfetch_d (HP mismatch); double_star/triple_star variants (rarity confirmed from in-game screenshots)
-- 9 still unresolved: PTCGP interface cannot distinguish same-rarity reprints from different sets
+- 9 remaining are a provenance gap only — not an EV accuracy issue
 
 Manual CSV review (`data/exports/current_pack_source_review.csv`) is a **fallback tool only**, used when:
 - Automated confidence scores fall below threshold for a specific entry
