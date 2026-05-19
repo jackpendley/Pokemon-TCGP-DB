@@ -1,6 +1,6 @@
 {
   "meta": {
-    "total_cards": 483,
+    "total_cards": 532,
     "last_updated": "2026-05-18",
     "format": "Pokemon TCG Pocket"
   },
@@ -209,6 +209,30 @@
       "hp": 140,
       "card_type": "Pokemon",
       "attack": "Blaze Kick 100",
+      "count": 1
+    },
+    {
+      "name": "Litten",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Camerupt",
+      "type": "Fire",
+      "stage": 1,
+      "hp": 130,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Volcarona",
+      "type": "Fire",
+      "stage": 1,
+      "hp": 110,
+      "card_type": "Pokemon",
       "count": 1
     },
     // ─── GRASS ───────────────────────────────────────────────────────────────
@@ -450,6 +474,47 @@
       "attack": "Sweets Relay 10+",
       "count": 1
     },
+    {
+      "name": "Heracross",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Sceptile",
+      "type": "Grass",
+      "stage": 2,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Shaymin",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Flapple",
+      "type": "Grass",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Mega Heracross ex",
+      "type": "Grass",
+      "stage": 2,
+      "hp": 210,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "count": 1
+    },
     // ─── WATER ───────────────────────────────────────────────────────────────
     {
       "name": "Sobble",
@@ -625,6 +690,54 @@
       "attack": "Wave Splash 40",
       "count": 1
     },
+    {
+      "name": "Froakie",
+      "type": "Water",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Vanilluxe",
+      "type": "Water",
+      "stage": 2,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "count": 2
+    },
+    {
+      "name": "Cryogonal",
+      "type": "Water",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Regice",
+      "type": "Water",
+      "stage": 0,
+      "hp": 110,
+      "card_type": "Pokemon",
+      "count": 2
+    },
+    {
+      "name": "Beartic",
+      "type": "Water",
+      "stage": 1,
+      "hp": 130,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Inteleon",
+      "type": "Water",
+      "stage": 2,
+      "hp": 150,
+      "card_type": "Pokemon",
+      "count": 1
+    },
     // ─── LIGHTNING ───────────────────────────────────────────────────────────
     {
       "name": "Zekrom",
@@ -766,6 +879,14 @@
       "attack": "Spark 10",
       "count": 1
     },
+    {
+      "name": "Toxel",
+      "type": "Lightning",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 4
+    },
     // ─── PSYCHIC ─────────────────────────────────────────────────────────────
     {
       "name": "Meloetta",
@@ -892,6 +1013,46 @@
       "card_type": "Pokemon",
       "attack": "Petty Grudge 20",
       "count": 3
+    },
+    {
+      "name": "Galarian Ponyta",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Indeedee",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Hypno",
+      "type": "Psychic",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Kirlia",
+      "type": "Psychic",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Diancie",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "count": 2
     },
     // ─── FIGHTING ────────────────────────────────────────────────────────────
     {
@@ -1283,6 +1444,23 @@
       "attack": "Teary Attack 10",
       "count": 1
     },
+    {
+      "name": "Lucario",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Crustle ex",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 160,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "count": 1
+    },
     // ─── DARKNESS ────────────────────────────────────────────────────────────
     {
       "name": "Yveltal",
@@ -1437,6 +1615,47 @@
       "attack": "Spiny Rush 40+",
       "count": 4
     },
+    {
+      "name": "Sneasel",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Umbreon ex",
+      "type": "Darkness",
+      "stage": 1,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "count": 1
+    },
+    {
+      "name": "Foongus",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Inkay",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 3
+    },
+    {
+      "name": "Zarude",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "count": 2
+    },
     // ─── METAL ───────────────────────────────────────────────────────────────
     {
       "name": "Genesect",
@@ -1563,6 +1782,14 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Ram 40",
+      "count": 1
+    },
+    {
+      "name": "Axew",
+      "type": "Dragon",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
       "count": 1
     },
     // ─── COLORLESS ───────────────────────────────────────────────────────────
@@ -1829,6 +2056,47 @@
       "attack": "Gust 10",
       "count": 2
     },
+    {
+      "name": "Pidgeotto",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Spinda",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Snorlax ex",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 160,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "count": 1
+    },
+    {
+      "name": "Meowth",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "count": 1
+    },
+    {
+      "name": "Patrat",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 2
+    },
     // ─── TRAINERS: ITEMS ─────────────────────────────────────────────────────
     {
       "name": "Quick-Grow Extract",
@@ -1877,7 +2145,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "effect": "Opponent shuffles hand and draws 3",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Potion",
@@ -1891,7 +2159,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "effect": "Active Pokemon Retreat Cost -1 this turn",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Hand Scope",
@@ -1913,6 +2181,12 @@
       "trainer_subtype": "Item",
       "effect": "Put a random Basic Pokemon from deck into hand",
       "count": 4
+    },
+    {
+      "name": "Lucky Egg",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "count": 1
     },
     // ─── TRAINERS: SUPPORTERS ────────────────────────────────────────────────
     {
@@ -1999,6 +2273,18 @@
       "effect": "Draw 2 cards",
       "count": 4
     },
+    {
+      "name": "Lyra",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "count": 1
+    },
+    {
+      "name": "Cabbie",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "count": 1
+    },
     // ─── TRAINERS: STADIUMS ──────────────────────────────────────────────────
     {
       "name": "Starting Plains",
@@ -2013,6 +2299,12 @@
       "trainer_subtype": "Stadium",
       "effect": "Each Fighting Pokemon's attacks do +20 vs opponent's Active ex",
       "count": 2
+    },
+    {
+      "name": "Peculiar Plaza",
+      "card_type": "Trainer",
+      "trainer_subtype": "Stadium",
+      "count": 1
     }
   ]
 }

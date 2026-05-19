@@ -1,12 +1,12 @@
 {
   "meta": {
-    "total_cards": 483,
+    "total_cards": 532,
     "last_updated": "2026-05-18",
     "format": "Pokemon TCG Pocket"
   },
   "generated_note": "Normalized output — do not edit. Source: collection.json",
-  "actual_total_quantity": 483,
-  "unique_entries": 224,
+  "actual_total_quantity": 532,
+  "unique_entries": 261,
   "collection": [
     {
       "name": "Charmander",
@@ -296,6 +296,42 @@
       "entry_id": "blaziken",
       "is_ex": false,
       "stage_label": "Stage 2"
+    },
+    {
+      "name": "Litten",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "litten",
+      "entry_id": "litten",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Camerupt",
+      "type": "Fire",
+      "stage": 1,
+      "hp": 130,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "camerupt",
+      "entry_id": "camerupt",
+      "is_ex": false,
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "Volcarona",
+      "type": "Fire",
+      "stage": 1,
+      "hp": 110,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "volcarona",
+      "entry_id": "volcarona",
+      "is_ex": false,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Bulbasaur",
@@ -639,6 +675,66 @@
       "stage_label": "Basic"
     },
     {
+      "name": "Heracross",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "heracross",
+      "entry_id": "heracross",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Sceptile",
+      "type": "Grass",
+      "stage": 2,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "sceptile",
+      "entry_id": "sceptile",
+      "is_ex": false,
+      "stage_label": "Stage 2"
+    },
+    {
+      "name": "Shaymin",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "shaymin",
+      "entry_id": "shaymin",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Flapple",
+      "type": "Grass",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "flapple",
+      "entry_id": "flapple",
+      "is_ex": false,
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "Mega Heracross ex",
+      "type": "Grass",
+      "stage": 2,
+      "hp": 210,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "count": 1,
+      "normalized_name": "mega_heracross_ex",
+      "entry_id": "mega_heracross_ex",
+      "stage_label": "Stage 2"
+    },
+    {
       "name": "Sobble",
       "type": "Water",
       "stage": 0,
@@ -888,6 +984,78 @@
       "stage_label": "Basic"
     },
     {
+      "name": "Froakie",
+      "type": "Water",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "froakie",
+      "entry_id": "froakie",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Vanilluxe",
+      "type": "Water",
+      "stage": 2,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "count": 2,
+      "normalized_name": "vanilluxe",
+      "entry_id": "vanilluxe",
+      "is_ex": false,
+      "stage_label": "Stage 2"
+    },
+    {
+      "name": "Cryogonal",
+      "type": "Water",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "cryogonal",
+      "entry_id": "cryogonal",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Regice",
+      "type": "Water",
+      "stage": 0,
+      "hp": 110,
+      "card_type": "Pokemon",
+      "count": 2,
+      "normalized_name": "regice",
+      "entry_id": "regice",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Beartic",
+      "type": "Water",
+      "stage": 1,
+      "hp": 130,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "beartic",
+      "entry_id": "beartic",
+      "is_ex": false,
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "Inteleon",
+      "type": "Water",
+      "stage": 2,
+      "hp": 150,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "inteleon",
+      "entry_id": "inteleon",
+      "is_ex": false,
+      "stage_label": "Stage 2"
+    },
+    {
       "name": "Zekrom",
       "type": "Lightning",
       "stage": 0,
@@ -1087,6 +1255,18 @@
       "stage_label": "Basic"
     },
     {
+      "name": "Toxel",
+      "type": "Lightning",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 4,
+      "normalized_name": "toxel",
+      "entry_id": "toxel",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
       "name": "Meloetta",
       "type": "Psychic",
       "stage": 0,
@@ -1265,6 +1445,66 @@
       "count": 3,
       "normalized_name": "bramblin",
       "entry_id": "bramblin",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Galarian Ponyta",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "galarian_ponyta",
+      "entry_id": "galarian_ponyta",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Indeedee",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "indeedee",
+      "entry_id": "indeedee",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Hypno",
+      "type": "Psychic",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "hypno",
+      "entry_id": "hypno",
+      "is_ex": false,
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "Kirlia",
+      "type": "Psychic",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "kirlia",
+      "entry_id": "kirlia",
+      "is_ex": false,
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "Diancie",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "count": 2,
+      "normalized_name": "diancie",
+      "entry_id": "diancie",
       "is_ex": false,
       "stage_label": "Basic"
     },
@@ -1824,6 +2064,30 @@
       "stage_label": "Basic"
     },
     {
+      "name": "Lucario",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 100,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "lucario",
+      "entry_id": "lucario",
+      "is_ex": false,
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "Crustle ex",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 160,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "count": 1,
+      "normalized_name": "crustle_ex",
+      "entry_id": "crustle_ex",
+      "stage_label": "Stage 1"
+    },
+    {
       "name": "Yveltal",
       "type": "Darkness",
       "stage": 0,
@@ -2045,6 +2309,66 @@
       "stage_label": "Basic"
     },
     {
+      "name": "Sneasel",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "sneasel",
+      "entry_id": "sneasel",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Umbreon ex",
+      "type": "Darkness",
+      "stage": 1,
+      "hp": 140,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "count": 1,
+      "normalized_name": "umbreon_ex",
+      "entry_id": "umbreon_ex",
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "Foongus",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "foongus",
+      "entry_id": "foongus",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Inkay",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 3,
+      "normalized_name": "inkay",
+      "entry_id": "inkay",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Zarude",
+      "type": "Darkness",
+      "stage": 0,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "count": 2,
+      "normalized_name": "zarude",
+      "entry_id": "zarude",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
       "name": "Genesect",
       "type": "Metal",
       "stage": 0,
@@ -2223,6 +2547,18 @@
       "count": 1,
       "normalized_name": "dratini",
       "entry_id": "dratini",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Axew",
+      "type": "Dragon",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "axew",
+      "entry_id": "axew",
       "is_ex": false,
       "stage_label": "Basic"
     },
@@ -2605,6 +2941,66 @@
       "stage_label": "Basic"
     },
     {
+      "name": "Pidgeotto",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "pidgeotto",
+      "entry_id": "pidgeotto",
+      "is_ex": false,
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "Spinda",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "spinda",
+      "entry_id": "spinda",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Snorlax ex",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 160,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "count": 1,
+      "normalized_name": "snorlax_ex",
+      "entry_id": "snorlax_ex",
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Meowth",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "count": 1,
+      "normalized_name": "meowth",
+      "entry_id": "meowth",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Patrat",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 2,
+      "normalized_name": "patrat",
+      "entry_id": "patrat",
+      "is_ex": false,
+      "stage_label": "Basic"
+    },
+    {
       "name": "Quick-Grow Extract",
       "card_type": "Trainer",
       "trainer_subtype": "Item",
@@ -2669,7 +3065,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "effect": "Opponent shuffles hand and draws 3",
-      "count": 1,
+      "count": 2,
       "normalized_name": "red_card",
       "entry_id": "red_card",
       "is_ex": false
@@ -2689,7 +3085,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "effect": "Active Pokemon Retreat Cost -1 this turn",
-      "count": 1,
+      "count": 2,
       "normalized_name": "x_speed",
       "entry_id": "x_speed",
       "is_ex": false
@@ -2722,6 +3118,15 @@
       "count": 4,
       "normalized_name": "pok_ball",
       "entry_id": "pok_ball",
+      "is_ex": false
+    },
+    {
+      "name": "Lucky Egg",
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "count": 1,
+      "normalized_name": "lucky_egg",
+      "entry_id": "lucky_egg",
       "is_ex": false
     },
     {
@@ -2845,6 +3250,24 @@
       "is_ex": false
     },
     {
+      "name": "Lyra",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "count": 1,
+      "normalized_name": "lyra",
+      "entry_id": "lyra",
+      "is_ex": false
+    },
+    {
+      "name": "Cabbie",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "count": 1,
+      "normalized_name": "cabbie",
+      "entry_id": "cabbie",
+      "is_ex": false
+    },
+    {
       "name": "Starting Plains",
       "card_type": "Trainer",
       "trainer_subtype": "Stadium",
@@ -2862,6 +3285,15 @@
       "count": 2,
       "normalized_name": "arena_of_antiquity",
       "entry_id": "arena_of_antiquity",
+      "is_ex": false
+    },
+    {
+      "name": "Peculiar Plaza",
+      "card_type": "Trainer",
+      "trainer_subtype": "Stadium",
+      "count": 1,
+      "normalized_name": "peculiar_plaza",
+      "entry_id": "peculiar_plaza",
       "is_ex": false
     }
   ]

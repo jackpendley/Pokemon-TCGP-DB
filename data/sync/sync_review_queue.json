@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-05-18",
-  "resolved": false,
+  "resolved": true,
   "new_cards": [
     {
       "set_code": "A1",
@@ -45,7 +45,7 @@
     {
       "set_code": "A1",
       "card_number": 280,
-      "raw_name": "Farfetch’d",
+      "raw_name": "Farfetch\u2019d",
       "canonical_name": "Charizard ex",
       "count": 1,
       "action_needed": "Add this card to collection.json manually"
@@ -445,77 +445,78 @@
     {
       "name": "Moltres ex",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Bulbasaur",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Bulbasaur",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Marowak ex",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Mienfoo",
       "current_count": 2,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Mienshao",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Riolu",
       "current_count": 2,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Onix",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Zygarde 10% Forme",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Zygarde 50% Forme",
       "current_count": 3,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Zygarde ex",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Jigglypuff",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Farfetch'd",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "Red Card",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     },
     {
       "name": "X Speed",
       "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
+      "note": "Not found in Pokemon Zone response \u2014 count NOT zeroed"
     }
-  ]
+  ],
+  "resolution_note": "2026-05-18: new_cards added to collection.json; X Speed and Red Card counts updated 1\u21922; PROMO-B Zygarde forms and ex already existed; A1 mismatch cards (Moltres ex, Marowak ex, Jigglypuff, Farfetch'd) already existed; B3+PROMO-B Zarude combined into one entry (count=2)"
 }

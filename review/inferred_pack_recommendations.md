@@ -18,9 +18,9 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-05-15T22:15:13+00:00 |
+| Report generated | 2026-05-19T04:07:53+00:00 |
 | Model confidence | **third_party_verified_with_in_app_anchor** (not official in-app verified) |
-| Collection total | 380 cards (380 validated) |
+| Collection total | 532 cards (380 validated) |
 | EV-ready entries | 157/224 (108 auto-accept + 49 secondary evidence) |
 | Excluded from EV | 67/224 (59 low-confidence + 8 unresolved) |
 | Packs ranked | 24 |
@@ -33,10 +33,10 @@
 | Rank | Pack | Expansion | Adj. EV | Total EV | New EV | Deck EV | EX EV | Missing |
 |---|---|---|---|---|---|---|---|---|
 | 1 | **Paldean Wonders** | Paldean Wonders | 4.2019 | 4.9434 | 4.9155 | 0.0000 | 0.2052 | 128 |
-| 2 | **Fantastical Parade** | Fantastical Parade | 3.8206 | 4.4948 | 4.2512 | 0.0000 | 0.2234 | 205 |
-| 3 | **Mew** | Mythical Island | 3.7835 | 4.4512 | 4.2741 | 0.0000 | 0.0000 | 77 |
-| 4 | **Lugia** | Wisdom of Sea and Sky | 3.7188 | 4.3751 | 4.1524 | 0.0000 | 0.0000 | 118 |
-| 5 | **Extradimensional Crisis** | Extradimensional Crisis | 3.7062 | 4.3602 | 4.1071 | 0.0000 | 0.0000 | 90 |
+| 2 | **Mew** | Mythical Island | 3.6879 | 4.3388 | 4.1492 | 0.0000 | 0.0000 | 75 |
+| 3 | **Extradimensional Crisis** | Extradimensional Crisis | 3.6448 | 4.2881 | 4.0909 | 0.0000 | 0.0000 | 88 |
+| 4 | **Fantastical Parade** | Fantastical Parade | 3.6016 | 4.2372 | 3.8743 | 0.0000 | 0.2221 | 191 |
+| 5 | **Lugia** | Wisdom of Sea and Sky | 3.5943 | 4.2286 | 4.0246 | 0.0000 | 0.0000 | 114 |
 
 ---
 
@@ -50,10 +50,10 @@ adjusted for inferred-rate uncertainty.
 | Rank | Pack | Adj. EV | Why |
 |---|---|---|---|
 | 1 | Paldean Wonders | 4.2019 | Large pool, very few owned (3/131). Almost every pull is new. |
-| 2 | Fantastical Parade | 3.8206 | Largest pool (234 cards), 205 missing. Highest raw volume of new cards. |
-| 3 | Mew | 3.7835 | Small dense pool (86 cards), 77 missing — high hit rate per pull. |
-| 4 | Lugia | 3.7188 | High new-card EV relative to pool size. |
-| 5 | Extradimensional Crisis | 3.7062 | Medium pool, low ownership (13/103). Consistent new-card rate. |
+| 2 | Mew | 3.6879 | Small dense pool (86 cards), 77 missing — high hit rate per pull. |
+| 3 | Extradimensional Crisis | 3.6448 | Medium pool, low ownership (13/103). Consistent new-card rate. |
+| 4 | Fantastical Parade | 3.6016 | Largest pool (234 cards), 205 missing. Highest raw volume of new cards. |
+| 5 | Lugia | 3.5943 | High new-card EV relative to pool size. |
 
 ### Best for Collection Completion
 
@@ -62,10 +62,10 @@ Ranked by new_card_ev — these packs return the most new unique cards per pull.
 | Rank | Pack | New Card EV | Missing in Pool |
 |---|---|---|---|
 | 1 | Paldean Wonders | 4.9155 | 128 |
-| 2 | Mew | 4.2741 | 77 |
-| 3 | Fantastical Parade | 4.2512 | 205 |
-| 4 | Mega Altaria | 4.1928 | 119 |
-| 5 | Lugia | 4.1524 | 118 |
+| 2 | Mew | 4.1492 | 75 |
+| 3 | Extradimensional Crisis | 4.0909 | 88 |
+| 4 | Lugia | 4.0246 | 114 |
+| 5 | Lunala | 4.0152 | 117 |
 
 ### Best for Deck Targets
 
@@ -91,7 +91,7 @@ Ranked by ex_card_ev — these packs contain the most missing EX cards.
 | 1 | Mega Gyarados | 0.2369 |
 | 2 | Mega Altaria | 0.2344 |
 | 3 | Mega Blaziken | 0.2344 |
-| 4 | Fantastical Parade | 0.2234 |
+| 4 | Fantastical Parade | 0.2221 |
 | 5 | Mega Shine | 0.2115 |
 
 ### Packs to Deprioritize
@@ -100,11 +100,11 @@ These packs have the lowest adjusted EV — most cards in the pool are already o
 
 | Rank | Pack | Adj. EV | Owned/Pool | Notes |
 |---|---|---|---|---|
-| 1 | Crimson Blaze | 1.5145 | 64/103 | High deck-target value offsets low general EV — open only if chasing Ivysaur |
-| 2 | Pulsing Aura | 1.7232 | 141/234 | Contains Magnezone ex — open only if chasing that deck |
-| 3 | Arceus | 3.0068 | 25/96 | Mid-range owned ratio |
-| 4 | Mewtwo | 3.1995 | 38/126 | Higher EV than Crimson Blaze/Pulsing Aura; only deprioritized vs top packs |
-| 5 | Pikachu | 3.3306 | 28/127 | Low new-card return relative to pool |
+| 1 | Pulsing Aura | 1.1345 | 164/234 | Contains Magnezone ex — open only if chasing that deck |
+| 2 | Crimson Blaze | 1.5145 | 64/103 | High deck-target value offsets low general EV — open only if chasing Ivysaur |
+| 3 | Arceus | 2.8908 | 28/96 | Mid-range owned ratio |
+| 4 | Mewtwo | 3.1118 | 40/126 | Higher EV than Crimson Blaze/Pulsing Aura; only deprioritized vs top packs |
+| 5 | Charizard | 3.2502 | 33/127 | Low new-card return relative to pool |
 
 ---
 
@@ -135,43 +135,18 @@ Top EV cards in this pack:
 
 ---
 
-**Fantastical Parade** (Fantastical Parade)
-
-| Metric | Value |
-|---|---|
-| Adjusted EV (×0.85) | **3.8206** |
-| Total EV (raw) | 4.4948 |
-| New-card EV | 4.2512 |
-| EX-card EV | 0.2234 |
-| Deck target EV | 0.0000 |
-| Pool size | 234 cards |
-| Already owned in pool | 29 |
-| Missing from pool | **205** |
-
-Top EV cards in this pack:
-
-| Card | Rarity | Owned | Pull P | Value | EV |
-|---|---|---|---|---|---|
-| Ledyba | one_diamond | 0 | 0.04543 | 1.00 | 0.04543 |
-| Ledian | one_diamond | 0 | 0.04543 | 1.00 | 0.04543 |
-| Shuckle | one_diamond | 0 | 0.04543 | 1.00 | 0.04543 |
-| Cacnea | one_diamond | 0 | 0.04543 | 1.00 | 0.04543 |
-| Chespin | one_diamond | 0 | 0.04543 | 1.00 | 0.04543 |
-
----
-
 **Mew** (Mythical Island)
 
 | Metric | Value |
 |---|---|
-| Adjusted EV (×0.85) | **3.7835** |
-| Total EV (raw) | 4.4512 |
-| New-card EV | 4.2741 |
+| Adjusted EV (×0.85) | **3.6879** |
+| Total EV (raw) | 4.3388 |
+| New-card EV | 4.1492 |
 | EX-card EV | 0.0000 |
 | Deck target EV | 0.0000 |
 | Pool size | 86 cards |
-| Already owned in pool | 9 |
-| Missing from pool | **77** |
+| Already owned in pool | 11 |
+| Missing from pool | **75** |
 
 Top EV cards in this pack:
 
@@ -185,43 +160,18 @@ Top EV cards in this pack:
 
 ---
 
-**Lugia** (Wisdom of Sea and Sky)
-
-| Metric | Value |
-|---|---|
-| Adjusted EV (×0.85) | **3.7188** |
-| Total EV (raw) | 4.3751 |
-| New-card EV | 4.1524 |
-| EX-card EV | 0.0000 |
-| Deck target EV | 0.0000 |
-| Pool size | 136 cards |
-| Already owned in pool | 18 |
-| Missing from pool | **118** |
-
-Top EV cards in this pack:
-
-| Card | Rarity | Owned | Pull P | Value | EV |
-|---|---|---|---|---|---|
-| Oddish | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
-| Scyther | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
-| Pinsir | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
-| Chikorita | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
-| Ledyba | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
-
----
-
 **Extradimensional Crisis** (Extradimensional Crisis)
 
 | Metric | Value |
 |---|---|
-| Adjusted EV (×0.85) | **3.7062** |
-| Total EV (raw) | 4.3602 |
-| New-card EV | 4.1071 |
+| Adjusted EV (×0.85) | **3.6448** |
+| Total EV (raw) | 4.2881 |
+| New-card EV | 4.0909 |
 | EX-card EV | 0.0000 |
 | Deck target EV | 0.0000 |
 | Pool size | 103 cards |
-| Already owned in pool | 13 |
-| Missing from pool | **90** |
+| Already owned in pool | 15 |
+| Missing from pool | **88** |
 
 Top EV cards in this pack:
 
@@ -232,6 +182,56 @@ Top EV cards in this pack:
 | Rowlet | one_diamond | 0 | 0.09370 | 1.00 | 0.09370 |
 | Kartana | one_diamond | 0 | 0.09370 | 1.00 | 0.09370 |
 | Mantine | one_diamond | 0 | 0.09370 | 1.00 | 0.09370 |
+
+---
+
+**Fantastical Parade** (Fantastical Parade)
+
+| Metric | Value |
+|---|---|
+| Adjusted EV (×0.85) | **3.6016** |
+| Total EV (raw) | 4.2372 |
+| New-card EV | 3.8743 |
+| EX-card EV | 0.2221 |
+| Deck target EV | 0.0000 |
+| Pool size | 234 cards |
+| Already owned in pool | 43 |
+| Missing from pool | **191** |
+
+Top EV cards in this pack:
+
+| Card | Rarity | Owned | Pull P | Value | EV |
+|---|---|---|---|---|---|
+| Ledyba | one_diamond | 0 | 0.04543 | 1.00 | 0.04543 |
+| Ledian | one_diamond | 0 | 0.04543 | 1.00 | 0.04543 |
+| Shuckle | one_diamond | 0 | 0.04543 | 1.00 | 0.04543 |
+| Cacnea | one_diamond | 0 | 0.04543 | 1.00 | 0.04543 |
+| Chespin | one_diamond | 0 | 0.04543 | 1.00 | 0.04543 |
+
+---
+
+**Lugia** (Wisdom of Sea and Sky)
+
+| Metric | Value |
+|---|---|
+| Adjusted EV (×0.85) | **3.5943** |
+| Total EV (raw) | 4.2286 |
+| New-card EV | 4.0246 |
+| EX-card EV | 0.0000 |
+| Deck target EV | 0.0000 |
+| Pool size | 136 cards |
+| Already owned in pool | 22 |
+| Missing from pool | **114** |
+
+Top EV cards in this pack:
+
+| Card | Rarity | Owned | Pull P | Value | EV |
+|---|---|---|---|---|---|
+| Oddish | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Scyther | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Pinsir | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Chikorita | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
+| Ledyba | one_diamond | 0 | 0.07139 | 1.00 | 0.07139 |
 
 ---
 
@@ -298,29 +298,29 @@ If completing a specific chase deck matters more, see Scenario B.
 | Rank | Pack | Expansion | Adj. EV | Total EV | New EV | Missing | Deck EV | EX EV |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Paldean Wonders | Paldean Wonders | 4.2019 | 4.9434 | 4.9155 | 128 | 0.0000 | 0.2052 |
-| 2 | Fantastical Parade | Fantastical Parade | 3.8206 | 4.4948 | 4.2512 | 205 | 0.0000 | 0.2234 |
-| 3 | Mew | Mythical Island | 3.7835 | 4.4512 | 4.2741 | 77 | 0.0000 | 0.0000 |
-| 4 | Lugia | Wisdom of Sea and Sky | 3.7188 | 4.3751 | 4.1524 | 118 | 0.0000 | 0.0000 |
-| 5 | Extradimensional Crisis | Extradimensional Crisis | 3.7062 | 4.3602 | 4.1071 | 90 | 0.0000 | 0.0000 |
-| 6 | Mega Altaria | Mega Rising | 3.6754 | 4.3239 | 4.1928 | 119 | 0.0000 | 0.2344 |
-| 7 | Solgaleo | Celestial Guardians | 3.6400 | 4.2823 | 3.9192 | 106 | 0.0611 | 0.0000 |
-| 8 | Lunala | Celestial Guardians | 3.6341 | 4.2755 | 4.0833 | 118 | 0.0000 | 0.0000 |
-| 9 | Ho-Oh | Wisdom of Sea and Sky | 3.5953 | 4.2298 | 3.9382 | 114 | 0.0000 | 0.0000 |
-| 10 | Secluded Springs | Secluded Springs | 3.5598 | 4.1880 | 3.9223 | 92 | 0.0000 | 0.0000 |
-| 11 | Eevee Grove | Eevee Grove | 3.5594 | 4.1875 | 3.9885 | 90 | 0.0000 | 0.0000 |
-| 12 | Palkia | Space-Time Smackdown | 3.5457 | 4.1714 | 4.0011 | 106 | 0.0000 | 0.0000 |
-| 13 | Deluxe Pack: ex | Deluxe Pack: ex | 3.4818 | 4.0962 | 3.7134 | 304 | 0.0746 | 0.0067 |
-| 14 | Mega Shine | Mega Shine | 3.4578 | 4.0680 | 3.8568 | 97 | 0.0000 | 0.2115 |
-| 15 | Dialga | Space-Time Smackdown | 3.4275 | 4.0323 | 3.8751 | 106 | 0.0000 | 0.0000 |
-| 16 | Shining Revelry | Shining Revelry | 3.4215 | 4.0253 | 3.7963 | 92 | 0.0000 | 0.0000 |
-| 17 | Mega Blaziken | Mega Rising | 3.4200 | 4.0236 | 3.7119 | 108 | 0.0000 | 0.2344 |
-| 18 | Mega Gyarados | Mega Rising | 3.4120 | 4.0141 | 3.8217 | 109 | 0.0059 | 0.2369 |
-| 19 | Charizard | Genetic Apex | 3.3401 | 3.9295 | 3.6621 | 97 | 0.0000 | 0.0000 |
-| 20 | Pikachu | Genetic Apex | 3.3306 | 3.9184 | 3.6447 | 99 | 0.0000 | 0.0000 |
-| 21 | Mewtwo | Genetic Apex | 3.1995 | 3.7641 | 3.3167 | 88 | 0.1028 | 0.0000 |
-| 22 | Arceus | Triumphant Light | 3.0068 | 3.5374 | 3.0803 | 71 | 0.0000 | 0.0000 |
-| 23 | Pulsing Aura | Pulsing Aura | 1.7232 | 2.0273 | 1.3672 | 93 | 0.0340 | 0.1892 |
-| 24 | Crimson Blaze | Crimson Blaze | 1.5145 | 1.7817 | 1.1216 | 39 | 0.1499 | 0.1349 |
+| 2 | Mew | Mythical Island | 3.6879 | 4.3388 | 4.1492 | 75 | 0.0000 | 0.0000 |
+| 3 | Extradimensional Crisis | Extradimensional Crisis | 3.6448 | 4.2881 | 4.0909 | 88 | 0.0000 | 0.0000 |
+| 4 | Fantastical Parade | Fantastical Parade | 3.6016 | 4.2372 | 3.8743 | 191 | 0.0000 | 0.2221 |
+| 5 | Lugia | Wisdom of Sea and Sky | 3.5943 | 4.2286 | 4.0246 | 114 | 0.0000 | 0.0000 |
+| 6 | Solgaleo | Celestial Guardians | 3.5902 | 4.2238 | 3.8511 | 105 | 0.0611 | 0.0000 |
+| 7 | Lunala | Celestial Guardians | 3.5864 | 4.2193 | 4.0152 | 117 | 0.0000 | 0.0000 |
+| 8 | Mega Altaria | Mega Rising | 3.5337 | 4.1573 | 4.0020 | 115 | 0.0000 | 0.2344 |
+| 9 | Ho-Oh | Wisdom of Sea and Sky | 3.5215 | 4.1429 | 3.8929 | 109 | 0.0000 | 0.0000 |
+| 10 | Palkia | Space-Time Smackdown | 3.4382 | 4.0449 | 3.8913 | 104 | 0.0000 | 0.0000 |
+| 11 | Shining Revelry | Shining Revelry | 3.3983 | 3.9980 | 3.7963 | 92 | 0.0000 | 0.0000 |
+| 12 | Secluded Springs | Secluded Springs | 3.3783 | 3.9745 | 3.7349 | 90 | 0.0000 | 0.0000 |
+| 13 | Mega Shine | Mega Shine | 3.3760 | 3.9718 | 3.6964 | 94 | 0.0000 | 0.2115 |
+| 14 | Eevee Grove | Eevee Grove | 3.3734 | 3.9687 | 3.8059 | 84 | 0.0000 | 0.0000 |
+| 15 | Dialga | Space-Time Smackdown | 3.3057 | 3.8890 | 3.7526 | 101 | 0.0000 | 0.0000 |
+| 16 | Mega Blaziken | Mega Rising | 3.3005 | 3.8830 | 3.5895 | 106 | 0.0000 | 0.2344 |
+| 17 | Deluxe Pack: ex | Deluxe Pack: ex | 3.2987 | 3.8809 | 3.4169 | 284 | 0.0746 | 0.0067 |
+| 18 | Pikachu | Genetic Apex | 3.2756 | 3.8536 | 3.6269 | 98 | 0.0000 | 0.0000 |
+| 19 | Mega Gyarados | Mega Rising | 3.2540 | 3.8282 | 3.6237 | 104 | 0.0059 | 0.2369 |
+| 20 | Charizard | Genetic Apex | 3.2502 | 3.8238 | 3.5260 | 94 | 0.0000 | 0.0000 |
+| 21 | Mewtwo | Genetic Apex | 3.1118 | 3.6609 | 3.2138 | 86 | 0.1028 | 0.0000 |
+| 22 | Arceus | Triumphant Light | 2.8908 | 3.4009 | 2.9819 | 68 | 0.0000 | 0.0000 |
+| 23 | Crimson Blaze | Crimson Blaze | 1.5145 | 1.7817 | 1.1216 | 39 | 0.1499 | 0.1349 |
+| 24 | Pulsing Aura | Pulsing Aura | 1.1345 | 1.3347 | 0.8720 | 70 | 0.0340 | 0.1732 |
 
 ---
 

@@ -1,41 +1,41 @@
 {
   "meta": {
-    "total_cards": 483,
+    "total_cards": 532,
     "last_updated": "2026-05-18",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 483,
-  "meta_total_cards": 483,
+  "total_quantity": 532,
+  "meta_total_cards": 532,
   "count_matches_meta": true,
-  "unique_entries": 224,
+  "unique_entries": 261,
   "by_card_type": {
-    "Pokemon": 432,
-    "Trainer": 51
+    "Pokemon": 475,
+    "Trainer": 57
   },
   "by_pokemon_type": {
-    "Fire": 61,
-    "Grass": 59,
-    "Water": 41,
-    "Lightning": 36,
-    "Psychic": 35,
-    "Fighting": 85,
-    "Darkness": 38,
+    "Fire": 64,
+    "Grass": 64,
+    "Water": 49,
+    "Lightning": 40,
+    "Psychic": 41,
+    "Fighting": 87,
+    "Darkness": 46,
     "Metal": 16,
-    "Dragon": 2,
-    "Colorless": 59
+    "Dragon": 3,
+    "Colorless": 65
   },
   "by_stage": {
-    "Basic": 294,
-    "Stage 1": 113,
-    "Stage 2": 25
+    "Basic": 322,
+    "Stage 1": 123,
+    "Stage 2": 30
   },
-  "ex_entries": 10,
-  "ex_quantity": 12,
+  "ex_entries": 14,
+  "ex_quantity": 16,
   "trainer_subtypes": {
-    "Item": 22,
+    "Item": 25,
     "Pokemon Tool": 2,
-    "Supporter": 24,
-    "Stadium": 3
+    "Supporter": 26,
+    "Stadium": 4
   },
   "top_cards_by_count": [
     [
@@ -173,11 +173,11 @@
         "Sceptile"
       ],
       "owned": [
-        "Treecko"
+        "Treecko",
+        "Sceptile"
       ],
       "missing": [
-        "Grovyle",
-        "Sceptile"
+        "Grovyle"
       ],
       "complete": false
     },
@@ -202,11 +202,11 @@
         "Inteleon"
       ],
       "owned": [
-        "Sobble"
+        "Sobble",
+        "Inteleon"
       ],
       "missing": [
-        "Drizzile",
-        "Inteleon"
+        "Drizzile"
       ],
       "complete": false
     },
@@ -431,12 +431,11 @@
         "Lucario"
       ],
       "owned": [
-        "Riolu"
-      ],
-      "missing": [
+        "Riolu",
         "Lucario"
       ],
-      "complete": false
+      "missing": [],
+      "complete": true
     },
     {
       "line": [
@@ -506,11 +505,15 @@
       "Moltres ex",
       "Mega Camerupt ex",
       "Mega Venusaur ex",
+      "Mega Heracross ex",
       "Vaporeon ex",
       "Magnezone ex",
       "Marowak ex",
       "Zygarde ex",
-      "Corviknight ex"
+      "Crustle ex",
+      "Umbreon ex",
+      "Corviknight ex",
+      "Snorlax ex"
     ],
     "strong_evolution_lines": [
       "Charmander → Charmeleon → Charizard",
@@ -527,6 +530,7 @@
       "Spritzee → Aromatisse",
       "Cubone → Marowak ex",
       "Sandshrew → Sandslash",
+      "Riolu → Lucario",
       "Zygarde 10% Forme → Zygarde 50% Forme → Zygarde ex",
       "Zubat → Golbat → Crobat",
       "Grimer → Garbodor",
@@ -543,9 +547,8 @@
     "partial_evolution_lines": [
       "Treecko → Grovyle → Sceptile",
       "Sobble → Drizzile → Inteleon",
-      "Riolu → Lucario",
       "Zorua → Zoroark"
     ],
-    "total_trainer_cards": 51
+    "total_trainer_cards": 57
   }
 }

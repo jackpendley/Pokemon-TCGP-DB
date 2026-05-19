@@ -1,6 +1,6 @@
 # Resolved Ambiguous Pack Sources
 
-Generated: 2026-05-15  
+Generated: 2026-05-19  
 Script: `scripts/resolve_ambiguous_pack_sources.py`
 
 ---
@@ -86,7 +86,7 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 
 | Entry | Set | Pack | Count | Confidence | Evidence |
 |---|---|---|---|---|---|
-| grimer | B1a | Crimson Blaze | — | 0.9 | count=3 with B1a=one_diamond; one_star candidate(s) B3=one_star implausible at this count |
+| grimer | B1a | Crimson Blaze | — | 0.9 | count=4 with B1a=one_diamond; one_star candidate(s) B3=one_star implausible at this count |
 | onix_dig_art | B1a | Crimson Blaze | — | 0.85 | count=2 with B1a=one_diamond; one_star candidate(s) B3=one_star implausible at this count |
 | porygon | B1a | Crimson Blaze | — | 0.9 | count=3 with B1a=one_diamond; one_star candidate(s) B3=one_star implausible at this count |
 | steelix | B1a | Crimson Blaze | — | 0.9 | count=3 with B1a=two_diamond; one_star candidate(s) B3=one_star implausible at this count |

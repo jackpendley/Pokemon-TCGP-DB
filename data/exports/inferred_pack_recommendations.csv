@@ -1,25 +1,25 @@
 rank_adj_ev,pack_name,expansion,set_code,confidence_adjusted_ev,pack_total_ev,new_card_ev,ex_card_ev,deck_target_ev,cards_in_pool,owned_in_pool,missing_in_pool,is_deck_target_pack,top_deck_target_card,recommendation_bucket
 1,Paldean Wonders,Paldean Wonders,B2a,4.201902,4.943414,4.915521,0.20518,0.0,131,3,128,no,,top_ev
-2,Fantastical Parade,Fantastical Parade,B2,3.820576,4.494795,4.251195,0.223438,0.0,234,29,205,no,,top_ev
-3,Mew,Mythical Island,A1a,3.783515,4.451194,4.274146,0.0,0.0,86,9,77,no,,top_ev
-4,Lugia,Wisdom of Sea and Sky,A4,3.718818,4.37508,4.152364,0.0,0.0,136,18,118,no,,top_ev
-5,Extradimensional Crisis,Extradimensional Crisis,A3a,3.7062,4.360235,4.107122,0.0,0.0,103,13,90,no,,top_ev
-6,Mega Altaria,Mega Rising,B1,3.675354,4.323946,4.192759,0.234432,0.0,139,20,119,no,,mid
-7,Solgaleo,Celestial Guardians,A3,3.639978,4.282327,3.919249,0.0,0.061092,140,34,106,yes,,deck_target
-8,Lunala,Celestial Guardians,A3,3.634147,4.275467,4.083319,0.0,0.0,140,22,118,no,,mid
-9,Ho-Oh,Wisdom of Sea and Sky,A4,3.595304,4.229769,3.938175,0.0,0.0,136,22,114,no,,mid
-10,Secluded Springs,Secluded Springs,A4a,3.559762,4.187955,3.922327,0.0,0.0,105,13,92,no,,mid
-11,Eevee Grove,Eevee Grove,A3b,3.559357,4.187478,3.988547,0.0,0.0,107,17,90,no,,mid
-12,Palkia,Space-Time Smackdown,A2,3.545659,4.171364,4.001102,0.0,0.0,126,20,106,no,,mid
-13,Deluxe Pack: ex,Deluxe Pack: ex,A4b,3.481781,4.096213,3.713377,0.006661,0.074628,379,75,304,yes,,deck_target
-14,Mega Shine,Mega Shine,B2b,3.457796,4.067995,3.856752,0.211483,0.0,117,20,97,no,,mid
-15,Dialga,Space-Time Smackdown,A2,3.427469,4.032316,3.875106,0.0,0.0,126,20,106,no,,mid
-16,Shining Revelry,Shining Revelry,A2b,3.421474,4.025263,3.796254,0.0,0.0,111,19,92,no,,mid
-17,Mega Blaziken,Mega Rising,B1,3.42002,4.023552,3.711884,0.234432,0.0,139,31,108,no,,mid
-18,Mega Gyarados,Mega Rising,B1,3.411997,4.014114,3.821721,0.23688,0.005947,139,30,109,no,,mid
-19,Charizard,Genetic Apex,A1,3.340066,3.929489,3.662095,0.0,0.0,127,30,97,no,,mid
-20,Pikachu,Genetic Apex,A1,3.330644,3.918405,3.644724,0.0,0.0,127,28,99,no,,deprioritize
-21,Mewtwo,Genetic Apex,A1,3.199485,3.7641,3.316652,0.0,0.102806,126,38,88,yes,,deck_target
-22,Arceus,Triumphant Light,A2a,3.006766,3.537372,3.080325,0.0,0.0,96,25,71,no,,deprioritize
-23,Pulsing Aura,Pulsing Aura,B3,1.723187,2.027278,1.367216,0.189238,0.03405,234,141,93,yes,,deck_target
-24,Crimson Blaze,Crimson Blaze,B1a,1.514464,1.781722,1.121639,0.134892,0.149924,103,64,39,yes,Ivysaur,deck_target
+2,Mew,Mythical Island,A1a,3.687938,4.33875,4.149208,0.0,0.0,86,11,75,no,,top_ev
+3,Extradimensional Crisis,Extradimensional Crisis,A3a,3.644843,4.288051,4.09093,0.0,0.0,103,15,88,no,,top_ev
+4,Fantastical Parade,Fantastical Parade,B2,3.60162,4.2372,3.874283,0.222084,0.0,234,43,191,no,,top_ev
+5,Lugia,Wisdom of Sea and Sky,A4,3.594326,4.228619,4.024592,0.0,0.0,136,22,114,no,,top_ev
+6,Solgaleo,Celestial Guardians,A3,3.59023,4.2238,3.851101,0.0,0.061092,140,35,105,yes,,deck_target
+7,Lunala,Celestial Guardians,A3,3.586401,4.219296,4.015171,0.0,0.0,140,23,117,no,,mid
+8,Mega Altaria,Mega Rising,B1,3.533695,4.157288,4.001983,0.234432,0.0,139,24,115,no,,mid
+9,Ho-Oh,Wisdom of Sea and Sky,A4,3.521499,4.142939,3.892901,0.0,0.0,136,27,109,no,,mid
+10,Palkia,Space-Time Smackdown,A2,3.438175,4.044912,3.891309,0.0,0.0,126,22,104,no,,mid
+11,Shining Revelry,Shining Revelry,A2b,3.398303,3.998004,3.796254,0.0,0.0,111,19,92,no,,mid
+12,Secluded Springs,Secluded Springs,A4a,3.378304,3.974475,3.734921,0.0,0.0,105,15,90,no,,mid
+13,Mega Shine,Mega Shine,B2b,3.376014,3.971781,3.696395,0.211483,0.0,117,23,94,no,,mid
+14,Eevee Grove,Eevee Grove,A3b,3.373361,3.96866,3.805878,0.0,0.0,107,23,84,no,,mid
+15,Dialga,Space-Time Smackdown,A2,3.305691,3.889048,3.752635,0.0,0.0,126,25,101,no,,mid
+16,Mega Blaziken,Mega Rising,B1,3.300544,3.882993,3.589497,0.234432,0.0,139,33,106,no,,mid
+17,Deluxe Pack: ex,Deluxe Pack: ex,A4b,3.298733,3.880863,3.416929,0.006661,0.074628,379,95,284,yes,,deck_target
+18,Pikachu,Genetic Apex,A1,3.275577,3.85362,3.626876,0.0,0.0,127,29,98,no,,mid
+19,Mega Gyarados,Mega Rising,B1,3.253973,3.828203,3.623749,0.23688,0.005947,139,35,104,no,,mid
+20,Charizard,Genetic Apex,A1,3.250249,3.823822,3.525963,0.0,0.0,127,33,94,no,,deprioritize
+21,Mewtwo,Genetic Apex,A1,3.11178,3.660917,3.213846,0.0,0.102806,126,40,86,yes,,deck_target
+22,Arceus,Triumphant Light,A2a,2.890771,3.400907,2.981851,0.0,0.0,96,28,68,no,,deprioritize
+23,Crimson Blaze,Crimson Blaze,B1a,1.514464,1.781722,1.121639,0.134892,0.149924,103,64,39,yes,Ivysaur,deck_target
+24,Pulsing Aura,Pulsing Aura,B3,1.134518,1.334727,0.872007,0.173215,0.03405,234,164,70,yes,,deck_target

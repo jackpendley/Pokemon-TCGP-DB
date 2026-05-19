@@ -2,7 +2,7 @@
 
 Generated: 2026-05-12  
 Model confidence: **THIRD PARTY VERIFIED WITH IN APP ANCHOR**  
-Collection total: 380 cards  
+Collection total: 532 cards  
 Batch size: 10 packs per batch  
 
 > **DISCLAIMER**
@@ -67,7 +67,7 @@ Batch size: 10 packs per batch
 |---|---|---|---|---|---|---|---|---|
 | 1 | Paldean Wonders | B2a | 10 | 4.2019 | 42.02 | 128 | Pause after this batch. Count new unique cards acquired from… | — |
 | 2 | Paldean Wonders | B2a | 10 | 4.2019 | 42.02 | 128 | STOP after this batch. Re-run EV calculator — 20 packs opene… | ✅ |
-| 3 | Fantastical Parade | B2 | 10 | 3.8206 | 38.21 | 205 | Stop after batch 3 and re-assess. If a deck target was pulle… | ✅ |
+| 3 | Mew | A1a | 10 | 3.6879 | 36.88 | 75 | Stop after batch 3 and re-assess. If a deck target was pulle… | ✅ |
 
 #### Batch 1 — Paldean Wonders (B2a)
 
@@ -90,14 +90,14 @@ Batch size: 10 packs per batch
 - **Stopping condition:** STOP after this batch. Re-run EV calculator — 20 packs opened from this pool.
 - **Re-run required:** 20 packs from same pool. EV will have dropped. Re-run before continuing.
 
-#### Batch 3 — Fantastical Parade (B2)
+#### Batch 3 — Mew (A1a)
 
-- **Pack:** Fantastical Parade (Fantastical Parade)
+- **Pack:** Mew (Mythical Island)
 - **Packs to open:** 10
-- **Adj EV per pack:** 3.8206
-- **Estimated batch value:** 38.21  
+- **Adj EV per pack:** 3.6879
+- **Estimated batch value:** 36.88  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 205
+- **Missing cards in pool:** 75
 - **Stopping condition:** Stop after batch 3 and re-assess. If a deck target was pulled, re-run EV. If top pack changed after re-run, adjust batch 4 accordingly.
 - **Re-run required:** Switching packs after re-run. Re-run EV to confirm rankings after collection update.
 
@@ -122,8 +122,8 @@ Batch size: 10 packs per batch
 |---|---|---|---|---|---|---|---|---|
 | 1 | Paldean Wonders | B2a | 10 | 4.2019 | 42.02 | 128 | Pause after batch 1. Count new cards from this pool. | — |
 | 2 | Paldean Wonders | B2a | 10 | 4.2019 | 42.02 | 128 | STOP after batch 2 and re-run EV calculator. 20 packs opened… | ✅ |
-| 3 | Fantastical Parade | B2 | 10 | 3.8206 | 38.21 | 205 | Pause after switching to pack #2. First batch from new pool. | — |
-| 4 | Mew | A1a | 10 | 3.7835 | 37.84 | 77 | Pause after switching to pack #3. First batch from new pool. | — |
+| 3 | Mew | A1a | 10 | 3.6879 | 36.88 | 75 | Pause after switching to pack #2. First batch from new pool. | — |
+| 4 | Extradimensional Crisis | A3a | 10 | 3.6448 | 36.45 | 88 | Pause after switching to pack #3. First batch from new pool. | — |
 | 5 | Crimson Blaze | B1a | 10 | 1.5145 | 15.14 | 39 | Deck-target batch: Crimson Blaze has highest deck_target_ev … | ✅ |
 
 #### Batch 1 — Paldean Wonders (B2a)
@@ -147,24 +147,24 @@ Batch size: 10 packs per batch
 - **Stopping condition:** STOP after batch 2 and re-run EV calculator. 20 packs opened from this pool.
 - **Re-run required:** 20 packs from same pool. Re-run EV before committing further.
 
-#### Batch 3 — Fantastical Parade (B2)
-
-- **Pack:** Fantastical Parade (Fantastical Parade)
-- **Packs to open:** 10
-- **Adj EV per pack:** 3.8206
-- **Estimated batch value:** 38.21  
-  _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 205
-- **Stopping condition:** Pause after switching to pack #2. First batch from new pool.
-
-#### Batch 4 — Mew (A1a)
+#### Batch 3 — Mew (A1a)
 
 - **Pack:** Mew (Mythical Island)
 - **Packs to open:** 10
-- **Adj EV per pack:** 3.7835
-- **Estimated batch value:** 37.84  
+- **Adj EV per pack:** 3.6879
+- **Estimated batch value:** 36.88  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 77
+- **Missing cards in pool:** 75
+- **Stopping condition:** Pause after switching to pack #2. First batch from new pool.
+
+#### Batch 4 — Extradimensional Crisis (A3a)
+
+- **Pack:** Extradimensional Crisis (Extradimensional Crisis)
+- **Packs to open:** 10
+- **Adj EV per pack:** 3.6448
+- **Estimated batch value:** 36.45  
+  _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
+- **Missing cards in pool:** 88
 - **Stopping condition:** Pause after switching to pack #3. First batch from new pool.
 
 #### Batch 5 — Crimson Blaze (B1a)
