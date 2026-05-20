@@ -25,7 +25,19 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-import requests as _requests
+try:
+    from curl_cffi import requests as _cffi_requests
+    _HAS_CURL_CFFI = True
+except ImportError:
+    import requests as _cffi_requests  # type: ignore[no-redef]
+    _HAS_CURL_CFFI = False
+
+
+def _get(url: str, **kwargs):
+    """HTTP GET with Chrome TLS impersonation when curl_cffi is available."""
+    if _HAS_CURL_CFFI:
+        kwargs.setdefault("impersonate", "chrome124")
+    return _cffi_requests.get(url, **kwargs)
 
 ROOT = Path(__file__).resolve().parent.parent
 BROWSER_SESSION_DIR = ROOT / ".browser_session"
@@ -241,30 +253,112 @@ def parse_curl(curl_str: str) -> dict:
     return {"url": url, "cookies": cookies, "headers": headers}
 
 
-def _try_fetch(url: str, cookies: dict, auth_headers: dict) -> tuple[list | None, dict | list | None]:
-    """Try a GET request and return (card_array, raw_body) or (None, None)."""
+_CATALOG_URL  = "https://www.pokemon-zone.com/api/cards/search/"
+_PLAYER_URL   = "https://www.pokemon-zone.com/api/players/mine/"
+
+
+def _fetch_catalog(cookies: dict, auth_headers: dict) -> dict[str, dict]:
+    """
+    Fetch the card catalog from /api/cards/search/ and return
+    {cardDefKey → {name, set_code, card_number}}.
+    Returns an empty dict on failure (caller decides how to handle).
+    """
     req_headers = {**auth_headers, "Accept": "application/json, */*"}
     try:
-        r = _requests.get(url, headers=req_headers, cookies=cookies, timeout=30)
+        r = _get(_CATALOG_URL, headers=req_headers, cookies=cookies, timeout=30)
         if r.status_code != 200:
-            return None, None
+            return {}
         body = r.json()
-        score = _score_response(url, body)
-        arr, _ = _find_array(body)
-        if arr and score >= 3:
-            return arr, body
+        data = body.get("data", [])
+        if isinstance(data, dict):
+            data = data.get("results", [])
+        if not isinstance(data, list):
+            return {}
+        catalog: dict[str, dict] = {}
+        for item in data:
+            key  = item.get("cardDefKey", "")
+            name = item.get("name", "")
+            exp  = item.get("expansionId", "")
+            cn   = _parse_cn_from_url(item.get("url", ""))
+            if key and name:
+                catalog[key] = {"name": name, "set_code": exp, "card_number": cn}
+        return catalog
     except Exception:
-        pass
-    return None, None
+        return {}
+
+
+def _fetch_and_normalize_cards(
+    api_url: str,
+    cookies: dict,
+    auth_headers: dict,
+    catalog: dict[str, dict],
+) -> tuple[list | None, dict | list | None, int]:
+    """
+    GET api_url and decode the raw card records using the catalog.
+
+    Returns (normalized_card_list, raw_body, http_status).
+    Returns (None, None, status) on failure.
+    """
+    req_headers = {**auth_headers, "Accept": "application/json, */*"}
+    try:
+        r = _get(api_url, headers=req_headers, cookies=cookies, timeout=30)
+        status = r.status_code
+        if status != 200:
+            return None, None, status
+        body = r.json()
+    except Exception:
+        return None, None, 0
+
+    # Known Pokemon Zone format: {data: {cards: [...]}}
+    owned_raw: list = []
+    data = body.get("data") if isinstance(body, dict) else None
+    if isinstance(data, dict):
+        owned_raw = data.get("cards") or data.get("card_list") or data.get("items") or []
+
+    # Generic fallback: find any large list in the response
+    if not owned_raw:
+        arr, _ = _find_array(body)
+        if arr and len(arr) > 10:
+            owned_raw = arr
+
+    if not owned_raw:
+        return None, body, 200
+
+    raw_cards: list[dict] = []
+    for card in owned_raw:
+        if not isinstance(card, dict):
+            continue
+        card_id    = card.get("cardId", "")
+        amount     = int(card.get("amount") or card.get("amountLang_EN") or 0)
+        player_exp = (card.get("expansionIds") or [""])[0]
+        if amount <= 0:
+            continue
+        info = catalog.get(card_id) if catalog else None
+        if info:
+            set_code = player_exp if player_exp else info["set_code"]
+            raw_cards.append({
+                "cardName":   info["name"],
+                "setCode":    set_code,
+                "cardNumber": info["card_number"],
+                "ownedCount": amount,
+            })
+        elif not catalog:
+            # No catalog available — pass raw record; normalize_pz_record will handle it
+            raw_cards.append(card)
+
+    return (raw_cards or None), body, 200
 
 
 def import_curl_auth(curl_str: str) -> tuple[list, dict]:
     """
-    Parse a cURL command, discover the collection API, save auth, and
-    return (card_array, discovery_cache).
+    Parse a cURL command, fetch the collection (catalog + player data), save
+    auth credentials, and return (card_array, discovery_cache).
+
+    The Pokemon Zone API returns internal card IDs; we must also fetch the
+    card catalog (/api/cards/search/) to map IDs → names/set/number.
 
     Raises ValueError for unparseable cURL.
-    Raises APIDiscoveryFailedError if the collection API cannot be found.
+    Raises APIDiscoveryFailedError if the collection cannot be fetched.
     """
     parsed = parse_curl(curl_str)
     url = parsed.get("url")
@@ -286,26 +380,24 @@ def import_curl_auth(curl_str: str) -> tuple[list, dict]:
             "you copied is an authenticated XHR (not a static asset or login page)."
         )
 
-    # Try the URL from the pasted cURL first
-    print(f"  Trying URL from cURL: {url[:80]}...")
-    arr, body = _try_fetch(url, cookies, auth_headers)
-    api_url = url
+    # Step 1: card catalog (maps internal IDs → names/set/number)
+    print("  Fetching card catalog...")
+    catalog = _fetch_catalog(cookies, auth_headers)
+    if catalog:
+        print(f"  Card catalog: {len(catalog):,} entries.")
+    else:
+        print("  WARNING: card catalog unavailable — card names may not resolve.")
 
-    if arr is None:
-        print("  That URL doesn't appear to be the collection API.")
-        # Try the cached API URL with the new credentials
-        if DISCOVERY_CACHE.exists():
-            try:
-                cached = json.loads(DISCOVERY_CACHE.read_text(encoding="utf-8"))
-                cached_url = cached.get("api_url", "")
-                if cached_url and cached_url != url:
-                    print(f"  Trying cached API URL: {cached_url[:80]}...")
-                    arr, body = _try_fetch(cached_url, cookies, auth_headers)
-                    if arr:
-                        api_url = cached_url
-                        print(f"  Cached URL works with new credentials: {len(arr)} cards.")
-            except Exception:
-                pass
+    # Step 2: owned cards (always use the canonical player URL)
+    api_url = _PLAYER_URL
+    print(f"  Fetching owned cards from {api_url}...")
+    arr, body, status = _fetch_and_normalize_cards(api_url, cookies, auth_headers, catalog)
+
+    if status in (301, 302, 401, 403):
+        raise APIDiscoveryFailedError(
+            f"Auth rejected (HTTP {status}). Make sure you are still logged in to\n"
+            "Pokemon Zone when you copy the cURL, then re-run --curl-import."
+        )
 
     if arr is None or body is None:
         raise APIDiscoveryFailedError(CURL_IMPORT_GUIDANCE)
@@ -323,17 +415,15 @@ def import_curl_auth(curl_str: str) -> tuple[list, dict]:
     AUTH_CACHE.write_text(json.dumps(auth, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  Auth saved → {AUTH_CACHE.relative_to(ROOT)}")
 
-    # Update discovery cache and raw cache
-    _, arr_key = _find_array(body)
     cache = {
         "discovered_at": auth["imported_at"],
         "api_url": api_url,
-        "collection_array_key": arr_key,
-        "sample_element_keys": list(arr[0].keys())[:8] if isinstance(arr[0], dict) else [],
+        "collection_array_key": "data.cards",
         "element_count": len(arr),
     }
+    DISCOVERY_CACHE.parent.mkdir(parents=True, exist_ok=True)
     DISCOVERY_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
-    RAW_CACHE.write_text(json.dumps(body, indent=2, ensure_ascii=False), encoding="utf-8")
+    RAW_CACHE.write_text(json.dumps(arr, indent=2, ensure_ascii=False), encoding="utf-8")
 
     return arr, cache
 
@@ -341,6 +431,10 @@ def import_curl_auth(curl_str: str) -> tuple[list, dict]:
 def fetch_with_stored_auth() -> tuple[list, dict]:
     """
     Fetch the collection using stored auth credentials (no browser automation).
+
+    Performs the same two-step fetch as import_har():
+      1. Card catalog (/api/cards/search/) — maps internal IDs → names
+      2. Player cards (/api/players/mine/) — owned counts
 
     Raises AuthNotFoundError if no .auth.json exists.
     Raises AuthExpiredError if credentials are rejected.
@@ -356,63 +450,51 @@ def fetch_with_stored_auth() -> tuple[list, dict]:
         )
 
     auth = json.loads(AUTH_CACHE.read_text(encoding="utf-8"))
-    api_url     = auth.get("api_url", "")
-    cookies     = auth.get("cookies", {})
+    api_url      = auth.get("api_url", _PLAYER_URL)
+    cookies      = auth.get("cookies", {})
     auth_headers = auth.get("auth_headers", {})
 
-    if not api_url:
-        raise APIDiscoveryFailedError(
-            "Stored auth is missing api_url. Re-run --curl-import."
-        )
+    # Step 1: card catalog
+    catalog = _fetch_catalog(cookies, auth_headers)
+    if catalog:
+        print(f"  Card catalog: {len(catalog):,} entries.")
+    else:
+        print("  WARNING: card catalog unavailable — card names may not resolve.")
 
-    req_headers = {**auth_headers, "Accept": "application/json, */*"}
+    # Step 2: owned cards
+    arr, body, status = _fetch_and_normalize_cards(api_url, cookies, auth_headers, catalog)
 
-    try:
-        resp = _requests.get(api_url, headers=req_headers, cookies=cookies, timeout=30)
-    except _requests.RequestException as e:
-        raise APIDiscoveryFailedError(f"Network request failed: {e}") from e
-
-    if resp.status_code in (301, 302, 401, 403):
+    if status in (301, 302, 401, 403):
         raise AuthExpiredError(
-            f"Auth credentials expired (HTTP {resp.status_code}).\n"
+            f"Auth credentials expired (HTTP {status}).\n"
             "Re-run:  python3 scripts/sync_collection.py --curl-import\n"
             "\n"
             "Go to pokemon-zone.com/collection-tracker/ in your browser,\n"
-            "open DevTools → Network → find the collection API request,\n"
-            "right-click → Copy as cURL, then paste when prompted."
+            "open DevTools → Network → find the /api/players/mine/ request,\n"
+            "right-click → Copy as cURL, then run the command."
         )
 
-    if resp.status_code != 200:
+    if status != 200:
         raise APIDiscoveryFailedError(
-            f"Unexpected HTTP {resp.status_code} from collection API.\n"
+            f"Unexpected HTTP {status} from collection API.\n"
             "Try re-running --curl-import."
         )
 
-    try:
-        body = resp.json()
-    except ValueError as e:
-        raise AuthExpiredError(
-            "API returned non-JSON (possible login redirect).\n"
-            "Re-run:  python3 scripts/sync_collection.py --curl-import"
-        ) from e
-
-    arr, arr_key = _find_array(body)
     if not arr:
         raise APIDiscoveryFailedError(
-            f"API response at {api_url} contains no array data."
+            f"API response at {api_url} contains no card data.\n"
+            "Try re-running --curl-import."
         )
 
-    # Update caches
     cache = {
         "discovered_at": datetime.now(timezone.utc).isoformat(),
         "api_url": api_url,
-        "collection_array_key": arr_key,
-        "sample_element_keys": list(arr[0].keys())[:8] if isinstance(arr[0], dict) else [],
+        "collection_array_key": "data.cards",
         "element_count": len(arr),
     }
     DISCOVERY_CACHE.parent.mkdir(parents=True, exist_ok=True)
     DISCOVERY_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
-    RAW_CACHE.write_text(json.dumps(body, indent=2, ensure_ascii=False), encoding="utf-8")
+    RAW_CACHE.write_text(json.dumps(arr, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  Fetched {len(arr)} cards via stored auth.")
 
     return arr, cache

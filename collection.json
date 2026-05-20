@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 532,
-    "last_updated": "2026-05-18",
+    "total_cards": 584,
+    "last_updated": "2026-05-20",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -172,7 +172,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Steady Firebreathing 20",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Numel",
@@ -233,6 +233,16 @@
       "stage": 1,
       "hp": 110,
       "card_type": "Pokemon",
+      "count": 2
+    },
+    {
+      "name": "Charizard ex",
+      "type": "Fire",
+      "stage": 2,
+      "hp": 200,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Blast Burn 200",
       "count": 1
     },
     // ─── GRASS ───────────────────────────────────────────────────────────────
@@ -291,7 +301,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Spore",
-      "count": 6
+      "count": 7
     },
     {
       "name": "Budew",
@@ -318,7 +328,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Pound 20",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Surskit",
@@ -363,7 +373,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Protect",
-      "count": 6
+      "count": 8
     },
     {
       "name": "Applin",
@@ -372,7 +382,7 @@
       "hp": 40,
       "card_type": "Pokemon",
       "attack": "Share",
-      "count": 5
+      "count": 7
     },
     {
       "name": "Leavanny",
@@ -480,7 +490,7 @@
       "stage": 0,
       "hp": 90,
       "card_type": "Pokemon",
-      "count": 1
+      "count": 3
     },
     {
       "name": "Sceptile",
@@ -515,6 +525,43 @@
       "is_ex": true,
       "count": 1
     },
+    {
+      "name": "Exeggcute",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Bullet Seed 20",
+      "count": 1
+    },
+    {
+      "name": "Ledyba",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Comet Punch 20+",
+      "count": 1
+    },
+    {
+      "name": "Grovyle",
+      "type": "Grass",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Slash 30",
+      "count": 1
+    },
+    {
+      "name": "Grovyle",
+      "type": "Grass",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Slash 30",
+      "count": 1,
+      "variant": "alt art"
+    },
     // ─── WATER ───────────────────────────────────────────────────────────────
     {
       "name": "Sobble",
@@ -523,7 +570,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Find a Friend",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Wartortle",
@@ -562,7 +609,7 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Hydro Splash 70",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Gorebyss",
@@ -688,7 +735,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Wave Splash 40",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Froakie",
@@ -737,6 +784,24 @@
       "hp": 150,
       "card_type": "Pokemon",
       "count": 1
+    },
+    {
+      "name": "Cloyster",
+      "type": "Water",
+      "stage": 1,
+      "hp": 110,
+      "card_type": "Pokemon",
+      "attack": "Icicle Spear 40",
+      "count": 1
+    },
+    {
+      "name": "Drizzile",
+      "type": "Water",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Water Gun 30",
+      "count": 2
     },
     // ─── LIGHTNING ───────────────────────────────────────────────────────────
     {
@@ -804,7 +869,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Thunder Shock 20",
-      "count": 4,
+      "count": 5,
       "variant": "Thunder Shock art"
     },
     {
@@ -859,7 +924,7 @@
       "hp": 50,
       "card_type": "Pokemon",
       "attack": "Single Shot Blast 50",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Electrode",
@@ -985,7 +1050,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Mumble 20",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Oricorio",
@@ -1003,7 +1068,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Stampede 10",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Bramblin",
@@ -1012,7 +1077,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Petty Grudge 20",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Galarian Ponyta",
@@ -1053,6 +1118,35 @@
       "hp": 90,
       "card_type": "Pokemon",
       "count": 2
+    },
+    {
+      "name": "Gengar ex",
+      "type": "Psychic",
+      "stage": 2,
+      "hp": 150,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Shadow Ball 100+",
+      "count": 1
+    },
+    {
+      "name": "Weezing",
+      "type": "Psychic",
+      "stage": 1,
+      "hp": 110,
+      "card_type": "Pokemon",
+      "attack": "Smogscreen 50",
+      "count": 1
+    },
+    {
+      "name": "Mew ex",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 150,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Genome Hacking",
+      "count": 1
     },
     // ─── FIGHTING ────────────────────────────────────────────────────────────
     {
@@ -1378,7 +1472,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Rolling Tackle 20",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Silicobra",
@@ -1387,7 +1481,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Headbutt 30",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Kubfu",
@@ -1487,7 +1581,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Cutting Wind 40",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Zubat",
@@ -1656,6 +1750,25 @@
       "card_type": "Pokemon",
       "count": 2
     },
+    {
+      "name": "Galarian Linoone",
+      "type": "Darkness",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Reckless Charge 80",
+      "count": 1
+    },
+    {
+      "name": "Crobat ex",
+      "type": "Darkness",
+      "stage": 2,
+      "hp": 170,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Air Slash 110",
+      "count": 1
+    },
     // ─── METAL ───────────────────────────────────────────────────────────────
     {
       "name": "Genesect",
@@ -1736,7 +1849,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Speed Dive 20",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Pawniard",
@@ -1745,7 +1858,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Cut Up 10",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Mawile",
@@ -1763,6 +1876,16 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Suffocating Gas 40",
+      "count": 1
+    },
+    {
+      "name": "Mega Mawile ex",
+      "type": "Metal",
+      "stage": 2,
+      "hp": 170,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Hyper Fang 150",
       "count": 1
     },
     // ─── DRAGON ──────────────────────────────────────────────────────────────
@@ -1791,6 +1914,16 @@
       "hp": 70,
       "card_type": "Pokemon",
       "count": 1
+    },
+    {
+      "name": "Mega Charizard X ex",
+      "type": "Dragon",
+      "stage": 2,
+      "hp": 220,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "attack": "Chaotic Tempest 150",
+      "count": 2
     },
     // ─── COLORLESS ───────────────────────────────────────────────────────────
     {
@@ -1910,7 +2043,7 @@
       "card_type": "Pokemon",
       "ability": "Fur Coat",
       "attack": "Tackle 30",
-      "count": 1
+      "count": 3
     },
     {
       "name": "Ditto",
@@ -1982,7 +2115,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Psych Up 30",
-      "count": 2
+      "count": 4
     },
     {
       "name": "Eevee",
@@ -2087,7 +2220,7 @@
       "stage": 0,
       "hp": 50,
       "card_type": "Pokemon",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Patrat",
@@ -2096,6 +2229,33 @@
       "hp": 60,
       "card_type": "Pokemon",
       "count": 2
+    },
+    {
+      "name": "Wigglytuff",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Round 70",
+      "count": 2
+    },
+    {
+      "name": "Tandemaus",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 40,
+      "card_type": "Pokemon",
+      "attack": "Team Tackle 20",
+      "count": 1
+    },
+    {
+      "name": "Teddiursa",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Scratch 20",
+      "count": 1
     },
     // ─── TRAINERS: ITEMS ─────────────────────────────────────────────────────
     {
@@ -2117,7 +2277,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "effect": "Evolve Basic to Stage 2, skipping Stage 1",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Field Blower",
@@ -2186,7 +2346,7 @@
       "name": "Lucky Egg",
       "card_type": "Trainer",
       "trainer_subtype": "Item",
-      "count": 1
+      "count": 2
     },
     // ─── TRAINERS: SUPPORTERS ────────────────────────────────────────────────
     {
@@ -2284,6 +2444,12 @@
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "count": 1
+    },
+    {
+      "name": "Red",
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "count": 2
     },
     // ─── TRAINERS: STADIUMS ──────────────────────────────────────────────────
     {

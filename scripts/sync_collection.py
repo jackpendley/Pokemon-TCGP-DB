@@ -4,7 +4,13 @@ Sync collection.json from Pokemon Zone (pokemon-zone.com).
 
 The user must have linked their Nintendo Account to Pokemon Zone first.
 
-FIRST-TIME SETUP (Cloudflare-safe, recommended):
+EASIEST — Browser bookmarklet (always works, no auth to manage):
+    1. Add the bookmarklet from CLAUDE.md section 4 to your bookmarks bar.
+    2. Open pokemon-zone.com/collection-tracker/ (must be logged in).
+    3. Click the bookmarklet → pz_collection.json downloads automatically.
+    4. Run:  python3 scripts/sync_collection.py --json-import pz_collection.json
+
+FIRST-TIME SETUP (Cloudflare-safe, enables headless syncs):
     python3 scripts/sync_collection.py --curl-import
     # Opens instructions; paste a cURL from browser DevTools once.
     # Auth is stored in data/sync/.auth.json (gitignored).
@@ -15,6 +21,9 @@ SUBSEQUENT SYNCS (headless, no browser):
 
 WHEN AUTH EXPIRES (re-run curl import):
     python3 scripts/sync_collection.py --curl-import
+
+ONE-SHOT HAR IMPORT (no persistent auth):
+    python3 scripts/sync_collection.py --har-import www.pokemon-zone.com.har
 
 OTHER:
     python3 scripts/sync_collection.py --discover # inspect API responses (Playwright)
@@ -191,6 +200,14 @@ def normalize_pz_record(raw: dict) -> PZCard | None:
 # Matching logic
 # ---------------------------------------------------------------------------
 
+# Known PROMO-B card-number → canonical collection.json name overrides.
+# PZ's catalog returns "Zygarde" for these slots; the correct names use form suffixes.
+_PROMO_B_OVERRIDES: dict[int, str] = {
+    51: "Zygarde 10% Forme",
+    52: "Zygarde 50% Forme",
+}
+
+
 def _build_name_index(collection: list[dict]) -> dict[str, list[int]]:
     """Return {normalized_name → [entry_indices]}."""
     idx: dict[str, list[int]] = {}
@@ -236,9 +253,13 @@ def _match_one(
     pack_name_list: list[str],
     ext_ref: dict[str, list[dict]],
 ) -> MatchResult:
-    # Step 1: resolve canonical name via (set_code, card_number) → pack_sources
+    # Pre-step: PROMO-B overrides (PZ catalog returns wrong names for these slots)
     canonical_name: str | None = None
-    if pz.set_code and pz.card_number is not None:
+    if pz.set_code == "PROMO-B" and pz.card_number in _PROMO_B_OVERRIDES:
+        canonical_name = _PROMO_B_OVERRIDES[pz.card_number]
+
+    # Step 1: resolve canonical name via (set_code, card_number) → pack_sources
+    if canonical_name is None and pz.set_code and pz.card_number is not None:
         key = (pz.set_code, pz.card_number)
         ref = pack_sources.get(key)
         if ref:
@@ -612,8 +633,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Sync collection.json from Pokemon Zone.")
     parser.add_argument("--har-import",  metavar="FILE",
                         help="Import collection from a browser HAR file (no auth stored; run --curl-import afterwards for ongoing syncs)")
+    parser.add_argument("--json-import", metavar="FILE",
+                        help="Import pre-normalized JSON from the browser bookmarklet (fastest; no auth stored)")
     parser.add_argument("--curl-import", action="store_true",
                         help="Paste a browser DevTools cURL to set up / refresh auth (Cloudflare-safe)")
+    parser.add_argument("--curl-file",   metavar="FILE",
+                        help="Read cURL from a file instead of stdin (alternative to --curl-import)")
     parser.add_argument("--login",       action="store_true",
                         help="Headed Playwright browser login (fallback; may hit Cloudflare)")
     parser.add_argument("--discover",    action="store_true",
@@ -631,8 +656,25 @@ def main() -> int:
 
     # ── Phase 0: Pre-flight ───────────────────────────────────────────────
 
+    # --json-import: read pre-normalized JSON from the browser bookmarklet
+    if args.json_import:
+        json_path = Path(args.json_import)
+        if not json_path.exists():
+            print(f"ERROR: file not found: {json_path}", file=sys.stderr)
+            return 1
+        print(f"Importing collection from bookmarklet JSON: {json_path.name}")
+        try:
+            raw_cards = json.loads(json_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as e:
+            print(f"ERROR: could not read {json_path}: {e}", file=sys.stderr)
+            return 1
+        if not isinstance(raw_cards, list) or not raw_cards:
+            print("ERROR: JSON file must contain a non-empty array of card objects.", file=sys.stderr)
+            return 1
+        print(f"  Loaded {len(raw_cards)} card records.")
+
     # --har-import: parse a HAR file directly (one-shot; no auth stored)
-    if args.har_import:
+    elif args.har_import:
         print(f"Importing collection from HAR file: {args.har_import}")
         try:
             raw_cards, _cache = pz.import_har(args.har_import)
@@ -646,6 +688,24 @@ def main() -> int:
         print("      Go to pokemon-zone.com/collection-tracker/ → DevTools → Network →")
         print("      right-click the /api/players/mine/ request → Copy as cURL.")
         print()
+
+    # --curl-file: read cURL from a file (alternative to --curl-import + paste)
+    elif args.curl_file:
+        curl_path = Path(args.curl_file)
+        if not curl_path.exists():
+            print(f"ERROR: file not found: {curl_path}", file=sys.stderr)
+            return 1
+        curl_str = curl_path.read_text(encoding="utf-8").strip()
+        if not curl_str:
+            print("ERROR: curl file is empty.", file=sys.stderr)
+            return 1
+        print(f"Reading cURL from {curl_path} ...")
+        print("Parsing cURL and fetching collection...")
+        try:
+            raw_cards, _cache = pz.import_curl_auth(curl_str)
+        except (ValueError, pz.APIDiscoveryFailedError) as e:
+            print(f"\nERROR: {e}", file=sys.stderr)
+            return 1
 
     # --curl-import: read a pasted cURL, discover API, save auth, then sync
     elif args.curl_import:

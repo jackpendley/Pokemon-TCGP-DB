@@ -1,6 +1,8 @@
 Pillow
 rapidfuzz
 requests
+# Chrome TLS impersonation — bypasses Cloudflare fingerprinting (optional but recommended)
+curl-cffi
 opencv-python
 pytesseract
 imagehash
