@@ -1,46 +1,58 @@
 {
   "meta": {
-    "total_cards": 532,
-    "last_updated": "2026-05-18",
+    "total_cards": 584,
+    "last_updated": "2026-05-20",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 532,
-  "meta_total_cards": 532,
+  "total_quantity": 584,
+  "meta_total_cards": 584,
   "count_matches_meta": true,
-  "unique_entries": 261,
+  "unique_entries": 279,
   "by_card_type": {
-    "Pokemon": 475,
-    "Trainer": 57
+    "Pokemon": 523,
+    "Trainer": 61
   },
   "by_pokemon_type": {
-    "Fire": 64,
-    "Grass": 64,
-    "Water": 49,
-    "Lightning": 40,
-    "Psychic": 41,
-    "Fighting": 87,
-    "Darkness": 46,
-    "Metal": 16,
-    "Dragon": 3,
-    "Colorless": 65
+    "Fire": 67,
+    "Grass": 76,
+    "Water": 55,
+    "Lightning": 42,
+    "Psychic": 47,
+    "Fighting": 89,
+    "Darkness": 49,
+    "Metal": 19,
+    "Dragon": 5,
+    "Colorless": 74
   },
   "by_stage": {
-    "Basic": 322,
-    "Stage 1": 123,
-    "Stage 2": 30
+    "Basic": 348,
+    "Stage 1": 139,
+    "Stage 2": 36
   },
-  "ex_entries": 14,
-  "ex_quantity": 16,
+  "ex_entries": 20,
+  "ex_quantity": 23,
   "trainer_subtypes": {
-    "Item": 25,
+    "Item": 27,
     "Pokemon Tool": 2,
-    "Supporter": 26,
+    "Supporter": 28,
     "Stadium": 4
   },
   "top_cards_by_count": [
     [
       "Tepig",
       10
+    ],
+    [
+      "Swadloon",
+      8
+    ],
+    [
+      "Shroomish",
+      7
+    ],
+    [
+      "Applin",
+      7
     ],
     [
       "Electrode",
@@ -59,11 +71,11 @@
       6
     ],
     [
-      "Shroomish",
+      "Larvesta",
       6
     ],
     [
-      "Swadloon",
+      "Magnemite",
       6
     ],
     [
@@ -85,23 +97,12 @@
     [
       "Korrina",
       6
-    ],
-    [
-      "Victini",
-      5
-    ],
-    [
-      "Larvesta",
-      5
-    ],
-    [
-      "Castform Sunny Form",
-      5
     ]
   ],
   "variant_names": {
     "Charmander": 2,
     "Bulbasaur": 3,
+    "Grovyle": 2,
     "Magneton": 2,
     "Magnemite": 2,
     "Mienfoo": 2,
@@ -174,12 +175,11 @@
       ],
       "owned": [
         "Treecko",
+        "Grovyle",
         "Sceptile"
       ],
-      "missing": [
-        "Grovyle"
-      ],
-      "complete": false
+      "missing": [],
+      "complete": true
     },
     {
       "line": [
@@ -203,12 +203,11 @@
       ],
       "owned": [
         "Sobble",
+        "Drizzile",
         "Inteleon"
       ],
-      "missing": [
-        "Drizzile"
-      ],
-      "complete": false
+      "missing": [],
+      "complete": true
     },
     {
       "line": [
@@ -504,14 +503,20 @@
       "Incineroar ex",
       "Moltres ex",
       "Mega Camerupt ex",
+      "Charizard ex",
       "Mega Venusaur ex",
       "Mega Heracross ex",
       "Vaporeon ex",
       "Magnezone ex",
+      "Gengar ex",
+      "Mew ex",
       "Marowak ex",
       "Zygarde ex",
       "Crustle ex",
       "Umbreon ex",
+      "Crobat ex",
+      "Mega Mawile ex",
+      "Mega Charizard X ex",
       "Corviknight ex",
       "Snorlax ex"
     ],
@@ -521,7 +526,9 @@
       "Tepig → Pignite → Incineroar ex",
       "Darumaka → Darmanitan",
       "Bulbasaur → Ivysaur → Mega Venusaur ex",
+      "Treecko → Grovyle → Sceptile",
       "Sewaddle → Swadloon → Leavanny",
+      "Sobble → Drizzile → Inteleon",
       "Eevee → Vaporeon ex",
       "Magnemite → Magneton → Magnezone ex",
       "Helioptile → Heliolisk",
@@ -545,10 +552,8 @@
       "Rattata → Raticate"
     ],
     "partial_evolution_lines": [
-      "Treecko → Grovyle → Sceptile",
-      "Sobble → Drizzile → Inteleon",
       "Zorua → Zoroark"
     ],
-    "total_trainer_cards": 57
+    "total_trainer_cards": 61
   }
 }

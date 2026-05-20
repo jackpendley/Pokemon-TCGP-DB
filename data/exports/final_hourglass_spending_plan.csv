@@ -1,10 +1,10 @@
 scenario,batch_number,pack_name,expansion,set_code,packs_to_open,adj_ev_per_pack,expected_value_this_batch,missing_in_pool,rerun_trigger,stopping_condition
-conservative,1,Paldean Wonders,Paldean Wonders,B2a,10,4.201902,42.019,128,True,STOP after this batch regardless of results. Do not open further packs until slot rates are verified in PTCGP app.
-moderate,1,Paldean Wonders,Paldean Wonders,B2a,10,4.201902,42.019,128,False,Pause after this batch. Count new unique cards acquired from this pool.
-moderate,2,Paldean Wonders,Paldean Wonders,B2a,10,4.201902,42.019,128,True,STOP after this batch. Re-run EV calculator — 20 packs opened from this pool.
-moderate,3,Mew,Mythical Island,A1a,10,3.687938,36.8794,75,True,"Stop after batch 3 and re-assess. If a deck target was pulled, re-run EV. If top pack changed after re-run, adjust batch 4 accordingly."
-aggressive,1,Paldean Wonders,Paldean Wonders,B2a,10,4.201902,42.019,128,False,Pause after batch 1. Count new cards from this pool.
-aggressive,2,Paldean Wonders,Paldean Wonders,B2a,10,4.201902,42.019,128,True,STOP after batch 2 and re-run EV calculator. 20 packs opened from this pool.
-aggressive,3,Mew,Mythical Island,A1a,10,3.687938,36.8794,75,False,Pause after switching to pack #2. First batch from new pool.
+conservative,1,Paldean Wonders,Paldean Wonders,B2a,10,4.166339,41.6634,127,True,STOP after this batch regardless of results. Do not open further packs until slot rates are verified in PTCGP app.
+moderate,1,Paldean Wonders,Paldean Wonders,B2a,10,4.166339,41.6634,127,False,Pause after this batch. Count new unique cards acquired from this pool.
+moderate,2,Paldean Wonders,Paldean Wonders,B2a,10,4.166339,41.6634,127,True,STOP after this batch. Re-run EV calculator — 20 packs opened from this pool.
+moderate,3,Lunala,Celestial Guardians,A3,10,3.658768,36.5877,114,True,"Stop after batch 3 and re-assess. If a deck target was pulled, re-run EV. If top pack changed after re-run, adjust batch 4 accordingly."
+aggressive,1,Paldean Wonders,Paldean Wonders,B2a,10,4.166339,41.6634,127,False,Pause after batch 1. Count new cards from this pool.
+aggressive,2,Paldean Wonders,Paldean Wonders,B2a,10,4.166339,41.6634,127,True,STOP after batch 2 and re-run EV calculator. 20 packs opened from this pool.
+aggressive,3,Lunala,Celestial Guardians,A3,10,3.658768,36.5877,114,False,Pause after switching to pack #2. First batch from new pool.
 aggressive,4,Extradimensional Crisis,Extradimensional Crisis,A3a,10,3.644843,36.4484,88,False,Pause after switching to pack #3. First batch from new pool.
-aggressive,5,Crimson Blaze,Crimson Blaze,B1a,10,1.514464,15.1446,39,True,Deck-target batch: Crimson Blaze has highest deck_target_ev per pack. Stop immediately if chase deck card is pulled.
+aggressive,5,Mewtwo,Genetic Apex,A1,10,3.150123,31.5012,79,True,Deck-target batch: Mewtwo has highest deck_target_ev per pack. Stop immediately if chase deck card is pulled.

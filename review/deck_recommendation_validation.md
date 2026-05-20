@@ -14,16 +14,16 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 | Charmeleon | 2 | 2 | ✅ |
 | Mega Charizard Y ex | 2 | 2 | ✅ |
 | Moltres ex | 1 | 1 | ✅ |
-| Victini | 1 | 4 | ✅ |
+| Victini | 1 | 5 | ✅ |
 | Poké Ball | 2 | 4 | ✅ |
 | Professor's Research | 2 | 4 | ✅ |
 | Serena | 1 | 1 | ✅ |
 | Sabrina | 1 | 1 | ✅ |
 | Giovanni | 1 | 1 | ✅ |
 | Flame Patch | 2 | 2 | ✅ |
-| Rare Candy | 1 | 1 | ✅ |
+| Rare Candy | 1 | 2 | ✅ |
 | Copycat | 1 | 2 | ✅ |
-| X Speed | 1 | 1 | ✅ |
+| X Speed | 1 | 2 | ✅ |
 
 ### Victini + Darmanitan (Tier A)
 
@@ -31,10 +31,10 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 
 | Card | Required | Owned | Status |
 |---|---|---|---|
-| Victini | 2 | 4 | ✅ |
-| Darumaka | 2 | 2 | ✅ |
-| Darmanitan | 2 | 3 | ✅ |
-| Tepig | 2 | 2 | ✅ |
+| Victini | 2 | 5 | ✅ |
+| Darumaka | 2 | 3 | ✅ |
+| Darmanitan | 2 | 4 | ✅ |
+| Tepig | 2 | 10 | ✅ |
 | Moltres ex | 1 | 1 | ✅ |
 | Poké Ball | 2 | 4 | ✅ |
 | Professor's Research | 2 | 4 | ✅ |
@@ -50,8 +50,8 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 
 | Card | Required | Owned | Status |
 |---|---|---|---|
-| Zubat | 1 | 1 | ✅ |
-| Golbat | 1 | 1 | ✅ |
+| Zubat | 1 | 2 | ✅ |
+| Golbat | 1 | 2 | ✅ |
 | Crobat | 1 | 1 | ✅ |
 | Single Strike Urshifu | 1 | 1 | ✅ |
 | Yveltal | 1 | 1 | ✅ |
@@ -75,7 +75,7 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 | Staravia | 1 | 1 | ✅ |
 | Staraptor | 2 | 5 | ✅ |
 | Bouffalant | 2 | 2 | ✅ |
-| Furfrou | 1 | 1 | ✅ |
+| Furfrou | 1 | 3 | ✅ |
 | Dodrio | 1 | 1 | ✅ |
 | Poké Ball | 2 | 4 | ✅ |
 | Professor's Research | 2 | 4 | ✅ |
@@ -98,15 +98,15 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 | Bulbasaur | 2 | 5 | ✅ |
 | Ivysaur | 2 | 1 | ⚠️ short |
 | Mega Venusaur ex | 2 | 2 | ✅ |
-| Shroomish | 1 | 3 | ✅ |
-| Breloom | 1 | 1 | ✅ |
+| Shroomish | 1 | 7 | ✅ |
+| Breloom | 1 | 2 | ✅ |
 | Poké Ball | 2 | 4 | ✅ |
 | Professor's Research | 2 | 4 | ✅ |
 | Quick-Grow Extract | 2 | 4 | ✅ |
 | Serena | 1 | 1 | ✅ |
 | Sabrina | 1 | 1 | ✅ |
 | Giovanni | 1 | 1 | ✅ |
-| Rare Candy | 1 | 1 | ✅ |
+| Rare Candy | 1 | 2 | ✅ |
 | Copycat | 1 | 2 | ✅ |
 
 **Missing or short:**
@@ -122,8 +122,8 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 
 | Card | Required | Owned | Status |
 |---|---|---|---|
-| Tepig | 2 | 2 | ✅ |
-| Pignite | 2 | 4 | ✅ |
+| Tepig | 2 | 10 | ✅ |
+| Pignite | 2 | 6 | ✅ |
 | Incineroar ex | 2 | 1 | ⚠️ short |
 | Charmeleon | 1 | 2 | ✅ |
 | Moltres ex | 1 | 1 | ✅ |
@@ -133,7 +133,7 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 | Giovanni | 1 | 1 | ✅ |
 | Sabrina | 1 | 1 | ✅ |
 | Flame Patch | 1 | 2 | ✅ |
-| Rare Candy | 1 | 1 | ✅ |
+| Rare Candy | 1 | 2 | ✅ |
 | Copycat | 1 | 2 | ✅ |
 | May | 1 | 1 | ✅ |
 
@@ -152,12 +152,12 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 |---|---|---|---|
 | Zygarde 50% Forme | 2 | 3 | ✅ |
 | Zygarde ex | 2 | 1 | ⚠️ short |
-| Cubone | 2 | 2 | ✅ |
+| Cubone | 2 | 1 | ⚠️ short |
 | Marowak ex | 1 | 1 | ✅ |
 | Poké Ball | 2 | 4 | ✅ |
 | Professor's Research | 2 | 4 | ✅ |
-| Korrina | 2 | 2 | ✅ |
-| Arena of Antiquity | 1 | 1 | ✅ |
+| Korrina | 2 | 6 | ✅ |
+| Arena of Antiquity | 1 | 2 | ✅ |
 | Giovanni | 1 | 1 | ✅ |
 | Sabrina | 1 | 1 | ✅ |
 | Cyrus | 1 | 1 | ✅ |
@@ -165,6 +165,7 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 
 **Missing or short:**
 - Zygarde ex: need 2, have 1 (short by 1)
+- Cubone: need 2, have 1 (short by 1)
 
 **Stated missing in JSX:** 1× Zygarde ex
 
@@ -176,7 +177,7 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 
 | Card | Required | Owned | Status |
 |---|---|---|---|
-| Magnemite | 2 | 3 | ✅ |
+| Magnemite | 2 | 6 | ✅ |
 | Magneton | 2 | 3 | ✅ |
 | Magnezone ex | 2 | 1 | ⚠️ short |
 | Heliolisk | 2 | 2 | ✅ |
@@ -184,7 +185,7 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 | Professor's Research | 2 | 4 | ✅ |
 | Clemont | 2 | 2 | ✅ |
 | Clemont's Backpack | 1 | 1 | ✅ |
-| Rare Candy | 1 | 1 | ✅ |
+| Rare Candy | 1 | 2 | ✅ |
 | Sabrina | 1 | 1 | ✅ |
 | Giovanni | 1 | 1 | ✅ |
 | Copycat | 1 | 2 | ✅ |

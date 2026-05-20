@@ -1,66 +1,72 @@
 # Current Collection Summary
 
-**Last updated:** 2026-05-18  
+**Last updated:** 2026-05-20  
 **Format:** Pokemon TCG Pocket  
-**Meta declared total:** 532  
-**Actual card count:** 532  
-**Unique entries:** 261  
+**Meta declared total:** 584  
+**Actual card count:** 584  
+**Unique entries:** 279  
 
 ## By Card Type
 
 | Card Type | Count |
 |---|---|
-| Pokemon | 475 |
-| Trainer | 57 |
+| Pokemon | 523 |
+| Trainer | 61 |
 
 ## By Pokémon Type
 
 | Type | Count |
 |---|---|
-| Fighting | 87 |
-| Colorless | 65 |
-| Fire | 64 |
-| Grass | 64 |
-| Water | 49 |
-| Darkness | 46 |
-| Psychic | 41 |
-| Lightning | 40 |
-| Metal | 16 |
-| Dragon | 3 |
+| Fighting | 89 |
+| Grass | 76 |
+| Colorless | 74 |
+| Fire | 67 |
+| Water | 55 |
+| Darkness | 49 |
+| Psychic | 47 |
+| Lightning | 42 |
+| Metal | 19 |
+| Dragon | 5 |
 
 ## By Stage
 
 | Stage | Count |
 |---|---|
-| Basic | 322 |
-| Stage 1 | 123 |
-| Stage 2 | 30 |
+| Basic | 348 |
+| Stage 1 | 139 |
+| Stage 2 | 36 |
 
 ## Trainer Cards
 
 | Subtype | Count |
 |---|---|
-| Supporter | 26 |
-| Item | 25 |
+| Supporter | 28 |
+| Item | 27 |
 | Stadium | 4 |
 | Pokemon Tool | 2 |
 
 ## Ex Pokémon
 
-- **Ex entries:** 14
-- **Ex card count:** 16
+- **Ex entries:** 20
+- **Ex card count:** 23
 
 | Ex Card |
 |---|
+| Charizard ex |
 | Corviknight ex |
+| Crobat ex |
 | Crustle ex |
+| Gengar ex |
 | Incineroar ex |
 | Magnezone ex |
 | Marowak ex |
 | Mega Camerupt ex |
+| Mega Charizard X ex |
 | Mega Charizard Y ex |
 | Mega Heracross ex |
+| Mega Mawile ex |
 | Mega Venusaur ex |
+| Mew ex |
 | Moltres ex |
 | Snorlax ex |
 | Umbreon ex |
@@ -72,20 +78,20 @@
 | Card | Total Count |
 |---|---|
 | Tepig | 10 |
+| Swadloon | 8 |
+| Shroomish | 7 |
+| Applin | 7 |
 | Electrode | 7 |
 | Riolu | 7 |
 | Charmander | 6 |
 | Pignite | 6 |
-| Shroomish | 6 |
-| Swadloon | 6 |
+| Larvesta | 6 |
+| Magnemite | 6 |
 | Spritzee | 6 |
 | Nosepass | 6 |
 | Dwebble | 6 |
 | Lillipup | 6 |
 | Korrina | 6 |
-| Victini | 5 |
-| Larvesta | 5 |
-| Castform Sunny Form | 5 |
 
 ## Variant Cards (Same Name, Different Version)
 
@@ -93,6 +99,7 @@
 |---|---|
 | Bulbasaur | 3 entries |
 | Charmander | 2 entries |
+| Grovyle | 2 entries |
 | Magneton | 2 entries |
 | Magnemite | 2 entries |
 | Mienfoo | 2 entries |
@@ -109,7 +116,9 @@
 - Tepig → Pignite → Incineroar ex
 - Darumaka → Darmanitan
 - Bulbasaur → Ivysaur → Mega Venusaur ex
+- Treecko → Grovyle → Sceptile
 - Sewaddle → Swadloon → Leavanny
+- Sobble → Drizzile → Inteleon
 - Eevee → Vaporeon ex
 - Magnemite → Magneton → Magnezone ex
 - Helioptile → Heliolisk
@@ -134,6 +143,4 @@
 
 ### Partial Evolution Lines (Missing at Least One Stage)
 
-- Treecko → Grovyle → Sceptile
-- Sobble → Drizzile → Inteleon
 - Zorua → Zoroark

@@ -2,7 +2,7 @@
 
 Generated: 2026-05-12  
 Model confidence: **THIRD PARTY VERIFIED WITH IN APP ANCHOR**  
-Collection total: 532 cards  
+Collection total: 584 cards  
 Batch size: 10 packs per batch  
 
 > **DISCLAIMER**
@@ -31,16 +31,16 @@ Batch size: 10 packs per batch
 
 | # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | B2a | 10 | 4.2019 | 42.02 | 128 | STOP after this batch regardless of results. Do not open fur… | ✅ |
+| 1 | Paldean Wonders | B2a | 10 | 4.1663 | 41.66 | 127 | STOP after this batch regardless of results. Do not open fur… | ✅ |
 
 #### Batch 1 — Paldean Wonders (B2a)
 
 - **Pack:** Paldean Wonders (Paldean Wonders)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.2019
-- **Estimated batch value:** 42.02  
+- **Adj EV per pack:** 4.1663
+- **Estimated batch value:** 41.66  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 128
+- **Missing cards in pool:** 127
 - **Stopping condition:** STOP after this batch regardless of results. Do not open further packs until slot rates are verified in PTCGP app.
 - **Re-run required:** Mandatory post-conservative check: open PTCGP app → any pack → Pack details → Offering Rates. If rates match model, upgrade to verified confidence.
 
@@ -59,45 +59,45 @@ Batch size: 10 packs per batch
 
 **Rationale:** Accepts third_party_verified confidence risk (~15% adjustment applied to all EVs). Prioritizes collection expansion at the highest expected value. Re-run after 20 packs prevents over-committing to a pack whose EV has dropped as new cards were pulled. Switching to #2 after re-run hedges against pool depletion.
 
-**Deck-target variant:** Deck-target variant: if completing a specific chase deck is the priority goal, replace batch 3 with Crimson Blaze (Crimson Blaze, adj_ev=1.5145, deck_target_ev=0.1499). This pack has the highest deck_target_ev per 10 packs. Note: overall adj_ev is lower than the top collection-expansion packs.
+**Deck-target variant:** Deck-target variant: if completing a specific chase deck is the priority goal, replace batch 3 with Mewtwo (Genetic Apex, adj_ev=3.1501, deck_target_ev=0.2856). This pack has the highest deck_target_ev per 10 packs. Note: overall adj_ev is lower than the top collection-expansion packs.
 
 ### Batches
 
 | # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | B2a | 10 | 4.2019 | 42.02 | 128 | Pause after this batch. Count new unique cards acquired from… | — |
-| 2 | Paldean Wonders | B2a | 10 | 4.2019 | 42.02 | 128 | STOP after this batch. Re-run EV calculator — 20 packs opene… | ✅ |
-| 3 | Mew | A1a | 10 | 3.6879 | 36.88 | 75 | Stop after batch 3 and re-assess. If a deck target was pulle… | ✅ |
+| 1 | Paldean Wonders | B2a | 10 | 4.1663 | 41.66 | 127 | Pause after this batch. Count new unique cards acquired from… | — |
+| 2 | Paldean Wonders | B2a | 10 | 4.1663 | 41.66 | 127 | STOP after this batch. Re-run EV calculator — 20 packs opene… | ✅ |
+| 3 | Lunala | A3 | 10 | 3.6588 | 36.59 | 114 | Stop after batch 3 and re-assess. If a deck target was pulle… | ✅ |
 
 #### Batch 1 — Paldean Wonders (B2a)
 
 - **Pack:** Paldean Wonders (Paldean Wonders)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.2019
-- **Estimated batch value:** 42.02  
+- **Adj EV per pack:** 4.1663
+- **Estimated batch value:** 41.66  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 128
+- **Missing cards in pool:** 127
 - **Stopping condition:** Pause after this batch. Count new unique cards acquired from this pool.
 
 #### Batch 2 — Paldean Wonders (B2a)
 
 - **Pack:** Paldean Wonders (Paldean Wonders)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.2019
-- **Estimated batch value:** 42.02  
+- **Adj EV per pack:** 4.1663
+- **Estimated batch value:** 41.66  
   _EV per pack is lower than batch 1 — cards already acquired reduce the effective pool. Actual expected value for this batch is less than the static estimate._
-- **Missing cards in pool:** 128
+- **Missing cards in pool:** 127
 - **Stopping condition:** STOP after this batch. Re-run EV calculator — 20 packs opened from this pool.
 - **Re-run required:** 20 packs from same pool. EV will have dropped. Re-run before continuing.
 
-#### Batch 3 — Mew (A1a)
+#### Batch 3 — Lunala (A3)
 
-- **Pack:** Mew (Mythical Island)
+- **Pack:** Lunala (Celestial Guardians)
 - **Packs to open:** 10
-- **Adj EV per pack:** 3.6879
-- **Estimated batch value:** 36.88  
+- **Adj EV per pack:** 3.6588
+- **Estimated batch value:** 36.59  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 75
+- **Missing cards in pool:** 114
 - **Stopping condition:** Stop after batch 3 and re-assess. If a deck target was pulled, re-run EV. If top pack changed after re-run, adjust batch 4 accordingly.
 - **Re-run required:** Switching packs after re-run. Re-run EV to confirm rankings after collection update.
 
@@ -112,7 +112,7 @@ Batch size: 10 packs per batch
 
 ## Aggressive Scenario
 
-**Description:** Open 5 batches across the top 3 adj-EV packs plus the top deck-target pack (Crimson Blaze). Re-run EV after every 20+ packs from the same pool. Accept third_party_verified confidence risk on all decisions.
+**Description:** Open 5 batches across the top 3 adj-EV packs plus the top deck-target pack (Mewtwo). Re-run EV after every 20+ packs from the same pool. Accept third_party_verified confidence risk on all decisions.
 
 **Rationale:** Maximizes collection expansion rate by rotating across the top EV packs, avoiding diminishing returns on a single pool. A deck-target batch is included for chase deck progress. Higher resource commitment — verify in-app rates as early as possible to lock in confidence.
 
@@ -120,41 +120,41 @@ Batch size: 10 packs per batch
 
 | # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | B2a | 10 | 4.2019 | 42.02 | 128 | Pause after batch 1. Count new cards from this pool. | — |
-| 2 | Paldean Wonders | B2a | 10 | 4.2019 | 42.02 | 128 | STOP after batch 2 and re-run EV calculator. 20 packs opened… | ✅ |
-| 3 | Mew | A1a | 10 | 3.6879 | 36.88 | 75 | Pause after switching to pack #2. First batch from new pool. | — |
+| 1 | Paldean Wonders | B2a | 10 | 4.1663 | 41.66 | 127 | Pause after batch 1. Count new cards from this pool. | — |
+| 2 | Paldean Wonders | B2a | 10 | 4.1663 | 41.66 | 127 | STOP after batch 2 and re-run EV calculator. 20 packs opened… | ✅ |
+| 3 | Lunala | A3 | 10 | 3.6588 | 36.59 | 114 | Pause after switching to pack #2. First batch from new pool. | — |
 | 4 | Extradimensional Crisis | A3a | 10 | 3.6448 | 36.45 | 88 | Pause after switching to pack #3. First batch from new pool. | — |
-| 5 | Crimson Blaze | B1a | 10 | 1.5145 | 15.14 | 39 | Deck-target batch: Crimson Blaze has highest deck_target_ev … | ✅ |
+| 5 | Mewtwo | A1 | 10 | 3.1501 | 31.50 | 79 | Deck-target batch: Mewtwo has highest deck_target_ev per pac… | ✅ |
 
 #### Batch 1 — Paldean Wonders (B2a)
 
 - **Pack:** Paldean Wonders (Paldean Wonders)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.2019
-- **Estimated batch value:** 42.02  
+- **Adj EV per pack:** 4.1663
+- **Estimated batch value:** 41.66  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 128
+- **Missing cards in pool:** 127
 - **Stopping condition:** Pause after batch 1. Count new cards from this pool.
 
 #### Batch 2 — Paldean Wonders (B2a)
 
 - **Pack:** Paldean Wonders (Paldean Wonders)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.2019
-- **Estimated batch value:** 42.02  
+- **Adj EV per pack:** 4.1663
+- **Estimated batch value:** 41.66  
   _EV lower than batch 1 — cards already acquired reduce the pool._
-- **Missing cards in pool:** 128
+- **Missing cards in pool:** 127
 - **Stopping condition:** STOP after batch 2 and re-run EV calculator. 20 packs opened from this pool.
 - **Re-run required:** 20 packs from same pool. Re-run EV before committing further.
 
-#### Batch 3 — Mew (A1a)
+#### Batch 3 — Lunala (A3)
 
-- **Pack:** Mew (Mythical Island)
+- **Pack:** Lunala (Celestial Guardians)
 - **Packs to open:** 10
-- **Adj EV per pack:** 3.6879
-- **Estimated batch value:** 36.88  
+- **Adj EV per pack:** 3.6588
+- **Estimated batch value:** 36.59  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 75
+- **Missing cards in pool:** 114
 - **Stopping condition:** Pause after switching to pack #2. First batch from new pool.
 
 #### Batch 4 — Extradimensional Crisis (A3a)
@@ -167,15 +167,15 @@ Batch size: 10 packs per batch
 - **Missing cards in pool:** 88
 - **Stopping condition:** Pause after switching to pack #3. First batch from new pool.
 
-#### Batch 5 — Crimson Blaze (B1a)
+#### Batch 5 — Mewtwo (A1)
 
-- **Pack:** Crimson Blaze (Crimson Blaze)
+- **Pack:** Mewtwo (Genetic Apex)
 - **Packs to open:** 10
-- **Adj EV per pack:** 1.5145
-- **Estimated batch value:** 15.14  
-  _deck_target_ev=0.1499 — per-pack deck completion value._
-- **Missing cards in pool:** 39
-- **Stopping condition:** Deck-target batch: Crimson Blaze has highest deck_target_ev per pack. Stop immediately if chase deck card is pulled.
+- **Adj EV per pack:** 3.1501
+- **Estimated batch value:** 31.50  
+  _deck_target_ev=0.2856 — per-pack deck completion value._
+- **Missing cards in pool:** 79
+- **Stopping condition:** Deck-target batch: Mewtwo has highest deck_target_ev per pack. Stop immediately if chase deck card is pulled.
 - **Re-run required:** Final aggressive batch. Re-run EV for updated plan after deck-target batch.
 
 ### Re-run checklist

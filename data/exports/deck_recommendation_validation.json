@@ -37,7 +37,7 @@
         {
           "name": "Victini",
           "required": 1,
-          "owned": 4,
+          "owned": 5,
           "status": "owned_enough",
           "match_type": "exact"
         },
@@ -86,7 +86,7 @@
         {
           "name": "Rare Candy",
           "required": 1,
-          "owned": 1,
+          "owned": 2,
           "status": "owned_enough",
           "match_type": "exact"
         },
@@ -100,7 +100,7 @@
         {
           "name": "X Speed",
           "required": 1,
-          "owned": 1,
+          "owned": 2,
           "status": "owned_enough",
           "match_type": "exact"
         }
@@ -121,28 +121,28 @@
         {
           "name": "Victini",
           "required": 2,
-          "owned": 4,
+          "owned": 5,
           "status": "owned_enough",
           "match_type": "exact"
         },
         {
           "name": "Darumaka",
           "required": 2,
-          "owned": 2,
+          "owned": 3,
           "status": "owned_enough",
           "match_type": "exact"
         },
         {
           "name": "Darmanitan",
           "required": 2,
-          "owned": 3,
+          "owned": 4,
           "status": "owned_enough",
           "match_type": "exact"
         },
         {
           "name": "Tepig",
           "required": 2,
-          "owned": 2,
+          "owned": 10,
           "status": "owned_enough",
           "match_type": "exact"
         },
@@ -219,14 +219,14 @@
         {
           "name": "Zubat",
           "required": 1,
-          "owned": 1,
+          "owned": 2,
           "status": "owned_enough",
           "match_type": "exact"
         },
         {
           "name": "Golbat",
           "required": 1,
-          "owned": 1,
+          "owned": 2,
           "status": "owned_enough",
           "match_type": "exact"
         },
@@ -359,7 +359,7 @@
         {
           "name": "Furfrou",
           "required": 1,
-          "owned": 1,
+          "owned": 3,
           "status": "owned_enough",
           "match_type": "exact"
         },
@@ -457,14 +457,14 @@
         {
           "name": "Shroomish",
           "required": 1,
-          "owned": 3,
+          "owned": 7,
           "status": "owned_enough",
           "match_type": "exact"
         },
         {
           "name": "Breloom",
           "required": 1,
-          "owned": 1,
+          "owned": 2,
           "status": "owned_enough",
           "match_type": "exact"
         },
@@ -513,7 +513,7 @@
         {
           "name": "Rare Candy",
           "required": 1,
-          "owned": 1,
+          "owned": 2,
           "status": "owned_enough",
           "match_type": "exact"
         },
@@ -550,14 +550,14 @@
         {
           "name": "Tepig",
           "required": 2,
-          "owned": 2,
+          "owned": 10,
           "status": "owned_enough",
           "match_type": "exact"
         },
         {
           "name": "Pignite",
           "required": 2,
-          "owned": 4,
+          "owned": 6,
           "status": "owned_enough",
           "match_type": "exact"
         },
@@ -627,7 +627,7 @@
         {
           "name": "Rare Candy",
           "required": 1,
-          "owned": 1,
+          "owned": 2,
           "status": "owned_enough",
           "match_type": "exact"
         },
@@ -685,8 +685,8 @@
         {
           "name": "Cubone",
           "required": 2,
-          "owned": 2,
-          "status": "owned_enough",
+          "owned": 1,
+          "status": "short",
           "match_type": "exact"
         },
         {
@@ -713,14 +713,14 @@
         {
           "name": "Korrina",
           "required": 2,
-          "owned": 2,
+          "owned": 6,
           "status": "owned_enough",
           "match_type": "exact"
         },
         {
           "name": "Arena of Antiquity",
           "required": 1,
-          "owned": 1,
+          "owned": 2,
           "status": "owned_enough",
           "match_type": "exact"
         },
@@ -760,6 +760,12 @@
           "required": 2,
           "owned": 1,
           "short_by": 1
+        },
+        {
+          "name": "Cubone",
+          "required": 2,
+          "owned": 1,
+          "short_by": 1
         }
       ],
       "questionable_names": [],
@@ -778,7 +784,7 @@
         {
           "name": "Magnemite",
           "required": 2,
-          "owned": 3,
+          "owned": 6,
           "status": "owned_enough",
           "match_type": "exact"
         },
@@ -834,7 +840,7 @@
         {
           "name": "Rare Candy",
           "required": 1,
-          "owned": 1,
+          "owned": 2,
           "status": "owned_enough",
           "match_type": "exact"
         },
