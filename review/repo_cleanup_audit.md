@@ -368,3 +368,47 @@ All 82 remaining files are either:
 - `CLAUDE.md` — updated sections 1, 2, 3, 4, 10, 17, 18, 19 to remove historical references; added EV pipeline section
 
 **Repo state after cleanup:** 82 tracked files. Clean. All active scripts validated against remaining file structure.
+
+---
+
+## Pass: 2026-05-20 (remove screenshot alignment sub-pipeline)
+
+**Scope:** Remove the remaining screenshot-based collection alignment sub-pipeline
+(`inventory_screenshots.py`, `reconcile_current_collection_sources.py`,
+`build_screenshot_collection_alignment.py`, `validate_screenshot_collection_alignment.py`)
+and all their data artifacts. These were superseded by the Pokemon Zone bookmarklet +
+`--json-import` sync pipeline committed earlier in this session.
+
+**Dependency resolved first:**
+`score_pack_source_confidence.py` required `screenshot_collection_alignment.json` as a
+mandatory input. Made it optional: if absent, `aln_index = {}` and `ALN_NO_RECORD_PENALTY`
+(-0.05) applies uniformly — functionally equivalent to having no screenshot data.
+EV pipeline is unaffected (confidence scores are provenance metadata, not EV inputs).
+
+**Scripts deleted (4):**
+- `scripts/inventory_screenshots.py`
+- `scripts/reconcile_current_collection_sources.py`
+- `scripts/build_screenshot_collection_alignment.py`
+- `scripts/validate_screenshot_collection_alignment.py`
+
+**Data files deleted (4):**
+- `data/current/screenshot_collection_alignment.json`
+- `data/current/screenshot_inventory.json`
+- `data/current/screenshot_manifest.json`
+- `data/current/current_collection_reconciliation.json`
+
+**Review/report files deleted (4):**
+- `review/screenshot_collection_alignment.md`
+- `review/screenshot_inventory.md`
+- `review/screenshot_manifest.md`
+- `review/current_collection_reconciliation.md`
+
+**Scripts modified (1):**
+- `scripts/score_pack_source_confidence.py` — alignment file made optional (graceful fallback)
+
+**Preservation confirmed:** All files in the "Always preserve" list (Section 15 of CLAUDE.md)
+verified intact: `collection.json`, `pack_sources.json`, `pull_probability_model.json`,
+`external_card_reference.json`, `current_collection_pack_confirmations.json`, all EV outputs,
+`review/final_hourglass_spending_plan.md`.
+
+**Repo state after cleanup:** Clean. EV pipeline validated end-to-end with 584-card collection.

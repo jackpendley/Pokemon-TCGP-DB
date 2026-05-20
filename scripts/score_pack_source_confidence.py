@@ -732,7 +732,6 @@ def main():
         (COLLECTION_JSON, "collection_normalized.json"),
         (PACK_SOURCES_JSON, "pack_sources.json"),
         (COVERAGE_JSON, "current_collection_pack_coverage.json"),
-        (ALIGNMENT_JSON, "screenshot_collection_alignment.json"),
     ]:
         if not path.exists():
             print(f"ERROR: {label} not found at {path}", file=sys.stderr)
@@ -751,9 +750,13 @@ def main():
     cov_by_id = {e["entry_id"]: e for e in cov_data["entries"]}
     print(f"  Coverage entries:   {len(cov_by_id)}")
 
-    aln_data = json.loads(ALIGNMENT_JSON.read_text(encoding="utf-8"))
-    aln_index = build_aln_index(aln_data["alignment_records"])
-    print(f"  Alignment records:  {len(aln_index)} with entry_id")
+    if ALIGNMENT_JSON.exists():
+        aln_data = json.loads(ALIGNMENT_JSON.read_text(encoding="utf-8"))
+        aln_index = build_aln_index(aln_data["alignment_records"])
+        print(f"  Alignment records:  {len(aln_index)} with entry_id")
+    else:
+        aln_index = {}
+        print(f"  Alignment records:  0 (screenshot pipeline removed — no_record_penalty applies to all)")
 
     # Score every entry
     scored = []
