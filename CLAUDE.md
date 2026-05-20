@@ -20,11 +20,12 @@ Everything built must serve the collection tracking and recommendation goal. Do 
 | `collection.json` total | **584** (last_updated: 2026-05-20) |
 | `collection.json` unique entries | **279** |
 | `pack_sources.json` records | 3110 validated |
-| EV pipeline status | **STALE** — last built against 532-card collection; must rebuild |
+| EV pipeline status | **Current** — rebuilt 2026-05-20 against 584-card collection |
 | Pull rate model version | **v0.6.0** |
-| Pull rate verification | 3 in-app verified; 12 bulbapedia-branch-verified; rest third_party_verified |
+| Pull rate data source | Pokemon Zone (source of truth); third_party cross-checked |
 | Deck status | 4 buildable; 4 chase (1 ex short each) |
-| Pack-source coverage | **207/279 minimum** — needs re-run after new entries added |
+| Pack-source coverage | **207/224** (EV-ready); 9 permanently unresolvable |
+| Known discrepancy | collection.json=584, PTCGP app=573 — 11 phantom entries from pre-PZ era |
 
 The `sum(count)` across all entries in `collection.json` must always equal `meta.total_cards`. Validation enforces this strictly.
 
@@ -185,21 +186,31 @@ Manual CSV confirmation (`data/exports/current_pack_source_review.csv`) is a **f
 
 ---
 
-## 7. Pull Rate Verification Status
+## 7. Pull Rate Data Source Policy
+
+**Pokemon Zone is the source of truth for collection tracking and pull rate data.**
+
+In-app PTCGP verification is no longer required. Pull rate data from Pokemon Zone, Bulbapedia,
+or other third-party sources is sufficient. Only fall back to in-app verification if pull rate
+data for a specific pack is inaccessible via Pokemon Zone or external resources.
 
 | Pack group | Status |
 |---|---|
 | A4 Ho-Oh / Lugia | `user_in_app_verified` (v0.6.0, 2026-05-14) |
 | B3 Pulsing Aura | `user_in_app_verified_plus_bulbapedia` (v0.4.0, 2026-05-13) |
 | 12 packs | `bulbapedia_branch_verified` (v0.5.0) |
-| A4b Deluxe Pack: ex | `pending` — pack unavailable in app, 4 cards/pack, rates inaccessible |
+| A4b Deluxe Pack: ex | `pending` — rates not publicly available yet |
 | Remaining packs | `third_party_verified` |
 
 Overall model status: **`third_party_verified_with_in_app_anchor`**, model_version=0.6.0.
 
-**Do not issue final pack-opening recommendations until all packs reach at least `bulbapedia_branch_verified`.** Current decision-support document: `review/final_hourglass_spending_plan.md`.
+Current decision-support document: `review/final_hourglass_spending_plan.md`.
 
-To verify a pack in-app: open PTCGP → select pack → Pack Details → Offering Rates. Screenshot and update `data/reference/pull_probability_model.json` + `data/current/in_app_rate_verification.json`. Then rebuild EV: `python3 scripts/build_pack_ev.py && python3 scripts/generate_pack_recommendation_report.py && python3 scripts/generate_hourglass_spending_plan.py`.
+If pull rate data for a new pack becomes available on Pokemon Zone or Bulbapedia, update
+`data/reference/pull_probability_model.json` and rebuild EV:
+```bash
+python3 scripts/build_pack_ev.py && python3 scripts/generate_pack_recommendation_report.py && python3 scripts/generate_hourglass_spending_plan.py
+```
 
 ---
 
@@ -209,9 +220,8 @@ To verify a pack in-app: open PTCGP → select pack → Pack Details → Offerin
 - **4 chase decks (1 ex short each):** Mega Venusaur ex, Incineroar ex, Zygarde ex, Magnezone ex
 
 **Do not issue final automated pack-opening recommendations yet.** Remaining blockers:
-1. Pull rates not fully in-app verified (A4b pending; others third_party_verified)
-2. Deck scoring model not built — needed to weight EV toward packs containing chase cards
-3. Optional meta/tier data not integrated
+1. Deck scoring model not built — needed to weight EV toward packs containing chase cards
+2. Optional meta/tier data not integrated
 
 ---
 
@@ -234,7 +244,7 @@ python3 scripts/validate_deck_recommendations.py
 **Completed — do not rebuild:**
 - Pokemon Zone bookmarklet + `--json-import` sync pipeline (2026-05-20)
 - curl-cffi Chrome TLS impersonation for stored-auth headless syncs (2026-05-20)
-- Pack EV calculator (24 packs ranked, top: Paldean Wonders ev=4.94)
+- EV pipeline rebuilt against 584-card collection (2026-05-20); top pack: Paldean Wonders ev=4.94
 - Inferred pack recommendation report (5-metric ranking, 3 planning scenarios)
 - Hourglass spending plan (conservative/moderate/aggressive, 10-pack batches)
 - Pull rate cross-check (ONE Esports + 3 sources, model_version=0.3.0)
@@ -243,14 +253,14 @@ python3 scripts/validate_deck_recommendations.py
 - A4 in-app verification (v0.6.0, 2026-05-14)
 - Ambiguous pack-source resolution: 38 user-confirmed + 8 automated (2026-05-15)
 - Collection sync: 25 count updates + 18 new card entries → 584 total (2026-05-20)
+- Screenshot alignment pipeline removed; score_pack_source_confidence.py made optional (2026-05-20)
+- Local crops/ and screenshots/ directories deleted (282 files, not tracked) (2026-05-20)
 
 **Next steps in priority order:**
 
-1. **Rebuild EV pipeline** — `python3 scripts/run_recommendations.py --skip-sync` (collection is now 584; EV data is stale)
-2. **Repo cleanup** — remove obsolete screenshot-pipeline scripts and artifacts (see Section 15)
-3. **Continue in-app pull rate verification** — upgrade remaining `third_party_verified` packs; A4b when available
-4. **Build deck scoring model** — weight EV recommendations toward packs containing chase cards
-5. **Final recommendations** — only after all packs verified + deck scoring built
+1. **Resolve 584 vs 573 discrepancy** — run fresh PZ sync (`--json-import`); for each `missing_from_pz` entry, verify in PTCGP. 11 likely-phantom entries: Bulbasaur ×2 variants, Mega Heracross ex, Marowak ex, Mienfoo, Mienshao, Riolu, Onix, Moltres ex. Set count=0 or remove if not owned. See Section 19.
+2. **Build deck scoring model** — weight EV recommendations toward packs containing chase cards
+3. **Final recommendations** — only after deck scoring built
 
 ---
 
@@ -315,27 +325,24 @@ If SSH fails: verify public key exists, key loaded in agent, test `ssh -T git@gi
 
 ---
 
-## 15. Repo Cleanup — Obsolete Screenshot Pipeline
+## 15. Repo Cleanup Policy
 
-The screenshot-based collection alignment pipeline has been superseded by automated Pokemon Zone sync. The following files are candidates for removal. **Audit before deleting — verify no active script references them.**
+The screenshot-based pipeline has been fully removed. Future cleanup follows these rules.
 
-**Scripts to remove:**
-- `scripts/inventory_screenshots.py` — screenshot inventory, superseded by sync
-- `scripts/reconcile_current_collection_sources.py` — screenshot-slot reconciliation, superseded
-- `scripts/build_screenshot_collection_alignment.py` — screenshot alignment, superseded
-- `scripts/validate_screenshot_collection_alignment.py` — validates screenshot alignment, superseded
+**Standard cleanup procedure (run after any major phase):**
+1. `git status` — confirm clean tree.
+2. Check for local-only leftover directories (`crops/`, `screenshots/`, `ocr_temp/`, `.browser_session/`) — delete them. They are gitignored and have no repo value.
+3. For tracked files: verify no active script references them before deleting.
+4. Document all tracked-file deletions in `review/repo_cleanup_audit.md`.
+5. Commit tracked-file removals as a standalone commit.
 
-**Generated data files to remove:**
-- `data/current/screenshot_collection_alignment.json`
-- `data/current/screenshot_inventory.json`
-- `data/current/screenshot_manifest.json`
-- `data/current/current_collection_reconciliation.json`
-
-**Review/report files to remove:**
-- `review/screenshot_collection_alignment.md`
-- `review/screenshot_inventory.md`
-- `review/screenshot_manifest.md`
-- `review/current_collection_reconciliation.md`
+**Local directories to delete (gitignored, not tracked — delete without hesitation):**
+- `crops/` — cropped card images from old OCR pipeline
+- `screenshots/` — PTCGP app screenshots from old manual pipeline
+- `ocr_temp/` — OCR scratch directory
+- `.browser_session/` — Playwright session cache
+- `data/reference/images/` — downloaded card images
+- `data/reference/external/html_cache/` — scraped HTML cache
 
 **Always preserve — never delete without explicit instruction:**
 - `collection.json`
@@ -345,13 +352,6 @@ The screenshot-based collection alignment pipeline has been superseded by automa
 - `data/current/current_collection_pack_confirmations.json`
 - All active EV/recommendation outputs in `data/current/`
 - `review/final_hourglass_spending_plan.md`
-
-**Cleanup procedure:**
-1. Run `git status` — confirm clean tree.
-2. For each candidate: verify no active script, doc, or report references it by name.
-3. Delete only confirmed-orphaned files.
-4. Document all deletions in `review/repo_cleanup_audit.md`.
-5. Commit the cleanup as a standalone commit.
 
 ---
 
@@ -393,3 +393,42 @@ Monitor context window usage throughout every session.
 - The handoff plan must be complete enough that a fresh Claude Code session can resume without any prior context.
 
 This rule exists to prevent silent degradation of accuracy as context fills, and to ensure development can be resumed efficiently.
+
+---
+
+## 19. collection.json vs PTCGP Discrepancy — Resolution Procedure
+
+**Current state (2026-05-20):** collection.json=584, PTCGP app=573. Gap=11 phantom entries.
+
+**Root cause:** The PZ sync preserves historical counts for cards it can't match (`missing_from_pz`). 15 entries (21 cards) were not matched in the last sync. 10 of those 21 are real cards PZ can't track (PROMO-B Zygarde ×5, trainers Red Card×2 + X Speed×2, Jigglypuff×1). The remaining **11 are phantom entries** from the pre-PZ screenshot pipeline.
+
+**Likely phantom entries (in PTCGP? → NO):**
+
+| Name | Variants | Count | Why phantom |
+|---|---|---|---|
+| Bulbasaur (hp=70, Vine Whip) | variant collision | 1 | PZ matched Bulbasaur to another variant |
+| Bulbasaur (hp=70, alt art) | variant collision | 1 | PZ matched Bulbasaur to another variant |
+| Mega Heracross ex | — | 1 | Not returned by PZ; may not be in collection |
+| Moltres ex | — | 1 | A1 vs A4b ambiguous; PZ returned one, this is the other |
+| Marowak ex | — | 1 | A1 vs A4b ambiguous; PZ returned one, this is the other |
+| Mienfoo (Pound art) | variant collision | 2 | PZ matched Mienfoo to another variant |
+| Mienshao (Spiral Kick art) | variant collision | 1 | PZ matched Mienshao to another variant |
+| Riolu (Fighting Fist art) | variant collision | 2 | PZ matched Riolu to another variant |
+| Onix (Land Crush art) | variant collision | 1 | PZ matched Onix to another variant |
+
+Total: 11 cards
+
+**Likely real (PZ can't track → still in PTCGP):**
+- Zygarde 10% Forme (count=1), Zygarde 50% Forme (count=3), Zygarde ex (count=1) — PROMO-B
+- Red Card (count=2), X Speed (count=2) — trainers
+- Jigglypuff (count=1) — name mismatch in PZ
+
+**Resolution steps:**
+1. Run fresh PZ sync: download `pz_collection.json` via bookmarklet → `python3 scripts/sync_collection.py --json-import ~/Downloads/pz_collection.json --dry-run`
+2. Check `data/sync/sync_review_queue.json` → `missing_from_pz` section
+3. For each entry: open PTCGP and confirm whether you actually own that specific variant
+4. For confirmed phantoms: set count=0 in `collection.json` (or remove the entry if count=0 makes no sense)
+5. Re-validate: `python3 scripts/validate_current_collection.py --expected-total <new_total>`
+6. Rebuild EV: `python3 scripts/run_recommendations.py --skip-sync`
+
+**Do not change collection.json quantities without explicit user confirmation.**
