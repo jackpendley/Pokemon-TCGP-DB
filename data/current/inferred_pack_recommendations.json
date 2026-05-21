@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-20T23:22:01+00:00",
+  "generated_at": "2026-05-21T00:14:21+00:00",
   "generated_by": "generate_pack_recommendation_report.py",
   "disclaimer": "INFERRED CONFIDENCE ONLY. Slot rates are from trusted external sources (Game8, ShackNews, cgmagonline) — NOT verified from the in-app Offering Rates screen. Rankings are for planning purposes only. Verify in-app before acting on any recommendation.",
   "model_confidence": "third_party_verified_with_in_app_anchor",
-  "collection_total": 584,
+  "collection_total": 582,
   "collection_mutated": false,
   "ev_ready_entries": {
     "total": 224,

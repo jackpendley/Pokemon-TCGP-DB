@@ -2,22 +2,22 @@
 
 **Last updated:** 2026-05-20  
 **Format:** Pokemon TCG Pocket  
-**Meta declared total:** 584  
-**Actual card count:** 584  
+**Meta declared total:** 582  
+**Actual card count:** 582  
 **Unique entries:** 279  
 
 ## By Card Type
 
 | Card Type | Count |
 |---|---|
-| Pokemon | 523 |
+| Pokemon | 521 |
 | Trainer | 61 |
 
 ## By Pokémon Type
 
 | Type | Count |
 |---|---|
-| Fighting | 89 |
+| Fighting | 87 |
 | Grass | 76 |
 | Colorless | 74 |
 | Fire | 67 |
@@ -32,7 +32,7 @@
 
 | Stage | Count |
 |---|---|
-| Basic | 348 |
+| Basic | 346 |
 | Stage 1 | 139 |
 | Stage 2 | 36 |
 
@@ -82,7 +82,6 @@
 | Shroomish | 7 |
 | Applin | 7 |
 | Electrode | 7 |
-| Riolu | 7 |
 | Charmander | 6 |
 | Pignite | 6 |
 | Larvesta | 6 |
@@ -92,6 +91,7 @@
 | Dwebble | 6 |
 | Lillipup | 6 |
 | Korrina | 6 |
+| Victini | 5 |
 
 ## Variant Cards (Same Name, Different Version)
 

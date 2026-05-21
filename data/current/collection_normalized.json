@@ -1,11 +1,11 @@
 {
   "meta": {
-    "total_cards": 584,
+    "total_cards": 582,
     "last_updated": "2026-05-20",
     "format": "Pokemon TCG Pocket"
   },
   "generated_note": "Normalized output — do not edit. Source: collection.json",
-  "actual_total_quantity": 584,
+  "actual_total_quantity": 582,
   "unique_entries": 279,
   "collection": [
     {
@@ -1807,7 +1807,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Fighting Fast 10+",
-      "count": 5,
+      "count": 3,
       "variant": "Fighting Fast art",
       "normalized_name": "riolu",
       "entry_id": "riolu_fighting_fast_art",

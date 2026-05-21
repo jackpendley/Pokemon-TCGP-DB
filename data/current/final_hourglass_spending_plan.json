@@ -3,7 +3,7 @@
   "generated_by": "scripts/generate_hourglass_spending_plan.py",
   "disclaimer": "IMPORTANT — NOT OFFICIAL: Slot rates are third_party_verified (confirmed by 4 independent sources: Game8, ONE Esports, CGMagazine, ShackNews) but NOT officially verified from the in-app Offering Rates screen. EV calculations are for planning purposes only. Do not treat these as guaranteed outcomes. Verify slot rates in PTCGP app (any pack → Pack details → Offering Rates) before committing large resources.",
   "model_confidence": "third_party_verified_with_in_app_anchor",
-  "collection_total": 584,
+  "collection_total": 582,
   "collection_mutated": false,
   "batch_size": 10,
   "model_version": "0.6.0",

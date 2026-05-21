@@ -1,15 +1,15 @@
 {
   "meta": {
-    "total_cards": 584,
+    "total_cards": 582,
     "last_updated": "2026-05-20",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 584,
-  "meta_total_cards": 584,
+  "total_quantity": 582,
+  "meta_total_cards": 582,
   "count_matches_meta": true,
   "unique_entries": 279,
   "by_card_type": {
-    "Pokemon": 523,
+    "Pokemon": 521,
     "Trainer": 61
   },
   "by_pokemon_type": {
@@ -18,14 +18,14 @@
     "Water": 55,
     "Lightning": 42,
     "Psychic": 47,
-    "Fighting": 89,
+    "Fighting": 87,
     "Darkness": 49,
     "Metal": 19,
     "Dragon": 5,
     "Colorless": 74
   },
   "by_stage": {
-    "Basic": 348,
+    "Basic": 346,
     "Stage 1": 139,
     "Stage 2": 36
   },
@@ -56,10 +56,6 @@
     ],
     [
       "Electrode",
-      7
-    ],
-    [
-      "Riolu",
       7
     ],
     [
@@ -97,6 +93,10 @@
     [
       "Korrina",
       6
+    ],
+    [
+      "Victini",
+      5
     ]
   ],
   "variant_names": {

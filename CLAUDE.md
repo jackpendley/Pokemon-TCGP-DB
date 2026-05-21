@@ -20,7 +20,7 @@ Everything built must serve the collection tracking and recommendation goal. Do 
 | `collection.json` total | **582** (last_updated: 2026-05-20) |
 | `collection.json` unique entries | **279** |
 | `pack_sources.json` records | 3110 validated |
-| EV pipeline status | **STALE** — last built against 584-card collection; must rebuild against 582 |
+| EV pipeline status | **Current** — rebuilt 2026-05-20 against 582-card collection |
 | Pull rate model version | **v0.6.0** |
 | Pull rate data source | Pokemon Zone (source of truth); third_party cross-checked |
 | Deck status | 4 buildable; 4 chase (1 ex short each) |
@@ -257,13 +257,13 @@ python3 scripts/validate_deck_recommendations.py
 - Local crops/ and screenshots/ directories deleted (282 files, not tracked) (2026-05-20)
 - Riolu Fighting Fast phantom corrected: count 5→3, total_cards 584→582 (2026-05-20)
 - 582 vs 573 discrepancy resolved: gap=9 real PZ-untracked cards (trainers, promos) (2026-05-20)
+- EV pipeline rebuilt against 582-card collection (2026-05-20); top pack: Paldean Wonders adj_ev=4.1663
 
 **Next steps in priority order:**
 
-1. **Rebuild EV pipeline** against corrected 582-card collection: `python3 scripts/run_recommendations.py --skip-sync`
-2. **Upgrade sync_collection.py** to match by setCode+cardNumber via pack_sources.json lookup (eliminates all variant disambiguation failures)
-3. **Build deck scoring model** — weight EV recommendations toward packs containing chase cards
-4. **Final recommendations** — only after deck scoring built
+1. **Upgrade sync_collection.py** to match by setCode+cardNumber via pack_sources.json lookup (eliminates all variant disambiguation failures)
+2. **Build deck scoring model** — weight EV recommendations toward packs containing chase cards
+3. **Final recommendations** — only after deck scoring built
 
 ---
 

@@ -18,9 +18,9 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-05-20T23:22:01+00:00 |
+| Report generated | 2026-05-21T00:14:21+00:00 |
 | Model confidence | **third_party_verified_with_in_app_anchor** (not official in-app verified) |
-| Collection total | 584 cards (380 validated) |
+| Collection total | 582 cards (380 validated) |
 | EV-ready entries | 157/224 (108 auto-accept + 49 secondary evidence) |
 | Excluded from EV | 67/224 (59 low-confidence + 8 unresolved) |
 | Packs ranked | 24 |

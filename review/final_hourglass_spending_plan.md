@@ -2,7 +2,7 @@
 
 Generated: 2026-05-12  
 Model confidence: **THIRD PARTY VERIFIED WITH IN APP ANCHOR**  
-Collection total: 584 cards  
+Collection total: 582 cards  
 Batch size: 10 packs per batch  
 
 > **DISCLAIMER**
