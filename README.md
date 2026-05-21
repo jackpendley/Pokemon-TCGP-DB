@@ -1,126 +1,156 @@
 # Pokemon TCG Pocket Collection Database
 
-Tracks the user's Pokémon TCG Pocket card collection and generates pack-opening and deck-building recommendations.
+Personal collection tracker and pack-opening optimizer for Pokémon TCG Pocket.
 
-## Collection Baseline
-
-`collection.json` is the **active collection source of truth** as of 2026-05-11.
-
-| File | Cards | Status |
-|---|---|---|
-| `collection.json` | **380 verified ✅** (224 unique entries) | Active — use for all recommendations |
-| `data/reference/pack_sources.json` | 3110 records | Card-to-pack mappings (all sets A1–B3) |
-| `data/reference/pull_probability_model.json` | 24 packs | Pull rates, v0.6.0 |
-| `screenshots/` | 26 files (IMG_1556–IMG_1581) | Cropped 3×3 grid screenshots, gitignored |
-
-Pack-source coverage: **207/224 entries (92%) EV-ready**. 9 entries are permanently unresolvable (same-rarity reprints in original set + A4b — PTCGP UI groups them together).
-
-## Validate and Normalize
+## Quick Start
 
 ```bash
-python3 scripts/validate_current_collection.py --expected-total 380
-python3 scripts/normalize_current_collection.py
+python3 scripts/run_recommendations.py
+```
+
+Syncs collection from Pokemon Zone, runs the full EV pipeline, and prints a condensed summary. Full verbose output logged to `data/pipeline.log`.
+
+```
+  ✓  Sync collection         588 cards, 272 unique
+  ✓  Validate collection     272 entries, total=588
+  ✓  Normalize collection    OK
+  ✓  Pack coverage           202 direct, 70 ambiguous → resolver
+  ✓  Confidence scoring      141 high-conf, 131 queued for resolver
+  ✓  Resolve pack sources    272/272 EV-ready
+  ✓  Build pack EV           24 packs
+  ✓  Build promo EV          21 promo packs
+  ✓  Recommendations         OK
+  ✓  Spending plan           OK
+
+  Top pack:   Paldean Wonders (adj_ev=4.8900) — 127/131 cards unowned
+  Top promo:  Promo Pack A Series Vol. 8 (new_ev=0.9198) — Shop Tokens
+  Log:        data/pipeline.log
+```
+
+**Flags:**
+
+| Flag | Effect |
+|---|---|
+| _(none)_ | Full run: headless PZ sync + EV pipeline |
+| `--skip-sync` | Skip sync, use current collection.json |
+| `--json-import` | Auto-import newest `~/Downloads/pz_collection*.json` |
+| `--json-import FILE` | Import specific bookmarklet JSON |
+| `--dry-run-sync` | Preview sync diff, stop before EV |
+| `--login` | Re-authenticate browser before sync |
+
+---
+
+## Collection
+
+**Source of truth:** `collection.json` — synced from [Pokemon Zone](https://pokemon-zone.com/collection-tracker/).
+
+| Stat | Value |
+|---|---|
+| Total cards | 588 |
+| Unique entries | 272 |
+| Last synced | 2026-05-21 |
+| Pack-source coverage | 272/272 (100%) EV-ready |
+
+Auth is stored in `data/sync/.auth.json` (gitignored). To re-authenticate:
+
+```bash
+python3 scripts/sync_collection.py --curl-import
+```
+
+---
+
+## Pipeline Architecture
+
+```
+sync_collection.py            ← fetch from Pokemon Zone (stored auth)
+validate_current_collection.py
+normalize_current_collection.py
+current_collection_pack_coverage.py   ← match entries against pack_sources.json
+score_pack_source_confidence.py       ← score each match (auto_accept / secondary / low_conf)
+resolve_ambiguous_pack_sources.py     ← HP/evolution/PZ-set-code disambiguation
+build_pack_ev.py                      ← EV for 24 regular packs
+build_promo_pack_ev.py                ← EV for 21 promo packs (Shop Tokens)
+generate_pack_recommendation_report.py
+generate_hourglass_spending_plan.py
+```
+
+**Why coverage + confidence + resolver all run:**
+- Coverage identifies which 70 entries have multiple candidate packs (ambiguous)
+- Confidence scores all 272 entries; 141 clear, 131 need disambiguation
+- Resolver applies 4 passes (HP match → evolution chain → rarity inference → PZ set code) to bring all 272 to EV-ready
+
+---
+
+## Key Outputs
+
+| File | Description |
+|---|---|
+| `review/inferred_pack_recommendations.md` | Ranked pack list with EV scores and deck-chase guide |
+| `review/final_hourglass_spending_plan.md` | Scenario-based spending plan (conservative / moderate / aggressive) |
+| `review/promo_pack_ev.md` | Promo pack rankings (Shop Token currency) |
+| `review/resolved_pack_sources.md` | Pack-source resolution detail |
+| `review/deck_recommendation_validation.md` | Deck buildability report |
+| `data/pipeline.log` | Full verbose output from last run (gitignored) |
+
+---
+
+## Reference Data
+
+| File | Contents |
+|---|---|
+| `data/reference/pack_sources.json` | 3119 card → pack mappings (A1–B3 + PROMO-A/B) |
+| `data/reference/pz_pack_odds.json` | PZ per-card drop chances (45 packs: 24 regular + 21 promo) |
+| `data/reference/pull_probability_model.json` | Pull rate model v0.6.0, `pz_verified` |
+
+**Pull rate source:** Pokemon Zone pack pages (`?show_pack_odds=1&show_pack_slot_odds=1`). All 24 regular packs and 21 promo packs are `pz_verified`.
+
+---
+
+## EV Model
+
+```
+EV per pack = Σ (p_pull × value_of_next_copy)
+
+value_of_next_copy:
+  owned=0, not ex  →  1.0
+  owned=0, ex      →  2.0
+  owned=1, not ex  →  0.4
+  owned=1, ex      →  1.4
+  owned≥2          →  0.0
+
+adj_ev = pack_total_ev × confidence_multiplier  (1.0 for pz_verified)
+```
+
+---
+
+## Manual Tools
+
+```bash
+# Re-run individual pipeline steps
 python3 scripts/current_collection_pack_coverage.py
-python3 scripts/validate_deck_recommendations.py
-python3 scripts/validate_pack_sources.py
-```
-
-## EV Pipeline
-
-Ranks all 24 packs by expected new-card value. Top pack: **Paldean Wonders** (adj EV=4.20).
-
-```bash
-python3 scripts/resolve_ambiguous_pack_sources.py
-python3 scripts/build_pack_ev.py
-python3 scripts/generate_pack_recommendation_report.py
-python3 scripts/generate_hourglass_spending_plan.py
-```
-
-Outputs: `review/inferred_pack_recommendations.md`, `review/final_hourglass_spending_plan.md`, `review/pack_ev.md`
-
-## Pull Probability Model
-
-Model v0.6.0 — `source_status=third_party_verified_with_in_app_anchor`.
-
-- A4 (Ho-Oh/Lugia): `user_in_app_verified`
-- B3 (Pulsing Aura): `user_in_app_verified_plus_bulbapedia`
-- 12 packs: `bulbapedia_branch_verified`
-- 8 packs: `third_party_verified` (two-branch)
-- 1 pack: `pending_verification` (A4b — unavailable in app)
-
-```bash
-python3 scripts/build_pull_probability_model.py
-python3 scripts/validate_pull_probability_model.py
-```
-
-See `review/in_app_rate_verification.md` and `review/pull_rate_cross_check.md` for verification history.
-
-## Pack-Source Confidence
-
-```bash
-python3 scripts/build_screenshot_collection_alignment.py
-python3 scripts/validate_screenshot_collection_alignment.py
 python3 scripts/score_pack_source_confidence.py
 python3 scripts/resolve_ambiguous_pack_sources.py
-```
 
-Outputs: `data/current/pack_source_confidence_scores.json`, `review/pack_source_confidence_scores.md`, `data/current/resolved_pack_sources.json`
-
-Manual confirmation (fallback only, when automated confidence < threshold):
-
-```bash
+# Manual pack-source confirmation (when resolver can't disambiguate)
 python3 scripts/create_current_pack_review.py
 python3 scripts/apply_current_pack_confirmations.py --dry-run
 python3 scripts/apply_current_pack_confirmations.py --apply
-```
 
-## Deck Recommendations
-
-4 buildable decks, 4 chase decks (1 ex card short each). See `review/deck_recommendation_validation.md`.
-
-```bash
+# Deck validation
 python3 scripts/validate_deck_recommendations.py
-```
 
-Prototype UI: `deck-recommendations.jsx`
-
-## Pack Source Mapping
-
-```bash
+# Pack source reference rebuild
 python3 scripts/build_pack_sources.py
 python3 scripts/validate_pack_sources.py
 ```
 
-Pack name rules:
-- Multi-pack expansions (A1, A2, A3, A4, B1): `high` confidence for pack-specific cards; `medium` for shared-pool cards
-- Single-pack expansions (A1a, A2a, A2b, A3a, A3b, A4a, A4b, B1a, B2, B2a, B2b, B3): `medium` — expansion name is the pack name
-- `pack_name=null` = shared across all packs in that expansion
+---
 
-## Screenshots
+## Sync Notes
 
-`screenshots/` is gitignored — local only. Re-generate inventory:
+- Rate-limited to once per ~24h by Pokemon Zone (skips gracefully if too early)
+- Chrome136 impersonation for both GET and POST (prevents Cloudflare 403)
+- Raw API response not committed (`data/sync/last_sync_raw.json` gitignored)
+- Player sync triggered automatically before each collection fetch
 
-```bash
-python3 scripts/inventory_screenshots.py
-python3 scripts/reconcile_current_collection_sources.py
-```
-
-Outputs: `review/screenshot_inventory.md`, `review/screenshot_manifest.md`
-
-## Repo Hygiene
-
-Cleanup policy: `CLAUDE.md` section 19. Per-pass results: `review/repo_cleanup_audit.md`.
-
-## Key Reports
-
-| Report | Description |
-|---|---|
-| `review/final_hourglass_spending_plan.md` | Current decision-support document for pack-opening |
-| `review/inferred_pack_recommendations.md` | 5-metric pack ranking with chase-deck guide |
-| `review/pack_ev.md` | EV scores for all 24 packs |
-| `review/deck_recommendation_validation.md` | Deck-by-deck buildability report |
-| `review/in_app_rate_verification.md` | In-app pull rate verification log |
-| `review/pull_rate_cross_check.md` | Third-party source cross-check |
-| `review/resolved_pack_sources.md` | Final pack-source resolution summary |
-
-See `docs/product_roadmap.md` for the full project roadmap.
+See `PROJECT.md` for full project context and decision log.

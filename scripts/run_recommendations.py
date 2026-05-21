@@ -41,8 +41,8 @@ PIPELINE_STEPS = [
 ]
 
 _STATUS_PATTERNS: dict[str, tuple] = {
-    "Pack coverage":        (r"Coverage:\s*(\d+/\d+)", lambda m: f"{m.group(1)} matched"),
-    "Confidence scoring":   (r"auto_accept:\s*(\d+)", lambda m: f"{m.group(1)} auto-accept"),
+    "Pack coverage":        (r"Coverage:\s*(\d+)/(\d+)", lambda m: f"{m.group(1)} direct, {int(m.group(2))-int(m.group(1))} ambiguous → resolver"),
+    "Confidence scoring":   (r"auto_accept:\s*(\d+)\s+secondary_evidence:\s*(\d+)\s+low_confidence:\s*(\d+)", lambda m: f"{m.group(1)} high-conf, {int(m.group(2))+int(m.group(3))} queued for resolver"),
     "Resolve pack sources": (r"→\s*(\d+/\d+)", lambda m: f"{m.group(1)} EV-ready"),
     "Build pack EV":        (r"Packs scored:\s*(\d+)", lambda m: f"{m.group(1)} packs"),
     "Build promo EV":       (r"Promo packs in PZ data:\s*(\d+)", lambda m: f"{m.group(1)} promo packs"),
