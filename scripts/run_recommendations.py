@@ -3,10 +3,12 @@
 Full recommendation pipeline: sync → validate → normalize → EV → reports.
 
 Usage:
-    python3 scripts/run_recommendations.py              # sync + full pipeline
-    python3 scripts/run_recommendations.py --skip-sync  # skip sync, use current collection
-    python3 scripts/run_recommendations.py --login      # re-auth browser before sync
-    python3 scripts/run_recommendations.py --dry-run-sync  # show sync diff only, stop
+    python3 scripts/run_recommendations.py                         # headless sync (stored auth)
+    python3 scripts/run_recommendations.py --json-import           # auto-detect newest ~/Downloads/pz_collection*.json
+    python3 scripts/run_recommendations.py --json-import FILE      # explicit bookmarklet JSON path
+    python3 scripts/run_recommendations.py --skip-sync             # skip sync, use current collection
+    python3 scripts/run_recommendations.py --login                 # re-auth browser before sync
+    python3 scripts/run_recommendations.py --dry-run-sync          # show sync diff only, stop
 
 Exit codes:
     0  Full pipeline completed
@@ -38,25 +40,59 @@ def run(label: str, script: str, extra_args: list[str] | None = None) -> int:
     return result.returncode
 
 
+def _find_latest_pz_json() -> Path:
+    """Return the newest pz_collection*.json in ~/Downloads."""
+    downloads = Path.home() / "Downloads"
+    candidates = sorted(downloads.glob("pz_collection*.json"), key=lambda p: p.stat().st_mtime)
+    if not candidates:
+        raise FileNotFoundError(
+            "No pz_collection*.json found in ~/Downloads.\n"
+            "Click the 'PZ Sync' bookmarklet on pokemon-zone.com/collection-tracker/ first."
+        )
+    latest = candidates[-1]
+    print(f"  Auto-detected: {latest.name}", flush=True)
+    return latest
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run full recommendation pipeline.")
     parser.add_argument("--skip-sync",    action="store_true", help="Skip Pokemon Zone sync")
     parser.add_argument("--login",        action="store_true", help="Re-auth browser before sync")
     parser.add_argument("--dry-run-sync", action="store_true", help="Show sync diff only, stop before reports")
+    parser.add_argument(
+        "--json-import", metavar="FILE", nargs="?", const="auto",
+        help="Import from bookmarklet JSON (omit FILE to auto-detect newest ~/Downloads/pz_collection*.json)",
+    )
     args = parser.parse_args()
 
     sync_had_review_items = False
 
     # ── Step 1: Sync ──────────────────────────────────────────────────────
     if not args.skip_sync:
-        sync_args = ["scripts/sync_collection.py"]
-        if args.login:
-            sync_args.append("--login")
-        if args.dry_run_sync:
-            sync_args.append("--dry-run")
+        sync_extra: list[str] = []
 
-        rc = run("Sync collection from Pokemon Zone", sync_args[0],
-                 sync_args[1:] if len(sync_args) > 1 else None)
+        if args.json_import:
+            # Bookmarklet path: resolve file, then pass to sync script
+            if args.json_import == "auto":
+                try:
+                    json_path = _find_latest_pz_json()
+                except FileNotFoundError as e:
+                    print(f"\nERROR: {e}", file=sys.stderr)
+                    return 1
+            else:
+                json_path = Path(args.json_import)
+                if not json_path.exists():
+                    print(f"\nERROR: File not found: {json_path}", file=sys.stderr)
+                    return 1
+            sync_extra += ["--json-import", str(json_path)]
+        elif args.login:
+            sync_extra.append("--login")
+
+        if args.dry_run_sync:
+            sync_extra.append("--dry-run")
+
+        rc = run("Sync collection from Pokemon Zone", "scripts/sync_collection.py",
+                 sync_extra or None)
 
         if args.dry_run_sync:
             print("\nDRY RUN SYNC complete — stopping before report generation.")
