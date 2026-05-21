@@ -41,6 +41,7 @@ import json
 import re
 import subprocess
 import sys
+from collections import defaultdict
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
@@ -200,6 +201,11 @@ def normalize_pz_record(raw: dict) -> PZCard | None:
 # Matching logic
 # ---------------------------------------------------------------------------
 
+_RARITY_RANK: dict[str, int] = {
+    "one_diamond": 1, "two_diamond": 2,
+    "one_star": 3, "two_star": 4, "three_star": 5, "crown": 6,
+}
+
 # Known PROMO-B card-number → canonical collection.json name overrides.
 # PZ's catalog returns "Zygarde" for these slots; the correct names use form suffixes.
 _PROMO_B_OVERRIDES: dict[int, str] = {
@@ -234,6 +240,64 @@ def match_pz_cards(
     for pz in pz_cards:
         result = _match_one(pz, collection, name_index, pack_sources, pack_name_list, ext_ref)
         results.append(result)
+
+    # Pass 2: retry AMBIGUOUS results — exclude already-matched entry indices.
+    # Handles cases where a sibling PZ record matched by HP first, leaving only one
+    # candidate for the remaining ambiguous record (e.g. Mienfoo A1 after B1A matched).
+    matched_indices: set[int] = {r.entry_index for r in results if r.status == "MATCHED"}
+    changed = True
+    while changed:
+        changed = False
+        for i, r in enumerate(results):
+            if r.status != "AMBIGUOUS" or not r.canonical_name:
+                continue
+            nn = _normalize(r.canonical_name)
+            remaining = [idx for idx in name_index.get(nn, []) if idx not in matched_indices]
+            if len(remaining) == 1:
+                idx = remaining[0]
+                results[i] = MatchResult(
+                    status="MATCHED",
+                    pz_card=r.pz_card,
+                    entry=collection[idx],
+                    entry_index=idx,
+                    canonical_name=r.canonical_name,
+                )
+                matched_indices.add(idx)
+                changed = True
+
+    # Pass 3: group-level rank assignment for remaining AMBIGUOUS groups.
+    # When N PZ records and N unmatched collection entries share the same name,
+    # assign by rarity rank then set_code order so lower-rarity PZ records map
+    # to lower collection.json index entries (e.g. Riolu one_diamond → Fighting Fast).
+    ambiguous_groups: dict[str, list[int]] = defaultdict(list)
+    for i, r in enumerate(results):
+        if r.status == "AMBIGUOUS" and r.canonical_name:
+            ambiguous_groups[r.canonical_name].append(i)
+
+    for canon_name, res_idxs in ambiguous_groups.items():
+        nn = _normalize(canon_name)
+        remaining = [idx for idx in name_index.get(nn, []) if idx not in matched_indices]
+        if len(res_idxs) != len(remaining) or len(res_idxs) < 2:
+            continue
+
+        def _pz_sort_key(ri: int) -> tuple:
+            pz = results[ri].pz_card
+            rank = 99
+            if pz.set_code and pz.card_number is not None:
+                ref = pack_sources.get((pz.set_code, pz.card_number))
+                if ref:
+                    rank = _RARITY_RANK.get(ref.get("rarity", ""), 99)
+            return (rank, pz.set_code or "", pz.card_number or 0)
+
+        for ri, ci in zip(sorted(res_idxs, key=_pz_sort_key), sorted(remaining)):
+            results[ri] = MatchResult(
+                status="MATCHED",
+                pz_card=results[ri].pz_card,
+                entry=collection[ci],
+                entry_index=ci,
+                canonical_name=canon_name,
+            )
+        matched_indices.update(remaining)
 
     return results
 
@@ -296,10 +360,10 @@ def _match_one(
             canonical_name=canonical_name,
         )
 
-    # Multiple variants — try to disambiguate via HP from external_card_reference
+    # Multiple variants — try HP then rarity to disambiguate
     if pz.set_code and pz.card_number is not None:
+        # Step A: HP from external_card_reference
         ext_records = ext_ref.get(nn, [])
-        # Find the ext_ref record for this specific card_number in this set
         target_hp: int | None = None
         for er in ext_records:
             if (str(er.get("set_code", "")).upper() == pz.set_code
@@ -308,16 +372,43 @@ def _match_one(
                 break
 
         if target_hp is not None:
-            for idx in indices:
-                entry = collection[idx]
-                if entry.get("hp") == target_hp:
-                    return MatchResult(
-                        status="MATCHED",
-                        pz_card=pz,
-                        entry=entry,
-                        entry_index=idx,
-                        canonical_name=canonical_name,
-                    )
+            hp_matches = [i for i in indices if collection[i].get("hp") == target_hp]
+            if len(hp_matches) == 1:
+                return MatchResult(
+                    status="MATCHED",
+                    pz_card=pz,
+                    entry=collection[hp_matches[0]],
+                    entry_index=hp_matches[0],
+                    canonical_name=canonical_name,
+                )
+            if hp_matches:
+                indices = hp_matches  # narrow to same-HP bucket before rarity step
+
+        # Step B: rarity-based alt-art disambiguation
+        ps_ref = pack_sources.get((pz.set_code, pz.card_number))
+        if ps_ref:
+            rarity = ps_ref.get("rarity", "")
+            is_alt = rarity in {"one_star", "two_star", "three_star", "crown"}
+            alt_idx = [i for i in indices
+                       if "alt" in str(collection[i].get("variant", "")).lower()]
+            reg_idx = [i for i in indices
+                       if "alt" not in str(collection[i].get("variant", "")).lower()]
+            if is_alt and len(alt_idx) == 1:
+                return MatchResult(
+                    status="MATCHED",
+                    pz_card=pz,
+                    entry=collection[alt_idx[0]],
+                    entry_index=alt_idx[0],
+                    canonical_name=canonical_name,
+                )
+            if not is_alt and len(reg_idx) == 1:
+                return MatchResult(
+                    status="MATCHED",
+                    pz_card=pz,
+                    entry=collection[reg_idx[0]],
+                    entry_index=reg_idx[0],
+                    canonical_name=canonical_name,
+                )
 
     # Disambiguation failed
     return MatchResult(
