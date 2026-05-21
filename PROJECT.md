@@ -17,15 +17,15 @@ Everything built must serve the collection tracking and recommendation goal. Do 
 
 | Item | Value |
 |---|---|
-| `collection.json` total | **582** (last_updated: 2026-05-20) |
-| `collection.json` unique entries | **279** |
+| `collection.json` total | **578** (last_updated: 2026-05-20) |
+| `collection.json` unique entries | **272** |
 | `pack_sources.json` records | 3110 validated |
-| EV pipeline status | **Current** — rebuilt 2026-05-20 against 582-card collection |
+| EV pipeline status | **Stale** — needs rebuild against 578-card collection |
 | Pull rate model version | **v0.6.0** |
 | Pull rate data source | Pokemon Zone (source of truth); third_party cross-checked |
 | Deck status | 4 buildable; 4 chase (1 ex short each) |
 | Pack-source coverage | **207/224** (EV-ready); 9 permanently unresolvable |
-| Known discrepancy | **RESOLVED 2026-05-20** — collection.json=582, PTCGP app=573; gap=9 real PZ-untracked cards (trainers, promos) |
+| Known discrepancy | **RESOLVED 2026-05-20** — collection.json=578 matches PZ exactly |
 
 The `sum(count)` across all entries in `collection.json` must always equal `meta.total_cards`. Validation enforces this strictly.
 
@@ -106,7 +106,7 @@ python3 scripts/run_recommendations.py --login     # Playwright re-auth before s
 ### Collection validation
 
 ```bash
-python3 scripts/validate_current_collection.py --expected-total 582
+python3 scripts/validate_current_collection.py --expected-total 578
 python3 scripts/normalize_current_collection.py
 ```
 
@@ -257,11 +257,13 @@ python3 scripts/validate_deck_recommendations.py
 - 582 vs 573 discrepancy resolved: gap=9 real PZ-untracked cards (trainers, promos) (2026-05-20)
 - EV pipeline rebuilt against 582-card collection (2026-05-20); top pack: Paldean Wonders adj_ev=4.1663
 - sync_collection.py upgraded: HP fix + rarity-alt-art + two-pass + group-rank disambiguation (2026-05-20)
+- Sync to 578: fixed PROMO-A/B overrides + A1 sanity check; removed 7 untracked entries (2026-05-20)
 
 **Next steps in priority order:**
 
-1. **Build deck scoring model** — weight EV recommendations toward packs containing chase cards
-2. **Final recommendations** — only after deck scoring built
+1. **Rebuild EV pipeline** against 578-card collection (`build_pack_ev.py` → `generate_pack_recommendation_report.py` → `generate_hourglass_spending_plan.py`)
+2. **Build deck scoring model** — weight EV recommendations toward packs containing chase cards
+3. **Final recommendations** — only after deck scoring built
 
 ---
 
@@ -399,31 +401,17 @@ This rule exists to prevent silent degradation of accuracy as context fills, and
 
 ## 19. collection.json vs PTCGP Discrepancy — RESOLVED
 
-**Status (2026-05-20): RESOLVED.** collection.json=582, PTCGP app=573. Gap=9 real PZ-untracked cards.
+**Status (2026-05-20): FULLY RESOLVED.** collection.json=578 matches PZ exactly. No gap.
 
-**Root cause (identified and corrected):** The PZ sync preserves historical counts for cards it can't match (`missing_from_pz`). Direct comparison of PZ `sum(ownedCount)=573` vs PTCGP count=573 confirmed PZ data is exact. The 11-card gap from collection.json=584 was entirely due to 2 phantom Riolu (Fighting Fast art) copies from the pre-PZ screenshot pipeline.
+**Sync matching bugs fixed (2026-05-20):**
+- Added `_PROMO_A_OVERRIDES` (X Speed/#2, Red Card/#6) — fuzzy matcher was picking wrong cards.
+- Extended `_PROMO_B_OVERRIDES` with Zygarde ex/#53 and Mega Heracross ex/#56.
+- Added Step 1 sanity check: reject pack_sources result when name fuzzy similarity vs PZ name < 60%. This fixes the A1 card-number mismatch (pack_sources A1 uses a different numbering scheme than PZ — e.g., pack_sources A1/67="Cloyster" but PZ A1/67="Moltres ex").
 
-**Phantom corrected:**
-- Riolu Fighting Fast art (B3/79, one_diamond): count 5→3 (PZ shows 3, collection.json had 5 from screenshot era)
-
-**Confirmed real — PZ can't track these 9 cards (7 entries):**
-
-| Name | Count | Reason PZ can't track |
-|---|---|---|
-| Zygarde ex | 1 | PROMO-B; no override mapping exists |
-| Moltres ex | 1 | A1 vs A4b ambiguity; both sets same rarity — unresolvable |
-| Marowak ex | 1 | A1 vs A4b ambiguity; both sets same rarity — unresolvable |
-| Mega Heracross ex | 1 | Not present in PZ records |
-| Red Card | 2 | Trainer; not in PZ card tracking |
-| X Speed | 2 | Trainer; not in PZ card tracking |
-| Jigglypuff | 1 | Name mismatch in PZ |
-
-Total PZ-untracked: 7 entries, 9 cards. collection.json=582 = 573 PZ-tracked + 9 PZ-untracked. ✓
-
-Note: Zygarde 10% Forme and Zygarde 50% Forme ARE tracked via PROMO-B overrides in the sync.
+**7 entries removed (no PZ record):** Charizard ex, Cloyster, Gengar ex, Mew ex, Mega Charizard X ex, Wigglytuff, Red (supporter). These were absorbed by wrong matches under the old sync logic. With matching fixed they have no corresponding PZ record and were confirmed absent.
 
 **Variant disambiguation: FULLY RESOLVED (2026-05-20)**
 
-All multi-variant cards (Bulbasaur, Mienfoo, Mienshao, Onix, Riolu, Grovyle) are now correctly matched per variant via HP + rarity + two-pass + group-rank disambiguation in sync_collection.py. No entries appear in `missing_from_pz` due to variant collision.
+All multi-variant cards (Bulbasaur, Mienfoo, Mienshao, Onix, Riolu, Grovyle) are correctly matched per variant via HP + rarity + two-pass + group-rank disambiguation in sync_collection.py.
 
 **Do not change collection.json quantities without explicit user confirmation.**
