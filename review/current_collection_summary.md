@@ -2,38 +2,38 @@
 
 **Last updated:** 2026-05-20  
 **Format:** Pokemon TCG Pocket  
-**Meta declared total:** 582  
-**Actual card count:** 582  
+**Meta declared total:** 588  
+**Actual card count:** 588  
 **Unique entries:** 279  
 
 ## By Card Type
 
 | Card Type | Count |
 |---|---|
-| Pokemon | 521 |
+| Pokemon | 527 |
 | Trainer | 61 |
 
 ## By Pokémon Type
 
 | Type | Count |
 |---|---|
-| Fighting | 87 |
-| Grass | 76 |
-| Colorless | 74 |
+| Fighting | 89 |
+| Colorless | 76 |
+| Grass | 75 |
 | Fire | 67 |
-| Water | 55 |
+| Water | 56 |
 | Darkness | 49 |
-| Psychic | 47 |
+| Psychic | 48 |
 | Lightning | 42 |
-| Metal | 19 |
+| Metal | 20 |
 | Dragon | 5 |
 
 ## By Stage
 
 | Stage | Count |
 |---|---|
-| Basic | 346 |
-| Stage 1 | 139 |
+| Basic | 350 |
+| Stage 1 | 141 |
 | Stage 2 | 36 |
 
 ## Trainer Cards
@@ -48,7 +48,7 @@
 ## Ex Pokémon
 
 - **Ex entries:** 20
-- **Ex card count:** 23
+- **Ex card count:** 24
 
 | Ex Card |
 |---|

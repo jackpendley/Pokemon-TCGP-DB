@@ -208,9 +208,20 @@ _RARITY_RANK: dict[str, int] = {
 
 # Known PROMO-B card-number → canonical collection.json name overrides.
 # PZ's catalog returns "Zygarde" for these slots; the correct names use form suffixes.
+# #53 and #56 need overrides because pack_sources has no PROMO-B entries and the
+# fuzzy matcher picks wrong cards at ≥85% ("Mega Ampharos ex", "Heracross").
 _PROMO_B_OVERRIDES: dict[int, str] = {
     51: "Zygarde 10% Forme",
     52: "Zygarde 50% Forme",
+    53: "Zygarde ex",
+    56: "Mega Heracross ex",
+}
+
+# PROMO-A cards are not in pack_sources; fuzzy matcher picks wrong names ("Mega Charizard X ex",
+# "Red") at ≥85%. Override directly to the correct collection.json names.
+_PROMO_A_OVERRIDES: dict[int, str] = {
+    2: "X Speed",
+    6: "Red Card",
 }
 
 
@@ -317,17 +328,24 @@ def _match_one(
     pack_name_list: list[str],
     ext_ref: dict[str, list[dict]],
 ) -> MatchResult:
-    # Pre-step: PROMO-B overrides (PZ catalog returns wrong names for these slots)
+    # Pre-step: PROMO overrides (PZ catalog returns wrong/missing names for these slots)
     canonical_name: str | None = None
-    if pz.set_code == "PROMO-B" and pz.card_number in _PROMO_B_OVERRIDES:
+    if pz.set_code == "PROMO-A" and pz.card_number in _PROMO_A_OVERRIDES:
+        canonical_name = _PROMO_A_OVERRIDES[pz.card_number]
+    elif pz.set_code == "PROMO-B" and pz.card_number in _PROMO_B_OVERRIDES:
         canonical_name = _PROMO_B_OVERRIDES[pz.card_number]
 
-    # Step 1: resolve canonical name via (set_code, card_number) → pack_sources
+    # Step 1: resolve canonical name via (set_code, card_number) → pack_sources.
+    # Sanity-check: reject the pack_sources result if its name is implausibly
+    # different from the PZ raw name (catches A1 card-number mismatches where
+    # pack_sources uses a different numbering scheme than PZ).
     if canonical_name is None and pz.set_code and pz.card_number is not None:
         key = (pz.set_code, pz.card_number)
         ref = pack_sources.get(key)
         if ref:
-            canonical_name = ref["card_name"]
+            from rapidfuzz import fuzz as _fuzz
+            if _fuzz.ratio(pz.raw_name.lower(), ref["card_name"].lower()) >= 60:
+                canonical_name = ref["card_name"]
 
     # Step 2: fuzzy match raw name against pack_sources card_name list
     if not canonical_name:

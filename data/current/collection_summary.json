@@ -1,36 +1,36 @@
 {
   "meta": {
-    "total_cards": 582,
+    "total_cards": 588,
     "last_updated": "2026-05-20",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 582,
-  "meta_total_cards": 582,
+  "total_quantity": 588,
+  "meta_total_cards": 588,
   "count_matches_meta": true,
   "unique_entries": 279,
   "by_card_type": {
-    "Pokemon": 521,
+    "Pokemon": 527,
     "Trainer": 61
   },
   "by_pokemon_type": {
     "Fire": 67,
-    "Grass": 76,
-    "Water": 55,
+    "Grass": 75,
+    "Water": 56,
     "Lightning": 42,
-    "Psychic": 47,
-    "Fighting": 87,
+    "Psychic": 48,
+    "Fighting": 89,
     "Darkness": 49,
-    "Metal": 19,
+    "Metal": 20,
     "Dragon": 5,
-    "Colorless": 74
+    "Colorless": 76
   },
   "by_stage": {
-    "Basic": 346,
-    "Stage 1": 139,
+    "Basic": 350,
+    "Stage 1": 141,
     "Stage 2": 36
   },
   "ex_entries": 20,
-  "ex_quantity": 23,
+  "ex_quantity": 24,
   "trainer_subtypes": {
     "Item": 27,
     "Pokemon Tool": 2,

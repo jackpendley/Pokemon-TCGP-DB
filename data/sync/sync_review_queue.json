@@ -1,296 +1,41 @@
 {
   "generated_at": "2026-05-20",
-  "resolved": true,
-  "resolution_note": "2026-05-20: Added 18 new card entries to collection.json (Charizard ex, Exeggcute, Ledyba, Grovyle x2, Cloyster, Drizzile, Gengar ex, Weezing, Mew ex, Galarian Linoone, Crobat ex, Mega Mawile ex, Mega Charizard X ex, Wigglytuff, Tandemaus, Teddiursa, Red supporter). PROMO-B/51+52 Zygarde name mismatch fixed in sync code. Ambiguous Bulbasaur/Onix/Mienfoo/Mienshao matches left unresolved (existing counts kept).",
-  "new_cards": [
-    {
-      "set_code": "A4B",
-      "card_number": 11,
-      "raw_name": "Exeggcute",
-      "canonical_name": "Exeggcute",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "A1",
-      "card_number": 67,
-      "raw_name": "Moltres ex",
-      "canonical_name": "Cloyster",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "A1",
-      "card_number": 194,
-      "raw_name": "Cubone",
-      "canonical_name": "Wigglytuff",
-      "count": 2,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "A1",
-      "card_number": 277,
-      "raw_name": "Jigglypuff",
-      "canonical_name": "Gengar ex",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "A1",
-      "card_number": 280,
-      "raw_name": "Farfetch’d",
-      "canonical_name": "Charizard ex",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "A4B",
-      "card_number": 232,
-      "raw_name": "Crobat ex",
-      "canonical_name": "Crobat ex",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "B2",
-      "card_number": 1,
-      "raw_name": "Ledyba",
-      "canonical_name": "Ledyba",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "B2",
-      "card_number": 99,
-      "raw_name": "Galarian Linoone",
-      "canonical_name": "Galarian Linoone",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "B2",
-      "card_number": 113,
-      "raw_name": "Mega Mawile ex",
-      "canonical_name": "Mega Mawile ex",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "B2",
-      "card_number": 142,
-      "raw_name": "Tandemaus",
-      "canonical_name": "Tandemaus",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "B3",
-      "card_number": 6,
-      "raw_name": "Grovyle",
-      "canonical_name": "Grovyle",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "B3",
-      "card_number": 49,
-      "raw_name": "Drizzile",
-      "canonical_name": "Drizzile",
-      "count": 2,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "B3",
-      "card_number": 102,
-      "raw_name": "Weezing",
-      "canonical_name": "Weezing",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "B3",
-      "card_number": 131,
-      "raw_name": "Teddiursa",
-      "canonical_name": "Teddiursa",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "B3",
-      "card_number": 157,
-      "raw_name": "Grovyle",
-      "canonical_name": "Grovyle",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "PROMO-B",
-      "card_number": 51,
-      "raw_name": "Zygarde",
-      "canonical_name": null,
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "PROMO-B",
-      "card_number": 52,
-      "raw_name": "Zygarde",
-      "canonical_name": null,
-      "count": 3,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "PROMO-B",
-      "card_number": 53,
-      "raw_name": "Zygarde ex",
-      "canonical_name": "Mew ex",
-      "count": 1,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "PROMO-A",
-      "card_number": 2,
-      "raw_name": "X Speed",
-      "canonical_name": "Mega Charizard X ex",
-      "count": 2,
-      "action_needed": "Add this card to collection.json manually"
-    },
-    {
-      "set_code": "PROMO-A",
-      "card_number": 6,
-      "raw_name": "Red Card",
-      "canonical_name": "Red",
-      "count": 2,
-      "action_needed": "Add this card to collection.json manually"
-    }
-  ],
-  "ambiguous_matches": [
-    {
-      "raw_name": "Bulbasaur",
-      "canonical_name": "Bulbasaur",
-      "pz_count": 1,
-      "candidate_names": [
-        "Bulbasaur (hp=70, variant=)",
-        "Bulbasaur (hp=70, variant=alt art)",
-        "Bulbasaur (hp=60, variant=Tackle art)"
-      ],
-      "action_needed": "Resolve variant manually, then re-run sync"
-    },
-    {
-      "raw_name": "Onix",
-      "canonical_name": "Onix",
-      "pz_count": 1,
-      "candidate_names": [
-        "Onix (hp=110, variant=Land Crush art)",
-        "Onix (hp=100, variant=Dig art)"
-      ],
-      "action_needed": "Resolve variant manually, then re-run sync"
-    },
-    {
-      "raw_name": "Mienfoo",
-      "canonical_name": "Mienfoo",
-      "pz_count": 2,
-      "candidate_names": [
-        "Mienfoo (hp=60, variant=Pound art)",
-        "Mienfoo (hp=50, variant=Chop art)"
-      ],
-      "action_needed": "Resolve variant manually, then re-run sync"
-    },
-    {
-      "raw_name": "Mienshao",
-      "canonical_name": "Mienshao",
-      "pz_count": 1,
-      "candidate_names": [
-        "Mienshao (hp=80, variant=Spiral Kick art)",
-        "Mienshao (hp=90, variant=Low Sweep art)"
-      ],
-      "action_needed": "Resolve variant manually, then re-run sync"
-    },
-    {
-      "raw_name": "Bulbasaur",
-      "canonical_name": "Bulbasaur",
-      "pz_count": 1,
-      "candidate_names": [
-        "Bulbasaur (hp=70, variant=)",
-        "Bulbasaur (hp=70, variant=alt art)",
-        "Bulbasaur (hp=60, variant=Tackle art)"
-      ],
-      "action_needed": "Resolve variant manually, then re-run sync"
-    }
-  ],
+  "resolved": false,
+  "new_cards": [],
+  "ambiguous_matches": [],
   "missing_from_pz": [
     {
-      "name": "Moltres ex",
+      "name": "Charizard ex",
       "current_count": 1,
       "note": "Not found in Pokemon Zone response — count NOT zeroed"
     },
     {
-      "name": "Bulbasaur",
+      "name": "Cloyster",
       "current_count": 1,
       "note": "Not found in Pokemon Zone response — count NOT zeroed"
     },
     {
-      "name": "Bulbasaur",
+      "name": "Gengar ex",
       "current_count": 1,
       "note": "Not found in Pokemon Zone response — count NOT zeroed"
     },
     {
-      "name": "Mega Heracross ex",
+      "name": "Mew ex",
       "current_count": 1,
       "note": "Not found in Pokemon Zone response — count NOT zeroed"
     },
     {
-      "name": "Marowak ex",
-      "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Mienfoo",
+      "name": "Mega Charizard X ex",
       "current_count": 2,
       "note": "Not found in Pokemon Zone response — count NOT zeroed"
     },
     {
-      "name": "Mienshao",
-      "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Riolu",
+      "name": "Wigglytuff",
       "current_count": 2,
       "note": "Not found in Pokemon Zone response — count NOT zeroed"
     },
     {
-      "name": "Onix",
-      "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Zygarde 10% Forme",
-      "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Zygarde 50% Forme",
-      "current_count": 3,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Zygarde ex",
-      "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Jigglypuff",
-      "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Red Card",
-      "current_count": 2,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "X Speed",
+      "name": "Red",
       "current_count": 2,
       "note": "Not found in Pokemon Zone response — count NOT zeroed"
     }
