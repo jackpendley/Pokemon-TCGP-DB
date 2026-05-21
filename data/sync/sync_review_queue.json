@@ -1,43 +1,7 @@
 {
-  "generated_at": "2026-05-20",
+  "generated_at": "2026-05-21",
   "resolved": false,
   "new_cards": [],
   "ambiguous_matches": [],
-  "missing_from_pz": [
-    {
-      "name": "Charizard ex",
-      "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Cloyster",
-      "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Gengar ex",
-      "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Mew ex",
-      "current_count": 1,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Mega Charizard X ex",
-      "current_count": 2,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Wigglytuff",
-      "current_count": 2,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    },
-    {
-      "name": "Red",
-      "current_count": 2,
-      "note": "Not found in Pokemon Zone response — count NOT zeroed"
-    }
-  ]
+  "missing_from_pz": []
 }

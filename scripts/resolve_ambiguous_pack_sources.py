@@ -55,6 +55,7 @@ COLLECTION_JSON      = ROOT / "data" / "current"   / "collection_normalized.json
 CONFIRMATIONS_JSON   = ROOT / "data" / "current"   / "current_collection_pack_confirmations.json"
 EXT_REF_JSON         = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
 PACK_SOURCES_JSON    = ROOT / "data" / "reference" / "pack_sources.json"
+PZ_RAW_CACHE         = ROOT / "data" / "sync" / "last_sync_raw.json"
 
 OUT_JSON = ROOT / "data" / "current" / "resolved_pack_sources.json"
 OUT_MD   = ROOT / "review"           / "resolved_pack_sources.md"
@@ -82,6 +83,7 @@ KNOWN_INVALID_CANDIDATES = {
 }
 
 # Confidence thresholds
+PZ_SET_CODE_CONFIDENCE = 0.97   # PZ is source of truth for which set a card came from
 HP_MATCH_CONFIDENCE   = 0.88
 EVO_CHAIN_CONFIDENCE  = 0.82
 RARITY_COUNT_CONF_3   = 0.90   # count >= 3, one_star vs common
@@ -403,6 +405,57 @@ def pass3_rarity_count(remaining, coll_map, pack_sources, scores_map):
     return resolved
 
 
+def pass4_pz_set_code(remaining, pack_sources):
+    """
+    Resolve using set codes from last_sync_raw.json (Pokemon Zone source data).
+    PZ directly reports which set each owned card came from — authoritative for
+    trainer cards and A-series cards that can't be disambiguated via HP.
+    Only resolves when the PZ set codes intersect uniquely with one candidate set.
+    """
+    if not PZ_RAW_CACHE.exists():
+        return {}
+    try:
+        raw = json.loads(PZ_RAW_CACHE.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+    # name_lower → set of set_codes reported by PZ for owned copies
+    pz_sets: dict[str, set[str]] = {}
+    for rec in raw:
+        name = rec.get("cardName", "").lower()
+        sc   = rec.get("setCode", "")
+        if name and sc:
+            pz_sets.setdefault(name, set()).add(sc)
+
+    resolved = {}
+    for entry in remaining:
+        eid  = entry["entry_id"]
+        name = entry["name"]
+        candidate_sets = set(c.get("set_code") for c in entry.get("candidates", []))
+
+        owned_sets   = pz_sets.get(name.lower(), set())
+        intersection = owned_sets & candidate_sets
+
+        if len(intersection) != 1:
+            continue
+
+        winner = next(iter(intersection))
+        pr = best_pack_rec(pack_sources, winner, name)
+        if not pr:
+            continue
+
+        resolved[eid] = {
+            "name":       name,
+            "set_code":   winner,
+            "pack_name":  pr["pack_name"],
+            "expansion":  pr["expansion"],
+            "method":     "pz_set_code",
+            "confidence": PZ_SET_CODE_CONFIDENCE,
+            "evidence":   f"Pokemon Zone reports setCode={winner} for owned copy",
+        }
+    return resolved
+
+
 def classify_unresolved_reason(entry, coll_map, ext_idx):
     """Return a human-readable reason code for why an entry could not be resolved."""
     eid  = entry["entry_id"]
@@ -488,19 +541,28 @@ def run():
     p2b = pass2_evo_chain(remaining_after_p3, combined_pool_2b, pack_sources)
     print(f"PASS 2B (evo_chain+):   {len(p2b):3d} resolved")
 
-    # Merge all resolved (P0 highest priority, then P1, P2, P2B, P3)
-    new_resolved = {**p1, **p2, **p2b, **p3, **p0}
+    # --- PASS 4 ---
+    remaining_after_p2b = [e for e in remaining_after_p3 if e["entry_id"] not in p2b]
+    p4 = pass4_pz_set_code(remaining_after_p2b, pack_sources)
+    print(f"PASS 4 (pz_set_code):  {len(p4):3d} resolved")
+
+    # Merge all resolved (P0 highest priority, then P1, P2, P2B, P3, P4)
+    new_resolved = {**p1, **p2, **p2b, **p3, **p4, **p0}
     total_new = len(new_resolved)
 
     remaining_final = [e for e in low_entries if e["entry_id"] not in new_resolved]
     print(f"\nTotal new resolutions: {total_new} / {len(low_entries)}")
     print(f"Still unresolved:      {len(remaining_final)} / {len(low_entries)}")
 
-    prev_ev_ready = 157
+    ev_total = len(scores.get("entries", []))
+    prev_ev_ready = (
+        len(scores.get("auto_accept_entries", []))
+        + len(scores.get("secondary_evidence_entries", []))
+    )
     new_ev_ready  = prev_ev_ready + sum(
         1 for r in new_resolved.values() if r["confidence"] >= SECONDARY_THRESHOLD
     )
-    print(f"\nEV-ready coverage:     {prev_ev_ready}/224 → {new_ev_ready}/224")
+    print(f"\nEV-ready coverage:     {prev_ev_ready}/{ev_total} → {new_ev_ready}/{ev_total}")
 
     # Classify unresolved reasons
     unresolved_list = []
@@ -518,14 +580,14 @@ def run():
         "_meta": {
             "generated":       datetime.now(timezone.utc).isoformat(),
             "source_script":   "scripts/resolve_ambiguous_pack_sources.py",
-            "version":         "1.2.0",
-            "passes":          ["user_confirmation", "hp_match", "evo_chain", "rarity_count", "evo_chain_2b"],
+            "version":         "1.3.0",
+            "passes":          ["user_confirmation", "hp_match", "evo_chain", "rarity_count", "evo_chain_2b", "pz_set_code"],
             "input_low_confidence": len(low_entries),
             "total_new_resolved": total_new,
             "total_still_unresolved": len(remaining_final),
             "ev_ready_before": prev_ev_ready,
             "ev_ready_after":  new_ev_ready,
-            "ev_ready_total":  224,
+            "ev_ready_total":  ev_total,
         },
         "resolved": new_resolved,
         "unresolved": unresolved_list,
@@ -535,13 +597,13 @@ def run():
     OUT_JSON.write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print(f"\nWrote {OUT_JSON}")
 
-    _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p2b, p3)
+    _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p2b, p3, p4)
     print(f"Wrote {OUT_MD}")
 
     return out
 
 
-def _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p2b, p3):
+def _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p2b, p3, p4):
     meta = out["_meta"]
     ts   = meta["generated"]
 
@@ -563,6 +625,7 @@ def _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p2b, p3):
         f"| PASS 2 — evo_chain | {len(p2)} |",
         f"| PASS 3 — rarity_count | {len(p3)} |",
         f"| PASS 2B — evo_chain (post-P3) | {len(p2b)} |",
+        f"| PASS 4 — pz_set_code | {len(p4)} |",
         f"| **Total new resolved** | **{meta['total_new_resolved']}** |",
         f"| Still unresolved | {meta['total_still_unresolved']} |",
         f"| EV-ready before | {meta['ev_ready_before']}/{meta['ev_ready_total']} ({meta['ev_ready_before']/meta['ev_ready_total']*100:.0f}%) |",
@@ -620,6 +683,16 @@ def _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p2b, p3):
 
     lines += [
         "",
+        "## PASS 4: Pokemon Zone Set Code",
+        "",
+        "| Entry | Set | Pack | Confidence | Evidence |",
+        "|---|---|---|---|---|",
+    ]
+    for eid, r in sorted(p4.items()):
+        lines.append(f"| {eid} | {r['set_code']} | {r['pack_name']} | {r['confidence']} | {r['evidence']} |")
+
+    lines += [
+        "",
         "## Unresolved (manual review or leave as ambiguous)",
         "",
         "| Entry | Candidates | Reason |",
@@ -649,6 +722,7 @@ def _write_markdown(out, new_resolved, unresolved_list, p0, p1, p2, p2b, p3):
         "| Method | Confidence | Tier |",
         "|---|---|---|",
         "| user_confirmation | 0.99 | auto_accept |",
+        "| pz_set_code | 0.97 | auto_accept |",
         "| hp_match | 0.88 | secondary |",
         "| evo_chain | 0.82 | secondary |",
         "| rarity_count (count≥3) | 0.90 | secondary |",

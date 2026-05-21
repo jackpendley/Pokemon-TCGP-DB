@@ -40,15 +40,11 @@ OUT_CSV = ROOT / "data" / "exports" / "current_collection_pack_coverage.csv"
 
 # Common trainer items that are not indexed in Limitless TCG Pocket
 KNOWN_GAP_ITEMS = {
-    "potion", "x speed", "red card", "hand scope", "pokédex", "pokedex",
     "poke ball", "poké ball", "x attack", "super potion",
 }
 
 # Manual name aliases: collection.json name → pack_sources lookup name
-NAME_ALIASES: dict[str, list[str]] = {
-    # Zygarde forms: not present in pack_sources under either name
-    # (logged as no_match for transparency)
-}
+NAME_ALIASES: dict[str, list[str]] = {}
 
 
 def norm(s: str) -> str:
@@ -398,11 +394,6 @@ def main():
     OUT_JSON.write_text(json.dumps(out_data, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\n  Written: {OUT_JSON.relative_to(ROOT)}")
 
-    write_csv(results, OUT_CSV)
-    print(f"  Written: {OUT_CSV.relative_to(ROOT)}")
-
-    write_md(results, ps_meta, OUT_MD)
-    print(f"  Written: {OUT_MD.relative_to(ROOT)}")
 
     resolved = sum(1 for r in results if r["match_status"] in ("exact_match", "unanimous_pack", "unanimous_expansion"))
     total = len(results)

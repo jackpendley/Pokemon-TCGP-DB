@@ -1,16 +1,14 @@
 {
   "meta": {
-    "total_cards": 380,
-    "ps_records": 3110
+    "total_cards": 588,
+    "ps_records": 3119
   },
-  "total_entries": 224,
-  "total_quantity": 380,
+  "total_entries": 272,
+  "total_quantity": 588,
   "by_status": {
-    "ambiguous_cross_set": 59,
-    "unanimous_pack": 49,
-    "exact_match": 108,
-    "no_match": 3,
-    "no_match_known_gap": 5
+    "ambiguous_cross_set": 70,
+    "unanimous_pack": 60,
+    "exact_match": 142
   },
   "entries": [
     {
@@ -264,7 +262,7 @@
     {
       "entry_id": "tepig",
       "name": "Tepig",
-      "count": 2,
+      "count": 10,
       "type": "Fire",
       "card_type": "Pokemon",
       "stage": 0,
@@ -306,7 +304,7 @@
     {
       "entry_id": "pignite",
       "name": "Pignite",
-      "count": 4,
+      "count": 7,
       "type": "Fire",
       "card_type": "Pokemon",
       "stage": 1,
@@ -546,7 +544,7 @@
     {
       "entry_id": "victini",
       "name": "Victini",
-      "count": 4,
+      "count": 5,
       "type": "Fire",
       "card_type": "Pokemon",
       "stage": 0,
@@ -648,7 +646,7 @@
     {
       "entry_id": "darumaka",
       "name": "Darumaka",
-      "count": 2,
+      "count": 4,
       "type": "Fire",
       "card_type": "Pokemon",
       "stage": 0,
@@ -692,7 +690,7 @@
     {
       "entry_id": "darmanitan",
       "name": "Darmanitan",
-      "count": 3,
+      "count": 4,
       "type": "Fire",
       "card_type": "Pokemon",
       "stage": 1,
@@ -736,7 +734,7 @@
     {
       "entry_id": "larvesta",
       "name": "Larvesta",
-      "count": 3,
+      "count": 6,
       "type": "Fire",
       "card_type": "Pokemon",
       "stage": 0,
@@ -804,7 +802,7 @@
     {
       "entry_id": "castform_sunny_form",
       "name": "Castform Sunny Form",
-      "count": 1,
+      "count": 5,
       "type": "Fire",
       "card_type": "Pokemon",
       "stage": 0,
@@ -928,6 +926,108 @@
         }
       ],
       "recommended_resolution": "needs_card_number"
+    },
+    {
+      "entry_id": "litten",
+      "name": "Litten",
+      "count": 1,
+      "type": "Fire",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 60,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Mega Gyarados"
+      ],
+      "unique_expansions": [
+        "Mega Rising"
+      ],
+      "candidate_summary": "B1/293 Mega Rising (Mega Gyarados) [one_star]",
+      "candidates": [
+        {
+          "set_code": "B1",
+          "card_number": 293,
+          "expansion": "Mega Rising",
+          "pack_name": "Mega Gyarados",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B1/293"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "camerupt",
+      "name": "Camerupt",
+      "count": 1,
+      "type": "Fire",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 130,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/22 Pulsing Aura (Pulsing Aura) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 22,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/22"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "volcarona",
+      "name": "Volcarona",
+      "count": 2,
+      "type": "Fire",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 110,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/32 Pulsing Aura (Pulsing Aura) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 32,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/32"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
     },
     {
       "entry_id": "bulbasaur",
@@ -1190,7 +1290,7 @@
     {
       "entry_id": "shroomish",
       "name": "Shroomish",
-      "count": 3,
+      "count": 7,
       "type": "Grass",
       "card_type": "Pokemon",
       "stage": 0,
@@ -1284,7 +1384,7 @@
     {
       "entry_id": "breloom",
       "name": "Breloom",
-      "count": 1,
+      "count": 2,
       "type": "Grass",
       "card_type": "Pokemon",
       "stage": 1,
@@ -1328,7 +1428,7 @@
     {
       "entry_id": "treecko",
       "name": "Treecko",
-      "count": 2,
+      "count": 4,
       "type": "Grass",
       "card_type": "Pokemon",
       "stage": 0,
@@ -1404,7 +1504,7 @@
     {
       "entry_id": "masquerain",
       "name": "Masquerain",
-      "count": 1,
+      "count": 2,
       "type": "Grass",
       "card_type": "Pokemon",
       "stage": 1,
@@ -1472,7 +1572,7 @@
     {
       "entry_id": "sewaddle",
       "name": "Sewaddle",
-      "count": 2,
+      "count": 5,
       "type": "Grass",
       "card_type": "Pokemon",
       "stage": 0,
@@ -1506,7 +1606,7 @@
     {
       "entry_id": "swadloon",
       "name": "Swadloon",
-      "count": 2,
+      "count": 8,
       "type": "Grass",
       "card_type": "Pokemon",
       "stage": 1,
@@ -1540,7 +1640,7 @@
     {
       "entry_id": "applin",
       "name": "Applin",
-      "count": 4,
+      "count": 8,
       "type": "Grass",
       "card_type": "Pokemon",
       "stage": 0,
@@ -1574,7 +1674,7 @@
     {
       "entry_id": "leavanny",
       "name": "Leavanny",
-      "count": 1,
+      "count": 2,
       "type": "Grass",
       "card_type": "Pokemon",
       "stage": 2,
@@ -1744,7 +1844,7 @@
     {
       "entry_id": "tangela",
       "name": "Tangela",
-      "count": 3,
+      "count": 5,
       "type": "Grass",
       "card_type": "Pokemon",
       "stage": 0,
@@ -1984,9 +2084,407 @@
       "recommended_resolution": "needs_card_number"
     },
     {
+      "entry_id": "heracross",
+      "name": "Heracross",
+      "count": 2,
+      "type": "Grass",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 90,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/3 Pulsing Aura (Pulsing Aura) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 3,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/3"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "sceptile",
+      "name": "Sceptile",
+      "count": 1,
+      "type": "Grass",
+      "card_type": "Pokemon",
+      "stage": 2,
+      "hp": 140,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/7 Pulsing Aura (Pulsing Aura) [three_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 7,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/7"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "shaymin",
+      "name": "Shaymin",
+      "count": 1,
+      "type": "Grass",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 70,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "ambiguous_cross_set",
+      "match_confidence": "low",
+      "candidate_count": 8,
+      "unique_packs": [
+        "Arceus",
+        "Deluxe Pack: ex",
+        "Dialga"
+      ],
+      "unique_expansions": [
+        "Deluxe Pack: ex",
+        "Space-Time Smackdown",
+        "Triumphant Light"
+      ],
+      "candidate_summary": "A2/22 Space-Time Smackdown (Dialga) [three_diamond]; A2/159 Space-Time Smackdown (Dialga) [one_star]; A2a/69 Triumphant Light (Arceus) [three_diamond]; A2a/81 Triumphant Light (Arceus) [one_star]; A4b/30 Deluxe Pack: ex (Deluxe Pack: ex) [three_diamond] … +3 more",
+      "candidates": [
+        {
+          "set_code": "A2",
+          "card_number": 22,
+          "expansion": "Space-Time Smackdown",
+          "pack_name": "Dialga",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A2/22"
+        },
+        {
+          "set_code": "A2",
+          "card_number": 159,
+          "expansion": "Space-Time Smackdown",
+          "pack_name": "Dialga",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A2/159"
+        },
+        {
+          "set_code": "A2a",
+          "card_number": 69,
+          "expansion": "Triumphant Light",
+          "pack_name": "Arceus",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A2a/69"
+        },
+        {
+          "set_code": "A2a",
+          "card_number": 81,
+          "expansion": "Triumphant Light",
+          "pack_name": "Arceus",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A2a/81"
+        },
+        {
+          "set_code": "A4b",
+          "card_number": 30,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/30"
+        },
+        {
+          "set_code": "A4b",
+          "card_number": 31,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/31"
+        },
+        {
+          "set_code": "A4b",
+          "card_number": 297,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/297"
+        },
+        {
+          "set_code": "A4b",
+          "card_number": 298,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/298"
+        }
+      ],
+      "recommended_resolution": "needs_card_number"
+    },
+    {
+      "entry_id": "flapple",
+      "name": "Flapple",
+      "count": 1,
+      "type": "Grass",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 90,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "unanimous_pack",
+      "match_confidence": "medium",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/20 Pulsing Aura (Pulsing Aura) [three_diamond]; B3/160 Pulsing Aura (Pulsing Aura) [one_star]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 20,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/20"
+        },
+        {
+          "set_code": "B3",
+          "card_number": 160,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/160"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "mega_heracross_ex",
+      "name": "Mega Heracross ex",
+      "count": 1,
+      "type": "Grass",
+      "card_type": "Pokemon",
+      "stage": 2,
+      "hp": 210,
+      "is_ex": true,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Promo Pack B Series Vol. 8"
+      ],
+      "unique_expansions": [
+        "PROMO-B"
+      ],
+      "candidate_summary": "PROMO-B/56 PROMO-B (Promo Pack B Series Vol. 8) [None]",
+      "candidates": [
+        {
+          "set_code": "PROMO-B",
+          "card_number": 56,
+          "expansion": "PROMO-B",
+          "pack_name": "Promo Pack B Series Vol. 8",
+          "rarity": null,
+          "source_url": "https://www.pokemon-zone.com/cards/promo-b/56/mega-heracross-ex/"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "exeggcute",
+      "name": "Exeggcute",
+      "count": 1,
+      "type": "Grass",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 50,
+      "is_ex": false,
+      "attack": "Bullet Seed 20",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "unanimous_pack",
+      "match_confidence": "medium",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Deluxe Pack: ex"
+      ],
+      "unique_expansions": [
+        "Deluxe Pack: ex"
+      ],
+      "candidate_summary": "A4b/11 Deluxe Pack: ex (Deluxe Pack: ex) [one_diamond]; A4b/12 Deluxe Pack: ex (Deluxe Pack: ex) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "A4b",
+          "card_number": 11,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/11"
+        },
+        {
+          "set_code": "A4b",
+          "card_number": 12,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/12"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "ledyba",
+      "name": "Ledyba",
+      "count": 1,
+      "type": "Grass",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 60,
+      "is_ex": false,
+      "attack": "Comet Punch 20+",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Fantastical Parade"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade"
+      ],
+      "candidate_summary": "B2/1 Fantastical Parade (Fantastical Parade) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 1,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/1"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "grovyle",
+      "name": "Grovyle",
+      "count": 1,
+      "type": "Grass",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 80,
+      "is_ex": false,
+      "attack": "Slash 30",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "unanimous_pack",
+      "match_confidence": "medium",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/6 Pulsing Aura (Pulsing Aura) [two_diamond]; B3/157 Pulsing Aura (Pulsing Aura) [one_star]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 6,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/6"
+        },
+        {
+          "set_code": "B3",
+          "card_number": 157,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/157"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "grovyle_alt_art",
+      "name": "Grovyle",
+      "count": 1,
+      "type": "Grass",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 80,
+      "is_ex": false,
+      "attack": "Slash 30",
+      "variant": "alt art",
+      "trainer_subtype": "",
+      "match_status": "unanimous_pack",
+      "match_confidence": "medium",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/6 Pulsing Aura (Pulsing Aura) [two_diamond]; B3/157 Pulsing Aura (Pulsing Aura) [one_star]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 6,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/6"
+        },
+        {
+          "set_code": "B3",
+          "card_number": 157,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/157"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
       "entry_id": "sobble",
       "name": "Sobble",
-      "count": 3,
+      "count": 5,
       "type": "Water",
       "card_type": "Pokemon",
       "stage": 0,
@@ -2062,7 +2560,7 @@
     {
       "entry_id": "vaporeon_ex",
       "name": "Vaporeon ex",
-      "count": 1,
+      "count": 2,
       "type": "Water",
       "card_type": "Pokemon",
       "stage": 1,
@@ -2146,7 +2644,7 @@
     {
       "entry_id": "huntail",
       "name": "Huntail",
-      "count": 2,
+      "count": 4,
       "type": "Water",
       "card_type": "Pokemon",
       "stage": 1,
@@ -2214,7 +2712,7 @@
     {
       "entry_id": "quagsire",
       "name": "Quagsire",
-      "count": 1,
+      "count": 2,
       "type": "Water",
       "card_type": "Pokemon",
       "stage": 1,
@@ -2470,7 +2968,7 @@
     {
       "entry_id": "castform_rainy_form",
       "name": "Castform Rainy Form",
-      "count": 3,
+      "count": 4,
       "type": "Water",
       "card_type": "Pokemon",
       "stage": 0,
@@ -2572,7 +3070,7 @@
     {
       "entry_id": "cubchoo",
       "name": "Cubchoo",
-      "count": 1,
+      "count": 2,
       "type": "Water",
       "card_type": "Pokemon",
       "stage": 0,
@@ -2650,7 +3148,7 @@
     {
       "entry_id": "chewtle",
       "name": "Chewtle",
-      "count": 1,
+      "count": 2,
       "type": "Water",
       "card_type": "Pokemon",
       "stage": 0,
@@ -2690,6 +3188,244 @@
         }
       ],
       "recommended_resolution": "needs_card_number"
+    },
+    {
+      "entry_id": "froakie",
+      "name": "Froakie",
+      "count": 1,
+      "type": "Water",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 60,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Mega Gyarados"
+      ],
+      "unique_expansions": [
+        "Mega Rising"
+      ],
+      "candidate_summary": "B1/71 Mega Rising (Mega Gyarados) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "B1",
+          "card_number": 71,
+          "expansion": "Mega Rising",
+          "pack_name": "Mega Gyarados",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B1/71"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "vanilluxe",
+      "name": "Vanilluxe",
+      "count": 2,
+      "type": "Water",
+      "card_type": "Pokemon",
+      "stage": 2,
+      "hp": 140,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Fantastical Parade"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade"
+      ],
+      "candidate_summary": "B2/39 Fantastical Parade (Fantastical Parade) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 39,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/39"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "cryogonal",
+      "name": "Cryogonal",
+      "count": 1,
+      "type": "Water",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 70,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Fantastical Parade"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade"
+      ],
+      "candidate_summary": "B2/40 Fantastical Parade (Fantastical Parade) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 40,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/40"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "regice",
+      "name": "Regice",
+      "count": 2,
+      "type": "Water",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 110,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/45 Pulsing Aura (Pulsing Aura) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 45,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/45"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "beartic",
+      "name": "Beartic",
+      "count": 1,
+      "type": "Water",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 130,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/47 Pulsing Aura (Pulsing Aura) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 47,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/47"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "inteleon",
+      "name": "Inteleon",
+      "count": 1,
+      "type": "Water",
+      "card_type": "Pokemon",
+      "stage": 2,
+      "hp": 150,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/50 Pulsing Aura (Pulsing Aura) [three_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 50,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/50"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "drizzile",
+      "name": "Drizzile",
+      "count": 2,
+      "type": "Water",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 80,
+      "is_ex": false,
+      "attack": "Water Gun 30",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/49 Pulsing Aura (Pulsing Aura) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 49,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/49"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
     },
     {
       "entry_id": "zekrom",
@@ -2962,7 +3698,7 @@
     {
       "entry_id": "magnemite_thunder_shock_art",
       "name": "Magnemite",
-      "count": 2,
+      "count": 5,
       "type": "Lightning",
       "card_type": "Pokemon",
       "stage": 0,
@@ -3074,7 +3810,7 @@
     {
       "entry_id": "lanturn",
       "name": "Lanturn",
-      "count": 2,
+      "count": 5,
       "type": "Lightning",
       "card_type": "Pokemon",
       "stage": 1,
@@ -3108,7 +3844,7 @@
     {
       "entry_id": "morpeko",
       "name": "Morpeko",
-      "count": 3,
+      "count": 4,
       "type": "Lightning",
       "card_type": "Pokemon",
       "stage": 0,
@@ -3184,7 +3920,7 @@
     {
       "entry_id": "voltorb",
       "name": "Voltorb",
-      "count": 3,
+      "count": 4,
       "type": "Lightning",
       "card_type": "Pokemon",
       "stage": 0,
@@ -3218,7 +3954,7 @@
     {
       "entry_id": "electrode",
       "name": "Electrode",
-      "count": 1,
+      "count": 7,
       "type": "Lightning",
       "card_type": "Pokemon",
       "stage": 1,
@@ -3302,9 +4038,61 @@
       "recommended_resolution": "needs_card_number"
     },
     {
+      "entry_id": "toxel",
+      "name": "Toxel",
+      "count": 4,
+      "type": "Lightning",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 60,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "ambiguous_cross_set",
+      "match_confidence": "low",
+      "candidate_count": 3,
+      "unique_packs": [
+        "Fantastical Parade",
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade",
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B2/54 Fantastical Parade (Fantastical Parade) [one_diamond]; B2/166 Fantastical Parade (Fantastical Parade) [one_star]; B3/60 Pulsing Aura (Pulsing Aura) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 54,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/54"
+        },
+        {
+          "set_code": "B2",
+          "card_number": 166,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/166"
+        },
+        {
+          "set_code": "B3",
+          "card_number": 60,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/60"
+        }
+      ],
+      "recommended_resolution": "needs_card_number"
+    },
+    {
       "entry_id": "meloetta",
       "name": "Meloetta",
-      "count": 3,
+      "count": 4,
       "type": "Psychic",
       "card_type": "Pokemon",
       "stage": 0,
@@ -3624,7 +4412,7 @@
     {
       "entry_id": "ralts",
       "name": "Ralts",
-      "count": 1,
+      "count": 2,
       "type": "Psychic",
       "card_type": "Pokemon",
       "stage": 0,
@@ -3702,7 +4490,7 @@
     {
       "entry_id": "espurr",
       "name": "Espurr",
-      "count": 1,
+      "count": 4,
       "type": "Psychic",
       "card_type": "Pokemon",
       "stage": 0,
@@ -3736,7 +4524,7 @@
     {
       "entry_id": "oricorio",
       "name": "Oricorio",
-      "count": 2,
+      "count": 4,
       "type": "Psychic",
       "card_type": "Pokemon",
       "stage": 0,
@@ -3778,7 +4566,7 @@
     {
       "entry_id": "hatenna",
       "name": "Hatenna",
-      "count": 1,
+      "count": 2,
       "type": "Psychic",
       "card_type": "Pokemon",
       "stage": 0,
@@ -3812,7 +4600,7 @@
     {
       "entry_id": "bramblin",
       "name": "Bramblin",
-      "count": 2,
+      "count": 4,
       "type": "Psychic",
       "card_type": "Pokemon",
       "stage": 0,
@@ -3839,6 +4627,246 @@
           "pack_name": "Pulsing Aura",
           "rarity": "one_diamond",
           "source_url": "https://pocket.limitlesstcg.com/cards/B3/72"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "galarian_ponyta",
+      "name": "Galarian Ponyta",
+      "count": 1,
+      "type": "Psychic",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 60,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "unanimous_pack",
+      "match_confidence": "medium",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Fantastical Parade"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade"
+      ],
+      "candidate_summary": "B2/58 Fantastical Parade (Fantastical Parade) [one_diamond]; B2/167 Fantastical Parade (Fantastical Parade) [one_star]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 58,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/58"
+        },
+        {
+          "set_code": "B2",
+          "card_number": 167,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/167"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "indeedee",
+      "name": "Indeedee",
+      "count": 1,
+      "type": "Psychic",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 80,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "unanimous_pack",
+      "match_confidence": "medium",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Fantastical Parade"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade"
+      ],
+      "candidate_summary": "B2/76 Fantastical Parade (Fantastical Parade) [one_diamond]; B2/169 Fantastical Parade (Fantastical Parade) [one_star]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 76,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/76"
+        },
+        {
+          "set_code": "B2",
+          "card_number": 169,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/169"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "hypno",
+      "name": "Hypno",
+      "count": 1,
+      "type": "Psychic",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 100,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "ambiguous_cross_set",
+      "match_confidence": "low",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Mega Gyarados",
+        "Mega Shine"
+      ],
+      "unique_expansions": [
+        "Mega Rising",
+        "Mega Shine"
+      ],
+      "candidate_summary": "B1/306 Mega Rising (Mega Gyarados) [one_star]; B2b/29 Mega Shine (Mega Shine) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B1",
+          "card_number": 306,
+          "expansion": "Mega Rising",
+          "pack_name": "Mega Gyarados",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B1/306"
+        },
+        {
+          "set_code": "B2b",
+          "card_number": 29,
+          "expansion": "Mega Shine",
+          "pack_name": "Mega Shine",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2b/29"
+        }
+      ],
+      "recommended_resolution": "needs_card_number"
+    },
+    {
+      "entry_id": "kirlia",
+      "name": "Kirlia",
+      "count": 1,
+      "type": "Psychic",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 80,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "ambiguous_cross_set",
+      "match_confidence": "low",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Fantastical Parade",
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade",
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B2/64 Fantastical Parade (Fantastical Parade) [two_diamond]; B3/64 Pulsing Aura (Pulsing Aura) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 64,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/64"
+        },
+        {
+          "set_code": "B3",
+          "card_number": 64,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/64"
+        }
+      ],
+      "recommended_resolution": "needs_card_number"
+    },
+    {
+      "entry_id": "diancie",
+      "name": "Diancie",
+      "count": 2,
+      "type": "Psychic",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 90,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/67 Pulsing Aura (Pulsing Aura) [three_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 67,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/67"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "weezing",
+      "name": "Weezing",
+      "count": 1,
+      "type": "Psychic",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 110,
+      "is_ex": false,
+      "attack": "Smogscreen 50",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/102 Pulsing Aura (Pulsing Aura) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 102,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/102"
         }
       ],
       "recommended_resolution": "no_action_needed"
@@ -4330,7 +5358,7 @@
     {
       "entry_id": "riolu_fighting_fast_art",
       "name": "Riolu",
-      "count": 1,
+      "count": 3,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 0,
@@ -4414,7 +5442,7 @@
     {
       "entry_id": "sandshrew",
       "name": "Sandshrew",
-      "count": 2,
+      "count": 3,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 0,
@@ -4476,7 +5504,7 @@
     {
       "entry_id": "cubone",
       "name": "Cubone",
-      "count": 2,
+      "count": 3,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 0,
@@ -4700,7 +5728,7 @@
     {
       "entry_id": "bewear",
       "name": "Bewear",
-      "count": 2,
+      "count": 3,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 1,
@@ -4812,7 +5840,7 @@
     {
       "entry_id": "trapinch",
       "name": "Trapinch",
-      "count": 1,
+      "count": 2,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 0,
@@ -4914,7 +5942,7 @@
     {
       "entry_id": "toxicroak",
       "name": "Toxicroak",
-      "count": 2,
+      "count": 5,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 1,
@@ -4948,7 +5976,7 @@
     {
       "entry_id": "croagunk",
       "name": "Croagunk",
-      "count": 4,
+      "count": 5,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 0,
@@ -5016,7 +6044,7 @@
     {
       "entry_id": "throh",
       "name": "Throh",
-      "count": 1,
+      "count": 3,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 0,
@@ -5050,7 +6078,7 @@
     {
       "entry_id": "sawk",
       "name": "Sawk",
-      "count": 2,
+      "count": 3,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 0,
@@ -5084,7 +6112,7 @@
     {
       "entry_id": "dwebble",
       "name": "Dwebble",
-      "count": 1,
+      "count": 6,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 0,
@@ -5118,7 +6146,7 @@
     {
       "entry_id": "stufful",
       "name": "Stufful",
-      "count": 1,
+      "count": 2,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 0,
@@ -5162,7 +6190,7 @@
     {
       "entry_id": "rolycoly",
       "name": "Rolycoly",
-      "count": 3,
+      "count": 4,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 0,
@@ -5206,7 +6234,7 @@
     {
       "entry_id": "silicobra",
       "name": "Silicobra",
-      "count": 2,
+      "count": 4,
       "type": "Fighting",
       "card_type": "Pokemon",
       "stage": 0,
@@ -5291,14 +6319,27 @@
       "attack": "Bite 30",
       "variant": "",
       "trainer_subtype": "",
-      "match_status": "no_match",
-      "match_confidence": "none",
-      "candidate_count": 0,
-      "unique_packs": [],
-      "unique_expansions": [],
-      "candidate_summary": "",
-      "candidates": [],
-      "recommended_resolution": "needs_reference_expansion"
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Promo Pack B Series Vol. 7"
+      ],
+      "unique_expansions": [
+        "PROMO-B"
+      ],
+      "candidate_summary": "PROMO-B/51 PROMO-B (Promo Pack B Series Vol. 7) [None]",
+      "candidates": [
+        {
+          "set_code": "PROMO-B",
+          "card_number": 51,
+          "expansion": "PROMO-B",
+          "pack_name": "Promo Pack B Series Vol. 7",
+          "rarity": null,
+          "source_url": "https://www.pokemon-zone.com/cards/promo-b/51/zygarde/"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
     },
     {
       "entry_id": "zygarde_50_forme",
@@ -5312,14 +6353,27 @@
       "attack": "Cell Storm 60",
       "variant": "",
       "trainer_subtype": "",
-      "match_status": "no_match",
-      "match_confidence": "none",
-      "candidate_count": 0,
-      "unique_packs": [],
-      "unique_expansions": [],
-      "candidate_summary": "",
-      "candidates": [],
-      "recommended_resolution": "needs_reference_expansion"
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Promo Pack B Series Vol. 7"
+      ],
+      "unique_expansions": [
+        "PROMO-B"
+      ],
+      "candidate_summary": "PROMO-B/52 PROMO-B (Promo Pack B Series Vol. 7) [None]",
+      "candidates": [
+        {
+          "set_code": "PROMO-B",
+          "card_number": 52,
+          "expansion": "PROMO-B",
+          "pack_name": "Promo Pack B Series Vol. 7",
+          "rarity": null,
+          "source_url": "https://www.pokemon-zone.com/cards/promo-b/52/zygarde/"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
     },
     {
       "entry_id": "zygarde_ex",
@@ -5333,14 +6387,27 @@
       "attack": "Land Laser 100+",
       "variant": "",
       "trainer_subtype": "",
-      "match_status": "no_match",
-      "match_confidence": "none",
-      "candidate_count": 0,
-      "unique_packs": [],
-      "unique_expansions": [],
-      "candidate_summary": "",
-      "candidates": [],
-      "recommended_resolution": "needs_reference_expansion"
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Promo Pack B Series Vol. 7"
+      ],
+      "unique_expansions": [
+        "PROMO-B"
+      ],
+      "candidate_summary": "PROMO-B/53 PROMO-B (Promo Pack B Series Vol. 7) [None]",
+      "candidates": [
+        {
+          "set_code": "PROMO-B",
+          "card_number": 53,
+          "expansion": "PROMO-B",
+          "pack_name": "Promo Pack B Series Vol. 7",
+          "rarity": null,
+          "source_url": "https://www.pokemon-zone.com/cards/promo-b/53/zygarde-ex/"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
     },
     {
       "entry_id": "krookodile",
@@ -5414,6 +6481,90 @@
           "pack_name": "Pulsing Aura",
           "rarity": "one_star",
           "source_url": "https://pocket.limitlesstcg.com/cards/B3/168"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "lucario",
+      "name": "Lucario",
+      "count": 1,
+      "type": "Fighting",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 100,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/80 Pulsing Aura (Pulsing Aura) [three_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 80,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/80"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "crustle_ex",
+      "name": "Crustle ex",
+      "count": 1,
+      "type": "Fighting",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 160,
+      "is_ex": true,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "unanimous_pack",
+      "match_confidence": "medium",
+      "candidate_count": 3,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/88 Pulsing Aura (Pulsing Aura) [four_diamond]; B3/185 Pulsing Aura (Pulsing Aura) [double_star]; B3/198 Pulsing Aura (Pulsing Aura) [double_star]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 88,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "four_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/88"
+        },
+        {
+          "set_code": "B3",
+          "card_number": 185,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "double_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/185"
+        },
+        {
+          "set_code": "B3",
+          "card_number": 198,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "double_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/198"
         }
       ],
       "recommended_resolution": "no_action_needed"
@@ -5505,7 +6656,7 @@
     {
       "entry_id": "golbat",
       "name": "Golbat",
-      "count": 1,
+      "count": 2,
       "type": "Darkness",
       "card_type": "Pokemon",
       "stage": 1,
@@ -5547,7 +6698,7 @@
     {
       "entry_id": "zubat",
       "name": "Zubat",
-      "count": 1,
+      "count": 2,
       "type": "Darkness",
       "card_type": "Pokemon",
       "stage": 0,
@@ -5779,7 +6930,7 @@
     {
       "entry_id": "malamar",
       "name": "Malamar",
-      "count": 1,
+      "count": 2,
       "type": "Darkness",
       "card_type": "Pokemon",
       "stage": 1,
@@ -5821,7 +6972,7 @@
     {
       "entry_id": "grimer",
       "name": "Grimer",
-      "count": 3,
+      "count": 4,
       "type": "Darkness",
       "card_type": "Pokemon",
       "stage": 0,
@@ -6053,7 +7204,7 @@
     {
       "entry_id": "koffing",
       "name": "Koffing",
-      "count": 2,
+      "count": 4,
       "type": "Darkness",
       "card_type": "Pokemon",
       "stage": 0,
@@ -6087,7 +7238,7 @@
     {
       "entry_id": "qwilfish",
       "name": "Qwilfish",
-      "count": 1,
+      "count": 4,
       "type": "Darkness",
       "card_type": "Pokemon",
       "stage": 0,
@@ -6117,6 +7268,306 @@
         }
       ],
       "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "sneasel",
+      "name": "Sneasel",
+      "count": 1,
+      "type": "Darkness",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 60,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "ambiguous_cross_set",
+      "match_confidence": "low",
+      "candidate_count": 5,
+      "unique_packs": [
+        "Deluxe Pack: ex",
+        "Lugia",
+        "Palkia"
+      ],
+      "unique_expansions": [
+        "Deluxe Pack: ex",
+        "Space-Time Smackdown",
+        "Wisdom of Sea and Sky"
+      ],
+      "candidate_summary": "A2/98 Space-Time Smackdown (Palkia) [one_diamond]; A4/115 Wisdom of Sea and Sky (Lugia) [one_diamond]; A4/229 Wisdom of Sea and Sky (Lugia) [one_star]; A4b/242 Deluxe Pack: ex (Deluxe Pack: ex) [one_diamond]; A4b/243 Deluxe Pack: ex (Deluxe Pack: ex) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "A2",
+          "card_number": 98,
+          "expansion": "Space-Time Smackdown",
+          "pack_name": "Palkia",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A2/98"
+        },
+        {
+          "set_code": "A4",
+          "card_number": 115,
+          "expansion": "Wisdom of Sea and Sky",
+          "pack_name": "Lugia",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4/115"
+        },
+        {
+          "set_code": "A4",
+          "card_number": 229,
+          "expansion": "Wisdom of Sea and Sky",
+          "pack_name": "Lugia",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4/229"
+        },
+        {
+          "set_code": "A4b",
+          "card_number": 242,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/242"
+        },
+        {
+          "set_code": "A4b",
+          "card_number": 243,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/243"
+        }
+      ],
+      "recommended_resolution": "needs_card_number"
+    },
+    {
+      "entry_id": "umbreon_ex",
+      "name": "Umbreon ex",
+      "count": 1,
+      "type": "Darkness",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 140,
+      "is_ex": true,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Fantastical Parade"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade"
+      ],
+      "candidate_summary": "B2/231 Fantastical Parade (Fantastical Parade) [double_star]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 231,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "double_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/231"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "foongus",
+      "name": "Foongus",
+      "count": 1,
+      "type": "Darkness",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 60,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/107 Pulsing Aura (Pulsing Aura) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 107,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/107"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "inkay",
+      "name": "Inkay",
+      "count": 3,
+      "type": "Darkness",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 60,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/111 Pulsing Aura (Pulsing Aura) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 111,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/111"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "zarude",
+      "name": "Zarude",
+      "count": 2,
+      "type": "Darkness",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 90,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/114 Pulsing Aura (Pulsing Aura) [three_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 114,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "three_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/114"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "galarian_linoone",
+      "name": "Galarian Linoone",
+      "count": 1,
+      "type": "Darkness",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 80,
+      "is_ex": false,
+      "attack": "Reckless Charge 80",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Fantastical Parade"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade"
+      ],
+      "candidate_summary": "B2/99 Fantastical Parade (Fantastical Parade) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 99,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/99"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "crobat_ex",
+      "name": "Crobat ex",
+      "count": 1,
+      "type": "Darkness",
+      "card_type": "Pokemon",
+      "stage": 2,
+      "hp": 170,
+      "is_ex": true,
+      "attack": "Air Slash 110",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "ambiguous_cross_set",
+      "match_confidence": "low",
+      "candidate_count": 4,
+      "unique_packs": [
+        "Deluxe Pack: ex",
+        "Ho-Oh"
+      ],
+      "unique_expansions": [
+        "Deluxe Pack: ex",
+        "Wisdom of Sea and Sky"
+      ],
+      "candidate_summary": "A4/109 Wisdom of Sea and Sky (Ho-Oh) [four_diamond]; A4/192 Wisdom of Sea and Sky (Ho-Oh) [double_star]; A4/207 Wisdom of Sea and Sky (Ho-Oh) [double_star]; A4b/232 Deluxe Pack: ex (Deluxe Pack: ex) [four_diamond]",
+      "candidates": [
+        {
+          "set_code": "A4",
+          "card_number": 109,
+          "expansion": "Wisdom of Sea and Sky",
+          "pack_name": "Ho-Oh",
+          "rarity": "four_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4/109"
+        },
+        {
+          "set_code": "A4",
+          "card_number": 192,
+          "expansion": "Wisdom of Sea and Sky",
+          "pack_name": "Ho-Oh",
+          "rarity": "double_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4/192"
+        },
+        {
+          "set_code": "A4",
+          "card_number": 207,
+          "expansion": "Wisdom of Sea and Sky",
+          "pack_name": "Ho-Oh",
+          "rarity": "double_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4/207"
+        },
+        {
+          "set_code": "A4b",
+          "card_number": 232,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "four_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/232"
+        }
+      ],
+      "recommended_resolution": "needs_card_number"
     },
     {
       "entry_id": "genesect",
@@ -6439,7 +7890,7 @@
     {
       "entry_id": "bronzor",
       "name": "Bronzor",
-      "count": 2,
+      "count": 4,
       "type": "Metal",
       "card_type": "Pokemon",
       "stage": 0,
@@ -6473,7 +7924,7 @@
     {
       "entry_id": "pawniard",
       "name": "Pawniard",
-      "count": 1,
+      "count": 2,
       "type": "Metal",
       "card_type": "Pokemon",
       "stage": 0,
@@ -6583,6 +8034,56 @@
       "recommended_resolution": "needs_card_number"
     },
     {
+      "entry_id": "mega_mawile_ex",
+      "name": "Mega Mawile ex",
+      "count": 1,
+      "type": "Metal",
+      "card_type": "Pokemon",
+      "stage": 2,
+      "hp": 170,
+      "is_ex": true,
+      "attack": "Hyper Fang 150",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "unanimous_pack",
+      "match_confidence": "medium",
+      "candidate_count": 3,
+      "unique_packs": [
+        "Fantastical Parade"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade"
+      ],
+      "candidate_summary": "B2/113 Fantastical Parade (Fantastical Parade) [four_diamond]; B2/188 Fantastical Parade (Fantastical Parade) [double_star]; B2/201 Fantastical Parade (Fantastical Parade) [double_star]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 113,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "four_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/113"
+        },
+        {
+          "set_code": "B2",
+          "card_number": 188,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "double_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/188"
+        },
+        {
+          "set_code": "B2",
+          "card_number": 201,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "double_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/201"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
       "entry_id": "vibrava",
       "name": "Vibrava",
       "count": 1,
@@ -6659,9 +8160,51 @@
       "recommended_resolution": "no_action_needed"
     },
     {
+      "entry_id": "axew",
+      "name": "Axew",
+      "count": 1,
+      "type": "Dragon",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 70,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "unanimous_pack",
+      "match_confidence": "medium",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Mega Shine"
+      ],
+      "unique_expansions": [
+        "Mega Shine"
+      ],
+      "candidate_summary": "B2b/54 Mega Shine (Mega Shine) [one_diamond]; B2b/108 Mega Shine (Mega Shine) [one_star]",
+      "candidates": [
+        {
+          "set_code": "B2b",
+          "card_number": 54,
+          "expansion": "Mega Shine",
+          "pack_name": "Mega Shine",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2b/54"
+        },
+        {
+          "set_code": "B2b",
+          "card_number": 108,
+          "expansion": "Mega Shine",
+          "pack_name": "Mega Shine",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2b/108"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
       "entry_id": "stoutland",
       "name": "Stoutland",
-      "count": 1,
+      "count": 2,
       "type": "Colorless",
       "card_type": "Pokemon",
       "stage": 2,
@@ -6757,7 +8300,7 @@
     {
       "entry_id": "lillipup",
       "name": "Lillipup",
-      "count": 3,
+      "count": 6,
       "type": "Colorless",
       "card_type": "Pokemon",
       "stage": 0,
@@ -6835,7 +8378,7 @@
     {
       "entry_id": "corvisquire",
       "name": "Corvisquire",
-      "count": 1,
+      "count": 2,
       "type": "Colorless",
       "card_type": "Pokemon",
       "stage": 1,
@@ -7153,7 +8696,7 @@
     {
       "entry_id": "furfrou",
       "name": "Furfrou",
-      "count": 1,
+      "count": 3,
       "type": "Colorless",
       "card_type": "Pokemon",
       "stage": 0,
@@ -7313,7 +8856,7 @@
     {
       "entry_id": "audino",
       "name": "Audino",
-      "count": 1,
+      "count": 2,
       "type": "Colorless",
       "card_type": "Pokemon",
       "stage": 0,
@@ -7423,7 +8966,7 @@
     {
       "entry_id": "cinccino",
       "name": "Cinccino",
-      "count": 2,
+      "count": 3,
       "type": "Colorless",
       "card_type": "Pokemon",
       "stage": 1,
@@ -7519,7 +9062,7 @@
     {
       "entry_id": "watchog",
       "name": "Watchog",
-      "count": 2,
+      "count": 4,
       "type": "Colorless",
       "card_type": "Pokemon",
       "stage": 1,
@@ -7563,7 +9106,7 @@
     {
       "entry_id": "eevee",
       "name": "Eevee",
-      "count": 1,
+      "count": 3,
       "type": "Colorless",
       "card_type": "Pokemon",
       "stage": 0,
@@ -7607,7 +9150,7 @@
     {
       "entry_id": "castform",
       "name": "Castform",
-      "count": 2,
+      "count": 6,
       "type": "Colorless",
       "card_type": "Pokemon",
       "stage": 0,
@@ -7771,7 +9314,7 @@
     {
       "entry_id": "farfetch_d",
       "name": "Farfetch'd",
-      "count": 1,
+      "count": 2,
       "type": "Colorless",
       "card_type": "Pokemon",
       "stage": 0,
@@ -7925,6 +9468,318 @@
       "recommended_resolution": "no_action_needed"
     },
     {
+      "entry_id": "pidgeotto",
+      "name": "Pidgeotto",
+      "count": 1,
+      "type": "Colorless",
+      "card_type": "Pokemon",
+      "stage": 1,
+      "hp": 90,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "shared pool"
+      ],
+      "unique_expansions": [
+        "Mega Rising"
+      ],
+      "candidate_summary": "B1/181 Mega Rising (shared pool) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "B1",
+          "card_number": 181,
+          "expansion": "Mega Rising",
+          "pack_name": null,
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B1/181"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "spinda",
+      "name": "Spinda",
+      "count": 1,
+      "type": "Colorless",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 70,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "ambiguous_cross_set",
+      "match_confidence": "low",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Fantastical Parade",
+        "Mega Altaria"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade",
+        "Mega Rising"
+      ],
+      "candidate_summary": "B1/195 Mega Rising (Mega Altaria) [one_diamond]; B2/137 Fantastical Parade (Fantastical Parade) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "B1",
+          "card_number": 195,
+          "expansion": "Mega Rising",
+          "pack_name": "Mega Altaria",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B1/195"
+        },
+        {
+          "set_code": "B2",
+          "card_number": 137,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/137"
+        }
+      ],
+      "recommended_resolution": "needs_card_number"
+    },
+    {
+      "entry_id": "snorlax_ex",
+      "name": "Snorlax ex",
+      "count": 1,
+      "type": "Colorless",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 160,
+      "is_ex": true,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "ambiguous_cross_set",
+      "match_confidence": "low",
+      "candidate_count": 4,
+      "unique_packs": [
+        "Deluxe Pack: ex",
+        "Eevee Grove"
+      ],
+      "unique_expansions": [
+        "Deluxe Pack: ex",
+        "Eevee Grove"
+      ],
+      "candidate_summary": "A3b/57 Eevee Grove (Eevee Grove) [four_diamond]; A3b/84 Eevee Grove (Eevee Grove) [double_star]; A3b/91 Eevee Grove (Eevee Grove) [double_star]; A4b/288 Deluxe Pack: ex (Deluxe Pack: ex) [four_diamond]",
+      "candidates": [
+        {
+          "set_code": "A3b",
+          "card_number": 57,
+          "expansion": "Eevee Grove",
+          "pack_name": "Eevee Grove",
+          "rarity": "four_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A3b/57"
+        },
+        {
+          "set_code": "A3b",
+          "card_number": 84,
+          "expansion": "Eevee Grove",
+          "pack_name": "Eevee Grove",
+          "rarity": "double_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A3b/84"
+        },
+        {
+          "set_code": "A3b",
+          "card_number": 91,
+          "expansion": "Eevee Grove",
+          "pack_name": "Eevee Grove",
+          "rarity": "double_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A3b/91"
+        },
+        {
+          "set_code": "A4b",
+          "card_number": 288,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "four_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/288"
+        }
+      ],
+      "recommended_resolution": "needs_card_number"
+    },
+    {
+      "entry_id": "meowth",
+      "name": "Meowth",
+      "count": 1,
+      "type": "Colorless",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 50,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "ambiguous_cross_set",
+      "match_confidence": "low",
+      "candidate_count": 3,
+      "unique_packs": [
+        "Fantastical Parade",
+        "Mega Altaria"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade",
+        "Mega Rising"
+      ],
+      "candidate_summary": "B1/312 Mega Rising (Mega Altaria) [one_star]; B2/124 Fantastical Parade (Fantastical Parade) [one_diamond]; B2/204 Fantastical Parade (Fantastical Parade) [triple_star]",
+      "candidates": [
+        {
+          "set_code": "B1",
+          "card_number": 312,
+          "expansion": "Mega Rising",
+          "pack_name": "Mega Altaria",
+          "rarity": "one_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B1/312"
+        },
+        {
+          "set_code": "B2",
+          "card_number": 124,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/124"
+        },
+        {
+          "set_code": "B2",
+          "card_number": 204,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "triple_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/204"
+        }
+      ],
+      "recommended_resolution": "needs_card_number"
+    },
+    {
+      "entry_id": "patrat",
+      "name": "Patrat",
+      "count": 2,
+      "type": "Colorless",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 60,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "unanimous_pack",
+      "match_confidence": "medium",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Pulsing Aura",
+        "shared pool"
+      ],
+      "unique_expansions": [
+        "Mega Rising",
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B1/199 Mega Rising (shared pool) [one_diamond]; B3/135 Pulsing Aura (Pulsing Aura) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "B1",
+          "card_number": 199,
+          "expansion": "Mega Rising",
+          "pack_name": null,
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B1/199"
+        },
+        {
+          "set_code": "B3",
+          "card_number": 135,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/135"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "tandemaus",
+      "name": "Tandemaus",
+      "count": 1,
+      "type": "Colorless",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 40,
+      "is_ex": false,
+      "attack": "Team Tackle 20",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "ambiguous_cross_set",
+      "match_confidence": "low",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Fantastical Parade",
+        "Paldean Wonders"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade",
+        "Paldean Wonders"
+      ],
+      "candidate_summary": "B2/142 Fantastical Parade (Fantastical Parade) [one_diamond]; B2a/81 Paldean Wonders (Paldean Wonders) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 142,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/142"
+        },
+        {
+          "set_code": "B2a",
+          "card_number": 81,
+          "expansion": "Paldean Wonders",
+          "pack_name": "Paldean Wonders",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2a/81"
+        }
+      ],
+      "recommended_resolution": "needs_card_number"
+    },
+    {
+      "entry_id": "teddiursa",
+      "name": "Teddiursa",
+      "count": 2,
+      "type": "Colorless",
+      "card_type": "Pokemon",
+      "stage": 0,
+      "hp": 60,
+      "is_ex": false,
+      "attack": "Scratch 20",
+      "variant": "",
+      "trainer_subtype": "",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/131 Pulsing Aura (Pulsing Aura) [one_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 131,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "one_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/131"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
       "entry_id": "quick_grow_extract",
       "name": "Quick-Grow Extract",
       "count": 4,
@@ -8012,7 +9867,7 @@
     {
       "entry_id": "rare_candy",
       "name": "Rare Candy",
-      "count": 1,
+      "count": 2,
       "type": "",
       "card_type": "Trainer",
       "stage": null,
@@ -8072,7 +9927,7 @@
     {
       "entry_id": "field_blower",
       "name": "Field Blower",
-      "count": 1,
+      "count": 2,
       "type": "",
       "card_type": "Trainer",
       "stage": null,
@@ -8192,7 +10047,7 @@
     {
       "entry_id": "red_card",
       "name": "Red Card",
-      "count": 1,
+      "count": 2,
       "type": "",
       "card_type": "Trainer",
       "stage": null,
@@ -8201,19 +10056,32 @@
       "attack": "",
       "variant": "",
       "trainer_subtype": "Item",
-      "match_status": "no_match_known_gap",
-      "match_confidence": "none",
-      "candidate_count": 0,
-      "unique_packs": [],
-      "unique_expansions": [],
-      "candidate_summary": "",
-      "candidates": [],
-      "recommended_resolution": "needs_manual_source_entry"
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "shared pool"
+      ],
+      "unique_expansions": [
+        "PROMO-A"
+      ],
+      "candidate_summary": "PROMO-A/6 PROMO-A (shared pool) [None]",
+      "candidates": [
+        {
+          "set_code": "PROMO-A",
+          "card_number": 6,
+          "expansion": "PROMO-A",
+          "pack_name": null,
+          "rarity": null,
+          "source_url": null
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
     },
     {
       "entry_id": "potion",
       "name": "Potion",
-      "count": 1,
+      "count": 2,
       "type": "",
       "card_type": "Trainer",
       "stage": null,
@@ -8222,19 +10090,32 @@
       "attack": "",
       "variant": "",
       "trainer_subtype": "Item",
-      "match_status": "no_match_known_gap",
-      "match_confidence": "none",
-      "candidate_count": 0,
-      "unique_packs": [],
-      "unique_expansions": [],
-      "candidate_summary": "",
-      "candidates": [],
-      "recommended_resolution": "needs_manual_source_entry"
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "shared pool"
+      ],
+      "unique_expansions": [
+        "PROMO-A"
+      ],
+      "candidate_summary": "PROMO-A/1 PROMO-A (shared pool) [None]",
+      "candidates": [
+        {
+          "set_code": "PROMO-A",
+          "card_number": 1,
+          "expansion": "PROMO-A",
+          "pack_name": null,
+          "rarity": null,
+          "source_url": null
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
     },
     {
       "entry_id": "x_speed",
       "name": "X Speed",
-      "count": 1,
+      "count": 2,
       "type": "",
       "card_type": "Trainer",
       "stage": null,
@@ -8243,19 +10124,32 @@
       "attack": "",
       "variant": "",
       "trainer_subtype": "Item",
-      "match_status": "no_match_known_gap",
-      "match_confidence": "none",
-      "candidate_count": 0,
-      "unique_packs": [],
-      "unique_expansions": [],
-      "candidate_summary": "",
-      "candidates": [],
-      "recommended_resolution": "needs_manual_source_entry"
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "shared pool"
+      ],
+      "unique_expansions": [
+        "PROMO-A"
+      ],
+      "candidate_summary": "PROMO-A/2 PROMO-A (shared pool) [None]",
+      "candidates": [
+        {
+          "set_code": "PROMO-A",
+          "card_number": 2,
+          "expansion": "PROMO-A",
+          "pack_name": null,
+          "rarity": null,
+          "source_url": null
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
     },
     {
       "entry_id": "hand_scope",
       "name": "Hand Scope",
-      "count": 1,
+      "count": 3,
       "type": "",
       "card_type": "Trainer",
       "stage": null,
@@ -8264,19 +10158,32 @@
       "attack": "",
       "variant": "",
       "trainer_subtype": "Item",
-      "match_status": "no_match_known_gap",
-      "match_confidence": "none",
-      "candidate_count": 0,
-      "unique_packs": [],
-      "unique_expansions": [],
-      "candidate_summary": "",
-      "candidates": [],
-      "recommended_resolution": "needs_manual_source_entry"
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "shared pool"
+      ],
+      "unique_expansions": [
+        "PROMO-A"
+      ],
+      "candidate_summary": "PROMO-A/3 PROMO-A (shared pool) [None]",
+      "candidates": [
+        {
+          "set_code": "PROMO-A",
+          "card_number": 3,
+          "expansion": "PROMO-A",
+          "pack_name": null,
+          "rarity": null,
+          "source_url": null
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
     },
     {
       "entry_id": "pok_dex",
       "name": "Pokédex",
-      "count": 1,
+      "count": 2,
       "type": "",
       "card_type": "Trainer",
       "stage": null,
@@ -8285,14 +10192,27 @@
       "attack": "",
       "variant": "",
       "trainer_subtype": "Item",
-      "match_status": "no_match_known_gap",
-      "match_confidence": "none",
-      "candidate_count": 0,
-      "unique_packs": [],
-      "unique_expansions": [],
-      "candidate_summary": "",
-      "candidates": [],
-      "recommended_resolution": "needs_manual_source_entry"
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "shared pool"
+      ],
+      "unique_expansions": [
+        "PROMO-A"
+      ],
+      "candidate_summary": "PROMO-A/4 PROMO-A (shared pool) [None]",
+      "candidates": [
+        {
+          "set_code": "PROMO-A",
+          "card_number": 4,
+          "expansion": "PROMO-A",
+          "pack_name": null,
+          "rarity": null,
+          "source_url": null
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
     },
     {
       "entry_id": "pok_ball",
@@ -8324,6 +10244,40 @@
           "pack_name": "Shining Revelry",
           "rarity": null,
           "source_url": "https://pocket.limitlesstcg.com/cards/A2b/111"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "lucky_egg",
+      "name": "Lucky Egg",
+      "count": 2,
+      "type": "",
+      "card_type": "Trainer",
+      "stage": null,
+      "hp": null,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "Item",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/148 Pulsing Aura (Pulsing Aura) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 148,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/148"
         }
       ],
       "recommended_resolution": "no_action_needed"
@@ -8655,7 +10609,7 @@
     {
       "entry_id": "korrina",
       "name": "Korrina",
-      "count": 2,
+      "count": 6,
       "type": "",
       "card_type": "Trainer",
       "stage": null,
@@ -8697,7 +10651,7 @@
     {
       "entry_id": "cheren",
       "name": "Cheren",
-      "count": 2,
+      "count": 3,
       "type": "",
       "card_type": "Trainer",
       "stage": null,
@@ -8931,6 +10885,108 @@
       "recommended_resolution": "no_action_needed"
     },
     {
+      "entry_id": "lyra",
+      "name": "Lyra",
+      "count": 1,
+      "type": "",
+      "card_type": "Trainer",
+      "stage": null,
+      "hp": null,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "Supporter",
+      "match_status": "ambiguous_cross_set",
+      "match_confidence": "low",
+      "candidate_count": 4,
+      "unique_packs": [
+        "Deluxe Pack: ex",
+        "Lugia"
+      ],
+      "unique_expansions": [
+        "Deluxe Pack: ex",
+        "Wisdom of Sea and Sky"
+      ],
+      "candidate_summary": "A4/157 Wisdom of Sea and Sky (Lugia) [two_diamond]; A4/197 Wisdom of Sea and Sky (Lugia) [double_star]; A4b/332 Deluxe Pack: ex (Deluxe Pack: ex) [two_diamond]; A4b/333 Deluxe Pack: ex (Deluxe Pack: ex) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "A4",
+          "card_number": 157,
+          "expansion": "Wisdom of Sea and Sky",
+          "pack_name": "Lugia",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4/157"
+        },
+        {
+          "set_code": "A4",
+          "card_number": 197,
+          "expansion": "Wisdom of Sea and Sky",
+          "pack_name": "Lugia",
+          "rarity": "double_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4/197"
+        },
+        {
+          "set_code": "A4b",
+          "card_number": 332,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/332"
+        },
+        {
+          "set_code": "A4b",
+          "card_number": 333,
+          "expansion": "Deluxe Pack: ex",
+          "pack_name": "Deluxe Pack: ex",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/A4b/333"
+        }
+      ],
+      "recommended_resolution": "needs_card_number"
+    },
+    {
+      "entry_id": "cabbie",
+      "name": "Cabbie",
+      "count": 1,
+      "type": "",
+      "card_type": "Trainer",
+      "stage": null,
+      "hp": null,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "Supporter",
+      "match_status": "unanimous_pack",
+      "match_confidence": "medium",
+      "candidate_count": 2,
+      "unique_packs": [
+        "Pulsing Aura"
+      ],
+      "unique_expansions": [
+        "Pulsing Aura"
+      ],
+      "candidate_summary": "B3/150 Pulsing Aura (Pulsing Aura) [two_diamond]; B3/191 Pulsing Aura (Pulsing Aura) [double_star]",
+      "candidates": [
+        {
+          "set_code": "B3",
+          "card_number": 150,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/150"
+        },
+        {
+          "set_code": "B3",
+          "card_number": 191,
+          "expansion": "Pulsing Aura",
+          "pack_name": "Pulsing Aura",
+          "rarity": "double_star",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B3/191"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
       "entry_id": "starting_plains",
       "name": "Starting Plains",
       "count": 1,
@@ -8967,7 +11023,7 @@
     {
       "entry_id": "arena_of_antiquity",
       "name": "Arena of Antiquity",
-      "count": 1,
+      "count": 2,
       "type": "",
       "card_type": "Trainer",
       "stage": null,
@@ -8994,6 +11050,40 @@
           "pack_name": "Pulsing Aura",
           "rarity": "two_diamond",
           "source_url": "https://pocket.limitlesstcg.com/cards/B3/154"
+        }
+      ],
+      "recommended_resolution": "no_action_needed"
+    },
+    {
+      "entry_id": "peculiar_plaza",
+      "name": "Peculiar Plaza",
+      "count": 1,
+      "type": "",
+      "card_type": "Trainer",
+      "stage": null,
+      "hp": null,
+      "is_ex": false,
+      "attack": "",
+      "variant": "",
+      "trainer_subtype": "Stadium",
+      "match_status": "exact_match",
+      "match_confidence": "high",
+      "candidate_count": 1,
+      "unique_packs": [
+        "Fantastical Parade"
+      ],
+      "unique_expansions": [
+        "Fantastical Parade"
+      ],
+      "candidate_summary": "B2/155 Fantastical Parade (Fantastical Parade) [two_diamond]",
+      "candidates": [
+        {
+          "set_code": "B2",
+          "card_number": 155,
+          "expansion": "Fantastical Parade",
+          "pack_name": "Fantastical Parade",
+          "rarity": "two_diamond",
+          "source_url": "https://pocket.limitlesstcg.com/cards/B2/155"
         }
       ],
       "recommended_resolution": "no_action_needed"

@@ -36,14 +36,26 @@ except ImportError:
 def _get(url: str, **kwargs):
     """HTTP GET with Chrome TLS impersonation when curl_cffi is available."""
     if _HAS_CURL_CFFI:
-        kwargs.setdefault("impersonate", "chrome124")
+        kwargs.setdefault("impersonate", "chrome136")
     return _cffi_requests.get(url, **kwargs)
+
+
+def _post(url: str, **kwargs):
+    """HTTP POST with Chrome TLS impersonation when curl_cffi is available."""
+    if _HAS_CURL_CFFI:
+        kwargs.setdefault("impersonate", "chrome136")
+    return _cffi_requests.post(url, **kwargs)
 
 ROOT = Path(__file__).resolve().parent.parent
 BROWSER_SESSION_DIR = ROOT / ".browser_session"
 DISCOVERY_CACHE     = ROOT / "data" / "sync" / "api_discovery_cache.json"
 RAW_CACHE           = ROOT / "data" / "sync" / "last_sync_raw.json"
 AUTH_CACHE          = ROOT / "data" / "sync" / ".auth.json"
+PLAYER_STATS_CACHE  = ROOT / "data" / "sync" / "player_stats.json"
+
+# Candidate field names for hourglass balance across PZ API versions
+_HOURGLASS_FIELDS = ("hourglasses", "hourglass_count", "packHourglasses",
+                     "pack_hourglasses", "currency", "gems")
 
 COLLECTION_URL = "https://www.pokemon-zone.com/collection-tracker/"
 HOME_URL       = "https://www.pokemon-zone.com/"
@@ -253,8 +265,11 @@ def parse_curl(curl_str: str) -> dict:
     return {"url": url, "cookies": cookies, "headers": headers}
 
 
-_CATALOG_URL  = "https://www.pokemon-zone.com/api/cards/search/"
-_PLAYER_URL   = "https://www.pokemon-zone.com/api/players/mine/"
+_CATALOG_URL      = "https://www.pokemon-zone.com/api/cards/search/"
+_PLAYER_URL       = "https://www.pokemon-zone.com/api/players/mine/"
+_IDENTITY_URL     = "https://www.pokemon-zone.com/api/users/identity/"
+_SYNC_URL         = "https://www.pokemon-zone.com/api/players/sync/"
+_SYNC_STATUS_URL  = "https://www.pokemon-zone.com/api/players/sync/status/{}/"
 
 
 def _fetch_catalog(cookies: dict, auth_headers: dict) -> dict[str, dict]:
@@ -285,6 +300,30 @@ def _fetch_catalog(cookies: dict, auth_headers: dict) -> dict[str, dict]:
         return catalog
     except Exception:
         return {}
+
+
+def _save_player_stats(body: dict | list | None) -> None:
+    """Extract and persist player stats (including hourglass balance) from the raw API body."""
+    if not isinstance(body, dict):
+        return
+    data = body.get("data", {})
+    if not isinstance(data, dict):
+        return
+    stats: dict = {}
+    for field in _HOURGLASS_FIELDS:
+        if field in data:
+            stats[field] = data[field]
+    # Save any non-card scalar fields from data as potential stats
+    for k, v in data.items():
+        if k not in ("cards", "card_list", "items") and isinstance(v, (int, float, str, bool)):
+            stats[k] = v
+    if stats:
+        PLAYER_STATS_CACHE.parent.mkdir(parents=True, exist_ok=True)
+        PLAYER_STATS_CACHE.write_text(
+            json.dumps({"fetched_at": datetime.now(timezone.utc).isoformat(), **stats},
+                       indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
 
 
 def _fetch_and_normalize_cards(
@@ -386,7 +425,8 @@ def import_curl_auth(curl_str: str) -> tuple[list, dict]:
     if catalog:
         print(f"  Card catalog: {len(catalog):,} entries.")
     else:
-        print("  WARNING: card catalog unavailable — card names may not resolve.")
+        print("  WARNING: card catalog unavailable — card names may not resolve correctly.")
+        print(f"  (Attempted: {_CATALOG_URL})")
 
     # Step 2: owned cards (always use the canonical player URL)
     api_url = _PLAYER_URL
@@ -399,8 +439,30 @@ def import_curl_auth(curl_str: str) -> tuple[list, dict]:
             "Pokemon Zone when you copy the cURL, then re-run --curl-import."
         )
 
-    if arr is None or body is None:
-        raise APIDiscoveryFailedError(CURL_IMPORT_GUIDANCE)
+    if status == 0:
+        raise APIDiscoveryFailedError(
+            "Network error — could not reach Pokemon Zone API.\n"
+            "Check your internet connection and try again."
+        )
+
+    if status != 200:
+        raise APIDiscoveryFailedError(
+            f"Unexpected HTTP {status} from {api_url}.\n"
+            "Re-run --curl-import with a fresh cURL from DevTools."
+        )
+
+    if arr is None:
+        # Show a snippet of the actual response to help diagnose format issues
+        hint = ""
+        if isinstance(body, dict):
+            top_keys = list(body.keys())[:8]
+            hint = f"\n  Response top-level keys: {top_keys}"
+            data = body.get("data")
+            if isinstance(data, dict):
+                hint += f"\n  body['data'] keys: {list(data.keys())[:8]}"
+            elif isinstance(data, list):
+                hint += f"\n  body['data'] is a list with {len(data)} items"
+        raise APIDiscoveryFailedError(CURL_IMPORT_GUIDANCE + hint)
 
     print(f"  Collection API confirmed: {len(arr)} cards.")
 
@@ -424,8 +486,93 @@ def import_curl_auth(curl_str: str) -> tuple[list, dict]:
     DISCOVERY_CACHE.parent.mkdir(parents=True, exist_ok=True)
     DISCOVERY_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
     RAW_CACHE.write_text(json.dumps(arr, indent=2, ensure_ascii=False), encoding="utf-8")
+    _save_player_stats(body)
 
     return arr, cache
+
+
+def trigger_player_sync(cookies: dict, auth_headers: dict, poll_interval: float = 2.0, timeout: int = 90) -> bool:
+    """
+    Trigger the Pokemon Zone 'Sync Player' button programmatically.
+
+    Flow:
+      1. GET /api/users/identity/ → get friendId, check nextSyncPlayerAt rate limit
+      2. POST /api/players/sync/ with {"friendId": ...} + x-csrftoken
+      3. Poll /api/players/sync/status/{taskId}/ until ready=true or timeout
+
+    Returns True if sync completed successfully, False on any non-fatal failure.
+    The caller should proceed with collection fetch regardless of the return value.
+    """
+    import time
+
+    req_headers = {**auth_headers, "Accept": "application/json, */*"}
+
+    # Step 1: identity — get friendId and check rate limit
+    try:
+        r = _get(_IDENTITY_URL, headers=req_headers, cookies=cookies, timeout=15)
+        if r.status_code != 200:
+            print(f"  Player sync: identity fetch returned HTTP {r.status_code} — skipping.")
+            return False
+        identity = r.json().get("data", {})
+    except Exception as exc:
+        print(f"  Player sync: identity fetch failed ({exc}) — skipping.")
+        return False
+
+    players = identity.get("players", [])
+    if not players:
+        print("  Player sync: no players in identity response — skipping.")
+        return False
+    friend_id = players[0].get("friendId", "")
+    if not friend_id:
+        print("  Player sync: friendId missing — skipping.")
+        return False
+
+    # Step 2: trigger sync
+    csrftoken = cookies.get("csrftoken", "")
+    post_headers = {
+        **req_headers,
+        "content-type": "application/json",
+        "x-csrftoken": csrftoken,
+        "origin": "https://www.pokemon-zone.com",
+        "referer": f"https://www.pokemon-zone.com/players/{friend_id}/",
+        "x-402-status": "1",
+    }
+    try:
+        r = _post(_SYNC_URL, headers=post_headers, cookies=cookies,
+                  json={"friendId": friend_id}, timeout=20)
+        if r.status_code != 200:
+            print(f"  Player sync: trigger returned HTTP {r.status_code} — skipping.")
+            return False
+        task_id = r.json().get("data", {}).get("taskId")
+        if not task_id:
+            print("  Player sync: no taskId in response — skipping.")
+            return False
+    except Exception as exc:
+        print(f"  Player sync: trigger failed ({exc}) — skipping.")
+        return False
+
+    print(f"  Player sync triggered (taskId={task_id}) — waiting for completion...")
+
+    # Step 3: poll until ready
+    status_url = _SYNC_STATUS_URL.format(task_id)
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        time.sleep(poll_interval)
+        try:
+            r = _get(status_url, headers=req_headers, cookies=cookies, timeout=15)
+            data = r.json().get("data", {})
+            if data.get("ready"):
+                result = data.get("result", {})
+                print(f"  Player sync complete — {result.get('successCount', '?')} cards synced.")
+                return True
+            if data.get("status") not in ("PENDING", "IN_PROGRESS", None):
+                print(f"  Player sync ended with status={data.get('status')} — proceeding.")
+                return False
+        except Exception:
+            pass  # transient poll error — keep trying
+
+    print(f"  Player sync timed out after {timeout}s — proceeding with collection fetch.")
+    return False
 
 
 def fetch_with_stored_auth() -> tuple[list, dict]:
@@ -453,6 +600,9 @@ def fetch_with_stored_auth() -> tuple[list, dict]:
     api_url      = auth.get("api_url", _PLAYER_URL)
     cookies      = auth.get("cookies", {})
     auth_headers = auth.get("auth_headers", {})
+
+    # Step 0: trigger PZ player sync (equivalent to clicking "Sync Player" in browser)
+    trigger_player_sync(cookies, auth_headers)
 
     # Step 1: card catalog
     catalog = _fetch_catalog(cookies, auth_headers)
@@ -495,6 +645,7 @@ def fetch_with_stored_auth() -> tuple[list, dict]:
     DISCOVERY_CACHE.parent.mkdir(parents=True, exist_ok=True)
     DISCOVERY_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
     RAW_CACHE.write_text(json.dumps(arr, indent=2, ensure_ascii=False), encoding="utf-8")
+    _save_player_stats(body)
     print(f"  Fetched {len(arr)} cards via stored auth.")
 
     return arr, cache

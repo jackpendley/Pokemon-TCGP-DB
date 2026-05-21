@@ -711,6 +711,30 @@ def _load_pz_client():
     return mod
 
 
+def _read_curl_from_clipboard() -> str:
+    """Return clipboard contents if they look like a cURL command, else ''."""
+    try:
+        result = subprocess.run(["pbpaste"], capture_output=True, text=True, timeout=3)
+        if result.returncode == 0:
+            text = result.stdout.strip()
+            if text.startswith("curl ") or text.startswith("curl'"):
+                return text
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        pass
+    try:
+        result = subprocess.run(
+            ["xclip", "-selection", "clipboard", "-o"],
+            capture_output=True, text=True, timeout=3,
+        )
+        if result.returncode == 0:
+            text = result.stdout.strip()
+            if text.startswith("curl ") or text.startswith("curl'"):
+                return text
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        pass
+    return ""
+
+
 def _read_curl_from_stdin() -> str:
     """Print instructions and read a multi-line cURL paste from stdin."""
     print()
@@ -736,6 +760,23 @@ def _read_curl_from_stdin() -> str:
         print("\nCancelled.")
         return ""
     return curl_str.strip()
+
+
+def _get_curl() -> str:
+    """Try clipboard first; if no cURL found there, fall back to stdin prompt."""
+    clipboard = _read_curl_from_clipboard()
+    if clipboard:
+        print()
+        print("=" * 65)
+        print("  CURL IMPORT — reading cURL from clipboard")
+        print("=" * 65)
+        # Show just the URL so user can confirm it's the right request
+        url_match = __import__("re").search(r"curl\s+['\"]?(https?://[^\s'\"]+)", clipboard)
+        if url_match:
+            print(f"  URL: {url_match.group(1)}")
+        print()
+        return clipboard
+    return _read_curl_from_stdin()
 
 
 def main() -> int:
@@ -816,9 +857,9 @@ def main() -> int:
             print(f"\nERROR: {e}", file=sys.stderr)
             return 1
 
-    # --curl-import: read a pasted cURL, discover API, save auth, then sync
+    # --curl-import: read cURL (clipboard first, then stdin), save auth, sync
     elif args.curl_import:
-        curl_str = _read_curl_from_stdin()
+        curl_str = _get_curl()
         if not curl_str:
             return 1
         print("\nParsing cURL and fetching collection...")

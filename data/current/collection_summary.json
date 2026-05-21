@@ -1,38 +1,38 @@
 {
   "meta": {
-    "total_cards": 578,
-    "last_updated": "2026-05-20",
+    "total_cards": 588,
+    "last_updated": "2026-05-21",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 578,
-  "meta_total_cards": 578,
+  "total_quantity": 588,
+  "meta_total_cards": 588,
   "count_matches_meta": true,
   "unique_entries": 272,
   "by_card_type": {
-    "Pokemon": 519,
-    "Trainer": 59
+    "Pokemon": 528,
+    "Trainer": 60
   },
   "by_pokemon_type": {
-    "Fire": 66,
-    "Grass": 75,
+    "Fire": 68,
+    "Grass": 77,
     "Water": 55,
     "Lightning": 42,
-    "Psychic": 46,
-    "Fighting": 89,
+    "Psychic": 47,
+    "Fighting": 90,
     "Darkness": 49,
     "Metal": 20,
     "Dragon": 3,
-    "Colorless": 74
+    "Colorless": 77
   },
   "by_stage": {
-    "Basic": 349,
-    "Stage 1": 138,
+    "Basic": 355,
+    "Stage 1": 141,
     "Stage 2": 32
   },
   "ex_entries": 16,
   "ex_quantity": 19,
   "trainer_subtypes": {
-    "Item": 27,
+    "Item": 28,
     "Pokemon Tool": 2,
     "Supporter": 26,
     "Stadium": 4
@@ -47,11 +47,15 @@
       8
     ],
     [
-      "Shroomish",
+      "Applin",
+      8
+    ],
+    [
+      "Pignite",
       7
     ],
     [
-      "Applin",
+      "Shroomish",
       7
     ],
     [
@@ -60,10 +64,6 @@
     ],
     [
       "Charmander",
-      6
-    ],
-    [
-      "Pignite",
       6
     ],
     [
@@ -91,12 +91,12 @@
       6
     ],
     [
-      "Korrina",
+      "Castform",
       6
     ],
     [
-      "Victini",
-      5
+      "Korrina",
+      6
     ]
   ],
   "variant_names": {
@@ -550,6 +550,6 @@
     "partial_evolution_lines": [
       "Zorua → Zoroark"
     ],
-    "total_trainer_cards": 59
+    "total_trainer_cards": 60
   }
 }

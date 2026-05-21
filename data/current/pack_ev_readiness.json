@@ -1,86 +1,67 @@
 {
-  "generated_at": "2026-05-12",
-  "model_version": "0.2.0",
-  "overall_status": "partially_ready",
+  "generated_at": "2026-05-21",
+  "model_version": "0.6.0",
+  "overall_status": "ready",
   "ev_calculation_possible": true,
-  "ev_confidence": "inferred",
-  "ev_confidence_note": "Slot rates from trusted external sources — not yet verified from in-app Offering Rates",
+  "ev_confidence": "pz_verified",
+  "ev_confidence_note": "Per-card drop chances sourced directly from Pokemon Zone — no confidence haircut applied (confidence_weight=1.0)",
   "collection": {
-    "source": "collection.json",
-    "total_cards": 380,
-    "unique_entries": 224,
+    "source": "data/sync/last_sync_raw.json via PZ player sync",
+    "total_cards": 588,
+    "unique_entries": 272,
     "validated": true
   },
   "pull_probability_model": {
     "file": "data/reference/pull_probability_model.json",
     "packs_modeled": 24,
-    "source_status": "inferred",
+    "source_status": "pz_verified",
     "slot_rates_populated": true,
-    "slot_rates_confidence": "inferred",
-    "rarity_probabilities_populated": false,
-    "inferred_source": "game8_co_ptcgp_offering_rates",
-    "inferred_source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
-    "corroborating_sources": [
-      "shacknews.com/article/142035/pokemon-trading-card-game-pocket-card-drop-chance-rate",
-      "cgmagonline.com/news/pokemon-tcg-pocket-pull-rates-lowered"
-    ]
+    "slot_rates_confidence": "pz_verified",
+    "pz_source": "Pokemon Zone pack odds pages (?show_pack_odds=1&show_pack_slot_odds=1)",
+    "pz_odds_file": "data/reference/pz_pack_odds.json",
+    "pz_coverage": "100% (all 24 packs at pz_verified)"
   },
   "pack_source_coverage": {
-    "total_entries": 224,
+    "total_entries": 272,
     "ev_ready": {
-      "count": 157,
-      "pct": 70.1,
+      "count": 272,
+      "pct": 100.0,
       "breakdown": {
-        "auto_accept": 108,
-        "secondary_evidence": 49
+        "auto_accept": 202,
+        "secondary_evidence_after_resolver": 70
+      },
+      "resolver_detail": {
+        "pass0_user_confirmed": 41,
+        "pass1_hp_match": 6,
+        "pass2b_evo_chain": 1,
+        "pass3_rarity_count": 6,
+        "pass4_pz_set_code": 16
       }
     },
-    "blocked": {
-      "count": 67,
-      "breakdown": {
-        "low_confidence": 59,
-        "unresolved": 8
-      }
+    "promo_entries": {
+      "count": 9,
+      "ev_contribution": 0,
+      "notes": [
+        "5 PROMO-A starters (Potion, X Speed, Hand Scope, Pokédex, Red Card) — non-pullable gift cards, now in pack_sources with pack_name=null",
+        "3 PROMO-B/51-53 (Zygarde 10% Forme, 50% Forme, Zygarde ex) — Promo Pack B Series Vol. 7, promo packs not yet in EV model",
+        "1 PROMO-B/56 (Mega Heracross ex) — Promo Pack B Series Vol. 8, promo packs not yet in EV model"
+      ]
     }
   },
-  "packs_with_ev_ready_entries": {
-    "count": 10,
+  "packs_with_ev_scored": {
+    "count": 24,
     "packs": [
-      "Crimson Blaze",
-      "Deluxe Pack: ex",
-      "Fantastical Parade",
-      "Mega Altaria",
-      "Mega Blaziken",
-      "Mega Gyarados",
-      "Mega Shine",
-      "Mewtwo",
-      "Pulsing Aura",
-      "Shining Revelry"
+      "Arceus", "Charizard", "Crimson Blaze", "Deluxe Pack: ex",
+      "Dialga", "Eevee Grove", "Extradimensional Crisis", "Fantastical Parade",
+      "Ho-Oh", "Lugia", "Lunala", "Mega Altaria", "Mega Blaziken",
+      "Mega Gyarados", "Mega Shine", "Mew", "Mewtwo",
+      "Paldean Wonders", "Palkia", "Pikachu", "Pulsing Aura",
+      "Secluded Springs", "Shining Revelry", "Solgaleo"
     ]
   },
-  "packs_no_ev_ready_entries": {
-    "count": 14,
-    "packs": [
-      "Arceus",
-      "Charizard",
-      "Dialga",
-      "Eevee Grove",
-      "Extradimensional Crisis",
-      "Ho-Oh",
-      "Lugia",
-      "Lunala",
-      "Mew",
-      "Paldean Wonders",
-      "Palkia",
-      "Pikachu",
-      "Secluded Springs",
-      "Solgaleo"
-    ]
-  },
-  "unblock_steps": [
-    "Verify inferred slot_rates against in-app Offering Rates (PTCGP app -> Pack details -> Offering Rates)",
-    "Set confidence=verified and populate rarity_probabilities for at least one pack",
-    "Resolve 59 ambiguous cross-expansion entries (data/exports/current_pack_source_review.csv)",
-    "Build EV calculator script once rates and pack sources are confirmed"
+  "known_gaps": [
+    "8 collection entries excluded from EV (5 non-pullable starters + 3 Zygarde PROMO-B) — zero EV impact",
+    "Promo packs (21 packs in pz_pack_odds.json) not yet scored — separate currency (Shop Tokens), future feature",
+    "pz_pack_odds.json may be missing PROMO-B Vol. 9+ (owned Zarude PROMO-B/60 not in current data)"
   ]
 }

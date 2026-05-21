@@ -17,141 +17,278 @@ Exit codes:
 """
 
 import argparse
+import itertools
+import json
+import re
 import subprocess
 import sys
+import threading
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+LOG_FILE = ROOT / "data" / "pipeline.log"
 
 PIPELINE_STEPS = [
-    ("Resolve pack sources",     "scripts/resolve_ambiguous_pack_sources.py"),
-    ("Build pack EV",            "scripts/build_pack_ev.py"),
-    ("Generate recommendations", "scripts/generate_pack_recommendation_report.py"),
-    ("Generate spending plan",   "scripts/generate_hourglass_spending_plan.py"),
+    ("Pack coverage",        "scripts/current_collection_pack_coverage.py"),
+    ("Confidence scoring",   "scripts/score_pack_source_confidence.py"),
+    ("Resolve pack sources", "scripts/resolve_ambiguous_pack_sources.py"),
+    ("Build pack EV",        "scripts/build_pack_ev.py"),
+    ("Build promo EV",       "scripts/build_promo_pack_ev.py"),
+    ("Recommendations",      "scripts/generate_pack_recommendation_report.py"),
+    ("Spending plan",        "scripts/generate_hourglass_spending_plan.py"),
 ]
 
+_STATUS_PATTERNS: dict[str, tuple] = {
+    "Pack coverage":        (r"Coverage:\s*(\d+/\d+)", lambda m: f"{m.group(1)} matched"),
+    "Confidence scoring":   (r"auto_accept:\s*(\d+)", lambda m: f"{m.group(1)} auto-accept"),
+    "Resolve pack sources": (r"→\s*(\d+/\d+)", lambda m: f"{m.group(1)} EV-ready"),
+    "Build pack EV":        (r"Packs scored:\s*(\d+)", lambda m: f"{m.group(1)} packs"),
+    "Build promo EV":       (r"Promo packs in PZ data:\s*(\d+)", lambda m: f"{m.group(1)} promo packs"),
+}
 
-def run(label: str, script: str, extra_args: list[str] | None = None) -> int:
+
+def _append_log(label: str, output: str) -> None:
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    with LOG_FILE.open("a", encoding="utf-8") as f:
+        f.write(f"\n{'=' * 60}\n[{ts}] {label}\n{'=' * 60}\n")
+        f.write(output)
+        if not output.endswith("\n"):
+            f.write("\n")
+
+
+def _extract_status(label: str, stdout: str) -> str:
+    entry = _STATUS_PATTERNS.get(label)
+    if not entry:
+        return "OK"
+    pattern, fmt = entry
+    m = re.search(pattern, stdout)
+    return fmt(m) if m else "OK"
+
+
+def _run(label: str, script: str, extra_args: list[str] | None = None) -> tuple[int, str]:
     cmd = [sys.executable, script] + (extra_args or [])
-    print(f"\n{'─' * 55}")
-    print(f"  {label}")
-    print(f"{'─' * 55}")
-    result = subprocess.run(cmd, cwd=ROOT)
-    return result.returncode
+    result = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+    combined = result.stdout
+    if result.stderr.strip():
+        combined += "\n--- stderr ---\n" + result.stderr
+    _append_log(label, combined)
+    return result.returncode, result.stdout
+
+
+def _run_with_spinner(label: str, script: str, extra_args: list[str] | None = None) -> tuple[int, str]:
+    """Run a subprocess while printing a spinner; capture output for the log."""
+    cmd = [sys.executable, script] + (extra_args or [])
+    buf_out: list[str] = []
+    buf_err: list[str] = []
+    done = threading.Event()
+
+    def _spin() -> None:
+        for frame in itertools.cycle("⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"):
+            if done.is_set():
+                break
+            print(f"\r  {frame}  {label:<22}  syncing...", end="", flush=True)
+            time.sleep(0.1)
+        print(f"\r{' ' * 50}\r", end="", flush=True)  # clear spinner line
+
+    with subprocess.Popen(cmd, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True) as proc:
+        spin_thread = threading.Thread(target=_spin, daemon=True)
+        spin_thread.start()
+        stdout, stderr = proc.communicate()
+        done.set()
+        spin_thread.join()
+        rc = proc.returncode
+
+    combined = stdout + (("\n--- stderr ---\n" + stderr) if stderr.strip() else "")
+    _append_log(label, combined)
+    return rc, stdout
+
+
+def _print_step(label: str, rc: int, status: str) -> None:
+    icon = "✓" if rc == 0 else "✗"
+    print(f"  {icon}  {label:<22}  {status}")
 
 
 def _find_latest_pz_json() -> Path:
-    """Return the newest pz_collection*.json in ~/Downloads."""
     downloads = Path.home() / "Downloads"
     candidates = sorted(downloads.glob("pz_collection*.json"), key=lambda p: p.stat().st_mtime)
     if not candidates:
         raise FileNotFoundError(
-            "No pz_collection*.json found in ~/Downloads.\n"
+            "No pz_collection*.json in ~/Downloads.\n"
             "Click the 'PZ Sync' bookmarklet on pokemon-zone.com/collection-tracker/ first."
         )
-    latest = candidates[-1]
-    print(f"  Auto-detected: {latest.name}", flush=True)
-    return latest
-
-
-def main() -> int:
-    parser = argparse.ArgumentParser(description="Run full recommendation pipeline.")
-    parser.add_argument("--skip-sync",    action="store_true", help="Skip Pokemon Zone sync")
-    parser.add_argument("--login",        action="store_true", help="Re-auth browser before sync")
-    parser.add_argument("--dry-run-sync", action="store_true", help="Show sync diff only, stop before reports")
-    parser.add_argument(
-        "--json-import", metavar="FILE", nargs="?", const="auto",
-        help="Import from bookmarklet JSON (omit FILE to auto-detect newest ~/Downloads/pz_collection*.json)",
-    )
-    args = parser.parse_args()
-
-    sync_had_review_items = False
-
-    # ── Step 1: Sync ──────────────────────────────────────────────────────
-    if not args.skip_sync:
-        sync_extra: list[str] = []
-
-        if args.json_import:
-            # Bookmarklet path: resolve file, then pass to sync script
-            if args.json_import == "auto":
-                try:
-                    json_path = _find_latest_pz_json()
-                except FileNotFoundError as e:
-                    print(f"\nERROR: {e}", file=sys.stderr)
-                    return 1
-            else:
-                json_path = Path(args.json_import)
-                if not json_path.exists():
-                    print(f"\nERROR: File not found: {json_path}", file=sys.stderr)
-                    return 1
-            sync_extra += ["--json-import", str(json_path)]
-        elif args.login:
-            sync_extra.append("--login")
-
-        if args.dry_run_sync:
-            sync_extra.append("--dry-run")
-
-        rc = run("Sync collection from Pokemon Zone", "scripts/sync_collection.py",
-                 sync_extra or None)
-
-        if args.dry_run_sync:
-            print("\nDRY RUN SYNC complete — stopping before report generation.")
-            return 0
-
-        if rc == 1:
-            print("\nFATAL: Sync failed. Pipeline aborted.", file=sys.stderr)
-            return 1
-        if rc == 3:
-            print("\nBLOCKED: Unresolved review queue. Run --skip-sync or resolve queue first.",
-                  file=sys.stderr)
-            return 1
-        if rc == 2:
-            print("\nNOTE: Sync completed with review items. Pipeline continuing with current collection.")
-            sync_had_review_items = True
-    else:
-        print("Skipping sync — using current collection.json")
-
-    # ── Step 2: Validate ──────────────────────────────────────────────────
-    rc = run("Validate collection", "scripts/validate_current_collection.py",
-             ["--expected-total", _read_meta_total()])
-    if rc != 0:
-        print("\nFATAL: Validation failed. Pipeline aborted.", file=sys.stderr)
-        return 1
-
-    # ── Step 3: Normalize ─────────────────────────────────────────────────
-    rc = run("Normalize collection", "scripts/normalize_current_collection.py")
-    if rc != 0:
-        print("\nFATAL: Normalize failed. Pipeline aborted.", file=sys.stderr)
-        return 1
-
-    # ── Steps 4-7: EV pipeline ────────────────────────────────────────────
-    for label, script in PIPELINE_STEPS:
-        rc = run(label, script)
-        if rc != 0:
-            print(f"\nFATAL: '{label}' failed. Pipeline aborted.", file=sys.stderr)
-            return 1
-
-    # ── Done ──────────────────────────────────────────────────────────────
-    print(f"\n{'=' * 55}")
-    print("  Pipeline complete.")
-    print(f"  Reports: review/inferred_pack_recommendations.md")
-    print(f"           review/final_hourglass_spending_plan.md")
-    print(f"           review/pack_ev.md")
-    if sync_had_review_items:
-        print(f"\n  NOTE: Review queue has items requiring attention.")
-        print(f"        See: data/sync/sync_review_queue.json")
-    print(f"{'=' * 55}\n")
-
-    return 2 if sync_had_review_items else 0
+    return candidates[-1]
 
 
 def _read_meta_total() -> str:
-    """Read meta.total_cards from collection.json for the validate step."""
-    import json, re
     raw = (ROOT / "collection.json").read_text(encoding="utf-8")
     cleaned = re.sub(r"//[^\n]*", "", raw)
     data = json.loads(cleaned)
     return str(data.get("meta", {}).get("total_cards", 380))
+
+
+def _collection_status() -> str:
+    """Read total/unique from collection.json for the sync status line."""
+    try:
+        raw = (ROOT / "collection.json").read_text(encoding="utf-8")
+        cleaned = re.sub(r"//[^\n]*", "", raw)
+        data = json.loads(cleaned)
+        meta = data.get("meta", {})
+        total = meta.get("total_cards", "?")
+        unique = len(data.get("collection", []))
+        return f"{total} cards, {unique} unique"
+    except Exception:
+        return "synced"
+
+
+_HOURGLASS_FIELDS = ("hourglasses", "hourglass_count", "packHourglasses",
+                     "pack_hourglasses", "currency", "gems")
+
+
+def _read_hourglasses() -> int | None:
+    path = ROOT / "data" / "sync" / "player_stats.json"
+    if not path.exists():
+        return None
+    try:
+        stats = json.loads(path.read_text(encoding="utf-8"))
+        for field in _HOURGLASS_FIELDS:
+            if field in stats:
+                return int(stats[field])
+    except Exception:
+        pass
+    return None
+
+
+def _print_final_summary() -> None:
+    pack_ev_path  = ROOT / "data" / "current" / "pack_ev.json"
+    promo_ev_path = ROOT / "data" / "current" / "promo_pack_ev.json"
+
+    top_pack = None
+    print()
+    if pack_ev_path.exists():
+        try:
+            packs = json.loads(pack_ev_path.read_text(encoding="utf-8")).get("packs", [])
+            top_pack = max((p for p in packs if not p.get("blocked")),
+                           key=lambda p: p.get("confidence_adjusted_ev", 0), default=None)
+            if top_pack:
+                missing = top_pack.get("missing_in_pool", "?")
+                total   = top_pack.get("cards_in_pool", "?")
+                adj_ev  = top_pack.get("confidence_adjusted_ev", 0)
+                print(f"  Top pack:   {top_pack['pack_name']} (adj_ev={adj_ev:.4f})"
+                      f" — {missing}/{total} cards unowned")
+        except Exception:
+            pass
+
+    if promo_ev_path.exists():
+        try:
+            top = next((p for p in json.loads(promo_ev_path.read_text(encoding="utf-8")).get("packs", [])
+                        if p.get("new_card_ev", 0) > 0), None)
+            if top:
+                print(f"  Top promo:  {top['pack_name']} (new_ev={top['new_card_ev']:.4f})"
+                      f" — Shop Tokens")
+        except Exception:
+            pass
+
+    hourglasses = _read_hourglasses()
+    if hourglasses is not None:
+        hg_str = f"  Hourglasses: {hourglasses}"
+        if hourglasses >= 120 and top_pack:
+            hg_str += f"  → buy 10x {top_pack['pack_name']} (costs 120 ⧗), then re-run"
+        print(hg_str)
+
+    print(f"  Log:        {LOG_FILE.relative_to(ROOT)}")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Run full recommendation pipeline.")
+    parser.add_argument("--skip-sync",    action="store_true")
+    parser.add_argument("--login",        action="store_true")
+    parser.add_argument("--dry-run-sync", action="store_true")
+    parser.add_argument("--json-import",  metavar="FILE", nargs="?", const="auto")
+    args = parser.parse_args()
+
+    LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    LOG_FILE.write_text(f"Pipeline run: {ts}\n", encoding="utf-8")
+
+    sync_had_review_items = False
+    print()
+
+    # ── Sync ─────────────────────────────────────────────────────────────
+    if not args.skip_sync:
+        sync_extra: list[str] = []
+        if args.json_import:
+            if args.json_import == "auto":
+                try:
+                    json_path = _find_latest_pz_json()
+                    print(f"  Auto-detected: {json_path.name}")
+                except FileNotFoundError as e:
+                    print(f"\n  ERROR: {e}", file=sys.stderr)
+                    return 1
+            else:
+                json_path = Path(args.json_import)
+                if not json_path.exists():
+                    print(f"\n  ERROR: File not found: {json_path}", file=sys.stderr)
+                    return 1
+            sync_extra += ["--json-import", str(json_path)]
+        elif args.login:
+            sync_extra.append("--login")
+        if args.dry_run_sync:
+            sync_extra.append("--dry-run")
+
+        rc, stdout = _run_with_spinner("Sync collection", "scripts/sync_collection.py", sync_extra or None)
+
+        if args.dry_run_sync:
+            print(stdout)
+            print("  DRY RUN — stopping before report generation.")
+            return 0
+
+        if rc == 1:
+            _print_step("Sync collection", rc, "FATAL")
+            print("\n  FATAL: Sync failed. Check data/pipeline.log", file=sys.stderr)
+            return 1
+        if rc == 3:
+            _print_step("Sync collection", rc, "BLOCKED — unresolved review queue")
+            return 1
+        if rc == 2:
+            _print_step("Sync collection", 0, f"{_collection_status()} (review items pending)")
+            sync_had_review_items = True
+        else:
+            _print_step("Sync collection", rc, _collection_status())
+    else:
+        print(f"  -  {'Sync collection':<22}  skipped")
+
+    # ── Validate ──────────────────────────────────────────────────────────
+    rc, stdout = _run("Validate collection", "scripts/validate_current_collection.py",
+                      ["--expected-total", _read_meta_total()])
+    if rc != 0:
+        _print_step("Validate collection", rc, "FATAL — check data/pipeline.log")
+        return 1
+    m = re.search(r"VALIDATION PASSED\s*\((.+?)\)", stdout)
+    _print_step("Validate collection", rc, m.group(1) if m else "OK")
+
+    # ── Normalize ─────────────────────────────────────────────────────────
+    rc, stdout = _run("Normalize collection", "scripts/normalize_current_collection.py")
+    if rc != 0:
+        _print_step("Normalize collection", rc, "FATAL — check data/pipeline.log")
+        return 1
+    _print_step("Normalize collection", rc, "OK")
+
+    # ── EV pipeline ───────────────────────────────────────────────────────
+    for label, script in PIPELINE_STEPS:
+        rc, stdout = _run(label, script)
+        if rc != 0:
+            _print_step(label, rc, f"FATAL — check data/pipeline.log")
+            return 1
+        _print_step(label, rc, _extract_status(label, stdout))
+
+    _print_final_summary()
+
+    if sync_had_review_items:
+        print(f"\n  NOTE: Review queue has items. See: data/sync/sync_review_queue.json")
+
+    return 2 if sync_had_review_items else 0
 
 
 if __name__ == "__main__":

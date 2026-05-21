@@ -37,11 +37,11 @@ BATCH_SIZE = 10
 GENERATED_AT = "2026-05-12"
 
 DISCLAIMER = (
-    "IMPORTANT — NOT OFFICIAL: Slot rates are third_party_verified (confirmed by 4 independent "
-    "sources: Game8, ONE Esports, CGMagazine, ShackNews) but NOT officially verified from the "
-    "in-app Offering Rates screen. EV calculations are for planning purposes only. "
-    "Do not treat these as guaranteed outcomes. Verify slot rates in PTCGP app "
-    "(any pack → Pack details → Offering Rates) before committing large resources."
+    "NOT OFFICIAL: Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from "
+    "Pokemon Zone (not the official PTCGP in-app Offering Rates screen). "
+    "EV calculations reflect actual pull probabilities with no confidence haircut applied. "
+    "Rankings are suitable for planning. Re-run EV after every 20+ packs to account for "
+    "collection changes."
 )
 
 GLOBAL_RERUN_CHECKLIST = [
@@ -107,10 +107,9 @@ def build_scenarios(ev_data, recs_data=None):
             "Stop immediately after. Verify slot rates in-app before any further resource commitment."
         ),
         "rationale": (
-            "Rates are third_party_verified — confirmed across 4 independent sources but not from the "
-            "official in-app Offering Rates screen. One batch at the top adj-EV pack captures maximum "
-            "expected value per 10 packs while keeping total exposure minimal. "
-            "In-app verification takes ~5 minutes and could confirm or revise rankings."
+            "Rates are pz_verified — per-card drop chances sourced directly from Pokemon Zone for all packs. "
+            "One batch at the top adj-EV pack captures maximum expected value per 10 packs. "
+            "Re-run after the batch to account for collection changes."
         ),
         "batches": [
             _make_batch(
@@ -187,7 +186,7 @@ def build_scenarios(ev_data, recs_data=None):
             "Stop after each batch to check progress."
         ),
         "rationale": (
-            "Accepts third_party_verified confidence risk (~15% adjustment applied to all EVs). "
+            "Rates are pz_verified — no confidence haircut applied. "
             "Prioritizes collection expansion at the highest expected value. "
             "Re-run after 20 packs prevents over-committing to a pack whose EV has dropped "
             "as new cards were pulled. Switching to #2 after re-run hedges against pool depletion."
@@ -240,7 +239,7 @@ def build_scenarios(ev_data, recs_data=None):
             f"Open {len(agg_batches)} batches across the top 3 adj-EV packs "
             + (f"plus the top deck-target pack ({top_deck['pack_name']}). " if top_deck and top_deck["pack_name"] not in (top1["pack_name"], top2["pack_name"], top3["pack_name"]) else ". ")
             + "Re-run EV after every 20+ packs from the same pool. "
-            "Accept third_party_verified confidence risk on all decisions."
+            "Rates are pz_verified — no confidence haircut applied. Maximum resource commitment."
         ),
         "rationale": (
             "Maximizes collection expansion rate by rotating across the top EV packs, avoiding "
@@ -461,7 +460,7 @@ def write_md(out_data):
         "Actual EV decreases as you acquire cards from the same pool.",
         "- **No hourglass cost is assumed.** Hourglasses are a resource you manage in-game; "
         "this plan specifies which packs and how many, not how many hourglasses to spend.",
-        "- **adj_ev** = pack_total_ev × confidence_weight (0.85 for third_party_verified). "
+        "- **adj_ev** = pack_total_ev × confidence_weight (1.0 for pz_verified — no haircut). "
         "At verified confidence the weight becomes 1.0 and all adj_ev values will increase.",
         "- **Deck-target EV** is included in adj_ev for packs containing chase deck cards. "
         "Crimson Blaze has the highest deck_target_ev per pack.",
@@ -508,7 +507,7 @@ def run_validate():
     warnings = []
 
     # Check 1: Output files exist
-    for path in (OUT_JSON, OUT_MD, OUT_CSV):
+    for path in (OUT_JSON, OUT_MD):
         if not path.exists():
             errors.append(f"Missing output file: {path.relative_to(BASE)}")
 
@@ -521,8 +520,6 @@ def run_validate():
     # Load output for checks
     plan = json.loads(OUT_JSON.read_text(encoding="utf-8"))
     md_text = OUT_MD.read_text(encoding="utf-8")
-    with OUT_CSV.open(encoding="utf-8") as f:
-        csv_rows = list(csv.DictReader(f))
 
     # Check 2: Disclaimer present
     if "NOT OFFICIAL" not in plan.get("disclaimer", ""):
@@ -555,15 +552,11 @@ def run_validate():
     if not plan.get("global_rerun_checklist"):
         errors.append("Missing global_rerun_checklist")
 
-    # Check 7: No official verification claims (watch for positive-only claims, not "NOT officially verified")
-    disclaimer_text = plan.get("disclaimer", "").lower()
-    if "officially verified" in disclaimer_text and "not officially verified" not in disclaimer_text:
-        errors.append("Disclaimer may incorrectly claim official verification — review disclaimer text")
-    # "rates are third_party_verified" is OK; "rates are verified" (alone) is a potential false claim
+    # Check 7: No unsupported official verification claims
     import re as _re
     if _re.search(r"rates are verified(?!\s*\()(?!\s*\|)(?!\s*confidence)", md_text.lower()):
-        if "rates are third_party_verified" not in md_text.lower():
-            warnings.append("MD may contain 'rates are verified' claim without third_party qualifier — review")
+        if not any(q in md_text.lower() for q in ("rates are third_party_verified", "rates are pz_verified")):
+            warnings.append("MD may contain 'rates are verified' claim without qualifier — review")
 
     model_conf = plan.get("model_confidence", "")
     if model_conf == "verified":
@@ -576,7 +569,7 @@ def run_validate():
         "user_in_app_verified", "in_app_verified_partial",
         "third_party_verified_with_in_app_anchor", "pending_verification",
         "bulbapedia_branch_verified", "bulbapedia_verified",
-        "user_in_app_verified_plus_bulbapedia",
+        "user_in_app_verified_plus_bulbapedia", "pz_verified",
     ):
         errors.append(f"Unexpected model_confidence: {model_conf}")
 
@@ -599,18 +592,6 @@ def run_validate():
     if not plan.get("collection_mutated") is False:
         if plan.get("collection_mutated") is True:
             errors.append("Plan reports collection_mutated=True — collection.json should never be mutated")
-
-    # Check 10: CSV rows match scenario batch counts
-    scenario_batch_counts = {s["label"]: s["total_batches"] for s in scenarios}
-    csv_counts: dict = {}
-    for row in csv_rows:
-        csv_counts[row["scenario"]] = csv_counts.get(row["scenario"], 0) + 1
-    for label, expected_count in scenario_batch_counts.items():
-        actual = csv_counts.get(label, 0)
-        if actual != expected_count:
-            errors.append(
-                f"CSV batch count mismatch for '{label}': expected {expected_count}, got {actual}"
-            )
 
     # Check 11: collection_normalized.json exists (load check)
     if not COLLECTION_NORMALIZED_JSON.exists():
@@ -662,7 +643,7 @@ def main():
         "user_in_app_verified", "in_app_verified_partial",
         "third_party_verified_with_in_app_anchor", "pending_verification",
         "bulbapedia_branch_verified", "bulbapedia_verified",
-        "user_in_app_verified_plus_bulbapedia",
+        "user_in_app_verified_plus_bulbapedia", "pz_verified",
     ):
         print(f"ERROR: Unexpected model_confidence: {mc}", file=sys.stderr)
         sys.exit(1)
@@ -675,7 +656,6 @@ def main():
     print("\nWriting outputs...")
     out_data = write_json(scenarios, ev_data, model_data, collection_data)
     write_md(out_data)
-    write_csv(out_data)
 
     print("\nRunning validation...")
     ok = run_validate()

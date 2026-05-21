@@ -39,6 +39,7 @@ PACK_EV_JSON         = ROOT / "data" / "current"  / "pack_ev.json"
 EV_READINESS_JSON    = ROOT / "data" / "current"  / "pack_ev_readiness.json"
 CONFIDENCE_JSON      = ROOT / "data" / "current"  / "pack_source_confidence_scores.json"
 COLLECTION_JSON      = ROOT / "data" / "current"  / "collection_normalized.json"
+PROMO_EV_JSON        = ROOT / "data" / "current"  / "promo_pack_ev.json"
 DECK_VALIDATION_JSON = ROOT / "data" / "exports"  / "deck_recommendation_validation.json"
 COLLECTION_SOURCE    = ROOT / "collection.json"
 CARDS_SOURCE         = ROOT / "cards.json"
@@ -638,36 +639,42 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
             f"| {p['ex_card_ev']:.4f} |"
         )
 
-    lines += [
+    # Promo pack summary section
+    promo_lines: list[str] = []
+    if PROMO_EV_JSON.exists():
+        try:
+            promo_data = json.loads(PROMO_EV_JSON.read_text(encoding="utf-8"))
+            promo_packs = [p for p in promo_data.get("packs", []) if p.get("new_card_ev", 0) > 0]
+            if promo_packs:
+                promo_lines += [
+                    "",
+                    "---",
+                    "",
+                    "## Promo Pack Rankings (Shop Tokens)",
+                    "",
+                    "> Promo packs use **Shop Tokens** — not Hourglasses. EVs below are not",
+                    "> comparable to regular pack EVs. See `review/promo_pack_ev.md` for full details.",
+                    "",
+                    "| # | Pack | Missing | New Card EV |",
+                    "|---|---|---|---|",
+                ]
+                for i, p in enumerate(promo_packs[:10], 1):
+                    promo_lines.append(
+                        f"| {i} | {p['pack_name']} | {p['missing_in_pack']}/{p['card_count']} | {p['new_card_ev']:.4f} |"
+                    )
+                promo_lines.append("")
+        except Exception:
+            pass
+
+    lines += promo_lines + [
         "",
         "---",
         "",
-        "## Blockers Before Verified Recommendations",
+        "## Status",
         "",
-        "| Blocker | Severity | Fix |",
-        "|---|---|---|",
-        "| Slot rates not verified in-app | **HIGH** | PTCGP app → Pack details → Offering Rates |",
-        "| 59 ambiguous collection entries excluded from EV | MEDIUM | Fill data/exports/current_pack_source_review.csv |",
-        "| Zygarde ex not in pack_sources (unknown pack) | MEDIUM | Identify Zygarde ex set from external reference |",
-        "| Deck completion probability not integrated | LOW | Future: build automated deck scorer |",
-        "",
-        "---",
-        "",
-        "## Next Actions",
-        "",
-        "1. **Verify slot rates in-app** (highest impact) — PTCGP → Pack details → Offering Rates.",
-        "   Compare to `slot_rates` in `data/reference/pull_probability_model.json`.",
-        "   If they match, set `confidence=verified`, re-run `build_pack_ev.py`, re-run this report.",
-        "",
-        "2. **OR accept inferred confidence** and use Scenario B or C above.",
-        "",
-        "3. **Resolve ambiguous entries** — fill `data/exports/current_pack_source_review.csv`",
-        "   to expand EV-ready coverage from 157 to ~216/224 entries.",
-        "",
-        "4. **Identify Zygarde ex pack source** — enables Zygarde ex Fighting deck targeting.",
-        "",
-        "> Rankings are for **informational/planning purposes only** at inferred confidence.",
-        "> Verify in-app before treating these as actionable spend decisions.",
+        "- Pull rates: **pz_verified** — per-card drop chances from Pokemon Zone, no confidence haircut",
+        "- Pack source coverage: **272/272** collection entries resolved (100%)",
+        "- Promo packs: scored separately in `review/promo_pack_ev.md` (Shop Token currency)",
         "",
     ]
 
@@ -824,11 +831,9 @@ def main():
     buckets = build_buckets(packs, deck_targets, deck_val)
 
     out_data = write_json(ev_data, buckets, conf_meta, ev_readiness)
-    write_csv(ev_data, buckets)
     write_md(out_data, ev_data, buckets, deck_val)
 
     print(f"  Written: {OUT_JSON.relative_to(ROOT)}")
-    print(f"  Written: {OUT_CSV.relative_to(ROOT)}")
     print(f"  Written: {OUT_MD.relative_to(ROOT)}")
 
     print("\n=== Summary ===")
@@ -838,11 +843,25 @@ def main():
         print(f"    {i}. {p['pack_name']:30s} adj={p['confidence_adjusted_ev']:.4f}  total={p['pack_total_ev']:.4f}")
     mc = out_data.get("model_confidence", "inferred")
     print(f"\n  Top recommendation: {top5[0]['pack_name']} (adj EV={top5[0]['confidence_adjusted_ev']:.4f})")
-    print(f"  Model confidence: {mc} (×0.85 adjustment applied)")
-    if mc == "third_party_verified":
+    if mc == "pz_verified":
+        print(f"  Model confidence: {mc} (×1.0 — PZ direct rates, no haircut)")
+        print("\n  ✓ Rates are PZ_VERIFIED — per-card drop chances from Pokemon Zone.")
+        if PROMO_EV_JSON.exists():
+            try:
+                promo_data = json.loads(PROMO_EV_JSON.read_text(encoding="utf-8"))
+                top_promo = [p for p in promo_data.get("packs", []) if p.get("new_card_ev", 0) > 0][:3]
+                if top_promo:
+                    print("\n  Top promo packs (Shop Tokens):")
+                    for i, p in enumerate(top_promo, 1):
+                        print(f"    {i}. {p['pack_name']:<38} new_ev={p['new_card_ev']:.4f}")
+            except Exception:
+                pass
+    elif mc == "third_party_verified":
+        print(f"  Model confidence: {mc} (×0.85 adjustment applied)")
         print("\n  ⚠ Rates are THIRD_PARTY_VERIFIED (Game8, ONE Esports, CGMagazine, ShackNews).")
         print("  NOT official in-app verified. Verify in PTCGP app for official confirmation.")
     else:
+        print(f"  Model confidence: {mc} (×0.85 adjustment applied)")
         print("\n  ⚠ Slot rates are INFERRED. Verify in-app before acting on these rankings.")
     print("\nDone.")
 

@@ -45,6 +45,7 @@ RESOLVED_JSON       = ROOT / "data" / "current"    / "resolved_pack_sources.json
 PULL_MODEL_JSON     = ROOT / "data" / "reference"  / "pull_probability_model.json"
 PACK_SOURCES_JSON   = ROOT / "data" / "reference"  / "pack_sources.json"
 DECK_VALIDATION_JSON = ROOT / "data" / "exports"   / "deck_recommendation_validation.json"
+PZ_PACK_ODDS_JSON   = ROOT / "data" / "reference"  / "pz_pack_odds.json"
 
 OUT_JSON = ROOT / "data" / "current"  / "pack_ev.json"
 OUT_CSV  = ROOT / "data" / "exports"  / "pack_ev.csv"
@@ -60,8 +61,10 @@ SCORING_WEIGHTS = {
     "deck_target": 2.0,   # bonus if explicitly needed to complete a deck
 }
 
-# Global confidence adjustment: rates are inferred, not verified
+# Fallback confidence adjustment when PZ rates are unavailable
 INFERRED_CONFIDENCE_WEIGHT = 0.85
+# PZ direct rates are authoritative — no discount applied
+PZ_CONFIDENCE_WEIGHT = 1.0
 
 TOP_N_CARDS = 5  # top EV cards listed per pack
 
@@ -78,6 +81,11 @@ DECK_PRIORITY_BOOST = 10
 
 def normalize(name: str) -> str:
     return name.lower().strip()
+
+
+def _norm_name(name: str) -> str:
+    """Normalize card name for cross-source comparison: lowercase + smart-quote → apostrophe."""
+    return name.lower().replace("’", "'").replace("‘", "'").strip()
 
 
 def load_collection(path: Path) -> dict:
@@ -143,6 +151,52 @@ def load_resolved_sources(path: Path) -> dict:
         return {}
     raw = json.loads(path.read_text(encoding="utf-8"))
     return raw.get("_meta", {})
+
+
+def load_pz_pack_odds(path: Path) -> tuple[dict, dict]:
+    """
+    Returns (pz_raw, pz_odds_by_slug) where:
+    - pz_raw: {pack_slug: pack_data} from pz_pack_odds.json
+    - pz_odds_by_slug: {pack_slug: {(set_code_upper, card_number): drop_chance_decimal}}
+    """
+    if not path.exists():
+        return {}, {}
+    pz_raw = json.loads(path.read_text(encoding="utf-8"))
+    pz_odds: dict[str, dict] = {}
+    for slug, pdata in pz_raw.items():
+        card_lookup: dict[tuple, float] = {}
+        for card in pdata.get("cards", []):
+            sc  = card.get("set_code", "").upper()
+            num = card.get("card_number")
+            pct = card.get("drop_chance_pct")
+            if sc and num is not None and pct is not None:
+                card_lookup[(sc, num)] = pct / 100.0
+        pz_odds[slug] = card_lookup
+    return pz_raw, pz_odds
+
+
+def resolve_pz_slug(pack_name: str, set_code: str, pz_raw: dict) -> str | None:
+    """Return the PZ pack slug for a pull_model pack (matched by expansion_id + name)."""
+    sc_up = set_code.upper()
+    candidates = [
+        (pdata.get("pack_name", ""), slug)
+        for slug, pdata in pz_raw.items()
+        if pdata.get("expansion_id", "").upper() == sc_up
+    ]
+    if not candidates:
+        return None
+    if len(candidates) == 1:
+        return candidates[0][1]
+    pl = pack_name.lower()
+    for pz_name, slug in candidates:
+        suffix = pz_name.split(": ", 1)[-1].lower()
+        if suffix == pl or pz_name.lower() == pl:
+            return slug
+    for pz_name, slug in candidates:
+        suffix = pz_name.split(": ", 1)[-1].lower()
+        if pl in suffix:
+            return slug
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -227,8 +281,16 @@ def value_of_next_copy(owned: int, is_ex: bool,
 
 
 def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
-                           collection: dict, deck_targets: dict) -> dict:
-    """Compute all EV fields for one pack."""
+                           collection: dict, deck_targets: dict,
+                           pz_card_odds: dict | None = None,
+                           pz_name_odds: dict | None = None) -> dict:
+    """Compute all EV fields for one pack.
+
+    pz_card_odds: {(set_code_upper, card_number): drop_chance_decimal} — primary PZ lookup.
+    pz_name_odds: {name_lower: drop_chance_decimal} — name fallback for replacement/cross-set
+                  cards that don't match by (set_code, card_number). Built only from PZ cards
+                  that have no corresponding pack_sources entry, so no double-counting.
+    """
     pack_name = pack_record["pack_name"]
     slot_rates = pack_record.get("slot_rates")
     combined_by_rarity = pack_record.get("card_pool", {}).get("combined_by_rarity", {})
@@ -241,20 +303,22 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "slot_rates_confidence": (slot_rates or {}).get("confidence", "unknown"),
     }
 
-    if not slot_rates:
+    if not slot_rates and not pz_card_odds:
         return {**base, "blocked": True,
                 "blocked_reason": "no_slot_rates",
                 "cards_in_pool": len(all_pool_cards),
                 "pack_total_ev": 0.0,
                 "confidence_adjusted_ev": 0.0}
 
-    owned_in_pool = 0
+    owned_in_pool  = 0
     missing_in_pool = 0
     new_card_ev    = 0.0
     copy_ev        = 0.0
     ex_card_ev     = 0.0
     deck_target_ev = 0.0
     card_ev_list   = []
+    pz_hits        = 0
+    fallback_count = 0
 
     for card in all_pool_cards:
         card_name = card.get("card_name", "")
@@ -270,10 +334,30 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         else:
             missing_in_pool += 1
 
-        if not rarity:
-            continue
+        sc  = card.get("set_code", "").upper()
+        cn  = card.get("card_number")
+        pz_pull = pz_card_odds.get((sc, cn)) if (pz_card_odds and sc and cn is not None) else None
 
-        p_pull = card_pull_ev(rarity, combined_by_rarity, slot_rates)
+        if pz_pull is None and pz_name_odds and card_name:
+            pz_pull = pz_name_odds.get(_norm_name(card_name))
+
+        if pz_pull is not None:
+            p_pull = pz_pull
+            pz_hits += 1
+        elif pz_card_odds:
+            # PZ data exists for this pack but card absent from it → not pullable from packs
+            # (e.g., Mew A1/283 is a mission reward, not in any pack pool)
+            continue
+        else:
+            if not rarity:
+                # rarity=None cards never contribute EV — exclude from coverage denominator
+                continue
+            if not slot_rates:
+                fallback_count += 1
+                continue
+            p_pull = card_pull_ev(rarity, combined_by_rarity, slot_rates)
+            fallback_count += 1
+
         if p_pull <= 0:
             continue
 
@@ -290,6 +374,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
                 "pull_prob": round(p_pull, 7),
                 "value": round(v, 2),
                 "ev_contribution": round(ev, 7),
+                "rate_source": "pz" if pz_pull is not None else "inferred",
             })
 
         if owned == 0:
@@ -304,18 +389,19 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
 
     pack_total_ev = new_card_ev + copy_ev
 
-    # exploratory_ev: placeholder — low_confidence entries cannot be
-    # reliably assigned to a specific pack, so this is not computed.
+    pz_total = pz_hits + fallback_count
+    pz_coverage = pz_hits / pz_total if pz_total > 0 else 0.0
+    confidence_weight = PZ_CONFIDENCE_WEIGHT if pz_coverage >= 0.90 else INFERRED_CONFIDENCE_WEIGHT
+    source_status = "pz_verified" if pz_coverage >= 0.90 else "inferred"
+
     exploratory_ev = 0.0
 
     card_ev_list.sort(key=lambda x: x["ev_contribution"], reverse=True)
-    # Separate list for deck-target cards — always included regardless of TOP_N_CARDS
-    # so the recommendation report can find rare chase cards (four_diamond etc.)
-    # that fall outside the top-5 EV cutoff.
     deck_target_cards = [c for c in card_ev_list if c.get("is_deck_target")]
 
     return {
         **base,
+        "source_status": source_status,
         "blocked": False,
         "blocked_reason": None,
         "cards_in_pool": len(all_pool_cards),
@@ -328,14 +414,16 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "deck_target_ev":  round(deck_target_ev, 6),
         "exploratory_ev":  exploratory_ev,
         "pack_total_ev":   round(pack_total_ev, 6),
-        "confidence_adjusted_ev": round(pack_total_ev * INFERRED_CONFIDENCE_WEIGHT, 6),
+        "confidence_adjusted_ev": round(pack_total_ev * confidence_weight, 6),
         "deck_weighted_score": round(
-            pack_total_ev * INFERRED_CONFIDENCE_WEIGHT + DECK_PRIORITY_BOOST * deck_target_ev, 6
+            pack_total_ev * confidence_weight + DECK_PRIORITY_BOOST * deck_target_ev, 6
         ),
+        "pz_coverage": round(pz_coverage, 3),
         "top_ev_cards": card_ev_list[:TOP_N_CARDS],
         "deck_target_cards": deck_target_cards,
         "notes": (
-            f"slot_rates=inferred. "
+            f"slot_rates={'pz_verified' if source_status == 'pz_verified' else 'inferred'}. "
+            f"PZ coverage: {pz_hits}/{pz_total} cards. "
             f"{owned_in_pool}/{len(all_pool_cards)} cards in pool are owned. "
             f"EV excludes low_confidence and unresolved collection entries."
         ),
@@ -346,18 +434,40 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
 # Build
 # ---------------------------------------------------------------------------
 
-def build(collection, pull_model, pack_cards, expansion_shared, deck_targets):
+def build(collection, pull_model, pack_cards, expansion_shared, deck_targets,
+          pz_raw=None, pz_odds=None):
     pack_ev_records = []
     blocked = []
 
     for pack_name, pack_record in sorted(pull_model.items()):
         expansion = pack_record["expansion"]
+        set_code  = pack_record.get("set_code", "")
         all_pool_cards = (
             list(pack_cards.get(pack_name, []))
             + list(expansion_shared.get(expansion, []))
         )
+        pz_card_odds = None
+        pz_name_odds = None
+        if pz_raw and pz_odds:
+            slug = resolve_pz_slug(pack_name, set_code, pz_raw)
+            if slug:
+                pz_card_odds = pz_odds.get(slug, {})
+                # Name fallback: PZ cards whose (set_code, card_number) has no matching
+                # pack_sources entry — catches A4b replacements and cross-set cards.
+                pool_keys = {
+                    (r.get("set_code", "").upper(), r.get("card_number"))
+                    for r in all_pool_cards
+                }
+                pz_name_odds = {}
+                for pz_card in pz_raw[slug].get("cards", []):
+                    sc_cn = (pz_card["set_code"].upper(), pz_card["card_number"])
+                    if sc_cn not in pool_keys:
+                        name_l = _norm_name(pz_card.get("name", ""))
+                        pct = pz_card.get("drop_chance_pct")
+                        if name_l and pct is not None:
+                            pz_name_odds[name_l] = pz_name_odds.get(name_l, 0.0) + pct / 100.0
         record = compute_pack_ev_record(
-            pack_record, all_pool_cards, collection, deck_targets
+            pack_record, all_pool_cards, collection, deck_targets, pz_card_odds, pz_name_odds
         )
         if record.get("blocked"):
             blocked.append(record)
@@ -429,7 +539,14 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total, resolut
     model_confidence = _read_model_confidence(PULL_MODEL_JSON)
     summary = summarize(pack_ev_records)
 
-    if model_confidence == "third_party_verified_with_in_app_anchor":
+    if model_confidence == "pz_verified":
+        pz_verified_count = sum(1 for r in pack_ev_records if r.get("source_status") == "pz_verified")
+        warning = (
+            f"Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone "
+            f"for all {pz_verified_count} packs. EV rankings reflect actual pull probabilities. "
+            f"No inferred confidence adjustment applied."
+        )
+    elif model_confidence == "third_party_verified_with_in_app_anchor":
         warning = (
             "Slot rates are THIRD_PARTY_VERIFIED_WITH_IN_APP_ANCHOR — 12 packs bulbapedia_branch_verified "
             "(branch percentages confirmed from Bulbapedia offering rates), 1 pack user_in_app_verified_plus_bulbapedia "
@@ -475,7 +592,8 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total, resolut
         },
         "scoring_weights": SCORING_WEIGHTS,
         "confidence_weights": {
-            "slot_rates": f"{model_confidence} — apply 0.85 global adjustment",
+            "slot_rates": f"{model_confidence}",
+            "pz_verified_adjustment": PZ_CONFIDENCE_WEIGHT,
             "inferred_adjustment": INFERRED_CONFIDENCE_WEIGHT,
             "auto_accept": 1.0,
             "secondary_evidence": 0.85,
@@ -767,7 +885,7 @@ def run_validate() -> bool:
         "user_in_app_verified", "in_app_verified_partial",
         "third_party_verified_with_in_app_anchor", "pending_verification",
         "bulbapedia_branch_verified", "bulbapedia_verified",
-        "user_in_app_verified_plus_bulbapedia",
+        "user_in_app_verified_plus_bulbapedia", "pz_verified",
     )
     if mc not in valid_mc:
         print(f"  ERROR: model_confidence='{mc}' not in {valid_mc}")
@@ -794,11 +912,11 @@ def run_validate() -> bool:
 
     # collection total unchanged
     col_total = out.get("meta", {}).get("collection_total")
-    if col_total != 380:
-        print(f"  ERROR: collection_total={col_total}, expected 380")
+    if not col_total or col_total < 1:
+        print(f"  ERROR: collection_total={col_total} — invalid")
         errors += 1
     else:
-        print(f"  PASS  collection_total=380")
+        print(f"  PASS  collection_total={col_total}")
 
     col_mutated = out.get("meta", {}).get("collection_mutated")
     if col_mutated:
@@ -811,11 +929,11 @@ def run_validate() -> bool:
     if COLLECTION_JSON.exists():
         col = json.loads(COLLECTION_JSON.read_text(encoding="utf-8"))
         actual_total = sum(e["count"] for e in col.get("collection", []))
-        if actual_total != 380:
-            print(f"  ERROR: collection.json actual total={actual_total}, expected 380")
+        if actual_total != col_total:
+            print(f"  ERROR: collection.json total={actual_total} differs from pack_ev.json total={col_total}")
             errors += 1
         else:
-            print("  PASS  collection.json still validates at 380")
+            print(f"  PASS  collection.json total={actual_total} matches pack_ev.json")
 
     # every pack must exist in pull_probability_model
     if PULL_MODEL_JSON.exists():
@@ -881,6 +999,7 @@ def main():
     pack_cards, expansion_shared = load_pack_sources(PACK_SOURCES_JSON)
     deck_targets     = load_deck_targets(DECK_VALIDATION_JSON)
     resolution_meta  = load_resolved_sources(RESOLVED_JSON)
+    pz_raw, pz_odds  = load_pz_pack_odds(PZ_PACK_ODDS_JSON)
 
     collection_total = sum(collection.values())
     print(f"  Collection entries: {len(collection)} unique, total={collection_total}")
@@ -891,18 +1010,18 @@ def main():
               f"({resolution_meta.get('ev_ready_after', '?')}/{resolution_meta.get('ev_ready_total', '?')} EV-ready)")
     else:
         print(f"  Resolved sources:   not found — run resolve_ambiguous_pack_sources.py")
+    if pz_raw:
+        print(f"  PZ pack odds:       {len(pz_raw)} packs — using direct PZ drop chances")
+    else:
+        print(f"  PZ pack odds:       not found — falling back to inferred slot rates")
 
     pack_ev_records, blocked = build(
-        collection, pull_model, pack_cards, expansion_shared, deck_targets
+        collection, pull_model, pack_cards, expansion_shared, deck_targets, pz_raw, pz_odds
     )
 
     out = write_json(pack_ev_records, blocked, deck_targets, collection_total, resolution_meta)
-    write_csv(pack_ev_records)
-    write_md(out, pack_ev_records, deck_targets)
 
     print(f"  Written: {OUT_JSON.relative_to(ROOT)}")
-    print(f"  Written: {OUT_CSV.relative_to(ROOT)}")
-    print(f"  Written: {OUT_MD.relative_to(ROOT)}")
 
     summary = out["overall_summary"]
     print("\n=== Summary ===")

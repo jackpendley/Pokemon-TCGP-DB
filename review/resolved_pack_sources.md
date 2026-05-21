@@ -9,16 +9,17 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 
 | Metric | Value |
 |---|---|
-| Low-confidence input | 59 |
+| Low-confidence input | 70 |
 | PASS 0 — user_confirmation | 41 |
-| PASS 1 — hp_match | 4 |
+| PASS 1 — hp_match | 6 |
 | PASS 2 — evo_chain | 0 |
-| PASS 3 — rarity_count | 4 |
+| PASS 3 — rarity_count | 6 |
 | PASS 2B — evo_chain (post-P3) | 1 |
-| **Total new resolved** | **50** |
-| Still unresolved | 9 |
-| EV-ready before | 157/224 (70%) |
-| EV-ready after  | 207/224 (92%) |
+| PASS 4 — pz_set_code | 16 |
+| **Total new resolved** | **70** |
+| Still unresolved | 0 |
+| EV-ready before | 202/272 (74%) |
+| EV-ready after  | 272/272 (100%) |
 
 ---
 
@@ -75,7 +76,9 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 | bulbasaur | A4b | Deluxe Pack: ex | 0.88 | collection hp=70 uniquely matches A4b in external reference |
 | bulbasaur_alt_art | A4b | Deluxe Pack: ex | 0.88 | collection hp=70 uniquely matches A4b in external reference |
 | furfrou | B1a | Crimson Blaze | 0.88 | collection hp=70 uniquely matches B1a in external reference |
+| meowth | B2 | Fantastical Parade | 0.88 | collection hp=50 uniquely matches B2 in external reference |
 | pikachu | B2 | Fantastical Parade | 0.88 | collection hp=60 uniquely matches B2 in external reference |
+| tandemaus | B2 | Fantastical Parade | 0.88 | collection hp=40 uniquely matches B2 in external reference |
 
 ## PASS 2: Evolution Chain
 
@@ -86,10 +89,12 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 
 | Entry | Set | Pack | Count | Confidence | Evidence |
 |---|---|---|---|---|---|
+| farfetch_d | A1 | None | — | 0.85 | count=2 with A1=one_diamond; one_star candidate(s) A4b=one_star implausible at this count |
 | grimer | B1a | Crimson Blaze | — | 0.9 | count=4 with B1a=one_diamond; one_star candidate(s) B3=one_star implausible at this count |
 | onix_dig_art | B1a | Crimson Blaze | — | 0.85 | count=2 with B1a=one_diamond; one_star candidate(s) B3=one_star implausible at this count |
 | porygon | B1a | Crimson Blaze | — | 0.9 | count=3 with B1a=one_diamond; one_star candidate(s) B3=one_star implausible at this count |
 | steelix | B1a | Crimson Blaze | — | 0.9 | count=3 with B1a=two_diamond; one_star candidate(s) B3=one_star implausible at this count |
+| toxel | B3 | Pulsing Aura | — | 0.9 | count=4 with B3=one_diamond; one_star candidate(s) B2=one_star implausible at this count |
 
 ## PASS 2B: Evolution Chain (post-PASS 3)
 
@@ -97,19 +102,31 @@ Script: `scripts/resolve_ambiguous_pack_sources.py`
 |---|---|---|---|---|
 | porygon2 | B1a | Crimson Blaze | 0.82 | evolution partner 'porygon' confirmed in B1a |
 
+## PASS 4: Pokemon Zone Set Code
+
+| Entry | Set | Pack | Confidence | Evidence |
+|---|---|---|---|---|
+| crobat_ex | A4b | Deluxe Pack: ex | 0.97 | Pokemon Zone reports setCode=A4b for owned copy |
+| cyrus | A2 | Palkia | 0.97 | Pokemon Zone reports setCode=A2 for owned copy |
+| giant_cape | A2 | Dialga | 0.97 | Pokemon Zone reports setCode=A2 for owned copy |
+| giovanni | A1 | Mewtwo | 0.97 | Pokemon Zone reports setCode=A1 for owned copy |
+| hypno | B2b | Mega Shine | 0.97 | Pokemon Zone reports setCode=B2b for owned copy |
+| kirlia | B3 | Pulsing Aura | 0.97 | Pokemon Zone reports setCode=B3 for owned copy |
+| leaf | A1a | Mew | 0.97 | Pokemon Zone reports setCode=A1a for owned copy |
+| lillie | A3 | Solgaleo | 0.97 | Pokemon Zone reports setCode=A3 for owned copy |
+| lyra | A4b | Deluxe Pack: ex | 0.97 | Pokemon Zone reports setCode=A4b for owned copy |
+| marowak_ex | A1 | Mewtwo | 0.97 | Pokemon Zone reports setCode=A1 for owned copy |
+| moltres_ex | A1 | Charizard | 0.97 | Pokemon Zone reports setCode=A1 for owned copy |
+| sabrina | A1 | Charizard | 0.97 | Pokemon Zone reports setCode=A1 for owned copy |
+| shaymin | A4b | Deluxe Pack: ex | 0.97 | Pokemon Zone reports setCode=A4b for owned copy |
+| sneasel | A4b | Deluxe Pack: ex | 0.97 | Pokemon Zone reports setCode=A4b for owned copy |
+| snorlax_ex | A4b | Deluxe Pack: ex | 0.97 | Pokemon Zone reports setCode=A4b for owned copy |
+| spinda | B2 | Fantastical Parade | 0.97 | Pokemon Zone reports setCode=B2 for owned copy |
+
 ## Unresolved (manual review or leave as ambiguous)
 
 | Entry | Candidates | Reason |
 |---|---|---|
-| cyrus | A2, A4b | trainer — no HP field, candidates span A1/A4b reprint |
-| farfetch_d | A1, A4b | A-series card — not in external_card_reference.json |
-| giant_cape | A2, A4b | trainer — no HP field, candidates span A1/A4b reprint |
-| giovanni | A1, A4b | trainer — no HP field, candidates span A1/A4b reprint |
-| leaf | A1a, A4b | trainer — no HP field, candidates span A1/A4b reprint |
-| lillie | A3, A4b | trainer — no HP field, candidates span A1/A4b reprint |
-| marowak_ex | A1, A4b | A-series card — not in external_card_reference.json |
-| moltres_ex | A1, A4b | A-series card — not in external_card_reference.json |
-| sabrina | A1, A4b | trainer — no HP field, candidates span A1/A4b reprint |
 
 ---
 
@@ -120,6 +137,7 @@ Entries resolved at confidence ≥ 0.80 are EV-ready (auto-accept or secondary t
 | Method | Confidence | Tier |
 |---|---|---|
 | user_confirmation | 0.99 | auto_accept |
+| pz_set_code | 0.97 | auto_accept |
 | hp_match | 0.88 | secondary |
 | evo_chain | 0.82 | secondary |
 | rarity_count (count≥3) | 0.90 | secondary |

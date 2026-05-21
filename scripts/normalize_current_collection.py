@@ -376,9 +376,6 @@ def main():
     SUMMARY_JSON.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  Written: {SUMMARY_JSON}")
 
-    write_markdown(summary, REVIEW_MD)
-    print(f"  Written: {REVIEW_MD}")
-
     print(f"\n  Actual total quantity: {actual_total}")
     if actual_total != meta.get("total_cards"):
         print(f"  WARNING: actual count ({actual_total}) != meta.total_cards ({meta.get('total_cards')})")

@@ -58,7 +58,7 @@ BASE_SCORES = {
 
 # Alignment adjustments (screenshot order-only evidence)
 ALN_BONUS = 0.02          # alignment record exists and confidence >= 0.60
-ALN_NO_RECORD_PENALTY = -0.05  # no alignment record found for entry
+ALN_NO_RECORD_PENALTY = 0.0   # screenshot pipeline removed — no penalty when no alignment file
 
 # Metadata agreement adjustments (pack_sources vs collection entry)
 META_IS_EX_AGREE = 0.02
@@ -774,8 +774,6 @@ def main():
               f"{missing_coverage[:5]}", file=sys.stderr)
 
     out = write_json(scored)
-    write_csv(scored)
-    write_md(out, scored)
 
     tc = out["meta"]["tier_counts"]
     print(f"\n=== Summary ===")

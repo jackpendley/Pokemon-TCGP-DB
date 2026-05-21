@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 578,
-    "last_updated": "2026-05-20",
+    "total_cards": 588,
+    "last_updated": "2026-05-21",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -70,7 +70,7 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Magma Punch 60",
-      "count": 6
+      "count": 7
     },
     {
       "name": "Incineroar ex",
@@ -154,7 +154,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Headbutt 10",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Darmanitan",
@@ -373,7 +373,7 @@
       "hp": 40,
       "card_type": "Pokemon",
       "attack": "Share",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Leavanny",
@@ -427,7 +427,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Bind 20",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Venonat",
@@ -1033,7 +1033,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Mumble 20",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Oricorio",
@@ -1374,7 +1374,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Poison Jab 40",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Croagunk",
@@ -2053,7 +2053,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Knock Away 30+",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Minccino",
@@ -2080,7 +2080,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Jumping Kick",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Castform",
@@ -2089,7 +2089,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Blow Through 20+",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Raticate",
@@ -2232,7 +2232,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "effect": "Discard a Pokemon Tool or Stadium",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Giant Cape",
