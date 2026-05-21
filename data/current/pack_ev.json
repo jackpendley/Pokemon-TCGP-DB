@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T04:04:15+00:00",
+  "generated_at": "2026-05-21T04:13:37+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "third_party_verified_with_in_app_anchor",
@@ -26,12 +26,11 @@
     "unresolved": "excluded_from_ev"
   },
   "deck_targets": {
-    "count": 5,
+    "count": 4,
     "targets": {
       "ivysaur": 1,
       "incineroar ex": 1,
       "zygarde ex": 1,
-      "cubone": 1,
       "magnezone ex": 1
     }
   },
@@ -186,6 +185,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.339151,
       "confidence_adjusted_ev": 2.838278,
+      "deck_weighted_score": 2.838278,
       "top_ev_cards": [
         {
           "name": "Combee",
@@ -238,6 +238,7 @@
           "ev_contribution": 0.0967258
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 28/96 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -259,6 +260,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.739864,
       "confidence_adjusted_ev": 3.178884,
+      "deck_weighted_score": 3.178884,
       "top_ev_cards": [
         {
           "name": "Oddish",
@@ -311,6 +313,7 @@
           "ev_contribution": 0.05997
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 34/127 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -332,6 +335,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 1.756735,
       "confidence_adjusted_ev": 1.493225,
+      "deck_weighted_score": 2.99246,
       "top_ev_cards": [
         {
           "name": "Ivysaur",
@@ -384,6 +388,18 @@
           "ev_contribution": 0.0937022
         }
       ],
+      "deck_target_cards": [
+        {
+          "name": "Ivysaur",
+          "rarity": "two_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0624681,
+          "value": 2.4,
+          "ev_contribution": 0.1499235
+        }
+      ],
       "notes": "slot_rates=inferred. 64/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -405,6 +421,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.775234,
       "confidence_adjusted_ev": 3.208949,
+      "deck_weighted_score": 3.955232,
       "top_ev_cards": [
         {
           "name": "Ivysaur",
@@ -457,6 +474,38 @@
           "ev_contribution": 0.0234258
         }
       ],
+      "deck_target_cards": [
+        {
+          "name": "Ivysaur",
+          "rarity": "two_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0149925,
+          "value": 2.4,
+          "ev_contribution": 0.035982
+        },
+        {
+          "name": "Ivysaur",
+          "rarity": "two_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0149925,
+          "value": 2.4,
+          "ev_contribution": 0.035982
+        },
+        {
+          "name": "Incineroar ex",
+          "rarity": "four_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0011101,
+          "value": 2.4,
+          "ev_contribution": 0.0026643
+        }
+      ],
       "notes": "slot_rates=inferred. 98/379 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -478,6 +527,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.889048,
       "confidence_adjusted_ev": 3.305691,
+      "deck_weighted_score": 3.305691,
       "top_ev_cards": [
         {
           "name": "Yanma",
@@ -530,6 +580,7 @@
           "ev_contribution": 0.0651848
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 25/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -551,6 +602,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.965933,
       "confidence_adjusted_ev": 3.371043,
+      "deck_weighted_score": 3.371043,
       "top_ev_cards": [
         {
           "name": "Bounsweet",
@@ -603,6 +655,7 @@
           "ev_contribution": 0.0937031
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 23/107 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -624,6 +677,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.288051,
       "confidence_adjusted_ev": 3.644843,
+      "deck_weighted_score": 3.644843,
       "top_ev_cards": [
         {
           "name": "Petilil",
@@ -676,6 +730,7 @@
           "ev_contribution": 0.0937031
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 15/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -697,6 +752,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.100911,
       "confidence_adjusted_ev": 3.485774,
+      "deck_weighted_score": 3.485774,
       "top_ev_cards": [
         {
           "name": "Ledian",
@@ -749,6 +805,7 @@
           "ev_contribution": 0.0454314
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 49/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -770,6 +827,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.030105,
       "confidence_adjusted_ev": 3.42559,
+      "deck_weighted_score": 3.42559,
       "top_ev_cards": [
         {
           "name": "Hoppip",
@@ -822,6 +880,7 @@
           "ev_contribution": 0.0713929
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 31/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -843,6 +902,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.185783,
       "confidence_adjusted_ev": 3.557916,
+      "deck_weighted_score": 3.557916,
       "top_ev_cards": [
         {
           "name": "Oddish",
@@ -895,6 +955,7 @@
           "ev_contribution": 0.0713929
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 23/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -916,6 +977,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.127622,
       "confidence_adjusted_ev": 3.508479,
+      "deck_weighted_score": 3.508479,
       "top_ev_cards": [
         {
           "name": "Maractus",
@@ -968,6 +1030,7 @@
           "ev_contribution": 0.0681477
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 25/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -989,6 +1052,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.139116,
       "confidence_adjusted_ev": 3.518248,
+      "deck_weighted_score": 3.518248,
       "top_ev_cards": [
         {
           "name": "Cottonee",
@@ -1041,6 +1105,7 @@
           "ev_contribution": 0.0611933
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 24/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1062,6 +1127,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.846648,
       "confidence_adjusted_ev": 3.269651,
+      "deck_weighted_score": 3.269651,
       "top_ev_cards": [
         {
           "name": "Pinsir",
@@ -1114,6 +1180,7 @@
           "ev_contribution": 0.0611933
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 33/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1135,6 +1202,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.785554,
       "confidence_adjusted_ev": 3.217721,
+      "deck_weighted_score": 3.277192,
       "top_ev_cards": [
         {
           "name": "Pansage",
@@ -1187,6 +1255,18 @@
           "ev_contribution": 0.0611933
         }
       ],
+      "deck_target_cards": [
+        {
+          "name": "Incineroar ex",
+          "rarity": "double_star",
+          "is_ex": true,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0017492,
+          "value": 3.4,
+          "ev_contribution": 0.0059471
+        }
+      ],
       "notes": "slot_rates=inferred. 35/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1208,6 +1288,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.945708,
       "confidence_adjusted_ev": 3.353852,
+      "deck_weighted_score": 3.353852,
       "top_ev_cards": [
         {
           "name": "Scyther",
@@ -1260,6 +1341,7 @@
           "ev_contribution": 0.0908582
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 23/117 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1281,6 +1363,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.193443,
       "confidence_adjusted_ev": 3.564426,
+      "deck_weighted_score": 3.564426,
       "top_ev_cards": [
         {
           "name": "Snivy",
@@ -1333,6 +1416,7 @@
           "ev_contribution": 0.0937031
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 13/86 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1354,6 +1438,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.538441,
       "confidence_adjusted_ev": 3.007675,
+      "deck_weighted_score": 4.035732,
       "top_ev_cards": [
         {
           "name": "Ivysaur",
@@ -1406,6 +1491,18 @@
           "ev_contribution": 0.05997
         }
       ],
+      "deck_target_cards": [
+        {
+          "name": "Ivysaur",
+          "rarity": "two_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0428357,
+          "value": 2.4,
+          "ev_contribution": 0.1028057
+        }
+      ],
       "notes": "slot_rates=inferred. 42/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1427,6 +1524,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.901575,
       "confidence_adjusted_ev": 4.166339,
+      "deck_weighted_score": 4.166339,
       "top_ev_cards": [
         {
           "name": "Sprigatito",
@@ -1479,6 +1577,7 @@
           "ev_contribution": 0.0697319
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 4/131 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1500,6 +1599,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.044912,
       "confidence_adjusted_ev": 3.438175,
+      "deck_weighted_score": 3.438175,
       "top_ev_cards": [
         {
           "name": "Turtwig",
@@ -1552,6 +1652,7 @@
           "ev_contribution": 0.0681477
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 22/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1573,6 +1674,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.805644,
       "confidence_adjusted_ev": 3.234797,
+      "deck_weighted_score": 3.234797,
       "top_ev_cards": [
         {
           "name": "Caterpie",
@@ -1625,6 +1727,7 @@
           "ev_contribution": 0.05997
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 29/127 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1646,6 +1749,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 1.096578,
       "confidence_adjusted_ev": 0.932091,
+      "deck_weighted_score": 1.272587,
       "top_ev_cards": [
         {
           "name": "Durant",
@@ -1698,6 +1802,38 @@
           "ev_contribution": 0.0293964
         }
       ],
+      "deck_target_cards": [
+        {
+          "name": "Magnezone ex",
+          "rarity": "four_diamond",
+          "is_ex": true,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0083297,
+          "value": 3.4,
+          "ev_contribution": 0.0283211
+        },
+        {
+          "name": "Magnezone ex",
+          "rarity": "double_star",
+          "is_ex": true,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0008424,
+          "value": 3.4,
+          "ev_contribution": 0.0028642
+        },
+        {
+          "name": "Magnezone ex",
+          "rarity": "double_star",
+          "is_ex": true,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0008424,
+          "value": 3.4,
+          "ev_contribution": 0.0028642
+        }
+      ],
       "notes": "slot_rates=inferred. 169/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1719,6 +1855,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.843291,
       "confidence_adjusted_ev": 3.266797,
+      "deck_weighted_score": 3.266797,
       "top_ev_cards": [
         {
           "name": "Hoppip",
@@ -1771,6 +1908,7 @@
           "ev_contribution": 0.0937031
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 16/105 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1792,6 +1930,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.998004,
       "confidence_adjusted_ev": 3.398303,
+      "deck_weighted_score": 3.398303,
       "top_ev_cards": [
         {
           "name": "Weedle",
@@ -1844,6 +1983,7 @@
           "ev_contribution": 0.0937031
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 19/111 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1865,6 +2005,7 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.206162,
       "confidence_adjusted_ev": 3.575237,
+      "deck_weighted_score": 4.186156,
       "top_ev_cards": [
         {
           "name": "Phantump",
@@ -1915,6 +2056,48 @@
           "pull_prob": 0.0681477,
           "value": 1.0,
           "ev_contribution": 0.0681477
+        }
+      ],
+      "deck_target_cards": [
+        {
+          "name": "Incineroar ex",
+          "rarity": "four_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0166517,
+          "value": 2.4,
+          "ev_contribution": 0.039964
+        },
+        {
+          "name": "Ivysaur",
+          "rarity": "one_star",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.005888,
+          "value": 2.4,
+          "ev_contribution": 0.0141312
+        },
+        {
+          "name": "Incineroar ex",
+          "rarity": "double_star",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0014576,
+          "value": 2.4,
+          "ev_contribution": 0.0034983
+        },
+        {
+          "name": "Incineroar ex",
+          "rarity": "double_star",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0014576,
+          "value": 2.4,
+          "ev_contribution": 0.0034983
         }
       ],
       "notes": "slot_rates=inferred. 35/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."

@@ -1,7 +1,7 @@
 rank_adj_ev,pack_name,expansion,set_code,confidence_adjusted_ev,pack_total_ev,new_card_ev,ex_card_ev,deck_target_ev,cards_in_pool,owned_in_pool,missing_in_pool,is_deck_target_pack,top_deck_target_card,recommendation_bucket
 1,Paldean Wonders,Paldean Wonders,B2a,4.166339,4.901575,4.845789,0.20518,0.0,131,4,127,no,,top_ev
 2,Extradimensional Crisis,Extradimensional Crisis,A3a,3.644843,4.288051,4.09093,0.0,0.0,103,15,88,no,,top_ev
-3,Solgaleo,Celestial Guardians,A3,3.575237,4.206162,3.851101,0.0,0.061092,140,35,105,yes,,deck_target
+3,Solgaleo,Celestial Guardians,A3,3.575237,4.206162,3.851101,0.0,0.061092,140,35,105,yes,Incineroar ex,deck_target
 4,Mew,Mythical Island,A1a,3.564426,4.193443,3.99032,0.0,0.0,86,13,73,no,,top_ev
 5,Lugia,Wisdom of Sea and Sky,A4,3.557916,4.185783,3.953199,0.0,0.0,136,23,113,no,,top_ev
 6,Mega Altaria,Mega Rising,B1,3.518248,4.139116,4.001983,0.234432,0.0,139,24,115,no,,mid
@@ -22,4 +22,4 @@ rank_adj_ev,pack_name,expansion,set_code,confidence_adjusted_ev,pack_total_ev,ne
 21,Mewtwo,Genetic Apex,A1,3.007675,3.538441,3.179806,0.0,0.102806,126,42,84,yes,,deck_target
 22,Arceus,Triumphant Light,A2a,2.838278,3.339151,2.981851,0.0,0.0,96,28,68,no,,deprioritize
 23,Crimson Blaze,Crimson Blaze,B1a,1.493225,1.756735,1.121639,0.134892,0.149924,103,64,39,yes,Ivysaur,deck_target
-24,Pulsing Aura,Pulsing Aura,B3,0.932091,1.096578,0.73474,0.169209,0.03405,234,169,65,yes,,deck_target
+24,Pulsing Aura,Pulsing Aura,B3,0.932091,1.096578,0.73474,0.169209,0.03405,234,169,65,yes,Magnezone ex,deck_target

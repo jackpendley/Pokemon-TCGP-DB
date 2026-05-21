@@ -685,8 +685,8 @@
         {
           "name": "Cubone",
           "required": 2,
-          "owned": 1,
-          "status": "short",
+          "owned": 3,
+          "status": "owned_enough",
           "match_type": "exact"
         },
         {
@@ -757,12 +757,6 @@
       "missing_cards": [
         {
           "name": "Zygarde ex",
-          "required": 2,
-          "owned": 1,
-          "short_by": 1
-        },
-        {
-          "name": "Cubone",
           "required": 2,
           "owned": 1,
           "short_by": 1

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T04:04:18+00:00",
+  "generated_at": "2026-05-21T04:14:22+00:00",
   "generated_by": "generate_pack_recommendation_report.py",
   "disclaimer": "INFERRED CONFIDENCE ONLY. Slot rates are from trusted external sources (Game8, ShackNews, cgmagonline) — NOT verified from the in-app Offering Rates screen. Rankings are for planning purposes only. Verify in-app before acting on any recommendation.",
   "model_confidence": "third_party_verified_with_in_app_anchor",
@@ -32,6 +32,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.901575,
       "confidence_adjusted_ev": 4.166339,
+      "deck_weighted_score": 4.166339,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 4/131 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -53,6 +55,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.288051,
       "confidence_adjusted_ev": 3.644843,
+      "deck_weighted_score": 3.644843,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 15/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -74,6 +78,49 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.206162,
       "confidence_adjusted_ev": 3.575237,
+      "deck_weighted_score": 4.186156,
+      "deck_target_cards": [
+        {
+          "name": "Incineroar ex",
+          "rarity": "four_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0166517,
+          "value": 2.4,
+          "ev_contribution": 0.039964
+        },
+        {
+          "name": "Ivysaur",
+          "rarity": "one_star",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.005888,
+          "value": 2.4,
+          "ev_contribution": 0.0141312
+        },
+        {
+          "name": "Incineroar ex",
+          "rarity": "double_star",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0014576,
+          "value": 2.4,
+          "ev_contribution": 0.0034983
+        },
+        {
+          "name": "Incineroar ex",
+          "rarity": "double_star",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0014576,
+          "value": 2.4,
+          "ev_contribution": 0.0034983
+        }
+      ],
       "notes": "slot_rates=inferred. 35/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -95,6 +142,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.193443,
       "confidence_adjusted_ev": 3.564426,
+      "deck_weighted_score": 3.564426,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 13/86 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -116,6 +165,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.185783,
       "confidence_adjusted_ev": 3.557916,
+      "deck_weighted_score": 3.557916,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 23/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     }
   ],
@@ -139,6 +190,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.901575,
       "confidence_adjusted_ev": 4.166339,
+      "deck_weighted_score": 4.166339,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 4/131 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -160,6 +213,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.288051,
       "confidence_adjusted_ev": 3.644843,
+      "deck_weighted_score": 3.644843,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 15/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -181,6 +236,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.139116,
       "confidence_adjusted_ev": 3.518248,
+      "deck_weighted_score": 3.518248,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 24/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -202,6 +259,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.193443,
       "confidence_adjusted_ev": 3.564426,
+      "deck_weighted_score": 3.564426,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 13/86 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -223,6 +282,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.185783,
       "confidence_adjusted_ev": 3.557916,
+      "deck_weighted_score": 3.557916,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 23/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     }
   ],
@@ -246,6 +307,19 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 1.756735,
       "confidence_adjusted_ev": 1.493225,
+      "deck_weighted_score": 2.99246,
+      "deck_target_cards": [
+        {
+          "name": "Ivysaur",
+          "rarity": "two_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0624681,
+          "value": 2.4,
+          "ev_contribution": 0.1499235
+        }
+      ],
       "notes": "slot_rates=inferred. 64/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -267,6 +341,19 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.538441,
       "confidence_adjusted_ev": 3.007675,
+      "deck_weighted_score": 4.035732,
+      "deck_target_cards": [
+        {
+          "name": "Ivysaur",
+          "rarity": "two_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0428357,
+          "value": 2.4,
+          "ev_contribution": 0.1028057
+        }
+      ],
       "notes": "slot_rates=inferred. 42/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -288,6 +375,39 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.775234,
       "confidence_adjusted_ev": 3.208949,
+      "deck_weighted_score": 3.955232,
+      "deck_target_cards": [
+        {
+          "name": "Ivysaur",
+          "rarity": "two_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0149925,
+          "value": 2.4,
+          "ev_contribution": 0.035982
+        },
+        {
+          "name": "Ivysaur",
+          "rarity": "two_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0149925,
+          "value": 2.4,
+          "ev_contribution": 0.035982
+        },
+        {
+          "name": "Incineroar ex",
+          "rarity": "four_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0011101,
+          "value": 2.4,
+          "ev_contribution": 0.0026643
+        }
+      ],
       "notes": "slot_rates=inferred. 98/379 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -309,6 +429,49 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.206162,
       "confidence_adjusted_ev": 3.575237,
+      "deck_weighted_score": 4.186156,
+      "deck_target_cards": [
+        {
+          "name": "Incineroar ex",
+          "rarity": "four_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0166517,
+          "value": 2.4,
+          "ev_contribution": 0.039964
+        },
+        {
+          "name": "Ivysaur",
+          "rarity": "one_star",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.005888,
+          "value": 2.4,
+          "ev_contribution": 0.0141312
+        },
+        {
+          "name": "Incineroar ex",
+          "rarity": "double_star",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0014576,
+          "value": 2.4,
+          "ev_contribution": 0.0034983
+        },
+        {
+          "name": "Incineroar ex",
+          "rarity": "double_star",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0014576,
+          "value": 2.4,
+          "ev_contribution": 0.0034983
+        }
+      ],
       "notes": "slot_rates=inferred. 35/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -330,6 +493,39 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 1.096578,
       "confidence_adjusted_ev": 0.932091,
+      "deck_weighted_score": 1.272587,
+      "deck_target_cards": [
+        {
+          "name": "Magnezone ex",
+          "rarity": "four_diamond",
+          "is_ex": true,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0083297,
+          "value": 3.4,
+          "ev_contribution": 0.0283211
+        },
+        {
+          "name": "Magnezone ex",
+          "rarity": "double_star",
+          "is_ex": true,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0008424,
+          "value": 3.4,
+          "ev_contribution": 0.0028642
+        },
+        {
+          "name": "Magnezone ex",
+          "rarity": "double_star",
+          "is_ex": true,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0008424,
+          "value": 3.4,
+          "ev_contribution": 0.0028642
+        }
+      ],
       "notes": "slot_rates=inferred. 169/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     }
   ],
@@ -353,6 +549,19 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.785554,
       "confidence_adjusted_ev": 3.217721,
+      "deck_weighted_score": 3.277192,
+      "deck_target_cards": [
+        {
+          "name": "Incineroar ex",
+          "rarity": "double_star",
+          "is_ex": true,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0017492,
+          "value": 3.4,
+          "ev_contribution": 0.0059471
+        }
+      ],
       "notes": "slot_rates=inferred. 35/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -374,6 +583,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.139116,
       "confidence_adjusted_ev": 3.518248,
+      "deck_weighted_score": 3.518248,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 24/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -395,6 +606,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.846648,
       "confidence_adjusted_ev": 3.269651,
+      "deck_weighted_score": 3.269651,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 33/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -416,6 +629,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.945708,
       "confidence_adjusted_ev": 3.353852,
+      "deck_weighted_score": 3.353852,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 23/117 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -437,6 +652,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 4.100911,
       "confidence_adjusted_ev": 3.485774,
+      "deck_weighted_score": 3.485774,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 49/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     }
   ],
@@ -460,6 +677,39 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 1.096578,
       "confidence_adjusted_ev": 0.932091,
+      "deck_weighted_score": 1.272587,
+      "deck_target_cards": [
+        {
+          "name": "Magnezone ex",
+          "rarity": "four_diamond",
+          "is_ex": true,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0083297,
+          "value": 3.4,
+          "ev_contribution": 0.0283211
+        },
+        {
+          "name": "Magnezone ex",
+          "rarity": "double_star",
+          "is_ex": true,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0008424,
+          "value": 3.4,
+          "ev_contribution": 0.0028642
+        },
+        {
+          "name": "Magnezone ex",
+          "rarity": "double_star",
+          "is_ex": true,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0008424,
+          "value": 3.4,
+          "ev_contribution": 0.0028642
+        }
+      ],
       "notes": "slot_rates=inferred. 169/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -481,6 +731,19 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 1.756735,
       "confidence_adjusted_ev": 1.493225,
+      "deck_weighted_score": 2.99246,
+      "deck_target_cards": [
+        {
+          "name": "Ivysaur",
+          "rarity": "two_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0624681,
+          "value": 2.4,
+          "ev_contribution": 0.1499235
+        }
+      ],
       "notes": "slot_rates=inferred. 64/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -502,6 +765,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.339151,
       "confidence_adjusted_ev": 2.838278,
+      "deck_weighted_score": 2.838278,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 28/96 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -523,6 +788,19 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.538441,
       "confidence_adjusted_ev": 3.007675,
+      "deck_weighted_score": 4.035732,
+      "deck_target_cards": [
+        {
+          "name": "Ivysaur",
+          "rarity": "two_diamond",
+          "is_ex": false,
+          "is_deck_target": true,
+          "owned": 1,
+          "pull_prob": 0.0428357,
+          "value": 2.4,
+          "ev_contribution": 0.1028057
+        }
+      ],
       "notes": "slot_rates=inferred. 42/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -544,6 +822,8 @@
       "exploratory_ev": 0.0,
       "pack_total_ev": 3.739864,
       "confidence_adjusted_ev": 3.178884,
+      "deck_weighted_score": 3.178884,
+      "deck_target_cards": [],
       "notes": "slot_rates=inferred. 34/127 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     }
   ],
@@ -590,35 +870,116 @@
           "owned": 1,
           "rarity": "two_diamond",
           "value": 2.4
+        },
+        {
+          "pack_name": "Solgaleo",
+          "expansion": "Celestial Guardians",
+          "ev_contribution": 0.0141312,
+          "pull_prob": 0.005888,
+          "owned": 1,
+          "rarity": "one_star",
+          "value": 2.4
         }
       ]
     },
     "Incineroar ex": {
       "card_needed": "Incineroar ex",
       "short_by": 1,
-      "best_pack": null,
-      "best_ev": 0.0,
-      "best_pull_prob": 0.0,
-      "candidates": [],
-      "note": "card not found in pack_sources — pack unknown"
+      "best_pack": "Solgaleo",
+      "best_ev": 0.039964,
+      "best_pull_prob": 0.0166517,
+      "candidates": [
+        {
+          "pack_name": "Solgaleo",
+          "expansion": "Celestial Guardians",
+          "ev_contribution": 0.039964,
+          "pull_prob": 0.0166517,
+          "owned": 1,
+          "rarity": "four_diamond",
+          "value": 2.4
+        },
+        {
+          "pack_name": "Mega Gyarados",
+          "expansion": "Mega Rising",
+          "ev_contribution": 0.0059471,
+          "pull_prob": 0.0017492,
+          "owned": 1,
+          "rarity": "double_star",
+          "value": 3.4
+        },
+        {
+          "pack_name": "Solgaleo",
+          "expansion": "Celestial Guardians",
+          "ev_contribution": 0.0034983,
+          "pull_prob": 0.0014576,
+          "owned": 1,
+          "rarity": "double_star",
+          "value": 2.4
+        },
+        {
+          "pack_name": "Solgaleo",
+          "expansion": "Celestial Guardians",
+          "ev_contribution": 0.0034983,
+          "pull_prob": 0.0014576,
+          "owned": 1,
+          "rarity": "double_star",
+          "value": 2.4
+        },
+        {
+          "pack_name": "Deluxe Pack: ex",
+          "expansion": "Deluxe Pack: ex",
+          "ev_contribution": 0.0026643,
+          "pull_prob": 0.0011101,
+          "owned": 1,
+          "rarity": "four_diamond",
+          "value": 2.4
+        }
+      ]
     },
     "Zygarde ex Fighting": {
-      "card_needed": "Cubone",
+      "card_needed": "Zygarde ex",
       "short_by": 1,
       "best_pack": null,
       "best_ev": 0.0,
       "best_pull_prob": 0.0,
       "candidates": [],
-      "note": "card not found in pack_sources — pack unknown"
+      "note": "PROMO-B card — cannot be obtained from any pack; must be acquired through events or missions"
     },
     "Magnezone ex (Clemont Engine)": {
       "card_needed": "Magnezone ex",
       "short_by": 1,
-      "best_pack": null,
-      "best_ev": 0.0,
-      "best_pull_prob": 0.0,
-      "candidates": [],
-      "note": "card not found in pack_sources — pack unknown"
+      "best_pack": "Pulsing Aura",
+      "best_ev": 0.0283211,
+      "best_pull_prob": 0.0083297,
+      "candidates": [
+        {
+          "pack_name": "Pulsing Aura",
+          "expansion": "Pulsing Aura",
+          "ev_contribution": 0.0283211,
+          "pull_prob": 0.0083297,
+          "owned": 1,
+          "rarity": "four_diamond",
+          "value": 3.4
+        },
+        {
+          "pack_name": "Pulsing Aura",
+          "expansion": "Pulsing Aura",
+          "ev_contribution": 0.0028642,
+          "pull_prob": 0.0008424,
+          "owned": 1,
+          "rarity": "double_star",
+          "value": 3.4
+        },
+        {
+          "pack_name": "Pulsing Aura",
+          "expansion": "Pulsing Aura",
+          "ev_contribution": 0.0028642,
+          "pull_prob": 0.0008424,
+          "owned": 1,
+          "rarity": "double_star",
+          "value": 3.4
+        }
+      ]
     }
   },
   "planning_scenarios": {

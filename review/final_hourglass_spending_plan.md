@@ -18,6 +18,7 @@ Batch size: 10 packs per batch
 | Conservative | 1 | 10 | Paldean Wonders |
 | Moderate | 3 | 30 | Paldean Wonders |
 | Aggressive | 5 | 50 | Paldean Wonders |
+| Deck_priority | 1 | 10 | Solgaleo |
 
 ---
 
@@ -184,6 +185,41 @@ Batch size: 10 packs per batch
 - [ ] After completing any deck target: re-run python3 scripts/build_pack_ev.py.
 - [ ] After verifying in-app rates: upgrade confidence and re-run both EV scripts.
 - [ ] After resolving 59 ambiguous collection entries: re-run for more accurate coverage.
+
+---
+
+## Deck_priority Scenario
+
+**Description:** Open 1 batch from the pack with the highest deck_weighted_score (Solgaleo). Prioritizes completing a chase deck over raw collection expansion.
+
+**Rationale:** deck_weighted_score = adj_ev + 10 × deck_target_ev. The 10× multiplier gives chase-card pull probability significant weight, so a pack with a lower overall EV can outrank a pure collection-expansion pack when it contains an urgently needed chase card. Stop after 1 batch and re-run — completing a chase deck changes the score immediately.
+
+### Batches
+
+| # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Solgaleo | A3 | 10 | 3.5752 | 35.75 | 105 | STOP after this batch. Check if any chase deck card was pull… | ✅ |
+
+#### Batch 1 — Solgaleo (A3)
+
+- **Pack:** Solgaleo (Celestial Guardians)
+- **Packs to open:** 10
+- **Adj EV per pack:** 3.5752
+- **Estimated batch value:** 35.75  
+  _deck_weighted_score=4.1862 (adj_ev=3.5752 + 10× deck_target_ev=0.0611). Overall adj_ev may be lower than pure collection-expansion packs._
+- **Missing cards in pool:** 105
+- **Stopping condition:** STOP after this batch. Check if any chase deck card was pulled. Re-run EV calculator before deciding on batch 2.
+- **Re-run required:** Chase deck target may have been acquired — re-run EV to update deck_weighted_score.
+
+### Re-run checklist
+
+- [ ] After batch 1: check if any chase deck card was pulled.
+- [ ] Re-run python3 scripts/build_pack_ev.py to update deck_target_ev and deck_weighted_score.
+- [ ] Re-run python3 scripts/generate_hourglass_spending_plan.py to refresh this plan.
+- [ ] If Incineroar ex pulled: Incineroar ex deck becomes buildable — remove from chase targets.
+- [ ] If Ivysaur pulled (2nd copy): Mega Venusaur ex deck may now be buildable.
+- [ ] If Magnezone ex pulled: Magnezone ex deck becomes buildable — remove from chase targets.
+- [ ] Note: Zygarde ex is PROMO-B only — cannot be obtained from packs.
 
 ---
 

@@ -65,6 +65,12 @@ INFERRED_CONFIDENCE_WEIGHT = 0.85
 
 TOP_N_CARDS = 5  # top EV cards listed per pack
 
+# Deck-priority composite score: adj_ev + DECK_PRIORITY_BOOST * deck_target_ev.
+# At 10×, a pack with deck_target_ev=0.06 (Solgaleo/Incineroar ex) scores ~+0.61
+# above its adj_ev, enough to rank it above a pure collection-expansion pack when
+# the player cares more about completing a chase deck than raw new-card rate.
+DECK_PRIORITY_BOOST = 10
+
 
 # ---------------------------------------------------------------------------
 # Loaders
@@ -303,6 +309,10 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     exploratory_ev = 0.0
 
     card_ev_list.sort(key=lambda x: x["ev_contribution"], reverse=True)
+    # Separate list for deck-target cards — always included regardless of TOP_N_CARDS
+    # so the recommendation report can find rare chase cards (four_diamond etc.)
+    # that fall outside the top-5 EV cutoff.
+    deck_target_cards = [c for c in card_ev_list if c.get("is_deck_target")]
 
     return {
         **base,
@@ -319,7 +329,11 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "exploratory_ev":  exploratory_ev,
         "pack_total_ev":   round(pack_total_ev, 6),
         "confidence_adjusted_ev": round(pack_total_ev * INFERRED_CONFIDENCE_WEIGHT, 6),
+        "deck_weighted_score": round(
+            pack_total_ev * INFERRED_CONFIDENCE_WEIGHT + DECK_PRIORITY_BOOST * deck_target_ev, 6
+        ),
         "top_ev_cards": card_ev_list[:TOP_N_CARDS],
+        "deck_target_cards": deck_target_cards,
         "notes": (
             f"slot_rates=inferred. "
             f"{owned_in_pool}/{len(all_pool_cards)} cards in pool are owned. "

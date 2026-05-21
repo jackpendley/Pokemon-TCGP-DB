@@ -18,7 +18,7 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-05-21T04:04:18+00:00 |
+| Report generated | 2026-05-21T04:14:22+00:00 |
 | Model confidence | **third_party_verified_with_in_app_anchor** (not official in-app verified) |
 | Collection total | 578 cards (380 validated) |
 | EV-ready entries | 157/224 (108 auto-accept + 49 secondary evidence) |
@@ -240,9 +240,9 @@ Top EV cards in this pack:
 | Chase Deck | Missing Card | Short By | Best Pack | Pack EV | Pull Prob | Notes |
 |---|---|---|---|---|---|---|
 | Mega Venusaur ex | Ivysaur | 1 | Crimson Blaze | 0.14992 | 0.06247 |  |
-| Incineroar ex | Incineroar ex | 1 | **UNKNOWN** | N/A | N/A | card not found in pack_sources — pack unknown |
-| Zygarde ex Fighting | Cubone | 1 | **UNKNOWN** | N/A | N/A | card not found in pack_sources — pack unknown |
-| Magnezone ex (Clemont Engine) | Magnezone ex | 1 | **UNKNOWN** | N/A | N/A | card not found in pack_sources — pack unknown |
+| Incineroar ex | Incineroar ex | 1 | Solgaleo | 0.03996 | 0.01665 |  |
+| Zygarde ex Fighting | Zygarde ex | 1 | **UNKNOWN** | N/A | N/A | PROMO-B card — cannot be obtained from any pack; must be acquired through events or missions |
+| Magnezone ex (Clemont Engine) | Magnezone ex | 1 | Pulsing Aura | 0.02832 | 0.00833 |  |
 
 ---
 

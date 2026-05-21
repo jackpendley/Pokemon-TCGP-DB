@@ -84,26 +84,29 @@ def rank_packs(packs: list, key: str, n: int = TOP_N) -> list:
 
 def deck_target_pack_map(packs: list) -> dict:
     """
-    Returns {card_name: [(pack_name, ev_contribution, pull_prob, owned)]}.
-    Only includes deck-target cards that appear in at least one pack's top_ev_cards.
+    Returns {card_name: [pack entries sorted by ev_contribution desc]}.
+    Uses deck_target_cards (added in build_pack_ev to capture rare chase cards
+    that fall outside the TOP_N_CARDS cutoff in top_ev_cards).
     """
     out = {}
     for p in packs:
-        for c in p.get("top_ev_cards", []):
-            if c.get("is_deck_target"):
-                name = c["name"]
-                if name not in out:
-                    out[name] = []
-                out[name].append({
-                    "pack_name": p["pack_name"],
-                    "expansion": p["expansion"],
-                    "ev_contribution": c["ev_contribution"],
-                    "pull_prob": c["pull_prob"],
-                    "owned": c["owned"],
-                    "rarity": c["rarity"],
-                    "value": c["value"],
-                })
-    # Sort each card's pack list by ev_contribution descending
+        # Prefer deck_target_cards; fall back to top_ev_cards for older outputs
+        sources = p.get("deck_target_cards") or [
+            c for c in p.get("top_ev_cards", []) if c.get("is_deck_target")
+        ]
+        for c in sources:
+            name = c["name"]
+            if name not in out:
+                out[name] = []
+            out[name].append({
+                "pack_name": p["pack_name"],
+                "expansion": p["expansion"],
+                "ev_contribution": c["ev_contribution"],
+                "pull_prob": c["pull_prob"],
+                "owned": c["owned"],
+                "rarity": c["rarity"],
+                "value": c["value"],
+            })
     for name in out:
         out[name].sort(key=lambda x: x["ev_contribution"], reverse=True)
     return out
@@ -138,6 +141,14 @@ def build_buckets(packs: list, deck_targets: dict, deck_validation: list) -> dic
                     "candidates": entries,
                 }
             else:
+                # Check if this is a known PROMO-only card (cannot be pulled from any pack)
+                promo_only = {"Zygarde ex"}
+                note = (
+                    "PROMO-B card — cannot be obtained from any pack; "
+                    "must be acquired through events or missions"
+                    if card_name in promo_only
+                    else "card not found in pack_sources — pack unknown"
+                )
                 best_for_chase[deck_name] = {
                     "card_needed": card_name,
                     "short_by": mc["short_by"],
@@ -145,7 +156,7 @@ def build_buckets(packs: list, deck_targets: dict, deck_validation: list) -> dic
                     "best_ev": 0.0,
                     "best_pull_prob": 0.0,
                     "candidates": [],
-                    "note": "card not found in pack_sources — pack unknown",
+                    "note": note,
                 }
 
     return {

@@ -8,3 +8,4 @@ aggressive,2,Paldean Wonders,Paldean Wonders,B2a,10,4.166339,41.6634,127,True,ST
 aggressive,3,Extradimensional Crisis,Extradimensional Crisis,A3a,10,3.644843,36.4484,88,False,Pause after switching to pack #2. First batch from new pool.
 aggressive,4,Solgaleo,Celestial Guardians,A3,10,3.575237,35.7524,105,False,Pause after switching to pack #3. First batch from new pool.
 aggressive,5,Crimson Blaze,Crimson Blaze,B1a,10,1.493225,14.9322,39,True,Deck-target batch: Crimson Blaze has highest deck_target_ev per pack. Stop immediately if chase deck card is pulled.
+deck_priority,1,Solgaleo,Celestial Guardians,A3,10,3.575237,35.7524,105,True,STOP after this batch. Check if any chase deck card was pulled. Re-run EV calculator before deciding on batch 2.

@@ -180,6 +180,200 @@
         "After verifying in-app rates: upgrade confidence and re-run both EV scripts.",
         "After resolving 59 ambiguous collection entries: re-run for more accurate coverage."
       ]
+    },
+    {
+      "label": "deck_priority",
+      "description": "Open 1 batch from the pack with the highest deck_weighted_score (Solgaleo). Prioritizes completing a chase deck over raw collection expansion.",
+      "rationale": "deck_weighted_score = adj_ev + 10 × deck_target_ev. The 10× multiplier gives chase-card pull probability significant weight, so a pack with a lower overall EV can outrank a pure collection-expansion pack when it contains an urgently needed chase card. Stop after 1 batch and re-run — completing a chase deck changes the score immediately.",
+      "deck_weighted_top": {
+        "pack_name": "Solgaleo",
+        "expansion": "Celestial Guardians",
+        "adj_ev": 3.575237,
+        "deck_target_ev": 0.061092,
+        "deck_weighted_score": 4.186156
+      },
+      "per_chase_deck": {
+        "Mega Venusaur ex": {
+          "card_needed": "Ivysaur",
+          "short_by": 1,
+          "best_pack": "Crimson Blaze",
+          "best_ev": 0.1499235,
+          "best_pull_prob": 0.0624681,
+          "candidates": [
+            {
+              "pack_name": "Crimson Blaze",
+              "expansion": "Crimson Blaze",
+              "ev_contribution": 0.1499235,
+              "pull_prob": 0.0624681,
+              "owned": 1,
+              "rarity": "two_diamond",
+              "value": 2.4
+            },
+            {
+              "pack_name": "Mewtwo",
+              "expansion": "Genetic Apex",
+              "ev_contribution": 0.1028057,
+              "pull_prob": 0.0428357,
+              "owned": 1,
+              "rarity": "two_diamond",
+              "value": 2.4
+            },
+            {
+              "pack_name": "Deluxe Pack: ex",
+              "expansion": "Deluxe Pack: ex",
+              "ev_contribution": 0.035982,
+              "pull_prob": 0.0149925,
+              "owned": 1,
+              "rarity": "two_diamond",
+              "value": 2.4
+            },
+            {
+              "pack_name": "Deluxe Pack: ex",
+              "expansion": "Deluxe Pack: ex",
+              "ev_contribution": 0.035982,
+              "pull_prob": 0.0149925,
+              "owned": 1,
+              "rarity": "two_diamond",
+              "value": 2.4
+            },
+            {
+              "pack_name": "Solgaleo",
+              "expansion": "Celestial Guardians",
+              "ev_contribution": 0.0141312,
+              "pull_prob": 0.005888,
+              "owned": 1,
+              "rarity": "one_star",
+              "value": 2.4
+            }
+          ]
+        },
+        "Incineroar ex": {
+          "card_needed": "Incineroar ex",
+          "short_by": 1,
+          "best_pack": "Solgaleo",
+          "best_ev": 0.039964,
+          "best_pull_prob": 0.0166517,
+          "candidates": [
+            {
+              "pack_name": "Solgaleo",
+              "expansion": "Celestial Guardians",
+              "ev_contribution": 0.039964,
+              "pull_prob": 0.0166517,
+              "owned": 1,
+              "rarity": "four_diamond",
+              "value": 2.4
+            },
+            {
+              "pack_name": "Mega Gyarados",
+              "expansion": "Mega Rising",
+              "ev_contribution": 0.0059471,
+              "pull_prob": 0.0017492,
+              "owned": 1,
+              "rarity": "double_star",
+              "value": 3.4
+            },
+            {
+              "pack_name": "Solgaleo",
+              "expansion": "Celestial Guardians",
+              "ev_contribution": 0.0034983,
+              "pull_prob": 0.0014576,
+              "owned": 1,
+              "rarity": "double_star",
+              "value": 2.4
+            },
+            {
+              "pack_name": "Solgaleo",
+              "expansion": "Celestial Guardians",
+              "ev_contribution": 0.0034983,
+              "pull_prob": 0.0014576,
+              "owned": 1,
+              "rarity": "double_star",
+              "value": 2.4
+            },
+            {
+              "pack_name": "Deluxe Pack: ex",
+              "expansion": "Deluxe Pack: ex",
+              "ev_contribution": 0.0026643,
+              "pull_prob": 0.0011101,
+              "owned": 1,
+              "rarity": "four_diamond",
+              "value": 2.4
+            }
+          ]
+        },
+        "Zygarde ex Fighting": {
+          "card_needed": "Zygarde ex",
+          "short_by": 1,
+          "best_pack": null,
+          "best_ev": 0.0,
+          "best_pull_prob": 0.0,
+          "candidates": [],
+          "note": "PROMO-B card — cannot be obtained from any pack; must be acquired through events or missions"
+        },
+        "Magnezone ex (Clemont Engine)": {
+          "card_needed": "Magnezone ex",
+          "short_by": 1,
+          "best_pack": "Pulsing Aura",
+          "best_ev": 0.0283211,
+          "best_pull_prob": 0.0083297,
+          "candidates": [
+            {
+              "pack_name": "Pulsing Aura",
+              "expansion": "Pulsing Aura",
+              "ev_contribution": 0.0283211,
+              "pull_prob": 0.0083297,
+              "owned": 1,
+              "rarity": "four_diamond",
+              "value": 3.4
+            },
+            {
+              "pack_name": "Pulsing Aura",
+              "expansion": "Pulsing Aura",
+              "ev_contribution": 0.0028642,
+              "pull_prob": 0.0008424,
+              "owned": 1,
+              "rarity": "double_star",
+              "value": 3.4
+            },
+            {
+              "pack_name": "Pulsing Aura",
+              "expansion": "Pulsing Aura",
+              "ev_contribution": 0.0028642,
+              "pull_prob": 0.0008424,
+              "owned": 1,
+              "rarity": "double_star",
+              "value": 3.4
+            }
+          ]
+        }
+      },
+      "batches": [
+        {
+          "batch_number": 1,
+          "pack_name": "Solgaleo",
+          "expansion": "Celestial Guardians",
+          "set_code": "A3",
+          "packs_to_open": 10,
+          "adj_ev_per_pack": 3.575237,
+          "expected_value_this_batch": 35.7524,
+          "expected_value_note": "deck_weighted_score=4.1862 (adj_ev=3.5752 + 10× deck_target_ev=0.0611). Overall adj_ev may be lower than pure collection-expansion packs.",
+          "missing_in_pool": 105,
+          "stopping_condition": "STOP after this batch. Check if any chase deck card was pulled. Re-run EV calculator before deciding on batch 2.",
+          "rerun_trigger": true,
+          "rerun_reason": "Chase deck target may have been acquired — re-run EV to update deck_weighted_score."
+        }
+      ],
+      "total_batches": 1,
+      "total_packs": 10,
+      "rerun_checklist": [
+        "After batch 1: check if any chase deck card was pulled.",
+        "Re-run python3 scripts/build_pack_ev.py to update deck_target_ev and deck_weighted_score.",
+        "Re-run python3 scripts/generate_hourglass_spending_plan.py to refresh this plan.",
+        "If Incineroar ex pulled: Incineroar ex deck becomes buildable — remove from chase targets.",
+        "If Ivysaur pulled (2nd copy): Mega Venusaur ex deck may now be buildable.",
+        "If Magnezone ex pulled: Magnezone ex deck becomes buildable — remove from chase targets.",
+        "Note: Zygarde ex is PROMO-B only — cannot be obtained from packs."
+      ]
     }
   ],
   "global_rerun_checklist": [

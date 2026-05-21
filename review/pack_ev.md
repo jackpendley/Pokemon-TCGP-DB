@@ -17,7 +17,7 @@
 | Collection total | 578 cards (380 validated) |
 | EV-ready collection entries | 207/224 (108 auto-accept + 49 secondary + 50 resolved) |
 | Excluded entries | 17/224 (9 low-confidence + 8 unresolved) |
-| Deck targets | 5 cards needed for deck completion |
+| Deck targets | 4 cards needed for deck completion |
 
 ---
 
@@ -136,7 +136,6 @@
 
 | Card | Still Needed | Deck Target EV Impact |
 |---|---|---|
-| Cubone | 1 | best in not in top cards (ev=0.00000) |
 | Incineroar Ex | 1 | best in not in top cards (ev=0.00000) |
 | Ivysaur | 1 | best in Crimson Blaze (ev=0.14992) |
 | Magnezone Ex | 1 | best in not in top cards (ev=0.00000) |

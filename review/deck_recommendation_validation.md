@@ -152,7 +152,7 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 |---|---|---|---|
 | Zygarde 50% Forme | 2 | 3 | ✅ |
 | Zygarde ex | 2 | 1 | ⚠️ short |
-| Cubone | 2 | 1 | ⚠️ short |
+| Cubone | 2 | 3 | ✅ |
 | Marowak ex | 1 | 1 | ✅ |
 | Poké Ball | 2 | 4 | ✅ |
 | Professor's Research | 2 | 4 | ✅ |
@@ -165,7 +165,6 @@ Validates `deck-recommendations.jsx` against `collection.json`.
 
 **Missing or short:**
 - Zygarde ex: need 2, have 1 (short by 1)
-- Cubone: need 2, have 1 (short by 1)
 
 **Stated missing in JSX:** 1× Zygarde ex
 

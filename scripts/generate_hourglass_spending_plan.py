@@ -87,7 +87,7 @@ def _make_batch(n, pack, stopping_condition, rerun_trigger, rerun_reason, ev_not
     }
 
 
-def build_scenarios(ev_data):
+def build_scenarios(ev_data, recs_data=None):
     packs = sorted(
         ev_data["packs"], key=lambda x: x["confidence_adjusted_ev"], reverse=True
     )
@@ -258,7 +258,73 @@ def build_scenarios(ev_data):
         ],
     }
 
-    return [conservative, moderate, aggressive]
+    # Deck-priority scenario: rank packs by deck_weighted_score instead of adj_ev.
+    # Surfaces the pack most likely to complete a chase deck even if its raw EV is lower.
+    deck_priority_packs = sorted(
+        ev_data["packs"],
+        key=lambda x: x.get("deck_weighted_score", x["confidence_adjusted_ev"]),
+        reverse=True,
+    )
+    dp_top = deck_priority_packs[0]
+
+    # Per-chase-deck best packs — from recommendation report (recs_data)
+    chase_deck_info = (recs_data or {}).get("chase_deck_packs", {})
+
+    deck_priority_batches = [
+        _make_batch(
+            1, dp_top,
+            stopping_condition=(
+                f"STOP after this batch. Check if any chase deck card was pulled. "
+                f"Re-run EV calculator before deciding on batch 2."
+            ),
+            rerun_trigger=True,
+            rerun_reason="Chase deck target may have been acquired — re-run EV to update deck_weighted_score.",
+            ev_note=(
+                f"deck_weighted_score={dp_top.get('deck_weighted_score', dp_top['confidence_adjusted_ev']):.4f} "
+                f"(adj_ev={dp_top['confidence_adjusted_ev']:.4f} + "
+                f"10× deck_target_ev={dp_top.get('deck_target_ev', 0):.4f}). "
+                "Overall adj_ev may be lower than pure collection-expansion packs."
+            ),
+        )
+    ]
+
+    deck_priority = {
+        "label": "deck_priority",
+        "description": (
+            f"Open 1 batch from the pack with the highest deck_weighted_score "
+            f"({dp_top['pack_name']}). Prioritizes completing a chase deck over "
+            f"raw collection expansion."
+        ),
+        "rationale": (
+            "deck_weighted_score = adj_ev + 10 × deck_target_ev. The 10× multiplier "
+            "gives chase-card pull probability significant weight, so a pack with "
+            "a lower overall EV can outrank a pure collection-expansion pack when it "
+            "contains an urgently needed chase card. Stop after 1 batch and re-run — "
+            "completing a chase deck changes the score immediately."
+        ),
+        "deck_weighted_top": {
+            "pack_name": dp_top["pack_name"],
+            "expansion": dp_top["expansion"],
+            "adj_ev": dp_top["confidence_adjusted_ev"],
+            "deck_target_ev": dp_top.get("deck_target_ev", 0),
+            "deck_weighted_score": dp_top.get("deck_weighted_score", dp_top["confidence_adjusted_ev"]),
+        },
+        "per_chase_deck": chase_deck_info,
+        "batches": deck_priority_batches,
+        "total_batches": 1,
+        "total_packs": BATCH_SIZE,
+        "rerun_checklist": [
+            "After batch 1: check if any chase deck card was pulled.",
+            "Re-run python3 scripts/build_pack_ev.py to update deck_target_ev and deck_weighted_score.",
+            "Re-run python3 scripts/generate_hourglass_spending_plan.py to refresh this plan.",
+            "If Incineroar ex pulled: Incineroar ex deck becomes buildable — remove from chase targets.",
+            "If Ivysaur pulled (2nd copy): Mega Venusaur ex deck may now be buildable.",
+            "If Magnezone ex pulled: Magnezone ex deck becomes buildable — remove from chase targets.",
+            "Note: Zygarde ex is PROMO-B only — cannot be obtained from packs.",
+        ],
+    }
+
+    return [conservative, moderate, aggressive, deck_priority]
 
 
 def write_json(scenarios, ev_data, model_data, collection_data):
@@ -602,7 +668,7 @@ def main():
         sys.exit(1)
 
     print("\nBuilding scenarios...")
-    scenarios = build_scenarios(ev_data)
+    scenarios = build_scenarios(ev_data, recs_data)
     for s in scenarios:
         print(f"  {s['label']}: {s['total_batches']} batches, {s['total_packs']} packs")
 
