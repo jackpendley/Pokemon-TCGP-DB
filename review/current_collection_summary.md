@@ -2,71 +2,67 @@
 
 **Last updated:** 2026-05-20  
 **Format:** Pokemon TCG Pocket  
-**Meta declared total:** 588  
-**Actual card count:** 588  
-**Unique entries:** 279  
+**Meta declared total:** 578  
+**Actual card count:** 578  
+**Unique entries:** 272  
 
 ## By Card Type
 
 | Card Type | Count |
 |---|---|
-| Pokemon | 527 |
-| Trainer | 61 |
+| Pokemon | 519 |
+| Trainer | 59 |
 
 ## By Pokémon Type
 
 | Type | Count |
 |---|---|
 | Fighting | 89 |
-| Colorless | 76 |
 | Grass | 75 |
-| Fire | 67 |
-| Water | 56 |
+| Colorless | 74 |
+| Fire | 66 |
+| Water | 55 |
 | Darkness | 49 |
-| Psychic | 48 |
+| Psychic | 46 |
 | Lightning | 42 |
 | Metal | 20 |
-| Dragon | 5 |
+| Dragon | 3 |
 
 ## By Stage
 
 | Stage | Count |
 |---|---|
-| Basic | 350 |
-| Stage 1 | 141 |
-| Stage 2 | 36 |
+| Basic | 349 |
+| Stage 1 | 138 |
+| Stage 2 | 32 |
 
 ## Trainer Cards
 
 | Subtype | Count |
 |---|---|
-| Supporter | 28 |
 | Item | 27 |
+| Supporter | 26 |
 | Stadium | 4 |
 | Pokemon Tool | 2 |
 
 ## Ex Pokémon
 
-- **Ex entries:** 20
-- **Ex card count:** 24
+- **Ex entries:** 16
+- **Ex card count:** 19
 
 | Ex Card |
 |---|
-| Charizard ex |
 | Corviknight ex |
 | Crobat ex |
 | Crustle ex |
-| Gengar ex |
 | Incineroar ex |
 | Magnezone ex |
 | Marowak ex |
 | Mega Camerupt ex |
-| Mega Charizard X ex |
 | Mega Charizard Y ex |
 | Mega Heracross ex |
 | Mega Mawile ex |
 | Mega Venusaur ex |
-| Mew ex |
 | Moltres ex |
 | Snorlax ex |
 | Umbreon ex |

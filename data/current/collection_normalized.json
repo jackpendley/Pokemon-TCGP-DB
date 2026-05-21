@@ -1,12 +1,12 @@
 {
   "meta": {
-    "total_cards": 588,
+    "total_cards": 578,
     "last_updated": "2026-05-20",
     "format": "Pokemon TCG Pocket"
   },
   "generated_note": "Normalized output — do not edit. Source: collection.json",
-  "actual_total_quantity": 588,
-  "unique_entries": 279,
+  "actual_total_quantity": 578,
+  "unique_entries": 272,
   "collection": [
     {
       "name": "Charmander",
@@ -332,19 +332,6 @@
       "entry_id": "volcarona",
       "is_ex": false,
       "stage_label": "Stage 1"
-    },
-    {
-      "name": "Charizard ex",
-      "type": "Fire",
-      "stage": 2,
-      "hp": 200,
-      "card_type": "Pokemon",
-      "is_ex": true,
-      "attack": "Blast Burn 200",
-      "count": 1,
-      "normalized_name": "charizard_ex",
-      "entry_id": "charizard_ex",
-      "stage_label": "Stage 2"
     },
     {
       "name": "Bulbasaur",
@@ -1122,19 +1109,6 @@
       "stage_label": "Stage 2"
     },
     {
-      "name": "Cloyster",
-      "type": "Water",
-      "stage": 1,
-      "hp": 110,
-      "card_type": "Pokemon",
-      "attack": "Icicle Spear 40",
-      "count": 1,
-      "normalized_name": "cloyster",
-      "entry_id": "cloyster",
-      "is_ex": false,
-      "stage_label": "Stage 1"
-    },
-    {
       "name": "Drizzile",
       "type": "Water",
       "stage": 1,
@@ -1601,19 +1575,6 @@
       "stage_label": "Basic"
     },
     {
-      "name": "Gengar ex",
-      "type": "Psychic",
-      "stage": 2,
-      "hp": 150,
-      "card_type": "Pokemon",
-      "is_ex": true,
-      "attack": "Shadow Ball 100+",
-      "count": 1,
-      "normalized_name": "gengar_ex",
-      "entry_id": "gengar_ex",
-      "stage_label": "Stage 2"
-    },
-    {
       "name": "Weezing",
       "type": "Psychic",
       "stage": 1,
@@ -1625,19 +1586,6 @@
       "entry_id": "weezing",
       "is_ex": false,
       "stage_label": "Stage 1"
-    },
-    {
-      "name": "Mew ex",
-      "type": "Psychic",
-      "stage": 0,
-      "hp": 150,
-      "card_type": "Pokemon",
-      "is_ex": true,
-      "attack": "Genome Hacking",
-      "count": 1,
-      "normalized_name": "mew_ex",
-      "entry_id": "mew_ex",
-      "stage_label": "Basic"
     },
     {
       "name": "Marowak ex",
@@ -2733,19 +2681,6 @@
       "stage_label": "Basic"
     },
     {
-      "name": "Mega Charizard X ex",
-      "type": "Dragon",
-      "stage": 2,
-      "hp": 220,
-      "card_type": "Pokemon",
-      "is_ex": true,
-      "attack": "Chaotic Tempest 150",
-      "count": 2,
-      "normalized_name": "mega_charizard_x_ex",
-      "entry_id": "mega_charizard_x_ex",
-      "stage_label": "Stage 2"
-    },
-    {
       "name": "Stoutland",
       "type": "Colorless",
       "stage": 2,
@@ -3184,19 +3119,6 @@
       "stage_label": "Basic"
     },
     {
-      "name": "Wigglytuff",
-      "type": "Colorless",
-      "stage": 1,
-      "hp": 80,
-      "card_type": "Pokemon",
-      "attack": "Round 70",
-      "count": 2,
-      "normalized_name": "wigglytuff",
-      "entry_id": "wigglytuff",
-      "is_ex": false,
-      "stage_label": "Stage 1"
-    },
-    {
       "name": "Tandemaus",
       "type": "Colorless",
       "stage": 0,
@@ -3487,15 +3409,6 @@
       "count": 1,
       "normalized_name": "cabbie",
       "entry_id": "cabbie",
-      "is_ex": false
-    },
-    {
-      "name": "Red",
-      "card_type": "Trainer",
-      "trainer_subtype": "Supporter",
-      "count": 2,
-      "normalized_name": "red",
-      "entry_id": "red",
       "is_ex": false
     },
     {
