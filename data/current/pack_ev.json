@@ -1,14 +1,12 @@
 {
-  "generated_at": "2026-05-21T21:32:45+00:00",
+  "generated_at": "2026-05-21T22:20:17+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "pz_verified",
     "collection_total": 588,
     "collection_mutated": false,
     "warnings": [
-      "Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone for all 24 packs. EV rankings reflect actual pull probabilities. No inferred confidence adjustment applied.",
-      "EV-ready coverage: 272/272 entries resolved (108 auto-accept + 49 secondary + 70 newly resolved). 8 entries still excluded from EV computation.",
-      "Card-name matching is case-insensitive by name only — multi-set cards (same name, different sets) may be counted as owned across all packs they appear in."
+      "Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone for all 24 packs. EV rankings reflect actual pull probabilities. No inferred confidence adjustment applied."
     ]
   },
   "scoring_weights": {
@@ -2263,9 +2261,6 @@
   ],
   "blocked_packs": [],
   "next_steps": [
-    "Verify slot_rates in PTCGP app (Pack details > Offering Rates) for official verification.",
-    "Set confidence=verified in pull_probability_model.json once confirmed in-app.",
-    "Resolve remaining ambiguous cross-set entries via resolve_ambiguous_pack_sources.py.",
     "Review top-EV packs as planning input — see review/inferred_pack_recommendations.md."
   ]
 }

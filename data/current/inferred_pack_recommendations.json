@@ -1,17 +1,9 @@
 {
-  "generated_at": "2026-05-21T21:32:45+00:00",
+  "generated_at": "2026-05-21T22:20:17+00:00",
   "generated_by": "generate_pack_recommendation_report.py",
-  "disclaimer": "INFERRED CONFIDENCE ONLY. Slot rates are from trusted external sources (Game8, ShackNews, cgmagonline) — NOT verified from the in-app Offering Rates screen. Rankings are for planning purposes only. Verify in-app before acting on any recommendation.",
   "model_confidence": "pz_verified",
   "collection_total": 588,
   "collection_mutated": false,
-  "ev_ready_entries": {
-    "total": 272,
-    "auto_accept": 141,
-    "secondary_evidence": 61,
-    "low_confidence_excluded": 70,
-    "unresolved_excluded": 0
-  },
   "top_5_by_adjusted_ev": [
     {
       "pack_name": "Paldean Wonders",
@@ -1089,16 +1081,6 @@
       "description": "Slot rates not verified in-app. All EVs adjusted by 0.85 to reflect this uncertainty. Actual EVs may be higher or lower.",
       "fix": "PTCGP app → Pack details → Offering Rates"
     },
-    "ambiguous_entries": {
-      "severity": "MEDIUM",
-      "description": "59 collection entries are low-confidence (card appears in multiple expansions with no confirmed set). These are excluded from EV. Resolving them could shift rankings.",
-      "fix": "Fill data/exports/current_pack_source_review.csv"
-    },
-    "zygarde_unknown_pack": {
-      "severity": "MEDIUM",
-      "description": "Zygarde ex is not in pack_sources.json — its source pack is unknown. Cannot calculate pull probability. One chase deck (Zygarde ex Fighting) cannot be targeted by pack selection.",
-      "fix": "Identify Zygarde ex set from external reference or in-app"
-    },
     "deck_scorer_not_automated": {
       "severity": "LOW",
       "description": "Deck completion probability is not integrated into EV. deck_target_ev only reflects the value of the missing card(s), not the full deck completion probability uplift.",
@@ -1106,9 +1088,6 @@
     }
   },
   "next_actions": [
-    "PRIORITY 1: Verify slot rates in-app (PTCGP → any pack → Offering Rates). If they match, set confidence=verified in pull_probability_model.json.",
-    "PRIORITY 2: If accepting inferred confidence, open Paldean Wonders (best overall adjusted EV) or Crimson Blaze (best for Mega Venusaur ex chase deck).",
-    "PRIORITY 3: Resolve 59 ambiguous collection entries (fill data/exports/current_pack_source_review.csv) to expand EV coverage.",
-    "PRIORITY 4: Identify Zygarde ex pack source to enable Zygarde ex Fighting deck targeting."
+    "Open top-EV pack (see top_5_by_adjusted_ev). Re-run pipeline after opening packs."
   ]
 }

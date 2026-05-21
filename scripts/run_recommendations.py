@@ -31,9 +31,6 @@ ROOT = Path(__file__).resolve().parent.parent
 LOG_FILE = ROOT / "data" / "pipeline.log"
 
 PIPELINE_STEPS = [
-    ("Pack coverage",        "scripts/current_collection_pack_coverage.py"),
-    ("Confidence scoring",   "scripts/score_pack_source_confidence.py"),
-    ("Resolve pack sources", "scripts/resolve_ambiguous_pack_sources.py"),
     ("Build pack EV",        "scripts/build_pack_ev.py"),
     ("Build promo EV",       "scripts/build_promo_pack_ev.py"),
     ("Recommendations",      "scripts/generate_pack_recommendation_report.py"),
@@ -41,9 +38,6 @@ PIPELINE_STEPS = [
 ]
 
 _STATUS_PATTERNS: dict[str, tuple] = {
-    "Pack coverage":        (r"Coverage:\s*(\d+)/(\d+)", lambda m: f"{m.group(1)} direct, {int(m.group(2))-int(m.group(1))} ambiguous → resolver"),
-    "Confidence scoring":   (r"auto_accept:\s*(\d+)\s+secondary_evidence:\s*(\d+)\s+low_confidence:\s*(\d+)", lambda m: f"{m.group(1)} high-conf, {int(m.group(2))+int(m.group(3))} queued for resolver"),
-    "Resolve pack sources": (r"→\s*(\d+/\d+)", lambda m: f"{m.group(1)} EV-ready"),
     "Build pack EV":        (r"Packs scored:\s*(\d+)", lambda m: f"{m.group(1)} packs"),
     "Build promo EV":       (r"Promo packs in PZ data:\s*(\d+)", lambda m: f"{m.group(1)} promo packs"),
 }
@@ -142,22 +136,14 @@ def _collection_status() -> str:
         return "synced"
 
 
-_HOURGLASS_FIELDS = ("hourglasses", "hourglass_count", "packHourglasses",
-                     "pack_hourglasses", "currency", "gems")
-
-
-def _read_hourglasses() -> int | None:
+def _read_player_stats() -> dict:
     path = ROOT / "data" / "sync" / "player_stats.json"
     if not path.exists():
-        return None
+        return {}
     try:
-        stats = json.loads(path.read_text(encoding="utf-8"))
-        for field in _HOURGLASS_FIELDS:
-            if field in stats:
-                return int(stats[field])
+        return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
-        pass
-    return None
+        return {}
 
 
 def _print_final_summary() -> None:
@@ -190,12 +176,17 @@ def _print_final_summary() -> None:
         except Exception:
             pass
 
-    hourglasses = _read_hourglasses()
-    if hourglasses is not None:
-        hg_str = f"  Hourglasses: {hourglasses}"
-        if hourglasses >= 120 and top_pack:
-            hg_str += f"  → buy 10x {top_pack['pack_name']} (costs 120 ⧗), then re-run"
-        print(hg_str)
+    stats = _read_player_stats()
+    if stats:
+        pack_hg = stats.get("pack_hourglasses")
+        shop    = stats.get("shop_tickets")
+        if pack_hg is not None:
+            hg_str = f"  Pack Hourglasses: {pack_hg}"
+            if pack_hg >= 120 and top_pack:
+                hg_str += f"  → buy 10x {top_pack['pack_name']} (costs 120 ⧗), then re-run"
+            print(hg_str)
+        if shop is not None:
+            print(f"  Shop Tickets:     {shop}")
 
     print(f"  Log:        {LOG_FILE.relative_to(ROOT)}")
 

@@ -40,8 +40,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 COLLECTION_JSON     = ROOT / "data" / "current"    / "collection_normalized.json"
-CONFIDENCE_JSON     = ROOT / "data" / "current"    / "pack_source_confidence_scores.json"
-RESOLVED_JSON       = ROOT / "data" / "current"    / "resolved_pack_sources.json"
 PULL_MODEL_JSON     = ROOT / "data" / "reference"  / "pull_probability_model.json"
 PACK_SOURCES_JSON   = ROOT / "data" / "reference"  / "pack_sources.json"
 DECK_VALIDATION_JSON = ROOT / "data" / "exports"   / "deck_recommendation_validation.json"
@@ -137,20 +135,6 @@ def load_deck_targets(path: Path) -> dict:
             targets[nn] = max(targets.get(nn, 0), needed)
     return targets
 
-
-def load_resolved_sources(path: Path) -> dict:
-    """
-    Load resolved_pack_sources.json produced by resolve_ambiguous_pack_sources.py.
-
-    Returns a coverage stats dict with keys:
-      ev_ready_before, ev_ready_after, ev_ready_total,
-      total_new_resolved, total_still_unresolved
-    Returns empty dict if the file doesn't exist yet.
-    """
-    if not path.exists():
-        return {}
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    return raw.get("_meta", {})
 
 
 def load_pz_pack_odds(path: Path) -> tuple[dict, dict]:
@@ -515,27 +499,7 @@ def _read_model_confidence(path: Path) -> str:
         return "inferred"
 
 
-def _coverage_warning(resolution_meta) -> str:
-    """Build the EV-ready coverage warning string from resolution stats."""
-    if resolution_meta:
-        after   = resolution_meta.get("ev_ready_after", 192)
-        total   = resolution_meta.get("ev_ready_total", 224)
-        still   = resolution_meta.get("total_still_unresolved", 24)
-        unres   = 8   # always-unresolved (Zygarde forms + trainer gaps)
-        excluded = still + unres
-        newly = resolution_meta.get("total_new_resolved", 46)
-        return (
-            f"EV-ready coverage: {after}/{total} entries resolved "
-            f"(108 auto-accept + 49 secondary + {newly} newly resolved). "
-            f"{excluded} entries still excluded from EV computation."
-        )
-    return (
-        "EV-ready coverage: 157/224 entries (108 auto-accept + 49 secondary). "
-        "Run resolve_ambiguous_pack_sources.py to expand to ~192/224."
-    )
-
-
-def write_json(pack_ev_records, blocked, deck_targets, collection_total, resolution_meta=None):
+def write_json(pack_ev_records, blocked, deck_targets, collection_total):
     model_confidence = _read_model_confidence(PULL_MODEL_JSON)
     summary = summarize(pack_ev_records)
 
@@ -582,13 +546,7 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total, resolut
             "model_confidence": model_confidence,
             "collection_total": collection_total,
             "collection_mutated": False,
-            "warnings": [
-                warning,
-                _coverage_warning(resolution_meta),
-                "Card-name matching is case-insensitive by name only — "
-                "multi-set cards (same name, different sets) may be counted as owned "
-                "across all packs they appear in.",
-            ],
+            "warnings": [warning],
         },
         "scoring_weights": SCORING_WEIGHTS,
         "confidence_weights": {
@@ -608,9 +566,6 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total, resolut
         "packs": pack_ev_records,
         "blocked_packs": blocked,
         "next_steps": [
-            "Verify slot_rates in PTCGP app (Pack details > Offering Rates) for official verification.",
-            "Set confidence=verified in pull_probability_model.json once confirmed in-app.",
-            "Resolve remaining ambiguous cross-set entries via resolve_ambiguous_pack_sources.py.",
             "Review top-EV packs as planning input — see review/inferred_pack_recommendations.md.",
         ],
     }
@@ -960,13 +915,12 @@ def run_validate() -> bool:
     else:
         print("  PASS  top_ev_cards structure valid")
 
-    # output files exist
-    for fpath in (OUT_JSON, OUT_CSV, OUT_MD):
-        if fpath.exists():
-            print(f"  PASS  {fpath.relative_to(ROOT)} exists")
-        else:
-            print(f"  ERROR: {fpath.relative_to(ROOT)} missing")
-            errors += 1
+    # output file exists
+    if OUT_JSON.exists():
+        print(f"  PASS  {OUT_JSON.relative_to(ROOT)} exists")
+    else:
+        print(f"  ERROR: {OUT_JSON.relative_to(ROOT)} missing")
+        errors += 1
 
     if errors == 0:
         print(f"\nVALIDATION PASSED  ({len(packs)} packs, model_confidence={mc})")
@@ -998,18 +952,12 @@ def main():
     pull_model       = load_pull_model(PULL_MODEL_JSON)
     pack_cards, expansion_shared = load_pack_sources(PACK_SOURCES_JSON)
     deck_targets     = load_deck_targets(DECK_VALIDATION_JSON)
-    resolution_meta  = load_resolved_sources(RESOLVED_JSON)
     pz_raw, pz_odds  = load_pz_pack_odds(PZ_PACK_ODDS_JSON)
 
     collection_total = sum(collection.values())
     print(f"  Collection entries: {len(collection)} unique, total={collection_total}")
     print(f"  Pull model packs:   {len(pull_model)}")
     print(f"  Deck targets:       {len(deck_targets)} → {list(deck_targets)}")
-    if resolution_meta:
-        print(f"  Resolved sources:   {resolution_meta.get('total_new_resolved', '?')} new "
-              f"({resolution_meta.get('ev_ready_after', '?')}/{resolution_meta.get('ev_ready_total', '?')} EV-ready)")
-    else:
-        print(f"  Resolved sources:   not found — run resolve_ambiguous_pack_sources.py")
     if pz_raw:
         print(f"  PZ pack odds:       {len(pz_raw)} packs — using direct PZ drop chances")
     else:
@@ -1019,7 +967,7 @@ def main():
         collection, pull_model, pack_cards, expansion_shared, deck_targets, pz_raw, pz_odds
     )
 
-    out = write_json(pack_ev_records, blocked, deck_targets, collection_total, resolution_meta)
+    out = write_json(pack_ev_records, blocked, deck_targets, collection_total)
 
     print(f"  Written: {OUT_JSON.relative_to(ROOT)}")
 

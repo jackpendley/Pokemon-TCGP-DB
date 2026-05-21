@@ -37,7 +37,6 @@ ROOT = Path(__file__).resolve().parent.parent
 
 PACK_EV_JSON         = ROOT / "data" / "current"  / "pack_ev.json"
 EV_READINESS_JSON    = ROOT / "data" / "current"  / "pack_ev_readiness.json"
-CONFIDENCE_JSON      = ROOT / "data" / "current"  / "pack_source_confidence_scores.json"
 COLLECTION_JSON      = ROOT / "data" / "current"  / "collection_normalized.json"
 PROMO_EV_JSON        = ROOT / "data" / "current"  / "promo_pack_ev.json"
 DECK_VALIDATION_JSON = ROOT / "data" / "exports"  / "deck_recommendation_validation.json"
@@ -65,10 +64,6 @@ def load_deck_validation(path: Path) -> list:
     raw = json.loads(path.read_text(encoding="utf-8"))
     return raw.get("decks", [])
 
-
-def load_confidence_meta(path: Path) -> dict:
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    return raw.get("meta", {})
 
 
 def load_ev_readiness(path: Path) -> dict:
@@ -175,27 +170,15 @@ def build_buckets(packs: list, deck_targets: dict, deck_validation: list) -> dic
 # Writers
 # ---------------------------------------------------------------------------
 
-def write_json(ev_data: dict, buckets: dict, conf_meta: dict, ev_readiness: dict) -> dict:
+def write_json(ev_data: dict, buckets: dict, ev_readiness: dict) -> dict:
     packs = ev_data["packs"]
+    mc = ev_data["meta"]["model_confidence"]
     out = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "generated_by": "generate_pack_recommendation_report.py",
-        "disclaimer": (
-            "INFERRED CONFIDENCE ONLY. Slot rates are from trusted external sources "
-            "(Game8, ShackNews, cgmagonline) — NOT verified from the in-app Offering "
-            "Rates screen. Rankings are for planning purposes only. Verify in-app before "
-            "acting on any recommendation."
-        ),
-        "model_confidence": ev_data["meta"]["model_confidence"],
+        "model_confidence": mc,
         "collection_total": ev_data["meta"]["collection_total"],
         "collection_mutated": False,
-        "ev_ready_entries": {
-            "total": conf_meta.get("total_entries", 0),
-            "auto_accept": conf_meta.get("tier_counts", {}).get("auto_accept", 0),
-            "secondary_evidence": conf_meta.get("tier_counts", {}).get("secondary_evidence", 0),
-            "low_confidence_excluded": conf_meta.get("tier_counts", {}).get("low_confidence", 0),
-            "unresolved_excluded": conf_meta.get("tier_counts", {}).get("unresolved", 0),
-        },
         "top_5_by_adjusted_ev": [
             {k: v for k, v in p.items() if k != "top_ev_cards"}
             for p in buckets["best_overall_adj_ev"]
@@ -259,24 +242,6 @@ def write_json(ev_data: dict, buckets: dict, conf_meta: dict, ev_readiness: dict
                 ),
                 "fix": "PTCGP app → Pack details → Offering Rates",
             },
-            "ambiguous_entries": {
-                "severity": "MEDIUM",
-                "description": (
-                    "59 collection entries are low-confidence (card appears in multiple "
-                    "expansions with no confirmed set). These are excluded from EV. "
-                    "Resolving them could shift rankings."
-                ),
-                "fix": "Fill data/exports/current_pack_source_review.csv",
-            },
-            "zygarde_unknown_pack": {
-                "severity": "MEDIUM",
-                "description": (
-                    "Zygarde ex is not in pack_sources.json — its source pack is unknown. "
-                    "Cannot calculate pull probability. One chase deck (Zygarde ex Fighting) "
-                    "cannot be targeted by pack selection."
-                ),
-                "fix": "Identify Zygarde ex set from external reference or in-app",
-            },
             "deck_scorer_not_automated": {
                 "severity": "LOW",
                 "description": (
@@ -288,13 +253,7 @@ def write_json(ev_data: dict, buckets: dict, conf_meta: dict, ev_readiness: dict
             },
         },
         "next_actions": [
-            "PRIORITY 1: Verify slot rates in-app (PTCGP → any pack → Offering Rates). "
-            "If they match, set confidence=verified in pull_probability_model.json.",
-            "PRIORITY 2: If accepting inferred confidence, open Paldean Wonders "
-            "(best overall adjusted EV) or Crimson Blaze (best for Mega Venusaur ex chase deck).",
-            "PRIORITY 3: Resolve 59 ambiguous collection entries "
-            "(fill data/exports/current_pack_source_review.csv) to expand EV coverage.",
-            "PRIORITY 4: Identify Zygarde ex pack source to enable Zygarde ex Fighting deck targeting.",
+            "Open top-EV pack (see top_5_by_adjusted_ev). Re-run pipeline after opening packs.",
         ],
     }
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
@@ -391,32 +350,17 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
                 )
         return lines
 
+    mc = out_data["model_confidence"]
     lines = [
-        "# Inferred Pack Recommendation Report",
-        "",
-        "> ## ⚠ INFERRED CONFIDENCE — NOT VERIFIED",
-        ">",
-        "> Slot rates sourced from Game8 PTCGP guide and corroborating sites.",
-        "> These rates have **NOT been verified** against the in-app Offering Rates screen.",
-        "> All EV values are adjusted by ×0.85 to reflect this uncertainty.",
-        ">",
-        "> **Do not treat this as a final pack-opening recommendation.**",
-        "> Verify slot rates in the PTCGP app first:",
-        "> App → any pack → Pack details → Offering Rates",
-        ">",
-        "> This report is decision-support for planning purposes only.",
-        "",
-        "---",
+        "# Pack Recommendation Report",
         "",
         "## Status",
         "",
         "| Metric | Value |",
         "|---|---|",
         f"| Report generated | {out_data['generated_at']} |",
-        f"| Model confidence | **{out_data['model_confidence']}** (not official in-app verified) |",
-        f"| Collection total | {out_data['collection_total']} cards (380 validated) |",
-        f"| EV-ready entries | 157/224 (108 auto-accept + 49 secondary evidence) |",
-        f"| Excluded from EV | 67/224 (59 low-confidence + 8 unresolved) |",
+        f"| Model confidence | **{mc}** |",
+        f"| Collection total | {out_data['collection_total']} cards |",
         f"| Packs ranked | {len(packs)} |",
         f"| Packs blocked | {len(ev_data.get('blocked_packs', []))} |",
         "",
@@ -818,7 +762,6 @@ def main():
 
     ev_data       = load_ev(PACK_EV_JSON)
     ev_readiness  = load_ev_readiness(EV_READINESS_JSON) if EV_READINESS_JSON.exists() else {}
-    conf_meta     = load_confidence_meta(CONFIDENCE_JSON) if CONFIDENCE_JSON.exists() else {}
     deck_val      = load_deck_validation(DECK_VALIDATION_JSON)
 
     packs = ev_data["packs"]
@@ -830,7 +773,7 @@ def main():
     deck_targets = deck_target_pack_map(packs)
     buckets = build_buckets(packs, deck_targets, deck_val)
 
-    out_data = write_json(ev_data, buckets, conf_meta, ev_readiness)
+    out_data = write_json(ev_data, buckets, ev_readiness)
     write_md(out_data, ev_data, buckets, deck_val)
 
     print(f"  Written: {OUT_JSON.relative_to(ROOT)}")

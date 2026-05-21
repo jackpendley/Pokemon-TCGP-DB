@@ -1,28 +1,12 @@
-# Inferred Pack Recommendation Report
-
-> ## ⚠ INFERRED CONFIDENCE — NOT VERIFIED
->
-> Slot rates sourced from Game8 PTCGP guide and corroborating sites.
-> These rates have **NOT been verified** against the in-app Offering Rates screen.
-> All EV values are adjusted by ×0.85 to reflect this uncertainty.
->
-> **Do not treat this as a final pack-opening recommendation.**
-> Verify slot rates in the PTCGP app first:
-> App → any pack → Pack details → Offering Rates
->
-> This report is decision-support for planning purposes only.
-
----
+# Pack Recommendation Report
 
 ## Status
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-05-21T21:32:45+00:00 |
-| Model confidence | **pz_verified** (not official in-app verified) |
-| Collection total | 588 cards (380 validated) |
-| EV-ready entries | 157/224 (108 auto-accept + 49 secondary evidence) |
-| Excluded from EV | 67/224 (59 low-confidence + 8 unresolved) |
+| Report generated | 2026-05-21T22:20:17+00:00 |
+| Model confidence | **pz_verified** |
+| Collection total | 588 cards |
 | Packs ranked | 24 |
 | Packs blocked | 0 |
 

@@ -303,20 +303,48 @@ def _fetch_catalog(cookies: dict, auth_headers: dict) -> dict[str, dict]:
 
 
 def _save_player_stats(body: dict | list | None) -> None:
-    """Extract and persist player stats (including hourglass balance) from the raw API body."""
+    """Extract and persist player currency/resource stats from the raw API body."""
     if not isinstance(body, dict):
         return
     data = body.get("data", {})
     if not isinstance(data, dict):
         return
+    rd = data.get("resourceData", {})
+    if not isinstance(rd, dict):
+        return
+
     stats: dict = {}
-    for field in _HOURGLASS_FIELDS:
-        if field in data:
-            stats[field] = data[field]
-    # Save any non-card scalar fields from data as potential stats
-    for k, v in data.items():
-        if k not in ("cards", "card_list", "items") and isinstance(v, (int, float, str, bool)):
-            stats[k] = v
+
+    # Pack Hourglasses — the main pack-opening currency
+    for item in rd.get("packPowerChargers", []):
+        stats["pack_hourglasses"] = item.get("value", 0)
+        break
+
+    # Wonder Hourglasses — challenge-mode currency
+    for item in rd.get("challengePowerChargers", []):
+        stats["wonder_hourglasses"] = item.get("value", 0)
+        break
+
+    # Event Hourglasses
+    for item in rd.get("eventPowerChargers", []):
+        stats["event_hourglasses"] = item.get("value", 0)
+        break
+
+    # Trade Hourglasses
+    for item in rd.get("tradePowerChargers", []):
+        stats["trade_hourglasses"] = item.get("value", 0)
+        break
+
+    # Shop currencies (Shop Tickets, Shinedust, Premium Tickets)
+    for item in rd.get("currencies", []):
+        key = item.get("key", "")
+        if key == "SHOP_TICKET":
+            stats["shop_tickets"] = item.get("value", 0)
+        elif key == "BRIGHT_SAND":
+            stats["shinedust"] = item.get("value", 0)
+        elif key == "SUBSCRIPTION_TICKET":
+            stats["premium_tickets"] = item.get("value", 0)
+
     if stats:
         PLAYER_STATS_CACHE.parent.mkdir(parents=True, exist_ok=True)
         PLAYER_STATS_CACHE.write_text(
