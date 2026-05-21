@@ -1,6 +1,6 @@
 {
   "meta": {
-    "total_cards": 584,
+    "total_cards": 582,
     "last_updated": "2026-05-20",
     "format": "Pokemon TCG Pocket"
   },
@@ -1270,7 +1270,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Fighting Fast 10+",
-      "count": 5,
+      "count": 3,
       "variant": "Fighting Fast art"
     },
     {
