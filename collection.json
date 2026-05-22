@@ -1,6 +1,6 @@
 {
   "meta": {
-    "total_cards": 588,
+    "total_cards": 599,
     "last_updated": "2026-05-21",
     "format": "Pokemon TCG Pocket"
   },
@@ -681,7 +681,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Rainy Absorbing 30",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Castform Snowy Form",
@@ -708,7 +708,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Icicle Punch 30",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Frillish",
@@ -1060,7 +1060,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Petty Grudge 20",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Galarian Ponyta",
@@ -1383,7 +1383,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Corkscrew Punch 20",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Meditite",
@@ -2344,7 +2344,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "effect": "Fighting Pokemon do +30 damage vs opponent's Active ex this turn",
-      "count": 6
+      "count": 7
     },
     {
       "name": "Cheren",
@@ -2407,13 +2407,59 @@
       "card_type": "Trainer",
       "trainer_subtype": "Stadium",
       "effect": "Each Fighting Pokemon's attacks do +20 vs opponent's Active ex",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Peculiar Plaza",
       "card_type": "Trainer",
       "trainer_subtype": "Stadium",
       "count": 1
+    },
+    {
+      "name": "Cetoddle",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 100,
+      "is_ex": false
+    },
+    {
+      "name": "Veluza",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 100,
+      "is_ex": false
+    },
+    {
+      "name": "Toedscool",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "is_ex": false
+    },
+    {
+      "name": "Gallade",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 150,
+      "is_ex": false
+    },
+    {
+      "name": "Arven",
+      "count": 1,
+      "card_type": "Supporter",
+      "is_ex": false
     }
   ]
 }

@@ -11,17 +11,17 @@ python3 scripts/run_recommendations.py
 Syncs collection from Pokemon Zone, runs the full EV pipeline, and prints a condensed summary. Full verbose output logged to `data/pipeline.log`.
 
 ```
-  ✓  Sync collection         588 cards, 272 unique
-  ✓  Validate collection     272 entries, total=588
+  ✓  Sync collection         599 cards, 277 unique
+  ✓  Validate collection     277 entries, total=599
   ✓  Normalize collection    OK
   ✓  Build pack EV           24 packs
   ✓  Build promo EV          21 promo packs
   ✓  Recommendations         OK
   ✓  Spending plan           OK
 
-  Top pack:   Paldean Wonders (adj_ev=4.8900) — 127/131 cards unowned
+  Top pack:   Paldean Wonders (adj_ev=4.7464) — 121/131 cards unowned
   Top promo:  Promo Pack A Series Vol. 8 (new_ev=0.9198) — Shop Tokens
-  Pack Hourglasses: 755  → buy 10x Paldean Wonders (costs 120 ⧗), then re-run
+  Pack Hourglasses: 756  → buy 10x Paldean Wonders (costs 120 ⧗), then re-run
   Shop Tickets:     347
   Log:        data/pipeline.log
 ```
@@ -45,8 +45,8 @@ Syncs collection from Pokemon Zone, runs the full EV pipeline, and prints a cond
 
 | Stat | Value |
 |---|---|
-| Total cards | 588 |
-| Unique entries | 272 |
+| Total cards | 599 |
+| Unique entries | 277 |
 | Last synced | 2026-05-21 |
 
 ---
@@ -113,7 +113,6 @@ EV is computed directly from `pz_pack_odds.json` keyed by `(set_code, card_numbe
 | `review/inferred_pack_recommendations.md` | Ranked pack list with EV scores and deck-chase guide |
 | `review/final_hourglass_spending_plan.md` | Scenario-based spending plan (conservative / moderate / aggressive) |
 | `review/promo_pack_ev.md` | Promo pack rankings (Shop Token currency) |
-| `review/deck_recommendation_validation.md` | Deck buildability report |
 | `data/pipeline.log` | Full verbose output from last run (gitignored) |
 
 ---
@@ -149,15 +148,15 @@ adj_ev = pack_total_ev × confidence_multiplier  (1.0 for pz_verified)
 
 ## Utility Scripts
 
-```bash
-# Deck validation
-python3 scripts/validate_deck_recommendations.py
+These are not part of the daily pipeline — run them when reference data needs rebuilding (e.g., new set release).
 
+```bash
 # Pack source reference rebuild (if pack_sources.json needs updating)
 python3 scripts/build_pack_sources.py
 python3 scripts/validate_pack_sources.py
 
-# Pull probability model validation
+# Pull probability model rebuild/validation
+python3 scripts/build_pull_probability_model.py
 python3 scripts/validate_pull_probability_model.py
 ```
 

@@ -562,6 +562,75 @@ def update_meta(raw: str, new_total: int) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Auto-add new cards from ext_ref
+# ---------------------------------------------------------------------------
+
+_STAGE_MAP: dict[str, tuple[int, str]] = {
+    "Basic":   (0, "Basic"),
+    "Stage 1": (1, "Stage 1"),
+    "Stage 2": (2, "Stage 2"),
+}
+
+
+def build_auto_entry(mr: "MatchResult", ext_ref: dict) -> dict | None:
+    """Build a collection entry from ext_ref metadata for a NEW_CARD match.
+
+    Prefers the ext_ref record whose (set_code, number) matches the PZ card.
+    Returns None if ext_ref has no record for this name.
+    """
+    if not mr.canonical_name:
+        return None
+    nn = _normalize(mr.canonical_name)
+    records = ext_ref.get(nn, [])
+    if not records:
+        return None
+
+    pz = mr.pz_card
+    best = next(
+        (r for r in records
+         if r.get("set_code", "").upper() == (pz.set_code or "").upper()
+         and r.get("number") == pz.card_number),
+        records[0],
+    )
+
+    entry: dict = {"name": mr.canonical_name, "count": pz.count}
+    cat = best.get("card_category", "")
+    if cat == "Pokemon":
+        entry["card_type"] = "Pokemon"
+        ptype = best.get("pokemon_type")
+        if ptype and ptype != "None":
+            entry["type"] = ptype
+        stage_str = best.get("stage", "")
+        if stage_str in _STAGE_MAP:
+            s, sl = _STAGE_MAP[stage_str]
+            entry["stage"] = s
+            entry["stage_label"] = sl
+        hp = best.get("hp")
+        if hp is not None:
+            entry["hp"] = hp
+    else:
+        entry["card_type"] = cat if cat else "Trainer"
+
+    entry["is_ex"] = bool(best.get("is_ex", False))
+    return entry
+
+
+def append_entries_to_collection(raw: str, entries: list[dict]) -> str:
+    """Append new card entries to the collection array in raw JSONC text."""
+    blocks = []
+    for e in entries:
+        lines = json.dumps(e, indent=2).splitlines()
+        blocks.append("\n".join("    " + line for line in lines))
+    insertion = ",\n".join(blocks)
+    # Insert before the closing `]` of the collection array (followed by outer `}`)
+    return re.sub(
+        r'(?<=\})\n(\s*\])\n(\})\s*$',
+        lambda m: f",\n{insertion}\n{m.group(1)}\n{m.group(2)}",
+        raw,
+    )
+
+
+# ---------------------------------------------------------------------------
 # Review queue
 # ---------------------------------------------------------------------------
 
@@ -622,7 +691,8 @@ def load_review_queue() -> dict:
 def review_queue_is_unresolved(q: dict) -> bool:
     if q.get("resolved", True):
         return False
-    return bool(q.get("new_cards") or q.get("ambiguous_matches"))
+    # new_cards are now auto-added from ext_ref; only ambiguous matches need human review
+    return bool(q.get("ambiguous_matches"))
 
 
 # ---------------------------------------------------------------------------
@@ -984,7 +1054,20 @@ def main() -> int:
         print("DRY RUN — no changes written.")
         return 0
 
-    # ── Phase 4b: Write review queue ─────────────────────────────────────
+    # ── Phase 4b: Auto-add new cards from ext_ref ─────────────────────────
+    auto_added: list[dict] = []
+    still_new: list[MatchResult] = []
+    for mr in new_cards:
+        entry = build_auto_entry(mr, ext_ref)
+        if entry is not None:
+            auto_added.append(entry)
+            print(f"  Auto-adding: {mr.canonical_name} ×{mr.pz_card.count}")
+        else:
+            still_new.append(mr)
+            print(f"  Cannot auto-add (no ext_ref match): {mr.canonical_name}", file=sys.stderr)
+    new_cards = still_new
+
+    # ── Phase 4c: Write review queue ─────────────────────────────────────
     has_review_items = bool(new_cards or ambiguous)
     write_review_queue(new_cards, ambiguous, missing_from_pz)
 
@@ -992,28 +1075,39 @@ def main() -> int:
         n_new = len(new_cards)
         n_amb = len(ambiguous)
         print(f"\nReview queue written: {REVIEW_QUEUE}")
-        print(f"  {n_new} new card(s) require manual addition to collection.json")
-        print(f"  {n_amb} ambiguous match(es) require manual disambiguation")
+        if n_new:
+            print(f"  {n_new} new card(s) could not be auto-added — add to collection.json manually")
+        if n_amb:
+            print(f"  {n_amb} ambiguous match(es) require manual disambiguation")
         print("Continuing to apply count updates for matched cards...")
 
     # ── Phase 5: Apply in-place edits ────────────────────────────────────
-    if not changes:
+    if not changes and not auto_added:
         print("No count changes to apply.")
-        # Still write review queue — exit 2 if review items exist
         return 2 if has_review_items else 0
 
-    print(f"Applying {len(changes)} count update(s) to collection.json...")
-    counts = [e.get("count", 0) for e in collection_entries]
-    for ch in changes:
-        counts[ch.entry_index] = ch.new_count
-    new_total = sum(counts)
+    edited = raw_text
 
-    edited, skipped = apply_count_changes(raw_text, changes, collection_entries)
-    if skipped:
-        names = ", ".join(f"'{ch.entry.get('name')}'" for ch in skipped)
-        print(f"  ERROR: could not locate count line(s) for: {names}", file=sys.stderr)
-        print("  Aborting — collection.json not modified.", file=sys.stderr)
-        return 1
+    if changes:
+        print(f"Applying {len(changes)} count update(s) to collection.json...")
+        counts = [e.get("count", 0) for e in collection_entries]
+        for ch in changes:
+            counts[ch.entry_index] = ch.new_count
+        new_total = sum(counts)
+
+        edited, skipped = apply_count_changes(raw_text, changes, collection_entries)
+        if skipped:
+            names = ", ".join(f"'{ch.entry.get('name')}'" for ch in skipped)
+            print(f"  ERROR: could not locate count line(s) for: {names}", file=sys.stderr)
+            print("  Aborting — collection.json not modified.", file=sys.stderr)
+            return 1
+    else:
+        new_total = sum(e.get("count", 0) for e in collection_entries)
+
+    if auto_added:
+        print(f"Auto-adding {len(auto_added)} new card(s) to collection.json...")
+        edited = append_entries_to_collection(edited, auto_added)
+        new_total += sum(e.get("count", 0) for e in auto_added)
 
     edited = update_meta(edited, new_total)
 

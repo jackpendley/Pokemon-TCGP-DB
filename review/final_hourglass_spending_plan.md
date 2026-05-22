@@ -1,8 +1,8 @@
 # Final Hourglass Spending Plan
 
-Generated: 2026-05-12  
+Generated: 2026-05-21  
 Model confidence: **PZ VERIFIED**  
-Collection total: 588 cards  
+Collection total: 599 cards  
 Batch size: 10 packs per batch  
 
 > **DISCLAIMER**
@@ -17,7 +17,7 @@ Batch size: 10 packs per batch
 |---|---|---|---|
 | Conservative | 1 | 10 | Paldean Wonders |
 | Moderate | 3 | 30 | Paldean Wonders |
-| Aggressive | 5 | 50 | Paldean Wonders |
+| Aggressive | 4 | 40 | Paldean Wonders |
 | Deck_priority | 1 | 10 | Paldean Wonders |
 
 ---
@@ -32,16 +32,16 @@ Batch size: 10 packs per batch
 
 | # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | B2a | 10 | 4.8900 | 48.90 | 127 | STOP after this batch regardless of results. Do not open fur… | ✅ |
+| 1 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | STOP after this batch regardless of results. Do not open fur… | ✅ |
 
 #### Batch 1 — Paldean Wonders (B2a)
 
 - **Pack:** Paldean Wonders (Paldean Wonders)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.8900
-- **Estimated batch value:** 48.90  
+- **Adj EV per pack:** 4.7464
+- **Estimated batch value:** 47.46  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 127
+- **Missing cards in pool:** 121
 - **Stopping condition:** STOP after this batch regardless of results. Do not open further packs until slot rates are verified in PTCGP app.
 - **Re-run required:** Mandatory post-conservative check: open PTCGP app → any pack → Pack details → Offering Rates. If rates match model, upgrade to verified confidence.
 
@@ -60,34 +60,32 @@ Batch size: 10 packs per batch
 
 **Rationale:** Rates are pz_verified — no confidence haircut applied. Prioritizes collection expansion at the highest expected value. Re-run after 20 packs prevents over-committing to a pack whose EV has dropped as new cards were pulled. Switching to #2 after re-run hedges against pool depletion.
 
-**Deck-target variant:** Deck-target variant: if completing a specific chase deck is the priority goal, replace batch 3 with Crimson Blaze (Crimson Blaze, adj_ev=1.7766, deck_target_ev=0.1476). This pack has the highest deck_target_ev per 10 packs. Note: overall adj_ev is lower than the top collection-expansion packs.
-
 ### Batches
 
 | # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | B2a | 10 | 4.8900 | 48.90 | 127 | Pause after this batch. Count new unique cards acquired from… | — |
-| 2 | Paldean Wonders | B2a | 10 | 4.8900 | 48.90 | 127 | STOP after this batch. Re-run EV calculator — 20 packs opene… | ✅ |
+| 1 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | Pause after this batch. Count new unique cards acquired from… | — |
+| 2 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | STOP after this batch. Re-run EV calculator — 20 packs opene… | ✅ |
 | 3 | Extradimensional Crisis | A3a | 10 | 4.2065 | 42.06 | 88 | Stop after batch 3 and re-assess. If a deck target was pulle… | ✅ |
 
 #### Batch 1 — Paldean Wonders (B2a)
 
 - **Pack:** Paldean Wonders (Paldean Wonders)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.8900
-- **Estimated batch value:** 48.90  
+- **Adj EV per pack:** 4.7464
+- **Estimated batch value:** 47.46  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 127
+- **Missing cards in pool:** 121
 - **Stopping condition:** Pause after this batch. Count new unique cards acquired from this pool.
 
 #### Batch 2 — Paldean Wonders (B2a)
 
 - **Pack:** Paldean Wonders (Paldean Wonders)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.8900
-- **Estimated batch value:** 48.90  
+- **Adj EV per pack:** 4.7464
+- **Estimated batch value:** 47.46  
   _EV per pack is lower than batch 1 — cards already acquired reduce the effective pool. Actual expected value for this batch is less than the static estimate._
-- **Missing cards in pool:** 127
+- **Missing cards in pool:** 121
 - **Stopping condition:** STOP after this batch. Re-run EV calculator — 20 packs opened from this pool.
 - **Re-run required:** 20 packs from same pool. EV will have dropped. Re-run before continuing.
 
@@ -113,7 +111,7 @@ Batch size: 10 packs per batch
 
 ## Aggressive Scenario
 
-**Description:** Open 5 batches across the top 3 adj-EV packs plus the top deck-target pack (Crimson Blaze). Re-run EV after every 20+ packs from the same pool. Rates are pz_verified — no confidence haircut applied. Maximum resource commitment.
+**Description:** Open 4 batches across the top 3 adj-EV packs . Re-run EV after every 20+ packs from the same pool. Rates are pz_verified — no confidence haircut applied. Maximum resource commitment.
 
 **Rationale:** Maximizes collection expansion rate by rotating across the top EV packs, avoiding diminishing returns on a single pool. A deck-target batch is included for chase deck progress. Higher resource commitment — verify in-app rates as early as possible to lock in confidence.
 
@@ -121,30 +119,29 @@ Batch size: 10 packs per batch
 
 | # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | B2a | 10 | 4.8900 | 48.90 | 127 | Pause after batch 1. Count new cards from this pool. | — |
-| 2 | Paldean Wonders | B2a | 10 | 4.8900 | 48.90 | 127 | STOP after batch 2 and re-run EV calculator. 20 packs opened… | ✅ |
+| 1 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | Pause after batch 1. Count new cards from this pool. | — |
+| 2 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | STOP after batch 2 and re-run EV calculator. 20 packs opened… | ✅ |
 | 3 | Extradimensional Crisis | A3a | 10 | 4.2065 | 42.06 | 88 | Pause after switching to pack #2. First batch from new pool. | — |
 | 4 | Lugia | A4 | 10 | 4.1445 | 41.44 | 113 | Pause after switching to pack #3. First batch from new pool. | — |
-| 5 | Crimson Blaze | B1a | 10 | 1.7766 | 17.77 | 39 | Deck-target batch: Crimson Blaze has highest deck_target_ev … | ✅ |
 
 #### Batch 1 — Paldean Wonders (B2a)
 
 - **Pack:** Paldean Wonders (Paldean Wonders)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.8900
-- **Estimated batch value:** 48.90  
+- **Adj EV per pack:** 4.7464
+- **Estimated batch value:** 47.46  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 127
+- **Missing cards in pool:** 121
 - **Stopping condition:** Pause after batch 1. Count new cards from this pool.
 
 #### Batch 2 — Paldean Wonders (B2a)
 
 - **Pack:** Paldean Wonders (Paldean Wonders)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.8900
-- **Estimated batch value:** 48.90  
+- **Adj EV per pack:** 4.7464
+- **Estimated batch value:** 47.46  
   _EV lower than batch 1 — cards already acquired reduce the pool._
-- **Missing cards in pool:** 127
+- **Missing cards in pool:** 121
 - **Stopping condition:** STOP after batch 2 and re-run EV calculator. 20 packs opened from this pool.
 - **Re-run required:** 20 packs from same pool. Re-run EV before committing further.
 
@@ -168,17 +165,6 @@ Batch size: 10 packs per batch
 - **Missing cards in pool:** 113
 - **Stopping condition:** Pause after switching to pack #3. First batch from new pool.
 
-#### Batch 5 — Crimson Blaze (B1a)
-
-- **Pack:** Crimson Blaze (Crimson Blaze)
-- **Packs to open:** 10
-- **Adj EV per pack:** 1.7766
-- **Estimated batch value:** 17.77  
-  _deck_target_ev=0.1476 — per-pack deck completion value._
-- **Missing cards in pool:** 39
-- **Stopping condition:** Deck-target batch: Crimson Blaze has highest deck_target_ev per pack. Stop immediately if chase deck card is pulled.
-- **Re-run required:** Final aggressive batch. Re-run EV for updated plan after deck-target batch.
-
 ### Re-run checklist
 
 - [ ] After batch 2 (20 packs from top1 pool): re-run python3 scripts/build_pack_ev.py.
@@ -198,16 +184,16 @@ Batch size: 10 packs per batch
 
 | # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | B2a | 10 | 4.8900 | 48.90 | 127 | STOP after this batch. Check if any chase deck card was pull… | ✅ |
+| 1 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | STOP after this batch. Check if any chase deck card was pull… | ✅ |
 
 #### Batch 1 — Paldean Wonders (B2a)
 
 - **Pack:** Paldean Wonders (Paldean Wonders)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.8900
-- **Estimated batch value:** 48.90  
-  _deck_weighted_score=4.8900 (adj_ev=4.8900 + 10× deck_target_ev=0.0000). Overall adj_ev may be lower than pure collection-expansion packs._
-- **Missing cards in pool:** 127
+- **Adj EV per pack:** 4.7464
+- **Estimated batch value:** 47.46  
+  _deck_weighted_score=4.7464 (adj_ev=4.7464 + 10× deck_target_ev=0.0000). Overall adj_ev may be lower than pure collection-expansion packs._
+- **Missing cards in pool:** 121
 - **Stopping condition:** STOP after this batch. Check if any chase deck card was pulled. Re-run EV calculator before deciding on batch 2.
 - **Re-run required:** Chase deck target may have been acquired — re-run EV to update deck_weighted_score.
 

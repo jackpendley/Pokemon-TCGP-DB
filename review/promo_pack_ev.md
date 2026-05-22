@@ -4,7 +4,7 @@
 > Source: Pokemon Zone direct drop chances (`pz_verified`).
 > EV model: new card = 1.0, second copy = 0.4, +1.0 bonus for ex cards.
 
-Generated: 2026-05-21  
+Generated: 2026-05-22  
 
 ## Rankings by New Card EV
 

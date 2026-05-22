@@ -1,41 +1,42 @@
 {
   "meta": {
-    "total_cards": 588,
+    "total_cards": 599,
     "last_updated": "2026-05-21",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 588,
-  "meta_total_cards": 588,
+  "total_quantity": 599,
+  "meta_total_cards": 599,
   "count_matches_meta": true,
-  "unique_entries": 272,
+  "unique_entries": 277,
   "by_card_type": {
-    "Pokemon": 528,
-    "Trainer": 60
+    "Pokemon": 536,
+    "Trainer": 62,
+    "Supporter": 1
   },
   "by_pokemon_type": {
     "Fire": 68,
     "Grass": 77,
-    "Water": 55,
+    "Water": 59,
     "Lightning": 42,
-    "Psychic": 47,
-    "Fighting": 90,
+    "Psychic": 48,
+    "Fighting": 93,
     "Darkness": 49,
     "Metal": 20,
     "Dragon": 3,
     "Colorless": 77
   },
   "by_stage": {
-    "Basic": 355,
+    "Basic": 362,
     "Stage 1": 141,
-    "Stage 2": 32
+    "Stage 2": 33
   },
   "ex_entries": 16,
   "ex_quantity": 19,
   "trainer_subtypes": {
     "Item": 28,
     "Pokemon Tool": 2,
-    "Supporter": 26,
-    "Stadium": 4
+    "Supporter": 27,
+    "Stadium": 5
   },
   "top_cards_by_count": [
     [
@@ -63,6 +64,10 @@
       7
     ],
     [
+      "Korrina",
+      7
+    ],
+    [
       "Charmander",
       6
     ],
@@ -83,19 +88,15 @@
       6
     ],
     [
+      "Croagunk",
+      6
+    ],
+    [
       "Dwebble",
       6
     ],
     [
       "Lillipup",
-      6
-    ],
-    [
-      "Castform",
-      6
-    ],
-    [
-      "Korrina",
       6
     ]
   ],
@@ -550,6 +551,6 @@
     "partial_evolution_lines": [
       "Zorua → Zoroark"
     ],
-    "total_trainer_cards": 60
+    "total_trainer_cards": 62
   }
 }

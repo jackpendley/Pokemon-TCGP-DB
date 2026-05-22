@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-21T22:20:17+00:00",
+  "generated_at": "2026-05-22T00:32:58+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "pz_verified",
-    "collection_total": 588,
+    "collection_total": 599,
     "collection_mutated": false,
     "warnings": [
       "Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone for all 24 packs. EV rankings reflect actual pull probabilities. No inferred confidence adjustment applied."
@@ -25,23 +25,18 @@
     "unresolved": "excluded_from_ev"
   },
   "deck_targets": {
-    "count": 4,
-    "targets": {
-      "ivysaur": 1,
-      "incineroar ex": 1,
-      "zygarde ex": 1,
-      "magnezone ex": 1
-    }
+    "count": 0,
+    "targets": {}
   },
   "overall_summary": {
     "top_packs_by_total_ev": [
       {
         "pack_name": "Paldean Wonders",
         "expansion": "Paldean Wonders",
-        "pack_total_ev": 4.88996,
-        "new_card_ev": 4.8354,
+        "pack_total_ev": 4.74638,
+        "new_card_ev": 4.5961,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.88996
+        "confidence_adjusted_ev": 4.74638
       },
       {
         "pack_name": "Extradimensional Crisis",
@@ -68,22 +63,22 @@
         "confidence_adjusted_ev": 4.13388
       },
       {
-        "pack_name": "Solgaleo",
-        "expansion": "Celestial Guardians",
-        "pack_total_ev": 4.1321,
-        "new_card_ev": 3.7847,
-        "deck_target_ev": 0.05736,
-        "confidence_adjusted_ev": 4.1321
+        "pack_name": "Mew",
+        "expansion": "Mythical Island",
+        "pack_total_ev": 4.10864,
+        "new_card_ev": 3.9112,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 4.10864
       }
     ],
     "top_packs_by_new_card_ev": [
       {
         "pack_name": "Paldean Wonders",
         "expansion": "Paldean Wonders",
-        "pack_total_ev": 4.88996,
-        "new_card_ev": 4.8354,
+        "pack_total_ev": 4.74638,
+        "new_card_ev": 4.5961,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.88996
+        "confidence_adjusted_ev": 4.74638
       },
       {
         "pack_name": "Extradimensional Crisis",
@@ -120,44 +115,44 @@
     ],
     "top_packs_by_deck_target_ev": [
       {
-        "pack_name": "Crimson Blaze",
-        "expansion": "Crimson Blaze",
-        "pack_total_ev": 1.7766,
-        "new_card_ev": 1.154,
-        "deck_target_ev": 0.1476,
-        "confidence_adjusted_ev": 1.7766
+        "pack_name": "Arceus",
+        "expansion": "Triumphant Light",
+        "pack_total_ev": 3.2681,
+        "new_card_ev": 2.9199,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 3.2681
       },
       {
-        "pack_name": "Mewtwo",
+        "pack_name": "Charizard",
         "expansion": "Genetic Apex",
-        "pack_total_ev": 3.48546,
-        "new_card_ev": 3.1319,
-        "deck_target_ev": 0.10152,
-        "confidence_adjusted_ev": 3.48546
+        "pack_total_ev": 3.68406,
+        "new_card_ev": 3.4147,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 3.68406
+      },
+      {
+        "pack_name": "Crimson Blaze",
+        "expansion": "Crimson Blaze",
+        "pack_total_ev": 1.6536,
+        "new_card_ev": 1.154,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 1.6536
       },
       {
         "pack_name": "Deluxe Pack: ex",
         "expansion": "Deluxe Pack: ex",
-        "pack_total_ev": 3.3398,
+        "pack_total_ev": 3.26284,
         "new_card_ev": 3.0282,
-        "deck_target_ev": 0.08016,
-        "confidence_adjusted_ev": 3.3398
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 3.26284
       },
       {
-        "pack_name": "Solgaleo",
-        "expansion": "Celestial Guardians",
-        "pack_total_ev": 4.1321,
-        "new_card_ev": 3.7847,
-        "deck_target_ev": 0.05736,
-        "confidence_adjusted_ev": 4.1321
-      },
-      {
-        "pack_name": "Pulsing Aura",
-        "expansion": "Pulsing Aura",
-        "pack_total_ev": 1.10822,
-        "new_card_ev": 0.7549,
-        "deck_target_ev": 0.03604,
-        "confidence_adjusted_ev": 1.10822
+        "pack_name": "Dialga",
+        "expansion": "Space-Time Smackdown",
+        "pack_total_ev": 3.8418,
+        "new_card_ev": 3.7076,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 3.8418
       }
     ],
     "highest_ev_pack": "Paldean Wonders",
@@ -338,28 +333,17 @@
       "cards_in_pool": 103,
       "owned_in_pool": 64,
       "missing_in_pool": 39,
-      "collection_completion_ev": 1.7766,
+      "collection_completion_ev": 1.6536,
       "new_card_ev": 1.154,
-      "copy_ev": 0.6226,
+      "copy_ev": 0.4996,
       "ex_card_ev": 0.1602,
-      "deck_target_ev": 0.1476,
+      "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 1.7766,
-      "confidence_adjusted_ev": 1.7766,
-      "deck_weighted_score": 3.2526,
+      "pack_total_ev": 1.6536,
+      "confidence_adjusted_ev": 1.6536,
+      "deck_weighted_score": 1.6536,
       "pz_coverage": 1.0,
       "top_ev_cards": [
-        {
-          "name": "Ivysaur",
-          "rarity": "two_diamond",
-          "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0615,
-          "value": 2.4,
-          "ev_contribution": 0.1476,
-          "rate_source": "pz"
-        },
         {
           "name": "Squirtle",
           "rarity": "one_diamond",
@@ -403,21 +387,20 @@
           "value": 1.0,
           "ev_contribution": 0.0907,
           "rate_source": "pz"
-        }
-      ],
-      "deck_target_cards": [
+        },
         {
-          "name": "Ivysaur",
-          "rarity": "two_diamond",
+          "name": "Purrloin",
+          "rarity": "one_diamond",
           "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0615,
-          "value": 2.4,
-          "ev_contribution": 0.1476,
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0907,
+          "value": 1.0,
+          "ev_contribution": 0.0907,
           "rate_source": "pz"
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=pz_verified. PZ coverage: 102/102 cards. 64/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -431,39 +414,17 @@
       "cards_in_pool": 379,
       "owned_in_pool": 98,
       "missing_in_pool": 281,
-      "collection_completion_ev": 3.3398,
+      "collection_completion_ev": 3.26284,
       "new_card_ev": 3.0282,
-      "copy_ev": 0.3116,
+      "copy_ev": 0.23464,
       "ex_card_ev": 0.0798,
-      "deck_target_ev": 0.08016,
+      "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 3.3398,
-      "confidence_adjusted_ev": 3.3398,
-      "deck_weighted_score": 4.1414,
+      "pack_total_ev": 3.26284,
+      "confidence_adjusted_ev": 3.26284,
+      "deck_weighted_score": 3.26284,
       "pz_coverage": 1.0,
       "top_ev_cards": [
-        {
-          "name": "Ivysaur",
-          "rarity": "two_diamond",
-          "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0165,
-          "value": 2.4,
-          "ev_contribution": 0.0396,
-          "rate_source": "pz"
-        },
-        {
-          "name": "Incineroar ex",
-          "rarity": "four_diamond",
-          "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0133,
-          "value": 2.4,
-          "ev_contribution": 0.03192,
-          "rate_source": "pz"
-        },
         {
           "name": "Venusaur ex",
           "rarity": "four_diamond",
@@ -496,43 +457,31 @@
           "value": 2.0,
           "ev_contribution": 0.0266,
           "rate_source": "pz"
-        }
-      ],
-      "deck_target_cards": [
+        },
         {
-          "name": "Ivysaur",
-          "rarity": "two_diamond",
+          "name": "Floragato",
+          "rarity": "one_star",
           "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0165,
-          "value": 2.4,
-          "ev_contribution": 0.0396,
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0215,
+          "value": 1.0,
+          "ev_contribution": 0.0215,
           "rate_source": "pz"
         },
         {
-          "name": "Incineroar ex",
-          "rarity": "four_diamond",
+          "name": "Crawdaunt",
+          "rarity": "one_star",
           "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0133,
-          "value": 2.4,
-          "ev_contribution": 0.03192,
-          "rate_source": "pz"
-        },
-        {
-          "name": "Ivysaur",
-          "rarity": "two_diamond",
-          "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0036,
-          "value": 2.4,
-          "ev_contribution": 0.00864,
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0215,
+          "value": 1.0,
+          "ev_contribution": 0.0215,
           "rate_source": "pz"
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=pz_verified. PZ coverage: 379/379 cards. 98/379 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1275,15 +1224,15 @@
       "cards_in_pool": 139,
       "owned_in_pool": 35,
       "missing_in_pool": 104,
-      "collection_completion_ev": 3.8101,
+      "collection_completion_ev": 3.7975,
       "new_card_ev": 3.6471,
-      "copy_ev": 0.163,
-      "ex_card_ev": 0.26828,
-      "deck_target_ev": 0.01428,
+      "copy_ev": 0.1504,
+      "ex_card_ev": 0.25568,
+      "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 3.8101,
-      "confidence_adjusted_ev": 3.8101,
-      "deck_weighted_score": 3.9529,
+      "pack_total_ev": 3.7975,
+      "confidence_adjusted_ev": 3.7975,
+      "deck_weighted_score": 3.7975,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -1342,19 +1291,7 @@
           "rate_source": "pz"
         }
       ],
-      "deck_target_cards": [
-        {
-          "name": "Incineroar ex",
-          "rarity": "double_star",
-          "is_ex": true,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0042,
-          "value": 3.4,
-          "ev_contribution": 0.01428,
-          "rate_source": "pz"
-        }
-      ],
+      "deck_target_cards": [],
       "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards. 35/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1530,28 +1467,17 @@
       "cards_in_pool": 126,
       "owned_in_pool": 42,
       "missing_in_pool": 84,
-      "collection_completion_ev": 3.48546,
+      "collection_completion_ev": 3.40086,
       "new_card_ev": 3.1319,
-      "copy_ev": 0.35356,
+      "copy_ev": 0.26896,
       "ex_card_ev": 0.0,
-      "deck_target_ev": 0.10152,
+      "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 3.48546,
-      "confidence_adjusted_ev": 3.48546,
-      "deck_weighted_score": 4.50066,
+      "pack_total_ev": 3.40086,
+      "confidence_adjusted_ev": 3.40086,
+      "deck_weighted_score": 3.40086,
       "pz_coverage": 1.0,
       "top_ev_cards": [
-        {
-          "name": "Ivysaur",
-          "rarity": "two_diamond",
-          "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0423,
-          "value": 2.4,
-          "ev_contribution": 0.10152,
-          "rate_source": "pz"
-        },
         {
           "name": "Weedle",
           "rarity": "one_diamond",
@@ -1595,21 +1521,20 @@
           "value": 1.0,
           "ev_contribution": 0.0588,
           "rate_source": "pz"
-        }
-      ],
-      "deck_target_cards": [
+        },
         {
-          "name": "Ivysaur",
-          "rarity": "two_diamond",
+          "name": "Salazzle",
+          "rarity": "one_diamond",
           "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0423,
-          "value": 2.4,
-          "ev_contribution": 0.10152,
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0588,
+          "value": 1.0,
+          "ev_contribution": 0.0588,
           "rate_source": "pz"
         }
       ],
+      "deck_target_cards": [],
       "notes": "slot_rates=pz_verified. PZ coverage: 124/124 cards. 42/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
@@ -1621,17 +1546,17 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 131,
-      "owned_in_pool": 4,
-      "missing_in_pool": 127,
-      "collection_completion_ev": 4.88996,
-      "new_card_ev": 4.8354,
-      "copy_ev": 0.05456,
+      "owned_in_pool": 10,
+      "missing_in_pool": 121,
+      "collection_completion_ev": 4.74638,
+      "new_card_ev": 4.5961,
+      "copy_ev": 0.15028,
       "ex_card_ev": 0.2326,
       "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 4.88996,
-      "confidence_adjusted_ev": 4.88996,
-      "deck_weighted_score": 4.88996,
+      "pack_total_ev": 4.74638,
+      "confidence_adjusted_ev": 4.74638,
+      "deck_weighted_score": 4.74638,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -1691,7 +1616,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 130/130 cards. 4/131 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 130/130 cards. 10/131 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Palkia",
@@ -1864,17 +1789,17 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 234,
-      "owned_in_pool": 169,
-      "missing_in_pool": 65,
-      "collection_completion_ev": 1.10822,
-      "new_card_ev": 0.7549,
-      "copy_ev": 0.35332,
-      "ex_card_ev": 0.19716,
-      "deck_target_ev": 0.03604,
+      "owned_in_pool": 170,
+      "missing_in_pool": 64,
+      "collection_completion_ev": 1.07126,
+      "new_card_ev": 0.7463,
+      "copy_ev": 0.32496,
+      "ex_card_ev": 0.16536,
+      "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 1.10822,
-      "confidence_adjusted_ev": 1.10822,
-      "deck_weighted_score": 1.46862,
+      "pack_total_ev": 1.07126,
+      "confidence_adjusted_ev": 1.07126,
+      "deck_weighted_score": 1.07126,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -1933,42 +1858,8 @@
           "rate_source": "pz"
         }
       ],
-      "deck_target_cards": [
-        {
-          "name": "Magnezone ex",
-          "rarity": "four_diamond",
-          "is_ex": true,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0084,
-          "value": 3.4,
-          "ev_contribution": 0.02856,
-          "rate_source": "pz"
-        },
-        {
-          "name": "Magnezone ex",
-          "rarity": "double_star",
-          "is_ex": true,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0011,
-          "value": 3.4,
-          "ev_contribution": 0.00374,
-          "rate_source": "pz"
-        },
-        {
-          "name": "Magnezone ex",
-          "rarity": "double_star",
-          "is_ex": true,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0011,
-          "value": 3.4,
-          "ev_contribution": 0.00374,
-          "rate_source": "pz"
-        }
-      ],
-      "notes": "slot_rates=pz_verified. PZ coverage: 233/233 cards. 169/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "deck_target_cards": [],
+      "notes": "slot_rates=pz_verified. PZ coverage: 233/233 cards. 170/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Secluded Springs",
@@ -2143,15 +2034,15 @@
       "cards_in_pool": 140,
       "owned_in_pool": 35,
       "missing_in_pool": 105,
-      "collection_completion_ev": 4.1321,
+      "collection_completion_ev": 4.0843,
       "new_card_ev": 3.7847,
-      "copy_ev": 0.3474,
+      "copy_ev": 0.2996,
       "ex_card_ev": 0.0,
-      "deck_target_ev": 0.05736,
+      "deck_target_ev": 0.0,
       "exploratory_ev": 0.0,
-      "pack_total_ev": 4.1321,
-      "confidence_adjusted_ev": 4.1321,
-      "deck_weighted_score": 4.7057,
+      "pack_total_ev": 4.0843,
+      "confidence_adjusted_ev": 4.0843,
+      "deck_weighted_score": 4.0843,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -2210,52 +2101,7 @@
           "rate_source": "pz"
         }
       ],
-      "deck_target_cards": [
-        {
-          "name": "Incineroar ex",
-          "rarity": "four_diamond",
-          "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0165,
-          "value": 2.4,
-          "ev_contribution": 0.0396,
-          "rate_source": "pz"
-        },
-        {
-          "name": "Ivysaur",
-          "rarity": "one_star",
-          "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0036,
-          "value": 2.4,
-          "ev_contribution": 0.00864,
-          "rate_source": "pz"
-        },
-        {
-          "name": "Incineroar ex",
-          "rarity": "double_star",
-          "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0019,
-          "value": 2.4,
-          "ev_contribution": 0.00456,
-          "rate_source": "pz"
-        },
-        {
-          "name": "Incineroar ex",
-          "rarity": "double_star",
-          "is_ex": false,
-          "is_deck_target": true,
-          "owned": 1,
-          "pull_prob": 0.0019,
-          "value": 2.4,
-          "ev_contribution": 0.00456,
-          "rate_source": "pz"
-        }
-      ],
+      "deck_target_cards": [],
       "notes": "slot_rates=pz_verified. PZ coverage: 139/139 cards. 35/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     }
   ],

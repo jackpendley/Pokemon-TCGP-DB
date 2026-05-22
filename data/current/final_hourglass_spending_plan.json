@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-12",
+  "generated_at": "2026-05-21",
   "generated_by": "scripts/generate_hourglass_spending_plan.py",
   "disclaimer": "NOT OFFICIAL: Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone (not the official PTCGP in-app Offering Rates screen). EV calculations reflect actual pull probabilities with no confidence haircut applied. Rankings are suitable for planning. Re-run EV after every 20+ packs to account for collection changes.",
   "model_confidence": "pz_verified",
-  "collection_total": 588,
+  "collection_total": 599,
   "collection_mutated": false,
   "batch_size": 10,
   "model_version": "0.6.0",
@@ -20,10 +20,10 @@
           "expansion": "Paldean Wonders",
           "set_code": "B2a",
           "packs_to_open": 10,
-          "adj_ev_per_pack": 4.88996,
-          "expected_value_this_batch": 48.8996,
+          "adj_ev_per_pack": 4.74638,
+          "expected_value_this_batch": 47.4638,
           "expected_value_note": "First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired.",
-          "missing_in_pool": 127,
+          "missing_in_pool": 121,
           "stopping_condition": "STOP after this batch regardless of results. Do not open further packs until slot rates are verified in PTCGP app.",
           "rerun_trigger": true,
           "rerun_reason": "Mandatory post-conservative check: open PTCGP app → any pack → Pack details → Offering Rates. If rates match model, upgrade to verified confidence."
@@ -42,7 +42,7 @@
       "label": "moderate",
       "description": "Open 3 batches: 2 from the top adj-EV pack, then 1 from the #2 adj-EV pack. Re-run the EV calculator after batch 2 (20 packs from same pool). Stop after each batch to check progress.",
       "rationale": "Rates are pz_verified — no confidence haircut applied. Prioritizes collection expansion at the highest expected value. Re-run after 20 packs prevents over-committing to a pack whose EV has dropped as new cards were pulled. Switching to #2 after re-run hedges against pool depletion.",
-      "deck_target_variant": "Deck-target variant: if completing a specific chase deck is the priority goal, replace batch 3 with Crimson Blaze (Crimson Blaze, adj_ev=1.7766, deck_target_ev=0.1476). This pack has the highest deck_target_ev per 10 packs. Note: overall adj_ev is lower than the top collection-expansion packs.",
+      "deck_target_variant": null,
       "batches": [
         {
           "batch_number": 1,
@@ -50,10 +50,10 @@
           "expansion": "Paldean Wonders",
           "set_code": "B2a",
           "packs_to_open": 10,
-          "adj_ev_per_pack": 4.88996,
-          "expected_value_this_batch": 48.8996,
+          "adj_ev_per_pack": 4.74638,
+          "expected_value_this_batch": 47.4638,
           "expected_value_note": "First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired.",
-          "missing_in_pool": 127,
+          "missing_in_pool": 121,
           "stopping_condition": "Pause after this batch. Count new unique cards acquired from this pool.",
           "rerun_trigger": false,
           "rerun_reason": null
@@ -64,10 +64,10 @@
           "expansion": "Paldean Wonders",
           "set_code": "B2a",
           "packs_to_open": 10,
-          "adj_ev_per_pack": 4.88996,
-          "expected_value_this_batch": 48.8996,
+          "adj_ev_per_pack": 4.74638,
+          "expected_value_this_batch": 47.4638,
           "expected_value_note": "EV per pack is lower than batch 1 — cards already acquired reduce the effective pool. Actual expected value for this batch is less than the static estimate.",
-          "missing_in_pool": 127,
+          "missing_in_pool": 121,
           "stopping_condition": "STOP after this batch. Re-run EV calculator — 20 packs opened from this pool.",
           "rerun_trigger": true,
           "rerun_reason": "20 packs from same pool. EV will have dropped. Re-run before continuing."
@@ -98,7 +98,7 @@
     },
     {
       "label": "aggressive",
-      "description": "Open 5 batches across the top 3 adj-EV packs plus the top deck-target pack (Crimson Blaze). Re-run EV after every 20+ packs from the same pool. Rates are pz_verified — no confidence haircut applied. Maximum resource commitment.",
+      "description": "Open 4 batches across the top 3 adj-EV packs . Re-run EV after every 20+ packs from the same pool. Rates are pz_verified — no confidence haircut applied. Maximum resource commitment.",
       "rationale": "Maximizes collection expansion rate by rotating across the top EV packs, avoiding diminishing returns on a single pool. A deck-target batch is included for chase deck progress. Higher resource commitment — verify in-app rates as early as possible to lock in confidence.",
       "batches": [
         {
@@ -107,10 +107,10 @@
           "expansion": "Paldean Wonders",
           "set_code": "B2a",
           "packs_to_open": 10,
-          "adj_ev_per_pack": 4.88996,
-          "expected_value_this_batch": 48.8996,
+          "adj_ev_per_pack": 4.74638,
+          "expected_value_this_batch": 47.4638,
           "expected_value_note": "First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired.",
-          "missing_in_pool": 127,
+          "missing_in_pool": 121,
           "stopping_condition": "Pause after batch 1. Count new cards from this pool.",
           "rerun_trigger": false,
           "rerun_reason": null
@@ -121,10 +121,10 @@
           "expansion": "Paldean Wonders",
           "set_code": "B2a",
           "packs_to_open": 10,
-          "adj_ev_per_pack": 4.88996,
-          "expected_value_this_batch": 48.8996,
+          "adj_ev_per_pack": 4.74638,
+          "expected_value_this_batch": 47.4638,
           "expected_value_note": "EV lower than batch 1 — cards already acquired reduce the pool.",
-          "missing_in_pool": 127,
+          "missing_in_pool": 121,
           "stopping_condition": "STOP after batch 2 and re-run EV calculator. 20 packs opened from this pool.",
           "rerun_trigger": true,
           "rerun_reason": "20 packs from same pool. Re-run EV before committing further."
@@ -156,24 +156,10 @@
           "stopping_condition": "Pause after switching to pack #3. First batch from new pool.",
           "rerun_trigger": false,
           "rerun_reason": null
-        },
-        {
-          "batch_number": 5,
-          "pack_name": "Crimson Blaze",
-          "expansion": "Crimson Blaze",
-          "set_code": "B1a",
-          "packs_to_open": 10,
-          "adj_ev_per_pack": 1.7766,
-          "expected_value_this_batch": 17.766,
-          "expected_value_note": "deck_target_ev=0.1476 — per-pack deck completion value.",
-          "missing_in_pool": 39,
-          "stopping_condition": "Deck-target batch: Crimson Blaze has highest deck_target_ev per pack. Stop immediately if chase deck card is pulled.",
-          "rerun_trigger": true,
-          "rerun_reason": "Final aggressive batch. Re-run EV for updated plan after deck-target batch."
         }
       ],
-      "total_batches": 5,
-      "total_packs": 50,
+      "total_batches": 4,
+      "total_packs": 40,
       "rerun_checklist": [
         "After batch 2 (20 packs from top1 pool): re-run python3 scripts/build_pack_ev.py.",
         "After completing any deck target: re-run python3 scripts/build_pack_ev.py.",
@@ -188,165 +174,11 @@
       "deck_weighted_top": {
         "pack_name": "Paldean Wonders",
         "expansion": "Paldean Wonders",
-        "adj_ev": 4.88996,
+        "adj_ev": 4.74638,
         "deck_target_ev": 0.0,
-        "deck_weighted_score": 4.88996
+        "deck_weighted_score": 4.74638
       },
-      "per_chase_deck": {
-        "Mega Venusaur ex": {
-          "card_needed": "Ivysaur",
-          "short_by": 1,
-          "best_pack": "Crimson Blaze",
-          "best_ev": 0.1476,
-          "best_pull_prob": 0.0615,
-          "candidates": [
-            {
-              "pack_name": "Crimson Blaze",
-              "expansion": "Crimson Blaze",
-              "ev_contribution": 0.1476,
-              "pull_prob": 0.0615,
-              "owned": 1,
-              "rarity": "two_diamond",
-              "value": 2.4
-            },
-            {
-              "pack_name": "Mewtwo",
-              "expansion": "Genetic Apex",
-              "ev_contribution": 0.10152,
-              "pull_prob": 0.0423,
-              "owned": 1,
-              "rarity": "two_diamond",
-              "value": 2.4
-            },
-            {
-              "pack_name": "Deluxe Pack: ex",
-              "expansion": "Deluxe Pack: ex",
-              "ev_contribution": 0.0396,
-              "pull_prob": 0.0165,
-              "owned": 1,
-              "rarity": "two_diamond",
-              "value": 2.4
-            },
-            {
-              "pack_name": "Deluxe Pack: ex",
-              "expansion": "Deluxe Pack: ex",
-              "ev_contribution": 0.00864,
-              "pull_prob": 0.0036,
-              "owned": 1,
-              "rarity": "two_diamond",
-              "value": 2.4
-            },
-            {
-              "pack_name": "Solgaleo",
-              "expansion": "Celestial Guardians",
-              "ev_contribution": 0.00864,
-              "pull_prob": 0.0036,
-              "owned": 1,
-              "rarity": "one_star",
-              "value": 2.4
-            }
-          ]
-        },
-        "Incineroar ex": {
-          "card_needed": "Incineroar ex",
-          "short_by": 1,
-          "best_pack": "Solgaleo",
-          "best_ev": 0.0396,
-          "best_pull_prob": 0.0165,
-          "candidates": [
-            {
-              "pack_name": "Solgaleo",
-              "expansion": "Celestial Guardians",
-              "ev_contribution": 0.0396,
-              "pull_prob": 0.0165,
-              "owned": 1,
-              "rarity": "four_diamond",
-              "value": 2.4
-            },
-            {
-              "pack_name": "Deluxe Pack: ex",
-              "expansion": "Deluxe Pack: ex",
-              "ev_contribution": 0.03192,
-              "pull_prob": 0.0133,
-              "owned": 1,
-              "rarity": "four_diamond",
-              "value": 2.4
-            },
-            {
-              "pack_name": "Mega Gyarados",
-              "expansion": "Mega Rising",
-              "ev_contribution": 0.01428,
-              "pull_prob": 0.0042,
-              "owned": 1,
-              "rarity": "double_star",
-              "value": 3.4
-            },
-            {
-              "pack_name": "Solgaleo",
-              "expansion": "Celestial Guardians",
-              "ev_contribution": 0.00456,
-              "pull_prob": 0.0019,
-              "owned": 1,
-              "rarity": "double_star",
-              "value": 2.4
-            },
-            {
-              "pack_name": "Solgaleo",
-              "expansion": "Celestial Guardians",
-              "ev_contribution": 0.00456,
-              "pull_prob": 0.0019,
-              "owned": 1,
-              "rarity": "double_star",
-              "value": 2.4
-            }
-          ]
-        },
-        "Zygarde ex Fighting": {
-          "card_needed": "Zygarde ex",
-          "short_by": 1,
-          "best_pack": null,
-          "best_ev": 0.0,
-          "best_pull_prob": 0.0,
-          "candidates": [],
-          "note": "PROMO-B card — cannot be obtained from any pack; must be acquired through events or missions"
-        },
-        "Magnezone ex (Clemont Engine)": {
-          "card_needed": "Magnezone ex",
-          "short_by": 1,
-          "best_pack": "Pulsing Aura",
-          "best_ev": 0.02856,
-          "best_pull_prob": 0.0084,
-          "candidates": [
-            {
-              "pack_name": "Pulsing Aura",
-              "expansion": "Pulsing Aura",
-              "ev_contribution": 0.02856,
-              "pull_prob": 0.0084,
-              "owned": 1,
-              "rarity": "four_diamond",
-              "value": 3.4
-            },
-            {
-              "pack_name": "Pulsing Aura",
-              "expansion": "Pulsing Aura",
-              "ev_contribution": 0.00374,
-              "pull_prob": 0.0011,
-              "owned": 1,
-              "rarity": "double_star",
-              "value": 3.4
-            },
-            {
-              "pack_name": "Pulsing Aura",
-              "expansion": "Pulsing Aura",
-              "ev_contribution": 0.00374,
-              "pull_prob": 0.0011,
-              "owned": 1,
-              "rarity": "double_star",
-              "value": 3.4
-            }
-          ]
-        }
-      },
+      "per_chase_deck": {},
       "batches": [
         {
           "batch_number": 1,
@@ -354,10 +186,10 @@
           "expansion": "Paldean Wonders",
           "set_code": "B2a",
           "packs_to_open": 10,
-          "adj_ev_per_pack": 4.88996,
-          "expected_value_this_batch": 48.8996,
-          "expected_value_note": "deck_weighted_score=4.8900 (adj_ev=4.8900 + 10× deck_target_ev=0.0000). Overall adj_ev may be lower than pure collection-expansion packs.",
-          "missing_in_pool": 127,
+          "adj_ev_per_pack": 4.74638,
+          "expected_value_this_batch": 47.4638,
+          "expected_value_note": "deck_weighted_score=4.7464 (adj_ev=4.7464 + 10× deck_target_ev=0.0000). Overall adj_ev may be lower than pure collection-expansion packs.",
+          "missing_in_pool": 121,
           "stopping_condition": "STOP after this batch. Check if any chase deck card was pulled. Re-run EV calculator before deciding on batch 2.",
           "rerun_trigger": true,
           "rerun_reason": "Chase deck target may have been acquired — re-run EV to update deck_weighted_score."
