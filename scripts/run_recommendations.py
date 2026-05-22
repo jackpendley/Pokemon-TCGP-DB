@@ -116,10 +116,13 @@ def _find_latest_pz_json() -> Path:
 
 
 def _read_meta_total() -> str:
-    raw = (ROOT / "collection.json").read_text(encoding="utf-8")
-    cleaned = re.sub(r"//[^\n]*", "", raw)
-    data = json.loads(cleaned)
-    return str(data.get("meta", {}).get("total_cards", 380))
+    try:
+        raw = (ROOT / "collection.json").read_text(encoding="utf-8")
+        cleaned = re.sub(r"//[^\n]*", "", raw)
+        data = json.loads(cleaned)
+        return str(data.get("meta", {}).get("total_cards", 380))
+    except (FileNotFoundError, json.JSONDecodeError, KeyError):
+        return "0"
 
 
 def _collection_status() -> str:
@@ -201,7 +204,8 @@ def main() -> int:
 
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    LOG_FILE.write_text(f"Pipeline run: {ts}\n", encoding="utf-8")
+    with LOG_FILE.open("a", encoding="utf-8") as _f:
+        _f.write(f"\n{'=' * 60}\nPipeline run: {ts}\n{'=' * 60}\n")
 
     sync_had_review_items = False
     print()

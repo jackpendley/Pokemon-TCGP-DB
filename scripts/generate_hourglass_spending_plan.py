@@ -20,6 +20,7 @@ import json
 import csv
 import argparse
 import sys
+from datetime import date
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
@@ -34,7 +35,7 @@ OUT_MD = BASE / "review/final_hourglass_spending_plan.md"
 OUT_CSV = BASE / "data/exports/final_hourglass_spending_plan.csv"
 
 BATCH_SIZE = 10
-GENERATED_AT = "2026-05-12"
+GENERATED_AT = date.today().isoformat()
 
 DISCLAIMER = (
     "NOT OFFICIAL: Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from "
@@ -56,7 +57,10 @@ GLOBAL_RERUN_CHECKLIST = [
 
 def load_data():
     ev = json.loads(PACK_EV_JSON.read_text(encoding="utf-8"))
-    recs = json.loads(RECOMMENDATIONS_JSON.read_text(encoding="utf-8"))
+    try:
+        recs = json.loads(RECOMMENDATIONS_JSON.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        recs = {}
     model = json.loads(PULL_MODEL_JSON.read_text(encoding="utf-8"))
     raw_coll = json.loads(COLLECTION_NORMALIZED_JSON.read_text(encoding="utf-8"))
     coll = raw_coll  # full dict

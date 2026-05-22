@@ -247,6 +247,12 @@ def build_records(ext_index: dict, dry_run: bool) -> list[dict]:
             stats["warnings"].append(f"Could not parse {fpath.name}")
             continue
 
+        if set_code not in SINGLE_PACK_SETS and set_code not in MULTI_PACK_SETS:
+            warn = (f"Unknown set structure for {set_code}; assumed single-pack. "
+                    "Add to SINGLE_PACK_SETS or MULTI_PACK_SETS if incorrect.")
+            if warn not in stats["warnings"]:
+                stats["warnings"].append(warn)
+
         # Supplemental metadata from ext_ref
         ext = ext_index.get((set_code, number), {})
         card_category = ext.get("card_category")

@@ -503,24 +503,29 @@ def _find_count_lines(raw: str, collection: list[dict]) -> dict[int, int]:
     return count_line
 
 
-def apply_count_changes(raw: str, changes: list[CountChange], collection: list[dict]) -> str:
+def apply_count_changes(
+    raw: str, changes: list[CountChange], collection: list[dict]
+) -> tuple[str, list[CountChange]]:
     """
     Apply count changes to the raw JSONC text in-place.
     Replacements are made from bottom to top so line numbers stay valid.
+
+    Returns (edited_text, skipped) where skipped is any changes that could not
+    be located in the file. Callers must treat a non-empty skipped list as an error.
     """
     count_lines = _find_count_lines(raw, collection)
     lines = raw.split("\n")
 
-    # Sort changes by line number descending (bottom to top)
     indexed_changes = []
+    skipped: list[CountChange] = []
     for ch in changes:
         lineno = count_lines.get(ch.entry_index)
         if lineno is None:
-            print(f"  WARNING: could not locate count line for '{ch.entry.get('name')}' — skipping",
-                  file=sys.stderr)
+            skipped.append(ch)
             continue
         indexed_changes.append((lineno, ch))
 
+    # Sort bottom-to-top so earlier line numbers stay valid during replacement
     indexed_changes.sort(key=lambda x: x[0], reverse=True)
 
     for lineno, ch in indexed_changes:
@@ -533,7 +538,7 @@ def apply_count_changes(raw: str, changes: list[CountChange], collection: list[d
         )
         lines[lineno] = new_line
 
-    return "\n".join(lines)
+    return "\n".join(lines), skipped
 
 
 def update_meta(raw: str, new_total: int) -> str:
@@ -1003,7 +1008,13 @@ def main() -> int:
         counts[ch.entry_index] = ch.new_count
     new_total = sum(counts)
 
-    edited = apply_count_changes(raw_text, changes, collection_entries)
+    edited, skipped = apply_count_changes(raw_text, changes, collection_entries)
+    if skipped:
+        names = ", ".join(f"'{ch.entry.get('name')}'" for ch in skipped)
+        print(f"  ERROR: could not locate count line(s) for: {names}", file=sys.stderr)
+        print("  Aborting — collection.json not modified.", file=sys.stderr)
+        return 1
+
     edited = update_meta(edited, new_total)
 
     COLLECTION_JSON.write_text(edited, encoding="utf-8")

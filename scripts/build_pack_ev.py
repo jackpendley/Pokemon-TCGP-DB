@@ -90,8 +90,8 @@ def load_collection(path: Path) -> dict:
     """Returns {normalized_name: total_count} — sums counts across set variants."""
     raw = json.loads(path.read_text(encoding="utf-8"))
     result = {}
-    for e in raw["collection"]:
-        nn = normalize(e["name"])
+    for e in raw.get("collection", []):
+        nn = _norm_name(e["name"])
         result[nn] = result.get(nn, 0) + e["count"]
     return result
 
@@ -129,7 +129,7 @@ def load_deck_targets(path: Path) -> dict:
     targets = {}
     for deck in raw.get("decks", []):
         for mc in deck.get("missing_cards", []):
-            nn = normalize(mc["name"])
+            nn = _norm_name(mc["name"])
             # If a card appears in multiple decks, take the max needed
             needed = mc.get("short_by", 1)
             targets[nn] = max(targets.get(nn, 0), needed)
@@ -308,7 +308,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         card_name = card.get("card_name", "")
         rarity    = card.get("rarity")
         is_ex     = bool(card.get("is_ex"))
-        nn        = normalize(card_name)
+        nn        = _norm_name(card_name)
         is_dt     = nn in deck_targets
 
         owned = collection.get(nn, 0)
@@ -449,7 +449,7 @@ def build(collection, pull_model, pack_cards, expansion_shared, deck_targets,
                         name_l = _norm_name(pz_card.get("name", ""))
                         pct = pz_card.get("drop_chance_pct")
                         if name_l and pct is not None:
-                            pz_name_odds[name_l] = pz_name_odds.get(name_l, 0.0) + pct / 100.0
+                            pz_name_odds[name_l] = max(pz_name_odds.get(name_l, 0.0), pct / 100.0)
         record = compute_pack_ev_record(
             pack_record, all_pool_cards, collection, deck_targets, pz_card_odds, pz_name_odds
         )

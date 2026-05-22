@@ -144,7 +144,7 @@ def validate(data, expected_total):
             f"but meta.total_cards = {meta_declared}. "
             f"Difference of {abs(total_quantity - meta_declared)} cards unaccounted for."
         )
-    if total_quantity != expected_total:
+    if expected_total != meta_declared and total_quantity != expected_total:
         failures.append(
             f"TOTAL MISMATCH: actual quantity sum {total_quantity} != expected {expected_total}"
         )
