@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-24T18:23:55+00:00",
+  "generated_at": "2026-05-24T18:24:58+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "pz_verified",
-    "collection_total": 697,
+    "collection_total": 699,
     "collection_mutated": false,
-    "inputs_hash": "a781404f61b9657127bdbe0d9ced6cdcbf0ffdf01b00d0e33de483387d5e9fff",
+    "inputs_hash": "f9368780526ca9db7d821a3b162bef2bc89d895e9d537987a57c7c1a57914cf1",
     "warnings": [
       "Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone for all 24 packs. EV rankings reflect actual pull probabilities. No inferred confidence adjustment applied."
     ]

@@ -1,36 +1,36 @@
 {
   "meta": {
-    "total_cards": 682,
-    "last_updated": "2026-05-23",
+    "total_cards": 699,
+    "last_updated": "2026-05-24",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 682,
-  "meta_total_cards": 682,
+  "total_quantity": 699,
+  "meta_total_cards": 699,
   "count_matches_meta": true,
-  "unique_entries": 324,
+  "unique_entries": 330,
   "by_card_type": {
-    "Pokemon": 615,
+    "Pokemon": 632,
     "Trainer": 67
   },
   "by_pokemon_type": {
     "Fire": 72,
-    "Grass": 93,
-    "Water": 73,
-    "Lightning": 51,
+    "Grass": 95,
+    "Water": 79,
+    "Lightning": 53,
     "Psychic": 52,
-    "Fighting": 103,
-    "Darkness": 53,
+    "Fighting": 107,
+    "Darkness": 54,
     "Metal": 26,
     "Dragon": 3,
-    "Colorless": 89
+    "Colorless": 91
   },
   "by_stage": {
-    "Basic": 414,
-    "Stage 1": 162,
-    "Stage 2": 39
+    "Basic": 423,
+    "Stage 1": 167,
+    "Stage 2": 42
   },
-  "ex_entries": 17,
-  "ex_quantity": 20,
+  "ex_entries": 18,
+  "ex_quantity": 21,
   "trainer_subtypes": {
     "Item": 29,
     "Pokemon Tool": 3,
@@ -44,14 +44,14 @@
     ],
     [
       "Shroomish",
-      8
-    ],
-    [
-      "Swadloon",
-      8
+      9
     ],
     [
       "Applin",
+      9
+    ],
+    [
+      "Swadloon",
       8
     ],
     [
@@ -63,11 +63,19 @@
       7
     ],
     [
+      "Sobble",
+      7
+    ],
+    [
       "Electrode",
       7
     ],
     [
       "Nosepass",
+      7
+    ],
+    [
+      "Toxicroak",
       7
     ],
     [
@@ -88,14 +96,6 @@
     ],
     [
       "Magnemite",
-      6
-    ],
-    [
-      "Spritzee",
-      6
-    ],
-    [
-      "Toxicroak",
       6
     ]
   ],
@@ -515,7 +515,8 @@
       "Mega Mawile ex",
       "Corviknight ex",
       "Snorlax ex",
-      "Lugia ex"
+      "Lugia ex",
+      "Mega Lucario ex"
     ],
     "strong_evolution_lines": [
       "Charmander → Charmeleon → Charizard",

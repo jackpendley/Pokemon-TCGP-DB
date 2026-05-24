@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 682,
-    "last_updated": "2026-05-23",
+    "total_cards": 699,
+    "last_updated": "2026-05-24",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -292,7 +292,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Spore",
-      "count": 8
+      "count": 9
     },
     {
       "name": "Budew",
@@ -373,7 +373,7 @@
       "hp": 40,
       "card_type": "Pokemon",
       "attack": "Share",
-      "count": 8
+      "count": 9
     },
     {
       "name": "Leavanny",
@@ -561,7 +561,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Find a Friend",
-      "count": 5
+      "count": 7
     },
     {
       "name": "Wartortle",
@@ -758,7 +758,7 @@
       "stage": 0,
       "hp": 110,
       "card_type": "Pokemon",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Beartic",
@@ -907,7 +907,7 @@
       "hp": 50,
       "card_type": "Pokemon",
       "attack": "Single Shot Blast 50",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Electrode",
@@ -1374,7 +1374,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Poison Jab 40",
-      "count": 6
+      "count": 7
     },
     {
       "name": "Croagunk",
@@ -1645,7 +1645,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Poison Jab 20",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Scraggy",
@@ -2053,7 +2053,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Knock Away 30+",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Minccino",
@@ -2447,7 +2447,7 @@
     },
     {
       "name": "Gallade",
-      "count": 3,
+      "count": 5,
       "card_type": "Pokemon",
       "type": "Fighting",
       "stage": 2,
@@ -2921,6 +2921,66 @@
       "stage_label": "Basic",
       "hp": 120,
       "is_ex": false
+    },
+    {
+      "name": "Ludicolo",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 140,
+      "is_ex": false
+    },
+    {
+      "name": "Panpour",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "is_ex": false
+    },
+    {
+      "name": "Palpitoad",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 90,
+      "is_ex": false
+    },
+    {
+      "name": "Boltund",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 110,
+      "is_ex": false
+    },
+    {
+      "name": "Swablu",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "is_ex": false
+    },
+    {
+      "name": "Mega Lucario ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 190,
+      "is_ex": true
     }
   ]
 }

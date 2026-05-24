@@ -3,7 +3,7 @@
   "generated_by": "scripts/generate_hourglass_spending_plan.py",
   "disclaimer": "NOT OFFICIAL: Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone (not the official PTCGP in-app Offering Rates screen). EV calculations reflect actual pull probabilities with no confidence haircut applied. Rankings are suitable for planning. Re-run EV after every 20+ packs to account for collection changes.",
   "model_confidence": "pz_verified",
-  "collection_total": 697,
+  "collection_total": 699,
   "collection_mutated": false,
   "batch_size": 10,
   "hourglass_per_pack": 12,
