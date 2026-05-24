@@ -164,6 +164,8 @@ def normalize_pz_record(raw: dict) -> PZCard | None:
     try:
         count = int(count_raw)
     except (TypeError, ValueError):
+        if count_raw is not None:
+            print(f"WARNING: dropped PZ card '{name}' — count parse failed: {count_raw!r}", file=sys.stderr)
         count = 0
     if count <= 0:
         return None
@@ -310,6 +312,23 @@ def match_pz_cards(
             )
         matched_indices.update(remaining)
 
+    still_ambiguous = [r for r in results if r.status == "AMBIGUOUS"]
+    if still_ambiguous:
+        lines = []
+        for r in still_ambiguous:
+            cands = ", ".join(
+                f"{c.get('name')}(hp={c.get('hp')},variant={c.get('variant','')})"
+                for c in r.candidates
+            )
+            lines.append(
+                f"  '{r.pz_card.raw_name}' "
+                f"(set={r.pz_card.set_code}, num={r.pz_card.card_number}) → {cands}"
+            )
+        raise RuntimeError(
+            f"Unresolvable match for {len(still_ambiguous)} card(s) — "
+            f"add HP/rarity/set_code to ext_ref or pack_sources:\n" + "\n".join(lines)
+        )
+
     return results
 
 
@@ -351,6 +370,8 @@ def _match_one(
     if not canonical_name:
         hit = fuzz_process.extractOne(pz.raw_name, pack_name_list, score_cutoff=85)
         if hit:
+            if hit[1] < 95:
+                print(f"  DEBUG: fuzzy '{pz.raw_name}' → '{hit[0]}' ({hit[1]:.0f}%)", file=sys.stderr)
             canonical_name = hit[0]
 
     # Step 3: direct normalized-name match against collection.json
@@ -636,9 +657,15 @@ def append_entries_to_collection(raw: str, entries: list[dict]) -> str:
         lines = json.dumps(e, indent=2).splitlines()
         blocks.append("\n".join("    " + line for line in lines))
     insertion = ",\n".join(blocks)
-    # Insert before the closing `]` of the collection array (followed by outer `}`)
+    pattern = r'(?<=\})\n(\s*\])\n(\})\s*$'
+    if not re.search(pattern, raw):
+        raise RuntimeError(
+            "collection.json append point not found — "
+            r"expected closing structure: }\n]\n}. "
+            "Check for trailing whitespace or extra blank lines at end of file."
+        )
     return re.sub(
-        r'(?<=\})\n(\s*\])\n(\})\s*$',
+        pattern,
         lambda m: f",\n{insertion}\n{m.group(1)}\n{m.group(2)}",
         raw,
     )
@@ -1032,7 +1059,12 @@ def main() -> int:
 
     # ── Phase 3: Match ────────────────────────────────────────────────────
     print(f"  Matching {len(pz_cards)} PZ cards to {len(collection_entries)} collection entries...")
-    results = match_pz_cards(pz_cards, collection_entries, pack_sources, ext_ref)
+    try:
+        results = match_pz_cards(pz_cards, collection_entries, pack_sources, ext_ref)
+    except RuntimeError as e:
+        print(f"\nFATAL: {e}", file=sys.stderr)
+        print("Sync cannot proceed. Add disambiguation data to reference files and retry.", file=sys.stderr)
+        return 1
 
     matched   = [r for r in results if r.status == "MATCHED"]
     new_cards = [r for r in results if r.status in ("NEW_CARD", "UNMATCHED")]
@@ -1043,6 +1075,13 @@ def main() -> int:
     missing_from_pz = [
         e for i, e in enumerate(collection_entries) if i not in matched_indices
     ]
+
+    if missing_from_pz:
+        print(
+            f"  WARNING: {len(missing_from_pz)} collection entries not returned by PZ "
+            f"— counts unchanged (check sync_review_queue.json)",
+            file=sys.stderr,
+        )
 
     # ── Phase 4: Compute diff ─────────────────────────────────────────────
     # Aggregate counts: the same card may appear in multiple sets in PZ
@@ -1140,7 +1179,31 @@ def main() -> int:
     print("  PASS — collection.json valid and normalized.")
 
     if has_review_items:
-        print(f"\nExit 2: review queue has items. See {REVIEW_QUEUE}")
+        queue_data = json.loads(REVIEW_QUEUE.read_text(encoding="utf-8"))
+        n_new = len(queue_data.get("new_cards", []))
+        n_amb = len(queue_data.get("ambiguous_matches", []))
+        n_mis = len(queue_data.get("missing_from_pz", []))
+        print("\nReview queue summary:")
+        if n_new:
+            print(f"  {n_new} new card(s) needing manual addition:")
+            for item in queue_data.get("new_cards", [])[:3]:
+                sc = item.get("set_code", "?")
+                cn = item.get("card_number", "?")
+                name_display = item.get("canonical_name") or item.get("raw_name", "?")
+                print(f"    [{sc}/{cn}] {name_display} ×{item.get('count', '?')}")
+            if n_new > 3:
+                print(f"    ... and {n_new - 3} more")
+        if n_amb:
+            print(f"  {n_amb} ambiguous match(es) needing disambiguation:")
+            for item in queue_data.get("ambiguous_matches", [])[:3]:
+                cands = ", ".join(item.get("candidate_names", [])[:2])
+                print(f"    {item.get('canonical_name')}: {cands}")
+            if n_amb > 3:
+                print(f"    ... and {n_amb - 3} more")
+        if n_mis:
+            print(f"  {n_mis} collection entries not found in PZ response")
+        print(f"  Full details: {REVIEW_QUEUE}")
+        print("\nExit 2: matched card counts updated; review queue requires attention.")
         return 2
 
     return 0

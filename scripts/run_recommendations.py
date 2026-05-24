@@ -159,12 +159,12 @@ def _print_final_summary() -> None:
         try:
             packs = json.loads(pack_ev_path.read_text(encoding="utf-8")).get("packs", [])
             top_pack = max((p for p in packs if not p.get("blocked")),
-                           key=lambda p: p.get("confidence_adjusted_ev", 0), default=None)
+                           key=lambda p: p.get("unified_score", 0), default=None)
             if top_pack:
                 missing = top_pack.get("missing_in_pool", "?")
                 total   = top_pack.get("cards_in_pool", "?")
-                adj_ev  = top_pack.get("confidence_adjusted_ev", 0)
-                print(f"  Top pack:   {top_pack['pack_name']} (adj_ev={adj_ev:.4f})"
+                score   = top_pack.get("unified_score", 0)
+                print(f"  Top pack:   {top_pack['pack_name']} (unified={score:.4f})"
                       f" — {missing}/{total} cards unowned")
         except Exception:
             pass

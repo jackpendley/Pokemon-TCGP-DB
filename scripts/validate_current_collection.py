@@ -124,7 +124,7 @@ def validate(data, expected_total):
 
             is_ex = entry.get("is_ex", False)
             if not isinstance(is_ex, bool):
-                warnings.append(f"Entry {i} ({name!r}): is_ex should be boolean, got {is_ex!r}")
+                failures.append(f"Entry {i} ({name!r}): is_ex must be boolean true/false, got {is_ex!r}")
             if is_ex:
                 ex_entry_count += 1
                 ex_card_count += (count or 0)

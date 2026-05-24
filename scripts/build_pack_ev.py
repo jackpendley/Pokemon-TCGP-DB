@@ -32,6 +32,7 @@ Usage:
 
 import argparse
 import csv
+import hashlib
 import json
 import sys
 from collections import defaultdict
@@ -56,8 +57,32 @@ SCORING_WEIGHTS = {
     "new_card":    1.0,   # first copy of any unseen unique card
     "copy_up_to_2": 0.4,  # second copy (can use 2 copies per deck)
     "ex_missing":  1.0,   # bonus if EX/powerful card, not yet at 2 copies
-    "deck_target": 2.0,   # bonus if explicitly needed to complete a deck
+    "deck_target": 2.0,   # max bonus for a deck-target card (scaled by copies still needed)
 }
+
+# Rarity bonus applied to owned==0 pulls (first copy). Higher rarities are harder
+# to pull and more desirable, so missing them carries extra collection value.
+RARITY_BONUS: dict[str, float] = {
+    "crown":        2.0,
+    "triple_star":  1.5,
+    "double_star":  1.0,
+    "one_star":     0.8,
+    "four_diamond": 0.6,
+    "three_diamond": 0.3,
+    "two_diamond":  0.1,
+    "one_diamond":  0.0,
+}
+
+# Unified score weights — single composite signal used for all recommendations.
+UNIFIED_WEIGHTS = {
+    "new_card_10x": 1.0,   # primary: unique new cards in a 10-pack batch (diminishing returns)
+    "copy":         0.2,   # secondary: duplicate copies for deck building
+    "ex":           0.5,   # EX cards still missing
+    "deck_target":  1.5,   # scaled deck completion contribution
+}
+
+# Cost in hourglasses per single pack opening (no bulk discount in TCGP)
+HOURGLASS_PER_PACK = 12
 
 # Fallback confidence adjustment when PZ rates are unavailable
 INFERRED_CONFIDENCE_WEIGHT = 0.85
@@ -67,9 +92,6 @@ PZ_CONFIDENCE_WEIGHT = 1.0
 TOP_N_CARDS = 5  # top EV cards listed per pack
 
 # Deck-priority composite score: adj_ev + DECK_PRIORITY_BOOST * deck_target_ev.
-# At 10×, a pack with deck_target_ev=0.06 (Solgaleo/Incineroar ex) scores ~+0.61
-# above its adj_ev, enough to rank it above a pure collection-expansion pack when
-# the player cares more about completing a chase deck than raw new-card rate.
 DECK_PRIORITY_BOOST = 10
 
 
@@ -204,6 +226,12 @@ def card_pull_ev(rarity: str, combined_by_rarity: dict, slot_rates: dict) -> flo
     P_regular  = slot_rates.get("regular_pack_probability", 0.9995)
     P_plus_one = slot_rates.get("regular_pack_plus_one_probability") or 0.0
     P_rare     = slot_rates.get("rare_pack_probability", 0.0005)
+    if slot_rates.get("branch_model") == "three_branch" and P_plus_one == 0.0:
+        print(
+            f"  WARNING: three_branch pack has plus_one_probability=null — "
+            f"treating as two_branch. Add regular_pack_plus_one_probability to pull_probability_model.json.",
+            file=sys.stderr,
+        )
     # Combined probability for slots 1-5 (same rates in both regular branches)
     P_combined = P_regular + P_plus_one
 
@@ -234,32 +262,41 @@ def card_pull_ev(rarity: str, combined_by_rarity: dict, slot_rates: dict) -> flo
     return regular_contrib + rare_contrib + plus_one_card6_contrib
 
 
-def value_of_next_copy(owned: int, is_ex: bool,
+def value_of_next_copy(owned: int, is_ex: bool, rarity: str | None,
                        deck_targets: dict, norm_name: str) -> float:
     """
     Value of pulling one more copy of this card.
-    owned = copies already in collection.
-    deck_targets = {norm_name: still_needed_count}
+
+    owned       = copies already in collection.
+    rarity      = card rarity string (e.g. "one_star", "crown") — used for rarity bonus on
+                  first copy. None is treated as no bonus.
+    deck_targets = {norm_name: still_needed_count} where still_needed is how many copies
+                  the player is short across all target decks. Bonus scales with urgency:
+                  needing 1 copy is worth more than needing 2.
     """
     still_needed = deck_targets.get(norm_name, 0)
 
     if owned >= 2:
         return 0.0  # already at maximum useful quantity
 
-    # Determine base value for this copy number
     if owned == 0:
         v = SCORING_WEIGHTS["new_card"]
+        # Rarity bonus: rarer missing cards carry extra collection value
+        v += RARITY_BONUS.get(rarity or "", 0.0)
         if is_ex:
             v += SCORING_WEIGHTS["ex_missing"]
         if still_needed > 0:
-            v += SCORING_WEIGHTS["deck_target"]
+            # Scale deck bonus by urgency: 2.0 when 1 copy needed, 1.0 when 2 needed, etc.
+            v += SCORING_WEIGHTS["deck_target"] / max(still_needed, 1)
     else:
         # owned == 1, pulling the second copy
         v = SCORING_WEIGHTS["copy_up_to_2"]
-        if is_ex and still_needed > 0:
-            v += SCORING_WEIGHTS["ex_missing"] + SCORING_WEIGHTS["deck_target"]
-        elif still_needed > 0:
-            v += SCORING_WEIGHTS["deck_target"]
+        if still_needed > 0:
+            deck_bonus = SCORING_WEIGHTS["deck_target"] / max(still_needed, 1)
+            if is_ex:
+                v += SCORING_WEIGHTS["ex_missing"] + deck_bonus
+            else:
+                v += deck_bonus
 
     return v
 
@@ -294,13 +331,14 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
                 "pack_total_ev": 0.0,
                 "confidence_adjusted_ev": 0.0}
 
-    owned_in_pool  = 0
-    missing_in_pool = 0
-    new_card_ev    = 0.0
-    copy_ev        = 0.0
-    ex_card_ev     = 0.0
-    deck_target_ev = 0.0
-    card_ev_list   = []
+    owned_in_pool    = 0
+    missing_in_pool  = 0
+    new_card_ev      = 0.0
+    new_card_ev_10x  = 0.0   # E[unique new cards in 10 consecutive openings] via Coupon Collector
+    copy_ev          = 0.0
+    ex_card_ev       = 0.0
+    deck_target_ev   = 0.0
+    card_ev_list     = []
     pz_hits          = 0
     fallback_count   = 0
     pz_excluded_count = 0
@@ -331,15 +369,12 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
             pz_hits += 1  # count all PZ cards in coverage denominator, including zero-rate
         elif pz_card_odds:
             # PZ data exists for this pack but card absent from it → not pullable from packs
-            # (e.g., Mew A1/283 is a mission reward, not in any pack pool)
             pz_excluded_count += 1
             continue
         else:
             if not rarity:
-                # rarity=None cards never contribute EV — exclude from coverage denominator
                 continue
             if not slot_rates:
-                # No slot rates available — pull rate uncomputable, exclude from coverage
                 continue
             p_pull = card_pull_ev(rarity, combined_by_rarity, slot_rates)
 
@@ -349,7 +384,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         if pz_pull is None:
             fallback_count += 1
 
-        v = value_of_next_copy(owned, is_ex, deck_targets, nn)
+        v = value_of_next_copy(owned, is_ex, rarity, deck_targets, nn)
         ev = p_pull * v
 
         if ev > 0:
@@ -367,6 +402,17 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
 
         if owned == 0:
             new_card_ev += ev
+            # 10x model: P(get at least 1 in 10 packs) — accounts for within-batch duplicates.
+            # PZ rates are proper per-pack probabilities; use directly.
+            # Inferred rates return E[copies per pack] for multi-slot rarities (one/two/three_diamond
+            # each fill 3 regular slots), which can exceed 1.0 when the pool has < 3 cards of
+            # that rarity. Back-calculate P(≥1 in 1 pack) = 1-(1-p_per_slot)^3 in that case.
+            if pz_pull is None and p_pull > 1.0:
+                p_per_slot = p_pull / 3.0  # 3 regular slots for common rarities
+                p_at_least_one = 1.0 - (1.0 - min(p_per_slot, 1.0)) ** 3
+            else:
+                p_at_least_one = min(p_pull, 1.0)
+            new_card_ev_10x += 1.0 - (1.0 - p_at_least_one) ** 10
         else:
             copy_ev += ev
 
@@ -382,7 +428,22 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     confidence_weight = PZ_CONFIDENCE_WEIGHT if pz_coverage >= 0.90 else INFERRED_CONFIDENCE_WEIGHT
     source_status = "pz_verified" if pz_coverage >= 0.90 else "inferred"
 
-    exploratory_ev = 0.0
+    # Diminishing returns ratio: how much 10x batch EV differs from 10 × 1x EV.
+    # A ratio < 0.85 means significant within-batch duplicates (pack is near-complete).
+    ev_10x_uncapped = new_card_ev * 10
+    dr_ratio = new_card_ev_10x / ev_10x_uncapped if ev_10x_uncapped > 0 else 1.0
+
+    # Unified score: single composite signal used for all downstream recommendations.
+    unified_score = (
+        new_card_ev_10x * UNIFIED_WEIGHTS["new_card_10x"]
+        + copy_ev        * UNIFIED_WEIGHTS["copy"]
+        + ex_card_ev     * UNIFIED_WEIGHTS["ex"]
+        + deck_target_ev * UNIFIED_WEIGHTS["deck_target"]
+    ) * confidence_weight
+
+    # Cost efficiency: hourglasses per expected unique new card
+    cost_per_unique_1x  = HOURGLASS_PER_PACK / max(new_card_ev, 0.001)
+    cost_per_unique_10x = (HOURGLASS_PER_PACK * 10) / max(new_card_ev_10x, 0.001)
 
     card_ev_list.sort(key=lambda x: x["ev_contribution"], reverse=True)
     deck_target_cards = [c for c in card_ev_list if c.get("is_deck_target")]
@@ -390,6 +451,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     return {
         **base,
         "source_status": source_status,
+        "confidence_weight": confidence_weight,
         "blocked": False,
         "blocked_reason": None,
         "cards_in_pool": len(all_pool_cards),
@@ -397,12 +459,16 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "missing_in_pool": missing_in_pool,
         "collection_completion_ev": round(pack_total_ev, 6),
         "new_card_ev":     round(new_card_ev, 6),
+        "new_card_ev_10x": round(new_card_ev_10x, 6),
         "copy_ev":         round(copy_ev, 6),
         "ex_card_ev":      round(ex_card_ev, 6),
         "deck_target_ev":  round(deck_target_ev, 6),
-        "exploratory_ev":  exploratory_ev,
         "pack_total_ev":   round(pack_total_ev, 6),
         "confidence_adjusted_ev": round(pack_total_ev * confidence_weight, 6),
+        "unified_score":   round(unified_score, 6),
+        "ev_diminishing_returns_ratio": round(dr_ratio, 4),
+        "cost_per_unique_card_1x":  round(cost_per_unique_1x, 2),
+        "cost_per_unique_card_10x": round(cost_per_unique_10x, 2),
         "deck_weighted_score": round(
             pack_total_ev * confidence_weight + DECK_PRIORITY_BOOST * deck_target_ev, 6
         ),
@@ -468,27 +534,28 @@ def build(collection, pull_model, pack_cards, expansion_shared, deck_targets,
 
 
 def summarize(records: list) -> dict:
-    by_total = sorted(records, key=lambda r: r["pack_total_ev"], reverse=True)
-    by_new   = sorted(records, key=lambda r: r["new_card_ev"], reverse=True)
-    by_dt    = sorted(records, key=lambda r: r["deck_target_ev"], reverse=True)
+    by_unified = sorted(records, key=lambda r: r.get("unified_score", 0.0), reverse=True)
+    by_new     = sorted(records, key=lambda r: r["new_card_ev"], reverse=True)
+    by_dt      = sorted(records, key=lambda r: r["deck_target_ev"], reverse=True)
 
     def brief(r):
         return {
             "pack_name": r["pack_name"],
             "expansion": r["expansion"],
-            "pack_total_ev": r["pack_total_ev"],
+            "unified_score": r.get("unified_score", 0.0),
             "new_card_ev": r["new_card_ev"],
+            "new_card_ev_10x": r.get("new_card_ev_10x", 0.0),
             "deck_target_ev": r["deck_target_ev"],
             "confidence_adjusted_ev": r["confidence_adjusted_ev"],
         }
 
     return {
-        "top_packs_by_total_ev":      [brief(r) for r in by_total[:5]],
-        "top_packs_by_new_card_ev":   [brief(r) for r in by_new[:5]],
-        "top_packs_by_deck_target_ev":[brief(r) for r in by_dt[:5]],
-        "highest_ev_pack":     by_total[0]["pack_name"] if by_total else None,
-        "highest_new_card_ev_pack": by_new[0]["pack_name"] if by_new else None,
-        "total_packs_scored":  len(records),
+        "top_packs_by_unified_score":  [brief(r) for r in by_unified[:5]],
+        "top_packs_by_new_card_ev":    [brief(r) for r in by_new[:5]],
+        "top_packs_by_deck_target_ev": [brief(r) for r in by_dt[:5]],
+        "highest_unified_pack":        by_unified[0]["pack_name"] if by_unified else None,
+        "highest_new_card_ev_pack":    by_new[0]["pack_name"] if by_new else None,
+        "total_packs_scored":          len(records),
     }
 
 
@@ -505,7 +572,7 @@ def _read_model_confidence(path: Path) -> str:
         return "inferred"
 
 
-def write_json(pack_ev_records, blocked, deck_targets, collection_total):
+def write_json(pack_ev_records, blocked, deck_targets, collection_total, inputs_hash=None):
     model_confidence = _read_model_confidence(PULL_MODEL_JSON)
     summary = summarize(pack_ev_records)
 
@@ -552,6 +619,7 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total):
             "model_confidence": model_confidence,
             "collection_total": collection_total,
             "collection_mutated": False,
+            "inputs_hash": inputs_hash,
             "warnings": [warning],
         },
         "scoring_weights": SCORING_WEIGHTS,
@@ -584,8 +652,10 @@ def write_csv(pack_ev_records):
     fields = [
         "pack_name", "expansion", "set_code", "source_status",
         "cards_in_pool", "owned_in_pool", "missing_in_pool",
-        "new_card_ev", "copy_ev", "ex_card_ev", "deck_target_ev",
-        "pack_total_ev", "confidence_adjusted_ev",
+        "new_card_ev", "new_card_ev_10x", "copy_ev", "ex_card_ev", "deck_target_ev",
+        "pack_total_ev", "confidence_adjusted_ev", "unified_score",
+        "ev_diminishing_returns_ratio",
+        "cost_per_unique_card_1x", "cost_per_unique_card_10x",
         "top_ev_cards_summary",
     ]
     OUT_CSV.parent.mkdir(parents=True, exist_ok=True)
@@ -606,11 +676,16 @@ def write_csv(pack_ev_records):
                 "owned_in_pool": r["owned_in_pool"],
                 "missing_in_pool": r["missing_in_pool"],
                 "new_card_ev":   r["new_card_ev"],
+                "new_card_ev_10x": r.get("new_card_ev_10x", ""),
                 "copy_ev":       r["copy_ev"],
                 "ex_card_ev":    r["ex_card_ev"],
                 "deck_target_ev": r["deck_target_ev"],
                 "pack_total_ev": r["pack_total_ev"],
                 "confidence_adjusted_ev": r["confidence_adjusted_ev"],
+                "unified_score": r.get("unified_score", ""),
+                "ev_diminishing_returns_ratio": r.get("ev_diminishing_returns_ratio", ""),
+                "cost_per_unique_card_1x": r.get("cost_per_unique_card_1x", ""),
+                "cost_per_unique_card_10x": r.get("cost_per_unique_card_10x", ""),
                 "top_ev_cards_summary": top_summary,
             })
 
@@ -954,6 +1029,22 @@ def main():
             print(f"ERROR: required input not found: {p}", file=sys.stderr)
             sys.exit(1)
 
+    # Inputs hash skip: if no input file has changed since last run, reuse prior results.
+    # Covers collection AND all reference inputs so pull-model or deck-target edits invalidate cache.
+    _h = hashlib.sha256()
+    for _p in (COLLECTION_JSON, PULL_MODEL_JSON, PACK_SOURCES_JSON, DECK_VALIDATION_JSON, PZ_PACK_ODDS_JSON):
+        if _p.exists():
+            _h.update(_p.read_bytes())
+    inputs_hash = _h.hexdigest()
+    if OUT_JSON.exists():
+        try:
+            prev_meta = json.loads(OUT_JSON.read_text(encoding="utf-8")).get("meta", {})
+            if prev_meta.get("inputs_hash") == inputs_hash:
+                print(f"  Inputs unchanged (hash={inputs_hash[:12]}…) — skipping EV recompute.")
+                sys.exit(0)
+        except Exception:
+            pass  # corrupted prior output — recompute
+
     collection       = load_collection(COLLECTION_JSON)
     pull_model       = load_pull_model(PULL_MODEL_JSON)
     pack_cards, expansion_shared = load_pack_sources(PACK_SOURCES_JSON)
@@ -973,7 +1064,7 @@ def main():
         collection, pull_model, pack_cards, expansion_shared, deck_targets, pz_raw, pz_odds
     )
 
-    out = write_json(pack_ev_records, blocked, deck_targets, collection_total)
+    out = write_json(pack_ev_records, blocked, deck_targets, collection_total, inputs_hash)
 
     print(f"  Written: {OUT_JSON.relative_to(ROOT)}")
 

@@ -2,8 +2,8 @@
 """
 generate_hourglass_spending_plan.py
 
-Generates a pack-opening hourglass spending plan from EV data.
-Outputs conservative / moderate / aggressive scenarios in 10-pack-batch format.
+Generates a single optimal hourglass spending plan from EV data.
+Uses unified_score and ev_diminishing_returns_ratio to sequence batches.
 Does NOT assume a specific hourglass balance.
 
 Outputs:
@@ -27,7 +27,6 @@ BASE = Path(__file__).resolve().parent.parent
 PACK_EV_JSON = BASE / "data/current/pack_ev.json"
 RECOMMENDATIONS_JSON = BASE / "data/current/inferred_pack_recommendations.json"
 PULL_MODEL_JSON = BASE / "data/reference/pull_probability_model.json"
-COLLECTION_JSON = BASE / "collection.json"  # raw JSONC — not parsed directly
 COLLECTION_NORMALIZED_JSON = BASE / "data/current/collection_normalized.json"
 
 OUT_JSON = BASE / "data/current/final_hourglass_spending_plan.json"
@@ -35,6 +34,8 @@ OUT_MD = BASE / "review/final_hourglass_spending_plan.md"
 OUT_CSV = BASE / "data/exports/final_hourglass_spending_plan.csv"
 
 BATCH_SIZE = 10
+HOURGLASS_PER_PACK = 12
+NEAR_COMPLETE_THRESHOLD = 0.85  # DR ratio below this → flag near-complete
 GENERATED_AT = date.today().isoformat()
 
 DISCLAIMER = (
@@ -45,14 +46,13 @@ DISCLAIMER = (
     "collection changes."
 )
 
-GLOBAL_RERUN_CHECKLIST = [
-    "After every 20+ pack opens from the same pool: re-run python3 scripts/build_pack_ev.py",
-    "After completing any deck target: re-run python3 scripts/build_pack_ev.py (deck_target_ev drops to zero)",
-    "After official in-app rate verification: set confidence=verified and re-run python3 scripts/build_pack_ev.py",
-    "After resolving 59 ambiguous collection entries: re-run python3 scripts/build_pack_ev.py for more accurate coverage",
-    "After any new expansion releases: re-run python3 scripts/build_pull_probability_model.py then python3 scripts/build_pack_ev.py",
-    "After updating collection.json with new cards: re-run python3 scripts/normalize_current_collection.py then python3 scripts/build_pack_ev.py",
-]
+VALID_CONFIDENCE_LEVELS = {
+    "inferred", "third_party_verified", "verified",
+    "user_in_app_verified", "in_app_verified_partial",
+    "third_party_verified_with_in_app_anchor", "pending_verification",
+    "bulbapedia_branch_verified", "bulbapedia_verified",
+    "user_in_app_verified_plus_bulbapedia", "pz_verified",
+}
 
 
 def load_data():
@@ -62,275 +62,126 @@ def load_data():
     except (FileNotFoundError, json.JSONDecodeError):
         recs = {}
     model = json.loads(PULL_MODEL_JSON.read_text(encoding="utf-8"))
-    raw_coll = json.loads(COLLECTION_NORMALIZED_JSON.read_text(encoding="utf-8"))
-    coll = raw_coll  # full dict
-    return ev, recs, model, coll
+    collection = json.loads(COLLECTION_NORMALIZED_JSON.read_text(encoding="utf-8"))
+    return ev, recs, model, collection
 
 
-def _batch_ev(pack, multiplier=1.0):
-    return round(pack["confidence_adjusted_ev"] * BATCH_SIZE * multiplier, 4)
-
-
-def _make_batch(n, pack, stopping_condition, rerun_trigger, rerun_reason, ev_note=None):
+def _make_batch(n, pack, rerun_after, notes):
+    dr = pack.get("ev_diminishing_returns_ratio", 1.0)
+    near_complete = dr < NEAR_COMPLETE_THRESHOLD
     return {
         "batch_number": n,
         "pack_name": pack["pack_name"],
         "expansion": pack["expansion"],
         "set_code": pack["set_code"],
         "packs_to_open": BATCH_SIZE,
-        "adj_ev_per_pack": round(pack["confidence_adjusted_ev"], 6),
-        "expected_value_this_batch": _batch_ev(pack),
-        "expected_value_note": ev_note or (
-            "First batch from this pool — estimate is at current collection state. "
-            "Actual EV decreases as new cards are acquired."
-        ),
+        "hourglass_cost": BATCH_SIZE * HOURGLASS_PER_PACK,
+        "unified_score": round(pack.get("unified_score", 0.0), 6),
+        "new_card_ev_10x": round(pack.get("new_card_ev_10x", 0.0), 6),
+        "cost_per_unique_card_10x": round(pack.get("cost_per_unique_card_10x", 0.0), 4),
+        "ev_diminishing_returns_ratio": round(dr, 4),
         "missing_in_pool": pack["missing_in_pool"],
-        "stopping_condition": stopping_condition,
-        "rerun_trigger": rerun_trigger,
-        "rerun_reason": rerun_reason,
+        "near_complete": near_complete,
+        "rerun_after": rerun_after,
+        "notes": notes,
     }
 
 
-def build_scenarios(ev_data, recs_data=None):
+def build_optimal_plan(ev_data, recs_data=None):
+    """
+    Build a single optimal spending plan using unified_score.
+
+    Batch 1: top pack by unified_score; always trigger rerun after.
+    Batch 2: continue top pack if DR ratio >= threshold; switch to #2 if near-complete.
+    Batches 3+: rotate through top 3, flagging near-complete packs.
+    Stopping condition: when cost_per_unique_card_10x > 2× batch-1 cost, stop.
+    """
     packs = sorted(
-        ev_data["packs"], key=lambda x: x["confidence_adjusted_ev"], reverse=True
+        ev_data["packs"], key=lambda x: x.get("unified_score", 0.0), reverse=True
     )
-    deck_target_packs = sorted(
-        [p for p in ev_data["packs"] if p.get("deck_target_ev", 0) > 0],
-        key=lambda x: x["deck_target_ev"],
-        reverse=True,
-    )
+    if len(packs) < 3:
+        raise ValueError(f"Need at least 3 scored packs, got {len(packs)}")
 
     top1, top2, top3 = packs[0], packs[1], packs[2]
-    top_deck = deck_target_packs[0] if deck_target_packs else None
+    base_cost = top1.get("cost_per_unique_card_10x", 0.0)
+    cost_ceiling = base_cost * 2.0 if base_cost > 0 else float("inf")
 
-    conservative = {
-        "label": "conservative",
-        "description": (
-            "Open 1 batch (10 packs) from the highest adj-EV pack only. "
-            "Stop immediately after. Verify slot rates in-app before any further resource commitment."
-        ),
-        "rationale": (
-            "Rates are pz_verified — per-card drop chances sourced directly from Pokemon Zone for all packs. "
-            "One batch at the top adj-EV pack captures maximum expected value per 10 packs. "
-            "Re-run after the batch to account for collection changes."
-        ),
-        "batches": [
-            _make_batch(
-                1, top1,
-                stopping_condition=(
-                    "STOP after this batch regardless of results. "
-                    "Do not open further packs until slot rates are verified in PTCGP app."
-                ),
-                rerun_trigger=True,
-                rerun_reason=(
-                    "Mandatory post-conservative check: open PTCGP app → any pack → "
-                    "Pack details → Offering Rates. If rates match model, upgrade to verified confidence."
-                ),
-            )
-        ],
-        "total_batches": 1,
-        "total_packs": BATCH_SIZE,
-        "rerun_checklist": [
-            "After batch 1: open PTCGP app → any pack → Pack details → Offering Rates.",
-            "Compare displayed percentages to slot_rates in data/reference/pull_probability_model.json.",
-            "If they match: update confidence=verified in the model JSON, then re-run python3 scripts/build_pack_ev.py.",
-            "Re-run python3 scripts/generate_hourglass_spending_plan.py to refresh this plan at verified confidence.",
-        ],
-    }
+    dr1 = top1.get("ev_diminishing_returns_ratio", 1.0)
+    near1 = dr1 < NEAR_COMPLETE_THRESHOLD
 
-    moderate_batches = [
-        _make_batch(
-            1, top1,
-            stopping_condition="Pause after this batch. Count new unique cards acquired from this pool.",
-            rerun_trigger=False,
-            rerun_reason=None,
-        ),
-        _make_batch(
-            2, top1,
-            stopping_condition=(
-                "STOP after this batch. Re-run EV calculator — 20 packs opened from this pool."
-            ),
-            rerun_trigger=True,
-            rerun_reason="20 packs from same pool. EV will have dropped. Re-run before continuing.",
-            ev_note=(
-                "EV per pack is lower than batch 1 — cards already acquired reduce the effective pool. "
-                "Actual expected value for this batch is less than the static estimate."
-            ),
-        ),
-        _make_batch(
-            3, top2,
-            stopping_condition=(
-                "Stop after batch 3 and re-assess. If a deck target was pulled, re-run EV. "
-                "If top pack changed after re-run, adjust batch 4 accordingly."
-            ),
-            rerun_trigger=True,
-            rerun_reason=(
-                "Switching packs after re-run. Re-run EV to confirm rankings after collection update."
-            ),
-        ),
-    ]
-
-    deck_target_note = None
-    if top_deck:
-        deck_target_note = (
-            f"Deck-target variant: if completing a specific chase deck is the priority goal, "
-            f"replace batch 3 with {top_deck['pack_name']} ({top_deck['expansion']}, "
-            f"adj_ev={top_deck['confidence_adjusted_ev']:.4f}, "
-            f"deck_target_ev={top_deck['deck_target_ev']:.4f}). "
-            f"This pack has the highest deck_target_ev per 10 packs. "
-            f"Note: overall adj_ev is lower than the top collection-expansion packs."
+    # Batch 1: always top pack
+    b1_notes = "Open first batch from the top unified-score pack."
+    if near1:
+        b1_notes += (
+            f" WARNING: DR ratio={dr1:.3f} < {NEAR_COMPLETE_THRESHOLD} — "
+            "this pool is near-complete; switch to #2 after this batch."
         )
+    b1 = _make_batch(1, top1, rerun_after=True, notes=b1_notes)
 
-    moderate = {
-        "label": "moderate",
-        "description": (
-            "Open 3 batches: 2 from the top adj-EV pack, then 1 from the #2 adj-EV pack. "
-            "Re-run the EV calculator after batch 2 (20 packs from same pool). "
-            "Stop after each batch to check progress."
-        ),
-        "rationale": (
-            "Rates are pz_verified — no confidence haircut applied. "
-            "Prioritizes collection expansion at the highest expected value. "
-            "Re-run after 20 packs prevents over-committing to a pack whose EV has dropped "
-            "as new cards were pulled. Switching to #2 after re-run hedges against pool depletion."
-        ),
-        "deck_target_variant": deck_target_note,
-        "batches": moderate_batches,
-        "total_batches": 3,
-        "total_packs": BATCH_SIZE * 3,
-        "rerun_checklist": [
-            "After batch 2: re-run python3 scripts/build_pack_ev.py.",
-            "Check if top1 pack is still the highest adj-EV. If not, update batch 3 target.",
-            "After batch 3: re-run python3 scripts/generate_hourglass_spending_plan.py to update this plan.",
-            "If a deck target is completed after any batch: re-run python3 scripts/build_pack_ev.py.",
-        ],
-    }
-
-    agg_steps_spec = [
-        (top1, "Pause after batch 1. Count new cards from this pool.", False, None,
-         None),
-        (top1,
-         "STOP after batch 2 and re-run EV calculator. 20 packs opened from this pool.",
-         True, "20 packs from same pool. Re-run EV before committing further.",
-         "EV lower than batch 1 — cards already acquired reduce the pool."),
-        (top2, "Pause after switching to pack #2. First batch from new pool.", False, None,
-         None),
-        (top3, "Pause after switching to pack #3. First batch from new pool.", False, None,
-         None),
-    ]
-    if top_deck and top_deck["pack_name"] not in (top1["pack_name"], top2["pack_name"], top3["pack_name"]):
-        agg_steps_spec.append((
-            top_deck,
-            (
-                f"Deck-target batch: {top_deck['pack_name']} has highest deck_target_ev per pack. "
-                "Stop immediately if chase deck card is pulled."
-            ),
-            True,
-            "Final aggressive batch. Re-run EV for updated plan after deck-target batch.",
-            f"deck_target_ev={top_deck['deck_target_ev']:.4f} — per-pack deck completion value.",
-        ))
-
-    agg_batches = []
-    for i, (pack, stop_cond, rerun, rerun_reason, ev_note) in enumerate(agg_steps_spec, 1):
-        agg_batches.append(
-            _make_batch(i, pack, stop_cond, rerun, rerun_reason, ev_note)
-        )
-
-    aggressive = {
-        "label": "aggressive",
-        "description": (
-            f"Open {len(agg_batches)} batches across the top 3 adj-EV packs "
-            + (f"plus the top deck-target pack ({top_deck['pack_name']}). " if top_deck and top_deck["pack_name"] not in (top1["pack_name"], top2["pack_name"], top3["pack_name"]) else ". ")
-            + "Re-run EV after every 20+ packs from the same pool. "
-            "Rates are pz_verified — no confidence haircut applied. Maximum resource commitment."
-        ),
-        "rationale": (
-            "Maximizes collection expansion rate by rotating across the top EV packs, avoiding "
-            "diminishing returns on a single pool. A deck-target batch is included for chase deck progress. "
-            "Higher resource commitment — verify in-app rates as early as possible to lock in confidence."
-        ),
-        "batches": agg_batches,
-        "total_batches": len(agg_batches),
-        "total_packs": len(agg_batches) * BATCH_SIZE,
-        "rerun_checklist": [
-            "After batch 2 (20 packs from top1 pool): re-run python3 scripts/build_pack_ev.py.",
-            "After completing any deck target: re-run python3 scripts/build_pack_ev.py.",
-            "After verifying in-app rates: upgrade confidence and re-run both EV scripts.",
-            "After resolving 59 ambiguous collection entries: re-run for more accurate coverage.",
-        ],
-    }
-
-    # Deck-priority scenario: rank packs by deck_weighted_score instead of adj_ev.
-    # Surfaces the pack most likely to complete a chase deck even if its raw EV is lower.
-    deck_priority_packs = sorted(
-        ev_data["packs"],
-        key=lambda x: x.get("deck_weighted_score", x["confidence_adjusted_ev"]),
-        reverse=True,
+    # Batch 2: switch if near-complete, else continue
+    b2_pack = top2 if near1 else top1
+    b2_notes = (
+        f"Switched to #{2 if near1 else 'same'} pack (near-complete flag on batch 1)."
+        if near1
+        else "Continue top pack for batch 2."
     )
-    dp_top = deck_priority_packs[0]
+    b2 = _make_batch(2, b2_pack, rerun_after=True, notes=b2_notes)
 
-    # Per-chase-deck best packs — from recommendation report (recs_data)
-    chase_deck_info = (recs_data or {}).get("chase_deck_packs", {})
-
-    deck_priority_batches = [
-        _make_batch(
-            1, dp_top,
-            stopping_condition=(
-                f"STOP after this batch. Check if any chase deck card was pulled. "
-                f"Re-run EV calculator before deciding on batch 2."
-            ),
-            rerun_trigger=True,
-            rerun_reason="Chase deck target may have been acquired — re-run EV to update deck_weighted_score.",
-            ev_note=(
-                f"deck_weighted_score={dp_top.get('deck_weighted_score', dp_top['confidence_adjusted_ev']):.4f} "
-                f"(adj_ev={dp_top['confidence_adjusted_ev']:.4f} + "
-                f"10× deck_target_ev={dp_top.get('deck_target_ev', 0):.4f}). "
-                "Overall adj_ev may be lower than pure collection-expansion packs."
-            ),
+    # Batch 3: rotate to a pack not already used in batches 1 and 2.
+    # Exclude all packs opened in prior batches; fall back to a pack ≠ batch-2 if needed.
+    used_b1_b2 = {top1["pack_name"], b2_pack["pack_name"]}
+    b3_candidates = [p for p in [top1, top2, top3] if p["pack_name"] not in used_b1_b2]
+    if not b3_candidates:
+        b3_candidates = [p for p in [top1, top2, top3] if p["pack_name"] != b2_pack["pack_name"]]
+    b3_pack = next(
+        (p for p in b3_candidates if p.get("ev_diminishing_returns_ratio", 1.0) >= NEAR_COMPLETE_THRESHOLD),
+        b3_candidates[0] if b3_candidates else top3,
+    )
+    b3_cost = b3_pack.get("cost_per_unique_card_10x", 0.0)
+    if cost_ceiling < float("inf") and b3_cost > cost_ceiling:
+        b3_stop = (
+            f"STOP: cost_per_unique_card_10x={b3_cost:.1f}⧗ exceeds 2× batch-1 baseline "
+            f"({cost_ceiling:.1f}⧗). Re-run EV before committing further."
         )
-    ]
+    else:
+        b3_stop = "Re-run EV after this batch; rotate to highest unified-score pack for batch 4."
+    b3 = _make_batch(3, b3_pack, rerun_after=True, notes=b3_stop)
 
-    deck_priority = {
-        "label": "deck_priority",
+    batches = [b1, b2, b3]
+    total_hourglasses = sum(b["hourglass_cost"] for b in batches)
+
+    stopping_condition = (
+        f"Stop any batch when cost_per_unique_card_10x exceeds {cost_ceiling:.1f}⧗ "
+        f"(2× batch-1 baseline of {base_cost:.1f}⧗). Re-run EV before committing further."
+        if cost_ceiling < float("inf")
+        else "Re-run EV after each batch to reassess. No cost ceiling computed (batch-1 EV is zero)."
+    )
+
+    chase_deck_packs = (recs_data or {}).get("chase_deck_packs", {})
+
+    return {
+        "label": "optimal",
         "description": (
-            f"Open 1 batch from the pack with the highest deck_weighted_score "
-            f"({dp_top['pack_name']}). Prioritizes completing a chase deck over "
-            f"raw collection expansion."
+            f"3-batch plan rotating through top unified-score packs. "
+            f"Batch 1: {top1['pack_name']}. "
+            f"{'Batch 2: switch to ' + top2['pack_name'] + ' (near-complete)' if near1 else 'Batch 2: continue ' + top1['pack_name']}. "
+            f"Batch 3: {b3_pack['pack_name']}. "
+            f"Always rerun EV after each batch."
         ),
-        "rationale": (
-            "deck_weighted_score = adj_ev + 10 × deck_target_ev. The 10× multiplier "
-            "gives chase-card pull probability significant weight, so a pack with "
-            "a lower overall EV can outrank a pure collection-expansion pack when it "
-            "contains an urgently needed chase card. Stop after 1 batch and re-run — "
-            "completing a chase deck changes the score immediately."
-        ),
-        "deck_weighted_top": {
-            "pack_name": dp_top["pack_name"],
-            "expansion": dp_top["expansion"],
-            "adj_ev": dp_top["confidence_adjusted_ev"],
-            "deck_target_ev": dp_top.get("deck_target_ev", 0),
-            "deck_weighted_score": dp_top.get("deck_weighted_score", dp_top["confidence_adjusted_ev"]),
-        },
-        "per_chase_deck": chase_deck_info,
-        "batches": deck_priority_batches,
-        "total_batches": 1,
-        "total_packs": BATCH_SIZE,
-        "rerun_checklist": [
-            "After batch 1: check if any chase deck card was pulled.",
-            "Re-run python3 scripts/build_pack_ev.py to update deck_target_ev and deck_weighted_score.",
-            "Re-run python3 scripts/generate_hourglass_spending_plan.py to refresh this plan.",
-            "If Incineroar ex pulled: Incineroar ex deck becomes buildable — remove from chase targets.",
-            "If Ivysaur pulled (2nd copy): Mega Venusaur ex deck may now be buildable.",
-            "If Magnezone ex pulled: Magnezone ex deck becomes buildable — remove from chase targets.",
-            "Note: Zygarde ex is PROMO-B only — cannot be obtained from packs.",
-        ],
+        "batches": batches,
+        "total_batches": len(batches),
+        "total_hourglasses": total_hourglasses,
+        "rerun_after_batch_n": [b["batch_number"] for b in batches if b["rerun_after"]],
+        "stopping_condition": stopping_condition,
+        "near_complete_threshold": NEAR_COMPLETE_THRESHOLD,
+        "cost_ceiling_per_unique_card": round(cost_ceiling, 2) if cost_ceiling < float("inf") else None,
+        "chase_deck_packs": chase_deck_packs,
+        "top_pack_unified_score": round(top1.get("unified_score", 0.0), 4),
+        "top_pack_name": top1["pack_name"],
     }
 
-    return [conservative, moderate, aggressive, deck_priority]
 
-
-def write_json(scenarios, ev_data, model_data, collection_data):
+def write_json(spending_plan, ev_data, model_data, collection_data):
     out = {
         "generated_at": GENERATED_AT,
         "generated_by": "scripts/generate_hourglass_spending_plan.py",
@@ -339,10 +190,10 @@ def write_json(scenarios, ev_data, model_data, collection_data):
         "collection_total": collection_data.get("actual_total_quantity", len(collection_data.get("collection", []))),
         "collection_mutated": False,
         "batch_size": BATCH_SIZE,
+        "hourglass_per_pack": HOURGLASS_PER_PACK,
         "model_version": model_data["meta"]["model_version"],
         "ev_source": str(PACK_EV_JSON.relative_to(BASE)),
-        "scenarios": scenarios,
-        "global_rerun_checklist": GLOBAL_RERUN_CHECKLIST,
+        "spending_plan": spending_plan,
     }
     OUT_JSON.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  Wrote: {OUT_JSON.relative_to(BASE)}")
@@ -351,15 +202,16 @@ def write_json(scenarios, ev_data, model_data, collection_data):
 
 def write_md(out_data):
     mc = out_data["model_confidence"]
-    ev_label = mc.upper().replace("_", " ")
+    plan = out_data["spending_plan"]
+    batches = plan["batches"]
 
     lines = [
         "# Final Hourglass Spending Plan",
         "",
         f"Generated: {out_data['generated_at']}  ",
-        f"Model confidence: **{ev_label}**  ",
+        f"Model confidence: **{mc.upper().replace('_', ' ')}**  ",
         f"Collection total: {out_data['collection_total']} cards  ",
-        f"Batch size: {BATCH_SIZE} packs per batch  ",
+        f"Batch size: {BATCH_SIZE} packs ({BATCH_SIZE * HOURGLASS_PER_PACK} ⧗ per batch)  ",
         "",
         "> **DISCLAIMER**",
         ">",
@@ -367,108 +219,82 @@ def write_md(out_data):
         "",
         "---",
         "",
-        "## Summary Table",
+        "## Optimal Spending Plan",
         "",
-        "| Scenario | Batches | Total packs | Top pack |",
-        "|---|---|---|---|",
+        f"**{plan['description']}**",
+        "",
+        f"- Total batches: {plan['total_batches']}",
+        f"- Total hourglasses: {plan['total_hourglasses']} ⧗",
+        f"- Rerun EV after batch(es): {plan['rerun_after_batch_n']}",
+        f"- Stopping condition: {plan['stopping_condition']}",
+        "",
+        "| # | Pack | Set | ⧗ Cost | Unified | 10x EV | ⧗/card | DR Ratio | Missing | Near-Complete | Rerun? |",
+        "|---|---|---|---|---|---|---|---|---|---|---|",
     ]
 
-    for s in out_data["scenarios"]:
-        top_pack = s["batches"][0]["pack_name"] if s["batches"] else "—"
+    for b in batches:
+        nc_flag = "YES" if b["near_complete"] else "—"
+        rerun_flag = "YES" if b["rerun_after"] else "—"
         lines.append(
-            f"| {s['label'].capitalize()} | {s['total_batches']} | {s['total_packs']} | {top_pack} |"
+            f"| {b['batch_number']} "
+            f"| **{b['pack_name']}** "
+            f"| {b['set_code']} "
+            f"| {b['hourglass_cost']} ⧗ "
+            f"| {b['unified_score']:.4f} "
+            f"| {b['new_card_ev_10x']:.4f} "
+            f"| {b['cost_per_unique_card_10x']:.1f} "
+            f"| {b['ev_diminishing_returns_ratio']:.3f} "
+            f"| {b['missing_in_pool']} "
+            f"| {nc_flag} "
+            f"| {rerun_flag} |"
         )
 
-    lines += ["", "---", ""]
+    lines += ["", "---", "", "### Batch Details", ""]
 
-    for s in out_data["scenarios"]:
-        label = s["label"].capitalize()
+    for b in batches:
         lines += [
-            f"## {label} Scenario",
+            f"#### Batch {b['batch_number']} — {b['pack_name']} ({b['set_code']})",
             "",
-            f"**Description:** {s['description']}",
-            "",
-            f"**Rationale:** {s['rationale']}",
+            f"- **Pack:** {b['pack_name']} ({b['expansion']})",
+            f"- **Hourglasses:** {b['hourglass_cost']} ⧗ ({b['packs_to_open']} packs × {HOURGLASS_PER_PACK} ⧗)",
+            f"- **Unified score:** {b['unified_score']:.4f}",
+            f"- **New-card EV (10x):** {b['new_card_ev_10x']:.4f}",
+            f"- **Cost per unique card:** {b['cost_per_unique_card_10x']:.1f} ⧗",
+            f"- **DR ratio:** {b['ev_diminishing_returns_ratio']:.3f}"
+            + (" ← near-complete" if b["near_complete"] else ""),
+            f"- **Missing in pool:** {b['missing_in_pool']}",
+            f"- **Notes:** {b['notes']}",
+            f"- **Rerun after:** {'YES — re-run build_pack_ev.py before next batch' if b['rerun_after'] else 'No'}",
             "",
         ]
 
-        if s.get("deck_target_variant"):
-            lines += [
-                f"**Deck-target variant:** {s['deck_target_variant']}",
-                "",
-            ]
-
+    if plan.get("chase_deck_packs"):
         lines += [
-            "### Batches",
+            "---",
             "",
-            "| # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |",
-            "|---|---|---|---|---|---|---|---|---|",
-        ]
-
-        for b in s["batches"]:
-            rerun_flag = "✅" if b["rerun_trigger"] else "—"
-            lines.append(
-                f"| {b['batch_number']} "
-                f"| {b['pack_name']} "
-                f"| {b['set_code']} "
-                f"| {b['packs_to_open']} "
-                f"| {b['adj_ev_per_pack']:.4f} "
-                f"| {b['expected_value_this_batch']:.2f} "
-                f"| {b['missing_in_pool']} "
-                f"| {b['stopping_condition'][:60]}{'…' if len(b['stopping_condition']) > 60 else ''} "
-                f"| {rerun_flag} |"
-            )
-
-        lines += [""]
-
-        for b in s["batches"]:
-            lines += [
-                f"#### Batch {b['batch_number']} — {b['pack_name']} ({b['set_code']})",
-                "",
-                f"- **Pack:** {b['pack_name']} ({b['expansion']})",
-                f"- **Packs to open:** {b['packs_to_open']}",
-                f"- **Adj EV per pack:** {b['adj_ev_per_pack']:.4f}",
-                f"- **Estimated batch value:** {b['expected_value_this_batch']:.2f}  ",
-                f"  _{b['expected_value_note']}_",
-                f"- **Missing cards in pool:** {b['missing_in_pool']}",
-                f"- **Stopping condition:** {b['stopping_condition']}",
-            ]
-            if b["rerun_trigger"]:
-                lines.append(f"- **Re-run required:** {b['rerun_reason']}")
-            lines.append("")
-
-        lines += [
-            "### Re-run checklist",
+            "## Chase Deck Pack Guide",
             "",
+            "| Chase Deck | Missing Card | Short By | Best Pack | Notes |",
+            "|---|---|---|---|---|",
         ]
-        for item in s["rerun_checklist"]:
-            lines.append(f"- [ ] {item}")
-        lines += ["", "---", ""]
+        for deck_name, info in plan["chase_deck_packs"].items():
+            card = info.get("card_needed", "?")
+            short_by = info.get("short_by", 1)
+            best_pack = info.get("best_pack") or "**UNKNOWN**"
+            note = info.get("note", "")
+            lines.append(f"| {deck_name} | {card} | {short_by} | {best_pack} | {note} |")
+        lines.append("")
 
     lines += [
-        "## Global Re-run Checklist",
-        "",
-        "Run these at any time they apply, regardless of scenario:",
-        "",
-    ]
-    for item in out_data["global_rerun_checklist"]:
-        lines.append(f"- [ ] {item}")
-
-    lines += [
-        "",
         "---",
         "",
         "## Notes",
         "",
-        "- **Expected value per batch** is a rough estimate at current collection state. "
-        "Actual EV decreases as you acquire cards from the same pool.",
-        "- **No hourglass cost is assumed.** Hourglasses are a resource you manage in-game; "
-        "this plan specifies which packs and how many, not how many hourglasses to spend.",
-        "- **adj_ev** = pack_total_ev × confidence_weight (1.0 for pz_verified — no haircut). "
-        "At verified confidence the weight becomes 1.0 and all adj_ev values will increase.",
-        "- **Deck-target EV** is included in adj_ev for packs containing chase deck cards. "
-        "Crimson Blaze has the highest deck_target_ev per pack.",
+        f"- **Unified score** = `new_card_ev_10x×1.0 + copy_ev×0.2 + ex_card_ev×0.5 + deck_target_ev×1.5` × confidence_weight",
+        f"- **DR ratio** = `new_card_ev_10x / (new_card_ev_1x × 10)`. Below {NEAR_COMPLETE_THRESHOLD}: pool near-complete, diminishing returns significant.",
+        f"- **⧗/card** = `{BATCH_SIZE * HOURGLASS_PER_PACK} ⧗ / new_card_ev_10x`. Lower is better.",
         "- Re-run `build_pack_ev.py` after every significant collection change to keep rankings current.",
+        "",
     ]
 
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -476,41 +302,28 @@ def write_md(out_data):
 
 
 def write_csv(out_data):
-    rows = []
-    for s in out_data["scenarios"]:
-        for b in s["batches"]:
-            rows.append({
-                "scenario": s["label"],
-                "batch_number": b["batch_number"],
-                "pack_name": b["pack_name"],
-                "expansion": b["expansion"],
-                "set_code": b["set_code"],
-                "packs_to_open": b["packs_to_open"],
-                "adj_ev_per_pack": b["adj_ev_per_pack"],
-                "expected_value_this_batch": b["expected_value_this_batch"],
-                "missing_in_pool": b["missing_in_pool"],
-                "rerun_trigger": b["rerun_trigger"],
-                "stopping_condition": b["stopping_condition"],
-            })
-
+    plan = out_data["spending_plan"]
     fieldnames = [
-        "scenario", "batch_number", "pack_name", "expansion", "set_code",
-        "packs_to_open", "adj_ev_per_pack", "expected_value_this_batch",
-        "missing_in_pool", "rerun_trigger", "stopping_condition",
+        "batch_number", "pack_name", "expansion", "set_code",
+        "packs_to_open", "hourglass_cost",
+        "unified_score", "new_card_ev_10x", "cost_per_unique_card_10x",
+        "ev_diminishing_returns_ratio", "missing_in_pool",
+        "near_complete", "rerun_after", "notes",
     ]
     with OUT_CSV.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(plan["batches"])
     print(f"  Wrote: {OUT_CSV.relative_to(BASE)}")
 
 
 def run_validate():
     print("Running validation checks...")
     errors = []
-    warnings = []
 
-    # Check 1: Output files exist
+    if not COLLECTION_NORMALIZED_JSON.exists():
+        errors.append(f"Required input missing: {COLLECTION_NORMALIZED_JSON.relative_to(BASE)}")
+
     for path in (OUT_JSON, OUT_MD):
         if not path.exists():
             errors.append(f"Missing output file: {path.relative_to(BASE)}")
@@ -521,108 +334,90 @@ def run_validate():
         print(f"\nVALIDATION: FAIL ({len(errors)} error(s))")
         return False
 
-    # Load output for checks
-    plan = json.loads(OUT_JSON.read_text(encoding="utf-8"))
-    md_text = OUT_MD.read_text(encoding="utf-8")
+    plan_doc = json.loads(OUT_JSON.read_text(encoding="utf-8"))
 
-    # Check 2: Disclaimer present
-    if "NOT OFFICIAL" not in plan.get("disclaimer", ""):
-        errors.append("Disclaimer missing 'NOT OFFICIAL' language in JSON")
-    if "NOT OFFICIAL" not in md_text and "NOT_OFFICIAL" not in md_text:
-        errors.append("Disclaimer missing 'NOT OFFICIAL' in Markdown output")
+    # spending_plan key present (not scenarios)
+    if "spending_plan" not in plan_doc:
+        errors.append("Missing 'spending_plan' key in JSON output")
+    if "scenarios" in plan_doc:
+        errors.append("Stale 'scenarios' key found — should be 'spending_plan'")
 
-    # Check 3: 3 scenarios present
-    scenarios = plan.get("scenarios", [])
-    scenario_labels = [s["label"] for s in scenarios]
-    for expected in ("conservative", "moderate", "aggressive"):
-        if expected not in scenario_labels:
-            errors.append(f"Missing scenario: {expected}")
+    plan = plan_doc.get("spending_plan", {})
 
-    # Check 4: Stopping points present in every batch
-    for s in scenarios:
-        for b in s.get("batches", []):
-            sc = b.get("stopping_condition", "")
-            if not sc or len(sc) < 10:
-                errors.append(
-                    f"Batch {b['batch_number']} in scenario '{s['label']}' has no stopping condition"
-                )
+    # batches non-empty
+    batches = plan.get("batches", [])
+    if not batches:
+        errors.append("spending_plan.batches is empty")
+    else:
+        print(f"  PASS  spending_plan.batches has {len(batches)} entries")
 
-    # Check 5: Rerun checklist present in every scenario
-    for s in scenarios:
-        if not s.get("rerun_checklist"):
-            errors.append(f"Scenario '{s['label']}' missing rerun_checklist")
+    # each batch has required fields
+    required_batch_fields = [
+        "batch_number", "pack_name", "hourglass_cost",
+        "unified_score", "new_card_ev_10x", "rerun_after", "notes",
+    ]
+    for b in batches:
+        for f in required_batch_fields:
+            if f not in b:
+                errors.append(f"Batch {b.get('batch_number', '?')} missing field '{f}'")
 
-    # Check 6: Global rerun checklist present
-    if not plan.get("global_rerun_checklist"):
-        errors.append("Missing global_rerun_checklist")
+    # rerun_after_batch_n present and non-empty
+    rerun_list = plan.get("rerun_after_batch_n", [])
+    if not rerun_list:
+        errors.append("spending_plan.rerun_after_batch_n is empty — at least one rerun point required")
+    else:
+        print(f"  PASS  rerun_after_batch_n={rerun_list}")
 
-    # Check 7: No unsupported official verification claims
-    import re as _re
-    if _re.search(r"rates are verified(?!\s*\()(?!\s*\|)(?!\s*confidence)", md_text.lower()):
-        if not any(q in md_text.lower() for q in ("rates are third_party_verified", "rates are pz_verified")):
-            warnings.append("MD may contain 'rates are verified' claim without qualifier — review")
+    # stopping_condition present
+    if not plan.get("stopping_condition"):
+        errors.append("spending_plan.stopping_condition missing")
+    else:
+        print("  PASS  stopping_condition present")
 
-    model_conf = plan.get("model_confidence", "")
-    if model_conf == "verified":
-        warnings.append(
-            "model_confidence=verified — this plan was generated after in-app verification. "
-            "Confirm this is intentional."
-        )
-    if model_conf not in (
-        "inferred", "third_party_verified", "verified",
-        "user_in_app_verified", "in_app_verified_partial",
-        "third_party_verified_with_in_app_anchor", "pending_verification",
-        "bulbapedia_branch_verified", "bulbapedia_verified",
-        "user_in_app_verified_plus_bulbapedia", "pz_verified",
-    ):
-        errors.append(f"Unexpected model_confidence: {model_conf}")
+    # collection_mutated=False
+    if plan_doc.get("collection_mutated") is not False:
+        errors.append("collection_mutated must be False")
+    else:
+        print("  PASS  collection_mutated=False")
 
-    # Check 8: Top pack in this plan matches pack_ev.json top pack
+    # model_confidence valid
+    mc = plan_doc.get("model_confidence", "")
+    if mc not in VALID_CONFIDENCE_LEVELS:
+        errors.append(f"Unexpected model_confidence: {mc}")
+    else:
+        print(f"  PASS  model_confidence={mc}")
+
+    # batch_size=10
+    if plan_doc.get("batch_size") != 10:
+        errors.append(f"batch_size should be 10, got: {plan_doc.get('batch_size')}")
+
+    # disclaimer present
+    if "NOT OFFICIAL" not in plan_doc.get("disclaimer", ""):
+        errors.append("Disclaimer missing 'NOT OFFICIAL' language")
+
+    # top pack matches pack_ev.json top unified pack
     if PACK_EV_JSON.exists():
         ev = json.loads(PACK_EV_JSON.read_text(encoding="utf-8"))
         top_ev_pack = sorted(
-            ev["packs"], key=lambda x: x["confidence_adjusted_ev"], reverse=True
+            ev["packs"], key=lambda x: x.get("unified_score", 0.0), reverse=True
         )[0]["pack_name"]
-        conservative = next((s for s in scenarios if s["label"] == "conservative"), None)
-        if conservative and conservative["batches"]:
-            plan_top = conservative["batches"][0]["pack_name"]
-            if plan_top != top_ev_pack:
-                errors.append(
-                    f"Conservative batch 1 pack ({plan_top}) does not match "
-                    f"top adj-EV pack in pack_ev.json ({top_ev_pack})"
-                )
+        plan_top = batches[0]["pack_name"] if batches else None
+        if plan_top and plan_top != top_ev_pack:
+            errors.append(
+                f"Batch 1 pack ({plan_top}) does not match "
+                f"top unified-score pack in pack_ev.json ({top_ev_pack})"
+            )
+        elif plan_top:
+            print(f"  PASS  batch 1 pack matches top unified-score pack ({top_ev_pack})")
 
-    # Check 9: collection.json unchanged (not mutated)
-    if plan.get("collection_mutated") is not False:
-        if plan.get("collection_mutated") is True:
-            errors.append("Plan reports collection_mutated=True — collection.json should never be mutated")
-        else:
-            errors.append("Plan missing collection_mutated field — mutation state unknown")
-
-    # Check 11: collection_normalized.json exists (load check)
-    if not COLLECTION_NORMALIZED_JSON.exists():
-        errors.append(f"Required file missing: {COLLECTION_NORMALIZED_JSON.relative_to(BASE)}")
-
-    # Check 12: batch_size is 10
-    if plan.get("batch_size") != 10:
-        errors.append(f"batch_size should be 10, got: {plan.get('batch_size')}")
-
-    # Report
-    for e in errors:
-        print(f"  ERROR: {e}")
-    for w in warnings:
-        print(f"  WARN:  {w}")
-
-    n_checks = 12
+    n_checks = 10
     if errors:
-        print(f"\nVALIDATION: FAIL ({len(errors)} error(s), {len(warnings)} warning(s)) — {n_checks} checks run")
+        for e in errors:
+            print(f"  ERROR: {e}")
+        print(f"\nVALIDATION: FAIL ({len(errors)} error(s)) — {n_checks} checks run")
         return False
-    print(
-        f"  INFO:  {len(scenarios)} scenarios, "
-        f"{sum(s['total_batches'] for s in scenarios)} total batches, "
-        f"model_confidence={model_conf}"
-    )
-    print(f"\nVALIDATION: PASS (0 errors, {len(warnings)} warning(s)) — {n_checks} checks run")
+
+    print(f"\nVALIDATION: PASS (0 errors) — {n_checks} checks run")
     return True
 
 
@@ -635,6 +430,11 @@ def main():
         ok = run_validate()
         sys.exit(0 if ok else 1)
 
+    for req in (PACK_EV_JSON, PULL_MODEL_JSON, COLLECTION_NORMALIZED_JSON):
+        if not req.exists():
+            print(f"ERROR: required input not found: {req}", file=sys.stderr)
+            sys.exit(1)
+
     print("Loading data...")
     ev_data, recs_data, model_data, collection_data = load_data()
 
@@ -644,24 +444,23 @@ def main():
     coll_total = collection_data.get("actual_total_quantity", "?")
     print(f"  Collection total: {coll_total}")
 
-    if mc not in (
-        "inferred", "third_party_verified", "verified",
-        "user_in_app_verified", "in_app_verified_partial",
-        "third_party_verified_with_in_app_anchor", "pending_verification",
-        "bulbapedia_branch_verified", "bulbapedia_verified",
-        "user_in_app_verified_plus_bulbapedia", "pz_verified",
-    ):
+    if mc not in VALID_CONFIDENCE_LEVELS:
         print(f"ERROR: Unexpected model_confidence: {mc}", file=sys.stderr)
         sys.exit(1)
 
-    print("\nBuilding scenarios...")
-    scenarios = build_scenarios(ev_data, recs_data)
-    for s in scenarios:
-        print(f"  {s['label']}: {s['total_batches']} batches, {s['total_packs']} packs")
+    print("\nBuilding optimal plan...")
+    try:
+        spending_plan = build_optimal_plan(ev_data, recs_data)
+    except ValueError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        sys.exit(1)
+    print(f"  Top pack: {spending_plan['top_pack_name']} (unified={spending_plan['top_pack_unified_score']:.4f})")
+    print(f"  Batches: {spending_plan['total_batches']}, total ⧗: {spending_plan['total_hourglasses']}")
 
     print("\nWriting outputs...")
-    out_data = write_json(scenarios, ev_data, model_data, collection_data)
+    out_data = write_json(spending_plan, ev_data, model_data, collection_data)
     write_md(out_data)
+    write_csv(out_data)
 
     print("\nRunning validation...")
     ok = run_validate()
@@ -669,13 +468,6 @@ def main():
         sys.exit(1)
 
     print("\nDone.")
-    print(f"  Top pack (all scenarios): {scenarios[0]['batches'][0]['pack_name']}")
-    print(f"  Model confidence: {mc}")
-    if mc != "verified":
-        print(
-            "  NOTE: Rates are not officially in-app verified. "
-            "Open PTCGP app → any pack → Pack details → Offering Rates to verify."
-        )
 
 
 if __name__ == "__main__":
