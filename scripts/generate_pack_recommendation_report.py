@@ -659,7 +659,7 @@ def main():
     parser.add_argument("--validate",     action="store_true")
     parser.add_argument("--no-promo",     action="store_true",
                         help="Suppress promo pack section in outputs")
-    parser.add_argument("--full-ranking", action="store_true",
+    parser.add_argument("--full-rankings", action="store_true",
                         help="Write review/full_pack_ranking.md with descriptions for all 24 packs")
     args = parser.parse_args()
 
@@ -696,7 +696,7 @@ def main():
     print(f"  Written: {OUT_CSV.relative_to(ROOT)}")
     print(f"  Written: {OUT_MD.relative_to(ROOT)}")
 
-    if args.full_ranking:
+    if args.full_rankings:
         ranking_path = write_full_ranking_md(ev_data, buckets)
         print(f"  Written: {ranking_path.relative_to(ROOT)}")
 

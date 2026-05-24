@@ -10,7 +10,7 @@ Usage:
     python3 scripts/run_recommendations.py --login                 # re-auth browser before sync
     python3 scripts/run_recommendations.py --dry-run-sync          # show sync diff only, stop
     python3 scripts/run_recommendations.py --promo                 # also run promo EV (Shop Tickets currency)
-    python3 scripts/run_recommendations.py --full-ranking          # write review/full_pack_ranking.md with descriptions
+    python3 scripts/run_recommendations.py --full-rankings         # print all 24 packs ranked + write review/full_pack_ranking.md
 
 Exit codes:
     0  Full pipeline completed
@@ -150,6 +150,42 @@ def _read_player_stats() -> dict:
         return {}
 
 
+def _print_full_rankings() -> None:
+    pack_ev_path = ROOT / "data" / "current" / "pack_ev.json"
+    if not pack_ev_path.exists():
+        return
+    try:
+        data = json.loads(pack_ev_path.read_text(encoding="utf-8"))
+    except Exception:
+        return
+
+    packs = sorted(
+        (p for p in data.get("packs", []) if not p.get("blocked")),
+        key=lambda p: p.get("unified_score", 0),
+        reverse=True,
+    )
+    if not packs:
+        return
+
+    col_name = max(len(p.get("pack_name", "")) for p in packs)
+    col_name = max(col_name, 4)
+
+    print()
+    print(f"  Full Pack Rankings — {len(packs)} packs  (open with Pack Hourglasses, 120 ⧗ per 10x)")
+    print()
+    print(f"  {'#':>3}  {'Pack':<{col_name}}  {'Missing':>9}  {'New/10x':>7}  {'⧗/card':>7}")
+    print(f"  {'─' * 3}  {'─' * col_name}  {'─' * 9}  {'─' * 7}  {'─' * 7}")
+
+    for i, p in enumerate(packs, 1):
+        name     = p.get("pack_name", "?")
+        missing  = p.get("missing_in_pool", 0)
+        total    = p.get("cards_in_pool", 0)
+        new_ev   = p.get("new_card_ev_10x", 0.0)
+        cost     = p.get("cost_per_unique_card_10x", 0.0)
+        miss_str = f"{missing}/{total}"
+        print(f"  {i:>3}  {name:<{col_name}}  {miss_str:>9}  {new_ev:>6.1f}x  {cost:>6.1f}⧗")
+
+
 def _print_final_summary(show_promo: bool = False) -> None:
     pack_ev_path  = ROOT / "data" / "current" / "pack_ev.json"
     promo_ev_path = ROOT / "data" / "current" / "promo_pack_ev.json"
@@ -204,8 +240,8 @@ def main() -> int:
     parser.add_argument("--json-import",  metavar="FILE", nargs="?", const="auto")
     parser.add_argument("--promo",        action="store_true",
                         help="Also run promo EV and show promo/Shop Ticket summary")
-    parser.add_argument("--full-ranking", action="store_true",
-                        help="Write review/full_pack_ranking.md with descriptions for all 24 packs")
+    parser.add_argument("--full-rankings", action="store_true",
+                        help="Print all 24 packs ranked to console + write review/full_pack_ranking.md")
     args = parser.parse_args()
 
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -298,8 +334,8 @@ def main() -> int:
             extra = []
             if not args.promo:
                 extra.append("--no-promo")
-            if args.full_ranking:
-                extra.append("--full-ranking")
+            if args.full_rankings:
+                extra.append("--full-rankings")
             extra = extra or None
 
         rc, stdout = _run(label, script, extra)
@@ -309,6 +345,9 @@ def main() -> int:
         _print_step(label, rc, _extract_status(label, stdout))
 
     _print_final_summary(show_promo=args.promo)
+
+    if args.full_rankings:
+        _print_full_rankings()
 
     if sync_had_review_items:
         print(f"\n  NOTE: Review queue has items. See: data/sync/sync_review_queue.json")
