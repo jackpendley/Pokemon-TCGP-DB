@@ -22,8 +22,6 @@ Inputs:
 
 Outputs:
     data/current/pack_ev.json
-    data/exports/pack_ev.csv
-    review/pack_ev.md
 
 Usage:
     python3 scripts/build_pack_ev.py
@@ -31,7 +29,6 @@ Usage:
 """
 
 import argparse
-import csv
 import hashlib
 import json
 import sys
@@ -47,8 +44,6 @@ DECK_VALIDATION_JSON = ROOT / "data" / "exports"   / "deck_recommendation_valida
 PZ_PACK_ODDS_JSON   = ROOT / "data" / "reference"  / "pz_pack_odds.json"
 
 OUT_JSON = ROOT / "data" / "current"  / "pack_ev.json"
-OUT_CSV  = ROOT / "data" / "exports"  / "pack_ev.csv"
-OUT_MD   = ROOT / "review"            / "pack_ev.md"
 
 # ---------------------------------------------------------------------------
 # Scoring weights
@@ -90,9 +85,6 @@ INFERRED_CONFIDENCE_WEIGHT = 0.85
 PZ_CONFIDENCE_WEIGHT = 1.0
 
 TOP_N_CARDS = 5  # top EV cards listed per pack
-
-# Deck-priority composite score: adj_ev + DECK_PRIORITY_BOOST * deck_target_ev.
-DECK_PRIORITY_BOOST = 10
 
 
 # ---------------------------------------------------------------------------
@@ -457,7 +449,6 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "cards_in_pool": len(all_pool_cards),
         "owned_in_pool": owned_in_pool,
         "missing_in_pool": missing_in_pool,
-        "collection_completion_ev": round(pack_total_ev, 6),
         "new_card_ev":     round(new_card_ev, 6),
         "new_card_ev_10x": round(new_card_ev_10x, 6),
         "copy_ev":         round(copy_ev, 6),
@@ -469,11 +460,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "ev_diminishing_returns_ratio": round(dr_ratio, 4),
         "cost_per_unique_card_1x":  round(cost_per_unique_1x, 2),
         "cost_per_unique_card_10x": round(cost_per_unique_10x, 2),
-        "deck_weighted_score": round(
-            pack_total_ev * confidence_weight + DECK_PRIORITY_BOOST * deck_target_ev, 6
-        ),
         "pz_coverage": round(pz_coverage, 3),
-        "pz_excluded": pz_excluded_count,
         "top_ev_cards": card_ev_list[:TOP_N_CARDS],
         "deck_target_cards": deck_target_cards,
         "notes": (
@@ -647,256 +634,6 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total, inputs_
     OUT_JSON.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
     return out
 
-
-def write_csv(pack_ev_records):
-    fields = [
-        "pack_name", "expansion", "set_code", "source_status",
-        "cards_in_pool", "owned_in_pool", "missing_in_pool",
-        "new_card_ev", "new_card_ev_10x", "copy_ev", "ex_card_ev", "deck_target_ev",
-        "pack_total_ev", "confidence_adjusted_ev", "unified_score",
-        "ev_diminishing_returns_ratio",
-        "cost_per_unique_card_1x", "cost_per_unique_card_10x",
-        "top_ev_cards_summary",
-    ]
-    OUT_CSV.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
-        w.writeheader()
-        for r in pack_ev_records:
-            top_summary = " | ".join(
-                f"{c['name']}({c['rarity']},p={c['pull_prob']:.4f},ev={c['ev_contribution']:.4f})"
-                for c in r.get("top_ev_cards", [])
-            )
-            w.writerow({
-                "pack_name":    r["pack_name"],
-                "expansion":    r["expansion"],
-                "set_code":     r["set_code"],
-                "source_status": r["source_status"],
-                "cards_in_pool": r["cards_in_pool"],
-                "owned_in_pool": r["owned_in_pool"],
-                "missing_in_pool": r["missing_in_pool"],
-                "new_card_ev":   r["new_card_ev"],
-                "new_card_ev_10x": r.get("new_card_ev_10x", ""),
-                "copy_ev":       r["copy_ev"],
-                "ex_card_ev":    r["ex_card_ev"],
-                "deck_target_ev": r["deck_target_ev"],
-                "pack_total_ev": r["pack_total_ev"],
-                "confidence_adjusted_ev": r["confidence_adjusted_ev"],
-                "unified_score": r.get("unified_score", ""),
-                "ev_diminishing_returns_ratio": r.get("ev_diminishing_returns_ratio", ""),
-                "cost_per_unique_card_1x": r.get("cost_per_unique_card_1x", ""),
-                "cost_per_unique_card_10x": r.get("cost_per_unique_card_10x", ""),
-                "top_ev_cards_summary": top_summary,
-            })
-
-
-def _ev_ready_md_row(out: dict) -> str:
-    w = out.get("meta", {}).get("warnings", [])
-    for msg in w:
-        if "EV-ready coverage:" in msg:
-            # Extract "192/224" style from the warning message
-            import re
-            m = re.search(r"(\d+/\d+) entries resolved", msg)
-            if m:
-                n = re.search(r"(\d+) newly resolved", msg)
-                newly = n.group(1) if n else "46"
-                return f"| EV-ready collection entries | {m.group(1)} (108 auto-accept + 49 secondary + {newly} resolved) |"
-    return "| EV-ready collection entries | 157/224 (108 auto-accept + 49 secondary) |"
-
-
-def _excluded_md_row(out: dict) -> str:
-    w = out.get("meta", {}).get("warnings", [])
-    for msg in w:
-        if "excluded from EV" in msg:
-            import re
-            m = re.search(r"(\d+) entries still excluded", msg)
-            if m:
-                excluded = int(m.group(1))
-                low_conf = excluded - 8
-                return f"| Excluded entries | {excluded}/224 ({low_conf} low-confidence + 8 unresolved) |"
-    return "| Excluded entries | 67/224 (59 low-confidence + 8 unresolved) |"
-
-
-def write_md(out: dict, pack_ev_records: list, deck_targets: dict):
-    summary = out["overall_summary"]
-    model_confidence = out["meta"]["model_confidence"]
-    lines = [
-        f"# Pack EV Analysis ({model_confidence.replace('_', ' ').title()} Confidence)",
-        "",
-        "> **IMPORTANT — Partially Verified Rates**",
-        "> Branch structure (regular/rare/plus_one percentages) confirmed from Bulbapedia offering rates",
-        "> for 12 packs; rarity distributions within slots remain third_party_verified.",
-        "> Pulsing Aura (B3) is user-in-app-verified with Bulbapedia corroboration.",
-        "> Do NOT treat these rankings as final pack-opening recommendations.",
-        "> Verify remaining packs in PTCGP app → Pack details → Offering Rates before acting.",
-        "",
-        "## Status",
-        "",
-        "| Metric | Value |",
-        "|---|---|",
-        f"| Model confidence | **{model_confidence}** |",
-        f"| Slot rates source | Bulbapedia (branch) + Game8/ShackNews (rarity dist.) |",
-        f"| Packs ranked | {len(pack_ev_records)} |",
-        f"| Collection total | {out['meta']['collection_total']} cards (380 validated) |",
-        _ev_ready_md_row(out),
-        _excluded_md_row(out),
-        f"| Deck targets | {len(deck_targets)} cards needed for deck completion |",
-        "",
-        "---",
-        "",
-        "## Top 5 Packs by Total EV",
-        "",
-        "| Rank | Pack | Expansion | Total EV | New Card EV | Deck Target EV | Adj. EV |",
-        "|---|---|---|---|---|---|---|",
-    ]
-    for i, p in enumerate(summary["top_packs_by_total_ev"], 1):
-        lines.append(
-            f"| {i} | {p['pack_name']} | {p['expansion']} "
-            f"| {p['pack_total_ev']:.4f} "
-            f"| {p['new_card_ev']:.4f} "
-            f"| {p['deck_target_ev']:.4f} "
-            f"| {p['confidence_adjusted_ev']:.4f} |"
-        )
-
-    lines += [
-        "",
-        "## Top 5 Packs by New-Card EV",
-        "",
-        "| Rank | Pack | Expansion | New Card EV | Missing in Pool |",
-        "|---|---|---|---|---|",
-    ]
-    for i, p in enumerate(summary["top_packs_by_new_card_ev"], 1):
-        full = next((r for r in pack_ev_records if r["pack_name"] == p["pack_name"]), {})
-        lines.append(
-            f"| {i} | {p['pack_name']} | {p['expansion']} "
-            f"| {p['new_card_ev']:.4f} "
-            f"| {full.get('missing_in_pool', '?')} |"
-        )
-
-    lines += [
-        "",
-        "## Top 5 Packs by Deck Target EV",
-        "",
-        "| Rank | Pack | Expansion | Deck Target EV | Deck Target Cards |",
-        "|---|---|---|---|---|",
-    ]
-    for i, p in enumerate(summary["top_packs_by_deck_target_ev"], 1):
-        full = next((r for r in pack_ev_records if r["pack_name"] == p["pack_name"]), {})
-        dt_cards = [c["name"] for c in full.get("top_ev_cards", []) if c.get("is_deck_target")]
-        lines.append(
-            f"| {i} | {p['pack_name']} | {p['expansion']} "
-            f"| {p['deck_target_ev']:.4f} "
-            f"| {', '.join(dt_cards) or 'none'} |"
-        )
-
-    lines += [
-        "",
-        "## All Packs — EV Summary",
-        "",
-        "| Pack | Expansion | Set | Pool | Owned | Missing | Total EV | Adj. EV |",
-        "|---|---|---|---|---|---|---|---|",
-    ]
-    for r in sorted(pack_ev_records, key=lambda x: x["pack_total_ev"], reverse=True):
-        lines.append(
-            f"| {r['pack_name']} | {r['expansion']} | {r['set_code']} "
-            f"| {r['cards_in_pool']} "
-            f"| {r['owned_in_pool']} "
-            f"| {r['missing_in_pool']} "
-            f"| {r['pack_total_ev']:.4f} "
-            f"| {r['confidence_adjusted_ev']:.4f} |"
-        )
-
-    lines += [
-        "",
-        "## Top EV Cards per Pack (Top 5 Packs)",
-        "",
-    ]
-    top5 = [r for r in pack_ev_records
-            if r["pack_name"] in {p["pack_name"] for p in summary["top_packs_by_total_ev"]}]
-    top5 = sorted(top5, key=lambda x: x["pack_total_ev"], reverse=True)
-    for r in top5:
-        lines += [
-            f"### {r['pack_name']} ({r['expansion']})",
-            "",
-            "| Card | Rarity | Owned | Pull P | Value | EV |",
-            "|---|---|---|---|---|---|",
-        ]
-        for c in r.get("top_ev_cards", []):
-            flags = []
-            if c.get("is_ex"):
-                flags.append("EX")
-            if c.get("is_deck_target"):
-                flags.append("DECK")
-            flag_str = " ".join(flags)
-            lines.append(
-                f"| {c['name']} {flag_str} | {c['rarity']} "
-                f"| {c['owned']} "
-                f"| {c['pull_prob']:.5f} "
-                f"| {c['value']:.2f} "
-                f"| {c['ev_contribution']:.5f} |"
-            )
-        lines.append("")
-
-    lines += [
-        "## Deck Targets",
-        "",
-        "| Card | Still Needed | Deck Target EV Impact |",
-        "|---|---|---|",
-    ]
-    for name, needed in sorted(deck_targets.items()):
-        # Find which pack has the highest deck_target_ev contribution for this card
-        best_pack = None
-        best_ev = 0.0
-        for r in pack_ev_records:
-            for c in r.get("top_ev_cards", []):
-                if normalize(c["name"]) == name and c.get("is_deck_target"):
-                    if c["ev_contribution"] > best_ev:
-                        best_ev = c["ev_contribution"]
-                        best_pack = r["pack_name"]
-        lines.append(
-            f"| {name.title()} | {needed} | "
-            f"best in {best_pack or 'not in top cards'} (ev={best_ev:.5f}) |"
-        )
-
-    lines += [
-        "",
-        "## Assumptions and Scoring Weights",
-        "",
-        "| Parameter | Value |",
-        "|---|---|",
-        f"| New unique card | {SCORING_WEIGHTS['new_card']} |",
-        f"| 2nd copy (deck usable) | {SCORING_WEIGHTS['copy_up_to_2']} |",
-        f"| EX card bonus | {SCORING_WEIGHTS['ex_missing']} |",
-        f"| Deck target bonus | {SCORING_WEIGHTS['deck_target']} |",
-        f"| Inferred confidence adj. | {INFERRED_CONFIDENCE_WEIGHT} |",
-        "",
-        "- Cards owned ≥ 2 contribute EV = 0 (maximum useful copies).",
-        "- Slot 4 and Slot 5 probabilities are summed per rarity for expected count.",
-        "- Rare/god pack (0.05%) contributions are included.",
-        "- one_diamond cards: slots 1-3 (100% each, 3 total expected).",
-        "- Card matching is by normalized name only (case-insensitive). Cross-set",
-        "  cards with the same name may be double-counted as owned.",
-        "- 21 low-confidence/unresolved collection entries still excluded from EV (46 newly resolved by resolve_ambiguous_pack_sources.py).",
-        "",
-        "## Next Steps Before Final Recommendations",
-        "",
-        "1. **Verify slot rates in-app** — open PTCGP → any pack → Offering Rates.",
-        "2. **Resolve remaining 24 ambiguous entries** — run resolve_ambiguous_pack_sources.py; coverage now 192/224.",
-        "3. **Build deck scorer** — integrate deck completion probability into EV.",
-        "4. **Re-run EV calculator** after any rate or coverage update.",
-        "",
-        "> This analysis is at **inferred confidence**. Rankings may shift once rates",
-        "> are verified. Do not issue pack-opening recommendations from this output alone.",
-        "",
-    ]
-
-    OUT_MD.parent.mkdir(parents=True, exist_ok=True)
-    OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
-# ---------------------------------------------------------------------------
-# Validation
-# ---------------------------------------------------------------------------
 
 def run_validate() -> bool:
     print("\n=== build_pack_ev.py [VALIDATE] ===")
@@ -1073,9 +810,9 @@ def main():
     print(f"  Packs scored:    {len(pack_ev_records)}")
     print(f"  Packs blocked:   {len(blocked)}")
     print(f"  Model confidence: {out['meta']['model_confidence']}")
-    print("  Top packs by total EV:")
-    for p in summary["top_packs_by_total_ev"]:
-        print(f"    {p['pack_name']:30s} ev={p['pack_total_ev']:.4f}  "
+    print("  Top packs by unified score:")
+    for p in summary["top_packs_by_unified_score"]:
+        print(f"    {p['pack_name']:30s} unified={p['unified_score']:.4f}  "
               f"adj={p['confidence_adjusted_ev']:.4f}")
     print("\nDone.")
 

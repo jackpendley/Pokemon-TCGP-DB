@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T17:52:13+00:00",
+  "generated_at": "2026-05-24T18:23:55+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "pz_verified",
@@ -30,86 +30,96 @@
     "targets": {}
   },
   "overall_summary": {
-    "top_packs_by_total_ev": [
-      {
-        "pack_name": "Extradimensional Crisis",
-        "expansion": "Extradimensional Crisis",
-        "pack_total_ev": 4.61774,
-        "new_card_ev": 4.43174,
-        "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.61774
-      },
-      {
-        "pack_name": "Lugia",
-        "expansion": "Wisdom of Sea and Sky",
-        "pack_total_ev": 4.51959,
-        "new_card_ev": 4.27591,
-        "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.51959
-      },
+    "top_packs_by_unified_score": [
       {
         "pack_name": "Fantastical Parade",
         "expansion": "Fantastical Parade",
-        "pack_total_ev": 4.43073,
+        "unified_score": 30.731956,
         "new_card_ev": 4.03557,
+        "new_card_ev_10x": 30.495109,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 4.43073
       },
       {
+        "pack_name": "Lugia",
+        "expansion": "Wisdom of Sea and Sky",
+        "unified_score": 30.590016,
+        "new_card_ev": 4.27591,
+        "new_card_ev_10x": 30.54128,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 4.51959
+      },
+      {
+        "pack_name": "Palkia",
+        "expansion": "Space-Time Smackdown",
+        "unified_score": 30.5367,
+        "new_card_ev": 4.1944,
+        "new_card_ev_10x": 30.506484,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 4.34548
+      },
+      {
         "pack_name": "Lunala",
         "expansion": "Celestial Guardians",
-        "pack_total_ev": 4.37921,
+        "unified_score": 30.400344,
         "new_card_ev": 4.19961,
+        "new_card_ev_10x": 30.364424,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 4.37921
       },
       {
-        "pack_name": "Mew",
-        "expansion": "Mythical Island",
-        "pack_total_ev": 4.37379,
-        "new_card_ev": 4.21263,
+        "pack_name": "Dialga",
+        "expansion": "Space-Time Smackdown",
+        "unified_score": 29.725177,
+        "new_card_ev": 4.06422,
+        "new_card_ev_10x": 29.698337,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.37379
+        "confidence_adjusted_ev": 4.19842
       }
     ],
     "top_packs_by_new_card_ev": [
       {
         "pack_name": "Extradimensional Crisis",
         "expansion": "Extradimensional Crisis",
-        "pack_total_ev": 4.61774,
+        "unified_score": 29.493327,
         "new_card_ev": 4.43174,
+        "new_card_ev_10x": 29.456127,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 4.61774
       },
       {
         "pack_name": "Lugia",
         "expansion": "Wisdom of Sea and Sky",
-        "pack_total_ev": 4.51959,
+        "unified_score": 30.590016,
         "new_card_ev": 4.27591,
+        "new_card_ev_10x": 30.54128,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 4.51959
       },
       {
         "pack_name": "Mew",
         "expansion": "Mythical Island",
-        "pack_total_ev": 4.37379,
+        "unified_score": 28.019198,
         "new_card_ev": 4.21263,
+        "new_card_ev_10x": 27.986966,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 4.37379
       },
       {
         "pack_name": "Lunala",
         "expansion": "Celestial Guardians",
-        "pack_total_ev": 4.37921,
+        "unified_score": 30.400344,
         "new_card_ev": 4.19961,
+        "new_card_ev_10x": 30.364424,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 4.37921
       },
       {
         "pack_name": "Palkia",
         "expansion": "Space-Time Smackdown",
-        "pack_total_ev": 4.34548,
+        "unified_score": 30.5367,
         "new_card_ev": 4.1944,
+        "new_card_ev_10x": 30.506484,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 4.34548
       }
@@ -118,45 +128,50 @@
       {
         "pack_name": "Arceus",
         "expansion": "Triumphant Light",
-        "pack_total_ev": 3.58286,
+        "unified_score": 21.802962,
         "new_card_ev": 3.23466,
+        "new_card_ev_10x": 21.733322,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 3.58286
       },
       {
         "pack_name": "Charizard",
         "expansion": "Genetic Apex",
-        "pack_total_ev": 3.9197,
+        "unified_score": 27.295119,
         "new_card_ev": 3.69078,
+        "new_card_ev_10x": 27.249335,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 3.9197
       },
       {
         "pack_name": "Crimson Blaze",
         "expansion": "Crimson Blaze",
-        "pack_total_ev": 1.88006,
+        "unified_score": 8.541384,
         "new_card_ev": 1.38046,
+        "new_card_ev_10x": 8.331214,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 1.88006
       },
       {
         "pack_name": "Deluxe Pack: ex",
         "expansion": "Deluxe Pack: ex",
-        "pack_total_ev": 3.94552,
+        "unified_score": 26.290309,
         "new_card_ev": 3.64812,
+        "new_card_ev_10x": 26.178959,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 3.94552
       },
       {
         "pack_name": "Dialga",
         "expansion": "Space-Time Smackdown",
-        "pack_total_ev": 4.19842,
+        "unified_score": 29.725177,
         "new_card_ev": 4.06422,
+        "new_card_ev_10x": 29.698337,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 4.19842
       }
     ],
-    "highest_ev_pack": "Extradimensional Crisis",
+    "highest_unified_pack": "Fantastical Parade",
     "highest_new_card_ev_pack": "Extradimensional Crisis",
     "total_packs_scored": 24
   },
@@ -173,7 +188,6 @@
       "cards_in_pool": 96,
       "owned_in_pool": 28,
       "missing_in_pool": 68,
-      "collection_completion_ev": 3.58286,
       "new_card_ev": 3.23466,
       "new_card_ev_10x": 21.733322,
       "copy_ev": 0.3482,
@@ -185,9 +199,7 @@
       "ev_diminishing_returns_ratio": 0.6719,
       "cost_per_unique_card_1x": 3.71,
       "cost_per_unique_card_10x": 5.52,
-      "deck_weighted_score": 3.58286,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Combee",
@@ -260,7 +272,6 @@
       "cards_in_pool": 127,
       "owned_in_pool": 35,
       "missing_in_pool": 92,
-      "collection_completion_ev": 3.9197,
       "new_card_ev": 3.69078,
       "new_card_ev_10x": 27.249335,
       "copy_ev": 0.22892,
@@ -272,9 +283,7 @@
       "ev_diminishing_returns_ratio": 0.7383,
       "cost_per_unique_card_1x": 3.25,
       "cost_per_unique_card_10x": 4.4,
-      "deck_weighted_score": 3.9197,
       "pz_coverage": 1.0,
-      "pz_excluded": 2,
       "top_ev_cards": [
         {
           "name": "Oddish",
@@ -347,7 +356,6 @@
       "cards_in_pool": 103,
       "owned_in_pool": 64,
       "missing_in_pool": 39,
-      "collection_completion_ev": 1.88006,
       "new_card_ev": 1.38046,
       "new_card_ev_10x": 8.331214,
       "copy_ev": 0.4996,
@@ -359,9 +367,7 @@
       "ev_diminishing_returns_ratio": 0.6035,
       "cost_per_unique_card_1x": 8.69,
       "cost_per_unique_card_10x": 14.4,
-      "deck_weighted_score": 1.88006,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Squirtle",
@@ -434,7 +440,6 @@
       "cards_in_pool": 379,
       "owned_in_pool": 117,
       "missing_in_pool": 262,
-      "collection_completion_ev": 3.94552,
       "new_card_ev": 3.64812,
       "new_card_ev_10x": 26.178959,
       "copy_ev": 0.2974,
@@ -446,9 +451,7 @@
       "ev_diminishing_returns_ratio": 0.7176,
       "cost_per_unique_card_1x": 3.29,
       "cost_per_unique_card_10x": 4.58,
-      "deck_weighted_score": 3.94552,
       "pz_coverage": 1.0,
-      "pz_excluded": 0,
       "top_ev_cards": [
         {
           "name": "Crawdaunt",
@@ -521,7 +524,6 @@
       "cards_in_pool": 126,
       "owned_in_pool": 25,
       "missing_in_pool": 101,
-      "collection_completion_ev": 4.19842,
       "new_card_ev": 4.06422,
       "new_card_ev_10x": 29.698337,
       "copy_ev": 0.1342,
@@ -533,9 +535,7 @@
       "ev_diminishing_returns_ratio": 0.7307,
       "cost_per_unique_card_1x": 2.95,
       "cost_per_unique_card_10x": 4.04,
-      "deck_weighted_score": 4.19842,
       "pz_coverage": 1.0,
-      "pz_excluded": 0,
       "top_ev_cards": [
         {
           "name": "Yanma",
@@ -608,7 +608,6 @@
       "cards_in_pool": 107,
       "owned_in_pool": 23,
       "missing_in_pool": 84,
-      "collection_completion_ev": 4.28015,
       "new_card_ev": 4.12475,
       "new_card_ev_10x": 27.44591,
       "copy_ev": 0.1554,
@@ -620,9 +619,7 @@
       "ev_diminishing_returns_ratio": 0.6654,
       "cost_per_unique_card_1x": 2.91,
       "cost_per_unique_card_10x": 4.37,
-      "deck_weighted_score": 4.28015,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Bounsweet",
@@ -695,7 +692,6 @@
       "cards_in_pool": 103,
       "owned_in_pool": 16,
       "missing_in_pool": 87,
-      "collection_completion_ev": 4.61774,
       "new_card_ev": 4.43174,
       "new_card_ev_10x": 29.456127,
       "copy_ev": 0.186,
@@ -707,9 +703,7 @@
       "ev_diminishing_returns_ratio": 0.6647,
       "cost_per_unique_card_1x": 2.71,
       "cost_per_unique_card_10x": 4.07,
-      "deck_weighted_score": 4.61774,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Petilil",
@@ -782,7 +776,6 @@
       "cards_in_pool": 234,
       "owned_in_pool": 52,
       "missing_in_pool": 182,
-      "collection_completion_ev": 4.43073,
       "new_card_ev": 4.03557,
       "new_card_ev_10x": 30.495109,
       "copy_ev": 0.39516,
@@ -794,9 +787,7 @@
       "ev_diminishing_returns_ratio": 0.7557,
       "cost_per_unique_card_1x": 2.97,
       "cost_per_unique_card_10x": 3.94,
-      "deck_weighted_score": 4.43073,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Ledian",
@@ -869,7 +860,6 @@
       "cards_in_pool": 136,
       "owned_in_pool": 33,
       "missing_in_pool": 103,
-      "collection_completion_ev": 4.35009,
       "new_card_ev": 4.12437,
       "new_card_ev_10x": 29.492831,
       "copy_ev": 0.22572,
@@ -881,9 +871,7 @@
       "ev_diminishing_returns_ratio": 0.7151,
       "cost_per_unique_card_1x": 2.91,
       "cost_per_unique_card_10x": 4.07,
-      "deck_weighted_score": 4.35009,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Hoppip",
@@ -956,7 +944,6 @@
       "cards_in_pool": 136,
       "owned_in_pool": 27,
       "missing_in_pool": 109,
-      "collection_completion_ev": 4.51959,
       "new_card_ev": 4.27591,
       "new_card_ev_10x": 30.54128,
       "copy_ev": 0.24368,
@@ -968,9 +955,7 @@
       "ev_diminishing_returns_ratio": 0.7143,
       "cost_per_unique_card_1x": 2.81,
       "cost_per_unique_card_10x": 3.93,
-      "deck_weighted_score": 4.51959,
       "pz_coverage": 1.0,
-      "pz_excluded": 0,
       "top_ev_cards": [
         {
           "name": "Oddish",
@@ -1043,7 +1028,6 @@
       "cards_in_pool": 140,
       "owned_in_pool": 26,
       "missing_in_pool": 114,
-      "collection_completion_ev": 4.37921,
       "new_card_ev": 4.19961,
       "new_card_ev_10x": 30.364424,
       "copy_ev": 0.1796,
@@ -1055,9 +1039,7 @@
       "ev_diminishing_returns_ratio": 0.723,
       "cost_per_unique_card_1x": 2.86,
       "cost_per_unique_card_10x": 3.95,
-      "deck_weighted_score": 4.37921,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Maractus",
@@ -1130,7 +1112,6 @@
       "cards_in_pool": 139,
       "owned_in_pool": 30,
       "missing_in_pool": 109,
-      "collection_completion_ev": 4.35895,
       "new_card_ev": 4.12275,
       "new_card_ev_10x": 29.126643,
       "copy_ev": 0.2362,
@@ -1142,9 +1123,7 @@
       "ev_diminishing_returns_ratio": 0.7065,
       "cost_per_unique_card_1x": 2.91,
       "cost_per_unique_card_10x": 4.12,
-      "deck_weighted_score": 4.35895,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Cottonee",
@@ -1217,7 +1196,6 @@
       "cards_in_pool": 139,
       "owned_in_pool": 37,
       "missing_in_pool": 102,
-      "collection_completion_ev": 4.09524,
       "new_card_ev": 3.7618,
       "new_card_ev_10x": 26.397748,
       "copy_ev": 0.33344,
@@ -1229,9 +1207,7 @@
       "ev_diminishing_returns_ratio": 0.7017,
       "cost_per_unique_card_1x": 3.19,
       "cost_per_unique_card_10x": 4.55,
-      "deck_weighted_score": 4.09524,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Pinsir",
@@ -1304,7 +1280,6 @@
       "cards_in_pool": 139,
       "owned_in_pool": 36,
       "missing_in_pool": 103,
-      "collection_completion_ev": 4.1537,
       "new_card_ev": 3.97934,
       "new_card_ev_10x": 27.991458,
       "copy_ev": 0.17436,
@@ -1316,9 +1291,7 @@
       "ev_diminishing_returns_ratio": 0.7034,
       "cost_per_unique_card_1x": 3.02,
       "cost_per_unique_card_10x": 4.29,
-      "deck_weighted_score": 4.1537,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Pansage",
@@ -1391,7 +1364,6 @@
       "cards_in_pool": 117,
       "owned_in_pool": 24,
       "missing_in_pool": 93,
-      "collection_completion_ev": 4.28692,
       "new_card_ev": 4.0128,
       "new_card_ev_10x": 25.843848,
       "copy_ev": 0.27412,
@@ -1403,9 +1375,7 @@
       "ev_diminishing_returns_ratio": 0.644,
       "cost_per_unique_card_1x": 2.99,
       "cost_per_unique_card_10x": 4.64,
-      "deck_weighted_score": 4.28692,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Scyther",
@@ -1478,7 +1448,6 @@
       "cards_in_pool": 86,
       "owned_in_pool": 14,
       "missing_in_pool": 72,
-      "collection_completion_ev": 4.37379,
       "new_card_ev": 4.21263,
       "new_card_ev_10x": 27.986966,
       "copy_ev": 0.16116,
@@ -1490,9 +1459,7 @@
       "ev_diminishing_returns_ratio": 0.6644,
       "cost_per_unique_card_1x": 2.85,
       "cost_per_unique_card_10x": 4.29,
-      "deck_weighted_score": 4.37379,
       "pz_coverage": 1.0,
-      "pz_excluded": 0,
       "top_ev_cards": [
         {
           "name": "Snivy",
@@ -1565,7 +1532,6 @@
       "cards_in_pool": 126,
       "owned_in_pool": 42,
       "missing_in_pool": 84,
-      "collection_completion_ev": 3.65528,
       "new_card_ev": 3.40324,
       "new_card_ev_10x": 25.345364,
       "copy_ev": 0.25204,
@@ -1577,9 +1543,7 @@
       "ev_diminishing_returns_ratio": 0.7447,
       "cost_per_unique_card_1x": 3.53,
       "cost_per_unique_card_10x": 4.73,
-      "deck_weighted_score": 3.65528,
       "pz_coverage": 1.0,
-      "pz_excluded": 2,
       "top_ev_cards": [
         {
           "name": "Weedle",
@@ -1652,7 +1616,6 @@
       "cards_in_pool": 131,
       "owned_in_pool": 67,
       "missing_in_pool": 64,
-      "collection_completion_ev": 3.15134,
       "new_card_ev": 2.33806,
       "new_card_ev_10x": 15.805875,
       "copy_ev": 0.81328,
@@ -1664,9 +1627,7 @@
       "ev_diminishing_returns_ratio": 0.676,
       "cost_per_unique_card_1x": 5.13,
       "cost_per_unique_card_10x": 7.59,
-      "deck_weighted_score": 3.15134,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Sprigatito",
@@ -1739,7 +1700,6 @@
       "cards_in_pool": 126,
       "owned_in_pool": 22,
       "missing_in_pool": 104,
-      "collection_completion_ev": 4.34548,
       "new_card_ev": 4.1944,
       "new_card_ev_10x": 30.506484,
       "copy_ev": 0.15108,
@@ -1751,9 +1711,7 @@
       "ev_diminishing_returns_ratio": 0.7273,
       "cost_per_unique_card_1x": 2.86,
       "cost_per_unique_card_10x": 3.93,
-      "deck_weighted_score": 4.34548,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Turtwig",
@@ -1826,7 +1784,6 @@
       "cards_in_pool": 127,
       "owned_in_pool": 31,
       "missing_in_pool": 96,
-      "collection_completion_ev": 3.9991,
       "new_card_ev": 3.79298,
       "new_card_ev_10x": 27.976861,
       "copy_ev": 0.20612,
@@ -1838,9 +1795,7 @@
       "ev_diminishing_returns_ratio": 0.7376,
       "cost_per_unique_card_1x": 3.16,
       "cost_per_unique_card_10x": 4.29,
-      "deck_weighted_score": 3.9991,
       "pz_coverage": 1.0,
-      "pz_excluded": 2,
       "top_ev_cards": [
         {
           "name": "Caterpie",
@@ -1913,7 +1868,6 @@
       "cards_in_pool": 234,
       "owned_in_pool": 176,
       "missing_in_pool": 58,
-      "collection_completion_ev": 1.12868,
       "new_card_ev": 0.79336,
       "new_card_ev_10x": 5.400248,
       "copy_ev": 0.33532,
@@ -1925,9 +1879,7 @@
       "ev_diminishing_returns_ratio": 0.6807,
       "cost_per_unique_card_1x": 15.13,
       "cost_per_unique_card_10x": 22.22,
-      "deck_weighted_score": 1.12868,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Durant",
@@ -2000,7 +1952,6 @@
       "cards_in_pool": 105,
       "owned_in_pool": 19,
       "missing_in_pool": 86,
-      "collection_completion_ev": 4.21605,
       "new_card_ev": 3.97129,
       "new_card_ev_10x": 26.178065,
       "copy_ev": 0.24476,
@@ -2012,9 +1963,7 @@
       "ev_diminishing_returns_ratio": 0.6592,
       "cost_per_unique_card_1x": 3.02,
       "cost_per_unique_card_10x": 4.58,
-      "deck_weighted_score": 4.21605,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Hoppip",
@@ -2087,7 +2036,6 @@
       "cards_in_pool": 111,
       "owned_in_pool": 35,
       "missing_in_pool": 76,
-      "collection_completion_ev": 3.62217,
       "new_card_ev": 3.15109,
       "new_card_ev_10x": 20.761857,
       "copy_ev": 0.47108,
@@ -2099,9 +2047,7 @@
       "ev_diminishing_returns_ratio": 0.6589,
       "cost_per_unique_card_1x": 3.81,
       "cost_per_unique_card_10x": 5.78,
-      "deck_weighted_score": 3.62217,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Weedle",
@@ -2174,7 +2120,6 @@
       "cards_in_pool": 140,
       "owned_in_pool": 37,
       "missing_in_pool": 103,
-      "collection_completion_ev": 4.36628,
       "new_card_ev": 4.03864,
       "new_card_ev_10x": 29.453602,
       "copy_ev": 0.32764,
@@ -2186,9 +2131,7 @@
       "ev_diminishing_returns_ratio": 0.7293,
       "cost_per_unique_card_1x": 2.97,
       "cost_per_unique_card_10x": 4.07,
-      "deck_weighted_score": 4.36628,
       "pz_coverage": 1.0,
-      "pz_excluded": 1,
       "top_ev_cards": [
         {
           "name": "Phantump",
