@@ -1,8 +1,8 @@
 # Final Hourglass Spending Plan
 
-Generated: 2026-05-21  
+Generated: 2026-05-23  
 Model confidence: **PZ VERIFIED**  
-Collection total: 599 cards  
+Collection total: 682 cards  
 Batch size: 10 packs per batch  
 
 > **DISCLAIMER**
@@ -15,10 +15,10 @@ Batch size: 10 packs per batch
 
 | Scenario | Batches | Total packs | Top pack |
 |---|---|---|---|
-| Conservative | 1 | 10 | Paldean Wonders |
-| Moderate | 3 | 30 | Paldean Wonders |
-| Aggressive | 4 | 40 | Paldean Wonders |
-| Deck_priority | 1 | 10 | Paldean Wonders |
+| Conservative | 1 | 10 | Extradimensional Crisis |
+| Moderate | 3 | 30 | Extradimensional Crisis |
+| Aggressive | 4 | 40 | Extradimensional Crisis |
+| Deck_priority | 1 | 10 | Extradimensional Crisis |
 
 ---
 
@@ -32,16 +32,16 @@ Batch size: 10 packs per batch
 
 | # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | STOP after this batch regardless of results. Do not open fur… | ✅ |
+| 1 | Extradimensional Crisis | A3a | 10 | 4.2043 | 42.04 | 87 | STOP after this batch regardless of results. Do not open fur… | ✅ |
 
-#### Batch 1 — Paldean Wonders (B2a)
+#### Batch 1 — Extradimensional Crisis (A3a)
 
-- **Pack:** Paldean Wonders (Paldean Wonders)
+- **Pack:** Extradimensional Crisis (Extradimensional Crisis)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.7464
-- **Estimated batch value:** 47.46  
+- **Adj EV per pack:** 4.2043
+- **Estimated batch value:** 42.04  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 121
+- **Missing cards in pool:** 87
 - **Stopping condition:** STOP after this batch regardless of results. Do not open further packs until slot rates are verified in PTCGP app.
 - **Re-run required:** Mandatory post-conservative check: open PTCGP app → any pack → Pack details → Offering Rates. If rates match model, upgrade to verified confidence.
 
@@ -64,39 +64,39 @@ Batch size: 10 packs per batch
 
 | # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | Pause after this batch. Count new unique cards acquired from… | — |
-| 2 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | STOP after this batch. Re-run EV calculator — 20 packs opene… | ✅ |
-| 3 | Extradimensional Crisis | A3a | 10 | 4.2065 | 42.06 | 88 | Stop after batch 3 and re-assess. If a deck target was pulle… | ✅ |
+| 1 | Extradimensional Crisis | A3a | 10 | 4.2043 | 42.04 | 87 | Pause after this batch. Count new unique cards acquired from… | — |
+| 2 | Extradimensional Crisis | A3a | 10 | 4.2043 | 42.04 | 87 | STOP after this batch. Re-run EV calculator — 20 packs opene… | ✅ |
+| 3 | Mega Altaria | B1 | 10 | 4.1339 | 41.34 | 115 | Stop after batch 3 and re-assess. If a deck target was pulle… | ✅ |
 
-#### Batch 1 — Paldean Wonders (B2a)
-
-- **Pack:** Paldean Wonders (Paldean Wonders)
-- **Packs to open:** 10
-- **Adj EV per pack:** 4.7464
-- **Estimated batch value:** 47.46  
-  _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 121
-- **Stopping condition:** Pause after this batch. Count new unique cards acquired from this pool.
-
-#### Batch 2 — Paldean Wonders (B2a)
-
-- **Pack:** Paldean Wonders (Paldean Wonders)
-- **Packs to open:** 10
-- **Adj EV per pack:** 4.7464
-- **Estimated batch value:** 47.46  
-  _EV per pack is lower than batch 1 — cards already acquired reduce the effective pool. Actual expected value for this batch is less than the static estimate._
-- **Missing cards in pool:** 121
-- **Stopping condition:** STOP after this batch. Re-run EV calculator — 20 packs opened from this pool.
-- **Re-run required:** 20 packs from same pool. EV will have dropped. Re-run before continuing.
-
-#### Batch 3 — Extradimensional Crisis (A3a)
+#### Batch 1 — Extradimensional Crisis (A3a)
 
 - **Pack:** Extradimensional Crisis (Extradimensional Crisis)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.2065
-- **Estimated batch value:** 42.06  
+- **Adj EV per pack:** 4.2043
+- **Estimated batch value:** 42.04  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 88
+- **Missing cards in pool:** 87
+- **Stopping condition:** Pause after this batch. Count new unique cards acquired from this pool.
+
+#### Batch 2 — Extradimensional Crisis (A3a)
+
+- **Pack:** Extradimensional Crisis (Extradimensional Crisis)
+- **Packs to open:** 10
+- **Adj EV per pack:** 4.2043
+- **Estimated batch value:** 42.04  
+  _EV per pack is lower than batch 1 — cards already acquired reduce the effective pool. Actual expected value for this batch is less than the static estimate._
+- **Missing cards in pool:** 87
+- **Stopping condition:** STOP after this batch. Re-run EV calculator — 20 packs opened from this pool.
+- **Re-run required:** 20 packs from same pool. EV will have dropped. Re-run before continuing.
+
+#### Batch 3 — Mega Altaria (B1)
+
+- **Pack:** Mega Altaria (Mega Rising)
+- **Packs to open:** 10
+- **Adj EV per pack:** 4.1339
+- **Estimated batch value:** 41.34  
+  _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
+- **Missing cards in pool:** 115
 - **Stopping condition:** Stop after batch 3 and re-assess. If a deck target was pulled, re-run EV. If top pack changed after re-run, adjust batch 4 accordingly.
 - **Re-run required:** Switching packs after re-run. Re-run EV to confirm rankings after collection update.
 
@@ -119,50 +119,50 @@ Batch size: 10 packs per batch
 
 | # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | Pause after batch 1. Count new cards from this pool. | — |
-| 2 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | STOP after batch 2 and re-run EV calculator. 20 packs opened… | ✅ |
-| 3 | Extradimensional Crisis | A3a | 10 | 4.2065 | 42.06 | 88 | Pause after switching to pack #2. First batch from new pool. | — |
-| 4 | Lugia | A4 | 10 | 4.1445 | 41.44 | 113 | Pause after switching to pack #3. First batch from new pool. | — |
+| 1 | Extradimensional Crisis | A3a | 10 | 4.2043 | 42.04 | 87 | Pause after batch 1. Count new cards from this pool. | — |
+| 2 | Extradimensional Crisis | A3a | 10 | 4.2043 | 42.04 | 87 | STOP after batch 2 and re-run EV calculator. 20 packs opened… | ✅ |
+| 3 | Mega Altaria | B1 | 10 | 4.1339 | 41.34 | 115 | Pause after switching to pack #2. First batch from new pool. | — |
+| 4 | Lugia | A4 | 10 | 4.1167 | 41.17 | 109 | Pause after switching to pack #3. First batch from new pool. | — |
 
-#### Batch 1 — Paldean Wonders (B2a)
-
-- **Pack:** Paldean Wonders (Paldean Wonders)
-- **Packs to open:** 10
-- **Adj EV per pack:** 4.7464
-- **Estimated batch value:** 47.46  
-  _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 121
-- **Stopping condition:** Pause after batch 1. Count new cards from this pool.
-
-#### Batch 2 — Paldean Wonders (B2a)
-
-- **Pack:** Paldean Wonders (Paldean Wonders)
-- **Packs to open:** 10
-- **Adj EV per pack:** 4.7464
-- **Estimated batch value:** 47.46  
-  _EV lower than batch 1 — cards already acquired reduce the pool._
-- **Missing cards in pool:** 121
-- **Stopping condition:** STOP after batch 2 and re-run EV calculator. 20 packs opened from this pool.
-- **Re-run required:** 20 packs from same pool. Re-run EV before committing further.
-
-#### Batch 3 — Extradimensional Crisis (A3a)
+#### Batch 1 — Extradimensional Crisis (A3a)
 
 - **Pack:** Extradimensional Crisis (Extradimensional Crisis)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.2065
-- **Estimated batch value:** 42.06  
+- **Adj EV per pack:** 4.2043
+- **Estimated batch value:** 42.04  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 88
+- **Missing cards in pool:** 87
+- **Stopping condition:** Pause after batch 1. Count new cards from this pool.
+
+#### Batch 2 — Extradimensional Crisis (A3a)
+
+- **Pack:** Extradimensional Crisis (Extradimensional Crisis)
+- **Packs to open:** 10
+- **Adj EV per pack:** 4.2043
+- **Estimated batch value:** 42.04  
+  _EV lower than batch 1 — cards already acquired reduce the pool._
+- **Missing cards in pool:** 87
+- **Stopping condition:** STOP after batch 2 and re-run EV calculator. 20 packs opened from this pool.
+- **Re-run required:** 20 packs from same pool. Re-run EV before committing further.
+
+#### Batch 3 — Mega Altaria (B1)
+
+- **Pack:** Mega Altaria (Mega Rising)
+- **Packs to open:** 10
+- **Adj EV per pack:** 4.1339
+- **Estimated batch value:** 41.34  
+  _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
+- **Missing cards in pool:** 115
 - **Stopping condition:** Pause after switching to pack #2. First batch from new pool.
 
 #### Batch 4 — Lugia (A4)
 
 - **Pack:** Lugia (Wisdom of Sea and Sky)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.1445
-- **Estimated batch value:** 41.44  
+- **Adj EV per pack:** 4.1167
+- **Estimated batch value:** 41.17  
   _First batch from this pool — estimate is at current collection state. Actual EV decreases as new cards are acquired._
-- **Missing cards in pool:** 113
+- **Missing cards in pool:** 109
 - **Stopping condition:** Pause after switching to pack #3. First batch from new pool.
 
 ### Re-run checklist
@@ -176,7 +176,7 @@ Batch size: 10 packs per batch
 
 ## Deck_priority Scenario
 
-**Description:** Open 1 batch from the pack with the highest deck_weighted_score (Paldean Wonders). Prioritizes completing a chase deck over raw collection expansion.
+**Description:** Open 1 batch from the pack with the highest deck_weighted_score (Extradimensional Crisis). Prioritizes completing a chase deck over raw collection expansion.
 
 **Rationale:** deck_weighted_score = adj_ev + 10 × deck_target_ev. The 10× multiplier gives chase-card pull probability significant weight, so a pack with a lower overall EV can outrank a pure collection-expansion pack when it contains an urgently needed chase card. Stop after 1 batch and re-run — completing a chase deck changes the score immediately.
 
@@ -184,16 +184,16 @@ Batch size: 10 packs per batch
 
 | # | Pack | Set | Packs | Adj EV / pack | Est. batch value | Missing in pool | Stop? | Re-run? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Paldean Wonders | B2a | 10 | 4.7464 | 47.46 | 121 | STOP after this batch. Check if any chase deck card was pull… | ✅ |
+| 1 | Extradimensional Crisis | A3a | 10 | 4.2043 | 42.04 | 87 | STOP after this batch. Check if any chase deck card was pull… | ✅ |
 
-#### Batch 1 — Paldean Wonders (B2a)
+#### Batch 1 — Extradimensional Crisis (A3a)
 
-- **Pack:** Paldean Wonders (Paldean Wonders)
+- **Pack:** Extradimensional Crisis (Extradimensional Crisis)
 - **Packs to open:** 10
-- **Adj EV per pack:** 4.7464
-- **Estimated batch value:** 47.46  
-  _deck_weighted_score=4.7464 (adj_ev=4.7464 + 10× deck_target_ev=0.0000). Overall adj_ev may be lower than pure collection-expansion packs._
-- **Missing cards in pool:** 121
+- **Adj EV per pack:** 4.2043
+- **Estimated batch value:** 42.04  
+  _deck_weighted_score=4.2043 (adj_ev=4.2043 + 10× deck_target_ev=0.0000). Overall adj_ev may be lower than pure collection-expansion packs._
+- **Missing cards in pool:** 87
 - **Stopping condition:** STOP after this batch. Check if any chase deck card was pulled. Re-run EV calculator before deciding on batch 2.
 - **Re-run required:** Chase deck target may have been acquired — re-run EV to update deck_weighted_score.
 

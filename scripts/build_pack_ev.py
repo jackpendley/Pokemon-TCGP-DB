@@ -301,8 +301,9 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     ex_card_ev     = 0.0
     deck_target_ev = 0.0
     card_ev_list   = []
-    pz_hits        = 0
-    fallback_count = 0
+    pz_hits          = 0
+    fallback_count   = 0
+    pz_excluded_count = 0
 
     for card in all_pool_cards:
         card_name = card.get("card_name", "")
@@ -327,23 +328,26 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
 
         if pz_pull is not None:
             p_pull = pz_pull
-            pz_hits += 1
+            pz_hits += 1  # count all PZ cards in coverage denominator, including zero-rate
         elif pz_card_odds:
             # PZ data exists for this pack but card absent from it → not pullable from packs
             # (e.g., Mew A1/283 is a mission reward, not in any pack pool)
+            pz_excluded_count += 1
             continue
         else:
             if not rarity:
                 # rarity=None cards never contribute EV — exclude from coverage denominator
                 continue
             if not slot_rates:
-                fallback_count += 1
+                # No slot rates available — pull rate uncomputable, exclude from coverage
                 continue
             p_pull = card_pull_ev(rarity, combined_by_rarity, slot_rates)
-            fallback_count += 1
 
         if p_pull <= 0:
             continue
+
+        if pz_pull is None:
+            fallback_count += 1
 
         v = value_of_next_copy(owned, is_ex, deck_targets, nn)
         ev = p_pull * v
@@ -403,12 +407,14 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
             pack_total_ev * confidence_weight + DECK_PRIORITY_BOOST * deck_target_ev, 6
         ),
         "pz_coverage": round(pz_coverage, 3),
+        "pz_excluded": pz_excluded_count,
         "top_ev_cards": card_ev_list[:TOP_N_CARDS],
         "deck_target_cards": deck_target_cards,
         "notes": (
             f"slot_rates={'pz_verified' if source_status == 'pz_verified' else 'inferred'}. "
-            f"PZ coverage: {pz_hits}/{pz_total} cards. "
-            f"{owned_in_pool}/{len(all_pool_cards)} cards in pool are owned. "
+            f"PZ coverage: {pz_hits}/{pz_total} cards"
+            + (f" ({pz_excluded_count} excluded as non-pullable)." if pz_excluded_count else ".")
+            + f" {owned_in_pool}/{len(all_pool_cards)} cards in pool are owned. "
             f"EV excludes low_confidence and unresolved collection entries."
         ),
     }

@@ -1,47 +1,50 @@
 {
   "meta": {
-    "total_cards": 599,
-    "last_updated": "2026-05-21",
+    "total_cards": 682,
+    "last_updated": "2026-05-23",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 599,
-  "meta_total_cards": 599,
+  "total_quantity": 682,
+  "meta_total_cards": 682,
   "count_matches_meta": true,
-  "unique_entries": 277,
+  "unique_entries": 324,
   "by_card_type": {
-    "Pokemon": 536,
-    "Trainer": 62,
-    "Supporter": 1
+    "Pokemon": 615,
+    "Trainer": 67
   },
   "by_pokemon_type": {
-    "Fire": 68,
-    "Grass": 77,
-    "Water": 59,
-    "Lightning": 42,
-    "Psychic": 48,
-    "Fighting": 93,
-    "Darkness": 49,
-    "Metal": 20,
+    "Fire": 72,
+    "Grass": 93,
+    "Water": 73,
+    "Lightning": 51,
+    "Psychic": 52,
+    "Fighting": 103,
+    "Darkness": 53,
+    "Metal": 26,
     "Dragon": 3,
-    "Colorless": 77
+    "Colorless": 89
   },
   "by_stage": {
-    "Basic": 362,
-    "Stage 1": 141,
-    "Stage 2": 33
+    "Basic": 414,
+    "Stage 1": 162,
+    "Stage 2": 39
   },
-  "ex_entries": 16,
-  "ex_quantity": 19,
+  "ex_entries": 17,
+  "ex_quantity": 20,
   "trainer_subtypes": {
-    "Item": 28,
-    "Pokemon Tool": 2,
-    "Supporter": 27,
+    "Item": 29,
+    "Pokemon Tool": 3,
+    "Supporter": 30,
     "Stadium": 5
   },
   "top_cards_by_count": [
     [
       "Tepig",
       10
+    ],
+    [
+      "Shroomish",
+      8
     ],
     [
       "Swadloon",
@@ -56,11 +59,19 @@
       7
     ],
     [
-      "Shroomish",
+      "Treecko",
       7
     ],
     [
       "Electrode",
+      7
+    ],
+    [
+      "Nosepass",
+      7
+    ],
+    [
+      "Croagunk",
       7
     ],
     [
@@ -84,19 +95,7 @@
       6
     ],
     [
-      "Nosepass",
-      6
-    ],
-    [
-      "Croagunk",
-      6
-    ],
-    [
-      "Dwebble",
-      6
-    ],
-    [
-      "Lillipup",
+      "Toxicroak",
       6
     ]
   ],
@@ -515,7 +514,8 @@
       "Crobat ex",
       "Mega Mawile ex",
       "Corviknight ex",
-      "Snorlax ex"
+      "Snorlax ex",
+      "Lugia ex"
     ],
     "strong_evolution_lines": [
       "Charmander → Charmeleon → Charizard",
@@ -551,6 +551,6 @@
     "partial_evolution_lines": [
       "Zorua → Zoroark"
     ],
-    "total_trainer_cards": 62
+    "total_trainer_cards": 67
   }
 }

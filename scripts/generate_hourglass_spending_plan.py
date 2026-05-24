@@ -593,9 +593,11 @@ def run_validate():
                 )
 
     # Check 9: collection.json unchanged (not mutated)
-    if not plan.get("collection_mutated") is False:
+    if plan.get("collection_mutated") is not False:
         if plan.get("collection_mutated") is True:
             errors.append("Plan reports collection_mutated=True — collection.json should never be mutated")
+        else:
+            errors.append("Plan missing collection_mutated field — mutation state unknown")
 
     # Check 11: collection_normalized.json exists (load check)
     if not COLLECTION_NORMALIZED_JSON.exists():

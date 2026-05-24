@@ -170,6 +170,13 @@ def build_buckets(packs: list, deck_targets: dict, deck_validation: list) -> dic
 # Writers
 # ---------------------------------------------------------------------------
 
+_INFERRED_MC_VALUES = {
+    "inferred", "pending_verification",
+    "in_app_verified_partial",
+    "third_party_verified_with_in_app_anchor",
+}
+
+
 def write_json(ev_data: dict, buckets: dict, ev_readiness: dict) -> dict:
     packs = ev_data["packs"]
     mc = ev_data["meta"]["model_confidence"]
@@ -179,6 +186,10 @@ def write_json(ev_data: dict, buckets: dict, ev_readiness: dict) -> dict:
         "model_confidence": mc,
         "collection_total": ev_data["meta"]["collection_total"],
         "collection_mutated": False,
+        "disclaimer": (
+            "INFERRED CONFIDENCE: Slot rates are inferred from third-party data, not "
+            "verified in-app. All EVs are adjusted by 0.85 to reflect this uncertainty."
+        ) if mc in _INFERRED_MC_VALUES else "",
         "top_5_by_adjusted_ev": [
             {k: v for k, v in p.items() if k != "top_ev_cards"}
             for p in buckets["best_overall_adj_ev"]
@@ -654,26 +665,34 @@ def run_validate() -> bool:
 
     # model_confidence must be a valid confidence level
     mc = out.get("model_confidence")
-    valid_mc = (
-        "inferred", "third_party_verified", "verified",
-        "user_in_app_verified", "in_app_verified_partial",
-        "third_party_verified_with_in_app_anchor", "pending_verification",
+    valid_mc = _INFERRED_MC_VALUES | {
+        "pz_verified", "third_party_verified", "verified",
+        "user_in_app_verified",
         "bulbapedia_branch_verified", "bulbapedia_verified",
         "user_in_app_verified_plus_bulbapedia",
-    )
+    }
     if mc not in valid_mc:
         print(f"  ERROR: model_confidence='{mc}' not in {valid_mc}")
         errors += 1
     else:
         print(f"  PASS  model_confidence={mc}")
 
-    # disclaimer must be present
-    disclaimer = out.get("disclaimer", "")
-    if "INFERRED" not in disclaimer.upper() and "inferred" not in disclaimer.lower():
-        print("  ERROR: disclaimer missing or does not mention inferred confidence")
-        errors += 1
+    # disclaimer must mention inferred confidence — only applies to inferred confidence levels
+    if mc in _INFERRED_MC_VALUES:
+        disclaimer = out.get("disclaimer", "")
+        if "INFERRED" not in disclaimer.upper() and "inferred" not in disclaimer.lower():
+            print("  ERROR: disclaimer missing or does not mention inferred confidence")
+            errors += 1
+        else:
+            print("  PASS  disclaimer present")
     else:
-        print("  PASS  disclaimer present")
+        # For verified confidence, check no stale inferred disclaimer remains
+        stale = out.get("disclaimer", "")
+        if stale and "inferred" in stale.lower():
+            print("  ERROR: stale inferred-confidence disclaimer present for verified confidence level")
+            errors += 1
+        else:
+            print(f"  SKIP  disclaimer check (model_confidence={mc} does not require inferred disclaimer)")
 
     # No unqualified claim that rates currently are verified
     md_text = OUT_MD.read_text(encoding="utf-8").lower()
@@ -711,17 +730,18 @@ def run_validate() -> bool:
         else:
             print("  PASS  all recommended packs exist in pack_ev.json")
 
-    # collection.json unchanged — use regex since file has JS-style comments
+    # collection.json total_cards must match what the EV report recorded
     if COLLECTION_SOURCE.exists():
         import re as _re
         raw = COLLECTION_SOURCE.read_text(encoding="utf-8")
         m = _re.search(r'"total_cards"\s*:\s*(\d+)', raw)
-        total = int(m.group(1)) if m else 0
-        if total != 380:
-            print(f"  ERROR: collection.json total_cards={total}, expected 380")
+        actual_total = int(m.group(1)) if m else 0
+        expected_total = out.get("collection_total", 0)
+        if actual_total != expected_total:
+            print(f"  ERROR: collection.json total_cards={actual_total}, expected {expected_total} (from report)")
             errors += 1
         else:
-            print("  PASS  collection.json total_cards=380 (unchanged)")
+            print(f"  PASS  collection.json total_cards={actual_total} matches report")
 
     # collection_mutated must be False
     if out.get("collection_mutated"):
@@ -774,9 +794,11 @@ def main():
     buckets = build_buckets(packs, deck_targets, deck_val)
 
     out_data = write_json(ev_data, buckets, ev_readiness)
+    write_csv(ev_data, buckets)
     write_md(out_data, ev_data, buckets, deck_val)
 
     print(f"  Written: {OUT_JSON.relative_to(ROOT)}")
+    print(f"  Written: {OUT_CSV.relative_to(ROOT)}")
     print(f"  Written: {OUT_MD.relative_to(ROOT)}")
 
     print("\n=== Summary ===")

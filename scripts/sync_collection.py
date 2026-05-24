@@ -123,7 +123,7 @@ def load_ext_ref() -> dict[str, list[dict]]:
     records = json.loads(EXT_REF.read_text(encoding="utf-8"))
     result: dict[str, list[dict]] = {}
     for r in records:
-        nn = r.get("normalized_name") or _normalize(r.get("name", ""))
+        nn = _normalize(r.get("normalized_name") or r.get("name", ""))
         result.setdefault(nn, []).append(r)
     return result
 
@@ -474,6 +474,7 @@ def _find_count_lines(raw: str, collection: list[dict]) -> dict[int, int]:
         m_name = re.search(r'"name"\s*:\s*"([^"]+)"', stripped)
         if m_name:
             current_name = m_name.group(1).strip()
+            current_hp = None  # reset so previous card's HP can't bleed into this entry
 
         m_hp = re.search(r'"hp"\s*:\s*(\d+)', stripped)
         if m_hp:
@@ -571,6 +572,14 @@ _STAGE_MAP: dict[str, tuple[int, str]] = {
     "Stage 2": (2, "Stage 2"),
 }
 
+# Maps ext_ref card_category to trainer_subtype in collection.json schema
+_TRAINER_SUBTYPE_MAP: dict[str, str] = {
+    "Supporter":  "Supporter",
+    "Item":       "Item",
+    "Stadium":    "Stadium",
+    "Tool":       "Pokemon Tool",
+}
+
 
 def build_auto_entry(mr: "MatchResult", ext_ref: dict) -> dict | None:
     """Build a collection entry from ext_ref metadata for a NEW_CARD match.
@@ -609,7 +618,12 @@ def build_auto_entry(mr: "MatchResult", ext_ref: dict) -> dict | None:
         if hp is not None:
             entry["hp"] = hp
     else:
-        entry["card_type"] = cat if cat else "Trainer"
+        entry["card_type"] = "Trainer"
+        subtype = _TRAINER_SUBTYPE_MAP.get(cat)
+        if subtype:
+            entry["trainer_subtype"] = subtype
+        elif cat:
+            print(f"  WARN: unknown trainer category '{cat}' for {mr.canonical_name} — add to _TRAINER_SUBTYPE_MAP", file=sys.stderr)
 
     entry["is_ex"] = bool(best.get("is_ex", False))
     return entry
@@ -691,7 +705,9 @@ def load_review_queue() -> dict:
 def review_queue_is_unresolved(q: dict) -> bool:
     if q.get("resolved", True):
         return False
-    # new_cards are now auto-added from ext_ref; only ambiguous matches need human review
+    # Only ambiguous matches hard-block: they require human disambiguation before
+    # the next sync can resolve them. new_cards are re-attempted via auto-add each
+    # run and produce exit 2 (soft warning) if they still can't be resolved.
     return bool(q.get("ambiguous_matches"))
 
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T00:32:58.274658+00:00",
+  "generated_at": "2026-05-24T00:18:41.841299+00:00",
   "generated_by": "build_promo_pack_ev.py",
   "meta": {
     "note": "Promo packs use Shop Tokens (not Hourglasses). EV is comparable within promo packs only — not directly comparable to regular pack EV.",
@@ -135,61 +135,6 @@
           "drop_chance": 0.1551,
           "value": 1.0,
           "ev": 0.1551
-        }
-      ]
-    },
-    {
-      "pack_name": "Promo Pack B Series Vol. 5",
-      "slug": "promo-pack-b-series-vol-5",
-      "expansion_id": "PROMO-B",
-      "card_count": 4,
-      "owned_in_pack": 0,
-      "missing_in_pack": 4,
-      "new_card_ev": 0.8418,
-      "copy_ev": 0.0,
-      "ex_card_ev": 0.0,
-      "total_ev": 0.8418,
-      "source_status": "pz_verified",
-      "cards": [
-        {
-          "name": "Smoliv",
-          "set_code": "PROMO-B",
-          "card_number": 34,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
-        },
-        {
-          "name": "Charcadet",
-          "set_code": "PROMO-B",
-          "card_number": 35,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.1266,
-          "value": 1.0,
-          "ev": 0.1266
-        },
-        {
-          "name": "Tatsugiri",
-          "set_code": "PROMO-B",
-          "card_number": 36,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
-        },
-        {
-          "name": "Frigibax",
-          "set_code": "PROMO-B",
-          "card_number": 37,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
         }
       ]
     },
@@ -524,61 +469,6 @@
       ]
     },
     {
-      "pack_name": "Promo Pack A Series Vol. 6",
-      "slug": "promo-pack-a-series-vol-6",
-      "expansion_id": "PROMO-A",
-      "card_count": 4,
-      "owned_in_pack": 1,
-      "missing_in_pack": 3,
-      "new_card_ev": 0.6034,
-      "copy_ev": 0.06328,
-      "ex_card_ev": 0.0,
-      "total_ev": 0.66668,
-      "source_status": "pz_verified",
-      "cards": [
-        {
-          "name": "Floatzel",
-          "set_code": "PROMO-A",
-          "card_number": 53,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
-        },
-        {
-          "name": "Pawmot",
-          "set_code": "PROMO-A",
-          "card_number": 54,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.1266,
-          "value": 1.0,
-          "ev": 0.1266
-        },
-        {
-          "name": "Machamp",
-          "set_code": "PROMO-A",
-          "card_number": 55,
-          "is_ex": false,
-          "owned": 1,
-          "drop_chance": 0.1582,
-          "value": 0.4,
-          "ev": 0.06328
-        },
-        {
-          "name": "Ekans",
-          "set_code": "PROMO-A",
-          "card_number": 56,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
-        }
-      ]
-    },
-    {
       "pack_name": "Promo Pack A Series Vol. 2",
       "slug": "promo-pack-a-series-vol-2",
       "expansion_id": "PROMO-A",
@@ -671,7 +561,7 @@
           "set_code": "PROMO-A",
           "card_number": 45,
           "is_ex": false,
-          "owned": 6,
+          "owned": 7,
           "drop_chance": 0.2384,
           "value": 0.0,
           "ev": 0.0
@@ -790,6 +680,116 @@
           "name": "Machamp",
           "set_code": "PROMO-A",
           "card_number": 114,
+          "is_ex": false,
+          "owned": 1,
+          "drop_chance": 0.2384,
+          "value": 0.4,
+          "ev": 0.09536
+        }
+      ]
+    },
+    {
+      "pack_name": "Promo Pack A Series Vol. 6",
+      "slug": "promo-pack-a-series-vol-6",
+      "expansion_id": "PROMO-A",
+      "card_count": 4,
+      "owned_in_pack": 2,
+      "missing_in_pack": 2,
+      "new_card_ev": 0.4768,
+      "copy_ev": 0.06328,
+      "ex_card_ev": 0.0,
+      "total_ev": 0.54008,
+      "source_status": "pz_verified",
+      "cards": [
+        {
+          "name": "Floatzel",
+          "set_code": "PROMO-A",
+          "card_number": 53,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.2384,
+          "value": 1.0,
+          "ev": 0.2384
+        },
+        {
+          "name": "Pawmot",
+          "set_code": "PROMO-A",
+          "card_number": 54,
+          "is_ex": false,
+          "owned": 2,
+          "drop_chance": 0.1266,
+          "value": 0.0,
+          "ev": 0.0
+        },
+        {
+          "name": "Machamp",
+          "set_code": "PROMO-A",
+          "card_number": 55,
+          "is_ex": false,
+          "owned": 1,
+          "drop_chance": 0.1582,
+          "value": 0.4,
+          "ev": 0.06328
+        },
+        {
+          "name": "Ekans",
+          "set_code": "PROMO-A",
+          "card_number": 56,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.2384,
+          "value": 1.0,
+          "ev": 0.2384
+        }
+      ]
+    },
+    {
+      "pack_name": "Promo Pack B Series Vol. 5",
+      "slug": "promo-pack-b-series-vol-5",
+      "expansion_id": "PROMO-B",
+      "card_count": 4,
+      "owned_in_pack": 2,
+      "missing_in_pack": 2,
+      "new_card_ev": 0.4768,
+      "copy_ev": 0.09536,
+      "ex_card_ev": 0.0,
+      "total_ev": 0.57216,
+      "source_status": "pz_verified",
+      "cards": [
+        {
+          "name": "Smoliv",
+          "set_code": "PROMO-B",
+          "card_number": 34,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.2384,
+          "value": 1.0,
+          "ev": 0.2384
+        },
+        {
+          "name": "Charcadet",
+          "set_code": "PROMO-B",
+          "card_number": 35,
+          "is_ex": false,
+          "owned": 3,
+          "drop_chance": 0.1266,
+          "value": 0.0,
+          "ev": 0.0
+        },
+        {
+          "name": "Tatsugiri",
+          "set_code": "PROMO-B",
+          "card_number": 36,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.2384,
+          "value": 1.0,
+          "ev": 0.2384
+        },
+        {
+          "name": "Frigibax",
+          "set_code": "PROMO-B",
+          "card_number": 37,
           "is_ex": false,
           "owned": 1,
           "drop_chance": 0.2384,
@@ -1026,9 +1026,9 @@
       "owned_in_pack": 3,
       "missing_in_pack": 1,
       "new_card_ev": 0.1582,
-      "copy_ev": 0.19072,
+      "copy_ev": 0.09536,
       "ex_card_ev": 0.0,
-      "total_ev": 0.34892,
+      "total_ev": 0.25356,
       "source_status": "pz_verified",
       "cards": [
         {
@@ -1036,10 +1036,10 @@
           "set_code": "PROMO-A",
           "card_number": 60,
           "is_ex": false,
-          "owned": 1,
+          "owned": 2,
           "drop_chance": 0.2384,
-          "value": 0.4,
-          "ev": 0.09536
+          "value": 0.0,
+          "ev": 0.0
         },
         {
           "name": "Froakie",
