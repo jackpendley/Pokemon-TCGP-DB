@@ -4,7 +4,7 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-05-24T18:24:58+00:00 |
+| Report generated | 2026-05-24T19:10:03+00:00 |
 | Model confidence | **pz_verified** |
 | Collection total | 699 cards |
 | Packs ranked | 24 |
@@ -215,30 +215,8 @@ Top EV cards in this pack:
 
 ---
 
-## Promo Pack Rankings (Shop Tokens)
-
-> Promo packs use **Shop Tokens** — not Hourglasses. EVs below are not
-> comparable to regular pack EVs. See `review/promo_pack_ev.md` for full details.
-
-| # | Pack | Missing | New Card EV |
-|---|---|---|---|
-| 1 | Promo Pack A Series Vol. 8 | 4/4 | 0.9198 |
-| 2 | Promo Pack A Series Vol. 9 | 6/6 | 0.8736 |
-| 3 | Promo Pack A Series Vol. 10 | 4/4 | 0.7616 |
-| 4 | Promo Pack B Series Vol. 4 | 3/4 | 0.7300 |
-| 5 | Promo Pack A Series Vol. 1 | 3/4 | 0.6498 |
-| 6 | Promo Pack A Series Vol. 4 | 3/4 | 0.6498 |
-| 7 | Promo Pack A Series Vol. 11 | 3/4 | 0.6350 |
-| 8 | Promo Pack A Series Vol. 12 | 3/4 | 0.6350 |
-| 9 | Promo Pack A Series Vol. 2 | 3/4 | 0.5232 |
-| 10 | Promo Pack A Series Vol. 5 | 3/4 | 0.5232 |
-
-
----
-
 ## Status
 
 - Pull rates: **pz_verified** — per-card drop chances from Pokemon Zone, no confidence haircut
 - Pack source coverage: **272/272** collection entries resolved (100%)
-- Promo packs: scored separately in `review/promo_pack_ev.md` (Shop Token currency)
 

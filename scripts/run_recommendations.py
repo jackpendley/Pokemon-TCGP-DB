@@ -9,6 +9,8 @@ Usage:
     python3 scripts/run_recommendations.py --skip-sync             # skip sync, use current collection
     python3 scripts/run_recommendations.py --login                 # re-auth browser before sync
     python3 scripts/run_recommendations.py --dry-run-sync          # show sync diff only, stop
+    python3 scripts/run_recommendations.py --promo                 # also run promo EV (Shop Tickets currency)
+    python3 scripts/run_recommendations.py --full-ranking          # write review/full_pack_ranking.md with descriptions
 
 Exit codes:
     0  Full pipeline completed
@@ -32,7 +34,6 @@ LOG_FILE = ROOT / "data" / "pipeline.log"
 
 PIPELINE_STEPS = [
     ("Build pack EV",        "scripts/build_pack_ev.py"),
-    ("Build promo EV",       "scripts/build_promo_pack_ev.py"),
     ("Recommendations",      "scripts/generate_pack_recommendation_report.py"),
     ("Spending plan",        "scripts/generate_hourglass_spending_plan.py"),
 ]
@@ -149,7 +150,7 @@ def _read_player_stats() -> dict:
         return {}
 
 
-def _print_final_summary() -> None:
+def _print_final_summary(show_promo: bool = False) -> None:
     pack_ev_path  = ROOT / "data" / "current" / "pack_ev.json"
     promo_ev_path = ROOT / "data" / "current" / "promo_pack_ev.json"
 
@@ -169,27 +170,28 @@ def _print_final_summary() -> None:
         except Exception:
             pass
 
-    if promo_ev_path.exists():
+    if show_promo and promo_ev_path.exists():
         try:
             top = next((p for p in json.loads(promo_ev_path.read_text(encoding="utf-8")).get("packs", [])
                         if p.get("new_card_ev", 0) > 0), None)
             if top:
                 print(f"  Top promo:  {top['pack_name']} (new_ev={top['new_card_ev']:.4f})"
-                      f" — Shop Tokens")
+                      f" — Shop Tickets")
         except Exception:
             pass
 
     stats = _read_player_stats()
     if stats:
         pack_hg = stats.get("pack_hourglasses")
-        shop    = stats.get("shop_tickets")
         if pack_hg is not None:
             hg_str = f"  Pack Hourglasses: {pack_hg}"
             if pack_hg >= 120 and top_pack:
                 hg_str += f"  → buy 10x {top_pack['pack_name']} (costs 120 ⧗), then re-run"
             print(hg_str)
-        if shop is not None:
-            print(f"  Shop Tickets:     {shop}")
+        if show_promo:
+            shop = stats.get("shop_tickets")
+            if shop is not None:
+                print(f"  Shop Tickets:     {shop}")
 
     print(f"  Log:        {LOG_FILE.relative_to(ROOT)}")
 
@@ -200,6 +202,10 @@ def main() -> int:
     parser.add_argument("--login",        action="store_true")
     parser.add_argument("--dry-run-sync", action="store_true")
     parser.add_argument("--json-import",  metavar="FILE", nargs="?", const="auto")
+    parser.add_argument("--promo",        action="store_true",
+                        help="Also run promo EV and show promo/Shop Ticket summary")
+    parser.add_argument("--full-ranking", action="store_true",
+                        help="Write review/full_pack_ranking.md with descriptions for all 24 packs")
     args = parser.parse_args()
 
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -272,13 +278,37 @@ def main() -> int:
 
     # ── EV pipeline ───────────────────────────────────────────────────────
     for label, script in PIPELINE_STEPS:
-        rc, stdout = _run(label, script)
+        extra: list[str] | None = None
+        if label == "Build pack EV" and args.promo:
+            # Run promo EV immediately after pack EV, before recommendations
+            rc, stdout = _run(label, script)
+            if rc != 0:
+                _print_step(label, rc, "FATAL — check data/pipeline.log")
+                return 1
+            _print_step(label, rc, _extract_status(label, stdout))
+
+            rc, stdout = _run("Build promo EV", "scripts/build_promo_pack_ev.py")
+            if rc != 0:
+                _print_step("Build promo EV", rc, "FATAL — check data/pipeline.log")
+                return 1
+            _print_step("Build promo EV", rc, _extract_status("Build promo EV", stdout))
+            continue
+
+        if label == "Recommendations":
+            extra = []
+            if not args.promo:
+                extra.append("--no-promo")
+            if args.full_ranking:
+                extra.append("--full-ranking")
+            extra = extra or None
+
+        rc, stdout = _run(label, script, extra)
         if rc != 0:
-            _print_step(label, rc, f"FATAL — check data/pipeline.log")
+            _print_step(label, rc, "FATAL — check data/pipeline.log")
             return 1
         _print_step(label, rc, _extract_status(label, stdout))
 
-    _print_final_summary()
+    _print_final_summary(show_promo=args.promo)
 
     if sync_had_review_items:
         print(f"\n  NOTE: Review queue has items. See: data/sync/sync_review_queue.json")

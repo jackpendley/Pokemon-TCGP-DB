@@ -78,6 +78,48 @@ def rank_packs(packs: list, key: str, n: int = TOP_N) -> list:
     return sorted(packs, key=lambda p: p.get(key, 0.0), reverse=True)[:n]
 
 
+def generate_pack_description(pack: dict, rank: int) -> str:
+    missing   = pack.get("missing_in_pool", 0)
+    total     = pack.get("cards_in_pool", 1)
+    new_ev    = pack.get("new_card_ev_10x", 0.0)
+    dr_ratio  = pack.get("ev_diminishing_returns_ratio", 1.0)
+    deck_ev   = pack.get("deck_target_ev", 0.0)
+    ex_ev     = pack.get("ex_card_ev", 0.0)
+    cost      = pack.get("cost_per_unique_card_10x", 0.0)
+    pct_miss  = missing / total if total > 0 else 0
+
+    parts: list[str] = []
+
+    if pct_miss >= 0.60:
+        parts.append(f"large fresh pool — {missing}/{total} cards unowned")
+    elif pct_miss >= 0.30:
+        parts.append(f"moderate pool — {missing}/{total} cards unowned")
+    else:
+        parts.append(f"mostly complete — {missing}/{total} cards unowned")
+        if dr_ratio < 0.70:
+            parts.append(f"heavy diminishing returns (DR={dr_ratio:.2f})")
+
+    parts.append(f"expect ~{new_ev:.1f} new cards per 10x batch")
+
+    if deck_ev >= 0.5:
+        parts.append("high-value deck targets present")
+    elif deck_ev >= 0.1:
+        parts.append("contains deck targets")
+
+    if ex_ev >= 1.0:
+        parts.append("strong EX card density")
+    elif ex_ev >= 0.3:
+        parts.append("notable EX cards available")
+
+    if cost > 0 and rank > 3:
+        parts.append(f"{cost:.1f} ⧗/unique card")
+
+    prefix = {1: "Top pick.", 2: "Strong choice.", 3: "Good option."}.get(rank, "")
+    joined = "; ".join(parts)
+    body   = (joined[0].upper() + joined[1:] if joined else "") + "."
+    return f"{prefix} {body}".strip() if prefix else body
+
+
 def deck_target_pack_map(packs: list) -> dict:
     """
     Returns {card_name: [pack entries sorted by ev_contribution desc]}.
@@ -229,7 +271,50 @@ def write_csv(ev_data: dict, buckets: dict):
             })
 
 
-def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list):
+def write_full_ranking_md(ev_data: dict, buckets: dict) -> Path:
+    out_path = ROOT / "review" / "full_pack_ranking.md"
+    all_packs = buckets["full_unified_ranking"]
+    ts = datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+    lines = [
+        "# Full Pack Ranking — All 24 Standard Packs",
+        "",
+        f"Generated: {ts}",
+        "",
+        "Ranked by unified score. Use Pack Hourglasses to open these packs.",
+        "",
+        "---",
+        "",
+    ]
+
+    for i, p in enumerate(all_packs, 1):
+        name     = p["pack_name"]
+        exp      = p["expansion"]
+        score    = p.get("unified_score", 0.0)
+        missing  = p.get("missing_in_pool", 0)
+        total    = p.get("cards_in_pool", 0)
+        new_ev   = p.get("new_card_ev_10x", 0.0)
+        cost     = p.get("cost_per_unique_card_10x", 0.0)
+        dr       = p.get("ev_diminishing_returns_ratio", 0.0)
+        desc     = generate_pack_description(p, i)
+
+        lines += [
+            f"## {i}. {name} ({exp})",
+            "",
+            f"**Score:** {score:.4f} | **Missing:** {missing}/{total} | **New EV 10x:** {new_ev:.2f} | **⧗/card:** {cost:.1f} | **DR:** {dr:.2f}",
+            "",
+            desc,
+            "",
+            "---",
+            "",
+        ]
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text("\n".join(lines), encoding="utf-8")
+    return out_path
+
+
+def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list, show_promo: bool = True):
     packs = ev_data["packs"]
     top5 = buckets["top_packs_unified"]
 
@@ -387,7 +472,7 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
 
     # Promo pack summary section
     promo_lines: list[str] = []
-    if PROMO_EV_JSON.exists():
+    if show_promo and PROMO_EV_JSON.exists():
         try:
             promo_data = json.loads(PROMO_EV_JSON.read_text(encoding="utf-8"))
             promo_packs = [p for p in promo_data.get("packs", []) if p.get("new_card_ev", 0) > 0]
@@ -396,9 +481,9 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
                     "",
                     "---",
                     "",
-                    "## Promo Pack Rankings (Shop Tokens)",
+                    "## Promo Pack Rankings (Shop Tickets)",
                     "",
-                    "> Promo packs use **Shop Tokens** — not Hourglasses. EVs below are not",
+                    "> Promo packs use **Shop Tickets** — not Hourglasses. EVs below are not",
                     "> comparable to regular pack EVs. See `review/promo_pack_ev.md` for full details.",
                     "",
                     "| # | Pack | Missing | New Card EV |",
@@ -412,7 +497,7 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         except Exception:
             pass
 
-    lines += promo_lines + [
+    status_lines = [
         "",
         "---",
         "",
@@ -420,9 +505,12 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         "",
         "- Pull rates: **pz_verified** — per-card drop chances from Pokemon Zone, no confidence haircut",
         "- Pack source coverage: **272/272** collection entries resolved (100%)",
-        "- Promo packs: scored separately in `review/promo_pack_ev.md` (Shop Token currency)",
-        "",
     ]
+    if show_promo:
+        status_lines.append("- Promo packs: scored separately in `review/promo_pack_ev.md` (Shop Ticket currency)")
+    status_lines.append("")
+
+    lines += promo_lines + status_lines
 
     OUT_MD.parent.mkdir(parents=True, exist_ok=True)
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -568,11 +656,17 @@ def main():
     parser = argparse.ArgumentParser(
         description="Generate or validate inferred pack recommendation report"
     )
-    parser.add_argument("--validate", action="store_true")
+    parser.add_argument("--validate",     action="store_true")
+    parser.add_argument("--no-promo",     action="store_true",
+                        help="Suppress promo pack section in outputs")
+    parser.add_argument("--full-ranking", action="store_true",
+                        help="Write review/full_pack_ranking.md with descriptions for all 24 packs")
     args = parser.parse_args()
 
     if args.validate:
         sys.exit(0 if run_validate() else 1)
+
+    show_promo = not args.no_promo
 
     print("\n=== generate_pack_recommendation_report.py ===")
 
@@ -596,11 +690,15 @@ def main():
 
     out_data = write_json(ev_data, buckets, ev_readiness)
     write_csv(ev_data, buckets)
-    write_md(out_data, ev_data, buckets, deck_val)
+    write_md(out_data, ev_data, buckets, deck_val, show_promo=show_promo)
 
     print(f"  Written: {OUT_JSON.relative_to(ROOT)}")
     print(f"  Written: {OUT_CSV.relative_to(ROOT)}")
     print(f"  Written: {OUT_MD.relative_to(ROOT)}")
+
+    if args.full_ranking:
+        ranking_path = write_full_ranking_md(ev_data, buckets)
+        print(f"  Written: {ranking_path.relative_to(ROOT)}")
 
     print("\n=== Summary ===")
     top5 = out_data["top_packs_unified"]
@@ -612,12 +710,12 @@ def main():
     if mc == "pz_verified":
         print(f"  Model confidence: {mc} (×1.0 — PZ direct rates, no haircut)")
         print("\n  Rates are PZ_VERIFIED — per-card drop chances from Pokemon Zone.")
-        if PROMO_EV_JSON.exists():
+        if show_promo and PROMO_EV_JSON.exists():
             try:
                 promo_data = json.loads(PROMO_EV_JSON.read_text(encoding="utf-8"))
                 top_promo = [p for p in promo_data.get("packs", []) if p.get("new_card_ev", 0) > 0][:3]
                 if top_promo:
-                    print("\n  Top promo packs (Shop Tokens):")
+                    print("\n  Top promo packs (Shop Tickets):")
                     for i, p in enumerate(top_promo, 1):
                         print(f"    {i}. {p['pack_name']:<38} new_ev={p['new_card_ev']:.4f}")
             except Exception:
