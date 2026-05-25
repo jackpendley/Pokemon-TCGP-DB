@@ -11,7 +11,7 @@
   "ev_source": "data/current/pack_ev.json",
   "spending_plan": {
     "label": "optimal",
-    "description": "3-batch plan rotating through top unified-score packs. Batch 1: Fantastical Parade. Batch 2: switch to Lugia (near-complete). Batch 3: Palkia. Always rerun EV after each batch.",
+    "description": "3-batch plan rotating through top unified-score packs. Batch 1: Fantastical Parade. Batch 2: switch to Lugia (near-complete). Batch 3: Deluxe Pack: ex. Always rerun EV after each batch.",
     "batches": [
       {
         "batch_number": 1,
@@ -20,14 +20,14 @@
         "set_code": "B2",
         "packs_to_open": 10,
         "hourglass_cost": 120,
-        "unified_score": 30.731956,
-        "new_card_ev_10x": 30.495109,
-        "cost_per_unique_card_10x": 3.94,
-        "ev_diminishing_returns_ratio": 0.7557,
+        "unified_score": 34.261675,
+        "new_card_ev_10x": 34.024828,
+        "cost_per_unique_card_10x": 3.53,
+        "ev_diminishing_returns_ratio": 0.8431,
         "missing_in_pool": 182,
         "near_complete": true,
         "rerun_after": true,
-        "notes": "Open first batch from the top unified-score pack. WARNING: DR ratio=0.756 < 0.85 — this pool is near-complete; switch to #2 after this batch."
+        "notes": "Open first batch from the top unified-score pack. WARNING: DR ratio=0.843 < 0.85 — this pool is near-complete; switch to #2 after this batch."
       },
       {
         "batch_number": 2,
@@ -36,10 +36,10 @@
         "set_code": "A4",
         "packs_to_open": 10,
         "hourglass_cost": 120,
-        "unified_score": 30.590016,
-        "new_card_ev_10x": 30.54128,
-        "cost_per_unique_card_10x": 3.93,
-        "ev_diminishing_returns_ratio": 0.7143,
+        "unified_score": 34.255941,
+        "new_card_ev_10x": 34.207205,
+        "cost_per_unique_card_10x": 3.51,
+        "ev_diminishing_returns_ratio": 0.8,
         "missing_in_pool": 109,
         "near_complete": true,
         "rerun_after": true,
@@ -47,17 +47,17 @@
       },
       {
         "batch_number": 3,
-        "pack_name": "Palkia",
-        "expansion": "Space-Time Smackdown",
-        "set_code": "A2",
+        "pack_name": "Deluxe Pack: ex",
+        "expansion": "Deluxe Pack: ex",
+        "set_code": "A4b",
         "packs_to_open": 10,
         "hourglass_cost": 120,
-        "unified_score": 30.5367,
-        "new_card_ev_10x": 30.506484,
-        "cost_per_unique_card_10x": 3.93,
-        "ev_diminishing_returns_ratio": 0.7273,
-        "missing_in_pool": 104,
-        "near_complete": true,
+        "unified_score": 34.022189,
+        "new_card_ev_10x": 33.910839,
+        "cost_per_unique_card_10x": 3.54,
+        "ev_diminishing_returns_ratio": 0.9295,
+        "missing_in_pool": 262,
+        "near_complete": false,
         "rerun_after": true,
         "notes": "Re-run EV after this batch; rotate to highest unified-score pack for batch 4."
       }
@@ -69,11 +69,11 @@
       2,
       3
     ],
-    "stopping_condition": "Stop any batch when cost_per_unique_card_10x exceeds 7.9⧗ (2× batch-1 baseline of 3.9⧗). Re-run EV before committing further.",
+    "stopping_condition": "Stop any batch when cost_per_unique_card_10x exceeds 7.1⧗ (2× batch-1 baseline of 3.5⧗). Re-run EV before committing further.",
     "near_complete_threshold": 0.85,
-    "cost_ceiling_per_unique_card": 7.88,
+    "cost_ceiling_per_unique_card": 7.06,
     "chase_deck_packs": {},
-    "top_pack_unified_score": 30.732,
+    "top_pack_unified_score": 34.2617,
     "top_pack_name": "Fantastical Parade"
   }
 }

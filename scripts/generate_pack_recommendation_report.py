@@ -99,7 +99,7 @@ def generate_pack_description(pack: dict, rank: int) -> str:
         if dr_ratio < 0.70:
             parts.append(f"heavy diminishing returns (DR={dr_ratio:.2f})")
 
-    parts.append(f"expect ~{new_ev:.1f} new cards per 10x batch")
+    parts.append(f"expect ~{new_ev:.1f} new-card EV per 10x batch (rarity-weighted)")
 
     if deck_ev >= 0.5:
         parts.append("high-value deck targets present")
@@ -242,6 +242,7 @@ def write_csv(ev_data: dict, buckets: dict):
         "rank_unified", "pack_name", "expansion", "set_code",
         "unified_score", "new_card_ev_10x", "new_card_ev",
         "ex_card_ev", "deck_target_ev",
+        "missing_rare_plus", "rare_plus_ev_10x",
         "cost_per_unique_card_10x", "ev_diminishing_returns_ratio",
         "cards_in_pool", "owned_in_pool", "missing_in_pool",
     ]
@@ -263,6 +264,8 @@ def write_csv(ev_data: dict, buckets: dict):
                 "new_card_ev": round(p.get("new_card_ev", 0.0), 6),
                 "ex_card_ev": round(p.get("ex_card_ev", 0.0), 6),
                 "deck_target_ev": round(p.get("deck_target_ev", 0.0), 6),
+                "missing_rare_plus": p.get("missing_rare_plus", 0),
+                "rare_plus_ev_10x": round(p.get("rare_plus_ev_10x", 0.0), 6),
                 "cost_per_unique_card_10x": round(p.get("cost_per_unique_card_10x", 0.0), 4),
                 "ev_diminishing_returns_ratio": round(p.get("ev_diminishing_returns_ratio", 0.0), 4),
                 "cards_in_pool": p.get("cards_in_pool", 0),
@@ -298,10 +301,12 @@ def write_full_ranking_md(ev_data: dict, buckets: dict) -> Path:
         dr       = p.get("ev_diminishing_returns_ratio", 0.0)
         desc     = generate_pack_description(p, i)
 
+        rare_miss = p.get("missing_rare_plus", 0)
+        rare_ev   = p.get("rare_plus_ev_10x", 0.0)
         lines += [
             f"## {i}. {name} ({exp})",
             "",
-            f"**Score:** {score:.4f} | **Missing:** {missing}/{total} | **New EV 10x:** {new_ev:.2f} | **⧗/card:** {cost:.1f} | **DR:** {dr:.2f}",
+            f"**Score:** {score:.4f} | **Missing:** {missing}/{total} | **★+ miss:** {rare_miss} | **EV/10x:** {new_ev:.2f} | **★+/10x:** {rare_ev:.2f} | **⧗/EV:** {cost:.1f} | **DR:** {dr:.2f}",
             "",
             desc,
             "",
@@ -378,7 +383,7 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         "",
         "## Top Packs — Unified Ranking",
         "",
-        "Ranked by unified score: `new_card_ev_10x×1.0 + copy_ev×0.2 + ex_card_ev×0.5 + deck_target_ev×1.5`, weighted by confidence.",
+        "Ranked by unified score: `new_card_ev_10x×1.0 + copy_ev×0.2 + ex_card_ev×0.5 + deck_target_ev×1.5`, weighted by confidence. `new_card_ev_10x` is rarity-weighted (base + rarity bonus only); EX and deck-target bonuses are added separately via their own terms.",
         "",
         "| Rank | Pack | Expansion | Unified | New EV (10x) | Deck EV | EX EV | ⧗/card | Missing |",
         "|---|---|---|---|---|---|---|---|---|",

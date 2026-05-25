@@ -170,22 +170,24 @@ def _print_full_rankings() -> None:
     col_name = max(len(p.get("pack_name", "")) for p in packs)
     col_name = max(col_name, 4)
     max_cost = max((p.get("cost_per_unique_card_10x", 0.0) for p in packs), default=0.0)
-    col_cost = max(len(f"{max_cost:.1f}") + 1, 7)  # +1 for ⧗ suffix; min 7 for header "⧗/card"
+    col_cost = max(len(f"{max_cost:.1f}") + 1, 6)  # +1 for ⧗ suffix; min 6 for header "⧗/EV"
 
     print()
     print(f"  Full Pack Rankings — {len(packs)} packs  (open with Pack Hourglasses, 120 ⧗ per 10x)")
     print()
-    print(f"  {'#':>3}  {'Pack':<{col_name}}  {'Missing':>9}  {'New/10x':>7}  {'⧗/card':>{col_cost}}")
-    print(f"  {'─' * 3}  {'─' * col_name}  {'─' * 9}  {'─' * 7}  {'─' * col_cost}")
+    print(f"  {'#':>3}  {'Pack':<{col_name}}  {'Missing':>9}  {'★+miss':>6}  {'EV/10x':>7}  {'★+cnt':>6}  {'⧗/EV':>{col_cost}}")
+    print(f"  {'─' * 3}  {'─' * col_name}  {'─' * 9}  {'─' * 6}  {'─' * 7}  {'─' * 6}  {'─' * col_cost}")
 
     for i, p in enumerate(packs, 1):
-        name     = p.get("pack_name", "?")
-        missing  = p.get("missing_in_pool", 0)
-        total    = p.get("cards_in_pool", 0)
-        new_ev   = p.get("new_card_ev_10x", 0.0)
-        cost     = p.get("cost_per_unique_card_10x", 0.0)
-        miss_str = f"{missing}/{total}"
-        print(f"  {i:>3}  {name:<{col_name}}  {miss_str:>9}  {new_ev:>6.1f}x  {cost:{col_cost - 1}.1f}⧗")
+        name         = p.get("pack_name", "?")
+        missing      = p.get("missing_in_pool", 0)
+        total        = p.get("cards_in_pool", 0)
+        new_ev       = p.get("new_card_ev_10x", 0.0)
+        rare_miss    = p.get("missing_rare_plus", 0)
+        rare_ev      = p.get("rare_plus_ev_10x", 0.0)
+        cost         = p.get("cost_per_unique_card_10x", 0.0)
+        miss_str     = f"{missing}/{total}"
+        print(f"  {i:>3}  {name:<{col_name}}  {miss_str:>9}  {rare_miss:>6}  {new_ev:>6.1f}x  {rare_ev:>6.2f}  {cost:{col_cost - 1}.1f}⧗")
 
 
 def _print_final_summary(show_promo: bool = False) -> None:

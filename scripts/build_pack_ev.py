@@ -76,6 +76,9 @@ UNIFIED_WEIGHTS = {
     "deck_target":  1.5,   # scaled deck completion contribution
 }
 
+# Rarities considered "rare+" for breakdown metrics in rankings
+RARE_PLUS_RARITIES = {"one_star", "double_star", "triple_star", "crown"}
+
 # Cost in hourglasses per single pack opening (no bulk discount in TCGP)
 HOURGLASS_PER_PACK = 12
 
@@ -326,10 +329,12 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     owned_in_pool    = 0
     missing_in_pool  = 0
     new_card_ev      = 0.0
-    new_card_ev_10x  = 0.0   # E[unique new cards in 10 consecutive openings] via Coupon Collector
+    new_card_ev_10x  = 0.0   # E[rarity-weighted new cards in 10 consecutive openings]
     copy_ev          = 0.0
     ex_card_ev       = 0.0
     deck_target_ev   = 0.0
+    missing_rare_plus = 0    # count of missing one_star+ cards
+    rare_plus_ev_10x  = 0.0  # P(≥1 in 10 packs), count-based, for rare+ cards only
     card_ev_list     = []
     pz_hits          = 0
     fallback_count   = 0
@@ -404,7 +409,15 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
                 p_at_least_one = 1.0 - (1.0 - min(p_per_slot, 1.0)) ** 3
             else:
                 p_at_least_one = min(p_pull, 1.0)
-            new_card_ev_10x += 1.0 - (1.0 - p_at_least_one) ** 10
+            p_10x = 1.0 - (1.0 - p_at_least_one) ** 10
+            # Rarity-only weight: EX and deck-target bonuses live in their own unified_score
+            # terms (ex_card_ev × 0.5, deck_target_ev × 1.5); including them here would
+            # double-count those signals.
+            v_rarity = 1.0 + RARITY_BONUS.get(rarity or "", 0.0)
+            new_card_ev_10x += p_10x * v_rarity
+            if rarity in RARE_PLUS_RARITIES:
+                missing_rare_plus += 1
+                rare_plus_ev_10x += p_10x  # count-based for display
         else:
             copy_ev += ev
 
@@ -454,6 +467,8 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "copy_ev":         round(copy_ev, 6),
         "ex_card_ev":      round(ex_card_ev, 6),
         "deck_target_ev":  round(deck_target_ev, 6),
+        "missing_rare_plus": missing_rare_plus,
+        "rare_plus_ev_10x":  round(rare_plus_ev_10x, 6),
         "pack_total_ev":   round(pack_total_ev, 6),
         "confidence_adjusted_ev": round(pack_total_ev * confidence_weight, 6),
         "unified_score":   round(unified_score, 6),

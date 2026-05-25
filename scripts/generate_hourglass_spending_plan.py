@@ -228,7 +228,7 @@ def write_md(out_data):
         f"- Rerun EV after batch(es): {plan['rerun_after_batch_n']}",
         f"- Stopping condition: {plan['stopping_condition']}",
         "",
-        "| # | Pack | Set | ⧗ Cost | Unified | 10x EV | ⧗/card | DR Ratio | Missing | Near-Complete | Rerun? |",
+        "| # | Pack | Set | ⧗ Cost | Unified | 10x EV | ⧗/EV | DR Ratio | Missing | Near-Complete | Rerun? |",
         "|---|---|---|---|---|---|---|---|---|---|---|",
     ]
 
@@ -259,7 +259,7 @@ def write_md(out_data):
             f"- **Hourglasses:** {b['hourglass_cost']} ⧗ ({b['packs_to_open']} packs × {HOURGLASS_PER_PACK} ⧗)",
             f"- **Unified score:** {b['unified_score']:.4f}",
             f"- **New-card EV (10x):** {b['new_card_ev_10x']:.4f}",
-            f"- **Cost per unique card:** {b['cost_per_unique_card_10x']:.1f} ⧗",
+            f"- **Cost per EV unit (⧗/EV):** {b['cost_per_unique_card_10x']:.1f} ⧗",
             f"- **DR ratio:** {b['ev_diminishing_returns_ratio']:.3f}"
             + (" ← near-complete" if b["near_complete"] else ""),
             f"- **Missing in pool:** {b['missing_in_pool']}",
@@ -290,9 +290,9 @@ def write_md(out_data):
         "",
         "## Notes",
         "",
-        f"- **Unified score** = `new_card_ev_10x×1.0 + copy_ev×0.2 + ex_card_ev×0.5 + deck_target_ev×1.5` × confidence_weight",
+        f"- **Unified score** = `new_card_ev_10x×1.0 + copy_ev×0.2 + ex_card_ev×0.5 + deck_target_ev×1.5` × confidence_weight. new_card_ev_10x is rarity-weighted; EX and deck bonuses are added separately.",
         f"- **DR ratio** = `new_card_ev_10x / (new_card_ev_1x × 10)`. Below {NEAR_COMPLETE_THRESHOLD}: pool near-complete, diminishing returns significant.",
-        f"- **⧗/card** = `{BATCH_SIZE * HOURGLASS_PER_PACK} ⧗ / new_card_ev_10x`. Lower is better.",
+        f"- **⧗/EV** = `{BATCH_SIZE * HOURGLASS_PER_PACK} ⧗ / new_card_ev_10x`. Lower is better. (new_card_ev_10x is rarity-weighted, so this is cost per rarity-weighted value unit, not per raw card count)",
         "- Re-run `build_pack_ev.py` after every significant collection change to keep rankings current.",
         "",
     ]
