@@ -4,7 +4,7 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-05-25T04:04:19+00:00 |
+| Report generated | 2026-05-25T04:18:14+00:00 |
 | Model confidence | **pz_verified** |
 | Collection total | 709 cards |
 | Packs ranked | 24 |
@@ -51,7 +51,7 @@ Ranked by hourglasses spent per unique new card (10-pack batch). Lower is better
 | New-card EV (1x) | 4.1996 |
 | EX-card EV | 0.0000 |
 | Deck target EV | 0.0000 |
-| Cost / unique card (10x) | 3.54 ⧗ |
+| Cost / EV unit (10x) | 3.54 ⧗ |
 | DR ratio | 0.808 |
 | Pool size | 140 cards |
 | Already owned in pool | 26 |
@@ -78,7 +78,7 @@ Top EV cards in this pack:
 | New-card EV (1x) | 4.1944 |
 | EX-card EV | 0.0000 |
 | Deck target EV | 0.0000 |
-| Cost / unique card (10x) | 3.55 ⧗ |
+| Cost / EV unit (10x) | 3.55 ⧗ |
 | DR ratio | 0.807 |
 | Pool size | 126 cards |
 | Already owned in pool | 22 |
@@ -105,7 +105,7 @@ Top EV cards in this pack:
 | New-card EV (1x) | 3.9697 |
 | EX-card EV | 0.3156 |
 | Deck target EV | 0.0000 |
-| Cost / unique card (10x) | 3.59 ⧗ |
+| Cost / EV unit (10x) | 3.59 ⧗ |
 | DR ratio | 0.843 |
 | Pool size | 234 cards |
 | Already owned in pool | 55 |
@@ -132,7 +132,7 @@ Top EV cards in this pack:
 | New-card EV (1x) | 3.6049 |
 | EX-card EV | 0.1037 |
 | Deck target EV | 0.0000 |
-| Cost / unique card (10x) | 3.58 ⧗ |
+| Cost / EV unit (10x) | 3.58 ⧗ |
 | DR ratio | 0.929 |
 | Pool size | 379 cards |
 | Already owned in pool | 120 |
@@ -159,7 +159,7 @@ Top EV cards in this pack:
 | New-card EV (1x) | 4.0642 |
 | EX-card EV | 0.0000 |
 | Deck target EV | 0.0000 |
-| Cost / unique card (10x) | 3.65 ⧗ |
+| Cost / EV unit (10x) | 3.65 ⧗ |
 | DR ratio | 0.810 |
 | Pool size | 126 cards |
 | Already owned in pool | 25 |

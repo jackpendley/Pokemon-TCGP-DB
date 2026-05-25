@@ -299,6 +299,14 @@ def main() -> int:
             _print_step("Sync collection", rc, _collection_status())
     else:
         print(f"  -  {'Sync collection':<22}  skipped")
+        _rq = ROOT / "data" / "sync" / "sync_review_queue.json"
+        if _rq.exists():
+            try:
+                q = json.loads(_rq.read_text(encoding="utf-8"))
+                if not q.get("resolved", True) and (q.get("new_cards") or q.get("ambiguous_matches")):
+                    sync_had_review_items = True
+            except Exception:
+                pass
 
     # ── Validate ──────────────────────────────────────────────────────────
     rc, stdout = _run("Validate collection", "scripts/validate_current_collection.py",

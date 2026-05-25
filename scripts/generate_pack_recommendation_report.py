@@ -112,7 +112,7 @@ def generate_pack_description(pack: dict, rank: int) -> str:
         parts.append("notable EX cards available")
 
     if cost > 0 and rank > 3:
-        parts.append(f"{cost:.1f} ⧗/unique card")
+        parts.append(f"{cost:.1f} ⧗/EV")
 
     prefix = {1: "Top pick.", 2: "Strong choice.", 3: "Good option."}.get(rank, "")
     joined = "; ".join(parts)
@@ -334,7 +334,7 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         lines.append(f"| New-card EV (1x) | {p.get('new_card_ev', 0.0):.4f} |")
         lines.append(f"| EX-card EV | {p.get('ex_card_ev', 0.0):.4f} |")
         lines.append(f"| Deck target EV | {p.get('deck_target_ev', 0.0):.4f} |")
-        lines.append(f"| Cost / unique card (10x) | {p.get('cost_per_unique_card_10x', 0.0):.2f} ⧗ |")
+        lines.append(f"| Cost / EV unit (10x) | {p.get('cost_per_unique_card_10x', 0.0):.2f} ⧗ |")
         lines.append(f"| DR ratio | {p.get('ev_diminishing_returns_ratio', 0.0):.3f} |")
         lines.append(f"| Pool size | {p['cards_in_pool']} cards |")
         lines.append(f"| Already owned in pool | {p['owned_in_pool']} |")
@@ -496,7 +496,7 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
                 ]
                 for i, p in enumerate(promo_packs[:10], 1):
                     promo_lines.append(
-                        f"| {i} | {p['pack_name']} | {p['missing_in_pack']}/{p['card_count']} | {p['new_card_ev']:.4f} |"
+                        f"| {i} | {p['pack_name']} | {p.get('missing_in_pool', '?')}/{p.get('cards_in_pool', '?')} | {p['new_card_ev']:.4f} |"
                     )
                 promo_lines.append("")
         except Exception:
