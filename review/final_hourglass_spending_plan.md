@@ -2,7 +2,7 @@
 
 Generated: 2026-05-24  
 Model confidence: **PZ VERIFIED**  
-Collection total: 699 cards  
+Collection total: 709 cards  
 Batch size: 10 packs (120 ⧗ per batch)  
 
 > **DISCLAIMER**
@@ -13,7 +13,7 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 ## Optimal Spending Plan
 
-**3-batch plan rotating through top unified-score packs. Batch 1: Fantastical Parade. Batch 2: switch to Lugia (near-complete). Batch 3: Deluxe Pack: ex. Always rerun EV after each batch.**
+**3-batch plan rotating through top unified-score packs. Batch 1: Lunala. Batch 2: switch to Palkia (near-complete). Batch 3: Fantastical Parade. Always rerun EV after each batch.**
 
 - Total batches: 3
 - Total hourglasses: 360 ⧗
@@ -22,47 +22,47 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 | # | Pack | Set | ⧗ Cost | Unified | 10x EV | ⧗/EV | DR Ratio | Missing | Near-Complete | Rerun? |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **Fantastical Parade** | B2 | 120 ⧗ | 34.2617 | 34.0248 | 3.5 | 0.843 | 182 | YES | YES |
-| 2 | **Lugia** | A4 | 120 ⧗ | 34.2559 | 34.2072 | 3.5 | 0.800 | 109 | YES | YES |
-| 3 | **Deluxe Pack: ex** | A4b | 120 ⧗ | 34.0222 | 33.9108 | 3.5 | 0.929 | 262 | — | YES |
+| 1 | **Lunala** | A3 | 120 ⧗ | 33.9516 | 33.9157 | 3.5 | 0.808 | 114 | YES | YES |
+| 2 | **Palkia** | A2 | 120 ⧗ | 33.8678 | 33.8429 | 3.5 | 0.807 | 104 | YES | YES |
+| 3 | **Fantastical Parade** | B2 | 120 ⧗ | 33.6845 | 33.4524 | 3.6 | 0.843 | 179 | YES | YES |
 
 ---
 
 ### Batch Details
 
-#### Batch 1 — Fantastical Parade (B2)
+#### Batch 1 — Lunala (A3)
 
-- **Pack:** Fantastical Parade (Fantastical Parade)
+- **Pack:** Lunala (Celestial Guardians)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 34.2617
-- **New-card EV (10x):** 34.0248
+- **Unified score:** 33.9516
+- **New-card EV (10x):** 33.9157
 - **Cost per EV unit (⧗/EV):** 3.5 ⧗
-- **DR ratio:** 0.843 ← near-complete
-- **Missing in pool:** 182
-- **Notes:** Open first batch from the top unified-score pack. WARNING: DR ratio=0.843 < 0.85 — this pool is near-complete; switch to #2 after this batch.
+- **DR ratio:** 0.808 ← near-complete
+- **Missing in pool:** 114
+- **Notes:** Open first batch from the top unified-score pack. WARNING: DR ratio=0.808 < 0.85 — this pool is near-complete; switch to #2 after this batch.
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 
-#### Batch 2 — Lugia (A4)
+#### Batch 2 — Palkia (A2)
 
-- **Pack:** Lugia (Wisdom of Sea and Sky)
+- **Pack:** Palkia (Space-Time Smackdown)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 34.2559
-- **New-card EV (10x):** 34.2072
+- **Unified score:** 33.8678
+- **New-card EV (10x):** 33.8429
 - **Cost per EV unit (⧗/EV):** 3.5 ⧗
-- **DR ratio:** 0.800 ← near-complete
-- **Missing in pool:** 109
+- **DR ratio:** 0.807 ← near-complete
+- **Missing in pool:** 104
 - **Notes:** Switched to #2 pack (near-complete flag on batch 1).
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 
-#### Batch 3 — Deluxe Pack: ex (A4b)
+#### Batch 3 — Fantastical Parade (B2)
 
-- **Pack:** Deluxe Pack: ex (Deluxe Pack: ex)
+- **Pack:** Fantastical Parade (Fantastical Parade)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 34.0222
-- **New-card EV (10x):** 33.9108
-- **Cost per EV unit (⧗/EV):** 3.5 ⧗
-- **DR ratio:** 0.929
-- **Missing in pool:** 262
+- **Unified score:** 33.6845
+- **New-card EV (10x):** 33.4524
+- **Cost per EV unit (⧗/EV):** 3.6 ⧗
+- **DR ratio:** 0.843 ← near-complete
+- **Missing in pool:** 179
 - **Notes:** Re-run EV after this batch; rotate to highest unified-score pack for batch 4.
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 

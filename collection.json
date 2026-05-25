@@ -1,6 +1,6 @@
 {
   "meta": {
-    "total_cards": 699,
+    "total_cards": 709,
     "last_updated": "2026-05-24",
     "format": "Pokemon TCG Pocket"
   },
@@ -750,7 +750,7 @@
       "stage": 0,
       "hp": 70,
       "card_type": "Pokemon",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Regice",
@@ -1159,7 +1159,7 @@
       "hp": 150,
       "card_type": "Pokemon",
       "attack": "Knocking Hammer 80",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Machop",
@@ -1680,7 +1680,7 @@
       "stage": 0,
       "hp": 60,
       "card_type": "Pokemon",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Umbreon ex",
@@ -2159,7 +2159,7 @@
       "stage": 0,
       "hp": 70,
       "card_type": "Pokemon",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Snorlax ex",
@@ -2980,6 +2980,62 @@
       "stage": 1,
       "stage_label": "Stage 1",
       "hp": 190,
+      "is_ex": true
+    },
+    {
+      "name": "Ferroseed",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "is_ex": false
+    },
+    {
+      "name": "Tyrantrum",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 150,
+      "is_ex": false
+    },
+    {
+      "name": "Sunflora",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "is_ex": false
+    },
+    {
+      "name": "Chinchou",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "is_ex": false
+    },
+    {
+      "name": "Slowpoke",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "is_ex": false
+    },
+    {
+      "name": "Lanturn ex",
+      "count": 1,
+      "card_type": "Pokemon",
       "is_ex": true
     }
   ]

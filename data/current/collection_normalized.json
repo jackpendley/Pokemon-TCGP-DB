@@ -1,12 +1,12 @@
 {
   "meta": {
-    "total_cards": 699,
+    "total_cards": 709,
     "last_updated": "2026-05-24",
     "format": "Pokemon TCG Pocket"
   },
   "generated_note": "Normalized output — do not edit. Source: collection.json",
-  "actual_total_quantity": 699,
-  "unique_entries": 330,
+  "actual_total_quantity": 709,
+  "unique_entries": 336,
   "collection": [
     {
       "name": "Charmander",
@@ -1066,7 +1066,7 @@
       "stage": 0,
       "hp": 70,
       "card_type": "Pokemon",
-      "count": 1,
+      "count": 2,
       "normalized_name": "cryogonal",
       "entry_id": "cryogonal",
       "is_ex": false,
@@ -1647,7 +1647,7 @@
       "hp": 150,
       "card_type": "Pokemon",
       "attack": "Knocking Hammer 80",
-      "count": 1,
+      "count": 2,
       "normalized_name": "machamp",
       "entry_id": "machamp",
       "is_ex": false,
@@ -2393,7 +2393,7 @@
       "stage": 0,
       "hp": 60,
       "card_type": "Pokemon",
-      "count": 1,
+      "count": 2,
       "normalized_name": "sneasel",
       "entry_id": "sneasel",
       "is_ex": false,
@@ -3076,7 +3076,7 @@
       "stage": 0,
       "hp": 70,
       "card_type": "Pokemon",
-      "count": 1,
+      "count": 2,
       "normalized_name": "spinda",
       "entry_id": "spinda",
       "is_ex": false,
@@ -4122,6 +4122,74 @@
       "is_ex": true,
       "normalized_name": "mega_lucario_ex",
       "entry_id": "mega_lucario_ex"
+    },
+    {
+      "name": "Ferroseed",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "is_ex": false,
+      "normalized_name": "ferroseed",
+      "entry_id": "ferroseed"
+    },
+    {
+      "name": "Tyrantrum",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 150,
+      "is_ex": false,
+      "normalized_name": "tyrantrum",
+      "entry_id": "tyrantrum"
+    },
+    {
+      "name": "Sunflora",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "is_ex": false,
+      "normalized_name": "sunflora",
+      "entry_id": "sunflora"
+    },
+    {
+      "name": "Chinchou",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "is_ex": false,
+      "normalized_name": "chinchou",
+      "entry_id": "chinchou"
+    },
+    {
+      "name": "Slowpoke",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "is_ex": false,
+      "normalized_name": "slowpoke",
+      "entry_id": "slowpoke"
+    },
+    {
+      "name": "Lanturn ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "normalized_name": "lanturn_ex",
+      "entry_id": "lanturn_ex"
     }
   ]
 }

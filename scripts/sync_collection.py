@@ -606,13 +606,23 @@ def build_auto_entry(mr: "MatchResult", ext_ref: dict) -> dict | None:
     """Build a collection entry from ext_ref metadata for a NEW_CARD match.
 
     Prefers the ext_ref record whose (set_code, number) matches the PZ card.
-    Returns None if ext_ref has no record for this name.
+    Falls back to name-based heuristics when ext_ref has no record:
+      - "<Name> ex" is always a Pokemon EX card in TCGP.
+    Returns None if the card type cannot be reliably inferred.
     """
     if not mr.canonical_name:
         return None
     nn = _normalize(mr.canonical_name)
     records = ext_ref.get(nn, [])
     if not records:
+        # In TCGP, cards named "X ex" are always Pokemon EX cards — no exceptions.
+        if mr.canonical_name.lower().endswith(" ex"):
+            return {
+                "name": mr.canonical_name,
+                "count": mr.pz_card.count,
+                "card_type": "Pokemon",
+                "is_ex": True,
+            }
         return None
 
     pz = mr.pz_card
@@ -1119,7 +1129,7 @@ def main() -> int:
             print(f"  Auto-adding: {mr.canonical_name} ×{mr.pz_card.count}")
         else:
             still_new.append(mr)
-            print(f"  Cannot auto-add (no ext_ref match): {mr.canonical_name}", file=sys.stderr)
+            print(f"  Cannot auto-add (unknown card_type — add to ext_ref or collection.json): {mr.canonical_name}", file=sys.stderr)
     new_cards = still_new
 
     # ── Phase 4c: Write review queue ─────────────────────────────────────
