@@ -128,6 +128,45 @@ def load_ext_ref() -> dict[str, list[dict]]:
     return result
 
 
+def build_card_meta(
+    ext_ref: dict[str, list[dict]],
+    collection_entries: list[dict],
+) -> dict[str, dict]:
+    """Build {normalized_name → card_type_metadata} as fallback for auto-add.
+
+    Used when ext_ref has no exact (set_code, card_number) match.  Populated
+    from B-set ext_ref records (which have complete card_category coverage) plus
+    every entry in collection.json (known-good schema values).
+    Collection entries take priority so owned-card data is always authoritative.
+    """
+    meta: dict[str, dict] = {}
+
+    for nn, records in ext_ref.items():
+        for r in records:
+            if r.get("card_category") and nn not in meta:
+                cat = r.get("card_category", "")
+                card_type = "Pokemon" if cat == "Pokemon" else "Trainer"
+                meta[nn] = {
+                    "card_type": card_type,
+                    "trainer_subtype": _TRAINER_SUBTYPE_MAP.get(cat) if card_type == "Trainer" else None,
+                    "is_ex": bool(r.get("is_ex", False)),
+                    "type": r.get("pokemon_type"),
+                }
+                break
+
+    for entry in collection_entries:
+        nn = _normalize(entry.get("name", ""))
+        if entry.get("card_type"):
+            meta[nn] = {
+                "card_type": entry["card_type"],
+                "trainer_subtype": entry.get("trainer_subtype"),
+                "is_ex": bool(entry.get("is_ex", False)),
+                "type": entry.get("type"),
+            }
+
+    return meta
+
+
 # ---------------------------------------------------------------------------
 # Name normalization
 # ---------------------------------------------------------------------------
@@ -363,8 +402,16 @@ def _match_one(
         ref = pack_sources.get(key)
         if ref:
             from rapidfuzz import fuzz as _fuzz
-            if _fuzz.ratio(pz.raw_name.lower(), ref["card_name"].lower()) >= 60:
+            ratio = _fuzz.ratio(pz.raw_name.lower(), ref["card_name"].lower())
+            if ratio >= 60:
                 canonical_name = ref["card_name"]
+            else:
+                print(
+                    f"  WARN: card-number mismatch — PZ {pz.set_code}#{pz.card_number} "
+                    f"({pz.raw_name!r}) vs pack_sources ({ref['card_name']!r}, {ratio:.0f}%). "
+                    f"PZ may use different numbering for set {pz.set_code}.",
+                    file=sys.stderr,
+                )
 
     # Step 2: fuzzy match raw name against pack_sources card_name list
     if not canonical_name:
@@ -602,62 +649,110 @@ _TRAINER_SUBTYPE_MAP: dict[str, str] = {
 }
 
 
-def build_auto_entry(mr: "MatchResult", ext_ref: dict) -> dict | None:
-    """Build a collection entry from ext_ref metadata for a NEW_CARD match.
+def build_auto_entry(
+    mr: "MatchResult",
+    ext_ref: dict,
+    card_meta: dict | None = None,
+) -> dict:
+    """Build a collection entry for a NEW_CARD match.
 
-    Prefers the ext_ref record whose (set_code, number) matches the PZ card.
-    Falls back to name-based heuristics when ext_ref has no record:
-      - "<Name> ex" is always a Pokemon EX card in TCGP.
-    Returns None if the card type cannot be reliably inferred.
+    Lookup priority:
+    1. ext_ref exact match on (set_code, card_number) — best metadata.
+    2. ext_ref records[0] — same card name, different set; hp/stage may differ.
+    3. card_meta lookup — card_type/subtype from B-set ext_ref or owned collection.
+    4. " ex" suffix heuristic — always a Pokemon EX card in TCGP.
+    5. Assume Pokemon — all remaining cards; warn so ext_ref can be populated.
+
+    Never returns None: one of the five paths always produces a valid entry.
+    Callers should check that canonical_name is non-empty before calling.
     """
-    if not mr.canonical_name:
-        return None
     nn = _normalize(mr.canonical_name)
-    records = ext_ref.get(nn, [])
-    if not records:
-        # In TCGP, cards named "X ex" are always Pokemon EX cards — no exceptions.
-        if mr.canonical_name.lower().endswith(" ex"):
-            return {
-                "name": mr.canonical_name,
-                "count": mr.pz_card.count,
-                "card_type": "Pokemon",
-                "is_ex": True,
-            }
-        return None
-
     pz = mr.pz_card
-    best = next(
-        (r for r in records
-         if r.get("set_code", "").upper() == (pz.set_code or "").upper()
-         and r.get("number") == pz.card_number),
-        records[0],
-    )
+    records = ext_ref.get(nn, [])
 
-    entry: dict = {"name": mr.canonical_name, "count": pz.count}
-    cat = best.get("card_category", "")
-    if cat == "Pokemon":
-        entry["card_type"] = "Pokemon"
-        ptype = best.get("pokemon_type")
-        if ptype and ptype != "None":
-            entry["type"] = ptype
-        stage_str = best.get("stage", "")
-        if stage_str in _STAGE_MAP:
-            s, sl = _STAGE_MAP[stage_str]
-            entry["stage"] = s
-            entry["stage_label"] = sl
-        hp = best.get("hp")
-        if hp is not None:
-            entry["hp"] = hp
-    else:
-        entry["card_type"] = "Trainer"
-        subtype = _TRAINER_SUBTYPE_MAP.get(cat)
-        if subtype:
-            entry["trainer_subtype"] = subtype
-        elif cat:
-            print(f"  WARN: unknown trainer category '{cat}' for {mr.canonical_name} — add to _TRAINER_SUBTYPE_MAP", file=sys.stderr)
+    if records:
+        best = next(
+            (r for r in records
+             if r.get("set_code", "").upper() == (pz.set_code or "").upper()
+             and r.get("number") == pz.card_number),
+            None,
+        )
+        if best is None:
+            best = records[0]
+            if best.get("set_code", "").upper() != (pz.set_code or "").upper():
+                print(
+                    f"  INFO: using {best.get('set_code')} metadata for {mr.canonical_name!r} "
+                    f"(PZ {pz.set_code} not in ext_ref — hp/stage sourced from different set)",
+                    file=sys.stderr,
+                )
 
-    entry["is_ex"] = bool(best.get("is_ex", False))
-    return entry
+        entry: dict = {"name": mr.canonical_name, "count": pz.count}
+        cat = best.get("card_category", "")
+        if cat == "Pokemon":
+            entry["card_type"] = "Pokemon"
+            ptype = best.get("pokemon_type")
+            if ptype and ptype != "None":
+                entry["type"] = ptype
+            stage_str = best.get("stage", "")
+            if stage_str in _STAGE_MAP:
+                s, sl = _STAGE_MAP[stage_str]
+                entry["stage"] = s
+                entry["stage_label"] = sl
+            hp = best.get("hp")
+            if hp is not None:
+                entry["hp"] = hp
+        else:
+            entry["card_type"] = "Trainer"
+            subtype = _TRAINER_SUBTYPE_MAP.get(cat)
+            if subtype:
+                entry["trainer_subtype"] = subtype
+            elif cat:
+                print(
+                    f"  WARN: unknown trainer category {cat!r} for {mr.canonical_name!r} "
+                    f"— add to _TRAINER_SUBTYPE_MAP",
+                    file=sys.stderr,
+                )
+        entry["is_ex"] = bool(best.get("is_ex", False))
+        return entry
+
+    # No ext_ref record — fall back to name-based inference.
+
+    # Heuristic 1: " ex" suffix is unambiguous in TCGP.
+    if mr.canonical_name.lower().endswith(" ex"):
+        return {
+            "name": mr.canonical_name,
+            "count": pz.count,
+            "card_type": "Pokemon",
+            "is_ex": True,
+        }
+
+    # Heuristic 2: card_meta lookup (B-set ext_ref + owned collection entries).
+    if card_meta and nn in card_meta:
+        known = card_meta[nn]
+        entry = {
+            "name": mr.canonical_name,
+            "count": pz.count,
+            "card_type": known["card_type"],
+            "is_ex": known["is_ex"],
+        }
+        if known["card_type"] == "Pokemon":
+            if known.get("type"):
+                entry["type"] = known["type"]
+        else:
+            if known.get("trainer_subtype"):
+                entry["trainer_subtype"] = known["trainer_subtype"]
+        return entry
+
+    # Heuristic 3: assume Pokemon. In TCGP, all known Trainer names are covered by
+    # card_meta (from B-set ext_ref + collection.json). Anything not found there is
+    # overwhelmingly a Pokemon species. The caller is responsible for logging a
+    # summary; per-card logging at this site would be too noisy for bulk syncs.
+    return {
+        "name": mr.canonical_name,
+        "count": pz.count,
+        "card_type": "Pokemon",
+        "is_ex": False,
+    }
 
 
 def append_entries_to_collection(raw: str, entries: list[dict]) -> str:
@@ -693,15 +788,20 @@ def write_review_queue(
     SYNC_DIR.mkdir(parents=True, exist_ok=True)
     queue = {
         "generated_at": date.today().isoformat(),
-        "resolved": False,
+        "resolved": not bool(new_cards) and not bool(ambiguous),
         "new_cards": [
             {
+                "match_status": r.status,  # NEW_CARD or UNMATCHED
                 "set_code": r.pz_card.set_code,
                 "card_number": r.pz_card.card_number,
                 "raw_name": r.pz_card.raw_name,
                 "canonical_name": r.canonical_name,
                 "count": r.pz_card.count,
-                "action_needed": "Add this card to collection.json manually",
+                "action_needed": (
+                    "Add this card to collection.json manually"
+                    if r.status == "NEW_CARD"
+                    else "Card name unrecognized — check pack_sources or PZ data"
+                ),
             }
             for r in new_cards
         ],
@@ -1119,17 +1219,30 @@ def main() -> int:
         print("DRY RUN — no changes written.")
         return 0
 
-    # ── Phase 4b: Auto-add new cards from ext_ref ─────────────────────────
+    # ── Phase 4b: Auto-add new cards ─────────────────────────────────────
+    card_meta = build_card_meta(ext_ref, collection_entries)
     auto_added: list[dict] = []
     still_new: list[MatchResult] = []
+    n_assumed = 0
     for mr in new_cards:
-        entry = build_auto_entry(mr, ext_ref)
-        if entry is not None:
-            auto_added.append(entry)
-            print(f"  Auto-adding: {mr.canonical_name} ×{mr.pz_card.count}")
-        else:
+        if not mr.canonical_name:
             still_new.append(mr)
-            print(f"  Cannot auto-add (unknown card_type — add to ext_ref or collection.json): {mr.canonical_name}", file=sys.stderr)
+            continue
+        nn = _normalize(mr.canonical_name)
+        entry = build_auto_entry(mr, ext_ref, card_meta)
+        auto_added.append(entry)
+        print(f"  Auto-adding: {mr.canonical_name} ×{mr.pz_card.count}")
+        # Track whether the "assume Pokemon" heuristic fired
+        if (not ext_ref.get(nn)
+                and not mr.canonical_name.lower().endswith(" ex")
+                and not (card_meta and nn in card_meta)):
+            n_assumed += 1
+    if n_assumed:
+        print(
+            f"  WARN: {n_assumed} card(s) assumed card_type=Pokemon "
+            f"(no ext_ref metadata — run scripts/fetch_ext_ref.py to add)",
+            file=sys.stderr,
+        )
     new_cards = still_new
 
     # ── Phase 4c: Write review queue ─────────────────────────────────────
