@@ -1770,9 +1770,9 @@
       "card_type": "Pokemon",
       "attack": "Fighting Fist 10+",
       "count": 2,
-      "variant": "Fighting Fist art",
+      "variant": "Fighting Fist alt art",
       "normalized_name": "riolu",
-      "entry_id": "riolu_fighting_fist_art",
+      "entry_id": "riolu_fighting_fist_alt_art",
       "is_ex": false,
       "stage_label": "Basic"
     },
