@@ -46,7 +46,6 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 
-from rapidfuzz import process as fuzz_process
 
 ROOT            = Path(__file__).resolve().parent.parent
 COLLECTION_JSON = ROOT / "collection.json"
@@ -71,7 +70,7 @@ class PZCard:
 
 @dataclass
 class MatchResult:
-    status:        str   # MATCHED | NEW_CARD | UNMATCHED | AMBIGUOUS
+    status:        str   # MATCHED | NEW_CARD | AMBIGUOUS
     pz_card:       PZCard
     entry:         dict | None = None          # the collection.json entry (MATCHED only)
     entry_index:   int | None = None
@@ -196,6 +195,8 @@ def normalize_pz_record(raw: dict) -> PZCard | None:
     if not name:
         return None
     name = str(name).strip()
+    if not name:
+        return None
 
     # Count / quantity owned
     count_raw = _guess_field(raw, "ownedCount", "count", "quantity", "owned",
@@ -243,8 +244,16 @@ def normalize_pz_record(raw: dict) -> PZCard | None:
 # ---------------------------------------------------------------------------
 
 _RARITY_RANK: dict[str, int] = {
-    "one_diamond": 1, "two_diamond": 2,
-    "one_star": 3, "two_star": 4, "three_star": 5, "crown": 6,
+    "one_diamond":   1,
+    "two_diamond":   2,
+    "three_diamond": 3,
+    "four_diamond":  4,
+    "one_star":      5,
+    "two_star":      6,
+    "double_star":   6,
+    "three_star":    7,
+    "triple_star":   7,
+    "crown":         8,
 }
 
 # Known PROMO-B card-number → canonical collection.json name overrides.
@@ -261,9 +270,16 @@ _PROMO_B_OVERRIDES: dict[int, str] = {
 # PROMO-A cards are not in pack_sources; fuzzy matcher picks wrong names ("Mega Charizard X ex",
 # "Red") at ≥85%. Override directly to the correct collection.json names.
 _PROMO_A_OVERRIDES: dict[int, str] = {
+    1: "Potion",
     2: "X Speed",
+    3: "Hand Scope",
+    4: "Pokédex",
     6: "Red Card",
 }
+
+# Entries consecutively absent from PZ for this many syncs are considered stale and removed.
+# The check fires when stored consecutive_missing == threshold-1 (i.e., this is the Nth miss).
+_STALE_THRESHOLD = 3
 
 
 def _build_name_index(collection: list[dict]) -> dict[str, list[int]]:
@@ -275,10 +291,6 @@ def _build_name_index(collection: list[dict]) -> dict[str, list[int]]:
     return idx
 
 
-def _build_pack_name_list(pack_sources: dict) -> list[str]:
-    return list({r["card_name"] for r in pack_sources.values()})
-
-
 def match_pz_cards(
     pz_cards: list[PZCard],
     collection: list[dict],
@@ -286,11 +298,10 @@ def match_pz_cards(
     ext_ref: dict[str, list[dict]],
 ) -> list[MatchResult]:
     name_index = _build_name_index(collection)
-    pack_name_list = _build_name_list(pack_sources)
     results: list[MatchResult] = []
 
     for pz in pz_cards:
-        result = _match_one(pz, collection, name_index, pack_sources, pack_name_list, ext_ref)
+        result = _match_one(pz, collection, name_index, pack_sources, ext_ref)
         results.append(result)
 
     # Pass 2: retry AMBIGUOUS results — exclude already-matched entry indices.
@@ -341,7 +352,15 @@ def match_pz_cards(
                     rank = _RARITY_RANK.get(ref.get("rarity", ""), 99)
             return (rank, pz.set_code or "", pz.card_number or 0)
 
-        for ri, ci in zip(sorted(res_idxs, key=_pz_sort_key), sorted(remaining)):
+        def _coll_sort_key(ci: int) -> tuple:
+            """Sort collection entries rarity-ascending to mirror _pz_sort_key ordering."""
+            entry = collection[ci]
+            variant = (entry.get("variant") or "").lower()
+            # Alt-art variants are higher rarity — sort them after base variants.
+            is_alt = "alt" in variant.split()
+            return (1 if is_alt else 0, ci)
+
+        for ri, ci in zip(sorted(res_idxs, key=_pz_sort_key), sorted(remaining, key=_coll_sort_key)):
             results[ri] = MatchResult(
                 status="MATCHED",
                 pz_card=results[ri].pz_card,
@@ -351,31 +370,60 @@ def match_pz_cards(
             )
         matched_indices.update(remaining)
 
-    still_ambiguous = [r for r in results if r.status == "AMBIGUOUS"]
-    if still_ambiguous:
-        lines = []
-        for r in still_ambiguous:
-            cands = ", ".join(
-                f"{c.get('name')}(hp={c.get('hp')},variant={c.get('variant','')})"
-                for c in r.candidates
+    # Force-resolve any remaining AMBIGUOUS by picking the first unmatched candidate.
+    # Emits a WARN so the user can add disambiguation data to fix the root cause,
+    # but never hard-crashes — every PZ card is always ingested.
+    for i, r in enumerate(results):
+        if r.status != "AMBIGUOUS":
+            continue
+        nn = _normalize(r.canonical_name)
+        remaining = [idx for idx in name_index.get(nn, []) if idx not in matched_indices]
+        if remaining:
+            idx = remaining[0]
+            print(
+                f"  WARN: disambiguation failed for '{r.canonical_name}' "
+                f"(set={r.pz_card.set_code}, num={r.pz_card.card_number}) "
+                f"— force-matched to collection entry #{idx}. "
+                f"Add HP/rarity to ext_ref or pack_sources to resolve properly.",
+                file=sys.stderr,
             )
-            lines.append(
-                f"  '{r.pz_card.raw_name}' "
-                f"(set={r.pz_card.set_code}, num={r.pz_card.card_number}) → {cands}"
+            results[i] = MatchResult(
+                status="MATCHED",
+                pz_card=r.pz_card,
+                entry=collection[idx],
+                entry_index=idx,
+                canonical_name=r.canonical_name,
             )
-        raise RuntimeError(
-            f"Unresolvable match for {len(still_ambiguous)} card(s) — "
-            f"add HP/rarity/set_code to ext_ref or pack_sources:\n" + "\n".join(lines)
-        )
+            matched_indices.add(idx)
+        else:
+            # All variants already claimed — merge overflow count into first matched variant.
+            # Creating a NEW_CARD here would duplicate an existing entry in collection.json;
+            # instead, re-point to an already-matched index so Phase 5 aggregates the count.
+            nn_idxs = [idx for idx in name_index.get(nn, []) if idx in matched_indices]
+            target_idx = nn_idxs[0] if nn_idxs else None
+            print(
+                f"  WARN: overflow copies of '{r.canonical_name}' "
+                f"(set={r.pz_card.set_code}, num={r.pz_card.card_number}) "
+                f"— all {len(name_index.get(nn, []))} collection variant(s) already matched; "
+                f"merging {r.pz_card.count} count into existing variant.",
+                file=sys.stderr,
+            )
+            if target_idx is not None:
+                results[i] = MatchResult(
+                    status="MATCHED",
+                    pz_card=r.pz_card,
+                    entry=collection[target_idx],
+                    entry_index=target_idx,
+                    canonical_name=r.canonical_name,
+                )
+            else:
+                results[i] = MatchResult(
+                    status="NEW_CARD",
+                    pz_card=r.pz_card,
+                    canonical_name=r.canonical_name,
+                )
 
     return results
-
-
-def _build_name_list(pack_sources: dict) -> list[str]:
-    seen: dict[str, None] = {}
-    for r in pack_sources.values():
-        seen[r["card_name"]] = None
-    return list(seen)
 
 
 def _match_one(
@@ -383,7 +431,6 @@ def _match_one(
     collection: list[dict],
     name_index: dict[str, list[int]],
     pack_sources: dict,
-    pack_name_list: list[str],
     ext_ref: dict[str, list[dict]],
 ) -> MatchResult:
     # Pre-step: PROMO overrides (PZ catalog returns wrong/missing names for these slots)
@@ -393,43 +440,43 @@ def _match_one(
     elif pz.set_code == "PROMO-B" and pz.card_number in _PROMO_B_OVERRIDES:
         canonical_name = _PROMO_B_OVERRIDES[pz.card_number]
 
-    # Step 1: resolve canonical name via (set_code, card_number) → pack_sources.
-    # Sanity-check: reject the pack_sources result if its name is implausibly
-    # different from the PZ raw name (catches A1 card-number mismatches where
-    # pack_sources uses a different numbering scheme than PZ).
+    # Step 1: exact (set_code, card_number) → pack_sources canonical name.
+    # Sanity-check: if the raw_name is directly recognized in the collection AND
+    # it disagrees with the pack_sources name, the set has a card-numbering mismatch
+    # (e.g. PZ A1 uses different indices than our pack_sources). In that case skip
+    # Step 1 and let Step 2's direct-name match resolve it correctly.
     if canonical_name is None and pz.set_code and pz.card_number is not None:
-        key = (pz.set_code, pz.card_number)
-        ref = pack_sources.get(key)
+        ref = pack_sources.get((pz.set_code, pz.card_number))
         if ref:
-            from rapidfuzz import fuzz as _fuzz
-            ratio = _fuzz.ratio(pz.raw_name.lower(), ref["card_name"].lower())
-            if ratio >= 60:
-                canonical_name = ref["card_name"]
+            ps_name = ref["card_name"]
+            nn_raw = _normalize(pz.raw_name)
+            nn_ps  = _normalize(ps_name)
+            if nn_raw == nn_ps:
+                canonical_name = ps_name
             else:
+                # Names disagree after normalization → set-numbering mismatch.
+                # Fall through to Step 2's direct-name match using the PZ raw_name,
+                # which is always safer than blindly trusting a mismatched pack_sources entry.
+                # This handles both: card is already owned (raw_name in name_index) AND
+                # card is not yet owned (raw_name not in name_index → NEW_CARD via fallback).
                 print(
-                    f"  WARN: card-number mismatch — PZ {pz.set_code}#{pz.card_number} "
-                    f"({pz.raw_name!r}) vs pack_sources ({ref['card_name']!r}, {ratio:.0f}%). "
-                    f"PZ may use different numbering for set {pz.set_code}.",
+                    f"  WARN: set-numbering mismatch {pz.set_code}#{pz.card_number} "
+                    f"({pz.raw_name!r} vs pack_sources {ps_name!r}) "
+                    f"— using direct name match.",
                     file=sys.stderr,
                 )
 
-    # Step 2: fuzzy match raw name against pack_sources card_name list
-    if not canonical_name:
-        hit = fuzz_process.extractOne(pz.raw_name, pack_name_list, score_cutoff=85)
-        if hit:
-            if hit[1] < 95:
-                print(f"  DEBUG: fuzzy '{pz.raw_name}' → '{hit[0]}' ({hit[1]:.0f}%)", file=sys.stderr)
-            canonical_name = hit[0]
-
-    # Step 3: direct normalized-name match against collection.json
-    # (catches trainers and cards from sets not in pack_sources)
-    if not canonical_name:
+    # Step 2: direct normalized-name match against collection.json.
+    # Catches Trainers and cards from sets not yet in pack_sources.
+    if canonical_name is None:
         nn_direct = _normalize(pz.raw_name)
         if nn_direct in name_index:
             canonical_name = pz.raw_name
 
-    if not canonical_name:
-        return MatchResult(status="UNMATCHED", pz_card=pz, canonical_name=None)
+    # No match via any deterministic path — auto-add using the PZ name.
+    # This ensures no card is ever silently dropped.
+    if canonical_name is None:
+        canonical_name = pz.raw_name
 
     nn = _normalize(canonical_name)
     indices = name_index.get(nn, [])
@@ -438,13 +485,45 @@ def _match_one(
         return MatchResult(status="NEW_CARD", pz_card=pz, canonical_name=canonical_name)
 
     if len(indices) == 1:
+        single_entry = collection[indices[0]]
+        # Rarity cross-check: if pack_sources says alt-art but the only collection
+        # entry is base (or vice versa), this is a NEW variant not yet owned.
+        if pz.set_code and pz.card_number is not None:
+            ps_ref = pack_sources.get((pz.set_code, pz.card_number))
+            # Only apply rarity cross-check when pack_sources confirms the card
+            # identity — a set-numbering mismatch would give us a different card's
+            # rarity (e.g. triple_star for "Charizard ex" at the Farfetch'd slot).
+            if ps_ref and _normalize(ps_ref["card_name"]) == _normalize(canonical_name):
+                rarity = ps_ref.get("rarity", "")
+                is_pz_alt = rarity in {
+                    "one_star", "two_star", "double_star",
+                    "three_star", "triple_star", "crown",
+                }
+                entry_is_alt = "alt" in str(single_entry.get("variant", "")).lower().split()
+                if is_pz_alt != entry_is_alt:
+                    return MatchResult(status="NEW_CARD", pz_card=pz, canonical_name=canonical_name)
         return MatchResult(
             status="MATCHED",
             pz_card=pz,
-            entry=collection[indices[0]],
+            entry=single_entry,
             entry_index=indices[0],
             canonical_name=canonical_name,
         )
+
+    # Exact-name shortcut: canonical_name may contain characters that normalize
+    # identically to a sibling (e.g. Nidoran♀ and Nidoran♂ both → "nidoran").
+    # If exactly one collection entry matches the canonical name verbatim, use it
+    # directly rather than falling into the HP/rarity disambiguation path.
+    if canonical_name:
+        exact = [i for i in indices if collection[i].get("name") == canonical_name]
+        if len(exact) == 1:
+            return MatchResult(
+                status="MATCHED",
+                pz_card=pz,
+                entry=collection[exact[0]],
+                entry_index=exact[0],
+                canonical_name=canonical_name,
+            )
 
     # Multiple variants — try HP then rarity to disambiguate
     if pz.set_code and pz.card_number is not None:
@@ -472,13 +551,13 @@ def _match_one(
 
         # Step B: rarity-based alt-art disambiguation
         ps_ref = pack_sources.get((pz.set_code, pz.card_number))
-        if ps_ref:
+        if ps_ref and _normalize(ps_ref["card_name"]) == _normalize(canonical_name):
             rarity = ps_ref.get("rarity", "")
-            is_alt = rarity in {"one_star", "two_star", "three_star", "crown"}
+            is_alt = rarity in {"one_star", "two_star", "double_star", "three_star", "triple_star", "crown"}
             alt_idx = [i for i in indices
-                       if "alt" in str(collection[i].get("variant", "")).lower()]
+                       if "alt" in str(collection[i].get("variant", "")).lower().split()]
             reg_idx = [i for i in indices
-                       if "alt" not in str(collection[i].get("variant", "")).lower()]
+                       if "alt" not in str(collection[i].get("variant", "")).lower().split()]
             if is_alt and len(alt_idx) == 1:
                 return MatchResult(
                     status="MATCHED",
@@ -701,12 +780,32 @@ def build_auto_entry(
             hp = best.get("hp")
             if hp is not None:
                 entry["hp"] = hp
+        elif not cat:
+            # Blank ext_ref category — warn and default to Pokemon (safer than Trainer;
+            # run scripts/fetch_ext_ref.py to populate the missing card_category).
+            print(
+                f"  WARN: blank card_category in ext_ref for {mr.canonical_name!r} "
+                f"— defaulting to Pokemon. Run fetch_ext_ref.py to fix.",
+                file=sys.stderr,
+            )
+            entry["card_type"] = "Pokemon"
+            ptype = best.get("pokemon_type")
+            if ptype and ptype != "None":
+                entry["type"] = ptype
+            stage_str = best.get("stage", "")
+            if stage_str in _STAGE_MAP:
+                s, sl = _STAGE_MAP[stage_str]
+                entry["stage"] = s
+                entry["stage_label"] = sl
+            hp = best.get("hp")
+            if hp is not None:
+                entry["hp"] = hp
         else:
             entry["card_type"] = "Trainer"
             subtype = _TRAINER_SUBTYPE_MAP.get(cat)
             if subtype:
                 entry["trainer_subtype"] = subtype
-            elif cat:
+            else:
                 print(
                     f"  WARN: unknown trainer category {cat!r} for {mr.canonical_name!r} "
                     f"— add to _TRAINER_SUBTYPE_MAP",
@@ -782,46 +881,44 @@ def append_entries_to_collection(raw: str, entries: list[dict]) -> str:
 
 def write_review_queue(
     new_cards: list[MatchResult],
-    ambiguous: list[MatchResult],
     missing_from_pz: list[dict],
 ) -> None:
     SYNC_DIR.mkdir(parents=True, exist_ok=True)
+    # Build a lookup of previous consecutive_missing counts so we can increment them.
+    prev_consecutive: dict[str, int] = {}
+    if REVIEW_QUEUE.exists():
+        try:
+            prev_q = json.loads(REVIEW_QUEUE.read_text(encoding="utf-8"))
+            for entry in prev_q.get("missing_from_pz", []):
+                name = entry.get("name")
+                if name:
+                    prev_consecutive[name] = entry.get("consecutive_missing", 0)
+        except Exception:
+            print(
+                "  WARN: could not read previous sync_review_queue.json — "
+                "consecutive_missing counts reset to 1.",
+                file=sys.stderr,
+            )
     queue = {
         "generated_at": date.today().isoformat(),
-        "resolved": not bool(new_cards) and not bool(ambiguous),
+        "resolved": not bool(new_cards),
         "new_cards": [
             {
-                "match_status": r.status,  # NEW_CARD or UNMATCHED
                 "set_code": r.pz_card.set_code,
                 "card_number": r.pz_card.card_number,
                 "raw_name": r.pz_card.raw_name,
                 "canonical_name": r.canonical_name,
                 "count": r.pz_card.count,
-                "action_needed": (
-                    "Add this card to collection.json manually"
-                    if r.status == "NEW_CARD"
-                    else "Card name unrecognized — check pack_sources or PZ data"
-                ),
+                "action_needed": "Add this card to collection.json manually",
             }
             for r in new_cards
         ],
-        "ambiguous_matches": [
-            {
-                "raw_name": r.pz_card.raw_name,
-                "canonical_name": r.canonical_name,
-                "pz_count": r.pz_card.count,
-                "candidate_names": [
-                    f"{c.get('name')} (hp={c.get('hp')}, variant={c.get('variant', '')})"
-                    for c in r.candidates
-                ],
-                "action_needed": "Resolve variant manually, then re-run sync",
-            }
-            for r in ambiguous
-        ],
+        "ambiguous_matches": [],
         "missing_from_pz": [
             {
                 "name": e.get("name"),
                 "current_count": e.get("count"),
+                "consecutive_missing": prev_consecutive.get(e.get("name", ""), 0) + 1,
                 "note": "Not found in Pokemon Zone response — count NOT zeroed",
             }
             for e in missing_from_pz
@@ -840,23 +937,18 @@ def load_review_queue() -> dict:
 
 
 def review_queue_is_unresolved(q: dict) -> bool:
-    if q.get("resolved", True):
-        return False
-    # Only ambiguous matches hard-block: they require human disambiguation before
-    # the next sync can resolve them. new_cards are re-attempted via auto-add each
-    # run and produce exit 2 (soft warning) if they still can't be resolved.
-    return bool(q.get("ambiguous_matches"))
+    return not q.get("resolved", True)
 
 
 # ---------------------------------------------------------------------------
 # Validation subprocess
 # ---------------------------------------------------------------------------
 
-def run_validation() -> bool:
-    r1 = subprocess.run(
-        [sys.executable, "scripts/validate_current_collection.py"],
-        capture_output=True, text=True, cwd=ROOT
-    )
+def run_validation(expected_total: int | None = None) -> bool:
+    cmd = [sys.executable, "scripts/validate_current_collection.py"]
+    if expected_total is not None:
+        cmd += ["--expected-total", str(expected_total)]
+    r1 = subprocess.run(cmd, capture_output=True, text=True, cwd=ROOT)
     if r1.returncode != 0:
         print("  VALIDATION FAILED:", file=sys.stderr)
         print(r1.stdout, file=sys.stderr)
@@ -883,7 +975,6 @@ def run_validation() -> bool:
 def print_diff(
     changes: list[CountChange],
     new_cards: list[MatchResult],
-    ambiguous: list[MatchResult],
     missing: list[dict],
 ) -> None:
     today = date.today().isoformat()
@@ -906,14 +997,6 @@ def print_diff(
             sc = r.pz_card.set_code or "?"
             cn = r.pz_card.card_number or "?"
             print(f"    [{sc}/{cn}] {r.canonical_name or r.pz_card.raw_name}  ×{r.pz_card.count}")
-
-    if ambiguous:
-        print(f"\n  Ambiguous matches ({len(ambiguous)}) [review required]:")
-        for r in ambiguous:
-            variants = ", ".join(
-                f"hp={c.get('hp')}" for c in r.candidates
-            )
-            print(f"    {r.canonical_name} — {len(r.candidates)} variants ({variants})")
 
     if missing:
         print(f"\n  Missing from Pokemon Zone ({len(missing)}) [counts NOT changed]:")
@@ -1139,8 +1222,7 @@ def main() -> int:
         q = load_review_queue()
         if review_queue_is_unresolved(q):
             n_new = len(q.get("new_cards", []))
-            n_amb = len(q.get("ambiguous_matches", []))
-            print(f"BLOCKED: Review queue has {n_new} new card(s) and {n_amb} ambiguous match(es).")
+            print(f"BLOCKED: Review queue has {n_new} unresolved new card(s).")
             print(f"  File: {REVIEW_QUEUE}")
             print("  Resolve the items or run with --force to skip this check.")
             return 3
@@ -1177,10 +1259,8 @@ def main() -> int:
         return 1
 
     matched   = [r for r in results if r.status == "MATCHED"]
-    new_cards = [r for r in results if r.status in ("NEW_CARD", "UNMATCHED")]
-    ambiguous = [r for r in results if r.status == "AMBIGUOUS"]
+    new_cards = [r for r in results if r.status == "NEW_CARD"]
 
-    # Entries in collection.json with no corresponding PZ record
     matched_indices = {r.entry_index for r in matched if r.entry_index is not None}
     missing_from_pz = [
         e for i, e in enumerate(collection_entries) if i not in matched_indices
@@ -1213,7 +1293,7 @@ def main() -> int:
                 new_count=new_count,
             ))
 
-    print_diff(changes, new_cards, ambiguous, missing_from_pz)
+    print_diff(changes, new_cards, missing_from_pz)
 
     if args.dry_run:
         print("DRY RUN — no changes written.")
@@ -1224,19 +1304,67 @@ def main() -> int:
     auto_added: list[dict] = []
     still_new: list[MatchResult] = []
     n_assumed = 0
+
+    _ALT_RARITIES = {"one_star", "two_star", "double_star", "three_star", "triple_star", "crown"}
+
+    def _mr_is_alt(mr: MatchResult) -> bool:
+        """Return True if this NEW_CARD maps to an alt-rarity slot in pack_sources."""
+        pz_c = mr.pz_card
+        if not (pz_c.set_code and pz_c.card_number is not None):
+            return False
+        ps_r = pack_sources.get((pz_c.set_code, pz_c.card_number))
+        return bool(
+            ps_r
+            and _normalize(ps_r["card_name"]) == _normalize(mr.canonical_name or "")
+            and ps_r.get("rarity") in _ALT_RARITIES
+        )
+
+    # Merge duplicate NEW_CARD results for the same canonical name AND rarity tier.
+    # Can occur when PZ returns the same new card from multiple set records
+    # (e.g. cross-set parallels); sum counts so only one entry is appended.
+    # Key includes "|alt" vs "|base" so a base Bulbasaur and an alt-art Bulbasaur
+    # get separate entries — they require separate collection rows.
+    merged_new: dict[str, MatchResult] = {}
     for mr in new_cards:
         if not mr.canonical_name:
             still_new.append(mr)
             continue
+        key = mr.canonical_name.lower() + ("|alt" if _mr_is_alt(mr) else "|base")
+        if key in merged_new:
+            prev = merged_new[key]
+            merged_new[key] = MatchResult(
+                status=prev.status,
+                pz_card=PZCard(
+                    set_code=prev.pz_card.set_code,
+                    card_number=prev.pz_card.card_number,
+                    raw_name=prev.pz_card.raw_name,
+                    count=prev.pz_card.count + mr.pz_card.count,
+                    raw_record=prev.pz_card.raw_record,
+                ),
+                canonical_name=prev.canonical_name,
+            )
+        else:
+            merged_new[key] = mr
+
+    for mr in merged_new.values():
         nn = _normalize(mr.canonical_name)
         entry = build_auto_entry(mr, ext_ref, card_meta)
+        # Tag alt-art entries so they're distinguishable from base copies.
+        # Uses the same name-guard as the rarity cross-check to avoid mismatch slots.
+        pz_c = mr.pz_card
+        if pz_c.set_code and pz_c.card_number is not None:
+            ps_r = pack_sources.get((pz_c.set_code, pz_c.card_number))
+            if (ps_r
+                    and _normalize(ps_r["card_name"]) == _normalize(mr.canonical_name)
+                    and ps_r.get("rarity") in _ALT_RARITIES):
+                entry["variant"] = "alt art"
         auto_added.append(entry)
         print(f"  Auto-adding: {mr.canonical_name} ×{mr.pz_card.count}")
-        # Track whether the "assume Pokemon" heuristic fired
         if (not ext_ref.get(nn)
                 and not mr.canonical_name.lower().endswith(" ex")
                 and not (card_meta and nn in card_meta)):
             n_assumed += 1
+
     if n_assumed:
         print(
             f"  WARN: {n_assumed} card(s) assumed card_type=Pokemon "
@@ -1245,24 +1373,94 @@ def main() -> int:
         )
     new_cards = still_new
 
-    # ── Phase 4c: Write review queue ─────────────────────────────────────
-    has_review_items = bool(new_cards or ambiguous)
-    write_review_queue(new_cards, ambiguous, missing_from_pz)
+    # ── Phase 4c: Mark stale entries for removal ─────────────────────────────
+    # Two cases trigger removal:
+    #   A) PZ returned an alt-art for the card but not the base copy → stale base
+    #   B) Entry has been consecutively absent from PZ for >= threshold syncs
+    #      (implies the card is no longer owned and PZ has stopped tracking it)
+    # Read previous consecutive_missing counts from the existing review queue.
+    prev_consecutive: dict[str, int] = {}
+    if REVIEW_QUEUE.exists():
+        try:
+            prev_q = json.loads(REVIEW_QUEUE.read_text(encoding="utf-8"))
+            for entry in prev_q.get("missing_from_pz", []):
+                name = entry.get("name")
+                if name:
+                    prev_consecutive[name] = entry.get("consecutive_missing", 0)
+        except Exception:
+            pass
 
-    if has_review_items and not args.force:
-        n_new = len(new_cards)
-        n_amb = len(ambiguous)
-        print(f"\nReview queue written: {REVIEW_QUEUE}")
-        if n_new:
-            print(f"  {n_new} new card(s) could not be auto-added — add to collection.json manually")
-        if n_amb:
-            print(f"  {n_amb} ambiguous match(es) require manual disambiguation")
-        print("Continuing to apply count updates for matched cards...")
+    stale_base_indices: set[int] = set()
+    alt_art_nns: set[str] = set()
+    if auto_added:
+        # Use .lower() (not _normalize) so Nidoran♀ and Nidoran♂ stay distinct.
+        # Case A only fires when a NEW alt-art was auto-added this sync — a strong PZ-level
+        # signal that the base is superseded. Extending to pre-existing matched alt-art would
+        # fire Case A on any transient PZ failure, deleting a base with no threshold protection.
+        alt_art_nns = {e["name"].lower() for e in auto_added if e.get("variant") == "alt art"}
+    missing_nns = {_normalize(e.get("name", "")) for e in missing_from_pz}
+
+    for i, e in enumerate(collection_entries):
+        if i in matched_indices:
+            continue  # matched this run — keep
+        nn = _normalize(e.get("name", ""))
+        if nn not in missing_nns:
+            continue  # not missing from PZ this run
+        name = e.get("name", "")
+        has_variant = bool(e.get("variant"))
+        # Case A: alt-art just added — only mark BASE entries stale (not alt-art variants).
+        # Match by name.lower() (not _normalize) to keep Nidoran♀/♂ distinct.
+        if not has_variant and name.lower() in alt_art_nns:
+            stale_base_indices.add(i)
+        # Case B: consecutively missing past threshold — applies to base entries and alt-art
+        # variants only. Named-art entries (e.g. 'Tackle art', 'Flame Tail art') are never
+        # returned by PZ as standalone records, so they would always hit this threshold and
+        # be incorrectly deleted. Only remove them if they genuinely had no variant (base
+        # cards) or were an "alt art" variant (which PZ does return).
+        # prev_consecutive holds the count from the LAST run. This is the current Nth miss,
+        # so stored == threshold-1 means this run is the Nth (threshold-th) consecutive miss.
+        elif (e.get("variant") in (None, "alt art")
+              and prev_consecutive.get(name, 0) >= _STALE_THRESHOLD - 1):
+            stale_base_indices.add(i)
+
+    if stale_base_indices:
+        names = ", ".join(
+            collection_entries[i].get("name", "?") for i in sorted(stale_base_indices)
+        )
+        print(f"  Removing {len(stale_base_indices)} stale entry(ies): {names}")
+        # print_diff (above) reported missing_from_pz before stale filtering — clarify the delta.
+        # Use exact name matching (same as stale_names below) to avoid _normalize() collapsing
+        # distinct names like Nidoran♀ and Nidoran♂ into the same string.
+        missing_raw_names = {e.get("name", "") for e in missing_from_pz if e.get("name")}
+        n_stale_missing = sum(
+            1 for i in stale_base_indices
+            if collection_entries[i].get("name", "") in missing_raw_names
+        )
+        if n_stale_missing:
+            print(f"  (Note: {n_stale_missing} of the 'missing' entries above are stale and will be removed)")
+
+    # ── Phase 4e: Write review queue ─────────────────────────────────────
+    # Exclude stale entries from the queue — they're about to be removed, so
+    # reporting them as "missing" would be misleading and inflate consecutive counts.
+    # Guard: only include non-empty names so "" never accidentally matches unnamed entries.
+    stale_names = {
+        collection_entries[i]["name"]
+        for i in stale_base_indices
+        if collection_entries[i].get("name")
+    }
+    queue_missing = [e for e in missing_from_pz if e.get("name") not in stale_names]
+    # write_review_queue is deferred to after Phase 5 so that if stale removal aborts,
+    # the stale entry's consecutive_missing count is NOT reset (the old queue survives intact).
+    # Exception: the no-changes early-exit below calls it immediately since there's nothing to abort.
 
     # ── Phase 5: Apply in-place edits ────────────────────────────────────
-    if not changes and not auto_added:
+    if not changes and not auto_added and not stale_base_indices:
+        write_review_queue(new_cards, queue_missing)
+        if new_cards and not args.force:
+            print(f"\nReview queue written: {REVIEW_QUEUE}")
+            print(f"  {len(new_cards)} new card(s) could not be auto-added — add to collection.json manually")
         print("No count changes to apply.")
-        return 2 if has_review_items else 0
+        return 2 if (new_cards or queue_missing) else 0
 
     edited = raw_text
 
@@ -1284,27 +1482,64 @@ def main() -> int:
 
     if auto_added:
         print(f"Auto-adding {len(auto_added)} new card(s) to collection.json...")
-        edited = append_entries_to_collection(edited, auto_added)
+        try:
+            edited = append_entries_to_collection(edited, auto_added)
+        except RuntimeError as e:
+            print(f"  ERROR: {e}", file=sys.stderr)
+            print("  Aborting — collection.json not modified.", file=sys.stderr)
+            return 1
         new_total += sum(e.get("count", 0) for e in auto_added)
+
+    if stale_base_indices:
+        # Remove stale base entries (indices into the original collection_entries list).
+        # count changes and appended entries don't shift earlier positions, so indices
+        # remain valid against the fully-edited parsed collection.
+        # Try direct JSON parse first: safe when 'edited' is json.dumps output (no comments).
+        # Fall back to _strip_comments only if that fails (original JSONC with // comment lines).
+        # This avoids _strip_comments corrupting any string value that contains '//', since
+        # json.dumps does not escape '/' and the regex strips everything after '//' on a line.
+        try:
+            staged = json.loads(edited)
+        except json.JSONDecodeError:
+            try:
+                staged = json.loads(_strip_comments(edited))
+            except json.JSONDecodeError as exc:
+                print(f"  ERROR: could not parse collection for stale removal: {exc}", file=sys.stderr)
+                print("  Aborting — collection.json not modified.", file=sys.stderr)
+                return 1
+        staged_coll = staged.get("collection", [])
+        final_coll = [e for i, e in enumerate(staged_coll) if i not in stale_base_indices]
+        new_total = sum(e.get("count", 0) for e in final_coll)
+        staged["collection"] = final_coll
+        edited = json.dumps(staged, indent=2, ensure_ascii=False)
 
     edited = update_meta(edited, new_total)
 
     COLLECTION_JSON.write_text(edited, encoding="utf-8")
     print(f"  collection.json updated. New total: {new_total}")
 
+    # Write the review queue only AFTER collection.json is successfully written.
+    # This ensures that if any Phase 5 step aborted (JSON parse failure, append error, etc.),
+    # the old queue survives intact — stale entries retain their consecutive_missing counts
+    # and removal is retried on the next sync rather than silently resetting the threshold.
+    write_review_queue(new_cards, queue_missing)
+    if new_cards and not args.force:
+        print(f"\nReview queue written: {REVIEW_QUEUE}")
+        print(f"  {len(new_cards)} new card(s) could not be auto-added — add to collection.json manually")
+        print("Continuing to apply count updates for matched cards...")
+
     # ── Phase 6: Validate ─────────────────────────────────────────────────
     print("Validating...")
-    if not run_validation():
+    if not run_validation(expected_total=new_total):
         print("ROLLBACK: restoring original collection.json", file=sys.stderr)
         COLLECTION_JSON.write_text(raw_text, encoding="utf-8")
         return 1
 
     print("  PASS — collection.json valid and normalized.")
 
-    if has_review_items:
+    if new_cards or queue_missing:
         queue_data = json.loads(REVIEW_QUEUE.read_text(encoding="utf-8"))
         n_new = len(queue_data.get("new_cards", []))
-        n_amb = len(queue_data.get("ambiguous_matches", []))
         n_mis = len(queue_data.get("missing_from_pz", []))
         print("\nReview queue summary:")
         if n_new:
@@ -1316,13 +1551,6 @@ def main() -> int:
                 print(f"    [{sc}/{cn}] {name_display} ×{item.get('count', '?')}")
             if n_new > 3:
                 print(f"    ... and {n_new - 3} more")
-        if n_amb:
-            print(f"  {n_amb} ambiguous match(es) needing disambiguation:")
-            for item in queue_data.get("ambiguous_matches", [])[:3]:
-                cands = ", ".join(item.get("candidate_names", [])[:2])
-                print(f"    {item.get('canonical_name')}: {cands}")
-            if n_amb > 3:
-                print(f"    ... and {n_amb - 3} more")
         if n_mis:
             print(f"  {n_mis} collection entries not found in PZ response")
         print(f"  Full details: {REVIEW_QUEUE}")

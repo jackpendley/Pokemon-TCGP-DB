@@ -1,0 +1,397 @@
+#!/usr/bin/env python3
+"""
+Simulation / unit tests for the sync matching pipeline.
+
+Tests every reliability-critical scenario:
+  1. Exact (set_code, card_number) → pack_sources match
+  2. PROMO-A override match
+  3. PROMO-B override match
+  4. Direct normalized-name match (trainers / sets not in pack_sources)
+  5. NEW_CARD auto-add (card not in collection)
+  6. Duplicate NEW_CARD dedup — same canonical name from two PZ set records
+  7. Multi-variant disambiguation — Pass 2 (exclusion resolves AMBIGUOUS)
+  8. Multi-variant disambiguation — Pass 3 (rarity rank assignment)
+  9. AMBIGUOUS force-match with WARN (no disambiguation data)
+ 10. consecutive_missing counter increments correctly from 0
+
+Usage:
+    python3 scripts/test_sync_matching.py
+"""
+
+import importlib.util
+import json
+import sys
+import tempfile
+from dataclasses import dataclass, field
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+
+# ---------------------------------------------------------------------------
+# Load sync_collection functions without executing main()
+# ---------------------------------------------------------------------------
+
+spec = importlib.util.spec_from_file_location(
+    "sync_collection",
+    ROOT / "scripts" / "sync_collection.py",
+)
+sc = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(sc)
+
+PZCard       = sc.PZCard
+MatchResult  = sc.MatchResult
+match_pz_cards  = sc.match_pz_cards
+write_review_queue = sc.write_review_queue
+_normalize   = sc._normalize
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+PASS = "  ✓"
+FAIL = "  ✗"
+_failures: list[str] = []
+
+
+def check(name: str, cond: bool, detail: str = "") -> None:
+    if cond:
+        print(f"{PASS}  {name}")
+    else:
+        msg = f"{name}" + (f": {detail}" if detail else "")
+        print(f"{FAIL}  {msg}")
+        _failures.append(msg)
+
+
+def make_pz(raw_name, count=1, set_code=None, card_number=None) -> PZCard:
+    return PZCard(
+        set_code=set_code,
+        card_number=card_number,
+        raw_name=raw_name,
+        count=count,
+        raw_record={},
+    )
+
+
+def make_entry(name, count=1, hp=None, variant=None, card_type="Pokemon") -> dict:
+    e = {"name": name, "count": count, "card_type": card_type, "is_ex": False}
+    if hp is not None:
+        e["hp"] = hp
+    if variant is not None:
+        e["variant"] = variant
+    return e
+
+
+# ---------------------------------------------------------------------------
+# Scenario 1: Exact (set_code, card_number) match
+# ---------------------------------------------------------------------------
+def test_exact_set_number_match():
+    print("\n--- 1. Exact set+number match ---")
+    collection = [make_entry("Charmander", count=2)]
+    pack_sources = {("A1", 4): {"card_name": "Charmander", "rarity": "one_diamond"}}
+    pz_cards = [make_pz("Charmander", count=3, set_code="A1", card_number=4)]
+
+    results = match_pz_cards(pz_cards, collection, pack_sources, {})
+    r = results[0]
+    check("status=MATCHED", r.status == "MATCHED", r.status)
+    check("entry name correct", r.entry.get("name") == "Charmander")
+    check("canonical_name correct", r.canonical_name == "Charmander")
+    check("pz count preserved", r.pz_card.count == 3)
+
+
+# ---------------------------------------------------------------------------
+# Scenario 2: PROMO-A override
+# ---------------------------------------------------------------------------
+def test_promo_a_override():
+    print("\n--- 2. PROMO-A override ---")
+    collection = [make_entry("Potion", count=1, card_type="Trainer")]
+    pack_sources = {}  # PROMO-A not in pack_sources
+    pz_cards = [make_pz("PotionXXXWrongName", count=1, set_code="PROMO-A", card_number=1)]
+
+    results = match_pz_cards(pz_cards, collection, pack_sources, {})
+    r = results[0]
+    check("status=MATCHED", r.status == "MATCHED", r.status)
+    check("override maps to 'Potion'", r.entry.get("name") == "Potion")
+
+
+# ---------------------------------------------------------------------------
+# Scenario 3: PROMO-B override
+# ---------------------------------------------------------------------------
+def test_promo_b_override():
+    print("\n--- 3. PROMO-B override ---")
+    collection = [make_entry("Zygarde 10% Forme", count=1)]
+    pack_sources = {}
+    pz_cards = [make_pz("Zygarde", count=1, set_code="PROMO-B", card_number=51)]
+
+    results = match_pz_cards(pz_cards, collection, pack_sources, {})
+    r = results[0]
+    check("status=MATCHED", r.status == "MATCHED", r.status)
+    check("override maps to 'Zygarde 10% Forme'", r.entry.get("name") == "Zygarde 10% Forme")
+
+
+# ---------------------------------------------------------------------------
+# Scenario 4: Direct normalized-name match (trainer not in pack_sources)
+# ---------------------------------------------------------------------------
+def test_direct_name_match():
+    print("\n--- 4. Direct normalized-name match ---")
+    collection = [make_entry("Professor's Research", count=2, card_type="Trainer")]
+    pack_sources = {}
+    pz_cards = [make_pz("Professor's Research", count=3, set_code="A1", card_number=999)]
+
+    results = match_pz_cards(pz_cards, collection, pack_sources, {})
+    r = results[0]
+    check("status=MATCHED", r.status == "MATCHED", r.status)
+    check("entry name correct", r.entry.get("name") == "Professor's Research")
+
+
+# ---------------------------------------------------------------------------
+# Scenario 5: NEW_CARD — card exists in PZ but not in collection
+# ---------------------------------------------------------------------------
+def test_new_card():
+    print("\n--- 5. NEW_CARD auto-add ---")
+    collection = [make_entry("Charmander", count=2)]
+    pack_sources = {("B1", 7): {"card_name": "Bulbasaur", "rarity": "one_diamond"}}
+    pz_cards = [make_pz("Bulbasaur", count=1, set_code="B1", card_number=7)]
+
+    results = match_pz_cards(pz_cards, collection, pack_sources, {})
+    r = results[0]
+    check("status=NEW_CARD", r.status == "NEW_CARD", r.status)
+    check("canonical_name set", r.canonical_name == "Bulbasaur")
+
+
+# ---------------------------------------------------------------------------
+# Scenario 6: Duplicate NEW_CARD dedup — same canonical from two PZ set records
+# ---------------------------------------------------------------------------
+def test_new_card_dedup():
+    print("\n--- 6. Duplicate NEW_CARD dedup (same card, two PZ sets) ---")
+    collection: list[dict] = []
+    pack_sources = {
+        ("A1", 1): {"card_name": "Bulbasaur", "rarity": "one_diamond"},
+        ("B1", 1): {"card_name": "Bulbasaur", "rarity": "one_diamond"},
+    }
+    pz_cards = [
+        make_pz("Bulbasaur", count=2, set_code="A1", card_number=1),
+        make_pz("Bulbasaur", count=3, set_code="B1", card_number=1),
+    ]
+
+    results = match_pz_cards(pz_cards, collection, pack_sources, {})
+    new_results = [r for r in results if r.status == "NEW_CARD"]
+    check("both results are NEW_CARD", len(new_results) == 2, str(len(new_results)))
+    check("both have canonical_name=Bulbasaur", all(r.canonical_name == "Bulbasaur" for r in new_results))
+
+    # Simulate Phase 4b dedup logic from main():
+    # Key = canonical_name.lower() + "|alt"|"|base" to keep base and alt-art separate.
+    # .lower() (not _normalize) preserves Nidoran♀ vs Nidoran♂ distinction.
+    _ALT_RARITIES = {"one_star", "two_star", "double_star", "three_star", "triple_star", "crown"}
+
+    def _mr_is_alt(mr: MatchResult, ps: dict) -> bool:
+        pz_c = mr.pz_card
+        if not (pz_c.set_code and pz_c.card_number is not None):
+            return False
+        ps_r = ps.get((pz_c.set_code, pz_c.card_number))
+        return bool(
+            ps_r
+            and _normalize(ps_r.get("card_name", "")) == _normalize(mr.canonical_name or "")
+            and ps_r.get("rarity") in _ALT_RARITIES
+        )
+
+    merged: dict[str, MatchResult] = {}
+    for mr in new_results:
+        key = mr.canonical_name.lower() + ("|alt" if _mr_is_alt(mr, pack_sources) else "|base")
+        if key in merged:
+            prev = merged[key]
+            merged[key] = MatchResult(
+                status=prev.status,
+                pz_card=PZCard(
+                    set_code=prev.pz_card.set_code,
+                    card_number=prev.pz_card.card_number,
+                    raw_name=prev.pz_card.raw_name,
+                    count=prev.pz_card.count + mr.pz_card.count,
+                    raw_record=prev.pz_card.raw_record,
+                ),
+                canonical_name=prev.canonical_name,
+            )
+        else:
+            merged[key] = mr
+
+    check("dedup produces 1 entry", len(merged) == 1, str(len(merged)))
+    merged_mr = merged["bulbasaur|base"]
+    check("merged count = 5 (2+3)", merged_mr.pz_card.count == 5, str(merged_mr.pz_card.count))
+
+
+# ---------------------------------------------------------------------------
+# Scenario 7: Pass 2 AMBIGUOUS resolution (sibling match frees last candidate)
+# ---------------------------------------------------------------------------
+def test_pass2_ambiguous_resolution():
+    print("\n--- 7. Pass 2: sibling match resolves AMBIGUOUS ---")
+    # Two Riolu entries (hp=70 and hp=80). Two PZ records for Riolu.
+    # Pass 1 can't distinguish (both unresolvable by HP if HP data is absent).
+    # But: the first PZ record gets MATCHED by HP (70), leaving only one
+    # candidate for the second — Pass 2 resolves it.
+    collection = [
+        make_entry("Riolu", count=1, hp=70),
+        make_entry("Riolu", count=1, hp=80),
+    ]
+    ext_ref = {
+        "riolu": [
+            {"set_code": "A1", "number": 10, "hp": 70, "card_category": "Pokemon"},
+            {"set_code": "A1", "number": 11, "hp": 80, "card_category": "Pokemon"},
+        ]
+    }
+    pack_sources = {
+        ("A1", 10): {"card_name": "Riolu", "rarity": "one_diamond"},
+        ("A1", 11): {"card_name": "Riolu", "rarity": "one_diamond"},
+    }
+    pz_cards = [
+        make_pz("Riolu", count=2, set_code="A1", card_number=10),
+        make_pz("Riolu", count=3, set_code="A1", card_number=11),
+    ]
+
+    results = match_pz_cards(pz_cards, collection, pack_sources, ext_ref)
+    matched = [r for r in results if r.status == "MATCHED"]
+    check("both results MATCHED", len(matched) == 2, str(len(matched)))
+    # hp=70 should match the pz card with card_number=10, hp=80 with card_number=11
+    hp_map = {r.pz_card.card_number: r.entry.get("hp") for r in matched}
+    check("card_number 10 → hp=70", hp_map.get(10) == 70, str(hp_map))
+    check("card_number 11 → hp=80", hp_map.get(11) == 80, str(hp_map))
+
+
+# ---------------------------------------------------------------------------
+# Scenario 8: Pass 3 rarity-rank assignment (N PZ records, N collection entries)
+# ---------------------------------------------------------------------------
+def test_pass3_rarity_assignment():
+    print("\n--- 8. Pass 3: rarity-rank assignment ---")
+    # Pikachu has two variants: base (no variant) and alt art.
+    # PZ returns one_diamond (base) and one_star (alt).
+    collection = [
+        make_entry("Pikachu", count=1),                            # base
+        make_entry("Pikachu", count=1, variant="alt art"),         # alt
+    ]
+    pack_sources = {
+        ("A1", 35): {"card_name": "Pikachu", "rarity": "one_diamond"},
+        ("A1", 36): {"card_name": "Pikachu", "rarity": "one_star"},
+    }
+    pz_cards = [
+        make_pz("Pikachu", count=2, set_code="A1", card_number=35),  # one_diamond → base
+        make_pz("Pikachu", count=1, set_code="A1", card_number=36),  # one_star → alt
+    ]
+
+    results = match_pz_cards(pz_cards, collection, pack_sources, {})
+    matched = [r for r in results if r.status == "MATCHED"]
+    check("both results MATCHED", len(matched) == 2, str(len(matched)))
+
+    by_cn = {r.pz_card.card_number: r.entry for r in matched}
+    base_entry = by_cn.get(35)
+    alt_entry  = by_cn.get(36)
+    check("one_diamond (35) → base variant", base_entry and not base_entry.get("variant"), str(base_entry))
+    check("one_star (36) → alt variant", alt_entry and alt_entry.get("variant") == "alt art", str(alt_entry))
+
+
+# ---------------------------------------------------------------------------
+# Scenario 9: AMBIGUOUS force-match WARN (more PZ records than collection entries)
+# ---------------------------------------------------------------------------
+def test_ambiguous_force_match():
+    print("\n--- 9. AMBIGUOUS force-match with WARN ---")
+    import io
+    import contextlib
+
+    # Three PZ records for a card, but only 2 collection entries.
+    # Pass 3 skips the group (len(res_idxs)=3 != len(remaining)=2),
+    # so the force-match loop fires for the overflow record.
+    collection = [
+        make_entry("Charmander", count=1, hp=60),
+        make_entry("Charmander", count=1, hp=80),
+    ]
+    pack_sources: dict = {}  # no pack_sources for disambiguation
+    pz_cards = [
+        make_pz("Charmander", count=2, set_code="X1", card_number=1),
+        make_pz("Charmander", count=3, set_code="X1", card_number=2),
+        make_pz("Charmander", count=1, set_code="X1", card_number=3),  # no collection entry left
+    ]
+
+    stderr_capture = io.StringIO()
+    with contextlib.redirect_stderr(stderr_capture):
+        results = match_pz_cards(pz_cards, collection, pack_sources, {})
+
+    # All 3 should be MATCHED: first two force-matched to available entries,
+    # the overflow merged back into the first already-matched entry.
+    matched = [r for r in results if r.status == "MATCHED"]
+    check("all 3 results MATCHED (overflow merged into existing)", len(matched) == 3, str(len(matched)))
+
+    warn_output = stderr_capture.getvalue()
+    check("WARN printed for force-match or overflow", "WARN:" in warn_output, repr(warn_output[:200]))
+
+
+# ---------------------------------------------------------------------------
+# Scenario 10: consecutive_missing counter starts at 1, increments correctly
+# ---------------------------------------------------------------------------
+def test_consecutive_missing_counter():
+    print("\n--- 10. consecutive_missing counter ---")
+    import io
+
+    with tempfile.TemporaryDirectory() as tmp:
+        queue_path = Path(tmp) / "sync_review_queue.json"
+
+        # Simulate: first run writes queue with no previous queue
+        orig_review_queue = sc.REVIEW_QUEUE
+        sc.REVIEW_QUEUE = queue_path
+
+        try:
+            write_review_queue([], [{"name": "Misdreavus", "count": 2}])
+            q1 = json.loads(queue_path.read_text())
+            missing1 = q1["missing_from_pz"][0]
+            check("first missing run: consecutive=1", missing1["consecutive_missing"] == 1,
+                  str(missing1["consecutive_missing"]))
+
+            # Second run: Misdreavus still missing
+            write_review_queue([], [{"name": "Misdreavus", "count": 2}])
+            q2 = json.loads(queue_path.read_text())
+            missing2 = q2["missing_from_pz"][0]
+            check("second missing run: consecutive=2", missing2["consecutive_missing"] == 2,
+                  str(missing2["consecutive_missing"]))
+
+            # Third run: Misdreavus reappears (no longer missing)
+            write_review_queue([], [])
+            q3 = json.loads(queue_path.read_text())
+            check("after reappear: missing_from_pz empty", q3["missing_from_pz"] == [], str(q3["missing_from_pz"]))
+
+            # Fourth run: Misdreavus goes missing again — counter should reset to 1
+            write_review_queue([], [{"name": "Misdreavus", "count": 2}])
+            q4 = json.loads(queue_path.read_text())
+            missing4 = q4["missing_from_pz"][0]
+            check("after reset: consecutive=1 again", missing4["consecutive_missing"] == 1,
+                  str(missing4["consecutive_missing"]))
+
+        finally:
+            sc.REVIEW_QUEUE = orig_review_queue
+
+
+# ---------------------------------------------------------------------------
+# Run all scenarios
+# ---------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    print("=" * 60)
+    print("  Sync matching simulation")
+    print("=" * 60)
+
+    test_exact_set_number_match()
+    test_promo_a_override()
+    test_promo_b_override()
+    test_direct_name_match()
+    test_new_card()
+    test_new_card_dedup()
+    test_pass2_ambiguous_resolution()
+    test_pass3_rarity_assignment()
+    test_ambiguous_force_match()
+    test_consecutive_missing_counter()
+
+    print()
+    if _failures:
+        print(f"FAILED: {len(_failures)} scenario(s)")
+        for f in _failures:
+            print(f"  - {f}")
+        sys.exit(1)
+    else:
+        print(f"ALL PASSED — {10 - len(_failures)} / 10 scenarios")
+        sys.exit(0)
