@@ -78,6 +78,48 @@ def rank_packs(packs: list, key: str, n: int = TOP_N) -> list:
     return sorted(packs, key=lambda p: p.get(key, 0.0), reverse=True)[:n]
 
 
+def generate_pack_description(pack: dict, rank: int) -> str:
+    missing   = pack.get("missing_in_pool", 0)
+    total     = pack.get("cards_in_pool", 1)
+    new_ev    = pack.get("new_card_ev_10x", 0.0)
+    dr_ratio  = pack.get("ev_diminishing_returns_ratio", 1.0)
+    deck_ev   = pack.get("deck_target_ev", 0.0)
+    ex_ev     = pack.get("ex_card_ev", 0.0)
+    cost      = pack.get("cost_per_unique_card_10x", 0.0)
+    pct_miss  = missing / total if total > 0 else 0
+
+    parts: list[str] = []
+
+    if pct_miss >= 0.60:
+        parts.append(f"large fresh pool — {missing}/{total} cards unowned")
+    elif pct_miss >= 0.30:
+        parts.append(f"moderate pool — {missing}/{total} cards unowned")
+    else:
+        parts.append(f"mostly complete — {missing}/{total} cards unowned")
+        if dr_ratio < 0.70:
+            parts.append(f"heavy diminishing returns (DR={dr_ratio:.2f})")
+
+    parts.append(f"expect ~{new_ev:.1f} new-card EV per 10x batch (rarity-weighted)")
+
+    if deck_ev >= 0.5:
+        parts.append("high-value deck targets present")
+    elif deck_ev >= 0.1:
+        parts.append("contains deck targets")
+
+    if ex_ev >= 1.0:
+        parts.append("strong EX card density")
+    elif ex_ev >= 0.3:
+        parts.append("notable EX cards available")
+
+    if cost > 0 and rank > 3:
+        parts.append(f"{cost:.1f} ⧗/EV")
+
+    prefix = {1: "Top pick.", 2: "Strong choice.", 3: "Good option."}.get(rank, "")
+    joined = "; ".join(parts)
+    body   = (joined[0].upper() + joined[1:] if joined else "") + "."
+    return f"{prefix} {body}".strip() if prefix else body
+
+
 def deck_target_pack_map(packs: list) -> dict:
     """
     Returns {card_name: [pack entries sorted by ev_contribution desc]}.
@@ -108,16 +150,10 @@ def deck_target_pack_map(packs: list) -> dict:
     return out
 
 
-def build_buckets(packs: list, deck_targets: dict, deck_validation: list) -> dict:
-    """Build recommendation buckets from EV data."""
-    by_adj_ev   = rank_packs(packs, "confidence_adjusted_ev")
-    by_total_ev = rank_packs(packs, "pack_total_ev")
-    by_new_card = rank_packs(packs, "new_card_ev")
-    by_dt       = rank_packs(packs, "deck_target_ev")
-    by_ex       = rank_packs(packs, "ex_card_ev")
-
-    # Deprioritize: lowest adjusted EV + low missing count
-    by_adj_asc  = sorted(packs, key=lambda p: p["confidence_adjusted_ev"])[:5]
+def build_unified_ranking(packs: list, deck_targets: dict, deck_validation: list) -> dict:
+    """Single unified ranking plus cost-efficiency analysis and chase deck guide."""
+    by_unified = sorted(packs, key=lambda p: p.get("unified_score", 0.0), reverse=True)
+    by_cost     = sorted(packs, key=lambda p: p.get("cost_per_unique_card_10x", float("inf")))
 
     # Chase deck specifics: which packs contain the missing deck-target cards
     chase_decks = [d for d in deck_validation if not d.get("fully_buildable")]
@@ -137,7 +173,6 @@ def build_buckets(packs: list, deck_targets: dict, deck_validation: list) -> dic
                     "candidates": entries,
                 }
             else:
-                # Check if this is a known PROMO-only card (cannot be pulled from any pack)
                 promo_only = {"Zygarde ex"}
                 note = (
                     "PROMO-B card — cannot be obtained from any pack; "
@@ -156,12 +191,9 @@ def build_buckets(packs: list, deck_targets: dict, deck_validation: list) -> dic
                 }
 
     return {
-        "best_overall_adj_ev": by_adj_ev,
-        "best_total_ev": by_total_ev,
-        "best_new_card_ev": by_new_card,
-        "best_deck_target_ev": by_dt,
-        "best_ex_ev": by_ex,
-        "deprioritize": by_adj_asc,
+        "top_packs_unified": by_unified[:TOP_N],
+        "cost_efficiency_ranking": by_cost[:TOP_N],
+        "full_unified_ranking": by_unified,
         "chase_deck_packs": best_for_chase,
     }
 
@@ -190,82 +222,15 @@ def write_json(ev_data: dict, buckets: dict, ev_readiness: dict) -> dict:
             "INFERRED CONFIDENCE: Slot rates are inferred from third-party data, not "
             "verified in-app. All EVs are adjusted by 0.85 to reflect this uncertainty."
         ) if mc in _INFERRED_MC_VALUES else "",
-        "top_5_by_adjusted_ev": [
+        "top_packs_unified": [
             {k: v for k, v in p.items() if k != "top_ev_cards"}
-            for p in buckets["best_overall_adj_ev"]
+            for p in buckets["top_packs_unified"]
         ],
-        "top_5_by_new_card_ev": [
+        "cost_efficiency_ranking": [
             {k: v for k, v in p.items() if k != "top_ev_cards"}
-            for p in buckets["best_new_card_ev"]
-        ],
-        "top_5_by_deck_target_ev": [
-            {k: v for k, v in p.items() if k != "top_ev_cards"}
-            for p in buckets["best_deck_target_ev"]
-        ],
-        "top_5_by_ex_ev": [
-            {k: v for k, v in p.items() if k != "top_ev_cards"}
-            for p in buckets["best_ex_ev"]
-        ],
-        "deprioritize_5": [
-            {k: v for k, v in p.items() if k != "top_ev_cards"}
-            for p in buckets["deprioritize"]
+            for p in buckets["cost_efficiency_ranking"]
         ],
         "chase_deck_packs": buckets["chase_deck_packs"],
-        "planning_scenarios": {
-            "conservative": {
-                "label": "Wait for in-app verification",
-                "description": (
-                    "Do not open any packs yet. Verify slot rates in PTCGP app "
-                    "(Pack details → Offering Rates). If rates match inferred values, "
-                    "upgrade to verified confidence and run the EV calculator again. "
-                    "Only then act on rankings."
-                ),
-            },
-            "moderate": {
-                "label": "Accept inferred confidence — limited opens",
-                "description": (
-                    "Accept that inferred rates may be off by a small margin (~15% "
-                    "confidence adjustment applied). Open 10 pulls from the top-adjusted-EV "
-                    "pack only. Recommended starting pack: Paldean Wonders (adj EV=4.20). "
-                    "If a specific deck target is the goal, open Crimson Blaze for Ivysaur "
-                    "or Solgaleo for Incineroar ex instead."
-                ),
-                "suggested_pack": buckets["best_overall_adj_ev"][0]["pack_name"] if buckets["best_overall_adj_ev"] else None,
-            },
-            "aggressive": {
-                "label": "Accept inferred confidence — prioritize top EV packs",
-                "description": (
-                    "Focus pack openings on the top 2–3 adjusted-EV packs. "
-                    "These packs have the most missing cards relative to their pool size. "
-                    "High miss rate means high per-pull value at current collection state. "
-                    "Rankings will shift as collection grows. Re-run EV calculator after "
-                    "every 20+ pulls."
-                ),
-                "suggested_packs": [p["pack_name"] for p in buckets["best_overall_adj_ev"][:3]],
-            },
-        },
-        "blockers": {
-            "inferred_rates": {
-                "severity": "HIGH",
-                "description": (
-                    "Slot rates not verified in-app. All EVs adjusted by 0.85 to reflect "
-                    "this uncertainty. Actual EVs may be higher or lower."
-                ),
-                "fix": "PTCGP app → Pack details → Offering Rates",
-            },
-            "deck_scorer_not_automated": {
-                "severity": "LOW",
-                "description": (
-                    "Deck completion probability is not integrated into EV. "
-                    "deck_target_ev only reflects the value of the missing card(s), "
-                    "not the full deck completion probability uplift."
-                ),
-                "fix": "Build automated deck scorer as a future phase",
-            },
-        },
-        "next_actions": [
-            "Open top-EV pack (see top_5_by_adjusted_ev). Re-run pipeline after opening packs.",
-        ],
     }
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -274,54 +239,89 @@ def write_json(ev_data: dict, buckets: dict, ev_readiness: dict) -> dict:
 
 def write_csv(ev_data: dict, buckets: dict):
     fields = [
-        "rank_adj_ev", "pack_name", "expansion", "set_code",
-        "confidence_adjusted_ev", "pack_total_ev", "new_card_ev",
+        "rank_unified", "pack_name", "expansion", "set_code",
+        "unified_score", "new_card_ev_10x", "new_card_ev",
         "ex_card_ev", "deck_target_ev",
+        "missing_rare_plus", "rare_plus_ev_10x",
+        "cost_per_unique_card_10x", "ev_diminishing_returns_ratio",
         "cards_in_pool", "owned_in_pool", "missing_in_pool",
-        "is_deck_target_pack", "top_deck_target_card",
-        "recommendation_bucket",
     ]
     packs = ev_data["packs"]
-    by_adj = sorted(packs, key=lambda p: p["confidence_adjusted_ev"], reverse=True)
-    dt_pack_names = {p["pack_name"] for p in buckets["best_deck_target_ev"]}
-
-    # Build a lookup for best deck target card per pack
-    dt_card_lookup = {}
-    for card_name, entries in buckets.get("chase_deck_packs", {}).items():
-        if isinstance(entries, dict) and entries.get("best_pack"):
-            pk = entries["best_pack"]
-            dt_card_lookup[pk] = entries["card_needed"]
+    by_unified = sorted(packs, key=lambda p: p.get("unified_score", 0.0), reverse=True)
 
     OUT_CSV.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields)
         w.writeheader()
-        for i, p in enumerate(by_adj, 1):
-            bucket = "top_ev" if i <= 5 else ("deprioritize" if i > len(by_adj) - 5 else "mid")
-            if p["pack_name"] in dt_pack_names:
-                bucket = "deck_target"
+        for i, p in enumerate(by_unified, 1):
             w.writerow({
-                "rank_adj_ev": i,
+                "rank_unified": i,
                 "pack_name": p["pack_name"],
                 "expansion": p["expansion"],
                 "set_code": p["set_code"],
-                "confidence_adjusted_ev": p["confidence_adjusted_ev"],
-                "pack_total_ev": p["pack_total_ev"],
-                "new_card_ev": p["new_card_ev"],
-                "ex_card_ev": p["ex_card_ev"],
-                "deck_target_ev": p["deck_target_ev"],
-                "cards_in_pool": p["cards_in_pool"],
-                "owned_in_pool": p["owned_in_pool"],
-                "missing_in_pool": p["missing_in_pool"],
-                "is_deck_target_pack": "yes" if p["pack_name"] in dt_pack_names else "no",
-                "top_deck_target_card": dt_card_lookup.get(p["pack_name"], ""),
-                "recommendation_bucket": bucket,
+                "unified_score": round(p.get("unified_score", 0.0), 6),
+                "new_card_ev_10x": round(p.get("new_card_ev_10x", 0.0), 6),
+                "new_card_ev": round(p.get("new_card_ev", 0.0), 6),
+                "ex_card_ev": round(p.get("ex_card_ev", 0.0), 6),
+                "deck_target_ev": round(p.get("deck_target_ev", 0.0), 6),
+                "missing_rare_plus": p.get("missing_rare_plus", 0),
+                "rare_plus_ev_10x": round(p.get("rare_plus_ev_10x", 0.0), 6),
+                "cost_per_unique_card_10x": round(p.get("cost_per_unique_card_10x", 0.0), 4),
+                "ev_diminishing_returns_ratio": round(p.get("ev_diminishing_returns_ratio", 0.0), 4),
+                "cards_in_pool": p.get("cards_in_pool", 0),
+                "owned_in_pool": p.get("owned_in_pool", 0),
+                "missing_in_pool": p.get("missing_in_pool", 0),
             })
 
 
-def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list):
+def write_full_ranking_md(ev_data: dict, buckets: dict) -> Path:
+    out_path = ROOT / "review" / "full_pack_ranking.md"
+    all_packs = buckets["full_unified_ranking"]
+    ts = datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+    lines = [
+        "# Full Pack Ranking — All 24 Standard Packs",
+        "",
+        f"Generated: {ts}",
+        "",
+        "Ranked by unified score. Use Pack Hourglasses to open these packs.",
+        "",
+        "---",
+        "",
+    ]
+
+    for i, p in enumerate(all_packs, 1):
+        name     = p["pack_name"]
+        exp      = p["expansion"]
+        score    = p.get("unified_score", 0.0)
+        missing  = p.get("missing_in_pool", 0)
+        total    = p.get("cards_in_pool", 0)
+        new_ev   = p.get("new_card_ev_10x", 0.0)
+        cost     = p.get("cost_per_unique_card_10x", 0.0)
+        dr       = p.get("ev_diminishing_returns_ratio", 0.0)
+        desc     = generate_pack_description(p, i)
+
+        rare_miss = p.get("missing_rare_plus", 0)
+        rare_ev   = p.get("rare_plus_ev_10x", 0.0)
+        lines += [
+            f"## {i}. {name} ({exp})",
+            "",
+            f"**Score:** {score:.4f} | **Missing:** {missing}/{total} | **★+ miss:** {rare_miss} | **EV/10x:** {new_ev:.2f} | **★+/10x:** {rare_ev:.2f} | **⧗/EV:** {cost:.1f} | **DR:** {dr:.2f}",
+            "",
+            desc,
+            "",
+            "---",
+            "",
+        ]
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text("\n".join(lines), encoding="utf-8")
+    return out_path
+
+
+def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list, show_promo: bool = True):
     packs = ev_data["packs"]
-    top5 = buckets["best_overall_adj_ev"]
+    top5 = buckets["top_packs_unified"]
 
     def pack_detail(p: dict) -> list:
         lines = []
@@ -329,11 +329,13 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         lines.append("")
         lines.append(f"| Metric | Value |")
         lines.append(f"|---|---|")
-        lines.append(f"| Adjusted EV (×0.85) | **{p['confidence_adjusted_ev']:.4f}** |")
-        lines.append(f"| Total EV (raw) | {p['pack_total_ev']:.4f} |")
-        lines.append(f"| New-card EV | {p['new_card_ev']:.4f} |")
-        lines.append(f"| EX-card EV | {p['ex_card_ev']:.4f} |")
-        lines.append(f"| Deck target EV | {p['deck_target_ev']:.4f} |")
+        lines.append(f"| Unified Score | **{p.get('unified_score', 0.0):.4f}** |")
+        lines.append(f"| New-card EV (10x) | {p.get('new_card_ev_10x', 0.0):.4f} |")
+        lines.append(f"| New-card EV (1x) | {p.get('new_card_ev', 0.0):.4f} |")
+        lines.append(f"| EX-card EV | {p.get('ex_card_ev', 0.0):.4f} |")
+        lines.append(f"| Deck target EV | {p.get('deck_target_ev', 0.0):.4f} |")
+        lines.append(f"| Cost / EV unit (10x) | {p.get('cost_per_unique_card_10x', 0.0):.2f} ⧗ |")
+        lines.append(f"| DR ratio | {p.get('ev_diminishing_returns_ratio', 0.0):.3f} |")
         lines.append(f"| Pool size | {p['cards_in_pool']} cards |")
         lines.append(f"| Already owned in pool | {p['owned_in_pool']} |")
         lines.append(f"| Missing from pool | **{p['missing_in_pool']}** |")
@@ -362,6 +364,8 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         return lines
 
     mc = out_data["model_confidence"]
+    all_unified = buckets["full_unified_ranking"]
+
     lines = [
         "# Pack Recommendation Report",
         "",
@@ -377,21 +381,22 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         "",
         "---",
         "",
-        "## Top 5 Packs — All Metrics",
+        "## Top Packs — Unified Ranking",
         "",
-        "| Rank | Pack | Expansion | Adj. EV | Total EV | New EV | Deck EV | EX EV | Missing |",
+        "Ranked by unified score: `new_card_ev_10x×1.0 + copy_ev×0.2 + ex_card_ev×0.5 + deck_target_ev×1.5`, weighted by confidence. `new_card_ev_10x` is rarity-weighted (base + rarity bonus only); EX and deck-target bonuses are added separately via their own terms.",
+        "",
+        "| Rank | Pack | Expansion | Unified | New EV (10x) | Deck EV | EX EV | ⧗/card | Missing |",
         "|---|---|---|---|---|---|---|---|---|",
     ]
 
-    all_sorted = sorted(packs, key=lambda p: p["confidence_adjusted_ev"], reverse=True)
-    for i, p in enumerate(all_sorted[:TOP_N], 1):
+    for i, p in enumerate(top5, 1):
         lines.append(
             f"| {i} | **{p['pack_name']}** | {p['expansion']} "
-            f"| {p['confidence_adjusted_ev']:.4f} "
-            f"| {p['pack_total_ev']:.4f} "
-            f"| {p['new_card_ev']:.4f} "
-            f"| {p['deck_target_ev']:.4f} "
-            f"| {p['ex_card_ev']:.4f} "
+            f"| {p.get('unified_score', 0.0):.4f} "
+            f"| {p.get('new_card_ev_10x', 0.0):.4f} "
+            f"| {p.get('deck_target_ev', 0.0):.4f} "
+            f"| {p.get('ex_card_ev', 0.0):.4f} "
+            f"| {p.get('cost_per_unique_card_10x', 0.0):.1f} "
             f"| {p['missing_in_pool']} |"
         )
 
@@ -399,103 +404,30 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         "",
         "---",
         "",
-        "## Recommendation Buckets",
+        "## Cost Efficiency Ranking",
         "",
-        "### Best Overall Inferred EV",
+        "Ranked by hourglasses spent per unique new card (10-pack batch). Lower is better.",
         "",
-        "These packs have the highest expected number of new unique cards per pull,",
-        "adjusted for inferred-rate uncertainty.",
-        "",
-        "| Rank | Pack | Adj. EV | Why |",
-        "|---|---|---|---|",
+        "| Rank | Pack | ⧗/card (10x) | New EV (10x) | DR Ratio | Missing |",
+        "|---|---|---|---|---|---|",
     ]
-
-    explanations = {
-        "Paldean Wonders": "Large pool, very few owned (3/131). Almost every pull is new.",
-        "Fantastical Parade": "Largest pool (234 cards), 205 missing. Highest raw volume of new cards.",
-        "Mew": "Small dense pool (86 cards), 77 missing — high hit rate per pull.",
-        "Extradimensional Crisis": "Medium pool, low ownership (13/103). Consistent new-card rate.",
-        "Mega Altaria": "Large pool (139), 119 missing. Strong EX cards present.",
-    }
-    for i, p in enumerate(buckets["best_overall_adj_ev"], 1):
-        why = explanations.get(p["pack_name"], "High new-card EV relative to pool size.")
-        lines.append(f"| {i} | {p['pack_name']} | {p['confidence_adjusted_ev']:.4f} | {why} |")
-
-    lines += [
-        "",
-        "### Best for Collection Completion",
-        "",
-        "Ranked by new_card_ev — these packs return the most new unique cards per pull.",
-        "",
-        "| Rank | Pack | New Card EV | Missing in Pool |",
-        "|---|---|---|---|",
-    ]
-    for i, p in enumerate(buckets["best_new_card_ev"], 1):
-        lines.append(f"| {i} | {p['pack_name']} | {p['new_card_ev']:.4f} | {p['missing_in_pool']} |")
-
-    lines += [
-        "",
-        "### Best for Deck Targets",
-        "",
-        "Ranked by deck_target_ev — these packs contain the highest-value missing deck cards.",
-        "Only Ivysaur (two_diamond) is in the top deck-target packs.",
-        "Incineroar ex is in Solgaleo. Magnezone ex is in Pulsing Aura.",
-        "Zygarde ex has **no known pack** — not in pack_sources.json.",
-        "",
-        "| Rank | Pack | Deck Target EV | Notes |",
-        "|---|---|---|---|",
-    ]
-    dt_notes = {
-        "Crimson Blaze": "Contains Ivysaur (two_diamond) — best for Mega Venusaur ex",
-        "Mewtwo": "Contains Ivysaur (two_diamond) — alternative Mega Venusaur ex route",
-        "Deluxe Pack: ex": "Contains Ivysaur but low per-card rate (large pool, 379 cards)",
-        "Solgaleo": "Contains Incineroar ex (four_diamond) — best for Incineroar ex chase deck",
-        "Pulsing Aura": "Contains Magnezone ex — best for Magnezone ex chase deck",
-    }
-    for i, p in enumerate(buckets["best_deck_target_ev"], 1):
-        note = dt_notes.get(p["pack_name"], "")
-        lines.append(f"| {i} | {p['pack_name']} | {p['deck_target_ev']:.4f} | {note} |")
-
-    lines += [
-        "",
-        "### Best for EX / Card Power",
-        "",
-        "Ranked by ex_card_ev — these packs contain the most missing EX cards.",
-        "",
-        "| Rank | Pack | EX Card EV |",
-        "|---|---|---|",
-    ]
-    for i, p in enumerate(buckets["best_ex_ev"], 1):
-        lines.append(f"| {i} | {p['pack_name']} | {p['ex_card_ev']:.4f} |")
-
-    lines += [
-        "",
-        "### Packs to Deprioritize",
-        "",
-        "These packs have the lowest adjusted EV — most cards in the pool are already owned.",
-        "",
-        "| Rank | Pack | Adj. EV | Owned/Pool | Notes |",
-        "|---|---|---|---|---|",
-    ]
-    deprio_notes = {
-        "Crimson Blaze": "High deck-target value offsets low general EV — open only if chasing Ivysaur",
-        "Pulsing Aura": "Contains Magnezone ex — open only if chasing that deck",
-        "Mewtwo": "Higher EV than Crimson Blaze/Pulsing Aura; only deprioritized vs top packs",
-        "Arceus": "Mid-range owned ratio",
-    }
-    for i, p in enumerate(buckets["deprioritize"], 1):
-        owned_str = f"{p['owned_in_pool']}/{p['cards_in_pool']}"
-        note = deprio_notes.get(p["pack_name"], "Low new-card return relative to pool")
-        lines.append(f"| {i} | {p['pack_name']} | {p['confidence_adjusted_ev']:.4f} | {owned_str} | {note} |")
+    for i, p in enumerate(buckets["cost_efficiency_ranking"], 1):
+        lines.append(
+            f"| {i} | {p['pack_name']} "
+            f"| {p.get('cost_per_unique_card_10x', 0.0):.1f} "
+            f"| {p.get('new_card_ev_10x', 0.0):.4f} "
+            f"| {p.get('ev_diminishing_returns_ratio', 0.0):.3f} "
+            f"| {p['missing_in_pool']} |"
+        )
 
     lines += [
         "",
         "---",
         "",
-        "## Pack Detail — Top 5 by Adjusted EV",
+        "## Pack Detail — Top 5 by Unified Score",
         "",
     ]
-    for p in buckets["best_overall_adj_ev"]:
+    for p in top5:
         lines += pack_detail(p)
         lines.append("")
         lines.append("---")
@@ -507,11 +439,7 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         "| Chase Deck | Missing Card | Short By | Best Pack | Pack EV | Pull Prob | Notes |",
         "|---|---|---|---|---|---|---|",
     ]
-    chase_decks_order = ["Mega Venusaur ex", "Incineroar ex", "Zygarde ex Fighting", "Magnezone ex (Clemont Engine)"]
-    for deck_name in chase_decks_order:
-        info = buckets["chase_deck_packs"].get(deck_name, {})
-        if not info:
-            continue
+    for deck_name, info in buckets["chase_deck_packs"].items():
         card = info.get("card_needed", "?")
         short_by = info.get("short_by", 1)
         best_pack = info.get("best_pack") or "**UNKNOWN**"
@@ -531,72 +459,25 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         "",
         "---",
         "",
-        "## Planning Scenarios",
-        "",
-        "> These are scenarios for your consideration — not instructions.",
-        "> All scenarios assume inferred-confidence slot rates.",
-        "",
-        "### Scenario A — Conservative: Wait for In-App Verification",
-        "",
-        "**Action:** No pack opens until slot rates are verified in PTCGP app.",
-        "",
-        "**How:** Open PTCGP → any pack → Pack details → Offering Rates.",
-        "Compare the displayed percentages against `slot_rates` in",
-        "`data/reference/pull_probability_model.json`.",
-        "",
-        "If rates match: set `confidence=verified` in the model, re-run",
-        "`python3 scripts/build_pack_ev.py`, then return to this report for final rankings.",
-        "",
-        "**Tradeoff:** Delays pack decisions but eliminates rate uncertainty.",
-        "",
-        "### Scenario B — Moderate: Limited Opens at Inferred Confidence",
-        "",
-        "**Action:** Open up to ~10 pulls from one pack, accepting the ~15% rate uncertainty.",
-        "",
-        "**Suggested pack:** Paldean Wonders (adj EV=4.20) for general collection growth.",
-        "**Alternate:** Crimson Blaze if the Mega Venusaur ex chase deck is the priority.",
-        "**Alternate:** Solgaleo if the Incineroar ex chase deck is the priority.",
-        "",
-        "**Tradeoff:** Some risk of suboptimal pulls if inferred rates are wrong, but EV",
-        "rankings are broadly stable — a pack ranked #1 at inferred confidence is very",
-        "unlikely to be worst at verified confidence.",
-        "",
-        "### Scenario C — Aggressive: Maximize EV at Inferred Confidence",
-        "",
-        "**Action:** Focus all pack opens on the top 2–3 adjusted-EV packs.",
-        "",
-        "**Suggested priority order:**",
-        "1. Paldean Wonders (adj EV=4.20) — most missing cards relative to pool",
-        "2. Fantastical Parade (adj EV=3.82) — highest absolute missing count (205)",
-        "3. Mew (adj EV=3.78) — small focused pool, very high completion rate",
-        "",
-        "**Important:** EV rankings change as the collection grows. After every 20+ pulls,",
-        "re-run `python3 scripts/build_pack_ev.py` and regenerate this report.",
-        "",
-        "**Tradeoff:** Optimizes collection growth but ignores deck-target priority.",
-        "If completing a specific chase deck matters more, see Scenario B.",
-        "",
-        "---",
-        "",
         "## Complete Pack Ranking",
         "",
-        "| Rank | Pack | Expansion | Adj. EV | Total EV | New EV | Missing | Deck EV | EX EV |",
+        "| Rank | Pack | Expansion | Unified | New EV (10x) | New EV (1x) | Missing | Deck EV | EX EV |",
         "|---|---|---|---|---|---|---|---|---|",
     ]
-    for i, p in enumerate(all_sorted, 1):
+    for i, p in enumerate(all_unified, 1):
         lines.append(
             f"| {i} | {p['pack_name']} | {p['expansion']} "
-            f"| {p['confidence_adjusted_ev']:.4f} "
-            f"| {p['pack_total_ev']:.4f} "
-            f"| {p['new_card_ev']:.4f} "
+            f"| {p.get('unified_score', 0.0):.4f} "
+            f"| {p.get('new_card_ev_10x', 0.0):.4f} "
+            f"| {p.get('new_card_ev', 0.0):.4f} "
             f"| {p['missing_in_pool']} "
-            f"| {p['deck_target_ev']:.4f} "
-            f"| {p['ex_card_ev']:.4f} |"
+            f"| {p.get('deck_target_ev', 0.0):.4f} "
+            f"| {p.get('ex_card_ev', 0.0):.4f} |"
         )
 
     # Promo pack summary section
     promo_lines: list[str] = []
-    if PROMO_EV_JSON.exists():
+    if show_promo and PROMO_EV_JSON.exists():
         try:
             promo_data = json.loads(PROMO_EV_JSON.read_text(encoding="utf-8"))
             promo_packs = [p for p in promo_data.get("packs", []) if p.get("new_card_ev", 0) > 0]
@@ -605,9 +486,9 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
                     "",
                     "---",
                     "",
-                    "## Promo Pack Rankings (Shop Tokens)",
+                    "## Promo Pack Rankings (Shop Tickets)",
                     "",
-                    "> Promo packs use **Shop Tokens** — not Hourglasses. EVs below are not",
+                    "> Promo packs use **Shop Tickets** — not Hourglasses. EVs below are not",
                     "> comparable to regular pack EVs. See `review/promo_pack_ev.md` for full details.",
                     "",
                     "| # | Pack | Missing | New Card EV |",
@@ -615,13 +496,13 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
                 ]
                 for i, p in enumerate(promo_packs[:10], 1):
                     promo_lines.append(
-                        f"| {i} | {p['pack_name']} | {p['missing_in_pack']}/{p['card_count']} | {p['new_card_ev']:.4f} |"
+                        f"| {i} | {p['pack_name']} | {p.get('missing_in_pool', '?')}/{p.get('cards_in_pool', '?')} | {p['new_card_ev']:.4f} |"
                     )
                 promo_lines.append("")
         except Exception:
             pass
 
-    lines += promo_lines + [
+    status_lines = [
         "",
         "---",
         "",
@@ -629,9 +510,12 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         "",
         "- Pull rates: **pz_verified** — per-card drop chances from Pokemon Zone, no confidence haircut",
         "- Pack source coverage: **272/272** collection entries resolved (100%)",
-        "- Promo packs: scored separately in `review/promo_pack_ev.md` (Shop Token currency)",
-        "",
     ]
+    if show_promo:
+        status_lines.append("- Promo packs: scored separately in `review/promo_pack_ev.md` (Shop Ticket currency)")
+    status_lines.append("")
+
+    lines += promo_lines + status_lines
 
     OUT_MD.parent.mkdir(parents=True, exist_ok=True)
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -710,19 +594,27 @@ def run_validate() -> bool:
     else:
         print("  PASS  no false verified-rate claims in markdown")
 
-    # top_5_by_adjusted_ev non-empty
-    top5 = out.get("top_5_by_adjusted_ev", [])
+    # top_packs_unified non-empty
+    top5 = out.get("top_packs_unified", [])
     if len(top5) < 1:
-        print("  ERROR: top_5_by_adjusted_ev is empty")
+        print("  ERROR: top_packs_unified is empty")
         errors += 1
     else:
-        print(f"  PASS  top_5_by_adjusted_ev has {len(top5)} entries")
+        print(f"  PASS  top_packs_unified has {len(top5)} entries")
+
+    # cost_efficiency_ranking non-empty
+    cost_rank = out.get("cost_efficiency_ranking", [])
+    if len(cost_rank) < 1:
+        print("  ERROR: cost_efficiency_ranking is empty")
+        errors += 1
+    else:
+        print(f"  PASS  cost_efficiency_ranking has {len(cost_rank)} entries")
 
     # All referenced packs exist in pack_ev.json
     if PACK_EV_JSON.exists():
         ev = json.loads(PACK_EV_JSON.read_text(encoding="utf-8"))
         ev_pack_names = {p["pack_name"] for p in ev.get("packs", [])}
-        rec_packs = {p["pack_name"] for p in out.get("top_5_by_adjusted_ev", [])}
+        rec_packs = {p["pack_name"] for p in out.get("top_packs_unified", [])}
         missing_packs = rec_packs - ev_pack_names
         if missing_packs:
             print(f"  ERROR: recommendation references packs not in pack_ev.json: {missing_packs}")
@@ -752,8 +644,10 @@ def run_validate() -> bool:
 
     # cards.json check removed — historical file deleted in 2026-05-18 cleanup
 
+    top5 = out.get("top_packs_unified", [])
     if errors == 0:
-        print(f"\nVALIDATION PASSED  (model_confidence={mc}, top_rec={top5[0]['pack_name']})")
+        top_name = top5[0]["pack_name"] if top5 else "N/A"
+        print(f"\nVALIDATION PASSED  (model_confidence={mc}, top_rec={top_name})")
     else:
         print(f"\nVALIDATION FAILED  ({errors} error(s))")
     return errors == 0
@@ -767,11 +661,17 @@ def main():
     parser = argparse.ArgumentParser(
         description="Generate or validate inferred pack recommendation report"
     )
-    parser.add_argument("--validate", action="store_true")
+    parser.add_argument("--validate",     action="store_true")
+    parser.add_argument("--no-promo",     action="store_true",
+                        help="Suppress promo pack section in outputs")
+    parser.add_argument("--full-rankings", action="store_true",
+                        help="Write review/full_pack_ranking.md with descriptions for all 24 packs")
     args = parser.parse_args()
 
     if args.validate:
         sys.exit(0 if run_validate() else 1)
+
+    show_promo = not args.no_promo
 
     print("\n=== generate_pack_recommendation_report.py ===")
 
@@ -791,43 +691,46 @@ def main():
     print(f"  Model confidence:     {ev_data['meta']['model_confidence']}")
 
     deck_targets = deck_target_pack_map(packs)
-    buckets = build_buckets(packs, deck_targets, deck_val)
+    buckets = build_unified_ranking(packs, deck_targets, deck_val)
 
     out_data = write_json(ev_data, buckets, ev_readiness)
     write_csv(ev_data, buckets)
-    write_md(out_data, ev_data, buckets, deck_val)
+    write_md(out_data, ev_data, buckets, deck_val, show_promo=show_promo)
 
     print(f"  Written: {OUT_JSON.relative_to(ROOT)}")
     print(f"  Written: {OUT_CSV.relative_to(ROOT)}")
     print(f"  Written: {OUT_MD.relative_to(ROOT)}")
 
+    if args.full_rankings:
+        ranking_path = write_full_ranking_md(ev_data, buckets)
+        print(f"  Written: {ranking_path.relative_to(ROOT)}")
+
     print("\n=== Summary ===")
-    top5 = out_data["top_5_by_adjusted_ev"]
-    print("  Top packs by adjusted EV:")
+    top5 = out_data["top_packs_unified"]
+    print("  Top packs by unified score:")
     for i, p in enumerate(top5, 1):
-        print(f"    {i}. {p['pack_name']:30s} adj={p['confidence_adjusted_ev']:.4f}  total={p['pack_total_ev']:.4f}")
+        print(f"    {i}. {p['pack_name']:30s} unified={p.get('unified_score', 0.0):.4f}  10x_ev={p.get('new_card_ev_10x', 0.0):.4f}")
     mc = out_data.get("model_confidence", "inferred")
-    print(f"\n  Top recommendation: {top5[0]['pack_name']} (adj EV={top5[0]['confidence_adjusted_ev']:.4f})")
+    print(f"\n  Top recommendation: {top5[0]['pack_name']} (unified={top5[0].get('unified_score', 0.0):.4f})")
     if mc == "pz_verified":
         print(f"  Model confidence: {mc} (×1.0 — PZ direct rates, no haircut)")
-        print("\n  ✓ Rates are PZ_VERIFIED — per-card drop chances from Pokemon Zone.")
-        if PROMO_EV_JSON.exists():
+        print("\n  Rates are PZ_VERIFIED — per-card drop chances from Pokemon Zone.")
+        if show_promo and PROMO_EV_JSON.exists():
             try:
                 promo_data = json.loads(PROMO_EV_JSON.read_text(encoding="utf-8"))
                 top_promo = [p for p in promo_data.get("packs", []) if p.get("new_card_ev", 0) > 0][:3]
                 if top_promo:
-                    print("\n  Top promo packs (Shop Tokens):")
+                    print("\n  Top promo packs (Shop Tickets):")
                     for i, p in enumerate(top_promo, 1):
                         print(f"    {i}. {p['pack_name']:<38} new_ev={p['new_card_ev']:.4f}")
             except Exception:
                 pass
     elif mc == "third_party_verified":
         print(f"  Model confidence: {mc} (×0.85 adjustment applied)")
-        print("\n  ⚠ Rates are THIRD_PARTY_VERIFIED (Game8, ONE Esports, CGMagazine, ShackNews).")
-        print("  NOT official in-app verified. Verify in PTCGP app for official confirmation.")
+        print("\n  Rates are THIRD_PARTY_VERIFIED. Verify in PTCGP app for official confirmation.")
     else:
         print(f"  Model confidence: {mc} (×0.85 adjustment applied)")
-        print("\n  ⚠ Slot rates are INFERRED. Verify in-app before acting on these rankings.")
+        print("\n  Slot rates are INFERRED. Verify in-app before acting on these rankings.")
     print("\nDone.")
 
 

@@ -9,6 +9,8 @@ Usage:
     python3 scripts/run_recommendations.py --skip-sync             # skip sync, use current collection
     python3 scripts/run_recommendations.py --login                 # re-auth browser before sync
     python3 scripts/run_recommendations.py --dry-run-sync          # show sync diff only, stop
+    python3 scripts/run_recommendations.py --promo                 # also run promo EV (Shop Tickets currency)
+    python3 scripts/run_recommendations.py --full-rankings         # print all 24 packs ranked + write review/full_pack_ranking.md
 
 Exit codes:
     0  Full pipeline completed
@@ -32,7 +34,6 @@ LOG_FILE = ROOT / "data" / "pipeline.log"
 
 PIPELINE_STEPS = [
     ("Build pack EV",        "scripts/build_pack_ev.py"),
-    ("Build promo EV",       "scripts/build_promo_pack_ev.py"),
     ("Recommendations",      "scripts/generate_pack_recommendation_report.py"),
     ("Spending plan",        "scripts/generate_hourglass_spending_plan.py"),
 ]
@@ -149,7 +150,47 @@ def _read_player_stats() -> dict:
         return {}
 
 
-def _print_final_summary() -> None:
+def _print_full_rankings() -> None:
+    pack_ev_path = ROOT / "data" / "current" / "pack_ev.json"
+    if not pack_ev_path.exists():
+        return
+    try:
+        data = json.loads(pack_ev_path.read_text(encoding="utf-8"))
+    except Exception:
+        return
+
+    packs = sorted(
+        (p for p in data.get("packs", []) if not p.get("blocked")),
+        key=lambda p: p.get("unified_score", 0),
+        reverse=True,
+    )
+    if not packs:
+        return
+
+    col_name = max(len(p.get("pack_name", "")) for p in packs)
+    col_name = max(col_name, 4)
+    max_cost = max((p.get("cost_per_unique_card_10x", 0.0) for p in packs), default=0.0)
+    col_cost = max(len(f"{max_cost:.1f}") + 1, 6)  # +1 for ⧗ suffix; min 6 for header "⧗/EV"
+
+    print()
+    print(f"  Full Pack Rankings — {len(packs)} packs  (open with Pack Hourglasses, 120 ⧗ per 10x)")
+    print()
+    print(f"  {'#':>3}  {'Pack':<{col_name}}  {'Missing':>9}  {'★+miss':>6}  {'EV/10x':>7}  {'★+cnt':>6}  {'⧗/EV':>{col_cost}}")
+    print(f"  {'─' * 3}  {'─' * col_name}  {'─' * 9}  {'─' * 6}  {'─' * 7}  {'─' * 6}  {'─' * col_cost}")
+
+    for i, p in enumerate(packs, 1):
+        name         = p.get("pack_name", "?")
+        missing      = p.get("missing_in_pool", 0)
+        total        = p.get("cards_in_pool", 0)
+        new_ev       = p.get("new_card_ev_10x", 0.0)
+        rare_miss    = p.get("missing_rare_plus", 0)
+        rare_ev      = p.get("rare_plus_ev_10x", 0.0)
+        cost         = p.get("cost_per_unique_card_10x", 0.0)
+        miss_str     = f"{missing}/{total}"
+        print(f"  {i:>3}  {name:<{col_name}}  {miss_str:>9}  {rare_miss:>6}  {new_ev:>6.1f}x  {rare_ev:>6.2f}  {cost:{col_cost - 1}.1f}⧗")
+
+
+def _print_final_summary(show_promo: bool = False) -> None:
     pack_ev_path  = ROOT / "data" / "current" / "pack_ev.json"
     promo_ev_path = ROOT / "data" / "current" / "promo_pack_ev.json"
 
@@ -159,37 +200,38 @@ def _print_final_summary() -> None:
         try:
             packs = json.loads(pack_ev_path.read_text(encoding="utf-8")).get("packs", [])
             top_pack = max((p for p in packs if not p.get("blocked")),
-                           key=lambda p: p.get("confidence_adjusted_ev", 0), default=None)
+                           key=lambda p: p.get("unified_score", 0), default=None)
             if top_pack:
                 missing = top_pack.get("missing_in_pool", "?")
                 total   = top_pack.get("cards_in_pool", "?")
-                adj_ev  = top_pack.get("confidence_adjusted_ev", 0)
-                print(f"  Top pack:   {top_pack['pack_name']} (adj_ev={adj_ev:.4f})"
+                score   = top_pack.get("unified_score", 0)
+                print(f"  Top pack:   {top_pack['pack_name']} (unified={score:.4f})"
                       f" — {missing}/{total} cards unowned")
         except Exception:
             pass
 
-    if promo_ev_path.exists():
+    if show_promo and promo_ev_path.exists():
         try:
             top = next((p for p in json.loads(promo_ev_path.read_text(encoding="utf-8")).get("packs", [])
                         if p.get("new_card_ev", 0) > 0), None)
             if top:
                 print(f"  Top promo:  {top['pack_name']} (new_ev={top['new_card_ev']:.4f})"
-                      f" — Shop Tokens")
+                      f" — Shop Tickets")
         except Exception:
             pass
 
     stats = _read_player_stats()
     if stats:
         pack_hg = stats.get("pack_hourglasses")
-        shop    = stats.get("shop_tickets")
         if pack_hg is not None:
             hg_str = f"  Pack Hourglasses: {pack_hg}"
             if pack_hg >= 120 and top_pack:
                 hg_str += f"  → buy 10x {top_pack['pack_name']} (costs 120 ⧗), then re-run"
             print(hg_str)
-        if shop is not None:
-            print(f"  Shop Tickets:     {shop}")
+        if show_promo:
+            shop = stats.get("shop_tickets")
+            if shop is not None:
+                print(f"  Shop Tickets:     {shop}")
 
     print(f"  Log:        {LOG_FILE.relative_to(ROOT)}")
 
@@ -200,6 +242,10 @@ def main() -> int:
     parser.add_argument("--login",        action="store_true")
     parser.add_argument("--dry-run-sync", action="store_true")
     parser.add_argument("--json-import",  metavar="FILE", nargs="?", const="auto")
+    parser.add_argument("--promo",        action="store_true",
+                        help="Also run promo EV and show promo/Shop Ticket summary")
+    parser.add_argument("--full-rankings", action="store_true",
+                        help="Print all 24 packs ranked to console + write review/full_pack_ranking.md")
     args = parser.parse_args()
 
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -253,6 +299,14 @@ def main() -> int:
             _print_step("Sync collection", rc, _collection_status())
     else:
         print(f"  -  {'Sync collection':<22}  skipped")
+        _rq = ROOT / "data" / "sync" / "sync_review_queue.json"
+        if _rq.exists():
+            try:
+                q = json.loads(_rq.read_text(encoding="utf-8"))
+                if not q.get("resolved", True) and (q.get("new_cards") or q.get("ambiguous_matches")):
+                    sync_had_review_items = True
+            except Exception:
+                pass
 
     # ── Validate ──────────────────────────────────────────────────────────
     rc, stdout = _run("Validate collection", "scripts/validate_current_collection.py",
@@ -272,13 +326,40 @@ def main() -> int:
 
     # ── EV pipeline ───────────────────────────────────────────────────────
     for label, script in PIPELINE_STEPS:
-        rc, stdout = _run(label, script)
+        extra: list[str] | None = None
+        if label == "Build pack EV" and args.promo:
+            # Run promo EV immediately after pack EV, before recommendations
+            rc, stdout = _run(label, script)
+            if rc != 0:
+                _print_step(label, rc, "FATAL — check data/pipeline.log")
+                return 1
+            _print_step(label, rc, _extract_status(label, stdout))
+
+            rc, stdout = _run("Build promo EV", "scripts/build_promo_pack_ev.py")
+            if rc != 0:
+                _print_step("Build promo EV", rc, "FATAL — check data/pipeline.log")
+                return 1
+            _print_step("Build promo EV", rc, _extract_status("Build promo EV", stdout))
+            continue
+
+        if label == "Recommendations":
+            extra = []
+            if not args.promo:
+                extra.append("--no-promo")
+            if args.full_rankings:
+                extra.append("--full-rankings")
+            extra = extra or None
+
+        rc, stdout = _run(label, script, extra)
         if rc != 0:
-            _print_step(label, rc, f"FATAL — check data/pipeline.log")
+            _print_step(label, rc, "FATAL — check data/pipeline.log")
             return 1
         _print_step(label, rc, _extract_status(label, stdout))
 
-    _print_final_summary()
+    _print_final_summary(show_promo=args.promo)
+
+    if args.full_rankings:
+        _print_full_rankings()
 
     if sync_had_review_items:
         print(f"\n  NOTE: Review queue has items. See: data/sync/sync_review_queue.json")
