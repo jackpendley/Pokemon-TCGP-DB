@@ -23,7 +23,6 @@ COLLECTION_JSON = ROOT / "collection.json"
 OUT_DIR = ROOT / "data" / "current"
 NORMALIZED_JSON = OUT_DIR / "collection_normalized.json"
 SUMMARY_JSON = OUT_DIR / "collection_summary.json"
-REVIEW_MD = ROOT / "review" / "current_collection_summary.md"
 
 
 def strip_comments(text):
@@ -242,110 +241,6 @@ def _assess_deck_readiness(normalized):
     }
 
 
-def write_markdown(summary, out_path):
-    meta = summary["meta"]
-    lines = []
-    lines.append("# Current Collection Summary")
-    lines.append("")
-    lines.append(f"**Last updated:** {meta.get('last_updated', 'unknown')}  ")
-    lines.append(f"**Format:** {meta.get('format', 'unknown')}  ")
-    lines.append(f"**Meta declared total:** {summary['meta_total_cards']}  ")
-    lines.append(f"**Actual card count:** {summary['total_quantity']}  ")
-    lines.append(f"**Unique entries:** {summary['unique_entries']}  ")
-
-    if not summary["count_matches_meta"]:
-        diff = summary["total_quantity"] - summary["meta_total_cards"]
-        lines.append("")
-        lines.append(f"> **WARNING:** Actual count ({summary['total_quantity']}) does not match "
-                     f"meta.total_cards ({summary['meta_total_cards']}). "
-                     f"Difference: {diff:+d}. "
-                     f"User should verify collection.json is complete.")
-
-    lines.append("")
-    lines.append("## By Card Type")
-    lines.append("")
-    lines.append("| Card Type | Count |")
-    lines.append("|---|---|")
-    for k, v in sorted(summary["by_card_type"].items()):
-        lines.append(f"| {k} | {v} |")
-
-    lines.append("")
-    lines.append("## By Pokémon Type")
-    lines.append("")
-    lines.append("| Type | Count |")
-    lines.append("|---|---|")
-    for k, v in sorted(summary["by_pokemon_type"].items(), key=lambda x: -x[1]):
-        lines.append(f"| {k} | {v} |")
-
-    lines.append("")
-    lines.append("## By Stage")
-    lines.append("")
-    lines.append("| Stage | Count |")
-    lines.append("|---|---|")
-    for k, v in sorted(summary["by_stage"].items()):
-        lines.append(f"| {k} | {v} |")
-
-    lines.append("")
-    lines.append("## Trainer Cards")
-    lines.append("")
-    lines.append("| Subtype | Count |")
-    lines.append("|---|---|")
-    for k, v in sorted(summary["trainer_subtypes"].items(), key=lambda x: -x[1]):
-        lines.append(f"| {k} | {v} |")
-
-    lines.append("")
-    lines.append(f"## Ex Pokémon")
-    lines.append("")
-    lines.append(f"- **Ex entries:** {summary['ex_entries']}")
-    lines.append(f"- **Ex card count:** {summary['ex_quantity']}")
-    lines.append("")
-    lines.append("| Ex Card |")
-    lines.append("|---|")
-    for name in sorted(summary["deck_readiness"]["notable_ex_cards"]):
-        lines.append(f"| {name} |")
-
-    lines.append("")
-    lines.append("## Top Cards by Total Count")
-    lines.append("")
-    lines.append("| Card | Total Count |")
-    lines.append("|---|---|")
-    for name, total in summary["top_cards_by_count"]:
-        lines.append(f"| {name} | {total} |")
-
-    lines.append("")
-    lines.append("## Variant Cards (Same Name, Different Version)")
-    lines.append("")
-    if summary["variant_names"]:
-        lines.append("| Card Name | Variant Entries |")
-        lines.append("|---|---|")
-        for name, ct in sorted(summary["variant_names"].items(), key=lambda x: -x[1]):
-            lines.append(f"| {name} | {ct} entries |")
-    else:
-        lines.append("None.")
-
-    lines.append("")
-    lines.append("## Deck Readiness")
-    lines.append("")
-    dr = summary["deck_readiness"]
-
-    lines.append("### Complete Evolution Lines")
-    lines.append("")
-    for ln in dr["strong_evolution_lines"]:
-        lines.append(f"- {ln}")
-    if not dr["strong_evolution_lines"]:
-        lines.append("None.")
-
-    lines.append("")
-    lines.append("### Partial Evolution Lines (Missing at Least One Stage)")
-    lines.append("")
-    for ln in dr["partial_evolution_lines"][:20]:
-        lines.append(f"- {ln}")
-    if not dr["partial_evolution_lines"]:
-        lines.append("None.")
-
-    out_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
 def main():
     print(f"\n=== normalize_current_collection.py ===")
     print(f"  Reading: {COLLECTION_JSON}")
@@ -356,7 +251,6 @@ def main():
     print(f"  Entries: {len(collection)}, Meta total: {meta.get('total_cards')}")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    (ROOT / "review").mkdir(exist_ok=True)
 
     normalized = build_normalized(collection)
     actual_total = sum(e["count"] for e in normalized)

@@ -69,7 +69,6 @@ def make_pz(raw_name, count=1, set_code=None, card_number=None) -> PZCard:
         card_number=card_number,
         raw_name=raw_name,
         count=count,
-        raw_record={},
     )
 
 
@@ -207,7 +206,6 @@ def test_new_card_dedup():
                     card_number=prev.pz_card.card_number,
                     raw_name=prev.pz_card.raw_name,
                     count=prev.pz_card.count + mr.pz_card.count,
-                    raw_record=prev.pz_card.raw_record,
                 ),
                 canonical_name=prev.canonical_name,
             )

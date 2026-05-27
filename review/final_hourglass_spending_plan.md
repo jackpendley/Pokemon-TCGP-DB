@@ -1,8 +1,8 @@
 # Final Hourglass Spending Plan
 
-Generated: 2026-05-24  
+Generated: 2026-05-26  
 Model confidence: **PZ VERIFIED**  
-Collection total: 709 cards  
+Collection total: 747 cards  
 Batch size: 10 packs (120 ⧗ per batch)  
 
 > **DISCLAIMER**
@@ -13,56 +13,56 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 ## Optimal Spending Plan
 
-**3-batch plan rotating through top unified-score packs. Batch 1: Lunala. Batch 2: switch to Palkia (near-complete). Batch 3: Fantastical Parade. Always rerun EV after each batch.**
+**3-batch plan rotating through top unified-score packs. Batch 1: Deluxe Pack: ex. Batch 2: continue Deluxe Pack: ex. Batch 3: Ho-Oh. Always rerun EV after each batch.**
 
 - Total batches: 3
 - Total hourglasses: 360 ⧗
 - Rerun EV after batch(es): [1, 2, 3]
-- Stopping condition: Stop any batch when cost_per_unique_card_10x exceeds 7.1⧗ (2× batch-1 baseline of 3.5⧗). Re-run EV before committing further.
+- Stopping condition: Stop any batch when cost_per_unique_card_10x exceeds 7.3⧗ (2× batch-1 baseline of 3.7⧗). Re-run EV before committing further.
 
 | # | Pack | Set | ⧗ Cost | Unified | 10x EV | ⧗/EV | DR Ratio | Missing | Near-Complete | Rerun? |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **Lunala** | A3 | 120 ⧗ | 33.9516 | 33.9157 | 3.5 | 0.808 | 114 | YES | YES |
-| 2 | **Palkia** | A2 | 120 ⧗ | 33.8678 | 33.8429 | 3.5 | 0.807 | 104 | YES | YES |
-| 3 | **Fantastical Parade** | B2 | 120 ⧗ | 33.6845 | 33.4524 | 3.6 | 0.843 | 179 | YES | YES |
+| 1 | **Deluxe Pack: ex** | A4b | 120 ⧗ | 32.7969 | 32.6830 | 3.7 | 0.929 | 251 | — | YES |
+| 2 | **Deluxe Pack: ex** | A4b | 120 ⧗ | 32.7969 | 32.6830 | 3.7 | 0.929 | 251 | — | YES |
+| 3 | **Ho-Oh** | A4 | 120 ⧗ | 32.6495 | 32.6044 | 3.7 | 0.800 | 102 | YES | YES |
 
 ---
 
 ### Batch Details
 
-#### Batch 1 — Lunala (A3)
+#### Batch 1 — Deluxe Pack: ex (A4b)
 
-- **Pack:** Lunala (Celestial Guardians)
+- **Pack:** Deluxe Pack: ex (Deluxe Pack: ex)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 33.9516
-- **New-card EV (10x):** 33.9157
-- **Cost per EV unit (⧗/EV):** 3.5 ⧗
-- **DR ratio:** 0.808 ← near-complete
-- **Missing in pool:** 114
-- **Notes:** Open first batch from the top unified-score pack. WARNING: DR ratio=0.808 < 0.85 — this pool is near-complete; switch to #2 after this batch.
+- **Unified score:** 32.7969
+- **New-card EV (10x):** 32.6830
+- **Cost per EV unit (⧗/EV):** 3.7 ⧗
+- **DR ratio:** 0.929
+- **Missing in pool:** 251
+- **Notes:** Open first batch from the top unified-score pack.
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 
-#### Batch 2 — Palkia (A2)
+#### Batch 2 — Deluxe Pack: ex (A4b)
 
-- **Pack:** Palkia (Space-Time Smackdown)
+- **Pack:** Deluxe Pack: ex (Deluxe Pack: ex)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 33.8678
-- **New-card EV (10x):** 33.8429
-- **Cost per EV unit (⧗/EV):** 3.5 ⧗
-- **DR ratio:** 0.807 ← near-complete
-- **Missing in pool:** 104
-- **Notes:** Switched to #2 pack (near-complete flag on batch 1).
+- **Unified score:** 32.7969
+- **New-card EV (10x):** 32.6830
+- **Cost per EV unit (⧗/EV):** 3.7 ⧗
+- **DR ratio:** 0.929
+- **Missing in pool:** 251
+- **Notes:** Continue top pack for batch 2.
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 
-#### Batch 3 — Fantastical Parade (B2)
+#### Batch 3 — Ho-Oh (A4)
 
-- **Pack:** Fantastical Parade (Fantastical Parade)
+- **Pack:** Ho-Oh (Wisdom of Sea and Sky)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 33.6845
-- **New-card EV (10x):** 33.4524
-- **Cost per EV unit (⧗/EV):** 3.6 ⧗
-- **DR ratio:** 0.843 ← near-complete
-- **Missing in pool:** 179
+- **Unified score:** 32.6495
+- **New-card EV (10x):** 32.6044
+- **Cost per EV unit (⧗/EV):** 3.7 ⧗
+- **DR ratio:** 0.800 ← near-complete
+- **Missing in pool:** 102
 - **Notes:** Re-run EV after this batch; rotate to highest unified-score pack for batch 4.
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 

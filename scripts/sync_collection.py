@@ -42,7 +42,7 @@ import re
 import subprocess
 import sys
 from collections import defaultdict
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
@@ -65,7 +65,6 @@ class PZCard:
     card_number: int | None
     raw_name:    str
     count:       int
-    raw_record:  dict = field(default_factory=dict, repr=False)
 
 
 @dataclass
@@ -75,7 +74,6 @@ class MatchResult:
     entry:         dict | None = None          # the collection.json entry (MATCHED only)
     entry_index:   int | None = None
     canonical_name: str | None = None
-    candidates:    list = field(default_factory=list)  # AMBIGUOUS
 
 
 @dataclass
@@ -235,7 +233,6 @@ def normalize_pz_record(raw: dict) -> PZCard | None:
         card_number=card_number,
         raw_name=name,
         count=count,
-        raw_record=raw,
     )
 
 
@@ -374,7 +371,7 @@ def match_pz_cards(
     # Emits a WARN so the user can add disambiguation data to fix the root cause,
     # but never hard-crashes — every PZ card is always ingested.
     for i, r in enumerate(results):
-        if r.status != "AMBIGUOUS":
+        if r.status != "AMBIGUOUS" or not r.canonical_name:
             continue
         nn = _normalize(r.canonical_name)
         remaining = [idx for idx in name_index.get(nn, []) if idx not in matched_indices]
@@ -580,7 +577,6 @@ def _match_one(
         status="AMBIGUOUS",
         pz_card=pz,
         canonical_name=canonical_name,
-        candidates=[collection[i] for i in indices],
     )
 
 
@@ -607,7 +603,6 @@ def _find_count_lines(raw: str, collection: list[dict]) -> dict[int, int]:
     count_line: dict[int, int] = {}  # entry_index → line number
 
     depth = 0
-    in_obj = False
     current_name: str | None = None
     current_hp: int | None = None
     # Track which signatures have been matched (in order) to handle duplicates
@@ -1082,7 +1077,7 @@ def _get_curl() -> str:
         print("  CURL IMPORT — reading cURL from clipboard")
         print("=" * 65)
         # Show just the URL so user can confirm it's the right request
-        url_match = __import__("re").search(r"curl\s+['\"]?(https?://[^\s'\"]+)", clipboard)
+        url_match = re.search(r"curl\s+['\"]?(https?://[^\s'\"]+)", clipboard)
         if url_match:
             print(f"  URL: {url_match.group(1)}")
         print()
@@ -1339,7 +1334,6 @@ def main() -> int:
                     card_number=prev.pz_card.card_number,
                     raw_name=prev.pz_card.raw_name,
                     count=prev.pz_card.count + mr.pz_card.count,
-                    raw_record=prev.pz_card.raw_record,
                 ),
                 canonical_name=prev.canonical_name,
             )

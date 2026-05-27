@@ -683,10 +683,6 @@ def fetch_with_stored_auth() -> tuple[list, dict]:
 # Playwright path (fallback — may hit Cloudflare)
 # ---------------------------------------------------------------------------
 
-def _is_static_playwright(url: str) -> bool:
-    return _is_static(url)
-
-
 def print_discovery_table(candidates: list[dict]) -> None:
     print("\nPOKEMON ZONE NETWORK RESPONSE DISCOVERY")
     print("=" * 60)

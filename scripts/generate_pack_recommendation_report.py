@@ -36,12 +36,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 PACK_EV_JSON         = ROOT / "data" / "current"  / "pack_ev.json"
-EV_READINESS_JSON    = ROOT / "data" / "current"  / "pack_ev_readiness.json"
 COLLECTION_JSON      = ROOT / "data" / "current"  / "collection_normalized.json"
 PROMO_EV_JSON        = ROOT / "data" / "current"  / "promo_pack_ev.json"
 DECK_VALIDATION_JSON = ROOT / "data" / "exports"  / "deck_recommendation_validation.json"
 COLLECTION_SOURCE    = ROOT / "collection.json"
-CARDS_SOURCE         = ROOT / "cards.json"
 
 OUT_MD   = ROOT / "review"         / "inferred_pack_recommendations.md"
 OUT_JSON = ROOT / "data" / "current" / "inferred_pack_recommendations.json"
@@ -63,11 +61,6 @@ def load_deck_validation(path: Path) -> list:
         return []
     raw = json.loads(path.read_text(encoding="utf-8"))
     return raw.get("decks", [])
-
-
-
-def load_ev_readiness(path: Path) -> dict:
-    return json.loads(path.read_text(encoding="utf-8"))
 
 
 # ---------------------------------------------------------------------------
@@ -209,7 +202,7 @@ _INFERRED_MC_VALUES = {
 }
 
 
-def write_json(ev_data: dict, buckets: dict, ev_readiness: dict) -> dict:
+def write_json(ev_data: dict, buckets: dict) -> dict:
     packs = ev_data["packs"]
     mc = ev_data["meta"]["model_confidence"]
     out = {
@@ -680,9 +673,8 @@ def main():
             print(f"ERROR: required input not found: {p}", file=sys.stderr)
             sys.exit(1)
 
-    ev_data       = load_ev(PACK_EV_JSON)
-    ev_readiness  = load_ev_readiness(EV_READINESS_JSON) if EV_READINESS_JSON.exists() else {}
-    deck_val      = load_deck_validation(DECK_VALIDATION_JSON)
+    ev_data  = load_ev(PACK_EV_JSON)
+    deck_val = load_deck_validation(DECK_VALIDATION_JSON)
 
     packs = ev_data["packs"]
     print(f"  EV packs loaded:      {len(packs)}")
@@ -693,7 +685,7 @@ def main():
     deck_targets = deck_target_pack_map(packs)
     buckets = build_unified_ranking(packs, deck_targets, deck_val)
 
-    out_data = write_json(ev_data, buckets, ev_readiness)
+    out_data = write_json(ev_data, buckets)
     write_csv(ev_data, buckets)
     write_md(out_data, ev_data, buckets, deck_val, show_promo=show_promo)
 

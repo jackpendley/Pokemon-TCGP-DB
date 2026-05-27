@@ -94,10 +94,6 @@ TOP_N_CARDS = 5  # top EV cards listed per pack
 # Loaders
 # ---------------------------------------------------------------------------
 
-def normalize(name: str) -> str:
-    return name.lower().strip()
-
-
 def _norm_name(name: str) -> str:
     """Normalize card name for cross-source comparison: lowercase + smart-quote → apostrophe."""
     return name.lower().replace("’", "'").replace("‘", "'").strip()

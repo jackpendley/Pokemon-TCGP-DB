@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-25T04:04:19+00:00",
+  "generated_at": "2026-05-27T01:52:46+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "pz_verified",
-    "collection_total": 709,
+    "collection_total": 747,
     "collection_mutated": false,
-    "inputs_hash": "ffcdcc24a04ff586c169a56dba525a8575d15ee461106a43c9d795462fe439e9",
+    "inputs_hash": "a0a1140d032abe69f9fcc1d43d39171f7ca7e6f74674d07d05dc1b1fbf1813b3",
     "warnings": [
       "Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone for all 24 packs. EV rankings reflect actual pull probabilities. No inferred confidence adjustment applied."
     ]
@@ -32,60 +32,60 @@
   "overall_summary": {
     "top_packs_by_unified_score": [
       {
-        "pack_name": "Lunala",
-        "expansion": "Celestial Guardians",
-        "unified_score": 33.951641,
-        "new_card_ev": 4.19961,
-        "new_card_ev_10x": 33.915721,
-        "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.37921
-      },
-      {
-        "pack_name": "Palkia",
-        "expansion": "Space-Time Smackdown",
-        "unified_score": 33.86779,
-        "new_card_ev": 4.1944,
-        "new_card_ev_10x": 33.842894,
-        "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.31888
-      },
-      {
-        "pack_name": "Fantastical Parade",
-        "expansion": "Fantastical Parade",
-        "unified_score": 33.684523,
-        "new_card_ev": 3.96968,
-        "new_card_ev_10x": 33.452436,
-        "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.34104
-      },
-      {
         "pack_name": "Deluxe Pack: ex",
         "expansion": "Deluxe Pack: ex",
-        "unified_score": 33.618684,
-        "new_card_ev": 3.60494,
-        "new_card_ev_10x": 33.50627,
+        "unified_score": 32.796889,
+        "new_card_ev": 3.51692,
+        "new_card_ev_10x": 32.683011,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.90766
+        "confidence_adjusted_ev": 3.82696
       },
       {
-        "pack_name": "Dialga",
-        "expansion": "Space-Time Smackdown",
-        "unified_score": 32.945997,
-        "new_card_ev": 4.06422,
-        "new_card_ev_10x": 32.919157,
+        "pack_name": "Ho-Oh",
+        "expansion": "Wisdom of Sea and Sky",
+        "unified_score": 32.649506,
+        "new_card_ev": 4.07344,
+        "new_card_ev_10x": 32.604362,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.19842
+        "confidence_adjusted_ev": 4.29916
+      },
+      {
+        "pack_name": "Lunala",
+        "expansion": "Celestial Guardians",
+        "unified_score": 32.07166,
+        "new_card_ev": 3.95797,
+        "new_card_ev_10x": 32.028156,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 4.17549
+      },
+      {
+        "pack_name": "Solgaleo",
+        "expansion": "Celestial Guardians",
+        "unified_score": 31.959997,
+        "new_card_ev": 3.97214,
+        "new_card_ev_10x": 31.895901,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 4.29262
+      },
+      {
+        "pack_name": "Mega Altaria",
+        "expansion": "Mega Rising",
+        "unified_score": 31.945772,
+        "new_card_ev": 4.01335,
+        "new_card_ev_10x": 31.715432,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 4.24955
       }
     ],
     "top_packs_by_new_card_ev": [
       {
         "pack_name": "Extradimensional Crisis",
         "expansion": "Extradimensional Crisis",
-        "unified_score": 32.522826,
-        "new_card_ev": 4.34104,
-        "new_card_ev_10x": 32.47837,
+        "unified_score": 31.909257,
+        "new_card_ev": 4.25034,
+        "new_card_ev_10x": 31.864801,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.56332
+        "confidence_adjusted_ev": 4.47262
       },
       {
         "pack_name": "Mew",
@@ -97,51 +97,51 @@
         "confidence_adjusted_ev": 4.37379
       },
       {
-        "pack_name": "Lunala",
-        "expansion": "Celestial Guardians",
-        "unified_score": 33.951641,
-        "new_card_ev": 4.19961,
-        "new_card_ev_10x": 33.915721,
-        "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.37921
-      },
-      {
-        "pack_name": "Palkia",
-        "expansion": "Space-Time Smackdown",
-        "unified_score": 33.86779,
-        "new_card_ev": 4.1944,
-        "new_card_ev_10x": 33.842894,
-        "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.31888
-      },
-      {
         "pack_name": "Eevee Grove",
         "expansion": "Eevee Grove",
-        "unified_score": 30.953709,
+        "unified_score": 30.953421,
         "new_card_ev": 4.12475,
         "new_card_ev_10x": 30.922629,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.28015
+        "confidence_adjusted_ev": 4.27871
+      },
+      {
+        "pack_name": "Ho-Oh",
+        "expansion": "Wisdom of Sea and Sky",
+        "unified_score": 32.649506,
+        "new_card_ev": 4.07344,
+        "new_card_ev_10x": 32.604362,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 4.29916
+      },
+      {
+        "pack_name": "Mega Altaria",
+        "expansion": "Mega Rising",
+        "unified_score": 31.945772,
+        "new_card_ev": 4.01335,
+        "new_card_ev_10x": 31.715432,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 4.24955
       }
     ],
     "top_packs_by_deck_target_ev": [
       {
         "pack_name": "Arceus",
         "expansion": "Triumphant Light",
-        "unified_score": 24.559982,
-        "new_card_ev": 3.23466,
-        "new_card_ev_10x": 24.490342,
+        "unified_score": 23.940943,
+        "new_card_ev": 3.14086,
+        "new_card_ev_10x": 23.863799,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.58286
+        "confidence_adjusted_ev": 3.52658
       },
       {
         "pack_name": "Charizard",
         "expansion": "Genetic Apex",
-        "unified_score": 29.579228,
-        "new_card_ev": 3.60282,
-        "new_card_ev_10x": 29.528868,
+        "unified_score": 29.124759,
+        "new_card_ev": 3.54402,
+        "new_card_ev_10x": 29.074399,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.85462
+        "confidence_adjusted_ev": 3.79582
       },
       {
         "pack_name": "Crimson Blaze",
@@ -155,23 +155,23 @@
       {
         "pack_name": "Deluxe Pack: ex",
         "expansion": "Deluxe Pack: ex",
-        "unified_score": 33.618684,
-        "new_card_ev": 3.60494,
-        "new_card_ev_10x": 33.50627,
+        "unified_score": 32.796889,
+        "new_card_ev": 3.51692,
+        "new_card_ev_10x": 32.683011,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.90766
+        "confidence_adjusted_ev": 3.82696
       },
       {
         "pack_name": "Dialga",
         "expansion": "Space-Time Smackdown",
-        "unified_score": 32.945997,
-        "new_card_ev": 4.06422,
-        "new_card_ev_10x": 32.919157,
+        "unified_score": 31.509547,
+        "new_card_ev": 3.87312,
+        "new_card_ev_10x": 31.472515,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.19842
+        "confidence_adjusted_ev": 4.05828
       }
     ],
-    "highest_unified_pack": "Lunala",
+    "highest_unified_pack": "Deluxe Pack: ex",
     "highest_new_card_ev_pack": "Extradimensional Crisis",
     "total_packs_scored": 24
   },
@@ -186,21 +186,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 96,
-      "owned_in_pool": 28,
-      "missing_in_pool": 68,
-      "new_card_ev": 3.23466,
-      "new_card_ev_10x": 24.490342,
-      "copy_ev": 0.3482,
+      "owned_in_pool": 29,
+      "missing_in_pool": 67,
+      "new_card_ev": 3.14086,
+      "new_card_ev_10x": 23.863799,
+      "copy_ev": 0.38572,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 17,
       "rare_plus_ev_10x": 0.947768,
-      "pack_total_ev": 3.58286,
-      "confidence_adjusted_ev": 3.58286,
-      "unified_score": 24.559982,
-      "ev_diminishing_returns_ratio": 0.7571,
-      "cost_per_unique_card_1x": 3.71,
-      "cost_per_unique_card_10x": 4.9,
+      "pack_total_ev": 3.52658,
+      "confidence_adjusted_ev": 3.52658,
+      "unified_score": 23.940943,
+      "ev_diminishing_returns_ratio": 0.7598,
+      "cost_per_unique_card_1x": 3.82,
+      "cost_per_unique_card_10x": 5.03,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -260,7 +260,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 95/95 cards (1 excluded as non-pullable). 28/96 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 95/95 cards (1 excluded as non-pullable). 29/96 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Charizard",
@@ -272,21 +272,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 127,
-      "owned_in_pool": 37,
-      "missing_in_pool": 90,
-      "new_card_ev": 3.60282,
-      "new_card_ev_10x": 29.528868,
+      "owned_in_pool": 38,
+      "missing_in_pool": 89,
+      "new_card_ev": 3.54402,
+      "new_card_ev_10x": 29.074399,
       "copy_ev": 0.2518,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 13,
       "rare_plus_ev_10x": 1.039837,
-      "pack_total_ev": 3.85462,
-      "confidence_adjusted_ev": 3.85462,
-      "unified_score": 29.579228,
-      "ev_diminishing_returns_ratio": 0.8196,
-      "cost_per_unique_card_1x": 3.33,
-      "cost_per_unique_card_10x": 4.06,
+      "pack_total_ev": 3.79582,
+      "confidence_adjusted_ev": 3.79582,
+      "unified_score": 29.124759,
+      "ev_diminishing_returns_ratio": 0.8204,
+      "cost_per_unique_card_1x": 3.39,
+      "cost_per_unique_card_10x": 4.13,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -346,7 +346,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 125/125 cards (2 excluded as non-pullable). 37/127 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 125/125 cards (2 excluded as non-pullable). 38/127 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Crimson Blaze",
@@ -444,21 +444,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 379,
-      "owned_in_pool": 120,
-      "missing_in_pool": 259,
-      "new_card_ev": 3.60494,
-      "new_card_ev_10x": 33.50627,
-      "copy_ev": 0.30272,
+      "owned_in_pool": 128,
+      "missing_in_pool": 251,
+      "new_card_ev": 3.51692,
+      "new_card_ev_10x": 32.683011,
+      "copy_ev": 0.31004,
       "ex_card_ev": 0.10374,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 20,
       "rare_plus_ev_10x": 1.269018,
-      "pack_total_ev": 3.90766,
-      "confidence_adjusted_ev": 3.90766,
-      "unified_score": 33.618684,
-      "ev_diminishing_returns_ratio": 0.9295,
-      "cost_per_unique_card_1x": 3.33,
-      "cost_per_unique_card_10x": 3.58,
+      "pack_total_ev": 3.82696,
+      "confidence_adjusted_ev": 3.82696,
+      "unified_score": 32.796889,
+      "ev_diminishing_returns_ratio": 0.9293,
+      "cost_per_unique_card_1x": 3.41,
+      "cost_per_unique_card_10x": 3.67,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -518,7 +518,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 379/379 cards. 120/379 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 379/379 cards. 128/379 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Dialga",
@@ -530,21 +530,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 126,
-      "owned_in_pool": 25,
-      "missing_in_pool": 101,
-      "new_card_ev": 4.06422,
-      "new_card_ev_10x": 32.919157,
-      "copy_ev": 0.1342,
+      "owned_in_pool": 28,
+      "missing_in_pool": 98,
+      "new_card_ev": 3.87312,
+      "new_card_ev_10x": 31.472515,
+      "copy_ev": 0.18516,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 22,
       "rare_plus_ev_10x": 1.294018,
-      "pack_total_ev": 4.19842,
-      "confidence_adjusted_ev": 4.19842,
-      "unified_score": 32.945997,
-      "ev_diminishing_returns_ratio": 0.81,
-      "cost_per_unique_card_1x": 2.95,
-      "cost_per_unique_card_10x": 3.65,
+      "pack_total_ev": 4.05828,
+      "confidence_adjusted_ev": 4.05828,
+      "unified_score": 31.509547,
+      "ev_diminishing_returns_ratio": 0.8126,
+      "cost_per_unique_card_1x": 3.1,
+      "cost_per_unique_card_10x": 3.81,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -604,7 +604,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 126/126 cards. 25/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 126/126 cards. 28/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Eevee Grove",
@@ -620,14 +620,14 @@
       "missing_in_pool": 84,
       "new_card_ev": 4.12475,
       "new_card_ev_10x": 30.922629,
-      "copy_ev": 0.1554,
+      "copy_ev": 0.15396,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 28,
       "rare_plus_ev_10x": 1.690495,
-      "pack_total_ev": 4.28015,
-      "confidence_adjusted_ev": 4.28015,
-      "unified_score": 30.953709,
+      "pack_total_ev": 4.27871,
+      "confidence_adjusted_ev": 4.27871,
+      "unified_score": 30.953421,
       "ev_diminishing_returns_ratio": 0.7497,
       "cost_per_unique_card_1x": 2.91,
       "cost_per_unique_card_10x": 3.88,
@@ -702,21 +702,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 103,
-      "owned_in_pool": 17,
-      "missing_in_pool": 86,
-      "new_card_ev": 4.34104,
-      "new_card_ev_10x": 32.47837,
+      "owned_in_pool": 18,
+      "missing_in_pool": 85,
+      "new_card_ev": 4.25034,
+      "new_card_ev_10x": 31.864801,
       "copy_ev": 0.22228,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 28,
       "rare_plus_ev_10x": 1.87614,
-      "pack_total_ev": 4.56332,
-      "confidence_adjusted_ev": 4.56332,
-      "unified_score": 32.522826,
-      "ev_diminishing_returns_ratio": 0.7482,
-      "cost_per_unique_card_1x": 2.76,
-      "cost_per_unique_card_10x": 3.69,
+      "pack_total_ev": 4.47262,
+      "confidence_adjusted_ev": 4.47262,
+      "unified_score": 31.909257,
+      "ev_diminishing_returns_ratio": 0.7497,
+      "cost_per_unique_card_1x": 2.82,
+      "cost_per_unique_card_10x": 3.77,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -776,7 +776,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 102/102 cards (1 excluded as non-pullable). 17/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 102/102 cards (1 excluded as non-pullable). 18/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Fantastical Parade",
@@ -788,21 +788,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 234,
-      "owned_in_pool": 55,
-      "missing_in_pool": 179,
-      "new_card_ev": 3.96968,
-      "new_card_ev_10x": 33.452436,
-      "copy_ev": 0.37136,
+      "owned_in_pool": 62,
+      "missing_in_pool": 172,
+      "new_card_ev": 3.66996,
+      "new_card_ev_10x": 30.972243,
+      "copy_ev": 0.44888,
       "ex_card_ev": 0.31563,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 63,
       "rare_plus_ev_10x": 1.625733,
-      "pack_total_ev": 4.34104,
-      "confidence_adjusted_ev": 4.34104,
-      "unified_score": 33.684523,
-      "ev_diminishing_returns_ratio": 0.8427,
-      "cost_per_unique_card_1x": 3.02,
-      "cost_per_unique_card_10x": 3.59,
+      "pack_total_ev": 4.11884,
+      "confidence_adjusted_ev": 4.11884,
+      "unified_score": 31.219834,
+      "ev_diminishing_returns_ratio": 0.8439,
+      "cost_per_unique_card_1x": 3.27,
+      "cost_per_unique_card_10x": 3.87,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -862,7 +862,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 233/233 cards (1 excluded as non-pullable). 55/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 233/233 cards (1 excluded as non-pullable). 62/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Ho-Oh",
@@ -878,14 +878,14 @@
       "missing_in_pool": 102,
       "new_card_ev": 4.07344,
       "new_card_ev_10x": 32.604362,
-      "copy_ev": 0.24424,
+      "copy_ev": 0.22572,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 29,
       "rare_plus_ev_10x": 1.682919,
-      "pack_total_ev": 4.31768,
-      "confidence_adjusted_ev": 4.31768,
-      "unified_score": 32.65321,
+      "pack_total_ev": 4.29916,
+      "confidence_adjusted_ev": 4.29916,
+      "unified_score": 32.649506,
       "ev_diminishing_returns_ratio": 0.8004,
       "cost_per_unique_card_1x": 2.95,
       "cost_per_unique_card_10x": 3.68,
@@ -960,21 +960,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 136,
-      "owned_in_pool": 33,
-      "missing_in_pool": 103,
-      "new_card_ev": 4.05038,
-      "new_card_ev_10x": 32.430642,
-      "copy_ev": 0.297,
+      "owned_in_pool": 36,
+      "missing_in_pool": 100,
+      "new_card_ev": 3.90869,
+      "new_card_ev_10x": 31.301053,
+      "copy_ev": 0.34808,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
-      "missing_rare_plus": 30,
-      "rare_plus_ev_10x": 1.799359,
-      "pack_total_ev": 4.34738,
-      "confidence_adjusted_ev": 4.34738,
-      "unified_score": 32.490042,
-      "ev_diminishing_returns_ratio": 0.8007,
-      "cost_per_unique_card_1x": 2.96,
-      "cost_per_unique_card_10x": 3.7,
+      "missing_rare_plus": 29,
+      "rare_plus_ev_10x": 1.688331,
+      "pack_total_ev": 4.25677,
+      "confidence_adjusted_ev": 4.25677,
+      "unified_score": 31.370669,
+      "ev_diminishing_returns_ratio": 0.8008,
+      "cost_per_unique_card_1x": 3.07,
+      "cost_per_unique_card_10x": 3.83,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -1034,7 +1034,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 136/136 cards. 33/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 136/136 cards. 36/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Lunala",
@@ -1046,21 +1046,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 140,
-      "owned_in_pool": 26,
-      "missing_in_pool": 114,
-      "new_card_ev": 4.19961,
-      "new_card_ev_10x": 33.915721,
-      "copy_ev": 0.1796,
+      "owned_in_pool": 31,
+      "missing_in_pool": 109,
+      "new_card_ev": 3.95797,
+      "new_card_ev_10x": 32.028156,
+      "copy_ev": 0.21752,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
-      "missing_rare_plus": 35,
-      "rare_plus_ev_10x": 1.760878,
-      "pack_total_ev": 4.37921,
-      "confidence_adjusted_ev": 4.37921,
-      "unified_score": 33.951641,
-      "ev_diminishing_returns_ratio": 0.8076,
-      "cost_per_unique_card_1x": 2.86,
-      "cost_per_unique_card_10x": 3.54,
+      "missing_rare_plus": 34,
+      "rare_plus_ev_10x": 1.658885,
+      "pack_total_ev": 4.17549,
+      "confidence_adjusted_ev": 4.17549,
+      "unified_score": 32.07166,
+      "ev_diminishing_returns_ratio": 0.8092,
+      "cost_per_unique_card_1x": 3.03,
+      "cost_per_unique_card_10x": 3.75,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -1120,7 +1120,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 139/139 cards (1 excluded as non-pullable). 26/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 139/139 cards (1 excluded as non-pullable). 31/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Mega Altaria",
@@ -1132,21 +1132,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 139,
-      "owned_in_pool": 31,
-      "missing_in_pool": 108,
-      "new_card_ev": 4.06285,
-      "new_card_ev_10x": 32.121325,
+      "owned_in_pool": 32,
+      "missing_in_pool": 107,
+      "new_card_ev": 4.01335,
+      "new_card_ev_10x": 31.715432,
       "copy_ev": 0.2362,
       "ex_card_ev": 0.3662,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 31,
       "rare_plus_ev_10x": 1.739514,
-      "pack_total_ev": 4.29905,
-      "confidence_adjusted_ev": 4.29905,
-      "unified_score": 32.351665,
-      "ev_diminishing_returns_ratio": 0.7906,
-      "cost_per_unique_card_1x": 2.95,
-      "cost_per_unique_card_10x": 3.74,
+      "pack_total_ev": 4.24955,
+      "confidence_adjusted_ev": 4.24955,
+      "unified_score": 31.945772,
+      "ev_diminishing_returns_ratio": 0.7902,
+      "cost_per_unique_card_1x": 2.99,
+      "cost_per_unique_card_10x": 3.78,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -1206,7 +1206,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 31/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 32/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Mega Blaziken",
@@ -1218,21 +1218,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 139,
-      "owned_in_pool": 38,
-      "missing_in_pool": 101,
-      "new_card_ev": 3.7019,
-      "new_card_ev_10x": 29.268051,
-      "copy_ev": 0.3574,
+      "owned_in_pool": 40,
+      "missing_in_pool": 99,
+      "new_card_ev": 3.64592,
+      "new_card_ev_10x": 28.798398,
+      "copy_ev": 0.35884,
       "ex_card_ev": 0.3662,
       "deck_target_ev": 0.0,
-      "missing_rare_plus": 30,
-      "rare_plus_ev_10x": 1.716751,
-      "pack_total_ev": 4.0593,
-      "confidence_adjusted_ev": 4.0593,
-      "unified_score": 29.522631,
-      "ev_diminishing_returns_ratio": 0.7906,
-      "cost_per_unique_card_1x": 3.24,
-      "cost_per_unique_card_10x": 4.1,
+      "missing_rare_plus": 29,
+      "rare_plus_ev_10x": 1.681329,
+      "pack_total_ev": 4.00476,
+      "confidence_adjusted_ev": 4.00476,
+      "unified_score": 29.053266,
+      "ev_diminishing_returns_ratio": 0.7899,
+      "cost_per_unique_card_1x": 3.29,
+      "cost_per_unique_card_10x": 4.17,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -1292,7 +1292,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 38/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 40/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Mega Gyarados",
@@ -1304,21 +1304,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 139,
-      "owned_in_pool": 37,
-      "missing_in_pool": 102,
-      "new_card_ev": 3.91944,
-      "new_card_ev_10x": 31.094507,
-      "copy_ev": 0.19832,
+      "owned_in_pool": 40,
+      "missing_in_pool": 99,
+      "new_card_ev": 3.81396,
+      "new_card_ev_10x": 30.218961,
+      "copy_ev": 0.21632,
       "ex_card_ev": 0.35528,
       "deck_target_ev": 0.0,
-      "missing_rare_plus": 27,
-      "rare_plus_ev_10x": 1.833491,
-      "pack_total_ev": 4.11776,
-      "confidence_adjusted_ev": 4.11776,
-      "unified_score": 31.311811,
-      "ev_diminishing_returns_ratio": 0.7933,
-      "cost_per_unique_card_1x": 3.06,
-      "cost_per_unique_card_10x": 3.86,
+      "missing_rare_plus": 26,
+      "rare_plus_ev_10x": 1.798069,
+      "pack_total_ev": 4.03028,
+      "confidence_adjusted_ev": 4.03028,
+      "unified_score": 30.439865,
+      "ev_diminishing_returns_ratio": 0.7923,
+      "cost_per_unique_card_1x": 3.15,
+      "cost_per_unique_card_10x": 3.97,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -1378,7 +1378,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 37/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 40/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Mega Shine",
@@ -1566,14 +1566,14 @@
       "missing_in_pool": 83,
       "new_card_ev": 3.34444,
       "new_card_ev_10x": 27.314918,
-      "copy_ev": 0.27556,
+      "copy_ev": 0.25864,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 10,
       "rare_plus_ev_10x": 0.608264,
-      "pack_total_ev": 3.62,
-      "confidence_adjusted_ev": 3.62,
-      "unified_score": 27.37003,
+      "pack_total_ev": 3.60308,
+      "confidence_adjusted_ev": 3.60308,
+      "unified_score": 27.366646,
       "ev_diminishing_returns_ratio": 0.8167,
       "cost_per_unique_card_1x": 3.59,
       "cost_per_unique_card_10x": 4.39,
@@ -1734,21 +1734,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 126,
-      "owned_in_pool": 22,
-      "missing_in_pool": 104,
-      "new_card_ev": 4.1944,
-      "new_card_ev_10x": 33.842894,
-      "copy_ev": 0.12448,
+      "owned_in_pool": 28,
+      "missing_in_pool": 98,
+      "new_card_ev": 3.8846,
+      "new_card_ev_10x": 31.408145,
+      "copy_ev": 0.24164,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
-      "missing_rare_plus": 22,
-      "rare_plus_ev_10x": 1.375134,
-      "pack_total_ev": 4.31888,
-      "confidence_adjusted_ev": 4.31888,
-      "unified_score": 33.86779,
-      "ev_diminishing_returns_ratio": 0.8069,
-      "cost_per_unique_card_1x": 2.86,
-      "cost_per_unique_card_10x": 3.55,
+      "missing_rare_plus": 21,
+      "rare_plus_ev_10x": 1.272235,
+      "pack_total_ev": 4.12624,
+      "confidence_adjusted_ev": 4.12624,
+      "unified_score": 31.456473,
+      "ev_diminishing_returns_ratio": 0.8085,
+      "cost_per_unique_card_1x": 3.09,
+      "cost_per_unique_card_10x": 3.82,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -1808,7 +1808,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 125/125 cards (1 excluded as non-pullable). 22/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 125/125 cards (1 excluded as non-pullable). 28/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Pikachu",
@@ -1906,36 +1906,25 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 234,
-      "owned_in_pool": 177,
-      "missing_in_pool": 57,
-      "new_card_ev": 0.74786,
-      "new_card_ev_10x": 6.281344,
+      "owned_in_pool": 181,
+      "missing_in_pool": 53,
+      "new_card_ev": 0.64934,
+      "new_card_ev_10x": 5.424493,
       "copy_ev": 0.35352,
       "ex_card_ev": 0.18712,
       "deck_target_ev": 0.0,
-      "missing_rare_plus": 28,
-      "rare_plus_ev_10x": 0.565891,
-      "pack_total_ev": 1.10138,
-      "confidence_adjusted_ev": 1.10138,
-      "unified_score": 6.445608,
-      "ev_diminishing_returns_ratio": 0.8399,
-      "cost_per_unique_card_1x": 16.05,
-      "cost_per_unique_card_10x": 19.1,
+      "missing_rare_plus": 27,
+      "rare_plus_ev_10x": 0.513185,
+      "pack_total_ev": 1.00286,
+      "confidence_adjusted_ev": 1.00286,
+      "unified_score": 5.588757,
+      "ev_diminishing_returns_ratio": 0.8354,
+      "cost_per_unique_card_1x": 18.48,
+      "cost_per_unique_card_10x": 22.12,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Durant",
-          "rarity": "one_diamond",
-          "is_ex": false,
-          "is_deck_target": false,
-          "owned": 0,
-          "pull_prob": 0.0455,
-          "value": 1.0,
-          "ev_contribution": 0.0455,
-          "rate_source": "pz"
-        },
-        {
-          "name": "Poliwag",
           "rarity": "one_diamond",
           "is_ex": false,
           "is_deck_target": false,
@@ -1977,10 +1966,21 @@
           "value": 1.1,
           "ev_contribution": 0.03212,
           "rate_source": "pz"
+        },
+        {
+          "name": "Amoonguss",
+          "rarity": "two_diamond",
+          "is_ex": false,
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0292,
+          "value": 1.1,
+          "ev_contribution": 0.03212,
+          "rate_source": "pz"
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 233/233 cards (1 excluded as non-pullable). 177/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 233/233 cards (1 excluded as non-pullable). 181/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Secluded Springs",
@@ -1992,21 +1992,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 105,
-      "owned_in_pool": 21,
-      "missing_in_pool": 84,
-      "new_card_ev": 3.81239,
-      "new_card_ev_10x": 28.953137,
-      "copy_ev": 0.26956,
+      "owned_in_pool": 23,
+      "missing_in_pool": 82,
+      "new_card_ev": 3.71521,
+      "new_card_ev_10x": 28.275808,
+      "copy_ev": 0.28248,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
-      "missing_rare_plus": 32,
-      "rare_plus_ev_10x": 2.098802,
-      "pack_total_ev": 4.08195,
-      "confidence_adjusted_ev": 4.08195,
-      "unified_score": 29.007049,
-      "ev_diminishing_returns_ratio": 0.7594,
-      "cost_per_unique_card_1x": 3.15,
-      "cost_per_unique_card_10x": 4.14,
+      "missing_rare_plus": 31,
+      "rare_plus_ev_10x": 2.06338,
+      "pack_total_ev": 3.99769,
+      "confidence_adjusted_ev": 3.99769,
+      "unified_score": 28.332304,
+      "ev_diminishing_returns_ratio": 0.7611,
+      "cost_per_unique_card_1x": 3.23,
+      "cost_per_unique_card_10x": 4.24,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -2054,7 +2054,7 @@
           "rate_source": "pz"
         },
         {
-          "name": "Poliwag",
+          "name": "Tentacool",
           "rarity": "one_diamond",
           "is_ex": false,
           "is_deck_target": false,
@@ -2066,7 +2066,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 104/104 cards (1 excluded as non-pullable). 21/105 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 104/104 cards (1 excluded as non-pullable). 23/105 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Shining Revelry",
@@ -2082,14 +2082,14 @@
       "missing_in_pool": 76,
       "new_card_ev": 3.15109,
       "new_card_ev_10x": 23.642749,
-      "copy_ev": 0.46012,
+      "copy_ev": 0.42384,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 31,
       "rare_plus_ev_10x": 1.495738,
-      "pack_total_ev": 3.61121,
-      "confidence_adjusted_ev": 3.61121,
-      "unified_score": 23.734773,
+      "pack_total_ev": 3.57493,
+      "confidence_adjusted_ev": 3.57493,
+      "unified_score": 23.727517,
       "ev_diminishing_returns_ratio": 0.7503,
       "cost_per_unique_card_1x": 3.81,
       "cost_per_unique_card_10x": 5.08,
@@ -2164,21 +2164,21 @@
       "blocked": false,
       "blocked_reason": null,
       "cards_in_pool": 140,
-      "owned_in_pool": 37,
-      "missing_in_pool": 103,
-      "new_card_ev": 4.03864,
-      "new_card_ev_10x": 32.393393,
-      "copy_ev": 0.3262,
+      "owned_in_pool": 38,
+      "missing_in_pool": 102,
+      "new_card_ev": 3.97214,
+      "new_card_ev_10x": 31.895901,
+      "copy_ev": 0.32048,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 27,
       "rare_plus_ev_10x": 1.32971,
-      "pack_total_ev": 4.36484,
-      "confidence_adjusted_ev": 4.36484,
-      "unified_score": 32.458633,
-      "ev_diminishing_returns_ratio": 0.8021,
-      "cost_per_unique_card_1x": 2.97,
-      "cost_per_unique_card_10x": 3.7,
+      "pack_total_ev": 4.29262,
+      "confidence_adjusted_ev": 4.29262,
+      "unified_score": 31.959997,
+      "ev_diminishing_returns_ratio": 0.803,
+      "cost_per_unique_card_1x": 3.02,
+      "cost_per_unique_card_10x": 3.76,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -2238,7 +2238,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 139/139 cards (1 excluded as non-pullable). 37/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 139/139 cards (1 excluded as non-pullable). 38/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     }
   ],
   "blocked_packs": [],

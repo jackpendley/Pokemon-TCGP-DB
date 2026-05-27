@@ -117,7 +117,7 @@ def check(name: str, cond: bool, detail: str = "") -> None:
 
 def pz(raw_name, count=1, set_code=None, card_number=None) -> PZCard:
     return PZCard(set_code=set_code, card_number=card_number,
-                  raw_name=raw_name, count=count, raw_record={})
+                  raw_name=raw_name, count=count)
 
 
 def entry(name, count=1, hp=None, variant=None, card_type="Pokemon") -> dict:
@@ -186,8 +186,7 @@ def test_multi_set_new_card():
                 status=prev.status,
                 pz_card=PZCard(prev.pz_card.set_code, prev.pz_card.card_number,
                                prev.pz_card.raw_name,
-                               prev.pz_card.count + mr.pz_card.count,
-                               prev.pz_card.raw_record),
+                               prev.pz_card.count + mr.pz_card.count),
                 canonical_name=prev.canonical_name,
             )
         else:
@@ -573,8 +572,7 @@ def test_nidoran_dedup_distinct():
                 status=prev.status,
                 pz_card=PZCard(prev.pz_card.set_code, prev.pz_card.card_number,
                                prev.pz_card.raw_name,
-                               prev.pz_card.count + mr.pz_card.count,
-                               prev.pz_card.raw_record),
+                               prev.pz_card.count + mr.pz_card.count),
                 canonical_name=prev.canonical_name,
             )
         else:
@@ -607,7 +605,7 @@ def test_build_auto_entry_blank_category():
     }
     mr = MatchResult(
         status="NEW_CARD",
-        pz_card=PZCard(set_code="A1", card_number=999, raw_name="TestPokemon", count=1, raw_record={}),
+        pz_card=PZCard(set_code="A1", card_number=999, raw_name="TestPokemon", count=1),
         canonical_name="TestPokemon",
     )
     built = build_auto_entry(mr, ext_ref_blank, None)
@@ -1178,8 +1176,7 @@ def test_phase4b_dedup_base_vs_altart():
                 status=prev.status,
                 pz_card=PZCard(prev.pz_card.set_code, prev.pz_card.card_number,
                                prev.pz_card.raw_name,
-                               prev.pz_card.count + mr.pz_card.count,
-                               prev.pz_card.raw_record),
+                               prev.pz_card.count + mr.pz_card.count),
                 canonical_name=prev.canonical_name,
             )
         else:
@@ -1207,8 +1204,7 @@ def test_phase4b_dedup_base_vs_altart():
                 status=prev.status,
                 pz_card=PZCard(prev.pz_card.set_code, prev.pz_card.card_number,
                                prev.pz_card.raw_name,
-                               prev.pz_card.count + mr.pz_card.count,
-                               prev.pz_card.raw_record),
+                               prev.pz_card.count + mr.pz_card.count),
                 canonical_name=prev.canonical_name,
             )
         else:

@@ -1,42 +1,42 @@
 {
   "meta": {
-    "total_cards": 709,
-    "last_updated": "2026-05-24",
+    "total_cards": 747,
+    "last_updated": "2026-05-26",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 709,
-  "meta_total_cards": 709,
+  "total_quantity": 747,
+  "meta_total_cards": 747,
   "count_matches_meta": true,
-  "unique_entries": 336,
+  "unique_entries": 366,
   "by_card_type": {
-    "Pokemon": 642,
-    "Trainer": 67
+    "Pokemon": 676,
+    "Trainer": 71
   },
   "by_pokemon_type": {
     "Fire": 72,
-    "Grass": 96,
-    "Water": 81,
+    "Grass": 98,
+    "Water": 84,
     "Lightning": 54,
-    "Psychic": 52,
-    "Fighting": 109,
-    "Darkness": 55,
+    "Psychic": 55,
+    "Fighting": 118,
+    "Darkness": 61,
     "Metal": 27,
     "Dragon": 3,
-    "Colorless": 92,
-    "Unknown": 1
+    "Colorless": 93,
+    "Unknown": 11
   },
   "by_stage": {
-    "Basic": 429,
-    "Stage 1": 168,
-    "Stage 2": 44
+    "Basic": 452,
+    "Stage 1": 176,
+    "Stage 2": 46
   },
   "ex_entries": 19,
   "ex_quantity": 22,
   "trainer_subtypes": {
-    "Item": 29,
+    "Item": 31,
     "Pokemon Tool": 3,
-    "Supporter": 30,
-    "Stadium": 5
+    "Supporter": 31,
+    "Stadium": 6
   },
   "top_cards_by_count": [
     [
@@ -52,19 +52,19 @@
       9
     ],
     [
+      "Treecko",
+      8
+    ],
+    [
       "Swadloon",
       8
     ],
     [
-      "Pignite",
-      7
-    ],
-    [
-      "Treecko",
-      7
-    ],
-    [
       "Sobble",
+      8
+    ],
+    [
+      "Pignite",
       7
     ],
     [
@@ -84,6 +84,10 @@
       7
     ],
     [
+      "Dwebble",
+      7
+    ],
+    [
       "Korrina",
       7
     ],
@@ -94,22 +98,32 @@
     [
       "Larvesta",
       6
-    ],
-    [
-      "Magnemite",
-      6
     ]
   ],
   "variant_names": {
     "Charmander": 2,
+    "Tepig": 2,
     "Bulbasaur": 3,
+    "Shroomish": 2,
     "Grovyle": 2,
+    "Sobble": 2,
+    "Quagsire": 2,
     "Magneton": 2,
     "Magnemite": 2,
+    "Morpeko": 2,
+    "Meloetta": 2,
     "Mienfoo": 2,
     "Mienshao": 2,
     "Riolu": 2,
-    "Onix": 2
+    "Onix": 2,
+    "Zubat": 2,
+    "Grimer": 2,
+    "Seviper": 2,
+    "Meltan": 2,
+    "Cinccino": 2,
+    "Farfetch'd": 2,
+    "Clemont": 2,
+    "Orthworm": 2
   },
   "evolution_groups": [
     {
@@ -510,15 +524,15 @@
       "Magnezone ex",
       "Marowak ex",
       "Zygarde ex",
-      "Crustle ex",
       "Umbreon ex",
       "Crobat ex",
       "Mega Mawile ex",
       "Corviknight ex",
       "Snorlax ex",
       "Lugia ex",
+      "Lanturn ex",
       "Mega Lucario ex",
-      "Lanturn ex"
+      "Crustle ex"
     ],
     "strong_evolution_lines": [
       "Charmander → Charmeleon → Charizard",
@@ -554,6 +568,6 @@
     "partial_evolution_lines": [
       "Zorua → Zoroark"
     ],
-    "total_trainer_cards": 67
+    "total_trainer_cards": 71
   }
 }
