@@ -53,10 +53,6 @@ RAW_CACHE           = ROOT / "data" / "sync" / "last_sync_raw.json"
 AUTH_CACHE          = ROOT / "data" / "sync" / ".auth.json"
 PLAYER_STATS_CACHE  = ROOT / "data" / "sync" / "player_stats.json"
 
-# Candidate field names for hourglass balance across PZ API versions
-_HOURGLASS_FIELDS = ("hourglasses", "hourglass_count", "packHourglasses",
-                     "pack_hourglasses", "currency", "gems")
-
 COLLECTION_URL = "https://www.pokemon-zone.com/collection-tracker/"
 HOME_URL       = "https://www.pokemon-zone.com/"
 

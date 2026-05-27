@@ -11,8 +11,6 @@ These are planning inputs, not final recommendations.
 
 Inputs:
     data/current/pack_ev.json
-    data/current/pack_ev_readiness.json
-    data/current/pack_source_confidence_scores.json
     data/current/collection_normalized.json
     data/exports/deck_recommendation_validation.json
 
