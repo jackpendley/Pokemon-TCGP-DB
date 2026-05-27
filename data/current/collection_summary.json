@@ -1,39 +1,39 @@
 {
   "meta": {
-    "total_cards": 747,
+    "total_cards": 757,
     "last_updated": "2026-05-26",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 747,
-  "meta_total_cards": 747,
+  "total_quantity": 757,
+  "meta_total_cards": 757,
   "count_matches_meta": true,
   "unique_entries": 366,
   "by_card_type": {
-    "Pokemon": 676,
-    "Trainer": 71
+    "Pokemon": 685,
+    "Trainer": 72
   },
   "by_pokemon_type": {
     "Fire": 72,
-    "Grass": 98,
-    "Water": 84,
+    "Grass": 100,
+    "Water": 85,
     "Lightning": 54,
-    "Psychic": 55,
-    "Fighting": 118,
-    "Darkness": 61,
+    "Psychic": 58,
+    "Fighting": 120,
+    "Darkness": 62,
     "Metal": 27,
     "Dragon": 3,
     "Colorless": 93,
     "Unknown": 11
   },
   "by_stage": {
-    "Basic": 452,
-    "Stage 1": 176,
-    "Stage 2": 46
+    "Basic": 459,
+    "Stage 1": 177,
+    "Stage 2": 47
   },
   "ex_entries": 19,
   "ex_quantity": 22,
   "trainer_subtypes": {
-    "Item": 31,
+    "Item": 32,
     "Pokemon Tool": 3,
     "Supporter": 31,
     "Stadium": 6
@@ -60,7 +60,15 @@
       8
     ],
     [
+      "Tangela",
+      8
+    ],
+    [
       "Sobble",
+      8
+    ],
+    [
+      "Dwebble",
       8
     ],
     [
@@ -84,19 +92,11 @@
       7
     ],
     [
-      "Dwebble",
-      7
-    ],
-    [
       "Korrina",
       7
     ],
     [
       "Charmander",
-      6
-    ],
-    [
-      "Larvesta",
       6
     ]
   ],
@@ -568,6 +568,6 @@
     "partial_evolution_lines": [
       "Zorua → Zoroark"
     ],
-    "total_trainer_cards": 71
+    "total_trainer_cards": 72
   }
 }

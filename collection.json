@@ -1,6 +1,6 @@
 {
   "meta": {
-    "total_cards": 747,
+    "total_cards": 757,
     "last_updated": "2026-05-26",
     "format": "Pokemon TCG Pocket"
   },
@@ -415,7 +415,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Bind 20",
-      "count": 6
+      "count": 8
     },
     {
       "name": "Venonat",
@@ -615,7 +615,7 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Smash Kick 50",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Shellder",
@@ -928,7 +928,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Disarming Voice 20",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Aromatisse",
@@ -1000,7 +1000,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Mumble 20",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Oricorio",
@@ -1009,7 +1009,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Pester the Dizzy 20+",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Hatenna",
@@ -1199,7 +1199,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Fighting Fast 10+",
-      "count": 3,
+      "count": 4,
       "variant": "Fighting Fast art"
     },
     {
@@ -1383,7 +1383,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Ram 20",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Stufful",
@@ -1482,7 +1482,7 @@
       "hp": 130,
       "card_type": "Pokemon",
       "attack": "Surprise Strike 60+",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Golbat",
@@ -2216,7 +2216,7 @@
       "name": "Lucky Egg",
       "card_type": "Trainer",
       "trainer_subtype": "Item",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Clemont",

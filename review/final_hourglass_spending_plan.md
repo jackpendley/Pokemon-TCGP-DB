@@ -2,7 +2,7 @@
 
 Generated: 2026-05-26  
 Model confidence: **PZ VERIFIED**  
-Collection total: 747 cards  
+Collection total: 757 cards  
 Batch size: 10 packs (120 ⧗ per batch)  
 
 > **DISCLAIMER**
@@ -22,8 +22,8 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 | # | Pack | Set | ⧗ Cost | Unified | 10x EV | ⧗/EV | DR Ratio | Missing | Near-Complete | Rerun? |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **Deluxe Pack: ex** | A4b | 120 ⧗ | 32.7969 | 32.6830 | 3.7 | 0.929 | 251 | — | YES |
-| 2 | **Deluxe Pack: ex** | A4b | 120 ⧗ | 32.7969 | 32.6830 | 3.7 | 0.929 | 251 | — | YES |
+| 1 | **Deluxe Pack: ex** | A4b | 120 ⧗ | 32.7956 | 32.6830 | 3.7 | 0.929 | 251 | — | YES |
+| 2 | **Deluxe Pack: ex** | A4b | 120 ⧗ | 32.7956 | 32.6830 | 3.7 | 0.929 | 251 | — | YES |
 | 3 | **Ho-Oh** | A4 | 120 ⧗ | 32.6495 | 32.6044 | 3.7 | 0.800 | 102 | YES | YES |
 
 ---
@@ -34,7 +34,7 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 - **Pack:** Deluxe Pack: ex (Deluxe Pack: ex)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 32.7969
+- **Unified score:** 32.7956
 - **New-card EV (10x):** 32.6830
 - **Cost per EV unit (⧗/EV):** 3.7 ⧗
 - **DR ratio:** 0.929
@@ -46,7 +46,7 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 - **Pack:** Deluxe Pack: ex (Deluxe Pack: ex)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 32.7969
+- **Unified score:** 32.7956
 - **New-card EV (10x):** 32.6830
 - **Cost per EV unit (⧗/EV):** 3.7 ⧗
 - **DR ratio:** 0.929

@@ -1,6 +1,6 @@
 # Full Pack Ranking — All 24 Standard Packs
 
-Generated: 2026-05-27T01:52:46+00:00
+Generated: 2026-05-27T04:39:12+00:00
 
 Ranked by unified score. Use Pack Hourglasses to open these packs.
 
@@ -8,7 +8,7 @@ Ranked by unified score. Use Pack Hourglasses to open these packs.
 
 ## 1. Deluxe Pack: ex (Deluxe Pack: ex)
 
-**Score:** 32.7969 | **Missing:** 251/379 | **★+ miss:** 20 | **EV/10x:** 32.68 | **★+/10x:** 1.27 | **⧗/EV:** 3.7 | **DR:** 0.93
+**Score:** 32.7956 | **Missing:** 251/379 | **★+ miss:** 20 | **EV/10x:** 32.68 | **★+/10x:** 1.27 | **⧗/EV:** 3.7 | **DR:** 0.93
 
 Top pick. Large fresh pool — 251/379 cards unowned; expect ~32.7 new-card EV per 10x batch (rarity-weighted).
 
@@ -160,7 +160,7 @@ Large fresh pool — 83/126 cards unowned; expect ~27.3 new-card EV per 10x batc
 
 ## 20. Arceus (Triumphant Light)
 
-**Score:** 23.9409 | **Missing:** 67/96 | **★+ miss:** 17 | **EV/10x:** 23.86 | **★+/10x:** 0.95 | **⧗/EV:** 5.0 | **DR:** 0.76
+**Score:** 23.9394 | **Missing:** 67/96 | **★+ miss:** 17 | **EV/10x:** 23.86 | **★+/10x:** 0.95 | **⧗/EV:** 5.0 | **DR:** 0.76
 
 Large fresh pool — 67/96 cards unowned; expect ~23.9 new-card EV per 10x batch (rarity-weighted); 5.0 ⧗/EV.
 
@@ -192,7 +192,7 @@ Moderate pool — 37/103 cards unowned; expect ~9.5 new-card EV per 10x batch (r
 
 ## 24. Pulsing Aura (Pulsing Aura)
 
-**Score:** 5.5888 | **Missing:** 53/234 | **★+ miss:** 27 | **EV/10x:** 5.42 | **★+/10x:** 0.51 | **⧗/EV:** 22.1 | **DR:** 0.84
+**Score:** 5.5879 | **Missing:** 53/234 | **★+ miss:** 27 | **EV/10x:** 5.42 | **★+/10x:** 0.51 | **⧗/EV:** 22.1 | **DR:** 0.84
 
 Mostly complete — 53/234 cards unowned; expect ~5.4 new-card EV per 10x batch (rarity-weighted); 22.1 ⧗/EV.
 

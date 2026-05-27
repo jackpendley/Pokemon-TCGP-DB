@@ -1,5 +1,5 @@
 rank_unified,pack_name,expansion,set_code,unified_score,new_card_ev_10x,new_card_ev,ex_card_ev,deck_target_ev,missing_rare_plus,rare_plus_ev_10x,cost_per_unique_card_10x,ev_diminishing_returns_ratio,cards_in_pool,owned_in_pool,missing_in_pool
-1,Deluxe Pack: ex,Deluxe Pack: ex,A4b,32.796889,32.683011,3.51692,0.10374,0.0,20,1.269018,3.67,0.9293,379,128,251
+1,Deluxe Pack: ex,Deluxe Pack: ex,A4b,32.795585,32.683011,3.51692,0.10374,0.0,20,1.269018,3.67,0.9293,379,128,251
 2,Ho-Oh,Wisdom of Sea and Sky,A4,32.649506,32.604362,4.07344,0.0,0.0,29,1.682919,3.68,0.8004,136,34,102
 3,Lunala,Celestial Guardians,A3,32.07166,32.028156,3.95797,0.0,0.0,34,1.658885,3.75,0.8092,140,31,109
 4,Solgaleo,Celestial Guardians,A3,31.959997,31.895901,3.97214,0.0,0.0,27,1.32971,3.76,0.803,140,38,102
@@ -18,8 +18,8 @@ rank_unified,pack_name,expansion,set_code,unified_score,new_card_ev_10x,new_card
 17,Mega Blaziken,Mega Rising,B1,29.053266,28.798398,3.64592,0.3662,0.0,29,1.681329,4.17,0.7899,139,40,99
 18,Secluded Springs,Secluded Springs,A4a,28.332304,28.275808,3.71521,0.0,0.0,31,2.06338,4.24,0.7611,105,23,82
 19,Mewtwo,Genetic Apex,A1,27.366646,27.314918,3.34444,0.0,0.0,10,0.608264,4.39,0.8167,126,43,83
-20,Arceus,Triumphant Light,A2a,23.940943,23.863799,3.14086,0.0,0.0,17,0.947768,5.03,0.7598,96,29,67
+20,Arceus,Triumphant Light,A2a,23.939415,23.863799,3.14086,0.0,0.0,17,0.947768,5.03,0.7598,96,29,67
 21,Shining Revelry,Shining Revelry,A2b,23.727517,23.642749,3.15109,0.0,0.0,31,1.495738,5.08,0.7503,111,35,76
 22,Paldean Wonders,Paldean Wonders,B2a,18.440628,18.120022,2.33806,0.3159,0.0,21,0.844072,6.62,0.775,131,67,64
 23,Crimson Blaze,Crimson Blaze,B1a,9.725024,9.508222,1.27429,0.2205,0.0,19,1.097549,12.62,0.7462,103,66,37
-24,Pulsing Aura,Pulsing Aura,B3,5.588757,5.424493,0.64934,0.18712,0.0,27,0.513185,22.12,0.8354,234,181,53
+24,Pulsing Aura,Pulsing Aura,B3,5.587925,5.424493,0.64934,0.18712,0.0,27,0.513185,22.12,0.8354,234,181,53

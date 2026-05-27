@@ -4,9 +4,9 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-05-27T01:52:46+00:00 |
+| Report generated | 2026-05-27T04:39:12+00:00 |
 | Model confidence | **pz_verified** |
-| Collection total | 747 cards |
+| Collection total | 757 cards |
 | Packs ranked | 24 |
 | Packs blocked | 0 |
 
@@ -18,7 +18,7 @@ Ranked by unified score: `new_card_ev_10x×1.0 + copy_ev×0.2 + ex_card_ev×0.5 
 
 | Rank | Pack | Expansion | Unified | New EV (10x) | Deck EV | EX EV | ⧗/card | Missing |
 |---|---|---|---|---|---|---|---|---|
-| 1 | **Deluxe Pack: ex** | Deluxe Pack: ex | 32.7969 | 32.6830 | 0.0000 | 0.1037 | 3.7 | 251 |
+| 1 | **Deluxe Pack: ex** | Deluxe Pack: ex | 32.7956 | 32.6830 | 0.0000 | 0.1037 | 3.7 | 251 |
 | 2 | **Ho-Oh** | Wisdom of Sea and Sky | 32.6495 | 32.6044 | 0.0000 | 0.0000 | 3.7 | 102 |
 | 3 | **Lunala** | Celestial Guardians | 32.0717 | 32.0282 | 0.0000 | 0.0000 | 3.8 | 109 |
 | 4 | **Solgaleo** | Celestial Guardians | 31.9600 | 31.8959 | 0.0000 | 0.0000 | 3.8 | 102 |
@@ -46,7 +46,7 @@ Ranked by hourglasses spent per unique new card (10-pack batch). Lower is better
 
 | Metric | Value |
 |---|---|
-| Unified Score | **32.7969** |
+| Unified Score | **32.7956** |
 | New-card EV (10x) | 32.6830 |
 | New-card EV (1x) | 3.5169 |
 | EX-card EV | 0.1037 |
@@ -188,7 +188,7 @@ Top EV cards in this pack:
 
 | Rank | Pack | Expansion | Unified | New EV (10x) | New EV (1x) | Missing | Deck EV | EX EV |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Deluxe Pack: ex | Deluxe Pack: ex | 32.7969 | 32.6830 | 3.5169 | 251 | 0.0000 | 0.1037 |
+| 1 | Deluxe Pack: ex | Deluxe Pack: ex | 32.7956 | 32.6830 | 3.5169 | 251 | 0.0000 | 0.1037 |
 | 2 | Ho-Oh | Wisdom of Sea and Sky | 32.6495 | 32.6044 | 4.0734 | 102 | 0.0000 | 0.0000 |
 | 3 | Lunala | Celestial Guardians | 32.0717 | 32.0282 | 3.9580 | 109 | 0.0000 | 0.0000 |
 | 4 | Solgaleo | Celestial Guardians | 31.9600 | 31.8959 | 3.9721 | 102 | 0.0000 | 0.0000 |
@@ -207,11 +207,11 @@ Top EV cards in this pack:
 | 17 | Mega Blaziken | Mega Rising | 29.0533 | 28.7984 | 3.6459 | 99 | 0.0000 | 0.3662 |
 | 18 | Secluded Springs | Secluded Springs | 28.3323 | 28.2758 | 3.7152 | 82 | 0.0000 | 0.0000 |
 | 19 | Mewtwo | Genetic Apex | 27.3666 | 27.3149 | 3.3444 | 83 | 0.0000 | 0.0000 |
-| 20 | Arceus | Triumphant Light | 23.9409 | 23.8638 | 3.1409 | 67 | 0.0000 | 0.0000 |
+| 20 | Arceus | Triumphant Light | 23.9394 | 23.8638 | 3.1409 | 67 | 0.0000 | 0.0000 |
 | 21 | Shining Revelry | Shining Revelry | 23.7275 | 23.6427 | 3.1511 | 76 | 0.0000 | 0.0000 |
 | 22 | Paldean Wonders | Paldean Wonders | 18.4406 | 18.1200 | 2.3381 | 64 | 0.0000 | 0.3159 |
 | 23 | Crimson Blaze | Crimson Blaze | 9.7250 | 9.5082 | 1.2743 | 37 | 0.0000 | 0.2205 |
-| 24 | Pulsing Aura | Pulsing Aura | 5.5888 | 5.4245 | 0.6493 | 53 | 0.0000 | 0.1871 |
+| 24 | Pulsing Aura | Pulsing Aura | 5.5879 | 5.4245 | 0.6493 | 53 | 0.0000 | 0.1871 |
 
 ---
 

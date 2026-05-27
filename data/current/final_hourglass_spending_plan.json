@@ -3,7 +3,7 @@
   "generated_by": "scripts/generate_hourglass_spending_plan.py",
   "disclaimer": "NOT OFFICIAL: Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone (not the official PTCGP in-app Offering Rates screen). EV calculations reflect actual pull probabilities with no confidence haircut applied. Rankings are suitable for planning. Re-run EV after every 20+ packs to account for collection changes.",
   "model_confidence": "pz_verified",
-  "collection_total": 747,
+  "collection_total": 757,
   "collection_mutated": false,
   "batch_size": 10,
   "hourglass_per_pack": 12,
@@ -20,7 +20,7 @@
         "set_code": "A4b",
         "packs_to_open": 10,
         "hourglass_cost": 120,
-        "unified_score": 32.796889,
+        "unified_score": 32.795585,
         "new_card_ev_10x": 32.683011,
         "cost_per_unique_card_10x": 3.67,
         "ev_diminishing_returns_ratio": 0.9293,
@@ -36,7 +36,7 @@
         "set_code": "A4b",
         "packs_to_open": 10,
         "hourglass_cost": 120,
-        "unified_score": 32.796889,
+        "unified_score": 32.795585,
         "new_card_ev_10x": 32.683011,
         "cost_per_unique_card_10x": 3.67,
         "ev_diminishing_returns_ratio": 0.9293,
@@ -73,7 +73,7 @@
     "near_complete_threshold": 0.85,
     "cost_ceiling_per_unique_card": 7.34,
     "chase_deck_packs": {},
-    "top_pack_unified_score": 32.7969,
+    "top_pack_unified_score": 32.7956,
     "top_pack_name": "Deluxe Pack: ex"
   }
 }

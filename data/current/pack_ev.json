@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-27T01:52:46+00:00",
+  "generated_at": "2026-05-27T04:32:20+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "pz_verified",
-    "collection_total": 747,
+    "collection_total": 757,
     "collection_mutated": false,
-    "inputs_hash": "a0a1140d032abe69f9fcc1d43d39171f7ca7e6f74674d07d05dc1b1fbf1813b3",
+    "inputs_hash": "349311f3431c8cbb223d945236e18e74ebdb078648e25edf8238d73cd5177a57",
     "warnings": [
       "Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone for all 24 packs. EV rankings reflect actual pull probabilities. No inferred confidence adjustment applied."
     ]
@@ -34,11 +34,11 @@
       {
         "pack_name": "Deluxe Pack: ex",
         "expansion": "Deluxe Pack: ex",
-        "unified_score": 32.796889,
+        "unified_score": 32.795585,
         "new_card_ev": 3.51692,
         "new_card_ev_10x": 32.683011,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.82696
+        "confidence_adjusted_ev": 3.82044
       },
       {
         "pack_name": "Ho-Oh",
@@ -128,11 +128,11 @@
       {
         "pack_name": "Arceus",
         "expansion": "Triumphant Light",
-        "unified_score": 23.940943,
+        "unified_score": 23.939415,
         "new_card_ev": 3.14086,
         "new_card_ev_10x": 23.863799,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.52658
+        "confidence_adjusted_ev": 3.51894
       },
       {
         "pack_name": "Charizard",
@@ -155,11 +155,11 @@
       {
         "pack_name": "Deluxe Pack: ex",
         "expansion": "Deluxe Pack: ex",
-        "unified_score": 32.796889,
+        "unified_score": 32.795585,
         "new_card_ev": 3.51692,
         "new_card_ev_10x": 32.683011,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.82696
+        "confidence_adjusted_ev": 3.82044
       },
       {
         "pack_name": "Dialga",
@@ -190,14 +190,14 @@
       "missing_in_pool": 67,
       "new_card_ev": 3.14086,
       "new_card_ev_10x": 23.863799,
-      "copy_ev": 0.38572,
+      "copy_ev": 0.37808,
       "ex_card_ev": 0.0,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 17,
       "rare_plus_ev_10x": 0.947768,
-      "pack_total_ev": 3.52658,
-      "confidence_adjusted_ev": 3.52658,
-      "unified_score": 23.940943,
+      "pack_total_ev": 3.51894,
+      "confidence_adjusted_ev": 3.51894,
+      "unified_score": 23.939415,
       "ev_diminishing_returns_ratio": 0.7598,
       "cost_per_unique_card_1x": 3.82,
       "cost_per_unique_card_10x": 5.03,
@@ -448,14 +448,14 @@
       "missing_in_pool": 251,
       "new_card_ev": 3.51692,
       "new_card_ev_10x": 32.683011,
-      "copy_ev": 0.31004,
+      "copy_ev": 0.30352,
       "ex_card_ev": 0.10374,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 20,
       "rare_plus_ev_10x": 1.269018,
-      "pack_total_ev": 3.82696,
-      "confidence_adjusted_ev": 3.82696,
-      "unified_score": 32.796889,
+      "pack_total_ev": 3.82044,
+      "confidence_adjusted_ev": 3.82044,
+      "unified_score": 32.795585,
       "ev_diminishing_returns_ratio": 0.9293,
       "cost_per_unique_card_1x": 3.41,
       "cost_per_unique_card_10x": 3.67,
@@ -1910,14 +1910,14 @@
       "missing_in_pool": 53,
       "new_card_ev": 0.64934,
       "new_card_ev_10x": 5.424493,
-      "copy_ev": 0.35352,
+      "copy_ev": 0.34936,
       "ex_card_ev": 0.18712,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 27,
       "rare_plus_ev_10x": 0.513185,
-      "pack_total_ev": 1.00286,
-      "confidence_adjusted_ev": 1.00286,
-      "unified_score": 5.588757,
+      "pack_total_ev": 0.9987,
+      "confidence_adjusted_ev": 0.9987,
+      "unified_score": 5.587925,
       "ev_diminishing_returns_ratio": 0.8354,
       "cost_per_unique_card_1x": 18.48,
       "cost_per_unique_card_10x": 22.12,
