@@ -73,6 +73,7 @@ SINGLE_PACK_SETS = {
     "B2a",  # Paldean Wonders
     "B2b",  # Mega Shine
     "B3",   # Pulsing Aura
+    "B3a",  # Paradox Drive
 }
 
 # Sets with multiple packs. Cards without a pack label are shared (pack_name=null).

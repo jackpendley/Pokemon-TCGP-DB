@@ -3045,6 +3045,93 @@
         "unknown": null
       },
       "notes": "Three-branch model verified from in-repo screenshots: regular_pack (91.620%) + regular_pack_plus_one (8.330%) + rare_pack (0.050%). Branch probabilities match Secluded Springs (A4a) exactly. Slot 6: one_star=12.900% (☆), three_diamond=87.100% (◇◇◇) — standard rarity, NOT shiny. Slot 4/5 distributions match third_party_verified standard rates. Rare pack distribution uses 40/50/5/5 placeholder — screenshots suggest apparent uniform per-card distribution (~2.564%), pending explicit confirmation."
+    },
+    {
+      "pack_name": "Paradox Drive",
+      "expansion": "Paradox Drive",
+      "set_code": "B3a",
+      "is_shared_pool": false,
+      "source_url": null,
+      "source_name": "pending_bulbapedia_verification",
+      "source_accessed_at": "2026-05-28",
+      "confidence": "pending_verification",
+      "bulbapedia_url": null,
+      "bulbapedia_match_status": "pending",
+      "stale_model_warning": "PLACEHOLDER: slot_rates copied from B1a Crimson Blaze. Verify in-app once Paradox Drive offering rates are published.",
+      "official_verification_status": "not_verified",
+      "slot_model": {
+        "cards_per_pack": 5,
+        "slot_count": 5,
+        "notes": "Three-branch assumed from B-series pattern. Verify in-app.",
+        "branch_model": "three_branch"
+      },
+      "slot_rates": {
+        "regular_pack_probability": 0.94711,
+        "rare_pack_probability": 0.0005,
+        "regular_pack_plus_one_probability": 0.05238,
+        "slots_1_3": {
+          "one_diamond": 1.0
+        },
+        "slot_4": {
+          "two_diamond": 0.9,
+          "three_diamond": 0.05,
+          "four_diamond": 0.01666,
+          "one_star": 0.02572,
+          "double_star": 0.005,
+          "triple_star": 0.00222,
+          "crown": 0.0004
+        },
+        "slot_5": {
+          "two_diamond": 0.6,
+          "three_diamond": 0.2,
+          "four_diamond": 0.06664,
+          "one_star": 0.10288,
+          "double_star": 0.02,
+          "triple_star": 0.00888,
+          "crown": 0.0016
+        },
+        "slot_6": null,
+        "rare_pack_all_5_slots": {
+          "one_star": 0.4,
+          "double_star": 0.5,
+          "triple_star": 0.05,
+          "crown": 0.05
+        },
+        "confidence": "pending_verification",
+        "source_name": "b1a_placeholder",
+        "source_url": null,
+        "source_notes": "PLACEHOLDER from B1a Crimson Blaze. Replace with actual B3a offering rates.",
+        "confidence_note": "pending_verification"
+      },
+      "card_pool": {
+        "pack_specific_total": 109,
+        "shared_pool_total": 0,
+        "combined_total": 109,
+        "pack_specific_by_rarity": {
+          "one_diamond": 32,
+          "two_diamond": 25,
+          "four_diamond": 5,
+          "three_diamond": 12,
+          "one_star": 16,
+          "two_star": 8,
+          "double_star": 4,
+          "triple_star": 5,
+          "crown": 2
+        },
+        "shared_pool_by_rarity": {},
+        "combined_by_rarity": {
+          "one_diamond": 32,
+          "two_diamond": 25,
+          "four_diamond": 5,
+          "three_diamond": 12,
+          "one_star": 16,
+          "two_star": 8,
+          "double_star": 4,
+          "triple_star": 5,
+          "crown": 2
+        }
+      },
+      "rarity_probabilities": null
     }
   ]
 }

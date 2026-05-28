@@ -4,10 +4,10 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-05-27T04:39:12+00:00 |
+| Report generated | 2026-05-28T18:48:11+00:00 |
 | Model confidence | **pz_verified** |
 | Collection total | 757 cards |
-| Packs ranked | 24 |
+| Packs ranked | 25 |
 | Packs blocked | 0 |
 
 ---
@@ -199,19 +199,20 @@ Top EV cards in this pack:
 | 9 | Mew | Mythical Island | 31.3884 | 31.3562 | 4.2126 | 72 | 0.0000 | 0.0000 |
 | 10 | Lugia | Wisdom of Sea and Sky | 31.3707 | 31.3011 | 3.9087 | 100 | 0.0000 | 0.0000 |
 | 11 | Fantastical Parade | Fantastical Parade | 31.2198 | 30.9722 | 3.6700 | 172 | 0.0000 | 0.3156 |
-| 12 | Eevee Grove | Eevee Grove | 30.9534 | 30.9226 | 4.1247 | 84 | 0.0000 | 0.0000 |
-| 13 | Pikachu | Genetic Apex | 30.6231 | 30.5772 | 3.7342 | 95 | 0.0000 | 0.0000 |
-| 14 | Mega Gyarados | Mega Rising | 30.4399 | 30.2190 | 3.8140 | 99 | 0.0000 | 0.3553 |
-| 15 | Charizard | Genetic Apex | 29.1248 | 29.0744 | 3.5440 | 89 | 0.0000 | 0.0000 |
-| 16 | Mega Shine | Mega Shine | 29.1052 | 28.8853 | 3.9220 | 91 | 0.0000 | 0.3159 |
-| 17 | Mega Blaziken | Mega Rising | 29.0533 | 28.7984 | 3.6459 | 99 | 0.0000 | 0.3662 |
-| 18 | Secluded Springs | Secluded Springs | 28.3323 | 28.2758 | 3.7152 | 82 | 0.0000 | 0.0000 |
-| 19 | Mewtwo | Genetic Apex | 27.3666 | 27.3149 | 3.3444 | 83 | 0.0000 | 0.0000 |
-| 20 | Arceus | Triumphant Light | 23.9394 | 23.8638 | 3.1409 | 67 | 0.0000 | 0.0000 |
-| 21 | Shining Revelry | Shining Revelry | 23.7275 | 23.6427 | 3.1511 | 76 | 0.0000 | 0.0000 |
-| 22 | Paldean Wonders | Paldean Wonders | 18.4406 | 18.1200 | 2.3381 | 64 | 0.0000 | 0.3159 |
-| 23 | Crimson Blaze | Crimson Blaze | 9.7250 | 9.5082 | 1.2743 | 37 | 0.0000 | 0.2205 |
-| 24 | Pulsing Aura | Pulsing Aura | 5.5879 | 5.4245 | 0.6493 | 53 | 0.0000 | 0.1871 |
+| 12 | Paradox Drive | Paradox Drive | 31.0279 | 30.9875 | 4.1028 | 89 | 0.0000 | 0.0000 |
+| 13 | Eevee Grove | Eevee Grove | 30.9534 | 30.9226 | 4.1247 | 84 | 0.0000 | 0.0000 |
+| 14 | Pikachu | Genetic Apex | 30.6231 | 30.5772 | 3.7342 | 95 | 0.0000 | 0.0000 |
+| 15 | Mega Gyarados | Mega Rising | 30.4399 | 30.2190 | 3.8140 | 99 | 0.0000 | 0.3553 |
+| 16 | Charizard | Genetic Apex | 29.1248 | 29.0744 | 3.5440 | 89 | 0.0000 | 0.0000 |
+| 17 | Mega Shine | Mega Shine | 29.1052 | 28.8853 | 3.9220 | 91 | 0.0000 | 0.3159 |
+| 18 | Mega Blaziken | Mega Rising | 29.0533 | 28.7984 | 3.6459 | 99 | 0.0000 | 0.3662 |
+| 19 | Secluded Springs | Secluded Springs | 28.3323 | 28.2758 | 3.7152 | 82 | 0.0000 | 0.0000 |
+| 20 | Mewtwo | Genetic Apex | 27.3666 | 27.3149 | 3.3444 | 83 | 0.0000 | 0.0000 |
+| 21 | Arceus | Triumphant Light | 23.9394 | 23.8638 | 3.1409 | 67 | 0.0000 | 0.0000 |
+| 22 | Shining Revelry | Shining Revelry | 23.7275 | 23.6427 | 3.1511 | 76 | 0.0000 | 0.0000 |
+| 23 | Paldean Wonders | Paldean Wonders | 18.4406 | 18.1200 | 2.3381 | 64 | 0.0000 | 0.3159 |
+| 24 | Crimson Blaze | Crimson Blaze | 9.7250 | 9.5082 | 1.2743 | 37 | 0.0000 | 0.2205 |
+| 25 | Pulsing Aura | Pulsing Aura | 5.5879 | 5.4245 | 0.6493 | 53 | 0.0000 | 0.1871 |
 
 ---
 

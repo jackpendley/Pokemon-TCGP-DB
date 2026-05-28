@@ -1,6 +1,6 @@
 # Final Hourglass Spending Plan
 
-Generated: 2026-05-26  
+Generated: 2026-05-28  
 Model confidence: **PZ VERIFIED**  
 Collection total: 757 cards  
 Batch size: 10 packs (120 ⧗ per batch)  

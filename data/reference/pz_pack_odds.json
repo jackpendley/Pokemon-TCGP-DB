@@ -48205,5 +48205,1540 @@
         }
       }
     ]
+  },
+  "paradox-drive": {
+    "pack_name": "Paradox Drive",
+    "expansion_id": "B3a",
+    "expansion_slug": "b3a",
+    "pack_slug": "paradox-drive",
+    "card_count": 109,
+    "cards": [
+      {
+        "card_url": "/cards/b3a/1/surskit/",
+        "name": "Surskit",
+        "set_code": "B3A",
+        "card_number": 1,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/2/masquerain/",
+        "name": "Masquerain",
+        "set_code": "B3A",
+        "card_number": 2,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/3/brute-bonnet/",
+        "name": "Brute Bonnet",
+        "set_code": "B3A",
+        "card_number": 3,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/4/slither-wing/",
+        "name": "Slither Wing",
+        "set_code": "B3A",
+        "card_number": 4,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/5/iron-moth/",
+        "name": "Iron Moth",
+        "set_code": "B3A",
+        "card_number": 5,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/6/psyduck/",
+        "name": "Psyduck",
+        "set_code": "B3A",
+        "card_number": 6,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/7/golduck/",
+        "name": "Golduck",
+        "set_code": "B3A",
+        "card_number": 7,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/8/vaporeon/",
+        "name": "Vaporeon",
+        "set_code": "B3A",
+        "card_number": 8,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/9/buizel/",
+        "name": "Buizel",
+        "set_code": "B3A",
+        "card_number": 9,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/10/floatzel/",
+        "name": "Floatzel",
+        "set_code": "B3A",
+        "card_number": 10,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/11/snom/",
+        "name": "Snom",
+        "set_code": "B3A",
+        "card_number": 11,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/12/frosmoth/",
+        "name": "Frosmoth",
+        "set_code": "B3A",
+        "card_number": 12,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/13/iron-bundle-ex/",
+        "name": "Iron Bundle ex",
+        "set_code": "B3A",
+        "card_number": 13,
+        "drop_chance_pct": 0.8,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.2,
+          "5": 0.6
+        }
+      },
+      {
+        "card_url": "/cards/b3a/14/pawmi/",
+        "name": "Pawmi",
+        "set_code": "B3A",
+        "card_number": 14,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/15/pawmo/",
+        "name": "Pawmo",
+        "set_code": "B3A",
+        "card_number": 15,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/16/pawmot/",
+        "name": "Pawmot",
+        "set_code": "B3A",
+        "card_number": 16,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/17/iron-hands/",
+        "name": "Iron Hands",
+        "set_code": "B3A",
+        "card_number": 17,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/18/iron-thorns/",
+        "name": "Iron Thorns",
+        "set_code": "B3A",
+        "card_number": 18,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/19/miraidon-ex/",
+        "name": "Miraidon ex",
+        "set_code": "B3A",
+        "card_number": 19,
+        "drop_chance_pct": 0.8,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.2,
+          "5": 0.6
+        }
+      },
+      {
+        "card_url": "/cards/b3a/20/espeon/",
+        "name": "Espeon",
+        "set_code": "B3A",
+        "card_number": 20,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/21/flittle/",
+        "name": "Flittle",
+        "set_code": "B3A",
+        "card_number": 21,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/22/espathra/",
+        "name": "Espathra",
+        "set_code": "B3A",
+        "card_number": 22,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/23/greavard/",
+        "name": "Greavard",
+        "set_code": "B3A",
+        "card_number": 23,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/24/houndstone/",
+        "name": "Houndstone",
+        "set_code": "B3A",
+        "card_number": 24,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/25/scream-tail/",
+        "name": "Scream Tail",
+        "set_code": "B3A",
+        "card_number": 25,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/26/flutter-mane-ex/",
+        "name": "Flutter Mane ex",
+        "set_code": "B3A",
+        "card_number": 26,
+        "drop_chance_pct": 0.8,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.2,
+          "5": 0.6
+        }
+      },
+      {
+        "card_url": "/cards/b3a/27/iron-valiant/",
+        "name": "Iron Valiant",
+        "set_code": "B3A",
+        "card_number": 27,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/28/iron-leaves/",
+        "name": "Iron Leaves",
+        "set_code": "B3A",
+        "card_number": 28,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/29/iron-boulder/",
+        "name": "Iron Boulder",
+        "set_code": "B3A",
+        "card_number": 29,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/30/iron-crown/",
+        "name": "Iron Crown",
+        "set_code": "B3A",
+        "card_number": 30,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/31/nacli/",
+        "name": "Nacli",
+        "set_code": "B3A",
+        "card_number": 31,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/32/naclstack/",
+        "name": "Naclstack",
+        "set_code": "B3A",
+        "card_number": 32,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/33/garganacl/",
+        "name": "Garganacl",
+        "set_code": "B3A",
+        "card_number": 33,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/34/great-tusk/",
+        "name": "Great Tusk",
+        "set_code": "B3A",
+        "card_number": 34,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/35/sandy-shocks/",
+        "name": "Sandy Shocks",
+        "set_code": "B3A",
+        "card_number": 35,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/36/koraidon-ex/",
+        "name": "Koraidon ex",
+        "set_code": "B3A",
+        "card_number": 36,
+        "drop_chance_pct": 0.8,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.2,
+          "5": 0.6
+        }
+      },
+      {
+        "card_url": "/cards/b3a/37/umbreon/",
+        "name": "Umbreon",
+        "set_code": "B3A",
+        "card_number": 37,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/38/sneasel/",
+        "name": "Sneasel",
+        "set_code": "B3A",
+        "card_number": 38,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/39/weavile/",
+        "name": "Weavile",
+        "set_code": "B3A",
+        "card_number": 39,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/40/sableye/",
+        "name": "Sableye",
+        "set_code": "B3A",
+        "card_number": 40,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/41/pawniard/",
+        "name": "Pawniard",
+        "set_code": "B3A",
+        "card_number": 41,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/42/bisharp/",
+        "name": "Bisharp",
+        "set_code": "B3A",
+        "card_number": 42,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/43/kingambit/",
+        "name": "Kingambit",
+        "set_code": "B3A",
+        "card_number": 43,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/44/glimmet/",
+        "name": "Glimmet",
+        "set_code": "B3A",
+        "card_number": 44,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/45/glimmora/",
+        "name": "Glimmora",
+        "set_code": "B3A",
+        "card_number": 45,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/46/iron-jugulis/",
+        "name": "Iron Jugulis",
+        "set_code": "B3A",
+        "card_number": 46,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/47/roaring-moon/",
+        "name": "Roaring Moon",
+        "set_code": "B3A",
+        "card_number": 47,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/48/corviknight/",
+        "name": "Corviknight",
+        "set_code": "B3A",
+        "card_number": 48,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/49/cufant/",
+        "name": "Cufant",
+        "set_code": "B3A",
+        "card_number": 49,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/50/copperajah/",
+        "name": "Copperajah",
+        "set_code": "B3A",
+        "card_number": 50,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/51/iron-treads/",
+        "name": "Iron Treads",
+        "set_code": "B3A",
+        "card_number": 51,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/52/altaria/",
+        "name": "Altaria",
+        "set_code": "B3A",
+        "card_number": 52,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/53/walking-wake/",
+        "name": "Walking Wake",
+        "set_code": "B3A",
+        "card_number": 53,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/54/gouging-fire/",
+        "name": "Gouging Fire",
+        "set_code": "B3A",
+        "card_number": 54,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/55/raging-bolt/",
+        "name": "Raging Bolt",
+        "set_code": "B3A",
+        "card_number": 55,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/56/eevee/",
+        "name": "Eevee",
+        "set_code": "B3A",
+        "card_number": 56,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/57/girafarig/",
+        "name": "Girafarig",
+        "set_code": "B3A",
+        "card_number": 57,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/58/farigiraf/",
+        "name": "Farigiraf",
+        "set_code": "B3A",
+        "card_number": 58,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/59/dunsparce/",
+        "name": "Dunsparce",
+        "set_code": "B3A",
+        "card_number": 59,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/60/dudunsparce/",
+        "name": "Dudunsparce",
+        "set_code": "B3A",
+        "card_number": 60,
+        "drop_chance_pct": 2.3,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.8,
+          "5": 1.5
+        }
+      },
+      {
+        "card_url": "/cards/b3a/61/swablu/",
+        "name": "Swablu",
+        "set_code": "B3A",
+        "card_number": 61,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/62/rufflet/",
+        "name": "Rufflet",
+        "set_code": "B3A",
+        "card_number": 62,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/63/braviary/",
+        "name": "Braviary",
+        "set_code": "B3A",
+        "card_number": 63,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/64/hawlucha/",
+        "name": "Hawlucha",
+        "set_code": "B3A",
+        "card_number": 64,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/65/rookidee/",
+        "name": "Rookidee",
+        "set_code": "B3A",
+        "card_number": 65,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/66/corvisquire/",
+        "name": "Corvisquire",
+        "set_code": "B3A",
+        "card_number": 66,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/67/flamigo/",
+        "name": "Flamigo",
+        "set_code": "B3A",
+        "card_number": 67,
+        "drop_chance_pct": 9.36,
+        "slot_odds_pct": {
+          "1": 3.12,
+          "2": 3.12,
+          "3": 3.12,
+          "4": 0,
+          "5": 0
+        }
+      },
+      {
+        "card_url": "/cards/b3a/68/terapagos-ex/",
+        "name": "Terapagos ex",
+        "set_code": "B3A",
+        "card_number": 68,
+        "drop_chance_pct": 0.8,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.2,
+          "5": 0.6
+        }
+      },
+      {
+        "card_url": "/cards/b3a/69/ancient-booster-energy-capsule/",
+        "name": "Ancient Booster Energy Capsule",
+        "set_code": "B3A",
+        "card_number": 69,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/70/future-booster-energy-capsule/",
+        "name": "Future Booster Energy Capsule",
+        "set_code": "B3A",
+        "card_number": 70,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/71/juliana/",
+        "name": "Juliana",
+        "set_code": "B3A",
+        "card_number": 71,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/72/professor-sada/",
+        "name": "Professor Sada",
+        "set_code": "B3A",
+        "card_number": 72,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/73/professor-turo/",
+        "name": "Professor Turo",
+        "set_code": "B3A",
+        "card_number": 73,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/74/area-zero/",
+        "name": "Area Zero",
+        "set_code": "B3A",
+        "card_number": 74,
+        "drop_chance_pct": 5.71,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3.33,
+          "5": 2.38
+        }
+      },
+      {
+        "card_url": "/cards/b3a/75/snom/",
+        "name": "Snom",
+        "set_code": "B3A",
+        "card_number": 75,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/76/flittle/",
+        "name": "Flittle",
+        "set_code": "B3A",
+        "card_number": 76,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/77/iron-boulder/",
+        "name": "Iron Boulder",
+        "set_code": "B3A",
+        "card_number": 77,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/78/glimmora/",
+        "name": "Glimmora",
+        "set_code": "B3A",
+        "card_number": 78,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/79/raging-bolt/",
+        "name": "Raging Bolt",
+        "set_code": "B3A",
+        "card_number": 79,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/80/hawlucha/",
+        "name": "Hawlucha",
+        "set_code": "B3A",
+        "card_number": 80,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/81/iron-bundle-ex/",
+        "name": "Iron Bundle ex",
+        "set_code": "B3A",
+        "card_number": 81,
+        "drop_chance_pct": 0.55,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.1,
+          "5": 0.45
+        }
+      },
+      {
+        "card_url": "/cards/b3a/82/miraidon-ex/",
+        "name": "Miraidon ex",
+        "set_code": "B3A",
+        "card_number": 82,
+        "drop_chance_pct": 0.55,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.1,
+          "5": 0.45
+        }
+      },
+      {
+        "card_url": "/cards/b3a/83/flutter-mane-ex/",
+        "name": "Flutter Mane ex",
+        "set_code": "B3A",
+        "card_number": 83,
+        "drop_chance_pct": 0.55,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.1,
+          "5": 0.45
+        }
+      },
+      {
+        "card_url": "/cards/b3a/84/koraidon-ex/",
+        "name": "Koraidon ex",
+        "set_code": "B3A",
+        "card_number": 84,
+        "drop_chance_pct": 0.55,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.1,
+          "5": 0.45
+        }
+      },
+      {
+        "card_url": "/cards/b3a/85/terapagos-ex/",
+        "name": "Terapagos ex",
+        "set_code": "B3A",
+        "card_number": 85,
+        "drop_chance_pct": 0.55,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.1,
+          "5": 0.45
+        }
+      },
+      {
+        "card_url": "/cards/b3a/86/juliana/",
+        "name": "Juliana",
+        "set_code": "B3A",
+        "card_number": 86,
+        "drop_chance_pct": 0.55,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.1,
+          "5": 0.45
+        }
+      },
+      {
+        "card_url": "/cards/b3a/87/professor-sada/",
+        "name": "Professor Sada",
+        "set_code": "B3A",
+        "card_number": 87,
+        "drop_chance_pct": 0.55,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.1,
+          "5": 0.45
+        }
+      },
+      {
+        "card_url": "/cards/b3a/88/professor-turo/",
+        "name": "Professor Turo",
+        "set_code": "B3A",
+        "card_number": 88,
+        "drop_chance_pct": 0.55,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.1,
+          "5": 0.45
+        }
+      },
+      {
+        "card_url": "/cards/b3a/89/iron-bundle-ex/",
+        "name": "Iron Bundle ex",
+        "set_code": "B3A",
+        "card_number": 89,
+        "drop_chance_pct": 0.36,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.08,
+          "5": 0.28
+        }
+      },
+      {
+        "card_url": "/cards/b3a/90/miraidon-ex/",
+        "name": "Miraidon ex",
+        "set_code": "B3A",
+        "card_number": 90,
+        "drop_chance_pct": 0.36,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.08,
+          "5": 0.28
+        }
+      },
+      {
+        "card_url": "/cards/b3a/91/flutter-mane-ex/",
+        "name": "Flutter Mane ex",
+        "set_code": "B3A",
+        "card_number": 91,
+        "drop_chance_pct": 0.36,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.08,
+          "5": 0.28
+        }
+      },
+      {
+        "card_url": "/cards/b3a/92/koraidon-ex/",
+        "name": "Koraidon ex",
+        "set_code": "B3A",
+        "card_number": 92,
+        "drop_chance_pct": 0.36,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.08,
+          "5": 0.28
+        }
+      },
+      {
+        "card_url": "/cards/b3a/93/terapagos-ex/",
+        "name": "Terapagos ex",
+        "set_code": "B3A",
+        "card_number": 93,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.04,
+          "5": 0.14
+        }
+      },
+      {
+        "card_url": "/cards/b3a/94/rellor/",
+        "name": "Rellor",
+        "set_code": "B3A",
+        "card_number": 94,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/95/charcadet/",
+        "name": "Charcadet",
+        "set_code": "B3A",
+        "card_number": 95,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/96/tadbulb/",
+        "name": "Tadbulb",
+        "set_code": "B3A",
+        "card_number": 96,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/97/rabsca/",
+        "name": "Rabsca",
+        "set_code": "B3A",
+        "card_number": 97,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/98/diglett/",
+        "name": "Diglett",
+        "set_code": "B3A",
+        "card_number": 98,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/99/dugtrio/",
+        "name": "Dugtrio",
+        "set_code": "B3A",
+        "card_number": 99,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/100/klawf/",
+        "name": "Klawf",
+        "set_code": "B3A",
+        "card_number": 100,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/101/orthworm/",
+        "name": "Orthworm",
+        "set_code": "B3A",
+        "card_number": 101,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/102/swablu/",
+        "name": "Swablu",
+        "set_code": "B3A",
+        "card_number": 102,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/103/altaria/",
+        "name": "Altaria",
+        "set_code": "B3A",
+        "card_number": 103,
+        "drop_chance_pct": 1.23,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.28,
+          "5": 0.95
+        }
+      },
+      {
+        "card_url": "/cards/b3a/104/meowscarada-ex/",
+        "name": "Meowscarada ex",
+        "set_code": "B3A",
+        "card_number": 104,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.04,
+          "5": 0.14
+        }
+      },
+      {
+        "card_url": "/cards/b3a/105/armarouge-ex/",
+        "name": "Armarouge ex",
+        "set_code": "B3A",
+        "card_number": 105,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.04,
+          "5": 0.14
+        }
+      },
+      {
+        "card_url": "/cards/b3a/106/bellibolt-ex/",
+        "name": "Bellibolt ex",
+        "set_code": "B3A",
+        "card_number": 106,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.04,
+          "5": 0.14
+        }
+      },
+      {
+        "card_url": "/cards/b3a/107/mega-altaria-ex/",
+        "name": "Mega Altaria ex",
+        "set_code": "B3A",
+        "card_number": 107,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.04,
+          "5": 0.14
+        }
+      },
+      {
+        "card_url": "/cards/b3a/108/iron-valiant/",
+        "name": "Iron Valiant",
+        "set_code": "B3A",
+        "card_number": 108,
+        "drop_chance_pct": 0.1,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.02,
+          "5": 0.08
+        }
+      },
+      {
+        "card_url": "/cards/b3a/109/roaring-moon/",
+        "name": "Roaring Moon",
+        "set_code": "B3A",
+        "card_number": 109,
+        "drop_chance_pct": 0.1,
+        "slot_odds_pct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0.02,
+          "5": 0.08
+        }
+      }
+    ]
   }
 }

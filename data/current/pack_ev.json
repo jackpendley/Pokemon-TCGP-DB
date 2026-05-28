@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-05-27T04:32:20+00:00",
+  "generated_at": "2026-05-28T18:48:11+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "pz_verified",
     "collection_total": 757,
     "collection_mutated": false,
-    "inputs_hash": "349311f3431c8cbb223d945236e18e74ebdb078648e25edf8238d73cd5177a57",
+    "inputs_hash": "1fb8c55269cd38f2507e176b5463bfd5d0ec2ef4ff0bf4acff0adeac6e21f199",
     "warnings": [
-      "Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone for all 24 packs. EV rankings reflect actual pull probabilities. No inferred confidence adjustment applied."
+      "Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone for all 25 packs. EV rankings reflect actual pull probabilities. No inferred confidence adjustment applied."
     ]
   },
   "scoring_weights": {
@@ -106,6 +106,15 @@
         "confidence_adjusted_ev": 4.27871
       },
       {
+        "pack_name": "Paradox Drive",
+        "expansion": "Paradox Drive",
+        "unified_score": 31.027873,
+        "new_card_ev": 4.1028,
+        "new_card_ev_10x": 30.987481,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 4.30476
+      },
+      {
         "pack_name": "Ho-Oh",
         "expansion": "Wisdom of Sea and Sky",
         "unified_score": 32.649506,
@@ -113,15 +122,6 @@
         "new_card_ev_10x": 32.604362,
         "deck_target_ev": 0.0,
         "confidence_adjusted_ev": 4.29916
-      },
-      {
-        "pack_name": "Mega Altaria",
-        "expansion": "Mega Rising",
-        "unified_score": 31.945772,
-        "new_card_ev": 4.01335,
-        "new_card_ev_10x": 31.715432,
-        "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 4.24955
       }
     ],
     "top_packs_by_deck_target_ev": [
@@ -173,7 +173,7 @@
     ],
     "highest_unified_pack": "Deluxe Pack: ex",
     "highest_new_card_ev_pack": "Extradimensional Crisis",
-    "total_packs_scored": 24
+    "total_packs_scored": 25
   },
   "packs": [
     {
@@ -1809,6 +1809,92 @@
       ],
       "deck_target_cards": [],
       "notes": "slot_rates=pz_verified. PZ coverage: 125/125 cards (1 excluded as non-pullable). 28/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+    },
+    {
+      "pack_name": "Paradox Drive",
+      "expansion": "Paradox Drive",
+      "set_code": "B3a",
+      "source_status": "pz_verified",
+      "slot_rates_confidence": "pending_verification",
+      "confidence_weight": 1.0,
+      "blocked": false,
+      "blocked_reason": null,
+      "cards_in_pool": 109,
+      "owned_in_pool": 20,
+      "missing_in_pool": 89,
+      "new_card_ev": 4.1028,
+      "new_card_ev_10x": 30.987481,
+      "copy_ev": 0.20196,
+      "ex_card_ev": 0.0,
+      "deck_target_ev": 0.0,
+      "missing_rare_plus": 20,
+      "rare_plus_ev_10x": 1.298569,
+      "pack_total_ev": 4.30476,
+      "confidence_adjusted_ev": 4.30476,
+      "unified_score": 31.027873,
+      "ev_diminishing_returns_ratio": 0.7553,
+      "cost_per_unique_card_1x": 2.92,
+      "cost_per_unique_card_10x": 3.87,
+      "pz_coverage": 1.0,
+      "top_ev_cards": [
+        {
+          "name": "Brute Bonnet",
+          "rarity": "one_diamond",
+          "is_ex": false,
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0936,
+          "value": 1.0,
+          "ev_contribution": 0.0936,
+          "rate_source": "pz"
+        },
+        {
+          "name": "Psyduck",
+          "rarity": "one_diamond",
+          "is_ex": false,
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0936,
+          "value": 1.0,
+          "ev_contribution": 0.0936,
+          "rate_source": "pz"
+        },
+        {
+          "name": "Golduck",
+          "rarity": "one_diamond",
+          "is_ex": false,
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0936,
+          "value": 1.0,
+          "ev_contribution": 0.0936,
+          "rate_source": "pz"
+        },
+        {
+          "name": "Buizel",
+          "rarity": "one_diamond",
+          "is_ex": false,
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0936,
+          "value": 1.0,
+          "ev_contribution": 0.0936,
+          "rate_source": "pz"
+        },
+        {
+          "name": "Floatzel",
+          "rarity": "one_diamond",
+          "is_ex": false,
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0936,
+          "value": 1.0,
+          "ev_contribution": 0.0936,
+          "rate_source": "pz"
+        }
+      ],
+      "deck_target_cards": [],
+      "notes": "slot_rates=pz_verified. PZ coverage: 109/109 cards. 20/109 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Pikachu",
