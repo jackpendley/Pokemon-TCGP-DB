@@ -99,14 +99,28 @@ def _norm_name(name: str) -> str:
     return name.lower().replace("’", "'").replace("‘", "'").strip()
 
 
-def load_collection(path: Path) -> dict:
-    """Returns {normalized_name: total_count} — sums counts across set variants."""
+def load_collection(path: Path) -> tuple[dict, dict]:
+    """
+    Returns (by_name, by_card):
+      by_name: {normalized_name: total_count}  — name-based fallback for all entries
+      by_card: {(set_code_upper, card_number): count}  — set-specific for entries that
+               carry set_code (added by sync for new cards from B3a onwards)
+    """
     raw = json.loads(path.read_text(encoding="utf-8"))
-    result = {}
+    by_name: dict[str, int] = {}
+    by_card: dict[tuple[str, int], int] = {}
     for e in raw.get("collection", []):
         nn = _norm_name(e["name"])
-        result[nn] = result.get(nn, 0) + e["count"]
-    return result
+        by_name[nn] = by_name.get(nn, 0) + e["count"]
+        sc = str(e.get("set_code") or "").upper().strip()
+        cn_raw = e.get("card_number")
+        if sc and cn_raw is not None:
+            try:
+                cn = int(cn_raw)
+                by_card[(sc, cn)] = by_card.get((sc, cn), 0) + e["count"]
+            except (TypeError, ValueError):
+                pass
+    return by_name, by_card
 
 
 def load_pull_model(path: Path) -> dict:
@@ -295,7 +309,8 @@ def value_of_next_copy(owned: int, is_ex: bool, rarity: str | None,
 def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
                            collection: dict, deck_targets: dict,
                            pz_card_odds: dict | None = None,
-                           pz_name_odds: dict | None = None) -> dict:
+                           pz_name_odds: dict | None = None,
+                           collection_by_card: dict | None = None) -> dict:
     """Compute all EV fields for one pack.
 
     pz_card_odds: {(set_code_upper, card_number): drop_chance_decimal} — primary PZ lookup.
@@ -343,15 +358,21 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         nn        = _norm_name(card_name)
         is_dt     = nn in deck_targets
 
-        owned = collection.get(nn, 0)
+        sc  = card.get("set_code", "").upper()
+        cn  = card.get("card_number")
+
+        # Prefer set-specific count (set_code + card_number) when the collection entry
+        # carries that data — avoids crediting cards owned from other sets against this
+        # pack's pool.  Falls back to name-only when set data is absent (legacy entries).
+        if collection_by_card and sc and cn is not None and (sc, cn) in collection_by_card:
+            owned = collection_by_card[(sc, cn)]
+        else:
+            owned = collection.get(nn, 0)
 
         if owned > 0:
             owned_in_pool += 1
         else:
             missing_in_pool += 1
-
-        sc  = card.get("set_code", "").upper()
-        cn  = card.get("card_number")
         pz_pull = pz_card_odds.get((sc, cn)) if (pz_card_odds and sc and cn is not None) else None
 
         if pz_pull is None and pz_name_odds and card_name:
@@ -489,7 +510,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
 # ---------------------------------------------------------------------------
 
 def build(collection, pull_model, pack_cards, expansion_shared, deck_targets,
-          pz_raw=None, pz_odds=None):
+          pz_raw=None, pz_odds=None, collection_by_card=None):
     pack_ev_records = []
     blocked = []
 
@@ -521,7 +542,8 @@ def build(collection, pull_model, pack_cards, expansion_shared, deck_targets,
                         if name_l and pct is not None:
                             pz_name_odds[name_l] = max(pz_name_odds.get(name_l, 0.0), pct / 100.0)
         record = compute_pack_ev_record(
-            pack_record, all_pool_cards, collection, deck_targets, pz_card_odds, pz_name_odds
+            pack_record, all_pool_cards, collection, deck_targets,
+            pz_card_odds, pz_name_odds, collection_by_card,
         )
         if record.get("blocked"):
             blocked.append(record)
@@ -793,7 +815,7 @@ def main():
         except Exception:
             pass  # corrupted prior output — recompute
 
-    collection       = load_collection(COLLECTION_JSON)
+    collection, collection_by_card = load_collection(COLLECTION_JSON)
     pull_model       = load_pull_model(PULL_MODEL_JSON)
     pack_cards, expansion_shared = load_pack_sources(PACK_SOURCES_JSON)
     deck_targets     = load_deck_targets(DECK_VALIDATION_JSON)
@@ -809,7 +831,8 @@ def main():
         print(f"  PZ pack odds:       not found — falling back to inferred slot rates")
 
     pack_ev_records, blocked = build(
-        collection, pull_model, pack_cards, expansion_shared, deck_targets, pz_raw, pz_odds
+        collection, pull_model, pack_cards, expansion_shared, deck_targets,
+        pz_raw, pz_odds, collection_by_card,
     )
 
     out = write_json(pack_ev_records, blocked, deck_targets, collection_total, inputs_hash)

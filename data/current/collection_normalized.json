@@ -1,12 +1,12 @@
 {
   "meta": {
-    "total_cards": 757,
-    "last_updated": "2026-05-26",
+    "total_cards": 784,
+    "last_updated": "2026-05-28",
     "format": "Pokemon TCG Pocket"
   },
   "generated_note": "Normalized output — do not edit. Source: collection.json",
-  "actual_total_quantity": 757,
-  "unique_entries": 366,
+  "actual_total_quantity": 784,
+  "unique_entries": 382,
   "collection": [
     {
       "name": "Charmander",
@@ -446,7 +446,7 @@
       "hp": 50,
       "card_type": "Pokemon",
       "attack": "Firefighting 10",
-      "count": 1,
+      "count": 2,
       "normalized_name": "surskit",
       "entry_id": "surskit",
       "is_ex": false,
@@ -2317,7 +2317,7 @@
       "stage": 0,
       "hp": 60,
       "card_type": "Pokemon",
-      "count": 2,
+      "count": 3,
       "normalized_name": "sneasel",
       "entry_id": "sneasel",
       "is_ex": false,
@@ -2521,7 +2521,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Cut Up 10",
-      "count": 2,
+      "count": 3,
       "normalized_name": "pawniard",
       "entry_id": "pawniard",
       "is_ex": false,
@@ -2663,7 +2663,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Joust 30",
-      "count": 2,
+      "count": 3,
       "normalized_name": "corvisquire",
       "entry_id": "corvisquire",
       "is_ex": false,
@@ -2937,7 +2937,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Pound 30",
-      "count": 1,
+      "count": 2,
       "normalized_name": "jigglypuff",
       "entry_id": "jigglypuff",
       "is_ex": false,
@@ -3555,7 +3555,7 @@
     },
     {
       "name": "Pawmot",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Lightning",
       "stage": 2,
@@ -3857,7 +3857,7 @@
     },
     {
       "name": "Tinkatink",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Metal",
       "stage": 0,
@@ -4546,6 +4546,169 @@
       "variant": "alt art",
       "normalized_name": "clemont",
       "entry_id": "clemont_alt_art"
+    },
+    {
+      "name": "Pachirisu ex",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Pokemon Tool",
+      "is_ex": true,
+      "normalized_name": "pachirisu_ex",
+      "entry_id": "pachirisu_ex"
+    },
+    {
+      "name": "Delcatty",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "is_ex": false,
+      "normalized_name": "delcatty",
+      "entry_id": "delcatty"
+    },
+    {
+      "name": "Zeraora",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "is_ex": false,
+      "normalized_name": "zeraora",
+      "entry_id": "zeraora"
+    },
+    {
+      "name": "Frosmoth",
+      "count": 3,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "is_ex": false,
+      "normalized_name": "frosmoth",
+      "entry_id": "frosmoth"
+    },
+    {
+      "name": "Scream Tail",
+      "count": 2,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 25,
+      "normalized_name": "scream_tail",
+      "entry_id": "scream_tail"
+    },
+    {
+      "name": "Great Tusk",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 34,
+      "normalized_name": "great_tusk",
+      "entry_id": "great_tusk"
+    },
+    {
+      "name": "Corviknight",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 140,
+      "is_ex": false,
+      "normalized_name": "corviknight",
+      "entry_id": "corviknight"
+    },
+    {
+      "name": "Cufant",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 49,
+      "normalized_name": "cufant",
+      "entry_id": "cufant"
+    },
+    {
+      "name": "Iron Treads",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 51,
+      "normalized_name": "iron_treads",
+      "entry_id": "iron_treads"
+    },
+    {
+      "name": "Girafarig",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "is_ex": false,
+      "normalized_name": "girafarig",
+      "entry_id": "girafarig"
+    },
+    {
+      "name": "Farigiraf",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 58,
+      "normalized_name": "farigiraf",
+      "entry_id": "farigiraf"
+    },
+    {
+      "name": "Dunsparce",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "is_ex": false,
+      "normalized_name": "dunsparce",
+      "entry_id": "dunsparce"
+    },
+    {
+      "name": "Braviary",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 120,
+      "is_ex": false,
+      "normalized_name": "braviary",
+      "entry_id": "braviary"
+    },
+    {
+      "name": "Ancient Booster Energy Capsule",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 69,
+      "normalized_name": "ancient_booster_energy_capsule",
+      "entry_id": "ancient_booster_energy_capsule"
+    },
+    {
+      "name": "Juliana",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 86,
+      "normalized_name": "juliana",
+      "entry_id": "juliana"
+    },
+    {
+      "name": "Area Zero",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 74,
+      "normalized_name": "area_zero",
+      "entry_id": "area_zero"
     }
   ]
 }

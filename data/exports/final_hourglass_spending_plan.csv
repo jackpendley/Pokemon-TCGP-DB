@@ -1,4 +1,4 @@
 batch_number,pack_name,expansion,set_code,packs_to_open,hourglass_cost,unified_score,new_card_ev_10x,cost_per_unique_card_10x,ev_diminishing_returns_ratio,missing_in_pool,near_complete,rerun_after,notes
-1,Deluxe Pack: ex,Deluxe Pack: ex,A4b,10,120,32.795585,32.683011,3.67,0.9293,251,False,True,Open first batch from the top unified-score pack.
-2,Deluxe Pack: ex,Deluxe Pack: ex,A4b,10,120,32.795585,32.683011,3.67,0.9293,251,False,True,Continue top pack for batch 2.
-3,Ho-Oh,Wisdom of Sea and Sky,A4,10,120,32.649506,32.604362,3.68,0.8004,102,True,True,Re-run EV after this batch; rotate to highest unified-score pack for batch 4.
+1,Deluxe Pack: ex,Deluxe Pack: ex,A4b,10,120,32.185962,32.072916,3.74,0.929,246,False,True,Open first batch from the top unified-score pack.
+2,Deluxe Pack: ex,Deluxe Pack: ex,A4b,10,120,32.185962,32.072916,3.74,0.929,246,False,True,Continue top pack for batch 2.
+3,Mega Altaria,Mega Rising,B1,10,120,31.882299,31.651671,3.79,0.7899,106,True,True,Re-run EV after this batch; rotate to highest unified-score pack for batch 4.

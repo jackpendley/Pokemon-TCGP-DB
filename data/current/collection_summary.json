@@ -1,40 +1,40 @@
 {
   "meta": {
-    "total_cards": 757,
-    "last_updated": "2026-05-26",
+    "total_cards": 784,
+    "last_updated": "2026-05-28",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 757,
-  "meta_total_cards": 757,
+  "total_quantity": 784,
+  "meta_total_cards": 784,
   "count_matches_meta": true,
-  "unique_entries": 366,
+  "unique_entries": 382,
   "by_card_type": {
-    "Pokemon": 685,
-    "Trainer": 72
+    "Pokemon": 711,
+    "Trainer": 73
   },
   "by_pokemon_type": {
     "Fire": 72,
-    "Grass": 100,
+    "Grass": 101,
     "Water": 85,
-    "Lightning": 54,
+    "Lightning": 55,
     "Psychic": 58,
     "Fighting": 120,
-    "Darkness": 62,
-    "Metal": 27,
+    "Darkness": 63,
+    "Metal": 31,
     "Dragon": 3,
-    "Colorless": 93,
-    "Unknown": 11
+    "Colorless": 96,
+    "Unknown": 27
   },
   "by_stage": {
-    "Basic": 459,
-    "Stage 1": 177,
-    "Stage 2": 47
+    "Basic": 467,
+    "Stage 1": 183,
+    "Stage 2": 50
   },
   "ex_entries": 19,
   "ex_quantity": 22,
   "trainer_subtypes": {
     "Item": 32,
-    "Pokemon Tool": 3,
+    "Pokemon Tool": 4,
     "Supporter": 31,
     "Stadium": 6
   },
@@ -532,7 +532,8 @@
       "Lugia ex",
       "Lanturn ex",
       "Mega Lucario ex",
-      "Crustle ex"
+      "Crustle ex",
+      "Pachirisu ex"
     ],
     "strong_evolution_lines": [
       "Charmander → Charmeleon → Charizard",
@@ -568,6 +569,6 @@
     "partial_evolution_lines": [
       "Zorua → Zoroark"
     ],
-    "total_trainer_cards": 72
+    "total_trainer_cards": 73
   }
 }

@@ -761,6 +761,10 @@ def build_auto_entry(
                 )
 
         entry: dict = {"name": mr.canonical_name, "count": pz.count}
+        if pz.set_code:
+            entry["set_code"] = pz.set_code
+        if pz.card_number is not None:
+            entry["card_number"] = pz.card_number
         cat = best.get("card_category", "")
         if cat == "Pokemon":
             entry["card_type"] = "Pokemon"
@@ -811,14 +815,22 @@ def build_auto_entry(
 
     # No ext_ref record — fall back to name-based inference.
 
+    def _with_coords(e: dict) -> dict:
+        """Inject set_code / card_number from the PZ source record when available."""
+        if pz.set_code:
+            e["set_code"] = pz.set_code
+        if pz.card_number is not None:
+            e["card_number"] = pz.card_number
+        return e
+
     # Heuristic 1: " ex" suffix is unambiguous in TCGP.
     if mr.canonical_name.lower().endswith(" ex"):
-        return {
+        return _with_coords({
             "name": mr.canonical_name,
             "count": pz.count,
             "card_type": "Pokemon",
             "is_ex": True,
-        }
+        })
 
     # Heuristic 2: card_meta lookup (B-set ext_ref + owned collection entries).
     if card_meta and nn in card_meta:
@@ -835,18 +847,18 @@ def build_auto_entry(
         else:
             if known.get("trainer_subtype"):
                 entry["trainer_subtype"] = known["trainer_subtype"]
-        return entry
+        return _with_coords(entry)
 
     # Heuristic 3: assume Pokemon. In TCGP, all known Trainer names are covered by
     # card_meta (from B-set ext_ref + collection.json). Anything not found there is
     # overwhelmingly a Pokemon species. The caller is responsible for logging a
     # summary; per-card logging at this site would be too noisy for bulk syncs.
-    return {
+    return _with_coords({
         "name": mr.canonical_name,
         "count": pz.count,
         "card_type": "Pokemon",
         "is_ex": False,
-    }
+    })
 
 
 def append_entries_to_collection(raw: str, entries: list[dict]) -> str:

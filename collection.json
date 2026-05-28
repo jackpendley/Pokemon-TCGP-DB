@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 757,
-    "last_updated": "2026-05-26",
+    "total_cards": 784,
+    "last_updated": "2026-05-28",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -316,7 +316,7 @@
       "hp": 50,
       "card_type": "Pokemon",
       "attack": "Firefighting 10",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Masquerain",
@@ -1616,7 +1616,7 @@
       "stage": 0,
       "hp": 60,
       "card_type": "Pokemon",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Umbreon ex",
@@ -1758,7 +1758,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Cut Up 10",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Mawile",
@@ -1857,7 +1857,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Joust 30",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Corviknight ex",
@@ -2048,7 +2048,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Pound 30",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Farfetch'd",
@@ -2503,7 +2503,7 @@
     },
     {
       "name": "Pawmot",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Lightning",
       "stage": 2,
@@ -2753,7 +2753,7 @@
     },
     {
       "name": "Tinkatink",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Metal",
       "stage": 0,
@@ -3326,6 +3326,137 @@
       "trainer_subtype": "Supporter",
       "is_ex": false,
       "variant": "alt art"
+    },
+    {
+      "name": "Pachirisu ex",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Pokemon Tool",
+      "is_ex": true
+    },
+    {
+      "name": "Delcatty",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "is_ex": false
+    },
+    {
+      "name": "Zeraora",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "is_ex": false
+    },
+    {
+      "name": "Frosmoth",
+      "count": 3,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "is_ex": false
+    },
+    {
+      "name": "Scream Tail",
+      "count": 2,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 25
+    },
+    {
+      "name": "Great Tusk",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 34
+    },
+    {
+      "name": "Corviknight",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 140,
+      "is_ex": false
+    },
+    {
+      "name": "Cufant",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 49
+    },
+    {
+      "name": "Iron Treads",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 51
+    },
+    {
+      "name": "Girafarig",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "is_ex": false
+    },
+    {
+      "name": "Farigiraf",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 58
+    },
+    {
+      "name": "Dunsparce",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "is_ex": false
+    },
+    {
+      "name": "Braviary",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 120,
+      "is_ex": false
+    },
+    {
+      "name": "Ancient Booster Energy Capsule",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 69
+    },
+    {
+      "name": "Juliana",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 86
+    },
+    {
+      "name": "Area Zero",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 74
     }
   ]
 }
