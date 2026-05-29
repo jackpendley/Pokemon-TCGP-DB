@@ -58,9 +58,9 @@ def _section(title: str) -> None:
     _log("─" * 64)
 
 
-def _run(cmd: list, capture: bool = True) -> subprocess.CompletedProcess:
+def _run(cmd: list) -> subprocess.CompletedProcess:
     _log(f"  $ {' '.join(str(c) for c in cmd)}")
-    return subprocess.run(cmd, capture_output=capture, text=True, cwd=ROOT)
+    return subprocess.run(cmd, capture_output=True, text=True, cwd=ROOT)
 
 
 def _git_restore(*rel_paths: str) -> None:
@@ -81,7 +81,6 @@ def _sibling_slugs(victim_slug: str, expansion_id: str, pz_data: dict) -> list[s
         s for s, info in pz_data.items()
         if info.get("expansion_id") == expansion_id
         and s != victim_slug
-        and not info.get("expansion_id", "").upper().startswith("PROMO")
     ]
 
 
@@ -297,6 +296,7 @@ def run_gate2(victim_slug: str, pack_info: dict, pz_data: dict, seed: int | None
     collection_backup   = COLLECTION.read_bytes()
     review_queue_path   = ROOT / "data" / "sync" / "sync_review_queue.json"
     review_queue_backup = review_queue_path.read_bytes()
+    sim_path: str | None = None
 
     try:
         # Step 1: Remove from pack_sources only (simulates "new pack not yet in our reference data")
@@ -352,10 +352,16 @@ def run_gate2(victim_slug: str, pack_info: dict, pz_data: dict, seed: int | None
     finally:
         # Always restore all three modified resources — runs on success, GateFailure, and any
         # unexpected exception (OSError, KeyboardInterrupt, etc.) so nothing leaks.
+        # _git_restore is wrapped so that a git failure doesn't skip the in-memory restores.
         _log("\n  Restoring pack_sources, collection.json, and review queue...")
-        _git_restore("data/reference/pack_sources.json")
+        try:
+            _git_restore("data/reference/pack_sources.json")
+        except subprocess.CalledProcessError as e:
+            _log(f"  WARNING: git restore failed — pack_sources.json may be dirty: {e}")
         COLLECTION.write_bytes(collection_backup)
         review_queue_path.write_bytes(review_queue_backup)
+        if sim_path:
+            Path(sim_path).unlink(missing_ok=True)
 
     # Step 7: Re-run pipeline and final validation (only reached on success path)
     _log("\n[7/7] Regenerating pipeline outputs from restored collection...")

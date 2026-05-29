@@ -26,7 +26,9 @@ SUMMARY_JSON = OUT_DIR / "collection_summary.json"
 
 
 def strip_comments(text):
-    return re.sub(r"//[^\n]*", "", text)
+    # Only strip lines whose first non-whitespace chars are '//'; avoids corrupting
+    # any string value containing '//' (e.g. a future URL field).
+    return re.sub(r"(?m)^\s*//[^\n]*\n?", "", text)
 
 
 def normalize_name(name):

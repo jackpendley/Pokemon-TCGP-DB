@@ -89,7 +89,9 @@ class CountChange:
 # ---------------------------------------------------------------------------
 
 def _strip_comments(text: str) -> str:
-    return re.sub(r"//[^\n]*", "", text)
+    # Only strip lines whose first non-whitespace chars are '//'; avoids corrupting
+    # any string value containing '//' (e.g. a future URL field).
+    return re.sub(r"(?m)^\s*//[^\n]*\n?", "", text)
 
 
 def load_collection() -> tuple[str, dict]:
@@ -744,6 +746,14 @@ def build_auto_entry(
     pz = mr.pz_card
     records = ext_ref.get(nn, [])
 
+    def _with_coords(e: dict) -> dict:
+        """Inject set_code / card_number from the PZ source record when available."""
+        if pz.set_code:
+            e["set_code"] = pz.set_code
+        if pz.card_number is not None:
+            e["card_number"] = pz.card_number
+        return e
+
     if records:
         best = next(
             (r for r in records
@@ -761,10 +771,6 @@ def build_auto_entry(
                 )
 
         entry: dict = {"name": mr.canonical_name, "count": pz.count}
-        if pz.set_code:
-            entry["set_code"] = pz.set_code
-        if pz.card_number is not None:
-            entry["card_number"] = pz.card_number
         cat = best.get("card_category", "")
         if cat == "Pokemon":
             entry["card_type"] = "Pokemon"
@@ -811,17 +817,9 @@ def build_auto_entry(
                     file=sys.stderr,
                 )
         entry["is_ex"] = bool(best.get("is_ex", False))
-        return entry
+        return _with_coords(entry)
 
     # No ext_ref record — fall back to name-based inference.
-
-    def _with_coords(e: dict) -> dict:
-        """Inject set_code / card_number from the PZ source record when available."""
-        if pz.set_code:
-            e["set_code"] = pz.set_code
-        if pz.card_number is not None:
-            e["card_number"] = pz.card_number
-        return e
 
     # Heuristic 1: " ex" suffix is unambiguous in TCGP.
     if mr.canonical_name.lower().endswith(" ex"):

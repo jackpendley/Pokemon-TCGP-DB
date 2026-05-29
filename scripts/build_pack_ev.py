@@ -534,13 +534,23 @@ def build(collection, pull_model, pack_cards, expansion_shared, deck_targets,
                     for r in all_pool_cards
                 }
                 pz_name_odds = {}
+                pz_name_ambiguous: set[str] = set()
                 for pz_card in pz_raw[slug].get("cards", []):
                     sc_cn = (pz_card["set_code"].upper(), pz_card["card_number"])
                     if sc_cn not in pool_keys:
                         name_l = _norm_name(pz_card.get("name", ""))
                         pct = pz_card.get("drop_chance_pct")
                         if name_l and pct is not None:
-                            pz_name_odds[name_l] = max(pz_name_odds.get(name_l, 0.0), pct / 100.0)
+                            rate = pct / 100.0
+                            if name_l in pz_name_ambiguous:
+                                pass  # already excluded due to conflicting rates
+                            elif name_l in pz_name_odds and pz_name_odds[name_l] != rate:
+                                # Same name, different rates — ambiguous; exclude to avoid
+                                # silently using the wrong rate for a pool card.
+                                pz_name_ambiguous.add(name_l)
+                                del pz_name_odds[name_l]
+                            else:
+                                pz_name_odds[name_l] = rate
         record = compute_pack_ev_record(
             pack_record, all_pool_cards, collection, deck_targets,
             pz_card_odds, pz_name_odds, collection_by_card,

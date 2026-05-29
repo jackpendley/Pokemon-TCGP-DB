@@ -35,13 +35,17 @@ COLLECTION_FILE = ROOT / "collection.json"  # canonical source; strip JSONC comm
 
 
 def _normalize(name: str) -> str:
-    return re.sub(r"[^a-z0-9]", "_", name.lower().strip()).strip("_")
+    # Matches _norm_name in build_pack_ev.py: normalize apostrophe variants, keep hyphens
+    # and other punctuation so names like Farfetch'd, Ho-Oh, Sirfetch'd compare correctly.
+    return name.lower().replace("’", "'").replace("‘", "'").strip()
 
 
 def _load_collection() -> dict:
     """Load collection.json, stripping JSONC // comments before parsing."""
     raw = COLLECTION_FILE.read_text(encoding="utf-8")
-    clean = re.sub(r"//[^\n]*", "", raw)
+    # Only strip lines whose first non-whitespace chars are '//'; avoids corrupting
+    # any string value containing '//' (e.g. a future URL field).
+    clean = re.sub(r"(?m)^\s*//[^\n]*\n?", "", raw)
     return json.loads(clean)
 
 
@@ -49,7 +53,7 @@ def _load_pz_data() -> dict:
     return json.loads(PZ_PACK_ODDS.read_text(encoding="utf-8"))
 
 
-def select_pack(pack_slug: str | None, use_random: bool, seed: int | None, pz_data: dict) -> tuple[str, dict]:
+def select_pack(pack_slug: str | None, seed: int | None, pz_data: dict) -> tuple[str, dict]:
     """Return (slug, pack_info). Random selection excludes promo packs."""
     non_promo_slugs = sorted(
         slug for slug, info in pz_data.items()
@@ -102,13 +106,16 @@ def _build_name_to_coord(ps_records: list[dict]) -> dict[str, tuple[str, int]]:
     """Build {normalized_card_name: (set_code, card_number)} from pack_sources records."""
     lookup: dict[str, tuple[str, int]] = {}
     for r in ps_records:
-        nn = _normalize(r.get("card_name", ""))
-        sc = str(r.get("set_code", "")).upper().strip()
+        nn     = _normalize(r.get("card_name", ""))
+        sc     = str(r.get("set_code", "")).upper().strip()
+        cn_raw = r.get("card_number")
+        if not nn or not sc or cn_raw is None:
+            continue
         try:
-            cn = int(r.get("card_number", 0))
+            cn = int(cn_raw)
         except (TypeError, ValueError):
             continue
-        if nn and sc and cn and nn not in lookup:
+        if nn not in lookup:
             lookup[nn] = (sc, cn)
     return lookup
 
@@ -116,6 +123,8 @@ def _build_name_to_coord(ps_records: list[dict]) -> dict[str, tuple[str, int]]:
 def build_pz_snapshot(
     pulled: dict[tuple[str, int], int],
     pack_info: dict,
+    collection_data: dict,
+    ps_records: list[dict],
 ) -> list[dict]:
     """
     Build a complete PZ-format snapshot:
@@ -125,11 +134,7 @@ def build_pz_snapshot(
     Must include ALL owned cards — not just pulled ones — because --json-import treats
     absent entries as "missing from PZ" and will stale them out after a threshold.
     """
-    collection_data = _load_collection()
     entries = collection_data.get("collection", [])
-
-    ps_data    = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
-    ps_records = ps_data.get("records", ps_data) if isinstance(ps_data, dict) else ps_data
     name_to_coord = _build_name_to_coord(ps_records)
 
     # (set_code, card_number) → name for cards in the simulated pack
@@ -148,7 +153,7 @@ def build_pz_snapshot(
         coord = name_to_coord.get(nn)
 
         extra = 0
-        if coord and coord in pulled:
+        if coord and coord in pulled and coord not in covered:
             extra = pulled[coord]
             covered.add(coord)
 
@@ -173,14 +178,17 @@ def build_pz_snapshot(
     return output
 
 
-def print_pull_summary(pulled: dict[tuple[str, int], int], pack_info: dict) -> None:
+def print_pull_summary(
+    pulled: dict[tuple[str, int], int],
+    pack_info: dict,
+    collection_data: dict,
+    ps_records: list[dict],
+) -> None:
     pack_card_map: dict[tuple[str, int], dict] = {
         (c["set_code"], c["card_number"]): c
         for c in pack_info.get("cards", [])
     }
 
-    ps_data    = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
-    ps_records = ps_data.get("records", ps_data) if isinstance(ps_data, dict) else ps_data
     coord_rarity: dict[tuple[str, int], str] = {}
     for r in ps_records:
         sc = str(r.get("set_code", "")).upper()
@@ -190,7 +198,6 @@ def print_pull_summary(pulled: dict[tuple[str, int], int], pack_info: dict) -> N
             continue
         coord_rarity[(sc, cn)] = r.get("rarity", "?")
 
-    collection_data = _load_collection()
     owned_set = {
         _normalize(e.get("name", ""))
         for e in collection_data.get("collection", [])
@@ -226,14 +233,19 @@ def main() -> None:
     args = parser.parse_args()
 
     pz_data = _load_pz_data()
-    slug, pack_info = select_pack(args.pack, args.use_random, args.seed, pz_data)
+    slug, pack_info = select_pack(args.pack, args.seed, pz_data)
 
     print(f"Selected pack : {pack_info['pack_name']} ({pack_info['expansion_id']}, {pack_info['card_count']} cards)",
           file=sys.stderr)
     print(f"Simulating    : {args.count} pack(s) with seed={args.seed}", file=sys.stderr)
 
     pulled = simulate_opens(pack_info, args.count, args.seed)
-    print_pull_summary(pulled, pack_info)
+
+    collection_data = _load_collection()
+    ps_data    = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
+    ps_records = ps_data.get("records", ps_data) if isinstance(ps_data, dict) else ps_data
+
+    print_pull_summary(pulled, pack_info, collection_data, ps_records)
 
     # Always emit the slug to stdout for the test runner
     print(slug)
@@ -246,7 +258,7 @@ def main() -> None:
         print("ERROR: --output PATH required unless --dry-run", file=sys.stderr)
         sys.exit(1)
 
-    records = build_pz_snapshot(pulled, pack_info)
+    records = build_pz_snapshot(pulled, pack_info, collection_data, ps_records)
     out_path = Path(args.output)
     out_path.write_text(json.dumps(records, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\nOutput: {out_path}  ({len(records)} records)", file=sys.stderr)

@@ -4,7 +4,7 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-05-28T19:11:59+00:00 |
+| Report generated | 2026-05-29T00:51:27+00:00 |
 | Model confidence | **pz_verified** |
 | Collection total | 784 cards |
 | Packs ranked | 25 |
