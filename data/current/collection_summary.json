@@ -1,41 +1,41 @@
 {
   "meta": {
-    "total_cards": 784,
-    "last_updated": "2026-05-28",
+    "total_cards": 859,
+    "last_updated": "2026-05-29",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 784,
-  "meta_total_cards": 784,
+  "total_quantity": 859,
+  "meta_total_cards": 859,
   "count_matches_meta": true,
-  "unique_entries": 382,
+  "unique_entries": 414,
   "by_card_type": {
-    "Pokemon": 711,
-    "Trainer": 73
+    "Pokemon": 784,
+    "Trainer": 75
   },
   "by_pokemon_type": {
-    "Fire": 72,
-    "Grass": 101,
+    "Fire": 73,
+    "Grass": 104,
     "Water": 85,
-    "Lightning": 55,
-    "Psychic": 58,
+    "Lightning": 61,
+    "Psychic": 60,
     "Fighting": 120,
-    "Darkness": 63,
-    "Metal": 31,
+    "Darkness": 65,
+    "Metal": 33,
     "Dragon": 3,
-    "Colorless": 96,
-    "Unknown": 27
+    "Colorless": 102,
+    "Unknown": 78
   },
   "by_stage": {
-    "Basic": 467,
-    "Stage 1": 183,
+    "Basic": 494,
+    "Stage 1": 203,
     "Stage 2": 50
   },
-  "ex_entries": 19,
-  "ex_quantity": 22,
+  "ex_entries": 23,
+  "ex_quantity": 27,
   "trainer_subtypes": {
     "Item": 32,
     "Pokemon Tool": 4,
-    "Supporter": 31,
+    "Supporter": 33,
     "Stadium": 6
   },
   "top_cards_by_count": [
@@ -96,8 +96,8 @@
       7
     ],
     [
-      "Charmander",
-      6
+      "Pawmi",
+      7
     ]
   ],
   "variant_names": {
@@ -123,7 +123,9 @@
     "Cinccino": 2,
     "Farfetch'd": 2,
     "Clemont": 2,
-    "Orthworm": 2
+    "Rellor": 2,
+    "Orthworm": 2,
+    "Juliana": 2
   },
   "evolution_groups": [
     {
@@ -533,7 +535,11 @@
       "Lanturn ex",
       "Mega Lucario ex",
       "Crustle ex",
-      "Pachirisu ex"
+      "Pachirisu ex",
+      "Miraidon ex",
+      "Bellibolt ex",
+      "Iron Bundle ex",
+      "Terapagos ex"
     ],
     "strong_evolution_lines": [
       "Charmander → Charmeleon → Charizard",
@@ -569,6 +575,6 @@
     "partial_evolution_lines": [
       "Zorua → Zoroark"
     ],
-    "total_trainer_cards": 73
+    "total_trainer_cards": 75
   }
 }

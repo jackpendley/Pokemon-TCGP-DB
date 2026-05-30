@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 784,
-    "last_updated": "2026-05-28",
+    "total_cards": 859,
+    "last_updated": "2026-05-29",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -316,7 +316,7 @@
       "hp": 50,
       "card_type": "Pokemon",
       "attack": "Firefighting 10",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Masquerain",
@@ -325,7 +325,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Gust 40",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Carnivine",
@@ -1616,7 +1616,7 @@
       "stage": 0,
       "hp": 60,
       "card_type": "Pokemon",
-      "count": 3
+      "count": 5
     },
     {
       "name": "Umbreon ex",
@@ -1740,7 +1740,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Night Slash 60",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Bronzor",
@@ -1758,7 +1758,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Cut Up 10",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Mawile",
@@ -2012,7 +2012,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Jumping Kick",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Castform",
@@ -2483,7 +2483,7 @@
     },
     {
       "name": "Pawmi",
-      "count": 5,
+      "count": 7,
       "card_type": "Pokemon",
       "type": "Lightning",
       "stage": 0,
@@ -2493,7 +2493,7 @@
     },
     {
       "name": "Pawmo",
-      "count": 1,
+      "count": 4,
       "card_type": "Pokemon",
       "type": "Lightning",
       "stage": 1,
@@ -2853,7 +2853,7 @@
     },
     {
       "name": "Swablu",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Colorless",
       "stage": 0,
@@ -3352,7 +3352,7 @@
     },
     {
       "name": "Frosmoth",
-      "count": 3,
+      "count": 6,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -3394,7 +3394,7 @@
     },
     {
       "name": "Iron Treads",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "is_ex": false,
       "set_code": "B3A",
@@ -3402,7 +3402,7 @@
     },
     {
       "name": "Girafarig",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -3418,7 +3418,7 @@
     },
     {
       "name": "Dunsparce",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -3444,7 +3444,7 @@
     },
     {
       "name": "Juliana",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "is_ex": false,
       "set_code": "B3A",
@@ -3457,6 +3457,308 @@
       "is_ex": false,
       "set_code": "B3A",
       "card_number": 74
+    },
+    {
+      "name": "Golduck",
+      "count": 2,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 7
+    },
+    {
+      "name": "Miraidon ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "set_code": "B3A",
+      "card_number": 19
+    },
+    {
+      "name": "Rufflet",
+      "count": 3,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 62
+    },
+    {
+      "name": "Bellibolt ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 160,
+      "is_ex": true,
+      "set_code": "B3A",
+      "card_number": 106,
+      "variant": "alt art"
+    },
+    {
+      "name": "Future Booster Energy Capsule",
+      "count": 2,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 70
+    },
+    {
+      "name": "Professor Turo",
+      "count": 2,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 73
+    },
+    {
+      "name": "Brute Bonnet",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 3
+    },
+    {
+      "name": "Psyduck",
+      "count": 2,
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 6
+    },
+    {
+      "name": "Buizel",
+      "count": 4,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 9
+    },
+    {
+      "name": "Floatzel",
+      "count": 4,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 10
+    },
+    {
+      "name": "Snom",
+      "count": 2,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 11
+    },
+    {
+      "name": "Iron Bundle ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "set_code": "B3A",
+      "card_number": 13
+    },
+    {
+      "name": "Iron Hands",
+      "count": 2,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 17
+    },
+    {
+      "name": "Iron Thorns",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 18
+    },
+    {
+      "name": "Espeon",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 20
+    },
+    {
+      "name": "Flittle",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 21
+    },
+    {
+      "name": "Houndstone",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 130,
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 24
+    },
+    {
+      "name": "Iron Valiant",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 27
+    },
+    {
+      "name": "Sandy Shocks",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 35
+    },
+    {
+      "name": "Umbreon",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 37
+    },
+    {
+      "name": "Weavile",
+      "count": 2,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 39
+    },
+    {
+      "name": "Sableye",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 40
+    },
+    {
+      "name": "Glimmet",
+      "count": 2,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 44
+    },
+    {
+      "name": "Glimmora",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 45
+    },
+    {
+      "name": "Iron Jugulis",
+      "count": 3,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 46
+    },
+    {
+      "name": "Copperajah",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 50
+    },
+    {
+      "name": "Walking Wake",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 53
+    },
+    {
+      "name": "Terapagos ex",
+      "count": 2,
+      "card_type": "Pokemon",
+      "is_ex": true,
+      "set_code": "B3A",
+      "card_number": 68
+    },
+    {
+      "name": "Rellor",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 94,
+      "variant": "alt art"
+    },
+    {
+      "name": "Juliana",
+      "count": 1,
+      "card_type": "Pokemon",
+      "is_ex": false,
+      "set_code": "B3A",
+      "card_number": 86,
+      "variant": "alt art"
+    },
+    {
+      "name": "Hoothoot",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "is_ex": false,
+      "set_code": "A4",
+      "card_number": 140
+    },
+    {
+      "name": "Rapidash",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fire",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "is_ex": false,
+      "set_code": "B2B",
+      "card_number": 11
     }
   ]
 }

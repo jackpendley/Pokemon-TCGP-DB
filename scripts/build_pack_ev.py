@@ -317,6 +317,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     pz_name_odds: {name_lower: drop_chance_decimal} — name fallback for replacement/cross-set
                   cards that don't match by (set_code, card_number). Built only from PZ cards
                   that have no corresponding pack_sources entry, so no double-counting.
+                  When a name appeared with conflicting rates, the lower rate is stored.
     """
     pack_name = pack_record["pack_name"]
     slot_rates = pack_record.get("slot_rates")
@@ -333,6 +334,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     if not slot_rates and not pz_card_odds:
         return {**base, "blocked": True,
                 "blocked_reason": "no_slot_rates",
+                "purchasable": pack_record.get("hourglass_purchasable", True),
                 "cards_in_pool": len(all_pool_cards),
                 "pack_total_ev": 0.0,
                 "confidence_adjusted_ev": 0.0}
@@ -376,13 +378,13 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         pz_pull = pz_card_odds.get((sc, cn)) if (pz_card_odds and sc and cn is not None) else None
 
         if pz_pull is None and pz_name_odds and card_name:
-            pz_pull = pz_name_odds.get(_norm_name(card_name))
+            pz_pull = pz_name_odds.get(nn)
 
         if pz_pull is not None:
             p_pull = pz_pull
             pz_hits += 1  # count all PZ cards in coverage denominator, including zero-rate
         elif pz_card_odds:
-            # PZ data exists for this pack but card absent from it → not pullable from packs
+            # PZ data exists for this pack but card absent from it → not pullable from packs.
             pz_excluded_count += 1
             continue
         else:
@@ -476,6 +478,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "confidence_weight": confidence_weight,
         "blocked": False,
         "blocked_reason": None,
+        "purchasable": pack_record.get("hourglass_purchasable", True),
         "cards_in_pool": len(all_pool_cards),
         "owned_in_pool": owned_in_pool,
         "missing_in_pool": missing_in_pool,
@@ -529,12 +532,12 @@ def build(collection, pull_model, pack_cards, expansion_shared, deck_targets,
                 pz_card_odds = pz_odds.get(slug, {})
                 # Name fallback: PZ cards whose (set_code, card_number) has no matching
                 # pack_sources entry — catches A4b replacements and cross-set cards.
+                # When the same name appears with conflicting rates, the lower rate wins.
                 pool_keys = {
                     (r.get("set_code", "").upper(), r.get("card_number"))
                     for r in all_pool_cards
                 }
                 pz_name_odds = {}
-                pz_name_ambiguous: set[str] = set()
                 for pz_card in pz_raw[slug].get("cards", []):
                     sc_cn = (pz_card["set_code"].upper(), pz_card["card_number"])
                     if sc_cn not in pool_keys:
@@ -542,13 +545,8 @@ def build(collection, pull_model, pack_cards, expansion_shared, deck_targets,
                         pct = pz_card.get("drop_chance_pct")
                         if name_l and pct is not None:
                             rate = pct / 100.0
-                            if name_l in pz_name_ambiguous:
-                                pass  # already excluded due to conflicting rates
-                            elif name_l in pz_name_odds and pz_name_odds[name_l] != rate:
-                                # Same name, different rates — ambiguous; exclude to avoid
-                                # silently using the wrong rate for a pool card.
-                                pz_name_ambiguous.add(name_l)
-                                del pz_name_odds[name_l]
+                            if name_l in pz_name_odds and pz_name_odds[name_l] != rate:
+                                pz_name_odds[name_l] = min(pz_name_odds[name_l], rate)
                             else:
                                 pz_name_odds[name_l] = rate
         record = compute_pack_ev_record(

@@ -271,7 +271,7 @@ def write_full_ranking_md(ev_data: dict, buckets: dict) -> Path:
     ts = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
     lines = [
-        "# Full Pack Ranking — All 24 Standard Packs",
+        f"# Full Pack Ranking — All {len(all_packs)} Standard Packs",
         "",
         f"Generated: {ts}",
         "",
@@ -657,6 +657,8 @@ def main():
                         help="Suppress promo pack section in outputs")
     parser.add_argument("--full-rankings", action="store_true",
                         help="Write review/full_pack_ranking.md with descriptions for all 24 packs")
+    parser.add_argument("--include-limited", action="store_true",
+                        help="Include limited-time packs not currently purchasable (e.g. Deluxe Pack: ex)")
     args = parser.parse_args()
 
     if args.validate:
@@ -673,6 +675,9 @@ def main():
 
     ev_data  = load_ev(PACK_EV_JSON)
     deck_val = load_deck_validation(DECK_VALIDATION_JSON)
+
+    if not args.include_limited:
+        ev_data["packs"] = [p for p in ev_data["packs"] if p.get("purchasable", True)]
 
     packs = ev_data["packs"]
     print(f"  EV packs loaded:      {len(packs)}")

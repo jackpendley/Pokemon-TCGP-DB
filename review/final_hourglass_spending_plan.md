@@ -1,8 +1,8 @@
 # Final Hourglass Spending Plan
 
-Generated: 2026-05-28  
+Generated: 2026-05-29  
 Model confidence: **PZ VERIFIED**  
-Collection total: 784 cards  
+Collection total: 859 cards  
 Batch size: 10 packs (120 ⧗ per batch)  
 
 > **DISCLAIMER**
@@ -13,56 +13,56 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 ## Optimal Spending Plan
 
-**3-batch plan rotating through top unified-score packs. Batch 1: Deluxe Pack: ex. Batch 2: continue Deluxe Pack: ex. Batch 3: Mega Altaria. Always rerun EV after each batch.**
+**3-batch plan rotating through top unified-score packs. Batch 1: Extradimensional Crisis. Batch 2: switch to Mega Altaria (near-complete). Batch 3: Lunala. Always rerun EV after each batch.**
 
 - Total batches: 3
 - Total hourglasses: 360 ⧗
 - Rerun EV after batch(es): [1, 2, 3]
-- Stopping condition: Stop any batch when cost_per_unique_card_10x exceeds 7.5⧗ (2× batch-1 baseline of 3.7⧗). Re-run EV before committing further.
+- Stopping condition: Stop any batch when cost_per_unique_card_10x exceeds 7.6⧗ (2× batch-1 baseline of 3.8⧗). Re-run EV before committing further.
 
 | # | Pack | Set | ⧗ Cost | Unified | 10x EV | ⧗/EV | DR Ratio | Missing | Near-Complete | Rerun? |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **Deluxe Pack: ex** | A4b | 120 ⧗ | 32.1860 | 32.0729 | 3.7 | 0.929 | 246 | — | YES |
-| 2 | **Deluxe Pack: ex** | A4b | 120 ⧗ | 32.1860 | 32.0729 | 3.7 | 0.929 | 246 | — | YES |
-| 3 | **Mega Altaria** | B1 | 120 ⧗ | 31.8823 | 31.6517 | 3.8 | 0.790 | 106 | YES | YES |
+| 1 | **Extradimensional Crisis** | A3a | 120 ⧗ | 31.5625 | 31.5156 | 3.8 | 0.749 | 84 | YES | YES |
+| 2 | **Mega Altaria** | B1 | 120 ⧗ | 31.4215 | 31.1909 | 3.9 | 0.790 | 105 | YES | YES |
+| 3 | **Lunala** | A3 | 120 ⧗ | 31.3025 | 31.2576 | 3.8 | 0.809 | 107 | YES | YES |
 
 ---
 
 ### Batch Details
 
-#### Batch 1 — Deluxe Pack: ex (A4b)
+#### Batch 1 — Extradimensional Crisis (A3a)
 
-- **Pack:** Deluxe Pack: ex (Deluxe Pack: ex)
+- **Pack:** Extradimensional Crisis (Extradimensional Crisis)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 32.1860
-- **New-card EV (10x):** 32.0729
-- **Cost per EV unit (⧗/EV):** 3.7 ⧗
-- **DR ratio:** 0.929
-- **Missing in pool:** 246
-- **Notes:** Open first batch from the top unified-score pack.
+- **Unified score:** 31.5625
+- **New-card EV (10x):** 31.5156
+- **Cost per EV unit (⧗/EV):** 3.8 ⧗
+- **DR ratio:** 0.749 ← near-complete
+- **Missing in pool:** 84
+- **Notes:** Open first batch from the top unified-score pack. WARNING: DR ratio=0.749 < 0.85 — this pool is near-complete; switch to #2 after this batch.
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 
-#### Batch 2 — Deluxe Pack: ex (A4b)
-
-- **Pack:** Deluxe Pack: ex (Deluxe Pack: ex)
-- **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 32.1860
-- **New-card EV (10x):** 32.0729
-- **Cost per EV unit (⧗/EV):** 3.7 ⧗
-- **DR ratio:** 0.929
-- **Missing in pool:** 246
-- **Notes:** Continue top pack for batch 2.
-- **Rerun after:** YES — re-run build_pack_ev.py before next batch
-
-#### Batch 3 — Mega Altaria (B1)
+#### Batch 2 — Mega Altaria (B1)
 
 - **Pack:** Mega Altaria (Mega Rising)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 31.8823
-- **New-card EV (10x):** 31.6517
-- **Cost per EV unit (⧗/EV):** 3.8 ⧗
+- **Unified score:** 31.4215
+- **New-card EV (10x):** 31.1909
+- **Cost per EV unit (⧗/EV):** 3.9 ⧗
 - **DR ratio:** 0.790 ← near-complete
-- **Missing in pool:** 106
+- **Missing in pool:** 105
+- **Notes:** Switched to #2 pack (near-complete flag on batch 1).
+- **Rerun after:** YES — re-run build_pack_ev.py before next batch
+
+#### Batch 3 — Lunala (A3)
+
+- **Pack:** Lunala (Celestial Guardians)
+- **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
+- **Unified score:** 31.3025
+- **New-card EV (10x):** 31.2576
+- **Cost per EV unit (⧗/EV):** 3.8 ⧗
+- **DR ratio:** 0.809 ← near-complete
+- **Missing in pool:** 107
 - **Notes:** Re-run EV after this batch; rotate to highest unified-score pack for batch 4.
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 

@@ -421,6 +421,7 @@
       "expansion": "Deluxe Pack: ex",
       "set_code": "A4b",
       "is_shared_pool": false,
+      "hourglass_purchasable": false,
       "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
       "source_name": "game8_co_ptcgp_offering_rates",
       "source_accessed_at": "2026-05-12",

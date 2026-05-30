@@ -1,4 +1,4 @@
 batch_number,pack_name,expansion,set_code,packs_to_open,hourglass_cost,unified_score,new_card_ev_10x,cost_per_unique_card_10x,ev_diminishing_returns_ratio,missing_in_pool,near_complete,rerun_after,notes
-1,Deluxe Pack: ex,Deluxe Pack: ex,A4b,10,120,32.185962,32.072916,3.74,0.929,246,False,True,Open first batch from the top unified-score pack.
-2,Deluxe Pack: ex,Deluxe Pack: ex,A4b,10,120,32.185962,32.072916,3.74,0.929,246,False,True,Continue top pack for batch 2.
-3,Mega Altaria,Mega Rising,B1,10,120,31.882299,31.651671,3.79,0.7899,106,True,True,Re-run EV after this batch; rotate to highest unified-score pack for batch 4.
+1,Extradimensional Crisis,Extradimensional Crisis,A3a,10,120,31.562495,31.515575,3.81,0.7485,84,True,True,Open first batch from the top unified-score pack. WARNING: DR ratio=0.749 < 0.85 — this pool is near-complete; switch to #2 after this batch.
+2,Mega Altaria,Mega Rising,B1,10,120,31.421488,31.19086,3.85,0.7902,105,True,True,Switched to #2 pack (near-complete flag on batch 1).
+3,Lunala,Celestial Guardians,A3,10,120,31.302549,31.257613,3.84,0.8087,107,True,True,Re-run EV after this batch; rotate to highest unified-score pack for batch 4.

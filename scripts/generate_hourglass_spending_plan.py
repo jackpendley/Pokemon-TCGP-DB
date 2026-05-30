@@ -87,7 +87,7 @@ def _make_batch(n, pack, rerun_after, notes):
     }
 
 
-def build_optimal_plan(ev_data, recs_data=None):
+def build_optimal_plan(ev_data, recs_data=None, include_limited: bool = False):
     """
     Build a single optimal spending plan using unified_score.
 
@@ -97,7 +97,8 @@ def build_optimal_plan(ev_data, recs_data=None):
     Stopping condition: when cost_per_unique_card_10x > 2× batch-1 cost, stop.
     """
     packs = sorted(
-        ev_data["packs"], key=lambda x: x.get("unified_score", 0.0), reverse=True
+        (p for p in ev_data["packs"] if include_limited or p.get("purchasable", True)),
+        key=lambda x: x.get("unified_score", 0.0), reverse=True,
     )
     if len(packs) < 3:
         raise ValueError(f"Need at least 3 scored packs, got {len(packs)}")
@@ -178,6 +179,7 @@ def build_optimal_plan(ev_data, recs_data=None):
         "chase_deck_packs": chase_deck_packs,
         "top_pack_unified_score": round(top1.get("unified_score", 0.0), 4),
         "top_pack_name": top1["pack_name"],
+        "include_limited_packs": include_limited,
     }
 
 
@@ -317,7 +319,13 @@ def write_csv(out_data):
     print(f"  Wrote: {OUT_CSV.relative_to(BASE)}")
 
 
-def run_validate():
+def run_validate(include_limited_fallback: bool = False):
+    """Validate spending plan outputs.
+
+    include_limited_fallback: used only when the stored plan lacks the
+    include_limited_packs field (i.e. plans generated before that field
+    was added). For all modern plans the stored value takes precedence.
+    """
     print("Running validation checks...")
     errors = []
 
@@ -395,20 +403,27 @@ def run_validate():
     if "NOT OFFICIAL" not in plan_doc.get("disclaimer", ""):
         errors.append("Disclaimer missing 'NOT OFFICIAL' language")
 
-    # top pack matches pack_ev.json top unified pack
+    # top pack matches pack_ev.json top unified pack.
+    # Use the include_limited_packs flag stored in the plan itself so --validate
+    # always applies the same filter that was used during generation.
     if PACK_EV_JSON.exists():
         ev = json.loads(PACK_EV_JSON.read_text(encoding="utf-8"))
-        top_ev_pack = sorted(
-            ev["packs"], key=lambda x: x.get("unified_score", 0.0), reverse=True
-        )[0]["pack_name"]
-        plan_top = batches[0]["pack_name"] if batches else None
-        if plan_top and plan_top != top_ev_pack:
-            errors.append(
-                f"Batch 1 pack ({plan_top}) does not match "
-                f"top unified-score pack in pack_ev.json ({top_ev_pack})"
-            )
-        elif plan_top:
-            print(f"  PASS  batch 1 pack matches top unified-score pack ({top_ev_pack})")
+        stored_flag = plan.get("include_limited_packs", include_limited_fallback)
+        eligible = [p for p in ev["packs"] if stored_flag or p.get("purchasable", True)]
+        if not eligible:
+            errors.append("No eligible packs in pack_ev.json after purchasable filter")
+        else:
+            top_ev_pack = sorted(
+                eligible, key=lambda x: x.get("unified_score", 0.0), reverse=True
+            )[0]["pack_name"]
+            plan_top = batches[0]["pack_name"] if batches else None
+            if plan_top and plan_top != top_ev_pack:
+                errors.append(
+                    f"Batch 1 pack ({plan_top}) does not match "
+                    f"top unified-score pack in pack_ev.json ({top_ev_pack})"
+                )
+            elif plan_top:
+                print(f"  PASS  batch 1 pack matches top unified-score pack ({top_ev_pack})")
 
     n_checks = 10
     if errors:
@@ -424,10 +439,12 @@ def run_validate():
 def main():
     parser = argparse.ArgumentParser(description="Generate hourglass spending plan")
     parser.add_argument("--validate", action="store_true", help="Validate outputs only")
+    parser.add_argument("--include-limited", action="store_true",
+                        help="Include limited-time packs not currently purchasable (e.g. Deluxe Pack: ex)")
     args = parser.parse_args()
 
     if args.validate:
-        ok = run_validate()
+        ok = run_validate(include_limited_fallback=args.include_limited)
         sys.exit(0 if ok else 1)
 
     for req in (PACK_EV_JSON, PULL_MODEL_JSON, COLLECTION_NORMALIZED_JSON):
@@ -450,7 +467,7 @@ def main():
 
     print("\nBuilding optimal plan...")
     try:
-        spending_plan = build_optimal_plan(ev_data, recs_data)
+        spending_plan = build_optimal_plan(ev_data, recs_data, include_limited=args.include_limited)
     except ValueError as e:
         print(f"ERROR: {e}", file=sys.stderr)
         sys.exit(1)
@@ -463,7 +480,7 @@ def main():
     write_csv(out_data)
 
     print("\nRunning validation...")
-    ok = run_validate()
+    ok = run_validate(include_limited_fallback=args.include_limited)
     if not ok:
         sys.exit(1)
 

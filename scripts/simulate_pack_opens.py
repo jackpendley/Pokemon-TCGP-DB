@@ -33,11 +33,8 @@ PZ_PACK_ODDS    = ROOT / "data" / "reference" / "pz_pack_odds.json"
 PACK_SOURCES    = ROOT / "data" / "reference" / "pack_sources.json"
 COLLECTION_FILE = ROOT / "collection.json"  # canonical source; strip JSONC comments before parsing
 
-
-def _normalize(name: str) -> str:
-    # Matches _norm_name in build_pack_ev.py: normalize apostrophe variants, keep hyphens
-    # and other punctuation so names like Farfetch'd, Ho-Oh, Sirfetch'd compare correctly.
-    return name.lower().replace("’", "'").replace("‘", "'").strip()
+sys.path.insert(0, str(Path(__file__).parent))
+from build_pack_ev import _norm_name as _normalize  # single canonical normalization
 
 
 def _load_collection() -> dict:
@@ -115,6 +112,8 @@ def _build_name_to_coord(ps_records: list[dict]) -> dict[str, tuple[str, int]]:
             cn = int(cn_raw)
         except (TypeError, ValueError):
             continue
+        if cn == 0:
+            continue
         if nn not in lookup:
             lookup[nn] = (sc, cn)
     return lookup
@@ -143,6 +142,17 @@ def build_pz_snapshot(
         for c in pack_info.get("cards", [])
     }
 
+    # name → pulled coord for cross-set matching: when a card exists in the collection
+    # under a different set_code than the one being simulated, the coord lookup misses.
+    # Build a reverse map from normalized pack-card name to its pulled coord.
+    pulled_by_name: dict[str, tuple[str, int]] = {}
+    for coord in pulled:
+        card_name_in_pack = pack_card_names.get(coord, "")
+        if card_name_in_pack:
+            nn_pack = _normalize(card_name_in_pack)
+            if nn_pack and nn_pack not in pulled_by_name:
+                pulled_by_name[nn_pack] = coord
+
     output: list[dict] = []
     covered: set[tuple[str, int]] = set()
 
@@ -150,17 +160,35 @@ def build_pz_snapshot(
         name  = entry.get("name", "")
         count = entry.get("count", 0)
         nn    = _normalize(name)
-        coord = name_to_coord.get(nn)
+
+        # Use the entry's own set identity when present; fall back to name_to_coord.
+        # This prevents a same-name but different-variant card (e.g. B3A/71 vs B3A/86)
+        # from being confused with this entry during the pull-coord lookup.
+        entry_sc = entry.get("set_code", "")
+        entry_cn = entry.get("card_number")
+        has_own_coord = bool(entry_sc and entry_cn is not None and entry_cn != 0)
+        coord = (str(entry_sc).upper(), entry_cn) if has_own_coord else name_to_coord.get(nn)
 
         extra = 0
+        pull_coord = None
         if coord and coord in pulled and coord not in covered:
-            extra = pulled[coord]
-            covered.add(coord)
+            pull_coord = coord
+        elif not has_own_coord and nn in pulled_by_name and pulled_by_name[nn] not in covered:
+            # Cross-set name match: only for entries without their own coord identity.
+            # (Entries with explicit set_code/card_number must match by exact coord.)
+            pull_coord = pulled_by_name[nn]
+
+        if pull_coord:
+            extra = pulled[pull_coord]
+            covered.add(pull_coord)
 
         rec: dict = {"cardName": name, "ownedCount": count + extra}
-        if coord:
-            rec["setCode"]     = coord[0]
-            rec["cardNumber"]  = coord[1]
+        # When pull_coord comes from the cross-set elif branch it is the actual pulled
+        # card's coord; prefer it over coord (the name_to_coord lookup) for set identity.
+        output_coord = pull_coord or coord
+        if output_coord:
+            rec["setCode"]    = output_coord[0]
+            rec["cardNumber"] = output_coord[1]
         output.append(rec)
 
     # Append brand-new pulled cards not present in the collection at all
@@ -224,7 +252,7 @@ def main() -> None:
     )
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--pack",   help="Pack slug from pz_pack_odds.json")
-    group.add_argument("--random", action="store_true", dest="use_random",
+    group.add_argument("--random", action="store_true",
                        help="Randomly select a non-promo pack")
     parser.add_argument("--count",   type=int, default=5, help="Number of packs to open (default: 5)")
     parser.add_argument("--seed",    type=int,            help="Random seed for reproducibility")

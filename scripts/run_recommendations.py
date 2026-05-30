@@ -11,6 +11,7 @@ Usage:
     python3 scripts/run_recommendations.py --dry-run-sync          # show sync diff only, stop
     python3 scripts/run_recommendations.py --promo                 # also run promo EV (Shop Tickets currency)
     python3 scripts/run_recommendations.py --full-rankings         # print all 24 packs ranked + write review/full_pack_ranking.md
+    python3 scripts/run_recommendations.py --include-limited       # include limited-time packs (e.g. Deluxe Pack: ex)
 
 Exit codes:
     0  Full pipeline completed
@@ -119,7 +120,7 @@ def _find_latest_pz_json() -> Path:
 def _read_meta_total() -> str:
     try:
         raw = (ROOT / "collection.json").read_text(encoding="utf-8")
-        cleaned = re.sub(r"//[^\n]*", "", raw)
+        cleaned = re.sub(r"(?m)^\s*//[^\n]*\n?", "", raw)
         data = json.loads(cleaned)
         return str(data.get("meta", {}).get("total_cards", 380))
     except (FileNotFoundError, json.JSONDecodeError, KeyError):
@@ -130,7 +131,7 @@ def _collection_status() -> str:
     """Read total/unique from collection.json for the sync status line."""
     try:
         raw = (ROOT / "collection.json").read_text(encoding="utf-8")
-        cleaned = re.sub(r"//[^\n]*", "", raw)
+        cleaned = re.sub(r"(?m)^\s*//[^\n]*\n?", "", raw)
         data = json.loads(cleaned)
         meta = data.get("meta", {})
         total = meta.get("total_cards", "?")
@@ -150,7 +151,7 @@ def _read_player_stats() -> dict:
         return {}
 
 
-def _print_full_rankings() -> None:
+def _print_full_rankings(include_limited: bool = False) -> None:
     pack_ev_path = ROOT / "data" / "current" / "pack_ev.json"
     if not pack_ev_path.exists():
         return
@@ -160,7 +161,8 @@ def _print_full_rankings() -> None:
         return
 
     packs = sorted(
-        (p for p in data.get("packs", []) if not p.get("blocked")),
+        (p for p in data.get("packs", [])
+         if not p.get("blocked") and (include_limited or p.get("purchasable", True))),
         key=lambda p: p.get("unified_score", 0),
         reverse=True,
     )
@@ -190,7 +192,7 @@ def _print_full_rankings() -> None:
         print(f"  {i:>3}  {name:<{col_name}}  {miss_str:>9}  {rare_miss:>6}  {new_ev:>6.1f}x  {rare_ev:>6.2f}  {cost:{col_cost - 1}.1f}⧗")
 
 
-def _print_final_summary(show_promo: bool = False) -> None:
+def _print_final_summary(show_promo: bool = False, include_limited: bool = False) -> None:
     pack_ev_path  = ROOT / "data" / "current" / "pack_ev.json"
     promo_ev_path = ROOT / "data" / "current" / "promo_pack_ev.json"
 
@@ -199,8 +201,10 @@ def _print_final_summary(show_promo: bool = False) -> None:
     if pack_ev_path.exists():
         try:
             packs = json.loads(pack_ev_path.read_text(encoding="utf-8")).get("packs", [])
-            top_pack = max((p for p in packs if not p.get("blocked")),
-                           key=lambda p: p.get("unified_score", 0), default=None)
+            top_pack = max(
+                (p for p in packs
+                 if not p.get("blocked") and (include_limited or p.get("purchasable", True))),
+                key=lambda p: p.get("unified_score", 0), default=None)
             if top_pack:
                 missing = top_pack.get("missing_in_pool", "?")
                 total   = top_pack.get("cards_in_pool", "?")
@@ -246,6 +250,8 @@ def main() -> int:
                         help="Also run promo EV and show promo/Shop Ticket summary")
     parser.add_argument("--full-rankings", action="store_true",
                         help="Print all 24 packs ranked to console + write review/full_pack_ranking.md")
+    parser.add_argument("--include-limited", action="store_true",
+                        help="Include limited-time packs not currently purchasable (e.g. Deluxe Pack: ex)")
     args = parser.parse_args()
 
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -348,7 +354,12 @@ def main() -> int:
                 extra.append("--no-promo")
             if args.full_rankings:
                 extra.append("--full-rankings")
+            if args.include_limited:
+                extra.append("--include-limited")
             extra = extra or None
+
+        if label == "Spending plan" and args.include_limited:
+            extra = ["--include-limited"]
 
         rc, stdout = _run(label, script, extra)
         if rc != 0:
@@ -356,10 +367,10 @@ def main() -> int:
             return 1
         _print_step(label, rc, _extract_status(label, stdout))
 
-    _print_final_summary(show_promo=args.promo)
+    _print_final_summary(show_promo=args.promo, include_limited=args.include_limited)
 
     if args.full_rankings:
-        _print_full_rankings()
+        _print_full_rankings(include_limited=args.include_limited)
 
     if sync_had_review_items:
         print(f"\n  NOTE: Review queue has items. See: data/sync/sync_review_queue.json")
