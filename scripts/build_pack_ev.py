@@ -109,7 +109,7 @@ def load_collection(path: Path) -> tuple[dict, dict]:
     Returns (by_name, by_card):
       by_name: {normalized_name: total_count}  — name-based fallback for all entries
       by_card: {(set_code_upper, card_number): count}  — set-specific for entries that
-               carry set_code (added by sync for new cards from B3a onwards)
+               carry set_code (added by sync for new cards from B3A onwards)
     """
     raw = json.loads(path.read_text(encoding="utf-8"))
     by_name: dict[str, int] = {}

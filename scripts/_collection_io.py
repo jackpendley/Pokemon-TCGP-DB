@@ -6,8 +6,10 @@ scripts (sync, normalize, validate, assign, EV). Kept here as the single
 source of truth so fixes don't have to be copied into every script.
 """
 
+import html
 import json
 import re
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -19,14 +21,19 @@ CACHE_MAX_AGE_DAYS = 30
 
 
 def norm_card_name(name) -> str:
-    """Normalize a card name for matching/keying.
+    """Normalize a card name for cross-source matching.
 
-    Lowercase, map the gender symbols to distinct ASCII markers (♀→f, ♂→m) BEFORE
-    stripping — otherwise Nidoran♀/Nidoran♂ collapse to the same key and a
-    gender-swapped coord would pass a name check — then drop all non-alphanumerics.
-    Single source so sync, validate, and the coord resolver normalize identically.
+    Pipeline: html.unescape (handles &eacute; etc from Serebii) → gender symbols to
+    ASCII markers BEFORE stripping (♀→f, ♂→m, so Nidoran♀/♂ don't collapse) →
+    NFKD accent-fold to ASCII (Flabébé/Flabebe both → flabebe) → lowercase →
+    strip non-alphanumerics. The ' ex' suffix is NOT stripped — base vs EX are
+    distinct cards. Single source so all scripts and new ingestion layer normalize
+    identically.
     """
-    s = str(name or "").lower().replace("♀", "f").replace("♂", "m")
+    s = html.unescape(str(name or ""))
+    s = s.replace("♀", "f").replace("♂", "m")
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
+    s = s.lower()
     return re.sub(r"[^a-z0-9]", "", s)
 
 

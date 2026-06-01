@@ -14,7 +14,7 @@ Pack assignment rules derived from Limitless HTML:
         Cards with a "· PackName pack" label are pack-specific (confidence=high).
         Cards without a pack label are shared across all packs (pack_name=null, confidence=medium).
 
-    Single-pack sets (A1a, A2a, A2b, A3a, A3b, A4a, A4b, B1a, B2, B2a, B2b, B3):
+    Single-pack sets (A1a, A2a, A2b, A3a, A3b, A4a, A4b, B1a, B2, B2a, B2b, B3, B3A):
         All cards are in the one expansion pack.
         pack_name = cleaned expansion name (confidence=medium).
 
@@ -73,7 +73,7 @@ SINGLE_PACK_SETS = {
     "B2a",  # Paldean Wonders
     "B2b",  # Mega Shine
     "B3",   # Pulsing Aura
-    "B3a",  # Paradox Drive
+    "B3A",  # Paradox Drive
 }
 
 # Sets with multiple packs. Cards without a pack label are shared (pack_name=null).
@@ -216,6 +216,13 @@ def build_records(ext_index: dict, dry_run: bool) -> list[dict]:
 
     print(f"Found {len(card_files)} cached card HTML files.")
 
+    # Case-insensitive canonical lookup so a Limitless slug like "B3a" stored as
+    # "card_B3a_N.html" resolves to the canonical "B3A" from SINGLE_PACK_SETS.
+    _CANONICAL_CASE: dict[str, str] = {
+        sc.upper(): sc
+        for sc in (SINGLE_PACK_SETS | MULTI_PACK_SETS)
+    }
+
     records = []
     stats = {
         "total": 0,
@@ -236,7 +243,7 @@ def build_records(ext_index: dict, dry_run: bool) -> list[dict]:
         m = re.match(r"card_([A-Za-z0-9]+)_(\d+)\.html", fpath.name)
         if not m:
             continue
-        set_code = m.group(1)
+        set_code = _CANONICAL_CASE.get(m.group(1).upper(), m.group(1))
         number = int(m.group(2))
         stats["total"] += 1
 

@@ -755,11 +755,21 @@ def build_auto_entry(
     pz = mr.pz_card
     records = ext_ref.get(nn, [])
 
-    def _with_coords(e: dict) -> dict:
-        """Inject the (cross-validated, if a resolver is given) coord from PZ."""
+    def _with_coords(e: dict) -> dict | None:
+        """Inject the (cross-validated, if a resolver is given) coord from PZ.
+
+        Returns None when the resolver finds a genuine conflict (two independent
+        sources disagree on what card lives at this coord) — the caller must route
+        the card to the review queue rather than auto-adding with a wrong coord.
+        """
         sc_code, cn = pz.set_code, pz.card_number
         if resolver is not None and pz.card_number is not None:
             rc = resolver.resolve(mr.canonical_name, pz.set_code, pz.card_number)
+            if rc.confidence == "conflict":
+                print(f"  CONFLICT: {mr.canonical_name} {pz.set_code}/{pz.card_number} "
+                      f"— independent sources disagree; routed to review queue",
+                      file=sys.stderr)
+                return None  # caller routes to still_new
             if rc.confidence in ("confirmed", "single-source") and rc.set_code:
                 if (rc.set_code, rc.card_number) != (pz.set_code, pz.card_number):
                     print(f"  COORD: {mr.canonical_name} {pz.set_code}/{pz.card_number} "
@@ -1383,8 +1393,25 @@ def main() -> int:
     merged_new: dict[str, MatchResult] = {}
     for mr in new_cards:
         if not mr.canonical_name:
-            still_new.append(mr)
-            continue
+            # Blank PZ name: try to recover from card_reference using coord.
+            # Reuse resolver.ref_by_coord — already loaded from the same file.
+            pz_c = mr.pz_card
+            recovered = None
+            if resolver is not None and pz_c.set_code and pz_c.card_number is not None:
+                ref_rec = resolver.ref_by_coord.get(
+                    (str(pz_c.set_code).upper(), pz_c.card_number)
+                )
+                if ref_rec and ref_rec.get("confidence") in ("confirmed", "single"):
+                    recovered = ref_rec.get("name") or None
+            if recovered:
+                print(f"  RECOVER: blank PZ name at {pz_c.set_code}/{pz_c.card_number} "
+                      f"→ {recovered!r} (card_reference)", file=sys.stderr)
+                mr = MatchResult(
+                    status=mr.status, pz_card=mr.pz_card, canonical_name=recovered
+                )
+            else:
+                still_new.append(mr)
+                continue
         key = mr.canonical_name.lower() + ("|alt" if _mr_is_alt(mr) else "|base")
         if key in merged_new:
             prev = merged_new[key]
@@ -1404,6 +1431,11 @@ def main() -> int:
     for mr in merged_new.values():
         nn = _normalize(mr.canonical_name)
         entry = build_auto_entry(mr, ext_ref, card_meta, resolver=resolver)
+        if entry is None:
+            # Genuine conflict: independent sources disagree on this coord.
+            # Route to still_new so it surfaces in the review queue — do NOT auto-add.
+            still_new.append(mr)
+            continue
         # Tag alt-art entries so they're distinguishable from base copies.
         # Uses the same name-guard as the rarity cross-check to avoid mismatch slots.
         # IMPORTANT: look up the entry's RESOLVED coord (build_auto_entry may have

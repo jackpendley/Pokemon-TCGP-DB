@@ -1,19 +1,25 @@
 #!/usr/bin/env python3
 """
-Cross-validated coord resolver: PZ × pack_sources × TCGdex × Limitless.
+Cross-validated coord resolver: PZ × card_reference (offline) with live fallback.
 
 PZ tells us a card's NAME and a reliable card_NUMBER, but its set_code is sometimes
 wrong (it mislabels the "Deluxe Pack: ex" A4b set as A1/A2/A3/A4). The true coord is
-recovered from (card_name, card_number) → pack_sources, then CONFIRMED against
-independent sources:
-  - TCGdex API   (official numbering; covers A1–B2a only)
-  - Limitless    (pocket.limitlesstcg.com; covers everything, incl. A4b/B3/B3a/promo)
+recovered via card_reference.json — the frozen, cross-validated snapshot built by
+fetch_source_snapshots.py + build_card_reference.py from three independent sources:
+  - TCGdex    (official numbering; covers A1–B2a: 15 sets)
+  - Serebii   (all 20 sets)
+  - Bulbapedia (all 20 sets, via MediaWiki API)
 
 resolve(name, pz_set, pz_number) → ResolvedCoord with a confidence:
-  confirmed     pack_sources + ≥1 independent source agree
-  single-source only pack_sources/Limitless backs it (no independent disagreement)
-  conflict      an independent source names a DIFFERENT card at that coord
-  unconfirmed   nothing reachable confirms it
+  confirmed     card_reference has this coord with ≥2-source confirmation
+  single-source card_reference has this coord with only 1-source confirmation
+  conflict      independent sources disagree at this coord (surfaced, not auto-added)
+  unconfirmed   card not in reference — brand-new card; run fetch_source_snapshots +
+                build_card_reference to add it, then re-sync
+
+Live-network fallback (TCGdex + Limitless) is retained for cards absent from the
+reference, maintaining backward compatibility for new packs before the reference is
+refreshed.
 
 Caches: TCGdex in data/reference/tcgdex_card_cache.json (shared w/ validate_collection_coords),
 Limitless names in data/reference/limitless_name_cache.json. Both with a 30-day TTL.
@@ -34,6 +40,7 @@ from _collection_io import normalize_rarity, norm_card_name as _norm, is_cache_f
 
 ROOT = Path(__file__).resolve().parent.parent
 PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
+CARD_REF_JSON     = ROOT / "data" / "reference" / "card_reference.json"
 TCGDEX_CACHE      = ROOT / "data" / "reference" / "tcgdex_card_cache.json"
 LIMITLESS_CACHE   = ROOT / "data" / "reference" / "limitless_name_cache.json"
 
@@ -83,7 +90,7 @@ class ResolvedCoord:
 class CoordResolver:
     def __init__(self, *, fetch: bool = True, tcgdex_sets: set | None = None):
         self.fetch = fetch
-        # pack_sources indexes
+        # pack_sources indexes (kept for fallback when card_reference doesn't have a card)
         data = json.loads(PACK_SOURCES_JSON.read_text(encoding="utf-8"))
         records = data.get("records", data) if isinstance(data, dict) else data
         self.ps_by_coord: dict[tuple, dict] = {}
@@ -96,7 +103,24 @@ class CoordResolver:
                 continue
             self.ps_by_coord[(s, n)] = r
             self.ps_name_num.setdefault((_norm(r.get("card_name")), n), []).append(s)
-        # caches
+
+        # card_reference.json: frozen, cross-validated (offline primary lookup)
+        # Indexed by (set_code, card_number) and by (_norm(name), card_number) for
+        # set_code correction (e.g. PZ mislabeling A4b cards as A1).
+        self.ref_by_coord: dict[tuple[str, int], dict] = {}
+        self.ref_name_num: dict[tuple[str, int], list[tuple[str, int]]] = {}
+        if CARD_REF_JSON.exists():
+            ref_data = json.loads(CARD_REF_JSON.read_text(encoding="utf-8"))
+            for r in ref_data.get("records", []):
+                sc = str(r.get("set_code") or "").upper().strip()
+                try:
+                    cn = int(r.get("card_number"))
+                except (TypeError, ValueError):
+                    continue
+                self.ref_by_coord[(sc, cn)] = r
+                self.ref_name_num.setdefault((_norm(r.get("name", "")), cn), []).append((sc, cn))
+
+        # Per-card network caches (used only as fallback for cards absent from the reference)
         self.tcgdex_cache = json.loads(TCGDEX_CACHE.read_text()) if TCGDEX_CACHE.exists() else {}
         self.limitless_cache = json.loads(LIMITLESS_CACHE.read_text()) if LIMITLESS_CACHE.exists() else {}
         self._dirty_td = False
@@ -198,26 +222,56 @@ class CoordResolver:
             return ResolvedCoord(name, None, None, None, "unconfirmed", detail="no card_number")
         pz_s = str(pz_set or "").upper().strip()
 
+        # ── Fast path: card_reference lookup (offline, no network) ─────────────
+        # 1a. Exact coord: (pz_set, number) → reference record
+        ref = self.ref_by_coord.get((pz_s, num))
+        if ref:
+            if _name_agrees(name, ref.get("name", "")):
+                return self._coord_from_ref(name, ref)
+            # Reference has a DIFFERENT card at this coord — genuine conflict.
+            # Don't fall through to live-network (which might trust the PZ coord);
+            # surface the disagreement so the entry routes to the review queue.
+            ref_name = ref.get("name", "")
+            return ResolvedCoord(name, pz_s, num, None, "conflict",
+                                 sources_agreed=["card_reference"],
+                                 detail=f"card_reference says {ref_name!r} at {pz_s}/{num}")
+
+        # 1b. Name+number lookup: handles PZ set_code mislabels (e.g. A4b cards as A1)
+        ref_cands = self.ref_name_num.get((_norm(name), num), [])
+        if len(ref_cands) == 1:
+            ref = self.ref_by_coord[ref_cands[0]]
+            return self._coord_from_ref(name, ref)
+        elif len(ref_cands) > 1:
+            # Multiple sets have this name+number — use PZ set as tiebreaker if valid
+            if (pz_s, num) in self.ref_by_coord:
+                ref = self.ref_by_coord[(pz_s, num)]
+                return self._coord_from_ref(name, ref)
+            # Otherwise fall through to live-lookup fallback
+            return ResolvedCoord(name, None, num, None, "conflict",
+                                 sources_agreed=["card_reference"],
+                                 detail=f"ambiguous sets in reference: {sorted(ref_cands)}")
+
+        # ── Fallback: live network (for brand-new cards not yet in reference) ──
+        # A card absent from card_reference is genuinely new — run fetch_source_snapshots
+        # then build_card_reference to add it, then re-sync. In the meantime the old
+        # pack_sources + TCGdex/Limitless logic applies as a temporary bridge.
         cands = self.ps_name_num.get((_norm(name), num), [])
-        # pick candidate set from pack_sources
         if len(cands) == 1:
             S, backed = cands[0], True
         elif pz_s in cands:
             S, backed = pz_s, True
         elif len(cands) > 1:
-            # ambiguous: confirm each candidate, prefer the one an independent source agrees with
             confirmed = [c for c in cands if self._confirm(name, c, num)[0]]
             if len(confirmed) == 1:
                 S, backed = confirmed[0], True
             else:
                 return ResolvedCoord(name, None, num, None, "conflict",
-                                     detail=f"ambiguous sets {sorted(cands)}")
+                                     detail=f"ambiguous sets {sorted(cands)}; not in card_reference")
         elif pz_s:
-            S, backed = pz_s, False  # no pack_sources record (e.g. promo) → trust PZ coord
+            S, backed = pz_s, False
         else:
-            # No pack_sources match AND PZ gave no set → nothing to anchor a coord on.
             return ResolvedCoord(name, None, num, None, "unconfirmed",
-                                 detail="no pack_sources match and no PZ set_code")
+                                 detail="not in card_reference and no pack_sources match")
 
         rar = normalize_rarity(self.ps_by_coord.get((S, num), {}).get("rarity")) if backed else None
         agreed, disagreed = self._confirm(name, S, num)
@@ -227,11 +281,26 @@ class CoordResolver:
             detail = f"{','.join(disagreed)} name a different card at {S}/{num}"
         elif agreed:
             conf = "confirmed"
-            detail = f"agreed: {','.join(sources)}"
+            detail = f"agreed: {','.join(sources)} (live; not in card_reference)"
         elif backed:
-            conf = "single-source"   # only the pack_sources scrape backs it
-            detail = "pack_sources only (no independent source reachable/covered)"
+            conf = "single-source"
+            detail = "pack_sources only; not in card_reference — run reference refresh"
         else:
-            conf = "unconfirmed"     # promo with no pack_sources and no Limitless confirmation
-            detail = "no source confirms"
+            conf = "unconfirmed"
+            detail = "not in card_reference; no source confirms"
         return ResolvedCoord(name, S, num, rar, conf, sources, detail)
+
+    def _coord_from_ref(self, pz_name: str, ref: dict) -> ResolvedCoord:
+        """Build a ResolvedCoord from a card_reference record."""
+        sc = ref["set_code"]
+        cn = ref["card_number"]
+        rar = normalize_rarity(ref.get("rarity"))
+        ref_conf = ref.get("confidence", "unconfirmed")
+        # Map card_reference confidence to the resolver's vocabulary
+        conf_map = {"confirmed": "confirmed", "single": "single-source", "conflict": "conflict"}
+        conf = conf_map.get(ref_conf, "unconfirmed")
+        sources_agreed = ["card_reference"] + ref.get("confirmations", [])
+        detail = f"card_reference ({ref_conf})"
+        if ref.get("conflict_notes"):
+            detail += f"; notes: {'; '.join(ref['conflict_notes'][:2])}"
+        return ResolvedCoord(pz_name, sc, cn, rar, conf, sources_agreed, detail)

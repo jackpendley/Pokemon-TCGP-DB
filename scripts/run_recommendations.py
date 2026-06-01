@@ -330,19 +330,18 @@ def main() -> int:
         return 1
     _print_step("Normalize entries", rc, "OK")
 
-    # ── Validate coords against cached TCGdex + ext_ref ───────────────────
-    # Run offline (--no-fetch) so the pipeline stays headless and deterministic —
-    # the TCGdex cache is refreshed out-of-band via `validate_collection_coords.py`
-    # (with fetch). Exit codes: 2 = serious (coord points at a wrong/nonexistent
-    # card → would skew set-aware EV → FATAL); 1 = advisory HP diff (WARN, don't
-    # block recommendations over a cosmetic diff); 0 = clean.
+    # ── Validate coords against card_reference.json (offline, 3-source validated) ──
+    # Run offline (--no-fetch) so the pipeline stays headless and deterministic.
+    # card_reference.json covers all 20 sets (Bulbapedia + Serebii + TCGdex where
+    # available). Exit codes: 2 = serious coord error → FATAL; 1 = advisory HP diff
+    # (WARN, don't block); 0 = clean.
     rc, stdout = _run("Validate coords", "scripts/validate_collection_coords.py",
                       ["--no-fetch"])
     if rc >= 2:
         _print_step("Validate coords", rc, "FATAL — serious coord error (see data/pipeline.log)")
         return 1
     elif rc == 1:
-        _print_step("Validate coords", rc, "WARN — advisory (HP diff / 0 cross-checks; see data/pipeline.log)")
+        _print_step("Validate coords", rc, "WARN — advisory HP diff(s); see data/pipeline.log")
     else:
         _print_step("Validate coords", rc, "OK")
 

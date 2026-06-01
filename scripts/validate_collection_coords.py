@@ -3,22 +3,24 @@
 Validate collection.json set_code/card_number assignments against external sources.
 
 For each entry that has set_code + card_number, confirms:
-  - card_name matches (TCGdex or pack_sources)
-  - HP matches (TCGdex or ext_ref), for Pokemon entries
+  - card_name matches card_reference.json (offline, cross-validated across TCGdex,
+    Serebii, and Bulbapedia — covers all 20 sets, not just A1–B2a)
+  - HP matches (TCGdex cache or ext_ref), for Pokemon entries
 
-Primary source: TCGdex REST API (no API key, covers A1–B2a)
-Fallback source: local ext_ref (for newer sets not yet in TCGdex)
+Primary source: card_reference.json (frozen, multi-source — covers all 20 sets)
+Fallback source: TCGdex API + local ext_ref (for brand-new cards not yet in reference)
 
-Results cached in data/reference/tcgdex_card_cache.json to avoid repeat requests.
+Run python3 scripts/fetch_source_snapshots.py && python3 scripts/build_card_reference.py
+to refresh the reference when a new pack ships.
 
 Usage:
     python3 scripts/validate_collection_coords.py
-    python3 scripts/validate_collection_coords.py --no-fetch   # local-only, no API calls
+    python3 scripts/validate_collection_coords.py --no-fetch   # fully offline
     python3 scripts/validate_collection_coords.py --set A1     # one set only
-    python3 scripts/validate_collection_coords.py --fix-cache  # re-fetch all TCGdex entries
+    python3 scripts/validate_collection_coords.py --fix-cache  # re-fetch TCGdex HP cache
 
 Exit codes:
-    0  All entries validated (or skipped for uncovered sets)
+    0  All entries validated
     1  One or more validation failures found
 """
 
@@ -40,6 +42,7 @@ from coord_resolver import _name_agrees
 ROOT           = Path(__file__).resolve().parent.parent
 COLLECTION     = ROOT / "collection.json"
 PACK_SOURCES   = ROOT / "data" / "reference" / "pack_sources.json"
+CARD_REF       = ROOT / "data" / "reference" / "card_reference.json"
 EXT_REF        = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
 TCGDEX_CACHE   = ROOT / "data" / "reference" / "tcgdex_card_cache.json"
 
@@ -55,6 +58,24 @@ REQUEST_TIMEOUT = 12
 def load_collection() -> list[dict]:
     raw = COLLECTION.read_text(encoding="utf-8")
     return json.loads(strip_comments(raw))["collection"]
+
+
+def load_card_reference() -> dict[tuple[str, int], dict]:
+    """Load card_reference.json indexed by (set_code_upper, card_number)."""
+    if not CARD_REF.exists():
+        return {}
+    data = json.loads(CARD_REF.read_text(encoding="utf-8"))
+    records = data.get("records", []) if isinstance(data, dict) else data
+    index: dict[tuple[str, int], dict] = {}
+    for r in records:
+        sc = str(r.get("set_code") or "").upper().strip()
+        cn_raw = r.get("card_number")
+        try:
+            cn = int(cn_raw)
+        except (TypeError, ValueError):
+            continue
+        index[(sc, cn)] = r
+    return index
 
 
 def load_pack_sources() -> dict[tuple[str, int], dict]:
@@ -146,6 +167,7 @@ def validate_entry(
     fetch_stats: dict | None = None,
     covered_sets: frozenset[str] | None = None,
     limitless_lookup=None,
+    card_ref: dict | None = None,
 ) -> dict:
     """
     Validate one collection entry. Returns a result dict with:
@@ -213,55 +235,60 @@ def validate_entry(
     ps_rec  = pack_sources.get(key)
     ext_rec = ext_ref.get(key)
 
-    # Name validation — a name mismatch (or a coord present in NEITHER source)
-    # means the (set_code, card_number) points at the wrong/nonexistent card. This
-    # is serious: build_pack_ev attributes owned counts by this coord, so a wrong
-    # coord silently skews EV.
+    # Name validation — a name mismatch means (set_code, card_number) points at the
+    # wrong card. This is serious: build_pack_ev attributes owned counts by coord, so
+    # a wrong coord silently skews EV.
     #
-    # Independent-source priority: TCGdex (covers A1–B2a) > live Limitless (covers
-    # everything, incl. A4b/B2b/B3/B3a/promo — turns the old near-circular local-only
-    # check into a genuine cross-check) > local pack_sources (last-resort fallback).
+    # Priority: card_reference (offline, 3-source validated, covers all 20 sets)
+    #   > TCGdex API cache (A1–B2a only, fallback for brand-new cards)
+    #   > local pack_sources (same-origin, last resort)
     ind_name = ind_source = None
-    if ref_data:
+
+    # ── Primary: card_reference (offline) ─────────────────────────────────────
+    if card_ref is not None:
+        ref_rec = card_ref.get(key)
+        if ref_rec:
+            ind_name = ref_rec.get("name", "")
+            ref_confidence = ref_rec.get("confidence", "unconfirmed")
+            ind_source = f"card_reference({ref_confidence})"
+
+    # ── Fallback: TCGdex API cache (for cards absent from reference) ──────────
+    if ind_name is None and ref_data:
         ind_name, ind_source = ref_data["name"], "tcgdex"
-    elif limitless_lookup is not None:
+
+    # ── Fallback: live Limitless (for brand-new cards) ────────────────────────
+    if ind_name is None and limitless_lookup is not None:
         ll = limitless_lookup(sc, cn)
         if ll:
             ind_name, ind_source = ll, "limitless"
 
     if ind_name is not None:
-        # Limitless titles some formes ambiguously (e.g. both Zygarde formes show as
-        # "Zygarde") — use the forme-tolerant comparison there; card_number still
-        # distinguishes formes. TCGdex names are exact, so use the strict compare.
-        agrees = _name_agrees(name, ind_name) if ind_source == "limitless" else names_match(name, ind_name)
+        # card_reference names are pre-reconciled (forme-tolerant) — use _name_agrees.
+        # TCGdex names are exact → use strict compare. Limitless is scrape-sourced → forme-tolerant.
+        if ind_source and "tcgdex" in ind_source and "card_reference" not in ind_source:
+            agrees = names_match(name, ind_name)
+        else:
+            agrees = _name_agrees(name, ind_name)
         if not agrees:
-            # A TCGdex mismatch is a hard, structured-API signal → serious (FATAL).
-            # A Limitless mismatch is scrape-sourced (HTML/title parse can misfire on an
-            # unexpected page) → advisory so a scrape hiccup can't FATAL the pipeline;
-            # the strict gate lives in reconcile_coords_from_pz (aborts on conflict at
-            # apply-time). Surfaced loudly with a note to verify + reconcile.
-            if ind_source == "limitless":
+            sev_source = ind_source or "unknown"
+            if ind_source and "limitless" in ind_source:
                 advisory_issues.append(f"name mismatch: collection='{name}' vs limitless='{ind_name}'"
                                        f" — verify {sc}/{cn} (scrape-sourced; run reconcile_coords_from_pz)")
             else:
-                serious_issues.append(f"name mismatch: collection='{name}' vs {ind_source}='{ind_name}'")
+                serious_issues.append(f"name mismatch: collection='{name}' vs {sev_source}='{ind_name}'")
     elif ps_rec:
         ps_name = ps_rec.get("card_name", "")
         if not names_match(name, ps_name):
             serious_issues.append(f"name mismatch: collection='{name}' vs pack_sources='{ps_name}'")
     else:
-        # Coord found in neither TCGdex nor pack_sources. Two very different cases:
-        #   - The set IS covered by pack_sources but this card number isn't → the
-        #     coord points at a nonexistent card in a known set → SERIOUS.
-        #   - The set is NOT covered at all (e.g. a freshly-synced new pack awaiting
-        #     a build_pack_sources refresh) → we simply can't validate it yet →
-        #     advisory, not fatal (don't break the two-gate new-pack workflow).
+        # Coord in neither card_reference nor pack_sources — brand-new card.
         set_covered = covered_sets is not None and sc in covered_sets
         if set_covered:
-            serious_issues.append(f"coord {sc}/{cn} not found in pack_sources (set {sc} is known)")
+            serious_issues.append(f"coord {sc}/{cn} not found in pack_sources or card_reference "
+                                  f"(set {sc} is known — possible wrong coord)")
         else:
             advisory_issues.append(f"coord {sc}/{cn} in uncovered set {sc} — cannot validate "
-                                   f"(awaiting pack_sources/TCGdex coverage)")
+                                   f"(run fetch_source_snapshots + build_card_reference)")
 
     # HP validation (Pokemon only) — advisory, NOT fatal. An HP mismatch with a
     # matching name is ambiguous: it can mean (a) the coord points at the WRONG
@@ -312,40 +339,39 @@ def main() -> int:
     args = parser.parse_args()
 
     fetch = not args.no_fetch
-    entries     = load_collection()
+    entries      = load_collection()
     pack_sources = load_pack_sources()
-    ext_ref     = ext_ref_by_coord(EXT_REF)
-    cache       = {} if args.fix_cache else load_cache()
+    ext_ref      = ext_ref_by_coord(EXT_REF)
+    cache        = {} if args.fix_cache else load_cache()
+    card_ref_raw = load_card_reference()
+    if card_ref_raw:
+        print(f"  card_reference: {len(card_ref_raw)} coords (offline, 3-source validated)")
+        card_ref: dict | None = card_ref_raw
+    else:
+        print("  WARN: card_reference.json not found or empty — name validation falls back to "
+              "TCGdex+local. Run fetch_source_snapshots + build_card_reference to rebuild.",
+              file=sys.stderr)
+        card_ref = None
+
     # Set codes pack_sources actually covers — used to tell a "wrong card number in
     # a known set" (serious) from an "uncovered new set, can't validate yet" (advisory).
     covered_sets = frozenset(sc for (sc, _cn) in pack_sources)
 
-    # Get the set list so we know which sets TCGdex covers.
-    # When --no-fetch is set, derive from the cache to stay fully offline.
+    # TCGdex set list (for HP cache lookups — name check now uses card_reference).
     if fetch:
-        print("Fetching TCGdex available sets…")
-        tcgdex_sets = _tcgdex_sets_available()
-        if not tcgdex_sets:
-            # API call failed — fall back to cache-derived set IDs
-            tcgdex_sets = {k.rsplit("-", 1)[0].upper() for k in cache}
+        tcgdex_sets = _tcgdex_sets_available() or {k.rsplit("-", 1)[0].upper() for k in cache}
     else:
-        # Offline mode: honour whatever sets are already cached
         tcgdex_sets = {k.rsplit("-", 1)[0].upper() for k in cache}
-    print(f"  TCGdex covers {len(tcgdex_sets)} Pocket sets")
 
-    # Live-Limitless cross-check for sets TCGdex doesn't cover (A4b/B2b/B3/B3a/promo).
-    # Best-effort: if the resolver can't load, those entries fall back to local-only.
-    # Honours --no-fetch (cache-only) so the pipeline's --no-fetch step stays offline.
+    # Limitless fallback for brand-new cards absent from card_reference.
+    # Best-effort: if resolver can't load, those entries fall back to local-only.
     limitless_lookup = resolver = None
     try:
         from coord_resolver import CoordResolver
-        # Reuse the set list we already fetched above — avoids a duplicate
-        # /series/tcgp request inside CoordResolver.__init__.
         resolver = CoordResolver(fetch=fetch, tcgdex_sets=tcgdex_sets)
         limitless_lookup = resolver._limitless_name
     except Exception as e:
-        print(f"  WARN: Limitless cross-check unavailable ({e}) — non-TCGdex sets stay local-only",
-              file=sys.stderr)
+        print(f"  WARN: Limitless fallback unavailable ({e})", file=sys.stderr)
 
     # Filter by --set
     if args.set:
@@ -364,7 +390,7 @@ def main() -> int:
 
         result = validate_entry(entry, pack_sources, ext_ref, cache,
                                 tcgdex_sets, fetch, fetch_stats, covered_sets,
-                                limitless_lookup)
+                                limitless_lookup, card_ref=card_ref)
         results[result["status"]].append((entry, result))
 
     # Save updated cache if any live fetch occurred (new lookups or stale refreshes)
@@ -385,17 +411,19 @@ def main() -> int:
     # split prevents a green "PASS" from being mistaken for full verification —
     # especially under --no-fetch, where uncached sets get only local checks.
     checked = results["ok"] + results["mismatch"]
+    cardref_checked   = sum(1 for _, r in checked if r.get("source", "").startswith("card_reference"))
     tcgdex_checked    = sum(1 for _, r in checked if r.get("source") == "tcgdex")
     limitless_checked = sum(1 for _, r in checked if r.get("source") == "limitless")
     local_only        = sum(1 for _, r in checked if r.get("source") == "local")
-    independent       = tcgdex_checked + limitless_checked
+    independent       = cardref_checked + tcgdex_checked + limitless_checked
 
     print(f"\n── Validation Results ──────────────────────────────────────────")
     print(f"  OK:           {ok_count}")
     print(f"  Mismatches:   {mismatch_count}")
     print(f"  No coords:    {no_coords}")
-    print(f"  Cross-checked vs TCGdex:    {tcgdex_checked}")
-    print(f"  Cross-checked vs Limitless: {limitless_checked}")
+    print(f"  Cross-checked vs card_reference (offline, 3-source): {cardref_checked}")
+    print(f"  Cross-checked vs TCGdex (fallback):  {tcgdex_checked}")
+    print(f"  Cross-checked vs Limitless (fallback): {limitless_checked}")
     print(f"  Local-only (ext_ref/pack_sources, weaker): {local_only}")
 
     serious_count = sum(1 for _, r in results["mismatch"] if r.get("serious"))
@@ -433,8 +461,9 @@ def main() -> int:
         print(f"\nWARN: {advisory_count} advisory diff(s) — no serious coord errors")
         return 1
 
-    print(f"\nPASS: {tcgdex_checked} cross-checked vs TCGdex, {limitless_checked} vs Limitless, "
-          f"{local_only} local-only (run with fetch to cross-check uncached sets)")
+    print(f"\nPASS: {cardref_checked} cross-checked vs card_reference (offline), "
+          f"{tcgdex_checked} vs TCGdex, {limitless_checked} vs Limitless, "
+          f"{local_only} local-only")
     return 0
 
 

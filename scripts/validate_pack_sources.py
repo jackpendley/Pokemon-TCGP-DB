@@ -24,7 +24,8 @@ VALID_SET_CODES = {
     "A4", "A4a", "A4b",
     "B1", "B1a",
     "B2", "B2a", "B2b",
-    "B3",
+    "B3", "B3A",
+    "PROMO-A", "PROMO-B",
 }
 VALID_RARITIES = {
     "one_diamond", "two_diamond", "three_diamond", "four_diamond",

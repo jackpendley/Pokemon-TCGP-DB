@@ -27,7 +27,7 @@ from collections import defaultdict
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (
     strip_comments, ext_ref_by_coord, TRAINER_SUBTYPE_MAP, TRAINER_CATEGORIES,
-    RARE_PLUS_RARITIES, normalize_rarity,
+    RARE_PLUS_RARITIES, normalize_rarity, norm_card_name,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -48,23 +48,19 @@ def load_collection() -> tuple[dict, list]:
 
 
 def load_pack_sources() -> dict[str, list]:
-    """Returns {card_name_lower: [record, ...]}"""
+    """Returns {norm_card_name(card_name): [record, ...]}"""
     data = json.loads(PACK_SOURCES_JSON.read_text(encoding="utf-8"))
     records = data.get("records", data) if isinstance(data, dict) else data
     by_name: dict[str, list] = defaultdict(list)
     for r in records:
         name = (r.get("card_name") or "").strip()
-        by_name[name.lower()].append(r)
+        by_name[norm_card_name(name)].append(r)
     return dict(by_name)
 
 
 # ---------------------------------------------------------------------------
 # Disambiguation logic
 # ---------------------------------------------------------------------------
-
-def _norm(name: str) -> str:
-    return name.lower().replace("’", "'").replace("‘", "'").strip()
-
 
 def _stage_match(entry_stage, ext_stage) -> bool:
     """Loose stage comparison: collection uses 0/1/2 integers, ext_ref uses Basic/Stage 1/etc."""
@@ -190,7 +186,7 @@ def main() -> int:
                 skipped += 1
                 continue
             # Look up rarity from pack_sources if missing or needs normalization
-            ps_candidates = ps_by_name.get(_norm(entry.get("name") or ""), [])
+            ps_candidates = ps_by_name.get(norm_card_name(entry.get("name") or ""), [])
             ps_match = next(
                 (c for c in ps_candidates
                  if str(c.get("set_code") or "").upper() == sc
@@ -218,7 +214,7 @@ def main() -> int:
         # operation no entry should land here. Heuristic guesses (esp. "tiebreak")
         # are NOT cross-validated and are flagged below for review.
         name = (entry.get("name") or "").strip()
-        candidates = ps_by_name.get(_norm(name), [])
+        candidates = ps_by_name.get(norm_card_name(name), [])
 
         if not candidates:
             print(f"  WARNING: no pack_sources match for '{name}' (idx {idx})", file=sys.stderr)
@@ -269,7 +265,6 @@ def main() -> int:
         return 0
 
     # ── Apply to collection.json ─────────────────────────────────────────────
-    # Special fix: Juliana non-variant entry should be card_number 71 not 86
     for a in assignments:
         entry = entries[a["index"]]
         entry["set_code"]    = a["set_code"]
@@ -278,21 +273,6 @@ def main() -> int:
         # Also normalize any existing rarity aliases on entries we're NOT re-assigning coords to
         if entry.get("rarity"):
             entry["rarity"] = normalize_rarity(entry["rarity"])
-
-    # Juliana fix: the non-variant Juliana entry (no "variant" field) should be B3A/71
-    juliana_fixed = 0
-    for entry in entries:
-        if (entry.get("name") == "Juliana"
-                and not entry.get("variant")
-                and str(entry.get("set_code") or "").upper() == "B3A"
-                and entry.get("card_number") == 86):
-            entry["card_number"] = 71
-            # rarity for B3A/71 is two_diamond
-            entry["rarity"] = "two_diamond"
-            juliana_fixed += 1
-
-    if juliana_fixed:
-        print(f"\nFixed {juliana_fixed} Juliana entry (B3A/86 → B3A/71)")
 
     # ── Whole-collection cleanup (idempotent, safe to run every pipeline pass) ───
     # Build canonical set_code casing lookup from the already-loaded pack_sources
