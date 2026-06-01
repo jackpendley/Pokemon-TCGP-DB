@@ -65,8 +65,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -74,15 +74,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "third_party_verified",
@@ -128,8 +128,8 @@
           "three_diamond": 14,
           "four_diamond": 5,
           "one_star": 22,
-          "double_star": 18,
-          "triple_star": 1
+          "two_star": 18,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 22,
@@ -138,12 +138,12 @@
         },
         "combined_by_rarity": {
           "one_diamond": 44,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 22,
           "three_diamond": 14,
           "four_diamond": 5,
           "unknown": 2,
-          "double_star": 18,
+          "two_star": 18,
           "two_diamond": 34
         }
       },
@@ -153,8 +153,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -194,8 +194,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -203,15 +203,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "third_party_verified",
@@ -257,8 +257,8 @@
           "three_diamond": 14,
           "four_diamond": 5,
           "one_star": 22,
-          "double_star": 18,
-          "triple_star": 1
+          "two_star": 18,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 22,
@@ -267,12 +267,12 @@
         },
         "combined_by_rarity": {
           "one_diamond": 44,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 22,
           "three_diamond": 14,
           "four_diamond": 5,
           "unknown": 2,
-          "double_star": 18,
+          "two_star": 18,
           "two_diamond": 34
         }
       },
@@ -282,8 +282,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -323,8 +323,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -332,15 +332,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
@@ -386,19 +386,19 @@
           "three_diamond": 8,
           "four_diamond": 5,
           "one_star": 16,
-          "double_star": 15,
-          "triple_star": 1,
+          "two_star": 15,
+          "three_star": 1,
           "unknown": 2
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 16,
           "three_diamond": 8,
           "four_diamond": 5,
           "unknown": 2,
-          "double_star": 15,
+          "two_star": 15,
           "two_diamond": 24
         }
       },
@@ -408,8 +408,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -450,8 +450,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -459,15 +459,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "pending_verification",
@@ -513,19 +513,19 @@
           "three_diamond": 50,
           "four_diamond": 75,
           "one_star": 6,
-          "double_star": 18,
-          "triple_star": 1,
+          "two_star": 18,
+          "three_star": 1,
           "unknown": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 128,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 6,
           "three_diamond": 50,
           "four_diamond": 75,
           "unknown": 1,
-          "double_star": 18,
+          "two_star": 18,
           "two_diamond": 100
         }
       },
@@ -535,8 +535,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -576,8 +576,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -585,15 +585,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
@@ -639,19 +639,19 @@
           "three_diamond": 8,
           "four_diamond": 6,
           "one_star": 19,
-          "double_star": 17,
-          "triple_star": 1,
+          "two_star": 17,
+          "three_star": 1,
           "unknown": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 19,
           "three_diamond": 8,
           "four_diamond": 6,
           "unknown": 1,
-          "double_star": 17,
+          "two_star": 17,
           "two_diamond": 23
         }
       },
@@ -661,8 +661,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -702,8 +702,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -711,15 +711,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
@@ -765,19 +765,19 @@
           "three_diamond": 8,
           "four_diamond": 5,
           "one_star": 16,
-          "double_star": 16,
-          "triple_star": 1,
+          "two_star": 16,
+          "three_star": 1,
           "unknown": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 16,
           "three_diamond": 8,
           "four_diamond": 5,
           "unknown": 1,
-          "double_star": 16,
+          "two_star": 16,
           "two_diamond": 24
         }
       },
@@ -787,8 +787,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -828,8 +828,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -837,15 +837,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
@@ -891,19 +891,19 @@
           "three_diamond": 28,
           "four_diamond": 10,
           "one_star": 44,
-          "double_star": 31,
-          "triple_star": 2,
+          "two_star": 31,
+          "three_star": 2,
           "unknown": 2
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 66,
-          "triple_star": 2,
+          "three_star": 2,
           "one_star": 44,
           "three_diamond": 28,
           "four_diamond": 10,
           "unknown": 2,
-          "double_star": 31,
+          "two_star": 31,
           "two_diamond": 51
         }
       },
@@ -913,8 +913,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -954,8 +954,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -963,15 +963,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "third_party_verified",
@@ -1017,23 +1017,23 @@
           "three_diamond": 14,
           "four_diamond": 5,
           "one_star": 8,
-          "double_star": 10,
-          "triple_star": 1
+          "two_star": 10,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 25,
           "two_diamond": 18,
-          "triple_star": 1,
+          "three_star": 1,
           "unknown": 3
         },
         "combined_by_rarity": {
           "one_diamond": 50,
-          "triple_star": 2,
+          "three_star": 2,
           "one_star": 8,
           "three_diamond": 14,
           "four_diamond": 5,
           "unknown": 3,
-          "double_star": 10,
+          "two_star": 10,
           "two_diamond": 35
         }
       },
@@ -1043,8 +1043,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -1084,8 +1084,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -1093,15 +1093,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "third_party_verified",
@@ -1147,23 +1147,23 @@
           "three_diamond": 14,
           "four_diamond": 5,
           "one_star": 8,
-          "double_star": 9,
-          "triple_star": 1
+          "two_star": 9,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 25,
           "two_diamond": 18,
-          "triple_star": 1,
+          "three_star": 1,
           "unknown": 3
         },
         "combined_by_rarity": {
           "one_diamond": 50,
-          "triple_star": 2,
+          "three_star": 2,
           "one_star": 8,
           "three_diamond": 14,
           "four_diamond": 5,
           "unknown": 3,
-          "double_star": 9,
+          "two_star": 9,
           "two_diamond": 35
         }
       },
@@ -1173,8 +1173,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -1214,8 +1214,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -1223,15 +1223,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "third_party_verified",
@@ -1277,23 +1277,23 @@
           "three_diamond": 14,
           "four_diamond": 5,
           "one_star": 8,
-          "double_star": 10,
-          "triple_star": 1
+          "two_star": 10,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 25,
           "two_diamond": 18,
-          "triple_star": 1,
+          "three_star": 1,
           "unknown": 3
         },
         "combined_by_rarity": {
           "one_diamond": 50,
-          "triple_star": 2,
+          "three_star": 2,
           "one_star": 8,
           "three_diamond": 14,
           "four_diamond": 5,
           "unknown": 3,
-          "double_star": 10,
+          "two_star": 10,
           "two_diamond": 35
         }
       },
@@ -1303,8 +1303,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -1344,8 +1344,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -1353,15 +1353,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
@@ -1407,8 +1407,8 @@
           "three_diamond": 14,
           "four_diamond": 5,
           "one_star": 18,
-          "double_star": 15,
-          "triple_star": 1
+          "two_star": 15,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 24,
@@ -1418,12 +1418,12 @@
         },
         "combined_by_rarity": {
           "one_diamond": 49,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 18,
           "three_diamond": 15,
           "four_diamond": 5,
           "unknown": 3,
-          "double_star": 15,
+          "two_star": 15,
           "two_diamond": 33
         }
       },
@@ -1433,8 +1433,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -1474,8 +1474,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -1483,15 +1483,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
@@ -1537,8 +1537,8 @@
           "three_diamond": 14,
           "four_diamond": 5,
           "one_star": 18,
-          "double_star": 15,
-          "triple_star": 1
+          "two_star": 15,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 24,
@@ -1548,12 +1548,12 @@
         },
         "combined_by_rarity": {
           "one_diamond": 49,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 18,
           "three_diamond": 15,
           "four_diamond": 5,
           "unknown": 3,
-          "double_star": 15,
+          "two_star": 15,
           "two_diamond": 33
         }
       },
@@ -1563,8 +1563,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -1604,8 +1604,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -1613,15 +1613,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
@@ -1667,8 +1667,8 @@
           "three_diamond": 14,
           "four_diamond": 5,
           "one_star": 18,
-          "double_star": 15,
-          "triple_star": 1
+          "two_star": 15,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 24,
@@ -1678,12 +1678,12 @@
         },
         "combined_by_rarity": {
           "one_diamond": 49,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 18,
           "three_diamond": 15,
           "four_diamond": 5,
           "unknown": 3,
-          "double_star": 15,
+          "two_star": 15,
           "two_diamond": 33
         }
       },
@@ -1693,8 +1693,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -1735,8 +1735,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -1744,15 +1744,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "themed_rare_pack_all_5_slots": null,
@@ -1799,19 +1799,19 @@
           "three_diamond": 8,
           "four_diamond": 5,
           "one_star": 30,
-          "double_star": 14,
-          "triple_star": 2,
+          "two_star": 14,
+          "three_star": 2,
           "unknown": 2
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 33,
-          "triple_star": 2,
+          "three_star": 2,
           "one_star": 30,
           "three_diamond": 8,
           "four_diamond": 5,
           "unknown": 2,
-          "double_star": 14,
+          "two_star": 14,
           "two_diamond": 23
         }
       },
@@ -1821,8 +1821,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -1862,8 +1862,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -1871,15 +1871,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
@@ -1925,19 +1925,19 @@
           "three_diamond": 8,
           "four_diamond": 5,
           "one_star": 6,
-          "double_star": 10,
-          "triple_star": 1,
+          "two_star": 10,
+          "three_star": 1,
           "unknown": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 6,
           "three_diamond": 8,
           "four_diamond": 5,
           "unknown": 1,
-          "double_star": 10,
+          "two_star": 10,
           "two_diamond": 23
         }
       },
@@ -1947,8 +1947,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -1988,8 +1988,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -1997,15 +1997,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
@@ -2051,19 +2051,19 @@
           "three_diamond": 12,
           "four_diamond": 5,
           "one_star": 16,
-          "double_star": 19,
-          "triple_star": 1,
+          "two_star": 19,
+          "three_star": 1,
           "unknown": 2
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 43,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 16,
           "three_diamond": 12,
           "four_diamond": 5,
           "unknown": 2,
-          "double_star": 19,
+          "two_star": 19,
           "two_diamond": 33
         }
       },
@@ -2073,8 +2073,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -2114,8 +2114,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01667,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -2123,8 +2123,8 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06667,
           "one_star": 0.10286,
-          "double_star": 0.02,
-          "triple_star": 0.00889,
+          "two_star": 0.02,
+          "three_star": 0.00889,
           "crown": 0.0016
         },
         "slot_6": {
@@ -2134,8 +2134,8 @@
         },
         "rare_pack_all_5_slots": {
           "one_star": 0.47058,
-          "double_star": 0.45098,
-          "triple_star": 0.03921,
+          "two_star": 0.45098,
+          "three_star": 0.03921,
           "crown_or_highest_rare": 0.03921
         },
         "confidence": "user_in_app_verified_plus_bulbapedia",
@@ -2165,19 +2165,19 @@
           "three_diamond": 29,
           "four_diamond": 10,
           "one_star": 44,
-          "double_star": 31,
-          "triple_star": 2,
+          "two_star": 31,
+          "three_star": 2,
           "unknown": 2
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 65,
-          "triple_star": 2,
+          "three_star": 2,
           "one_star": 44,
           "three_diamond": 29,
           "four_diamond": 10,
           "unknown": 2,
-          "double_star": 31,
+          "two_star": 31,
           "two_diamond": 51
         }
       },
@@ -2187,8 +2187,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -2228,8 +2228,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -2237,15 +2237,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
@@ -2291,19 +2291,19 @@
           "three_diamond": 11,
           "four_diamond": 5,
           "one_star": 16,
-          "double_star": 16,
-          "triple_star": 1,
+          "two_star": 16,
+          "three_star": 1,
           "unknown": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 16,
           "three_diamond": 11,
           "four_diamond": 5,
           "unknown": 1,
-          "double_star": 16,
+          "two_star": 16,
           "two_diamond": 23
         }
       },
@@ -2313,8 +2313,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -2354,8 +2354,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -2363,15 +2363,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "third_party_verified",
@@ -2417,19 +2417,19 @@
           "three_diamond": 9,
           "four_diamond": 9,
           "one_star": 16,
-          "double_star": 21,
-          "triple_star": 1,
+          "two_star": 21,
+          "three_star": 1,
           "unknown": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 32,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 16,
           "three_diamond": 9,
           "four_diamond": 9,
           "unknown": 1,
-          "double_star": 21,
+          "two_star": 21,
           "two_diamond": 22
         }
       },
@@ -2439,8 +2439,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -2480,8 +2480,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -2489,15 +2489,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "third_party_verified",
@@ -2543,8 +2543,8 @@
           "three_diamond": 10,
           "four_diamond": 5,
           "one_star": 12,
-          "double_star": 12,
-          "triple_star": 1
+          "two_star": 12,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 23,
@@ -2554,12 +2554,12 @@
         },
         "combined_by_rarity": {
           "one_diamond": 46,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 12,
           "three_diamond": 14,
           "four_diamond": 5,
           "unknown": 2,
-          "double_star": 12,
+          "two_star": 12,
           "two_diamond": 34
         }
       },
@@ -2569,8 +2569,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -2610,8 +2610,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -2619,15 +2619,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "third_party_verified",
@@ -2673,8 +2673,8 @@
           "three_diamond": 10,
           "four_diamond": 5,
           "one_star": 12,
-          "double_star": 12,
-          "triple_star": 1
+          "two_star": 12,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 23,
@@ -2684,12 +2684,12 @@
         },
         "combined_by_rarity": {
           "one_diamond": 44,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 12,
           "three_diamond": 14,
           "four_diamond": 5,
           "unknown": 2,
-          "double_star": 12,
+          "two_star": 12,
           "two_diamond": 36
         }
       },
@@ -2699,8 +2699,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -2740,8 +2740,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -2749,15 +2749,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
@@ -2803,19 +2803,19 @@
           "three_diamond": 13,
           "four_diamond": 5,
           "one_star": 6,
-          "double_star": 13,
-          "triple_star": 1,
+          "two_star": 13,
+          "three_star": 1,
           "unknown": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
           "one_diamond": 31,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 6,
           "three_diamond": 13,
           "four_diamond": 5,
           "unknown": 1,
-          "double_star": 13,
+          "two_star": 13,
           "two_diamond": 26
         }
       },
@@ -2825,8 +2825,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -2866,8 +2866,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -2875,8 +2875,8 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": {
@@ -2886,8 +2886,8 @@
         },
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "user_in_app_verified",
@@ -2907,8 +2907,8 @@
           "three_diamond": 17,
           "four_diamond": 5,
           "one_star": 22,
-          "double_star": 16,
-          "triple_star": 1
+          "two_star": 16,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 18,
@@ -2917,12 +2917,12 @@
         },
         "combined_by_rarity": {
           "one_diamond": 42,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 22,
           "three_diamond": 17,
           "four_diamond": 5,
           "unknown": 2,
-          "double_star": 16,
+          "two_star": 16,
           "two_diamond": 31
         }
       },
@@ -2932,8 +2932,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -2973,8 +2973,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -2982,8 +2982,8 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": {
@@ -2993,8 +2993,8 @@
         },
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "user_in_app_verified",
@@ -3014,8 +3014,8 @@
           "three_diamond": 17,
           "four_diamond": 5,
           "one_star": 22,
-          "double_star": 16,
-          "triple_star": 1
+          "two_star": 16,
+          "three_star": 1
         },
         "shared_pool_by_rarity": {
           "one_diamond": 18,
@@ -3024,12 +3024,12 @@
         },
         "combined_by_rarity": {
           "one_diamond": 42,
-          "triple_star": 1,
+          "three_star": 1,
           "one_star": 22,
           "three_diamond": 17,
           "four_diamond": 5,
           "unknown": 2,
-          "double_star": 16,
+          "two_star": 16,
           "two_diamond": 31
         }
       },
@@ -3039,8 +3039,8 @@
         "three_diamond": null,
         "four_diamond": null,
         "one_star": null,
-        "double_star": null,
-        "triple_star": null,
+        "two_star": null,
+        "three_star": null,
         "crown": null,
         "promo": null,
         "unknown": null
@@ -3078,8 +3078,8 @@
           "three_diamond": 0.05,
           "four_diamond": 0.01666,
           "one_star": 0.02572,
-          "double_star": 0.005,
-          "triple_star": 0.00222,
+          "two_star": 0.005,
+          "three_star": 0.00222,
           "crown": 0.0004
         },
         "slot_5": {
@@ -3087,15 +3087,15 @@
           "three_diamond": 0.2,
           "four_diamond": 0.06664,
           "one_star": 0.10288,
-          "double_star": 0.02,
-          "triple_star": 0.00888,
+          "two_star": 0.02,
+          "three_star": 0.00888,
           "crown": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
           "one_star": 0.4,
-          "double_star": 0.5,
-          "triple_star": 0.05,
+          "two_star": 0.5,
+          "three_star": 0.05,
           "crown": 0.05
         },
         "confidence": "pending_verification",
@@ -3115,8 +3115,8 @@
           "three_diamond": 12,
           "one_star": 16,
           "two_star": 8,
-          "double_star": 4,
-          "triple_star": 5,
+          "two_star": 4,
+          "three_star": 5,
           "crown": 2
         },
         "shared_pool_by_rarity": {},
@@ -3127,8 +3127,8 @@
           "three_diamond": 12,
           "one_star": 16,
           "two_star": 8,
-          "double_star": 4,
-          "triple_star": 5,
+          "two_star": 4,
+          "three_star": 5,
           "crown": 2
         }
       },

@@ -96,14 +96,30 @@ def test_no_ambiguous_for_multi_variant_cards(pack_sources, ext_ref, collection)
     )
 
 
-def test_ambiguous_raises_runtime_error(pack_sources, ext_ref, collection):
-    """If disambiguation truly fails, RuntimeError is raised (not silent queue)."""
-    # Inject a card name that has multiple collection entries but no disambiguating data:
-    # We simulate this by passing ONE Riolu record when there are TWO collection entries
-    # for Riolu (same HP=60), with a bogus set_code so pack_sources can't help.
+def test_unresolvable_ambiguous_force_matches_with_warning(capsys, pack_sources, ext_ref, collection):
+    """An unresolvable ambiguous card is force-matched with a WARN, never raised.
+
+    A single Riolu PZ record with bogus coords can't be disambiguated against the
+    multiple Riolu collection entries. The matcher's design is to always ingest every
+    PZ card: it force-matches to an unclaimed variant and emits a WARN to stderr
+    (so the user can add HP/rarity data to resolve it properly) rather than crashing.
+    """
     pz_cards = [_make_pz("FAKE", 999, "Riolu")]
-    with pytest.raises(RuntimeError, match="Unresolvable match"):
-        sc.match_pz_cards(pz_cards, collection, pack_sources, ext_ref)
+    results = sc.match_pz_cards(pz_cards, collection, pack_sources, ext_ref)
+    captured = capsys.readouterr()
+    # Never raises, and no AMBIGUOUS result is left unresolved — the card is ingested.
+    assert all(r.status != "AMBIGUOUS" for r in results)
+    assert len(results) == 1 and results[0].status == "MATCHED"
+    # A WARN is surfaced so the root cause (missing disambiguation data) is visible.
+    assert "WARN" in captured.err and "Riolu" in captured.err
+
+    # Force-match must land on an actual Riolu collection entry — not some unrelated
+    # card. Guards against a regression where force-match picks the wrong index.
+    r = results[0]
+    assert r.entry is not None and r.entry_index is not None
+    assert r.entry is collection[r.entry_index]          # index points at the chosen entry
+    assert r.entry.get("name") == "Riolu"                # and it's genuinely a Riolu variant
+    assert r.canonical_name == "Riolu"
 
 
 # ---------------------------------------------------------------------------
@@ -165,34 +181,19 @@ def test_append_succeeds_on_valid_structure():
     assert "Bulbasaur" in result
     assert result.endswith("}")
     # Result must be valid JSON after stripping comments
-    parsed = json.loads(sc._strip_comments(result))
+    parsed = json.loads(sc.strip_comments(result))
     names = [e["name"] for e in parsed["collection"]]
     assert "Pikachu" in names
     assert "Bulbasaur" in names
 
 
 # ---------------------------------------------------------------------------
-# 1.4: Fuzzy match logging — borderline matches emit DEBUG to stderr
+# 1.4: Fuzzy name matching was intentionally removed from sync_collection.py —
+# it picked wrong cards at ≥85% similarity (e.g. "Mega Ampharos ex", "Heracross"),
+# which is why the _PROMO_A/_PROMO_B_OVERRIDES exist instead. The former
+# test_fuzzy_borderline_logs_debug covered that removed feature and was deleted
+# along with the _build_name_list helper that fed it.
 # ---------------------------------------------------------------------------
-
-def test_fuzzy_borderline_logs_debug(capsys, pack_sources, ext_ref, collection):
-    """A fuzzy match scoring 85-94% emits a DEBUG message to stderr.
-
-    We test the underlying _match_one() directly so we don't trigger
-    the AMBIGUOUS→RuntimeError path in match_pz_cards() (which fires
-    when a fuzzy-matched name has multiple variants).
-    """
-    name_index = sc._build_name_index(collection)
-    pack_name_list = sc._build_name_list(pack_sources)
-    # "Lapras" has only one variant in the collection — no disambiguation needed
-    pz = _make_pz(None, None, "Lapraz")  # typo, high fuzzy similarity to "Lapras"
-    result = sc._match_one(pz, collection, name_index, pack_sources, pack_name_list, ext_ref)
-    captured = capsys.readouterr()
-    if result.status == "MATCHED":
-        # Any borderline fuzzy match (85-94%) should log DEBUG
-        assert "DEBUG" in captured.err or "fuzzy" in captured.err.lower(), (
-            f"Expected DEBUG log for borderline fuzzy match, got stderr: {captured.err!r}"
-        )
 
 
 # ---------------------------------------------------------------------------
@@ -205,44 +206,10 @@ def _validate_collection_data(data):
     return failures, warnings
 
 
-def test_is_ex_string_is_failure():
-    data = {
-        "meta": {"total_cards": 1, "last_updated": "2026-01-01", "format": "test"},
-        "collection": [{
-            "name": "Pikachu", "count": 1, "card_type": "Pokemon",
-            "type": "Lightning", "stage": 0, "is_ex": "true",
-        }],
-    }
-    failures, warnings = _validate_collection_data(data)
-    failure_text = " ".join(failures)
-    warn_text = " ".join(warnings)
-    assert "is_ex" in failure_text, f"Expected is_ex failure, got failures={failures} warnings={warnings}"
-    assert "is_ex" not in warn_text
-
-
-def test_is_ex_integer_is_failure():
-    data = {
-        "meta": {"total_cards": 1, "last_updated": "2026-01-01", "format": "test"},
-        "collection": [{
-            "name": "Pikachu", "count": 1, "card_type": "Pokemon",
-            "type": "Lightning", "stage": 0, "is_ex": 1,
-        }],
-    }
-    failures, _ = _validate_collection_data(data)
-    assert any("is_ex" in f for f in failures)
-
-
-def test_is_ex_bool_passes():
-    data = {
-        "meta": {"total_cards": 1, "last_updated": "2026-01-01", "format": "test"},
-        "collection": [{
-            "name": "Pikachu ex", "count": 1, "card_type": "Pokemon",
-            "type": "Lightning", "stage": 0, "is_ex": True,
-        }],
-    }
-    failures, _ = _validate_collection_data(data)
-    is_ex_failures = [f for f in failures if "is_ex" in f]
-    assert is_ex_failures == []
+# Note: is_ex is no longer a tracked field on collection entries (it is stripped
+# by assign_collection_coords.py before validation, and EX status is derived from
+# rarity / the " ex" name suffix). The former test_is_ex_* validation tests were
+# removed when the field was dropped from the schema.
 
 
 # ---------------------------------------------------------------------------

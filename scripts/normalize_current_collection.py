@@ -18,17 +18,14 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import is_ex_from_name, strip_comments
+
 ROOT = Path(__file__).resolve().parent.parent
 COLLECTION_JSON = ROOT / "collection.json"
 OUT_DIR = ROOT / "data" / "current"
 NORMALIZED_JSON = OUT_DIR / "collection_normalized.json"
 SUMMARY_JSON = OUT_DIR / "collection_summary.json"
-
-
-def strip_comments(text):
-    # Only strip lines whose first non-whitespace chars are '//'; avoids corrupting
-    # any string value containing '//' (e.g. a future URL field).
-    return re.sub(r"(?m)^\s*//[^\n]*\n?", "", text)
 
 
 def normalize_name(name):
@@ -82,8 +79,11 @@ def build_normalized(collection):
         new_entry = dict(entry)
         new_entry["normalized_name"] = normalize_name(entry.get("name", ""))
         new_entry["entry_id"] = make_entry_id(entry, seen_ids)
-        if "is_ex" not in new_entry:
-            new_entry["is_ex"] = False
+        # is_ex is DERIVED (summary-only convenience), not authoritative collection
+        # state: source collection.json has no is_ex field — EX status comes from the
+        # " ex" name suffix via is_ex_from_name. Don't treat this stored value as a
+        # source of truth or propagate it back to collection.json.
+        new_entry["is_ex"] = is_ex_from_name(entry.get("name"))
         if isinstance(new_entry.get("stage"), int):
             new_entry["stage_label"] = stage_label(new_entry["stage"])
         normalized.append(new_entry)

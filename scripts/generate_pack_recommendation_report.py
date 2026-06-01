@@ -31,6 +31,9 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import is_ex_from_name
+
 ROOT = Path(__file__).resolve().parent.parent
 
 PACK_EV_JSON         = ROOT / "data" / "current"  / "pack_ev.json"
@@ -75,7 +78,6 @@ def generate_pack_description(pack: dict, rank: int) -> str:
     new_ev    = pack.get("new_card_ev_10x", 0.0)
     dr_ratio  = pack.get("ev_diminishing_returns_ratio", 1.0)
     deck_ev   = pack.get("deck_target_ev", 0.0)
-    ex_ev     = pack.get("ex_card_ev", 0.0)
     cost      = pack.get("cost_per_unique_card_10x", 0.0)
     pct_miss  = missing / total if total > 0 else 0
 
@@ -96,11 +98,6 @@ def generate_pack_description(pack: dict, rank: int) -> str:
         parts.append("high-value deck targets present")
     elif deck_ev >= 0.1:
         parts.append("contains deck targets")
-
-    if ex_ev >= 1.0:
-        parts.append("strong EX card density")
-    elif ex_ev >= 0.3:
-        parts.append("notable EX cards available")
 
     if cost > 0 and rank > 3:
         parts.append(f"{cost:.1f} ⧗/EV")
@@ -232,7 +229,7 @@ def write_csv(ev_data: dict, buckets: dict):
     fields = [
         "rank_unified", "pack_name", "expansion", "set_code",
         "unified_score", "new_card_ev_10x", "new_card_ev",
-        "ex_card_ev", "deck_target_ev",
+        "deck_target_ev",
         "missing_rare_plus", "rare_plus_ev_10x",
         "cost_per_unique_card_10x", "ev_diminishing_returns_ratio",
         "cards_in_pool", "owned_in_pool", "missing_in_pool",
@@ -253,7 +250,6 @@ def write_csv(ev_data: dict, buckets: dict):
                 "unified_score": round(p.get("unified_score", 0.0), 6),
                 "new_card_ev_10x": round(p.get("new_card_ev_10x", 0.0), 6),
                 "new_card_ev": round(p.get("new_card_ev", 0.0), 6),
-                "ex_card_ev": round(p.get("ex_card_ev", 0.0), 6),
                 "deck_target_ev": round(p.get("deck_target_ev", 0.0), 6),
                 "missing_rare_plus": p.get("missing_rare_plus", 0),
                 "rare_plus_ev_10x": round(p.get("rare_plus_ev_10x", 0.0), 6),
@@ -323,7 +319,6 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         lines.append(f"| Unified Score | **{p.get('unified_score', 0.0):.4f}** |")
         lines.append(f"| New-card EV (10x) | {p.get('new_card_ev_10x', 0.0):.4f} |")
         lines.append(f"| New-card EV (1x) | {p.get('new_card_ev', 0.0):.4f} |")
-        lines.append(f"| EX-card EV | {p.get('ex_card_ev', 0.0):.4f} |")
         lines.append(f"| Deck target EV | {p.get('deck_target_ev', 0.0):.4f} |")
         lines.append(f"| Cost / EV unit (10x) | {p.get('cost_per_unique_card_10x', 0.0):.2f} ⧗ |")
         lines.append(f"| DR ratio | {p.get('ev_diminishing_returns_ratio', 0.0):.3f} |")
@@ -339,7 +334,8 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
             lines.append("|---|---|---|---|---|---|")
             for c in top_cards:
                 flags = []
-                if c.get("is_ex"):
+                # is_ex is no longer stored per-card in pack_ev.json — derive from name
+                if is_ex_from_name(c.get("name")):
                     flags.append("EX")
                 if c.get("is_deck_target"):
                     flags.append("DECK TARGET")
@@ -374,10 +370,10 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         "",
         "## Top Packs — Unified Ranking",
         "",
-        "Ranked by unified score: `new_card_ev_10x×1.0 + copy_ev×0.2 + ex_card_ev×0.5 + deck_target_ev×1.5`, weighted by confidence. `new_card_ev_10x` is rarity-weighted (base + rarity bonus only); EX and deck-target bonuses are added separately via their own terms.",
+        "Ranked by unified score: `new_card_ev_10x×1.0 + copy_ev×0.2 + deck_target_ev×1.5`, weighted by confidence. `new_card_ev_10x` is rarity-weighted (higher rarities carry a pull-probability-derived bonus); deck-target bonus is added via its own term.",
         "",
-        "| Rank | Pack | Expansion | Unified | New EV (10x) | Deck EV | EX EV | ⧗/card | Missing |",
-        "|---|---|---|---|---|---|---|---|---|",
+        "| Rank | Pack | Expansion | Unified | New EV (10x) | Deck EV | ⧗/card | Missing |",
+        "|---|---|---|---|---|---|---|---|",
     ]
 
     for i, p in enumerate(top5, 1):
@@ -386,7 +382,6 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
             f"| {p.get('unified_score', 0.0):.4f} "
             f"| {p.get('new_card_ev_10x', 0.0):.4f} "
             f"| {p.get('deck_target_ev', 0.0):.4f} "
-            f"| {p.get('ex_card_ev', 0.0):.4f} "
             f"| {p.get('cost_per_unique_card_10x', 0.0):.1f} "
             f"| {p['missing_in_pool']} |"
         )
@@ -452,8 +447,8 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
         "",
         "## Complete Pack Ranking",
         "",
-        "| Rank | Pack | Expansion | Unified | New EV (10x) | New EV (1x) | Missing | Deck EV | EX EV |",
-        "|---|---|---|---|---|---|---|---|---|",
+        "| Rank | Pack | Expansion | Unified | New EV (10x) | New EV (1x) | Missing | Deck EV |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for i, p in enumerate(all_unified, 1):
         lines.append(
@@ -462,8 +457,7 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
             f"| {p.get('new_card_ev_10x', 0.0):.4f} "
             f"| {p.get('new_card_ev', 0.0):.4f} "
             f"| {p['missing_in_pool']} "
-            f"| {p.get('deck_target_ev', 0.0):.4f} "
-            f"| {p.get('ex_card_ev', 0.0):.4f} |"
+            f"| {p.get('deck_target_ev', 0.0):.4f} |"
         )
 
     # Promo pack summary section

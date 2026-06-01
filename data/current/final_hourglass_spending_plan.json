@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-29",
+  "generated_at": "2026-05-31",
   "generated_by": "scripts/generate_hourglass_spending_plan.py",
   "disclaimer": "NOT OFFICIAL: Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone (not the official PTCGP in-app Offering Rates screen). EV calculations reflect actual pull probabilities with no confidence haircut applied. Rankings are suitable for planning. Re-run EV after every 20+ packs to account for collection changes.",
   "model_confidence": "pz_verified",
-  "collection_total": 859,
+  "collection_total": 886,
   "collection_mutated": false,
   "batch_size": 10,
   "hourglass_per_pack": 12,
@@ -11,7 +11,7 @@
   "ev_source": "data/current/pack_ev.json",
   "spending_plan": {
     "label": "optimal",
-    "description": "3-batch plan rotating through top unified-score packs. Batch 1: Extradimensional Crisis. Batch 2: switch to Mega Altaria (near-complete). Batch 3: Lunala. Always rerun EV after each batch.",
+    "description": "3-batch plan rotating through top unified-score packs. Batch 1: Extradimensional Crisis. Batch 2: switch to Mega Altaria (near-complete). Batch 3: Fantastical Parade. Always rerun EV after each batch.",
     "batches": [
       {
         "batch_number": 1,
@@ -20,14 +20,14 @@
         "set_code": "A3a",
         "packs_to_open": 10,
         "hourglass_cost": 120,
-        "unified_score": 31.562495,
-        "new_card_ev_10x": 31.515575,
-        "cost_per_unique_card_10x": 3.81,
-        "ev_diminishing_returns_ratio": 0.7485,
+        "unified_score": 44.865188,
+        "new_card_ev_10x": 44.818268,
+        "cost_per_unique_card_10x": 2.68,
+        "ev_diminishing_returns_ratio": 0.7941,
         "missing_in_pool": 84,
         "near_complete": true,
         "rerun_after": true,
-        "notes": "Open first batch from the top unified-score pack. WARNING: DR ratio=0.749 < 0.85 — this pool is near-complete; switch to #2 after this batch."
+        "notes": "Open first batch from the top unified-score pack. WARNING: DR ratio=0.794 < 0.85 — this pool is near-complete; switch to #2 after this batch."
       },
       {
         "batch_number": 2,
@@ -36,28 +36,28 @@
         "set_code": "B1",
         "packs_to_open": 10,
         "hourglass_cost": 120,
-        "unified_score": 31.421488,
-        "new_card_ev_10x": 31.19086,
-        "cost_per_unique_card_10x": 3.85,
-        "ev_diminishing_returns_ratio": 0.7902,
+        "unified_score": 44.351656,
+        "new_card_ev_10x": 44.300528,
+        "cost_per_unique_card_10x": 2.71,
+        "ev_diminishing_returns_ratio": 0.8528,
         "missing_in_pool": 105,
-        "near_complete": true,
+        "near_complete": false,
         "rerun_after": true,
         "notes": "Switched to #2 pack (near-complete flag on batch 1)."
       },
       {
         "batch_number": 3,
-        "pack_name": "Lunala",
-        "expansion": "Celestial Guardians",
-        "set_code": "A3",
+        "pack_name": "Fantastical Parade",
+        "expansion": "Fantastical Parade",
+        "set_code": "B2",
         "packs_to_open": 10,
         "hourglass_cost": 120,
-        "unified_score": 31.302549,
-        "new_card_ev_10x": 31.257613,
-        "cost_per_unique_card_10x": 3.84,
-        "ev_diminishing_returns_ratio": 0.8087,
-        "missing_in_pool": 107,
-        "near_complete": true,
+        "unified_score": 43.724141,
+        "new_card_ev_10x": 43.617757,
+        "cost_per_unique_card_10x": 2.75,
+        "ev_diminishing_returns_ratio": 0.8994,
+        "missing_in_pool": 172,
+        "near_complete": false,
         "rerun_after": true,
         "notes": "Re-run EV after this batch; rotate to highest unified-score pack for batch 4."
       }
@@ -69,11 +69,11 @@
       2,
       3
     ],
-    "stopping_condition": "Stop any batch when cost_per_unique_card_10x exceeds 7.6⧗ (2× batch-1 baseline of 3.8⧗). Re-run EV before committing further.",
+    "stopping_condition": "Stop any batch when cost_per_unique_card_10x exceeds 5.4⧗ (2× batch-1 baseline of 2.7⧗). Re-run EV before committing further.",
     "near_complete_threshold": 0.85,
-    "cost_ceiling_per_unique_card": 7.62,
+    "cost_ceiling_per_unique_card": 5.36,
     "chase_deck_packs": {},
-    "top_pack_unified_score": 31.5625,
+    "top_pack_unified_score": 44.8652,
     "top_pack_name": "Extradimensional Crisis",
     "include_limited_packs": false
   }

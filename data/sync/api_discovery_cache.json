@@ -1,6 +1,6 @@
 {
-  "discovered_at": "2026-05-30T02:19:51.890713+00:00",
+  "discovered_at": "2026-06-01T02:54:31.934259+00:00",
   "api_url": "https://www.pokemon-zone.com/api/players/mine/",
   "collection_array_key": "data.cards",
-  "element_count": 447
+  "element_count": 457
 }

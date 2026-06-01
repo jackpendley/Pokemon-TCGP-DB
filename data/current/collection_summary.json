@@ -1,42 +1,42 @@
 {
   "meta": {
-    "total_cards": 859,
-    "last_updated": "2026-05-29",
+    "total_cards": 886,
+    "last_updated": "2026-05-31",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 859,
-  "meta_total_cards": 859,
+  "total_quantity": 886,
+  "meta_total_cards": 886,
   "count_matches_meta": true,
-  "unique_entries": 414,
+  "unique_entries": 457,
   "by_card_type": {
-    "Pokemon": 784,
-    "Trainer": 75
+    "Pokemon": 802,
+    "Trainer": 84
   },
   "by_pokemon_type": {
     "Fire": 73,
     "Grass": 104,
     "Water": 85,
-    "Lightning": 61,
+    "Lightning": 62,
     "Psychic": 60,
     "Fighting": 120,
     "Darkness": 65,
-    "Metal": 33,
+    "Metal": 35,
     "Dragon": 3,
-    "Colorless": 102,
-    "Unknown": 78
+    "Colorless": 106,
+    "Unknown": 89
   },
   "by_stage": {
-    "Basic": 494,
-    "Stage 1": 203,
-    "Stage 2": 50
+    "Basic": 510,
+    "Stage 1": 210,
+    "Stage 2": 51
   },
-  "ex_entries": 23,
-  "ex_quantity": 27,
+  "ex_entries": 25,
+  "ex_quantity": 29,
   "trainer_subtypes": {
     "Item": 32,
-    "Pokemon Tool": 4,
-    "Supporter": 33,
-    "Stadium": 6
+    "Pokemon Tool": 7,
+    "Supporter": 38,
+    "Stadium": 7
   },
   "top_cards_by_count": [
     [
@@ -102,30 +102,64 @@
   ],
   "variant_names": {
     "Charmander": 2,
-    "Tepig": 2,
+    "Tepig": 3,
+    "Victini": 2,
+    "Castform Sunny Form": 2,
     "Bulbasaur": 3,
     "Shroomish": 2,
+    "Treecko": 2,
+    "Surskit": 2,
+    "Masquerain": 2,
+    "Exeggcute": 2,
     "Grovyle": 2,
     "Sobble": 2,
     "Quagsire": 2,
+    "Chewtle": 2,
     "Magneton": 2,
     "Magnemite": 2,
     "Morpeko": 2,
     "Meloetta": 2,
+    "Misdreavus": 2,
+    "Ralts": 2,
+    "Bramblin": 2,
+    "Kirlia": 2,
     "Mienfoo": 2,
     "Mienshao": 2,
     "Riolu": 2,
+    "Sandshrew": 2,
+    "Cubone": 2,
     "Onix": 2,
+    "Nosepass": 2,
+    "Rockruff": 2,
+    "Dwebble": 2,
     "Zubat": 2,
     "Grimer": 2,
     "Seviper": 2,
+    "Sneasel": 3,
+    "Zarude": 2,
     "Meltan": 2,
+    "Bisharp": 2,
+    "Pawniard": 2,
+    "Corvisquire": 2,
+    "Furfrou": 2,
     "Cinccino": 2,
+    "Eevee": 2,
+    "Jigglypuff": 2,
     "Farfetch'd": 2,
+    "Quick-Grow Extract": 2,
     "Clemont": 2,
     "Rellor": 2,
+    "Pawmi": 2,
+    "Pawmo": 2,
+    "Pawmot": 2,
     "Orthworm": 2,
-    "Juliana": 2
+    "Flamigo": 2,
+    "Tinkatink": 2,
+    "Swablu": 2,
+    "Toxapex": 2,
+    "Juliana": 2,
+    "Glimmora": 2,
+    "Terapagos ex": 2
   },
   "evolution_groups": [
     {
@@ -539,6 +573,7 @@
       "Miraidon ex",
       "Bellibolt ex",
       "Iron Bundle ex",
+      "Terapagos ex",
       "Terapagos ex"
     ],
     "strong_evolution_lines": [
@@ -575,6 +610,6 @@
     "partial_evolution_lines": [
       "Zorua → Zoroark"
     ],
-    "total_trainer_cards": 75
+    "total_trainer_cards": 84
   }
 }

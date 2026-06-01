@@ -1,8 +1,8 @@
 # Final Hourglass Spending Plan
 
-Generated: 2026-05-29  
+Generated: 2026-05-31  
 Model confidence: **PZ VERIFIED**  
-Collection total: 859 cards  
+Collection total: 886 cards  
 Batch size: 10 packs (120 ⧗ per batch)  
 
 > **DISCLAIMER**
@@ -13,18 +13,18 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 ## Optimal Spending Plan
 
-**3-batch plan rotating through top unified-score packs. Batch 1: Extradimensional Crisis. Batch 2: switch to Mega Altaria (near-complete). Batch 3: Lunala. Always rerun EV after each batch.**
+**3-batch plan rotating through top unified-score packs. Batch 1: Extradimensional Crisis. Batch 2: switch to Mega Altaria (near-complete). Batch 3: Fantastical Parade. Always rerun EV after each batch.**
 
 - Total batches: 3
 - Total hourglasses: 360 ⧗
 - Rerun EV after batch(es): [1, 2, 3]
-- Stopping condition: Stop any batch when cost_per_unique_card_10x exceeds 7.6⧗ (2× batch-1 baseline of 3.8⧗). Re-run EV before committing further.
+- Stopping condition: Stop any batch when cost_per_unique_card_10x exceeds 5.4⧗ (2× batch-1 baseline of 2.7⧗). Re-run EV before committing further.
 
 | # | Pack | Set | ⧗ Cost | Unified | 10x EV | ⧗/EV | DR Ratio | Missing | Near-Complete | Rerun? |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **Extradimensional Crisis** | A3a | 120 ⧗ | 31.5625 | 31.5156 | 3.8 | 0.749 | 84 | YES | YES |
-| 2 | **Mega Altaria** | B1 | 120 ⧗ | 31.4215 | 31.1909 | 3.9 | 0.790 | 105 | YES | YES |
-| 3 | **Lunala** | A3 | 120 ⧗ | 31.3025 | 31.2576 | 3.8 | 0.809 | 107 | YES | YES |
+| 1 | **Extradimensional Crisis** | A3a | 120 ⧗ | 44.8652 | 44.8183 | 2.7 | 0.794 | 84 | YES | YES |
+| 2 | **Mega Altaria** | B1 | 120 ⧗ | 44.3517 | 44.3005 | 2.7 | 0.853 | 105 | — | YES |
+| 3 | **Fantastical Parade** | B2 | 120 ⧗ | 43.7241 | 43.6178 | 2.8 | 0.899 | 172 | — | YES |
 
 ---
 
@@ -34,35 +34,35 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 - **Pack:** Extradimensional Crisis (Extradimensional Crisis)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 31.5625
-- **New-card EV (10x):** 31.5156
-- **Cost per EV unit (⧗/EV):** 3.8 ⧗
-- **DR ratio:** 0.749 ← near-complete
+- **Unified score:** 44.8652
+- **New-card EV (10x):** 44.8183
+- **Cost per EV unit (⧗/EV):** 2.7 ⧗
+- **DR ratio:** 0.794 ← near-complete
 - **Missing in pool:** 84
-- **Notes:** Open first batch from the top unified-score pack. WARNING: DR ratio=0.749 < 0.85 — this pool is near-complete; switch to #2 after this batch.
+- **Notes:** Open first batch from the top unified-score pack. WARNING: DR ratio=0.794 < 0.85 — this pool is near-complete; switch to #2 after this batch.
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 
 #### Batch 2 — Mega Altaria (B1)
 
 - **Pack:** Mega Altaria (Mega Rising)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 31.4215
-- **New-card EV (10x):** 31.1909
-- **Cost per EV unit (⧗/EV):** 3.9 ⧗
-- **DR ratio:** 0.790 ← near-complete
+- **Unified score:** 44.3517
+- **New-card EV (10x):** 44.3005
+- **Cost per EV unit (⧗/EV):** 2.7 ⧗
+- **DR ratio:** 0.853
 - **Missing in pool:** 105
 - **Notes:** Switched to #2 pack (near-complete flag on batch 1).
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 
-#### Batch 3 — Lunala (A3)
+#### Batch 3 — Fantastical Parade (B2)
 
-- **Pack:** Lunala (Celestial Guardians)
+- **Pack:** Fantastical Parade (Fantastical Parade)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 31.3025
-- **New-card EV (10x):** 31.2576
-- **Cost per EV unit (⧗/EV):** 3.8 ⧗
-- **DR ratio:** 0.809 ← near-complete
-- **Missing in pool:** 107
+- **Unified score:** 43.7241
+- **New-card EV (10x):** 43.6178
+- **Cost per EV unit (⧗/EV):** 2.8 ⧗
+- **DR ratio:** 0.899
+- **Missing in pool:** 172
 - **Notes:** Re-run EV after this batch; rotate to highest unified-score pack for batch 4.
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 

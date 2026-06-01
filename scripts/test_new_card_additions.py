@@ -68,6 +68,9 @@ build_auto_entry   = sc.build_auto_entry
 _normalize         = sc._normalize
 _PROMO_A_OVERRIDES = sc._PROMO_A_OVERRIDES
 _PROMO_B_OVERRIDES = sc._PROMO_B_OVERRIDES
+# Use the production alt-rarity vocabulary so the test tracks the real constant
+# (a change to RARE_PLUS_RARITIES propagates here instead of silently diverging).
+_ALT_RARITIES = sc.RARE_PLUS_RARITIES
 
 # ---------------------------------------------------------------------------
 # Load real reference data
@@ -164,7 +167,7 @@ def test_multi_set_new_card():
     check("same canonical_name", results[0].canonical_name == results[1].canonical_name == "Bulbasaur")
 
     # Simulate Phase 4b dedup (as in main()) — key is canonical_name.lower() + "|base"|"|alt"
-    _ALT_RARITIES_S2 = {"one_star", "two_star", "double_star", "three_star", "triple_star", "crown"}
+    _ALT_RARITIES_S2 = _ALT_RARITIES
 
     def _is_alt_s2(mr):
         pz_c = mr.pz_card
@@ -214,7 +217,7 @@ def test_new_alt_art_one_star():
 # ---------------------------------------------------------------------------
 # 4. New double_star alt-art — confirm is_alt includes double_star
 # ---------------------------------------------------------------------------
-def test_new_double_star():
+def test_new_two_star():
     print("\n--- 4. New double_star alt-art (is_alt check) ---")
     # Venusaur ex A1#251 is double_star; collection has base Venusaur ex (four_diamond, hp=340)
     # and alt-art Venusaur ex entry
@@ -234,10 +237,10 @@ def test_new_double_star():
 # ---------------------------------------------------------------------------
 # 5. New triple_star — is_alt=True for triple_star rarity
 # ---------------------------------------------------------------------------
-def test_new_triple_star():
+def test_new_three_star():
     print("\n--- 5. New triple_star (is_alt check) ---")
     # Find a real triple_star card in pack_sources
-    triple = next((r for r in PACK_SOURCES.values() if r.get("rarity") == "triple_star"), None)
+    triple = next((r for r in PACK_SOURCES.values() if r.get("rarity") == "three_star"), None)
     if triple is None:
         print("  SKIP: no triple_star card found in pack_sources")
         return
@@ -520,7 +523,7 @@ def test_all_rare_star_is_alt():
 
     for (sc_code, cn), ref in PACK_SOURCES.items():
         rarity = ref.get("rarity", "")
-        if rarity not in ("double_star", "triple_star"):
+        if rarity not in ("two_star", "three_star"):
             continue
         name = ref["card_name"]
 
@@ -776,7 +779,7 @@ def test_comprehensive_all_packs():
 # ---------------------------------------------------------------------------
 def test_phase4b_alt_art_tagging():
     print("\n--- 26. Phase 4b alt-art tagging via build_auto_entry + name guard ---")
-    _ALT_RARITIES = {"one_star", "two_star", "double_star", "three_star", "triple_star", "crown"}
+    # _ALT_RARITIES: use the module-level shared alias (defined at import)
 
     # Replicate Phase 4b logic inline: for a NEW_CARD result, call build_auto_entry
     # then apply the pack_sources name guard to set variant="alt art".
@@ -1154,7 +1157,7 @@ def test_phase4b_dedup_base_vs_altart():
     results = run(pz_cards, collection)
     check("both NEW_CARD", all(r.status == "NEW_CARD" for r in results))
 
-    _ALT_RARITIES_S33 = {"one_star", "two_star", "double_star", "three_star", "triple_star", "crown"}
+    _ALT_RARITIES_S33 = _ALT_RARITIES
 
     def _is_alt_s33(mr):
         pz_c = mr.pz_card
@@ -1225,8 +1228,8 @@ if __name__ == "__main__":
     test_simple_new_card()
     test_multi_set_new_card()
     test_new_alt_art_one_star()
-    test_new_double_star()
-    test_new_triple_star()
+    test_new_two_star()
+    test_new_three_star()
     test_both_variants_new()
     test_a1_mismatch_not_owned()
     test_a1_mismatch_owned()

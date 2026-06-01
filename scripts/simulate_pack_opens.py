@@ -24,7 +24,6 @@ Stderr: selection info, pull summary, output path.
 import argparse
 import json
 import random
-import re
 import sys
 from pathlib import Path
 
@@ -35,15 +34,13 @@ COLLECTION_FILE = ROOT / "collection.json"  # canonical source; strip JSONC comm
 
 sys.path.insert(0, str(Path(__file__).parent))
 from build_pack_ev import _norm_name as _normalize  # single canonical normalization
+from _collection_io import strip_comments
 
 
 def _load_collection() -> dict:
     """Load collection.json, stripping JSONC // comments before parsing."""
     raw = COLLECTION_FILE.read_text(encoding="utf-8")
-    # Only strip lines whose first non-whitespace chars are '//'; avoids corrupting
-    # any string value containing '//' (e.g. a future URL field).
-    clean = re.sub(r"(?m)^\s*//[^\n]*\n?", "", raw)
-    return json.loads(clean)
+    return json.loads(strip_comments(raw))
 
 
 def _load_pz_data() -> dict:

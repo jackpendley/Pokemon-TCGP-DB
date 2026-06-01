@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T19:08:42.222280+00:00",
+  "generated_at": "2026-05-31T21:37:29.218194+00:00",
   "generated_by": "build_promo_pack_ev.py",
   "meta": {
     "note": "Promo packs use Shop Tokens (not Hourglasses). EV is comparable within promo packs only — not directly comparable to regular pack EV.",
@@ -8,61 +8,6 @@
     "collection_total": null
   },
   "packs": [
-    {
-      "pack_name": "Promo Pack A Series Vol. 8",
-      "slug": "promo-pack-a-series-vol-8",
-      "expansion_id": "PROMO-A",
-      "card_count": 4,
-      "owned_in_pack": 0,
-      "missing_in_pack": 4,
-      "new_card_ev": 0.9198,
-      "copy_ev": 0.0,
-      "ex_card_ev": 0.3164,
-      "total_ev": 0.9198,
-      "source_status": "pz_verified",
-      "cards": [
-        {
-          "name": "Alolan Exeggutor",
-          "set_code": "PROMO-A",
-          "card_number": 69,
-          "is_ex": true,
-          "owned": 0,
-          "drop_chance": 0.1582,
-          "value": 2.0,
-          "ev": 0.3164
-        },
-        {
-          "name": "Alolan Ninetales",
-          "set_code": "PROMO-A",
-          "card_number": 70,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.1266,
-          "value": 1.0,
-          "ev": 0.1266
-        },
-        {
-          "name": "Crabrawler",
-          "set_code": "PROMO-A",
-          "card_number": 71,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
-        },
-        {
-          "name": "Alolan Grimer",
-          "set_code": "PROMO-A",
-          "card_number": 72,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
-        }
-      ]
-    },
     {
       "pack_name": "Promo Pack A Series Vol. 9",
       "slug": "promo-pack-a-series-vol-9",
@@ -351,117 +296,7 @@
           "set_code": "PROMO-A",
           "card_number": 38,
           "is_ex": false,
-          "owned": 4,
-          "drop_chance": 0.2384,
-          "value": 0.0,
-          "ev": 0.0
-        }
-      ]
-    },
-    {
-      "pack_name": "Promo Pack A Series Vol. 11",
-      "slug": "promo-pack-a-series-vol-11",
-      "expansion_id": "PROMO-A",
-      "card_count": 4,
-      "owned_in_pack": 1,
-      "missing_in_pack": 3,
-      "new_card_ev": 0.635,
-      "copy_ev": 0.09536,
-      "ex_card_ev": 0.0,
-      "total_ev": 0.73036,
-      "source_status": "pz_verified",
-      "cards": [
-        {
-          "name": "Horsea",
-          "set_code": "PROMO-A",
-          "card_number": 94,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
-        },
-        {
-          "name": "Chinchou",
-          "set_code": "PROMO-A",
-          "card_number": 95,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
-        },
-        {
-          "name": "Houndoom",
-          "set_code": "PROMO-A",
-          "card_number": 96,
-          "is_ex": false,
-          "owned": 1,
-          "drop_chance": 0.2384,
-          "value": 0.4,
-          "ev": 0.09536
-        },
-        {
-          "name": "Kangaskhan",
-          "set_code": "PROMO-A",
-          "card_number": 97,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.1582,
-          "value": 1.0,
-          "ev": 0.1582
-        }
-      ]
-    },
-    {
-      "pack_name": "Promo Pack A Series Vol. 12",
-      "slug": "promo-pack-a-series-vol-12",
-      "expansion_id": "PROMO-A",
-      "card_count": 4,
-      "owned_in_pack": 1,
-      "missing_in_pack": 3,
-      "new_card_ev": 0.635,
-      "copy_ev": 0.0,
-      "ex_card_ev": 0.0,
-      "total_ev": 0.635,
-      "source_status": "pz_verified",
-      "cards": [
-        {
-          "name": "Tropius",
-          "set_code": "PROMO-A",
-          "card_number": 102,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
-        },
-        {
-          "name": "Poliwag",
-          "set_code": "PROMO-A",
-          "card_number": 103,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
-        },
-        {
-          "name": "Milotic",
-          "set_code": "PROMO-A",
-          "card_number": 104,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.1582,
-          "value": 1.0,
-          "ev": 0.1582
-        },
-        {
-          "name": "Zorua",
-          "set_code": "PROMO-A",
-          "card_number": 105,
-          "is_ex": false,
-          "owned": 2,
+          "owned": 5,
           "drop_chance": 0.2384,
           "value": 0.0,
           "ev": 0.0
@@ -579,9 +414,9 @@
       ]
     },
     {
-      "pack_name": "Promo Pack B Series Vol. 6",
-      "slug": "promo-pack-b-series-vol-6",
-      "expansion_id": "PROMO-B",
+      "pack_name": "Promo Pack A Series Vol. 8",
+      "slug": "promo-pack-a-series-vol-8",
+      "expansion_id": "PROMO-A",
       "card_count": 4,
       "owned_in_pack": 1,
       "missing_in_pack": 3,
@@ -592,9 +427,19 @@
       "source_status": "pz_verified",
       "cards": [
         {
-          "name": "Slowpoke",
-          "set_code": "PROMO-B",
-          "card_number": 42,
+          "name": "Alolan Exeggutor",
+          "set_code": "PROMO-A",
+          "card_number": 69,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.1582,
+          "value": 1.0,
+          "ev": 0.1582
+        },
+        {
+          "name": "Alolan Ninetales",
+          "set_code": "PROMO-A",
+          "card_number": 70,
           "is_ex": false,
           "owned": 0,
           "drop_chance": 0.1266,
@@ -602,9 +447,9 @@
           "ev": 0.1266
         },
         {
-          "name": "Electrike",
-          "set_code": "PROMO-B",
-          "card_number": 43,
+          "name": "Crabrawler",
+          "set_code": "PROMO-A",
+          "card_number": 71,
           "is_ex": false,
           "owned": 0,
           "drop_chance": 0.2384,
@@ -612,24 +457,14 @@
           "ev": 0.2384
         },
         {
-          "name": "Varoom",
-          "set_code": "PROMO-B",
-          "card_number": 44,
+          "name": "Alolan Grimer",
+          "set_code": "PROMO-A",
+          "card_number": 72,
           "is_ex": false,
           "owned": 1,
           "drop_chance": 0.2384,
           "value": 0.4,
           "ev": 0.09536
-        },
-        {
-          "name": "Haxorus",
-          "set_code": "PROMO-B",
-          "card_number": 45,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.1582,
-          "value": 1.0,
-          "ev": 0.1582
         }
       ]
     },
@@ -641,9 +476,9 @@
       "owned_in_pack": 2,
       "missing_in_pack": 2,
       "new_card_ev": 0.4916,
-      "copy_ev": 0.19072,
+      "copy_ev": 0.09536,
       "ex_card_ev": 0.2532,
-      "total_ev": 0.68232,
+      "total_ev": 0.58696,
       "source_status": "pz_verified",
       "cards": [
         {
@@ -681,65 +516,10 @@
           "set_code": "PROMO-A",
           "card_number": 114,
           "is_ex": false,
-          "owned": 1,
+          "owned": 3,
           "drop_chance": 0.2384,
-          "value": 0.4,
-          "ev": 0.09536
-        }
-      ]
-    },
-    {
-      "pack_name": "Promo Pack A Series Vol. 6",
-      "slug": "promo-pack-a-series-vol-6",
-      "expansion_id": "PROMO-A",
-      "card_count": 4,
-      "owned_in_pack": 2,
-      "missing_in_pack": 2,
-      "new_card_ev": 0.4768,
-      "copy_ev": 0.06328,
-      "ex_card_ev": 0.0,
-      "total_ev": 0.54008,
-      "source_status": "pz_verified",
-      "cards": [
-        {
-          "name": "Floatzel",
-          "set_code": "PROMO-A",
-          "card_number": 53,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
-        },
-        {
-          "name": "Pawmot",
-          "set_code": "PROMO-A",
-          "card_number": 54,
-          "is_ex": false,
-          "owned": 2,
-          "drop_chance": 0.1266,
           "value": 0.0,
           "ev": 0.0
-        },
-        {
-          "name": "Machamp",
-          "set_code": "PROMO-A",
-          "card_number": 55,
-          "is_ex": false,
-          "owned": 1,
-          "drop_chance": 0.1582,
-          "value": 0.4,
-          "ev": 0.06328
-        },
-        {
-          "name": "Ekans",
-          "set_code": "PROMO-A",
-          "card_number": 56,
-          "is_ex": false,
-          "owned": 0,
-          "drop_chance": 0.2384,
-          "value": 1.0,
-          "ev": 0.2384
         }
       ]
     },
@@ -799,6 +579,116 @@
       ]
     },
     {
+      "pack_name": "Promo Pack A Series Vol. 11",
+      "slug": "promo-pack-a-series-vol-11",
+      "expansion_id": "PROMO-A",
+      "card_count": 4,
+      "owned_in_pack": 2,
+      "missing_in_pack": 2,
+      "new_card_ev": 0.3966,
+      "copy_ev": 0.19072,
+      "ex_card_ev": 0.0,
+      "total_ev": 0.58732,
+      "source_status": "pz_verified",
+      "cards": [
+        {
+          "name": "Horsea",
+          "set_code": "PROMO-A",
+          "card_number": 94,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.2384,
+          "value": 1.0,
+          "ev": 0.2384
+        },
+        {
+          "name": "Chinchou",
+          "set_code": "PROMO-A",
+          "card_number": 95,
+          "is_ex": false,
+          "owned": 1,
+          "drop_chance": 0.2384,
+          "value": 0.4,
+          "ev": 0.09536
+        },
+        {
+          "name": "Houndoom",
+          "set_code": "PROMO-A",
+          "card_number": 96,
+          "is_ex": false,
+          "owned": 1,
+          "drop_chance": 0.2384,
+          "value": 0.4,
+          "ev": 0.09536
+        },
+        {
+          "name": "Kangaskhan",
+          "set_code": "PROMO-A",
+          "card_number": 97,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.1582,
+          "value": 1.0,
+          "ev": 0.1582
+        }
+      ]
+    },
+    {
+      "pack_name": "Promo Pack A Series Vol. 12",
+      "slug": "promo-pack-a-series-vol-12",
+      "expansion_id": "PROMO-A",
+      "card_count": 4,
+      "owned_in_pack": 2,
+      "missing_in_pack": 2,
+      "new_card_ev": 0.3966,
+      "copy_ev": 0.09536,
+      "ex_card_ev": 0.0,
+      "total_ev": 0.49196,
+      "source_status": "pz_verified",
+      "cards": [
+        {
+          "name": "Tropius",
+          "set_code": "PROMO-A",
+          "card_number": 102,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.2384,
+          "value": 1.0,
+          "ev": 0.2384
+        },
+        {
+          "name": "Poliwag",
+          "set_code": "PROMO-A",
+          "card_number": 103,
+          "is_ex": false,
+          "owned": 1,
+          "drop_chance": 0.2384,
+          "value": 0.4,
+          "ev": 0.09536
+        },
+        {
+          "name": "Milotic",
+          "set_code": "PROMO-A",
+          "card_number": 104,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.1582,
+          "value": 1.0,
+          "ev": 0.1582
+        },
+        {
+          "name": "Zorua",
+          "set_code": "PROMO-A",
+          "card_number": 105,
+          "is_ex": false,
+          "owned": 2,
+          "drop_chance": 0.2384,
+          "value": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    {
       "pack_name": "Promo Pack B Series Vol. 1",
       "slug": "promo-pack-b-series-vol-1",
       "expansion_id": "PROMO-B",
@@ -854,6 +744,61 @@
       ]
     },
     {
+      "pack_name": "Promo Pack B Series Vol. 6",
+      "slug": "promo-pack-b-series-vol-6",
+      "expansion_id": "PROMO-B",
+      "card_count": 4,
+      "owned_in_pack": 2,
+      "missing_in_pack": 2,
+      "new_card_ev": 0.3966,
+      "copy_ev": 0.146,
+      "ex_card_ev": 0.0,
+      "total_ev": 0.5426,
+      "source_status": "pz_verified",
+      "cards": [
+        {
+          "name": "Slowpoke",
+          "set_code": "PROMO-B",
+          "card_number": 42,
+          "is_ex": false,
+          "owned": 1,
+          "drop_chance": 0.1266,
+          "value": 0.4,
+          "ev": 0.05064
+        },
+        {
+          "name": "Electrike",
+          "set_code": "PROMO-B",
+          "card_number": 43,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.2384,
+          "value": 1.0,
+          "ev": 0.2384
+        },
+        {
+          "name": "Varoom",
+          "set_code": "PROMO-B",
+          "card_number": 44,
+          "is_ex": false,
+          "owned": 1,
+          "drop_chance": 0.2384,
+          "value": 0.4,
+          "ev": 0.09536
+        },
+        {
+          "name": "Haxorus",
+          "set_code": "PROMO-B",
+          "card_number": 45,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.1582,
+          "value": 1.0,
+          "ev": 0.1582
+        }
+      ]
+    },
+    {
       "pack_name": "Promo Pack A Series Vol. 3",
       "slug": "promo-pack-a-series-vol-3",
       "expansion_id": "PROMO-A",
@@ -901,7 +846,7 @@
           "set_code": "PROMO-A",
           "card_number": 30,
           "is_ex": false,
-          "owned": 3,
+          "owned": 4,
           "drop_chance": 0.2384,
           "value": 0.0,
           "ev": 0.0
@@ -964,57 +909,57 @@
       ]
     },
     {
-      "pack_name": "Promo Pack B Series Vol. 3",
-      "slug": "promo-pack-b-series-vol-3",
-      "expansion_id": "PROMO-B",
+      "pack_name": "Promo Pack A Series Vol. 6",
+      "slug": "promo-pack-a-series-vol-6",
+      "expansion_id": "PROMO-A",
       "card_count": 4,
       "owned_in_pack": 3,
       "missing_in_pack": 1,
       "new_card_ev": 0.2384,
-      "copy_ev": 0.06328,
+      "copy_ev": 0.0,
       "ex_card_ev": 0.0,
-      "total_ev": 0.30168,
+      "total_ev": 0.2384,
       "source_status": "pz_verified",
       "cards": [
         {
-          "name": "Charmeleon",
-          "set_code": "PROMO-B",
-          "card_number": 20,
+          "name": "Floatzel",
+          "set_code": "PROMO-A",
+          "card_number": 53,
           "is_ex": false,
-          "owned": 2,
+          "owned": 4,
           "drop_chance": 0.2384,
           "value": 0.0,
           "ev": 0.0
         },
         {
-          "name": "Onix",
-          "set_code": "PROMO-B",
-          "card_number": 21,
+          "name": "Pawmot",
+          "set_code": "PROMO-A",
+          "card_number": 54,
+          "is_ex": false,
+          "owned": 4,
+          "drop_chance": 0.1266,
+          "value": 0.0,
+          "ev": 0.0
+        },
+        {
+          "name": "Machamp",
+          "set_code": "PROMO-A",
+          "card_number": 55,
           "is_ex": false,
           "owned": 3,
-          "drop_chance": 0.2384,
+          "drop_chance": 0.1582,
           "value": 0.0,
           "ev": 0.0
         },
         {
-          "name": "Hawlucha",
-          "set_code": "PROMO-B",
-          "card_number": 22,
+          "name": "Ekans",
+          "set_code": "PROMO-A",
+          "card_number": 56,
           "is_ex": false,
           "owned": 0,
           "drop_chance": 0.2384,
           "value": 1.0,
           "ev": 0.2384
-        },
-        {
-          "name": "Genesect",
-          "set_code": "PROMO-B",
-          "card_number": 23,
-          "is_ex": false,
-          "owned": 1,
-          "drop_chance": 0.1582,
-          "value": 0.4,
-          "ev": 0.06328
         }
       ]
     },
@@ -1070,6 +1015,61 @@
           "drop_chance": 0.1582,
           "value": 1.0,
           "ev": 0.1582
+        }
+      ]
+    },
+    {
+      "pack_name": "Promo Pack B Series Vol. 3",
+      "slug": "promo-pack-b-series-vol-3",
+      "expansion_id": "PROMO-B",
+      "card_count": 4,
+      "owned_in_pack": 4,
+      "missing_in_pack": 0,
+      "new_card_ev": 0.0,
+      "copy_ev": 0.15864,
+      "ex_card_ev": 0.0,
+      "total_ev": 0.15864,
+      "source_status": "pz_verified",
+      "cards": [
+        {
+          "name": "Charmeleon",
+          "set_code": "PROMO-B",
+          "card_number": 20,
+          "is_ex": false,
+          "owned": 2,
+          "drop_chance": 0.2384,
+          "value": 0.0,
+          "ev": 0.0
+        },
+        {
+          "name": "Onix",
+          "set_code": "PROMO-B",
+          "card_number": 21,
+          "is_ex": false,
+          "owned": 3,
+          "drop_chance": 0.2384,
+          "value": 0.0,
+          "ev": 0.0
+        },
+        {
+          "name": "Hawlucha",
+          "set_code": "PROMO-B",
+          "card_number": 22,
+          "is_ex": false,
+          "owned": 1,
+          "drop_chance": 0.2384,
+          "value": 0.4,
+          "ev": 0.09536
+        },
+        {
+          "name": "Genesect",
+          "set_code": "PROMO-B",
+          "card_number": 23,
+          "is_ex": false,
+          "owned": 1,
+          "drop_chance": 0.1582,
+          "value": 0.4,
+          "ev": 0.06328
         }
       ]
     },
@@ -1176,7 +1176,7 @@
           "set_code": "PROMO-B",
           "card_number": 59,
           "is_ex": false,
-          "owned": 6,
+          "owned": 8,
           "drop_chance": 0.2384,
           "value": 0.0,
           "ev": 0.0

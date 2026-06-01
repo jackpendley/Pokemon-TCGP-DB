@@ -19,6 +19,9 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import is_ex_from_name
+
 ROOT = Path(__file__).resolve().parent.parent
 
 PZ_PACK_ODDS_JSON  = ROOT / "data" / "reference" / "pz_pack_odds.json"
@@ -43,6 +46,14 @@ def _norm(name: str) -> str:
 
 
 def value_of_next_copy(owned: int, is_ex: bool) -> float:
+    # NOTE: unlike build_pack_ev (which values cards by rarity tier), promo cards
+    # have NO rarity scale — every promo is a flat "promo" rarity in all sources
+    # (pz_pack_odds has no rarity field; pack_sources is null; ext_ref is uniformly
+    # "promo"). So RARITY_BONUS can't distinguish promo chase cards. The ex/non-ex
+    # split is the meaningful signal here (ex cards are the promo chase pulls), so
+    # this model intentionally keeps the is_ex bonus. Promo EV (Shop Tickets) is a
+    # separate currency from pack EV (Hourglasses) and is ranked independently, so
+    # the two value scales not being comparable is by design.
     if owned >= 2:
         return 0.0
     if owned == 0:
@@ -57,14 +68,26 @@ def value_of_next_copy(owned: int, is_ex: bool) -> float:
     return v
 
 
-def load_collection(path: Path) -> dict[str, int]:
-    """Returns {normalized_name: owned_count}."""
+def load_collection(path: Path) -> tuple[dict[str, int], dict[tuple, int]]:
+    """Returns (by_name, by_coord):
+      by_name:  {normalized_name: owned_count}              — fallback
+      by_coord: {(set_code_upper, card_number): owned_count} — preferred, set-exact
+    """
     raw = json.loads(path.read_text(encoding="utf-8"))
-    result: dict[str, int] = {}
+    by_name: dict[str, int] = {}
+    by_coord: dict[tuple, int] = {}
     for e in raw.get("collection", []):
+        cnt = e.get("count", 0)
         name = _norm(e.get("name", ""))
-        result[name] = result.get(name, 0) + e.get("count", 0)
-    return result
+        by_name[name] = by_name.get(name, 0) + cnt
+        sc = str(e.get("set_code") or "").upper().strip()
+        cn = e.get("card_number")
+        if sc and cn is not None:
+            try:
+                by_coord[(sc, int(cn))] = by_coord.get((sc, int(cn)), 0) + cnt
+            except (TypeError, ValueError):
+                pass
+    return by_name, by_coord
 
 
 def load_promo_ps_index(path: Path) -> dict[tuple, dict]:
@@ -86,7 +109,8 @@ def load_promo_ps_index(path: Path) -> dict[tuple, dict]:
 # ---------------------------------------------------------------------------
 
 def compute_promo_pack_ev(slug: str, pack_data: dict, collection: dict[str, int],
-                          ps_idx: dict[tuple, dict]) -> dict:
+                          ps_idx: dict[tuple, dict],
+                          collection_by_coord: dict[tuple, int] | None = None) -> dict:
     cards = pack_data.get("cards", [])
     pack_name = pack_data.get("pack_name", slug)
     expansion_id = pack_data.get("expansion_id", "")
@@ -109,13 +133,19 @@ def compute_promo_pack_ev(slug: str, pack_data: dict, collection: dict[str, int]
         ps_rec = ps_idx.get((sc, cn))
         if ps_rec:
             card_name = ps_rec.get("card_name", card.get("name", ""))
-            is_ex     = bool(ps_rec.get("is_ex", False))
         else:
             card_name = card.get("name", "")
-            is_ex     = "ex" in card_name.lower() and not card_name.lower().startswith("exegg")
+        # EX status from the canonical " ex" name suffix (pack_sources.is_ex is null;
+        # the old substring heuristic mislabeled "Alolan Exeggutor", "Pokédex", etc.).
+        is_ex = is_ex_from_name(card_name)
 
-        # Get owned count from collection
-        owned = collection.get(_norm(card_name), 0)
+        # Owned count: prefer the exact (set_code, card_number) coord — avoids
+        # name-normalization mismatches and cross-set same-name collisions. Fall
+        # back to name only when the coord isn't in the collection index.
+        if collection_by_coord is not None and cn is not None and (sc, cn) in collection_by_coord:
+            owned = collection_by_coord[(sc, cn)]
+        else:
+            owned = collection.get(_norm(card_name), 0)
 
         value = value_of_next_copy(owned, is_ex)
         ev    = p_pull * value
@@ -238,7 +268,7 @@ def main():
     print("=== build_promo_pack_ev.py ===")
 
     pz_raw     = json.loads(PZ_PACK_ODDS_JSON.read_text(encoding="utf-8"))
-    collection = load_collection(COLLECTION_JSON)
+    collection, collection_by_coord = load_collection(COLLECTION_JSON)
     ps_idx     = load_promo_ps_index(PACK_SOURCES_JSON)
 
     promo_slugs = [slug for slug in pz_raw if "promo" in slug]
@@ -247,7 +277,8 @@ def main():
 
     records = []
     for slug in sorted(promo_slugs):
-        rec = compute_promo_pack_ev(slug, pz_raw[slug], collection, ps_idx)
+        rec = compute_promo_pack_ev(slug, pz_raw[slug], collection, ps_idx,
+                                    collection_by_coord)
         records.append(rec)
 
     records.sort(key=lambda r: r["new_card_ev"], reverse=True)

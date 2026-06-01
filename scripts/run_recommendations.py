@@ -30,6 +30,9 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import strip_comments
+
 ROOT = Path(__file__).resolve().parent.parent
 LOG_FILE = ROOT / "data" / "pipeline.log"
 
@@ -117,11 +120,17 @@ def _find_latest_pz_json() -> Path:
     return candidates[-1]
 
 
+def _load_collection_json() -> dict:
+    """Read + comment-strip + parse collection.json. Not cached: assign rewrites the
+    file mid-pipeline, so _collection_status (pre-assign) and _read_meta_total
+    (post-assign) intentionally read at different times."""
+    raw = (ROOT / "collection.json").read_text(encoding="utf-8")
+    return json.loads(strip_comments(raw))
+
+
 def _read_meta_total() -> str:
     try:
-        raw = (ROOT / "collection.json").read_text(encoding="utf-8")
-        cleaned = re.sub(r"(?m)^\s*//[^\n]*\n?", "", raw)
-        data = json.loads(cleaned)
+        data = _load_collection_json()
         return str(data.get("meta", {}).get("total_cards", 380))
     except (FileNotFoundError, json.JSONDecodeError, KeyError):
         return "0"
@@ -130,9 +139,7 @@ def _read_meta_total() -> str:
 def _collection_status() -> str:
     """Read total/unique from collection.json for the sync status line."""
     try:
-        raw = (ROOT / "collection.json").read_text(encoding="utf-8")
-        cleaned = re.sub(r"(?m)^\s*//[^\n]*\n?", "", raw)
-        data = json.loads(cleaned)
+        data = _load_collection_json()
         meta = data.get("meta", {})
         total = meta.get("total_cards", "?")
         unique = len(data.get("collection", []))
@@ -313,6 +320,31 @@ def main() -> int:
                     sync_had_review_items = True
             except Exception:
                 pass
+
+    # ── Assign / normalize collection entries ─────────────────────────────
+    # Fills missing set_code/card_number/rarity, strips is_ex, normalizes
+    # set_code casing and rarity aliases. Idempotent — safe on every run.
+    rc, stdout = _run("Normalize entries", "scripts/assign_collection_coords.py")
+    if rc != 0:
+        _print_step("Normalize entries", rc, "FATAL — check data/pipeline.log")
+        return 1
+    _print_step("Normalize entries", rc, "OK")
+
+    # ── Validate coords against cached TCGdex + ext_ref ───────────────────
+    # Run offline (--no-fetch) so the pipeline stays headless and deterministic —
+    # the TCGdex cache is refreshed out-of-band via `validate_collection_coords.py`
+    # (with fetch). Exit codes: 2 = serious (coord points at a wrong/nonexistent
+    # card → would skew set-aware EV → FATAL); 1 = advisory HP diff (WARN, don't
+    # block recommendations over a cosmetic diff); 0 = clean.
+    rc, stdout = _run("Validate coords", "scripts/validate_collection_coords.py",
+                      ["--no-fetch"])
+    if rc >= 2:
+        _print_step("Validate coords", rc, "FATAL — serious coord error (see data/pipeline.log)")
+        return 1
+    elif rc == 1:
+        _print_step("Validate coords", rc, "WARN — advisory (HP diff / 0 cross-checks; see data/pipeline.log)")
+    else:
+        _print_step("Validate coords", rc, "OK")
 
     # ── Validate ──────────────────────────────────────────────────────────
     rc, stdout = _run("Validate collection", "scripts/validate_current_collection.py",

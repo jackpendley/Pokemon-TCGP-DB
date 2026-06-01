@@ -11,10 +11,12 @@ Usage:
 
 import argparse
 import json
-import re
 import sys
 from collections import Counter
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import strip_comments, is_ex_from_name, TRAINER_SUBTYPE_MAP
 
 ROOT = Path(__file__).resolve().parent.parent
 COLLECTION_JSON = ROOT / "collection.json"
@@ -24,13 +26,8 @@ VALID_POKEMON_TYPES = {
     "Fire", "Grass", "Water", "Lightning", "Psychic",
     "Fighting", "Darkness", "Metal", "Dragon", "Colorless",
 }
-VALID_TRAINER_SUBTYPES = {"Item", "Supporter", "Stadium", "Pokemon Tool"}
-
-
-def strip_comments(text):
-    # Only strip lines whose first non-whitespace chars are '//'; avoids corrupting
-    # any string value containing '//' (e.g. a future URL field).
-    return re.sub(r"(?m)^\s*//[^\n]*\n?", "", text)
+# Valid trainer_subtype values, derived from the shared category map (single source).
+VALID_TRAINER_SUBTYPES = set(TRAINER_SUBTYPE_MAP.values())
 
 
 def load_collection():
@@ -124,9 +121,10 @@ def validate(data, expected_total):
             if stage is None:
                 missing_optional["stage"] += 1
 
-            is_ex = entry.get("is_ex", False)
-            if not isinstance(is_ex, bool):
-                failures.append(f"Entry {i} ({name!r}): is_ex must be boolean true/false, got {is_ex!r}")
+            # Detect EX cards by the canonical " ex" name suffix (the is_ex field
+            # is no longer stored on collection entries). Shared helper keeps this
+            # consistent with normalize/report.
+            is_ex = is_ex_from_name(name)
             if is_ex:
                 ex_entry_count += 1
                 ex_card_count += (count or 0)

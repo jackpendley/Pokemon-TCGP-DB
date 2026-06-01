@@ -44,18 +44,18 @@ def packs(pack_ev):
 def test_rarity_bonus_crown_gt_one_diamond():
     """Missing a crown card is worth more than missing a one_diamond card."""
     deck_targets: dict = {}
-    v_crown = bev.value_of_next_copy(0, False, "crown", deck_targets, "test_crown")
-    v_common = bev.value_of_next_copy(0, False, "one_diamond", deck_targets, "test_common")
+    v_crown = bev.value_of_next_copy(0, "crown", deck_targets, "test_crown")
+    v_common = bev.value_of_next_copy(0, "one_diamond", deck_targets, "test_common")
     assert v_crown > v_common, (
         f"crown value ({v_crown}) should exceed one_diamond value ({v_common})"
     )
 
 
 def test_rarity_bonus_ordering():
-    """Rarity value ordering: crown > triple_star > double_star > one_star > four_diamond."""
+    """Rarity value ordering matches RARITY_BONUS: crown > three_star > two_star > four_diamond > one_star > three_diamond >= two_diamond = one_diamond."""
     deck_targets: dict = {}
-    rarities = ["crown", "triple_star", "double_star", "one_star", "four_diamond", "three_diamond", "two_diamond", "one_diamond"]
-    values = [bev.value_of_next_copy(0, False, r, deck_targets, f"test_{r}") for r in rarities]
+    rarities = ["crown", "three_star", "two_star", "four_diamond", "one_star", "three_diamond", "two_diamond", "one_diamond"]
+    values = [bev.value_of_next_copy(0, r, deck_targets, f"test_{r}") for r in rarities]
     for i in range(len(values) - 1):
         assert values[i] >= values[i + 1], (
             f"value[{rarities[i]}]={values[i]} should be >= value[{rarities[i+1]}]={values[i+1]}"
@@ -65,8 +65,8 @@ def test_rarity_bonus_ordering():
 def test_rarity_bonus_only_on_first_copy():
     """Rarity bonus applies only on owned=0; owned=1 always equals copy_up_to_2."""
     deck_targets: dict = {}
-    v_crown_second  = bev.value_of_next_copy(1, False, "crown",       deck_targets, "test")
-    v_common_second = bev.value_of_next_copy(1, False, "one_diamond", deck_targets, "test")
+    v_crown_second  = bev.value_of_next_copy(1, "crown",       deck_targets, "test")
+    v_common_second = bev.value_of_next_copy(1, "one_diamond", deck_targets, "test")
     expected = bev.SCORING_WEIGHTS["copy_up_to_2"]
     assert v_crown_second == expected, f"crown 2nd copy: expected {expected}, got {v_crown_second}"
     assert v_common_second == expected, f"common 2nd copy: expected {expected}, got {v_common_second}"
@@ -75,8 +75,8 @@ def test_rarity_bonus_only_on_first_copy():
 def test_no_rarity_bonus_at_cap():
     """At owned=2, value is 0 regardless of rarity."""
     deck_targets: dict = {}
-    assert bev.value_of_next_copy(2, False, "crown", deck_targets, "test") == 0.0
-    assert bev.value_of_next_copy(2, True, "crown", deck_targets, "test") == 0.0
+    assert bev.value_of_next_copy(2, "crown",      deck_targets, "test") == 0.0
+    assert bev.value_of_next_copy(2, "one_diamond", deck_targets, "test") == 0.0
 
 
 # ---------------------------------------------------------------------------
@@ -87,8 +87,8 @@ def test_deck_bonus_scales_with_urgency():
     """Needing 1 more copy (short_by=1) is worth more than needing 2 (short_by=2)."""
     deck_1 = {"pikachu": 1}
     deck_2 = {"pikachu": 2}
-    v_urgent = bev.value_of_next_copy(0, False, "one_diamond", deck_1, "pikachu")
-    v_less   = bev.value_of_next_copy(0, False, "one_diamond", deck_2, "pikachu")
+    v_urgent = bev.value_of_next_copy(0, "one_diamond", deck_1, "pikachu")
+    v_less   = bev.value_of_next_copy(0, "one_diamond", deck_2, "pikachu")
     assert v_urgent > v_less, (
         f"1 copy needed ({v_urgent}) should be worth more than 2 copies needed ({v_less})"
     )
@@ -97,7 +97,7 @@ def test_deck_bonus_scales_with_urgency():
 def test_deck_bonus_at_1_equals_full_weight():
     """When short_by=1, deck bonus = SCORING_WEIGHTS['deck_target'] (full bonus)."""
     deck = {"test": 1}
-    v = bev.value_of_next_copy(0, False, "one_diamond", deck, "test")
+    v = bev.value_of_next_copy(0, "one_diamond", deck, "test")
     expected = (
         bev.SCORING_WEIGHTS["new_card"]
         + bev.RARITY_BONUS["one_diamond"]
@@ -109,7 +109,7 @@ def test_deck_bonus_at_1_equals_full_weight():
 def test_deck_bonus_at_2_equals_half_weight():
     """When short_by=2, deck bonus = SCORING_WEIGHTS['deck_target'] / 2."""
     deck = {"test": 2}
-    v = bev.value_of_next_copy(0, False, "one_diamond", deck, "test")
+    v = bev.value_of_next_copy(0, "one_diamond", deck, "test")
     expected = (
         bev.SCORING_WEIGHTS["new_card"]
         + bev.RARITY_BONUS["one_diamond"]
@@ -121,7 +121,7 @@ def test_deck_bonus_at_2_equals_half_weight():
 def test_no_deck_bonus_for_non_target():
     """Card not in deck_targets gets no deck bonus."""
     deck = {"other_card": 1}
-    v = bev.value_of_next_copy(0, False, "one_diamond", deck, "pikachu")
+    v = bev.value_of_next_copy(0, "one_diamond", deck, "pikachu")
     expected = bev.SCORING_WEIGHTS["new_card"] + bev.RARITY_BONUS["one_diamond"]
     assert abs(v - expected) < 1e-9
 

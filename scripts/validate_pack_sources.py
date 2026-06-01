@@ -28,7 +28,7 @@ VALID_SET_CODES = {
 }
 VALID_RARITIES = {
     "one_diamond", "two_diamond", "three_diamond", "four_diamond",
-    "one_star", "double_star", "triple_star", "crown", "promo", None,
+    "one_star", "two_star", "three_star", "crown", "promo", None,
 }
 VALID_CONFIDENCES = {"high", "medium", "low"}
 REQUIRED_FIELDS = ["set_code", "card_number", "card_name", "pack_name", "expansion"]

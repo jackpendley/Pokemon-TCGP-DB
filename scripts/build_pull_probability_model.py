@@ -51,7 +51,7 @@ OUT_MD = ROOT / "review" / "pull_probability_model.md"
 
 RARITY_FIELDS = [
     "one_diamond", "two_diamond", "three_diamond", "four_diamond",
-    "one_star", "double_star", "triple_star", "crown", "promo", "unknown",
+    "one_star", "two_star", "three_star", "crown", "promo", "unknown",
 ]
 
 STANDARD_SLOT_MODEL = {
@@ -138,8 +138,8 @@ _STANDARD_SLOT_4 = {
     "three_diamond": 0.05000,
     "four_diamond":  0.01666,
     "one_star":      0.02572,
-    "double_star":   0.00500,
-    "triple_star":   0.00222,
+    "two_star":   0.00500,
+    "three_star":   0.00222,
     "crown":         0.00040,
 }
 _STANDARD_SLOT_5 = {
@@ -147,14 +147,14 @@ _STANDARD_SLOT_5 = {
     "three_diamond": 0.20000,
     "four_diamond":  0.06664,
     "one_star":      0.10288,
-    "double_star":   0.02000,
-    "triple_star":   0.00888,
+    "two_star":   0.02000,
+    "three_star":   0.00888,
     "crown":         0.00160,
 }
 _STANDARD_RARE_PACK = {
     "one_star":    0.40,
-    "double_star": 0.50,
-    "triple_star": 0.05,
+    "two_star": 0.50,
+    "three_star": 0.05,
     "crown":       0.05,
 }
 _THIRD_PARTY_CROSS_CHECKS = [
@@ -331,8 +331,8 @@ PULSING_AURA_SLOT_RATES = {
         "three_diamond": 0.05000,
         "four_diamond":  0.01667,
         "one_star":      0.02572,
-        "double_star":   0.00500,
-        "triple_star":   0.00222,
+        "two_star":   0.00500,
+        "three_star":   0.00222,
         "crown":         0.00040,
     },
     "slot_5": {
@@ -340,8 +340,8 @@ PULSING_AURA_SLOT_RATES = {
         "three_diamond": 0.20000,
         "four_diamond":  0.06667,
         "one_star":      0.10286,
-        "double_star":   0.02000,
-        "triple_star":   0.00889,
+        "two_star":   0.02000,
+        "three_star":   0.00889,
         "crown":         0.00160,
     },
     "slot_6": {
@@ -355,8 +355,8 @@ PULSING_AURA_SLOT_RATES = {
     },
     "rare_pack_all_5_slots": {
         "one_star":              0.47058,
-        "double_star":           0.45098,
-        "triple_star":           0.03921,
+        "two_star":           0.45098,
+        "three_star":           0.03921,
         "crown_or_highest_rare": 0.03921,
     },
     "confidence": "user_in_app_verified_plus_bulbapedia",
@@ -1017,8 +1017,8 @@ def write_md(out: dict, pack_records: list):
             f"| {cp.get('three_diamond', 0)} "
             f"| {cp.get('four_diamond', 0)} "
             f"| {cp.get('one_star', 0)} "
-            f"| {cp.get('double_star', 0)} "
-            f"| {cp.get('triple_star', 0)} |"
+            f"| {cp.get('two_star', 0)} "
+            f"| {cp.get('three_star', 0)} |"
         )
 
     lines += [

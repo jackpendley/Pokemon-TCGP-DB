@@ -46,6 +46,9 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import strip_comments, TRAINER_SUBTYPE_MAP, RARE_PLUS_RARITIES, is_ex_from_name
+
 
 ROOT            = Path(__file__).resolve().parent.parent
 COLLECTION_JSON = ROOT / "collection.json"
@@ -88,16 +91,10 @@ class CountChange:
 # JSON / reference loaders
 # ---------------------------------------------------------------------------
 
-def _strip_comments(text: str) -> str:
-    # Only strip lines whose first non-whitespace chars are '//'; avoids corrupting
-    # any string value containing '//' (e.g. a future URL field).
-    return re.sub(r"(?m)^\s*//[^\n]*\n?", "", text)
-
-
 def load_collection() -> tuple[str, dict]:
     """Return (raw_text, parsed_dict) for collection.json."""
     raw = COLLECTION_JSON.read_text(encoding="utf-8")
-    data = json.loads(_strip_comments(raw))
+    data = json.loads(strip_comments(raw))
     return raw, data
 
 
@@ -147,8 +144,7 @@ def build_card_meta(
                 card_type = "Pokemon" if cat == "Pokemon" else "Trainer"
                 meta[nn] = {
                     "card_type": card_type,
-                    "trainer_subtype": _TRAINER_SUBTYPE_MAP.get(cat) if card_type == "Trainer" else None,
-                    "is_ex": bool(r.get("is_ex", False)),
+                    "trainer_subtype": TRAINER_SUBTYPE_MAP.get(cat) if card_type == "Trainer" else None,
                     "type": r.get("pokemon_type"),
                 }
                 break
@@ -159,7 +155,6 @@ def build_card_meta(
             meta[nn] = {
                 "card_type": entry["card_type"],
                 "trainer_subtype": entry.get("trainer_subtype"),
-                "is_ex": bool(entry.get("is_ex", False)),
                 "type": entry.get("type"),
             }
 
@@ -249,9 +244,7 @@ _RARITY_RANK: dict[str, int] = {
     "four_diamond":  4,
     "one_star":      5,
     "two_star":      6,
-    "double_star":   6,
     "three_star":    7,
-    "triple_star":   7,
     "crown":         8,
 }
 
@@ -494,10 +487,7 @@ def _match_one(
             # rarity (e.g. triple_star for "Charizard ex" at the Farfetch'd slot).
             if ps_ref and _normalize(ps_ref["card_name"]) == _normalize(canonical_name):
                 rarity = ps_ref.get("rarity", "")
-                is_pz_alt = rarity in {
-                    "one_star", "two_star", "double_star",
-                    "three_star", "triple_star", "crown",
-                }
+                is_pz_alt = rarity in RARE_PLUS_RARITIES
                 entry_is_alt = "alt" in str(single_entry.get("variant", "")).lower().split()
                 if is_pz_alt != entry_is_alt:
                     return MatchResult(status="NEW_CARD", pz_card=pz, canonical_name=canonical_name)
@@ -521,6 +511,26 @@ def _match_one(
                 pz_card=pz,
                 entry=collection[exact[0]],
                 entry_index=exact[0],
+                canonical_name=canonical_name,
+            )
+
+    # Step 0 (preferred): coord-exact match. Collection entries now carry
+    # set_code/card_number, so when the PZ card's exact coord is present among the
+    # same-name entries, match it directly. This is more reliable than the HP/rarity
+    # heuristics below (legacy fallbacks for entries without coords) and correctly
+    # pairs base vs alt-art prints when PZ returns BOTH (e.g. Glimmora B3A/45 base +
+    # B3A/78 alt) — the base entry may lack an hp field, which would otherwise let
+    # the alt entry wrongly absorb both PZ records.
+    if pz.set_code and pz.card_number is not None:
+        coord_idx = [i for i in indices
+                     if str(collection[i].get("set_code") or "").upper() == pz.set_code
+                     and collection[i].get("card_number") == pz.card_number]
+        if len(coord_idx) == 1:
+            return MatchResult(
+                status="MATCHED",
+                pz_card=pz,
+                entry=collection[coord_idx[0]],
+                entry_index=coord_idx[0],
                 canonical_name=canonical_name,
             )
 
@@ -552,7 +562,7 @@ def _match_one(
         ps_ref = pack_sources.get((pz.set_code, pz.card_number))
         if ps_ref and _normalize(ps_ref["card_name"]) == _normalize(canonical_name):
             rarity = ps_ref.get("rarity", "")
-            is_alt = rarity in {"one_star", "two_star", "double_star", "three_star", "triple_star", "crown"}
+            is_alt = rarity in RARE_PLUS_RARITIES
             alt_idx = [i for i in indices
                        if "alt" in str(collection[i].get("variant", "")).lower().split()]
             reg_idx = [i for i in indices
@@ -716,19 +726,12 @@ _STAGE_MAP: dict[str, tuple[int, str]] = {
     "Stage 2": (2, "Stage 2"),
 }
 
-# Maps ext_ref card_category to trainer_subtype in collection.json schema
-_TRAINER_SUBTYPE_MAP: dict[str, str] = {
-    "Supporter":  "Supporter",
-    "Item":       "Item",
-    "Stadium":    "Stadium",
-    "Tool":       "Pokemon Tool",
-}
-
 
 def build_auto_entry(
     mr: "MatchResult",
     ext_ref: dict,
     card_meta: dict | None = None,
+    resolver=None,
 ) -> dict:
     """Build a collection entry for a NEW_CARD match.
 
@@ -741,17 +744,37 @@ def build_auto_entry(
 
     Never returns None: one of the five paths always produces a valid entry.
     Callers should check that canonical_name is non-empty before calling.
+
+    If `resolver` (a coord_resolver.CoordResolver) is given, the coord is
+    cross-validated (PZ # → pack_sources → TCGdex/Limitless) so a new card's
+    set_code is corrected at add time — PZ mislabels the A4b "Deluxe Pack: ex"
+    set as A1/A2/A3/A4 while keeping the right number. Falls back to the raw PZ
+    coord when no resolver is supplied or the coord can't be confirmed.
     """
     nn = _normalize(mr.canonical_name)
     pz = mr.pz_card
     records = ext_ref.get(nn, [])
 
     def _with_coords(e: dict) -> dict:
-        """Inject set_code / card_number from the PZ source record when available."""
-        if pz.set_code:
-            e["set_code"] = pz.set_code
-        if pz.card_number is not None:
-            e["card_number"] = pz.card_number
+        """Inject the (cross-validated, if a resolver is given) coord from PZ."""
+        sc_code, cn = pz.set_code, pz.card_number
+        if resolver is not None and pz.card_number is not None:
+            rc = resolver.resolve(mr.canonical_name, pz.set_code, pz.card_number)
+            if rc.confidence in ("confirmed", "single-source") and rc.set_code:
+                if (rc.set_code, rc.card_number) != (pz.set_code, pz.card_number):
+                    print(f"  COORD: {mr.canonical_name} {pz.set_code}/{pz.card_number} "
+                          f"→ {rc.set_code}/{rc.card_number} (cross-validated, {rc.confidence})",
+                          file=sys.stderr)
+                sc_code, cn = rc.set_code, rc.card_number
+                if rc.rarity and not e.get("rarity"):
+                    e["rarity"] = rc.rarity
+            else:
+                print(f"  WARN: coord for {mr.canonical_name} {pz.set_code}/{pz.card_number} "
+                      f"unconfirmed ({rc.confidence}) — using raw PZ coord", file=sys.stderr)
+        if sc_code:
+            e["set_code"] = sc_code
+        if cn is not None:
+            e["card_number"] = cn
         return e
 
     if records:
@@ -807,27 +830,28 @@ def build_auto_entry(
                 entry["hp"] = hp
         else:
             entry["card_type"] = "Trainer"
-            subtype = _TRAINER_SUBTYPE_MAP.get(cat)
+            subtype = TRAINER_SUBTYPE_MAP.get(cat)
             if subtype:
                 entry["trainer_subtype"] = subtype
             else:
                 print(
                     f"  WARN: unknown trainer category {cat!r} for {mr.canonical_name!r} "
-                    f"— add to _TRAINER_SUBTYPE_MAP",
+                    f"— add to TRAINER_SUBTYPE_MAP",
                     file=sys.stderr,
                 )
-        entry["is_ex"] = bool(best.get("is_ex", False))
+        # is_ex is intentionally not written: it's no longer a tracked collection
+        # field (EX status derives from the " ex" name suffix via is_ex_from_name,
+        # and assign_collection_coords strips any stray is_ex).
         return _with_coords(entry)
 
     # No ext_ref record — fall back to name-based inference.
 
     # Heuristic 1: " ex" suffix is unambiguous in TCGP.
-    if mr.canonical_name.lower().endswith(" ex"):
+    if is_ex_from_name(mr.canonical_name):
         return _with_coords({
             "name": mr.canonical_name,
             "count": pz.count,
             "card_type": "Pokemon",
-            "is_ex": True,
         })
 
     # Heuristic 2: card_meta lookup (B-set ext_ref + owned collection entries).
@@ -837,7 +861,6 @@ def build_auto_entry(
             "name": mr.canonical_name,
             "count": pz.count,
             "card_type": known["card_type"],
-            "is_ex": known["is_ex"],
         }
         if known["card_type"] == "Pokemon":
             if known.get("type"):
@@ -855,7 +878,6 @@ def build_auto_entry(
         "name": mr.canonical_name,
         "count": pz.count,
         "card_type": "Pokemon",
-        "is_ex": False,
     })
 
 
@@ -1113,6 +1135,8 @@ def main() -> int:
                         help="Show diff only, no writes")
     parser.add_argument("--force",       action="store_true",
                         help="Apply updates even if review queue has items")
+    parser.add_argument("--no-fetch",    action="store_true",
+                        help="Skip live coord cross-validation for new cards (use caches only)")
     args = parser.parse_args()
 
     # ── Load sibling client module ────────────────────────────────────────
@@ -1282,9 +1306,25 @@ def main() -> int:
     # Aggregate counts: the same card may appear in multiple sets in PZ
     # (e.g. Shroomish in B2 + B3); sum all copies into one collection entry.
     entry_pz_total: dict[int, int] = {}
+    entry_pz_coords: dict[int, set] = {}
     for r in matched:
         idx = r.entry_index
         entry_pz_total[idx] = entry_pz_total.get(idx, 0) + r.pz_card.count
+        entry_pz_coords.setdefault(idx, set()).add(
+            (str(r.pz_card.set_code or "").upper(), r.pz_card.card_number))
+
+    # Split-gap detection: when PZ maps copies from >1 DISTINCT coord onto a single
+    # entry, those copies are different printings that the per-coord model wants as
+    # separate entries — but in-place count editing can only aggregate them here.
+    # Surface it so the user runs the per-coord reconcile (which splits + cross-validates).
+    multi_coord = {i: cs for i, cs in entry_pz_coords.items() if len(cs) > 1}
+    if multi_coord:
+        names = sorted({collection_entries[i].get("name", "?") for i in multi_coord})
+        shown = ", ".join(names[:5]) + ("…" if len(names) > 5 else "")
+        print(f"  NOTE: {len(multi_coord)} entry(ies) received copies from multiple coords "
+              f"({shown}) — counts aggregated onto one entry. Run "
+              f"`python3 scripts/reconcile_coords_from_pz.py --apply` to split per printing.",
+              file=sys.stderr)
 
     changes: list[CountChange] = []
     for idx, new_count in entry_pz_total.items():
@@ -1310,7 +1350,18 @@ def main() -> int:
     still_new: list[MatchResult] = []
     n_assumed = 0
 
-    _ALT_RARITIES = {"one_star", "two_star", "double_star", "three_star", "triple_star", "crown"}
+    # Cross-validate new-card coords (corrects PZ A4b set-mislabels at add time).
+    # Best-effort: if the resolver can't load, fall back to raw PZ coords.
+    resolver = None
+    if new_cards:
+        try:
+            from coord_resolver import CoordResolver
+            resolver = CoordResolver(fetch=not args.no_fetch)
+        except Exception as e:
+            print(f"  WARN: coord cross-validation unavailable ({e}); using raw PZ coords",
+                  file=sys.stderr)
+
+    _ALT_RARITIES = RARE_PLUS_RARITIES
 
     def _mr_is_alt(mr: MatchResult) -> bool:
         """Return True if this NEW_CARD maps to an alt-rarity slot in pack_sources."""
@@ -1352,12 +1403,16 @@ def main() -> int:
 
     for mr in merged_new.values():
         nn = _normalize(mr.canonical_name)
-        entry = build_auto_entry(mr, ext_ref, card_meta)
+        entry = build_auto_entry(mr, ext_ref, card_meta, resolver=resolver)
         # Tag alt-art entries so they're distinguishable from base copies.
         # Uses the same name-guard as the rarity cross-check to avoid mismatch slots.
-        pz_c = mr.pz_card
-        if pz_c.set_code and pz_c.card_number is not None:
-            ps_r = pack_sources.get((pz_c.set_code, pz_c.card_number))
+        # IMPORTANT: look up the entry's RESOLVED coord (build_auto_entry may have
+        # corrected a PZ set-mislabel, e.g. A4b-as-A1) — using the raw PZ coord here
+        # would miss the alt-art rarity for exactly the mislabeled-set case.
+        ec = entry.get("set_code")
+        en = entry.get("card_number")
+        if ec and en is not None:
+            ps_r = pack_sources.get((str(ec).upper(), en))
             if (ps_r
                     and _normalize(ps_r["card_name"]) == _normalize(mr.canonical_name)
                     and ps_r.get("rarity") in _ALT_RARITIES):
@@ -1365,7 +1420,7 @@ def main() -> int:
         auto_added.append(entry)
         print(f"  Auto-adding: {mr.canonical_name} ×{mr.pz_card.count}")
         if (not ext_ref.get(nn)
-                and not mr.canonical_name.lower().endswith(" ex")
+                and not is_ex_from_name(mr.canonical_name)
                 and not (card_meta and nn in card_meta)):
             n_assumed += 1
 
@@ -1375,6 +1430,8 @@ def main() -> int:
             f"(no ext_ref metadata — run scripts/fetch_ext_ref.py to add)",
             file=sys.stderr,
         )
+    if resolver is not None:
+        resolver.save()
     new_cards = still_new
 
     # ── Phase 4c: Mark stale entries for removal ─────────────────────────────
@@ -1499,14 +1556,12 @@ def main() -> int:
         # count changes and appended entries don't shift earlier positions, so indices
         # remain valid against the fully-edited parsed collection.
         # Try direct JSON parse first: safe when 'edited' is json.dumps output (no comments).
-        # Fall back to _strip_comments only if that fails (original JSONC with // comment lines).
-        # This avoids _strip_comments corrupting any string value that contains '//', since
-        # json.dumps does not escape '/' and the regex strips everything after '//' on a line.
+        # Fall back to strip_comments only if that fails (original JSONC with // comment lines).
         try:
             staged = json.loads(edited)
         except json.JSONDecodeError:
             try:
-                staged = json.loads(_strip_comments(edited))
+                staged = json.loads(strip_comments(edited))
             except json.JSONDecodeError as exc:
                 print(f"  ERROR: could not parse collection for stale removal: {exc}", file=sys.stderr)
                 print("  Aborting — collection.json not modified.", file=sys.stderr)

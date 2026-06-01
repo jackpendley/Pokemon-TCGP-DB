@@ -181,7 +181,7 @@ def test_new_card_dedup():
     # Simulate Phase 4b dedup logic from main():
     # Key = canonical_name.lower() + "|alt"|"|base" to keep base and alt-art separate.
     # .lower() (not _normalize) preserves Nidoran♀ vs Nidoran♂ distinction.
-    _ALT_RARITIES = {"one_star", "two_star", "double_star", "three_star", "triple_star", "crown"}
+    _ALT_RARITIES = sc.RARE_PLUS_RARITIES  # shared production vocabulary
 
     def _mr_is_alt(mr: MatchResult, ps: dict) -> bool:
         pz_c = mr.pz_card

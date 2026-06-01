@@ -36,6 +36,9 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import RARE_PLUS_RARITIES
+
 ROOT = Path(__file__).resolve().parent.parent
 COLLECTION_JSON     = ROOT / "data" / "current"    / "collection_normalized.json"
 PULL_MODEL_JSON     = ROOT / "data" / "reference"  / "pull_probability_model.json"
@@ -51,33 +54,35 @@ OUT_JSON = ROOT / "data" / "current"  / "pack_ev.json"
 SCORING_WEIGHTS = {
     "new_card":    1.0,   # first copy of any unseen unique card
     "copy_up_to_2": 0.4,  # second copy (can use 2 copies per deck)
-    "ex_missing":  1.0,   # bonus if EX/powerful card, not yet at 2 copies
     "deck_target": 2.0,   # max bonus for a deck-target card (scaled by copies still needed)
 }
 
-# Rarity bonus applied to owned==0 pulls (first copy). Higher rarities are harder
-# to pull and more desirable, so missing them carries extra collection value.
+# Rarity bonus applied to owned==0 pulls (first copy).
+# Values derived from pool-level slot probability averaged across all 25 packs:
+#   bonus(r) = ln(p_two_diamond / p_r), normalized so crown = 10.0.
+# Pool probabilities (slot4+slot5+rare_pack, avg across packs):
+#   two_diamond=1.499/pack, three_diamond=0.256, four_diamond=0.083,
+#   one_star=0.130, two_star=0.026, three_star=0.011, crown=0.002
 RARITY_BONUS: dict[str, float] = {
-    "crown":        2.0,
-    "triple_star":  1.5,
-    "double_star":  1.0,
-    "one_star":     0.8,
-    "four_diamond": 0.6,
-    "three_diamond": 0.3,
-    "two_diamond":  0.1,
-    "one_diamond":  0.0,
+    "crown":         10.0,   # 1-in-472 packs
+    "three_star":    7.5,    # 1-in-89
+    "two_star":      6.2,    # 1-in-38
+    "four_diamond":  4.4,    # 1-in-12
+    "one_star":      3.7,    # 1-in-8
+    "three_diamond": 2.7,    # 1-in-4
+    "two_diamond":   0.0,
+    "one_diamond":   0.0,
 }
 
 # Unified score weights — single composite signal used for all recommendations.
 UNIFIED_WEIGHTS = {
     "new_card_10x": 1.0,   # primary: unique new cards in a 10-pack batch (diminishing returns)
     "copy":         0.2,   # secondary: duplicate copies for deck building
-    "ex":           0.5,   # EX cards still missing
     "deck_target":  1.5,   # scaled deck completion contribution
 }
 
-# Rarities considered "rare+" for breakdown metrics in rankings
-RARE_PLUS_RARITIES = {"one_star", "double_star", "triple_star", "crown"}
+# Rarities considered "rare+" for breakdown metrics in rankings — imported from
+# _collection_io as the single source (shared with assign/sync alt-art logic).
 
 # Cost in hourglasses per single pack opening (no bulk discount in TCGP)
 HOURGLASS_PER_PACK = 12
@@ -267,17 +272,16 @@ def card_pull_ev(rarity: str, combined_by_rarity: dict, slot_rates: dict) -> flo
     return regular_contrib + rare_contrib + plus_one_card6_contrib
 
 
-def value_of_next_copy(owned: int, is_ex: bool, rarity: str | None,
+def value_of_next_copy(owned: int, rarity: str | None,
                        deck_targets: dict, norm_name: str) -> float:
     """
     Value of pulling one more copy of this card.
 
-    owned       = copies already in collection.
-    rarity      = card rarity string (e.g. "one_star", "crown") — used for rarity bonus on
-                  first copy. None is treated as no bonus.
+    owned        = copies already in collection.
+    rarity       = card rarity string (e.g. "one_star", "crown") — used for rarity bonus on
+                   first copy. None is treated as no bonus.
     deck_targets = {norm_name: still_needed_count} where still_needed is how many copies
-                  the player is short across all target decks. Bonus scales with urgency:
-                  needing 1 copy is worth more than needing 2.
+                   the player is short across all target decks.
     """
     still_needed = deck_targets.get(norm_name, 0)
 
@@ -286,22 +290,14 @@ def value_of_next_copy(owned: int, is_ex: bool, rarity: str | None,
 
     if owned == 0:
         v = SCORING_WEIGHTS["new_card"]
-        # Rarity bonus: rarer missing cards carry extra collection value
         v += RARITY_BONUS.get(rarity or "", 0.0)
-        if is_ex:
-            v += SCORING_WEIGHTS["ex_missing"]
         if still_needed > 0:
-            # Scale deck bonus by urgency: 2.0 when 1 copy needed, 1.0 when 2 needed, etc.
             v += SCORING_WEIGHTS["deck_target"] / max(still_needed, 1)
     else:
         # owned == 1, pulling the second copy
         v = SCORING_WEIGHTS["copy_up_to_2"]
         if still_needed > 0:
-            deck_bonus = SCORING_WEIGHTS["deck_target"] / max(still_needed, 1)
-            if is_ex:
-                v += SCORING_WEIGHTS["ex_missing"] + deck_bonus
-            else:
-                v += deck_bonus
+            v += SCORING_WEIGHTS["deck_target"] / max(still_needed, 1)
 
     return v
 
@@ -344,7 +340,6 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     new_card_ev      = 0.0
     new_card_ev_10x  = 0.0   # E[rarity-weighted new cards in 10 consecutive openings]
     copy_ev          = 0.0
-    ex_card_ev       = 0.0
     deck_target_ev   = 0.0
     missing_rare_plus = 0    # count of missing one_star+ cards
     rare_plus_ev_10x  = 0.0  # P(≥1 in 10 packs), count-based, for rare+ cards only
@@ -356,7 +351,6 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     for card in all_pool_cards:
         card_name = card.get("card_name", "")
         rarity    = card.get("rarity")
-        is_ex     = bool(card.get("is_ex"))
         nn        = _norm_name(card_name)
         is_dt     = nn in deck_targets
 
@@ -400,14 +394,13 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         if pz_pull is None:
             fallback_count += 1
 
-        v = value_of_next_copy(owned, is_ex, rarity, deck_targets, nn)
+        v = value_of_next_copy(owned, rarity, deck_targets, nn)
         ev = p_pull * v
 
         if ev > 0:
             card_ev_list.append({
                 "name": card_name,
                 "rarity": rarity,
-                "is_ex": is_ex,
                 "is_deck_target": is_dt,
                 "owned": owned,
                 "pull_prob": round(p_pull, 7),
@@ -429,9 +422,6 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
             else:
                 p_at_least_one = min(p_pull, 1.0)
             p_10x = 1.0 - (1.0 - p_at_least_one) ** 10
-            # Rarity-only weight: EX and deck-target bonuses live in their own unified_score
-            # terms (ex_card_ev × 0.5, deck_target_ev × 1.5); including them here would
-            # double-count those signals.
             v_rarity = 1.0 + RARITY_BONUS.get(rarity or "", 0.0)
             new_card_ev_10x += p_10x * v_rarity
             if rarity in RARE_PLUS_RARITIES:
@@ -440,8 +430,6 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         else:
             copy_ev += ev
 
-        if is_ex:
-            ex_card_ev += ev
         if is_dt:
             deck_target_ev += ev
 
@@ -461,7 +449,6 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     unified_score = (
         new_card_ev_10x * UNIFIED_WEIGHTS["new_card_10x"]
         + copy_ev        * UNIFIED_WEIGHTS["copy"]
-        + ex_card_ev     * UNIFIED_WEIGHTS["ex"]
         + deck_target_ev * UNIFIED_WEIGHTS["deck_target"]
     ) * confidence_weight
 
@@ -485,7 +472,6 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "new_card_ev":     round(new_card_ev, 6),
         "new_card_ev_10x": round(new_card_ev_10x, 6),
         "copy_ev":         round(copy_ev, 6),
-        "ex_card_ev":      round(ex_card_ev, 6),
         "deck_target_ev":  round(deck_target_ev, 6),
         "missing_rare_plus": missing_rare_plus,
         "rare_plus_ev_10x":  round(rare_plus_ev_10x, 6),
