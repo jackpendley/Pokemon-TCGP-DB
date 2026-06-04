@@ -20,6 +20,62 @@ from pathlib import Path
 CACHE_MAX_AGE_DAYS = 30
 
 
+# ---------------------------------------------------------------------------
+# Canonical set-code registry.
+# Keys are the canonical casing used throughout the pipeline. The value dict
+# carries: pack_type ("single"/"multi") and limitless_slug (the slug used in
+# Limitless URLs, which may differ in casing — e.g. B3A uses "B3a").
+# ---------------------------------------------------------------------------
+SET_REGISTRY: dict[str, dict] = {
+    "A1":     {"pack_type": "multi",  "limitless_slug": "A1"},
+    "A1a":    {"pack_type": "single", "limitless_slug": "A1a"},
+    "A2":     {"pack_type": "multi",  "limitless_slug": "A2"},
+    "A2a":    {"pack_type": "single", "limitless_slug": "A2a"},
+    "A2b":    {"pack_type": "single", "limitless_slug": "A2b"},
+    "A3":     {"pack_type": "multi",  "limitless_slug": "A3"},
+    "A3a":    {"pack_type": "single", "limitless_slug": "A3a"},
+    "A3b":    {"pack_type": "single", "limitless_slug": "A3b"},
+    "A4":     {"pack_type": "multi",  "limitless_slug": "A4"},
+    "A4a":    {"pack_type": "single", "limitless_slug": "A4a"},
+    "A4b":    {"pack_type": "single", "limitless_slug": "A4b"},
+    "B1":     {"pack_type": "multi",  "limitless_slug": "B1"},
+    "B1a":    {"pack_type": "single", "limitless_slug": "B1a"},
+    "B2":     {"pack_type": "single", "limitless_slug": "B2"},
+    "B2a":    {"pack_type": "single", "limitless_slug": "B2a"},
+    "B2b":    {"pack_type": "single", "limitless_slug": "B2b"},
+    "B3":     {"pack_type": "single", "limitless_slug": "B3"},
+    "B3A":    {"pack_type": "single", "limitless_slug": "B3a"},  # Limitless slug is lowercase
+    "PROMO-A":{"pack_type": "single", "limitless_slug": "PROMO-A"},
+    "PROMO-B":{"pack_type": "single", "limitless_slug": "PROMO-B"},
+}
+
+# Derived convenience sets for scripts that need them:
+SINGLE_PACK_SETS: frozenset[str] = frozenset(
+    k for k, v in SET_REGISTRY.items() if v["pack_type"] == "single"
+)
+MULTI_PACK_SETS: frozenset[str] = frozenset(
+    k for k, v in SET_REGISTRY.items() if v["pack_type"] == "multi"
+)
+# All valid set codes (for validators):
+VALID_SET_CODES: frozenset[str] = frozenset(SET_REGISTRY)
+
+# Case-insensitive → canonical casing lookup (used by build_pack_sources to
+# normalise set_codes read from HTML-cache filenames like "card_B3a_N.html"):
+_SET_CANONICAL: dict[str, str] = {k.upper(): k for k in SET_REGISTRY}
+
+
+def canonical_set_code(raw: str) -> str:
+    """Return the canonical casing for a set code, or the original if unknown."""
+    return _SET_CANONICAL.get(raw.upper(), raw)
+
+
+# ---------------------------------------------------------------------------
+# Pack Hourglasses cost (single pack). Single source for build_pack_ev and
+# generate_hourglass_spending_plan.
+# ---------------------------------------------------------------------------
+HOURGLASS_PER_PACK: int = 12
+
+
 def norm_card_name(name) -> str:
     """Normalize a card name for cross-source matching.
 
@@ -75,9 +131,30 @@ TRAINER_CATEGORIES = frozenset(TRAINER_SUBTYPE_MAP)
 # superset (adding "promo"/None) and intentionally do NOT import this.
 RARE_PLUS_RARITIES = frozenset({"one_star", "two_star", "three_star", "crown"})
 
+# Canonical ordered rarity list — drives RARITY_FIELDS in build_pull_probability_model
+# and VALID_RARITIES in validate_pack_sources.
+RARITIES: tuple[str, ...] = (
+    "one_diamond", "two_diamond", "three_diamond", "four_diamond",
+    "one_star", "two_star", "three_star", "crown", "promo", "unknown",
+)
+
 # Legacy rarity-name aliases → canonical names (two_star/three_star, matching the
 # one_star/one_diamond pattern). Single source for the normalization.
 RARITY_ALIASES = {"double_star": "two_star", "triple_star": "three_star"}
+
+# Unicode rarity symbols → canonical names. Used by build_pack_sources and
+# fetch_ext_ref for parsing HTML scraped from Limitless / ext_ref sources.
+RARITY_SYMBOLS: dict[str, str] = {
+    "◊◊◊◊": "four_diamond",
+    "◊◊◊":  "three_diamond",
+    "◊◊":   "two_diamond",
+    "◊":    "one_diamond",
+    "☆☆☆":  "three_star",
+    "☆☆":   "two_star",
+    "☆":    "one_star",
+    "♛":    "crown",
+    "✦":    "promo",
+}
 
 
 def normalize_rarity(rarity: str | None) -> str | None:
@@ -85,6 +162,49 @@ def normalize_rarity(rarity: str | None) -> str | None:
     if rarity is None:
         return None
     return RARITY_ALIASES.get(rarity, rarity)
+
+
+def pack_sources_by_coord(path: Path) -> dict[tuple[str, int], dict]:
+    """Load pack_sources.json indexed by (set_code_upper, card_number).
+
+    Handles both the flat-array and {'records': [...]} envelope forms.
+    set_code is always uppercased so callers don't need to normalise.
+    """
+    raw = json.loads(Path(path).read_text(encoding="utf-8"))
+    records = raw.get("records", raw) if isinstance(raw, dict) else raw
+    index: dict[tuple[str, int], dict] = {}
+    for r in records:
+        sc = str(r.get("set_code") or "").upper().strip()
+        cn_raw = r.get("card_number")
+        if sc and cn_raw is not None:
+            try:
+                index[(sc, int(cn_raw))] = r
+            except (TypeError, ValueError):
+                pass
+    return index
+
+
+def card_reference_by_coord(path: Path) -> dict[tuple[str, int], dict]:
+    """Load card_reference.json indexed by (set_code_upper, card_number).
+
+    Returns {} when the file does not exist (not an error — reference may not
+    have been built yet for a brand-new pack).
+    """
+    p = Path(path)
+    if not p.exists():
+        return {}
+    raw = json.loads(p.read_text(encoding="utf-8"))
+    records = raw.get("records", []) if isinstance(raw, dict) else raw
+    index: dict[tuple[str, int], dict] = {}
+    for r in records:
+        sc = str(r.get("set_code") or "").upper().strip()
+        cn_raw = r.get("card_number")
+        if cn_raw is not None:
+            try:
+                index[(sc, int(cn_raw))] = r
+            except (TypeError, ValueError):
+                pass
+    return index
 
 
 def ext_ref_by_coord(ext_ref_path: Path) -> dict[tuple[str, int], dict]:
@@ -113,6 +233,17 @@ def strip_comments(text: str) -> str:
     values containing '//' (e.g. a URL field) are preserved.
     """
     return re.sub(r"(?m)^\s*//[^\n]*\n?", "", text)
+
+
+def field_slug(name: str) -> str:
+    """Normalize a string to a lower-snake-case field/key slug.
+
+    Used for indexing collection entries and ext_ref records by name where
+    exact Unicode matching is not required. Distinct from norm_card_name
+    (which is for cross-source card-name matching): this replaces non-alphanumeric
+    chars with underscores rather than stripping them.
+    """
+    return re.sub(r"[^a-z0-9]", "_", name.lower().strip()).strip("_")
 
 
 def is_ex_from_name(name: str | None) -> bool:

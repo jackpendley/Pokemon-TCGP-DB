@@ -11,17 +11,17 @@ python3 scripts/run_recommendations.py
 Syncs collection from Pokemon Zone, runs the full EV pipeline, and prints a condensed summary. Full verbose output logged to `data/pipeline.log`.
 
 ```
-  ✓  Sync collection         599 cards, 277 unique
-  ✓  Validate collection     277 entries, total=599
+  ✓  Sync collection         1060 cards, 512 unique
+  ✓  Validate collection     512 entries, total=1060
   ✓  Normalize collection    OK
-  ✓  Build pack EV           24 packs
+  ✓  Build pack EV           25 packs
   ✓  Build promo EV          21 promo packs
   ✓  Recommendations         OK
   ✓  Spending plan           OK
 
-  Top pack:   Paldean Wonders (adj_ev=4.7464) — 121/131 cards unowned
+  Top pack:   Deluxe Pack: ex (unified=70.3026) — 228/279 cards unowned
   Top promo:  Promo Pack A Series Vol. 8 (new_ev=0.9198) — Shop Tokens
-  Pack Hourglasses: 756  → buy 10x Paldean Wonders (costs 120 ⧗), then re-run
+  Pack Hourglasses: 1260  → buy 10x Deluxe Pack: ex (costs 120 ⧗), then re-run
   Shop Tickets:     347
   Log:        data/pipeline.log
 ```
@@ -45,9 +45,9 @@ Syncs collection from Pokemon Zone, runs the full EV pipeline, and prints a cond
 
 | Stat | Value |
 |---|---|
-| Total cards | 599 |
-| Unique entries | 277 |
-| Last synced | 2026-05-21 |
+| Total cards | 1060 |
+| Unique entries | 512 |
+| Last synced | 2026-06-04 |
 
 ---
 
@@ -122,14 +122,15 @@ EV is computed directly from `pz_pack_odds.json` keyed by `(set_code, card_numbe
 ```
 EV per pack = Σ (p_pull × value_of_next_copy)
 
-value_of_next_copy:
-  owned=0, not ex  →  1.0
-  owned=0, ex      →  2.0
-  owned=1, not ex  →  0.4
-  owned=1, ex      →  1.4
-  owned≥2          →  0.0
+value_of_next_copy (per printing — each set coord counted independently):
+  owned=0  →  1.0 + RARITY_BONUS[rarity]  (crown=10.0, three_star=7.5 … two_diamond=0.0)
+  owned=1  →  0.4
+  owned≥2  →  0.0
 
-adj_ev = pack_total_ev × confidence_multiplier  (1.0 for pz_verified)
+unified_score = new_card_ev_10x×1.0 + copy_ev×0.2 + deck_target_ev×1.5
+               (× confidence_weight: 1.0 for pz_verified)
+
+new_card_ev_10x = E[rarity-weighted new cards in 10 consecutive openings]
 ```
 
 ---
@@ -138,7 +139,7 @@ adj_ev = pack_total_ev × confidence_multiplier  (1.0 for pz_verified)
 
 | File | Contents |
 |---|---|
-| `data/reference/pack_sources.json` | 3119 card → pack mappings (A1–B3 + PROMO-A/B) |
+| `data/reference/pack_sources.json` | 3228 card → pack mappings (A1–B3A + PROMO-A/B) |
 | `data/reference/pz_pack_odds.json` | PZ per-card drop chances (45 packs: 24 regular + 21 promo) |
 | `data/reference/pull_probability_model.json` | Pull rate model v0.6.0, `pz_verified` |
 
@@ -168,3 +169,18 @@ python3 scripts/validate_pull_probability_model.py
 - Chrome136 TLS impersonation (`curl-cffi`) prevents Cloudflare 403 on headless syncs
 - Raw API response not committed (`data/sync/last_sync_raw.json` gitignored)
 - Player stats (hourglasses, shop tickets) fetched automatically on each sync
+
+---
+
+## Roadmap / Known Limitations
+
+- **Deck-building EV (deferred):** The model currently optimizes purely for collection
+  completion (owned 0 / 1 / 2+ per printing). A deck-target scoring layer
+  (`deck_recommendation_validation.json`) is stubbed in `build_pack_ev.py` and
+  `generate_pack_recommendation_report.py` but intentionally inert — `deck_target_ev`
+  is always 0 at runtime. When deck logic lands, the owned-count basis will switch to
+  name-level counting (decks can mix sets) and the `SCORING_WEIGHTS["deck_target"]`
+  term will become active.
+- **Wonder Pick / trade / craft:** not modelled.
+- **Event / limited packs:** included via `--include-limited` flag; ranked on the same
+  EV metric but noted separately.

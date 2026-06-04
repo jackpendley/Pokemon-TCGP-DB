@@ -26,6 +26,7 @@ Usage:
 
 import argparse
 import csv
+import hashlib
 import json
 import sys
 from datetime import datetime, timezone
@@ -39,6 +40,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PACK_EV_JSON         = ROOT / "data" / "current"  / "pack_ev.json"
 COLLECTION_JSON      = ROOT / "data" / "current"  / "collection_normalized.json"
 PROMO_EV_JSON        = ROOT / "data" / "current"  / "promo_pack_ev.json"
+# TODO(deck-ev): no script writes this file; deck_target scoring is intentionally inert.
 DECK_VALIDATION_JSON = ROOT / "data" / "exports"  / "deck_recommendation_validation.json"
 COLLECTION_SOURCE    = ROOT / "collection.json"
 
@@ -197,7 +199,7 @@ _INFERRED_MC_VALUES = {
 }
 
 
-def write_json(ev_data: dict, buckets: dict) -> dict:
+def write_json(ev_data: dict, buckets: dict, inputs_hash: str | None = None) -> dict:
     packs = ev_data["packs"]
     mc = ev_data["meta"]["model_confidence"]
     out = {
@@ -220,6 +222,8 @@ def write_json(ev_data: dict, buckets: dict) -> dict:
         ],
         "chase_deck_packs": buckets["chase_deck_packs"],
     }
+    if inputs_hash:
+        out["inputs_hash"] = inputs_hash
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
     return out
@@ -484,8 +488,8 @@ def write_md(out_data: dict, ev_data: dict, buckets: dict, deck_validation: list
                         f"| {i} | {p['pack_name']} | {p.get('missing_in_pool', '?')}/{p.get('cards_in_pool', '?')} | {p['new_card_ev']:.4f} |"
                     )
                 promo_lines.append("")
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"WARN: could not load promo EV section: {e}", file=sys.stderr)
 
     status_lines = [
         "",
@@ -667,6 +671,21 @@ def main():
             print(f"ERROR: required input not found: {p}", file=sys.stderr)
             sys.exit(1)
 
+    # Skip recompute when inputs are unchanged (same pattern as build_pack_ev).
+    _h = hashlib.sha256()
+    for _p in (PACK_EV_JSON, COLLECTION_JSON, PROMO_EV_JSON, DECK_VALIDATION_JSON):
+        if _p.exists():
+            _h.update(_p.read_bytes())
+    inputs_hash = _h.hexdigest()
+    if OUT_JSON.exists():
+        try:
+            prev = json.loads(OUT_JSON.read_text(encoding="utf-8"))
+            if prev.get("inputs_hash") == inputs_hash:
+                print(f"  Inputs unchanged (hash={inputs_hash[:12]}…) — skipping recompute.")
+                sys.exit(0)
+        except Exception:
+            pass  # corrupted prior output — recompute
+
     ev_data  = load_ev(PACK_EV_JSON)
     deck_val = load_deck_validation(DECK_VALIDATION_JSON)
 
@@ -682,7 +701,7 @@ def main():
     deck_targets = deck_target_pack_map(packs)
     buckets = build_unified_ranking(packs, deck_targets, deck_val)
 
-    out_data = write_json(ev_data, buckets)
+    out_data = write_json(ev_data, buckets, inputs_hash=inputs_hash)
     write_csv(ev_data, buckets)
     write_md(out_data, ev_data, buckets, deck_val, show_promo=show_promo)
 
@@ -712,8 +731,8 @@ def main():
                     print("\n  Top promo packs (Shop Tickets):")
                     for i, p in enumerate(top_promo, 1):
                         print(f"    {i}. {p['pack_name']:<38} new_ev={p['new_card_ev']:.4f}")
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"  WARN: could not display top promo packs: {e}", file=sys.stderr)
     elif mc == "third_party_verified":
         print(f"  Model confidence: {mc} (×0.85 adjustment applied)")
         print("\n  Rates are THIRD_PARTY_VERIFIED. Verify in PTCGP app for official confirmation.")

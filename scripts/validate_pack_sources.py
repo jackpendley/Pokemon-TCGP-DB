@@ -13,23 +13,21 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import VALID_SET_CODES, RARE_PLUS_RARITIES
+
+try:
+    import jsonschema
+    _JSONSCHEMA_AVAILABLE = True
+except ImportError:
+    _JSONSCHEMA_AVAILABLE = False
+
 ROOT = Path(__file__).resolve().parent.parent
 PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
 PACK_SOURCES_SCHEMA = ROOT / "data" / "reference" / "pack_sources.schema.json"
 
-VALID_SET_CODES = {
-    "A1", "A1a",
-    "A2", "A2a", "A2b",
-    "A3", "A3a", "A3b",
-    "A4", "A4a", "A4b",
-    "B1", "B1a",
-    "B2", "B2a", "B2b",
-    "B3", "B3A",
-    "PROMO-A", "PROMO-B",
-}
-VALID_RARITIES = {
-    "one_diamond", "two_diamond", "three_diamond", "four_diamond",
-    "one_star", "two_star", "three_star", "crown", "promo", None,
+VALID_RARITIES = RARE_PLUS_RARITIES | {
+    "one_diamond", "two_diamond", "three_diamond", "four_diamond", "promo", None,
 }
 VALID_CONFIDENCES = {"high", "medium", "low"}
 REQUIRED_FIELDS = ["set_code", "card_number", "card_name", "pack_name", "expansion"]
@@ -67,6 +65,18 @@ def main():
         sys.exit(1)
 
     print(f"PASS  pack_sources.json loaded ({len(data)} records)")
+
+    # JSON Schema structural validation
+    if _JSONSCHEMA_AVAILABLE and PACK_SOURCES_SCHEMA.exists():
+        schema = json.loads(PACK_SOURCES_SCHEMA.read_text(encoding="utf-8"))
+        try:
+            jsonschema.validate(instance=raw, schema=schema)
+            print("PASS  JSON schema validation")
+        except jsonschema.ValidationError as e:
+            print(f"FAIL  JSON schema validation: {e.message} (path: {list(e.path)})")
+            sys.exit(1)
+    else:
+        print("WARN  jsonschema not available or schema file missing — skipping structural check")
 
     failures = 0
     warnings = 0

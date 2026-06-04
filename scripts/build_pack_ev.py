@@ -37,12 +37,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import RARE_PLUS_RARITIES
+from _collection_io import RARE_PLUS_RARITIES, HOURGLASS_PER_PACK, norm_card_name as _norm_name
 
 ROOT = Path(__file__).resolve().parent.parent
 COLLECTION_JSON     = ROOT / "data" / "current"    / "collection_normalized.json"
 PULL_MODEL_JSON     = ROOT / "data" / "reference"  / "pull_probability_model.json"
 PACK_SOURCES_JSON   = ROOT / "data" / "reference"  / "pack_sources.json"
+# TODO(deck-ev): deck_recommendation_validation.json is read here but never written by any
+# pipeline script — deck_target_ev is always 0 at runtime. When deck logic lands, wire up a
+# producer for this file and switch the owned-count basis to name-level (decks mix sets).
 DECK_VALIDATION_JSON = ROOT / "data" / "exports"   / "deck_recommendation_validation.json"
 PZ_PACK_ODDS_JSON   = ROOT / "data" / "reference"  / "pz_pack_odds.json"
 
@@ -83,9 +86,7 @@ UNIFIED_WEIGHTS = {
 
 # Rarities considered "rare+" for breakdown metrics in rankings — imported from
 # _collection_io as the single source (shared with assign/sync alt-art logic).
-
-# Cost in hourglasses per single pack opening (no bulk discount in TCGP)
-HOURGLASS_PER_PACK = 12
+# HOURGLASS_PER_PACK also imported from _collection_io.
 
 # Fallback confidence adjustment when PZ rates are unavailable
 INFERRED_CONFIDENCE_WEIGHT = 0.85
@@ -98,10 +99,6 @@ TOP_N_CARDS = 5  # top EV cards listed per pack
 # ---------------------------------------------------------------------------
 # Loaders
 # ---------------------------------------------------------------------------
-
-def _norm_name(name: str) -> str:
-    """Normalize card name for cross-source comparison: lowercase + smart-quote → apostrophe."""
-    return name.lower().replace("’", "'").replace("‘", "'").strip()
 
 
 def load_collection(path: Path) -> tuple[dict, dict]:
@@ -357,11 +354,12 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         sc  = card.get("set_code", "").upper()
         cn  = card.get("card_number")
 
-        # Prefer set-specific count (set_code + card_number) when the collection entry
-        # carries that data — avoids crediting cards owned from other sets against this
-        # pack's pool.  Falls back to name-only when set data is absent (legacy entries).
-        if collection_by_card and sc and cn is not None and (sc, cn) in collection_by_card:
-            owned = collection_by_card[(sc, cn)]
+        # Each printing is counted independently: only credits ownership if this exact
+        # (set_code, card_number) is in the collection. Falls back to name-only for
+        # genuinely coord-less legacy entries (in practice 0 since all entries carry coords).
+        # TODO(deck-ev): when deck logic lands, switch to name-count here (decks mix sets).
+        if collection_by_card and sc and cn is not None:
+            owned = collection_by_card.get((sc, cn), 0)
         else:
             owned = collection.get(nn, 0)
 
@@ -578,12 +576,13 @@ def summarize(records: list) -> dict:
 # ---------------------------------------------------------------------------
 
 def _read_model_confidence(path: Path) -> str:
-    """Read source_status from pull_probability_model.json."""
-    try:
-        raw = json.loads(path.read_text(encoding="utf-8"))
-        return raw.get("meta", {}).get("source_status", "inferred")
-    except Exception:
-        return "inferred"
+    """Read source_status from pull_probability_model.json.
+
+    Fails loudly if the model is missing or malformed — a corrupt model file
+    must not silently degrade all EV to the 'inferred' path.
+    """
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    return raw.get("meta", {}).get("source_status", "inferred")
 
 
 def write_json(pack_ev_records, blocked, deck_targets, collection_total, inputs_hash=None):

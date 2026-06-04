@@ -9,8 +9,8 @@ Scenarios:
   1.  Simple new card — pack_sources match, not in collection
   2.  Multi-set new card — same card from two different sets, dedup to one entry
   3.  New alt-art (one_star rarity) — base already owned, alt art is new
-  4.  New double_star alt art — same as above, double_star rarity is_alt path
-  5.  New triple_star — another star-tier new card
+  4.  New two_star alt art — same as above, two_star rarity is_alt path
+  5.  New three_star — another star-tier new card
   6.  Both variants new — neither base nor alt yet owned; PZ returns both
   7.  A1 numbering mismatch, card NOT owned — must use PZ raw_name, not pack_sources
   8.  A1 numbering mismatch, card OWNED — existing behavior preserved
@@ -23,7 +23,7 @@ Scenarios:
  15.  Cross-set parallel: card owned, PZ returns it from three set codes
  16.  All known A1/A4 numbering mismatches (not owned)
  17.  Smoke test: first unowned card from every set code
- 18.  All double_star/triple_star → is_alt=True
+ 18.  All two_star/three_star → is_alt=True
  19.  Nidoran♀ + Nidoran♂ both new — dedup must produce 2 entries, not 1
  20.  build_auto_entry blank card_category — hp/stage/type populated from ext_ref
  21.  Nidoran♀ + Nidoran♂ both owned — exact-name shortcut routes each correctly
@@ -215,11 +215,11 @@ def test_new_alt_art_one_star():
 
 
 # ---------------------------------------------------------------------------
-# 4. New double_star alt-art — confirm is_alt includes double_star
+# 4. New two_star alt-art — confirm is_alt includes two_star
 # ---------------------------------------------------------------------------
 def test_new_two_star():
-    print("\n--- 4. New double_star alt-art (is_alt check) ---")
-    # Venusaur ex A1#251 is double_star; collection has base Venusaur ex (four_diamond, hp=340)
+    print("\n--- 4. New two_star alt-art (is_alt check) ---")
+    # Venusaur ex A1#251 is two_star; collection has base Venusaur ex (four_diamond, hp=340)
     # and alt-art Venusaur ex entry
     collection = [
         entry("Venusaur ex", 1, hp=190),                    # base (four_diamond)
@@ -227,7 +227,7 @@ def test_new_two_star():
     ]
     results = run([pz("Venusaur ex", 1, "A1", 251)], collection)
     r = results[0]
-    # A1#251 = double_star → is_alt=True
+    # A1#251 = two_star → is_alt=True
     # alt_idx should = [1] (the alt art entry) → MATCHED to alt art
     check("status=MATCHED", r.status == "MATCHED", r.status)
     check("matched to alt art entry", r.entry.get("variant") == "alt art",
@@ -235,19 +235,19 @@ def test_new_two_star():
 
 
 # ---------------------------------------------------------------------------
-# 5. New triple_star — is_alt=True for triple_star rarity
+# 5. New three_star — is_alt=True for three_star rarity
 # ---------------------------------------------------------------------------
 def test_new_three_star():
-    print("\n--- 5. New triple_star (is_alt check) ---")
-    # Find a real triple_star card in pack_sources
+    print("\n--- 5. New three_star (is_alt check) ---")
+    # Find a real three_star card in pack_sources
     triple = next((r for r in PACK_SOURCES.values() if r.get("rarity") == "three_star"), None)
     if triple is None:
-        print("  SKIP: no triple_star card found in pack_sources")
+        print("  SKIP: no three_star card found in pack_sources")
         return
     sc_code = triple["set_code"]
     cn = triple["card_number"]
     name = triple["card_name"]
-    print(f"  Using: {sc_code}#{cn} {name} [triple_star]")
+    print(f"  Using: {sc_code}#{cn} {name} [three_star]")
 
     collection = [
         entry(name, 1, hp=100),
@@ -256,7 +256,7 @@ def test_new_three_star():
     results = run([pz(name, 1, sc_code, cn)], collection)
     r = results[0]
     check("status=MATCHED", r.status == "MATCHED", r.status)
-    check("triple_star matched to alt art",
+    check("three_star matched to alt art",
           r.entry.get("variant") == "alt art", str(r.entry.get("variant")))
 
 
@@ -513,10 +513,10 @@ def test_smoke_all_sets():
 
 
 # ---------------------------------------------------------------------------
-# 18. All double_star + triple_star cards — verify is_alt resolves correctly
+# 18. All two_star + three_star cards — verify is_alt resolves correctly
 # ---------------------------------------------------------------------------
 def test_all_rare_star_is_alt():
-    print("\n--- 18. All double_star/triple_star → is_alt=True path ---")
+    print("\n--- 18. All two_star/three_star → is_alt=True path ---")
     from collections import Counter
     ok_count = 0
     fail_count = 0
@@ -543,7 +543,7 @@ def test_all_rare_star_is_alt():
                       f"status={r.status} variant={r.entry.get('variant') if r.entry else None}")
 
     total = ok_count + fail_count
-    check(f"all {total} double/triple_star cards route to alt art variant",
+    check(f"all {total} two/three_star cards route to alt art variant",
           fail_count == 0, f"{fail_count} failed out of {total}")
 
 
@@ -656,9 +656,9 @@ def test_nidoran_both_owned():
 def test_mismatch_slot_altart_rarity_owned():
     print("\n--- 22. Mismatch slot alt-art rarity, card owned → MATCHED ---")
     import io, contextlib
-    # A1#277: pack_sources = "Gengar ex" (double_star), but PZ returns "Jigglypuff"
+    # A1#277: pack_sources = "Gengar ex" (two_star), but PZ returns "Jigglypuff"
     # at that slot (set-numbering mismatch). Collection has Jigglypuff (base).
-    # Before fix: rarity cross-check saw double_star → is_pz_alt=True, entry_is_alt=False
+    # Before fix: rarity cross-check saw two_star → is_pz_alt=True, entry_is_alt=False
     #             → incorrectly returned NEW_CARD instead of MATCHED.
     # After fix:  name guard skips rarity check when ps_ref card ≠ canonical_name.
     mismatch_ps = PACK_SOURCES.get(("A1", 277))

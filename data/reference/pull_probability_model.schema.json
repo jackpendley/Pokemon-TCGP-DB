@@ -24,6 +24,7 @@
             "in_app_verified_partial",
             "pending_verification",
             "inferred",
+            "pz_verified",
             "scaffold_only"
           ]
         },
@@ -73,8 +74,11 @@
             "enum": [
               "branch_verified",
               "branch_verified_special_case",
+              "branch_selection_corroborated",
               "two_branch_confirmed",
               "truncated_pending",
+              "in_app_verified_bulbapedia_inaccessible",
+              "pending",
               "not_found",
               "rejected",
               null
@@ -179,8 +183,8 @@
                 "description": "Rarity distribution applied uniformly to all 5 slots in a rare/god pack.",
                 "properties": {
                   "one_star":              { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "double_star":           { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "triple_star":           { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "two_star":              { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                  "three_star":            { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
                   "crown":                 { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
                   "crown_or_highest_rare": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
                 }
@@ -240,19 +244,17 @@
             }
           },
           "rarity_probabilities": {
-            "type": "object",
-            "description": "Aggregate per-pack pull probability per rarity tier. All values null until computed from verified slot_rates.",
+            "type": ["object", "null"],
+            "description": "Aggregate per-pack pull probability per rarity tier. Null for packs not yet computed; populated once slot_rates are verified.",
             "properties": {
               "one_diamond":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "two_diamond":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "three_diamond": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "four_diamond":  { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "one_star":      { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "double_star":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "triple_star":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "two_star":      { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+              "three_star":    { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "crown":         { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "one_shiny":     { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "two_shiny":     { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "promo":         { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
               "unknown":       { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
             }

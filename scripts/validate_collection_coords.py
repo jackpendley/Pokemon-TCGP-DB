@@ -36,7 +36,9 @@ from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (strip_comments, ext_ref_by_coord,
-                            norm_card_name as norm_name, is_cache_fresh as _is_cache_fresh)
+                            norm_card_name as norm_name, is_cache_fresh as _is_cache_fresh,
+                            pack_sources_by_coord as _ps_by_coord,
+                            card_reference_by_coord as _card_ref_by_coord)
 from coord_resolver import _name_agrees
 
 ROOT           = Path(__file__).resolve().parent.parent
@@ -61,31 +63,11 @@ def load_collection() -> list[dict]:
 
 
 def load_card_reference() -> dict[tuple[str, int], dict]:
-    """Load card_reference.json indexed by (set_code_upper, card_number)."""
-    if not CARD_REF.exists():
-        return {}
-    data = json.loads(CARD_REF.read_text(encoding="utf-8"))
-    records = data.get("records", []) if isinstance(data, dict) else data
-    index: dict[tuple[str, int], dict] = {}
-    for r in records:
-        sc = str(r.get("set_code") or "").upper().strip()
-        cn_raw = r.get("card_number")
-        try:
-            cn = int(cn_raw)
-        except (TypeError, ValueError):
-            continue
-        index[(sc, cn)] = r
-    return index
+    return _card_ref_by_coord(CARD_REF)
 
 
 def load_pack_sources() -> dict[tuple[str, int], dict]:
-    data = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
-    records = data.get("records", data) if isinstance(data, dict) else data
-    return {
-        (str(r["set_code"]).upper(), int(r["card_number"])): r
-        for r in records
-        if r.get("set_code") and r.get("card_number") is not None
-    }
+    return _ps_by_coord(PACK_SOURCES)
 
 
 def load_cache() -> dict:
@@ -106,16 +88,17 @@ def save_cache(cache: dict) -> None:
 # TCGdex API
 # ---------------------------------------------------------------------------
 
-def _tcgdex_sets_available() -> set[str]:
-    """Return set of set IDs available in TCGdex Pocket series."""
+def _tcgdex_sets_available() -> set[str] | None:
+    """Return set of set IDs available in TCGdex Pocket series, or None on failure."""
     url = f"{TCGDEX_BASE}/series/tcgp"
     req = urllib.request.Request(url, headers={"User-Agent": "ptcgp-validator/1.0"})
     try:
         with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
             data = json.loads(resp.read())
         return {s["id"].upper() for s in data.get("sets", [])}
-    except Exception:
-        return set()
+    except Exception as e:
+        print(f"  WARN: TCGdex set list fetch failed ({e}) — falling back to cache", file=sys.stderr)
+        return None
 
 
 def fetch_tcgdex_card(set_code: str, card_number: int) -> dict | None:

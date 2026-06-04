@@ -16,12 +16,16 @@ Usage:
   python3 scripts/generate_hourglass_spending_plan.py --validate
 """
 
+import hashlib
 import json
 import csv
 import argparse
 import sys
 from datetime import date
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import HOURGLASS_PER_PACK
 
 BASE = Path(__file__).resolve().parent.parent
 PACK_EV_JSON = BASE / "data/current/pack_ev.json"
@@ -34,7 +38,7 @@ OUT_MD = BASE / "review/final_hourglass_spending_plan.md"
 OUT_CSV = BASE / "data/exports/final_hourglass_spending_plan.csv"
 
 BATCH_SIZE = 10
-HOURGLASS_PER_PACK = 12
+# HOURGLASS_PER_PACK imported from _collection_io
 NEAR_COMPLETE_THRESHOLD = 0.85  # DR ratio below this → flag near-complete
 GENERATED_AT = date.today().isoformat()
 
@@ -183,7 +187,7 @@ def build_optimal_plan(ev_data, recs_data=None, include_limited: bool = False):
     }
 
 
-def write_json(spending_plan, ev_data, model_data, collection_data):
+def write_json(spending_plan, ev_data, model_data, collection_data, inputs_hash=None):
     out = {
         "generated_at": GENERATED_AT,
         "generated_by": "scripts/generate_hourglass_spending_plan.py",
@@ -197,6 +201,8 @@ def write_json(spending_plan, ev_data, model_data, collection_data):
         "ev_source": str(PACK_EV_JSON.relative_to(BASE)),
         "spending_plan": spending_plan,
     }
+    if inputs_hash:
+        out["inputs_hash"] = inputs_hash
     OUT_JSON.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  Wrote: {OUT_JSON.relative_to(BASE)}")
     return out
@@ -292,7 +298,7 @@ def write_md(out_data):
         "",
         "## Notes",
         "",
-        f"- **Unified score** = `new_card_ev_10x×1.0 + copy_ev×0.2 + ex_card_ev×0.5 + deck_target_ev×1.5` × confidence_weight. new_card_ev_10x is rarity-weighted; EX and deck bonuses are added separately.",
+        f"- **Unified score** = `new_card_ev_10x×1.0 + copy_ev×0.2 + deck_target_ev×1.5` × confidence_weight. new_card_ev_10x is rarity-weighted (crown=10.0 … two_diamond=0.0). deck_target_ev is 0 until deck targets are configured.",
         f"- **DR ratio** = `new_card_ev_10x / (new_card_ev_1x × 10)`. Below {NEAR_COMPLETE_THRESHOLD}: pool near-complete, diminishing returns significant.",
         f"- **⧗/EV** = `{BATCH_SIZE * HOURGLASS_PER_PACK} ⧗ / new_card_ev_10x`. Lower is better. (new_card_ev_10x is rarity-weighted, so this is cost per rarity-weighted value unit, not per raw card count)",
         "- Re-run `build_pack_ev.py` after every significant collection change to keep rankings current.",
@@ -452,6 +458,21 @@ def main():
             print(f"ERROR: required input not found: {req}", file=sys.stderr)
             sys.exit(1)
 
+    # Skip recompute when inputs are unchanged.
+    _h = hashlib.sha256()
+    for _p in (PACK_EV_JSON, PULL_MODEL_JSON, COLLECTION_NORMALIZED_JSON, RECOMMENDATIONS_JSON):
+        if _p.exists():
+            _h.update(_p.read_bytes())
+    inputs_hash = _h.hexdigest()
+    if OUT_JSON.exists():
+        try:
+            prev = json.loads(OUT_JSON.read_text(encoding="utf-8"))
+            if prev.get("inputs_hash") == inputs_hash:
+                print(f"  Inputs unchanged (hash={inputs_hash[:12]}…) — skipping recompute.")
+                sys.exit(0)
+        except Exception:
+            pass  # corrupted prior output — recompute
+
     print("Loading data...")
     ev_data, recs_data, model_data, collection_data = load_data()
 
@@ -475,7 +496,7 @@ def main():
     print(f"  Batches: {spending_plan['total_batches']}, total ⧗: {spending_plan['total_hourglasses']}")
 
     print("\nWriting outputs...")
-    out_data = write_json(spending_plan, ev_data, model_data, collection_data)
+    out_data = write_json(spending_plan, ev_data, model_data, collection_data, inputs_hash=inputs_hash)
     write_md(out_data)
     write_csv(out_data)
 

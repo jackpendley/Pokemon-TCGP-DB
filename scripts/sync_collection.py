@@ -47,7 +47,9 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import strip_comments, TRAINER_SUBTYPE_MAP, RARE_PLUS_RARITIES, is_ex_from_name
+from _collection_io import (strip_comments, TRAINER_SUBTYPE_MAP, RARE_PLUS_RARITIES,
+                            is_ex_from_name, pack_sources_by_coord as _ps_by_coord,
+                            field_slug as _normalize)
 
 
 ROOT            = Path(__file__).resolve().parent.parent
@@ -100,18 +102,7 @@ def load_collection() -> tuple[str, dict]:
 
 def load_pack_sources() -> dict[tuple[str, int], dict]:
     """Return {(set_code, card_number) → record}."""
-    data = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
-    records = data.get("records", data) if isinstance(data, dict) else data
-    result: dict[tuple[str, int], dict] = {}
-    for r in records:
-        sc = str(r.get("set_code", "")).upper().strip()
-        cn_raw = r.get("card_number")
-        try:
-            cn = int(cn_raw)
-        except (TypeError, ValueError):
-            continue
-        result[(sc, cn)] = r
-    return result
+    return _ps_by_coord(PACK_SOURCES)
 
 
 def load_ext_ref() -> dict[str, list[dict]]:
@@ -164,10 +155,6 @@ def build_card_meta(
 # ---------------------------------------------------------------------------
 # Name normalization
 # ---------------------------------------------------------------------------
-
-def _normalize(name: str) -> str:
-    return re.sub(r"[^a-z0-9]", "_", name.lower().strip()).strip("_")
-
 
 # ---------------------------------------------------------------------------
 # Pokemon Zone record → PZCard
@@ -1552,8 +1539,13 @@ def main() -> int:
         if new_cards and not args.force:
             print(f"\nReview queue written: {REVIEW_QUEUE}")
             print(f"  {len(new_cards)} new card(s) could not be auto-added — add to collection.json manually")
+        if queue_missing:
+            print(f"  INFO: {len(queue_missing)} entry/entries missing from PZ response (informational)")
         print("No count changes to apply.")
-        return 2 if (new_cards or queue_missing) else 0
+        # Return 2 only for genuinely NEW cards that need review, not for cards
+        # that are merely absent from the PZ response (queue_missing — common for
+        # promos/named-art cards that PZ perpetually omits on clean syncs).
+        return 2 if new_cards else 0
 
     edited = raw_text
 

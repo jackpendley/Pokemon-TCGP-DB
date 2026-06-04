@@ -40,50 +40,17 @@ HTML_CACHE = ROOT / "data" / "reference" / "external" / "html_cache"
 EXT_REF_JSON = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
 OUT_JSON = ROOT / "data" / "reference" / "pack_sources.json"
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import (SINGLE_PACK_SETS, MULTI_PACK_SETS, RARITY_SYMBOLS,
+                             canonical_set_code)
+
 try:
     from bs4 import BeautifulSoup
 except ImportError:
     print("ERROR: beautifulsoup4 required. Install: python3 -m pip install beautifulsoup4 lxml")
     sys.exit(1)
 
-RARITY_MAP = {
-    "◊◊◊◊": "four_diamond",
-    "◊◊◊":  "three_diamond",
-    "◊◊":   "two_diamond",
-    "◊":    "one_diamond",
-    "☆☆☆":  "three_star",
-    "☆☆":   "two_star",
-    "☆":    "one_star",
-    "♛":    "crown",
-    "✦":    "promo",
-}
-
-# Sets that are single-pack expansions (no per-card pack label in Limitless HTML).
-# All cards in these sets belong to the one expansion pack.
-SINGLE_PACK_SETS = {
-    "A1a",  # Mythical Island (Mew pack)
-    "A2a",  # Triumphant Light
-    "A2b",  # Shining Revelry
-    "A3a",  # Extradimensional Crisis
-    "A3b",  # Eevee Grove
-    "A4a",  # Secluded Springs
-    "A4b",  # Deluxe Pack: ex
-    "B1a",  # Crimson Blaze
-    "B2",   # Fantastical Parade
-    "B2a",  # Paldean Wonders
-    "B2b",  # Mega Shine
-    "B3",   # Pulsing Aura
-    "B3A",  # Paradox Drive
-}
-
-# Sets with multiple packs. Cards without a pack label are shared (pack_name=null).
-MULTI_PACK_SETS = {
-    "A1",   # Genetic Apex (Charizard, Pikachu, Mewtwo packs)
-    "A2",   # Space-Time Smackdown (Dialga, Palkia packs)
-    "A3",   # Celestial Guardians (Ho-Oh, Lugia packs)
-    "A4",   # Wisdom of Sea and Sky (Ho-Oh, Lugia packs)
-    "B1",   # Mega Rising (Mega Blaziken, Mega Gyarados, Mega Altaria packs)
-}
+RARITY_MAP = RARITY_SYMBOLS
 
 
 def clean_expansion_name(raw: str) -> str:
@@ -216,13 +183,6 @@ def build_records(ext_index: dict, dry_run: bool) -> list[dict]:
 
     print(f"Found {len(card_files)} cached card HTML files.")
 
-    # Case-insensitive canonical lookup so a Limitless slug like "B3a" stored as
-    # "card_B3a_N.html" resolves to the canonical "B3A" from SINGLE_PACK_SETS.
-    _CANONICAL_CASE: dict[str, str] = {
-        sc.upper(): sc
-        for sc in (SINGLE_PACK_SETS | MULTI_PACK_SETS)
-    }
-
     records = []
     stats = {
         "total": 0,
@@ -243,7 +203,7 @@ def build_records(ext_index: dict, dry_run: bool) -> list[dict]:
         m = re.match(r"card_([A-Za-z0-9]+)_(\d+)\.html", fpath.name)
         if not m:
             continue
-        set_code = _CANONICAL_CASE.get(m.group(1).upper(), m.group(1))
+        set_code = canonical_set_code(m.group(1))
         number = int(m.group(2))
         stats["total"] += 1
 

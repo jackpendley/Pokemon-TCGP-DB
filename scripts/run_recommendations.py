@@ -290,6 +290,10 @@ def main() -> int:
             sync_extra.append("--login")
         if args.dry_run_sync:
             sync_extra.append("--dry-run")
+        # Keep the pipeline deterministic and fully offline: new cards absent from
+        # card_reference route to the review queue. Run sync standalone (without
+        # run_recommendations) for a live coord fetch when adding a brand-new set.
+        sync_extra.append("--no-fetch")
 
         rc, stdout = _run_with_spinner("Sync collection", "scripts/sync_collection.py", sync_extra or None)
 

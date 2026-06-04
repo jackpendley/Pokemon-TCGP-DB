@@ -15,12 +15,13 @@ Outputs:
 """
 
 import json
+import hashlib
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import is_ex_from_name
+from _collection_io import is_ex_from_name, norm_card_name as _norm
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -40,10 +41,6 @@ SCORING_WEIGHTS = {
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
-
-def _norm(name: str) -> str:
-    return name.lower().replace("’", "'").replace("‘", "'").strip()
-
 
 def value_of_next_copy(owned: int, is_ex: bool) -> float:
     # NOTE: unlike build_pack_ev (which values cards by rarity tier), promo cards
@@ -141,9 +138,12 @@ def compute_promo_pack_ev(slug: str, pack_data: dict, collection: dict[str, int]
 
         # Owned count: prefer the exact (set_code, card_number) coord — avoids
         # name-normalization mismatches and cross-set same-name collisions. Fall
-        # back to name only when the coord isn't in the collection index.
-        if collection_by_coord is not None and cn is not None and (sc, cn) in collection_by_coord:
-            owned = collection_by_coord[(sc, cn)]
+        # Each printing is counted independently — only credits ownership if this exact
+        # (set_code, card_number) is in the collection. Falls back to name-only for
+        # genuinely coord-less legacy entries (in practice vestigial since all entries carry coords).
+        # TODO(deck-ev): when deck logic lands, switch to name-count here (decks mix sets).
+        if collection_by_coord is not None and cn is not None:
+            owned = collection_by_coord.get((sc, cn), 0)
         else:
             owned = collection.get(_norm(card_name), 0)
 
@@ -193,7 +193,7 @@ def compute_promo_pack_ev(slug: str, pack_data: dict, collection: dict[str, int]
 # Output writers
 # ---------------------------------------------------------------------------
 
-def write_json(records: list[dict]) -> dict:
+def write_json(records: list[dict], inputs_hash: str | None = None) -> dict:
     out = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "generated_by": "build_promo_pack_ev.py",
@@ -208,6 +208,8 @@ def write_json(records: list[dict]) -> dict:
         },
         "packs": records,
     }
+    if inputs_hash:
+        out["inputs_hash"] = inputs_hash
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -267,6 +269,21 @@ def write_md(records: list[dict]) -> None:
 def main():
     print("=== build_promo_pack_ev.py ===")
 
+    # Skip recompute when inputs unchanged.
+    _h = hashlib.sha256()
+    for _p in (PZ_PACK_ODDS_JSON, PACK_SOURCES_JSON, COLLECTION_JSON):
+        if _p.exists():
+            _h.update(_p.read_bytes())
+    inputs_hash = _h.hexdigest()
+    if OUT_JSON.exists():
+        try:
+            prev = json.loads(OUT_JSON.read_text(encoding="utf-8"))
+            if prev.get("inputs_hash") == inputs_hash:
+                print(f"  Inputs unchanged (hash={inputs_hash[:12]}…) — skipping recompute.")
+                return
+        except Exception:
+            pass  # corrupted prior output — recompute
+
     pz_raw     = json.loads(PZ_PACK_ODDS_JSON.read_text(encoding="utf-8"))
     collection, collection_by_coord = load_collection(COLLECTION_JSON)
     ps_idx     = load_promo_ps_index(PACK_SOURCES_JSON)
@@ -283,7 +300,7 @@ def main():
 
     records.sort(key=lambda r: r["new_card_ev"], reverse=True)
 
-    write_json(records)
+    write_json(records, inputs_hash=inputs_hash)
     write_md(records)
 
     print(f"\n  Written: {OUT_JSON.relative_to(ROOT)}")

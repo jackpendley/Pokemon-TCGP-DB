@@ -45,7 +45,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import norm_card_name, normalize_rarity
+from _collection_io import norm_card_name, normalize_rarity, card_reference_by_coord as _card_ref_by_coord
 
 ROOT          = Path(__file__).resolve().parent.parent
 PACK_SOURCES  = ROOT / "data" / "reference" / "pack_sources.json"
@@ -85,19 +85,7 @@ def _load_pack_sources() -> tuple[dict, list[dict]]:
 
 
 def _load_card_reference() -> dict[tuple[str, int], dict]:
-    """Return {(set_code, card_number) → ref_record}."""
-    data = _load_json(CARD_REF)
-    records = data.get("records", []) if isinstance(data, dict) else data
-    index: dict[tuple[str, int], dict] = {}
-    for r in records:
-        sc = str(r.get("set_code", "")).strip()
-        cn_raw = r.get("card_number")
-        try:
-            cn = int(cn_raw)
-        except (TypeError, ValueError):
-            continue
-        index[(sc, cn)] = r
-    return index
+    return _card_ref_by_coord(CARD_REF)
 
 
 # ---------------------------------------------------------------------------

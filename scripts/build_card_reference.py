@@ -93,12 +93,12 @@ def _load_snapshot(source: str, set_code: str) -> dict:
 
 
 def _load_pack_sources() -> dict[str, list[dict]]:
-    """Return {set_code: [record, ...]} from pack_sources.json."""
+    """Return {set_code: [record, ...]} from pack_sources.json, set_code uppercased."""
     data = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
     records = data.get("records", data) if isinstance(data, dict) else data
     by_set: dict[str, list[dict]] = {}
     for r in records:
-        sc = str(r.get("set_code", "")).strip()
+        sc = str(r.get("set_code", "")).upper().strip()
         if sc:
             by_set.setdefault(sc, []).append(r)
     return by_set
@@ -175,16 +175,10 @@ def reconcile_card(
     final_name = ps_name
 
     # ── Confidence determination ─────────────────────────────────────────────
-    # pack_sources is the Limitless-derived baseline — not independently sourced, but
-    # it is real authoritative game data. When an independent source agrees with
-    # pack_sources, those two together constitute a "majority" against a single
-    # disagreeing source (e.g. Bulbapedia + pack_sources = 2 vs Serebii's display
-    # truncation = 1). This prevents known Serebii display limitations from creating
-    # false conflicts when every other source is in agreement.
-    #
-    # True "conflict" is reserved for independent sources that DISAGREE WITH EACH OTHER
-    # (not just with pack_sources) — e.g. Bulbapedia says "Charizard" and Serebii says
-    # "Pikachu" at the same coord. That's the only genuine manual-review case.
+    # Confidence rule: ≥2 genuinely independent sources (TCGdex, Serebii, Bulbapedia)
+    # must agree for "confirmed". pack_sources is the Limitless-derived baseline —
+    # it is NOT an independent source and is NOT counted as a confirming vote.
+    # This prevents 1-source+baseline from masking a genuine disagreement.
 
     total_reachable = len(agreed) + len(disagreed)
     if total_reachable == 0:
@@ -197,27 +191,15 @@ def reconcile_card(
                 f"{src} returned {bad_name!r} (ps={ps_name!r}); overridden by majority"
             )
     elif len(agreed) == 1 and not disagreed:
-        # One independent source agrees, none disagree → single-source confirmation.
+        # One independent source agrees, none disagree → single-source.
         confidence = "single"
     elif len(agreed) >= 1 and disagreed:
-        # Mixed: some agree, some disagree.
-        # pack_sources (baseline) implicitly agrees with ps_name. So total "pro" votes
-        # = len(agreed) + 1 (pack_sources). When that exceeds disagreed, it's a majority.
-        pro = len(agreed) + 1   # +1 for pack_sources baseline
-        con = len(disagreed)
-        if pro > con:
-            confidence = "confirmed"
-            for src, bad_name in disagreed.items():
-                conflict_notes.append(
-                    f"{src} returned {bad_name!r} (ps={ps_name!r}); overridden by majority"
-                )
-        else:
-            # More (or equal) disagree than agree even including pack_sources → real conflict.
-            confidence = "conflict"
-            conflict_notes.append(
-                f"UNRESOLVED: pack_sources={ps_name!r} agreed={agreed} "
-                f"disagreed={dict(disagreed)}"
-            )
+        # Some agree, some disagree — with only 1 agreeing source this is ambiguous.
+        # Mark as conflict so it's surfaced for manual review.
+        confidence = "conflict"
+        conflict_notes.append(
+            f"UNRESOLVED: agreed={agreed} disagreed={dict(disagreed)} ps={ps_name!r}"
+        )
     elif not agreed and disagreed:
         # All reachable sources disagree with pack_sources — check if they agree with each other
         dis_names = list(disagreed.values())

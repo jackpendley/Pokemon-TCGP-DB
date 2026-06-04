@@ -42,7 +42,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import TRAINER_CATEGORIES, is_ex_from_name
+from _collection_io import TRAINER_CATEGORIES, is_ex_from_name, RARITY_SYMBOLS, field_slug as _normalize
 
 try:
     from bs4 import BeautifulSoup
@@ -125,10 +125,6 @@ _TRAINER_KEYWORDS = {
     "pokemon tool":  "Tool",
     "tool":          "Tool",
 }
-
-
-def _normalize(name: str) -> str:
-    return re.sub(r"[^a-z0-9]", "_", name.lower().strip()).strip("_")
 
 
 def _fetch_page(url: str) -> str | None:
@@ -302,16 +298,10 @@ def _parse_card_page(html: str, set_code: str, number: int, source_url: str) -> 
 
     # ── Rarity ───────────────────────────────────────────────────────────
     rarity: str | None = None
-    rarity_symbols = {
-        "◊◊◊◊": "four_diamond", "◊◊◊": "three_diamond",
-        "◊◊": "two_diamond", "◊": "one_diamond",
-        "☆☆☆": "three_star", "☆☆": "two_star", "☆": "one_star",
-        "♛": "crown", "✦": "promo",
-    }
     details = soup.select_one(".prints-current-details")
     if details:
         raw = details.get_text()
-        for sym, label in rarity_symbols.items():
+        for sym, label in RARITY_SYMBOLS.items():
             if sym in raw:
                 rarity = label
                 break

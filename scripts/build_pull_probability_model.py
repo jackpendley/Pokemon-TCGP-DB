@@ -44,15 +44,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from _collection_io import RARITIES as RARITY_FIELDS  # noqa: E402 (after sys.path insert)
+
 PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
 CONFIDENCE_SCORES_JSON = ROOT / "data" / "current" / "pack_source_confidence_scores.json"
 OUT_JSON = ROOT / "data" / "reference" / "pull_probability_model.json"
 OUT_MD = ROOT / "review" / "pull_probability_model.md"
-
-RARITY_FIELDS = [
-    "one_diamond", "two_diamond", "three_diamond", "four_diamond",
-    "one_star", "two_star", "three_star", "crown", "promo", "unknown",
-]
 
 STANDARD_SLOT_MODEL = {
     "cards_per_pack": 5,
@@ -533,22 +531,23 @@ def load_existing_rates(path: Path) -> dict:
         return {}
     try:
         raw = json.loads(path.read_text(encoding="utf-8"))
-        result = {}
-        for p in raw.get("packs", []):
-            pn = p.get("pack_name")
-            if pn:
-                result[pn] = {
-                    "confidence": p.get("confidence", "unknown"),
-                    "source_url": p.get("source_url"),
-                    "source_name": p.get("source_name"),
-                    "source_accessed_at": p.get("source_accessed_at"),
-                    "slot_rates": p.get("slot_rates"),
-                    "rarity_probabilities": p.get("rarity_probabilities"),
-                    "notes": p.get("notes"),
-                }
-        return result
-    except Exception:
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"WARN: could not load existing model from {path}: {e}", file=sys.stderr)
         return {}
+    result = {}
+    for p in raw.get("packs", []):
+        pn = p.get("pack_name")
+        if pn:
+            result[pn] = {
+                "confidence": p.get("confidence", "unknown"),
+                "source_url": p.get("source_url"),
+                "source_name": p.get("source_name"),
+                "source_accessed_at": p.get("source_accessed_at"),
+                "slot_rates": p.get("slot_rates"),
+                "rarity_probabilities": p.get("rarity_probabilities"),
+                "notes": p.get("notes"),
+            }
+    return result
 
 
 def _build_slot_rates_for_set(set_code: str) -> tuple[dict, str, str, str, bool]:
@@ -1099,7 +1098,7 @@ def run_validate() -> bool:
 
     prob_errors = 0
     for p in packs:
-        rp = p.get("rarity_probabilities", {})
+        rp = p.get("rarity_probabilities") or {}
         for field, val in rp.items():
             if val is not None and not (isinstance(val, (int, float)) and 0 <= val <= 1):
                 print(f"  ERROR: {p['pack_name']}.{field} = {val} (must be null or 0–1)")
@@ -1157,7 +1156,7 @@ def run_validate() -> bool:
 
     unknown_rarity_probs = sum(
         1 for p in packs
-        if all(v is None for v in p.get("rarity_probabilities", {}).values())
+        if all(v is None for v in (p.get("rarity_probabilities") or {}).values())
     )
     n_tpv     = sum(1 for p in packs if p.get("confidence") == "third_party_verified")
     n_bpv     = sum(1 for p in packs if p.get("confidence") == "bulbapedia_branch_verified")

@@ -46,7 +46,7 @@
           "rarity": {
             "type": ["string", "null"],
             "description": "Rarity code from Limitless",
-            "enum": ["one_diamond", "two_diamond", "three_diamond", "four_diamond", "one_star", "double_star", "triple_star", "crown", "promo", null]
+            "enum": ["one_diamond", "two_diamond", "three_diamond", "four_diamond", "one_star", "two_star", "three_star", "crown", "promo", null]
           },
           "card_category": {
             "type": ["string", "null"],
@@ -58,7 +58,7 @@
           },
           "is_ex": {
             "type": ["boolean", "null"],
-            "description": "True if this is an EX card"
+            "description": "EX status from ext_ref. Deprecated for collection entries (derive from name suffix ' ex') but retained in pack_sources for completeness."
           },
           "is_promo": {
             "type": ["boolean", "null"],
