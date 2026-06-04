@@ -242,6 +242,11 @@ def field_slug(name: str) -> str:
     exact Unicode matching is not required. Distinct from norm_card_name
     (which is for cross-source card-name matching): this replaces non-alphanumeric
     chars with underscores rather than stripping them.
+
+    ⚠️  Gender symbols (♀, ♂) are stripped to underscore, NOT substituted with f/m.
+    Both Nidoran♀ and Nidoran♂ produce 'nidoran', so this function MUST NOT be used
+    to build a lookup that must distinguish the two variants. Use norm_card_name
+    (which maps ♀→f, ♂→m before stripping) for any gender-sensitive card matching.
     """
     return re.sub(r"[^a-z0-9]", "_", name.lower().strip()).strip("_")
 

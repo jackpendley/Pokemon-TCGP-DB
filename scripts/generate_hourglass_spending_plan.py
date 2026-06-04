@@ -459,12 +459,15 @@ def main():
             sys.exit(1)
 
     # Skip recompute when inputs are unchanged.
+    # --include-limited changes which packs appear in outputs, so it's part of the hash.
     _h = hashlib.sha256()
     for _p in (PACK_EV_JSON, PULL_MODEL_JSON, COLLECTION_NORMALIZED_JSON, RECOMMENDATIONS_JSON):
         if _p.exists():
             _h.update(_p.read_bytes())
+    _h.update(f"include_limited={args.include_limited}".encode())
     inputs_hash = _h.hexdigest()
-    if OUT_JSON.exists():
+    _all_outputs_present = all(p.exists() for p in (OUT_JSON, OUT_MD, OUT_CSV))
+    if _all_outputs_present and OUT_JSON.exists():
         try:
             prev = json.loads(OUT_JSON.read_text(encoding="utf-8"))
             if prev.get("inputs_hash") == inputs_hash:

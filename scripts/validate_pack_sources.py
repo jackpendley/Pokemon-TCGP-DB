@@ -66,11 +66,14 @@ def main():
 
     print(f"PASS  pack_sources.json loaded ({len(data)} records)")
 
-    # JSON Schema structural validation
+    # JSON Schema structural validation.
+    # The schema expects {"records": [...]}; when the file is a flat array we wrap
+    # it so the same schema validates both formats.
     if _JSONSCHEMA_AVAILABLE and PACK_SOURCES_SCHEMA.exists():
         schema = json.loads(PACK_SOURCES_SCHEMA.read_text(encoding="utf-8"))
+        schema_instance = raw if isinstance(raw, dict) else {"records": raw}
         try:
-            jsonschema.validate(instance=raw, schema=schema)
+            jsonschema.validate(instance=schema_instance, schema=schema)
             print("PASS  JSON schema validation")
         except jsonschema.ValidationError as e:
             print(f"FAIL  JSON schema validation: {e.message} (path: {list(e.path)})")

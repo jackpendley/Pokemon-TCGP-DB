@@ -671,13 +671,17 @@ def main():
             print(f"ERROR: required input not found: {p}", file=sys.stderr)
             sys.exit(1)
 
-    # Skip recompute when inputs are unchanged (same pattern as build_pack_ev).
+    # Skip recompute when inputs are unchanged.
+    # Flags that change output content are included in the hash so toggling
+    # --include-limited or --no-promo always triggers a recompute.
     _h = hashlib.sha256()
     for _p in (PACK_EV_JSON, COLLECTION_JSON, PROMO_EV_JSON, DECK_VALIDATION_JSON):
         if _p.exists():
             _h.update(_p.read_bytes())
+    _h.update(f"include_limited={args.include_limited},show_promo={show_promo}".encode())
     inputs_hash = _h.hexdigest()
-    if OUT_JSON.exists():
+    _all_outputs_present = all(p.exists() for p in (OUT_JSON, OUT_MD, OUT_CSV))
+    if _all_outputs_present and OUT_JSON.exists():
         try:
             prev = json.loads(OUT_JSON.read_text(encoding="utf-8"))
             if prev.get("inputs_hash") == inputs_hash:

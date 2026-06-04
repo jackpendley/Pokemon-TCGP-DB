@@ -157,10 +157,11 @@ def test_name_number_corrects_pz_mislabel():
     assert rc.set_code == "A4b"  # corrected from PZ's "A1"
 
 
-# ── Path 1b multiple: collision → PZ tiebreaker ───────────────────────────
+# ── Path 1b multiple: any multi-set collision → conflict ─────────────────
 
-def test_collision_pz_set_tiebreaker():
-    # Bulbasaur #1 appears in A1 and A4b; PZ says A1 → A1 should win.
+def test_collision_returns_conflict_regardless_of_pz_set():
+    """Any name+number collision in 2+ sets must return conflict, even when PZ's
+    set_code is one of the candidates. Trusting PZ here re-enables the A4b mislabel."""
     resolver = _PatchedResolver(
         ref_records=[
             _ref_rec("A1", 1, "Bulbasaur"),
@@ -169,8 +170,9 @@ def test_collision_pz_set_tiebreaker():
         ps_records=[],
     )
     rc = resolver.resolve("Bulbasaur", "A1", 1)
-    assert rc.confidence == "confirmed"
-    assert rc.set_code == "A1"
+    assert rc.confidence == "conflict"
+    assert rc.set_code is None
+    assert "card_reference" in rc.sources_agreed
 
 
 def test_collision_no_pz_tiebreaker_returns_conflict_not_crash():
@@ -191,6 +193,56 @@ def test_collision_no_pz_tiebreaker_returns_conflict_not_crash():
     assert rc.confidence == "conflict"
     assert rc.set_code is None
     assert "card_reference" in rc.sources_agreed
+
+
+# ── Path 1a: multi-set collision — don't trust PZ's exact coord blindly ──────────
+
+def test_exact_coord_multi_set_collision_returns_conflict():
+    """Any (name, number) collision across 2+ sets must always return conflict.
+
+    This is the A4b→A1 mislabel guard: PZ labels A4b cards as A1/A2/A3/A4. Since
+    the reference is genuinely ambiguous, we surface the conflict so the review queue
+    catches it rather than silently attributing ownership to the wrong pack's EV pool.
+    """
+    resolver = _PatchedResolver(
+        ref_records=[
+            _ref_rec("A1",  1, "Bulbasaur"),
+            _ref_rec("A4b", 1, "Bulbasaur"),
+        ],
+        ps_records=[],
+    )
+    rc = resolver.resolve("Bulbasaur", "A1", 1)
+    assert rc.confidence == "conflict"
+    assert rc.set_code is None
+
+
+def test_name_number_single_set_uses_1b_path():
+    """When (name, number) uniquely maps to one set, path 1b corrects PZ's set_code.
+
+    Note: this test exercises path 1b (name+number lookup), not path 1a (exact coord).
+    Path 1a requires PZ's set_code to match the reference's set_code.
+    """
+    resolver = _PatchedResolver(
+        ref_records=[_ref_rec("Pikachu", 35, "Pikachu")],
+        ps_records=[],
+    )
+    # PZ says A1 but the reference only has this card in set "Pikachu" — 1b corrects it
+    rc = resolver.resolve("Pikachu", "A1", 35)
+    assert rc.confidence == "confirmed"
+    assert rc.set_code == "Pikachu"  # set_code from the ref record (corrected from A1)
+
+
+def test_exact_coord_single_set_fast_path():
+    """When PZ's set_code matches the reference AND the card is in exactly one set,
+    path 1a (exact coord + single ref_cands) confirms without any network call."""
+    resolver = _PatchedResolver(
+        ref_records=[_ref_rec("A1", 35, "Pikachu")],
+        ps_records=[],
+    )
+    # PZ says A1, reference has this card only in A1 → path 1a fast-path fires
+    rc = resolver.resolve("Pikachu", "A1", 35)
+    assert rc.confidence == "confirmed"
+    assert rc.set_code == "A1"
 
 
 # ── Path 1a: exact coord but name disagrees → conflict (not silent fallthrough) ──

@@ -247,19 +247,10 @@ class CoordResolver:
             ref = self.ref_by_coord[ref_cands[0]]
             return self._coord_from_ref(name, ref)
         elif len(ref_cands) > 1:
-            # Multiple sets have this name+number — use PZ set as tiebreaker only when
-            # we have additional evidence the PZ coord is the correct one; blind trust
-            # would re-confirm the exact mislabel the resolver exists to catch.
-            # Strategy: accept PZ's set if it has the LOWEST card_number among candidates
-            # (most cards appear first in earlier sets); otherwise return conflict.
-            if (pz_s, num) in self.ref_by_coord:
-                # PZ's set is one of the candidates — check if it's the canonical one.
-                # For now, accept it only when ALL candidates agree on the same set_code
-                # (i.e. the same card number exists in multiple sets by coincidence but
-                # PZ happens to give the right set for this entry).
-                ref = self.ref_by_coord[(pz_s, num)]
-                return self._coord_from_ref(name, ref)
-            # Otherwise fall through to live-lookup fallback
+            # Multiple sets share this (name, number) — PZ's set_code is unreliable
+            # here because this is exactly the A4b mislabel scenario (PZ labels A4b
+            # cards as A1/A2/A3/A4). Surface as conflict so the entry routes to the
+            # review queue rather than silently attributing ownership to the wrong set.
             return ResolvedCoord(name, None, num, None, "conflict",
                                  sources_agreed=["card_reference"],
                                  detail=f"ambiguous sets in reference: {sorted(ref_cands)}")

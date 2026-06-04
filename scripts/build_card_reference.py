@@ -40,7 +40,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import norm_card_name, normalize_rarity
+from _collection_io import norm_card_name, normalize_rarity, canonical_set_code
 
 ROOT          = Path(__file__).resolve().parent.parent
 SOURCES_DIR   = ROOT / "data" / "reference" / "sources"
@@ -194,12 +194,38 @@ def reconcile_card(
         # One independent source agrees, none disagree → single-source.
         confidence = "single"
     elif len(agreed) >= 1 and disagreed:
-        # Some agree, some disagree — with only 1 agreeing source this is ambiguous.
-        # Mark as conflict so it's surfaced for manual review.
-        confidence = "conflict"
-        conflict_notes.append(
-            f"UNRESOLVED: agreed={agreed} disagreed={dict(disagreed)} ps={ps_name!r}"
-        )
+        # Some agree, some disagree. Check if every disagreement is a display truncation
+        # (the disagreeing name is a strict normalised prefix of the agreed name). This
+        # pattern is known for Serebii, which sometimes truncates long card names.
+        # A prefix-match disagreement is advisory, not a blocking conflict.
+        def _is_prefix_truncation(bad: str, good: str) -> bool:
+            """True when one name is a normalised prefix of the other (either direction).
+
+            Covers two known Serebii patterns:
+            - Truncation: Serebii omits trailing words ('Mega Charizard' for 'Mega Charizard X')
+            - Appended junk: Serebii adds stray chars ('Professor Turoa' for 'Professor Turo')
+            Require at least 4 chars to avoid spurious matches on short names.
+            """
+            nb, ng = norm_card_name(bad), norm_card_name(good)
+            if nb == ng:
+                return False
+            min_len = min(len(nb), len(ng))
+            return min_len >= 4 and (ng.startswith(nb) or nb.startswith(ng))
+
+        all_prefix = all(_is_prefix_truncation(bad, ps_name) for bad in disagreed.values())
+        if all_prefix:
+            confidence = "single"
+            for src, bad_name in disagreed.items():
+                conflict_notes.append(
+                    f"{src} returned truncated name {bad_name!r} (prefix of {ps_name!r}); "
+                    f"treated as display truncation — not a blocking conflict"
+                )
+        else:
+            # Genuine disagreement: some agree, some disagree with a non-prefix name.
+            confidence = "conflict"
+            conflict_notes.append(
+                f"UNRESOLVED: agreed={agreed} disagreed={dict(disagreed)} ps={ps_name!r}"
+            )
     elif not agreed and disagreed:
         # All reachable sources disagree with pack_sources — check if they agree with each other
         dis_names = list(disagreed.values())
@@ -267,7 +293,7 @@ def reconcile_card(
             )
 
     return {
-        "set_code":       set_code,
+        "set_code":       canonical_set_code(set_code),
         "card_number":    card_number,
         "name":           final_name,
         "rarity":         normalize_rarity(rarity_final),
