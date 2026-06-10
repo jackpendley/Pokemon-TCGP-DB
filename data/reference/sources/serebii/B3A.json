@@ -1,0 +1,337 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:40Z",
+    "card_count": 109,
+    "set_code": "B3A",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Surskit"
+    },
+    "10": {
+      "name": "Floatzel"
+    },
+    "100": {
+      "name": "Klawf"
+    },
+    "101": {
+      "name": "Orthworm"
+    },
+    "102": {
+      "name": "Swablu"
+    },
+    "103": {
+      "name": "Altaria"
+    },
+    "104": {
+      "name": "Meowscarada ex"
+    },
+    "105": {
+      "name": "Armarouge ex"
+    },
+    "106": {
+      "name": "Bellibolt ex"
+    },
+    "107": {
+      "name": "Mega Altaria ex"
+    },
+    "108": {
+      "name": "Iron Valiant"
+    },
+    "109": {
+      "name": "Roaring Moon"
+    },
+    "11": {
+      "name": "Snom"
+    },
+    "12": {
+      "name": "Frosmoth"
+    },
+    "13": {
+      "name": "Iron Bundle ex"
+    },
+    "14": {
+      "name": "Pawmi"
+    },
+    "15": {
+      "name": "Pawmo"
+    },
+    "16": {
+      "name": "Pawmot"
+    },
+    "17": {
+      "name": "Iron Hands"
+    },
+    "18": {
+      "name": "Iron Thorns"
+    },
+    "19": {
+      "name": "Miraidon ex"
+    },
+    "2": {
+      "name": "Masquerain"
+    },
+    "20": {
+      "name": "Espeon"
+    },
+    "21": {
+      "name": "Flittle"
+    },
+    "22": {
+      "name": "Espathra"
+    },
+    "23": {
+      "name": "Greavard"
+    },
+    "24": {
+      "name": "Houndstone"
+    },
+    "25": {
+      "name": "Scream Tail"
+    },
+    "26": {
+      "name": "Flutter Mane ex"
+    },
+    "27": {
+      "name": "Iron Valiant"
+    },
+    "28": {
+      "name": "Iron Leaves"
+    },
+    "29": {
+      "name": "Iron Boulder"
+    },
+    "3": {
+      "name": "Brute Bonnet"
+    },
+    "30": {
+      "name": "Iron Crown"
+    },
+    "31": {
+      "name": "Nacli"
+    },
+    "32": {
+      "name": "Naclstack"
+    },
+    "33": {
+      "name": "Garganacl"
+    },
+    "34": {
+      "name": "Great Tusk"
+    },
+    "35": {
+      "name": "Sandy Shocks"
+    },
+    "36": {
+      "name": "Koraidon ex"
+    },
+    "37": {
+      "name": "Umbreon"
+    },
+    "38": {
+      "name": "Sneasel"
+    },
+    "39": {
+      "name": "Weavile"
+    },
+    "4": {
+      "name": "Slither Wing"
+    },
+    "40": {
+      "name": "Sableye"
+    },
+    "41": {
+      "name": "Pawniard"
+    },
+    "42": {
+      "name": "Bisharp"
+    },
+    "43": {
+      "name": "Kingambit"
+    },
+    "44": {
+      "name": "Glimmet"
+    },
+    "45": {
+      "name": "Glimmora"
+    },
+    "46": {
+      "name": "Iron Jugulis"
+    },
+    "47": {
+      "name": "Roaring Moon"
+    },
+    "48": {
+      "name": "Corviknight"
+    },
+    "49": {
+      "name": "Cufant"
+    },
+    "5": {
+      "name": "Iron Moth"
+    },
+    "50": {
+      "name": "Copperajah"
+    },
+    "51": {
+      "name": "Iron Treads"
+    },
+    "52": {
+      "name": "Altaria"
+    },
+    "53": {
+      "name": "Walking Wake"
+    },
+    "54": {
+      "name": "Gouging Fire"
+    },
+    "55": {
+      "name": "Raging Bolt"
+    },
+    "56": {
+      "name": "Eevee"
+    },
+    "57": {
+      "name": "Girafarig"
+    },
+    "58": {
+      "name": "Farigiraf"
+    },
+    "59": {
+      "name": "Dunsparce"
+    },
+    "6": {
+      "name": "Psyduck"
+    },
+    "60": {
+      "name": "Dudunsparce"
+    },
+    "61": {
+      "name": "Swablu"
+    },
+    "62": {
+      "name": "Rufflet"
+    },
+    "63": {
+      "name": "Braviary"
+    },
+    "64": {
+      "name": "Hawlucha"
+    },
+    "65": {
+      "name": "Rookidee"
+    },
+    "66": {
+      "name": "Corvisquire"
+    },
+    "67": {
+      "name": "Flamigo"
+    },
+    "68": {
+      "name": "Terapagos ex"
+    },
+    "69": {
+      "name": "Ancient Booster Energy Capsule"
+    },
+    "7": {
+      "name": "Golduck"
+    },
+    "70": {
+      "name": "Future Booster Energy Capsule"
+    },
+    "71": {
+      "name": "Juliana"
+    },
+    "72": {
+      "name": "Professor Sada"
+    },
+    "73": {
+      "name": "Professor Turoa"
+    },
+    "74": {
+      "name": "Area Zero"
+    },
+    "75": {
+      "name": "Snom"
+    },
+    "76": {
+      "name": "Flittle"
+    },
+    "77": {
+      "name": "Iron Boulder"
+    },
+    "78": {
+      "name": "Glimmora"
+    },
+    "79": {
+      "name": "Raging Bolt"
+    },
+    "8": {
+      "name": "Vaporeon"
+    },
+    "80": {
+      "name": "Hawlucha"
+    },
+    "81": {
+      "name": "Iron Bundle ex"
+    },
+    "82": {
+      "name": "Miraidon ex"
+    },
+    "83": {
+      "name": "Flutter Mane ex"
+    },
+    "84": {
+      "name": "Koraidon ex"
+    },
+    "85": {
+      "name": "Terapagos ex"
+    },
+    "86": {
+      "name": "Juliana"
+    },
+    "87": {
+      "name": "Professor Sada"
+    },
+    "88": {
+      "name": "Professor Turoa"
+    },
+    "89": {
+      "name": "Iron Bundle ex"
+    },
+    "9": {
+      "name": "Buizel"
+    },
+    "90": {
+      "name": "Miraidon ex"
+    },
+    "91": {
+      "name": "Flutter Mane ex"
+    },
+    "92": {
+      "name": "Koraidon ex"
+    },
+    "93": {
+      "name": "Terapagos ex"
+    },
+    "94": {
+      "name": "Rellor"
+    },
+    "95": {
+      "name": "Charcadet"
+    },
+    "96": {
+      "name": "Tadbulb"
+    },
+    "97": {
+      "name": "Rabsca"
+    },
+    "98": {
+      "name": "Diglett"
+    },
+    "99": {
+      "name": "Dugtrio"
+    }
+  }
+}

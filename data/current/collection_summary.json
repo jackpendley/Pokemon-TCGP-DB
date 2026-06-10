@@ -1,50 +1,57 @@
 {
   "meta": {
-    "total_cards": 886,
-    "last_updated": "2026-05-31",
+    "total_cards": 1145,
+    "last_updated": "2026-06-09",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 886,
-  "meta_total_cards": 886,
+  "total_quantity": 1145,
+  "meta_total_cards": 1145,
   "count_matches_meta": true,
-  "unique_entries": 457,
+  "unique_entries": 529,
   "by_card_type": {
-    "Pokemon": 802,
-    "Trainer": 84
+    "Pokemon": 1049,
+    "Trainer": 96
   },
   "by_pokemon_type": {
-    "Fire": 73,
-    "Grass": 104,
-    "Water": 85,
-    "Lightning": 62,
-    "Psychic": 60,
-    "Fighting": 120,
-    "Darkness": 65,
-    "Metal": 35,
-    "Dragon": 3,
-    "Colorless": 106,
-    "Unknown": 89
+    "Fire": 94,
+    "Grass": 130,
+    "Water": 148,
+    "Lightning": 94,
+    "Psychic": 91,
+    "Fighting": 148,
+    "Darkness": 104,
+    "Metal": 55,
+    "Dragon": 19,
+    "Colorless": 166
   },
   "by_stage": {
-    "Basic": 510,
-    "Stage 1": 210,
-    "Stage 2": 51
+    "Basic": 659,
+    "Stage 1": 282,
+    "Stage 2": 65
   },
-  "ex_entries": 25,
-  "ex_quantity": 29,
+  "ex_entries": 32,
+  "ex_quantity": 39,
   "trainer_subtypes": {
-    "Item": 32,
+    "Item": 34,
     "Pokemon Tool": 7,
-    "Supporter": 38,
-    "Stadium": 7
+    "Supporter": 44,
+    "Stadium": 11
   },
   "top_cards_by_count": [
     [
       "Tepig",
-      10
+      12
     ],
     [
       "Shroomish",
+      10
+    ],
+    [
+      "Sobble",
+      10
+    ],
+    [
+      "Treecko",
       9
     ],
     [
@@ -52,8 +59,20 @@
       9
     ],
     [
-      "Treecko",
-      8
+      "Riolu",
+      9
+    ],
+    [
+      "Croagunk",
+      9
+    ],
+    [
+      "Dwebble",
+      9
+    ],
+    [
+      "Buizel",
+      9
     ],
     [
       "Swadloon",
@@ -64,49 +83,31 @@
       8
     ],
     [
-      "Sobble",
-      8
-    ],
-    [
-      "Dwebble",
-      8
-    ],
-    [
-      "Pignite",
-      7
-    ],
-    [
       "Electrode",
-      7
+      8
     ],
     [
-      "Nosepass",
-      7
+      "Seviper",
+      8
     ],
     [
-      "Toxicroak",
-      7
+      "Pawniard",
+      8
     ],
     [
-      "Croagunk",
-      7
-    ],
-    [
-      "Korrina",
-      7
-    ],
-    [
-      "Pawmi",
-      7
+      "Cinccino",
+      8
     ]
   ],
   "variant_names": {
     "Charmander": 2,
+    "Charmeleon": 2,
     "Tepig": 3,
     "Victini": 2,
     "Castform Sunny Form": 2,
     "Bulbasaur": 3,
     "Shroomish": 2,
+    "Budew": 2,
     "Treecko": 2,
     "Surskit": 2,
     "Masquerain": 2,
@@ -152,14 +153,19 @@
     "Pawmi": 2,
     "Pawmo": 2,
     "Pawmot": 2,
+    "Rabsca": 2,
     "Orthworm": 2,
     "Flamigo": 2,
     "Tinkatink": 2,
     "Swablu": 2,
     "Toxapex": 2,
+    "Zekrom": 2,
     "Juliana": 2,
+    "Snom": 2,
     "Glimmora": 2,
-    "Terapagos ex": 2
+    "Terapagos ex": 2,
+    "Haxorus": 2,
+    "Miltank": 2
   },
   "evolution_groups": [
     {
@@ -468,12 +474,11 @@
         "Zoroark"
       ],
       "owned": [
-        "Zorua"
-      ],
-      "missing": [
+        "Zorua",
         "Zoroark"
       ],
-      "complete": false
+      "missing": [],
+      "complete": true
     },
     {
       "line": [
@@ -574,7 +579,14 @@
       "Bellibolt ex",
       "Iron Bundle ex",
       "Terapagos ex",
-      "Terapagos ex"
+      "Terapagos ex",
+      "Dialga ex",
+      "Flutter Mane ex",
+      "Meowscarada ex",
+      "Mega Gengar ex",
+      "Mega Absol ex",
+      "Flygon ex",
+      "Zoroark ex"
     ],
     "strong_evolution_lines": [
       "Charmander → Charmeleon → Charizard",
@@ -599,6 +611,7 @@
       "Grimer → Garbodor",
       "Vullaby → Mandibuzz",
       "Trubbish → Garbodor",
+      "Zorua → Zoroark",
       "Bronzor → Bronzong",
       "Pawniard → Bisharp",
       "Lillipup → Herdier → Stoutland",
@@ -607,9 +620,7 @@
       "Minccino → Cinccino",
       "Rattata → Raticate"
     ],
-    "partial_evolution_lines": [
-      "Zorua → Zoroark"
-    ],
-    "total_trainer_cards": 84
+    "partial_evolution_lines": [],
+    "total_trainer_cards": 96
   }
 }

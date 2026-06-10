@@ -64,12 +64,12 @@ KNOWN_MULTI_VARIANT_PZ = [
     _make_pz("B3",   79,  "Riolu"),
     _make_pz("B3",  169,  "Riolu"),
     # Bulbasaur — three variants; hp=60 unique; hp=70 × 2 resolved by alt-art rarity
-    _make_pz("A1",    1,  "Bulbasaur"),   # one_diamond, hp=70 regular
-    _make_pz("A1",  227,  "Bulbasaur"),   # one_star,    hp=70 alt art
-    _make_pz("B1a",   1,  "Bulbasaur"),   # one_diamond, hp=60 Tackle art
+    _make_pz("A1",    1,  "Bulbasaur"),   # common, hp=70 regular
+    _make_pz("A1",  227,  "Bulbasaur"),   # illustration_rare,    hp=70 alt art
+    _make_pz("B1a",   1,  "Bulbasaur"),   # common, hp=60 Tackle art
     # Grovyle — same HP (80), different rarities; alt-art or Pass 3
-    _make_pz("B3",    6,  "Grovyle"),     # two_diamond
-    _make_pz("B3",  157,  "Grovyle"),     # one_star
+    _make_pz("B3",    6,  "Grovyle"),     # uncommon
+    _make_pz("B3",  157,  "Grovyle"),     # illustration_rare
     # HP-unique pairs — resolve in Step A
     _make_pz("B3",   79,  "Mienfoo"),     # placeholder set; test by name-only if not in PS
     _make_pz("B3",   80,  "Mienshao"),

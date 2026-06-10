@@ -1,0 +1,319 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:34Z",
+    "card_count": 103,
+    "set_code": "A3a",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Petilil"
+    },
+    "10": {
+      "name": "Mantine"
+    },
+    "100": {
+      "name": "Arcanine ex"
+    },
+    "101": {
+      "name": "Aerodactyl ex"
+    },
+    "102": {
+      "name": "Pidgeot ex"
+    },
+    "103": {
+      "name": "Nihilego"
+    },
+    "11": {
+      "name": "Carvanha"
+    },
+    "12": {
+      "name": "Sharpedo"
+    },
+    "13": {
+      "name": "Shinx"
+    },
+    "14": {
+      "name": "Luxio"
+    },
+    "15": {
+      "name": "Luxray"
+    },
+    "16": {
+      "name": "Blitzle"
+    },
+    "17": {
+      "name": "Zebstrika"
+    },
+    "18": {
+      "name": "Emolga"
+    },
+    "19": {
+      "name": "Tapu Koko ex"
+    },
+    "2": {
+      "name": "Lilligant"
+    },
+    "20": {
+      "name": "Xurkitree"
+    },
+    "21": {
+      "name": "Zeraora"
+    },
+    "22": {
+      "name": "Clefairy"
+    },
+    "23": {
+      "name": "Clefable"
+    },
+    "24": {
+      "name": "Phantump"
+    },
+    "25": {
+      "name": "Trevenant"
+    },
+    "26": {
+      "name": "Morelull"
+    },
+    "27": {
+      "name": "Shiinotic"
+    },
+    "28": {
+      "name": "Meditite"
+    },
+    "29": {
+      "name": "Medicham"
+    },
+    "3": {
+      "name": "Rowlet"
+    },
+    "30": {
+      "name": "Baltoy"
+    },
+    "31": {
+      "name": "Claydol"
+    },
+    "32": {
+      "name": "Rockruff"
+    },
+    "33": {
+      "name": "Lycanroc ex"
+    },
+    "34": {
+      "name": "Passimian"
+    },
+    "35": {
+      "name": "Sandygast"
+    },
+    "36": {
+      "name": "Palossand"
+    },
+    "37": {
+      "name": "Alolan Meowth"
+    },
+    "38": {
+      "name": "Alolan Persian"
+    },
+    "39": {
+      "name": "Sandile"
+    },
+    "4": {
+      "name": "Dartrix"
+    },
+    "40": {
+      "name": "Krokorok"
+    },
+    "41": {
+      "name": "Krookodile"
+    },
+    "42": {
+      "name": "Nihilego"
+    },
+    "43": {
+      "name": "Guzzlord ex"
+    },
+    "44": {
+      "name": "Poipole"
+    },
+    "45": {
+      "name": "Naganadel"
+    },
+    "46": {
+      "name": "Alolan Diglett"
+    },
+    "47": {
+      "name": "Alolan Dugtrio ex"
+    },
+    "48": {
+      "name": "Aron"
+    },
+    "49": {
+      "name": "Lairon"
+    },
+    "5": {
+      "name": "Decidueye"
+    },
+    "50": {
+      "name": "Aggron"
+    },
+    "51": {
+      "name": "Ferroseed"
+    },
+    "52": {
+      "name": "Ferrothorn"
+    },
+    "53": {
+      "name": "Stakataka"
+    },
+    "54": {
+      "name": "Lillipup"
+    },
+    "55": {
+      "name": "Herdier"
+    },
+    "56": {
+      "name": "Stoutland"
+    },
+    "57": {
+      "name": "Stufful"
+    },
+    "58": {
+      "name": "Bewear"
+    },
+    "59": {
+      "name": "Oranguru"
+    },
+    "6": {
+      "name": "Buzzwole ex"
+    },
+    "60": {
+      "name": "Type: Null"
+    },
+    "61": {
+      "name": "Silvally"
+    },
+    "62": {
+      "name": "Celesteela"
+    },
+    "63": {
+      "name": "Beast Wall"
+    },
+    "64": {
+      "name": "Repel"
+    },
+    "65": {
+      "name": "Electrical Cord"
+    },
+    "66": {
+      "name": "Beastite"
+    },
+    "67": {
+      "name": "Gladion"
+    },
+    "68": {
+      "name": "Looker"
+    },
+    "69": {
+      "name": "Lusamine"
+    },
+    "7": {
+      "name": "Pheromosa"
+    },
+    "70": {
+      "name": "Rowlet"
+    },
+    "71": {
+      "name": "Pheromosa"
+    },
+    "72": {
+      "name": "Blacephalon"
+    },
+    "73": {
+      "name": "Alolan Meowth"
+    },
+    "74": {
+      "name": "Silvally"
+    },
+    "75": {
+      "name": "Celesteela"
+    },
+    "76": {
+      "name": "Buzzwole ex"
+    },
+    "77": {
+      "name": "Tapu Koko ex"
+    },
+    "78": {
+      "name": "Lycanroc ex"
+    },
+    "79": {
+      "name": "Guzzlord ex"
+    },
+    "8": {
+      "name": "Kartana"
+    },
+    "80": {
+      "name": "Alolan Dugtrio ex"
+    },
+    "81": {
+      "name": "Gladion"
+    },
+    "82": {
+      "name": "Looker"
+    },
+    "83": {
+      "name": "Lusamine"
+    },
+    "84": {
+      "name": "Tapu Koko ex"
+    },
+    "85": {
+      "name": "Lycanroc ex"
+    },
+    "86": {
+      "name": "Guzzlord ex"
+    },
+    "87": {
+      "name": "Alolan Dugtrio ex"
+    },
+    "88": {
+      "name": "Buzzwole ex"
+    },
+    "89": {
+      "name": "Growlithe"
+    },
+    "9": {
+      "name": "Blacephalon"
+    },
+    "90": {
+      "name": "Arcanine"
+    },
+    "91": {
+      "name": "Froakie"
+    },
+    "92": {
+      "name": "Frogadier"
+    },
+    "93": {
+      "name": "Greninja"
+    },
+    "94": {
+      "name": "Jynx"
+    },
+    "95": {
+      "name": "Pidgey"
+    },
+    "96": {
+      "name": "Pidgeotto"
+    },
+    "97": {
+      "name": "Pidgeot"
+    },
+    "98": {
+      "name": "Aerodactyl"
+    },
+    "99": {
+      "name": "Celebi ex"
+    }
+  }
+}

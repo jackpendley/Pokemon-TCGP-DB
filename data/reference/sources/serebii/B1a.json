@@ -1,0 +1,319 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:38Z",
+    "card_count": 103,
+    "set_code": "B1a",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Bulbasaur"
+    },
+    "10": {
+      "name": "Mothim"
+    },
+    "100": {
+      "name": "Guzzlord ex"
+    },
+    "101": {
+      "name": "Solgaleo ex"
+    },
+    "102": {
+      "name": "Aegislash"
+    },
+    "103": {
+      "name": "Quick-Grow Extract"
+    },
+    "11": {
+      "name": "Charmander"
+    },
+    "12": {
+      "name": "Charmeleon"
+    },
+    "13": {
+      "name": "Charizard"
+    },
+    "14": {
+      "name": "Mega Charizard ex"
+    },
+    "15": {
+      "name": "Houndour"
+    },
+    "16": {
+      "name": "Houndoom"
+    },
+    "17": {
+      "name": "Squirtle"
+    },
+    "18": {
+      "name": "Wartortle"
+    },
+    "19": {
+      "name": "Blastoise"
+    },
+    "2": {
+      "name": "Ivysaur"
+    },
+    "20": {
+      "name": "Mega Blastoise ex"
+    },
+    "21": {
+      "name": "Basculin"
+    },
+    "22": {
+      "name": "Clauncher"
+    },
+    "23": {
+      "name": "Clawitzer"
+    },
+    "24": {
+      "name": "Magnemite"
+    },
+    "25": {
+      "name": "Magneton"
+    },
+    "26": {
+      "name": "Magnezone"
+    },
+    "27": {
+      "name": "Emolga"
+    },
+    "28": {
+      "name": "Helioptile"
+    },
+    "29": {
+      "name": "Heliolisk"
+    },
+    "3": {
+      "name": "Venusaur"
+    },
+    "30": {
+      "name": "Misdreavus"
+    },
+    "31": {
+      "name": "Mismagius"
+    },
+    "32": {
+      "name": "Solosis"
+    },
+    "33": {
+      "name": "Duosion"
+    },
+    "34": {
+      "name": "Reuniclus"
+    },
+    "35": {
+      "name": "Spritzee"
+    },
+    "36": {
+      "name": "Aromatisse"
+    },
+    "37": {
+      "name": "Xerneas"
+    },
+    "38": {
+      "name": "Onix"
+    },
+    "39": {
+      "name": "Makuhita"
+    },
+    "4": {
+      "name": "Mega Venusaur ex"
+    },
+    "40": {
+      "name": "Hariyama"
+    },
+    "41": {
+      "name": "Nosepass"
+    },
+    "42": {
+      "name": "Mega Lopunny ex"
+    },
+    "43": {
+      "name": "Mienfoo"
+    },
+    "44": {
+      "name": "Mienshao"
+    },
+    "45": {
+      "name": "Grimer"
+    },
+    "46": {
+      "name": "Muk"
+    },
+    "47": {
+      "name": "Purrloin"
+    },
+    "48": {
+      "name": "Liepard"
+    },
+    "49": {
+      "name": "Trubbish"
+    },
+    "5": {
+      "name": "Spinarak"
+    },
+    "50": {
+      "name": "Garbodor"
+    },
+    "51": {
+      "name": "Steelix"
+    },
+    "52": {
+      "name": "Mega Steelix ex"
+    },
+    "53": {
+      "name": "Probopass"
+    },
+    "54": {
+      "name": "Genesect"
+    },
+    "55": {
+      "name": "Ditto"
+    },
+    "56": {
+      "name": "Porygon"
+    },
+    "57": {
+      "name": "Porygon2"
+    },
+    "58": {
+      "name": "Porygon-Z"
+    },
+    "59": {
+      "name": "Starly"
+    },
+    "6": {
+      "name": "Ariados"
+    },
+    "60": {
+      "name": "Staravia"
+    },
+    "61": {
+      "name": "Staraptor"
+    },
+    "62": {
+      "name": "Buneary"
+    },
+    "63": {
+      "name": "Lopunny"
+    },
+    "64": {
+      "name": "Bouffalant"
+    },
+    "65": {
+      "name": "Furfrou"
+    },
+    "66": {
+      "name": "Clemont's Backpack"
+    },
+    "67": {
+      "name": "Quick-Grow Extract"
+    },
+    "68": {
+      "name": "Clemont"
+    },
+    "69": {
+      "name": "Serena"
+    },
+    "7": {
+      "name": "Sunkern"
+    },
+    "70": {
+      "name": "Ariados"
+    },
+    "71": {
+      "name": "Sunflora"
+    },
+    "72": {
+      "name": "Reuniclus"
+    },
+    "73": {
+      "name": "Xerneas"
+    },
+    "74": {
+      "name": "Trubbish"
+    },
+    "75": {
+      "name": "Buneary"
+    },
+    "76": {
+      "name": "Mega Venusaur ex"
+    },
+    "77": {
+      "name": "Mega Charizard ex"
+    },
+    "78": {
+      "name": "Mega Blastoise ex"
+    },
+    "79": {
+      "name": "Mega Lopunny ex"
+    },
+    "8": {
+      "name": "Sunflora"
+    },
+    "80": {
+      "name": "Mega Steelix ex"
+    },
+    "81": {
+      "name": "Clemont"
+    },
+    "82": {
+      "name": "Serena"
+    },
+    "83": {
+      "name": "Mega Venusaur ex"
+    },
+    "84": {
+      "name": "Mega Blastoise ex"
+    },
+    "85": {
+      "name": "Mega Lopunny ex"
+    },
+    "86": {
+      "name": "Mega Steelix ex"
+    },
+    "87": {
+      "name": "Mega Charizard ex"
+    },
+    "88": {
+      "name": "Oddish"
+    },
+    "89": {
+      "name": "Gloom"
+    },
+    "9": {
+      "name": "Burmy"
+    },
+    "90": {
+      "name": "Vileplume"
+    },
+    "91": {
+      "name": "Charizard"
+    },
+    "92": {
+      "name": "Shellder"
+    },
+    "93": {
+      "name": "Cloyster"
+    },
+    "94": {
+      "name": "Sandshrew"
+    },
+    "95": {
+      "name": "Sandslash"
+    },
+    "96": {
+      "name": "Type: Null"
+    },
+    "97": {
+      "name": "Silvally"
+    },
+    "98": {
+      "name": "Buzzwole ex"
+    },
+    "99": {
+      "name": "Lunala ex"
+    }
+  }
+}

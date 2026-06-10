@@ -1,0 +1,268 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:30Z",
+    "card_count": 86,
+    "set_code": "A1a",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Exeggcute"
+    },
+    "10": {
+      "name": "Ponyta"
+    },
+    "11": {
+      "name": "Rapidash"
+    },
+    "12": {
+      "name": "Magmar"
+    },
+    "13": {
+      "name": "Larvesta"
+    },
+    "14": {
+      "name": "Volcarona"
+    },
+    "15": {
+      "name": "Salandit"
+    },
+    "16": {
+      "name": "Salazzle"
+    },
+    "17": {
+      "name": "Magikarp"
+    },
+    "18": {
+      "name": "Gyarados ex"
+    },
+    "19": {
+      "name": "Vaporeon"
+    },
+    "2": {
+      "name": "Exeggutor"
+    },
+    "20": {
+      "name": "Finneon"
+    },
+    "21": {
+      "name": "Lumineon"
+    },
+    "22": {
+      "name": "Chewtle"
+    },
+    "23": {
+      "name": "Drednaw"
+    },
+    "24": {
+      "name": "Cramorant"
+    },
+    "25": {
+      "name": "Pikachu"
+    },
+    "26": {
+      "name": "Raichu"
+    },
+    "27": {
+      "name": "Electabuzz"
+    },
+    "28": {
+      "name": "Joltik"
+    },
+    "29": {
+      "name": "Galvantula"
+    },
+    "3": {
+      "name": "Celebi ex"
+    },
+    "30": {
+      "name": "Dedenne"
+    },
+    "31": {
+      "name": "Mew"
+    },
+    "32": {
+      "name": "Mew ex"
+    },
+    "33": {
+      "name": "Sigilyph"
+    },
+    "34": {
+      "name": "Elgyem"
+    },
+    "35": {
+      "name": "Beheeyem"
+    },
+    "36": {
+      "name": "Flabébé"
+    },
+    "37": {
+      "name": "Floette"
+    },
+    "38": {
+      "name": "Florges"
+    },
+    "39": {
+      "name": "Swirlix"
+    },
+    "4": {
+      "name": "Snivy"
+    },
+    "40": {
+      "name": "Slurpuff"
+    },
+    "41": {
+      "name": "Mankey"
+    },
+    "42": {
+      "name": "Primeape"
+    },
+    "43": {
+      "name": "Geodude"
+    },
+    "44": {
+      "name": "Graveler"
+    },
+    "45": {
+      "name": "Golem"
+    },
+    "46": {
+      "name": "Aerodactyl ex"
+    },
+    "47": {
+      "name": "Marshadow"
+    },
+    "48": {
+      "name": "Stonjourner"
+    },
+    "49": {
+      "name": "Koffing"
+    },
+    "5": {
+      "name": "Servine"
+    },
+    "50": {
+      "name": "Weezing"
+    },
+    "51": {
+      "name": "Purrloin"
+    },
+    "52": {
+      "name": "Liepard"
+    },
+    "53": {
+      "name": "Venipede"
+    },
+    "54": {
+      "name": "Whirlipede"
+    },
+    "55": {
+      "name": "Scolipede"
+    },
+    "56": {
+      "name": "Druddigon"
+    },
+    "57": {
+      "name": "Pidgey"
+    },
+    "58": {
+      "name": "Pidgeotto"
+    },
+    "59": {
+      "name": "Pidgeot ex"
+    },
+    "6": {
+      "name": "Serperior"
+    },
+    "60": {
+      "name": "Tauros"
+    },
+    "61": {
+      "name": "Eevee"
+    },
+    "62": {
+      "name": "Chatot"
+    },
+    "63": {
+      "name": "Old Amber"
+    },
+    "64": {
+      "name": "Pokemon Flute"
+    },
+    "65": {
+      "name": "Mythical Slab"
+    },
+    "66": {
+      "name": "Budding Expeditioner"
+    },
+    "67": {
+      "name": "Blue"
+    },
+    "68": {
+      "name": "Leaf"
+    },
+    "69": {
+      "name": "Exeggutor"
+    },
+    "7": {
+      "name": "Morelull"
+    },
+    "70": {
+      "name": "Serperior"
+    },
+    "71": {
+      "name": "Salandit"
+    },
+    "72": {
+      "name": "Vaporeon"
+    },
+    "73": {
+      "name": "Dedenne"
+    },
+    "74": {
+      "name": "Marshadow"
+    },
+    "75": {
+      "name": "Celebi ex"
+    },
+    "76": {
+      "name": "Gyarados ex"
+    },
+    "77": {
+      "name": "Mew ex"
+    },
+    "78": {
+      "name": "Aerodactyl ex"
+    },
+    "79": {
+      "name": "Pidgeot ex"
+    },
+    "8": {
+      "name": "Shiinotic"
+    },
+    "80": {
+      "name": "Budding Expeditioner"
+    },
+    "81": {
+      "name": "Blue"
+    },
+    "82": {
+      "name": "Leaf"
+    },
+    "83": {
+      "name": "Mew ex"
+    },
+    "84": {
+      "name": "Aerodactyl ex"
+    },
+    "85": {
+      "name": "Celebi ex"
+    },
+    "86": {
+      "name": "Mew ex"
+    },
+    "9": {
+      "name": "Dhelmise"
+    }
+  }
+}

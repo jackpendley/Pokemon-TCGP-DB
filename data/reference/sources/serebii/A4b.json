@@ -1,0 +1,1147 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:53Z",
+    "card_count": 379,
+    "set_code": "A4b",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Bulbasaur"
+    },
+    "10": {
+      "name": "Beedrill ex"
+    },
+    "100": {
+      "name": "Vaporeon"
+    },
+    "101": {
+      "name": "Articuno ex"
+    },
+    "102": {
+      "name": "Corphish"
+    },
+    "103": {
+      "name": "Corphish"
+    },
+    "104": {
+      "name": "Crawdaunt"
+    },
+    "105": {
+      "name": "Crawdaunt"
+    },
+    "106": {
+      "name": "Glaceon ex"
+    },
+    "107": {
+      "name": "Palkia ex"
+    },
+    "108": {
+      "name": "Manaphy"
+    },
+    "109": {
+      "name": "Manaphy"
+    },
+    "11": {
+      "name": "Exeggcute"
+    },
+    "110": {
+      "name": "Froakie"
+    },
+    "111": {
+      "name": "Froakie"
+    },
+    "112": {
+      "name": "Frogadier"
+    },
+    "113": {
+      "name": "Frogadier"
+    },
+    "114": {
+      "name": "Greninja"
+    },
+    "115": {
+      "name": "Greninja"
+    },
+    "116": {
+      "name": "Popplio"
+    },
+    "117": {
+      "name": "Popplio"
+    },
+    "118": {
+      "name": "Brionne"
+    },
+    "119": {
+      "name": "Brionne"
+    },
+    "12": {
+      "name": "Exeggcute"
+    },
+    "120": {
+      "name": "Primarina ex"
+    },
+    "121": {
+      "name": "Crabominable ex"
+    },
+    "122": {
+      "name": "Wishiwashi"
+    },
+    "123": {
+      "name": "Wishiwashi"
+    },
+    "124": {
+      "name": "Wishiwashi ex"
+    },
+    "125": {
+      "name": "Wiglett"
+    },
+    "126": {
+      "name": "Wiglett"
+    },
+    "127": {
+      "name": "Wugtrio ex"
+    },
+    "128": {
+      "name": "Pikachu"
+    },
+    "129": {
+      "name": "Pikachu"
+    },
+    "13": {
+      "name": "Exeggutor ex"
+    },
+    "130": {
+      "name": "Alolan Raichu ex"
+    },
+    "131": {
+      "name": "Pikachu ex"
+    },
+    "132": {
+      "name": "Pikachu ex"
+    },
+    "133": {
+      "name": "Magnemite"
+    },
+    "134": {
+      "name": "Magnemite"
+    },
+    "135": {
+      "name": "Magneton"
+    },
+    "136": {
+      "name": "Magneton"
+    },
+    "137": {
+      "name": "Magnezone"
+    },
+    "138": {
+      "name": "Magnezone"
+    },
+    "139": {
+      "name": "Zapdos ex"
+    },
+    "14": {
+      "name": "Hoppip"
+    },
+    "140": {
+      "name": "Chinchou"
+    },
+    "141": {
+      "name": "Chinchou"
+    },
+    "142": {
+      "name": "Lanturn ex"
+    },
+    "143": {
+      "name": "Pachirisu"
+    },
+    "144": {
+      "name": "Pachirisu"
+    },
+    "145": {
+      "name": "Pachirisu ex"
+    },
+    "146": {
+      "name": "Oricorio"
+    },
+    "147": {
+      "name": "Oricorio"
+    },
+    "148": {
+      "name": "Tapu Koko ex"
+    },
+    "149": {
+      "name": "Zeraora"
+    },
+    "15": {
+      "name": "Hoppip"
+    },
+    "150": {
+      "name": "Zeraora"
+    },
+    "151": {
+      "name": "Gastly"
+    },
+    "152": {
+      "name": "Gastly"
+    },
+    "153": {
+      "name": "Haunter"
+    },
+    "154": {
+      "name": "Haunter"
+    },
+    "155": {
+      "name": "Gengar ex"
+    },
+    "156": {
+      "name": "Jynx"
+    },
+    "157": {
+      "name": "Jynx"
+    },
+    "158": {
+      "name": "Mewtwo ex"
+    },
+    "159": {
+      "name": "Mew ex"
+    },
+    "16": {
+      "name": "Skiploom"
+    },
+    "160": {
+      "name": "Espeon ex"
+    },
+    "161": {
+      "name": "Misdreavus"
+    },
+    "162": {
+      "name": "Misdreavus"
+    },
+    "163": {
+      "name": "Mismagius ex"
+    },
+    "164": {
+      "name": "Ralts"
+    },
+    "165": {
+      "name": "Ralts"
+    },
+    "166": {
+      "name": "Kirlia"
+    },
+    "167": {
+      "name": "Kirlia"
+    },
+    "168": {
+      "name": "Gardevoir"
+    },
+    "169": {
+      "name": "Gardevoir"
+    },
+    "17": {
+      "name": "Skiploom"
+    },
+    "170": {
+      "name": "Giratina"
+    },
+    "171": {
+      "name": "Giratina"
+    },
+    "172": {
+      "name": "Giratina ex"
+    },
+    "173": {
+      "name": "Swirlix"
+    },
+    "174": {
+      "name": "Swirlix"
+    },
+    "175": {
+      "name": "Slurpuff"
+    },
+    "176": {
+      "name": "Slurpuff"
+    },
+    "177": {
+      "name": "Sylveon ex"
+    },
+    "178": {
+      "name": "Oricorio"
+    },
+    "179": {
+      "name": "Oricorio"
+    },
+    "18": {
+      "name": "Jumpluff"
+    },
+    "180": {
+      "name": "Cosmog"
+    },
+    "181": {
+      "name": "Cosmog"
+    },
+    "182": {
+      "name": "Cosmoem"
+    },
+    "183": {
+      "name": "Cosmoem"
+    },
+    "184": {
+      "name": "Lunala ex"
+    },
+    "185": {
+      "name": "Milcery"
+    },
+    "186": {
+      "name": "Milcery"
+    },
+    "187": {
+      "name": "Alcremie"
+    },
+    "188": {
+      "name": "Alcremie"
+    },
+    "189": {
+      "name": "Machop"
+    },
+    "19": {
+      "name": "Jumpluff"
+    },
+    "190": {
+      "name": "Machop"
+    },
+    "191": {
+      "name": "Machoke"
+    },
+    "192": {
+      "name": "Machoke"
+    },
+    "193": {
+      "name": "Machamp ex"
+    },
+    "194": {
+      "name": "Cubone"
+    },
+    "195": {
+      "name": "Cubone"
+    },
+    "196": {
+      "name": "Marowak ex"
+    },
+    "197": {
+      "name": "Aerodactyl ex"
+    },
+    "198": {
+      "name": "Sudowoodo"
+    },
+    "199": {
+      "name": "Sudowoodo"
+    },
+    "2": {
+      "name": "Bulbasaur"
+    },
+    "20": {
+      "name": "Yanma"
+    },
+    "200": {
+      "name": "Phanpy"
+    },
+    "201": {
+      "name": "Phanpy"
+    },
+    "202": {
+      "name": "Donphan ex"
+    },
+    "203": {
+      "name": "Nosepass"
+    },
+    "204": {
+      "name": "Nosepass"
+    },
+    "205": {
+      "name": "Gible"
+    },
+    "206": {
+      "name": "Gible"
+    },
+    "207": {
+      "name": "Gabite"
+    },
+    "208": {
+      "name": "Gabite"
+    },
+    "209": {
+      "name": "Garchomp ex"
+    },
+    "21": {
+      "name": "Yanma"
+    },
+    "210": {
+      "name": "Riolu"
+    },
+    "211": {
+      "name": "Riolu"
+    },
+    "212": {
+      "name": "Lucario"
+    },
+    "213": {
+      "name": "Lucario"
+    },
+    "214": {
+      "name": "Lucario ex"
+    },
+    "215": {
+      "name": "Gallade ex"
+    },
+    "216": {
+      "name": "Drilbur"
+    },
+    "217": {
+      "name": "Drilbur"
+    },
+    "218": {
+      "name": "Crabrawler"
+    },
+    "219": {
+      "name": "Crabrawler"
+    },
+    "22": {
+      "name": "Yanmega ex"
+    },
+    "220": {
+      "name": "Rockruff"
+    },
+    "221": {
+      "name": "Rockruff"
+    },
+    "222": {
+      "name": "Lycanroc ex"
+    },
+    "223": {
+      "name": "Passimian ex"
+    },
+    "224": {
+      "name": "Marshadow"
+    },
+    "225": {
+      "name": "Marshadow"
+    },
+    "226": {
+      "name": "Zubat"
+    },
+    "227": {
+      "name": "Zubat"
+    },
+    "228": {
+      "name": "Golbat"
+    },
+    "229": {
+      "name": "Golbat"
+    },
+    "23": {
+      "name": "Shuckle ex"
+    },
+    "230": {
+      "name": "Crobat"
+    },
+    "231": {
+      "name": "Crobat"
+    },
+    "232": {
+      "name": "Crobat ex"
+    },
+    "233": {
+      "name": "Alolan Grimer"
+    },
+    "234": {
+      "name": "Alolan Grimer"
+    },
+    "235": {
+      "name": "Alolan Muk ex"
+    },
+    "236": {
+      "name": "Paldean Wooper"
+    },
+    "237": {
+      "name": "Paldean Wooper"
+    },
+    "238": {
+      "name": "Paldean Clodsire ex"
+    },
+    "239": {
+      "name": "Umbreon"
+    },
+    "24": {
+      "name": "Celebi ex"
+    },
+    "240": {
+      "name": "Umbreon"
+    },
+    "241": {
+      "name": "Umbreon ex"
+    },
+    "242": {
+      "name": "Sneasel"
+    },
+    "243": {
+      "name": "Sneasel"
+    },
+    "244": {
+      "name": "Weavile ex"
+    },
+    "245": {
+      "name": "Darkrai ex"
+    },
+    "246": {
+      "name": "Nihilego"
+    },
+    "247": {
+      "name": "Nihilego"
+    },
+    "248": {
+      "name": "Guzzlord ex"
+    },
+    "249": {
+      "name": "Alolan Diglett"
+    },
+    "25": {
+      "name": "Cherubi"
+    },
+    "250": {
+      "name": "Alolan Diglett"
+    },
+    "251": {
+      "name": "Alolan Dugtrio ex"
+    },
+    "252": {
+      "name": "Skarmory ex"
+    },
+    "253": {
+      "name": "Probopass ex"
+    },
+    "254": {
+      "name": "Dialga ex"
+    },
+    "255": {
+      "name": "Excadrill"
+    },
+    "256": {
+      "name": "Excadrill"
+    },
+    "257": {
+      "name": "Klefki"
+    },
+    "258": {
+      "name": "Klefki"
+    },
+    "259": {
+      "name": "Solgaleo ex"
+    },
+    "26": {
+      "name": "Cherubi"
+    },
+    "260": {
+      "name": "Magearna"
+    },
+    "261": {
+      "name": "Magearna"
+    },
+    "262": {
+      "name": "Tinkatink"
+    },
+    "263": {
+      "name": "Tinkatink"
+    },
+    "264": {
+      "name": "Tinkatuff"
+    },
+    "265": {
+      "name": "Tinkatuff"
+    },
+    "266": {
+      "name": "Tinkaton ex"
+    },
+    "267": {
+      "name": "Dratini"
+    },
+    "268": {
+      "name": "Dratini"
+    },
+    "269": {
+      "name": "Dragonair"
+    },
+    "27": {
+      "name": "Cherrim"
+    },
+    "270": {
+      "name": "Dragonair"
+    },
+    "271": {
+      "name": "Dragonite ex"
+    },
+    "272": {
+      "name": "Pidgey"
+    },
+    "273": {
+      "name": "Pidgey"
+    },
+    "274": {
+      "name": "Pidgeotto"
+    },
+    "275": {
+      "name": "Pidgeotto"
+    },
+    "276": {
+      "name": "Pidgeot ex"
+    },
+    "277": {
+      "name": "Jigglypuff"
+    },
+    "278": {
+      "name": "Jigglypuff"
+    },
+    "279": {
+      "name": "Wigglytuff ex"
+    },
+    "28": {
+      "name": "Cherrim"
+    },
+    "280": {
+      "name": "Farfetch'd"
+    },
+    "281": {
+      "name": "Farfetch'd"
+    },
+    "282": {
+      "name": "Lickitung"
+    },
+    "283": {
+      "name": "Lickitung"
+    },
+    "284": {
+      "name": "Lickilicky ex"
+    },
+    "285": {
+      "name": "Eevee"
+    },
+    "286": {
+      "name": "Eevee"
+    },
+    "287": {
+      "name": "Eevee ex"
+    },
+    "288": {
+      "name": "Snorlax ex"
+    },
+    "289": {
+      "name": "Lugia ex"
+    },
+    "29": {
+      "name": "Leafeon ex"
+    },
+    "290": {
+      "name": "Skitty"
+    },
+    "291": {
+      "name": "Skitty"
+    },
+    "292": {
+      "name": "Delcatty"
+    },
+    "293": {
+      "name": "Delcatty"
+    },
+    "294": {
+      "name": "Bidoof"
+    },
+    "295": {
+      "name": "Bidoof"
+    },
+    "296": {
+      "name": "Bibarel ex"
+    },
+    "297": {
+      "name": "Shaymin"
+    },
+    "298": {
+      "name": "Shaymin"
+    },
+    "299": {
+      "name": "Arceus ex"
+    },
+    "3": {
+      "name": "Ivysaur"
+    },
+    "30": {
+      "name": "Shaymin"
+    },
+    "300": {
+      "name": "Type: Null"
+    },
+    "301": {
+      "name": "Type: Null"
+    },
+    "302": {
+      "name": "Silvally"
+    },
+    "303": {
+      "name": "Silvally"
+    },
+    "304": {
+      "name": "Celesteela"
+    },
+    "305": {
+      "name": "Celesteela"
+    },
+    "306": {
+      "name": "Cyclizar"
+    },
+    "307": {
+      "name": "Cyclizar"
+    },
+    "308": {
+      "name": "Eevee Bag"
+    },
+    "309": {
+      "name": "Eevee Bag"
+    },
+    "31": {
+      "name": "Shaymin"
+    },
+    "310": {
+      "name": "Elemental Switch"
+    },
+    "311": {
+      "name": "Elemental Switch"
+    },
+    "312": {
+      "name": "Old Amber"
+    },
+    "313": {
+      "name": "Old Amber"
+    },
+    "314": {
+      "name": "Rare Candy"
+    },
+    "315": {
+      "name": "Rare Candy"
+    },
+    "316": {
+      "name": "Pokemon Communication"
+    },
+    "317": {
+      "name": "Pokemon Communication"
+    },
+    "318": {
+      "name": "Electrical Cord"
+    },
+    "319": {
+      "name": "Electrical Cord"
+    },
+    "32": {
+      "name": "Snivy"
+    },
+    "320": {
+      "name": "Giant Cape"
+    },
+    "321": {
+      "name": "Giant Cape"
+    },
+    "322": {
+      "name": "Rocky Helmet"
+    },
+    "323": {
+      "name": "Rocky Helmet"
+    },
+    "324": {
+      "name": "Leaf Cape"
+    },
+    "325": {
+      "name": "Leaf Cape"
+    },
+    "326": {
+      "name": "Cyrus"
+    },
+    "327": {
+      "name": "Cyrus"
+    },
+    "328": {
+      "name": "Erika"
+    },
+    "329": {
+      "name": "Erika"
+    },
+    "33": {
+      "name": "Snivy"
+    },
+    "330": {
+      "name": "Irida"
+    },
+    "331": {
+      "name": "Irida"
+    },
+    "332": {
+      "name": "Lyra"
+    },
+    "333": {
+      "name": "Lyra"
+    },
+    "334": {
+      "name": "Giovanni"
+    },
+    "335": {
+      "name": "Giovanni"
+    },
+    "336": {
+      "name": "Silver"
+    },
+    "337": {
+      "name": "Silver"
+    },
+    "338": {
+      "name": "Sabrina"
+    },
+    "339": {
+      "name": "Sabrina"
+    },
+    "34": {
+      "name": "Servine"
+    },
+    "340": {
+      "name": "Iono"
+    },
+    "341": {
+      "name": "Iono"
+    },
+    "342": {
+      "name": "Dawn"
+    },
+    "343": {
+      "name": "Dawn"
+    },
+    "344": {
+      "name": "Mars"
+    },
+    "345": {
+      "name": "Mars"
+    },
+    "346": {
+      "name": "Leaf"
+    },
+    "347": {
+      "name": "Leaf"
+    },
+    "348": {
+      "name": "Lillie"
+    },
+    "349": {
+      "name": "Lillie"
+    },
+    "35": {
+      "name": "Servine"
+    },
+    "350": {
+      "name": "Lusamine"
+    },
+    "351": {
+      "name": "Lusamine"
+    },
+    "352": {
+      "name": "Red"
+    },
+    "353": {
+      "name": "Red"
+    },
+    "354": {
+      "name": "Floragato"
+    },
+    "355": {
+      "name": "Crawdaunt"
+    },
+    "356": {
+      "name": "Greninja"
+    },
+    "357": {
+      "name": "Gardevoir"
+    },
+    "358": {
+      "name": "Slurpuff"
+    },
+    "359": {
+      "name": "Farfetch'd"
+    },
+    "36": {
+      "name": "Serperior"
+    },
+    "360": {
+      "name": "Buzzwole ex"
+    },
+    "361": {
+      "name": "Charizard ex"
+    },
+    "362": {
+      "name": "Ho-Oh ex"
+    },
+    "363": {
+      "name": "Palkia ex"
+    },
+    "364": {
+      "name": "Pikachu ex"
+    },
+    "365": {
+      "name": "Mewtwo ex"
+    },
+    "366": {
+      "name": "Mew ex"
+    },
+    "367": {
+      "name": "Lunala ex"
+    },
+    "368": {
+      "name": "Dialga ex"
+    },
+    "369": {
+      "name": "Solgaleo ex"
+    },
+    "37": {
+      "name": "Serperior"
+    },
+    "370": {
+      "name": "Eevee ex"
+    },
+    "371": {
+      "name": "Lugia ex"
+    },
+    "372": {
+      "name": "Arceus ex"
+    },
+    "373": {
+      "name": "Professor's Research"
+    },
+    "374": {
+      "name": "Lillie"
+    },
+    "375": {
+      "name": "Lusamine"
+    },
+    "376": {
+      "name": "Pikachu ex"
+    },
+    "377": {
+      "name": "Giratina ex"
+    },
+    "378": {
+      "name": "Darkrai ex"
+    },
+    "379": {
+      "name": "Rare Candy"
+    },
+    "38": {
+      "name": "Rowlet"
+    },
+    "39": {
+      "name": "Rowlet"
+    },
+    "4": {
+      "name": "Ivysaur"
+    },
+    "40": {
+      "name": "Dartrix"
+    },
+    "41": {
+      "name": "Dartrix"
+    },
+    "42": {
+      "name": "Decidueye ex"
+    },
+    "43": {
+      "name": "Dhelmise ex"
+    },
+    "44": {
+      "name": "Buzzwole ex"
+    },
+    "45": {
+      "name": "Pheromosa"
+    },
+    "46": {
+      "name": "Pheromosa"
+    },
+    "47": {
+      "name": "Kartana"
+    },
+    "48": {
+      "name": "Kartana"
+    },
+    "49": {
+      "name": "Sprigatito"
+    },
+    "5": {
+      "name": "Venusaur ex"
+    },
+    "50": {
+      "name": "Sprigatito"
+    },
+    "51": {
+      "name": "Floragato"
+    },
+    "52": {
+      "name": "Floragato"
+    },
+    "53": {
+      "name": "Meowscarada"
+    },
+    "54": {
+      "name": "Meowscarada"
+    },
+    "55": {
+      "name": "Charmander"
+    },
+    "56": {
+      "name": "Charmander"
+    },
+    "57": {
+      "name": "Charmeleon"
+    },
+    "58": {
+      "name": "Charmeleon"
+    },
+    "59": {
+      "name": "Charizard ex"
+    },
+    "6": {
+      "name": "Weedle"
+    },
+    "60": {
+      "name": "Charizard ex"
+    },
+    "61": {
+      "name": "Growlithe"
+    },
+    "62": {
+      "name": "Growlithe"
+    },
+    "63": {
+      "name": "Arcanine ex"
+    },
+    "64": {
+      "name": "Flareon"
+    },
+    "65": {
+      "name": "Flareon"
+    },
+    "66": {
+      "name": "Flareon ex"
+    },
+    "67": {
+      "name": "Moltres ex"
+    },
+    "68": {
+      "name": "Ho-Oh ex"
+    },
+    "69": {
+      "name": "Torkoal"
+    },
+    "7": {
+      "name": "Weedle"
+    },
+    "70": {
+      "name": "Torkoal"
+    },
+    "71": {
+      "name": "Chimchar"
+    },
+    "72": {
+      "name": "Chimchar"
+    },
+    "73": {
+      "name": "Monferno"
+    },
+    "74": {
+      "name": "Monferno"
+    },
+    "75": {
+      "name": "Infernape ex"
+    },
+    "76": {
+      "name": "Heatran"
+    },
+    "77": {
+      "name": "Heatran"
+    },
+    "78": {
+      "name": "Litten"
+    },
+    "79": {
+      "name": "Litten"
+    },
+    "8": {
+      "name": "Kakuna"
+    },
+    "80": {
+      "name": "Torracat"
+    },
+    "81": {
+      "name": "Torracat"
+    },
+    "82": {
+      "name": "Incineroar ex"
+    },
+    "83": {
+      "name": "Squirtle"
+    },
+    "84": {
+      "name": "Squirtle"
+    },
+    "85": {
+      "name": "Wartortle"
+    },
+    "86": {
+      "name": "Wartortle"
+    },
+    "87": {
+      "name": "Blastoise ex"
+    },
+    "88": {
+      "name": "Horsea"
+    },
+    "89": {
+      "name": "Horsea"
+    },
+    "9": {
+      "name": "Kakuna"
+    },
+    "90": {
+      "name": "Seadra"
+    },
+    "91": {
+      "name": "Seadra"
+    },
+    "92": {
+      "name": "Kingdra ex"
+    },
+    "93": {
+      "name": "Staryu"
+    },
+    "94": {
+      "name": "Staryu"
+    },
+    "95": {
+      "name": "Starmie ex"
+    },
+    "96": {
+      "name": "Magikarp"
+    },
+    "97": {
+      "name": "Magikarp"
+    },
+    "98": {
+      "name": "Gyarados ex"
+    },
+    "99": {
+      "name": "Vaporeon"
+    }
+  }
+}

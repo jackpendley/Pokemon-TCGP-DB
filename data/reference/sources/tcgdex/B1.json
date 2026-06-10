@@ -1,0 +1,4357 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-05T18:05:27Z",
+    "card_count": 331,
+    "set_code": "B1",
+    "source": "tcgdex"
+  },
+  "cards": {
+    "1": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Pinsir",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "10": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Shiftry",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "100": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Mismagius",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "101": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Sableye",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "102": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 190,
+      "name": "Mega Altaria ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "103": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Duskull",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "104": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Dusclops",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "105": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Dusknoir",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "106": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Jirachi",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "107": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Drifloon",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "108": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Drifblim",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "109": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Chingling",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "11": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Shroomish",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "110": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Yamask",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "111": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Cofagrigus",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "112": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Gothita",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "113": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Gothorita",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "114": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Gothitelle",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "115": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Spritzee",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "116": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Aromatisse",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "117": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Swirlix",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "118": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Slurpuff",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "119": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Carbink",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "12": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Breloom",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "120": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Klefki",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "121": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Indeedee ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "122": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Sandshrew",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "123": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Sandslash",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "124": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Hitmonchan ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "125": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Sudowoodo",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "126": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Makuhita",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "127": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Hariyama",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "128": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Hippopotas",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "129": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Hippowdon",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "13": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Pansage",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "130": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Sandile",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "131": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Krokorok",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "132": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Krookodile",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "133": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Archen",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "134": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Archeops",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "135": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Golett",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "136": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Golurk",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "137": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Terrakion",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "138": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Pancham",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "139": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Crabrawler",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "14": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Simisage",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "140": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Crabominable",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "141": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Stufful",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "142": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Bewear",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "143": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Sandygast",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "144": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Palossand",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "145": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Rolycoly",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "146": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Carkol",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "147": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Coalossal",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "148": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Murkrow",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "149": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Honchkrow",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "15": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Cottonee",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "150": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Absol",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "151": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Mega Absol ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "152": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Skorupi",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "153": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Drapion",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "154": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Darkrai",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "155": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Deino",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "156": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Zweilous",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "157": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Hydreigon",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "158": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Pangoro",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "159": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Skrelp",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "16": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Whimsicott ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "160": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Dragalge ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "161": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Mareanie",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "162": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Toxapex",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "163": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Impidimp",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "164": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Morgrem",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "165": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Grimmsnarl",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "166": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Ferroseed",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "167": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Ferrothorn",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "168": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Durant",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "169": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Cobalion",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "17": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Petilil",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "170": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Honedge",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "171": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Doublade",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "172": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Aegislash",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Metal"
+      ]
+    },
+    "173": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Meltan",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "174": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Melmetal ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "175": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Corviknight",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Metal"
+      ]
+    },
+    "176": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Druddigon",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "177": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 40,
+      "name": "Goomy",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "178": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Sliggoo",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "179": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Goodra",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "18": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Lilligant",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "180": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Pidgey",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "181": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Pidgeotto",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "182": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Pidgeot",
+      "rarity": "uncommon",
+      "stage": "Stage2",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "183": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Tauros ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "184": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Eevee",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "185": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Aipom",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "186": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Ambipom",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "187": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Miltank",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "188": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Zigzagoon",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "189": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Linoone",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "19": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Maractus",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "190": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Whismur",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "191": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Loudred",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "192": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Exploud",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "193": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Skitty",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "194": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Delcatty",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "195": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Spinda",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "196": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Swablu",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "197": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Altaria",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "198": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Chatot",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "199": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Patrat",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "2": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Mega Pinsir ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "20": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Virizion",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "200": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Watchog",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "201": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Lillipup",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "202": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Herdier",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "203": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Stoutland",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "204": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Rufflet",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "205": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Braviary",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "206": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Furfrou",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "207": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Furfrou",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "208": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Furfrou",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "209": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Rookidee",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "21": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Skiddo",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "210": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Corvisquire",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "211": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Wooloo",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "212": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Dubwool",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "213": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Prank Spinner",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "214": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Plume Fossil",
+      "rarity": "common",
+      "stage": null,
+      "types": []
+    },
+    "215": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Hitting Hammer",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "216": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Cover Fossil",
+      "rarity": "common",
+      "stage": null,
+      "types": []
+    },
+    "217": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Flame Patch",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "218": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Sitrus Berry",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "219": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Heavy Helmet",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "22": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Gogoat",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "220": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Lucky Mittens",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "221": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Marlon",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "222": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Hala",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "223": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "May",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "224": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Fantina",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "225": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Copycat",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "226": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Lisia",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "227": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Beautifly",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "228": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Skiddo",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "229": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Rillaboom",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "23": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Phantump",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "230": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Growlithe",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "231": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Chandelure",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "232": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Magikarp",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "233": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Ludicolo",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "234": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Jellicent",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "235": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Keldeo",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "236": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Eiscue",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "237": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Luxray",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "238": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Cofagrigus",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "239": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Gothita",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "24": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Trevenant",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "240": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Makuhita",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "241": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Hippowdon",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "242": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Archeops",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "243": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Pancham",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "244": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Honchkrow",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "245": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Hydreigon",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "246": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Corviknight",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Metal"
+      ]
+    },
+    "247": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 40,
+      "name": "Goomy",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "248": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Delcatty",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "249": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Stoutland",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "25": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Grookey",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "250": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Rufflet",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "251": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Mega Pinsir ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "252": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Whimsicott ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "253": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Rapidash ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "254": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 210,
+      "name": "Mega Blaziken ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "255": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 210,
+      "name": "Mega Gyarados ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "256": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Greninja ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "257": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Jolteon ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "258": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 210,
+      "name": "Mega Ampharos ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "259": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 190,
+      "name": "Mega Altaria ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "26": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Thwackey",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "260": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Indeedee ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "261": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Hitmonchan ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "262": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Mega Absol ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "263": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Dragalge ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "264": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Melmetal ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "265": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Tauros ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "266": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Marlon",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "267": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Hala",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "268": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "May",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "269": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Fantina",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "27": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Rillaboom",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "270": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Copycat",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "271": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Lisia",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "272": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Mega Pinsir ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "273": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Whimsicott ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "274": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Rapidash ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "275": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Greninja ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "276": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Jolteon ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "277": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 210,
+      "name": "Mega Ampharos ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "278": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Indeedee ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "279": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Hitmonchan ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "28": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Growlithe",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "280": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Mega Absol ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "281": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Dragalge ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "282": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Melmetal ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "283": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Tauros ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "284": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 210,
+      "name": "Mega Blaziken ex",
+      "rarity": "immersive",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "285": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 210,
+      "name": "Mega Gyarados ex",
+      "rarity": "immersive",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "286": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 190,
+      "name": "Mega Altaria ex",
+      "rarity": "immersive",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "287": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Bellsprout",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "288": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Weepinbell",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "289": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Victreebel",
+      "rarity": "shiny_rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "29": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Arcanine",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "290": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Rowlet",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "291": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Dartrix",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "292": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Moltres",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "293": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Litten",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "294": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Torracat",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "295": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Poliwag",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "296": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Poliwhirl",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "297": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Poliwrath",
+      "rarity": "shiny_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "298": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Articuno",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "299": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Manaphy",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "3": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Wurmple",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "30": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Ponyta",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "300": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Popplio",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "301": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Brionne",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "302": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Zapdos",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "303": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Oricorio",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "304": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Zeraora",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "305": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Drowzee",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "306": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Hypno",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "307": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Geodude",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "308": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Graveler",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "309": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Golem",
+      "rarity": "shiny_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "31": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Rapidash ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "310": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Rockruff",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "311": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Alolan Diglett",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "312": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Meowth",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "313": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Persian",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "314": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Doduo",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "315": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Dodrio",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "316": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Bidoof",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "317": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Decidueye ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "318": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Incineroar ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "319": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Palkia ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "32": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Ho-Oh",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "320": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Primarina ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "321": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Pikachu ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "322": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Tapu Koko ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "323": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Lycanroc ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "324": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Passimian ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "325": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Alolan Dugtrio ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "326": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Dialga ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "327": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Bibarel ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "328": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Arceus ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "329": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Lilligant",
+      "rarity": "ultra_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "33": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Torchic",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "330": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Klefki",
+      "rarity": "ultra_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "331": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Flame Patch",
+      "rarity": "ultra_rare",
+      "stage": null,
+      "types": []
+    },
+    "34": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Combusken",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "35": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Blaziken",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "36": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 210,
+      "name": "Mega Blaziken ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "37": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Pansear",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "38": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Simisear",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "39": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Darumaka",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "4": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Silcoon",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "40": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Darmanitan",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "41": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Litwick",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "42": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Lampent",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "43": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Chandelure",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "44": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Heatmor",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "45": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Litleo",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "46": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Pyroar",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "47": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Turtonator",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "48": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Psyduck",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "49": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Golduck",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "5": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Beautifly",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "50": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Magikarp",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "51": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Gyarados",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "52": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 210,
+      "name": "Mega Gyarados ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "53": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Lotad",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "54": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Lombre",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "55": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Ludicolo",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "56": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Wailmer",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "57": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 200,
+      "name": "Wailord",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "58": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Corphish",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "59": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Crawdaunt",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "6": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Cascoon",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "60": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Luvdisc",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "61": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Panpour",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "62": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Simipour",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "63": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Tympole",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "64": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Palpitoad",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "65": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Seismitoad",
+      "rarity": "uncommon",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "66": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Tirtouga",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "67": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Carracosta",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "68": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Frillish",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "69": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Jellicent",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "7": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Dustox",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "70": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Keldeo",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "71": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Froakie",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "72": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Frogadier",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "73": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Greninja ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "74": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Bergmite",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "75": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Avalugg",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "76": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Chewtle",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "77": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Drednaw",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "78": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Arrokuda",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "79": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Barraskewda",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "8": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Seedot",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "80": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Eiscue",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "81": {
+      "boosters": [
+        "Mega Gyarados"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Jolteon ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "82": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Mareep",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "83": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Flaaffy",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "84": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Ampharos",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "85": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 210,
+      "name": "Mega Ampharos ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "86": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Shinx",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "87": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Luxio",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "88": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Luxray",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "89": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Pachirisu",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "9": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Nuzleaf",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "90": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Blitzle",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "91": {
+      "boosters": [
+        "Mega Blaziken"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Zebstrika",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "92": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Joltik",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "93": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Galvantula",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "94": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Dedenne",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "95": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Yamper",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "96": {
+      "boosters": [
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Boltund",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "97": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Natu",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "98": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Xatu",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "99": {
+      "boosters": [
+        "Mega Gyarados",
+        "Mega Blaziken",
+        "Mega Altaria"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Misdreavus",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    }
+  }
+}

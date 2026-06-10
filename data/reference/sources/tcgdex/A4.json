@@ -1,0 +1,3132 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-05T18:00:16Z",
+    "card_count": 241,
+    "set_code": "A4",
+    "source": "tcgdex"
+  },
+  "cards": {
+    "1": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Oddish",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "10": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Meganium",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "100": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Donphan ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "101": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Tyrogue",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "102": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Hitmontop",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "103": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Larvitar",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "104": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Pupitar",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "105": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Binacle",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "106": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Barbaracle",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "107": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Zubat",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "108": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Golbat",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "109": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Crobat ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "11": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Ledyba",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "110": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Spinarak",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "111": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Ariados",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "112": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Umbreon ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "113": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Murkrow",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "114": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Honchkrow",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "115": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Sneasel",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "116": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Weavile",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "117": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Houndour",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "118": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Houndoom",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "119": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Tyranitar",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "12": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Ledian",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "120": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Absol",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "121": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Forretress",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "122": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Steelix",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "123": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Scizor",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "124": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Skarmory ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "125": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Mawile",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "126": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Klink",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "127": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Klang",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "128": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Klinklang",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Metal"
+      ]
+    },
+    "129": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Spearow",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "13": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Hoppip",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "130": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Fearow",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "131": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Chansey",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "132": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Blissey",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "133": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Kangaskhan",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "134": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Eevee",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "135": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Porygon",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "136": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Porygon2",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "137": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Porygon-Z",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "138": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Sentret",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "139": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Furret",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "14": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Skiploom",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "140": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Hoothoot",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "141": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Noctowl",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "142": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Aipom",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "143": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Ambipom",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "144": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Dunsparce",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "145": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Teddiursa",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "146": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Ursaring",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "147": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Stantler",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "148": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Smeargle",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "149": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Lugia ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "15": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Jumpluff",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "150": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Bouffalant",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "151": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Elemental Switch",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "152": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Squirt Bottle",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "153": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Steel Apron",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "154": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Dark Pendant",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "155": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Rescue Scarf",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "156": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Will",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "157": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Lyra",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "158": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Silver",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "159": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Fisher",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "16": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 40,
+      "name": "Sunkern",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "160": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Jasmine",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "161": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Hiker",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "162": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Chikorita",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "163": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Bellossom",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "164": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Heracross",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "165": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Cyndaquil",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "166": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Magby",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "167": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Totodile",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "168": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Qwilfish",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "169": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Octillery",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "17": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Sunflora",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "170": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Delibird",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "171": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Pichu",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "172": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Ampharos",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "173": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Togepi",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "174": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Xatu",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "175": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Wobbuffet",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "176": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Gligar",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "177": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Spinarak",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "178": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Murkrow",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "179": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Tyranitar",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "18": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Yanma",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "180": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Scizor",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "181": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Sentret",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "182": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Hoothoot",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "183": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Stantler",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "184": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Smeargle",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "185": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Blissey",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "186": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Shuckle ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "187": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Ho-Oh ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "188": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Kingdra ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "189": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Lanturn ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "19": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Yanmega",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "190": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Espeon ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "191": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Donphan ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "192": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Crobat ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "193": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Umbreon ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "194": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Skarmory ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "195": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Lugia ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "196": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Will",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "197": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Lyra",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "198": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Silver",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "199": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Fisher",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "2": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Gloom",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "20": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Pineco",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "200": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Jasmine",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "201": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Hiker",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "202": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Shuckle ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "203": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Kingdra ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "204": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Lanturn ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "205": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Espeon ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "206": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Donphan ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "207": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Crobat ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "208": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Umbreon ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "209": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Skarmory ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "21": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Shuckle ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "210": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Ho-Oh ex",
+      "rarity": "immersive",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "211": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Lugia ex",
+      "rarity": "immersive",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "212": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Yanma",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "213": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Flareon",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "214": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Magikarp",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "215": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Gyarados",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "216": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Vaporeon",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "217": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Magnemite",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "218": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Magneton",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "219": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Jolteon",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "22": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Heracross",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "220": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Misdreavus",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "221": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Mankey",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "222": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Primeape",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "223": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Nidoran♀",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "224": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Nidorina",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "225": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Nidoqueen",
+      "rarity": "shiny_rare",
+      "stage": "Stage2",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "226": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Nidoran♂",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "227": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Nidorino",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "228": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Nidoking",
+      "rarity": "shiny_rare",
+      "stage": "Stage2",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "229": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Sneasel",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "23": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Cherubi",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "230": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Lickitung",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "231": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Eevee",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "232": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Yanmega ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "233": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Leafeon ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "234": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Gyarados ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "235": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Glaceon ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "236": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Pachirisu ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "237": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Mismagius ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "238": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Weavile ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "239": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Lickilicky ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "24": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Cherrim",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "240": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Ho-Oh ex",
+      "rarity": "ultra_rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "241": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Lugia ex",
+      "rarity": "ultra_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "25": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Vulpix",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "26": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Ninetales",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "27": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Cyndaquil",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "28": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Quilava",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "29": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Typhlosion",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "3": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Bellossom",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "30": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Slugma",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "31": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Magcargo",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "32": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Magby",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "33": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Entei",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "34": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Ho-Oh ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "35": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Darumaka",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "36": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Darmanitan",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "37": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Heatmor",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "38": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Poliwag",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "39": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Poliwhirl",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "4": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Tangela",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "40": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Politoed",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "41": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Horsea",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "42": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Seadra",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "43": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Kingdra ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "44": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Magikarp",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "45": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Gyarados",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "46": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Totodile",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "47": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Croconaw",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "48": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Feraligatr",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "49": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Marill",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "5": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Tangrowth",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "50": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Azumarill",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "51": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Wooper",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "52": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Quagsire",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "53": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Qwilfish",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "54": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Corsola",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "55": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Remoraid",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "56": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Octillery",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "57": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Delibird",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "58": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Mantine",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "59": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Suicune",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "6": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Scyther",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "60": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Corphish",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "61": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Crawdaunt",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "62": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Ducklett",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "63": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Swanna",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "64": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Chinchou",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "65": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Lanturn ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "66": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Pichu",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "67": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Mareep",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "68": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Flaaffy",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "69": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Ampharos",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "7": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Pinsir",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "70": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Elekid",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "71": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Raikou",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "72": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Emolga",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "73": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Slowpoke",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "74": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Slowking",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "75": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Smoochum",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "76": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Jynx",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "77": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Cleffa",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "78": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Togepi",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "79": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Togetic",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "8": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Chikorita",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "80": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Togekiss",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "81": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Natu",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "82": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Xatu",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "83": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Espeon ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "84": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Unown",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "85": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Unown",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "86": {
+      "boosters": [
+        "Lugia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Wobbuffet",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "87": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Girafarig",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "88": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Snubbull",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "89": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Granbull",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "9": {
+      "boosters": [],
+      "name": "Bayleef",
+      "rarity": null
+    },
+    "90": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Munna",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "91": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Musharna",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "92": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Onix",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "93": {
+      "boosters": [
+        "Lugia",
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Sudowoodo",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "94": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Gligar",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "95": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Gliscor",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "96": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Swinub",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "97": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Piloswine",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "98": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Mamoswine",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "99": {
+      "boosters": [
+        "Ho-Oh"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Phanpy",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    }
+  }
+}

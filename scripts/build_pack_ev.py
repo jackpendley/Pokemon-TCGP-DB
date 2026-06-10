@@ -37,7 +37,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import RARE_PLUS_RARITIES, HOURGLASS_PER_PACK, norm_card_name as _norm_name
+from _collection_io import RARE_PLUS_RARITIES, HOURGLASS_PER_PACK, norm_card_name as _norm_name, normalize_rarity
 
 ROOT = Path(__file__).resolve().parent.parent
 COLLECTION_JSON     = ROOT / "data" / "current"    / "collection_normalized.json"
@@ -61,21 +61,33 @@ SCORING_WEIGHTS = {
 }
 
 # Rarity bonus applied to owned==0 pulls (first copy).
-# Values derived from pool-level slot probability averaged across all 25 packs:
-#   bonus(r) = ln(p_two_diamond / p_r), normalized so crown = 10.0.
-# Pool probabilities (slot4+slot5+rare_pack, avg across packs):
-#   two_diamond=1.499/pack, three_diamond=0.256, four_diamond=0.083,
-#   one_star=0.130, two_star=0.026, three_star=0.011, crown=0.002
+# Values derived from pool-level slot probability averaged across packs:
+#   bonus(r) = ln(p_uncommon / p_r), normalized so ultra_rare (crown) = 10.0.
+# Pool probabilities (slot4+slot5+rare_pack, avg across packs) — unchanged from the
+# symbol-tier model, only renamed:
+#   uncommon=1.499/pack, rare=0.256, double_rare=0.083,
+#   illustration_rare=0.130, super_rare=0.026, immersive=0.011, ultra_rare=0.002
+# special_illustration_rare shares the ★★ tier with super_rare (same pull rate).
+# shiny_rare / shiny_super_rare are premium pulls; bonuses interpolate by rarity rank
+# between immersive (7.5) and ultra_rare (10.0).
 RARITY_BONUS: dict[str, float] = {
-    "crown":         10.0,   # 1-in-472 packs
-    "three_star":    7.5,    # 1-in-89
-    "two_star":      6.2,    # 1-in-38
-    "four_diamond":  4.4,    # 1-in-12
-    "one_star":      3.7,    # 1-in-8
-    "three_diamond": 2.7,    # 1-in-4
-    "two_diamond":   0.0,
-    "one_diamond":   0.0,
+    "ultra_rare":                10.0,   # 1-in-472 packs (crown)
+    "shiny_super_rare":          9.2,    # ✷✷ — premium shiny ex
+    "shiny_rare":                8.3,    # ✷
+    "immersive":                 7.5,    # 1-in-89 (★★★)
+    "special_illustration_rare": 6.2,    # ★★ rainbow — same tier as super_rare
+    "super_rare":                6.2,    # 1-in-38 (★★)
+    "double_rare":               4.4,    # 1-in-12
+    "illustration_rare":         3.7,    # 1-in-8 (★)
+    "rare":                      2.7,    # 1-in-4
+    "uncommon":                  0.0,
+    "common":                    0.0,
 }
+
+# Super Rare and Special Illustration Rare are the same ★★ pull-rate tier (only the art
+# differs). For pull-probability math they share the super_rare slot rate and a combined
+# pool count; this maps a card's rarity to its probability tier.
+PROB_TIER: dict[str, str] = {"special_illustration_rare": "super_rare"}
 
 # Unified score weights — single composite signal used for all recommendations.
 UNIFIED_WEIGHTS = {
@@ -225,8 +237,14 @@ def card_pull_ev(rarity: str, combined_by_rarity: dict, slot_rates: dict) -> flo
     slots 1-5 are identical across regular and plus_one branches, so
     combined probability = P_regular + P_plus_one is used for those slots.
     Card 6 (shiny only) is omitted unless shiny cards appear in combined_by_rarity.
+
+    Super Rare and Special Illustration Rare share the ★★ "Two Star" slot rate and
+    pull-rate tier, so SIR cards use the super_rare slot probability and the COMBINED
+    ★★ pool count (otherwise the shared slot rate would be over-allocated).
     """
-    N_R = combined_by_rarity.get(rarity, 0)
+    prob_rarity = PROB_TIER.get(rarity, rarity)
+    # Pool size for this probability tier — all rarities that map to the same ★★ slot.
+    N_R = sum(n for r, n in combined_by_rarity.items() if PROB_TIER.get(r, r) == prob_rarity)
     if N_R <= 0:
         return 0.0
 
@@ -247,23 +265,22 @@ def card_pull_ev(rarity: str, combined_by_rarity: dict, slot_rates: dict) -> flo
     slot_6    = slot_rates.get("slot_6") or {}
     rare_dist = slot_rates.get("rare_pack_all_5_slots") or {}
 
-    if rarity == "one_diamond":
+    if prob_rarity == "common":
         return P_combined * 3.0 / N_R
 
-    p4 = slot_4.get(rarity, 0.0)
-    p5 = slot_5.get(rarity, 0.0)
+    p4 = slot_4.get(prob_rarity, 0.0)
+    p5 = slot_5.get(prob_rarity, 0.0)
     regular_contrib = P_combined * (p4 + p5) / N_R
 
     # Rare pack: 5 slots each with rare_dist probability.
-    # crown_or_highest_rare is an alias for crown used in some pack models.
-    p_rare_per_slot = rare_dist.get(rarity, 0.0)
-    if rarity == "crown" and p_rare_per_slot == 0.0:
+    # crown_or_highest_rare is an alias for ultra_rare used in some pack models.
+    p_rare_per_slot = rare_dist.get(prob_rarity, 0.0)
+    if prob_rarity == "ultra_rare" and p_rare_per_slot == 0.0:
         p_rare_per_slot = rare_dist.get("crown_or_highest_rare", 0.0)
     rare_contrib = P_rare * 5 * p_rare_per_slot / N_R
 
     # Card 6 (regular_pack_plus_one branch only, shiny rarities).
-    # Currently 0 for all packs since shiny cards are not in pack_sources.json.
-    p6 = slot_6.get(rarity, 0.0)
+    p6 = slot_6.get(prob_rarity, 0.0)
     plus_one_card6_contrib = P_plus_one * p6 / N_R if p6 > 0 else 0.0
 
     return regular_contrib + rare_contrib + plus_one_card6_contrib
@@ -347,7 +364,9 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
 
     for card in all_pool_cards:
         card_name = card.get("card_name", "")
-        rarity    = card.get("rarity")
+        # normalize_rarity is the safety net: a stray legacy/un-migrated rarity is read as
+        # its new-vocabulary name so RARITY_BONUS / card_pull_ev / RARE_PLUS lookups match.
+        rarity    = normalize_rarity(card.get("rarity"))
         nn        = _norm_name(card_name)
         is_dt     = nn in deck_targets
 

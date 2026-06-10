@@ -1,0 +1,535 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T18:56:45Z",
+    "card_count": 105,
+    "set_code": "A4a",
+    "source": "bulbapedia"
+  },
+  "cards": {
+    "1": {
+      "name": "Hoppip",
+      "pokemon_type": "Grass",
+      "rarity": "one_diamond"
+    },
+    "10": {
+      "name": "Entei ex",
+      "pokemon_type": "Fire",
+      "rarity": "four_diamond"
+    },
+    "100": {
+      "name": "Paldean Wooper",
+      "pokemon_type": "Darkness",
+      "rarity": "one_star"
+    },
+    "101": {
+      "name": "Infernape ex",
+      "pokemon_type": "Fire",
+      "rarity": "two_star"
+    },
+    "102": {
+      "name": "Mew ex",
+      "pokemon_type": "Psychic",
+      "rarity": "two_star"
+    },
+    "103": {
+      "name": "Garchomp ex",
+      "pokemon_type": "Fighting",
+      "rarity": "two_star"
+    },
+    "104": {
+      "name": "Paldean Clodsire ex",
+      "pokemon_type": "Darkness",
+      "rarity": "two_star"
+    },
+    "105": {
+      "name": "Mantyke",
+      "pokemon_type": "Water",
+      "rarity": "crown"
+    },
+    "11": {
+      "name": "Fletchinder",
+      "pokemon_type": "Fire",
+      "rarity": "one_diamond"
+    },
+    "12": {
+      "name": "Talonflame",
+      "pokemon_type": "Fire",
+      "rarity": "two_diamond"
+    },
+    "13": {
+      "name": "Poliwag",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "14": {
+      "name": "Poliwhirl",
+      "pokemon_type": "Water",
+      "rarity": "two_diamond"
+    },
+    "15": {
+      "name": "Tentacool",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "16": {
+      "name": "Tentacruel",
+      "pokemon_type": "Water",
+      "rarity": "two_diamond"
+    },
+    "17": {
+      "name": "Slowpoke",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "18": {
+      "name": "Slowking",
+      "pokemon_type": "Water",
+      "rarity": "two_diamond"
+    },
+    "19": {
+      "name": "Jynx",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "2": {
+      "name": "Skiploom",
+      "pokemon_type": "Grass",
+      "rarity": "two_diamond"
+    },
+    "20": {
+      "name": "Suicune ex",
+      "pokemon_type": "Water",
+      "rarity": "four_diamond"
+    },
+    "21": {
+      "name": "Feebas",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "22": {
+      "name": "Milotic",
+      "pokemon_type": "Water",
+      "rarity": "three_diamond"
+    },
+    "23": {
+      "name": "Mantyke",
+      "pokemon_type": "Water",
+      "rarity": "three_diamond"
+    },
+    "24": {
+      "name": "Cryogonal",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "25": {
+      "name": "Raikou ex",
+      "pokemon_type": "Lightning",
+      "rarity": "four_diamond"
+    },
+    "26": {
+      "name": "Tynamo",
+      "pokemon_type": "Lightning",
+      "rarity": "one_diamond"
+    },
+    "27": {
+      "name": "Eelektrik",
+      "pokemon_type": "Lightning",
+      "rarity": "one_diamond"
+    },
+    "28": {
+      "name": "Eelektross",
+      "pokemon_type": "Lightning",
+      "rarity": "two_diamond"
+    },
+    "29": {
+      "name": "Stunfisk",
+      "pokemon_type": "Lightning",
+      "rarity": "one_diamond"
+    },
+    "3": {
+      "name": "Jumpluff ex",
+      "pokemon_type": "Grass",
+      "rarity": "four_diamond"
+    },
+    "30": {
+      "name": "Yamper",
+      "pokemon_type": "Lightning",
+      "rarity": "one_diamond"
+    },
+    "31": {
+      "name": "Boltund",
+      "pokemon_type": "Lightning",
+      "rarity": "three_diamond"
+    },
+    "32": {
+      "name": "Misdreavus",
+      "pokemon_type": "Psychic",
+      "rarity": "one_diamond"
+    },
+    "33": {
+      "name": "Mismagius",
+      "pokemon_type": "Psychic",
+      "rarity": "two_diamond"
+    },
+    "34": {
+      "name": "Galarian Corsola",
+      "pokemon_type": "Psychic",
+      "rarity": "one_diamond"
+    },
+    "35": {
+      "name": "Galarian Cursola",
+      "pokemon_type": "Psychic",
+      "rarity": "three_diamond"
+    },
+    "36": {
+      "name": "Latias",
+      "pokemon_type": "Psychic",
+      "rarity": "three_diamond"
+    },
+    "37": {
+      "name": "Latios",
+      "pokemon_type": "Psychic",
+      "rarity": "three_diamond"
+    },
+    "38": {
+      "name": "Frillish",
+      "pokemon_type": "Psychic",
+      "rarity": "one_diamond"
+    },
+    "39": {
+      "name": "Jellicent",
+      "pokemon_type": "Psychic",
+      "rarity": "two_diamond"
+    },
+    "4": {
+      "name": "Sunkern",
+      "pokemon_type": "Grass",
+      "rarity": "one_diamond"
+    },
+    "40": {
+      "name": "Diglett",
+      "pokemon_type": "Fighting",
+      "rarity": "one_diamond"
+    },
+    "41": {
+      "name": "Dugtrio",
+      "pokemon_type": "Fighting",
+      "rarity": "two_diamond"
+    },
+    "42": {
+      "name": "Poliwrath ex",
+      "pokemon_type": "Fighting",
+      "rarity": "four_diamond"
+    },
+    "43": {
+      "name": "Phanpy",
+      "pokemon_type": "Fighting",
+      "rarity": "one_diamond"
+    },
+    "44": {
+      "name": "Donphan",
+      "pokemon_type": "Fighting",
+      "rarity": "two_diamond"
+    },
+    "45": {
+      "name": "Relicanth",
+      "pokemon_type": "Fighting",
+      "rarity": "one_diamond"
+    },
+    "46": {
+      "name": "Dwebble",
+      "pokemon_type": "Fighting",
+      "rarity": "one_diamond"
+    },
+    "47": {
+      "name": "Crustle",
+      "pokemon_type": "Fighting",
+      "rarity": "two_diamond"
+    },
+    "48": {
+      "name": "Seviper",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "49": {
+      "name": "Zorua",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "5": {
+      "name": "Sunflora",
+      "pokemon_type": "Grass",
+      "rarity": "two_diamond"
+    },
+    "50": {
+      "name": "Zoroark",
+      "pokemon_type": "Darkness",
+      "rarity": "three_diamond"
+    },
+    "51": {
+      "name": "Inkay",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "52": {
+      "name": "Malamar",
+      "pokemon_type": "Darkness",
+      "rarity": "two_diamond"
+    },
+    "53": {
+      "name": "Skrelp",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "54": {
+      "name": "Dragalge",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "55": {
+      "name": "Altaria",
+      "pokemon_type": "Dragon",
+      "rarity": "three_diamond"
+    },
+    "56": {
+      "name": "Farfetch'd",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "57": {
+      "name": "Lickitung",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "58": {
+      "name": "Lickilicky",
+      "pokemon_type": "Colorless",
+      "rarity": "two_diamond"
+    },
+    "59": {
+      "name": "Igglybuff",
+      "pokemon_type": "Colorless",
+      "rarity": "three_diamond"
+    },
+    "6": {
+      "name": "Celebi",
+      "pokemon_type": "Grass",
+      "rarity": "three_diamond"
+    },
+    "60": {
+      "name": "Teddiursa",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "61": {
+      "name": "Ursaring",
+      "pokemon_type": "Colorless",
+      "rarity": "two_diamond"
+    },
+    "62": {
+      "name": "Miltank",
+      "pokemon_type": "Colorless",
+      "rarity": "two_diamond"
+    },
+    "63": {
+      "name": "Azurill",
+      "pokemon_type": "Colorless",
+      "rarity": "three_diamond"
+    },
+    "64": {
+      "name": "Swablu",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "65": {
+      "name": "Zangoose",
+      "pokemon_type": "Colorless",
+      "rarity": "two_diamond"
+    },
+    "66": {
+      "name": "Fletchling",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "67": {
+      "name": "Inflatable Boat",
+      "pokemon_type": "Pokémon Tool",
+      "rarity": "two_diamond"
+    },
+    "68": {
+      "name": "Memory Light",
+      "pokemon_type": "Pokémon Tool",
+      "rarity": "two_diamond"
+    },
+    "69": {
+      "name": "Whitney",
+      "pokemon_type": "Supporter",
+      "rarity": "two_diamond"
+    },
+    "7": {
+      "name": "Durant",
+      "pokemon_type": "Grass",
+      "rarity": "one_diamond"
+    },
+    "70": {
+      "name": "Traveling Merchant",
+      "pokemon_type": "Supporter",
+      "rarity": "two_diamond"
+    },
+    "71": {
+      "name": "Morty",
+      "pokemon_type": "Supporter",
+      "rarity": "two_diamond"
+    },
+    "72": {
+      "name": "Milotic",
+      "pokemon_type": "Water",
+      "rarity": "one_star"
+    },
+    "73": {
+      "name": "Stunfisk",
+      "pokemon_type": "Lightning",
+      "rarity": "one_star"
+    },
+    "74": {
+      "name": "Yamper",
+      "pokemon_type": "Lightning",
+      "rarity": "one_star"
+    },
+    "75": {
+      "name": "Latios",
+      "pokemon_type": "Psychic",
+      "rarity": "one_star"
+    },
+    "76": {
+      "name": "Phanpy",
+      "pokemon_type": "Fighting",
+      "rarity": "one_star"
+    },
+    "77": {
+      "name": "Azurill",
+      "pokemon_type": "Colorless",
+      "rarity": "one_star"
+    },
+    "78": {
+      "name": "Jumpluff ex",
+      "pokemon_type": "Grass",
+      "rarity": "two_star"
+    },
+    "79": {
+      "name": "Entei ex",
+      "pokemon_type": "Fire",
+      "rarity": "two_star"
+    },
+    "8": {
+      "name": "Slugma",
+      "pokemon_type": "Fire",
+      "rarity": "one_diamond"
+    },
+    "80": {
+      "name": "Suicune ex",
+      "pokemon_type": "Water",
+      "rarity": "two_star"
+    },
+    "81": {
+      "name": "Raikou ex",
+      "pokemon_type": "Lightning",
+      "rarity": "two_star"
+    },
+    "82": {
+      "name": "Poliwrath ex",
+      "pokemon_type": "Fighting",
+      "rarity": "two_star"
+    },
+    "83": {
+      "name": "Whitney",
+      "pokemon_type": "Supporter",
+      "rarity": "two_star"
+    },
+    "84": {
+      "name": "Traveling Merchant",
+      "pokemon_type": "Supporter",
+      "rarity": "two_star"
+    },
+    "85": {
+      "name": "Morty",
+      "pokemon_type": "Supporter",
+      "rarity": "two_star"
+    },
+    "86": {
+      "name": "Jumpluff ex",
+      "pokemon_type": "Grass",
+      "rarity": "two_star"
+    },
+    "87": {
+      "name": "Entei ex",
+      "pokemon_type": "Fire",
+      "rarity": "two_star"
+    },
+    "88": {
+      "name": "Raikou ex",
+      "pokemon_type": "Lightning",
+      "rarity": "two_star"
+    },
+    "89": {
+      "name": "Poliwrath ex",
+      "pokemon_type": "Fighting",
+      "rarity": "two_star"
+    },
+    "9": {
+      "name": "Magcargo",
+      "pokemon_type": "Fire",
+      "rarity": "two_diamond"
+    },
+    "90": {
+      "name": "Suicune ex",
+      "pokemon_type": "Water",
+      "rarity": "three_star"
+    },
+    "91": {
+      "name": "Chimchar",
+      "pokemon_type": "Fire",
+      "rarity": "one_star"
+    },
+    "92": {
+      "name": "Monferno",
+      "pokemon_type": "Fire",
+      "rarity": "one_star"
+    },
+    "93": {
+      "name": "Psyduck",
+      "pokemon_type": "Water",
+      "rarity": "one_star"
+    },
+    "94": {
+      "name": "Golduck",
+      "pokemon_type": "Water",
+      "rarity": "one_star"
+    },
+    "95": {
+      "name": "Krabby",
+      "pokemon_type": "Water",
+      "rarity": "one_star"
+    },
+    "96": {
+      "name": "Kingler",
+      "pokemon_type": "Water",
+      "rarity": "one_star"
+    },
+    "97": {
+      "name": "Pyukumuku",
+      "pokemon_type": "Water",
+      "rarity": "one_star"
+    },
+    "98": {
+      "name": "Gible",
+      "pokemon_type": "Fighting",
+      "rarity": "one_star"
+    },
+    "99": {
+      "name": "Gabite",
+      "pokemon_type": "Fighting",
+      "rarity": "one_star"
+    }
+  }
+}

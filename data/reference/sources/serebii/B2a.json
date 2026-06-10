@@ -1,0 +1,403 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:39Z",
+    "card_count": 131,
+    "set_code": "B2a",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Sprigatito"
+    },
+    "10": {
+      "name": "Bramblin"
+    },
+    "100": {
+      "name": "Meowscarada ex"
+    },
+    "101": {
+      "name": "Armarouge ex"
+    },
+    "102": {
+      "name": "Chien-Pao ex"
+    },
+    "103": {
+      "name": "Bellibolt ex"
+    },
+    "104": {
+      "name": "Gholdengo ex"
+    },
+    "105": {
+      "name": "Team Star Grunts"
+    },
+    "106": {
+      "name": "Iono"
+    },
+    "107": {
+      "name": "Nemona"
+    },
+    "108": {
+      "name": "Arven"
+    },
+    "109": {
+      "name": "Penny"
+    },
+    "11": {
+      "name": "Brambleghast"
+    },
+    "110": {
+      "name": "Meowscarada ex"
+    },
+    "111": {
+      "name": "Armarouge ex"
+    },
+    "112": {
+      "name": "Chien-Pao ex"
+    },
+    "113": {
+      "name": "Bellibolt ex"
+    },
+    "114": {
+      "name": "Gholdengo ex"
+    },
+    "115": {
+      "name": "Arven"
+    },
+    "116": {
+      "name": "Sprigatito"
+    },
+    "117": {
+      "name": "Floragato"
+    },
+    "118": {
+      "name": "Meowscarada"
+    },
+    "119": {
+      "name": "Pawmi"
+    },
+    "12": {
+      "name": "Capsakid"
+    },
+    "120": {
+      "name": "Pawmo"
+    },
+    "121": {
+      "name": "Pawmot"
+    },
+    "122": {
+      "name": "Gimmighoul"
+    },
+    "123": {
+      "name": "Tinkatink"
+    },
+    "124": {
+      "name": "Tinkatuff"
+    },
+    "125": {
+      "name": "Gholdengo"
+    },
+    "126": {
+      "name": "Entei ex"
+    },
+    "127": {
+      "name": "Suicune ex"
+    },
+    "128": {
+      "name": "Raikou ex"
+    },
+    "129": {
+      "name": "Tinkaton ex"
+    },
+    "13": {
+      "name": "Scovillain"
+    },
+    "130": {
+      "name": "Baxcalibur"
+    },
+    "131": {
+      "name": "Electric Generator"
+    },
+    "14": {
+      "name": "Rellor"
+    },
+    "15": {
+      "name": "Wo-Chien"
+    },
+    "16": {
+      "name": "Fuecoco"
+    },
+    "17": {
+      "name": "Crocalor"
+    },
+    "18": {
+      "name": "Skeledirge"
+    },
+    "19": {
+      "name": "Charcadet"
+    },
+    "2": {
+      "name": "Floragato"
+    },
+    "20": {
+      "name": "Armarouge ex"
+    },
+    "21": {
+      "name": "Chi-Yu"
+    },
+    "22": {
+      "name": "Quaxly"
+    },
+    "23": {
+      "name": "Quaxwell"
+    },
+    "24": {
+      "name": "Quaquaval"
+    },
+    "25": {
+      "name": "Wiglett"
+    },
+    "26": {
+      "name": "Wugtrio"
+    },
+    "27": {
+      "name": "Finizen"
+    },
+    "28": {
+      "name": "Palafin"
+    },
+    "29": {
+      "name": "Cetoddle"
+    },
+    "3": {
+      "name": "Meowscarada ex"
+    },
+    "30": {
+      "name": "Cetitan"
+    },
+    "31": {
+      "name": "Veluza"
+    },
+    "32": {
+      "name": "Dondozo"
+    },
+    "33": {
+      "name": "Tatsugiri"
+    },
+    "34": {
+      "name": "Frigibax"
+    },
+    "35": {
+      "name": "Arctibax"
+    },
+    "36": {
+      "name": "Baxcalibur"
+    },
+    "37": {
+      "name": "Chien-Pao ex"
+    },
+    "38": {
+      "name": "Pawmi"
+    },
+    "39": {
+      "name": "Pawmo"
+    },
+    "4": {
+      "name": "Tarountula"
+    },
+    "40": {
+      "name": "Pawmot"
+    },
+    "41": {
+      "name": "Tadbulb"
+    },
+    "42": {
+      "name": "Bellibolt ex"
+    },
+    "43": {
+      "name": "Wattrel"
+    },
+    "44": {
+      "name": "Kilowattrel"
+    },
+    "45": {
+      "name": "Miraidon"
+    },
+    "46": {
+      "name": "Fidough"
+    },
+    "47": {
+      "name": "Dachsbun"
+    },
+    "48": {
+      "name": "Ceruledge"
+    },
+    "49": {
+      "name": "Rabsca"
+    },
+    "5": {
+      "name": "Spidops"
+    },
+    "50": {
+      "name": "Flittle"
+    },
+    "51": {
+      "name": "Espathra"
+    },
+    "52": {
+      "name": "Greavard"
+    },
+    "53": {
+      "name": "Houndstone"
+    },
+    "54": {
+      "name": "Gimmighoul"
+    },
+    "55": {
+      "name": "Mankey"
+    },
+    "56": {
+      "name": "Primeape"
+    },
+    "57": {
+      "name": "Annihilape"
+    },
+    "58": {
+      "name": "Paldean Tauros"
+    },
+    "59": {
+      "name": "Toedscool"
+    },
+    "6": {
+      "name": "Nymble"
+    },
+    "60": {
+      "name": "Toedscruel"
+    },
+    "61": {
+      "name": "Klawf"
+    },
+    "62": {
+      "name": "Ting-Lu"
+    },
+    "63": {
+      "name": "Koraidon"
+    },
+    "64": {
+      "name": "Paldean Wooper"
+    },
+    "65": {
+      "name": "Paldean Clodsire"
+    },
+    "66": {
+      "name": "Lokix"
+    },
+    "67": {
+      "name": "Maschiff"
+    },
+    "68": {
+      "name": "Mabosstiff"
+    },
+    "69": {
+      "name": "Shroodle"
+    },
+    "7": {
+      "name": "Smoliv"
+    },
+    "70": {
+      "name": "Grafaiai"
+    },
+    "71": {
+      "name": "Bombirdier"
+    },
+    "72": {
+      "name": "Tinkatink"
+    },
+    "73": {
+      "name": "Tinkatuff"
+    },
+    "74": {
+      "name": "Tinkaton"
+    },
+    "75": {
+      "name": "Varoom"
+    },
+    "76": {
+      "name": "Revavroom"
+    },
+    "77": {
+      "name": "Orthworm"
+    },
+    "78": {
+      "name": "Gholdengo ex"
+    },
+    "79": {
+      "name": "Lechonk"
+    },
+    "8": {
+      "name": "Dolliv"
+    },
+    "80": {
+      "name": "Oinkologne"
+    },
+    "81": {
+      "name": "Tandemaus"
+    },
+    "82": {
+      "name": "Maushold"
+    },
+    "83": {
+      "name": "Squawkabilly"
+    },
+    "84": {
+      "name": "Cyclizar"
+    },
+    "85": {
+      "name": "Flamigo"
+    },
+    "86": {
+      "name": "Electric Generator"
+    },
+    "87": {
+      "name": "Big Air Balloon"
+    },
+    "88": {
+      "name": "Team Star Grunts"
+    },
+    "89": {
+      "name": "Iono"
+    },
+    "9": {
+      "name": "Arboliva"
+    },
+    "90": {
+      "name": "Nemona"
+    },
+    "91": {
+      "name": "Arven"
+    },
+    "92": {
+      "name": "Penny"
+    },
+    "93": {
+      "name": "Mesagoza"
+    },
+    "94": {
+      "name": "Fuecoco"
+    },
+    "95": {
+      "name": "Greavard"
+    },
+    "96": {
+      "name": "Gimmighoul"
+    },
+    "97": {
+      "name": "Paldean Wooper"
+    },
+    "98": {
+      "name": "Orthworm"
+    },
+    "99": {
+      "name": "Maushold"
+    }
+  }
+}

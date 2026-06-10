@@ -44,6 +44,14 @@ CARD_REF_JSON     = ROOT / "data" / "reference" / "card_reference.json"
 TCGDEX_CACHE      = ROOT / "data" / "reference" / "tcgdex_card_cache.json"
 LIMITLESS_CACHE   = ROOT / "data" / "reference" / "limitless_name_cache.json"
 
+# Pokémon Zone's only known set-code mislabel: it labels "Deluxe Pack: ex" (A4b) cards as
+# A1/A2/A3/A4 (keeping the right number). So a cross-set (name, number) collision is only
+# genuinely ambiguous when PZ's set_code is one of those mislabel TARGETS *and* an A4b
+# printing (the SOURCE) of this (name, number) exists. In every other case PZ's set_code is
+# trustworthy. (Sets, upper-cased.)
+_PZ_MISLABEL_SOURCE_SETS = frozenset({"A4B"})
+_PZ_MISLABEL_TARGET_SETS = frozenset({"A1", "A2", "A3", "A4"})
+
 TCGDEX_BASE   = "https://api.tcgdex.net/v2/en"
 LIMITLESS_BASE = "https://pocket.limitlesstcg.com/cards"
 REQUEST_TIMEOUT = 12
@@ -247,10 +255,18 @@ class CoordResolver:
             ref = self.ref_by_coord[ref_cands[0]]
             return self._coord_from_ref(name, ref)
         elif len(ref_cands) > 1:
-            # Multiple sets share this (name, number) — PZ's set_code is unreliable
-            # here because this is exactly the A4b mislabel scenario (PZ labels A4b
-            # cards as A1/A2/A3/A4). Surface as conflict so the entry routes to the
-            # review queue rather than silently attributing ownership to the wrong set.
+            # Multiple sets share this (name, number). PZ's set_code is genuinely ambiguous
+            # ONLY when it is a mislabel target (A1/A2/A3/A4) AND an A4b printing of this
+            # (name, number) exists (the possible mislabel source). In every other case —
+            # no A4b candidate, or PZ reports a non-target set like B1a/A1a — PZ's set_code
+            # is trustworthy, so resolve to it when it's one of the confirmed candidates.
+            cand_sets = {c[0].upper() for c in ref_cands}
+            if pz_s in cand_sets:
+                a4b_ambiguous = (pz_s in _PZ_MISLABEL_TARGET_SETS
+                                 and bool(cand_sets & _PZ_MISLABEL_SOURCE_SETS))
+                if not a4b_ambiguous:
+                    match = next(c for c in ref_cands if c[0].upper() == pz_s)
+                    return self._coord_from_ref(name, self.ref_by_coord[match])
             return ResolvedCoord(name, None, num, None, "conflict",
                                  sources_agreed=["card_reference"],
                                  detail=f"ambiguous sets in reference: {sorted(ref_cands)}")

@@ -1,0 +1,712 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:39Z",
+    "card_count": 234,
+    "set_code": "B2",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Ledyba"
+    },
+    "10": {
+      "name": "Chesnaught"
+    },
+    "100": {
+      "name": "Galarian Obstagoon"
+    },
+    "101": {
+      "name": "Stunky"
+    },
+    "102": {
+      "name": "Skuntank"
+    },
+    "103": {
+      "name": "Spiritomb"
+    },
+    "104": {
+      "name": "Purrloin"
+    },
+    "105": {
+      "name": "Liepard"
+    },
+    "106": {
+      "name": "Scraggy"
+    },
+    "107": {
+      "name": "Scrafty"
+    },
+    "108": {
+      "name": "Yveltal"
+    },
+    "109": {
+      "name": "Guzzlord"
+    },
+    "11": {
+      "name": "Scatterbug"
+    },
+    "110": {
+      "name": "Galarian Meowth"
+    },
+    "111": {
+      "name": "Galarian Perrserker"
+    },
+    "112": {
+      "name": "Mawile"
+    },
+    "113": {
+      "name": "Mega Mawile ex"
+    },
+    "114": {
+      "name": "Excadrill"
+    },
+    "115": {
+      "name": "Ferroseed"
+    },
+    "116": {
+      "name": "Ferrothorn"
+    },
+    "117": {
+      "name": "Galarian Stunfisk"
+    },
+    "118": {
+      "name": "Honedge"
+    },
+    "119": {
+      "name": "Doublade"
+    },
+    "12": {
+      "name": "Spewpa"
+    },
+    "120": {
+      "name": "Aegislash"
+    },
+    "121": {
+      "name": "Bagon"
+    },
+    "122": {
+      "name": "Shelgon"
+    },
+    "123": {
+      "name": "Salamence"
+    },
+    "124": {
+      "name": "Meowth"
+    },
+    "125": {
+      "name": "Persian"
+    },
+    "126": {
+      "name": "Kangaskhan"
+    },
+    "127": {
+      "name": "Mega Kangaskhan ex"
+    },
+    "128": {
+      "name": "Sentret"
+    },
+    "129": {
+      "name": "Furret"
+    },
+    "13": {
+      "name": "Vivillon"
+    },
+    "130": {
+      "name": "Smeargle"
+    },
+    "131": {
+      "name": "Lugia"
+    },
+    "132": {
+      "name": "Taillow"
+    },
+    "133": {
+      "name": "Swellow"
+    },
+    "134": {
+      "name": "Slakoth"
+    },
+    "135": {
+      "name": "Vigoroth"
+    },
+    "136": {
+      "name": "Slaking"
+    },
+    "137": {
+      "name": "Spinda"
+    },
+    "138": {
+      "name": "Tornadus"
+    },
+    "139": {
+      "name": "Bunnelby"
+    },
+    "14": {
+      "name": "Buzzwole"
+    },
+    "140": {
+      "name": "Diggersby"
+    },
+    "141": {
+      "name": "Furfrou"
+    },
+    "142": {
+      "name": "Tandemaus"
+    },
+    "143": {
+      "name": "Maushold"
+    },
+    "144": {
+      "name": "Jaw Fossil"
+    },
+    "145": {
+      "name": "Lucky Ice Pop"
+    },
+    "146": {
+      "name": "Sail Fossil"
+    },
+    "147": {
+      "name": "Protective Poncho"
+    },
+    "148": {
+      "name": "Metal Core Barrier"
+    },
+    "149": {
+      "name": "Diantha"
+    },
+    "15": {
+      "name": "Gossifleur"
+    },
+    "150": {
+      "name": "Sightseer"
+    },
+    "151": {
+      "name": "Juggler"
+    },
+    "152": {
+      "name": "Piers"
+    },
+    "153": {
+      "name": "Training Area"
+    },
+    "154": {
+      "name": "Starting Plains"
+    },
+    "155": {
+      "name": "Peculiar Plaza"
+    },
+    "156": {
+      "name": "Cacnea"
+    },
+    "157": {
+      "name": "Roserade"
+    },
+    "158": {
+      "name": "Vivillon"
+    },
+    "159": {
+      "name": "Buzzwole"
+    },
+    "16": {
+      "name": "Eldegoss"
+    },
+    "160": {
+      "name": "Reshiram"
+    },
+    "161": {
+      "name": "Oricorio"
+    },
+    "162": {
+      "name": "Scorbunny"
+    },
+    "163": {
+      "name": "Aurorus"
+    },
+    "164": {
+      "name": "Cramorant"
+    },
+    "165": {
+      "name": "Minun"
+    },
+    "166": {
+      "name": "Toxel"
+    },
+    "167": {
+      "name": "Galarian Ponyta"
+    },
+    "168": {
+      "name": "Snubbull"
+    },
+    "169": {
+      "name": "Indeedee"
+    },
+    "17": {
+      "name": "Teal Mask Ogerpon ex"
+    },
+    "170": {
+      "name": "Sandshrew"
+    },
+    "171": {
+      "name": "Tyrantrum"
+    },
+    "172": {
+      "name": "Falinks"
+    },
+    "173": {
+      "name": "Alolan Muk"
+    },
+    "174": {
+      "name": "Purrloin"
+    },
+    "175": {
+      "name": "Yveltal"
+    },
+    "176": {
+      "name": "Galarian Obstagoon"
+    },
+    "177": {
+      "name": "Galarian Perrserker"
+    },
+    "178": {
+      "name": "Salamence"
+    },
+    "179": {
+      "name": "Slakoth"
+    },
+    "18": {
+      "name": "Alolan Marowak"
+    },
+    "180": {
+      "name": "Teal Mask Ogerpon ex"
+    },
+    "181": {
+      "name": "Blacephalon ex"
+    },
+    "182": {
+      "name": "Alolan Ninetales ex"
+    },
+    "183": {
+      "name": "Mega Swampert ex"
+    },
+    "184": {
+      "name": "Toxtricity ex"
+    },
+    "185": {
+      "name": "Mega Gardevoir ex"
+    },
+    "186": {
+      "name": "Mimikyu ex"
+    },
+    "187": {
+      "name": "Gigalith ex"
+    },
+    "188": {
+      "name": "Mega Mawile ex"
+    },
+    "189": {
+      "name": "Mega Kangaskhan ex"
+    },
+    "19": {
+      "name": "Reshiram"
+    },
+    "190": {
+      "name": "Diantha"
+    },
+    "191": {
+      "name": "Sightseer"
+    },
+    "192": {
+      "name": "Juggler"
+    },
+    "193": {
+      "name": "Piers"
+    },
+    "194": {
+      "name": "Teal Mask Ogerpon ex"
+    },
+    "195": {
+      "name": "Blacephalon ex"
+    },
+    "196": {
+      "name": "Alolan Ninetales ex"
+    },
+    "197": {
+      "name": "Mega Swampert ex"
+    },
+    "198": {
+      "name": "Toxtricity ex"
+    },
+    "199": {
+      "name": "Mimikyu ex"
+    },
+    "2": {
+      "name": "Ledian"
+    },
+    "20": {
+      "name": "Litleo"
+    },
+    "200": {
+      "name": "Gigalith ex"
+    },
+    "201": {
+      "name": "Mega Mawile ex"
+    },
+    "202": {
+      "name": "Mega Kangaskhan ex"
+    },
+    "203": {
+      "name": "Mega Gardevoir ex"
+    },
+    "204": {
+      "name": "Meowth"
+    },
+    "205": {
+      "name": "Tangela"
+    },
+    "206": {
+      "name": "Magby"
+    },
+    "207": {
+      "name": "Magmar"
+    },
+    "208": {
+      "name": "Horsea"
+    },
+    "209": {
+      "name": "Seadra"
+    },
+    "21": {
+      "name": "Pyroar"
+    },
+    "210": {
+      "name": "Mantyke"
+    },
+    "211": {
+      "name": "Omanyte"
+    },
+    "212": {
+      "name": "Omastar"
+    },
+    "213": {
+      "name": "Pichu"
+    },
+    "214": {
+      "name": "Clefairy"
+    },
+    "215": {
+      "name": "Clefable"
+    },
+    "216": {
+      "name": "Latias"
+    },
+    "217": {
+      "name": "Latios"
+    },
+    "218": {
+      "name": "Hitmonlee"
+    },
+    "219": {
+      "name": "Hitmonchan"
+    },
+    "22": {
+      "name": "Oricorio"
+    },
+    "220": {
+      "name": "Kabuto"
+    },
+    "221": {
+      "name": "Kabutops"
+    },
+    "222": {
+      "name": "Phanpy"
+    },
+    "223": {
+      "name": "Tyrogue"
+    },
+    "224": {
+      "name": "Tauros"
+    },
+    "225": {
+      "name": "Flareon ex"
+    },
+    "226": {
+      "name": "Ho-Oh ex"
+    },
+    "227": {
+      "name": "Kingdra ex"
+    },
+    "228": {
+      "name": "Espeon ex"
+    },
+    "229": {
+      "name": "Sylveon ex"
+    },
+    "23": {
+      "name": "Blacephalon ex"
+    },
+    "230": {
+      "name": "Donphan ex"
+    },
+    "231": {
+      "name": "Umbreon ex"
+    },
+    "232": {
+      "name": "Lugia ex"
+    },
+    "233": {
+      "name": "Meloetta"
+    },
+    "234": {
+      "name": "Protective Poncho"
+    },
+    "24": {
+      "name": "Scorbunny"
+    },
+    "25": {
+      "name": "Raboot"
+    },
+    "26": {
+      "name": "Cinderace"
+    },
+    "27": {
+      "name": "Hearthflame Mask Ogerpon"
+    },
+    "28": {
+      "name": "Alolan Vulpix"
+    },
+    "29": {
+      "name": "Alolan Ninetales ex"
+    },
+    "3": {
+      "name": "Shuckle"
+    },
+    "30": {
+      "name": "Galarian Mr. Mime"
+    },
+    "31": {
+      "name": "Galarian Mr. Rime"
+    },
+    "32": {
+      "name": "Delibird"
+    },
+    "33": {
+      "name": "Mudkip"
+    },
+    "34": {
+      "name": "Marshtomp"
+    },
+    "35": {
+      "name": "Swampert"
+    },
+    "36": {
+      "name": "Mega Swampert ex"
+    },
+    "37": {
+      "name": "Vanillite"
+    },
+    "38": {
+      "name": "Vanillish"
+    },
+    "39": {
+      "name": "Vanilluxe"
+    },
+    "4": {
+      "name": "Roselia"
+    },
+    "40": {
+      "name": "Cryogonal"
+    },
+    "41": {
+      "name": "Amaura"
+    },
+    "42": {
+      "name": "Aurorus"
+    },
+    "43": {
+      "name": "Chewtle"
+    },
+    "44": {
+      "name": "Drednaw"
+    },
+    "45": {
+      "name": "Cramorant"
+    },
+    "46": {
+      "name": "Arrokuda"
+    },
+    "47": {
+      "name": "Barraskewda"
+    },
+    "48": {
+      "name": "Wellspring Mask Ogerpon"
+    },
+    "49": {
+      "name": "Pikachu"
+    },
+    "5": {
+      "name": "Roserade"
+    },
+    "50": {
+      "name": "Alolan Raichu"
+    },
+    "51": {
+      "name": "Zapdos"
+    },
+    "52": {
+      "name": "Plusle"
+    },
+    "53": {
+      "name": "Minun"
+    },
+    "54": {
+      "name": "Toxel"
+    },
+    "55": {
+      "name": "Toxtricity ex"
+    },
+    "56": {
+      "name": "Tadbulb"
+    },
+    "57": {
+      "name": "Bellibolt"
+    },
+    "58": {
+      "name": "Galarian Ponyta"
+    },
+    "59": {
+      "name": "Galarian Rapidash"
+    },
+    "6": {
+      "name": "Cacnea"
+    },
+    "60": {
+      "name": "Wobbuffet"
+    },
+    "61": {
+      "name": "Snubbull"
+    },
+    "62": {
+      "name": "Granbull"
+    },
+    "63": {
+      "name": "Ralts"
+    },
+    "64": {
+      "name": "Kirlia"
+    },
+    "65": {
+      "name": "Gardevoir"
+    },
+    "66": {
+      "name": "Mega Gardevoir ex"
+    },
+    "67": {
+      "name": "Litwick"
+    },
+    "68": {
+      "name": "Lampent"
+    },
+    "69": {
+      "name": "Chandelure"
+    },
+    "7": {
+      "name": "Cacturne"
+    },
+    "70": {
+      "name": "Meloetta"
+    },
+    "71": {
+      "name": "Pumpkaboo"
+    },
+    "72": {
+      "name": "Gourgeist"
+    },
+    "73": {
+      "name": "Mimikyu ex"
+    },
+    "74": {
+      "name": "Sinistea"
+    },
+    "75": {
+      "name": "Polteageist"
+    },
+    "76": {
+      "name": "Indeedee"
+    },
+    "77": {
+      "name": "Sandshrew"
+    },
+    "78": {
+      "name": "Sandslash"
+    },
+    "79": {
+      "name": "Machop"
+    },
+    "8": {
+      "name": "Chespin"
+    },
+    "80": {
+      "name": "Machoke"
+    },
+    "81": {
+      "name": "Machamp"
+    },
+    "82": {
+      "name": "Cubone"
+    },
+    "83": {
+      "name": "Meditite"
+    },
+    "84": {
+      "name": "Medicham"
+    },
+    "85": {
+      "name": "Roggenrola"
+    },
+    "86": {
+      "name": "Boldore"
+    },
+    "87": {
+      "name": "Gigalith ex"
+    },
+    "88": {
+      "name": "Drilbur"
+    },
+    "89": {
+      "name": "Tyrunt"
+    },
+    "9": {
+      "name": "Quilladin"
+    },
+    "90": {
+      "name": "Tyrantrum"
+    },
+    "91": {
+      "name": "Passimian"
+    },
+    "92": {
+      "name": "Falinks"
+    },
+    "93": {
+      "name": "Cornerstone Mask Ogerpon"
+    },
+    "94": {
+      "name": "Alolan Meowth"
+    },
+    "95": {
+      "name": "Alolan Persian"
+    },
+    "96": {
+      "name": "Alolan Grimer"
+    },
+    "97": {
+      "name": "Alolan Muk"
+    },
+    "98": {
+      "name": "Galarian Zigzagoon"
+    },
+    "99": {
+      "name": "Galarian Linoone"
+    }
+  }
+}

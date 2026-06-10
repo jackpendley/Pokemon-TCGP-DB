@@ -1,0 +1,670 @@
+{
+  "_meta": {
+    "description": "Curated Special Illustration Rare (★★ rainbow-border) coords. SIR shares the Two Star tier/pull-rate with Super Rare; this list is the authority for the super_rare→special_illustration_rare split.",
+    "source": "game8 List of Full Art Cards (Rainbow Illustration Rare sections)",
+    "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152",
+    "generated_at": "2026-06-05T18:19:11Z",
+    "validation": "each coord confirmed ★★ (super_rare) in TCGdex, else Bulbapedia",
+    "count": 94
+  },
+  "records": [
+    {
+      "set_code": "A1",
+      "card_number": 274,
+      "name": "Moltres ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A1",
+      "card_number": 275,
+      "name": "Articuno ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A1",
+      "card_number": 276,
+      "name": "Zapdos ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A1",
+      "card_number": 277,
+      "name": "Gengar ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A1",
+      "card_number": 278,
+      "name": "Machamp ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A1a",
+      "card_number": 83,
+      "name": "Mew ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A1a",
+      "card_number": 84,
+      "name": "Aerodactyl ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2",
+      "card_number": 196,
+      "name": "Yanmega ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2",
+      "card_number": 197,
+      "name": "Infernape ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2",
+      "card_number": 198,
+      "name": "Pachirisu ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2",
+      "card_number": 199,
+      "name": "Mismagius ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2",
+      "card_number": 200,
+      "name": "Gallade ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2",
+      "card_number": 201,
+      "name": "Weavile ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2",
+      "card_number": 202,
+      "name": "Darkrai ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2",
+      "card_number": 203,
+      "name": "Lickilicky ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2a",
+      "card_number": 91,
+      "name": "Leafeon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2a",
+      "card_number": 92,
+      "name": "Glaceon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2a",
+      "card_number": 93,
+      "name": "Garchomp ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2a",
+      "card_number": 94,
+      "name": "Probopass ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2b",
+      "card_number": 92,
+      "name": "Pikachu ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2b",
+      "card_number": 93,
+      "name": "Paldean Clodsire ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2b",
+      "card_number": 94,
+      "name": "Tinkaton ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A2b",
+      "card_number": 95,
+      "name": "Bibarel ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3",
+      "card_number": 198,
+      "name": "Decidueye ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3",
+      "card_number": 199,
+      "name": "Dhelmise ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3",
+      "card_number": 200,
+      "name": "Incineroar ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3",
+      "card_number": 201,
+      "name": "Crabominable ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3",
+      "card_number": 202,
+      "name": "Wishiwashi ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3",
+      "card_number": 203,
+      "name": "Alolan Raichu ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3",
+      "card_number": 204,
+      "name": "Lunala ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3",
+      "card_number": 205,
+      "name": "Passimian ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3",
+      "card_number": 206,
+      "name": "Alolan Muk ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3",
+      "card_number": 207,
+      "name": "Solgaleo ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3a",
+      "card_number": 84,
+      "name": "Tapu Koko ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3a",
+      "card_number": 85,
+      "name": "Lycanroc ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3a",
+      "card_number": 86,
+      "name": "Guzzlord ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3a",
+      "card_number": 87,
+      "name": "Alolan Dugtrio ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3b",
+      "card_number": 87,
+      "name": "Flareon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3b",
+      "card_number": 88,
+      "name": "Primarina ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3b",
+      "card_number": 89,
+      "name": "Sylveon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3b",
+      "card_number": 90,
+      "name": "Dragonite ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A3b",
+      "card_number": 91,
+      "name": "Snorlax ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4",
+      "card_number": 202,
+      "name": "Shuckle ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4",
+      "card_number": 203,
+      "name": "Kingdra ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4",
+      "card_number": 204,
+      "name": "Lanturn ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4",
+      "card_number": 205,
+      "name": "Espeon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4",
+      "card_number": 206,
+      "name": "Donphan ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4",
+      "card_number": 207,
+      "name": "Crobat ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4",
+      "card_number": 208,
+      "name": "Umbreon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4",
+      "card_number": 209,
+      "name": "Skarmory ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4a",
+      "card_number": 86,
+      "name": "Jumpluff ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4a",
+      "card_number": 87,
+      "name": "Entei ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4a",
+      "card_number": 88,
+      "name": "Raikou ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "A4a",
+      "card_number": 89,
+      "name": "Poliwrath ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 272,
+      "name": "Mega Pinsir ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 273,
+      "name": "Whimsicott ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 274,
+      "name": "Rapidash ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 275,
+      "name": "Greninja ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 276,
+      "name": "Jolteon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 277,
+      "name": "Mega Ampharos ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 278,
+      "name": "Indeedee ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 279,
+      "name": "Hitmonchan ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 280,
+      "name": "Mega Absol ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 281,
+      "name": "Dragalge ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 282,
+      "name": "Melmetal ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1",
+      "card_number": 283,
+      "name": "Tauros ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1a",
+      "card_number": 83,
+      "name": "Mega Venusaur ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1a",
+      "card_number": 84,
+      "name": "Mega Blastoise ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1a",
+      "card_number": 85,
+      "name": "Mega Lopunny ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B1a",
+      "card_number": 86,
+      "name": "Mega Steelix ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 194,
+      "name": "Teal Mask Ogerpon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 195,
+      "name": "Blacephalon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 196,
+      "name": "Alolan Ninetales ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 197,
+      "name": "Mega Swampert ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 198,
+      "name": "Toxtricity ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 199,
+      "name": "Mimikyu ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 200,
+      "name": "Gigalith ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 201,
+      "name": "Mega Mawile ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2",
+      "card_number": 202,
+      "name": "Mega Kangaskhan ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2a",
+      "card_number": 110,
+      "name": "Meowscarada",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2a",
+      "card_number": 111,
+      "name": "Armarouge",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2a",
+      "card_number": 112,
+      "name": "Chien-Pao",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2a",
+      "card_number": 113,
+      "name": "Bellibolt",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B2a",
+      "card_number": 114,
+      "name": "Gholdengo",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 196,
+      "name": "Vaporeon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 197,
+      "name": "Magnezone ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 198,
+      "name": "Crustle ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 199,
+      "name": "Zoroark ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 200,
+      "name": "Corviknight ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B3",
+      "card_number": 201,
+      "name": "Flygon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B3A",
+      "card_number": 89,
+      "name": "Iron Bundle ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B3A",
+      "card_number": 90,
+      "name": "Miraidon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B3A",
+      "card_number": 91,
+      "name": "Flutter Mane ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    },
+    {
+      "set_code": "B3A",
+      "card_number": 92,
+      "name": "Koraidon ex",
+      "source": "game8",
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
+    }
+  ]
+}

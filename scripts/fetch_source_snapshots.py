@@ -93,33 +93,42 @@ SET_ALIASES: dict[str, dict] = {
 
 TCGDEX_SETS = frozenset(a["tcgdex"] for a in SET_ALIASES.values() if a["tcgdex"])
 
-# Rarity normalisation: Bulbapedia uses {{Rar/TCGP|Diamond|1}} style.
+# Rarity normalisation: Bulbapedia uses {{Rar/TCGP|Diamond|1}} style. Mapped to the new
+# canonical vocabulary. (Bulbapedia is a cross-validator; TCGdex is the per-card authority,
+# and the curated SIR list distinguishes super_rare vs special_illustration_rare.)
 _BP_RARITY: dict[str, str] = {
-    ("Diamond", "1"):  "one_diamond",
-    ("Diamond", "2"):  "two_diamond",
-    ("Diamond", "3"):  "three_diamond",
-    ("Diamond", "4"):  "four_diamond",
-    ("Star", "1"):     "one_star",
-    ("Star", "2"):     "two_star",
-    ("Star", "3"):     "three_star",
-    ("Shiny", "1"):    "one_star",    # Shiny = alt-art Star in Bulbapedia
-    ("Shiny", "2"):    "two_star",
-    ("Shiny", "3"):    "three_star",
-    ("Crown", "1"):    "crown",
+    ("Diamond", "1"):  "common",
+    ("Diamond", "2"):  "uncommon",
+    ("Diamond", "3"):  "rare",
+    ("Diamond", "4"):  "double_rare",
+    ("Star", "1"):     "illustration_rare",
+    ("Star", "2"):     "super_rare",
+    ("Star", "3"):     "immersive",
+    ("Shiny", "1"):    "shiny_rare",
+    ("Shiny", "2"):    "shiny_super_rare",
+    ("Crown", "1"):    "ultra_rare",
     ("Promo", ""):     "promo",
     ("Promo", "1"):    "promo",
 }
 
-# TCGdex rarity strings → canonical
+# TCGdex rarity strings → new canonical names. TCGdex is the per-card rarity
+# authority — it distinguishes the shiny tiers ("One Shiny"/"Two Shiny") and Crown,
+# which the symbol-scraping sources do not. The super_rare→special_illustration_rare
+# split (both "Two Star") is applied later from the curated SIR reference
+# (build_card_reference). Current API returns "Crown"; older responses used
+# "Crown Rare" — both mapped so re-fetches and stale caches agree.
 _TCGDEX_RARITY: dict[str, str] = {
-    "One Diamond":    "one_diamond",
-    "Two Diamond":    "two_diamond",
-    "Three Diamond":  "three_diamond",
-    "Four Diamond":   "four_diamond",
-    "One Star":       "one_star",
-    "Two Star":       "two_star",
-    "Three Star":     "three_star",
-    "Crown Rare":     "crown",
+    "One Diamond":    "common",
+    "Two Diamond":    "uncommon",
+    "Three Diamond":  "rare",
+    "Four Diamond":   "double_rare",
+    "One Star":       "illustration_rare",
+    "Two Star":       "super_rare",
+    "Three Star":     "immersive",
+    "One Shiny":      "shiny_rare",
+    "Two Shiny":      "shiny_super_rare",
+    "Crown":          "ultra_rare",
+    "Crown Rare":     "ultra_rare",
     "Promo":          "promo",
 }
 

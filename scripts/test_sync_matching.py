@@ -87,7 +87,7 @@ def make_entry(name, count=1, hp=None, variant=None, card_type="Pokemon") -> dic
 def test_exact_set_number_match():
     print("\n--- 1. Exact set+number match ---")
     collection = [make_entry("Charmander", count=2)]
-    pack_sources = {("A1", 4): {"card_name": "Charmander", "rarity": "one_diamond"}}
+    pack_sources = {("A1", 4): {"card_name": "Charmander", "rarity": "common"}}
     pz_cards = [make_pz("Charmander", count=3, set_code="A1", card_number=4)]
 
     results = match_pz_cards(pz_cards, collection, pack_sources, {})
@@ -149,7 +149,7 @@ def test_direct_name_match():
 def test_new_card():
     print("\n--- 5. NEW_CARD auto-add ---")
     collection = [make_entry("Charmander", count=2)]
-    pack_sources = {("B1", 7): {"card_name": "Bulbasaur", "rarity": "one_diamond"}}
+    pack_sources = {("B1", 7): {"card_name": "Bulbasaur", "rarity": "common"}}
     pz_cards = [make_pz("Bulbasaur", count=1, set_code="B1", card_number=7)]
 
     results = match_pz_cards(pz_cards, collection, pack_sources, {})
@@ -165,8 +165,8 @@ def test_new_card_dedup():
     print("\n--- 6. Duplicate NEW_CARD dedup (same card, two PZ sets) ---")
     collection: list[dict] = []
     pack_sources = {
-        ("A1", 1): {"card_name": "Bulbasaur", "rarity": "one_diamond"},
-        ("B1", 1): {"card_name": "Bulbasaur", "rarity": "one_diamond"},
+        ("A1", 1): {"card_name": "Bulbasaur", "rarity": "common"},
+        ("B1", 1): {"card_name": "Bulbasaur", "rarity": "common"},
     }
     pz_cards = [
         make_pz("Bulbasaur", count=2, set_code="A1", card_number=1),
@@ -237,8 +237,8 @@ def test_pass2_ambiguous_resolution():
         ]
     }
     pack_sources = {
-        ("A1", 10): {"card_name": "Riolu", "rarity": "one_diamond"},
-        ("A1", 11): {"card_name": "Riolu", "rarity": "one_diamond"},
+        ("A1", 10): {"card_name": "Riolu", "rarity": "common"},
+        ("A1", 11): {"card_name": "Riolu", "rarity": "common"},
     }
     pz_cards = [
         make_pz("Riolu", count=2, set_code="A1", card_number=10),
@@ -260,18 +260,18 @@ def test_pass2_ambiguous_resolution():
 def test_pass3_rarity_assignment():
     print("\n--- 8. Pass 3: rarity-rank assignment ---")
     # Pikachu has two variants: base (no variant) and alt art.
-    # PZ returns one_diamond (base) and one_star (alt).
+    # PZ returns common (base) and illustration_rare (alt).
     collection = [
         make_entry("Pikachu", count=1),                            # base
         make_entry("Pikachu", count=1, variant="alt art"),         # alt
     ]
     pack_sources = {
-        ("A1", 35): {"card_name": "Pikachu", "rarity": "one_diamond"},
-        ("A1", 36): {"card_name": "Pikachu", "rarity": "one_star"},
+        ("A1", 35): {"card_name": "Pikachu", "rarity": "common"},
+        ("A1", 36): {"card_name": "Pikachu", "rarity": "illustration_rare"},
     }
     pz_cards = [
-        make_pz("Pikachu", count=2, set_code="A1", card_number=35),  # one_diamond → base
-        make_pz("Pikachu", count=1, set_code="A1", card_number=36),  # one_star → alt
+        make_pz("Pikachu", count=2, set_code="A1", card_number=35),  # common → base
+        make_pz("Pikachu", count=1, set_code="A1", card_number=36),  # illustration_rare → alt
     ]
 
     results = match_pz_cards(pz_cards, collection, pack_sources, {})
@@ -281,8 +281,8 @@ def test_pass3_rarity_assignment():
     by_cn = {r.pz_card.card_number: r.entry for r in matched}
     base_entry = by_cn.get(35)
     alt_entry  = by_cn.get(36)
-    check("one_diamond (35) → base variant", base_entry and not base_entry.get("variant"), str(base_entry))
-    check("one_star (36) → alt variant", alt_entry and alt_entry.get("variant") == "alt art", str(alt_entry))
+    check("common (35) → base variant", base_entry and not base_entry.get("variant"), str(base_entry))
+    check("illustration_rare (36) → alt variant", alt_entry and alt_entry.get("variant") == "alt art", str(alt_entry))
 
 
 # ---------------------------------------------------------------------------

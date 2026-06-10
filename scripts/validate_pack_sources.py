@@ -14,7 +14,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import VALID_SET_CODES, RARE_PLUS_RARITIES
+from _collection_io import VALID_SET_CODES, RARE_PLUS_RARITIES, norm_card_name, MULTI_PACK_SETS
+
+TCGDEX_SNAPSHOTS = Path(__file__).resolve().parent.parent / "data" / "reference" / "sources" / "tcgdex"
 
 try:
     import jsonschema
@@ -27,7 +29,7 @@ PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
 PACK_SOURCES_SCHEMA = ROOT / "data" / "reference" / "pack_sources.schema.json"
 
 VALID_RARITIES = RARE_PLUS_RARITIES | {
-    "one_diamond", "two_diamond", "three_diamond", "four_diamond", "promo", None,
+    "common", "uncommon", "rare", "double_rare", "promo", None,
 }
 VALID_CONFIDENCES = {"high", "medium", "low"}
 REQUIRED_FIELDS = ["set_code", "card_number", "card_name", "pack_name", "expansion"]
@@ -131,6 +133,61 @@ def main():
             warnings += 1
         else:
             seen_keys.add(card_key)
+
+    # ── Pack-assignment cross-validation vs TCGdex boosters ──────────────────
+    # pack_name comes from Limitless alone. TCGdex 'boosters' is an INDEPENDENT record of
+    # which pack(s) a card belongs to — cross-check it where TCGdex covers the set, and
+    # surface the sets it doesn't cover as a single-source (Limitless-only) gap.
+    tcgdex_boosters: dict[tuple[str, int], list[str]] = {}
+    if TCGDEX_SNAPSHOTS.exists():
+        for snap in TCGDEX_SNAPSHOTS.glob("*.json"):
+            sc_up = snap.stem.upper()
+            try:
+                cards = json.loads(snap.read_text(encoding="utf-8")).get("cards", {})
+            except (OSError, json.JSONDecodeError):
+                continue
+            for num, c in cards.items():
+                if c.get("boosters"):
+                    try:
+                        tcgdex_boosters[(sc_up, int(num))] = c["boosters"]
+                    except (TypeError, ValueError):
+                        pass
+
+    pa_checked = pa_mismatch = 0
+    for entry in data:
+        pn = entry.get("pack_name")
+        if not pn:  # shared-pool card (in all of a set's packs) — nothing single to compare
+            continue
+        coord = (str(entry.get("set_code") or "").upper(), entry.get("card_number"))
+        boosters = tcgdex_boosters.get(coord)
+        if not boosters:
+            continue
+        pa_checked += 1
+        npn = norm_card_name(pn)
+        if not any(npn == norm_card_name(b) or npn in norm_card_name(b) or norm_card_name(b) in npn
+                   for b in boosters):
+            pa_mismatch += 1
+            print(f"WARN  pack-assignment mismatch {coord[0]}/{coord[1]} {entry.get('card_name')!r}: "
+                  f"pack_sources={pn!r} vs tcgdex_boosters={boosters}")
+            warnings += 1
+
+    sets_in_ps = sorted({str(e.get("set_code") or "").upper() for e in data})
+    sets_with_tcgdex = {k[0] for k in tcgdex_boosters}
+    # Pack assignment only needs independent validation for MULTI-pack sets (where a card maps
+    # to a specific sub-pack, e.g. Mewtwo/Charizard/Pikachu). Single-pack sets have a trivial
+    # one-pack assignment, so a missing TCGdex booster there is not a real gap.
+    multi_pack_upper = {s.upper() for s in MULTI_PACK_SETS}
+    genuine_gaps = [s for s in sets_in_ps if s in multi_pack_upper and s not in sets_with_tcgdex]
+    print()
+    print(f"PACK-ASSIGNMENT CROSS-VALIDATION (vs independent TCGdex boosters):")
+    print(f"  {pa_checked - pa_mismatch}/{pa_checked} multi-pack assignments match TCGdex "
+          f"({pa_mismatch} mismatch)")
+    if genuine_gaps:
+        print(f"  GAP: {len(genuine_gaps)} multi-pack set(s) have NO independent pack check "
+              f"(Limitless-only): {genuine_gaps}")
+    else:
+        print(f"  All multi-pack sets independently validated; single-pack sets have a trivial "
+              f"one-pack assignment (no cross-check needed).")
 
     print()
     if failures == 0:
