@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+# Cancel superseded runs on the same ref to save minutes.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install test dependencies
+        # Subset of requirements.txt actually exercised by the tests and validators.
+        # The OCR/browser deps (opencv-python, pytesseract, imagehash, Pillow, playwright,
+        # curl-cffi) are optional and not imported on any tested code path — curl-cffi has a
+        # `requests` fallback and playwright is lazy-imported — so they're skipped here to keep
+        # CI fast and free of system-library/binary requirements.
+        run: pip install pytest jsonschema rapidfuzz beautifulsoup4 lxml requests
+
+      - name: Test suite (pytest)
+        run: python -m pytest tests/ scripts/test_sync_matching.py -q
+
+      - name: New-card / alt-art harness
+        run: python scripts/test_new_card_additions.py
+
+      - name: Reference-data integrity (schemas + ranges)
+        run: |
+          python scripts/validate_pack_sources.py
+          python scripts/validate_pull_probability_model.py
