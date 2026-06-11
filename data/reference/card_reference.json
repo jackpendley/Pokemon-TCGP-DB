@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-06-05T18:19:11Z",
+    "generated_at": "2026-06-11T22:40:55Z",
     "schema_version": "1.0",
     "sources": [
       "tcgdex",
@@ -7401,6 +7401,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Mythical Island",
@@ -7423,6 +7424,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Mythical Island",
@@ -13449,6 +13451,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Triumphant Light",
@@ -13471,6 +13474,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Triumphant Light",
@@ -13493,6 +13497,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Triumphant Light",
@@ -13515,6 +13520,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Triumphant Light",
@@ -15397,6 +15403,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Shining Revelry",
@@ -15419,6 +15426,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Shining Revelry",
@@ -15441,6 +15449,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Shining Revelry",
@@ -15463,6 +15472,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Shining Revelry",
@@ -22275,6 +22285,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Extradimensional Crisis",
@@ -22297,6 +22308,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Extradimensional Crisis",
@@ -22319,6 +22331,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Extradimensional Crisis",
@@ -22341,6 +22354,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Extradimensional Crisis",
@@ -24403,6 +24417,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Eevee Grove",
@@ -24425,6 +24440,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Eevee Grove",
@@ -24447,6 +24463,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Eevee Grove",
@@ -24469,6 +24486,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Eevee Grove",
@@ -24491,6 +24509,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Eevee Grove",
@@ -24541,7 +24560,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "A3b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": "Pokemon",
@@ -25001,7 +25020,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": "Pokemon",
@@ -31377,6 +31396,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Secluded Springs",
@@ -31399,6 +31419,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Secluded Springs",
@@ -31421,6 +31442,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Secluded Springs",
@@ -31443,6 +31465,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Secluded Springs",
@@ -31792,7 +31815,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -31811,7 +31834,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -31830,7 +31853,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -31849,7 +31872,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -31868,7 +31891,7 @@
       "pokemon_type": "Grass",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -31887,7 +31910,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -31906,7 +31929,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -31925,7 +31948,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -31944,7 +31967,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -31963,7 +31986,7 @@
       "pokemon_type": "Grass",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -31982,7 +32005,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32001,7 +32024,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32020,7 +32043,7 @@
       "pokemon_type": "Grass",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32039,7 +32062,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32058,7 +32081,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32077,7 +32100,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32096,7 +32119,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32115,7 +32138,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -32134,7 +32157,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -32153,7 +32176,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32172,7 +32195,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32191,7 +32214,7 @@
       "pokemon_type": "Grass",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32210,7 +32233,7 @@
       "pokemon_type": "Grass",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32229,7 +32252,7 @@
       "pokemon_type": "Grass",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32248,7 +32271,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32267,7 +32290,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32286,7 +32309,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32305,7 +32328,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32324,7 +32347,7 @@
       "pokemon_type": "Grass",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32343,7 +32366,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32362,7 +32385,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32381,7 +32404,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32400,7 +32423,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32419,7 +32442,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32438,7 +32461,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32457,7 +32480,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -32476,7 +32499,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -32495,7 +32518,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32514,7 +32537,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32533,7 +32556,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32552,7 +32575,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32571,7 +32594,7 @@
       "pokemon_type": "Grass",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -32590,7 +32613,7 @@
       "pokemon_type": "Grass",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32609,7 +32632,7 @@
       "pokemon_type": "Grass",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32628,7 +32651,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32647,7 +32670,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32666,7 +32689,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32685,7 +32708,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32704,7 +32727,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32723,7 +32746,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32742,7 +32765,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32761,7 +32784,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32780,7 +32803,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -32799,7 +32822,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -32818,7 +32841,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32837,7 +32860,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32856,7 +32879,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32875,7 +32898,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32894,7 +32917,7 @@
       "pokemon_type": "Fire",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -32913,7 +32936,7 @@
       "pokemon_type": "Fire",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -32932,7 +32955,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32951,7 +32974,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -32970,7 +32993,7 @@
       "pokemon_type": "Fire",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -32989,7 +33012,7 @@
       "pokemon_type": "Fire",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33008,7 +33031,7 @@
       "pokemon_type": "Fire",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33027,7 +33050,7 @@
       "pokemon_type": "Fire",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33046,7 +33069,7 @@
       "pokemon_type": "Fire",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33065,7 +33088,7 @@
       "pokemon_type": "Fire",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33084,7 +33107,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33103,7 +33126,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33122,7 +33145,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33141,7 +33164,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33160,7 +33183,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33179,7 +33202,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33198,7 +33221,7 @@
       "pokemon_type": "Fire",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -33217,7 +33240,7 @@
       "pokemon_type": "Fire",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33236,7 +33259,7 @@
       "pokemon_type": "Fire",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33255,7 +33278,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33274,7 +33297,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33293,7 +33316,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33312,7 +33335,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33331,7 +33354,7 @@
       "pokemon_type": "Fire",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -33350,7 +33373,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33369,7 +33392,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33388,7 +33411,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33407,7 +33430,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33426,7 +33449,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -33445,7 +33468,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33464,7 +33487,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33483,7 +33506,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33502,7 +33525,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33521,7 +33544,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -33540,7 +33563,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33559,7 +33582,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33578,7 +33601,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33597,7 +33620,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33616,7 +33639,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33635,7 +33658,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33654,7 +33677,7 @@
       "pokemon_type": "Water",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33673,7 +33696,7 @@
       "pokemon_type": "Water",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33692,7 +33715,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33711,7 +33734,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33730,7 +33753,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33749,7 +33772,7 @@
       "pokemon_type": "Water",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33768,7 +33791,7 @@
       "pokemon_type": "Water",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33787,7 +33810,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33806,7 +33829,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33825,7 +33848,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33844,7 +33867,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33863,7 +33886,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33882,7 +33905,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33901,7 +33924,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33920,7 +33943,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -33939,7 +33962,7 @@
       "pokemon_type": "Water",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -33958,7 +33981,7 @@
       "pokemon_type": "Water",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -33977,7 +34000,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -33996,7 +34019,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34015,7 +34038,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34034,7 +34057,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34053,7 +34076,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -34072,7 +34095,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34091,7 +34114,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34110,7 +34133,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34129,7 +34152,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34148,7 +34171,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34167,7 +34190,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34186,7 +34209,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34205,7 +34228,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34224,7 +34247,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34243,7 +34266,7 @@
       "pokemon_type": "Lightning",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34262,7 +34285,7 @@
       "pokemon_type": "Lightning",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34281,7 +34304,7 @@
       "pokemon_type": "Lightning",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34300,7 +34323,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34319,7 +34342,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34338,7 +34361,7 @@
       "pokemon_type": "Lightning",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34357,7 +34380,7 @@
       "pokemon_type": "Lightning",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34376,7 +34399,7 @@
       "pokemon_type": "Lightning",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -34395,7 +34418,7 @@
       "pokemon_type": "Lightning",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -34414,7 +34437,7 @@
       "pokemon_type": "Lightning",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34433,7 +34456,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34452,7 +34475,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34471,7 +34494,7 @@
       "pokemon_type": "Lightning",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34490,7 +34513,7 @@
       "pokemon_type": "Lightning",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34509,7 +34532,7 @@
       "pokemon_type": "Lightning",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34528,7 +34551,7 @@
       "pokemon_type": "Lightning",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34547,7 +34570,7 @@
       "pokemon_type": "Lightning",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34566,7 +34589,7 @@
       "pokemon_type": "Lightning",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34585,7 +34608,7 @@
       "pokemon_type": "Lightning",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34604,7 +34627,7 @@
       "pokemon_type": "Lightning",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34623,7 +34646,7 @@
       "pokemon_type": "Lightning",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34642,7 +34665,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34661,7 +34684,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34680,7 +34703,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34699,7 +34722,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34737,7 +34760,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34756,7 +34779,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34775,7 +34798,7 @@
       "pokemon_type": "Psychic",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34794,7 +34817,7 @@
       "pokemon_type": "Psychic",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34813,7 +34836,7 @@
       "pokemon_type": "Psychic",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34832,7 +34855,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34851,7 +34874,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34870,7 +34893,7 @@
       "pokemon_type": "Psychic",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34889,7 +34912,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34908,7 +34931,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -34927,7 +34950,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34946,7 +34969,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -34965,7 +34988,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -34984,7 +35007,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -35003,7 +35026,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35022,7 +35045,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35041,7 +35064,7 @@
       "pokemon_type": "Psychic",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35060,7 +35083,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35079,7 +35102,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35098,7 +35121,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35117,7 +35140,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35136,7 +35159,7 @@
       "pokemon_type": "Psychic",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35155,7 +35178,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35174,7 +35197,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35193,7 +35216,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35212,7 +35235,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35231,7 +35254,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35250,7 +35273,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35269,7 +35292,7 @@
       "pokemon_type": "Psychic",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -35288,7 +35311,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35307,7 +35330,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35326,7 +35349,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35345,7 +35368,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35364,7 +35387,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35383,7 +35406,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35402,7 +35425,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35421,7 +35444,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35440,7 +35463,7 @@
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -35459,7 +35482,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35478,7 +35501,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35497,7 +35520,7 @@
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35516,7 +35539,7 @@
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35535,7 +35558,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35554,7 +35577,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35573,7 +35596,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35592,7 +35615,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35611,7 +35634,7 @@
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35630,7 +35653,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35649,7 +35672,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35668,7 +35691,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35687,7 +35710,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35706,7 +35729,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35725,7 +35748,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35744,7 +35767,7 @@
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -35763,7 +35786,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35782,7 +35805,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35801,7 +35824,7 @@
       "pokemon_type": "Fighting",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35820,7 +35843,7 @@
       "pokemon_type": "Fighting",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35839,7 +35862,7 @@
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -35858,7 +35881,7 @@
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -35877,7 +35900,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35896,7 +35919,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35915,7 +35938,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35934,7 +35957,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35953,7 +35976,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35972,7 +35995,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -35991,7 +36014,7 @@
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36010,7 +36033,7 @@
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36029,7 +36052,7 @@
       "pokemon_type": "Fighting",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36048,7 +36071,7 @@
       "pokemon_type": "Fighting",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36067,7 +36090,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36086,7 +36109,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36105,7 +36128,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36124,7 +36147,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36143,7 +36166,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -36162,7 +36185,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -36181,7 +36204,7 @@
       "pokemon_type": "Darkness",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -36200,7 +36223,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36219,7 +36242,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36238,7 +36261,7 @@
       "pokemon_type": "Darkness",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36257,7 +36280,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36276,7 +36299,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36295,7 +36318,7 @@
       "pokemon_type": "Darkness",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36314,7 +36337,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36333,7 +36356,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36352,7 +36375,7 @@
       "pokemon_type": "Darkness",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36371,7 +36394,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36390,7 +36413,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36409,7 +36432,7 @@
       "pokemon_type": "Darkness",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36428,7 +36451,7 @@
       "pokemon_type": "Darkness",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36447,7 +36470,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36466,7 +36489,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36485,7 +36508,7 @@
       "pokemon_type": "Darkness",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36504,7 +36527,7 @@
       "pokemon_type": "Metal",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36523,7 +36546,7 @@
       "pokemon_type": "Metal",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36542,7 +36565,7 @@
       "pokemon_type": "Metal",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36561,7 +36584,7 @@
       "pokemon_type": "Metal",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36580,7 +36603,7 @@
       "pokemon_type": "Metal",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36599,7 +36622,7 @@
       "pokemon_type": "Metal",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36618,7 +36641,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36637,7 +36660,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36656,7 +36679,7 @@
       "pokemon_type": "Metal",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36675,7 +36698,7 @@
       "pokemon_type": "Metal",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36694,7 +36717,7 @@
       "pokemon_type": "Metal",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -36713,7 +36736,7 @@
       "pokemon_type": "Metal",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36732,7 +36755,7 @@
       "pokemon_type": "Metal",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36751,7 +36774,7 @@
       "pokemon_type": "Metal",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36770,7 +36793,7 @@
       "pokemon_type": "Metal",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36789,7 +36812,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36808,7 +36831,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36827,7 +36850,7 @@
       "pokemon_type": "Metal",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -36846,7 +36869,7 @@
       "pokemon_type": "Dragon",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36865,7 +36888,7 @@
       "pokemon_type": "Dragon",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36884,7 +36907,7 @@
       "pokemon_type": "Dragon",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36903,7 +36926,7 @@
       "pokemon_type": "Dragon",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36922,7 +36945,7 @@
       "pokemon_type": "Dragon",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -36941,7 +36964,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36960,7 +36983,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -36979,7 +37002,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -36998,7 +37021,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -37017,7 +37040,7 @@
       "pokemon_type": "Colorless",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -37036,7 +37059,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37055,7 +37078,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37074,7 +37097,7 @@
       "pokemon_type": "Colorless",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -37093,7 +37116,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37112,7 +37135,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37131,7 +37154,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37150,7 +37173,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37169,7 +37192,7 @@
       "pokemon_type": "Colorless",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -37188,7 +37211,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37207,7 +37230,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37226,7 +37249,7 @@
       "pokemon_type": "Colorless",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37245,7 +37268,7 @@
       "pokemon_type": "Colorless",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37264,7 +37287,7 @@
       "pokemon_type": "Colorless",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37283,7 +37306,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37302,7 +37325,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37321,7 +37344,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -37340,7 +37363,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -37359,7 +37382,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37378,7 +37401,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37397,7 +37420,7 @@
       "pokemon_type": "Colorless",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -37416,7 +37439,7 @@
       "pokemon_type": "Colorless",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37435,7 +37458,7 @@
       "pokemon_type": "Colorless",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37454,7 +37477,7 @@
       "pokemon_type": "Colorless",
       "rarity": "double_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37473,7 +37496,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37492,7 +37515,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37549,7 +37572,7 @@
       "pokemon_type": "Colorless",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37568,7 +37591,7 @@
       "pokemon_type": "Colorless",
       "rarity": "rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37587,7 +37610,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -37606,7 +37629,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38499,7 +38522,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -38518,7 +38541,7 @@
       "pokemon_type": "Water",
       "rarity": "illustration_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -38537,7 +38560,7 @@
       "pokemon_type": "Water",
       "rarity": "illustration_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -38556,7 +38579,7 @@
       "pokemon_type": "Psychic",
       "rarity": "illustration_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -38575,7 +38598,7 @@
       "pokemon_type": "Psychic",
       "rarity": "illustration_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -38594,7 +38617,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38613,7 +38636,7 @@
       "pokemon_type": "Grass",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38632,7 +38655,7 @@
       "pokemon_type": "Fire",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -38651,7 +38674,7 @@
       "pokemon_type": "Fire",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38670,7 +38693,7 @@
       "pokemon_type": "Water",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38689,7 +38712,7 @@
       "pokemon_type": "Lightning",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38708,7 +38731,7 @@
       "pokemon_type": "Psychic",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38727,7 +38750,7 @@
       "pokemon_type": "Psychic",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38746,7 +38769,7 @@
       "pokemon_type": "Psychic",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -38765,7 +38788,7 @@
       "pokemon_type": "Metal",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38784,7 +38807,7 @@
       "pokemon_type": "Metal",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -38803,7 +38826,7 @@
       "pokemon_type": "Colorless",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38822,7 +38845,7 @@
       "pokemon_type": "Colorless",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38841,7 +38864,7 @@
       "pokemon_type": "Colorless",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38917,7 +38940,7 @@
       "pokemon_type": "Lightning",
       "rarity": "immersive",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38936,7 +38959,7 @@
       "pokemon_type": "Psychic",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -38955,7 +38978,7 @@
       "pokemon_type": "Darkness",
       "rarity": "super_rare",
       "set_code": "A4b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -47284,6 +47307,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Crimson Blaze",
@@ -47306,6 +47330,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Crimson Blaze",
@@ -47328,6 +47353,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Crimson Blaze",
@@ -47350,6 +47376,7 @@
         "bulbapedia"
       ],
       "conflict_notes": [
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Crimson Blaze",
@@ -48241,7 +48268,7 @@
       "pokemon_type": "Fire",
       "rarity": "rare",
       "set_code": "B2",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": "Pokemon",
@@ -54612,6 +54639,7 @@
       ],
       "conflict_notes": [
         "tcgdex returned 'Meowscarada' (ps='Meowscarada ex'); overridden by majority",
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Paldean Wonders",
@@ -54634,6 +54662,7 @@
       ],
       "conflict_notes": [
         "tcgdex returned 'Armarouge' (ps='Armarouge ex'); overridden by majority",
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Paldean Wonders",
@@ -54656,6 +54685,7 @@
       ],
       "conflict_notes": [
         "tcgdex returned 'Chien-Pao' (ps='Chien-Pao ex'); overridden by majority",
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Paldean Wonders",
@@ -54678,6 +54708,7 @@
       ],
       "conflict_notes": [
         "tcgdex returned 'Bellibolt' (ps='Bellibolt ex'); overridden by majority",
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Paldean Wonders",
@@ -54700,6 +54731,7 @@
       ],
       "conflict_notes": [
         "tcgdex returned 'Gholdengo' (ps='Gholdengo ex'); overridden by majority",
+        "rarity: pack_sources='special_illustration_rare' → tcgdex(authority)='super_rare'",
         "rarity: super_rare → special_illustration_rare (curated SIR list)"
       ],
       "expansion": "Paldean Wonders",
@@ -55073,7 +55105,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55092,7 +55124,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55111,7 +55143,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55130,7 +55162,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55149,7 +55181,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55168,7 +55200,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55187,7 +55219,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55206,7 +55238,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55226,7 +55258,7 @@
       "pokemon_type": null,
       "rarity": "double_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -55245,7 +55277,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55264,7 +55296,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55283,7 +55315,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55302,7 +55334,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55321,7 +55353,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55340,7 +55372,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55359,7 +55391,7 @@
       "pokemon_type": null,
       "rarity": "double_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55378,7 +55410,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55397,7 +55429,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55416,7 +55448,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55435,7 +55467,7 @@
       "pokemon_type": "Water",
       "rarity": "rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -55454,7 +55486,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55473,7 +55505,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55492,7 +55524,7 @@
       "pokemon_type": "Lightning",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55511,7 +55543,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55530,7 +55562,7 @@
       "pokemon_type": "Lightning",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55549,7 +55581,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55568,7 +55600,7 @@
       "pokemon_type": null,
       "rarity": "double_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55587,7 +55619,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55606,7 +55638,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55625,7 +55657,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55644,7 +55676,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55663,7 +55695,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55682,7 +55714,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55701,7 +55733,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55720,7 +55752,7 @@
       "pokemon_type": "Fighting",
       "rarity": "rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55739,7 +55771,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55758,7 +55790,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55777,7 +55809,7 @@
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55796,7 +55828,7 @@
       "pokemon_type": null,
       "rarity": "double_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -55815,7 +55847,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55834,7 +55866,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55853,7 +55885,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55872,7 +55904,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55891,7 +55923,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55910,7 +55942,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55929,7 +55961,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55948,7 +55980,7 @@
       "pokemon_type": null,
       "rarity": "double_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -55967,7 +55999,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -55986,7 +56018,7 @@
       "pokemon_type": "Metal",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56005,7 +56037,7 @@
       "pokemon_type": "Metal",
       "rarity": "rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56024,7 +56056,7 @@
       "pokemon_type": "Dragon",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56043,7 +56075,7 @@
       "pokemon_type": "Dragon",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56062,7 +56094,7 @@
       "pokemon_type": "Dragon",
       "rarity": "rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -56081,7 +56113,7 @@
       "pokemon_type": "Dragon",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56100,7 +56132,7 @@
       "pokemon_type": "Dragon",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56119,7 +56151,7 @@
       "pokemon_type": "Dragon",
       "rarity": "rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -56138,7 +56170,7 @@
       "pokemon_type": "Dragon",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56157,7 +56189,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56176,7 +56208,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56195,7 +56227,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56214,7 +56246,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56233,7 +56265,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56252,7 +56284,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56271,7 +56303,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56385,7 +56417,7 @@
       "pokemon_type": "Water",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56404,7 +56436,7 @@
       "pokemon_type": "Water",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -56423,7 +56455,7 @@
       "pokemon_type": "Fighting",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56442,7 +56474,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56461,7 +56493,7 @@
       "pokemon_type": "Metal",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56480,7 +56512,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56500,7 +56532,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -56519,7 +56551,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56538,7 +56570,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56557,7 +56589,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -56576,7 +56608,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56633,7 +56665,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56652,7 +56684,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56671,7 +56703,7 @@
       "pokemon_type": "Psychic",
       "rarity": "immersive",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56690,7 +56722,7 @@
       "pokemon_type": "Psychic",
       "rarity": "immersive",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56709,7 +56741,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56728,7 +56760,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56747,7 +56779,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56766,7 +56798,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56785,7 +56817,7 @@
       "pokemon_type": "Fire",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56804,7 +56836,7 @@
       "pokemon_type": "Fire",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56823,7 +56855,7 @@
       "pokemon_type": "Fire",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56842,7 +56874,7 @@
       "pokemon_type": "Fire",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56861,7 +56893,7 @@
       "pokemon_type": "Water",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56880,7 +56912,7 @@
       "pokemon_type": "Lightning",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56899,7 +56931,7 @@
       "pokemon_type": "Lightning",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56918,7 +56950,7 @@
       "pokemon_type": "Lightning",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56937,7 +56969,7 @@
       "pokemon_type": "Fighting",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56956,7 +56988,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -56975,7 +57007,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -56994,7 +57026,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57013,7 +57045,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57032,7 +57064,7 @@
       "pokemon_type": "Metal",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57051,7 +57083,7 @@
       "pokemon_type": "Dragon",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57070,7 +57102,7 @@
       "pokemon_type": "Dragon",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57089,7 +57121,7 @@
       "pokemon_type": "Dragon",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -57108,7 +57140,7 @@
       "pokemon_type": "Dragon",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57127,7 +57159,7 @@
       "pokemon_type": "Dragon",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57146,7 +57178,7 @@
       "pokemon_type": "Dragon",
       "rarity": "illustration_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -57166,7 +57198,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -57185,7 +57217,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57204,7 +57236,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57223,7 +57255,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -57242,7 +57274,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57261,7 +57293,7 @@
       "pokemon_type": "Grass",
       "rarity": "ultra_rare",
       "set_code": "B2b",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -57299,7 +57331,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57318,7 +57350,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57337,7 +57369,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57356,7 +57388,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57375,7 +57407,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57394,7 +57426,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57413,7 +57445,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -57432,7 +57464,7 @@
       "pokemon_type": null,
       "rarity": "double_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -57451,7 +57483,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57470,7 +57502,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57489,7 +57521,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57508,7 +57540,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57527,7 +57559,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57546,7 +57578,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57565,7 +57597,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57584,7 +57616,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57603,7 +57635,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -57622,7 +57654,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57641,7 +57673,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57660,7 +57692,7 @@
       "pokemon_type": "Grass",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57679,7 +57711,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57698,7 +57730,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57717,7 +57749,7 @@
       "pokemon_type": null,
       "rarity": "double_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57736,7 +57768,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57755,7 +57787,7 @@
       "pokemon_type": "Fire",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57774,7 +57806,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57793,7 +57825,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57812,7 +57844,7 @@
       "pokemon_type": "Fire",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -57831,7 +57863,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57850,7 +57882,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57869,7 +57901,7 @@
       "pokemon_type": "Fire",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57888,7 +57920,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57907,7 +57939,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57926,7 +57958,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -57945,7 +57977,7 @@
       "pokemon_type": "Water",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -57964,7 +57996,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -57983,7 +58015,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58002,7 +58034,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58021,7 +58053,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58040,7 +58072,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58059,7 +58091,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58078,7 +58110,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58097,7 +58129,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58116,7 +58148,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58135,7 +58167,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58154,7 +58186,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58173,7 +58205,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58192,7 +58224,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58211,7 +58243,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58230,7 +58262,7 @@
       "pokemon_type": "Water",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -58249,7 +58281,7 @@
       "pokemon_type": "Water",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58268,7 +58300,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58287,7 +58319,7 @@
       "pokemon_type": "Lightning",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58306,7 +58338,7 @@
       "pokemon_type": "Lightning",
       "rarity": "double_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -58325,7 +58357,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58344,7 +58376,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58363,7 +58395,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58382,7 +58414,7 @@
       "pokemon_type": "Lightning",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58401,7 +58433,7 @@
       "pokemon_type": "Lightning",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58420,7 +58452,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58439,7 +58471,7 @@
       "pokemon_type": "Lightning",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58458,7 +58490,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58477,7 +58509,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58496,7 +58528,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58515,7 +58547,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58534,7 +58566,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58553,7 +58585,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58572,7 +58604,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58591,7 +58623,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58610,7 +58642,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58629,7 +58661,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -58648,7 +58680,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58667,7 +58699,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58686,7 +58718,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58705,7 +58737,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58724,7 +58756,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58743,7 +58775,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58762,7 +58794,7 @@
       "pokemon_type": "Fighting",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58781,7 +58813,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58800,7 +58832,7 @@
       "pokemon_type": "Fighting",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58819,7 +58851,7 @@
       "pokemon_type": null,
       "rarity": "double_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58838,7 +58870,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58857,7 +58889,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58876,7 +58908,7 @@
       "pokemon_type": "Fighting",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -58895,7 +58927,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58914,7 +58946,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58933,7 +58965,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58952,7 +58984,7 @@
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -58971,7 +59003,7 @@
       "pokemon_type": "Fighting",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -58990,7 +59022,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59009,7 +59041,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59028,7 +59060,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59047,7 +59079,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59066,7 +59098,7 @@
       "pokemon_type": "Fighting",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -59085,7 +59117,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59104,7 +59136,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59123,7 +59155,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59142,7 +59174,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59161,7 +59193,7 @@
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59180,7 +59212,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -59199,7 +59231,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59218,7 +59250,7 @@
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59237,7 +59269,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59256,7 +59288,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59275,7 +59307,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59294,7 +59326,7 @@
       "pokemon_type": "Darkness",
       "rarity": "double_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59313,7 +59345,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59332,7 +59364,7 @@
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59351,7 +59383,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59370,7 +59402,7 @@
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59389,7 +59421,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59408,7 +59440,7 @@
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59427,7 +59459,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59446,7 +59478,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59465,7 +59497,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59484,7 +59516,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59503,7 +59535,7 @@
       "pokemon_type": "Metal",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59522,7 +59554,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59541,7 +59573,7 @@
       "pokemon_type": "Metal",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59560,7 +59592,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59579,7 +59611,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59598,7 +59630,7 @@
       "pokemon_type": "Metal",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59617,7 +59649,7 @@
       "pokemon_type": "Metal",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59636,7 +59668,7 @@
       "pokemon_type": "Metal",
       "rarity": "double_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -59655,7 +59687,7 @@
       "pokemon_type": "Dragon",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59674,7 +59706,7 @@
       "pokemon_type": "Dragon",
       "rarity": "double_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -59693,7 +59725,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59712,7 +59744,7 @@
       "pokemon_type": "Colorless",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59731,7 +59763,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59750,7 +59782,7 @@
       "pokemon_type": "Colorless",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59769,7 +59801,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59788,7 +59820,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59807,7 +59839,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59826,7 +59858,7 @@
       "pokemon_type": "Colorless",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59845,7 +59877,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59864,7 +59896,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59883,7 +59915,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59902,7 +59934,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -59921,7 +59953,7 @@
       "pokemon_type": "Colorless",
       "rarity": "rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -59940,7 +59972,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59959,7 +59991,7 @@
       "pokemon_type": null,
       "rarity": "double_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59978,7 +60010,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -59997,7 +60029,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60016,7 +60048,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60035,7 +60067,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60054,7 +60086,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60244,7 +60276,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60263,7 +60295,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60282,7 +60314,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60301,7 +60333,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60320,7 +60352,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60339,7 +60371,7 @@
       "pokemon_type": "Fire",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60358,7 +60390,7 @@
       "pokemon_type": "Water",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60377,7 +60409,7 @@
       "pokemon_type": "Lightning",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60396,7 +60428,7 @@
       "pokemon_type": "Lightning",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60415,7 +60447,7 @@
       "pokemon_type": "Psychic",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60434,7 +60466,7 @@
       "pokemon_type": "Psychic",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60453,7 +60485,7 @@
       "pokemon_type": "Psychic",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60472,7 +60504,7 @@
       "pokemon_type": "Fighting",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60491,7 +60523,7 @@
       "pokemon_type": "Fighting",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60510,7 +60542,7 @@
       "pokemon_type": "Fighting",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60529,7 +60561,7 @@
       "pokemon_type": "Fighting",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60548,7 +60580,7 @@
       "pokemon_type": "Fighting",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60567,7 +60599,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60586,7 +60618,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60605,7 +60637,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60624,7 +60656,7 @@
       "pokemon_type": "Metal",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60643,7 +60675,7 @@
       "pokemon_type": "Metal",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60662,7 +60694,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60681,7 +60713,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60700,7 +60732,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -60719,7 +60751,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60738,7 +60770,7 @@
       "pokemon_type": "Water",
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60757,7 +60789,7 @@
       "pokemon_type": "Lightning",
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -60776,7 +60808,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60795,7 +60827,7 @@
       "pokemon_type": "Fighting",
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60814,7 +60846,7 @@
       "pokemon_type": "Darkness",
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -60833,7 +60865,7 @@
       "pokemon_type": "Metal",
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -60852,7 +60884,7 @@
       "pokemon_type": "Dragon",
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -60871,7 +60903,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -60966,7 +60998,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -60985,7 +61017,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61004,7 +61036,7 @@
       "pokemon_type": "Water",
       "rarity": "special_illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61023,7 +61055,7 @@
       "pokemon_type": "Lightning",
       "rarity": "special_illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -61042,7 +61074,7 @@
       "pokemon_type": "Fighting",
       "rarity": "special_illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61061,7 +61093,7 @@
       "pokemon_type": "Darkness",
       "rarity": "special_illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61080,7 +61112,7 @@
       "pokemon_type": "Metal",
       "rarity": "special_illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -61099,7 +61131,7 @@
       "pokemon_type": "Dragon",
       "rarity": "special_illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -61118,7 +61150,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61137,7 +61169,7 @@
       "pokemon_type": "Water",
       "rarity": "immersive",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61156,7 +61188,7 @@
       "pokemon_type": null,
       "rarity": "immersive",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61175,7 +61207,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61194,7 +61226,7 @@
       "pokemon_type": "Fire",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61213,7 +61245,7 @@
       "pokemon_type": "Fire",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61232,7 +61264,7 @@
       "pokemon_type": "Fire",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -61251,7 +61283,7 @@
       "pokemon_type": "Water",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61270,7 +61302,7 @@
       "pokemon_type": "Water",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61289,7 +61321,7 @@
       "pokemon_type": "Fighting",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61308,7 +61340,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61327,7 +61359,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61346,7 +61378,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -61365,7 +61397,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61384,7 +61416,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61403,7 +61435,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61422,7 +61454,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61441,7 +61473,7 @@
       "pokemon_type": "Metal",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61460,7 +61492,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61479,7 +61511,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61498,7 +61530,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61517,7 +61549,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61536,7 +61568,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -61555,7 +61587,7 @@
       "pokemon_type": "Grass",
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61574,7 +61606,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -61593,7 +61625,7 @@
       "pokemon_type": "Water",
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -61612,7 +61644,7 @@
       "pokemon_type": "Lightning",
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61631,7 +61663,7 @@
       "pokemon_type": "Fighting",
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61650,7 +61682,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61669,7 +61701,7 @@
       "pokemon_type": "Darkness",
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61688,7 +61720,7 @@
       "pokemon_type": null,
       "rarity": "super_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61707,7 +61739,7 @@
       "pokemon_type": "Grass",
       "rarity": "ultra_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61726,7 +61758,7 @@
       "pokemon_type": "Darkness",
       "rarity": "ultra_rare",
       "set_code": "B3",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61745,7 +61777,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61764,7 +61796,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61783,7 +61815,7 @@
       "pokemon_type": "Grass",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61802,7 +61834,7 @@
       "pokemon_type": "Grass",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61821,7 +61853,7 @@
       "pokemon_type": "Fire",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61840,7 +61872,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61859,7 +61891,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61878,7 +61910,7 @@
       "pokemon_type": "Water",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61897,7 +61929,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61916,7 +61948,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61935,7 +61967,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61954,7 +61986,7 @@
       "pokemon_type": "Water",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -61973,7 +62005,7 @@
       "pokemon_type": "Water",
       "rarity": "double_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -61992,7 +62024,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62011,7 +62043,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62030,7 +62062,7 @@
       "pokemon_type": "Lightning",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -62049,7 +62081,7 @@
       "pokemon_type": "Lightning",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62068,7 +62100,7 @@
       "pokemon_type": "Lightning",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62087,7 +62119,7 @@
       "pokemon_type": "Lightning",
       "rarity": "double_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62106,7 +62138,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62125,7 +62157,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62144,7 +62176,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62163,7 +62195,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62182,7 +62214,7 @@
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62201,7 +62233,7 @@
       "pokemon_type": "Psychic",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62220,7 +62252,7 @@
       "pokemon_type": "Psychic",
       "rarity": "double_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62239,7 +62271,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62258,7 +62290,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62277,7 +62309,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62296,7 +62328,7 @@
       "pokemon_type": "Psychic",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62315,7 +62347,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62334,7 +62366,7 @@
       "pokemon_type": "Fighting",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62353,7 +62385,7 @@
       "pokemon_type": "Fighting",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -62372,7 +62404,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62391,7 +62423,7 @@
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62410,7 +62442,7 @@
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62429,7 +62461,7 @@
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62448,7 +62480,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62467,7 +62499,7 @@
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62486,7 +62518,7 @@
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62505,7 +62537,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62524,7 +62556,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62543,7 +62575,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -62562,7 +62594,7 @@
       "pokemon_type": "Darkness",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62581,7 +62613,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62600,7 +62632,7 @@
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62619,7 +62651,7 @@
       "pokemon_type": "Darkness",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62638,7 +62670,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -62657,7 +62689,7 @@
       "pokemon_type": "Metal",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62676,7 +62708,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62695,7 +62727,7 @@
       "pokemon_type": "Metal",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62714,7 +62746,7 @@
       "pokemon_type": "Dragon",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62733,7 +62765,7 @@
       "pokemon_type": "Dragon",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62752,7 +62784,7 @@
       "pokemon_type": "Dragon",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62771,7 +62803,7 @@
       "pokemon_type": "Dragon",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62790,7 +62822,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62809,7 +62841,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62828,7 +62860,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62847,7 +62879,7 @@
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62866,7 +62898,7 @@
       "pokemon_type": "Colorless",
       "rarity": "rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62885,7 +62917,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62904,7 +62936,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62923,7 +62955,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62942,7 +62974,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62961,7 +62993,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -62980,7 +63012,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -62999,7 +63031,7 @@
       "pokemon_type": "Colorless",
       "rarity": "common",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63018,7 +63050,7 @@
       "pokemon_type": "Colorless",
       "rarity": "double_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63152,7 +63184,7 @@
       "pokemon_type": "Water",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63171,7 +63203,7 @@
       "pokemon_type": "Psychic",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63190,7 +63222,7 @@
       "pokemon_type": "Psychic",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63209,7 +63241,7 @@
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -63228,7 +63260,7 @@
       "pokemon_type": "Dragon",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63247,7 +63279,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63266,7 +63298,7 @@
       "pokemon_type": "Water",
       "rarity": "super_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63285,7 +63317,7 @@
       "pokemon_type": "Lightning",
       "rarity": "super_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63304,7 +63336,7 @@
       "pokemon_type": "Psychic",
       "rarity": "super_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63323,7 +63355,7 @@
       "pokemon_type": "Fighting",
       "rarity": "super_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63342,7 +63374,7 @@
       "pokemon_type": "Colorless",
       "rarity": "super_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63419,7 +63451,7 @@
       "pokemon_type": "Water",
       "rarity": "special_illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63438,7 +63470,7 @@
       "pokemon_type": "Lightning",
       "rarity": "special_illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63457,7 +63489,7 @@
       "pokemon_type": "Psychic",
       "rarity": "special_illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63476,7 +63508,7 @@
       "pokemon_type": "Fighting",
       "rarity": "special_illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63495,7 +63527,7 @@
       "pokemon_type": "Colorless",
       "rarity": "immersive",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63514,7 +63546,7 @@
       "pokemon_type": "Grass",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63533,7 +63565,7 @@
       "pokemon_type": "Fire",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63552,7 +63584,7 @@
       "pokemon_type": "Lightning",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63571,7 +63603,7 @@
       "pokemon_type": "Psychic",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -63590,7 +63622,7 @@
       "pokemon_type": "Fighting",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63609,7 +63641,7 @@
       "pokemon_type": "Fighting",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -63628,7 +63660,7 @@
       "pokemon_type": "Fighting",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63647,7 +63679,7 @@
       "pokemon_type": "Metal",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63666,7 +63698,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63685,7 +63717,7 @@
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -63704,7 +63736,7 @@
       "pokemon_type": "Grass",
       "rarity": "immersive",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage2"
     },
     {
       "card_category": null,
@@ -63723,7 +63755,7 @@
       "pokemon_type": "Fire",
       "rarity": "immersive",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -63742,7 +63774,7 @@
       "pokemon_type": "Lightning",
       "rarity": "immersive",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -63761,7 +63793,7 @@
       "pokemon_type": null,
       "rarity": "immersive",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Stage1"
     },
     {
       "card_category": null,
@@ -63780,7 +63812,7 @@
       "pokemon_type": "Psychic",
       "rarity": "ultra_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63799,7 +63831,7 @@
       "pokemon_type": "Darkness",
       "rarity": "ultra_rare",
       "set_code": "B3A",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": "Trainer",
@@ -63918,7 +63950,7 @@
       "pokemon_type": "Fighting",
       "rarity": "promo",
       "set_code": "PROMO-B",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63937,7 +63969,7 @@
       "pokemon_type": "Fighting",
       "rarity": "promo",
       "set_code": "PROMO-B",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63956,7 +63988,7 @@
       "pokemon_type": "Fighting",
       "rarity": "promo",
       "set_code": "PROMO-B",
-      "stage": null
+      "stage": "Basic"
     },
     {
       "card_category": null,
@@ -63975,7 +64007,7 @@
       "pokemon_type": null,
       "rarity": "promo",
       "set_code": "PROMO-B",
-      "stage": null
+      "stage": "Basic"
     }
   ]
 }
