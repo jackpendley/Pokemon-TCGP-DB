@@ -1,0 +1,331 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:35Z",
+    "card_count": 107,
+    "set_code": "A3b",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Tropius"
+    },
+    "10": {
+      "name": "Torkoal"
+    },
+    "100": {
+      "name": "Ekans"
+    },
+    "101": {
+      "name": "Arbok"
+    },
+    "102": {
+      "name": "Farfetch'd"
+    },
+    "103": {
+      "name": "Moltres ex"
+    },
+    "104": {
+      "name": "Articuno ex"
+    },
+    "105": {
+      "name": "Zapdos ex"
+    },
+    "106": {
+      "name": "Gallade ex"
+    },
+    "107": {
+      "name": "Eevee Bag"
+    },
+    "11": {
+      "name": "Litten"
+    },
+    "12": {
+      "name": "Torracat"
+    },
+    "13": {
+      "name": "Incineroar"
+    },
+    "14": {
+      "name": "Salandit"
+    },
+    "15": {
+      "name": "Salazzle"
+    },
+    "16": {
+      "name": "Vaporeon"
+    },
+    "17": {
+      "name": "Glaceon"
+    },
+    "18": {
+      "name": "Vanillite"
+    },
+    "19": {
+      "name": "Vanillish"
+    },
+    "2": {
+      "name": "Leafeon"
+    },
+    "20": {
+      "name": "Vanilluxe"
+    },
+    "21": {
+      "name": "Alomomola"
+    },
+    "22": {
+      "name": "Popplio"
+    },
+    "23": {
+      "name": "Brionne"
+    },
+    "24": {
+      "name": "Primarina ex"
+    },
+    "25": {
+      "name": "Jolteon"
+    },
+    "26": {
+      "name": "Joltik"
+    },
+    "27": {
+      "name": "Galvantula"
+    },
+    "28": {
+      "name": "Espeon"
+    },
+    "29": {
+      "name": "Woobat"
+    },
+    "3": {
+      "name": "Bounsweet"
+    },
+    "30": {
+      "name": "Swoobat"
+    },
+    "31": {
+      "name": "Swirlix"
+    },
+    "32": {
+      "name": "Slurpuff"
+    },
+    "33": {
+      "name": "Sylveon"
+    },
+    "34": {
+      "name": "Sylveon ex"
+    },
+    "35": {
+      "name": "Mimikyu"
+    },
+    "36": {
+      "name": "Milcery"
+    },
+    "37": {
+      "name": "Alcremie"
+    },
+    "38": {
+      "name": "Barboach"
+    },
+    "39": {
+      "name": "Whiscash"
+    },
+    "4": {
+      "name": "Steenee"
+    },
+    "40": {
+      "name": "Mienfoo"
+    },
+    "41": {
+      "name": "Mienshao"
+    },
+    "42": {
+      "name": "Carbink"
+    },
+    "43": {
+      "name": "Umbreon"
+    },
+    "44": {
+      "name": "Sableye"
+    },
+    "45": {
+      "name": "Purrloin"
+    },
+    "46": {
+      "name": "Liepard"
+    },
+    "47": {
+      "name": "Mawile"
+    },
+    "48": {
+      "name": "Togedemaru"
+    },
+    "49": {
+      "name": "Meltan"
+    },
+    "5": {
+      "name": "Tsareena"
+    },
+    "50": {
+      "name": "Melmetal"
+    },
+    "51": {
+      "name": "Dratini"
+    },
+    "52": {
+      "name": "Dragonair"
+    },
+    "53": {
+      "name": "Dragonite ex"
+    },
+    "54": {
+      "name": "Drampa"
+    },
+    "55": {
+      "name": "Eevee"
+    },
+    "56": {
+      "name": "Eevee ex"
+    },
+    "57": {
+      "name": "Snorlax ex"
+    },
+    "58": {
+      "name": "Aipom"
+    },
+    "59": {
+      "name": "Ambipom"
+    },
+    "6": {
+      "name": "Applin"
+    },
+    "60": {
+      "name": "Chatot"
+    },
+    "61": {
+      "name": "Audino"
+    },
+    "62": {
+      "name": "Minccino"
+    },
+    "63": {
+      "name": "Cinccino"
+    },
+    "64": {
+      "name": "Skwovet"
+    },
+    "65": {
+      "name": "Greedent"
+    },
+    "66": {
+      "name": "Eevee Bag"
+    },
+    "67": {
+      "name": "Leftovers"
+    },
+    "68": {
+      "name": "Hau"
+    },
+    "69": {
+      "name": "Penny"
+    },
+    "7": {
+      "name": "Appletun"
+    },
+    "70": {
+      "name": "Leafeon"
+    },
+    "71": {
+      "name": "Flareon"
+    },
+    "72": {
+      "name": "Vaporeon"
+    },
+    "73": {
+      "name": "Glaceon"
+    },
+    "74": {
+      "name": "Jolteon"
+    },
+    "75": {
+      "name": "Espeon"
+    },
+    "76": {
+      "name": "Sylveon"
+    },
+    "77": {
+      "name": "Umbreon"
+    },
+    "78": {
+      "name": "Eevee"
+    },
+    "79": {
+      "name": "Flareon ex"
+    },
+    "8": {
+      "name": "Flareon"
+    },
+    "80": {
+      "name": "Primarina ex"
+    },
+    "81": {
+      "name": "Sylveon ex"
+    },
+    "82": {
+      "name": "Dragonite ex"
+    },
+    "83": {
+      "name": "Eevee ex"
+    },
+    "84": {
+      "name": "Snorlax ex"
+    },
+    "85": {
+      "name": "Hau"
+    },
+    "86": {
+      "name": "Penny"
+    },
+    "87": {
+      "name": "Flareon ex"
+    },
+    "88": {
+      "name": "Primarina ex"
+    },
+    "89": {
+      "name": "Sylveon ex"
+    },
+    "9": {
+      "name": "Flareon ex"
+    },
+    "90": {
+      "name": "Dragonite ex"
+    },
+    "91": {
+      "name": "Snorlax ex"
+    },
+    "92": {
+      "name": "Eevee ex"
+    },
+    "93": {
+      "name": "Pinsir"
+    },
+    "94": {
+      "name": "Lapras"
+    },
+    "95": {
+      "name": "Voltorb"
+    },
+    "96": {
+      "name": "Electrode"
+    },
+    "97": {
+      "name": "Ralts"
+    },
+    "98": {
+      "name": "Kirlia"
+    },
+    "99": {
+      "name": "Gardevoir"
+    }
+  }
+}

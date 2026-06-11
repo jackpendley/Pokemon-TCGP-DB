@@ -26,14 +26,15 @@ from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (
-    strip_comments, ext_ref_by_coord, TRAINER_SUBTYPE_MAP, TRAINER_CATEGORIES,
-    RARE_PLUS_RARITIES, normalize_rarity, norm_card_name,
+    strip_comments, ext_ref_by_coord, card_reference_by_coord, TRAINER_SUBTYPE_MAP,
+    TRAINER_CATEGORIES, RARE_PLUS_RARITIES, normalize_rarity, norm_card_name,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
 COLLECTION_JSON  = ROOT / "collection.json"
 PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
 EXT_REF_JSON     = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
+CARD_REF_JSON    = ROOT / "data" / "reference" / "card_reference.json"
 LOG_JSON         = ROOT / "data" / "current" / "coord_assignments_log.json"
 
 
@@ -115,10 +116,12 @@ def pick_candidate(entry: dict, candidates: list[dict], ext_ref: dict) -> tuple[
     # "alt art" in variant → the card is a one_star+ full-art; prefer those candidates.
     # Named attack arts ("Flame Tail art") and no-variant → prefer diamond-rarity cards.
     if len(pool) > 1:
+        # normalize_rarity guards against any legacy/un-migrated rarity in the pool so
+        # the RARE_PLUS_RARITIES (new-vocabulary) membership test matches correctly.
         if is_alt_art:
-            rare_candidates = [c for c in pool if c.get("rarity") in RARE_PLUS_RARITIES]
+            rare_candidates = [c for c in pool if normalize_rarity(c.get("rarity")) in RARE_PLUS_RARITIES]
         else:
-            rare_candidates = [c for c in pool if c.get("rarity") not in RARE_PLUS_RARITIES]
+            rare_candidates = [c for c in pool if normalize_rarity(c.get("rarity")) not in RARE_PLUS_RARITIES]
 
         if rare_candidates:
             pool = rare_candidates
@@ -171,6 +174,9 @@ def main() -> int:
     initial_count = sum(e.get("count", 0) for e in entries)
     ps_by_name = load_pack_sources()
     ext_ref    = ext_ref_by_coord(EXT_REF_JSON)
+    # card_reference (TCGdex-backed, cross-validated) is the authority for pokemon_type;
+    # it has full type coverage where Limitless-derived ext_ref leaves A-series types null.
+    card_ref   = card_reference_by_coord(CARD_REF_JSON)
 
     assignments = []
     skipped = 0
@@ -287,6 +293,7 @@ def main() -> int:
     is_ex_removed = 0
     case_fixed = 0
     rarity_alias_fixed = 0
+    type_backfilled = 0
     card_type_flips: list[str] = []
     for entry in entries:
         # 1. Strip is_ex (no longer tracked; rarity encodes this)
@@ -299,6 +306,11 @@ def main() -> int:
             if normalized != entry["rarity"]:
                 entry["rarity"] = normalized
                 rarity_alias_fixed += 1
+        # 2b. Promo cards carry no rarity symbol — keep the 'promo' sentinel when
+        #     unresolved (many owned promos aren't in the sparse pack_sources reference).
+        if not entry.get("rarity") and str(entry.get("set_code") or "").upper() in ("PROMO-A", "PROMO-B"):
+            entry["rarity"] = "promo"
+            rarity_alias_fixed += 1
         # 3. Normalize set_code casing to match pack_sources
         sc = entry.get("set_code") or ""
         if sc and sc.upper() in ps_sc_canonical:
@@ -333,12 +345,27 @@ def main() -> int:
             entry["trainer_subtype"] = TRAINER_SUBTYPE_MAP[ext_cat]
             card_type_flips.append(f"{entry.get('name')} ({entry['set_code']}/{cn}): →Trainer/{ext_cat}")
 
+        # 5. Backfill missing Pokémon type from card_reference (TCGdex-backed authority).
+        #    ext_ref leaves A-series pokemon_type null; card_reference has full coverage.
+        if entry.get("card_type") == "Pokemon" and not entry.get("type") and cn is not None:
+            try:
+                ref_coord = (str(entry.get("set_code") or "").upper(), int(cn))
+            except (TypeError, ValueError):
+                ref_coord = None
+            ref_rec = card_ref.get(ref_coord) if ref_coord else None
+            ref_type = ref_rec.get("pokemon_type") if ref_rec else None
+            if ref_type:
+                entry["type"] = ref_type
+                type_backfilled += 1
+
     if is_ex_removed:
         print(f"  Stripped is_ex from {is_ex_removed} entries")
     if case_fixed:
         print(f"  Normalized set_code casing on {case_fixed} entries")
     if rarity_alias_fixed:
         print(f"  Fixed {rarity_alias_fixed} rarity aliases")
+    if type_backfilled:
+        print(f"  Backfilled Pokémon type on {type_backfilled} entries from card_reference")
     if card_type_flips:
         print(f"  Reconciled card_type on {len(card_type_flips)} entries from ext_ref:")
         for flip in card_type_flips:

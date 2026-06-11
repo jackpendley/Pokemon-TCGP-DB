@@ -1,0 +1,631 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:31Z",
+    "card_count": 207,
+    "set_code": "A2",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Oddish"
+    },
+    "10": {
+      "name": "Turtwig"
+    },
+    "100": {
+      "name": "Poochyena"
+    },
+    "101": {
+      "name": "Mightyena"
+    },
+    "102": {
+      "name": "Stunky"
+    },
+    "103": {
+      "name": "Skuntank"
+    },
+    "104": {
+      "name": "Spiritomb"
+    },
+    "105": {
+      "name": "Skorupi"
+    },
+    "106": {
+      "name": "Drapion"
+    },
+    "107": {
+      "name": "Croagunk"
+    },
+    "108": {
+      "name": "Toxicroak"
+    },
+    "109": {
+      "name": "Darkrai"
+    },
+    "11": {
+      "name": "Grotle"
+    },
+    "110": {
+      "name": "Darkrai ex"
+    },
+    "111": {
+      "name": "Skarmory"
+    },
+    "112": {
+      "name": "Registeel"
+    },
+    "113": {
+      "name": "Shieldon"
+    },
+    "114": {
+      "name": "Bastiodon"
+    },
+    "115": {
+      "name": "Wormadam"
+    },
+    "116": {
+      "name": "Bronzor"
+    },
+    "117": {
+      "name": "Bronzong"
+    },
+    "118": {
+      "name": "Probopass"
+    },
+    "119": {
+      "name": "Dialga ex"
+    },
+    "12": {
+      "name": "Torterra"
+    },
+    "120": {
+      "name": "Heatran"
+    },
+    "121": {
+      "name": "Gible"
+    },
+    "122": {
+      "name": "Gabite"
+    },
+    "123": {
+      "name": "Garchomp"
+    },
+    "124": {
+      "name": "Lickitung"
+    },
+    "125": {
+      "name": "Lickilicky ex"
+    },
+    "126": {
+      "name": "Eevee"
+    },
+    "127": {
+      "name": "Porygon"
+    },
+    "128": {
+      "name": "Porygon2"
+    },
+    "129": {
+      "name": "Porygon-Z"
+    },
+    "13": {
+      "name": "Kricketot"
+    },
+    "130": {
+      "name": "Aipom"
+    },
+    "131": {
+      "name": "Ambipom"
+    },
+    "132": {
+      "name": "Starly"
+    },
+    "133": {
+      "name": "Staravia"
+    },
+    "134": {
+      "name": "Staraptor"
+    },
+    "135": {
+      "name": "Bidoof"
+    },
+    "136": {
+      "name": "Bibarel"
+    },
+    "137": {
+      "name": "Buneary"
+    },
+    "138": {
+      "name": "Lopunny"
+    },
+    "139": {
+      "name": "Glameow"
+    },
+    "14": {
+      "name": "Kricketune"
+    },
+    "140": {
+      "name": "Purugly"
+    },
+    "141": {
+      "name": "Chatot"
+    },
+    "142": {
+      "name": "Fan Rotom"
+    },
+    "143": {
+      "name": "Regigigas"
+    },
+    "144": {
+      "name": "Skull Fossil"
+    },
+    "145": {
+      "name": "Armor Fossil"
+    },
+    "146": {
+      "name": "Pokemon Communication"
+    },
+    "147": {
+      "name": "Giant Cape"
+    },
+    "148": {
+      "name": "Rocky Helmet"
+    },
+    "149": {
+      "name": "Lum Berry"
+    },
+    "15": {
+      "name": "Burmy"
+    },
+    "150": {
+      "name": "Cyrus"
+    },
+    "151": {
+      "name": "Team Galactic Grunt"
+    },
+    "152": {
+      "name": "Cynthia"
+    },
+    "153": {
+      "name": "Volkner"
+    },
+    "154": {
+      "name": "Dawn"
+    },
+    "155": {
+      "name": "Mars"
+    },
+    "156": {
+      "name": "Tangrowth"
+    },
+    "157": {
+      "name": "Combee"
+    },
+    "158": {
+      "name": "Carnivine"
+    },
+    "159": {
+      "name": "Shaymin"
+    },
+    "16": {
+      "name": "Wormadam"
+    },
+    "160": {
+      "name": "Mamoswine"
+    },
+    "161": {
+      "name": "Gastrodon"
+    },
+    "162": {
+      "name": "Manaphy"
+    },
+    "163": {
+      "name": "Shinx"
+    },
+    "164": {
+      "name": "Rotom"
+    },
+    "165": {
+      "name": "Drifloon"
+    },
+    "166": {
+      "name": "Mesprit"
+    },
+    "167": {
+      "name": "Giratina"
+    },
+    "168": {
+      "name": "Cresselia"
+    },
+    "169": {
+      "name": "Rhyperior"
+    },
+    "17": {
+      "name": "Combee"
+    },
+    "170": {
+      "name": "Lucario"
+    },
+    "171": {
+      "name": "Hippopotas"
+    },
+    "172": {
+      "name": "Spiritomb"
+    },
+    "173": {
+      "name": "Croagunk"
+    },
+    "174": {
+      "name": "Heatran"
+    },
+    "175": {
+      "name": "Garchomp"
+    },
+    "176": {
+      "name": "Staraptor"
+    },
+    "177": {
+      "name": "Bidoof"
+    },
+    "178": {
+      "name": "Glameow"
+    },
+    "179": {
+      "name": "Regigigas"
+    },
+    "18": {
+      "name": "Vespiquen"
+    },
+    "180": {
+      "name": "Yanmega ex"
+    },
+    "181": {
+      "name": "Infernape ex"
+    },
+    "182": {
+      "name": "Palkia ex"
+    },
+    "183": {
+      "name": "Pachirisu ex"
+    },
+    "184": {
+      "name": "Mismagius ex"
+    },
+    "185": {
+      "name": "Gallade ex"
+    },
+    "186": {
+      "name": "Weavile ex"
+    },
+    "187": {
+      "name": "Darkrai ex"
+    },
+    "188": {
+      "name": "Dialga ex"
+    },
+    "189": {
+      "name": "Lickilicky ex"
+    },
+    "19": {
+      "name": "Carnivine"
+    },
+    "190": {
+      "name": "Cyrus"
+    },
+    "191": {
+      "name": "Team Galactic Grunt"
+    },
+    "192": {
+      "name": "Cynthia"
+    },
+    "193": {
+      "name": "Volkner"
+    },
+    "194": {
+      "name": "Dawn"
+    },
+    "195": {
+      "name": "Mars"
+    },
+    "196": {
+      "name": "Yanmega ex"
+    },
+    "197": {
+      "name": "Infernape ex"
+    },
+    "198": {
+      "name": "Pachirisu ex"
+    },
+    "199": {
+      "name": "Mismagius ex"
+    },
+    "2": {
+      "name": "Gloom"
+    },
+    "20": {
+      "name": "Leafeon"
+    },
+    "200": {
+      "name": "Gallade ex"
+    },
+    "201": {
+      "name": "Weavile ex"
+    },
+    "202": {
+      "name": "Darkrai ex"
+    },
+    "203": {
+      "name": "Lickilicky ex"
+    },
+    "204": {
+      "name": "Palkia ex"
+    },
+    "205": {
+      "name": "Dialga ex"
+    },
+    "206": {
+      "name": "Palkia ex"
+    },
+    "207": {
+      "name": "Dialga ex"
+    },
+    "21": {
+      "name": "Mow Rotom"
+    },
+    "22": {
+      "name": "Shaymin"
+    },
+    "23": {
+      "name": "Magmar"
+    },
+    "24": {
+      "name": "Magmortar"
+    },
+    "25": {
+      "name": "Slugma"
+    },
+    "26": {
+      "name": "Magcargo"
+    },
+    "27": {
+      "name": "Chimchar"
+    },
+    "28": {
+      "name": "Monferno"
+    },
+    "29": {
+      "name": "Infernape ex"
+    },
+    "3": {
+      "name": "Bellossom"
+    },
+    "30": {
+      "name": "Heat Rotom"
+    },
+    "31": {
+      "name": "Swinub"
+    },
+    "32": {
+      "name": "Piloswine"
+    },
+    "33": {
+      "name": "Mamoswine"
+    },
+    "34": {
+      "name": "Regice"
+    },
+    "35": {
+      "name": "Piplup"
+    },
+    "36": {
+      "name": "Prinplup"
+    },
+    "37": {
+      "name": "Empoleon"
+    },
+    "38": {
+      "name": "Buizel"
+    },
+    "39": {
+      "name": "Floatzel"
+    },
+    "4": {
+      "name": "Tangela"
+    },
+    "40": {
+      "name": "Shellos"
+    },
+    "41": {
+      "name": "Gastrodon"
+    },
+    "42": {
+      "name": "Finneon"
+    },
+    "43": {
+      "name": "Lumineon"
+    },
+    "44": {
+      "name": "Snover"
+    },
+    "45": {
+      "name": "Abomasnow"
+    },
+    "46": {
+      "name": "Glaceon"
+    },
+    "47": {
+      "name": "Wash Rotom"
+    },
+    "48": {
+      "name": "Frost Rotom"
+    },
+    "49": {
+      "name": "Palkia ex"
+    },
+    "5": {
+      "name": "Tangrowth"
+    },
+    "50": {
+      "name": "Manaphy"
+    },
+    "51": {
+      "name": "Magnemite"
+    },
+    "52": {
+      "name": "Magneton"
+    },
+    "53": {
+      "name": "Magnezone"
+    },
+    "54": {
+      "name": "Voltorb"
+    },
+    "55": {
+      "name": "Electrode"
+    },
+    "56": {
+      "name": "Electabuzz"
+    },
+    "57": {
+      "name": "Electivire"
+    },
+    "58": {
+      "name": "Shinx"
+    },
+    "59": {
+      "name": "Luxio"
+    },
+    "6": {
+      "name": "Yanma"
+    },
+    "60": {
+      "name": "Luxray"
+    },
+    "61": {
+      "name": "Pachirisu ex"
+    },
+    "62": {
+      "name": "Rotom"
+    },
+    "63": {
+      "name": "Togepi"
+    },
+    "64": {
+      "name": "Togetic"
+    },
+    "65": {
+      "name": "Togekiss"
+    },
+    "66": {
+      "name": "Misdreavus"
+    },
+    "67": {
+      "name": "Mismagius ex"
+    },
+    "68": {
+      "name": "Ralts"
+    },
+    "69": {
+      "name": "Kirlia"
+    },
+    "7": {
+      "name": "Yanmega ex"
+    },
+    "70": {
+      "name": "Duskull"
+    },
+    "71": {
+      "name": "Dusclops"
+    },
+    "72": {
+      "name": "Dusknoir"
+    },
+    "73": {
+      "name": "Drifloon"
+    },
+    "74": {
+      "name": "Drifblim"
+    },
+    "75": {
+      "name": "Uxie"
+    },
+    "76": {
+      "name": "Mesprit"
+    },
+    "77": {
+      "name": "Azelf"
+    },
+    "78": {
+      "name": "Giratina"
+    },
+    "79": {
+      "name": "Cresselia"
+    },
+    "8": {
+      "name": "Roselia"
+    },
+    "80": {
+      "name": "Rhyhorn"
+    },
+    "81": {
+      "name": "Rhydon"
+    },
+    "82": {
+      "name": "Rhyperior"
+    },
+    "83": {
+      "name": "Gligar"
+    },
+    "84": {
+      "name": "Gliscor"
+    },
+    "85": {
+      "name": "Hitmontop"
+    },
+    "86": {
+      "name": "Nosepass"
+    },
+    "87": {
+      "name": "Regirock"
+    },
+    "88": {
+      "name": "Cranidos"
+    },
+    "89": {
+      "name": "Rampardos"
+    },
+    "9": {
+      "name": "Roserade"
+    },
+    "90": {
+      "name": "Wormadam"
+    },
+    "91": {
+      "name": "Riolu"
+    },
+    "92": {
+      "name": "Lucario"
+    },
+    "93": {
+      "name": "Hippopotas"
+    },
+    "94": {
+      "name": "Hippowdon"
+    },
+    "95": {
+      "name": "Gallade ex"
+    },
+    "96": {
+      "name": "Murkrow"
+    },
+    "97": {
+      "name": "Honchkrow"
+    },
+    "98": {
+      "name": "Sneasel"
+    },
+    "99": {
+      "name": "Weavile ex"
+    }
+  }
+}

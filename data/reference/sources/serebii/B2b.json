@@ -1,0 +1,361 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:53Z",
+    "card_count": 117,
+    "set_code": "B2b",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Scyther"
+    },
+    "10": {
+      "name": "Ponyta"
+    },
+    "100": {
+      "name": "Gastly"
+    },
+    "101": {
+      "name": "Haunter"
+    },
+    "102": {
+      "name": "Zorua"
+    },
+    "103": {
+      "name": "Zoroark"
+    },
+    "104": {
+      "name": "Forretress"
+    },
+    "105": {
+      "name": "Dratini"
+    },
+    "106": {
+      "name": "Dragonair"
+    },
+    "107": {
+      "name": "Dragonite"
+    },
+    "108": {
+      "name": "Axew"
+    },
+    "109": {
+      "name": "Fraxure"
+    },
+    "11": {
+      "name": "Rapidash"
+    },
+    "110": {
+      "name": "Haxorus"
+    },
+    "111": {
+      "name": "Mega Charizard ex"
+    },
+    "112": {
+      "name": "Mega Slowbro ex"
+    },
+    "113": {
+      "name": "Mega Manectric ex"
+    },
+    "114": {
+      "name": "Mega Gengar ex"
+    },
+    "115": {
+      "name": "Mega Scizor ex"
+    },
+    "116": {
+      "name": "Arboliva"
+    },
+    "117": {
+      "name": "Metal Core Barrier"
+    },
+    "12": {
+      "name": "Magmar"
+    },
+    "13": {
+      "name": "Magmortar"
+    },
+    "14": {
+      "name": "Paldean Tauros"
+    },
+    "15": {
+      "name": "Slowpoke"
+    },
+    "16": {
+      "name": "Mega Slowbro ex"
+    },
+    "17": {
+      "name": "Lapras"
+    },
+    "18": {
+      "name": "Piplup"
+    },
+    "19": {
+      "name": "Prinplup"
+    },
+    "2": {
+      "name": "Pineco"
+    },
+    "20": {
+      "name": "Empoleon"
+    },
+    "21": {
+      "name": "Phione"
+    },
+    "22": {
+      "name": "Pikachu"
+    },
+    "23": {
+      "name": "Raichu"
+    },
+    "24": {
+      "name": "Electabuzz"
+    },
+    "25": {
+      "name": "Electivire"
+    },
+    "26": {
+      "name": "Electrike"
+    },
+    "27": {
+      "name": "Mega Manectric ex"
+    },
+    "28": {
+      "name": "Drowzee"
+    },
+    "29": {
+      "name": "Hypno"
+    },
+    "3": {
+      "name": "Volbeat"
+    },
+    "30": {
+      "name": "Mew"
+    },
+    "31": {
+      "name": "Spoink"
+    },
+    "32": {
+      "name": "Grumpig"
+    },
+    "33": {
+      "name": "Diglett"
+    },
+    "34": {
+      "name": "Dugtrio"
+    },
+    "35": {
+      "name": "Groudon"
+    },
+    "36": {
+      "name": "Hawlucha"
+    },
+    "37": {
+      "name": "Gastly"
+    },
+    "38": {
+      "name": "Haunter"
+    },
+    "39": {
+      "name": "Mega Gengar ex"
+    },
+    "4": {
+      "name": "Illumise"
+    },
+    "40": {
+      "name": "Darkrai"
+    },
+    "41": {
+      "name": "Trubbish"
+    },
+    "42": {
+      "name": "Garbodor"
+    },
+    "43": {
+      "name": "Zorua"
+    },
+    "44": {
+      "name": "Zoroark"
+    },
+    "45": {
+      "name": "Morpeko"
+    },
+    "46": {
+      "name": "Forretress"
+    },
+    "47": {
+      "name": "Mega Scizor ex"
+    },
+    "48": {
+      "name": "Kartana"
+    },
+    "49": {
+      "name": "Varoom"
+    },
+    "5": {
+      "name": "Phantump"
+    },
+    "50": {
+      "name": "Revavroom"
+    },
+    "51": {
+      "name": "Dratini"
+    },
+    "52": {
+      "name": "Dragonair"
+    },
+    "53": {
+      "name": "Dragonite"
+    },
+    "54": {
+      "name": "Axew"
+    },
+    "55": {
+      "name": "Fraxure"
+    },
+    "56": {
+      "name": "Haxorus"
+    },
+    "57": {
+      "name": "Druddigon"
+    },
+    "58": {
+      "name": "Jigglypuff"
+    },
+    "59": {
+      "name": "Wigglytuff"
+    },
+    "6": {
+      "name": "Trevenant"
+    },
+    "60": {
+      "name": "Miltank"
+    },
+    "61": {
+      "name": "Chatot"
+    },
+    "62": {
+      "name": "Minccino"
+    },
+    "63": {
+      "name": "Cinccino"
+    },
+    "64": {
+      "name": "Furfrou"
+    },
+    "65": {
+      "name": "Nasty Notice"
+    },
+    "66": {
+      "name": "Maintenance"
+    },
+    "67": {
+      "name": "Iris"
+    },
+    "68": {
+      "name": "Calem"
+    },
+    "69": {
+      "name": "Hiking Trail"
+    },
+    "7": {
+      "name": "Charmander"
+    },
+    "70": {
+      "name": "Lapras"
+    },
+    "71": {
+      "name": "Empoleon"
+    },
+    "72": {
+      "name": "Groudon"
+    },
+    "73": {
+      "name": "Morpeko"
+    },
+    "74": {
+      "name": "Revavroom"
+    },
+    "75": {
+      "name": "Miltank"
+    },
+    "76": {
+      "name": "Mega Charizard ex"
+    },
+    "77": {
+      "name": "Mega Slowbro ex"
+    },
+    "78": {
+      "name": "Mega Manectric ex"
+    },
+    "79": {
+      "name": "Mega Gengar ex"
+    },
+    "8": {
+      "name": "Charmeleon"
+    },
+    "80": {
+      "name": "Mega Scizor ex"
+    },
+    "81": {
+      "name": "Iris"
+    },
+    "82": {
+      "name": "Calem"
+    },
+    "83": {
+      "name": "Mega Slowbro ex"
+    },
+    "84": {
+      "name": "Mega Manectric ex"
+    },
+    "85": {
+      "name": "Mew"
+    },
+    "86": {
+      "name": "Mew"
+    },
+    "87": {
+      "name": "Scyther"
+    },
+    "88": {
+      "name": "Pineco"
+    },
+    "89": {
+      "name": "Phantump"
+    },
+    "9": {
+      "name": "Mega Charizard ex"
+    },
+    "90": {
+      "name": "Trevenant"
+    },
+    "91": {
+      "name": "Charmander"
+    },
+    "92": {
+      "name": "Charmeleon"
+    },
+    "93": {
+      "name": "Ponyta"
+    },
+    "94": {
+      "name": "Rapidash"
+    },
+    "95": {
+      "name": "Slowpoke"
+    },
+    "96": {
+      "name": "Pikachu"
+    },
+    "97": {
+      "name": "Raichu"
+    },
+    "98": {
+      "name": "Electrike"
+    },
+    "99": {
+      "name": "Hawlucha"
+    }
+  }
+}

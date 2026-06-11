@@ -49,7 +49,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (strip_comments, TRAINER_SUBTYPE_MAP, RARE_PLUS_RARITIES,
                             is_ex_from_name, pack_sources_by_coord as _ps_by_coord,
-                            field_slug as _normalize)
+                            field_slug as _normalize, RARITY_RANK, normalize_rarity)
 
 
 ROOT            = Path(__file__).resolve().parent.parent
@@ -224,16 +224,10 @@ def normalize_pz_record(raw: dict) -> PZCard | None:
 # Matching logic
 # ---------------------------------------------------------------------------
 
-_RARITY_RANK: dict[str, int] = {
-    "one_diamond":   1,
-    "two_diamond":   2,
-    "three_diamond": 3,
-    "four_diamond":  4,
-    "one_star":      5,
-    "two_star":      6,
-    "three_star":    7,
-    "crown":         8,
-}
+# Rarity ordering for alt-art disambiguation — shared canonical rank
+# (_collection_io.RARITY_RANK). normalize_rarity() is applied at the lookup site so
+# both new-vocabulary and any legacy symbol-tier values resolve correctly.
+_RARITY_RANK = RARITY_RANK
 
 # Known PROMO-B card-number → canonical collection.json name overrides.
 # PZ's catalog returns "Zygarde" for these slots; the correct names use form suffixes.
@@ -328,7 +322,7 @@ def match_pz_cards(
             if pz.set_code and pz.card_number is not None:
                 ref = pack_sources.get((pz.set_code, pz.card_number))
                 if ref:
-                    rank = _RARITY_RANK.get(ref.get("rarity", ""), 99)
+                    rank = _RARITY_RANK.get(normalize_rarity(ref.get("rarity")) or "", 99)
             return (rank, pz.set_code or "", pz.card_number or 0)
 
         def _coll_sort_key(ci: int) -> tuple:
@@ -473,7 +467,7 @@ def _match_one(
             # identity — a set-numbering mismatch would give us a different card's
             # rarity (e.g. triple_star for "Charizard ex" at the Farfetch'd slot).
             if ps_ref and _normalize(ps_ref["card_name"]) == _normalize(canonical_name):
-                rarity = ps_ref.get("rarity", "")
+                rarity = normalize_rarity(ps_ref.get("rarity")) or ""
                 is_pz_alt = rarity in RARE_PLUS_RARITIES
                 entry_is_alt = "alt" in str(single_entry.get("variant", "")).lower().split()
                 if is_pz_alt != entry_is_alt:
@@ -548,7 +542,7 @@ def _match_one(
         # Step B: rarity-based alt-art disambiguation
         ps_ref = pack_sources.get((pz.set_code, pz.card_number))
         if ps_ref and _normalize(ps_ref["card_name"]) == _normalize(canonical_name):
-            rarity = ps_ref.get("rarity", "")
+            rarity = normalize_rarity(ps_ref.get("rarity")) or ""
             is_alt = rarity in RARE_PLUS_RARITIES
             alt_idx = [i for i in indices
                        if "alt" in str(collection[i].get("variant", "")).lower().split()]
@@ -772,6 +766,15 @@ def build_auto_entry(
             e["set_code"] = sc_code
         if cn is not None:
             e["card_number"] = cn
+        # Backfill Pokémon type from card_reference (TCGdex-backed authority) when ext_ref
+        # left it null — A-series ext_ref has no types, so a freshly-synced A-series card
+        # would otherwise be type-less until the pipeline's assign step runs.
+        if (e.get("card_type") == "Pokemon" and not e.get("type")
+                and resolver is not None and sc_code and cn is not None):
+            ref_rec = resolver.ref_by_coord.get((str(sc_code).upper(), cn))
+            ref_type = ref_rec.get("pokemon_type") if ref_rec else None
+            if ref_type:
+                e["type"] = ref_type
         return e
 
     if records:
@@ -1369,7 +1372,7 @@ def main() -> int:
         return bool(
             ps_r
             and _normalize(ps_r["card_name"]) == _normalize(mr.canonical_name or "")
-            and ps_r.get("rarity") in _ALT_RARITIES
+            and normalize_rarity(ps_r.get("rarity")) in _ALT_RARITIES
         )
 
     # Merge duplicate NEW_CARD results for the same canonical name AND rarity tier.
@@ -1434,7 +1437,7 @@ def main() -> int:
             ps_r = pack_sources.get((str(ec).upper(), en))
             if (ps_r
                     and _normalize(ps_r["card_name"]) == _normalize(mr.canonical_name)
-                    and ps_r.get("rarity") in _ALT_RARITIES):
+                    and normalize_rarity(ps_r.get("rarity")) in _ALT_RARITIES):
                 entry["variant"] = "alt art"
         auto_added.append(entry)
         print(f"  Auto-adding: {mr.canonical_name} ×{mr.pz_card.count}")

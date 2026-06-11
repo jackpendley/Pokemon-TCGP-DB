@@ -49,7 +49,7 @@ def test_resolved_coord_all_fields():
         name="Bulbasaur",
         set_code="A1",
         card_number=1,
-        rarity="one_diamond",
+        rarity="common",
         confidence="confirmed",
         sources_agreed=["card_reference", "tcgdex"],
         detail="test",
@@ -114,14 +114,14 @@ def _ref_rec(set_code, card_number, name, confidence="confirmed"):
         "set_code": set_code,
         "card_number": card_number,
         "name": name,
-        "rarity": "one_diamond",
+        "rarity": "common",
         "confidence": confidence,
         "confirmations": ["tcgdex"],
         "conflict_notes": [],
     }
 
 
-def _ps_rec(set_code, card_number, card_name, rarity="one_diamond"):
+def _ps_rec(set_code, card_number, card_name, rarity="common"):
     return {
         "set_code": set_code,
         "card_number": card_number,

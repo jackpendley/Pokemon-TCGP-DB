@@ -1,0 +1,325 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:36Z",
+    "card_count": 105,
+    "set_code": "A4a",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Hoppip"
+    },
+    "10": {
+      "name": "Entei ex"
+    },
+    "100": {
+      "name": "Paldean Wooper"
+    },
+    "101": {
+      "name": "Infernape ex"
+    },
+    "102": {
+      "name": "Mew ex"
+    },
+    "103": {
+      "name": "Garchomp ex"
+    },
+    "104": {
+      "name": "Paldean Clodsire ex"
+    },
+    "105": {
+      "name": "Mantyke"
+    },
+    "11": {
+      "name": "Fletchinder"
+    },
+    "12": {
+      "name": "Talonflame"
+    },
+    "13": {
+      "name": "Poliwag"
+    },
+    "14": {
+      "name": "Poliwhirl"
+    },
+    "15": {
+      "name": "Tentacool"
+    },
+    "16": {
+      "name": "Tentacruel"
+    },
+    "17": {
+      "name": "Slowpoke"
+    },
+    "18": {
+      "name": "Slowking"
+    },
+    "19": {
+      "name": "Jynx"
+    },
+    "2": {
+      "name": "Skiploom"
+    },
+    "20": {
+      "name": "Suicune ex"
+    },
+    "21": {
+      "name": "Feebas"
+    },
+    "22": {
+      "name": "Milotic"
+    },
+    "23": {
+      "name": "Mantyke"
+    },
+    "24": {
+      "name": "Cryogonal"
+    },
+    "25": {
+      "name": "Raikou ex"
+    },
+    "26": {
+      "name": "Tynamo"
+    },
+    "27": {
+      "name": "Eelektrik"
+    },
+    "28": {
+      "name": "Eelektross"
+    },
+    "29": {
+      "name": "Stunfisk"
+    },
+    "3": {
+      "name": "Jumpluff ex"
+    },
+    "30": {
+      "name": "Yamper"
+    },
+    "31": {
+      "name": "Boltund"
+    },
+    "32": {
+      "name": "Misdreavus"
+    },
+    "33": {
+      "name": "Mismagius"
+    },
+    "34": {
+      "name": "Galarian Corsola"
+    },
+    "35": {
+      "name": "Galarian Cursola"
+    },
+    "36": {
+      "name": "Latias"
+    },
+    "37": {
+      "name": "Latios"
+    },
+    "38": {
+      "name": "Frillish"
+    },
+    "39": {
+      "name": "Jellicent"
+    },
+    "4": {
+      "name": "Sunkern"
+    },
+    "40": {
+      "name": "Diglett"
+    },
+    "41": {
+      "name": "Dugtrio"
+    },
+    "42": {
+      "name": "Poliwrath ex"
+    },
+    "43": {
+      "name": "Phanpy"
+    },
+    "44": {
+      "name": "Donphan"
+    },
+    "45": {
+      "name": "Relicanth"
+    },
+    "46": {
+      "name": "Dwebble"
+    },
+    "47": {
+      "name": "Crustle"
+    },
+    "48": {
+      "name": "Seviper"
+    },
+    "49": {
+      "name": "Zorua"
+    },
+    "5": {
+      "name": "Sunflora"
+    },
+    "50": {
+      "name": "Zoroark"
+    },
+    "51": {
+      "name": "Inkay"
+    },
+    "52": {
+      "name": "Malamar"
+    },
+    "53": {
+      "name": "Skrelp"
+    },
+    "54": {
+      "name": "Dragalge"
+    },
+    "55": {
+      "name": "Altaria"
+    },
+    "56": {
+      "name": "Farfetch'd"
+    },
+    "57": {
+      "name": "Lickitung"
+    },
+    "58": {
+      "name": "Lickilicky"
+    },
+    "59": {
+      "name": "Igglybuff"
+    },
+    "6": {
+      "name": "Celebi"
+    },
+    "60": {
+      "name": "Teddiursa"
+    },
+    "61": {
+      "name": "Ursaring"
+    },
+    "62": {
+      "name": "Miltank"
+    },
+    "63": {
+      "name": "Azurill"
+    },
+    "64": {
+      "name": "Swablu"
+    },
+    "65": {
+      "name": "Zangoose"
+    },
+    "66": {
+      "name": "Fletchling"
+    },
+    "67": {
+      "name": "Inflatable Boat"
+    },
+    "68": {
+      "name": "Memory Light"
+    },
+    "69": {
+      "name": "Whitney"
+    },
+    "7": {
+      "name": "Durant"
+    },
+    "70": {
+      "name": "Traveling Merchant"
+    },
+    "71": {
+      "name": "Morty"
+    },
+    "72": {
+      "name": "Milotic"
+    },
+    "73": {
+      "name": "Stunfisk"
+    },
+    "74": {
+      "name": "Yamper"
+    },
+    "75": {
+      "name": "Latios"
+    },
+    "76": {
+      "name": "Phanpy"
+    },
+    "77": {
+      "name": "Azurill"
+    },
+    "78": {
+      "name": "Jumpluff ex"
+    },
+    "79": {
+      "name": "Entei ex"
+    },
+    "8": {
+      "name": "Slugma"
+    },
+    "80": {
+      "name": "Suicune ex"
+    },
+    "81": {
+      "name": "Raikou ex"
+    },
+    "82": {
+      "name": "Poliwrath ex"
+    },
+    "83": {
+      "name": "Whitney"
+    },
+    "84": {
+      "name": "Traveling Merchant"
+    },
+    "85": {
+      "name": "Morty"
+    },
+    "86": {
+      "name": "Jumpluff ex"
+    },
+    "87": {
+      "name": "Entei ex"
+    },
+    "88": {
+      "name": "Raikou ex"
+    },
+    "89": {
+      "name": "Poliwrath ex"
+    },
+    "9": {
+      "name": "Magcargo"
+    },
+    "90": {
+      "name": "Suicune ex"
+    },
+    "91": {
+      "name": "Chimchar"
+    },
+    "92": {
+      "name": "Monferno"
+    },
+    "93": {
+      "name": "Psyduck"
+    },
+    "94": {
+      "name": "Golduck"
+    },
+    "95": {
+      "name": "Krabby"
+    },
+    "96": {
+      "name": "Kingler"
+    },
+    "97": {
+      "name": "Pyukumuku"
+    },
+    "98": {
+      "name": "Gible"
+    },
+    "99": {
+      "name": "Gabite"
+    }
+  }
+}

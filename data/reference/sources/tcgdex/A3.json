@@ -1,0 +1,3110 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-05T17:54:16Z",
+    "card_count": 239,
+    "set_code": "A3",
+    "source": "tcgdex"
+  },
+  "cards": {
+    "1": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Exeggcute",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "10": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Rowlet",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "100": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Lycanroc",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "101": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Lycanroc",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "102": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Mudbray",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "103": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Mudsdale",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "104": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Passimian ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "105": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Minior",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "106": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Alolan Rattata",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "107": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Alolan Raticate",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "108": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Alolan Meowth",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "109": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Alolan Persian",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "11": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Dartrix",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "110": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Alolan Grimer",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "111": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Alolan Muk ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "112": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Absol",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "113": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Trubbish",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "114": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Garbodor",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "115": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Mareanie",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "116": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Toxapex",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "117": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Alolan Diglett",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "118": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Alolan Dugtrio",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "119": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Excadrill",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "12": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Decidueye ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "120": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Escavalier",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "121": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Klefki",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "122": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Solgaleo ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Metal"
+      ]
+    },
+    "123": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Magearna",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "124": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Drampa",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "125": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Jangmo-o",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "126": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Hakamo-o",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "127": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Kommo-o",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "128": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Tauros",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "129": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Skitty",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "13": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Grubbin",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "130": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Delcatty",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "131": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Fletchling",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "132": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Hawlucha",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "133": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Pikipek",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "134": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Trumbeak",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "135": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Toucannon",
+      "rarity": "uncommon",
+      "stage": "Stage2",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "136": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Yungoos",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "137": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Gumshoos",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "138": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Stufful",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "139": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Bewear",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "14": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Fomantis",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "140": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Oranguru",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "141": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Komala",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "142": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Big Malasada",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "143": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Fishing Net",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "144": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Rare Candy",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "145": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Rotom Dex",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "146": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Poison Barb",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "147": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Leaf Cape",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "148": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Acerola",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "149": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Ilima",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "15": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Lurantis",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "150": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Kiawe",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "151": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Guzma",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "152": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Lana",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "153": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Sophocles",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "154": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Mallow",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "155": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Lillie",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "156": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Alolan Exeggutor",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "157": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Morelull",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "158": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Tsareena",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "159": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Tapu Bulu",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "16": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Morelull",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "160": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Alolan Marowak",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "161": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Turtonator",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "162": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Alolan Vulpix",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "163": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Pyukumuku",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "164": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Tapu Fini",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "165": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Oricorio",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "166": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Tapu Koko",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "167": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Cutiefly",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "168": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Comfey",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "169": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Sandygast",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "17": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Shiinotic",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "170": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Tapu Lele",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "171": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Cosmog",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "172": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Rockruff",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "173": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Mudsdale",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "174": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Minior",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "175": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Magearna",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "176": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Drampa",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "177": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Pikipek",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "178": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Bewear",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "179": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Komala",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "18": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Bounsweet",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "180": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Decidueye ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "181": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Dhelmise ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "182": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Incineroar ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "183": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Crabominable ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "184": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Wishiwashi ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "185": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Alolan Raichu ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "186": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Lunala ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "187": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Passimian ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "188": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Alolan Muk ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "189": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Solgaleo ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Metal"
+      ]
+    },
+    "19": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Steenee",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "190": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Acerola",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "191": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Ilima",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "192": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Kiawe",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "193": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Guzma",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "194": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Lana",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "195": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Sophocles",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "196": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Mallow",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "197": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Lillie",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "198": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Decidueye ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "199": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Dhelmise ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "2": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Alolan Exeggutor",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "20": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Tsareena",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "200": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Incineroar ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "201": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Crabominable ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "202": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Wishiwashi ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "203": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Alolan Raichu ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "204": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Lunala ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "205": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Passimian ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "206": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Alolan Muk ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "207": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Solgaleo ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Metal"
+      ]
+    },
+    "208": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Guzma",
+      "rarity": "immersive",
+      "stage": null,
+      "types": []
+    },
+    "209": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Lillie",
+      "rarity": "immersive",
+      "stage": null,
+      "types": []
+    },
+    "21": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Wimpod",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "210": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Bulbasaur",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "211": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Ivysaur",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "212": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Venusaur",
+      "rarity": "shiny_rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "213": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Exeggcute",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "214": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Exeggutor",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "215": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Squirtle",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "216": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Wartortle",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "217": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Blastoise",
+      "rarity": "shiny_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "218": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Staryu",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "219": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Starmie",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "22": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Golisopod",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "220": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Gastly",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "221": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Haunter",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "222": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Gengar",
+      "rarity": "shiny_rare",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "223": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Machop",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "224": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Machoke",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "225": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Machamp",
+      "rarity": "shiny_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "226": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Cubone",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "227": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Marowak",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "228": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Jigglypuff",
+      "rarity": "shiny_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "229": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Wigglytuff",
+      "rarity": "shiny_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "23": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Dhelmise ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "230": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 190,
+      "name": "Venusaur ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "231": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Exeggutor ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "232": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Blastoise ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "233": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Starmie ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "234": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Gengar ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "235": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Machamp ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "236": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Marowak ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "237": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Wigglytuff ex",
+      "rarity": "shiny_super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "238": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Lunala ex",
+      "rarity": "ultra_rare",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "239": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Solgaleo ex",
+      "rarity": "ultra_rare",
+      "stage": "Stage2",
+      "types": [
+        "Metal"
+      ]
+    },
+    "24": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Tapu Bulu",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "25": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Growlithe",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "26": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Arcanine",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "27": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Alolan Marowak",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "28": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Fletchinder",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "29": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Talonflame",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "3": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Surskit",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "30": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Litten",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "31": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Litten",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "32": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Torracat",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "33": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Incineroar ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "34": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Oricorio",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "35": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Salandit",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "36": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Salazzle",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "37": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Turtonator",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "38": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Alolan Sandshrew",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "39": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Alolan Sandslash",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "4": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Masquerain",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "40": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Alolan Vulpix",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "41": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Alolan Ninetales",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "42": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Shellder",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "43": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Cloyster",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "44": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Lapras",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "45": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Popplio",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "46": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Popplio",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "47": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Brionne",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "48": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Primarina",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "49": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Crabominable ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "5": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Maractus",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "50": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Wishiwashi",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "51": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Wishiwashi ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "52": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Dewpider",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "53": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Araquanid",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "54": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Pyukumuku",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "55": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Bruxish",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "56": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Tapu Fini",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "57": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Pikachu",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "58": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Alolan Raichu ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "59": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Alolan Geodude",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "6": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Karrablast",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "60": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Alolan Graveler",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "61": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Alolan Golem",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "62": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Helioptile",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "63": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Heliolisk",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "64": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Charjabug",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "65": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Vikavolt",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "66": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Oricorio",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "67": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Togedemaru",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "68": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Tapu Koko",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "69": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Mr. Mime",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "7": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Phantump",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "70": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Sableye",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "71": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Spoink",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "72": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Grumpig",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "73": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Lunatone",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "74": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Shuppet",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "75": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Banette",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "76": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Oricorio",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "77": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Oricorio",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "78": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 30,
+      "name": "Cutiefly",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "79": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Ribombee",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "8": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Trevenant",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "80": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Comfey",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "81": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Sandygast",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "82": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Palossand",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "83": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Mimikyu",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "84": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Tapu Lele",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "85": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Cosmog",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "86": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Cosmoem",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "87": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 180,
+      "name": "Lunala ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "88": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Necrozma",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "89": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Cubone",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "9": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Rowlet",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "90": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Makuhita",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "91": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Hariyama",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "92": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Solrock",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "93": {
+      "boosters": [
+        "Solgaleo",
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Drilbur",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "94": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Timburr",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "95": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Gurdurr",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "96": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Conkeldurr",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "97": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Crabrawler",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "98": {
+      "boosters": [
+        "Lunala"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Rockruff",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "99": {
+      "boosters": [
+        "Solgaleo"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Rockruff",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    }
+  }
+}

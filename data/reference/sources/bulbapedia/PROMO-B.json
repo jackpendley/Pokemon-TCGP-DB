@@ -1,0 +1,360 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T18:57:41Z",
+    "card_count": 70,
+    "set_code": "PROMO-B",
+    "source": "bulbapedia"
+  },
+  "cards": {
+    "1": {
+      "name": "Pikachu",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "10": {
+      "name": "Drifblim",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "11": {
+      "name": "Eevee",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "12": {
+      "name": "Ditto",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "13": {
+      "name": "Arcanine",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "14": {
+      "name": "Magikarp",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "15": {
+      "name": "Mareep",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "16": {
+      "name": "Krookodile",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "17": {
+      "name": "Swablu",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "18": {
+      "name": "Heliolisk",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "19": {
+      "name": "Buneary",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "2": {
+      "name": "Petilil",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "20": {
+      "name": "Charmeleon",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "21": {
+      "name": "Onix",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "22": {
+      "name": "Hawlucha",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "23": {
+      "name": "Genesect",
+      "pokemon_type": "Metal",
+      "rarity": "promo"
+    },
+    "24": {
+      "name": "Mega Latios ex",
+      "pokemon_type": "Dragon",
+      "rarity": "promo"
+    },
+    "25": {
+      "name": "Jirachi",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "26": {
+      "name": "Mudkip",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "27": {
+      "name": "Plusle",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "28": {
+      "name": "Ralts",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "29": {
+      "name": "Mega Medicham ex",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "3": {
+      "name": "Froakie",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "30": {
+      "name": "Tornadus",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "31": {
+      "name": "Cinderace",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "32": {
+      "name": "Alolan Vulpix",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "33": {
+      "name": "Quaxly",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "34": {
+      "name": "Smoliv",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "35": {
+      "name": "Charcadet",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "36": {
+      "name": "Tatsugiri",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "37": {
+      "name": "Frigibax",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "38": {
+      "name": "Tinkaton",
+      "pokemon_type": "Metal",
+      "rarity": "promo"
+    },
+    "39": {
+      "name": "Pawmi",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "4": {
+      "name": "Luxray",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "40": {
+      "name": "Paldean Clodsire",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "41": {
+      "name": "Chien-Pao ex",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "42": {
+      "name": "Slowpoke",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "43": {
+      "name": "Electrike",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "44": {
+      "name": "Varoom",
+      "pokemon_type": "Metal",
+      "rarity": "promo"
+    },
+    "45": {
+      "name": "Haxorus",
+      "pokemon_type": "Dragon",
+      "rarity": "promo"
+    },
+    "46": {
+      "name": "Chatot",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "47": {
+      "name": "Gastly",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "48": {
+      "name": "Wigglytuff",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "49": {
+      "name": "Victini",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "5": {
+      "name": "Pidgey",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "50": {
+      "name": "Meloetta",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "51": {
+      "name": "Zygarde",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "52": {
+      "name": "Zygarde",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "53": {
+      "name": "Zygarde ex",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "54": {
+      "name": "Eevee",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "55": {
+      "name": "Zygarde ex",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "56": {
+      "name": "Mega Heracross ex",
+      "pokemon_type": null,
+      "rarity": "promo"
+    },
+    "57": {
+      "name": "Castform Sunny Form",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "58": {
+      "name": "Tepig",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "59": {
+      "name": "Dwebble",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "6": {
+      "name": "Mega Pidgeot ex",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "60": {
+      "name": "Zarude",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "61": {
+      "name": "Treecko",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "62": {
+      "name": "Gallade",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "63": {
+      "name": "Meowscarada ex",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "64": {
+      "name": "Charcadet",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "65": {
+      "name": "Vaporeon",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "66": {
+      "name": "Ceruledge ex",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "67": {
+      "name": "Pawniard",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "68": {
+      "name": "Dudunsparce",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "69": {
+      "name": "Floragato",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "7": {
+      "name": "Torchic",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "70": {
+      "name": "Sableye",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "8": {
+      "name": "Psyduck",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "9": {
+      "name": "Mega Absol ex",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    }
+  }
+}

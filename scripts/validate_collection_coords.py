@@ -32,7 +32,7 @@ import urllib.request
 import urllib.error
 from datetime import datetime, timezone
 from pathlib import Path
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (strip_comments, ext_ref_by_coord,
@@ -400,14 +400,35 @@ def main() -> int:
     local_only        = sum(1 for _, r in checked if r.get("source") == "local")
     independent       = cardref_checked + tcgdex_checked + limitless_checked
 
+    # Ownership-confidence breakdown: card_reference's 'confidence' (confirmed/single/conflict)
+    # reflects how many independent sources agreed on the card's identity. PZ is the only
+    # source of WHAT you own, so surfacing this flags owned cards whose printing isn't fully
+    # cross-validated (e.g. a name only one source confirmed, or a cross-set/A4b ambiguity).
+    cardref_conf: Counter = Counter()
+    low_conf_owned: list[tuple[dict, str]] = []
+    for entry, r in checked:
+        src = r.get("source", "")
+        if src.startswith("card_reference(") and src.endswith(")"):
+            conf = src[len("card_reference("):-1]
+            cardref_conf[conf] += 1
+            if conf != "confirmed":
+                low_conf_owned.append((entry, conf))
+
     print(f"\n── Validation Results ──────────────────────────────────────────")
     print(f"  OK:           {ok_count}")
     print(f"  Mismatches:   {mismatch_count}")
     print(f"  No coords:    {no_coords}")
-    print(f"  Cross-checked vs card_reference (offline, 3-source): {cardref_checked}")
+    print(f"  Cross-checked vs card_reference (offline, 3-source): {cardref_checked} "
+          f"(confirmed: {cardref_conf['confirmed']}, single: {cardref_conf['single']}, "
+          f"conflict: {cardref_conf['conflict']})")
     print(f"  Cross-checked vs TCGdex (fallback):  {tcgdex_checked}")
     print(f"  Cross-checked vs Limitless (fallback): {limitless_checked}")
     print(f"  Local-only (ext_ref/pack_sources, weaker): {local_only}")
+
+    if low_conf_owned:
+        print(f"\n── Owned cards with <confirmed identity ({len(low_conf_owned)}) — verify printing ──")
+        for entry, conf in low_conf_owned:
+            print(f"  [{conf}] {entry.get('name')} {entry.get('set_code')}/{entry.get('card_number')}")
 
     serious_count = sum(1 for _, r in results["mismatch"] if r.get("serious"))
     advisory_count = mismatch_count - serious_count

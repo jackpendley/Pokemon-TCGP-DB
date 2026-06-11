@@ -598,6 +598,12 @@
     "name": "Masquerain",
     "source": "tcgdex"
   },
+  "A3-029": {
+    "cached_at": "2026-06-01T06:55:38.079590+00:00",
+    "hp": 120,
+    "name": "Talonflame",
+    "source": "tcgdex"
+  },
   "A3-030": {
     "cached_at": "2026-05-31T04:10:19.820864+00:00",
     "hp": 60,

@@ -1,0 +1,343 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:32Z",
+    "card_count": 111,
+    "set_code": "A2b",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Weedle"
+    },
+    "10": {
+      "name": "Charizard ex"
+    },
+    "100": {
+      "name": "Charmeleon"
+    },
+    "101": {
+      "name": "Wiglett"
+    },
+    "102": {
+      "name": "Dondozo"
+    },
+    "103": {
+      "name": "Pachirisu"
+    },
+    "104": {
+      "name": "Riolu"
+    },
+    "105": {
+      "name": "Varoom"
+    },
+    "106": {
+      "name": "Revavroom"
+    },
+    "107": {
+      "name": "Beedrill ex"
+    },
+    "108": {
+      "name": "Charizard ex"
+    },
+    "109": {
+      "name": "Wugtrio ex"
+    },
+    "11": {
+      "name": "Magmar"
+    },
+    "110": {
+      "name": "Lucario ex"
+    },
+    "111": {
+      "name": "Poke Ball"
+    },
+    "12": {
+      "name": "Magmortar"
+    },
+    "13": {
+      "name": "Paldean Tauros"
+    },
+    "14": {
+      "name": "Tentacool"
+    },
+    "15": {
+      "name": "Tentacruel"
+    },
+    "16": {
+      "name": "Buizel"
+    },
+    "17": {
+      "name": "Floatzel"
+    },
+    "18": {
+      "name": "Wiglett"
+    },
+    "19": {
+      "name": "Wugtrio ex"
+    },
+    "2": {
+      "name": "Kakuna"
+    },
+    "20": {
+      "name": "Dondozo"
+    },
+    "21": {
+      "name": "Tatsugiri"
+    },
+    "22": {
+      "name": "Pikachu ex"
+    },
+    "23": {
+      "name": "Voltorb"
+    },
+    "24": {
+      "name": "Electrode"
+    },
+    "25": {
+      "name": "Pachirisu"
+    },
+    "26": {
+      "name": "Pawmi"
+    },
+    "27": {
+      "name": "Pawmo"
+    },
+    "28": {
+      "name": "Pawmot"
+    },
+    "29": {
+      "name": "Abra"
+    },
+    "3": {
+      "name": "Beedrill ex"
+    },
+    "30": {
+      "name": "Kadabra"
+    },
+    "31": {
+      "name": "Alakazam"
+    },
+    "32": {
+      "name": "Mr. Mime"
+    },
+    "33": {
+      "name": "Drifloon"
+    },
+    "34": {
+      "name": "Drifblim"
+    },
+    "35": {
+      "name": "Giratina ex"
+    },
+    "36": {
+      "name": "Gimmighoul"
+    },
+    "37": {
+      "name": "Machop"
+    },
+    "38": {
+      "name": "Machoke"
+    },
+    "39": {
+      "name": "Machamp"
+    },
+    "4": {
+      "name": "Pinsir"
+    },
+    "40": {
+      "name": "Hitmonlee"
+    },
+    "41": {
+      "name": "Hitmonchan"
+    },
+    "42": {
+      "name": "Riolu"
+    },
+    "43": {
+      "name": "Lucario ex"
+    },
+    "44": {
+      "name": "Flamigo"
+    },
+    "45": {
+      "name": "Ekans"
+    },
+    "46": {
+      "name": "Arbok"
+    },
+    "47": {
+      "name": "Paldean Wooper"
+    },
+    "48": {
+      "name": "Paldean Clodsire ex"
+    },
+    "49": {
+      "name": "Spiritomb"
+    },
+    "5": {
+      "name": "Sprigatito"
+    },
+    "50": {
+      "name": "Shroodle"
+    },
+    "51": {
+      "name": "Grafaiai"
+    },
+    "52": {
+      "name": "Tinkatink"
+    },
+    "53": {
+      "name": "Tinkatuff"
+    },
+    "54": {
+      "name": "Tinkaton ex"
+    },
+    "55": {
+      "name": "Varoom"
+    },
+    "56": {
+      "name": "Revavroom"
+    },
+    "57": {
+      "name": "Gholdengo"
+    },
+    "58": {
+      "name": "Rattata"
+    },
+    "59": {
+      "name": "Raticate"
+    },
+    "6": {
+      "name": "Floragato"
+    },
+    "60": {
+      "name": "Jigglypuff"
+    },
+    "61": {
+      "name": "Wigglytuff"
+    },
+    "62": {
+      "name": "Lickitung"
+    },
+    "63": {
+      "name": "Lickilicky"
+    },
+    "64": {
+      "name": "Bidoof"
+    },
+    "65": {
+      "name": "Bibarel ex"
+    },
+    "66": {
+      "name": "Buneary"
+    },
+    "67": {
+      "name": "Lopunny"
+    },
+    "68": {
+      "name": "Cyclizar"
+    },
+    "69": {
+      "name": "Iono"
+    },
+    "7": {
+      "name": "Meowscarada"
+    },
+    "70": {
+      "name": "Pokemon Center Lady"
+    },
+    "71": {
+      "name": "Red"
+    },
+    "72": {
+      "name": "Team Rocket Grunt"
+    },
+    "73": {
+      "name": "Meowscarada"
+    },
+    "74": {
+      "name": "Buizel"
+    },
+    "75": {
+      "name": "Tatsugiri"
+    },
+    "76": {
+      "name": "Grafaiai"
+    },
+    "77": {
+      "name": "Gholdengo"
+    },
+    "78": {
+      "name": "Wigglytuff"
+    },
+    "79": {
+      "name": "Beedrill ex"
+    },
+    "8": {
+      "name": "Charmander"
+    },
+    "80": {
+      "name": "Charizard ex"
+    },
+    "81": {
+      "name": "Wugtrio ex"
+    },
+    "82": {
+      "name": "Pikachu ex"
+    },
+    "83": {
+      "name": "Giratina ex"
+    },
+    "84": {
+      "name": "Lucario ex"
+    },
+    "85": {
+      "name": "Paldean Clodsire ex"
+    },
+    "86": {
+      "name": "Tinkaton ex"
+    },
+    "87": {
+      "name": "Bibarel ex"
+    },
+    "88": {
+      "name": "Iono"
+    },
+    "89": {
+      "name": "Pokemon Center Lady"
+    },
+    "9": {
+      "name": "Charmeleon"
+    },
+    "90": {
+      "name": "Red"
+    },
+    "91": {
+      "name": "Team Rocket Grunt"
+    },
+    "92": {
+      "name": "Pikachu ex"
+    },
+    "93": {
+      "name": "Paldean Clodsire ex"
+    },
+    "94": {
+      "name": "Tinkaton ex"
+    },
+    "95": {
+      "name": "Bibarel ex"
+    },
+    "96": {
+      "name": "Giratina ex"
+    },
+    "97": {
+      "name": "Weedle"
+    },
+    "98": {
+      "name": "Kakuna"
+    },
+    "99": {
+      "name": "Charmander"
+    }
+  }
+}

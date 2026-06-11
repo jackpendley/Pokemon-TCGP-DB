@@ -1,0 +1,595 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T18:57:40Z",
+    "card_count": 117,
+    "set_code": "PROMO-A",
+    "source": "bulbapedia"
+  },
+  "cards": {
+    "1": {
+      "name": "Potion",
+      "pokemon_type": "Item",
+      "rarity": "promo"
+    },
+    "10": {
+      "name": "Mewtwo",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "100": {
+      "name": "Weavile",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "101": {
+      "name": "Latias",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "102": {
+      "name": "Tropius",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "103": {
+      "name": "Poliwag",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "104": {
+      "name": "Milotic",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "105": {
+      "name": "Zorua",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "106": {
+      "name": "Zoroark",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "107": {
+      "name": "Miltank",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "108": {
+      "name": "Phanpy",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "109": {
+      "name": "Eevee ex",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "11": {
+      "name": "Chansey",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "110": {
+      "name": "Entei ex",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "111": {
+      "name": "Pikachu",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "112": {
+      "name": "Raichu ex",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "113": {
+      "name": "Mimikyu",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "114": {
+      "name": "Machamp",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "115": {
+      "name": "Regigigas",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "116": {
+      "name": "Shaymin",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "117": {
+      "name": "Absol",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "12": {
+      "name": "Meowth",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "13": {
+      "name": "Butterfree",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "14": {
+      "name": "Lapras ex",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "15": {
+      "name": "Pikachu",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "16": {
+      "name": "Clefairy",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "17": {
+      "name": "Mankey",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "18": {
+      "name": "Venusaur",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "19": {
+      "name": "Greninja",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "2": {
+      "name": "X Speed",
+      "pokemon_type": "Item",
+      "rarity": "promo"
+    },
+    "20": {
+      "name": "Haunter",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "21": {
+      "name": "Onix",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "22": {
+      "name": "Jigglypuff",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "23": {
+      "name": "Bulbasaur",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "24": {
+      "name": "Magnemite",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "25": {
+      "name": "Moltres ex",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "26": {
+      "name": "Pikachu",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "27": {
+      "name": "Snivy",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "28": {
+      "name": "Volcarona",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "29": {
+      "name": "Blastoise",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "3": {
+      "name": "Hand Scope",
+      "pokemon_type": "Item",
+      "rarity": "promo"
+    },
+    "30": {
+      "name": "Eevee",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "31": {
+      "name": "Cinccino",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "32": {
+      "name": "Charmander",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "33": {
+      "name": "Squirtle",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "34": {
+      "name": "Piplup",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "35": {
+      "name": "Turtwig",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "36": {
+      "name": "Electivire",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "37": {
+      "name": "Cresselia ex",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "38": {
+      "name": "Misdreavus",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "39": {
+      "name": "Skarmory",
+      "pokemon_type": "Metal",
+      "rarity": "promo"
+    },
+    "4": {
+      "name": "Pokédex",
+      "pokemon_type": "Item",
+      "rarity": "promo"
+    },
+    "40": {
+      "name": "Chimchar",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "41": {
+      "name": "Togepi",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "42": {
+      "name": "Darkrai ex",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "43": {
+      "name": "Cherrim",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "44": {
+      "name": "Raichu",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "45": {
+      "name": "Nosepass",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "46": {
+      "name": "Gible",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "47": {
+      "name": "Staraptor",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "48": {
+      "name": "Manaphy",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "49": {
+      "name": "Snorlax",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "5": {
+      "name": "Poké Ball",
+      "pokemon_type": "Item",
+      "rarity": "promo"
+    },
+    "50": {
+      "name": "Mewtwo ex",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "51": {
+      "name": "Cyclizar",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "52": {
+      "name": "Sprigatito",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "53": {
+      "name": "Floatzel",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "54": {
+      "name": "Pawmot",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "55": {
+      "name": "Machamp",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "56": {
+      "name": "Ekans",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "57": {
+      "name": "Bidoof",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "58": {
+      "name": "Pachirisu",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "59": {
+      "name": "Riolu",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "6": {
+      "name": "Red Card",
+      "pokemon_type": "Item",
+      "rarity": "promo"
+    },
+    "60": {
+      "name": "Exeggcute",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "61": {
+      "name": "Froakie",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "62": {
+      "name": "Farfetch'd",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "63": {
+      "name": "Rayquaza",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "64": {
+      "name": "Rayquaza ex",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "65": {
+      "name": "Rayquaza ex",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "66": {
+      "name": "Mimikyu",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "67": {
+      "name": "Cosmog",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "68": {
+      "name": "Lycanroc",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "69": {
+      "name": "Alolan Exeggutor",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "7": {
+      "name": "Professor's Research",
+      "pokemon_type": "Supporter",
+      "rarity": "promo"
+    },
+    "70": {
+      "name": "Alolan Ninetales",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "71": {
+      "name": "Crabrawler",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "72": {
+      "name": "Alolan Grimer",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "73": {
+      "name": "Toucannon",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "74": {
+      "name": "Zeraora",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "75": {
+      "name": "Kartana",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
+    "76": {
+      "name": "Blacephalon",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "77": {
+      "name": "Xurkitree",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "78": {
+      "name": "Dawn Wings Necrozma",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "79": {
+      "name": "Dusk Mane Necrozma",
+      "pokemon_type": "Metal",
+      "rarity": "promo"
+    },
+    "8": {
+      "name": "Pokédex",
+      "pokemon_type": "Item",
+      "rarity": "promo"
+    },
+    "80": {
+      "name": "Stakataka",
+      "pokemon_type": "Metal",
+      "rarity": "promo"
+    },
+    "81": {
+      "name": "Ultra Necrozma ex",
+      "pokemon_type": "Dragon",
+      "rarity": "promo"
+    },
+    "82": {
+      "name": "Poipole",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "83": {
+      "name": "Stufful",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "84": {
+      "name": "Tapu Koko ex",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "85": {
+      "name": "Vanillite",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "86": {
+      "name": "Jolteon",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "87": {
+      "name": "Alcremie",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "88": {
+      "name": "Dragonair",
+      "pokemon_type": "Dragon",
+      "rarity": "promo"
+    },
+    "89": {
+      "name": "Audino",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "9": {
+      "name": "Pikachu",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "90": {
+      "name": "Togedemaru",
+      "pokemon_type": "Metal",
+      "rarity": "promo"
+    },
+    "91": {
+      "name": "Greedent",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "92": {
+      "name": "Eevee",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "93": {
+      "name": "Cleffa",
+      "pokemon_type": "Psychic",
+      "rarity": "promo"
+    },
+    "94": {
+      "name": "Horsea",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "95": {
+      "name": "Chinchou",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "96": {
+      "name": "Houndoom",
+      "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "97": {
+      "name": "Kangaskhan",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "98": {
+      "name": "Blissey ex",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "99": {
+      "name": "Marill",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    }
+  }
+}

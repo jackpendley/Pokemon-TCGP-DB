@@ -298,7 +298,7 @@ def write_md(out_data):
         "",
         "## Notes",
         "",
-        f"- **Unified score** = `new_card_ev_10x×1.0 + copy_ev×0.2 + deck_target_ev×1.5` × confidence_weight. new_card_ev_10x is rarity-weighted (crown=10.0 … two_diamond=0.0). deck_target_ev is 0 until deck targets are configured.",
+        f"- **Unified score** = `new_card_ev_10x×1.0 + copy_ev×0.2 + deck_target_ev×1.5` × confidence_weight. new_card_ev_10x is rarity-weighted (ultra_rare=10.0 … uncommon=0.0). deck_target_ev is 0 until deck targets are configured.",
         f"- **DR ratio** = `new_card_ev_10x / (new_card_ev_1x × 10)`. Below {NEAR_COMPLETE_THRESHOLD}: pool near-complete, diminishing returns significant.",
         f"- **⧗/EV** = `{BATCH_SIZE * HOURGLASS_PER_PACK} ⧗ / new_card_ev_10x`. Lower is better. (new_card_ev_10x is rarity-weighted, so this is cost per rarity-weighted value unit, not per raw card count)",
         "- Re-run `build_pack_ev.py` after every significant collection change to keep rankings current.",

@@ -123,7 +123,7 @@ EV is computed directly from `pz_pack_odds.json` keyed by `(set_code, card_numbe
 EV per pack = Σ (p_pull × value_of_next_copy)
 
 value_of_next_copy (per printing — each set coord counted independently):
-  owned=0  →  1.0 + RARITY_BONUS[rarity]  (crown=10.0, three_star=7.5 … two_diamond=0.0)
+  owned=0  →  1.0 + RARITY_BONUS[rarity]  (ultra_rare=10.0, immersive=7.5 … uncommon=0.0)
   owned=1  →  0.4
   owned≥2  →  0.0
 

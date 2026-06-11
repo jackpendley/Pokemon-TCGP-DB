@@ -1,0 +1,2710 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-05T17:49:02Z",
+    "card_count": 207,
+    "set_code": "A2",
+    "source": "tcgdex"
+  },
+  "cards": {
+    "1": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Oddish",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "10": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Turtwig",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "100": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Poochyena",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "101": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Mightyena",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "102": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Stunky",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "103": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Skuntank",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "104": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Spiritomb",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "105": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Skorupi",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "106": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Drapion",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "107": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Croagunk",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "108": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Toxicroak",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "109": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Darkrai",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "11": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Grotle",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "110": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Darkrai ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "111": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Skarmory",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "112": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Registeel",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "113": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Shieldon",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "114": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Bastiodon",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Metal"
+      ]
+    },
+    "115": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Wormadam",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "116": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Bronzor",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "117": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Bronzong",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "118": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Probopass",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "119": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Dialga ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "12": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Torterra",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "120": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Heatran",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "121": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Gible",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "122": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Gabite",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "123": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Garchomp",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "124": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Lickitung",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "125": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Lickilicky ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "126": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Eevee",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "127": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Porygon",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "128": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Porygon2",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "129": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Porygon-Z",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "13": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Kricketot",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "130": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Aipom",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "131": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Ambipom",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "132": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Starly",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "133": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Staravia",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "134": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Staraptor",
+      "rarity": "uncommon",
+      "stage": "Stage2",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "135": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Bidoof",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "136": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Bibarel",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "137": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Buneary",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "138": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Lopunny",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "139": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Glameow",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "14": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Kricketune",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "140": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Purugly",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "141": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Chatot",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "142": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Fan Rotom",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "143": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Regigigas",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "144": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Skull Fossil",
+      "rarity": "common",
+      "stage": null,
+      "types": []
+    },
+    "145": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Armor Fossil",
+      "rarity": "common",
+      "stage": null,
+      "types": []
+    },
+    "146": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Pokémon Communication",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "147": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Giant Cape",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "148": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Rocky Helmet",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "149": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Lum Berry",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "15": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Burmy",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "150": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Cyrus",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "151": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Team Galactic Grunt",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "152": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Cynthia",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "153": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Volkner",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "154": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Dawn",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "155": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Mars",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "156": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Tangrowth",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "157": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Combee",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "158": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Carnivine",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "159": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Shaymin",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "16": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Wormadam",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "160": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Mamoswine",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "161": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Gastrodon",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "162": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Manaphy",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "163": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Shinx",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "164": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Rotom",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "165": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Drifloon",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "166": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Mesprit",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "167": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Giratina",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "168": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Cresselia",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "169": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Rhyperior",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "17": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Combee",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "170": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Lucario",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "171": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Hippopotas",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "172": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Spiritomb",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "173": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Croagunk",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "174": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Heatran",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "175": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Garchomp",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "176": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Staraptor",
+      "rarity": "illustration_rare",
+      "stage": "Stage2",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "177": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Bidoof",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "178": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Glameow",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "179": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Regigigas",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "18": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Vespiquen",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "180": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Yanmega ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "181": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Infernape ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "182": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Palkia ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "183": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Pachirisu ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "184": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Mismagius ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "185": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Gallade ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "186": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Weavile ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "187": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Darkrai ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "188": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Dialga ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "189": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Lickilicky ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "19": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Carnivine",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "190": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Cyrus",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "191": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Team Galactic Grunt",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "192": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Cynthia",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "193": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Volkner",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "194": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Dawn",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "195": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Mars",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "196": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Yanmega ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "197": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Infernape ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "198": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Pachirisu ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "199": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Mismagius ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "2": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Gloom",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "20": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Leafeon",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "200": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Gallade ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "201": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Weavile ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "202": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Darkrai ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "203": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Lickilicky ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "204": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Palkia ex",
+      "rarity": "immersive",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "205": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Dialga ex",
+      "rarity": "immersive",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "206": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Palkia ex",
+      "rarity": "ultra_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "207": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Dialga ex",
+      "rarity": "ultra_rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "21": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Mow Rotom",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "22": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Shaymin",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "23": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Magmar",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "24": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Magmortar",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "25": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Slugma",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "26": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Magcargo",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "27": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Chimchar",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "28": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Monferno",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "29": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Infernape ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fire"
+      ]
+    },
+    "3": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Bellossom",
+      "rarity": "uncommon",
+      "stage": "Stage2",
+      "types": [
+        "Grass"
+      ]
+    },
+    "30": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Heat Rotom",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "31": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Swinub",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "32": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Piloswine",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "33": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Mamoswine",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "34": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Regice",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "35": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Piplup",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "36": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Prinplup",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "37": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Empoleon",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Water"
+      ]
+    },
+    "38": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Buizel",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "39": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Floatzel",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "4": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Tangela",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "40": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Shellos",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "41": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Gastrodon",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "42": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Finneon",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "43": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Lumineon",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "44": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Snover",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "45": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Abomasnow",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "46": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Glaceon",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "47": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Wash Rotom",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "48": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Frost Rotom",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "49": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Palkia ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "5": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Tangrowth",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "50": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Manaphy",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "51": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Magnemite",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "52": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Magneton",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "53": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Magnezone",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "54": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Voltorb",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "55": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Electrode",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "56": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Electabuzz",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "57": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Electivire",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "58": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Shinx",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "59": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Luxio",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "6": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Yanma",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "60": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Luxray",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "61": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Pachirisu ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "62": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Rotom",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "63": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Togepi",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "64": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Togetic",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "65": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Togekiss",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "66": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Misdreavus",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "67": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Mismagius ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "68": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Ralts",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "69": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Kirlia",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "7": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Yanmega ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "70": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Duskull",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "71": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Dusclops",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "72": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 130,
+      "name": "Dusknoir",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "73": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Drifloon",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "74": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Drifblim",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "75": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Uxie",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "76": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Mesprit",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "77": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Azelf",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "78": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Giratina",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "79": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Cresselia",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "8": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Roselia",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "80": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Rhyhorn",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "81": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Rhydon",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "82": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Rhyperior",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "83": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Gligar",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "84": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Gliscor",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "85": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Hitmontop",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "86": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Nosepass",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "87": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Regirock",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "88": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Cranidos",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "89": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Rampardos",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "9": {
+      "boosters": [
+        "Palkia",
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Roserade",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "90": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Wormadam",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "91": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Riolu",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "92": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Lucario",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "93": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Hippopotas",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "94": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Hippowdon",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "95": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Gallade ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "96": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Murkrow",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "97": {
+      "boosters": [
+        "Dialga"
+      ],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Honchkrow",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "98": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Sneasel",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "99": {
+      "boosters": [
+        "Palkia"
+      ],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Weavile ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    }
+  }
+}

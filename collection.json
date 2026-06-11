@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 886,
-    "last_updated": "2026-05-31",
+    "total_cards": 1145,
+    "last_updated": "2026-06-09",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -15,7 +15,7 @@
       "count": 4,
       "set_code": "B1a",
       "card_number": 11,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Charmander",
@@ -24,11 +24,11 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Flame Tail 30",
-      "count": 2,
+      "count": 3,
       "variant": "Flame Tail art",
       "set_code": "B2b",
       "card_number": 7,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Charmeleon",
@@ -38,10 +38,10 @@
       "card_type": "Pokemon",
       "ability": "Ignition",
       "attack": "Slash 40",
-      "count": 2,
+      "count": 4,
       "set_code": "B2b",
       "card_number": 8,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Charizard",
@@ -53,7 +53,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 13,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Mega Charizard Y ex",
@@ -65,7 +65,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 14,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Tepig",
@@ -74,10 +74,10 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Stoke",
-      "count": 2,
+      "count": 4,
       "set_code": "B3",
       "card_number": 26,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Tepig",
@@ -89,7 +89,7 @@
       "count": 7,
       "set_code": "PROMO-B",
       "card_number": 58,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Pignite",
@@ -101,7 +101,7 @@
       "count": 7,
       "set_code": "B3",
       "card_number": 27,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Incineroar ex",
@@ -113,7 +113,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 82,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Houndour",
@@ -125,7 +125,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 15,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Houndoom",
@@ -137,7 +137,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 16,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Moltres ex",
@@ -149,7 +149,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 67,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Hearthflame Mask Ogerpon",
@@ -161,7 +161,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 27,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Victini",
@@ -174,7 +174,7 @@
       "count": 4,
       "set_code": "B3",
       "card_number": 25,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Victini",
@@ -187,7 +187,7 @@
       "count": 1,
       "set_code": "PROMO-B",
       "card_number": 49,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Turtonator",
@@ -199,7 +199,7 @@
       "count": 2,
       "set_code": "B1",
       "card_number": 47,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Arcanine",
@@ -211,7 +211,7 @@
       "count": 1,
       "set_code": "B1",
       "card_number": 29,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Darumaka",
@@ -223,7 +223,7 @@
       "count": 4,
       "set_code": "B3",
       "card_number": 29,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Darmanitan",
@@ -235,7 +235,7 @@
       "count": 4,
       "set_code": "B3",
       "card_number": 30,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Larvesta",
@@ -247,7 +247,7 @@
       "count": 6,
       "set_code": "B3",
       "card_number": 31,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Numel",
@@ -259,7 +259,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 21,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Castform Sunny Form",
@@ -268,10 +268,10 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Sunny Scorching 30",
-      "count": 2,
+      "count": 4,
       "set_code": "B3",
       "card_number": 24,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Castform Sunny Form",
@@ -283,7 +283,7 @@
       "count": 3,
       "set_code": "PROMO-B",
       "card_number": 57,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Mega Camerupt ex",
@@ -292,10 +292,10 @@
       "hp": 210,
       "card_type": "Pokemon",
       "attack": "Volcanic Kaboom 160",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 23,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Litten",
@@ -306,7 +306,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 78,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Camerupt",
@@ -314,10 +314,10 @@
       "stage": 1,
       "hp": 130,
       "card_type": "Pokemon",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 22,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Volcarona",
@@ -325,10 +325,10 @@
       "stage": 1,
       "hp": 110,
       "card_type": "Pokemon",
-      "count": 2,
+      "count": 3,
       "set_code": "B3",
       "card_number": 32,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Bulbasaur",
@@ -340,7 +340,7 @@
       "count": 1,
       "set_code": "A1",
       "card_number": 1,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Bulbasaur",
@@ -353,7 +353,7 @@
       "variant": "alt art",
       "set_code": "A1",
       "card_number": 227,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Bulbasaur",
@@ -366,7 +366,7 @@
       "variant": "Tackle art",
       "set_code": "B1a",
       "card_number": 1,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Ivysaur",
@@ -378,7 +378,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 2,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Mega Venusaur ex",
@@ -390,7 +390,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 4,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Shroomish",
@@ -402,7 +402,7 @@
       "count": 7,
       "set_code": "B3",
       "card_number": 11,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Budew",
@@ -414,7 +414,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 13,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Breloom",
@@ -426,7 +426,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 12,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Treecko",
@@ -435,10 +435,10 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Pound 20",
-      "count": 4,
+      "count": 5,
       "set_code": "B3",
       "card_number": 5,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Treecko",
@@ -450,7 +450,7 @@
       "count": 4,
       "set_code": "PROMO-B",
       "card_number": 61,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Surskit",
@@ -462,19 +462,19 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 9,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Surskit",
       "type": "Grass",
       "stage": 0,
-      "hp": 50,
+      "hp": 60,
       "card_type": "Pokemon",
       "attack": "Firefighting 10",
-      "count": 2,
+      "count": 6,
       "set_code": "B3A",
       "card_number": 1,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Masquerain",
@@ -486,7 +486,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 10,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Masquerain",
@@ -495,10 +495,10 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Gust 40",
-      "count": 1,
+      "count": 3,
       "set_code": "B3A",
       "card_number": 2,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Carnivine",
@@ -507,10 +507,10 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Bite 30",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 14,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Sewaddle",
@@ -522,7 +522,7 @@
       "count": 5,
       "set_code": "B3",
       "card_number": 15,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Swadloon",
@@ -534,7 +534,7 @@
       "count": 8,
       "set_code": "B3",
       "card_number": 16,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Applin",
@@ -546,7 +546,7 @@
       "count": 9,
       "set_code": "B3",
       "card_number": 19,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Leavanny",
@@ -555,10 +555,10 @@
       "hp": 140,
       "card_type": "Pokemon",
       "attack": "Razor Leaf 100",
-      "count": 2,
+      "count": 3,
       "set_code": "B3",
       "card_number": 17,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Silcoon",
@@ -570,7 +570,7 @@
       "count": 1,
       "set_code": "B1",
       "card_number": 4,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Seedot",
@@ -582,7 +582,7 @@
       "count": 1,
       "set_code": "B1",
       "card_number": 8,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Mothim",
@@ -594,7 +594,7 @@
       "count": 3,
       "set_code": "B1a",
       "card_number": 10,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Burmy",
@@ -606,7 +606,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 9,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Tangela",
@@ -618,7 +618,7 @@
       "count": 8,
       "set_code": "B3",
       "card_number": 1,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Venonat",
@@ -630,7 +630,7 @@
       "count": 1,
       "set_code": "A1",
       "card_number": 16,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Roselia",
@@ -642,7 +642,7 @@
       "count": 2,
       "set_code": "B2",
       "card_number": 4,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Spinarak",
@@ -654,7 +654,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 5,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Sunkern",
@@ -666,7 +666,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 7,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Cherubi",
@@ -679,7 +679,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 26,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Heracross",
@@ -690,7 +690,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 3,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Sceptile",
@@ -701,7 +701,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 7,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Shaymin",
@@ -712,7 +712,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 297,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Mega Heracross ex",
@@ -723,7 +723,7 @@
       "count": 1,
       "set_code": "PROMO-B",
       "card_number": 56,
-      "rarity": null
+      "rarity": "promo"
     },
     {
       "name": "Exeggcute",
@@ -735,7 +735,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 11,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Exeggcute",
@@ -747,7 +747,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 12,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Ledyba",
@@ -759,7 +759,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 1,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Grovyle",
@@ -771,7 +771,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 6,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Grovyle",
@@ -784,7 +784,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 157,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Sobble",
@@ -793,10 +793,10 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Find a Friend",
-      "count": 6,
+      "count": 8,
       "set_code": "B3",
       "card_number": 48,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Wartortle",
@@ -809,7 +809,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 18,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Vaporeon ex",
@@ -822,7 +822,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 37,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Clawitzer",
@@ -834,7 +834,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 23,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Huntail",
@@ -843,10 +843,10 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Hydro Splash 70",
-      "count": 4,
+      "count": 5,
       "set_code": "B3",
       "card_number": 43,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Gorebyss",
@@ -855,10 +855,10 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Aqua Edge 40",
-      "count": 2,
+      "count": 3,
       "set_code": "B3",
       "card_number": 44,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Quagsire",
@@ -867,10 +867,10 @@
       "hp": 130,
       "card_type": "Pokemon",
       "attack": "Muddy Headbutt 60+",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 39,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Poliwhirl",
@@ -882,7 +882,7 @@
       "count": 3,
       "set_code": "B3",
       "card_number": 34,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Paldean Tauros",
@@ -891,10 +891,10 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Smash Kick 50",
-      "count": 4,
+      "count": 6,
       "set_code": "B3",
       "card_number": 36,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Shellder",
@@ -906,7 +906,7 @@
       "count": 1,
       "set_code": "A1",
       "card_number": 66,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Clauncher",
@@ -918,7 +918,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 22,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Basculin",
@@ -930,7 +930,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 21,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Wooper",
@@ -942,7 +942,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 38,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Castform Rainy Form",
@@ -954,7 +954,7 @@
       "count": 5,
       "set_code": "B3",
       "card_number": 40,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Castform Snowy Form",
@@ -963,10 +963,10 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Snowy Chilling 40",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 41,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Clamperl",
@@ -978,7 +978,7 @@
       "count": 5,
       "set_code": "B3",
       "card_number": 42,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Cubchoo",
@@ -987,10 +987,10 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Icicle Punch 30",
-      "count": 4,
+      "count": 5,
       "set_code": "B3",
       "card_number": 46,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Frillish",
@@ -1002,7 +1002,7 @@
       "count": 1,
       "set_code": "B1",
       "card_number": 68,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Chewtle",
@@ -1014,7 +1014,7 @@
       "count": 1,
       "set_code": "B1",
       "card_number": 76,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Chewtle",
@@ -1026,7 +1026,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 43,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Froakie",
@@ -1037,7 +1037,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 110,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Vanilluxe",
@@ -1048,7 +1048,7 @@
       "count": 2,
       "set_code": "B2",
       "card_number": 39,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Cryogonal",
@@ -1059,7 +1059,7 @@
       "count": 2,
       "set_code": "B2",
       "card_number": 40,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Regice",
@@ -1067,10 +1067,10 @@
       "stage": 0,
       "hp": 110,
       "card_type": "Pokemon",
-      "count": 3,
+      "count": 5,
       "set_code": "B3",
       "card_number": 45,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Beartic",
@@ -1081,7 +1081,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 47,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Inteleon",
@@ -1092,7 +1092,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 50,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Drizzile",
@@ -1104,7 +1104,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 49,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Magnezone ex",
@@ -1116,7 +1116,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 54,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Eelektross",
@@ -1128,7 +1128,7 @@
       "count": 1,
       "set_code": "A1",
       "card_number": 109,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Magneton",
@@ -1141,7 +1141,7 @@
       "variant": "Spark art",
       "set_code": "B1a",
       "card_number": 25,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Magneton",
@@ -1150,11 +1150,11 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Magnetic Blast 50",
-      "count": 2,
+      "count": 3,
       "variant": "Magnetic Blast art",
       "set_code": "B3",
       "card_number": 53,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Magnemite",
@@ -1167,7 +1167,7 @@
       "variant": "Electro Ball art",
       "set_code": "B1a",
       "card_number": 24,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Magnemite",
@@ -1180,7 +1180,7 @@
       "variant": "Thunder Shock art",
       "set_code": "B3",
       "card_number": 52,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Heliolisk",
@@ -1192,7 +1192,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 29,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Helioptile",
@@ -1204,7 +1204,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 28,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Lanturn",
@@ -1216,7 +1216,7 @@
       "count": 5,
       "set_code": "B3",
       "card_number": 58,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Morpeko",
@@ -1228,7 +1228,7 @@
       "count": 3,
       "set_code": "B3",
       "card_number": 62,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Joltik",
@@ -1240,7 +1240,7 @@
       "count": 1,
       "set_code": "B1",
       "card_number": 92,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Voltorb",
@@ -1249,10 +1249,10 @@
       "hp": 50,
       "card_type": "Pokemon",
       "attack": "Single Shot Blast 50",
-      "count": 5,
+      "count": 7,
       "set_code": "B3",
       "card_number": 55,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Electrode",
@@ -1261,10 +1261,10 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Electroblast 20+",
-      "count": 7,
+      "count": 8,
       "set_code": "B3",
       "card_number": 56,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Pikachu",
@@ -1273,10 +1273,10 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Spark 10",
-      "count": 1,
+      "count": 4,
       "set_code": "PROMO-B",
       "card_number": 1,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Toxel",
@@ -1284,10 +1284,10 @@
       "stage": 0,
       "hp": 60,
       "card_type": "Pokemon",
-      "count": 4,
+      "count": 5,
       "set_code": "B3",
       "card_number": 60,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Meloetta",
@@ -1299,7 +1299,7 @@
       "count": 3,
       "set_code": "B3",
       "card_number": 89,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Mismagius",
@@ -1311,7 +1311,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 31,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Hattrem",
@@ -1320,10 +1320,10 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Disarming Voice 20",
-      "count": 3,
+      "count": 4,
       "set_code": "B3",
       "card_number": 70,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Aromatisse",
@@ -1335,7 +1335,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 36,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Galarian Rapidash",
@@ -1347,19 +1347,19 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 59,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Misdreavus",
       "type": "Psychic",
       "stage": 0,
-      "hp": 50,
+      "hp": 60,
       "card_type": "Pokemon",
       "attack": "Lead",
       "count": 1,
       "set_code": "A4b",
       "card_number": 161,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Misdreavus",
@@ -1371,7 +1371,7 @@
       "count": 4,
       "set_code": "B1a",
       "card_number": 30,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Solosis",
@@ -1383,7 +1383,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 32,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Spritzee",
@@ -1395,7 +1395,7 @@
       "count": 6,
       "set_code": "B1a",
       "card_number": 35,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Ralts",
@@ -1407,19 +1407,19 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 63,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Ralts",
       "type": "Psychic",
       "stage": 0,
-      "hp": 60,
+      "hp": 70,
       "card_type": "Pokemon",
       "attack": "Confuse Ray",
       "count": 1,
       "set_code": "B3",
       "card_number": 63,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Sinistea",
@@ -1431,7 +1431,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 74,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Espurr",
@@ -1440,10 +1440,10 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Mumble 20",
-      "count": 5,
+      "count": 6,
       "set_code": "B3",
       "card_number": 65,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Oricorio",
@@ -1452,10 +1452,10 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Pester the Dizzy 20+",
-      "count": 6,
+      "count": 7,
       "set_code": "B3",
       "card_number": 68,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Hatenna",
@@ -1464,22 +1464,22 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Stampede 10",
-      "count": 2,
+      "count": 5,
       "set_code": "B3",
       "card_number": 69,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Bramblin",
       "type": "Psychic",
       "stage": 0,
-      "hp": 60,
+      "hp": 50,
       "card_type": "Pokemon",
       "attack": "Petty Grudge 20",
       "count": 1,
       "set_code": "B2a",
       "card_number": 10,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Bramblin",
@@ -1491,7 +1491,7 @@
       "count": 4,
       "set_code": "B3",
       "card_number": 72,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Galarian Ponyta",
@@ -1502,7 +1502,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 58,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Indeedee",
@@ -1513,7 +1513,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 76,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Hypno",
@@ -1524,7 +1524,7 @@
       "count": 1,
       "set_code": "B2b",
       "card_number": 29,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Kirlia",
@@ -1535,7 +1535,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 64,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Kirlia",
@@ -1546,7 +1546,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 64,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Diancie",
@@ -1557,7 +1557,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 67,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Weezing",
@@ -1569,7 +1569,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 102,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Marowak ex",
@@ -1581,7 +1581,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 196,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Single Strike Urshifu",
@@ -1594,7 +1594,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 113,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Sandslash",
@@ -1606,7 +1606,7 @@
       "count": 2,
       "set_code": "A1",
       "card_number": 138,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Hariyama",
@@ -1618,7 +1618,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 40,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Machamp",
@@ -1630,7 +1630,7 @@
       "count": 3,
       "set_code": "B2",
       "card_number": 81,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Machop",
@@ -1642,7 +1642,7 @@
       "count": 2,
       "set_code": "B2",
       "card_number": 79,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Makuhita",
@@ -1654,7 +1654,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 39,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Hitmonchan",
@@ -1666,7 +1666,7 @@
       "count": 1,
       "set_code": "A1",
       "card_number": 155,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Mienfoo",
@@ -1679,7 +1679,7 @@
       "variant": "Pound art",
       "set_code": "A1",
       "card_number": 160,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Mienfoo",
@@ -1692,7 +1692,7 @@
       "variant": "Chop art",
       "set_code": "B1a",
       "card_number": 43,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Mienshao",
@@ -1705,7 +1705,7 @@
       "variant": "Spiral Kick art",
       "set_code": "A1",
       "card_number": 161,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Mienshao",
@@ -1718,7 +1718,7 @@
       "variant": "Low Sweep art",
       "set_code": "B1a",
       "card_number": 44,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Riolu",
@@ -1727,11 +1727,11 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Fighting Fast 10+",
-      "count": 4,
+      "count": 7,
       "variant": "Fighting Fast art",
       "set_code": "B3",
       "card_number": 79,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Riolu",
@@ -1744,7 +1744,7 @@
       "variant": "Fighting Fist alt art",
       "set_code": "B3",
       "card_number": 169,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Sandshrew",
@@ -1756,19 +1756,19 @@
       "count": 2,
       "set_code": "A1",
       "card_number": 137,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Sandshrew",
       "type": "Fighting",
       "stage": 0,
-      "hp": 70,
+      "hp": 60,
       "card_type": "Pokemon",
       "attack": "Scratch 10",
       "count": 1,
       "set_code": "B2",
       "card_number": 77,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Cubone",
@@ -1777,22 +1777,22 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Growl",
-      "count": 2,
+      "count": 3,
       "set_code": "A4b",
       "card_number": 194,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Cubone",
       "type": "Fighting",
       "stage": 0,
-      "hp": 60,
+      "hp": 70,
       "card_type": "Pokemon",
       "attack": "Growl",
       "count": 1,
       "set_code": "B2",
       "card_number": 82,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Onix",
@@ -1805,7 +1805,7 @@
       "variant": "Land Crush art",
       "set_code": "A1",
       "card_number": 150,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Onix",
@@ -1818,19 +1818,19 @@
       "variant": "Dig art",
       "set_code": "B1a",
       "card_number": 38,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Nosepass",
       "type": "Fighting",
       "stage": 0,
-      "hp": 70,
+      "hp": 80,
       "card_type": "Pokemon",
       "attack": "Rising Lunge 10+",
       "count": 1,
       "set_code": "A4b",
       "card_number": 203,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Nosepass",
@@ -1842,7 +1842,7 @@
       "count": 6,
       "set_code": "B1a",
       "card_number": 41,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Sandygast",
@@ -1854,7 +1854,7 @@
       "count": 1,
       "set_code": "B1",
       "card_number": 143,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Palossand",
@@ -1866,7 +1866,7 @@
       "count": 1,
       "set_code": "B1",
       "card_number": 144,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Bewear",
@@ -1878,7 +1878,7 @@
       "count": 3,
       "set_code": "B3",
       "card_number": 91,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Sandaconda",
@@ -1890,7 +1890,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 96,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Gligar",
@@ -1899,10 +1899,10 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Lunge 40",
-      "count": 1,
+      "count": 3,
       "set_code": "B3",
       "card_number": 74,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Trapinch",
@@ -1911,10 +1911,10 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Mud-Slap 10",
-      "count": 3,
+      "count": 5,
       "set_code": "B3",
       "card_number": 76,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Roggenrola",
@@ -1926,7 +1926,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 85,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Rockruff",
@@ -1938,7 +1938,7 @@
       "count": 2,
       "set_code": "A3",
       "card_number": 98,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Rockruff",
@@ -1950,7 +1950,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 220,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Toxicroak",
@@ -1962,7 +1962,7 @@
       "count": 7,
       "set_code": "B3",
       "card_number": 83,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Croagunk",
@@ -1971,10 +1971,10 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Corkscrew Punch 20",
-      "count": 7,
+      "count": 9,
       "set_code": "B3",
       "card_number": 82,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Meditite",
@@ -1986,7 +1986,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 83,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Throh",
@@ -1998,7 +1998,7 @@
       "count": 3,
       "set_code": "B3",
       "card_number": 85,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Sawk",
@@ -2010,7 +2010,7 @@
       "count": 3,
       "set_code": "B3",
       "card_number": 86,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Dwebble",
@@ -2019,10 +2019,10 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Ram 20",
-      "count": 5,
+      "count": 6,
       "set_code": "B3",
       "card_number": 87,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Dwebble",
@@ -2034,7 +2034,7 @@
       "count": 3,
       "set_code": "PROMO-B",
       "card_number": 59,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Stufful",
@@ -2046,7 +2046,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 90,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Rolycoly",
@@ -2055,10 +2055,10 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Rolling Tackle 20",
-      "count": 4,
+      "count": 5,
       "set_code": "B3",
       "card_number": 92,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Silicobra",
@@ -2067,10 +2067,10 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Headbutt 30",
-      "count": 4,
+      "count": 5,
       "set_code": "B3",
       "card_number": 95,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Kubfu",
@@ -2079,10 +2079,10 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Training",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 97,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Zygarde 10% Forme",
@@ -2094,7 +2094,7 @@
       "count": 1,
       "set_code": "PROMO-B",
       "card_number": 51,
-      "rarity": null
+      "rarity": "promo"
     },
     {
       "name": "Zygarde 50% Forme",
@@ -2106,7 +2106,7 @@
       "count": 3,
       "set_code": "PROMO-B",
       "card_number": 52,
-      "rarity": null
+      "rarity": "promo"
     },
     {
       "name": "Zygarde ex",
@@ -2118,7 +2118,7 @@
       "count": 1,
       "set_code": "PROMO-B",
       "card_number": 53,
-      "rarity": null
+      "rarity": "promo"
     },
     {
       "name": "Krookodile",
@@ -2130,7 +2130,7 @@
       "count": 1,
       "set_code": "B1",
       "card_number": 132,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Lucario",
@@ -2141,7 +2141,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 80,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Yveltal",
@@ -2153,7 +2153,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 108,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Crobat",
@@ -2165,7 +2165,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 100,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Golbat",
@@ -2177,7 +2177,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 99,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Zubat",
@@ -2186,10 +2186,10 @@
       "hp": 50,
       "card_type": "Pokemon",
       "attack": "Spin Turn 10",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 98,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Alolan Persian",
@@ -2201,7 +2201,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 95,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Garbodor",
@@ -2210,10 +2210,10 @@
       "hp": 130,
       "card_type": "Pokemon",
       "attack": "Acid Spray 70",
-      "count": 3,
+      "count": 4,
       "set_code": "B1a",
       "card_number": 50,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Mandibuzz",
@@ -2222,10 +2222,10 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Blindside 60",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 110,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Vullaby",
@@ -2237,7 +2237,7 @@
       "count": 5,
       "set_code": "B3",
       "card_number": 109,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Malamar",
@@ -2249,7 +2249,7 @@
       "count": 3,
       "set_code": "B3",
       "card_number": 112,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Grimer",
@@ -2261,7 +2261,7 @@
       "count": 3,
       "set_code": "B1a",
       "card_number": 45,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Trubbish",
@@ -2270,10 +2270,10 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Drool 30",
-      "count": 1,
+      "count": 2,
       "set_code": "B1a",
       "card_number": 49,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Zorua",
@@ -2282,10 +2282,10 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Ascension",
-      "count": 2,
+      "count": 5,
       "set_code": "B3",
       "card_number": 105,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Seviper",
@@ -2294,10 +2294,10 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Poison Jab 20",
-      "count": 5,
+      "count": 7,
       "set_code": "B3",
       "card_number": 104,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Scraggy",
@@ -2309,7 +2309,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 106,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Koffing",
@@ -2321,7 +2321,7 @@
       "count": 4,
       "set_code": "B3",
       "card_number": 101,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Qwilfish",
@@ -2333,7 +2333,7 @@
       "count": 4,
       "set_code": "B3",
       "card_number": 103,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Sneasel",
@@ -2344,7 +2344,7 @@
       "count": 1,
       "set_code": "A4",
       "card_number": 115,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Sneasel",
@@ -2355,7 +2355,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 243,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Sneasel",
@@ -2366,7 +2366,7 @@
       "count": 3,
       "set_code": "B3A",
       "card_number": 38,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Umbreon ex",
@@ -2377,7 +2377,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 241,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Foongus",
@@ -2388,7 +2388,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 107,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Inkay",
@@ -2396,10 +2396,10 @@
       "stage": 0,
       "hp": 60,
       "card_type": "Pokemon",
-      "count": 4,
+      "count": 5,
       "set_code": "B3",
       "card_number": 111,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Zarude",
@@ -2410,7 +2410,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 114,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Zarude",
@@ -2421,7 +2421,7 @@
       "count": 1,
       "set_code": "PROMO-B",
       "card_number": 60,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Galarian Linoone",
@@ -2433,7 +2433,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 99,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Crobat ex",
@@ -2445,7 +2445,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 232,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Genesect",
@@ -2457,7 +2457,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 54,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Magearna",
@@ -2469,7 +2469,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 121,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Meltan",
@@ -2481,7 +2481,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 122,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Steelix",
@@ -2493,7 +2493,7 @@
       "count": 3,
       "set_code": "B1a",
       "card_number": 51,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Probopass",
@@ -2505,7 +2505,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 53,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Doublade",
@@ -2517,7 +2517,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 119,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Bronzong",
@@ -2529,7 +2529,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 118,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Bisharp",
@@ -2541,19 +2541,19 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 120,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Bisharp",
       "type": "Metal",
       "stage": 1,
-      "hp": 90,
+      "hp": 80,
       "card_type": "Pokemon",
       "attack": "Night Slash 60",
       "count": 1,
       "set_code": "B3A",
       "card_number": 42,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Bronzor",
@@ -2565,7 +2565,7 @@
       "count": 4,
       "set_code": "B3",
       "card_number": 117,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Pawniard",
@@ -2574,22 +2574,22 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Cut Up 10",
-      "count": 2,
+      "count": 3,
       "set_code": "B3",
       "card_number": 119,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Pawniard",
       "type": "Metal",
       "stage": 0,
-      "hp": 60,
+      "hp": 50,
       "card_type": "Pokemon",
       "attack": "Cut Up 10",
-      "count": 4,
+      "count": 5,
       "set_code": "B3A",
       "card_number": 41,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Mawile",
@@ -2601,7 +2601,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 112,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Varoom",
@@ -2610,10 +2610,10 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Suffocating Gas 40",
-      "count": 1,
+      "count": 2,
       "set_code": "B2b",
       "card_number": 49,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Mega Mawile ex",
@@ -2625,7 +2625,7 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 113,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Vibrava",
@@ -2637,7 +2637,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 125,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Dratini",
@@ -2649,7 +2649,7 @@
       "count": 1,
       "set_code": "A1",
       "card_number": 183,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Axew",
@@ -2660,7 +2660,7 @@
       "count": 1,
       "set_code": "B2b",
       "card_number": 54,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Stoutland",
@@ -2672,7 +2672,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 139,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Herdier",
@@ -2681,10 +2681,10 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Hammer In 50",
-      "count": 3,
+      "count": 5,
       "set_code": "B3",
       "card_number": 138,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Lillipup",
@@ -2693,10 +2693,10 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Puppy Pile 20x",
-      "count": 6,
+      "count": 7,
       "set_code": "B3",
       "card_number": 137,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Dodrio",
@@ -2708,7 +2708,7 @@
       "count": 1,
       "set_code": "A1",
       "card_number": 200,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Corvisquire",
@@ -2717,22 +2717,22 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Joust 30",
-      "count": 2,
+      "count": 3,
       "set_code": "B3",
       "card_number": 146,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Corvisquire",
       "type": "Colorless",
       "stage": 1,
-      "hp": 80,
+      "hp": 70,
       "card_type": "Pokemon",
       "attack": "Joust 30",
-      "count": 1,
+      "count": 3,
       "set_code": "B3A",
       "card_number": 66,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Corviknight ex",
@@ -2744,7 +2744,7 @@
       "count": 1,
       "set_code": "B3",
       "card_number": 124,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Porygon2",
@@ -2756,7 +2756,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 57,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Porygon",
@@ -2768,7 +2768,7 @@
       "count": 3,
       "set_code": "B1a",
       "card_number": 56,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Staraptor",
@@ -2780,7 +2780,7 @@
       "count": 5,
       "set_code": "B1a",
       "card_number": 61,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Staravia",
@@ -2792,7 +2792,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 60,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Starly",
@@ -2804,7 +2804,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 59,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Bouffalant",
@@ -2816,7 +2816,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 64,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Furfrou",
@@ -2829,20 +2829,20 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 65,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Furfrou",
       "type": "Colorless",
       "stage": 0,
-      "hp": 70,
+      "hp": 80,
       "card_type": "Pokemon",
       "ability": "Fur Coat",
       "attack": "Tackle 30",
       "count": 2,
       "set_code": "B3",
       "card_number": 144,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Ditto",
@@ -2854,7 +2854,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 55,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Ursaring",
@@ -2863,10 +2863,10 @@
       "hp": 110,
       "card_type": "Pokemon",
       "attack": "Raging Claws 40+",
-      "count": 2,
+      "count": 3,
       "set_code": "B3",
       "card_number": 132,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Audino",
@@ -2875,10 +2875,10 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Healing Light 40",
-      "count": 2,
+      "count": 3,
       "set_code": "B3",
       "card_number": 140,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Chansey",
@@ -2887,10 +2887,10 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Bind Wound",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 127,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Dubwool",
@@ -2902,7 +2902,7 @@
       "count": 1,
       "set_code": "A1",
       "card_number": 215,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Cinccino",
@@ -2911,10 +2911,10 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Knock Away 30+",
-      "count": 3,
+      "count": 7,
       "set_code": "B3",
       "card_number": 143,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Minccino",
@@ -2923,10 +2923,10 @@
       "hp": 50,
       "card_type": "Pokemon",
       "attack": "Fluffy Tail",
-      "count": 5,
+      "count": 8,
       "set_code": "B3",
       "card_number": 142,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Watchog",
@@ -2938,7 +2938,7 @@
       "count": 4,
       "set_code": "B3",
       "card_number": 136,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Eevee",
@@ -2947,22 +2947,22 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Jumping Kick",
-      "count": 3,
+      "count": 4,
       "set_code": "B3",
       "card_number": 129,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Eevee",
       "type": "Colorless",
       "stage": 0,
-      "hp": 60,
+      "hp": 50,
       "card_type": "Pokemon",
       "attack": "Jumping Kick",
-      "count": 1,
+      "count": 2,
       "set_code": "B3A",
       "card_number": 56,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Castform",
@@ -2971,10 +2971,10 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Blow Through 20+",
-      "count": 6,
+      "count": 8,
       "set_code": "B3",
       "card_number": 133,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Raticate",
@@ -2986,7 +2986,7 @@
       "count": 1,
       "set_code": "A1",
       "card_number": 190,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Rattata",
@@ -2998,7 +2998,7 @@
       "count": 2,
       "set_code": "A1",
       "card_number": 189,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Jigglypuff",
@@ -3010,19 +3010,19 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 277,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Jigglypuff",
       "type": "Colorless",
       "stage": 0,
-      "hp": 60,
+      "hp": 70,
       "card_type": "Pokemon",
       "attack": "Pound 30",
-      "count": 1,
+      "count": 2,
       "set_code": "B2b",
       "card_number": 58,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Farfetch'd",
@@ -3034,7 +3034,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 359,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Buneary",
@@ -3046,7 +3046,7 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 62,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Pidgey",
@@ -3058,7 +3058,7 @@
       "count": 2,
       "set_code": "A1",
       "card_number": 186,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Pidgeotto",
@@ -3069,7 +3069,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 274,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Spinda",
@@ -3080,7 +3080,7 @@
       "count": 2,
       "set_code": "B2",
       "card_number": 137,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Snorlax ex",
@@ -3091,7 +3091,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 288,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Patrat",
@@ -3099,10 +3099,10 @@
       "stage": 0,
       "hp": 60,
       "card_type": "Pokemon",
-      "count": 2,
+      "count": 3,
       "set_code": "B3",
       "card_number": 135,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Tandemaus",
@@ -3111,10 +3111,10 @@
       "hp": 40,
       "card_type": "Pokemon",
       "attack": "Team Tackle 20",
-      "count": 1,
+      "count": 2,
       "set_code": "B2",
       "card_number": 142,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Teddiursa",
@@ -3126,7 +3126,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 131,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Quick-Grow Extract",
@@ -3136,7 +3136,7 @@
       "count": 3,
       "set_code": "B1a",
       "card_number": 67,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Quick-Grow Extract",
@@ -3146,7 +3146,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 103,
-      "rarity": "two_diamond"
+      "rarity": "ultra_rare"
     },
     {
       "name": "Flame Patch",
@@ -3156,7 +3156,7 @@
       "count": 2,
       "set_code": "B1",
       "card_number": 217,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Rare Candy",
@@ -3166,7 +3166,7 @@
       "count": 3,
       "set_code": "A4b",
       "card_number": 314,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Field Blower",
@@ -3176,7 +3176,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 147,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Giant Cape",
@@ -3186,7 +3186,7 @@
       "count": 2,
       "set_code": "A4b",
       "card_number": 320,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Clemont's Backpack",
@@ -3196,7 +3196,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 66,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Red Card",
@@ -3206,7 +3206,7 @@
       "count": 2,
       "set_code": "PROMO-A",
       "card_number": 6,
-      "rarity": null
+      "rarity": "promo"
     },
     {
       "name": "Potion",
@@ -3216,7 +3216,7 @@
       "count": 2,
       "set_code": "PROMO-A",
       "card_number": 1,
-      "rarity": null
+      "rarity": "promo"
     },
     {
       "name": "X Speed",
@@ -3226,7 +3226,7 @@
       "count": 2,
       "set_code": "PROMO-A",
       "card_number": 2,
-      "rarity": null
+      "rarity": "promo"
     },
     {
       "name": "Hand Scope",
@@ -3236,7 +3236,7 @@
       "count": 3,
       "set_code": "PROMO-A",
       "card_number": 3,
-      "rarity": null
+      "rarity": "promo"
     },
     {
       "name": "Pokédex",
@@ -3246,7 +3246,7 @@
       "count": 2,
       "set_code": "PROMO-A",
       "card_number": 4,
-      "rarity": null
+      "rarity": "promo"
     },
     {
       "name": "Poké Ball",
@@ -3256,16 +3256,16 @@
       "count": 4,
       "set_code": "PROMO-A",
       "card_number": 5,
-      "rarity": null
+      "rarity": "promo"
     },
     {
       "name": "Lucky Egg",
       "card_type": "Trainer",
       "trainer_subtype": "Item",
-      "count": 3,
+      "count": 4,
       "set_code": "B3",
       "card_number": 148,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Clemont",
@@ -3275,7 +3275,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 68,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Serena",
@@ -3285,7 +3285,7 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 69,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Giovanni",
@@ -3295,7 +3295,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 334,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Sabrina",
@@ -3305,7 +3305,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 338,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Leaf",
@@ -3315,7 +3315,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 346,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Cyrus",
@@ -3325,17 +3325,17 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 326,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Korrina",
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "effect": "Fighting Pokemon do +30 damage vs opponent's Active ex this turn",
-      "count": 7,
+      "count": 8,
       "set_code": "B3",
       "card_number": 149,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Cheren",
@@ -3345,7 +3345,7 @@
       "count": 3,
       "set_code": "B3",
       "card_number": 151,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "May",
@@ -3355,7 +3355,7 @@
       "count": 1,
       "set_code": "B1",
       "card_number": 223,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Copycat",
@@ -3365,7 +3365,7 @@
       "count": 2,
       "set_code": "B1",
       "card_number": 225,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Lillie",
@@ -3375,7 +3375,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 348,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Professor's Research",
@@ -3385,7 +3385,7 @@
       "count": 4,
       "set_code": "PROMO-A",
       "card_number": 7,
-      "rarity": "two_star"
+      "rarity": "super_rare"
     },
     {
       "name": "Lyra",
@@ -3394,7 +3394,7 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 332,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Cabbie",
@@ -3403,7 +3403,7 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 150,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Starting Plains",
@@ -3413,17 +3413,17 @@
       "count": 1,
       "set_code": "B2",
       "card_number": 154,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Arena of Antiquity",
       "card_type": "Trainer",
       "trainer_subtype": "Stadium",
       "effect": "Each Fighting Pokemon's attacks do +20 vs opponent's Active ex",
-      "count": 3,
+      "count": 4,
       "set_code": "B3",
       "card_number": 154,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Peculiar Plaza",
@@ -3432,7 +3432,7 @@
       "count": 2,
       "set_code": "B2",
       "card_number": 155,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Cetoddle",
@@ -3444,7 +3444,7 @@
       "hp": 100,
       "set_code": "B2a",
       "card_number": 29,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Veluza",
@@ -3456,7 +3456,7 @@
       "hp": 100,
       "set_code": "B2a",
       "card_number": 31,
-      "rarity": "two_diamond"
+      "rarity": "common"
     },
     {
       "name": "Toedscool",
@@ -3468,7 +3468,7 @@
       "hp": 60,
       "set_code": "B2a",
       "card_number": 59,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Gallade",
@@ -3480,7 +3480,7 @@
       "hp": 150,
       "set_code": "PROMO-B",
       "card_number": 62,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Arven",
@@ -3489,7 +3489,7 @@
       "trainer_subtype": "Supporter",
       "set_code": "B2a",
       "card_number": 91,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Tarountula",
@@ -3501,7 +3501,7 @@
       "hp": 50,
       "set_code": "B2a",
       "card_number": 4,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Scovillain",
@@ -3513,7 +3513,7 @@
       "hp": 100,
       "set_code": "B2a",
       "card_number": 13,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Rellor",
@@ -3525,7 +3525,7 @@
       "hp": 50,
       "set_code": "B2a",
       "card_number": 14,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Charcadet",
@@ -3537,11 +3537,11 @@
       "hp": 60,
       "set_code": "B2a",
       "card_number": 19,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Quaxwell",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Water",
       "stage": 1,
@@ -3549,7 +3549,7 @@
       "hp": 80,
       "set_code": "B2a",
       "card_number": 23,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Wiglett",
@@ -3561,7 +3561,7 @@
       "hp": 60,
       "set_code": "B2a",
       "card_number": 25,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Wugtrio",
@@ -3573,7 +3573,7 @@
       "hp": 90,
       "set_code": "B2a",
       "card_number": 26,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Frigibax",
@@ -3585,7 +3585,7 @@
       "hp": 60,
       "set_code": "B2a",
       "card_number": 34,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Arctibax",
@@ -3597,7 +3597,7 @@
       "hp": 90,
       "set_code": "B2a",
       "card_number": 35,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Baxcalibur",
@@ -3609,7 +3609,7 @@
       "hp": 140,
       "set_code": "B2a",
       "card_number": 36,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Pawmi",
@@ -3621,7 +3621,7 @@
       "hp": 60,
       "set_code": "B2a",
       "card_number": 38,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Pawmi",
@@ -3630,10 +3630,10 @@
       "type": "Lightning",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 60,
+      "hp": 50,
       "set_code": "B3A",
       "card_number": 14,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Pawmo",
@@ -3645,19 +3645,19 @@
       "hp": 90,
       "set_code": "B2a",
       "card_number": 39,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Pawmo",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "type": "Lightning",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 90,
+      "hp": 80,
       "set_code": "B3A",
       "card_number": 15,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Pawmot",
@@ -3669,7 +3669,7 @@
       "hp": 140,
       "set_code": "B2a",
       "card_number": 40,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Pawmot",
@@ -3678,10 +3678,10 @@
       "type": "Lightning",
       "stage": 2,
       "stage_label": "Stage 2",
-      "hp": 140,
+      "hp": 130,
       "set_code": "B3A",
       "card_number": 16,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Tadbulb",
@@ -3693,7 +3693,7 @@
       "hp": 60,
       "set_code": "B2a",
       "card_number": 41,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Rabsca",
@@ -3705,7 +3705,7 @@
       "hp": 70,
       "set_code": "B2a",
       "card_number": 49,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Mankey",
@@ -3717,7 +3717,7 @@
       "hp": 60,
       "set_code": "B2a",
       "card_number": 55,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Klawf",
@@ -3729,7 +3729,7 @@
       "hp": 100,
       "set_code": "B2a",
       "card_number": 61,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Koraidon",
@@ -3741,7 +3741,7 @@
       "hp": 120,
       "set_code": "B2a",
       "card_number": 63,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Maschiff",
@@ -3753,11 +3753,11 @@
       "hp": 70,
       "set_code": "B2a",
       "card_number": 67,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Mabosstiff",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Darkness",
       "stage": 1,
@@ -3765,7 +3765,7 @@
       "hp": 120,
       "set_code": "B2a",
       "card_number": 68,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Bombirdier",
@@ -3777,7 +3777,7 @@
       "hp": 90,
       "set_code": "B2a",
       "card_number": 71,
-      "rarity": "one_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Tinkatuff",
@@ -3789,7 +3789,7 @@
       "hp": 80,
       "set_code": "B2a",
       "card_number": 73,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Orthworm",
@@ -3801,7 +3801,7 @@
       "hp": 100,
       "set_code": "B2a",
       "card_number": 77,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Lechonk",
@@ -3813,7 +3813,7 @@
       "hp": 60,
       "set_code": "B2a",
       "card_number": 79,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Oinkologne",
@@ -3825,7 +3825,7 @@
       "hp": 110,
       "set_code": "B2a",
       "card_number": 80,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Maushold",
@@ -3837,11 +3837,11 @@
       "hp": 60,
       "set_code": "B2a",
       "card_number": 82,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Cyclizar",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Colorless",
       "stage": 0,
@@ -3849,7 +3849,7 @@
       "hp": 90,
       "set_code": "B2a",
       "card_number": 84,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Flamigo",
@@ -3861,11 +3861,11 @@
       "hp": 90,
       "set_code": "B2a",
       "card_number": 85,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Flamigo",
-      "count": 2,
+      "count": 4,
       "card_type": "Pokemon",
       "type": "Colorless",
       "stage": 0,
@@ -3873,7 +3873,7 @@
       "hp": 90,
       "set_code": "B3A",
       "card_number": 67,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Nemona",
@@ -3882,7 +3882,7 @@
       "trainer_subtype": "Supporter",
       "set_code": "B2a",
       "card_number": 90,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Paldean Wooper",
@@ -3893,7 +3893,7 @@
       "stage_label": "Basic",
       "set_code": "B2a",
       "card_number": 64,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Electric Generator",
@@ -3902,7 +3902,7 @@
       "trainer_subtype": "Item",
       "set_code": "B2a",
       "card_number": 86,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Big Air Balloon",
@@ -3911,7 +3911,7 @@
       "trainer_subtype": "Pokemon Tool",
       "set_code": "B2a",
       "card_number": 87,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Growlithe",
@@ -3923,7 +3923,7 @@
       "hp": 70,
       "set_code": "A4b",
       "card_number": 61,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Spidops",
@@ -3935,11 +3935,11 @@
       "hp": 100,
       "set_code": "B2a",
       "card_number": 5,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Nymble",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Grass",
       "stage": 0,
@@ -3947,7 +3947,7 @@
       "hp": 40,
       "set_code": "B2a",
       "card_number": 6,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Quaxly",
@@ -3959,7 +3959,7 @@
       "hp": 60,
       "set_code": "B2a",
       "card_number": 22,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Cetitan",
@@ -3971,7 +3971,7 @@
       "hp": 150,
       "set_code": "B2a",
       "card_number": 30,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Dachsbun",
@@ -3983,7 +3983,7 @@
       "hp": 100,
       "set_code": "B2a",
       "card_number": 47,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Tinkatink",
@@ -3995,7 +3995,7 @@
       "hp": 60,
       "set_code": "A4b",
       "card_number": 262,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Tinkatink",
@@ -4007,7 +4007,7 @@
       "hp": 60,
       "set_code": "B2a",
       "card_number": 72,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Squawkabilly",
@@ -4019,11 +4019,11 @@
       "hp": 70,
       "set_code": "B2a",
       "card_number": 83,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Wigglytuff",
-      "count": 1,
+      "count": 4,
       "card_type": "Pokemon",
       "type": "Colorless",
       "stage": 1,
@@ -4031,7 +4031,7 @@
       "hp": 110,
       "set_code": "B2b",
       "card_number": 59,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Rookidee",
@@ -4043,7 +4043,7 @@
       "hp": 60,
       "set_code": "B3",
       "card_number": 145,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Lugia ex",
@@ -4055,7 +4055,7 @@
       "hp": 150,
       "set_code": "A4b",
       "card_number": 289,
-      "rarity": "four_diamond"
+      "rarity": "double_rare"
     },
     {
       "name": "Ting-Lu",
@@ -4067,7 +4067,7 @@
       "hp": 120,
       "set_code": "B2a",
       "card_number": 62,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Ludicolo",
@@ -4079,7 +4079,7 @@
       "hp": 140,
       "set_code": "B1",
       "card_number": 55,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Panpour",
@@ -4091,7 +4091,7 @@
       "hp": 60,
       "set_code": "B1",
       "card_number": 61,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Palpitoad",
@@ -4103,7 +4103,7 @@
       "hp": 90,
       "set_code": "B1",
       "card_number": 64,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Boltund",
@@ -4115,7 +4115,7 @@
       "hp": 110,
       "set_code": "B1",
       "card_number": 96,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Swablu",
@@ -4127,7 +4127,7 @@
       "hp": 50,
       "set_code": "B1",
       "card_number": 196,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Swablu",
@@ -4139,7 +4139,7 @@
       "hp": 50,
       "set_code": "B3A",
       "card_number": 61,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Ferroseed",
@@ -4151,7 +4151,7 @@
       "hp": 70,
       "set_code": "B2",
       "card_number": 115,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Sunflora",
@@ -4160,26 +4160,26 @@
       "type": "Grass",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 100,
+      "hp": 90,
       "set_code": "A4",
       "card_number": 17,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Chinchou",
-      "count": 1,
+      "count": 4,
       "card_type": "Pokemon",
       "type": "Lightning",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 60,
+      "hp": 70,
       "set_code": "A4b",
       "card_number": 140,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Slowpoke",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Water",
       "stage": 0,
@@ -4187,7 +4187,7 @@
       "hp": 70,
       "set_code": "A4",
       "card_number": 73,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Lanturn ex",
@@ -4195,7 +4195,8 @@
       "card_type": "Pokemon",
       "set_code": "A4b",
       "card_number": 142,
-      "rarity": "four_diamond"
+      "rarity": "double_rare",
+      "type": "Lightning"
     },
     {
       "name": "Monferno",
@@ -4205,7 +4206,8 @@
       "stage_label": "Stage 1",
       "set_code": "A4b",
       "card_number": 73,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Fire"
     },
     {
       "name": "Snover",
@@ -4215,7 +4217,8 @@
       "stage_label": "Basic",
       "set_code": "A2",
       "card_number": 44,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Water"
     },
     {
       "name": "Manaphy",
@@ -4225,7 +4228,8 @@
       "stage_label": "Basic",
       "set_code": "A4b",
       "card_number": 108,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Water"
     },
     {
       "name": "Wormadam",
@@ -4235,7 +4239,8 @@
       "stage_label": "Stage 1",
       "set_code": "A2",
       "card_number": 115,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Metal"
     },
     {
       "name": "Tapu Fini",
@@ -4245,7 +4250,8 @@
       "stage_label": "Basic",
       "set_code": "A3",
       "card_number": 56,
-      "rarity": "three_diamond"
+      "rarity": "rare",
+      "type": "Water"
     },
     {
       "name": "Drilbur",
@@ -4255,7 +4261,8 @@
       "stage_label": "Basic",
       "set_code": "A4b",
       "card_number": 216,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Fighting"
     },
     {
       "name": "Toxapex",
@@ -4265,7 +4272,8 @@
       "stage_label": "Stage 1",
       "set_code": "A3",
       "card_number": 116,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Darkness"
     },
     {
       "name": "Toxapex",
@@ -4275,7 +4283,8 @@
       "stage_label": "Stage 1",
       "set_code": "B1",
       "card_number": 162,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Darkness"
     },
     {
       "name": "Galarian Mr. Mime",
@@ -4283,7 +4292,8 @@
       "card_type": "Pokemon",
       "set_code": "B2",
       "card_number": 30,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Water"
     },
     {
       "name": "Passimian",
@@ -4295,7 +4305,7 @@
       "hp": 90,
       "set_code": "B2",
       "card_number": 91,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Alolan Grimer",
@@ -4307,7 +4317,7 @@
       "hp": 80,
       "set_code": "B2",
       "card_number": 96,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Galarian Zigzagoon",
@@ -4319,7 +4329,7 @@
       "hp": 60,
       "set_code": "B2",
       "card_number": 98,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Smeargle",
@@ -4331,11 +4341,11 @@
       "hp": 60,
       "set_code": "B2",
       "card_number": 130,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Poliwag",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Water",
       "stage": 0,
@@ -4343,7 +4353,7 @@
       "hp": 60,
       "set_code": "B3",
       "card_number": 33,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Hatterene",
@@ -4355,7 +4365,7 @@
       "hp": 150,
       "set_code": "B3",
       "card_number": 71,
-      "rarity": "three_diamond"
+      "rarity": "rare"
     },
     {
       "name": "Carkol",
@@ -4367,7 +4377,7 @@
       "hp": 100,
       "set_code": "B3",
       "card_number": 93,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Farfetch'd",
@@ -4378,7 +4388,8 @@
       "variant": "alt art",
       "set_code": "A4b",
       "card_number": 280,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Colorless"
     },
     {
       "name": "Meowscarada",
@@ -4391,7 +4402,7 @@
       "variant": "alt art",
       "set_code": "B2a",
       "card_number": 118,
-      "rarity": "one_star"
+      "rarity": "shiny_rare"
     },
     {
       "name": "Blaziken",
@@ -4404,7 +4415,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 208,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Skrelp",
@@ -4417,7 +4428,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 218,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Grimer",
@@ -4430,7 +4441,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 215,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Tyrantrum",
@@ -4443,7 +4454,7 @@
       "variant": "alt art",
       "set_code": "B2",
       "card_number": 171,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Meowth",
@@ -4456,7 +4467,7 @@
       "variant": "alt art",
       "set_code": "B2",
       "card_number": 204,
-      "rarity": "three_star"
+      "rarity": "immersive"
     },
     {
       "name": "Floragato",
@@ -4469,7 +4480,7 @@
       "variant": "alt art",
       "set_code": "B2a",
       "card_number": 117,
-      "rarity": "one_star"
+      "rarity": "shiny_rare"
     },
     {
       "name": "Gimmighoul",
@@ -4482,7 +4493,7 @@
       "variant": "alt art",
       "set_code": "B2a",
       "card_number": 96,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Orthworm",
@@ -4495,11 +4506,11 @@
       "variant": "alt art",
       "set_code": "B2a",
       "card_number": 98,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Shroomish",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Grass",
       "stage": 0,
@@ -4508,7 +4519,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 158,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Flapple",
@@ -4521,7 +4532,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 160,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Tepig",
@@ -4534,7 +4545,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 161,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Quagsire",
@@ -4547,7 +4558,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 162,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Sobble",
@@ -4560,7 +4571,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 203,
-      "rarity": "three_star"
+      "rarity": "immersive"
     },
     {
       "name": "Zekrom",
@@ -4573,7 +4584,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 163,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Morpeko",
@@ -4586,7 +4597,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 164,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Bonsly",
@@ -4599,11 +4610,11 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 168,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Mega Lucario ex",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Fighting",
       "stage": 1,
@@ -4612,7 +4623,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 204,
-      "rarity": "three_star"
+      "rarity": "immersive"
     },
     {
       "name": "Crustle ex",
@@ -4625,7 +4636,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 185,
-      "rarity": "two_star"
+      "rarity": "super_rare"
     },
     {
       "name": "Meloetta",
@@ -4638,7 +4649,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 170,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Zubat",
@@ -4651,7 +4662,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 212,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Seviper",
@@ -4664,7 +4675,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 173,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Meltan",
@@ -4677,7 +4688,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 177,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Cinccino",
@@ -4690,7 +4701,7 @@
       "variant": "alt art",
       "set_code": "B3",
       "card_number": 179,
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Sail Fossil",
@@ -4699,7 +4710,7 @@
       "trainer_subtype": "Item",
       "set_code": "B2",
       "card_number": 146,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Clemont",
@@ -4709,7 +4720,7 @@
       "variant": "alt art",
       "set_code": "B1a",
       "card_number": 81,
-      "rarity": "two_star"
+      "rarity": "super_rare"
     },
     {
       "name": "Pachirisu ex",
@@ -4717,8 +4728,9 @@
       "card_type": "Pokemon",
       "set_code": "A4b",
       "card_number": 145,
-      "rarity": "four_diamond",
-      "hp": 120
+      "rarity": "double_rare",
+      "hp": 120,
+      "type": "Lightning"
     },
     {
       "name": "Delcatty",
@@ -4728,7 +4740,8 @@
       "stage_label": "Stage 1",
       "set_code": "A4b",
       "card_number": 292,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Colorless"
     },
     {
       "name": "Zeraora",
@@ -4738,17 +4751,19 @@
       "stage_label": "Basic",
       "set_code": "A4b",
       "card_number": 149,
-      "rarity": "three_diamond"
+      "rarity": "rare",
+      "type": "Lightning"
     },
     {
       "name": "Frosmoth",
-      "count": 7,
+      "count": 8,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
       "set_code": "B3A",
       "card_number": 12,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Water"
     },
     {
       "name": "Scream Tail",
@@ -4756,7 +4771,8 @@
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 25,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Psychic"
     },
     {
       "name": "Great Tusk",
@@ -4764,11 +4780,12 @@
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 34,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Fighting"
     },
     {
       "name": "Corviknight",
-      "count": 2,
+      "count": 5,
       "card_type": "Pokemon",
       "type": "Metal",
       "stage": 2,
@@ -4776,41 +4793,45 @@
       "hp": 140,
       "set_code": "B3A",
       "card_number": 48,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Cufant",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 49,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Metal"
     },
     {
       "name": "Iron Treads",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 51,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Metal"
     },
     {
       "name": "Girafarig",
-      "count": 4,
+      "count": 6,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
       "set_code": "B3A",
       "card_number": 57,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Colorless"
     },
     {
       "name": "Farigiraf",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 58,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Colorless"
     },
     {
       "name": "Dunsparce",
@@ -4820,11 +4841,12 @@
       "stage_label": "Basic",
       "set_code": "B3A",
       "card_number": 59,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Colorless"
     },
     {
       "name": "Braviary",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Colorless",
       "stage": 1,
@@ -4832,7 +4854,7 @@
       "hp": 120,
       "set_code": "B3A",
       "card_number": 63,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Ancient Booster Energy Capsule",
@@ -4840,7 +4862,7 @@
       "card_type": "Trainer",
       "set_code": "B3A",
       "card_number": 69,
-      "rarity": "two_diamond",
+      "rarity": "uncommon",
       "trainer_subtype": "Pokemon Tool"
     },
     {
@@ -4849,16 +4871,16 @@
       "card_type": "Trainer",
       "set_code": "B3A",
       "card_number": 71,
-      "rarity": "two_diamond",
+      "rarity": "uncommon",
       "trainer_subtype": "Supporter"
     },
     {
       "name": "Area Zero",
-      "count": 1,
+      "count": 3,
       "card_type": "Trainer",
       "set_code": "B3A",
       "card_number": 74,
-      "rarity": "two_diamond",
+      "rarity": "uncommon",
       "trainer_subtype": "Stadium"
     },
     {
@@ -4869,7 +4891,8 @@
       "stage_label": "Stage 1",
       "set_code": "B3A",
       "card_number": 7,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Water"
     },
     {
       "name": "Miraidon ex",
@@ -4877,11 +4900,12 @@
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 19,
-      "rarity": "four_diamond"
+      "rarity": "double_rare",
+      "type": "Lightning"
     },
     {
       "name": "Rufflet",
-      "count": 5,
+      "count": 8,
       "card_type": "Pokemon",
       "type": "Colorless",
       "stage": 0,
@@ -4889,7 +4913,7 @@
       "hp": 70,
       "set_code": "B3A",
       "card_number": 62,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Bellibolt ex",
@@ -4902,7 +4926,7 @@
       "set_code": "B3A",
       "card_number": 106,
       "variant": "alt art",
-      "rarity": "three_star"
+      "rarity": "immersive"
     },
     {
       "name": "Future Booster Energy Capsule",
@@ -4910,16 +4934,16 @@
       "card_type": "Trainer",
       "set_code": "B3A",
       "card_number": 70,
-      "rarity": "two_diamond",
+      "rarity": "uncommon",
       "trainer_subtype": "Pokemon Tool"
     },
     {
       "name": "Professor Turo",
-      "count": 2,
+      "count": 4,
       "card_type": "Trainer",
       "set_code": "B3A",
       "card_number": 73,
-      "rarity": "two_diamond",
+      "rarity": "uncommon",
       "trainer_subtype": "Supporter"
     },
     {
@@ -4928,26 +4952,29 @@
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 3,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Grass"
     },
     {
       "name": "Psyduck",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 6,
-      "rarity": "one_diamond",
-      "hp": 70
+      "rarity": "common",
+      "hp": 70,
+      "type": "Water"
     },
     {
       "name": "Buizel",
-      "count": 6,
+      "count": 9,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
       "set_code": "B3A",
       "card_number": 9,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Water"
     },
     {
       "name": "Floatzel",
@@ -4957,25 +4984,28 @@
       "stage_label": "Stage 1",
       "set_code": "B3A",
       "card_number": 10,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Water"
     },
     {
       "name": "Snom",
-      "count": 2,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
       "set_code": "B3A",
       "card_number": 11,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Water"
     },
     {
       "name": "Iron Bundle ex",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 13,
-      "rarity": "four_diamond"
+      "rarity": "double_rare",
+      "type": "Water"
     },
     {
       "name": "Iron Hands",
@@ -4983,15 +5013,17 @@
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 17,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Lightning"
     },
     {
       "name": "Iron Thorns",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 18,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Lightning"
     },
     {
       "name": "Espeon",
@@ -5001,11 +5033,12 @@
       "stage_label": "Stage 1",
       "set_code": "B3A",
       "card_number": 20,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Psychic"
     },
     {
       "name": "Flittle",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 0,
@@ -5013,11 +5046,11 @@
       "hp": 40,
       "set_code": "B3A",
       "card_number": 21,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Houndstone",
-      "count": 1,
+      "count": 4,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 1,
@@ -5025,7 +5058,7 @@
       "hp": 130,
       "set_code": "B3A",
       "card_number": 24,
-      "rarity": "two_diamond"
+      "rarity": "uncommon"
     },
     {
       "name": "Iron Valiant",
@@ -5033,7 +5066,8 @@
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 27,
-      "rarity": "three_diamond"
+      "rarity": "rare",
+      "type": "Psychic"
     },
     {
       "name": "Sandy Shocks",
@@ -5041,7 +5075,8 @@
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 35,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Fighting"
     },
     {
       "name": "Umbreon",
@@ -5051,7 +5086,8 @@
       "stage_label": "Basic",
       "set_code": "B3A",
       "card_number": 37,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Darkness"
     },
     {
       "name": "Weavile",
@@ -5061,7 +5097,8 @@
       "stage_label": "Stage 1",
       "set_code": "B3A",
       "card_number": 39,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Darkness"
     },
     {
       "name": "Sableye",
@@ -5071,15 +5108,17 @@
       "stage_label": "Basic",
       "set_code": "B3A",
       "card_number": 40,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Darkness"
     },
     {
       "name": "Glimmet",
-      "count": 2,
+      "count": 4,
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 44,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Darkness"
     },
     {
       "name": "Glimmora",
@@ -5087,7 +5126,8 @@
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 45,
-      "rarity": "three_diamond"
+      "rarity": "rare",
+      "type": "Darkness"
     },
     {
       "name": "Iron Jugulis",
@@ -5095,23 +5135,26 @@
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 46,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Darkness"
     },
     {
       "name": "Copperajah",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 50,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Metal"
     },
     {
       "name": "Walking Wake",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 53,
-      "rarity": "three_diamond"
+      "rarity": "rare",
+      "type": "Dragon"
     },
     {
       "name": "Terapagos ex",
@@ -5119,7 +5162,8 @@
       "card_type": "Pokemon",
       "set_code": "B3A",
       "card_number": 68,
-      "rarity": "four_diamond"
+      "rarity": "double_rare",
+      "type": "Colorless"
     },
     {
       "name": "Rellor",
@@ -5132,7 +5176,7 @@
       "set_code": "B3A",
       "card_number": 94,
       "variant": "alt art",
-      "rarity": "one_star"
+      "rarity": "illustration_rare"
     },
     {
       "name": "Juliana",
@@ -5141,7 +5185,7 @@
       "set_code": "B3A",
       "card_number": 86,
       "variant": "alt art",
-      "rarity": "two_star",
+      "rarity": "super_rare",
       "trainer_subtype": "Supporter"
     },
     {
@@ -5152,11 +5196,12 @@
       "stage_label": "Basic",
       "set_code": "A4",
       "card_number": 140,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Colorless"
     },
     {
       "name": "Rapidash",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Fire",
       "stage": 1,
@@ -5164,51 +5209,55 @@
       "hp": 100,
       "set_code": "B2b",
       "card_number": 11,
-      "rarity": "one_diamond"
+      "rarity": "common"
     },
     {
       "name": "Vaporeon",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
       "hp": 120,
       "set_code": "B3A",
       "card_number": 8,
-      "rarity": "two_diamond"
+      "rarity": "uncommon",
+      "type": "Water"
     },
     {
       "name": "Greavard",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
       "hp": 70,
       "set_code": "B3A",
       "card_number": 23,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Psychic"
     },
     {
       "name": "Nacli",
-      "count": 1,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
       "hp": 70,
       "set_code": "B3A",
       "card_number": 31,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Fighting"
     },
     {
       "name": "Naclstack",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
       "hp": 110,
       "set_code": "B3A",
       "card_number": 32,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Fighting"
     },
     {
       "name": "Raging Bolt",
@@ -5219,22 +5268,24 @@
       "hp": 130,
       "set_code": "B3A",
       "card_number": 55,
-      "rarity": "three_diamond"
+      "rarity": "rare",
+      "type": "Dragon"
     },
     {
       "name": "Hawlucha",
-      "count": 1,
+      "count": 5,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
       "hp": 80,
       "set_code": "B3A",
       "card_number": 64,
-      "rarity": "one_diamond"
+      "rarity": "common",
+      "type": "Colorless"
     },
     {
       "name": "Glimmora",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -5242,7 +5293,8 @@
       "set_code": "B3A",
       "card_number": 78,
       "variant": "alt art",
-      "rarity": "one_star"
+      "rarity": "illustration_rare",
+      "type": "Darkness"
     },
     {
       "name": "Professor Sada",
@@ -5252,7 +5304,7 @@
       "set_code": "B3A",
       "card_number": 87,
       "variant": "alt art",
-      "rarity": "two_star"
+      "rarity": "super_rare"
     },
     {
       "name": "Terapagos ex",
@@ -5264,7 +5316,867 @@
       "set_code": "B3A",
       "card_number": 93,
       "variant": "alt art",
-      "rarity": "three_star"
+      "rarity": "immersive",
+      "type": "Colorless"
+    },
+    {
+      "name": "Snivy",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "A4b",
+      "card_number": 32,
+      "type": "Grass"
+    },
+    {
+      "name": "Magnezone",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 140,
+      "rarity": "rare",
+      "set_code": "A4b",
+      "card_number": 137,
+      "type": "Lightning"
+    },
+    {
+      "name": "Dialga ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 150,
+      "rarity": "double_rare",
+      "set_code": "A4b",
+      "card_number": 254,
+      "type": "Metal"
+    },
+    {
+      "name": "Talonflame",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 120,
+      "rarity": "rare",
+      "set_code": "A3",
+      "card_number": 29,
+      "type": "Fire"
+    },
+    {
+      "name": "Espathra",
+      "count": 3,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "rarity": "uncommon",
+      "set_code": "B3A",
+      "card_number": 22,
+      "type": "Psychic"
+    },
+    {
+      "name": "Roaring Moon",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 100,
+      "rarity": "rare",
+      "set_code": "B3A",
+      "card_number": 47,
+      "type": "Darkness"
+    },
+    {
+      "name": "Altaria",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "rarity": "uncommon",
+      "set_code": "B3A",
+      "card_number": 52,
+      "type": "Dragon"
+    },
+    {
+      "name": "Gouging Fire",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 110,
+      "rarity": "rare",
+      "set_code": "B3A",
+      "card_number": 54,
+      "type": "Dragon"
+    },
+    {
+      "name": "Rabsca",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 70,
+      "rarity": "illustration_rare",
+      "set_code": "B3A",
+      "card_number": 97,
+      "variant": "alt art",
+      "type": "Psychic"
+    },
+    {
+      "name": "Snom",
+      "count": 2,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "rarity": "illustration_rare",
+      "set_code": "B3A",
+      "card_number": 75,
+      "variant": "alt art",
+      "type": "Water"
+    },
+    {
+      "name": "Flutter Mane ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 130,
+      "rarity": "special_illustration_rare",
+      "set_code": "B3A",
+      "card_number": 91,
+      "variant": "alt art",
+      "type": "Psychic"
+    },
+    {
+      "name": "Meowscarada ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 160,
+      "set_code": "PROMO-B",
+      "card_number": 63,
+      "rarity": "promo"
+    },
+    {
+      "name": "Ponyta",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Fire",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 10
+    },
+    {
+      "name": "Drowzee",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 28
+    },
+    {
+      "name": "Dugtrio",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 80,
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 34
+    },
+    {
+      "name": "Fraxure",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Dragon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 90,
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 55
+    },
+    {
+      "name": "Charmeleon",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fire",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 80,
+      "rarity": "illustration_rare",
+      "set_code": "B2b",
+      "card_number": 92,
+      "variant": "alt art"
+    },
+    {
+      "name": "Electabuzz",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "uncommon",
+      "set_code": "A1a",
+      "card_number": 27,
+      "type": "Lightning"
+    },
+    {
+      "name": "Scorbunny",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fire",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B2",
+      "card_number": 24
+    },
+    {
+      "name": "Haxorus",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Dragon",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 150,
+      "rarity": "rare",
+      "set_code": "B2b",
+      "card_number": 56
+    },
+    {
+      "name": "Trevenant",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 120,
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 6
+    },
+    {
+      "name": "Electivire",
+      "count": 3,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 130,
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 25
+    },
+    {
+      "name": "Forretress",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 46
+    },
+    {
+      "name": "Haxorus",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Dragon",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 150,
+      "rarity": "illustration_rare",
+      "set_code": "B2b",
+      "card_number": 110,
+      "variant": "alt art"
+    },
+    {
+      "name": "Delibird",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "uncommon",
+      "set_code": "A4",
+      "card_number": 57,
+      "type": "Water"
+    },
+    {
+      "name": "Chatot",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 61
+    },
+    {
+      "name": "Gastly",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 37
+    },
+    {
+      "name": "Scyther",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 1
+    },
+    {
+      "name": "Pineco",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 2
+    },
+    {
+      "name": "Volbeat",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 80,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 3
+    },
+    {
+      "name": "Illumise",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 80,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 4
+    },
+    {
+      "name": "Phantump",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 5
+    },
+    {
+      "name": "Magmar",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Fire",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 80,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 12
+    },
+    {
+      "name": "Lapras",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 100,
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 17
+    },
+    {
+      "name": "Piplup",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 18
+    },
+    {
+      "name": "Prinplup",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 80,
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 19
+    },
+    {
+      "name": "Phione",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 21
+    },
+    {
+      "name": "Electrike",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 26
+    },
+    {
+      "name": "Mew",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "rarity": "rare",
+      "set_code": "B2b",
+      "card_number": 30
+    },
+    {
+      "name": "Spoink",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 31
+    },
+    {
+      "name": "Groudon",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 130,
+      "rarity": "rare",
+      "set_code": "B2b",
+      "card_number": 35
+    },
+    {
+      "name": "Haunter",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 80,
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 38
+    },
+    {
+      "name": "Mega Gengar ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 210,
+      "rarity": "double_rare",
+      "set_code": "B2b",
+      "card_number": 39
+    },
+    {
+      "name": "Zoroark",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "rarity": "rare",
+      "set_code": "B2b",
+      "card_number": 44
+    },
+    {
+      "name": "Kartana",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 48
+    },
+    {
+      "name": "Dragonair",
+      "count": 4,
+      "card_type": "Pokemon",
+      "type": "Dragon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 80,
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 52
+    },
+    {
+      "name": "Druddigon",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Dragon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 100,
+      "rarity": "common",
+      "set_code": "B2b",
+      "card_number": 57
+    },
+    {
+      "name": "Empoleon",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 130,
+      "rarity": "illustration_rare",
+      "set_code": "B2b",
+      "card_number": 71,
+      "variant": "alt art"
+    },
+    {
+      "name": "Miltank",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 110,
+      "rarity": "illustration_rare",
+      "set_code": "B2b",
+      "card_number": 75,
+      "variant": "alt art"
+    },
+    {
+      "name": "Maintenance",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 66
+    },
+    {
+      "name": "Iris",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 67
+    },
+    {
+      "name": "Hiking Trail",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Stadium",
+      "rarity": "uncommon",
+      "set_code": "B2b",
+      "card_number": 69
+    },
+    {
+      "name": "Yamper",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 95
+    },
+    {
+      "name": "Tangrowth",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 130,
+      "rarity": "uncommon",
+      "set_code": "B3",
+      "card_number": 2
+    },
+    {
+      "name": "Mega Absol ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 170,
+      "rarity": "super_rare",
+      "set_code": "B3",
+      "card_number": 230,
+      "variant": "alt art"
+    },
+    {
+      "name": "Dedenne",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 94
+    },
+    {
+      "name": "Amoonguss",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 90,
+      "rarity": "uncommon",
+      "set_code": "B3",
+      "card_number": 108
+    },
+    {
+      "name": "Flygon ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Dragon",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 180,
+      "rarity": "double_rare",
+      "set_code": "B3",
+      "card_number": 126
+    },
+    {
+      "name": "Meowstic",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 90,
+      "rarity": "illustration_rare",
+      "set_code": "B3",
+      "card_number": 165,
+      "variant": "alt art"
+    },
+    {
+      "name": "Kadabra",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 80,
+      "rarity": "uncommon",
+      "set_code": "A2b",
+      "card_number": 30,
+      "type": "Psychic"
+    },
+    {
+      "name": "Cyndaquil",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "A4",
+      "card_number": 27,
+      "type": "Fire"
+    },
+    {
+      "name": "Miltank",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 100,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 187
+    },
+    {
+      "name": "Sentret",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B2",
+      "card_number": 128
+    },
+    {
+      "name": "Zekrom",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 120,
+      "rarity": "rare",
+      "set_code": "B3",
+      "card_number": 59
+    },
+    {
+      "name": "Regirock",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 110,
+      "rarity": "uncommon",
+      "set_code": "B3",
+      "card_number": 77
+    },
+    {
+      "name": "Zoroark ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 150,
+      "rarity": "double_rare",
+      "set_code": "B3",
+      "card_number": 106
+    },
+    {
+      "name": "Registeel",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 110,
+      "rarity": "uncommon",
+      "set_code": "B3",
+      "card_number": 116
+    },
+    {
+      "name": "Slither Wing",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 120,
+      "rarity": "uncommon",
+      "set_code": "B3A",
+      "card_number": 4,
+      "type": "Grass"
+    },
+    {
+      "name": "Budew",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 30,
+      "rarity": "illustration_rare",
+      "set_code": "B3",
+      "card_number": 159,
+      "variant": "alt art"
+    },
+    {
+      "name": "Lisia",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 226
+    },
+    {
+      "name": "Parasol Lady",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "rarity": "uncommon",
+      "set_code": "B3",
+      "card_number": 152
+    },
+    {
+      "name": "Oddish",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "rarity": "common",
+      "set_code": "A4",
+      "card_number": 1,
+      "type": "Grass"
     }
   ]
 }

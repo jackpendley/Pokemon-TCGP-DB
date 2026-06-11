@@ -1,0 +1,440 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T18:56:40Z",
+    "card_count": 86,
+    "set_code": "A1a",
+    "source": "bulbapedia"
+  },
+  "cards": {
+    "1": {
+      "name": "Exeggcute",
+      "pokemon_type": "Grass",
+      "rarity": "one_diamond"
+    },
+    "10": {
+      "name": "Ponyta",
+      "pokemon_type": "Fire",
+      "rarity": "one_diamond"
+    },
+    "11": {
+      "name": "Rapidash",
+      "pokemon_type": "Fire",
+      "rarity": "two_diamond"
+    },
+    "12": {
+      "name": "Magmar",
+      "pokemon_type": "Fire",
+      "rarity": "two_diamond"
+    },
+    "13": {
+      "name": "Larvesta",
+      "pokemon_type": "Fire",
+      "rarity": "one_diamond"
+    },
+    "14": {
+      "name": "Volcarona",
+      "pokemon_type": "Fire",
+      "rarity": "three_diamond"
+    },
+    "15": {
+      "name": "Salandit",
+      "pokemon_type": "Fire",
+      "rarity": "one_diamond"
+    },
+    "16": {
+      "name": "Salazzle",
+      "pokemon_type": "Fire",
+      "rarity": "one_diamond"
+    },
+    "17": {
+      "name": "Magikarp",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "18": {
+      "name": "Gyarados ex",
+      "pokemon_type": "Water",
+      "rarity": "four_diamond"
+    },
+    "19": {
+      "name": "Vaporeon",
+      "pokemon_type": "Water",
+      "rarity": "three_diamond"
+    },
+    "2": {
+      "name": "Exeggutor",
+      "pokemon_type": "Grass",
+      "rarity": "two_diamond"
+    },
+    "20": {
+      "name": "Finneon",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "21": {
+      "name": "Lumineon",
+      "pokemon_type": "Water",
+      "rarity": "two_diamond"
+    },
+    "22": {
+      "name": "Chewtle",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "23": {
+      "name": "Drednaw",
+      "pokemon_type": "Water",
+      "rarity": "two_diamond"
+    },
+    "24": {
+      "name": "Cramorant",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "25": {
+      "name": "Pikachu",
+      "pokemon_type": "Lightning",
+      "rarity": "one_diamond"
+    },
+    "26": {
+      "name": "Raichu",
+      "pokemon_type": "Lightning",
+      "rarity": "three_diamond"
+    },
+    "27": {
+      "name": "Electabuzz",
+      "pokemon_type": "Lightning",
+      "rarity": "two_diamond"
+    },
+    "28": {
+      "name": "Joltik",
+      "pokemon_type": "Lightning",
+      "rarity": "one_diamond"
+    },
+    "29": {
+      "name": "Galvantula",
+      "pokemon_type": "Lightning",
+      "rarity": "two_diamond"
+    },
+    "3": {
+      "name": "Celebi ex",
+      "pokemon_type": "Grass",
+      "rarity": "four_diamond"
+    },
+    "30": {
+      "name": "Dedenne",
+      "pokemon_type": "Lightning",
+      "rarity": "one_diamond"
+    },
+    "31": {
+      "name": "Mew",
+      "pokemon_type": "Psychic",
+      "rarity": "three_diamond"
+    },
+    "32": {
+      "name": "Mew ex",
+      "pokemon_type": "Psychic",
+      "rarity": "four_diamond"
+    },
+    "33": {
+      "name": "Sigilyph",
+      "pokemon_type": "Psychic",
+      "rarity": "two_diamond"
+    },
+    "34": {
+      "name": "Elgyem",
+      "pokemon_type": "Psychic",
+      "rarity": "one_diamond"
+    },
+    "35": {
+      "name": "Beheeyem",
+      "pokemon_type": "Psychic",
+      "rarity": "two_diamond"
+    },
+    "36": {
+      "name": "Flabébé",
+      "pokemon_type": "Psychic",
+      "rarity": "one_diamond"
+    },
+    "37": {
+      "name": "Floette",
+      "pokemon_type": "Psychic",
+      "rarity": "one_diamond"
+    },
+    "38": {
+      "name": "Florges",
+      "pokemon_type": "Psychic",
+      "rarity": "two_diamond"
+    },
+    "39": {
+      "name": "Swirlix",
+      "pokemon_type": "Psychic",
+      "rarity": "one_diamond"
+    },
+    "4": {
+      "name": "Snivy",
+      "pokemon_type": "Grass",
+      "rarity": "one_diamond"
+    },
+    "40": {
+      "name": "Slurpuff",
+      "pokemon_type": "Psychic",
+      "rarity": "one_diamond"
+    },
+    "41": {
+      "name": "Mankey",
+      "pokemon_type": "Fighting",
+      "rarity": "one_diamond"
+    },
+    "42": {
+      "name": "Primeape",
+      "pokemon_type": "Fighting",
+      "rarity": "one_diamond"
+    },
+    "43": {
+      "name": "Geodude",
+      "pokemon_type": "Fighting",
+      "rarity": "one_diamond"
+    },
+    "44": {
+      "name": "Graveler",
+      "pokemon_type": "Fighting",
+      "rarity": "two_diamond"
+    },
+    "45": {
+      "name": "Golem",
+      "pokemon_type": "Fighting",
+      "rarity": "three_diamond"
+    },
+    "46": {
+      "name": "Aerodactyl ex",
+      "pokemon_type": "Fighting",
+      "rarity": "four_diamond"
+    },
+    "47": {
+      "name": "Marshadow",
+      "pokemon_type": "Fighting",
+      "rarity": "three_diamond"
+    },
+    "48": {
+      "name": "Stonjourner",
+      "pokemon_type": "Fighting",
+      "rarity": "two_diamond"
+    },
+    "49": {
+      "name": "Koffing",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "5": {
+      "name": "Servine",
+      "pokemon_type": "Grass",
+      "rarity": "two_diamond"
+    },
+    "50": {
+      "name": "Weezing",
+      "pokemon_type": "Darkness",
+      "rarity": "two_diamond"
+    },
+    "51": {
+      "name": "Purrloin",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "52": {
+      "name": "Liepard",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "53": {
+      "name": "Venipede",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "54": {
+      "name": "Whirlipede",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "55": {
+      "name": "Scolipede",
+      "pokemon_type": "Darkness",
+      "rarity": "two_diamond"
+    },
+    "56": {
+      "name": "Druddigon",
+      "pokemon_type": "Dragon",
+      "rarity": "two_diamond"
+    },
+    "57": {
+      "name": "Pidgey",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "58": {
+      "name": "Pidgeotto",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "59": {
+      "name": "Pidgeot ex",
+      "pokemon_type": "Colorless",
+      "rarity": "four_diamond"
+    },
+    "6": {
+      "name": "Serperior",
+      "pokemon_type": "Grass",
+      "rarity": "three_diamond"
+    },
+    "60": {
+      "name": "Tauros",
+      "pokemon_type": "Colorless",
+      "rarity": "three_diamond"
+    },
+    "61": {
+      "name": "Eevee",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "62": {
+      "name": "Chatot",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "63": {
+      "name": "Old Amber",
+      "pokemon_type": "Item",
+      "rarity": "one_diamond"
+    },
+    "64": {
+      "name": "Pokémon Flute",
+      "pokemon_type": "Item",
+      "rarity": "two_diamond"
+    },
+    "65": {
+      "name": "Mythical Slab",
+      "pokemon_type": "Item",
+      "rarity": "two_diamond"
+    },
+    "66": {
+      "name": "Budding Expeditioner",
+      "pokemon_type": "Supporter",
+      "rarity": "two_diamond"
+    },
+    "67": {
+      "name": "Blue",
+      "pokemon_type": "Supporter",
+      "rarity": "two_diamond"
+    },
+    "68": {
+      "name": "Leaf",
+      "pokemon_type": "Supporter",
+      "rarity": "two_diamond"
+    },
+    "69": {
+      "name": "Exeggutor",
+      "pokemon_type": "Grass",
+      "rarity": "one_star"
+    },
+    "7": {
+      "name": "Morelull",
+      "pokemon_type": "Grass",
+      "rarity": "one_diamond"
+    },
+    "70": {
+      "name": "Serperior",
+      "pokemon_type": "Grass",
+      "rarity": "one_star"
+    },
+    "71": {
+      "name": "Salandit",
+      "pokemon_type": "Fire",
+      "rarity": "one_star"
+    },
+    "72": {
+      "name": "Vaporeon",
+      "pokemon_type": "Water",
+      "rarity": "one_star"
+    },
+    "73": {
+      "name": "Dedenne",
+      "pokemon_type": "Lightning",
+      "rarity": "one_star"
+    },
+    "74": {
+      "name": "Marshadow",
+      "pokemon_type": "Fighting",
+      "rarity": "one_star"
+    },
+    "75": {
+      "name": "Celebi ex",
+      "pokemon_type": "Grass",
+      "rarity": "two_star"
+    },
+    "76": {
+      "name": "Gyarados ex",
+      "pokemon_type": "Water",
+      "rarity": "two_star"
+    },
+    "77": {
+      "name": "Mew ex",
+      "pokemon_type": "Psychic",
+      "rarity": "two_star"
+    },
+    "78": {
+      "name": "Aerodactyl ex",
+      "pokemon_type": "Fighting",
+      "rarity": "two_star"
+    },
+    "79": {
+      "name": "Pidgeot ex",
+      "pokemon_type": "Colorless",
+      "rarity": "two_star"
+    },
+    "8": {
+      "name": "Shiinotic",
+      "pokemon_type": "Grass",
+      "rarity": "two_diamond"
+    },
+    "80": {
+      "name": "Budding Expeditioner",
+      "pokemon_type": "Supporter",
+      "rarity": "two_star"
+    },
+    "81": {
+      "name": "Blue",
+      "pokemon_type": "Supporter",
+      "rarity": "two_star"
+    },
+    "82": {
+      "name": "Leaf",
+      "pokemon_type": "Supporter",
+      "rarity": "two_star"
+    },
+    "83": {
+      "name": "Mew ex",
+      "pokemon_type": "Psychic",
+      "rarity": "two_star"
+    },
+    "84": {
+      "name": "Aerodactyl ex",
+      "pokemon_type": "Fighting",
+      "rarity": "two_star"
+    },
+    "85": {
+      "name": "Celebi ex",
+      "pokemon_type": "Grass",
+      "rarity": "three_star"
+    },
+    "86": {
+      "name": "Mew ex",
+      "pokemon_type": "Psychic",
+      "rarity": "crown"
+    },
+    "9": {
+      "name": "Dhelmise",
+      "pokemon_type": "Grass",
+      "rarity": "two_diamond"
+    }
+  }
+}

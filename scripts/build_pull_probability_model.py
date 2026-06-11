@@ -20,7 +20,7 @@ Branch model history:
           - A4/A4b: pending_verification (Bulbapedia data unavailable).
   v0.6.0  A4 (Wisdom of Sea and Sky) verified from in-repo Offering Rates screenshots (2026-05-14).
           - Ho-Oh/Lugia: three-branch 91.620%/8.330%/0.050% (matches A4a); slot_6 confirmed
-            (one_star=12.900%, three_diamond=87.100% — standard rarity, NOT shiny).
+            (illustration_rare=12.900%, rare=87.100% — standard rarity, NOT shiny).
           - A4b (Deluxe Pack: ex): remains pending_verification (pack unavailable, 4 cards/pack).
 
 Inputs:
@@ -45,10 +45,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
-from _collection_io import RARITIES as RARITY_FIELDS  # noqa: E402 (after sys.path insert)
+from _collection_io import (  # noqa: E402 (after sys.path insert)
+    RARITIES as RARITY_FIELDS, normalize_rarity, card_reference_by_coord,
+)
+# Reuse the EV computation's PZ loaders/slug-matcher so the per-rarity-per-pack
+# probabilities are derived from the exact same Pokémon Zone source the EV model uses.
+from build_pack_ev import load_pz_pack_odds, resolve_pz_slug  # noqa: E402
 
 PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
 CONFIDENCE_SCORES_JSON = ROOT / "data" / "current" / "pack_source_confidence_scores.json"
+PZ_PACK_ODDS_JSON = ROOT / "data" / "reference" / "pz_pack_odds.json"
+CARD_REF_JSON = ROOT / "data" / "reference" / "card_reference.json"
 OUT_JSON = ROOT / "data" / "reference" / "pull_probability_model.json"
 OUT_MD = ROOT / "review" / "pull_probability_model.md"
 
@@ -58,7 +65,7 @@ STANDARD_SLOT_MODEL = {
     "notes": (
         "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). "
         "Slot-level probability breakdown stored in slot_rates. "
-        "Aggregate rarity_probabilities null until computed from verified slot_rates."
+        "Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances."
     ),
 }
 
@@ -132,28 +139,28 @@ SET_CODE_BRANCH_CONFIG = {
 # Slot 5 total: 0.60+0.20+0.06664+0.10288+0.02+0.00888+0.0016 = 1.00000
 # ---------------------------------------------------------------------------
 _STANDARD_SLOT_4 = {
-    "two_diamond":   0.90000,
-    "three_diamond": 0.05000,
-    "four_diamond":  0.01666,
-    "one_star":      0.02572,
-    "two_star":   0.00500,
-    "three_star":   0.00222,
-    "crown":         0.00040,
+    "uncommon":      0.90000,
+    "rare":          0.05000,
+    "double_rare":   0.01666,
+    "illustration_rare": 0.02572,
+    "super_rare":    0.00500,
+    "immersive":     0.00222,
+    "ultra_rare":    0.00040,
 }
 _STANDARD_SLOT_5 = {
-    "two_diamond":   0.60000,
-    "three_diamond": 0.20000,
-    "four_diamond":  0.06664,
-    "one_star":      0.10288,
-    "two_star":   0.02000,
-    "three_star":   0.00888,
-    "crown":         0.00160,
+    "uncommon":      0.60000,
+    "rare":          0.20000,
+    "double_rare":   0.06664,
+    "illustration_rare": 0.10288,
+    "super_rare":    0.02000,
+    "immersive":     0.00888,
+    "ultra_rare":    0.00160,
 }
 _STANDARD_RARE_PACK = {
-    "one_star":    0.40,
-    "two_star": 0.50,
-    "three_star": 0.05,
-    "crown":       0.05,
+    "illustration_rare": 0.40,
+    "super_rare":        0.50,
+    "immersive":         0.05,
+    "ultra_rare":        0.05,
 }
 _THIRD_PARTY_CROSS_CHECKS = [
     {
@@ -192,7 +199,7 @@ INFERRED_SLOT_RATES = {
     "regular_pack_probability": 0.9995,
     "rare_pack_probability": 0.0005,
     "regular_pack_plus_one_probability": None,
-    "slots_1_3": {"one_diamond": 1.0},
+    "slots_1_3": {"common": 1.0},
     "slot_4": _STANDARD_SLOT_4,
     "slot_5": _STANDARD_SLOT_5,
     "slot_6": None,
@@ -228,7 +235,7 @@ BULBAPEDIA_THREE_BRANCH_SLOT_RATES = {
     "regular_pack_probability": 0.94711,
     "rare_pack_probability": 0.00050,
     "regular_pack_plus_one_probability": 0.05238,
-    "slots_1_3": {"one_diamond": 1.0},
+    "slots_1_3": {"common": 1.0},
     "slot_4": _STANDARD_SLOT_4,
     "slot_5": _STANDARD_SLOT_5,
     "slot_6": None,
@@ -286,7 +293,7 @@ MEGA_SHINE_SLOT_RATES = {
     "rare_pack_probability": 0.00050,
     "regular_pack_plus_one_probability": 0.05238,
     "themed_rare_pack_probability": 0.00005,
-    "slots_1_3": {"one_diamond": 1.0},
+    "slots_1_3": {"common": 1.0},
     "slot_4": _STANDARD_SLOT_4,
     "slot_5": _STANDARD_SLOT_5,
     "slot_6": None,
@@ -323,38 +330,38 @@ PULSING_AURA_SLOT_RATES = {
     "regular_pack_probability": 0.94711,
     "rare_pack_probability": 0.00050,
     "regular_pack_plus_one_probability": 0.05238,
-    "slots_1_3": {"one_diamond": 1.0},
+    "slots_1_3": {"common": 1.0},
     "slot_4": {
-        "two_diamond":   0.90000,
-        "three_diamond": 0.05000,
-        "four_diamond":  0.01667,
-        "one_star":      0.02572,
-        "two_star":   0.00500,
-        "three_star":   0.00222,
-        "crown":         0.00040,
+        "uncommon":   0.90000,
+        "rare": 0.05000,
+        "double_rare":  0.01667,
+        "illustration_rare":      0.02572,
+        "super_rare":   0.00500,
+        "immersive":   0.00222,
+        "ultra_rare":         0.00040,
     },
     "slot_5": {
-        "two_diamond":   0.59998,
-        "three_diamond": 0.20000,
-        "four_diamond":  0.06667,
-        "one_star":      0.10286,
-        "two_star":   0.02000,
-        "three_star":   0.00889,
-        "crown":         0.00160,
+        "uncommon":   0.59998,
+        "rare": 0.20000,
+        "double_rare":  0.06667,
+        "illustration_rare":      0.10286,
+        "super_rare":   0.02000,
+        "immersive":   0.00889,
+        "ultra_rare":         0.00160,
     },
     "slot_6": {
-        "one_shiny": 0.68180,
-        "two_shiny": 0.31820,
+        "shiny_rare": 0.68180,
+        "shiny_super_rare": 0.31820,
         "note": (
             "Card 6 appears only in Regular Pack + 1 Card openings (5.238% of packs). "
-            "Shiny cards (one_shiny/two_shiny) are NOT in pack_sources.json — "
+            "Shiny cards (shiny_rare/shiny_super_rare) are NOT in pack_sources.json — "
             "card 6 EV contribution is pending addition of shiny pool data."
         ),
     },
     "rare_pack_all_5_slots": {
-        "one_star":              0.47058,
-        "two_star":           0.45098,
-        "three_star":           0.03921,
+        "illustration_rare":              0.47058,
+        "super_rare":           0.45098,
+        "immersive":           0.03921,
         "crown_or_highest_rare": 0.03921,
     },
     "confidence": "user_in_app_verified_plus_bulbapedia",
@@ -401,13 +408,13 @@ PULSING_AURA_SLOT_RATES = {
 # Verified from IMG_1722 2.PNG: ☆=12.900% (Magby), ◇◇◇=87.100% (Magby/Smoochum/Tyrogue).
 # ---------------------------------------------------------------------------
 _A4_SLOT_6 = {
-    "one_star":      0.12900,
-    "three_diamond": 0.87100,
+    "illustration_rare":      0.12900,
+    "rare": 0.87100,
     "note": (
         "Card 6 in Regular Pack +1 Card openings (8.330% of packs). "
         "Verified from user in-app screenshots stored in 'Offering Rates screenshots/' "
         "(IMG_1722 2.PNG, 2026-05-14). "
-        "one_star (☆) = 12.900% (Magby), three_diamond (◇◇◇) = 87.100% "
+        "illustration_rare (☆) = 12.900% (Magby), rare (◇◇◇) = 87.100% "
         "(Magby/Smoochum/Tyrogue). Standard rarity cards — NOT shiny."
     ),
 }
@@ -422,7 +429,7 @@ A4_WISDOM_SLOT_RATES = {
     "regular_pack_probability": 0.91620,
     "rare_pack_probability": 0.00050,
     "regular_pack_plus_one_probability": 0.08330,
-    "slots_1_3": {"one_diamond": 1.0},
+    "slots_1_3": {"common": 1.0},
     "slot_4": _STANDARD_SLOT_4,
     "slot_5": _STANDARD_SLOT_5,
     "slot_6": _A4_SLOT_6,
@@ -433,7 +440,7 @@ A4_WISDOM_SLOT_RATES = {
     "source_accessed_at": "2026-05-14",
     "source_notes": (
         "Branch selection (regular_pack=91.620%, regular_pack_plus_one=8.330%, rare_pack=0.050%) "
-        "and slot_6 (one_star=12.900%, three_diamond=87.100%) verified from in-repo Offering "
+        "and slot_6 (illustration_rare=12.900%, rare=87.100%) verified from in-repo Offering "
         "Rates screenshots (IMG_1692 2.PNG – IMG_1722 2.PNG, 'Offering Rates screenshots/' folder). "
         "Ho-Oh (A4) verified directly; Lugia (A4) shares the same expansion — identical rates inferred. "
         "Branch probabilities match Secluded Springs (A4a) exactly. "
@@ -525,6 +532,74 @@ def add_rarity_dicts(a: dict, b: dict) -> dict:
     return {k: a.get(k, 0) + b.get(k, 0) for k in keys}
 
 
+def _remap_rarity_keys(obj):
+    """Recursively normalize legacy symbol-tier rarity keys to the new vocabulary
+    (e.g. two_diamond→uncommon, one_shiny→shiny_rare). Non-rarity keys pass through
+    unchanged. Rebuilds dicts/lists rather than mutating, so shared constant dicts
+    used as slot-rate templates are never modified in place."""
+    if isinstance(obj, dict):
+        return {(normalize_rarity(k) if isinstance(k, str) else k): _remap_rarity_keys(v)
+                for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_remap_rarity_keys(v) for v in obj]
+    return obj
+
+
+def compute_rarity_probabilities_from_pz(pack_name, set_code, pz_raw, pz_odds, ref_rarity) -> dict | None:
+    """Exact expected copies of each rarity per pack, summed INDEPENDENTLY per pack from
+    Pokémon Zone per-card drop chances (the same source build_pack_ev uses for EV).
+
+    For the pack's PZ entry, each card's drop_chance is added to its rarity bucket (rarity
+    from card_reference). Returns {rarity: expected_copies_per_pack} over RARITY_FIELDS, or
+    None when the pack has no PZ data (caller falls back to the slot model)."""
+    slug = resolve_pz_slug(pack_name, set_code, pz_raw)
+    card_odds = pz_odds.get(slug) if slug else None
+    if not card_odds:
+        return None
+    out = {r: 0.0 for r in RARITY_FIELDS}
+    for (sc, num), drop_dec in card_odds.items():
+        rar = ref_rarity.get((sc, num))  # canonical rarity for this coord
+        if rar not in out:
+            # Coord missing from card_reference (None) or an off-vocabulary value — never
+            # silently drop the pull mass: bucket it into 'unknown' so a stale/partial
+            # card_reference surfaces as a visible nonzero 'unknown' rather than understating.
+            rar = "unknown"
+        out[rar] += drop_dec
+    return {r: round(v, 8) for r, v in out.items()}
+
+
+def _slot_model_expected_per_pack(slot_rates: dict) -> dict:
+    """FALLBACK only (when a pack has no PZ data): approximate expected copies of each
+    rarity per pack from the inferred branch + per-slot model. Slots 1–3 are Common;
+    slot_6 (Card 6) appears only in the regular_pack_plus_one branch.
+      E[R] = P_reg·(3·s13 + s4 + s5) + P_plus·(3·s13 + s4 + s5 + s6) + P_rare·(5·rare)
+    Note: the slot model has no shiny/SIR keys, so those tiers read 0 here — PZ data is
+    required for exact shiny/SIR/crown rates."""
+    s13  = slot_rates.get("slots_1_3") or {}
+    s4   = slot_rates.get("slot_4") or {}
+    s5   = slot_rates.get("slot_5") or {}
+    s6   = slot_rates.get("slot_6") or {}
+    rare = slot_rates.get("rare_pack_all_5_slots") or {}
+    p_reg  = slot_rates.get("regular_pack_probability") or 0.0
+    p_plus = slot_rates.get("regular_pack_plus_one_probability") or 0.0
+    p_rare = slot_rates.get("rare_pack_probability") or 0.0
+
+    out: dict[str, float] = {}
+    for r in RARITY_FIELDS:
+        if r == "ultra_rare":
+            # Crown is stored under either 'ultra_rare' OR the 'crown_or_highest_rare'
+            # alias (never both) — pick whichever is present; don't sum (avoids double-count).
+            rare_r = float(rare.get("ultra_rare") or rare.get("crown_or_highest_rare") or 0.0)
+        else:
+            rare_r = float(rare.get(r, 0.0))
+        base = 3.0 * float(s13.get(r, 0.0)) + float(s4.get(r, 0.0)) + float(s5.get(r, 0.0))
+        e = (p_reg * base
+             + p_plus * (base + float(s6.get(r, 0.0)))
+             + p_rare * (5.0 * rare_r))
+        out[r] = round(e, 8) if e else 0.0
+    return out
+
+
 def load_existing_rates(path: Path) -> dict:
     """Load per-pack rate data from existing model JSON. Returns {pack_name: data}."""
     if not path.exists():
@@ -590,11 +665,24 @@ def _build_slot_rates_for_set(set_code: str) -> tuple[dict, str, str, str, bool]
     return (rates, "third_party_verified", "two_branch", None, False)
 
 
-def build_pack_records(records: list, existing_rates: dict) -> list:
+# Promo packs (PROMO-A/-B) are bought with a different currency and scored separately by
+# build_promo_pack_ev — they are excluded from the hourglass pull model entirely.
+_PROMO_SET_CODES = {"PROMO-A", "PROMO-B"}
+# Packs kept in the model but NOT purchasable with Pack Hourglasses → flagged
+# hourglass_purchasable=False so the recommendation report filters them out of the default
+# rankings unless --include-limited. Deluxe Pack: ex (A4b) is a limited/event pack.
+# (Compared upper-cased.)
+_NON_HOURGLASS_PURCHASABLE = {"A4B"}
+
+
+def build_pack_records(records: list, existing_rates: dict,
+                       pz_raw: dict, pz_odds: dict, ref_rarity: dict) -> list:
     """
     Return list of pack records — one per distinct pullable named pack.
     Shared-pool cards are folded into each named pack's combined_pool.
     Branch model applied per set_code from SET_CODE_BRANCH_CONFIG.
+    rarity_probabilities are computed per pack from PZ drop chances (exact), with the
+    slot model as fallback.
     """
     by_exp_pack = defaultdict(list)
     for r in records:
@@ -619,12 +707,20 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
         all_exp_cards = shared + [c for cc in d["named"].values() for c in cc]
         set_code = all_exp_cards[0].get("set_code", "") if all_exp_cards else ""
 
+        # Promo packs use a different currency (scored by build_promo_pack_ev) — keep them
+        # out of the hourglass pull model so they don't appear in pack EV / rankings.
+        if set_code.upper() in _PROMO_SET_CODES:
+            continue
+
         named_packs = d["named"]
         if not named_packs:
             continue
 
         slot_rates, confidence, branch_model_str, stale_warning, is_multi_branch = \
             _build_slot_rates_for_set(set_code)
+        # Normalize any legacy symbol-tier keys in the slot distributions to the new
+        # vocabulary (deep-copied so shared constants are not mutated).
+        slot_rates = _remap_rarity_keys(slot_rates)
 
         bulbapedia_url = BULBAPEDIA_URLS.get(set_code)
         branch_type = SET_CODE_BRANCH_CONFIG.get(set_code, "third_party_two_branch")
@@ -693,11 +789,11 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
             combined_total = pack_total + shared_total
 
             existing = existing_rates.get(pn, {})
-            prev_rarity_probs = existing.get("rarity_probabilities")
-            if prev_rarity_probs and any(v is not None for v in prev_rarity_probs.values()):
-                rarity_probs = prev_rarity_probs
-            else:
-                rarity_probs = {f: None for f in RARITY_FIELDS}
+            # Exact expected copies of each rarity per pack, summed independently per pack
+            # from Pokémon Zone per-card drop chances (the same source the EV model uses),
+            # falling back to the inferred slot model only when a pack has no PZ data.
+            rarity_probs = (compute_rarity_probabilities_from_pz(pn, set_code, pz_raw, pz_odds, ref_rarity)
+                            or _slot_model_expected_per_pack(slot_rates))
 
             slot_model = {
                 **STANDARD_SLOT_MODEL,
@@ -717,7 +813,7 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
                     "Source: user-provided in-app Offering Rates (ChatGPT, not in repo). "
                     "Bulbapedia corroborates branch percentages. "
                     "Rare pack distribution corrected from in-app data: 47.058/45.098/3.921/3.921. "
-                    "Card 6 shiny rates: one_shiny=68.180%, two_shiny=31.820% (EV pending shiny pool data)."
+                    "Card 6 shiny rates: shiny_rare=68.180%, shiny_super_rare=31.820% (EV pending shiny pool data)."
                 )
             elif branch_type == "user_in_app_verified_a4":
                 official_status = "user_in_app_verified"
@@ -730,7 +826,7 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
                     "Three-branch model verified from in-repo screenshots: "
                     "regular_pack (91.620%) + regular_pack_plus_one (8.330%) + rare_pack (0.050%). "
                     "Branch probabilities match Secluded Springs (A4a) exactly. "
-                    "Slot 6: one_star=12.900% (☆), three_diamond=87.100% (◇◇◇) — standard rarity, NOT shiny. "
+                    "Slot 6: illustration_rare=12.900% (☆), rare=87.100% (◇◇◇) — standard rarity, NOT shiny. "
                     "Slot 4/5 distributions match third_party_verified standard rates. "
                     "Rare pack distribution uses 40/50/5/5 placeholder — screenshots suggest "
                     "apparent uniform per-card distribution (~2.564%), pending explicit confirmation."
@@ -795,6 +891,9 @@ def build_pack_records(records: list, existing_rates: dict) -> list:
                 "expansion": exp,
                 "set_code": set_code,
                 "is_shared_pool": False,
+                # Purchasable with Pack Hourglasses? Limited/event packs (Deluxe Pack: ex /
+                # A4b) are not — the recommendation report filters them unless --include-limited.
+                "hourglass_purchasable": set_code.upper() not in _NON_HOURGLASS_PURCHASABLE,
                 "source_url": slot_rates.get("source_url"),
                 "source_name": slot_rates.get("source_name"),
                 "source_accessed_at": slot_rates.get("source_accessed_at"),
@@ -872,8 +971,8 @@ def write_json(pack_records: list) -> dict:
         f"bulbapedia_branch_verified: {n_bpv} packs (branch selection from Bulbapedia offering rates). "
         f"third_party_verified: {n_tpv} packs (two-branch, A-series, Bulbapedia truncated but pattern consistent). "
         f"pending_verification: {n_pending} packs (A4b Deluxe Pack: ex — pack unavailable in app, 4 cards/pack). "
-        f"All rarity_probabilities null (aggregate rates require in-app verification). "
-        f"A4 (Wisdom of Sea and Sky): three-branch 91.620%/8.330%/0.050%, slot_6 verified (one_star=12.9%, three_diamond=87.1%). "
+        f"rarity_probabilities = exact expected copies of each rarity per pack, summed per pack from Pokémon Zone per-card drop chances (slot-model fallback only when PZ data is absent). "
+        f"A4 (Wisdom of Sea and Sky): three-branch 91.620%/8.330%/0.050%, slot_6 verified (illustration_rare=12.9%, rare=87.1%). "
         f"Secluded Springs (A4a): unique three-branch (91.620%/8.330%/0.050%). "
         f"Mega Shine (B2b): four-branch with themed_rare_pack=0.005%."
     )
@@ -929,7 +1028,7 @@ def write_json(pack_records: list) -> dict:
                 "Pulsing Aura (B3) verified by user in-app (2026-05-13). "
                 "Most other packs branch-verified from Bulbapedia. "
                 "Slot rarity distributions still from third_party_verified sources. "
-                "Aggregate rarity_probabilities still null — require full in-app verification."
+                "Aggregate rarity_probabilities are PZ-exact (expected copies/rarity/pack from Pokémon Zone drop chances)."
             ),
             "how_to_officially_verify": (
                 "In the Pokémon TCG Pocket app: tap a pack > view 'Offering Rates'. "
@@ -959,7 +1058,7 @@ def write_md(out: dict, pack_records: list):
         "> Branch selection probabilities verified per-pack from Bulbapedia Offering Rates sections.",
         "> B-series packs corrected to three/four-branch. A-series packs confirmed two-branch.",
         "> Pulsing Aura (B3) is user_in_app_verified_plus_bulbapedia.",
-        "> `rarity_probabilities` (aggregate per-pack rates) are still null.",
+        "> `rarity_probabilities` = exact expected copies of each rarity per pack, summed per pack from Pokémon Zone per-card drop chances (slot-model fallback only when PZ data is absent).",
         "> Bulbapedia is a third-party wiki, NOT official in-app verification.",
         "",
         "## Status",
@@ -973,7 +1072,7 @@ def write_md(out: dict, pack_records: list):
         f"| Packs bulbapedia_branch_verified | {n_bpv} |",
         f"| Packs third_party_verified (two-branch, pattern consistent) | {n_tpv} |",
         f"| Packs pending_verification | {n_pending} (A4/A4b) |",
-        f"| rarity_probabilities | **all null** (aggregate rates not yet verified) |",
+        f"| rarity_probabilities | **PZ-exact** — expected copies of each rarity per pack from Pokémon Zone drop chances |",
         "",
         "## Branch Model by Pack",
         "",
@@ -1011,13 +1110,13 @@ def write_md(out: dict, pack_records: list):
         lines.append(
             f"| {p['pack_name']} | {p['expansion']} | {p['set_code']} "
             f"| {p['card_pool']['combined_total']} "
-            f"| {cp.get('one_diamond', 0)} "
-            f"| {cp.get('two_diamond', 0)} "
-            f"| {cp.get('three_diamond', 0)} "
-            f"| {cp.get('four_diamond', 0)} "
-            f"| {cp.get('one_star', 0)} "
-            f"| {cp.get('two_star', 0)} "
-            f"| {cp.get('three_star', 0)} |"
+            f"| {cp.get('common', 0)} "
+            f"| {cp.get('uncommon', 0)} "
+            f"| {cp.get('rare', 0)} "
+            f"| {cp.get('double_rare', 0)} "
+            f"| {cp.get('illustration_rare', 0)} "
+            f"| {cp.get('super_rare', 0)} "
+            f"| {cp.get('immersive', 0)} |"
         )
 
     lines += [
@@ -1033,8 +1132,10 @@ def write_md(out: dict, pack_records: list):
         "",
         "## rarity_probabilities Status",
         "",
-        "All aggregate `rarity_probabilities` values are currently `null`.",
-        "These will be computed once slot_rates are verified from official in-app Offering Rates.",
+        "`rarity_probabilities[r]` = exact expected number of cards of rarity *r* opened per pack,",
+        "summed independently per pack from Pokémon Zone per-card drop chances (`pz_pack_odds.json`)",
+        "joined to `card_reference` rarity. A slot-model approximation is used only when a pack",
+        "has no PZ data. Values are expected counts (e.g. common ~2.9/pack), not [0,1] probabilities.",
         "",
     ]
 
@@ -1100,13 +1201,15 @@ def run_validate() -> bool:
     for p in packs:
         rp = p.get("rarity_probabilities") or {}
         for field, val in rp.items():
-            if val is not None and not (isinstance(val, (int, float)) and 0 <= val <= 1):
-                print(f"  ERROR: {p['pack_name']}.{field} = {val} (must be null or 0–1)")
+            # Values are EXPECTED COPIES of each rarity per pack (e.g. common ~2.9), so they
+            # are non-negative reals, not [0,1] probabilities.
+            if val is not None and not (isinstance(val, (int, float)) and val >= 0):
+                print(f"  ERROR: {p['pack_name']}.{field} = {val} (must be null or >= 0)")
                 prob_errors += 1
     if prob_errors:
         errors += prob_errors
     else:
-        print("  PASS  all rarity_probabilities values are null or in [0, 1]")
+        print("  PASS  all rarity_probabilities values are null or >= 0 (expected copies/pack)")
 
     valid_conf = {
         "verified",
@@ -1211,8 +1314,17 @@ def main():
     if existing_rates:
         print(f"  Existing rates loaded: {len(existing_rates)} packs")
 
-    pack_records = build_pack_records(records, existing_rates)
+    # PZ per-card drop chances + card_reference rarity → exact per-rarity-per-pack probs.
+    pz_raw, pz_odds = load_pz_pack_odds(PZ_PACK_ODDS_JSON)
+    ref_rarity = {coord: normalize_rarity(rec.get("rarity"))
+                  for coord, rec in card_reference_by_coord(CARD_REF_JSON).items()}
+    print(f"  PZ packs: {len(pz_raw)} | card_reference coords: {len(ref_rarity)}")
+
+    pack_records = build_pack_records(records, existing_rates, pz_raw, pz_odds, ref_rarity)
     print(f"  Pullable packs: {len(pack_records)}")
+    n_pz_probs = sum(1 for p in pack_records
+                     if resolve_pz_slug(p["pack_name"], p["set_code"], pz_raw) in pz_odds)
+    print(f"  rarity_probabilities from PZ (exact): {n_pz_probs}/{len(pack_records)} packs (rest use slot-model fallback)")
 
     source_status = determine_source_status(pack_records)
     n_bpv     = sum(1 for p in pack_records if p.get("confidence") == "bulbapedia_branch_verified")
@@ -1232,7 +1344,7 @@ def main():
     print(f"  user_in_app_verified_plus_bulbapedia:{n_inapp_b}/24")
     print(f"  third_party_verified (pattern):     {n_tpv}/24")
     print(f"  pending_verification:               {n_pending}/24")
-    print(f"  rarity_probabilities:               all null")
+    print(f"  rarity_probabilities:               PZ-exact (expected copies/rarity/pack)")
     print(f"\nDone.")
 
 

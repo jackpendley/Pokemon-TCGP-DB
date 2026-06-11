@@ -1,0 +1,595 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T18:56:49Z",
+    "card_count": 117,
+    "set_code": "B2b",
+    "source": "bulbapedia"
+  },
+  "cards": {
+    "1": {
+      "name": "Scyther",
+      "pokemon_type": "Grass",
+      "rarity": "one_diamond"
+    },
+    "10": {
+      "name": "Ponyta",
+      "pokemon_type": "Fire",
+      "rarity": "one_diamond"
+    },
+    "100": {
+      "name": "Gastly",
+      "pokemon_type": "Darkness",
+      "rarity": "one_star"
+    },
+    "101": {
+      "name": "Haunter",
+      "pokemon_type": "Darkness",
+      "rarity": "one_star"
+    },
+    "102": {
+      "name": "Zorua",
+      "pokemon_type": "Darkness",
+      "rarity": "one_star"
+    },
+    "103": {
+      "name": "Zoroark",
+      "pokemon_type": "Darkness",
+      "rarity": "one_star"
+    },
+    "104": {
+      "name": "Forretress",
+      "pokemon_type": "Metal",
+      "rarity": "one_star"
+    },
+    "105": {
+      "name": "Dratini",
+      "pokemon_type": "Dragon",
+      "rarity": "one_star"
+    },
+    "106": {
+      "name": "Dragonair",
+      "pokemon_type": "Dragon",
+      "rarity": "one_star"
+    },
+    "107": {
+      "name": "Dragonite",
+      "pokemon_type": "Dragon",
+      "rarity": "one_star"
+    },
+    "108": {
+      "name": "Axew",
+      "pokemon_type": "Dragon",
+      "rarity": "one_star"
+    },
+    "109": {
+      "name": "Fraxure",
+      "pokemon_type": "Dragon",
+      "rarity": "one_star"
+    },
+    "11": {
+      "name": "Rapidash",
+      "pokemon_type": "Fire",
+      "rarity": "one_diamond"
+    },
+    "110": {
+      "name": "Haxorus",
+      "pokemon_type": "Dragon",
+      "rarity": "one_star"
+    },
+    "111": {
+      "name": "Mega Charizard X ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "112": {
+      "name": "Mega Slowbro ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "113": {
+      "name": "Mega Manectric ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "114": {
+      "name": "Mega Gengar ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "115": {
+      "name": "Mega Scizor ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "116": {
+      "name": "Arboliva",
+      "pokemon_type": "Grass",
+      "rarity": "crown"
+    },
+    "117": {
+      "name": "Metal Core Barrier",
+      "pokemon_type": "Pokémon Tool",
+      "rarity": "crown"
+    },
+    "12": {
+      "name": "Magmar",
+      "pokemon_type": "Fire",
+      "rarity": "one_diamond"
+    },
+    "13": {
+      "name": "Magmortar",
+      "pokemon_type": "Fire",
+      "rarity": "two_diamond"
+    },
+    "14": {
+      "name": "Paldean Tauros",
+      "pokemon_type": "Fire",
+      "rarity": "one_diamond"
+    },
+    "15": {
+      "name": "Slowpoke",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "16": {
+      "name": "Mega Slowbro ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "17": {
+      "name": "Lapras",
+      "pokemon_type": "Water",
+      "rarity": "two_diamond"
+    },
+    "18": {
+      "name": "Piplup",
+      "pokemon_type": "Water",
+      "rarity": "one_diamond"
+    },
+    "19": {
+      "name": "Prinplup",
+      "pokemon_type": "Water",
+      "rarity": "two_diamond"
+    },
+    "2": {
+      "name": "Pineco",
+      "pokemon_type": "Grass",
+      "rarity": "one_diamond"
+    },
+    "20": {
+      "name": "Empoleon",
+      "pokemon_type": "Water",
+      "rarity": "three_diamond"
+    },
+    "21": {
+      "name": "Phione",
+      "pokemon_type": "Water",
+      "rarity": "two_diamond"
+    },
+    "22": {
+      "name": "Pikachu",
+      "pokemon_type": "Lightning",
+      "rarity": "one_diamond"
+    },
+    "23": {
+      "name": "Raichu",
+      "pokemon_type": "Lightning",
+      "rarity": "two_diamond"
+    },
+    "24": {
+      "name": "Electabuzz",
+      "pokemon_type": "Lightning",
+      "rarity": "one_diamond"
+    },
+    "25": {
+      "name": "Electivire",
+      "pokemon_type": "Lightning",
+      "rarity": "two_diamond"
+    },
+    "26": {
+      "name": "Electrike",
+      "pokemon_type": "Lightning",
+      "rarity": "one_diamond"
+    },
+    "27": {
+      "name": "Mega Manectric ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "28": {
+      "name": "Drowzee",
+      "pokemon_type": "Psychic",
+      "rarity": "one_diamond"
+    },
+    "29": {
+      "name": "Hypno",
+      "pokemon_type": "Psychic",
+      "rarity": "two_diamond"
+    },
+    "3": {
+      "name": "Volbeat",
+      "pokemon_type": "Grass",
+      "rarity": "one_diamond"
+    },
+    "30": {
+      "name": "Mew",
+      "pokemon_type": "Psychic",
+      "rarity": "three_diamond"
+    },
+    "31": {
+      "name": "Spoink",
+      "pokemon_type": "Psychic",
+      "rarity": "one_diamond"
+    },
+    "32": {
+      "name": "Grumpig",
+      "pokemon_type": "Psychic",
+      "rarity": "two_diamond"
+    },
+    "33": {
+      "name": "Diglett",
+      "pokemon_type": "Fighting",
+      "rarity": "one_diamond"
+    },
+    "34": {
+      "name": "Dugtrio",
+      "pokemon_type": "Fighting",
+      "rarity": "two_diamond"
+    },
+    "35": {
+      "name": "Groudon",
+      "pokemon_type": "Fighting",
+      "rarity": "three_diamond"
+    },
+    "36": {
+      "name": "Hawlucha",
+      "pokemon_type": "Fighting",
+      "rarity": "one_diamond"
+    },
+    "37": {
+      "name": "Gastly",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "38": {
+      "name": "Haunter",
+      "pokemon_type": "Darkness",
+      "rarity": "two_diamond"
+    },
+    "39": {
+      "name": "Mega Gengar ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "4": {
+      "name": "Illumise",
+      "pokemon_type": "Grass",
+      "rarity": "one_diamond"
+    },
+    "40": {
+      "name": "Darkrai",
+      "pokemon_type": "Darkness",
+      "rarity": "three_diamond"
+    },
+    "41": {
+      "name": "Trubbish",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "42": {
+      "name": "Garbodor",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "43": {
+      "name": "Zorua",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "44": {
+      "name": "Zoroark",
+      "pokemon_type": "Darkness",
+      "rarity": "three_diamond"
+    },
+    "45": {
+      "name": "Morpeko",
+      "pokemon_type": "Darkness",
+      "rarity": "one_diamond"
+    },
+    "46": {
+      "name": "Forretress",
+      "pokemon_type": "Metal",
+      "rarity": "two_diamond"
+    },
+    "47": {
+      "name": "Mega Scizor ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "48": {
+      "name": "Kartana",
+      "pokemon_type": "Metal",
+      "rarity": "two_diamond"
+    },
+    "49": {
+      "name": "Varoom",
+      "pokemon_type": "Metal",
+      "rarity": "one_diamond"
+    },
+    "5": {
+      "name": "Phantump",
+      "pokemon_type": "Grass",
+      "rarity": "one_diamond"
+    },
+    "50": {
+      "name": "Revavroom",
+      "pokemon_type": "Metal",
+      "rarity": "three_diamond"
+    },
+    "51": {
+      "name": "Dratini",
+      "pokemon_type": "Dragon",
+      "rarity": "one_diamond"
+    },
+    "52": {
+      "name": "Dragonair",
+      "pokemon_type": "Dragon",
+      "rarity": "two_diamond"
+    },
+    "53": {
+      "name": "Dragonite",
+      "pokemon_type": "Dragon",
+      "rarity": "three_diamond"
+    },
+    "54": {
+      "name": "Axew",
+      "pokemon_type": "Dragon",
+      "rarity": "one_diamond"
+    },
+    "55": {
+      "name": "Fraxure",
+      "pokemon_type": "Dragon",
+      "rarity": "two_diamond"
+    },
+    "56": {
+      "name": "Haxorus",
+      "pokemon_type": "Dragon",
+      "rarity": "three_diamond"
+    },
+    "57": {
+      "name": "Druddigon",
+      "pokemon_type": "Dragon",
+      "rarity": "one_diamond"
+    },
+    "58": {
+      "name": "Jigglypuff",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "59": {
+      "name": "Wigglytuff",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "6": {
+      "name": "Trevenant",
+      "pokemon_type": "Grass",
+      "rarity": "two_diamond"
+    },
+    "60": {
+      "name": "Miltank",
+      "pokemon_type": "Colorless",
+      "rarity": "two_diamond"
+    },
+    "61": {
+      "name": "Chatot",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "62": {
+      "name": "Minccino",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "63": {
+      "name": "Cinccino",
+      "pokemon_type": "Colorless",
+      "rarity": "one_diamond"
+    },
+    "64": {
+      "name": "Furfrou",
+      "pokemon_type": "Colorless",
+      "rarity": "two_diamond"
+    },
+    "65": {
+      "name": "Nasty Notice",
+      "pokemon_type": "Item",
+      "rarity": "two_diamond"
+    },
+    "66": {
+      "name": "Maintenance",
+      "pokemon_type": "Item",
+      "rarity": "two_diamond"
+    },
+    "67": {
+      "name": "Iris",
+      "pokemon_type": "Supporter",
+      "rarity": "two_diamond"
+    },
+    "68": {
+      "name": "Calem",
+      "pokemon_type": "Supporter",
+      "rarity": "two_diamond"
+    },
+    "69": {
+      "name": "Hiking Trail",
+      "pokemon_type": "Stadium",
+      "rarity": "two_diamond"
+    },
+    "7": {
+      "name": "Charmander",
+      "pokemon_type": "Fire",
+      "rarity": "one_diamond"
+    },
+    "70": {
+      "name": "Lapras",
+      "pokemon_type": "Water",
+      "rarity": "one_star"
+    },
+    "71": {
+      "name": "Empoleon",
+      "pokemon_type": "Water",
+      "rarity": "one_star"
+    },
+    "72": {
+      "name": "Groudon",
+      "pokemon_type": "Fighting",
+      "rarity": "one_star"
+    },
+    "73": {
+      "name": "Morpeko",
+      "pokemon_type": "Darkness",
+      "rarity": "one_star"
+    },
+    "74": {
+      "name": "Revavroom",
+      "pokemon_type": "Metal",
+      "rarity": "one_star"
+    },
+    "75": {
+      "name": "Miltank",
+      "pokemon_type": "Colorless",
+      "rarity": "one_star"
+    },
+    "76": {
+      "name": "Mega Charizard X ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "77": {
+      "name": "Mega Slowbro ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "78": {
+      "name": "Mega Manectric ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "79": {
+      "name": "Mega Gengar ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "8": {
+      "name": "Charmeleon",
+      "pokemon_type": "Fire",
+      "rarity": "two_diamond"
+    },
+    "80": {
+      "name": "Mega Scizor ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "81": {
+      "name": "Iris",
+      "pokemon_type": "Supporter",
+      "rarity": "two_star"
+    },
+    "82": {
+      "name": "Calem",
+      "pokemon_type": "Supporter",
+      "rarity": "two_star"
+    },
+    "83": {
+      "name": "Mega Slowbro ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "84": {
+      "name": "Mega Manectric ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "85": {
+      "name": "Mew",
+      "pokemon_type": "Psychic",
+      "rarity": "three_star"
+    },
+    "86": {
+      "name": "Mew",
+      "pokemon_type": "Psychic",
+      "rarity": "three_star"
+    },
+    "87": {
+      "name": "Scyther",
+      "pokemon_type": "Grass",
+      "rarity": "one_star"
+    },
+    "88": {
+      "name": "Pineco",
+      "pokemon_type": "Grass",
+      "rarity": "one_star"
+    },
+    "89": {
+      "name": "Phantump",
+      "pokemon_type": "Grass",
+      "rarity": "one_star"
+    },
+    "9": {
+      "name": "Mega Charizard X ex",
+      "pokemon_type": null,
+      "rarity": null
+    },
+    "90": {
+      "name": "Trevenant",
+      "pokemon_type": "Grass",
+      "rarity": "one_star"
+    },
+    "91": {
+      "name": "Charmander",
+      "pokemon_type": "Fire",
+      "rarity": "one_star"
+    },
+    "92": {
+      "name": "Charmeleon",
+      "pokemon_type": "Fire",
+      "rarity": "one_star"
+    },
+    "93": {
+      "name": "Ponyta",
+      "pokemon_type": "Fire",
+      "rarity": "one_star"
+    },
+    "94": {
+      "name": "Rapidash",
+      "pokemon_type": "Fire",
+      "rarity": "one_star"
+    },
+    "95": {
+      "name": "Slowpoke",
+      "pokemon_type": "Water",
+      "rarity": "one_star"
+    },
+    "96": {
+      "name": "Pikachu",
+      "pokemon_type": "Lightning",
+      "rarity": "one_star"
+    },
+    "97": {
+      "name": "Raichu",
+      "pokemon_type": "Lightning",
+      "rarity": "one_star"
+    },
+    "98": {
+      "name": "Electrike",
+      "pokemon_type": "Lightning",
+      "rarity": "one_star"
+    },
+    "99": {
+      "name": "Hawlucha",
+      "pokemon_type": "Fighting",
+      "rarity": "one_star"
+    }
+  }
+}

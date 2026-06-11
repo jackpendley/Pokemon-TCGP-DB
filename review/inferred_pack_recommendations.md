@@ -4,9 +4,9 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-06-01T02:54:32+00:00 |
-| Model confidence | **pz_verified** |
-| Collection total | 886 cards |
+| Report generated | 2026-06-10T00:32:56+00:00 |
+| Model confidence | **third_party_verified_with_in_app_anchor** |
+| Collection total | 1145 cards |
 | Packs ranked | 24 |
 | Packs blocked | 0 |
 
@@ -18,11 +18,11 @@ Ranked by unified score: `new_card_ev_10x×1.0 + copy_ev×0.2 + deck_target_ev×
 
 | Rank | Pack | Expansion | Unified | New EV (10x) | Deck EV | ⧗/card | Missing |
 |---|---|---|---|---|---|---|---|
-| 1 | **Extradimensional Crisis** | Extradimensional Crisis | 44.8652 | 44.8183 | 0.0000 | 2.7 | 84 |
-| 2 | **Mega Altaria** | Mega Rising | 44.3517 | 44.3005 | 0.0000 | 2.7 | 105 |
-| 3 | **Fantastical Parade** | Fantastical Parade | 43.7241 | 43.6178 | 0.0000 | 2.8 | 172 |
-| 4 | **Lugia** | Wisdom of Sea and Sky | 43.6830 | 43.6074 | 0.0000 | 2.8 | 96 |
-| 5 | **Lunala** | Celestial Guardians | 43.6654 | 43.6185 | 0.0000 | 2.8 | 107 |
+| 1 | **Lugia** | Wisdom of Sea and Sky | 61.6441 | 61.6236 | 0.0000 | 1.9 | 131 |
+| 2 | **Ho-Oh** | Wisdom of Sea and Sky | 61.1274 | 61.1144 | 0.0000 | 2.0 | 133 |
+| 3 | **Solgaleo** | Celestial Guardians | 59.3978 | 59.3964 | 0.0000 | 2.0 | 139 |
+| 4 | **Secluded Springs** | Secluded Springs | 58.6307 | 58.6307 | 0.0000 | 2.0 | 105 |
+| 5 | **Lunala** | Celestial Guardians | 58.4190 | 58.4123 | 0.0000 | 2.0 | 137 |
 
 ---
 
@@ -32,117 +32,117 @@ Ranked by hourglasses spent per unique new card (10-pack batch). Lower is better
 
 | Rank | Pack | ⧗/card (10x) | New EV (10x) | DR Ratio | Missing |
 |---|---|---|---|---|---|
-| 1 | Extradimensional Crisis | 2.7 | 44.8183 | 0.794 | 84 |
-| 2 | Mega Altaria | 2.7 | 44.3005 | 0.853 | 105 |
-| 3 | Fantastical Parade | 2.8 | 43.6178 | 0.899 | 172 |
-| 4 | Ho-Oh | 2.8 | 43.5805 | 0.841 | 98 |
-| 5 | Lugia | 2.8 | 43.6074 | 0.840 | 96 |
+| 1 | Lugia | 1.9 | 61.6236 | 0.844 | 131 |
+| 2 | Ho-Oh | 2.0 | 61.1144 | 0.839 | 133 |
+| 3 | Solgaleo | 2.0 | 59.3964 | 0.841 | 139 |
+| 4 | Lunala | 2.0 | 58.4123 | 0.843 | 137 |
+| 5 | Secluded Springs | 2.0 | 58.6307 | 0.792 | 105 |
 
 ---
 
 ## Pack Detail — Top 5 by Unified Score
 
-**Extradimensional Crisis** (Extradimensional Crisis)
+**Lugia** (Wisdom of Sea and Sky)
 
 | Metric | Value |
 |---|---|
-| Unified Score | **44.8652** |
-| New-card EV (10x) | 44.8183 |
-| New-card EV (1x) | 5.6440 |
+| Unified Score | **61.6441** |
+| New-card EV (10x) | 61.6236 |
+| New-card EV (1x) | 7.3017 |
 | Deck target EV | 0.0000 |
-| Cost / EV unit (10x) | 2.68 ⧗ |
-| DR ratio | 0.794 |
-| Pool size | 103 cards |
-| Already owned in pool | 19 |
-| Missing from pool | **84** |
+| Cost / EV unit (10x) | 1.95 ⧗ |
+| DR ratio | 0.844 |
+| Pool size | 136 cards |
+| Already owned in pool | 5 |
+| Missing from pool | **131** |
 
 Top EV cards in this pack:
 
 | Card | Rarity | Owned | Pull P | Value | EV |
 |---|---|---|---|---|---|
-| Decidueye | three_diamond | 0 | 0.03080 | 3.70 | 0.11396 |
-| Luxray | three_diamond | 0 | 0.03080 | 3.70 | 0.11396 |
-| Shiinotic | three_diamond | 0 | 0.03080 | 3.70 | 0.11396 |
-| Nihilego | three_diamond | 0 | 0.03080 | 3.70 | 0.11396 |
-| Naganadel | three_diamond | 0 | 0.03080 | 3.70 | 0.11396 |
+| Lugia ex _EX_ | ultra_rare | 0 | 0.01650 | 11.00 | 0.18150 |
+| Lugia ex _EX_ | immersive | 0 | 0.01110 | 8.50 | 0.09435 |
+| Pichu | rare | 0 | 0.02420 | 3.70 | 0.08954 |
+| Elekid | rare | 0 | 0.02420 | 3.70 | 0.08954 |
+| Cleffa | rare | 0 | 0.02420 | 3.70 | 0.08954 |
 
 ---
 
-**Mega Altaria** (Mega Rising)
+**Ho-Oh** (Wisdom of Sea and Sky)
 
 | Metric | Value |
 |---|---|
-| Unified Score | **44.3517** |
-| New-card EV (10x) | 44.3005 |
-| New-card EV (1x) | 5.1948 |
+| Unified Score | **61.1274** |
+| New-card EV (10x) | 61.1144 |
+| New-card EV (1x) | 7.2841 |
 | Deck target EV | 0.0000 |
-| Cost / EV unit (10x) | 2.71 ⧗ |
-| DR ratio | 0.853 |
-| Pool size | 139 cards |
-| Already owned in pool | 34 |
+| Cost / EV unit (10x) | 1.96 ⧗ |
+| DR ratio | 0.839 |
+| Pool size | 136 cards |
+| Already owned in pool | 3 |
+| Missing from pool | **133** |
+
+Top EV cards in this pack:
+
+| Card | Rarity | Owned | Pull P | Value | EV |
+|---|---|---|---|---|---|
+| Ho-Oh ex _EX_ | immersive | 0 | 0.01110 | 8.50 | 0.09435 |
+| Magby | rare | 0 | 0.02420 | 3.70 | 0.08954 |
+| Smoochum | rare | 0 | 0.02420 | 3.70 | 0.08954 |
+| Tyrogue | rare | 0 | 0.02420 | 3.70 | 0.08954 |
+| Ho-Oh ex _EX_ | double_rare | 0 | 0.01650 | 5.40 | 0.08910 |
+
+---
+
+**Solgaleo** (Celestial Guardians)
+
+| Metric | Value |
+|---|---|
+| Unified Score | **59.3978** |
+| New-card EV (10x) | 59.3964 |
+| New-card EV (1x) | 7.0594 |
+| Deck target EV | 0.0000 |
+| Cost / EV unit (10x) | 2.02 ⧗ |
+| DR ratio | 0.841 |
+| Pool size | 140 cards |
+| Already owned in pool | 1 |
+| Missing from pool | **139** |
+
+Top EV cards in this pack:
+
+| Card | Rarity | Owned | Pull P | Value | EV |
+|---|---|---|---|---|---|
+| Lillie | immersive | 0 | 0.01110 | 8.50 | 0.09435 |
+| Dhelmise ex _EX_ | double_rare | 0 | 0.01650 | 5.40 | 0.08910 |
+| Incineroar ex _EX_ | double_rare | 0 | 0.01650 | 5.40 | 0.08910 |
+| Crabominable ex _EX_ | double_rare | 0 | 0.01650 | 5.40 | 0.08910 |
+| Alolan Raichu ex _EX_ | double_rare | 0 | 0.01650 | 5.40 | 0.08910 |
+
+---
+
+**Secluded Springs** (Secluded Springs)
+
+| Metric | Value |
+|---|---|
+| Unified Score | **58.6307** |
+| New-card EV (10x) | 58.6307 |
+| New-card EV (1x) | 7.3990 |
+| Deck target EV | 0.0000 |
+| Cost / EV unit (10x) | 2.05 ⧗ |
+| DR ratio | 0.792 |
+| Pool size | 105 cards |
+| Already owned in pool | 0 |
 | Missing from pool | **105** |
 
 Top EV cards in this pack:
 
 | Card | Rarity | Owned | Pull P | Value | EV |
 |---|---|---|---|---|---|
-| Mega Altaria ex _EX_ | three_star | 0 | 0.01120 | 8.50 | 0.09520 |
-| Whimsicott ex _EX_ | four_diamond | 0 | 0.01650 | 5.40 | 0.08910 |
-| Mega Ampharos ex _EX_ | four_diamond | 0 | 0.01650 | 5.40 | 0.08910 |
-| Mega Altaria ex _EX_ | four_diamond | 0 | 0.01650 | 5.40 | 0.08910 |
-| Indeedee ex _EX_ | four_diamond | 0 | 0.01650 | 5.40 | 0.08910 |
-
----
-
-**Fantastical Parade** (Fantastical Parade)
-
-| Metric | Value |
-|---|---|
-| Unified Score | **43.7241** |
-| New-card EV (10x) | 43.6178 |
-| New-card EV (1x) | 4.8496 |
-| Deck target EV | 0.0000 |
-| Cost / EV unit (10x) | 2.75 ⧗ |
-| DR ratio | 0.899 |
-| Pool size | 234 cards |
-| Already owned in pool | 62 |
-| Missing from pool | **172** |
-
-Top EV cards in this pack:
-
-| Card | Rarity | Owned | Pull P | Value | EV |
-|---|---|---|---|---|---|
-| Mega Gardevoir ex _EX_ | three_star | 0 | 0.00550 | 8.50 | 0.04675 |
-| Teal Mask Ogerpon ex _EX_ | four_diamond | 0 | 0.00840 | 5.40 | 0.04536 |
-| Blacephalon ex _EX_ | four_diamond | 0 | 0.00840 | 5.40 | 0.04536 |
-| Alolan Ninetales ex _EX_ | four_diamond | 0 | 0.00840 | 5.40 | 0.04536 |
-| Mega Swampert ex _EX_ | four_diamond | 0 | 0.00840 | 5.40 | 0.04536 |
-
----
-
-**Lugia** (Wisdom of Sea and Sky)
-
-| Metric | Value |
-|---|---|
-| Unified Score | **43.6830** |
-| New-card EV (10x) | 43.6074 |
-| New-card EV (1x) | 5.1904 |
-| Deck target EV | 0.0000 |
-| Cost / EV unit (10x) | 2.75 ⧗ |
-| DR ratio | 0.840 |
-| Pool size | 136 cards |
-| Already owned in pool | 40 |
-| Missing from pool | **96** |
-
-Top EV cards in this pack:
-
-| Card | Rarity | Owned | Pull P | Value | EV |
-|---|---|---|---|---|---|
-| Pichu | three_diamond | 0 | 0.02420 | 3.70 | 0.08954 |
-| Elekid | three_diamond | 0 | 0.02420 | 3.70 | 0.08954 |
-| Cleffa | three_diamond | 0 | 0.02420 | 3.70 | 0.08954 |
-| Shuckle ex _EX_ | four_diamond | 0 | 0.01650 | 5.40 | 0.08910 |
-| Kingdra ex _EX_ | four_diamond | 0 | 0.01650 | 5.40 | 0.08910 |
+| Milotic | illustration_rare | 0 | 0.02570 | 4.70 | 0.12079 |
+| Stunfisk | illustration_rare | 0 | 0.02570 | 4.70 | 0.12079 |
+| Yamper | illustration_rare | 0 | 0.02570 | 4.70 | 0.12079 |
+| Latios | illustration_rare | 0 | 0.02570 | 4.70 | 0.12079 |
+| Phanpy | illustration_rare | 0 | 0.02570 | 4.70 | 0.12079 |
 
 ---
 
@@ -150,25 +150,25 @@ Top EV cards in this pack:
 
 | Metric | Value |
 |---|---|
-| Unified Score | **43.6654** |
-| New-card EV (10x) | 43.6185 |
-| New-card EV (1x) | 5.1606 |
+| Unified Score | **58.4190** |
+| New-card EV (10x) | 58.4123 |
+| New-card EV (1x) | 6.9275 |
 | Deck target EV | 0.0000 |
-| Cost / EV unit (10x) | 2.75 ⧗ |
-| DR ratio | 0.845 |
+| Cost / EV unit (10x) | 2.05 ⧗ |
+| DR ratio | 0.843 |
 | Pool size | 140 cards |
-| Already owned in pool | 33 |
-| Missing from pool | **107** |
+| Already owned in pool | 3 |
+| Missing from pool | **137** |
 
 Top EV cards in this pack:
 
 | Card | Rarity | Owned | Pull P | Value | EV |
 |---|---|---|---|---|---|
-| Guzma | three_star | 0 | 0.01110 | 8.50 | 0.09435 |
-| Decidueye ex _EX_ | four_diamond | 0 | 0.01650 | 5.40 | 0.08910 |
-| Wishiwashi ex _EX_ | four_diamond | 0 | 0.01650 | 5.40 | 0.08910 |
-| Lunala ex _EX_ | four_diamond | 0 | 0.01650 | 5.40 | 0.08910 |
-| Passimian ex _EX_ | four_diamond | 0 | 0.01650 | 5.40 | 0.08910 |
+| Guzma | immersive | 0 | 0.01110 | 8.50 | 0.09435 |
+| Decidueye ex _EX_ | double_rare | 0 | 0.01650 | 5.40 | 0.08910 |
+| Wishiwashi ex _EX_ | double_rare | 0 | 0.01650 | 5.40 | 0.08910 |
+| Lunala ex _EX_ | double_rare | 0 | 0.01650 | 5.40 | 0.08910 |
+| Passimian ex _EX_ | double_rare | 0 | 0.01650 | 5.40 | 0.08910 |
 
 ---
 
@@ -183,30 +183,30 @@ Top EV cards in this pack:
 
 | Rank | Pack | Expansion | Unified | New EV (10x) | New EV (1x) | Missing | Deck EV |
 |---|---|---|---|---|---|---|---|
-| 1 | Extradimensional Crisis | Extradimensional Crisis | 44.8652 | 44.8183 | 5.6440 | 84 | 0.0000 |
-| 2 | Mega Altaria | Mega Rising | 44.3517 | 44.3005 | 5.1948 | 105 | 0.0000 |
-| 3 | Fantastical Parade | Fantastical Parade | 43.7241 | 43.6178 | 4.8496 | 172 | 0.0000 |
-| 4 | Lugia | Wisdom of Sea and Sky | 43.6830 | 43.6074 | 5.1904 | 96 | 0.0000 |
-| 5 | Lunala | Celestial Guardians | 43.6654 | 43.6185 | 5.1606 | 107 | 0.0000 |
-| 6 | Ho-Oh | Wisdom of Sea and Sky | 43.6322 | 43.5805 | 5.1838 | 98 | 0.0000 |
-| 7 | Secluded Springs | Secluded Springs | 43.4697 | 43.4204 | 5.3596 | 80 | 0.0000 |
-| 8 | Palkia | Space-Time Smackdown | 42.7269 | 42.6786 | 5.0559 | 96 | 0.0000 |
-| 9 | Mega Gyarados | Mega Rising | 42.6418 | 42.5875 | 4.9912 | 97 | 0.0000 |
-| 10 | Mega Shine | Mega Shine | 41.1752 | 41.0989 | 5.0737 | 87 | 0.0000 |
-| 11 | Solgaleo | Celestial Guardians | 40.9111 | 40.8459 | 4.8908 | 99 | 0.0000 |
-| 12 | Dialga | Space-Time Smackdown | 40.8518 | 40.8131 | 4.8355 | 93 | 0.0000 |
-| 13 | Mew | Mythical Island | 40.6551 | 40.6177 | 5.1942 | 69 | 0.0000 |
-| 14 | Pikachu | Genetic Apex | 39.6041 | 39.5527 | 4.6474 | 90 | 0.0000 |
-| 15 | Mega Blaziken | Mega Rising | 38.6572 | 38.5783 | 4.5023 | 92 | 0.0000 |
-| 16 | Eevee Grove | Eevee Grove | 38.1888 | 38.1580 | 4.8516 | 77 | 0.0000 |
-| 17 | Charizard | Genetic Apex | 36.3008 | 36.2458 | 4.2651 | 83 | 0.0000 |
-| 18 | Arceus | Triumphant Light | 33.2266 | 33.1435 | 4.0937 | 66 | 0.0000 |
-| 19 | Mewtwo | Genetic Apex | 33.1185 | 33.0574 | 3.9115 | 77 | 0.0000 |
-| 20 | Shining Revelry | Shining Revelry | 32.5998 | 32.5399 | 4.0438 | 73 | 0.0000 |
-| 21 | Paldean Wonders | Paldean Wonders | 24.6881 | 24.5010 | 2.8643 | 57 | 0.0000 |
-| 22 | Crimson Blaze | Crimson Blaze | 19.0168 | 18.8808 | 2.2182 | 37 | 0.0000 |
-| 23 | Paradox Drive | Paradox Drive | 12.9477 | 12.7927 | 1.4148 | 26 | 0.0000 |
-| 24 | Pulsing Aura | Pulsing Aura | 10.7157 | 10.6234 | 1.1222 | 52 | 0.0000 |
+| 1 | Lugia | Wisdom of Sea and Sky | 61.6441 | 61.6236 | 7.3017 | 131 | 0.0000 |
+| 2 | Ho-Oh | Wisdom of Sea and Sky | 61.1274 | 61.1144 | 7.2841 | 133 | 0.0000 |
+| 3 | Solgaleo | Celestial Guardians | 59.3978 | 59.3964 | 7.0594 | 139 | 0.0000 |
+| 4 | Secluded Springs | Secluded Springs | 58.6307 | 58.6307 | 7.3990 | 105 | 0.0000 |
+| 5 | Lunala | Celestial Guardians | 58.4190 | 58.4123 | 6.9275 | 137 | 0.0000 |
+| 6 | Dialga | Space-Time Smackdown | 56.9747 | 56.9696 | 6.8033 | 125 | 0.0000 |
+| 7 | Mega Blaziken | Mega Rising | 56.2840 | 56.2408 | 6.5990 | 128 | 0.0000 |
+| 8 | Mega Gyarados | Mega Rising | 56.0909 | 56.0536 | 6.5841 | 128 | 0.0000 |
+| 9 | Extradimensional Crisis | Extradimensional Crisis | 55.9698 | 55.9698 | 7.0816 | 103 | 0.0000 |
+| 10 | Eevee Grove | Eevee Grove | 55.8937 | 55.8937 | 7.0622 | 107 | 0.0000 |
+| 11 | Shining Revelry | Shining Revelry | 55.5531 | 55.5480 | 7.0205 | 110 | 0.0000 |
+| 12 | Mega Altaria | Mega Rising | 55.1861 | 55.1320 | 6.4643 | 126 | 0.0000 |
+| 13 | Palkia | Space-Time Smackdown | 54.6591 | 54.6485 | 6.5538 | 124 | 0.0000 |
+| 14 | Charizard | Genetic Apex | 53.2674 | 53.2499 | 6.3153 | 120 | 0.0000 |
+| 15 | Pikachu | Genetic Apex | 52.5676 | 52.5480 | 6.2307 | 118 | 0.0000 |
+| 16 | Mew | Mythical Island | 52.3585 | 52.3534 | 6.7431 | 85 | 0.0000 |
+| 17 | Arceus | Triumphant Light | 51.7711 | 51.7711 | 6.6373 | 96 | 0.0000 |
+| 18 | Fantastical Parade | Fantastical Parade | 50.8789 | 50.7882 | 5.6200 | 194 | 0.0000 |
+| 19 | Mewtwo | Genetic Apex | 50.1435 | 50.1092 | 5.9377 | 113 | 0.0000 |
+| 20 | Paldean Wonders | Paldean Wonders | 36.2827 | 36.1576 | 4.1950 | 82 | 0.0000 |
+| 21 | Mega Shine | Mega Shine | 27.9740 | 27.8539 | 3.3879 | 72 | 0.0000 |
+| 22 | Crimson Blaze | Crimson Blaze | 27.1435 | 27.0239 | 3.0990 | 51 | 0.0000 |
+| 23 | Paradox Drive | Paradox Drive | 17.3266 | 17.2800 | 1.8818 | 37 | 0.0000 |
+| 24 | Pulsing Aura | Pulsing Aura | 14.6871 | 14.6239 | 1.5240 | 81 | 0.0000 |
 
 ---
 

@@ -1,0 +1,1050 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-05T17:50:09Z",
+    "card_count": 96,
+    "set_code": "A2a",
+    "source": "tcgdex"
+  },
+  "cards": {
+    "1": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Heracross",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "10": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Leafeon ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "11": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Houndour",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "12": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Houndoom",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "13": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Heatran",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Fire"
+      ]
+    },
+    "14": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Marill",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "15": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Azumarill",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "16": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Barboach",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "17": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Whiscash",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "18": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Snorunt",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "19": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Froslass",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "2": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Burmy",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "20": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Snover",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "21": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Abomasnow",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "22": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Glaceon ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "23": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Origin Forme Palkia",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "24": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Phione",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "25": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Pikachu",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "26": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Raichu",
+      "rarity": "rare",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "27": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Electrike",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "28": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Manectric",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Lightning"
+      ]
+    },
+    "29": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Clefairy",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "3": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Mothim",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "30": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Clefable",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "31": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Gastly",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "32": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Haunter",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "33": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Gengar",
+      "rarity": "uncommon",
+      "stage": "Stage2",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "34": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Unown",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "35": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Rotom",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "36": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Sudowoodo",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "37": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Phanpy",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "38": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Donphan",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "39": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Larvitar",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "4": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Combee",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "40": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Pupitar",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "41": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Tyranitar",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "42": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Nosepass",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "43": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Meditite",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "44": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Medicham",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "45": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Gible",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "46": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Gabite",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "47": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Garchomp ex",
+      "rarity": "double_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "48": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Zubat",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "49": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Golbat",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "5": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Vespiquen",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "50": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 110,
+      "name": "Crobat",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "51": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Croagunk",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "52": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Toxicroak",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Darkness"
+      ]
+    },
+    "53": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Magnemite",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "54": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 90,
+      "name": "Magneton",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "55": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Magnezone",
+      "rarity": "rare",
+      "stage": "Stage2",
+      "types": [
+        "Metal"
+      ]
+    },
+    "56": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Mawile",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "57": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Probopass ex",
+      "rarity": "double_rare",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "58": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Bronzor",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "59": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Bronzong",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "6": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 50,
+      "name": "Cherubi",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "60": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Origin Forme Dialga",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "61": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Giratina",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Dragon"
+      ]
+    },
+    "62": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Eevee",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "63": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Snorlax",
+      "rarity": "uncommon",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "64": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Hoothoot",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "65": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Noctowl",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "66": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Starly",
+      "rarity": "common",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "67": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Staravia",
+      "rarity": "common",
+      "stage": "Stage1",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "68": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 150,
+      "name": "Staraptor",
+      "rarity": "uncommon",
+      "stage": "Stage2",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "69": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Shaymin",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "7": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Cherrim",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "70": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 120,
+      "name": "Arceus",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "71": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Arceus ex",
+      "rarity": "double_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "72": {
+      "boosters": [],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Irida",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "73": {
+      "boosters": [],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Celestic Town Elder",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "74": {
+      "boosters": [],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Barry",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "75": {
+      "boosters": [],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Adaman",
+      "rarity": "uncommon",
+      "stage": null,
+      "types": []
+    },
+    "76": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 100,
+      "name": "Houndoom",
+      "rarity": "illustration_rare",
+      "stage": "Stage1",
+      "types": [
+        "Fire"
+      ]
+    },
+    "77": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Marill",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Water"
+      ]
+    },
+    "78": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Unown",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Psychic"
+      ]
+    },
+    "79": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Sudowoodo",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "8": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Cherrim",
+      "rarity": "uncommon",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "80": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 60,
+      "name": "Magnemite",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Metal"
+      ]
+    },
+    "81": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 70,
+      "name": "Shaymin",
+      "rarity": "illustration_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "82": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Leafeon ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "83": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Glaceon ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "84": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Garchomp ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "85": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Probopass ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "86": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Arceus ex",
+      "rarity": "super_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "87": {
+      "boosters": [],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Irida",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "88": {
+      "boosters": [],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Celestic Town Elder",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "89": {
+      "boosters": [],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Barry",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "9": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 80,
+      "name": "Carnivine",
+      "rarity": "rare",
+      "stage": "Basic",
+      "types": [
+        "Grass"
+      ]
+    },
+    "90": {
+      "boosters": [],
+      "category": "Trainer",
+      "hp": null,
+      "name": "Adaman",
+      "rarity": "super_rare",
+      "stage": null,
+      "types": []
+    },
+    "91": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Leafeon ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Grass"
+      ]
+    },
+    "92": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Glaceon ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Water"
+      ]
+    },
+    "93": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 170,
+      "name": "Garchomp ex",
+      "rarity": "super_rare",
+      "stage": "Stage2",
+      "types": [
+        "Fighting"
+      ]
+    },
+    "94": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 160,
+      "name": "Probopass ex",
+      "rarity": "super_rare",
+      "stage": "Stage1",
+      "types": [
+        "Metal"
+      ]
+    },
+    "95": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Arceus ex",
+      "rarity": "immersive",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    },
+    "96": {
+      "boosters": [],
+      "category": "Pokemon",
+      "hp": 140,
+      "name": "Arceus ex",
+      "rarity": "ultra_rare",
+      "stage": "Basic",
+      "types": [
+        "Colorless"
+      ]
+    }
+  }
+}

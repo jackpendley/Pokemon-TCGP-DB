@@ -47,8 +47,33 @@ SOURCES_DIR   = ROOT / "data" / "reference" / "sources"
 PACK_SOURCES  = ROOT / "data" / "reference" / "pack_sources.json"
 OUT_JSON      = ROOT / "data" / "reference" / "card_reference.json"
 SCHEMA_JSON   = ROOT / "data" / "reference" / "card_reference.schema.json"
+SIR_JSON      = ROOT / "data" / "reference" / "special_illustration_rares.json"
 
 SCHEMA_VERSION = "1.0"
+
+# Curated Special Illustration Rare coords. Super Rare and Special Illustration Rare
+# are BOTH the ★★ "Two Star" tier (same symbol, same pull rate); no structured source
+# distinguishes them per-card, so this version-controlled list is the authority for the
+# super_rare→special_illustration_rare upgrade. Populated by load_sir_coords() in main().
+SIR_COORDS: set[tuple[str, int]] = set()
+
+
+def load_sir_coords() -> set[tuple[str, int]]:
+    """Load curated SIR coords keyed by canonical set-code casing. Empty if absent.
+
+    Uses canonical_set_code so the key matches the override's lookup (mixed-case
+    mini-sets like A1a/B2a must not be flattened to A1A/B2A)."""
+    if not SIR_JSON.exists():
+        return set()
+    raw = json.loads(SIR_JSON.read_text(encoding="utf-8"))
+    records = raw.get("records", raw) if isinstance(raw, dict) else raw
+    coords: set[tuple[str, int]] = set()
+    for r in records:
+        sc = canonical_set_code(str(r.get("set_code", "")).strip())
+        cn = r.get("card_number")
+        if sc and cn is not None:
+            coords.add((sc, int(cn)))
+    return coords
 
 # Forme-qualifier stripping for name comparison (port of coord_resolver._FORME_RE).
 # Forme qualifiers (e.g. "10% Forme", "Sunny Form") are omitted by some sources but
@@ -259,24 +284,46 @@ def reconcile_card(
     else:
         confidence = "unconfirmed"
 
-    # ── Metadata resolution (majority vote, pack_sources as fallback) ─────────
-    rarity_final = ps_record.get("rarity")
-    if rarity_votes:
+    # ── Rarity resolution ─────────────────────────────────────────────────────
+    # TCGdex is the structured per-card authority — it alone distinguishes the shiny
+    # tiers and Crown. Use its value directly when present; otherwise fall back to the
+    # external-vote consensus (≥2 sources), then the pack_sources (Limitless) baseline.
+    tcgdex_card = snapshots.get("tcgdex", {}).get(num_str, {})
+    tcgdex_rarity = normalize_rarity(tcgdex_card.get("rarity"))
+    rarity_final = normalize_rarity(ps_record.get("rarity"))
+    if tcgdex_rarity:
+        if rarity_final and rarity_final != tcgdex_rarity:
+            conflict_notes.append(
+                f"rarity: pack_sources={rarity_final!r} → tcgdex(authority)={tcgdex_rarity!r}"
+            )
+        rarity_final = tcgdex_rarity
+    elif rarity_votes:
         best = max(rarity_votes, key=lambda k: rarity_votes[k])
-        # Only override if the external consensus differs AND is more confident
-        if best and best != rarity_final and rarity_votes[best] >= 2:
+        # Override the baseline on a ≥2-source consensus, or whenever the baseline is
+        # empty (any single external vote beats an unknown rarity).
+        if best and best != rarity_final and (rarity_votes[best] >= 2 or not rarity_final):
             conflict_notes.append(
                 f"rarity override: pack_sources={rarity_final!r} → external={best!r} "
                 f"(votes={rarity_votes})"
             )
             rarity_final = best
 
+    # Super Rare and Special Illustration Rare share the ★★ symbol/tier; the curated
+    # SIR list is the authority for the super_rare→special_illustration_rare upgrade.
+    if rarity_final == "super_rare" and (canonical_set_code(set_code), card_number) in SIR_COORDS:
+        rarity_final = "special_illustration_rare"
+        conflict_notes.append("rarity: super_rare → special_illustration_rare (curated SIR list)")
+
+    # Promo-set cards carry no rarity symbol; keep the 'promo' sentinel when unresolved
+    # (per the keep-all-promos-as-promo decision — equivalents are not available for all).
+    if not rarity_final and canonical_set_code(set_code) in ("PROMO-A", "PROMO-B"):
+        rarity_final = "promo"
+
     pokemon_type_final = None
     if pokemon_type_votes:
         pokemon_type_final = max(pokemon_type_votes, key=lambda k: pokemon_type_votes[k])
 
     # Category/stage/hp from TCGdex (most structured source)
-    tcgdex_card = snapshots.get("tcgdex", {}).get(num_str, {})
     category_final = tcgdex_card.get("category")
     stage_final = tcgdex_card.get("stage")
     hp_final = tcgdex_card.get("hp")
@@ -321,6 +368,10 @@ def main() -> int:
     parser.add_argument("--set", metavar="SET_CODE",
                         help="Only process this set (e.g. B3A)")
     args = parser.parse_args()
+
+    global SIR_COORDS
+    SIR_COORDS = load_sir_coords()
+    print(f"Loaded {len(SIR_COORDS)} curated Special Illustration Rare coords.")
 
     ps_by_set = _load_pack_sources()
 

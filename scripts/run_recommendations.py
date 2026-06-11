@@ -31,10 +31,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import strip_comments
+from _collection_io import strip_comments, card_reference_freshness
 
 ROOT = Path(__file__).resolve().parent.parent
 LOG_FILE = ROOT / "data" / "pipeline.log"
+CARD_REF_JSON = ROOT / "data" / "reference" / "card_reference.json"
+SOURCES_DIR   = ROOT / "data" / "reference" / "sources"
 
 PIPELINE_STEPS = [
     ("Build pack EV",        "scripts/build_pack_ev.py"),
@@ -333,6 +335,16 @@ def main() -> int:
         _print_step("Normalize entries", rc, "FATAL — check data/pipeline.log")
         return 1
     _print_step("Normalize entries", rc, "OK")
+
+    # ── Reference freshness gate (non-fatal) ──────────────────────────────
+    # Card metadata is validated against the frozen card_reference.json. Warn (don't block)
+    # if it's stale relative to its source snapshots or older than the cache TTL, so syncs
+    # never silently validate against out-of-date metadata (e.g. after a new set drops).
+    _fresh_level, _fresh_msg = card_reference_freshness(CARD_REF_JSON, SOURCES_DIR)
+    if _fresh_level == "ok":
+        _print_step("Reference freshness", 0, _fresh_msg or "OK")
+    else:
+        _print_step("Reference freshness", 1, f"WARN — {_fresh_msg}")
 
     # ── Validate coords against card_reference.json (offline, 3-source validated) ──
     # Run offline (--no-fetch) so the pipeline stays headless and deterministic.

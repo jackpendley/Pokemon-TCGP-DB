@@ -1,0 +1,298 @@
+{
+  "_meta": {
+    "cached_at": "2026-06-01T19:02:32Z",
+    "card_count": 96,
+    "set_code": "A2a",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Heracross"
+    },
+    "10": {
+      "name": "Leafeon ex"
+    },
+    "11": {
+      "name": "Houndour"
+    },
+    "12": {
+      "name": "Houndoom"
+    },
+    "13": {
+      "name": "Heatran"
+    },
+    "14": {
+      "name": "Marill"
+    },
+    "15": {
+      "name": "Azumarill"
+    },
+    "16": {
+      "name": "Barboach"
+    },
+    "17": {
+      "name": "Whiscash"
+    },
+    "18": {
+      "name": "Snorunt"
+    },
+    "19": {
+      "name": "Froslass"
+    },
+    "2": {
+      "name": "Burmy"
+    },
+    "20": {
+      "name": "Snover"
+    },
+    "21": {
+      "name": "Abomasnow"
+    },
+    "22": {
+      "name": "Glaceon ex"
+    },
+    "23": {
+      "name": "Origin Forme Palkia"
+    },
+    "24": {
+      "name": "Phione"
+    },
+    "25": {
+      "name": "Pikachu"
+    },
+    "26": {
+      "name": "Raichu"
+    },
+    "27": {
+      "name": "Electrike"
+    },
+    "28": {
+      "name": "Manectric"
+    },
+    "29": {
+      "name": "Clefairy"
+    },
+    "3": {
+      "name": "Mothim"
+    },
+    "30": {
+      "name": "Clefable"
+    },
+    "31": {
+      "name": "Gastly"
+    },
+    "32": {
+      "name": "Haunter"
+    },
+    "33": {
+      "name": "Gengar"
+    },
+    "34": {
+      "name": "Unown"
+    },
+    "35": {
+      "name": "Rotom"
+    },
+    "36": {
+      "name": "Sudowoodo"
+    },
+    "37": {
+      "name": "Phanpy"
+    },
+    "38": {
+      "name": "Donphan"
+    },
+    "39": {
+      "name": "Larvitar"
+    },
+    "4": {
+      "name": "Combee"
+    },
+    "40": {
+      "name": "Pupitar"
+    },
+    "41": {
+      "name": "Tyranitar"
+    },
+    "42": {
+      "name": "Nosepass"
+    },
+    "43": {
+      "name": "Meditite"
+    },
+    "44": {
+      "name": "Medicham"
+    },
+    "45": {
+      "name": "Gible"
+    },
+    "46": {
+      "name": "Gabite"
+    },
+    "47": {
+      "name": "Garchomp ex"
+    },
+    "48": {
+      "name": "Zubat"
+    },
+    "49": {
+      "name": "Golbat"
+    },
+    "5": {
+      "name": "Vespiquen"
+    },
+    "50": {
+      "name": "Crobat"
+    },
+    "51": {
+      "name": "Croagunk"
+    },
+    "52": {
+      "name": "Toxicroak"
+    },
+    "53": {
+      "name": "Magnemite"
+    },
+    "54": {
+      "name": "Magneton"
+    },
+    "55": {
+      "name": "Magnezone"
+    },
+    "56": {
+      "name": "Mawile"
+    },
+    "57": {
+      "name": "Probopass ex"
+    },
+    "58": {
+      "name": "Bronzor"
+    },
+    "59": {
+      "name": "Bronzong"
+    },
+    "6": {
+      "name": "Cherubi"
+    },
+    "60": {
+      "name": "Origin Forme Dialga"
+    },
+    "61": {
+      "name": "Giratina"
+    },
+    "62": {
+      "name": "Eevee"
+    },
+    "63": {
+      "name": "Snorlax"
+    },
+    "64": {
+      "name": "Hoothoot"
+    },
+    "65": {
+      "name": "Noctowl"
+    },
+    "66": {
+      "name": "Starly"
+    },
+    "67": {
+      "name": "Staravia"
+    },
+    "68": {
+      "name": "Staraptor"
+    },
+    "69": {
+      "name": "Shaymin"
+    },
+    "7": {
+      "name": "Cherrim"
+    },
+    "70": {
+      "name": "Arceus"
+    },
+    "71": {
+      "name": "Arceus ex"
+    },
+    "72": {
+      "name": "Irida"
+    },
+    "73": {
+      "name": "Celestic Town Elder"
+    },
+    "74": {
+      "name": "Barry"
+    },
+    "75": {
+      "name": "Adaman"
+    },
+    "76": {
+      "name": "Houndoom"
+    },
+    "77": {
+      "name": "Marill"
+    },
+    "78": {
+      "name": "Unown"
+    },
+    "79": {
+      "name": "Sudowoodo"
+    },
+    "8": {
+      "name": "Cherrim"
+    },
+    "80": {
+      "name": "Magnemite"
+    },
+    "81": {
+      "name": "Shaymin"
+    },
+    "82": {
+      "name": "Leafeon ex"
+    },
+    "83": {
+      "name": "Glaceon ex"
+    },
+    "84": {
+      "name": "Garchomp ex"
+    },
+    "85": {
+      "name": "Probopass ex"
+    },
+    "86": {
+      "name": "Arceus ex"
+    },
+    "87": {
+      "name": "Irida"
+    },
+    "88": {
+      "name": "Celestic Town Elder"
+    },
+    "89": {
+      "name": "Barry"
+    },
+    "9": {
+      "name": "Carnivine"
+    },
+    "90": {
+      "name": "Adaman"
+    },
+    "91": {
+      "name": "Leafeon ex"
+    },
+    "92": {
+      "name": "Glaceon ex"
+    },
+    "93": {
+      "name": "Garchomp ex"
+    },
+    "94": {
+      "name": "Probopass ex"
+    },
+    "95": {
+      "name": "Arceus ex"
+    },
+    "96": {
+      "name": "Arceus ex"
+    }
+  }
+}

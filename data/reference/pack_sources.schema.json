@@ -45,8 +45,8 @@
           },
           "rarity": {
             "type": ["string", "null"],
-            "description": "Rarity code from Limitless",
-            "enum": ["one_diamond", "two_diamond", "three_diamond", "four_diamond", "one_star", "two_star", "three_star", "crown", "promo", null]
+            "description": "Pokémon TCG Pocket rarity tier (Bulbapedia naming)",
+            "enum": ["common", "uncommon", "rare", "double_rare", "illustration_rare", "super_rare", "special_illustration_rare", "immersive", "shiny_rare", "shiny_super_rare", "ultra_rare", "promo", null]
           },
           "card_category": {
             "type": ["string", "null"],

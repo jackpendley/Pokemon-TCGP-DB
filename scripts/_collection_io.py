@@ -112,6 +112,65 @@ def is_cache_fresh(entry: dict, max_age_days: int = CACHE_MAX_AGE_DAYS) -> bool:
     return age_days < max_age_days
 
 
+def _parse_iso(ts: str | None):
+    """Parse an ISO8601 timestamp (accepting a trailing 'Z') to an aware UTC datetime."""
+    if not ts:
+        return None
+    try:
+        dt = datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
+        return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except (ValueError, TypeError):
+        return None
+
+
+def card_reference_freshness(card_ref_path: Path, sources_dir: Path,
+                             max_age_days: int = CACHE_MAX_AGE_DAYS) -> tuple[str, str]:
+    """Assess whether card_reference.json is fresh relative to its source snapshots.
+
+    Returns (level, message):
+      'ok'             — up to date
+      'missing'        — card_reference.json absent
+      'stale_rebuild'  — a source snapshot is newer than card_reference (rebuild needed)
+      'stale_age'      — card_reference older than max_age_days (refresh recommended)
+    Used by the pipeline as a non-fatal freshness gate so syncs never validate against a
+    stale reference (e.g. after a new set's snapshots are fetched but the reference isn't
+    rebuilt). Falls back to 'ok' when timestamps can't be parsed (never blocks the pipeline).
+    """
+    p = Path(card_ref_path)
+    if not p.exists():
+        return ("missing", "card_reference.json not found — run fetch_source_snapshots.py + build_card_reference.py")
+    try:
+        meta = json.loads(p.read_text(encoding="utf-8")).get("_meta", {})
+    except (OSError, json.JSONDecodeError):
+        return ("ok", "")
+    gen_dt = _parse_iso(meta.get("generated_at"))
+    if gen_dt is None:
+        return ("ok", "")
+
+    newest_snap = None
+    sd = Path(sources_dir)
+    if sd.exists():
+        for snap in sd.glob("*/*.json"):
+            try:
+                ca = json.loads(snap.read_text(encoding="utf-8")).get("_meta", {}).get("cached_at")
+            except (OSError, json.JSONDecodeError):
+                continue
+            dt = _parse_iso(ca)
+            if dt and (newest_snap is None or dt > newest_snap):
+                newest_snap = dt
+
+    if newest_snap and newest_snap > gen_dt:
+        return ("stale_rebuild",
+                f"card_reference ({gen_dt.date()}) is older than source snapshots "
+                f"({newest_snap.date()}) — run build_card_reference.py")
+    age_days = int((datetime.now(timezone.utc) - gen_dt).total_seconds() / 86400)
+    if age_days > max_age_days:
+        return ("stale_age",
+                f"card_reference is {age_days}d old (>{max_age_days}d) — run "
+                f"fetch_source_snapshots.py + build_card_reference.py")
+    return ("ok", f"fresh ({age_days}d old)")
+
+
 # Maps an ext_ref/TCGdex card_category to the collection.json trainer_subtype.
 # Single source of truth — sync, assign, and fetch all derive their trainer
 # vocabulary from this so a new subtype can't be added to one and missed elsewhere.
@@ -124,41 +183,85 @@ TRAINER_SUBTYPE_MAP: dict[str, str] = {
 # The set of ext_ref card_category values that denote a Trainer card.
 TRAINER_CATEGORIES = frozenset(TRAINER_SUBTYPE_MAP)
 
-# "Rare+" / alt-art rarity tiers — cards at these rarities are full-art / alt-art
-# printings (vs base 1–4 diamond). Single source for: rare-plus EV metrics
-# (build_pack_ev), alt-art disambiguation (assign, sync), and the test harnesses.
+# "Rare+" / alt-art rarity tiers — cards at these tiers are full-art / alt-art
+# printings (vs the base common–double_rare diamonds). Single source for: rare-plus
+# EV metrics (build_pack_ev), alt-art disambiguation (assign, sync), and the test
+# harnesses.
 # NOTE: validate_pack_sources / build_pull_probability_model use a deliberate
-# superset (adding "promo"/None) and intentionally do NOT import this.
-RARE_PLUS_RARITIES = frozenset({"one_star", "two_star", "three_star", "crown"})
+# superset (adding the base diamonds, "promo"/None) built from this set.
+RARE_PLUS_RARITIES = frozenset({
+    "illustration_rare", "super_rare", "special_illustration_rare",
+    "immersive", "shiny_rare", "shiny_super_rare", "ultra_rare",
+})
 
-# Canonical ordered rarity list — drives RARITY_FIELDS in build_pull_probability_model
-# and VALID_RARITIES in validate_pack_sources.
+# Canonical ordered rarity list — the 11 Pokémon TCG Pocket tiers per Bulbapedia
+# "Rarity (TCG Pocket)", low→high, plus operational sentinels. Drives RARITY_FIELDS
+# in build_pull_probability_model, VALID_RARITIES in validate_pack_sources, and
+# RARITY_RANK below.
+#   common ◊ · uncommon ◊◊ · rare ◊◊◊ · double_rare ◊◊◊◊ · illustration_rare ☆ ·
+#   super_rare ☆☆ · special_illustration_rare ☆☆(rainbow) · immersive ☆☆☆ ·
+#   shiny_rare ✷ · shiny_super_rare ✷✷ · ultra_rare 👑
+# 'promo' (PROMO-A/-B cards, no rarity symbol) and 'unknown' (unresolved) are kept
+# after the 11 named tiers.
 RARITIES: tuple[str, ...] = (
-    "one_diamond", "two_diamond", "three_diamond", "four_diamond",
-    "one_star", "two_star", "three_star", "crown", "promo", "unknown",
+    "common", "uncommon", "rare", "double_rare",
+    "illustration_rare", "super_rare", "special_illustration_rare", "immersive",
+    "shiny_rare", "shiny_super_rare", "ultra_rare",
+    "promo", "unknown",
 )
 
-# Legacy rarity-name aliases → canonical names (two_star/three_star, matching the
-# one_star/one_diamond pattern). Single source for the normalization.
-RARITY_ALIASES = {"double_star": "two_star", "triple_star": "three_star"}
+# Ordered rank (1-based) over the 11 named tiers, for rarity-based disambiguation
+# (sync_collection alt-art matching). Sentinels (promo/unknown) are omitted —
+# callers default them to a high "unknown" rank.
+RARITY_RANK: dict[str, int] = {
+    name: i for i, name in enumerate(RARITIES, start=1)
+    if name not in ("promo", "unknown")
+}
+
+# Legacy symbol-tier rarity names → new canonical names. Single source for the
+# migration; normalize_rarity() applies it so any value still stored under the old
+# scheme (e.g. an un-regenerated collection.json entry) reads as the new name.
+# 'two_star' maps to the super_rare baseline; the super_rare→special_illustration_rare
+# split is applied separately from the curated SIR reference (build_card_reference).
+RARITY_ALIASES = {
+    "one_diamond":   "common",
+    "two_diamond":   "uncommon",
+    "three_diamond": "rare",
+    "four_diamond":  "double_rare",
+    "one_star":      "illustration_rare",
+    "two_star":      "super_rare",
+    "double_star":   "super_rare",
+    "three_star":    "immersive",
+    "triple_star":   "immersive",
+    "one_shiny":     "shiny_rare",
+    "two_shiny":     "shiny_super_rare",
+    "crown":         "ultra_rare",
+}
 
 # Unicode rarity symbols → canonical names. Used by build_pack_sources and
-# fetch_ext_ref for parsing HTML scraped from Limitless / ext_ref sources.
+# fetch_ext_ref to parse rarity from Limitless / ext_ref HTML. Longest glyphs must
+# come first (substring matching: '◊◊◊◊' before '◊◊◊'; '✷✷' before '✷').
 RARITY_SYMBOLS: dict[str, str] = {
-    "◊◊◊◊": "four_diamond",
-    "◊◊◊":  "three_diamond",
-    "◊◊":   "two_diamond",
-    "◊":    "one_diamond",
-    "☆☆☆":  "three_star",
-    "☆☆":   "two_star",
-    "☆":    "one_star",
-    "♛":    "crown",
+    "◊◊◊◊": "double_rare",
+    "◊◊◊":  "rare",
+    "◊◊":   "uncommon",
+    "◊":    "common",
+    "☆☆☆":  "immersive",
+    "☆☆":   "super_rare",
+    "☆":    "illustration_rare",
+    "✷✷":   "shiny_super_rare",
+    "✸✸":   "shiny_super_rare",
+    "✷":    "shiny_rare",
+    "✸":    "shiny_rare",
+    "♛":    "ultra_rare",
+    "👑":   "ultra_rare",
     "✦":    "promo",
 }
 
 
 def normalize_rarity(rarity: str | None) -> str | None:
-    """Map a legacy rarity alias to its canonical name; pass through otherwise."""
+    """Map a legacy symbol-tier rarity name to its new canonical name; pass through
+    values that are already canonical (or None)."""
     if rarity is None:
         return None
     return RARITY_ALIASES.get(rarity, rarity)

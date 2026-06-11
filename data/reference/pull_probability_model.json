@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-14T19:27:50+00:00",
+  "generated_at": "2026-06-09T23:35:58+00:00",
   "generated_by": "build_pull_probability_model.py",
   "meta": {
-    "generated_at": "2026-05-14T19:27:50+00:00",
+    "generated_at": "2026-06-09T23:35:58+00:00",
     "model_version": "0.6.0",
-    "source_status": "pz_verified",
+    "source_status": "third_party_verified_with_in_app_anchor",
     "verified_source": null,
     "user_in_app_verified_packs": [
       "Ho-Oh (A4)",
@@ -24,11 +24,11 @@
       "Deluxe Pack: ex (A4b) — pack unavailable in app; Offering Rates inaccessible; 4 cards/pack"
     ],
     "confidence_note": "third_party_verified_with_in_app_anchor: A4 (Ho-Oh/Lugia) user_in_app_verified from in-repo screenshots (2026-05-14). Pulsing Aura (B3) user_in_app_verified_plus_bulbapedia (2026-05-13). Most other packs branch-verified via Bulbapedia (2026-05-13). A-series packs confirmed two-branch (Bulbapedia + third-party sources). A4b pending — pack unavailable in app, Offering Rates inaccessible. Rarity distributions within slots still third_party_verified. NOT official in-app verified for any non-A4/non-B3 pack.",
-    "notes": "A4 in-app verified model (v0.6.0, 2026-05-14). user_in_app_verified: 2 packs (A4 Ho-Oh/Lugia, in-repo screenshots). user_in_app_verified_plus_bulbapedia: 1 pack (Pulsing Aura B3, user in-app + Bulbapedia). bulbapedia_branch_verified: 12 packs (branch selection from Bulbapedia offering rates). third_party_verified: 8 packs (two-branch, A-series, Bulbapedia truncated but pattern consistent). pending_verification: 1 packs (A4b Deluxe Pack: ex — pack unavailable in app, 4 cards/pack). All rarity_probabilities null (aggregate rates require in-app verification). A4 (Wisdom of Sea and Sky): three-branch 91.620%/8.330%/0.050%, slot_6 verified (one_star=12.9%, three_diamond=87.1%). Secluded Springs (A4a): unique three-branch (91.620%/8.330%/0.050%). Mega Shine (B2b): four-branch with themed_rare_pack=0.005%."
+    "notes": "A4 in-app verified model (v0.6.0, 2026-05-14). user_in_app_verified: 2 packs (A4 Ho-Oh/Lugia, in-repo screenshots). user_in_app_verified_plus_bulbapedia: 1 pack (Pulsing Aura B3, user in-app + Bulbapedia). bulbapedia_branch_verified: 12 packs (branch selection from Bulbapedia offering rates). third_party_verified: 9 packs (two-branch, A-series, Bulbapedia truncated but pattern consistent). pending_verification: 1 packs (A4b Deluxe Pack: ex — pack unavailable in app, 4 cards/pack). rarity_probabilities = exact expected copies of each rarity per pack, summed per pack from Pokémon Zone per-card drop chances (slot-model fallback only when PZ data is absent). A4 (Wisdom of Sea and Sky): three-branch 91.620%/8.330%/0.050%, slot_6 verified (illustration_rare=12.9%, rare=87.1%). Secluded Springs (A4a): unique three-branch (91.620%/8.330%/0.050%). Mega Shine (B2b): four-branch with themed_rare_pack=0.005%."
   },
   "probability_source_required": {
     "status": "IN_APP_VERIFIED_PARTIAL",
-    "description": "A4 (Ho-Oh/Lugia) branch and slot_6 verified from in-repo screenshots (2026-05-14). Pulsing Aura (B3) verified by user in-app (2026-05-13). Most other packs branch-verified from Bulbapedia. Slot rarity distributions still from third_party_verified sources. Aggregate rarity_probabilities still null — require full in-app verification.",
+    "description": "A4 (Ho-Oh/Lugia) branch and slot_6 verified from in-repo screenshots (2026-05-14). Pulsing Aura (B3) verified by user in-app (2026-05-13). Most other packs branch-verified from Bulbapedia. Slot rarity distributions still from third_party_verified sources. Aggregate rarity_probabilities are PZ-exact (expected copies/rarity/pack from Pokémon Zone drop chances).",
     "how_to_officially_verify": "In the Pokémon TCG Pocket app: tap a pack > view 'Offering Rates'. Compare branch percentages and slot rates to slot_rates in this file. If they match, set confidence='verified'."
   },
   "packs": [
@@ -37,6 +37,7 @@
       "expansion": "Celestial Guardians",
       "set_code": "A3",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
       "source_name": "game8_co_ptcgp_offering_rates",
       "source_accessed_at": "2026-05-12",
@@ -50,7 +51,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -58,32 +59,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "third_party_verified",
         "source_name": "game8_co_ptcgp_offering_rates",
@@ -123,41 +124,50 @@
         "shared_pool_total": 41,
         "combined_total": 140,
         "pack_specific_by_rarity": {
-          "one_diamond": 22,
-          "two_diamond": 17,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "one_star": 22,
-          "two_star": 18,
-          "three_star": 1
+          "common": 22,
+          "uncommon": 17,
+          "rare": 14,
+          "double_rare": 5,
+          "illustration_rare": 12,
+          "super_rare": 9,
+          "special_illustration_rare": 5,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 22,
-          "two_diamond": 17,
-          "unknown": 2
+          "common": 22,
+          "uncommon": 17,
+          "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "one_diamond": 44,
-          "three_star": 1,
-          "one_star": 22,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "unknown": 2,
-          "two_star": 18,
-          "two_diamond": 34
+          "illustration_rare": 12,
+          "special_illustration_rare": 5,
+          "common": 44,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 9,
+          "rare": 14,
+          "uncommon": 34,
+          "shiny_rare": 10,
+          "ultra_rare": 2
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.926,
+        "uncommon": 1.4348,
+        "rare": 0.2464,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1284,
+        "super_rare": 0.0171,
+        "special_illustration_rare": 0.0095,
+        "immersive": 0.0111,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.0011,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model (third_party_verified): regular_pack (99.950%) + rare_pack (0.050%). Consistent with Bulbapedia confirmed A-series packs. Bulbapedia page was truncated before offering rates section in 2026-05-13 check. Verify directly: https://bulbapedia.bulbagarden.net/wiki/Celestial_Guardians_(TCG_Pocket)"
     },
@@ -166,6 +176,7 @@
       "expansion": "Celestial Guardians",
       "set_code": "A3",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
       "source_name": "game8_co_ptcgp_offering_rates",
       "source_accessed_at": "2026-05-12",
@@ -179,7 +190,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -187,32 +198,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "third_party_verified",
         "source_name": "game8_co_ptcgp_offering_rates",
@@ -252,41 +263,50 @@
         "shared_pool_total": 41,
         "combined_total": 140,
         "pack_specific_by_rarity": {
-          "one_diamond": 22,
-          "two_diamond": 17,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "one_star": 22,
-          "two_star": 18,
-          "three_star": 1
+          "common": 22,
+          "uncommon": 17,
+          "rare": 14,
+          "double_rare": 5,
+          "illustration_rare": 12,
+          "super_rare": 9,
+          "special_illustration_rare": 5,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 22,
-          "two_diamond": 17,
-          "unknown": 2
+          "common": 22,
+          "uncommon": 17,
+          "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "one_diamond": 44,
-          "three_star": 1,
-          "one_star": 22,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "unknown": 2,
-          "two_star": 18,
-          "two_diamond": 34
+          "illustration_rare": 12,
+          "special_illustration_rare": 5,
+          "common": 44,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 9,
+          "rare": 14,
+          "uncommon": 34,
+          "shiny_rare": 10,
+          "ultra_rare": 2
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.926,
+        "uncommon": 1.4348,
+        "rare": 0.2464,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1284,
+        "super_rare": 0.0171,
+        "special_illustration_rare": 0.0095,
+        "immersive": 0.0111,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.001,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model (third_party_verified): regular_pack (99.950%) + rare_pack (0.050%). Consistent with Bulbapedia confirmed A-series packs. Bulbapedia page was truncated before offering rates section in 2026-05-13 check. Verify directly: https://bulbapedia.bulbagarden.net/wiki/Celestial_Guardians_(TCG_Pocket)"
     },
@@ -295,6 +315,7 @@
       "expansion": "Crimson Blaze",
       "set_code": "B1a",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Crimson_Blaze_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket",
       "source_accessed_at": "2026-05-13",
@@ -308,7 +329,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "three_branch"
       },
       "slot_rates": {
@@ -316,32 +337,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": 0.05238,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
         "source_name": "bulbapedia_tcg_pocket",
@@ -381,38 +402,47 @@
         "shared_pool_total": 0,
         "combined_total": 103,
         "pack_specific_by_rarity": {
-          "one_diamond": 32,
-          "two_diamond": 24,
-          "three_diamond": 8,
-          "four_diamond": 5,
-          "one_star": 16,
-          "two_star": 15,
-          "three_star": 1,
-          "unknown": 2
+          "common": 32,
+          "uncommon": 24,
+          "rare": 8,
+          "double_rare": 5,
+          "illustration_rare": 6,
+          "super_rare": 7,
+          "special_illustration_rare": 4,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4,
+          "ultra_rare": 2
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 32,
-          "three_star": 1,
-          "one_star": 16,
-          "three_diamond": 8,
-          "four_diamond": 5,
-          "unknown": 2,
-          "two_star": 15,
-          "two_diamond": 24
+          "illustration_rare": 6,
+          "special_illustration_rare": 4,
+          "common": 32,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 7,
+          "rare": 8,
+          "uncommon": 24,
+          "shiny_rare": 10,
+          "ultra_rare": 2
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9024,
+        "uncommon": 1.476,
+        "rare": 0.248,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1284,
+        "super_rare": 0.0161,
+        "special_illustration_rare": 0.0092,
+        "immersive": 0.0112,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.0011,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Three-branch model from Bulbapedia: regular_pack (94.711%) + regular_pack_plus_one (5.238%) + rare_pack (0.050%). Slot 4/5 rarity distributions from third_party_verified sources. Card 6 shiny rates unknown — EV contribution = 0. Rare pack distribution (40/50/5/5) from third_party_verified sources."
     },
@@ -435,7 +465,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -443,32 +473,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "pending_verification",
         "source_name": "game8_co_ptcgp_offering_rates",
@@ -508,38 +538,41 @@
         "shared_pool_total": 0,
         "combined_total": 379,
         "pack_specific_by_rarity": {
-          "one_diamond": 128,
-          "two_diamond": 100,
-          "three_diamond": 50,
-          "four_diamond": 75,
-          "one_star": 6,
-          "two_star": 18,
-          "three_star": 1,
-          "unknown": 1
+          "common": 128,
+          "uncommon": 100,
+          "rare": 50,
+          "double_rare": 75,
+          "illustration_rare": 6,
+          "super_rare": 18,
+          "immersive": 1,
+          "ultra_rare": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 128,
-          "three_star": 1,
-          "one_star": 6,
-          "three_diamond": 50,
-          "four_diamond": 75,
-          "unknown": 1,
-          "two_star": 18,
-          "two_diamond": 100
+          "illustration_rare": 6,
+          "common": 128,
+          "immersive": 1,
+          "double_rare": 75,
+          "super_rare": 18,
+          "rare": 50,
+          "uncommon": 100,
+          "ultra_rare": 1
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 1.4016,
+        "uncommon": 1.005,
+        "rare": 0.4075,
+        "double_rare": 0.9975,
+        "illustration_rare": 0.129,
+        "super_rare": 0.044,
+        "special_illustration_rare": 0.0,
+        "immersive": 0.0112,
+        "shiny_rare": 0.0,
+        "shiny_super_rare": 0.0,
+        "ultra_rare": 0.0,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Branch model unconfirmed — Bulbapedia offering rates section was not accessible during 2026-05-13 verification pass. Placeholder two-branch rates applied. Verify in-app."
     },
@@ -548,6 +581,7 @@
       "expansion": "Eevee Grove",
       "set_code": "A3b",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Eevee_Grove_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket",
       "source_accessed_at": "2026-05-13",
@@ -561,7 +595,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -569,32 +603,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
         "source_name": "bulbapedia_tcg_pocket",
@@ -634,38 +668,47 @@
         "shared_pool_total": 0,
         "combined_total": 107,
         "pack_specific_by_rarity": {
-          "one_diamond": 32,
-          "two_diamond": 23,
-          "three_diamond": 8,
-          "four_diamond": 6,
-          "one_star": 19,
-          "two_star": 17,
-          "three_star": 1,
-          "unknown": 1
+          "common": 32,
+          "uncommon": 23,
+          "rare": 8,
+          "double_rare": 6,
+          "illustration_rare": 10,
+          "super_rare": 8,
+          "special_illustration_rare": 5,
+          "immersive": 1,
+          "shiny_rare": 9,
+          "shiny_super_rare": 4,
+          "ultra_rare": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 32,
-          "three_star": 1,
-          "one_star": 19,
-          "three_diamond": 8,
-          "four_diamond": 6,
-          "unknown": 1,
-          "two_star": 17,
-          "two_diamond": 23
+          "illustration_rare": 10,
+          "special_illustration_rare": 5,
+          "common": 32,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 6,
+          "super_rare": 8,
+          "rare": 8,
+          "uncommon": 23,
+          "shiny_rare": 9,
+          "ultra_rare": 1
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9024,
+        "uncommon": 1.426,
+        "rare": 0.2464,
+        "double_rare": 0.0834,
+        "illustration_rare": 0.1314,
+        "super_rare": 0.016,
+        "special_illustration_rare": 0.01,
+        "immersive": 0.0111,
+        "shiny_rare": 0.0324,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.0,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model confirmed from Bulbapedia: regular_pack (99.950%) + rare_pack (0.050%). No Regular Pack + 1 Card branch for this expansion."
     },
@@ -674,6 +717,7 @@
       "expansion": "Extradimensional Crisis",
       "set_code": "A3a",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Extradimensional_Crisis_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket",
       "source_accessed_at": "2026-05-13",
@@ -687,7 +731,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -695,32 +739,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
         "source_name": "bulbapedia_tcg_pocket",
@@ -760,38 +804,47 @@
         "shared_pool_total": 0,
         "combined_total": 103,
         "pack_specific_by_rarity": {
-          "one_diamond": 32,
-          "two_diamond": 24,
-          "three_diamond": 8,
-          "four_diamond": 5,
-          "one_star": 16,
-          "two_star": 16,
-          "three_star": 1,
-          "unknown": 1
+          "common": 32,
+          "uncommon": 24,
+          "rare": 8,
+          "double_rare": 5,
+          "illustration_rare": 6,
+          "super_rare": 8,
+          "special_illustration_rare": 4,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4,
+          "ultra_rare": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 32,
-          "three_star": 1,
-          "one_star": 16,
-          "three_diamond": 8,
-          "four_diamond": 5,
-          "unknown": 1,
-          "two_star": 16,
-          "two_diamond": 24
+          "illustration_rare": 6,
+          "special_illustration_rare": 4,
+          "common": 32,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 8,
+          "rare": 8,
+          "uncommon": 24,
+          "shiny_rare": 10,
+          "ultra_rare": 1
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9024,
+        "uncommon": 1.428,
+        "rare": 0.2464,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1284,
+        "super_rare": 0.0176,
+        "special_illustration_rare": 0.0088,
+        "immersive": 0.0111,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.0,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model confirmed from Bulbapedia: regular_pack (99.950%) + rare_pack (0.050%). No Regular Pack + 1 Card branch for this expansion."
     },
@@ -800,6 +853,7 @@
       "expansion": "Fantastical Parade",
       "set_code": "B2",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Fantastical_Parade_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket",
       "source_accessed_at": "2026-05-13",
@@ -813,7 +867,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "three_branch"
       },
       "slot_rates": {
@@ -821,32 +875,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": 0.05238,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
         "source_name": "bulbapedia_tcg_pocket",
@@ -886,38 +940,47 @@
         "shared_pool_total": 0,
         "combined_total": 234,
         "pack_specific_by_rarity": {
-          "one_diamond": 66,
-          "two_diamond": 51,
-          "three_diamond": 28,
-          "four_diamond": 10,
-          "one_star": 44,
-          "two_star": 31,
-          "three_star": 2,
-          "unknown": 2
+          "common": 66,
+          "uncommon": 51,
+          "rare": 28,
+          "double_rare": 10,
+          "illustration_rare": 24,
+          "super_rare": 14,
+          "special_illustration_rare": 9,
+          "immersive": 2,
+          "shiny_rare": 20,
+          "shiny_super_rare": 8,
+          "ultra_rare": 2
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 66,
-          "three_star": 2,
-          "one_star": 44,
-          "three_diamond": 28,
-          "four_diamond": 10,
-          "unknown": 2,
-          "two_star": 31,
-          "two_diamond": 51
+          "illustration_rare": 24,
+          "special_illustration_rare": 9,
+          "common": 66,
+          "shiny_super_rare": 8,
+          "immersive": 2,
+          "double_rare": 10,
+          "super_rare": 14,
+          "rare": 28,
+          "uncommon": 51,
+          "shiny_rare": 20,
+          "ultra_rare": 2
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9436,
+        "uncommon": 1.4892,
+        "rare": 0.2492,
+        "double_rare": 0.084,
+        "illustration_rare": 0.1296,
+        "super_rare": 0.0154,
+        "special_illustration_rare": 0.0099,
+        "immersive": 0.011,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.001,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Three-branch model from Bulbapedia: regular_pack (94.711%) + regular_pack_plus_one (5.238%) + rare_pack (0.050%). Slot 4/5 rarity distributions from third_party_verified sources. Card 6 shiny rates unknown — EV contribution = 0. Rare pack distribution (40/50/5/5) from third_party_verified sources."
     },
@@ -926,6 +989,7 @@
       "expansion": "Genetic Apex",
       "set_code": "A1",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
       "source_name": "game8_co_ptcgp_offering_rates",
       "source_accessed_at": "2026-05-12",
@@ -939,7 +1003,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -947,32 +1011,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "third_party_verified",
         "source_name": "game8_co_ptcgp_offering_rates",
@@ -1012,42 +1076,47 @@
         "shared_pool_total": 47,
         "combined_total": 127,
         "pack_specific_by_rarity": {
-          "one_diamond": 25,
-          "two_diamond": 17,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "one_star": 8,
-          "two_star": 10,
-          "three_star": 1
+          "common": 25,
+          "uncommon": 17,
+          "rare": 14,
+          "double_rare": 5,
+          "illustration_rare": 8,
+          "super_rare": 8,
+          "special_illustration_rare": 2,
+          "immersive": 1
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 25,
-          "two_diamond": 18,
-          "three_star": 1,
-          "unknown": 3
+          "common": 25,
+          "uncommon": 18,
+          "immersive": 1,
+          "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "one_diamond": 50,
-          "three_star": 2,
-          "one_star": 8,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "unknown": 3,
-          "two_star": 10,
-          "two_diamond": 35
+          "illustration_rare": 8,
+          "special_illustration_rare": 2,
+          "common": 50,
+          "immersive": 2,
+          "double_rare": 5,
+          "super_rare": 8,
+          "rare": 14,
+          "uncommon": 35,
+          "ultra_rare": 3
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.94,
+        "uncommon": 1.4805,
+        "rare": 0.2492,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1296,
+        "super_rare": 0.0208,
+        "special_illustration_rare": 0.0052,
+        "immersive": 0.0112,
+        "shiny_rare": 0.0,
+        "shiny_super_rare": 0.0,
+        "ultra_rare": 0.0013,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model (third_party_verified): regular_pack (99.950%) + rare_pack (0.050%). Consistent with Bulbapedia confirmed A-series packs. Bulbapedia page was truncated before offering rates section in 2026-05-13 check. Verify directly: https://bulbapedia.bulbagarden.net/wiki/Genetic_Apex_(TCG_Pocket)"
     },
@@ -1056,6 +1125,7 @@
       "expansion": "Genetic Apex",
       "set_code": "A1",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
       "source_name": "game8_co_ptcgp_offering_rates",
       "source_accessed_at": "2026-05-12",
@@ -1069,7 +1139,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -1077,32 +1147,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "third_party_verified",
         "source_name": "game8_co_ptcgp_offering_rates",
@@ -1142,42 +1212,47 @@
         "shared_pool_total": 47,
         "combined_total": 126,
         "pack_specific_by_rarity": {
-          "one_diamond": 25,
-          "two_diamond": 17,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "one_star": 8,
-          "two_star": 9,
-          "three_star": 1
+          "common": 25,
+          "uncommon": 17,
+          "rare": 14,
+          "double_rare": 5,
+          "illustration_rare": 8,
+          "super_rare": 7,
+          "special_illustration_rare": 2,
+          "immersive": 1
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 25,
-          "two_diamond": 18,
-          "three_star": 1,
-          "unknown": 3
+          "common": 25,
+          "uncommon": 18,
+          "immersive": 1,
+          "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "one_diamond": 50,
-          "three_star": 2,
-          "one_star": 8,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "unknown": 3,
-          "two_star": 9,
-          "two_diamond": 35
+          "illustration_rare": 8,
+          "special_illustration_rare": 2,
+          "common": 50,
+          "immersive": 2,
+          "double_rare": 5,
+          "super_rare": 7,
+          "rare": 14,
+          "uncommon": 35,
+          "ultra_rare": 3
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.94,
+        "uncommon": 1.4805,
+        "rare": 0.2492,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1296,
+        "super_rare": 0.0203,
+        "special_illustration_rare": 0.0058,
+        "immersive": 0.0112,
+        "shiny_rare": 0.0,
+        "shiny_super_rare": 0.0,
+        "ultra_rare": 0.0012,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model (third_party_verified): regular_pack (99.950%) + rare_pack (0.050%). Consistent with Bulbapedia confirmed A-series packs. Bulbapedia page was truncated before offering rates section in 2026-05-13 check. Verify directly: https://bulbapedia.bulbagarden.net/wiki/Genetic_Apex_(TCG_Pocket)"
     },
@@ -1186,6 +1261,7 @@
       "expansion": "Genetic Apex",
       "set_code": "A1",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
       "source_name": "game8_co_ptcgp_offering_rates",
       "source_accessed_at": "2026-05-12",
@@ -1199,7 +1275,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -1207,32 +1283,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "third_party_verified",
         "source_name": "game8_co_ptcgp_offering_rates",
@@ -1272,42 +1348,47 @@
         "shared_pool_total": 47,
         "combined_total": 127,
         "pack_specific_by_rarity": {
-          "one_diamond": 25,
-          "two_diamond": 17,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "one_star": 8,
-          "two_star": 10,
-          "three_star": 1
+          "common": 25,
+          "uncommon": 17,
+          "rare": 14,
+          "double_rare": 5,
+          "illustration_rare": 8,
+          "super_rare": 9,
+          "special_illustration_rare": 1,
+          "immersive": 1
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 25,
-          "two_diamond": 18,
-          "three_star": 1,
-          "unknown": 3
+          "common": 25,
+          "uncommon": 18,
+          "immersive": 1,
+          "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "one_diamond": 50,
-          "three_star": 2,
-          "one_star": 8,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "unknown": 3,
-          "two_star": 10,
-          "two_diamond": 35
+          "illustration_rare": 8,
+          "special_illustration_rare": 1,
+          "common": 50,
+          "immersive": 2,
+          "double_rare": 5,
+          "super_rare": 9,
+          "rare": 14,
+          "uncommon": 35,
+          "ultra_rare": 3
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.94,
+        "uncommon": 1.4805,
+        "rare": 0.2492,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1296,
+        "super_rare": 0.0234,
+        "special_illustration_rare": 0.0026,
+        "immersive": 0.0112,
+        "shiny_rare": 0.0,
+        "shiny_super_rare": 0.0,
+        "ultra_rare": 0.0013,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model (third_party_verified): regular_pack (99.950%) + rare_pack (0.050%). Consistent with Bulbapedia confirmed A-series packs. Bulbapedia page was truncated before offering rates section in 2026-05-13 check. Verify directly: https://bulbapedia.bulbagarden.net/wiki/Genetic_Apex_(TCG_Pocket)"
     },
@@ -1316,6 +1397,7 @@
       "expansion": "Mega Rising",
       "set_code": "B1",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Mega_Rising_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket",
       "source_accessed_at": "2026-05-13",
@@ -1329,7 +1411,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "three_branch"
       },
       "slot_rates": {
@@ -1337,32 +1419,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": 0.05238,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
         "source_name": "bulbapedia_tcg_pocket",
@@ -1402,42 +1484,51 @@
         "shared_pool_total": 43,
         "combined_total": 139,
         "pack_specific_by_rarity": {
-          "one_diamond": 25,
-          "two_diamond": 18,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "one_star": 18,
-          "two_star": 15,
-          "three_star": 1
+          "common": 25,
+          "uncommon": 18,
+          "rare": 14,
+          "double_rare": 5,
+          "illustration_rare": 8,
+          "super_rare": 7,
+          "special_illustration_rare": 4,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 24,
-          "two_diamond": 15,
-          "three_diamond": 1,
-          "unknown": 3
+          "common": 24,
+          "uncommon": 15,
+          "rare": 1,
+          "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "one_diamond": 49,
-          "three_star": 1,
-          "one_star": 18,
-          "three_diamond": 15,
-          "four_diamond": 5,
-          "unknown": 3,
-          "two_star": 15,
-          "two_diamond": 33
+          "illustration_rare": 8,
+          "special_illustration_rare": 4,
+          "common": 49,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 7,
+          "rare": 15,
+          "uncommon": 33,
+          "shiny_rare": 10,
+          "ultra_rare": 3
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9351,
+        "uncommon": 1.485,
+        "rare": 0.2475,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1288,
+        "super_rare": 0.0161,
+        "special_illustration_rare": 0.0092,
+        "immersive": 0.0112,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.0013,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Three-branch model from Bulbapedia: regular_pack (94.711%) + regular_pack_plus_one (5.238%) + rare_pack (0.050%). Slot 4/5 rarity distributions from third_party_verified sources. Card 6 shiny rates unknown — EV contribution = 0. Rare pack distribution (40/50/5/5) from third_party_verified sources."
     },
@@ -1446,6 +1537,7 @@
       "expansion": "Mega Rising",
       "set_code": "B1",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Mega_Rising_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket",
       "source_accessed_at": "2026-05-13",
@@ -1459,7 +1551,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "three_branch"
       },
       "slot_rates": {
@@ -1467,32 +1559,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": 0.05238,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
         "source_name": "bulbapedia_tcg_pocket",
@@ -1532,42 +1624,51 @@
         "shared_pool_total": 43,
         "combined_total": 139,
         "pack_specific_by_rarity": {
-          "one_diamond": 25,
-          "two_diamond": 18,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "one_star": 18,
-          "two_star": 15,
-          "three_star": 1
+          "common": 25,
+          "uncommon": 18,
+          "rare": 14,
+          "double_rare": 5,
+          "illustration_rare": 8,
+          "super_rare": 7,
+          "special_illustration_rare": 4,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 24,
-          "two_diamond": 15,
-          "three_diamond": 1,
-          "unknown": 3
+          "common": 24,
+          "uncommon": 15,
+          "rare": 1,
+          "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "one_diamond": 49,
-          "three_star": 1,
-          "one_star": 18,
-          "three_diamond": 15,
-          "four_diamond": 5,
-          "unknown": 3,
-          "two_star": 15,
-          "two_diamond": 33
+          "illustration_rare": 8,
+          "special_illustration_rare": 4,
+          "common": 49,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 7,
+          "rare": 15,
+          "uncommon": 33,
+          "shiny_rare": 10,
+          "ultra_rare": 3
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9351,
+        "uncommon": 1.485,
+        "rare": 0.2475,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1288,
+        "super_rare": 0.0161,
+        "special_illustration_rare": 0.0092,
+        "immersive": 0.0112,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.0012,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Three-branch model from Bulbapedia: regular_pack (94.711%) + regular_pack_plus_one (5.238%) + rare_pack (0.050%). Slot 4/5 rarity distributions from third_party_verified sources. Card 6 shiny rates unknown — EV contribution = 0. Rare pack distribution (40/50/5/5) from third_party_verified sources."
     },
@@ -1576,6 +1677,7 @@
       "expansion": "Mega Rising",
       "set_code": "B1",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Mega_Rising_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket",
       "source_accessed_at": "2026-05-13",
@@ -1589,7 +1691,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "three_branch"
       },
       "slot_rates": {
@@ -1597,32 +1699,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": 0.05238,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
         "source_name": "bulbapedia_tcg_pocket",
@@ -1662,42 +1764,51 @@
         "shared_pool_total": 43,
         "combined_total": 139,
         "pack_specific_by_rarity": {
-          "one_diamond": 25,
-          "two_diamond": 18,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "one_star": 18,
-          "two_star": 15,
-          "three_star": 1
+          "common": 25,
+          "uncommon": 18,
+          "rare": 14,
+          "double_rare": 5,
+          "illustration_rare": 8,
+          "super_rare": 7,
+          "special_illustration_rare": 4,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 24,
-          "two_diamond": 15,
-          "three_diamond": 1,
-          "unknown": 3
+          "common": 24,
+          "uncommon": 15,
+          "rare": 1,
+          "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "one_diamond": 49,
-          "three_star": 1,
-          "one_star": 18,
-          "three_diamond": 15,
-          "four_diamond": 5,
-          "unknown": 3,
-          "two_star": 15,
-          "two_diamond": 33
+          "illustration_rare": 8,
+          "special_illustration_rare": 4,
+          "common": 49,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 7,
+          "rare": 15,
+          "uncommon": 33,
+          "shiny_rare": 10,
+          "ultra_rare": 3
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9351,
+        "uncommon": 1.485,
+        "rare": 0.2475,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1288,
+        "super_rare": 0.0161,
+        "special_illustration_rare": 0.0092,
+        "immersive": 0.0112,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.0013,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Three-branch model from Bulbapedia: regular_pack (94.711%) + regular_pack_plus_one (5.238%) + rare_pack (0.050%). Slot 4/5 rarity distributions from third_party_verified sources. Card 6 shiny rates unknown — EV contribution = 0. Rare pack distribution (40/50/5/5) from third_party_verified sources."
     },
@@ -1706,6 +1817,7 @@
       "expansion": "Mega Shine",
       "set_code": "B2b",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Mega_Shine_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket_mega_shine",
       "source_accessed_at": "2026-05-13",
@@ -1719,7 +1831,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "four_branch"
       },
       "slot_rates": {
@@ -1728,32 +1840,32 @@
         "regular_pack_plus_one_probability": 0.05238,
         "themed_rare_pack_probability": 5e-05,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "themed_rare_pack_all_5_slots": null,
         "confidence": "bulbapedia_branch_verified",
@@ -1794,38 +1906,41 @@
         "shared_pool_total": 0,
         "combined_total": 117,
         "pack_specific_by_rarity": {
-          "one_diamond": 33,
-          "two_diamond": 23,
-          "three_diamond": 8,
-          "four_diamond": 5,
-          "one_star": 30,
-          "two_star": 14,
-          "three_star": 2,
-          "unknown": 2
+          "common": 33,
+          "uncommon": 23,
+          "rare": 8,
+          "double_rare": 5,
+          "illustration_rare": 30,
+          "super_rare": 14,
+          "immersive": 2,
+          "ultra_rare": 2
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 33,
-          "three_star": 2,
-          "one_star": 30,
-          "three_diamond": 8,
-          "four_diamond": 5,
-          "unknown": 2,
-          "two_star": 14,
-          "two_diamond": 23
+          "illustration_rare": 30,
+          "common": 33,
+          "immersive": 2,
+          "double_rare": 5,
+          "super_rare": 14,
+          "rare": 8,
+          "uncommon": 23,
+          "ultra_rare": 2
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9073,
+        "uncommon": 1.4743,
+        "rare": 0.248,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1644,
+        "super_rare": 0.0396,
+        "special_illustration_rare": 0.0,
+        "immersive": 0.0146,
+        "shiny_rare": 0.0,
+        "shiny_super_rare": 0.0,
+        "ultra_rare": 0.0011,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Four-branch model from Bulbapedia: regular_pack (94.706%) + regular_pack_plus_one (5.238%) + rare_pack (0.050%) + themed_rare_pack (0.005%). themed_rare_pack guarantees Mega Evolution ex — EV not modeled (card pool unknown). Card 6 shiny rates unknown — EV contribution = 0."
     },
@@ -1834,6 +1949,7 @@
       "expansion": "Mythical Island",
       "set_code": "A1a",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Mythical_Island_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket",
       "source_accessed_at": "2026-05-13",
@@ -1847,7 +1963,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -1855,32 +1971,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
         "source_name": "bulbapedia_tcg_pocket",
@@ -1920,38 +2036,43 @@
         "shared_pool_total": 0,
         "combined_total": 86,
         "pack_specific_by_rarity": {
-          "one_diamond": 32,
-          "two_diamond": 23,
-          "three_diamond": 8,
-          "four_diamond": 5,
-          "one_star": 6,
-          "two_star": 10,
-          "three_star": 1,
-          "unknown": 1
+          "common": 32,
+          "uncommon": 23,
+          "rare": 8,
+          "double_rare": 5,
+          "illustration_rare": 6,
+          "super_rare": 8,
+          "special_illustration_rare": 2,
+          "immersive": 1,
+          "ultra_rare": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 32,
-          "three_star": 1,
-          "one_star": 6,
-          "three_diamond": 8,
-          "four_diamond": 5,
-          "unknown": 1,
-          "two_star": 10,
-          "two_diamond": 23
+          "illustration_rare": 6,
+          "special_illustration_rare": 2,
+          "common": 32,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 8,
+          "rare": 8,
+          "uncommon": 23,
+          "ultra_rare": 1
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9024,
+        "uncommon": 1.4743,
+        "rare": 0.248,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1284,
+        "super_rare": 0.0208,
+        "special_illustration_rare": 0.0052,
+        "immersive": 0.0112,
+        "shiny_rare": 0.0,
+        "shiny_super_rare": 0.0,
+        "ultra_rare": 0.0,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model confirmed from Bulbapedia: regular_pack (99.950%) + rare_pack (0.050%). No Regular Pack + 1 Card branch for this expansion."
     },
@@ -1960,6 +2081,7 @@
       "expansion": "Paldean Wonders",
       "set_code": "B2a",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Paldean_Wonders_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket",
       "source_accessed_at": "2026-05-13",
@@ -1973,7 +2095,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "three_branch"
       },
       "slot_rates": {
@@ -1981,32 +2103,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": 0.05238,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
         "source_name": "bulbapedia_tcg_pocket",
@@ -2046,46 +2168,188 @@
         "shared_pool_total": 0,
         "combined_total": 131,
         "pack_specific_by_rarity": {
-          "one_diamond": 43,
-          "two_diamond": 33,
-          "three_diamond": 12,
-          "four_diamond": 5,
-          "one_star": 16,
-          "two_star": 19,
-          "three_star": 1,
-          "unknown": 2
+          "common": 43,
+          "uncommon": 32,
+          "rare": 13,
+          "double_rare": 5,
+          "illustration_rare": 6,
+          "super_rare": 10,
+          "special_illustration_rare": 5,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4,
+          "ultra_rare": 2
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 43,
-          "three_star": 1,
-          "one_star": 16,
-          "three_diamond": 12,
-          "four_diamond": 5,
-          "unknown": 2,
-          "two_star": 19,
-          "two_diamond": 33
+          "illustration_rare": 6,
+          "special_illustration_rare": 5,
+          "common": 43,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 10,
+          "rare": 13,
+          "uncommon": 32,
+          "shiny_rare": 10,
+          "ultra_rare": 2
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9094,
+        "uncommon": 1.44,
+        "rare": 0.3178,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1284,
+        "super_rare": 0.017,
+        "special_illustration_rare": 0.0085,
+        "immersive": 0.0112,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.0011,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Three-branch model from Bulbapedia: regular_pack (94.711%) + regular_pack_plus_one (5.238%) + rare_pack (0.050%). Slot 4/5 rarity distributions from third_party_verified sources. Card 6 shiny rates unknown — EV contribution = 0. Rare pack distribution (40/50/5/5) from third_party_verified sources."
+    },
+    {
+      "pack_name": "Paradox Drive",
+      "expansion": "Paradox Drive",
+      "set_code": "B3A",
+      "is_shared_pool": false,
+      "hourglass_purchasable": true,
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
+      "source_name": "game8_co_ptcgp_offering_rates",
+      "source_accessed_at": "2026-05-12",
+      "confidence": "third_party_verified",
+      "bulbapedia_url": null,
+      "bulbapedia_match_status": "truncated_pending",
+      "bulbapedia_notes": "Bulbapedia offering rates section was not fully accessible during the 2026-05-13 verification pass. Two-branch model is consistent with confirmed A-series Bulbapedia data (A1a/A2a/A3a/A3b all two-branch).",
+      "stale_model_warning": null,
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
+      "slot_model": {
+        "cards_per_pack": 5,
+        "slot_count": 5,
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
+        "branch_model": "two_branch"
+      },
+      "slot_rates": {
+        "regular_pack_probability": 0.9995,
+        "rare_pack_probability": 0.0005,
+        "regular_pack_plus_one_probability": null,
+        "slots_1_3": {
+          "common": 1.0
+        },
+        "slot_4": {
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
+        },
+        "slot_5": {
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
+        },
+        "slot_6": null,
+        "rare_pack_all_5_slots": {
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
+        },
+        "confidence": "third_party_verified",
+        "source_name": "game8_co_ptcgp_offering_rates",
+        "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
+        "source_accessed_at": "2026-05-12",
+        "source_notes": "Per-slot rates sourced from Game8 (trusted third-party PTCGP guide), independently confirmed by ONE Esports, CGMagazine, ShackNews. 4 independent third-party sources report identical values. Two-branch model (regular=99.950%, rare=0.050%) confirmed for A-series packs by Bulbapedia (A1a/A2a/A3a/A3b confirmed; A1/A2/A2b/A3 consistent with pattern).",
+        "cross_checked_sources": [
+          {
+            "source_name": "one_esports_ptcgp_pull_rates",
+            "publisher": "ONE Esports",
+            "url": "https://www.oneesports.gg/gaming/pokemon-tcg-pocket-pity-system-explained/",
+            "accessed_at": "2026-05-12",
+            "match_result": "full_match",
+            "notes": "ALL slot rates match: regular=99.95%, rare=0.05%, slot4 and slot5 rates identical. Rare pack rates identical."
+          },
+          {
+            "source_name": "cgmagonline_pull_rates_lowered",
+            "publisher": "CGMagazine",
+            "url": "https://www.cgmagonline.com/news/pokemon-tcg-pocket-pull-rates-lowered/",
+            "accessed_at": "2026-05-12",
+            "match_result": "partial_match_confirms_universality",
+            "notes": "Explicitly compares two packs and confirms rates are universal."
+          },
+          {
+            "source_name": "shacknews_ptcgp_drop_rates",
+            "publisher": "ShackNews",
+            "url": "https://www.shacknews.com/article/142035/pokemon-trading-card-game-pocket-card-drop-chance-rate",
+            "accessed_at": "2026-05-12",
+            "match_result": "partial_match_non_shiny_rates",
+            "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
+          }
+        ],
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+      },
+      "card_pool": {
+        "pack_specific_total": 109,
+        "shared_pool_total": 0,
+        "combined_total": 109,
+        "pack_specific_by_rarity": {
+          "common": 32,
+          "uncommon": 25,
+          "rare": 12,
+          "double_rare": 5,
+          "illustration_rare": 16,
+          "super_rare": 8,
+          "special_illustration_rare": 4,
+          "immersive": 5,
+          "ultra_rare": 2
+        },
+        "shared_pool_by_rarity": {},
+        "combined_by_rarity": {
+          "illustration_rare": 16,
+          "special_illustration_rare": 4,
+          "common": 32,
+          "immersive": 5,
+          "double_rare": 5,
+          "super_rare": 8,
+          "rare": 12,
+          "uncommon": 25,
+          "ultra_rare": 2
+        }
+      },
+      "rarity_probabilities": {
+        "common": 2.9952,
+        "uncommon": 1.4275,
+        "rare": 0.276,
+        "double_rare": 0.04,
+        "illustration_rare": 0.1968,
+        "super_rare": 0.044,
+        "special_illustration_rare": 0.0144,
+        "immersive": 0.009,
+        "shiny_rare": 0.0,
+        "shiny_super_rare": 0.0,
+        "ultra_rare": 0.002,
+        "promo": 0.0,
+        "unknown": 0.0
+      },
+      "notes": "Two-branch model (third_party_verified): regular_pack (99.950%) + rare_pack (0.050%). Consistent with Bulbapedia confirmed A-series packs. Bulbapedia page was truncated before offering rates section in 2026-05-13 check. Verify directly: "
     },
     {
       "pack_name": "Pulsing Aura",
       "expansion": "Pulsing Aura",
       "set_code": "B3",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": null,
       "source_name": "user_provided_in_app_offering_rates_chatgpt_conversation",
       "source_accessed_at": "2026-05-13",
@@ -2099,7 +2363,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "three_branch"
       },
       "slot_rates": {
@@ -2107,35 +2371,35 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": 0.05238,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01667,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01667,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.59998,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06667,
-          "one_star": 0.10286,
-          "two_star": 0.02,
-          "three_star": 0.00889,
-          "crown": 0.0016
+          "uncommon": 0.59998,
+          "rare": 0.2,
+          "double_rare": 0.06667,
+          "illustration_rare": 0.10286,
+          "super_rare": 0.02,
+          "immersive": 0.00889,
+          "ultra_rare": 0.0016
         },
         "slot_6": {
-          "one_shiny": 0.6818,
-          "two_shiny": 0.3182,
-          "note": "Card 6 appears only in Regular Pack + 1 Card openings (5.238% of packs). Shiny cards (one_shiny/two_shiny) are NOT in pack_sources.json — card 6 EV contribution is pending addition of shiny pool data."
+          "shiny_rare": 0.6818,
+          "shiny_super_rare": 0.3182,
+          "note": "Card 6 appears only in Regular Pack + 1 Card openings (5.238% of packs). Shiny cards (shiny_rare/shiny_super_rare) are NOT in pack_sources.json — card 6 EV contribution is pending addition of shiny pool data."
         },
         "rare_pack_all_5_slots": {
-          "one_star": 0.47058,
-          "two_star": 0.45098,
-          "three_star": 0.03921,
+          "illustration_rare": 0.47058,
+          "super_rare": 0.45098,
+          "immersive": 0.03921,
           "crown_or_highest_rare": 0.03921
         },
         "confidence": "user_in_app_verified_plus_bulbapedia",
@@ -2160,46 +2424,52 @@
         "shared_pool_total": 0,
         "combined_total": 234,
         "pack_specific_by_rarity": {
-          "one_diamond": 65,
-          "two_diamond": 51,
-          "three_diamond": 29,
-          "four_diamond": 10,
-          "one_star": 44,
-          "two_star": 31,
-          "three_star": 2,
-          "unknown": 2
+          "common": 65,
+          "uncommon": 51,
+          "rare": 29,
+          "double_rare": 10,
+          "illustration_rare": 44,
+          "super_rare": 25,
+          "special_illustration_rare": 6,
+          "immersive": 2,
+          "ultra_rare": 2
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 65,
-          "three_star": 2,
-          "one_star": 44,
-          "three_diamond": 29,
-          "four_diamond": 10,
-          "unknown": 2,
-          "two_star": 31,
-          "two_diamond": 51
+          "illustration_rare": 44,
+          "special_illustration_rare": 6,
+          "common": 65,
+          "immersive": 2,
+          "double_rare": 10,
+          "super_rare": 25,
+          "rare": 29,
+          "uncommon": 51,
+          "ultra_rare": 2
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9575,
+        "uncommon": 1.4892,
+        "rare": 0.2494,
+        "double_rare": 0.084,
+        "illustration_rare": 0.1656,
+        "super_rare": 0.0355,
+        "special_illustration_rare": 0.0066,
+        "immersive": 0.011,
+        "shiny_rare": 0.0,
+        "shiny_super_rare": 0.0,
+        "ultra_rare": 0.001,
+        "promo": 0.0,
+        "unknown": 0.0
       },
-      "notes": "Three-branch model: regular_pack (94.711%) + rare_pack (0.050%) + regular_pack_plus_one (5.238%). Source: user-provided in-app Offering Rates (ChatGPT, not in repo). Bulbapedia corroborates branch percentages. Rare pack distribution corrected from in-app data: 47.058/45.098/3.921/3.921. Card 6 shiny rates: one_shiny=68.180%, two_shiny=31.820% (EV pending shiny pool data)."
+      "notes": "Three-branch model: regular_pack (94.711%) + rare_pack (0.050%) + regular_pack_plus_one (5.238%). Source: user-provided in-app Offering Rates (ChatGPT, not in repo). Bulbapedia corroborates branch percentages. Rare pack distribution corrected from in-app data: 47.058/45.098/3.921/3.921. Card 6 shiny rates: shiny_rare=68.180%, shiny_super_rare=31.820% (EV pending shiny pool data)."
     },
     {
       "pack_name": "Secluded Springs",
       "expansion": "Secluded Springs",
       "set_code": "A4a",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Secluded_Springs_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket",
       "source_accessed_at": "2026-05-13",
@@ -2213,7 +2483,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "three_branch"
       },
       "slot_rates": {
@@ -2221,32 +2491,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": 0.0833,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
         "source_name": "bulbapedia_tcg_pocket",
@@ -2286,38 +2556,47 @@
         "shared_pool_total": 0,
         "combined_total": 105,
         "pack_specific_by_rarity": {
-          "one_diamond": 32,
-          "two_diamond": 23,
-          "three_diamond": 11,
-          "four_diamond": 5,
-          "one_star": 16,
-          "two_star": 16,
-          "three_star": 1,
-          "unknown": 1
+          "common": 32,
+          "uncommon": 23,
+          "rare": 11,
+          "double_rare": 5,
+          "illustration_rare": 6,
+          "super_rare": 8,
+          "special_illustration_rare": 4,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4,
+          "ultra_rare": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 32,
-          "three_star": 1,
-          "one_star": 16,
-          "three_diamond": 11,
-          "four_diamond": 5,
-          "unknown": 1,
-          "two_star": 16,
-          "two_diamond": 23
+          "illustration_rare": 6,
+          "special_illustration_rare": 4,
+          "common": 32,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 8,
+          "rare": 11,
+          "uncommon": 23,
+          "shiny_rare": 10,
+          "ultra_rare": 1
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9024,
+        "uncommon": 1.426,
+        "rare": 0.319,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1392,
+        "super_rare": 0.0176,
+        "special_illustration_rare": 0.0088,
+        "immersive": 0.0111,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.0,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Unique three-branch model from Bulbapedia: regular_pack (91.620%) + regular_pack_plus_one (8.330%) + rare_pack (0.050%). Branch percentages differ from standard B-series model. EV impact: P_combined = 0.91620+0.08330 = 0.99950 ≈ same as two-branch EV."
     },
@@ -2326,6 +2605,7 @@
       "expansion": "Shining Revelry",
       "set_code": "A2b",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
       "source_name": "game8_co_ptcgp_offering_rates",
       "source_accessed_at": "2026-05-12",
@@ -2339,7 +2619,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -2347,32 +2627,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "third_party_verified",
         "source_name": "game8_co_ptcgp_offering_rates",
@@ -2412,38 +2692,47 @@
         "shared_pool_total": 0,
         "combined_total": 111,
         "pack_specific_by_rarity": {
-          "one_diamond": 32,
-          "two_diamond": 22,
-          "three_diamond": 9,
-          "four_diamond": 9,
-          "one_star": 16,
-          "two_star": 21,
-          "three_star": 1,
-          "unknown": 1
+          "common": 32,
+          "uncommon": 22,
+          "rare": 9,
+          "double_rare": 9,
+          "illustration_rare": 6,
+          "super_rare": 13,
+          "special_illustration_rare": 4,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4,
+          "ultra_rare": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 32,
-          "three_star": 1,
-          "one_star": 16,
-          "three_diamond": 9,
-          "four_diamond": 9,
-          "unknown": 1,
-          "two_star": 21,
-          "two_diamond": 22
+          "illustration_rare": 6,
+          "special_illustration_rare": 4,
+          "common": 32,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 9,
+          "super_rare": 13,
+          "rare": 9,
+          "uncommon": 22,
+          "shiny_rare": 10,
+          "ultra_rare": 1
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9024,
+        "uncommon": 1.4234,
+        "rare": 0.2466,
+        "double_rare": 0.0828,
+        "illustration_rare": 0.1284,
+        "super_rare": 0.0208,
+        "special_illustration_rare": 0.0064,
+        "immersive": 0.0111,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.0,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model (third_party_verified): regular_pack (99.950%) + rare_pack (0.050%). Consistent with Bulbapedia confirmed A-series packs. Bulbapedia page was truncated before offering rates section in 2026-05-13 check. Verify directly: https://bulbapedia.bulbagarden.net/wiki/Shining_Revelry_(TCG_Pocket)"
     },
@@ -2452,6 +2741,7 @@
       "expansion": "Space-Time Smackdown",
       "set_code": "A2",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
       "source_name": "game8_co_ptcgp_offering_rates",
       "source_accessed_at": "2026-05-12",
@@ -2465,7 +2755,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -2473,32 +2763,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "third_party_verified",
         "source_name": "game8_co_ptcgp_offering_rates",
@@ -2538,42 +2828,47 @@
         "shared_pool_total": 45,
         "combined_total": 126,
         "pack_specific_by_rarity": {
-          "one_diamond": 23,
-          "two_diamond": 18,
-          "three_diamond": 10,
-          "four_diamond": 5,
-          "one_star": 12,
-          "two_star": 12,
-          "three_star": 1
+          "common": 23,
+          "uncommon": 18,
+          "rare": 10,
+          "double_rare": 5,
+          "illustration_rare": 12,
+          "super_rare": 8,
+          "special_illustration_rare": 4,
+          "immersive": 1
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 23,
-          "two_diamond": 16,
-          "three_diamond": 4,
-          "unknown": 2
+          "common": 23,
+          "uncommon": 16,
+          "rare": 4,
+          "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "one_diamond": 46,
-          "three_star": 1,
-          "one_star": 12,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "unknown": 2,
-          "two_star": 12,
-          "two_diamond": 34
+          "illustration_rare": 12,
+          "special_illustration_rare": 4,
+          "common": 46,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 8,
+          "rare": 14,
+          "uncommon": 34,
+          "ultra_rare": 2
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9302,
+        "uncommon": 1.4824,
+        "rare": 0.2492,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1296,
+        "super_rare": 0.0176,
+        "special_illustration_rare": 0.0088,
+        "immersive": 0.0112,
+        "shiny_rare": 0.0,
+        "shiny_super_rare": 0.0,
+        "ultra_rare": 0.001,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model (third_party_verified): regular_pack (99.950%) + rare_pack (0.050%). Consistent with Bulbapedia confirmed A-series packs. Bulbapedia page was truncated before offering rates section in 2026-05-13 check. Verify directly: https://bulbapedia.bulbagarden.net/wiki/Space-Time_Smackdown_(TCG_Pocket)"
     },
@@ -2582,6 +2877,7 @@
       "expansion": "Space-Time Smackdown",
       "set_code": "A2",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
       "source_name": "game8_co_ptcgp_offering_rates",
       "source_accessed_at": "2026-05-12",
@@ -2595,7 +2891,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -2603,32 +2899,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "third_party_verified",
         "source_name": "game8_co_ptcgp_offering_rates",
@@ -2668,42 +2964,47 @@
         "shared_pool_total": 45,
         "combined_total": 126,
         "pack_specific_by_rarity": {
-          "one_diamond": 21,
-          "two_diamond": 20,
-          "three_diamond": 10,
-          "four_diamond": 5,
-          "one_star": 12,
-          "two_star": 12,
-          "three_star": 1
+          "common": 21,
+          "uncommon": 20,
+          "rare": 10,
+          "double_rare": 5,
+          "illustration_rare": 12,
+          "super_rare": 8,
+          "special_illustration_rare": 4,
+          "immersive": 1
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 23,
-          "two_diamond": 16,
-          "three_diamond": 4,
-          "unknown": 2
+          "common": 23,
+          "uncommon": 16,
+          "rare": 4,
+          "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "one_diamond": 44,
-          "three_star": 1,
-          "one_star": 12,
-          "three_diamond": 14,
-          "four_diamond": 5,
-          "unknown": 2,
-          "two_star": 12,
-          "two_diamond": 36
+          "illustration_rare": 12,
+          "special_illustration_rare": 4,
+          "common": 44,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 8,
+          "rare": 14,
+          "uncommon": 36,
+          "ultra_rare": 2
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.926,
+        "uncommon": 1.4868,
+        "rare": 0.2492,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1296,
+        "super_rare": 0.0176,
+        "special_illustration_rare": 0.0088,
+        "immersive": 0.0112,
+        "shiny_rare": 0.0,
+        "shiny_super_rare": 0.0,
+        "ultra_rare": 0.0011,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model (third_party_verified): regular_pack (99.950%) + rare_pack (0.050%). Consistent with Bulbapedia confirmed A-series packs. Bulbapedia page was truncated before offering rates section in 2026-05-13 check. Verify directly: https://bulbapedia.bulbagarden.net/wiki/Space-Time_Smackdown_(TCG_Pocket)"
     },
@@ -2712,6 +3013,7 @@
       "expansion": "Triumphant Light",
       "set_code": "A2a",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Triumphant_Light_(TCG_Pocket)",
       "source_name": "bulbapedia_tcg_pocket",
       "source_accessed_at": "2026-05-13",
@@ -2725,7 +3027,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "two_branch"
       },
       "slot_rates": {
@@ -2733,32 +3035,32 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": null,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": null,
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "bulbapedia_branch_verified",
         "source_name": "bulbapedia_tcg_pocket",
@@ -2798,38 +3100,43 @@
         "shared_pool_total": 0,
         "combined_total": 96,
         "pack_specific_by_rarity": {
-          "one_diamond": 31,
-          "two_diamond": 26,
-          "three_diamond": 13,
-          "four_diamond": 5,
-          "one_star": 6,
-          "two_star": 13,
-          "three_star": 1,
-          "unknown": 1
+          "common": 31,
+          "uncommon": 26,
+          "rare": 13,
+          "double_rare": 5,
+          "illustration_rare": 6,
+          "super_rare": 9,
+          "special_illustration_rare": 4,
+          "immersive": 1,
+          "ultra_rare": 1
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "one_diamond": 31,
-          "three_star": 1,
-          "one_star": 6,
-          "three_diamond": 13,
-          "four_diamond": 5,
-          "unknown": 1,
-          "two_star": 13,
-          "two_diamond": 26
+          "illustration_rare": 6,
+          "special_illustration_rare": 4,
+          "common": 31,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 9,
+          "rare": 13,
+          "uncommon": 26,
+          "ultra_rare": 1
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9078,
+        "uncommon": 1.4794,
+        "rare": 0.2483,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1284,
+        "super_rare": 0.018,
+        "special_illustration_rare": 0.008,
+        "immersive": 0.0112,
+        "shiny_rare": 0.0,
+        "shiny_super_rare": 0.0,
+        "ultra_rare": 0.0,
+        "promo": 0.0,
+        "unknown": 0.0
       },
       "notes": "Two-branch model confirmed from Bulbapedia: regular_pack (99.950%) + rare_pack (0.050%). No Regular Pack + 1 Card branch for this expansion."
     },
@@ -2838,6 +3145,7 @@
       "expansion": "Wisdom of Sea and Sky",
       "set_code": "A4",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Wisdom_of_Sea_and_Sky_(TCG_Pocket)",
       "source_name": "user_in_app_screenshots_offering_rates",
       "source_accessed_at": "2026-05-14",
@@ -2851,7 +3159,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "three_branch"
       },
       "slot_rates": {
@@ -2859,42 +3167,42 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": 0.0833,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": {
-          "one_star": 0.129,
-          "three_diamond": 0.871,
-          "note": "Card 6 in Regular Pack +1 Card openings (8.330% of packs). Verified from user in-app screenshots stored in 'Offering Rates screenshots/' (IMG_1722 2.PNG, 2026-05-14). one_star (☆) = 12.900% (Magby), three_diamond (◇◇◇) = 87.100% (Magby/Smoochum/Tyrogue). Standard rarity cards — NOT shiny."
+          "illustration_rare": 0.129,
+          "rare": 0.871,
+          "note": "Card 6 in Regular Pack +1 Card openings (8.330% of packs). Verified from user in-app screenshots stored in 'Offering Rates screenshots/' (IMG_1722 2.PNG, 2026-05-14). illustration_rare (☆) = 12.900% (Magby), rare (◇◇◇) = 87.100% (Magby/Smoochum/Tyrogue). Standard rarity cards — NOT shiny."
         },
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "user_in_app_verified",
         "source_name": "user_in_app_screenshots_offering_rates",
         "source_url": "https://bulbapedia.bulbagarden.net/wiki/Wisdom_of_Sea_and_Sky_(TCG_Pocket)",
         "source_accessed_at": "2026-05-14",
-        "source_notes": "Branch selection (regular_pack=91.620%, regular_pack_plus_one=8.330%, rare_pack=0.050%) and slot_6 (one_star=12.900%, three_diamond=87.100%) verified from in-repo Offering Rates screenshots (IMG_1692 2.PNG – IMG_1722 2.PNG, 'Offering Rates screenshots/' folder). Ho-Oh (A4) verified directly; Lugia (A4) shares the same expansion — identical rates inferred. Branch probabilities match Secluded Springs (A4a) exactly. Rare pack shows apparent uniform per-card distribution (~2.564% = 1/39 pool cards); standard 40/50/5/5 tier placeholder retained pending explicit rate confirmation. Screenshots stored in 'Offering Rates screenshots/' (gitignored — not committed to repo).",
+        "source_notes": "Branch selection (regular_pack=91.620%, regular_pack_plus_one=8.330%, rare_pack=0.050%) and slot_6 (illustration_rare=12.900%, rare=87.100%) verified from in-repo Offering Rates screenshots (IMG_1692 2.PNG – IMG_1722 2.PNG, 'Offering Rates screenshots/' folder). Ho-Oh (A4) verified directly; Lugia (A4) shares the same expansion — identical rates inferred. Branch probabilities match Secluded Springs (A4a) exactly. Rare pack shows apparent uniform per-card distribution (~2.564% = 1/39 pool cards); standard 40/50/5/5 tier placeholder retained pending explicit rate confirmation. Screenshots stored in 'Offering Rates screenshots/' (gitignored — not committed to repo).",
         "confidence_note": "user_in_app_verified: branch selection and slot_6 rates confirmed from PTCGP app screenshots stored in 'Offering Rates screenshots/'. Slot 4/5 distributions match third_party_verified standard rates. NOT Bulbapedia-corroborated (page was inaccessible during prior verification pass)."
       },
       "card_pool": {
@@ -2902,49 +3210,59 @@
         "shared_pool_total": 31,
         "combined_total": 136,
         "pack_specific_by_rarity": {
-          "one_diamond": 24,
-          "two_diamond": 20,
-          "three_diamond": 17,
-          "four_diamond": 5,
-          "one_star": 22,
-          "two_star": 16,
-          "three_star": 1
+          "common": 24,
+          "uncommon": 20,
+          "rare": 17,
+          "double_rare": 5,
+          "illustration_rare": 12,
+          "super_rare": 8,
+          "special_illustration_rare": 4,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 18,
-          "two_diamond": 11,
-          "unknown": 2
+          "common": 18,
+          "uncommon": 11,
+          "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "one_diamond": 42,
-          "three_star": 1,
-          "one_star": 22,
-          "three_diamond": 17,
-          "four_diamond": 5,
-          "unknown": 2,
-          "two_star": 16,
-          "two_diamond": 31
+          "illustration_rare": 12,
+          "special_illustration_rare": 4,
+          "common": 42,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 8,
+          "rare": 17,
+          "uncommon": 31,
+          "shiny_rare": 10,
+          "ultra_rare": 2
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9274,
+        "uncommon": 1.4353,
+        "rare": 0.319,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1394,
+        "super_rare": 0.0176,
+        "special_illustration_rare": 0.0088,
+        "immersive": 0.0111,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.0011,
+        "promo": 0.0,
+        "unknown": 0.0
       },
-      "notes": "Three-branch model verified from in-repo screenshots: regular_pack (91.620%) + regular_pack_plus_one (8.330%) + rare_pack (0.050%). Branch probabilities match Secluded Springs (A4a) exactly. Slot 6: one_star=12.900% (☆), three_diamond=87.100% (◇◇◇) — standard rarity, NOT shiny. Slot 4/5 distributions match third_party_verified standard rates. Rare pack distribution uses 40/50/5/5 placeholder — screenshots suggest apparent uniform per-card distribution (~2.564%), pending explicit confirmation."
+      "notes": "Three-branch model verified from in-repo screenshots: regular_pack (91.620%) + regular_pack_plus_one (8.330%) + rare_pack (0.050%). Branch probabilities match Secluded Springs (A4a) exactly. Slot 6: illustration_rare=12.900% (☆), rare=87.100% (◇◇◇) — standard rarity, NOT shiny. Slot 4/5 distributions match third_party_verified standard rates. Rare pack distribution uses 40/50/5/5 placeholder — screenshots suggest apparent uniform per-card distribution (~2.564%), pending explicit confirmation."
     },
     {
       "pack_name": "Lugia",
       "expansion": "Wisdom of Sea and Sky",
       "set_code": "A4",
       "is_shared_pool": false,
+      "hourglass_purchasable": true,
       "source_url": "https://bulbapedia.bulbagarden.net/wiki/Wisdom_of_Sea_and_Sky_(TCG_Pocket)",
       "source_name": "user_in_app_screenshots_offering_rates",
       "source_accessed_at": "2026-05-14",
@@ -2958,7 +3276,7 @@
       "slot_model": {
         "cards_per_pack": 5,
         "slot_count": 5,
-        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities null until computed from verified slot_rates.",
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
         "branch_model": "three_branch"
       },
       "slot_rates": {
@@ -2966,42 +3284,42 @@
         "rare_pack_probability": 0.0005,
         "regular_pack_plus_one_probability": 0.0833,
         "slots_1_3": {
-          "one_diamond": 1.0
+          "common": 1.0
         },
         "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
         },
         "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
         },
         "slot_6": {
-          "one_star": 0.129,
-          "three_diamond": 0.871,
-          "note": "Card 6 in Regular Pack +1 Card openings (8.330% of packs). Verified from user in-app screenshots stored in 'Offering Rates screenshots/' (IMG_1722 2.PNG, 2026-05-14). one_star (☆) = 12.900% (Magby), three_diamond (◇◇◇) = 87.100% (Magby/Smoochum/Tyrogue). Standard rarity cards — NOT shiny."
+          "illustration_rare": 0.129,
+          "rare": 0.871,
+          "note": "Card 6 in Regular Pack +1 Card openings (8.330% of packs). Verified from user in-app screenshots stored in 'Offering Rates screenshots/' (IMG_1722 2.PNG, 2026-05-14). illustration_rare (☆) = 12.900% (Magby), rare (◇◇◇) = 87.100% (Magby/Smoochum/Tyrogue). Standard rarity cards — NOT shiny."
         },
         "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
         },
         "confidence": "user_in_app_verified",
         "source_name": "user_in_app_screenshots_offering_rates",
         "source_url": "https://bulbapedia.bulbagarden.net/wiki/Wisdom_of_Sea_and_Sky_(TCG_Pocket)",
         "source_accessed_at": "2026-05-14",
-        "source_notes": "Branch selection (regular_pack=91.620%, regular_pack_plus_one=8.330%, rare_pack=0.050%) and slot_6 (one_star=12.900%, three_diamond=87.100%) verified from in-repo Offering Rates screenshots (IMG_1692 2.PNG – IMG_1722 2.PNG, 'Offering Rates screenshots/' folder). Ho-Oh (A4) verified directly; Lugia (A4) shares the same expansion — identical rates inferred. Branch probabilities match Secluded Springs (A4a) exactly. Rare pack shows apparent uniform per-card distribution (~2.564% = 1/39 pool cards); standard 40/50/5/5 tier placeholder retained pending explicit rate confirmation. Screenshots stored in 'Offering Rates screenshots/' (gitignored — not committed to repo).",
+        "source_notes": "Branch selection (regular_pack=91.620%, regular_pack_plus_one=8.330%, rare_pack=0.050%) and slot_6 (illustration_rare=12.900%, rare=87.100%) verified from in-repo Offering Rates screenshots (IMG_1692 2.PNG – IMG_1722 2.PNG, 'Offering Rates screenshots/' folder). Ho-Oh (A4) verified directly; Lugia (A4) shares the same expansion — identical rates inferred. Branch probabilities match Secluded Springs (A4a) exactly. Rare pack shows apparent uniform per-card distribution (~2.564% = 1/39 pool cards); standard 40/50/5/5 tier placeholder retained pending explicit rate confirmation. Screenshots stored in 'Offering Rates screenshots/' (gitignored — not committed to repo).",
         "confidence_note": "user_in_app_verified: branch selection and slot_6 rates confirmed from PTCGP app screenshots stored in 'Offering Rates screenshots/'. Slot 4/5 distributions match third_party_verified standard rates. NOT Bulbapedia-corroborated (page was inaccessible during prior verification pass)."
       },
       "card_pool": {
@@ -3009,130 +3327,52 @@
         "shared_pool_total": 31,
         "combined_total": 136,
         "pack_specific_by_rarity": {
-          "one_diamond": 24,
-          "two_diamond": 20,
-          "three_diamond": 17,
-          "four_diamond": 5,
-          "one_star": 22,
-          "two_star": 16,
-          "three_star": 1
+          "common": 24,
+          "uncommon": 20,
+          "rare": 17,
+          "double_rare": 5,
+          "illustration_rare": 12,
+          "super_rare": 8,
+          "special_illustration_rare": 4,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 4
         },
         "shared_pool_by_rarity": {
-          "one_diamond": 18,
-          "two_diamond": 11,
-          "unknown": 2
+          "common": 18,
+          "uncommon": 11,
+          "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "one_diamond": 42,
-          "three_star": 1,
-          "one_star": 22,
-          "three_diamond": 17,
-          "four_diamond": 5,
-          "unknown": 2,
-          "two_star": 16,
-          "two_diamond": 31
+          "illustration_rare": 12,
+          "special_illustration_rare": 4,
+          "common": 42,
+          "shiny_super_rare": 4,
+          "immersive": 1,
+          "double_rare": 5,
+          "super_rare": 8,
+          "rare": 17,
+          "uncommon": 31,
+          "shiny_rare": 10,
+          "ultra_rare": 2
         }
       },
       "rarity_probabilities": {
-        "one_diamond": null,
-        "two_diamond": null,
-        "three_diamond": null,
-        "four_diamond": null,
-        "one_star": null,
-        "two_star": null,
-        "three_star": null,
-        "crown": null,
-        "promo": null,
-        "unknown": null
+        "common": 2.9274,
+        "uncommon": 1.4353,
+        "rare": 0.319,
+        "double_rare": 0.0825,
+        "illustration_rare": 0.1394,
+        "super_rare": 0.0176,
+        "special_illustration_rare": 0.0088,
+        "immersive": 0.0111,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0168,
+        "ultra_rare": 0.001,
+        "promo": 0.0,
+        "unknown": 0.0
       },
-      "notes": "Three-branch model verified from in-repo screenshots: regular_pack (91.620%) + regular_pack_plus_one (8.330%) + rare_pack (0.050%). Branch probabilities match Secluded Springs (A4a) exactly. Slot 6: one_star=12.900% (☆), three_diamond=87.100% (◇◇◇) — standard rarity, NOT shiny. Slot 4/5 distributions match third_party_verified standard rates. Rare pack distribution uses 40/50/5/5 placeholder — screenshots suggest apparent uniform per-card distribution (~2.564%), pending explicit confirmation."
-    },
-    {
-      "pack_name": "Paradox Drive",
-      "expansion": "Paradox Drive",
-      "set_code": "B3a",
-      "is_shared_pool": false,
-      "source_url": null,
-      "source_name": "pending_bulbapedia_verification",
-      "source_accessed_at": "2026-05-28",
-      "confidence": "pending_verification",
-      "bulbapedia_url": null,
-      "bulbapedia_match_status": "pending",
-      "stale_model_warning": "PLACEHOLDER: slot_rates copied from B1a Crimson Blaze. Verify in-app once Paradox Drive offering rates are published.",
-      "official_verification_status": "not_verified",
-      "slot_model": {
-        "cards_per_pack": 5,
-        "slot_count": 5,
-        "notes": "Three-branch assumed from B-series pattern. Verify in-app.",
-        "branch_model": "three_branch"
-      },
-      "slot_rates": {
-        "regular_pack_probability": 0.94711,
-        "rare_pack_probability": 0.0005,
-        "regular_pack_plus_one_probability": 0.05238,
-        "slots_1_3": {
-          "one_diamond": 1.0
-        },
-        "slot_4": {
-          "two_diamond": 0.9,
-          "three_diamond": 0.05,
-          "four_diamond": 0.01666,
-          "one_star": 0.02572,
-          "two_star": 0.005,
-          "three_star": 0.00222,
-          "crown": 0.0004
-        },
-        "slot_5": {
-          "two_diamond": 0.6,
-          "three_diamond": 0.2,
-          "four_diamond": 0.06664,
-          "one_star": 0.10288,
-          "two_star": 0.02,
-          "three_star": 0.00888,
-          "crown": 0.0016
-        },
-        "slot_6": null,
-        "rare_pack_all_5_slots": {
-          "one_star": 0.4,
-          "two_star": 0.5,
-          "three_star": 0.05,
-          "crown": 0.05
-        },
-        "confidence": "pending_verification",
-        "source_name": "b1a_placeholder",
-        "source_url": null,
-        "source_notes": "PLACEHOLDER from B1a Crimson Blaze. Replace with actual B3a offering rates.",
-        "confidence_note": "pending_verification"
-      },
-      "card_pool": {
-        "pack_specific_total": 109,
-        "shared_pool_total": 0,
-        "combined_total": 109,
-        "pack_specific_by_rarity": {
-          "one_diamond": 32,
-          "two_diamond": 25,
-          "four_diamond": 5,
-          "three_diamond": 12,
-          "one_star": 16,
-          "two_star": 8,
-          "two_star": 4,
-          "three_star": 5,
-          "crown": 2
-        },
-        "shared_pool_by_rarity": {},
-        "combined_by_rarity": {
-          "one_diamond": 32,
-          "two_diamond": 25,
-          "four_diamond": 5,
-          "three_diamond": 12,
-          "one_star": 16,
-          "two_star": 8,
-          "two_star": 4,
-          "three_star": 5,
-          "crown": 2
-        }
-      },
-      "rarity_probabilities": null
+      "notes": "Three-branch model verified from in-repo screenshots: regular_pack (91.620%) + regular_pack_plus_one (8.330%) + rare_pack (0.050%). Branch probabilities match Secluded Springs (A4a) exactly. Slot 6: illustration_rare=12.900% (☆), rare=87.100% (◇◇◇) — standard rarity, NOT shiny. Slot 4/5 distributions match third_party_verified standard rates. Rare pack distribution uses 40/50/5/5 placeholder — screenshots suggest apparent uniform per-card distribution (~2.564%), pending explicit confirmation."
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Pokemon TCG Pocket Pull Probability Model",
-  "description": "Per-pack pull probability model for PTCGP. Supports two-branch (regular+rare), three-branch (regular+rare+regular_plus_one), and four-branch (regular+rare+regular_plus_one+themed_rare) models. rarity_probabilities are null until populated from verified in-app offering rates.",
+  "description": "Per-pack pull probability model for PTCGP. Supports two-branch (regular+rare), three-branch (regular+rare+regular_plus_one), and four-branch (regular+rare+regular_plus_one+themed_rare) models. rarity_probabilities = exact expected copies of each rarity per pack, summed per pack from Pokémon Zone per-card drop chances (slot-model fallback only when PZ data is absent).",
   "type": "object",
   "required": ["meta", "packs"],
   "properties": {
@@ -158,7 +158,7 @@
               },
               "slots_1_3": {
                 "type": ["object", "null"],
-                "description": "Rarity distribution for slots 1, 2, and 3 in a regular or regular+1 pack (always one_diamond)"
+                "description": "Rarity distribution for slots 1, 2, and 3 in a regular or regular+1 pack (always common)"
               },
               "slot_4": {
                 "type": ["object", "null"],
@@ -245,18 +245,15 @@
           },
           "rarity_probabilities": {
             "type": ["object", "null"],
-            "description": "Aggregate per-pack pull probability per rarity tier. Null for packs not yet computed; populated once slot_rates are verified.",
-            "properties": {
-              "one_diamond":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "two_diamond":   { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "three_diamond": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "four_diamond":  { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "one_star":      { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "two_star":      { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "three_star":    { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "crown":         { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "promo":         { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-              "unknown":       { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+            "description": "Exact expected number of cards of each rarity opened per pack, summed independently per pack from Pokémon Zone per-card drop chances (pz_pack_odds.json) joined to card_reference rarity. Keyed by the 11 canonical rarity tiers (+ promo/unknown). Values are expected counts >= 0 (e.g. common ~2.9/pack); a slot-model approximation is used only as a fallback when a pack has no PZ data.",
+            "propertyNames": {
+              "enum": ["common", "uncommon", "rare", "double_rare", "illustration_rare",
+                       "super_rare", "special_illustration_rare", "immersive", "shiny_rare",
+                       "shiny_super_rare", "ultra_rare", "promo", "unknown"]
+            },
+            "additionalProperties": {
+              "type": ["number", "null"],
+              "minimum": 0
             }
           },
           "notes": { "type": ["string", "null"] }
