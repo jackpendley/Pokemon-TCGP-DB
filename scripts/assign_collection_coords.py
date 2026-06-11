@@ -63,6 +63,14 @@ def load_pack_sources() -> dict[str, list]:
 # Disambiguation logic
 # ---------------------------------------------------------------------------
 
+# card_reference stage strings ("Basic"/"Stage1"/"Stage2") → collection (int, label) convention.
+_CARD_REF_STAGE: dict[str, tuple[int, str]] = {
+    "Basic":   (0, "Basic"),
+    "Stage1":  (1, "Stage 1"),
+    "Stage2":  (2, "Stage 2"),
+}
+
+
 def _stage_match(entry_stage, ext_stage) -> bool:
     """Loose stage comparison: collection uses 0/1/2 integers, ext_ref uses Basic/Stage 1/etc."""
     if entry_stage is None or ext_stage is None:
@@ -294,6 +302,7 @@ def main() -> int:
     case_fixed = 0
     rarity_alias_fixed = 0
     type_backfilled = 0
+    stage_backfilled = 0
     card_type_flips: list[str] = []
     for entry in entries:
         # 1. Strip is_ex (no longer tracked; rarity encodes this)
@@ -347,16 +356,26 @@ def main() -> int:
 
         # 5. Backfill missing Pokémon type from card_reference (TCGdex-backed authority).
         #    ext_ref leaves A-series pokemon_type null; card_reference has full coverage.
-        if entry.get("card_type") == "Pokemon" and not entry.get("type") and cn is not None:
+        ref_coord = None
+        if cn is not None:
             try:
                 ref_coord = (str(entry.get("set_code") or "").upper(), int(cn))
             except (TypeError, ValueError):
                 ref_coord = None
-            ref_rec = card_ref.get(ref_coord) if ref_coord else None
+        ref_rec = card_ref.get(ref_coord) if ref_coord else None
+        if entry.get("card_type") == "Pokemon" and not entry.get("type"):
             ref_type = ref_rec.get("pokemon_type") if ref_rec else None
             if ref_type:
                 entry["type"] = ref_type
                 type_backfilled += 1
+
+        # 6. Backfill missing Pokémon stage from card_reference (same authority).
+        #    A-series ext_ref has no stage, so older entries lack it; card_reference covers it.
+        if entry.get("card_type") == "Pokemon" and entry.get("stage") is None and ref_rec:
+            stg = _CARD_REF_STAGE.get(ref_rec.get("stage"))
+            if stg:
+                entry["stage"], entry["stage_label"] = stg
+                stage_backfilled += 1
 
     if is_ex_removed:
         print(f"  Stripped is_ex from {is_ex_removed} entries")
@@ -366,6 +385,8 @@ def main() -> int:
         print(f"  Fixed {rarity_alias_fixed} rarity aliases")
     if type_backfilled:
         print(f"  Backfilled Pokémon type on {type_backfilled} entries from card_reference")
+    if stage_backfilled:
+        print(f"  Backfilled Pokémon stage on {stage_backfilled} entries from card_reference")
     if card_type_flips:
         print(f"  Reconciled card_type on {len(card_type_flips)} entries from ext_ref:")
         for flip in card_type_flips:

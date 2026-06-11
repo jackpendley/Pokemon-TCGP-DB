@@ -243,11 +243,18 @@ class CoordResolver:
                 return self._coord_from_ref(name, ref)
             # Else: fall through to 1b collision handler (don't blindly trust PZ set).
         elif ref:
-            # Reference has a DIFFERENT card at this coord — genuine conflict.
+            # Reference has a DIFFERENT card at the PZ coord. Before declaring a conflict,
+            # try resolving by (name, number): PZ emits HYBRID coords for A4b "Deluxe Pack:
+            # ex" reprints — the original set_code + the A4b number — e.g. Greninja as A1/114
+            # where A1/114 is really Clefable but (Greninja, 114) uniquely lives at A4b/114.
+            # Fall through to the 1b name+number handler when it can resolve; only when the
+            # PZ name exists nowhere at this number is it a genuine conflict.
             ref_name = ref.get("name", "")
-            return ResolvedCoord(name, pz_s, num, None, "conflict",
-                                 sources_agreed=["card_reference"],
-                                 detail=f"card_reference says {ref_name!r} at {pz_s}/{num}")
+            if not self.ref_name_num.get((_norm(name), num)):
+                return ResolvedCoord(name, pz_s, num, None, "conflict",
+                                     sources_agreed=["card_reference"],
+                                     detail=f"card_reference says {ref_name!r} at {pz_s}/{num}")
+            # else: fall through to 1b — (name, number) resolves the PZ hybrid coord.
 
         # 1b. Name+number lookup: handles PZ set_code mislabels (e.g. A4b cards as A1)
         ref_cands = self.ref_name_num.get((_norm(name), num), [])

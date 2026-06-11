@@ -247,3 +247,51 @@ def test_cost_metrics_are_positive(packs):
             assert p["cost_per_unique_card_1x"] > 0
         if p["new_card_ev_10x"] > 0:
             assert p["cost_per_unique_card_10x"] > 0
+
+
+# ---------------------------------------------------------------------------
+# Reprint-aware ownership (A4b <-> original linkage)
+# ---------------------------------------------------------------------------
+
+def test_reprint_link_credits_original_from_a4b(tmp_path):
+    """Owning only the A4b reprint must credit its original-set printing as owned, and
+    vice versa — the app fills both dex slots from one card. Greninja: A4b/114 <-> A1/89."""
+    links = tmp_path / "links.json"
+    links.write_text(json.dumps({"links": [
+        {"a4b": ["A4b", 114], "original": ["A1", 89], "name": "Greninja", "rarity": "rare"}
+    ]}), encoding="utf-8")
+
+    # Own only the A4b coord -> original credited.
+    by_card = bev.apply_reprint_links({("A4B", 114): 1}, links)
+    assert by_card[("A1", 89)] == 1
+    assert by_card[("A4B", 114)] == 1
+
+    # Own only the original -> A4b credited.
+    by_card = bev.apply_reprint_links({("A1", 89): 1}, links)
+    assert by_card[("A4B", 114)] == 1
+
+    # Neither owned -> no spurious credit.
+    assert bev.apply_reprint_links({}, links) == {}
+
+
+def test_reprint_link_missing_file_is_noop():
+    by_card = {("A1", 89): 1}
+    assert bev.apply_reprint_links(by_card, Path("/nonexistent/links.json")) == {("A1", 89): 1}
+
+
+def test_reprint_link_no_transitive_credit_between_a4b_printings(tmp_path):
+    """Two A4b printings sharing one original must NOT credit each other through it.
+    Owning only A4b/114 leaves A4b/115 unowned; both still credit the shared original."""
+    links = tmp_path / "links.json"
+    links.write_text(json.dumps({"links": [
+        {"a4b": ["A4b", 114], "original": ["A1", 89], "name": "Greninja", "rarity": "rare"},
+        {"a4b": ["A4b", 115], "original": ["A1", 89], "name": "Greninja", "rarity": "rare"},
+    ]}), encoding="utf-8")
+
+    by_card = bev.apply_reprint_links({("A4B", 114): 1}, links)
+    assert by_card[("A1", 89)] == 1           # shared original credited
+    assert by_card.get(("A4B", 115), 0) == 0  # sibling printing NOT credited
+
+    # Owning the original credits BOTH reprints.
+    by_card = bev.apply_reprint_links({("A1", 89): 1}, links)
+    assert by_card[("A4B", 114)] == 1 and by_card[("A4B", 115)] == 1

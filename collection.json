@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 1145,
-    "last_updated": "2026-06-09",
+    "total_cards": 1179,
+    "last_updated": "2026-06-11",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -98,7 +98,7 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Magma Punch 60",
-      "count": 7,
+      "count": 8,
       "set_code": "B3",
       "card_number": 27,
       "rarity": "uncommon"
@@ -325,7 +325,7 @@
       "stage": 1,
       "hp": 110,
       "card_type": "Pokemon",
-      "count": 3,
+      "count": 4,
       "set_code": "B3",
       "card_number": 32,
       "rarity": "uncommon"
@@ -507,7 +507,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Bite 30",
-      "count": 2,
+      "count": 3,
       "set_code": "B3",
       "card_number": 14,
       "rarity": "common"
@@ -543,7 +543,7 @@
       "hp": 40,
       "card_type": "Pokemon",
       "attack": "Share",
-      "count": 9,
+      "count": 10,
       "set_code": "B3",
       "card_number": 19,
       "rarity": "common"
@@ -1078,7 +1078,7 @@
       "stage": 1,
       "hp": 130,
       "card_type": "Pokemon",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 47,
       "rarity": "uncommon"
@@ -1150,7 +1150,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Magnetic Blast 50",
-      "count": 3,
+      "count": 4,
       "variant": "Magnetic Blast art",
       "set_code": "B3",
       "card_number": 53,
@@ -1249,7 +1249,7 @@
       "hp": 50,
       "card_type": "Pokemon",
       "attack": "Single Shot Blast 50",
-      "count": 7,
+      "count": 8,
       "set_code": "B3",
       "card_number": 55,
       "rarity": "common"
@@ -1416,7 +1416,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Confuse Ray",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 63,
       "rarity": "common"
@@ -1452,7 +1452,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Pester the Dizzy 20+",
-      "count": 7,
+      "count": 9,
       "set_code": "B3",
       "card_number": 68,
       "rarity": "common"
@@ -1464,7 +1464,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Stampede 10",
-      "count": 5,
+      "count": 6,
       "set_code": "B3",
       "card_number": 69,
       "rarity": "common"
@@ -1566,7 +1566,7 @@
       "hp": 110,
       "card_type": "Pokemon",
       "attack": "Smogscreen 50",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 102,
       "rarity": "uncommon"
@@ -1727,7 +1727,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Fighting Fast 10+",
-      "count": 7,
+      "count": 8,
       "variant": "Fighting Fast art",
       "set_code": "B3",
       "card_number": 79,
@@ -1911,7 +1911,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Mud-Slap 10",
-      "count": 5,
+      "count": 6,
       "set_code": "B3",
       "card_number": 76,
       "rarity": "common"
@@ -1995,7 +1995,7 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Circle Throw 70",
-      "count": 3,
+      "count": 5,
       "set_code": "B3",
       "card_number": 85,
       "rarity": "common"
@@ -2138,7 +2138,7 @@
       "stage": 1,
       "hp": 100,
       "card_type": "Pokemon",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 80,
       "rarity": "rare"
@@ -2174,7 +2174,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Cutting Wind 40",
-      "count": 2,
+      "count": 3,
       "set_code": "B3",
       "card_number": 99,
       "rarity": "uncommon"
@@ -2246,7 +2246,7 @@
       "hp": 100,
       "card_type": "Pokemon",
       "attack": "Evolution Jammer 40",
-      "count": 3,
+      "count": 4,
       "set_code": "B3",
       "card_number": 112,
       "rarity": "uncommon"
@@ -2330,7 +2330,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Spiny Rush 40+",
-      "count": 4,
+      "count": 6,
       "set_code": "B3",
       "card_number": 103,
       "rarity": "common"
@@ -2385,7 +2385,7 @@
       "stage": 0,
       "hp": 60,
       "card_type": "Pokemon",
-      "count": 1,
+      "count": 2,
       "set_code": "B3",
       "card_number": 107,
       "rarity": "common"
@@ -2875,7 +2875,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Healing Light 40",
-      "count": 3,
+      "count": 4,
       "set_code": "B3",
       "card_number": 140,
       "rarity": "uncommon"
@@ -2923,7 +2923,7 @@
       "hp": 50,
       "card_type": "Pokemon",
       "attack": "Fluffy Tail",
-      "count": 8,
+      "count": 9,
       "set_code": "B3",
       "card_number": 142,
       "rarity": "common"
@@ -2935,7 +2935,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Psych Up 30",
-      "count": 4,
+      "count": 5,
       "set_code": "B3",
       "card_number": 136,
       "rarity": "common"
@@ -3123,7 +3123,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Scratch 20",
-      "count": 2,
+      "count": 3,
       "set_code": "B3",
       "card_number": 131,
       "rarity": "common"
@@ -3342,7 +3342,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "effect": "Next turn, Watchog and Stoutland take -100 from opponent's ex attacks",
-      "count": 3,
+      "count": 4,
       "set_code": "B3",
       "card_number": 151,
       "rarity": "uncommon"
@@ -4035,7 +4035,7 @@
     },
     {
       "name": "Rookidee",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Colorless",
       "stage": 0,
@@ -4293,7 +4293,9 @@
       "set_code": "B2",
       "card_number": 30,
       "rarity": "common",
-      "type": "Water"
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Passimian",
@@ -5225,7 +5227,7 @@
     },
     {
       "name": "Greavard",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -6016,7 +6018,7 @@
     },
     {
       "name": "Meowstic",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 1,
@@ -6168,7 +6170,7 @@
     },
     {
       "name": "Oddish",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -6177,6 +6179,42 @@
       "set_code": "A4",
       "card_number": 1,
       "type": "Grass"
+    },
+    {
+      "name": "Amaura",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "rarity": "uncommon",
+      "set_code": "B2",
+      "card_number": 41
+    },
+    {
+      "name": "Rapid Strike Urshifu",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 120,
+      "rarity": "rare",
+      "set_code": "B3",
+      "card_number": 51
+    },
+    {
+      "name": "Greninja",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 120,
+      "rarity": "rare",
+      "set_code": "A4b",
+      "card_number": 114,
+      "type": "Water"
     }
   ]
 }

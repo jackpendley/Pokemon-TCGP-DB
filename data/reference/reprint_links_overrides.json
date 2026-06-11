@@ -1,0 +1,17 @@
+{
+  "_comment": "Curated A4b 'Deluxe Pack: ex' reprint <-> original-printing pairs. AUTHORITATIVE: these override build_reprint_links.py's heuristic. Seeded 2026-06-11 from user-confirmed in-app dual locations (the card shows in both its original-set dex slot and its A4b slot). Each A4b reprint links to the card's DEBUT printing (earliest set, base number).",
+  "links": [
+    {"a4b": ["A4b", 67],  "original": ["A1", 47],  "name": "Moltres ex"},
+    {"a4b": ["A4b", 114], "original": ["A1", 89],  "name": "Greninja"},
+    {"a4b": ["A4b", 194], "original": ["A1", 151], "name": "Cubone"},
+    {"a4b": ["A4b", 196], "original": ["A1", 153], "name": "Marowak ex"},
+    {"a4b": ["A4b", 277], "original": ["A1", 193], "name": "Jigglypuff"},
+    {"a4b": ["A4b", 280], "original": ["A1", 198], "name": "Farfetch'd"},
+    {"a4b": ["A4b", 73],  "original": ["A2", 28],  "name": "Monferno"},
+    {"a4b": ["A4b", 108], "original": ["A2", 50],  "name": "Manaphy"},
+    {"a4b": ["A4b", 161], "original": ["A2", 66],  "name": "Misdreavus"},
+    {"a4b": ["A4b", 216], "original": ["A3", 93],  "name": "Drilbur"},
+    {"a4b": ["A4b", 140], "original": ["A4", 64],  "name": "Chinchou"},
+    {"a4b": ["A4b", 142], "original": ["A4", 65],  "name": "Lanturn ex"}
+  ]
+}

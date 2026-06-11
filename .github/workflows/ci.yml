@@ -39,3 +39,4 @@ jobs:
         run: |
           python scripts/validate_pack_sources.py
           python scripts/validate_pull_probability_model.py
+          python scripts/validate_reprint_links.py
