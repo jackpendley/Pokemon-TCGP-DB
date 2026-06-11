@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T22:44:14+00:00",
+  "generated_at": "2026-06-11T22:54:19+00:00",
   "generated_by": "generate_pack_recommendation_report.py",
   "model_confidence": "third_party_verified_with_in_app_anchor",
   "collection_total": 1179,
@@ -300,5 +300,5 @@
     }
   ],
   "chase_deck_packs": {},
-  "inputs_hash": "384d8f3f037fe7409bb65c16a83747462f2a4a8fc53888dbcf425f15e866a9fd"
+  "inputs_hash": "363f57ae2aaa918ebd62e9ab96a60fbf4854ff75d0b4fadbb8681080a999d167"
 }

@@ -4,7 +4,7 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-06-11T22:44:14+00:00 |
+| Report generated | 2026-06-11T22:54:19+00:00 |
 | Model confidence | **third_party_verified_with_in_app_anchor** |
 | Collection total | 1179 cards |
 | Packs ranked | 24 |

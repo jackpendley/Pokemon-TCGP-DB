@@ -191,6 +191,15 @@ def test_hash_skip_fires_on_second_run():
     )
 
 
+def test_ev_cache_hash_includes_source_code():
+    """The cache hash must cover the EV computation source, not just data files — otherwise
+    a logic change (scoring weights, ownership crediting) won't bust the cache and stale
+    results get served. Regression for the reprint-ownership snapshot fix being missed."""
+    names = {p.name for p in bev.hash_input_paths()}
+    assert "build_pack_ev.py" in names
+    assert "_collection_io.py" in names
+
+
 def test_inputs_hash_written_to_output(pack_ev):
     """pack_ev.json must contain inputs_hash in meta (covers all input files)."""
     h = pack_ev.get("meta", {}).get("inputs_hash")
