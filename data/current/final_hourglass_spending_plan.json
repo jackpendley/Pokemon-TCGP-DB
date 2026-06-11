@@ -2,7 +2,7 @@
   "generated_at": "2026-06-11",
   "generated_by": "scripts/generate_hourglass_spending_plan.py",
   "disclaimer": "NOT OFFICIAL: Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone (not the official PTCGP in-app Offering Rates screen). EV calculations reflect actual pull probabilities with no confidence haircut applied. Rankings are suitable for planning. Re-run EV after every 20+ packs to account for collection changes.",
-  "model_confidence": "third_party_verified_with_in_app_anchor",
+  "model_confidence": "user_in_app_verified",
   "collection_total": 1179,
   "collection_mutated": false,
   "batch_size": 10,
@@ -77,5 +77,5 @@
     "top_pack_name": "Ho-Oh",
     "include_limited_packs": false
   },
-  "inputs_hash": "8fbee8d8fb08e82f2d756424499dd8fd4e9fdf8b4d8c580af5e02b50c576b33b"
+  "inputs_hash": "a5637b62bcc182815bf7e8cac10cd1dff11b3f6de372802a102bb7673c3caaa5"
 }

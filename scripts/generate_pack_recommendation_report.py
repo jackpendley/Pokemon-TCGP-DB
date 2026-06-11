@@ -5,9 +5,10 @@ Generate a human-readable inferred-confidence pack recommendation report.
 Reads from existing EV outputs — does NOT recompute EV.
 Does NOT mutate collection.json or cards.json.
 
-IMPORTANT: All outputs are at INFERRED confidence.
-Slot rates are from external sources, not verified in-app.
-These are planning inputs, not final recommendations.
+Output confidence is data-driven via pull_probability_model.json -> meta.source_status:
+an INFERRED disclaimer is emitted only for unverified confidence levels (see
+_INFERRED_MC_VALUES). When slot rates are user_in_app_verified / pz_verified, no disclaimer
+or haircut applies.
 
 Inputs:
     data/current/pack_ev.json
@@ -737,6 +738,9 @@ def main():
                         print(f"    {i}. {p['pack_name']:<38} new_ev={p['new_card_ev']:.4f}")
             except Exception as e:
                 print(f"  WARN: could not display top promo packs: {e}", file=sys.stderr)
+    elif mc in ("user_in_app_verified", "verified"):
+        print(f"  Model confidence: {mc} (×1.0 — confirmed against in-app Offering Rates)")
+        print("\n  Slot rates are USER_IN_APP_VERIFIED — rankings reflect verified pull rates.")
     elif mc == "third_party_verified":
         print(f"  Model confidence: {mc} (×0.85 adjustment applied)")
         print("\n  Rates are THIRD_PARTY_VERIFIED. Verify in PTCGP app for official confirmation.")

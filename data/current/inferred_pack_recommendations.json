@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-11T22:54:19+00:00",
+  "generated_at": "2026-06-11T23:18:05+00:00",
   "generated_by": "generate_pack_recommendation_report.py",
-  "model_confidence": "third_party_verified_with_in_app_anchor",
+  "model_confidence": "user_in_app_verified",
   "collection_total": 1179,
   "collection_mutated": false,
-  "disclaimer": "INFERRED CONFIDENCE: Slot rates are inferred from third-party data, not verified in-app. All EVs are adjusted by 0.85 to reflect this uncertainty.",
+  "disclaimer": "",
   "top_packs_unified": [
     {
       "pack_name": "Ho-Oh",
@@ -40,7 +40,7 @@
       "expansion": "Secluded Springs",
       "set_code": "A4a",
       "source_status": "pz_verified",
-      "slot_rates_confidence": "bulbapedia_branch_verified",
+      "slot_rates_confidence": "user_in_app_verified",
       "confidence_weight": 1.0,
       "blocked": false,
       "blocked_reason": null,
@@ -98,7 +98,7 @@
       "expansion": "Celestial Guardians",
       "set_code": "A3",
       "source_status": "pz_verified",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "user_in_app_verified",
       "confidence_weight": 1.0,
       "blocked": false,
       "blocked_reason": null,
@@ -127,7 +127,7 @@
       "expansion": "Celestial Guardians",
       "set_code": "A3",
       "source_status": "pz_verified",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "user_in_app_verified",
       "confidence_weight": 1.0,
       "blocked": false,
       "blocked_reason": null,
@@ -216,7 +216,7 @@
       "expansion": "Secluded Springs",
       "set_code": "A4a",
       "source_status": "pz_verified",
-      "slot_rates_confidence": "bulbapedia_branch_verified",
+      "slot_rates_confidence": "user_in_app_verified",
       "confidence_weight": 1.0,
       "blocked": false,
       "blocked_reason": null,
@@ -245,7 +245,7 @@
       "expansion": "Celestial Guardians",
       "set_code": "A3",
       "source_status": "pz_verified",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "user_in_app_verified",
       "confidence_weight": 1.0,
       "blocked": false,
       "blocked_reason": null,
@@ -274,7 +274,7 @@
       "expansion": "Celestial Guardians",
       "set_code": "A3",
       "source_status": "pz_verified",
-      "slot_rates_confidence": "third_party_verified",
+      "slot_rates_confidence": "user_in_app_verified",
       "confidence_weight": 1.0,
       "blocked": false,
       "blocked_reason": null,
@@ -300,5 +300,5 @@
     }
   ],
   "chase_deck_packs": {},
-  "inputs_hash": "363f57ae2aaa918ebd62e9ab96a60fbf4854ff75d0b4fadbb8681080a999d167"
+  "inputs_hash": "40c91aebf50a9ade70946c7e3949a15e6c3b557a6bf35554fbd7ac6034d81def"
 }

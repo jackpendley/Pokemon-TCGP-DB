@@ -8,9 +8,11 @@ EV is based on:
   - pull_probability_model.json  — inferred per-slot pull probabilities
   - deck_recommendation_validation.json — target cards for deck completion
 
-IMPORTANT: Slot rates are INFERRED from external sources, not verified in-app.
-This output is analysis at inferred confidence — NOT a final recommendation.
-Verify slot rates in the PTCGP app before acting on these rankings.
+Slot-rate confidence is data-driven: pull_probability_model.json -> meta.source_status (and
+each pack's slot_rates.confidence) determines whether EV carries the inferred haircut
+(INFERRED_CONFIDENCE_WEIGHT) or full weight. When rates are user_in_app_verified / pz_verified,
+no haircut is applied. Verify packs against the in-app Offering Rates screen
+(scripts/generate_slot_rate_checklist.py) to clear any remaining inferred status.
 
 Inputs:
     data/current/collection_normalized.json
@@ -105,6 +107,12 @@ UNIFIED_WEIGHTS = {
 INFERRED_CONFIDENCE_WEIGHT = 0.85
 # PZ direct rates are authoritative — no discount applied
 PZ_CONFIDENCE_WEIGHT = 1.0
+# Per-pack slot_rates.confidence values that count as fully verified (no haircut), even when
+# PZ pack-odds coverage is below threshold — the user confirmed these against the in-app
+# Offering Rates screen (see scripts/generate_slot_rate_checklist.py).
+_VERIFIED_SLOT_CONFIDENCES = frozenset({
+    "user_in_app_verified", "user_in_app_verified_plus_bulbapedia", "verified",
+})
 
 TOP_N_CARDS = 5  # top EV cards listed per pack
 
@@ -492,8 +500,16 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
 
     pz_total = pz_hits + fallback_count
     pz_coverage = pz_hits / pz_total if pz_total > 0 else 0.0
-    confidence_weight = PZ_CONFIDENCE_WEIGHT if pz_coverage >= 0.90 else INFERRED_CONFIDENCE_WEIGHT
-    source_status = "pz_verified" if pz_coverage >= 0.90 else "inferred"
+    # Full confidence (no haircut) when EITHER PZ pack-odds cover the pack OR the slot rates
+    # have been verified in-app. Verification is honored even if PZ coverage drops, so a
+    # user-confirmed pack never silently reverts to the inferred haircut.
+    slot_verified = (slot_rates or {}).get("confidence") in _VERIFIED_SLOT_CONFIDENCES
+    if pz_coverage >= 0.90:
+        confidence_weight, source_status = PZ_CONFIDENCE_WEIGHT, "pz_verified"
+    elif slot_verified:
+        confidence_weight, source_status = PZ_CONFIDENCE_WEIGHT, "user_in_app_verified"
+    else:
+        confidence_weight, source_status = INFERRED_CONFIDENCE_WEIGHT, "inferred"
 
     # Diminishing returns ratio: how much 10x batch EV differs from 10 × 1x EV.
     # A ratio < 0.85 means significant within-batch duplicates (pack is near-complete).
@@ -544,7 +560,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "top_ev_cards": card_ev_list[:TOP_N_CARDS],
         "deck_target_cards": deck_target_cards,
         "notes": (
-            f"slot_rates={'pz_verified' if source_status == 'pz_verified' else 'inferred'}. "
+            f"slot_rates={source_status}. "
             f"PZ coverage: {pz_hits}/{pz_total} cards"
             + (f" ({pz_excluded_count} excluded as non-pullable)." if pz_excluded_count else ".")
             + f" {owned_in_pool}/{len(all_pool_cards)} cards in pool are owned. "
@@ -650,7 +666,13 @@ def write_json(pack_ev_records, blocked, deck_targets, collection_total, inputs_
     model_confidence = _read_model_confidence(PULL_MODEL_JSON)
     summary = summarize(pack_ev_records)
 
-    if model_confidence == "pz_verified":
+    if model_confidence in ("user_in_app_verified", "verified"):
+        warning = (
+            "Slot rates are USER_IN_APP_VERIFIED — branch and per-slot rates confirmed against "
+            "the in-app Offering Rates screen. No inferred confidence adjustment applied; EV "
+            "rankings reflect verified pull probabilities."
+        )
+    elif model_confidence == "pz_verified":
         pz_verified_count = sum(1 for r in pack_ev_records if r.get("source_status") == "pz_verified")
         warning = (
             f"Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone "
