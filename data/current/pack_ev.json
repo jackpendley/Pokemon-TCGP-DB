@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-11T20:55:30+00:00",
+  "generated_at": "2026-06-11T22:43:34+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "third_party_verified_with_in_app_anchor",
     "collection_total": 1179,
     "collection_mutated": false,
-    "inputs_hash": "666aaea07e5644a17c2b92a22706dc21d25ae2ae77845c59e0d9342d8aaa25b7",
+    "inputs_hash": "a65fd028cb004929783185a98fbfdf4bed8c5326e7875599dedf1a872f7502ae",
     "warnings": [
       "Slot rates are THIRD_PARTY_VERIFIED_WITH_IN_APP_ANCHOR — 12 packs bulbapedia_branch_verified (branch percentages confirmed from Bulbapedia offering rates), 1 pack user_in_app_verified_plus_bulbapedia (Pulsing Aura B3: in-app verified + Bulbapedia corroborated), 8 packs third_party_verified (pattern-consistent two-branch), 3 packs pending_verification (A4/A4b). Rarity distributions within slots remain third_party_verified. EV rankings are suitable for planning but not final recommendations."
     ]
@@ -33,11 +33,11 @@
       {
         "pack_name": "Deluxe Pack: ex",
         "expansion": "Deluxe Pack: ex",
-        "unified_score": 83.31982,
-        "new_card_ev": 8.84178,
-        "new_card_ev_10x": 83.26382,
+        "unified_score": 84.451118,
+        "new_card_ev": 8.95734,
+        "new_card_ev_10x": 84.400878,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 9.12178
+        "confidence_adjusted_ev": 9.20854
       },
       {
         "pack_name": "Ho-Oh",
@@ -80,11 +80,11 @@
       {
         "pack_name": "Deluxe Pack: ex",
         "expansion": "Deluxe Pack: ex",
-        "unified_score": 83.31982,
-        "new_card_ev": 8.84178,
-        "new_card_ev_10x": 83.26382,
+        "unified_score": 84.451118,
+        "new_card_ev": 8.95734,
+        "new_card_ev_10x": 84.400878,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 9.12178
+        "confidence_adjusted_ev": 9.20854
       },
       {
         "pack_name": "Secluded Springs",
@@ -154,11 +154,11 @@
       {
         "pack_name": "Deluxe Pack: ex",
         "expansion": "Deluxe Pack: ex",
-        "unified_score": 83.31982,
-        "new_card_ev": 8.84178,
-        "new_card_ev_10x": 83.26382,
+        "unified_score": 84.451118,
+        "new_card_ev": 8.95734,
+        "new_card_ev_10x": 84.400878,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 9.12178
+        "confidence_adjusted_ev": 9.20854
       },
       {
         "pack_name": "Dialga",
@@ -429,20 +429,20 @@
       "blocked_reason": null,
       "purchasable": false,
       "cards_in_pool": 379,
-      "owned_in_pool": 75,
-      "missing_in_pool": 304,
-      "new_card_ev": 8.84178,
-      "new_card_ev_10x": 83.26382,
-      "copy_ev": 0.28,
+      "owned_in_pool": 51,
+      "missing_in_pool": 328,
+      "new_card_ev": 8.95734,
+      "new_card_ev_10x": 84.400878,
+      "copy_ev": 0.2512,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 25,
       "rare_plus_ev_10x": 1.66825,
-      "pack_total_ev": 9.12178,
-      "confidence_adjusted_ev": 9.12178,
-      "unified_score": 83.31982,
-      "ev_diminishing_returns_ratio": 0.9417,
-      "cost_per_unique_card_1x": 1.36,
-      "cost_per_unique_card_10x": 1.44,
+      "pack_total_ev": 9.20854,
+      "confidence_adjusted_ev": 9.20854,
+      "unified_score": 84.451118,
+      "ev_diminishing_returns_ratio": 0.9423,
+      "cost_per_unique_card_1x": 1.34,
+      "cost_per_unique_card_10x": 1.42,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
@@ -497,7 +497,7 @@
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 379/379 cards. 75/379 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 379/379 cards. 51/379 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Dialga",

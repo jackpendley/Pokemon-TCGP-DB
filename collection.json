@@ -4196,7 +4196,9 @@
       "set_code": "A4b",
       "card_number": 142,
       "rarity": "double_rare",
-      "type": "Lightning"
+      "type": "Lightning",
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Monferno",
@@ -4732,7 +4734,9 @@
       "card_number": 145,
       "rarity": "double_rare",
       "hp": 120,
-      "type": "Lightning"
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Delcatty",
@@ -4774,7 +4778,9 @@
       "set_code": "B3A",
       "card_number": 25,
       "rarity": "common",
-      "type": "Psychic"
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Great Tusk",
@@ -4783,7 +4789,9 @@
       "set_code": "B3A",
       "card_number": 34,
       "rarity": "uncommon",
-      "type": "Fighting"
+      "type": "Fighting",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Corviknight",
@@ -4804,7 +4812,9 @@
       "set_code": "B3A",
       "card_number": 49,
       "rarity": "common",
-      "type": "Metal"
+      "type": "Metal",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Iron Treads",
@@ -4813,7 +4823,9 @@
       "set_code": "B3A",
       "card_number": 51,
       "rarity": "uncommon",
-      "type": "Metal"
+      "type": "Metal",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Girafarig",
@@ -4833,7 +4845,9 @@
       "set_code": "B3A",
       "card_number": 58,
       "rarity": "common",
-      "type": "Colorless"
+      "type": "Colorless",
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Dunsparce",
@@ -4903,7 +4917,9 @@
       "set_code": "B3A",
       "card_number": 19,
       "rarity": "double_rare",
-      "type": "Lightning"
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Rufflet",
@@ -4955,7 +4971,9 @@
       "set_code": "B3A",
       "card_number": 3,
       "rarity": "common",
-      "type": "Grass"
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Psyduck",
@@ -4965,7 +4983,9 @@
       "card_number": 6,
       "rarity": "common",
       "hp": 70,
-      "type": "Water"
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Buizel",
@@ -5007,7 +5027,9 @@
       "set_code": "B3A",
       "card_number": 13,
       "rarity": "double_rare",
-      "type": "Water"
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Iron Hands",
@@ -5016,7 +5038,9 @@
       "set_code": "B3A",
       "card_number": 17,
       "rarity": "common",
-      "type": "Lightning"
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Iron Thorns",
@@ -5025,7 +5049,9 @@
       "set_code": "B3A",
       "card_number": 18,
       "rarity": "uncommon",
-      "type": "Lightning"
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Espeon",
@@ -5069,7 +5095,9 @@
       "set_code": "B3A",
       "card_number": 27,
       "rarity": "rare",
-      "type": "Psychic"
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Sandy Shocks",
@@ -5078,7 +5106,9 @@
       "set_code": "B3A",
       "card_number": 35,
       "rarity": "uncommon",
-      "type": "Fighting"
+      "type": "Fighting",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Umbreon",
@@ -5120,7 +5150,9 @@
       "set_code": "B3A",
       "card_number": 44,
       "rarity": "common",
-      "type": "Darkness"
+      "type": "Darkness",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Glimmora",
@@ -5129,7 +5161,9 @@
       "set_code": "B3A",
       "card_number": 45,
       "rarity": "rare",
-      "type": "Darkness"
+      "type": "Darkness",
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Iron Jugulis",
@@ -5138,7 +5172,9 @@
       "set_code": "B3A",
       "card_number": 46,
       "rarity": "uncommon",
-      "type": "Darkness"
+      "type": "Darkness",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Copperajah",
@@ -5147,7 +5183,9 @@
       "set_code": "B3A",
       "card_number": 50,
       "rarity": "uncommon",
-      "type": "Metal"
+      "type": "Metal",
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Walking Wake",
@@ -5156,7 +5194,9 @@
       "set_code": "B3A",
       "card_number": 53,
       "rarity": "rare",
-      "type": "Dragon"
+      "type": "Dragon",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Terapagos ex",
@@ -5165,7 +5205,9 @@
       "set_code": "B3A",
       "card_number": 68,
       "rarity": "double_rare",
-      "type": "Colorless"
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Rellor",

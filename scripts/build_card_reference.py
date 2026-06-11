@@ -40,7 +40,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import norm_card_name, normalize_rarity, canonical_set_code
+from _collection_io import norm_card_name, normalize_rarity, canonical_set_code, ext_ref_by_coord
 
 ROOT          = Path(__file__).resolve().parent.parent
 SOURCES_DIR   = ROOT / "data" / "reference" / "sources"
@@ -48,8 +48,15 @@ PACK_SOURCES  = ROOT / "data" / "reference" / "pack_sources.json"
 OUT_JSON      = ROOT / "data" / "reference" / "card_reference.json"
 SCHEMA_JSON   = ROOT / "data" / "reference" / "card_reference.schema.json"
 SIR_JSON      = ROOT / "data" / "reference" / "special_illustration_rares.json"
+EXT_REF_JSON  = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
 
 SCHEMA_VERSION = "1.0"
+
+# TCGdex is the only structured stage source, but it covers only A1–B2a (A4b/B2b/B3/B3A and
+# the promo sets are tcgdex:None). For those sets, fall back to the Limitless-derived
+# external_card_reference stage. Limitless writes "Stage 1"/"Stage 2"; map to TCGdex's
+# spaceless "Stage1"/"Stage2" so card_reference stays single-format.
+_EXT_STAGE_TO_TCGDEX = {"Basic": "Basic", "Stage 1": "Stage1", "Stage 2": "Stage2"}
 
 # Curated Special Illustration Rare coords. Super Rare and Special Illustration Rare
 # are BOTH the ★★ "Two Star" tier (same symbol, same pull rate); no structured source
@@ -138,6 +145,7 @@ def reconcile_card(
     card_number: int,
     ps_record: dict,
     snapshots: dict[str, dict],  # source → {str(num): card_dict}
+    ext_stage: str | None = None,  # Limitless stage fallback (sets TCGdex doesn't cover)
 ) -> dict:
     """
     Produce a reconciled card_reference entry for one (set_code, card_number).
@@ -323,9 +331,11 @@ def reconcile_card(
     if pokemon_type_votes:
         pokemon_type_final = max(pokemon_type_votes, key=lambda k: pokemon_type_votes[k])
 
-    # Category/stage/hp from TCGdex (most structured source)
+    # Category/stage/hp from TCGdex (most structured source). For sets TCGdex doesn't cover
+    # (A4b/B2b/B3/B3A/promos), fall back to the Limitless stage so card_reference stays
+    # complete — used by validators and the collection stage backfill.
     category_final = tcgdex_card.get("category")
-    stage_final = tcgdex_card.get("stage")
+    stage_final = tcgdex_card.get("stage") or _EXT_STAGE_TO_TCGDEX.get(ext_stage)
     hp_final = tcgdex_card.get("hp")
 
     # pack_name: trust pack_sources; TCGdex boosters validate for A1–B2a
@@ -375,6 +385,9 @@ def main() -> int:
 
     ps_by_set = _load_pack_sources()
 
+    # Limitless stage fallback for sets TCGdex doesn't cover (keyed by upper-cased coord).
+    ext_ref = ext_ref_by_coord(EXT_REF_JSON) if EXT_REF_JSON.exists() else {}
+
     if args.set:
         # Case-insensitive match so "--set a2a" and "--set B3A" both work regardless
         # of the mixed casing in pack_sources (A2a, B3A, PROMO-A, etc.).
@@ -414,7 +427,8 @@ def main() -> int:
             except (TypeError, ValueError):
                 continue
 
-            entry = reconcile_card(sc, cn, r, set_snapshots)
+            ext_stage = (ext_ref.get((sc.upper(), cn)) or {}).get("stage")
+            entry = reconcile_card(sc, cn, r, set_snapshots, ext_stage)
             results.append(entry)
 
             conf = entry["confidence"]
