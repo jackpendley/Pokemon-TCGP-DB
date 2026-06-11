@@ -299,8 +299,9 @@ def test_a1_mismatch_not_owned():
     check("canonical_name=Moltres ex (not Cloyster)",
           r.canonical_name == "Moltres ex", r.canonical_name)
     check("status=NEW_CARD", r.status == "NEW_CARD", r.status)
-    check("WARN printed for mismatch", "mismatch" in stderr_buf.getvalue().lower(),
-          repr(stderr_buf.getvalue()[:100]))
+    _s = stderr_buf.getvalue().lower()
+    check("mismatch surfaced (INFO summary or WARN)", "re-resolved" in _s or "mismatch" in _s,
+          repr(stderr_buf.getvalue()[:120]))
 
 
 # ---------------------------------------------------------------------------
@@ -317,7 +318,8 @@ def test_a1_mismatch_owned():
     r = results[0]
     check("status=MATCHED to Moltres ex", r.status == "MATCHED" and r.entry.get("name") == "Moltres ex",
           f"{r.status} / {r.entry.get('name') if r.entry else None}")
-    check("WARN printed for mismatch", "mismatch" in stderr_buf.getvalue().lower())
+    _s = stderr_buf.getvalue().lower()
+    check("mismatch surfaced (INFO summary or WARN)", "re-resolved" in _s or "mismatch" in _s)
 
 
 # ---------------------------------------------------------------------------
@@ -675,7 +677,8 @@ def test_mismatch_slot_altart_rarity_owned():
     check("status=MATCHED (not NEW_CARD)", r.status == "MATCHED", r.status)
     check("matched to Jigglypuff entry", r.entry and r.entry.get("name") == "Jigglypuff",
           str(r.entry.get("name") if r.entry else None))
-    check("WARN printed for mismatch", "mismatch" in stderr_buf.getvalue().lower())
+    _s = stderr_buf.getvalue().lower()
+    check("mismatch surfaced (INFO summary or WARN)", "re-resolved" in _s or "mismatch" in _s)
 
 
 # ---------------------------------------------------------------------------
@@ -700,7 +703,8 @@ def test_mismatch_slot_altart_rarity_not_owned():
     check("status=NEW_CARD", r.status == "NEW_CARD", r.status)
     check("canonical_name=Jigglypuff (not mismatch card)",
           r.canonical_name == "Jigglypuff", r.canonical_name)
-    check("WARN printed for mismatch", "mismatch" in stderr_buf.getvalue().lower())
+    _s = stderr_buf.getvalue().lower()
+    check("mismatch surfaced (INFO summary or WARN)", "re-resolved" in _s or "mismatch" in _s)
 
 
 # ---------------------------------------------------------------------------

@@ -248,7 +248,11 @@ def test_exact_coord_single_set_fast_path():
 # ── Path 1a: exact coord but name disagrees → conflict (not silent fallthrough) ──
 
 def test_exact_coord_name_mismatch_returns_conflict():
-    """Reference says Charizard at A1/1 but PZ sends Pikachu — must conflict, not trust PZ."""
+    """Reference says Charizard at A1/1 but PZ sends Pikachu — must conflict, not trust PZ.
+
+    Here the PZ name (Pikachu) exists nowhere at number 1, so there is no hybrid coord to
+    recover — a genuine conflict.
+    """
     resolver = _PatchedResolver(
         ref_records=[_ref_rec("A1", 1, "Charizard")],
         ps_records=[_ps_rec("A1", 1, "Charizard")],
@@ -256,6 +260,26 @@ def test_exact_coord_name_mismatch_returns_conflict():
     rc = resolver.resolve("Pikachu", "A1", 1)
     assert rc.confidence == "conflict"
     assert "Charizard" in rc.detail
+
+
+# ── PZ hybrid coord: different card at PZ coord, but (name, number) recovers it ──
+
+def test_pz_hybrid_coord_resolves_to_a4b():
+    """PZ emits A4b reprints as <original set_code>/<A4b number>, a hybrid that points at a
+    different real card. The Greninja case: PZ sends A1/114, but A1/114 is Clefable while
+    (Greninja, 114) uniquely lives at A4b/114. The resolver must recover A4b/114 at full
+    confidence rather than declaring a conflict and routing it to the review queue."""
+    resolver = _PatchedResolver(
+        ref_records=[
+            _ref_rec("A1", 114, "Clefable"),
+            _ref_rec("A4b", 114, "Greninja"),
+        ],
+        ps_records=[],
+    )
+    rc = resolver.resolve("Greninja", "A1", 114)
+    assert rc.confidence == "confirmed"
+    assert rc.set_code == "A4b"
+    assert rc.card_number == 114
 
 
 # ── No card_number: unconfirmed ───────────────────────────────────────────

@@ -1,40 +1,40 @@
 {
   "meta": {
-    "total_cards": 1145,
-    "last_updated": "2026-06-09",
+    "total_cards": 1179,
+    "last_updated": "2026-06-11",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 1145,
-  "meta_total_cards": 1145,
+  "total_quantity": 1179,
+  "meta_total_cards": 1179,
   "count_matches_meta": true,
-  "unique_entries": 529,
+  "unique_entries": 532,
   "by_card_type": {
-    "Pokemon": 1049,
-    "Trainer": 96
+    "Pokemon": 1082,
+    "Trainer": 97
   },
   "by_pokemon_type": {
-    "Fire": 94,
-    "Grass": 130,
-    "Water": 148,
-    "Lightning": 94,
-    "Psychic": 91,
-    "Fighting": 148,
-    "Darkness": 104,
+    "Fire": 96,
+    "Grass": 133,
+    "Water": 152,
+    "Lightning": 96,
+    "Psychic": 98,
+    "Fighting": 153,
+    "Darkness": 109,
     "Metal": 55,
     "Dragon": 19,
-    "Colorless": 166
+    "Colorless": 171
   },
   "by_stage": {
-    "Basic": 659,
-    "Stage 1": 282,
-    "Stage 2": 65
+    "Basic": 680,
+    "Stage 1": 294,
+    "Stage 2": 66
   },
   "ex_entries": 32,
   "ex_quantity": 39,
   "trainer_subtypes": {
     "Item": 34,
     "Pokemon Tool": 7,
-    "Supporter": 44,
+    "Supporter": 45,
     "Stadium": 11
   },
   "top_cards_by_count": [
@@ -47,7 +47,15 @@
       10
     ],
     [
+      "Applin",
+      10
+    ],
+    [
       "Sobble",
+      10
+    ],
+    [
+      "Riolu",
       10
     ],
     [
@@ -55,11 +63,7 @@
       9
     ],
     [
-      "Applin",
-      9
-    ],
-    [
-      "Riolu",
+      "Oricorio",
       9
     ],
     [
@@ -71,8 +75,16 @@
       9
     ],
     [
+      "Minccino",
+      9
+    ],
+    [
       "Buizel",
       9
+    ],
+    [
+      "Pignite",
+      8
     ],
     [
       "Swadloon",
@@ -83,19 +95,7 @@
       8
     ],
     [
-      "Electrode",
-      8
-    ],
-    [
-      "Seviper",
-      8
-    ],
-    [
-      "Pawniard",
-      8
-    ],
-    [
-      "Cinccino",
+      "Voltorb",
       8
     ]
   ],
@@ -621,6 +621,6 @@
       "Rattata → Raticate"
     ],
     "partial_evolution_lines": [],
-    "total_trainer_cards": 96
+    "total_trainer_cards": 97
   }
 }

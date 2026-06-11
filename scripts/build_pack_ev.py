@@ -43,6 +43,7 @@ ROOT = Path(__file__).resolve().parent.parent
 COLLECTION_JSON     = ROOT / "data" / "current"    / "collection_normalized.json"
 PULL_MODEL_JSON     = ROOT / "data" / "reference"  / "pull_probability_model.json"
 PACK_SOURCES_JSON   = ROOT / "data" / "reference"  / "pack_sources.json"
+REPRINT_LINKS_JSON  = ROOT / "data" / "reference"  / "reprint_links.json"
 # TODO(deck-ev): deck_recommendation_validation.json is read here but never written by any
 # pipeline script — deck_target_ev is always 0 at runtime. When deck logic lands, wire up a
 # producer for this file and switch the owned-count basis to name-level (decks mix sets).
@@ -135,6 +136,30 @@ def load_collection(path: Path) -> tuple[dict, dict]:
             except (TypeError, ValueError):
                 pass
     return by_name, by_card
+
+
+def apply_reprint_links(by_card: dict, path: Path) -> dict:
+    """Credit ownership across A4b 'Deluxe Pack: ex' reprint <-> original links.
+
+    A base-rarity A4b card is the SAME card as its original-set printing (the app fills both
+    dex slots when you own one). Owning either coord must therefore credit the other, or the
+    unowned slot inflates its pack's EV. One-hop, mirrored crediting (max, never sum — it's
+    one physical card). No-op if the link file is absent. Built by build_reprint_links.py.
+    """
+    if not path.exists():
+        return by_card
+    # Decide credits from a SNAPSHOT of original ownership so crediting stays one-hop: two
+    # A4b printings that share one original (e.g. Greninja A4b/114 and /115 → A1/89) must not
+    # credit each other through it. Owning an original still credits all its reprints.
+    base = dict(by_card)
+    for link in json.loads(path.read_text(encoding="utf-8")).get("links", []):
+        a = (str(link["a4b"][0]).upper(), link["a4b"][1])
+        o = (str(link["original"][0]).upper(), link["original"][1])
+        owned = max(base.get(a, 0), base.get(o, 0))
+        if owned:
+            by_card[a] = max(by_card.get(a, 0), owned)
+            by_card[o] = max(by_card.get(o, 0), owned)
+    return by_card
 
 
 def load_pull_model(path: Path) -> dict:
@@ -374,8 +399,10 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         cn  = card.get("card_number")
 
         # Each printing is counted independently: only credits ownership if this exact
-        # (set_code, card_number) is in the collection. Falls back to name-only for
-        # genuinely coord-less legacy entries (in practice 0 since all entries carry coords).
+        # (set_code, card_number) is in the collection. A4b reprints and their originals are
+        # cross-credited beforehand via apply_reprint_links (owning one fills both dex slots,
+        # as the app does). Falls back to name-only for genuinely coord-less legacy entries
+        # (in practice 0 since all entries carry coords).
         # TODO(deck-ev): when deck logic lands, switch to name-count here (decks mix sets).
         if collection_by_card and sc and cn is not None:
             owned = collection_by_card.get((sc, cn), 0)
@@ -463,6 +490,10 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     dr_ratio = new_card_ev_10x / ev_10x_uncapped if ev_10x_uncapped > 0 else 1.0
 
     # Unified score: single composite signal used for all downstream recommendations.
+    # TODO(deck-ev): deck_target_ev is currently ALWAYS 0 — its source file
+    # (deck_recommendation_validation.json) has no producer in the pipeline (see load at
+    # DECK_VALIDATION_JSON). So the deck_target term is inert today; do not read the ×1.5
+    # weight as a live signal until a deck producer is wired up.
     unified_score = (
         new_card_ev_10x * UNIFIED_WEIGHTS["new_card_10x"]
         + copy_ev        * UNIFIED_WEIGHTS["copy"]
@@ -814,7 +845,8 @@ def main():
     # Inputs hash skip: if no input file has changed since last run, reuse prior results.
     # Covers collection AND all reference inputs so pull-model or deck-target edits invalidate cache.
     _h = hashlib.sha256()
-    for _p in (COLLECTION_JSON, PULL_MODEL_JSON, PACK_SOURCES_JSON, DECK_VALIDATION_JSON, PZ_PACK_ODDS_JSON):
+    for _p in (COLLECTION_JSON, PULL_MODEL_JSON, PACK_SOURCES_JSON, REPRINT_LINKS_JSON,
+               DECK_VALIDATION_JSON, PZ_PACK_ODDS_JSON):
         if _p.exists():
             _h.update(_p.read_bytes())
     inputs_hash = _h.hexdigest()
@@ -828,6 +860,7 @@ def main():
             pass  # corrupted prior output — recompute
 
     collection, collection_by_card = load_collection(COLLECTION_JSON)
+    collection_by_card = apply_reprint_links(collection_by_card, REPRINT_LINKS_JSON)
     pull_model       = load_pull_model(PULL_MODEL_JSON)
     pack_cards, expansion_shared = load_pack_sources(PACK_SOURCES_JSON)
     deck_targets     = load_deck_targets(DECK_VALIDATION_JSON)

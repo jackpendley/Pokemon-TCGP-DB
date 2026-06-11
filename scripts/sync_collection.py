@@ -272,10 +272,22 @@ def match_pz_cards(
 ) -> list[MatchResult]:
     name_index = _build_name_index(collection)
     results: list[MatchResult] = []
+    mismatches: list = []
 
     for pz in pz_cards:
-        result = _match_one(pz, collection, name_index, pack_sources, ext_ref)
+        result = _match_one(pz, collection, name_index, pack_sources, ext_ref, mismatches)
         results.append(result)
+
+    # Collapse the expected A4b-reprint hybrid mismatches into one summary line; surface any
+    # mismatch outside the A1–A4 mislabel sets individually (those are genuinely unexpected).
+    expected = [m for m in mismatches if m[4]]
+    unexpected = [m for m in mismatches if not m[4]]
+    if expected:
+        print(f"  INFO: {len(expected)} A4b-reprint hybrid coords re-resolved by name match "
+              f"(PZ stamps the original set code + A4b number; all matched).", file=sys.stderr)
+    for sc, cn, raw, ps_name, _ in unexpected:
+        print(f"  WARN: set-numbering mismatch {sc}#{cn} ({raw!r} vs pack_sources {ps_name!r}) "
+              f"— using direct name match.", file=sys.stderr)
 
     # Pass 2: retry AMBIGUOUS results — exclude already-matched entry indices.
     # Handles cases where a sibling PZ record matched by HP first, leaving only one
@@ -399,12 +411,19 @@ def match_pz_cards(
     return results
 
 
+# PZ stamps A4b "Deluxe Pack: ex" reprints with the original set code (A1–A4) + the A4b
+# number, so their (set, number) names a different card in pack_sources. This is expected and
+# resolved by the direct-name match below; only mismatches OUTSIDE these sets are surprising.
+_A4B_HYBRID_TARGET_SETS = frozenset({"A1", "A2", "A3", "A4"})
+
+
 def _match_one(
     pz: PZCard,
     collection: list[dict],
     name_index: dict[str, list[int]],
     pack_sources: dict,
     ext_ref: dict[str, list[dict]],
+    mismatches: list | None = None,
 ) -> MatchResult:
     # Pre-step: PROMO overrides (PZ catalog returns wrong/missing names for these slots)
     canonical_name: str | None = None
@@ -432,12 +451,16 @@ def _match_one(
                 # which is always safer than blindly trusting a mismatched pack_sources entry.
                 # This handles both: card is already owned (raw_name in name_index) AND
                 # card is not yet owned (raw_name not in name_index → NEW_CARD via fallback).
-                print(
-                    f"  WARN: set-numbering mismatch {pz.set_code}#{pz.card_number} "
-                    f"({pz.raw_name!r} vs pack_sources {ps_name!r}) "
-                    f"— using direct name match.",
-                    file=sys.stderr,
-                )
+                expected = str(pz.set_code).upper() in _A4B_HYBRID_TARGET_SETS
+                if mismatches is not None:
+                    mismatches.append((pz.set_code, pz.card_number, pz.raw_name, ps_name, expected))
+                elif not expected:
+                    print(
+                        f"  WARN: set-numbering mismatch {pz.set_code}#{pz.card_number} "
+                        f"({pz.raw_name!r} vs pack_sources {ps_name!r}) "
+                        f"— using direct name match.",
+                        file=sys.stderr,
+                    )
 
     # Step 2: direct normalized-name match against collection.json.
     # Catches Trainers and cards from sets not yet in pack_sources.
