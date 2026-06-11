@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-11T22:43:34+00:00",
+  "generated_at": "2026-06-11T22:54:07+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "third_party_verified_with_in_app_anchor",
     "collection_total": 1179,
     "collection_mutated": false,
-    "inputs_hash": "a65fd028cb004929783185a98fbfdf4bed8c5326e7875599dedf1a872f7502ae",
+    "inputs_hash": "c15c5b4173ae7bf45b8b059a8809a88cd931e8f315085127b9017b05966a56aa",
     "warnings": [
       "Slot rates are THIRD_PARTY_VERIFIED_WITH_IN_APP_ANCHOR — 12 packs bulbapedia_branch_verified (branch percentages confirmed from Bulbapedia offering rates), 1 pack user_in_app_verified_plus_bulbapedia (Pulsing Aura B3: in-app verified + Bulbapedia corroborated), 8 packs third_party_verified (pattern-consistent two-branch), 3 packs pending_verification (A4/A4b). Rarity distributions within slots remain third_party_verified. EV rankings are suitable for planning but not final recommendations."
     ]

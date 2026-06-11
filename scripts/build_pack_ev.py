@@ -114,6 +114,17 @@ TOP_N_CARDS = 5  # top EV cards listed per pack
 # ---------------------------------------------------------------------------
 
 
+def hash_input_paths() -> tuple[Path, ...]:
+    """Files whose content invalidates the EV cache: the data inputs PLUS the EV computation
+    source (this module + _collection_io). Including the code means a logic change to scoring
+    or ownership crediting busts the cache — a file-only hash would serve stale results after
+    such a change (e.g. the reprint-ownership snapshot fix, whose effect was missed until an
+    input file happened to change)."""
+    code = (Path(__file__).resolve(), Path(__file__).resolve().parent / "_collection_io.py")
+    return (COLLECTION_JSON, PULL_MODEL_JSON, PACK_SOURCES_JSON, REPRINT_LINKS_JSON,
+            DECK_VALIDATION_JSON, PZ_PACK_ODDS_JSON, *code)
+
+
 def load_collection(path: Path) -> tuple[dict, dict]:
     """
     Returns (by_name, by_card):
@@ -842,11 +853,9 @@ def main():
             print(f"ERROR: required input not found: {p}", file=sys.stderr)
             sys.exit(1)
 
-    # Inputs hash skip: if no input file has changed since last run, reuse prior results.
-    # Covers collection AND all reference inputs so pull-model or deck-target edits invalidate cache.
+    # Inputs hash skip: if nothing that affects the result changed since last run, reuse it.
     _h = hashlib.sha256()
-    for _p in (COLLECTION_JSON, PULL_MODEL_JSON, PACK_SOURCES_JSON, REPRINT_LINKS_JSON,
-               DECK_VALIDATION_JSON, PZ_PACK_ODDS_JSON):
+    for _p in hash_input_paths():
         if _p.exists():
             _h.update(_p.read_bytes())
     inputs_hash = _h.hexdigest()
