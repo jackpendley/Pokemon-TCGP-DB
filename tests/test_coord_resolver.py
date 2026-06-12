@@ -157,11 +157,13 @@ def test_name_number_corrects_pz_mislabel():
     assert rc.set_code == "A4b"  # corrected from PZ's "A1"
 
 
-# ── Path 1b multiple: any multi-set collision → conflict ─────────────────
+# ── Path 1a: name-agreeing PZ coord is trusted despite multi-set collision ──
 
-def test_collision_returns_conflict_regardless_of_pz_set():
-    """Any name+number collision in 2+ sets must return conflict, even when PZ's
-    set_code is one of the candidates. Trusting PZ here re-enables the A4b mislabel."""
+def test_collision_trusts_name_agreeing_pz_coord():
+    """A name+number collision across sets resolves to PZ's coord when the reference
+    name agrees there. For dual-location A4b reprints PZ's set_code is the ORIGINAL
+    set — the app's dex attribution (user-verified in-app 2026-06-12) — so the
+    original-set slot is the right answer either way."""
     resolver = _PatchedResolver(
         ref_records=[
             _ref_rec("A1", 1, "Bulbasaur"),
@@ -170,9 +172,9 @@ def test_collision_returns_conflict_regardless_of_pz_set():
         ps_records=[],
     )
     rc = resolver.resolve("Bulbasaur", "A1", 1)
-    assert rc.confidence == "conflict"
-    assert rc.set_code is None
-    assert "card_reference" in rc.sources_agreed
+    assert rc.confidence == "confirmed"
+    assert rc.set_code == "A1"
+    assert rc.card_number == 1
 
 
 def test_collision_no_pz_tiebreaker_returns_conflict_not_crash():
@@ -195,25 +197,23 @@ def test_collision_no_pz_tiebreaker_returns_conflict_not_crash():
     assert "card_reference" in rc.sources_agreed
 
 
-# ── Path 1a: multi-set collision — don't trust PZ's exact coord blindly ──────────
+# ── Path 1a: name MISMATCH at PZ coord still falls to 1b (hybrid coords) ─────────
 
-def test_exact_coord_multi_set_collision_returns_conflict():
-    """Any (name, number) collision across 2+ sets must always return conflict.
-
-    This is the A4b→A1 mislabel guard: PZ labels A4b cards as A1/A2/A3/A4. Since
-    the reference is genuinely ambiguous, we surface the conflict so the review queue
-    catches it rather than silently attributing ownership to the wrong pack's EV pool.
-    """
+def test_exact_coord_name_mismatch_resolves_by_name_number():
+    """A hybrid PZ coord (original set code + A4b number) where a DIFFERENT card sits
+    at that coord must resolve by name+number, not conflict — e.g. Greninja exported
+    as A1/114 where A1/114 is really Clefable but (Greninja, 114) lives at A4b/114."""
     resolver = _PatchedResolver(
         ref_records=[
-            _ref_rec("A1",  1, "Bulbasaur"),
-            _ref_rec("A4b", 1, "Bulbasaur"),
+            _ref_rec("A1",  114, "Clefable"),
+            _ref_rec("A4b", 114, "Greninja"),
         ],
         ps_records=[],
     )
-    rc = resolver.resolve("Bulbasaur", "A1", 1)
-    assert rc.confidence == "conflict"
-    assert rc.set_code is None
+    rc = resolver.resolve("Greninja", "A1", 114)
+    assert rc.confidence == "confirmed"
+    assert rc.set_code == "A4b"
+    assert rc.card_number == 114
 
 
 def test_name_number_single_set_uses_1b_path():
