@@ -283,6 +283,23 @@ def test_reprint_link_credits_original_from_a4b(tmp_path):
     assert bev.apply_reprint_links({}, links) == {}
 
 
+def _weight_for_confidence(conf):
+    """confidence_weight from compute_pack_ev_record for a pack with the given slot-rate
+    confidence and NO PZ odds (pz_coverage=0), isolating the verification path."""
+    pack = {"pack_name": "T", "expansion": "T", "set_code": "T",
+            "slot_rates": {"confidence": conf}, "card_pool": {}}
+    rec = bev.compute_pack_ev_record(pack, [], {}, {}, pz_card_odds=None)
+    return rec["confidence_weight"]
+
+
+def test_in_app_verified_slot_rates_skip_haircut_without_pz_odds():
+    """A pack verified in-app must get full weight even when PZ pack-odds don't cover it;
+    an unverified third-party pack still gets the 0.85 inferred haircut."""
+    assert "user_in_app_verified" in bev._VERIFIED_SLOT_CONFIDENCES
+    assert _weight_for_confidence("user_in_app_verified") == bev.PZ_CONFIDENCE_WEIGHT
+    assert _weight_for_confidence("third_party_verified") == bev.INFERRED_CONFIDENCE_WEIGHT
+
+
 def test_reprint_link_missing_file_is_noop():
     by_card = {("A1", 89): 1}
     assert bev.apply_reprint_links(by_card, Path("/nonexistent/links.json")) == {("A1", 89): 1}
