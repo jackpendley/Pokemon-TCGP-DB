@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-12T23:00:48+00:00",
+  "generated_at": "2026-06-12T23:24:28+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "user_in_app_verified",
     "collection_total": 1240,
     "collection_mutated": false,
-    "inputs_hash": "7cb0da99b5da3e0143327679b903e8ccafb243b44d16132d57424e9f5006c048",
+    "inputs_hash": "4d6a60e892bb84b8fd71b17e95f17cbcacf92c4cc9122e37cace057eb763aa92",
     "warnings": [
       "Slot rates are USER_IN_APP_VERIFIED — branch and per-slot rates confirmed against the in-app Offering Rates screen. No inferred confidence adjustment applied; EV rankings reflect verified pull probabilities."
     ]

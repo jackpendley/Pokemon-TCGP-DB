@@ -1,6 +1,6 @@
 # Full Pack Ranking — All 24 Standard Packs
 
-Generated: 2026-06-12T23:00:48+00:00
+Generated: 2026-06-12T23:24:28+00:00
 
 Ranked by unified score. Use Pack Hourglasses to open these packs.
 
