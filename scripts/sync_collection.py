@@ -1314,16 +1314,6 @@ def main() -> int:
     new_cards = [r for r in results if r.status == "NEW_CARD"]
 
     matched_indices = {r.entry_index for r in matched if r.entry_index is not None}
-    missing_from_pz = [
-        e for i, e in enumerate(collection_entries) if i not in matched_indices
-    ]
-
-    if missing_from_pz:
-        print(
-            f"  WARNING: {len(missing_from_pz)} collection entries not returned by PZ "
-            f"— counts unchanged (check sync_review_queue.json)",
-            file=sys.stderr,
-        )
 
     # ── Phase 4: Compute diff ─────────────────────────────────────────────
     # Aggregate counts: the same card may appear in multiple sets in PZ
@@ -1335,6 +1325,59 @@ def main() -> int:
         entry_pz_total[idx] = entry_pz_total.get(idx, 0) + r.pz_card.count
         entry_pz_coords.setdefault(idx, set()).add(
             (str(r.pz_card.set_code or "").upper(), r.pz_card.card_number))
+
+    # ── Dual-location pairing ─────────────────────────────────────────────
+    # A dual-location card (A4b "Deluxe Pack: ex" reprint) is ONE PZ record but TWO
+    # collection entries after reconcile splits it: the original-set slot (1st copy)
+    # and the A4b slot (2nd+ copies). The 1:1 matcher lands the record on one entry,
+    # which would reset it to the full PZ count and flag the sibling as missing
+    # (eventually stale-removing it). When the pair's combined count already equals
+    # the PZ count, both entries are correct: leave counts alone, don't flag the
+    # sibling. When they don't sum (a genuinely new copy), the normal count update +
+    # reconcile re-split applies.
+    paired_siblings: set[int] = set()
+    link_orig: dict[tuple, tuple] = {}
+    _links_path = ROOT / "data" / "reference" / "reprint_links.json"
+    if _links_path.exists():
+        for l in json.loads(_links_path.read_text(encoding="utf-8")).get("links", []):
+            link_orig[(str(l["a4b"][0]).upper(), int(l["a4b"][1]))] = (
+                str(l["original"][0]).upper(), int(l["original"][1]))
+    if link_orig:
+        a4b_by_orig: dict[tuple, list] = {}
+        for a, o in link_orig.items():
+            a4b_by_orig.setdefault(o, []).append(a)
+
+        def _coord(e: dict) -> tuple:
+            return (str(e.get("set_code") or "").upper(), e.get("card_number"))
+
+        for idx in list(entry_pz_total):
+            e = collection_entries[idx]
+            c = _coord(e)
+            partners = a4b_by_orig.get(c) or ([link_orig[c]] if c in link_orig else [])
+            if not partners:
+                continue
+            for j, s in enumerate(collection_entries):
+                if j in matched_indices or j in paired_siblings:
+                    continue
+                if _normalize(s.get("name", "")) != _normalize(e.get("name", "")):
+                    continue
+                if _coord(s) in partners and \
+                        e.get("count", 0) + s.get("count", 0) == entry_pz_total[idx]:
+                    entry_pz_total[idx] = e.get("count", 0)
+                    paired_siblings.add(j)
+                    break
+
+    missing_from_pz = [
+        e for i, e in enumerate(collection_entries)
+        if i not in matched_indices and i not in paired_siblings
+    ]
+
+    if missing_from_pz:
+        print(
+            f"  WARNING: {len(missing_from_pz)} collection entries not returned by PZ "
+            f"— counts unchanged (check sync_review_queue.json)",
+            file=sys.stderr,
+        )
 
     # Split-gap detection: when PZ maps copies from >1 DISTINCT coord onto a single
     # entry, those copies are different printings that the per-coord model wants as
