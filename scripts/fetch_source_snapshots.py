@@ -18,7 +18,7 @@ external_card_reference.json, so it's already the baseline, not an independent c
 
 Usage:
     python3 scripts/fetch_source_snapshots.py               # all sources, all sets
-    python3 scripts/fetch_source_snapshots.py --set B3A     # one set only
+    python3 scripts/fetch_source_snapshots.py --set B3a     # one set only
     python3 scripts/fetch_source_snapshots.py --source serebii
     python3 scripts/fetch_source_snapshots.py --dry-run     # show what would be fetched
     python3 scripts/fetch_source_snapshots.py --force       # ignore TTL, re-fetch all
@@ -86,7 +86,7 @@ SET_ALIASES: dict[str, dict] = {
     "B2a":    {"tcgdex": "B2a", "serebii": "paldeanwonders",           "bulbapedia": "Paldean Wonders (TCG Pocket)",         "limitless": "B2a"},
     "B2b":    {"tcgdex": None,  "serebii": "megashine",                "bulbapedia": "Mega Shine (TCG Pocket)",              "limitless": "B2b"},
     "B3":     {"tcgdex": None,  "serebii": "pulsingaura",              "bulbapedia": "Pulsing Aura (TCG Pocket)",            "limitless": "B3"},
-    "B3A":    {"tcgdex": None,  "serebii": "paradoxdrive",             "bulbapedia": "Paradox Drive (TCG Pocket)",           "limitless": "B3a"},
+    "B3a":    {"tcgdex": None,  "serebii": "paradoxdrive",             "bulbapedia": "Paradox Drive (TCG Pocket)",           "limitless": "B3a"},
     "PROMO-A":{"tcgdex": "P-A", "serebii": "promo-a",                  "bulbapedia": "Promo-A (TCG Pocket)",                 "limitless": "PROMO-A"},
     "PROMO-B":{"tcgdex": None,  "serebii": "promo-b",                  "bulbapedia": "Promo-B (TCG Pocket)",                 "limitless": "PROMO-B"},
 }
@@ -461,7 +461,7 @@ def main() -> int:
     all_sets = _sets_from_pack_sources()
     if args.set:
         sc_up = args.set.upper()
-        # Accept 'B3a' → 'B3A' case-insensitively
+        # Accept 'B3a' case-insensitively case-insensitively
         matched = next((s for s in SET_ALIASES if s.upper() == sc_up), None)
         if not matched:
             print(f"ERROR: unknown set '{args.set}'. Known: {', '.join(SET_ALIASES)}", file=sys.stderr)

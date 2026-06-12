@@ -39838,7 +39838,7 @@
     "stage": "Basic",
     "hp": 70,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/87",
     "source": "limitless",
     "normalized_name": "scyther"
@@ -39852,7 +39852,7 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/88",
     "source": "limitless",
     "normalized_name": "pineco"
@@ -39866,7 +39866,7 @@
     "stage": "Basic",
     "hp": 70,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/89",
     "source": "limitless",
     "normalized_name": "phantump"
@@ -39880,7 +39880,7 @@
     "stage": "Stage 1",
     "hp": 120,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/90",
     "source": "limitless",
     "normalized_name": "trevenant"
@@ -39894,7 +39894,7 @@
     "stage": "Basic",
     "hp": 70,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/91",
     "source": "limitless",
     "normalized_name": "charmander"
@@ -39908,7 +39908,7 @@
     "stage": "Stage 1",
     "hp": 80,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/92",
     "source": "limitless",
     "normalized_name": "charmeleon"
@@ -39922,7 +39922,7 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/93",
     "source": "limitless",
     "normalized_name": "ponyta"
@@ -39936,7 +39936,7 @@
     "stage": "Stage 1",
     "hp": 100,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/94",
     "source": "limitless",
     "normalized_name": "rapidash"
@@ -39950,7 +39950,7 @@
     "stage": "Basic",
     "hp": 70,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/95",
     "source": "limitless",
     "normalized_name": "slowpoke"
@@ -39964,7 +39964,7 @@
     "stage": "Basic",
     "hp": 70,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/96",
     "source": "limitless",
     "normalized_name": "pikachu"
@@ -39978,7 +39978,7 @@
     "stage": "Stage 1",
     "hp": 100,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/97",
     "source": "limitless",
     "normalized_name": "raichu"
@@ -39992,7 +39992,7 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/98",
     "source": "limitless",
     "normalized_name": "electrike"
@@ -40006,7 +40006,7 @@
     "stage": "Basic",
     "hp": 80,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/99",
     "source": "limitless",
     "normalized_name": "hawlucha"
@@ -40020,7 +40020,7 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/100",
     "source": "limitless",
     "normalized_name": "gastly"
@@ -40034,7 +40034,7 @@
     "stage": "Stage 1",
     "hp": 80,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/101",
     "source": "limitless",
     "normalized_name": "haunter"
@@ -40048,7 +40048,7 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/102",
     "source": "limitless",
     "normalized_name": "zorua"
@@ -40062,7 +40062,7 @@
     "stage": "Stage 1",
     "hp": 100,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/103",
     "source": "limitless",
     "normalized_name": "zoroark"
@@ -40076,7 +40076,7 @@
     "stage": "Stage 1",
     "hp": 100,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/104",
     "source": "limitless",
     "normalized_name": "forretress"
@@ -40090,7 +40090,7 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/105",
     "source": "limitless",
     "normalized_name": "dratini"
@@ -40104,7 +40104,7 @@
     "stage": "Stage 1",
     "hp": 80,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/106",
     "source": "limitless",
     "normalized_name": "dragonair"
@@ -40118,7 +40118,7 @@
     "stage": "Stage 2",
     "hp": 150,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/107",
     "source": "limitless",
     "normalized_name": "dragonite"
@@ -40132,7 +40132,7 @@
     "stage": "Basic",
     "hp": 70,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/108",
     "source": "limitless",
     "normalized_name": "axew"
@@ -40146,7 +40146,7 @@
     "stage": "Stage 1",
     "hp": 90,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/109",
     "source": "limitless",
     "normalized_name": "fraxure"
@@ -40160,7 +40160,7 @@
     "stage": "Stage 2",
     "hp": 150,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/110",
     "source": "limitless",
     "normalized_name": "haxorus"
@@ -40174,7 +40174,7 @@
     "stage": "Stage 2",
     "hp": 220,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/111",
     "source": "limitless",
     "normalized_name": "mega charizard x ex"
@@ -40188,7 +40188,7 @@
     "stage": "Stage 1",
     "hp": 200,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/112",
     "source": "limitless",
     "normalized_name": "mega slowbro ex"
@@ -40202,7 +40202,7 @@
     "stage": "Stage 1",
     "hp": 180,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/113",
     "source": "limitless",
     "normalized_name": "mega manectric ex"
@@ -40216,7 +40216,7 @@
     "stage": "Stage 2",
     "hp": 210,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/114",
     "source": "limitless",
     "normalized_name": "mega gengar ex"
@@ -40230,7 +40230,7 @@
     "stage": "Stage 1",
     "hp": 200,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B2b/115",
     "source": "limitless",
     "normalized_name": "mega scizor ex"
@@ -43128,7 +43128,7 @@
     "stage": "Basic",
     "hp": 50,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/205",
     "source": "limitless",
     "normalized_name": "cottonee"
@@ -43142,7 +43142,7 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/206",
     "source": "limitless",
     "normalized_name": "torchic"
@@ -43156,7 +43156,7 @@
     "stage": "Stage 1",
     "hp": 80,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/207",
     "source": "limitless",
     "normalized_name": "combusken"
@@ -43170,7 +43170,7 @@
     "stage": "Stage 2",
     "hp": 140,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/208",
     "source": "limitless",
     "normalized_name": "blaziken"
@@ -43184,7 +43184,7 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/209",
     "source": "limitless",
     "normalized_name": "frillish"
@@ -43198,7 +43198,7 @@
     "stage": "Stage 1",
     "hp": 120,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/210",
     "source": "limitless",
     "normalized_name": "jellicent"
@@ -43212,7 +43212,7 @@
     "stage": "Basic",
     "hp": 100,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/211",
     "source": "limitless",
     "normalized_name": "onix"
@@ -43226,7 +43226,7 @@
     "stage": "Basic",
     "hp": 50,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/212",
     "source": "limitless",
     "normalized_name": "zubat"
@@ -43240,7 +43240,7 @@
     "stage": "Stage 1",
     "hp": 80,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/213",
     "source": "limitless",
     "normalized_name": "golbat"
@@ -43254,7 +43254,7 @@
     "stage": "Stage 2",
     "hp": 130,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/214",
     "source": "limitless",
     "normalized_name": "crobat"
@@ -43268,7 +43268,7 @@
     "stage": "Basic",
     "hp": 80,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/215",
     "source": "limitless",
     "normalized_name": "grimer"
@@ -43282,7 +43282,7 @@
     "stage": "Stage 1",
     "hp": 130,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/216",
     "source": "limitless",
     "normalized_name": "muk"
@@ -43296,7 +43296,7 @@
     "stage": "Basic",
     "hp": 80,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/217",
     "source": "limitless",
     "normalized_name": "absol"
@@ -43310,7 +43310,7 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/218",
     "source": "limitless",
     "normalized_name": "skrelp"
@@ -43324,7 +43324,7 @@
     "stage": "Stage 1",
     "hp": 150,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/219",
     "source": "limitless",
     "normalized_name": "steelix"
@@ -43338,7 +43338,7 @@
     "stage": "Basic",
     "hp": 100,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/220",
     "source": "limitless",
     "normalized_name": "chansey"
@@ -43352,7 +43352,7 @@
     "stage": "Stage 1",
     "hp": 140,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/221",
     "source": "limitless",
     "normalized_name": "blissey"
@@ -43366,7 +43366,7 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/222",
     "source": "limitless",
     "normalized_name": "porygon"
@@ -43380,7 +43380,7 @@
     "stage": "Stage 1",
     "hp": 90,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/223",
     "source": "limitless",
     "normalized_name": "porygon2"
@@ -43394,7 +43394,7 @@
     "stage": "Stage 2",
     "hp": 140,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/224",
     "source": "limitless",
     "normalized_name": "porygon z"
@@ -43408,7 +43408,7 @@
     "stage": "Stage 1",
     "hp": 140,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/225",
     "source": "limitless",
     "normalized_name": "whimsicott ex"
@@ -43422,7 +43422,7 @@
     "stage": "Stage 2",
     "hp": 210,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/226",
     "source": "limitless",
     "normalized_name": "mega blaziken ex"
@@ -43436,7 +43436,7 @@
     "stage": "Stage 2",
     "hp": 170,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/227",
     "source": "limitless",
     "normalized_name": "greninja ex"
@@ -43450,7 +43450,7 @@
     "stage": "Stage 1",
     "hp": 140,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/228",
     "source": "limitless",
     "normalized_name": "jolteon ex"
@@ -43464,7 +43464,7 @@
     "stage": "Basic",
     "hp": 130,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/229",
     "source": "limitless",
     "normalized_name": "hitmonchan ex"
@@ -43478,7 +43478,7 @@
     "stage": "Basic",
     "hp": 170,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/230",
     "source": "limitless",
     "normalized_name": "mega absol ex"
@@ -43492,7 +43492,7 @@
     "stage": "Stage 1",
     "hp": 150,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/231",
     "source": "limitless",
     "normalized_name": "dragalge ex"
@@ -43506,7 +43506,7 @@
     "stage": "Stage 1",
     "hp": 220,
     "is_ex": true,
-    "rarity": "super_rare",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/B3/232",
     "source": "limitless",
     "normalized_name": "mega steelix ex"
@@ -43540,7 +43540,7 @@
     "normalized_name": "bombirdier"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 1,
     "name": "Surskit",
     "card_category": "Pokemon",
@@ -43554,7 +43554,7 @@
     "normalized_name": "surskit"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 2,
     "name": "Masquerain",
     "card_category": "Pokemon",
@@ -43568,7 +43568,7 @@
     "normalized_name": "masquerain"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 3,
     "name": "Brute Bonnet",
     "card_category": "Pokemon",
@@ -43582,7 +43582,7 @@
     "normalized_name": "brute_bonnet"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 4,
     "name": "Slither Wing",
     "card_category": "Pokemon",
@@ -43596,7 +43596,7 @@
     "normalized_name": "slither_wing"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 5,
     "name": "Iron Moth",
     "card_category": "Pokemon",
@@ -43610,7 +43610,7 @@
     "normalized_name": "iron_moth"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 6,
     "name": "Psyduck",
     "card_category": "Pokemon",
@@ -43624,7 +43624,7 @@
     "normalized_name": "psyduck"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 7,
     "name": "Golduck",
     "card_category": "Pokemon",
@@ -43638,7 +43638,7 @@
     "normalized_name": "golduck"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 8,
     "name": "Vaporeon",
     "card_category": "Pokemon",
@@ -43652,7 +43652,7 @@
     "normalized_name": "vaporeon"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 9,
     "name": "Buizel",
     "card_category": "Pokemon",
@@ -43666,7 +43666,7 @@
     "normalized_name": "buizel"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 10,
     "name": "Floatzel",
     "card_category": "Pokemon",
@@ -43680,7 +43680,7 @@
     "normalized_name": "floatzel"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 11,
     "name": "Snom",
     "card_category": "Pokemon",
@@ -43694,7 +43694,7 @@
     "normalized_name": "snom"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 12,
     "name": "Frosmoth",
     "card_category": "Pokemon",
@@ -43708,7 +43708,7 @@
     "normalized_name": "frosmoth"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 13,
     "name": "Iron Bundle ex",
     "card_category": "Pokemon",
@@ -43722,7 +43722,7 @@
     "normalized_name": "iron_bundle_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 14,
     "name": "Pawmi",
     "card_category": "Pokemon",
@@ -43736,7 +43736,7 @@
     "normalized_name": "pawmi"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 15,
     "name": "Pawmo",
     "card_category": "Pokemon",
@@ -43750,7 +43750,7 @@
     "normalized_name": "pawmo"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 16,
     "name": "Pawmot",
     "card_category": "Pokemon",
@@ -43764,7 +43764,7 @@
     "normalized_name": "pawmot"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 17,
     "name": "Iron Hands",
     "card_category": "Pokemon",
@@ -43778,7 +43778,7 @@
     "normalized_name": "iron_hands"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 18,
     "name": "Iron Thorns",
     "card_category": "Pokemon",
@@ -43792,7 +43792,7 @@
     "normalized_name": "iron_thorns"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 19,
     "name": "Miraidon ex",
     "card_category": "Pokemon",
@@ -43806,7 +43806,7 @@
     "normalized_name": "miraidon_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 20,
     "name": "Espeon",
     "card_category": "Pokemon",
@@ -43820,7 +43820,7 @@
     "normalized_name": "espeon"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 21,
     "name": "Flittle",
     "card_category": "Pokemon",
@@ -43834,7 +43834,7 @@
     "normalized_name": "flittle"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 22,
     "name": "Espathra",
     "card_category": "Pokemon",
@@ -43848,7 +43848,7 @@
     "normalized_name": "espathra"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 23,
     "name": "Greavard",
     "card_category": "Pokemon",
@@ -43862,7 +43862,7 @@
     "normalized_name": "greavard"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 24,
     "name": "Houndstone",
     "card_category": "Pokemon",
@@ -43876,7 +43876,7 @@
     "normalized_name": "houndstone"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 25,
     "name": "Scream Tail",
     "card_category": "Pokemon",
@@ -43890,7 +43890,7 @@
     "normalized_name": "scream_tail"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 26,
     "name": "Flutter Mane ex",
     "card_category": "Pokemon",
@@ -43904,7 +43904,7 @@
     "normalized_name": "flutter_mane_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 27,
     "name": "Iron Valiant",
     "card_category": "Pokemon",
@@ -43918,7 +43918,7 @@
     "normalized_name": "iron_valiant"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 28,
     "name": "Iron Leaves",
     "card_category": "Pokemon",
@@ -43932,7 +43932,7 @@
     "normalized_name": "iron_leaves"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 29,
     "name": "Iron Boulder",
     "card_category": "Pokemon",
@@ -43946,7 +43946,7 @@
     "normalized_name": "iron_boulder"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 30,
     "name": "Iron Crown",
     "card_category": "Pokemon",
@@ -43960,7 +43960,7 @@
     "normalized_name": "iron_crown"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 31,
     "name": "Nacli",
     "card_category": "Pokemon",
@@ -43974,7 +43974,7 @@
     "normalized_name": "nacli"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 32,
     "name": "Naclstack",
     "card_category": "Pokemon",
@@ -43988,7 +43988,7 @@
     "normalized_name": "naclstack"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 33,
     "name": "Garganacl",
     "card_category": "Pokemon",
@@ -44002,7 +44002,7 @@
     "normalized_name": "garganacl"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 34,
     "name": "Great Tusk",
     "card_category": "Pokemon",
@@ -44016,7 +44016,7 @@
     "normalized_name": "great_tusk"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 35,
     "name": "Sandy Shocks",
     "card_category": "Pokemon",
@@ -44030,7 +44030,7 @@
     "normalized_name": "sandy_shocks"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 36,
     "name": "Koraidon ex",
     "card_category": "Pokemon",
@@ -44044,7 +44044,7 @@
     "normalized_name": "koraidon_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 37,
     "name": "Umbreon",
     "card_category": "Pokemon",
@@ -44058,7 +44058,7 @@
     "normalized_name": "umbreon"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 38,
     "name": "Sneasel",
     "card_category": "Pokemon",
@@ -44072,7 +44072,7 @@
     "normalized_name": "sneasel"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 39,
     "name": "Weavile",
     "card_category": "Pokemon",
@@ -44086,7 +44086,7 @@
     "normalized_name": "weavile"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 40,
     "name": "Sableye",
     "card_category": "Pokemon",
@@ -44100,7 +44100,7 @@
     "normalized_name": "sableye"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 41,
     "name": "Pawniard",
     "card_category": "Pokemon",
@@ -44114,7 +44114,7 @@
     "normalized_name": "pawniard"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 42,
     "name": "Bisharp",
     "card_category": "Pokemon",
@@ -44128,7 +44128,7 @@
     "normalized_name": "bisharp"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 43,
     "name": "Kingambit",
     "card_category": "Pokemon",
@@ -44142,7 +44142,7 @@
     "normalized_name": "kingambit"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 44,
     "name": "Glimmet",
     "card_category": "Pokemon",
@@ -44156,7 +44156,7 @@
     "normalized_name": "glimmet"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 45,
     "name": "Glimmora",
     "card_category": "Pokemon",
@@ -44170,7 +44170,7 @@
     "normalized_name": "glimmora"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 46,
     "name": "Iron Jugulis",
     "card_category": "Pokemon",
@@ -44184,7 +44184,7 @@
     "normalized_name": "iron_jugulis"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 47,
     "name": "Roaring Moon",
     "card_category": "Pokemon",
@@ -44198,7 +44198,7 @@
     "normalized_name": "roaring_moon"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 48,
     "name": "Corviknight",
     "card_category": "Pokemon",
@@ -44212,7 +44212,7 @@
     "normalized_name": "corviknight"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 49,
     "name": "Cufant",
     "card_category": "Pokemon",
@@ -44226,7 +44226,7 @@
     "normalized_name": "cufant"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 50,
     "name": "Copperajah",
     "card_category": "Pokemon",
@@ -44240,7 +44240,7 @@
     "normalized_name": "copperajah"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 51,
     "name": "Iron Treads",
     "card_category": "Pokemon",
@@ -44254,7 +44254,7 @@
     "normalized_name": "iron_treads"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 52,
     "name": "Altaria",
     "card_category": "Pokemon",
@@ -44268,7 +44268,7 @@
     "normalized_name": "altaria"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 53,
     "name": "Walking Wake",
     "card_category": "Pokemon",
@@ -44282,7 +44282,7 @@
     "normalized_name": "walking_wake"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 54,
     "name": "Gouging Fire",
     "card_category": "Pokemon",
@@ -44296,7 +44296,7 @@
     "normalized_name": "gouging_fire"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 55,
     "name": "Raging Bolt",
     "card_category": "Pokemon",
@@ -44310,7 +44310,7 @@
     "normalized_name": "raging_bolt"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 56,
     "name": "Eevee",
     "card_category": "Pokemon",
@@ -44324,7 +44324,7 @@
     "normalized_name": "eevee"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 57,
     "name": "Girafarig",
     "card_category": "Pokemon",
@@ -44338,7 +44338,7 @@
     "normalized_name": "girafarig"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 58,
     "name": "Farigiraf",
     "card_category": "Pokemon",
@@ -44352,7 +44352,7 @@
     "normalized_name": "farigiraf"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 59,
     "name": "Dunsparce",
     "card_category": "Pokemon",
@@ -44366,7 +44366,7 @@
     "normalized_name": "dunsparce"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 60,
     "name": "Dudunsparce",
     "card_category": "Pokemon",
@@ -44380,7 +44380,7 @@
     "normalized_name": "dudunsparce"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 61,
     "name": "Swablu",
     "card_category": "Pokemon",
@@ -44394,7 +44394,7 @@
     "normalized_name": "swablu"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 62,
     "name": "Rufflet",
     "card_category": "Pokemon",
@@ -44408,7 +44408,7 @@
     "normalized_name": "rufflet"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 63,
     "name": "Braviary",
     "card_category": "Pokemon",
@@ -44422,7 +44422,7 @@
     "normalized_name": "braviary"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 64,
     "name": "Hawlucha",
     "card_category": "Pokemon",
@@ -44436,7 +44436,7 @@
     "normalized_name": "hawlucha"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 65,
     "name": "Rookidee",
     "card_category": "Pokemon",
@@ -44450,7 +44450,7 @@
     "normalized_name": "rookidee"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 66,
     "name": "Corvisquire",
     "card_category": "Pokemon",
@@ -44464,7 +44464,7 @@
     "normalized_name": "corvisquire"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 67,
     "name": "Flamigo",
     "card_category": "Pokemon",
@@ -44478,7 +44478,7 @@
     "normalized_name": "flamigo"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 68,
     "name": "Terapagos ex",
     "card_category": "Pokemon",
@@ -44492,7 +44492,7 @@
     "normalized_name": "terapagos_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 69,
     "name": "Ancient Booster Energy Capsule",
     "card_category": "Tool",
@@ -44506,7 +44506,7 @@
     "normalized_name": "ancient_booster_energy_capsule"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 70,
     "name": "Future Booster Energy Capsule",
     "card_category": "Tool",
@@ -44520,7 +44520,7 @@
     "normalized_name": "future_booster_energy_capsule"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 71,
     "name": "Juliana",
     "card_category": "Supporter",
@@ -44534,7 +44534,7 @@
     "normalized_name": "juliana"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 72,
     "name": "Professor Sada",
     "card_category": "Supporter",
@@ -44548,7 +44548,7 @@
     "normalized_name": "professor_sada"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 73,
     "name": "Professor Turo",
     "card_category": "Supporter",
@@ -44562,7 +44562,7 @@
     "normalized_name": "professor_turo"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 74,
     "name": "Area Zero",
     "card_category": "Stadium",
@@ -44576,7 +44576,7 @@
     "normalized_name": "area_zero"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 75,
     "name": "Snom",
     "card_category": "Pokemon",
@@ -44590,7 +44590,7 @@
     "normalized_name": "snom"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 76,
     "name": "Flittle",
     "card_category": "Pokemon",
@@ -44604,7 +44604,7 @@
     "normalized_name": "flittle"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 77,
     "name": "Iron Boulder",
     "card_category": "Pokemon",
@@ -44618,7 +44618,7 @@
     "normalized_name": "iron_boulder"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 78,
     "name": "Glimmora",
     "card_category": "Pokemon",
@@ -44632,7 +44632,7 @@
     "normalized_name": "glimmora"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 79,
     "name": "Raging Bolt",
     "card_category": "Pokemon",
@@ -44646,7 +44646,7 @@
     "normalized_name": "raging_bolt"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 80,
     "name": "Hawlucha",
     "card_category": "Pokemon",
@@ -44660,7 +44660,7 @@
     "normalized_name": "hawlucha"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 81,
     "name": "Iron Bundle ex",
     "card_category": "Pokemon",
@@ -44674,7 +44674,7 @@
     "normalized_name": "iron_bundle_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 82,
     "name": "Miraidon ex",
     "card_category": "Pokemon",
@@ -44688,7 +44688,7 @@
     "normalized_name": "miraidon_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 83,
     "name": "Flutter Mane ex",
     "card_category": "Pokemon",
@@ -44702,7 +44702,7 @@
     "normalized_name": "flutter_mane_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 84,
     "name": "Koraidon ex",
     "card_category": "Pokemon",
@@ -44716,7 +44716,7 @@
     "normalized_name": "koraidon_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 85,
     "name": "Terapagos ex",
     "card_category": "Pokemon",
@@ -44730,7 +44730,7 @@
     "normalized_name": "terapagos_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 86,
     "name": "Juliana",
     "card_category": "Supporter",
@@ -44744,7 +44744,7 @@
     "normalized_name": "juliana"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 87,
     "name": "Professor Sada",
     "card_category": "Supporter",
@@ -44758,7 +44758,7 @@
     "normalized_name": "professor_sada"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 88,
     "name": "Professor Turo",
     "card_category": "Supporter",
@@ -44772,7 +44772,7 @@
     "normalized_name": "professor_turo"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 89,
     "name": "Iron Bundle ex",
     "card_category": "Pokemon",
@@ -44786,7 +44786,7 @@
     "normalized_name": "iron_bundle_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 90,
     "name": "Miraidon ex",
     "card_category": "Pokemon",
@@ -44800,7 +44800,7 @@
     "normalized_name": "miraidon_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 91,
     "name": "Flutter Mane ex",
     "card_category": "Pokemon",
@@ -44814,7 +44814,7 @@
     "normalized_name": "flutter_mane_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 92,
     "name": "Koraidon ex",
     "card_category": "Pokemon",
@@ -44828,7 +44828,7 @@
     "normalized_name": "koraidon_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 93,
     "name": "Terapagos ex",
     "card_category": "Pokemon",
@@ -44842,7 +44842,7 @@
     "normalized_name": "terapagos_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 94,
     "name": "Rellor",
     "card_category": "Pokemon",
@@ -44850,13 +44850,13 @@
     "stage": "Basic",
     "hp": 50,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/94",
     "source": "limitless",
     "normalized_name": "rellor"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 95,
     "name": "Charcadet",
     "card_category": "Pokemon",
@@ -44864,13 +44864,13 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/95",
     "source": "limitless",
     "normalized_name": "charcadet"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 96,
     "name": "Tadbulb",
     "card_category": "Pokemon",
@@ -44878,13 +44878,13 @@
     "stage": "Basic",
     "hp": 50,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/96",
     "source": "limitless",
     "normalized_name": "tadbulb"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 97,
     "name": "Rabsca",
     "card_category": "Pokemon",
@@ -44892,13 +44892,13 @@
     "stage": "Stage 1",
     "hp": 70,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/97",
     "source": "limitless",
     "normalized_name": "rabsca"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 98,
     "name": "Diglett",
     "card_category": "Pokemon",
@@ -44906,13 +44906,13 @@
     "stage": "Basic",
     "hp": 60,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/98",
     "source": "limitless",
     "normalized_name": "diglett"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 99,
     "name": "Dugtrio",
     "card_category": "Pokemon",
@@ -44920,13 +44920,13 @@
     "stage": "Stage 1",
     "hp": 80,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/99",
     "source": "limitless",
     "normalized_name": "dugtrio"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 100,
     "name": "Klawf",
     "card_category": "Pokemon",
@@ -44934,13 +44934,13 @@
     "stage": "Basic",
     "hp": 100,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/100",
     "source": "limitless",
     "normalized_name": "klawf"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 101,
     "name": "Orthworm",
     "card_category": "Pokemon",
@@ -44948,13 +44948,13 @@
     "stage": "Basic",
     "hp": 100,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/101",
     "source": "limitless",
     "normalized_name": "orthworm"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 102,
     "name": "Swablu",
     "card_category": "Pokemon",
@@ -44962,13 +44962,13 @@
     "stage": "Basic",
     "hp": 50,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/102",
     "source": "limitless",
     "normalized_name": "swablu"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 103,
     "name": "Altaria",
     "card_category": "Pokemon",
@@ -44976,13 +44976,13 @@
     "stage": "Stage 1",
     "hp": 100,
     "is_ex": false,
-    "rarity": "illustration_rare",
+    "rarity": "shiny_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/103",
     "source": "limitless",
     "normalized_name": "altaria"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 104,
     "name": "Meowscarada ex",
     "card_category": "Pokemon",
@@ -44990,13 +44990,13 @@
     "stage": "Stage 2",
     "hp": 160,
     "is_ex": true,
-    "rarity": "immersive",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/104",
     "source": "limitless",
     "normalized_name": "meowscarada_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 105,
     "name": "Armarouge ex",
     "card_category": "Pokemon",
@@ -45004,13 +45004,13 @@
     "stage": "Stage 1",
     "hp": 140,
     "is_ex": true,
-    "rarity": "immersive",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/105",
     "source": "limitless",
     "normalized_name": "armarouge_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 106,
     "name": "Bellibolt ex",
     "card_category": "Pokemon",
@@ -45018,13 +45018,13 @@
     "stage": "Stage 1",
     "hp": 160,
     "is_ex": true,
-    "rarity": "immersive",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/106",
     "source": "limitless",
     "normalized_name": "bellibolt_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 107,
     "name": "Mega Altaria ex",
     "card_category": "Pokemon",
@@ -45032,13 +45032,13 @@
     "stage": "Stage 1",
     "hp": 190,
     "is_ex": true,
-    "rarity": "immersive",
+    "rarity": "shiny_super_rare",
     "source_url": "https://pocket.limitlesstcg.com/cards/b3a/107",
     "source": "limitless",
     "normalized_name": "mega_altaria_ex"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 108,
     "name": "Iron Valiant",
     "card_category": "Pokemon",
@@ -45052,7 +45052,7 @@
     "normalized_name": "iron_valiant"
   },
   {
-    "set_code": "B3A",
+    "set_code": "B3a",
     "number": 109,
     "name": "Roaring Moon",
     "card_category": "Pokemon",

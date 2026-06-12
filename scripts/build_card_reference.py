@@ -24,7 +24,7 @@ Unanimity policy (a single flaky scrape must never force manual review):
 Usage:
     python3 scripts/build_card_reference.py             # build/update
     python3 scripts/build_card_reference.py --dry-run   # report only, no write
-    python3 scripts/build_card_reference.py --set B3A   # one set
+    python3 scripts/build_card_reference.py --set B3a   # one set
 
 Exit codes:
     0  Success (all cards confirmed or single; no unresolved conflicts)
@@ -48,11 +48,12 @@ PACK_SOURCES  = ROOT / "data" / "reference" / "pack_sources.json"
 OUT_JSON      = ROOT / "data" / "reference" / "card_reference.json"
 SCHEMA_JSON   = ROOT / "data" / "reference" / "card_reference.schema.json"
 SIR_JSON      = ROOT / "data" / "reference" / "special_illustration_rares.json"
+RARITY_OVR_JSON = ROOT / "data" / "reference" / "rarity_overrides.json"
 EXT_REF_JSON  = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
 
 SCHEMA_VERSION = "1.0"
 
-# TCGdex is the only structured stage source, but it covers only A1–B2a (A4b/B2b/B3/B3A and
+# TCGdex is the only structured stage source, but it covers only A1–B2a (A4b/B2b/B3/B3a and
 # the promo sets are tcgdex:None). For those sets, fall back to the Limitless-derived
 # external_card_reference stage. Limitless writes "Stage 1"/"Stage 2"; map to TCGdex's
 # spaceless "Stage1"/"Stage2" so card_reference stays single-format.
@@ -63,6 +64,25 @@ _EXT_STAGE_TO_TCGDEX = {"Basic": "Basic", "Stage 1": "Stage1", "Stage 2": "Stage
 # distinguishes them per-card, so this version-controlled list is the authority for the
 # super_rare→special_illustration_rare upgrade. Populated by load_sir_coords() in main().
 SIR_COORDS: set[tuple[str, int]] = set()
+
+# Curated rarity corrections (B-series shiny regions). The wiki sources lump 8-point-star
+# shiny tiers into one_star/two_star, so source voting converges on the wrong tier; this
+# list (derived from PZ drop-chance clusters + user in-app verification) wins over all
+# votes. Populated by load_rarity_overrides() in main(): (set_code, card_number) -> rarity.
+RARITY_OVERRIDES: dict[tuple[str, int], str] = {}
+
+
+def load_rarity_overrides() -> dict[tuple[str, int], str]:
+    """Load curated per-coord rarity overrides (range records). Empty if absent."""
+    if not RARITY_OVR_JSON.exists():
+        return {}
+    raw = json.loads(RARITY_OVR_JSON.read_text(encoding="utf-8"))
+    out: dict[tuple[str, int], str] = {}
+    for r in raw.get("records", []):
+        sc = canonical_set_code(str(r.get("set_code", "")).strip())
+        for cn in range(int(r["from"]), int(r["to"]) + 1):
+            out[(sc, cn)] = r["rarity"]
+    return out
 
 
 def load_sir_coords() -> set[tuple[str, int]]:
@@ -322,6 +342,13 @@ def reconcile_card(
         rarity_final = "special_illustration_rare"
         conflict_notes.append("rarity: super_rare → special_illustration_rare (curated SIR list)")
 
+    # Curated shiny-region corrections win over every source vote (wiki sources lump the
+    # 8-point-star tiers into one_star/two_star).
+    ovr = RARITY_OVERRIDES.get((canonical_set_code(set_code), card_number))
+    if ovr and ovr != rarity_final:
+        conflict_notes.append(f"rarity: {rarity_final!r} → {ovr!r} (curated rarity_overrides)")
+        rarity_final = ovr
+
     # Promo-set cards carry no rarity symbol; keep the 'promo' sentinel when unresolved
     # (per the keep-all-promos-as-promo decision — equivalents are not available for all).
     if not rarity_final and canonical_set_code(set_code) in ("PROMO-A", "PROMO-B"):
@@ -332,7 +359,7 @@ def reconcile_card(
         pokemon_type_final = max(pokemon_type_votes, key=lambda k: pokemon_type_votes[k])
 
     # Category/stage/hp from TCGdex (most structured source). For sets TCGdex doesn't cover
-    # (A4b/B2b/B3/B3A/promos), fall back to the Limitless stage so card_reference stays
+    # (A4b/B2b/B3/B3a/promos), fall back to the Limitless stage so card_reference stays
     # complete — used by validators and the collection stage backfill.
     category_final = tcgdex_card.get("category")
     stage_final = tcgdex_card.get("stage") or _EXT_STAGE_TO_TCGDEX.get(ext_stage)
@@ -382,6 +409,9 @@ def main() -> int:
     global SIR_COORDS
     SIR_COORDS = load_sir_coords()
     print(f"Loaded {len(SIR_COORDS)} curated Special Illustration Rare coords.")
+    global RARITY_OVERRIDES
+    RARITY_OVERRIDES = load_rarity_overrides()
+    print(f"Loaded {len(RARITY_OVERRIDES)} curated rarity-override coords.")
 
     ps_by_set = _load_pack_sources()
 
@@ -389,8 +419,8 @@ def main() -> int:
     ext_ref = ext_ref_by_coord(EXT_REF_JSON) if EXT_REF_JSON.exists() else {}
 
     if args.set:
-        # Case-insensitive match so "--set a2a" and "--set B3A" both work regardless
-        # of the mixed casing in pack_sources (A2a, B3A, PROMO-A, etc.).
+        # Case-insensitive match so "--set a2a" and "--set B3a" both work regardless
+        # of the mixed casing in pack_sources (A2a, B3a, PROMO-A, etc.).
         sc_upper = args.set.upper()
         canonical = next((k for k in ps_by_set if k.upper() == sc_upper), None)
         if canonical is None:

@@ -1,40 +1,40 @@
 {
   "meta": {
-    "total_cards": 1179,
+    "total_cards": 1240,
     "last_updated": "2026-06-11",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 1179,
-  "meta_total_cards": 1179,
+  "total_quantity": 1240,
+  "meta_total_cards": 1240,
   "count_matches_meta": true,
-  "unique_entries": 532,
+  "unique_entries": 584,
   "by_card_type": {
-    "Pokemon": 1082,
-    "Trainer": 97
+    "Pokemon": 1137,
+    "Trainer": 103
   },
   "by_pokemon_type": {
-    "Fire": 96,
-    "Grass": 133,
-    "Water": 152,
-    "Lightning": 96,
-    "Psychic": 98,
-    "Fighting": 153,
-    "Darkness": 109,
-    "Metal": 55,
-    "Dragon": 19,
-    "Colorless": 171
+    "Fire": 97,
+    "Grass": 138,
+    "Water": 159,
+    "Lightning": 99,
+    "Psychic": 110,
+    "Fighting": 164,
+    "Darkness": 113,
+    "Metal": 60,
+    "Dragon": 22,
+    "Colorless": 175
   },
   "by_stage": {
-    "Basic": 716,
-    "Stage 1": 300,
-    "Stage 2": 66
+    "Basic": 753,
+    "Stage 1": 316,
+    "Stage 2": 68
   },
   "ex_entries": 32,
   "ex_quantity": 39,
   "trainer_subtypes": {
-    "Item": 34,
-    "Pokemon Tool": 7,
-    "Supporter": 45,
+    "Item": 37,
+    "Pokemon Tool": 9,
+    "Supporter": 46,
     "Stadium": 11
   },
   "top_cards_by_count": [
@@ -55,15 +55,15 @@
       10
     ],
     [
+      "Oricorio",
+      10
+    ],
+    [
       "Riolu",
       10
     ],
     [
       "Treecko",
-      9
-    ],
-    [
-      "Oricorio",
       9
     ],
     [
@@ -115,39 +115,53 @@
     "Grovyle": 2,
     "Sobble": 2,
     "Quagsire": 2,
+    "Paldean Tauros": 2,
     "Chewtle": 2,
     "Magneton": 2,
     "Magnemite": 2,
     "Morpeko": 2,
-    "Meloetta": 2,
+    "Chinchou": 2,
+    "Pikachu": 2,
+    "Toxel": 2,
+    "Meloetta": 3,
     "Misdreavus": 2,
     "Ralts": 2,
+    "Oricorio": 2,
     "Bramblin": 2,
     "Kirlia": 2,
+    "Sandslash": 2,
     "Mienfoo": 2,
     "Mienshao": 2,
     "Riolu": 2,
     "Sandshrew": 2,
-    "Cubone": 2,
+    "Cubone": 3,
     "Onix": 2,
     "Nosepass": 2,
     "Rockruff": 2,
     "Dwebble": 2,
     "Zubat": 2,
+    "Garbodor": 2,
     "Grimer": 2,
+    "Trubbish": 2,
+    "Zorua": 2,
     "Seviper": 2,
     "Sneasel": 3,
     "Zarude": 2,
     "Meltan": 2,
     "Bisharp": 2,
     "Pawniard": 2,
+    "Lillipup": 2,
     "Corvisquire": 2,
-    "Furfrou": 2,
-    "Cinccino": 2,
+    "Furfrou": 3,
+    "Cinccino": 4,
+    "Minccino": 2,
     "Eevee": 2,
     "Jigglypuff": 2,
     "Farfetch'd": 2,
+    "Tandemaus": 2,
     "Quick-Grow Extract": 2,
+    "Rare Candy": 2,
+    "Giant Cape": 2,
     "Clemont": 2,
     "Rellor": 2,
     "Pawmi": 2,
@@ -158,14 +172,19 @@
     "Flamigo": 2,
     "Tinkatink": 2,
     "Swablu": 2,
+    "Slowpoke": 2,
     "Toxapex": 2,
     "Zekrom": 2,
     "Juliana": 2,
     "Snom": 2,
+    "Houndstone": 2,
     "Glimmora": 2,
     "Terapagos ex": 2,
+    "Hawlucha": 2,
     "Haxorus": 2,
-    "Miltank": 2
+    "Delibird": 2,
+    "Miltank": 2,
+    "Oddish": 2
   },
   "evolution_groups": [
     {
@@ -621,6 +640,6 @@
       "Rattata → Raticate"
     ],
     "partial_evolution_lines": [],
-    "total_trainer_cards": 97
+    "total_trainer_cards": 103
   }
 }

@@ -1,0 +1,15 @@
+{
+  "_meta": {
+    "description": "Curated rarity corrections for the B-series shiny regions. Bulbapedia/Serebii wikitext lumps shiny (8-point star) tiers into one_star/two_star, and Limitless lists them as illustration_rare, so multi-source voting converges on the wrong tier for B2b/B3/B3a. Tier boundaries derived from PZ per-card drop-chance clusters (pz_pack_odds.json), anchored on B2 Fantastical Parade (identical structure + drop values, correctly classified) and confirmed against the user's in-app per-set Star / 8-point-Star / Crown counters (2026-06-12).",
+    "generated_at": "2026-06-12T23:30:00Z",
+    "applied_by": "build_card_reference.py (after the SIR step); takes precedence over all source votes"
+  },
+  "records": [
+    {"set_code": "B3",  "from": 205, "to": 224, "rarity": "shiny_rare",       "note": "drop 0.18% cluster, mirrors B2 205-224"},
+    {"set_code": "B3",  "from": 225, "to": 232, "rarity": "shiny_super_rare", "note": "drop 0.21% cluster, mirrors B2 225-232"},
+    {"set_code": "B3a", "from": 94,  "to": 103, "rarity": "shiny_rare",       "note": "user-confirmed: Rellor 94 / Rabsca 97 count as 8-point stars in-app"},
+    {"set_code": "B3a", "from": 104, "to": 107, "rarity": "shiny_super_rare", "note": "user-confirmed: Bellibolt ex 106 counts as 8-point star in-app"},
+    {"set_code": "B2b", "from": 87,  "to": 110, "rarity": "shiny_rare",       "note": "drop 0.15% cluster; user-confirmed: Charmeleon 92 / Haxorus 110 are 8-point stars"},
+    {"set_code": "B2b", "from": 111, "to": 115, "rarity": "shiny_super_rare", "note": "drop 0.27% cluster positioned after the shiny block, like every other set"}
+  ]
+}

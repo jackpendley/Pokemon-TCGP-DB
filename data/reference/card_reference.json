@@ -56739,7 +56739,7 @@
       "name": "Scyther",
       "pack_name": "Mega Shine",
       "pokemon_type": "Grass",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -56758,7 +56758,7 @@
       "name": "Pineco",
       "pack_name": "Mega Shine",
       "pokemon_type": "Grass",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -56777,7 +56777,7 @@
       "name": "Phantump",
       "pack_name": "Mega Shine",
       "pokemon_type": "Grass",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -56796,7 +56796,7 @@
       "name": "Trevenant",
       "pack_name": "Mega Shine",
       "pokemon_type": "Grass",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -56815,7 +56815,7 @@
       "name": "Charmander",
       "pack_name": "Mega Shine",
       "pokemon_type": "Fire",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -56834,7 +56834,7 @@
       "name": "Charmeleon",
       "pack_name": "Mega Shine",
       "pokemon_type": "Fire",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -56853,7 +56853,7 @@
       "name": "Ponyta",
       "pack_name": "Mega Shine",
       "pokemon_type": "Fire",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -56872,7 +56872,7 @@
       "name": "Rapidash",
       "pack_name": "Mega Shine",
       "pokemon_type": "Fire",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -56891,7 +56891,7 @@
       "name": "Slowpoke",
       "pack_name": "Mega Shine",
       "pokemon_type": "Water",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -56910,7 +56910,7 @@
       "name": "Pikachu",
       "pack_name": "Mega Shine",
       "pokemon_type": "Lightning",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -56929,7 +56929,7 @@
       "name": "Raichu",
       "pack_name": "Mega Shine",
       "pokemon_type": "Lightning",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -56948,7 +56948,7 @@
       "name": "Electrike",
       "pack_name": "Mega Shine",
       "pokemon_type": "Lightning",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -56967,7 +56967,7 @@
       "name": "Hawlucha",
       "pack_name": "Mega Shine",
       "pokemon_type": "Fighting",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -56986,7 +56986,7 @@
       "name": "Gastly",
       "pack_name": "Mega Shine",
       "pokemon_type": "Darkness",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -57005,7 +57005,7 @@
       "name": "Haunter",
       "pack_name": "Mega Shine",
       "pokemon_type": "Darkness",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -57024,7 +57024,7 @@
       "name": "Zorua",
       "pack_name": "Mega Shine",
       "pokemon_type": "Darkness",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -57043,7 +57043,7 @@
       "name": "Zoroark",
       "pack_name": "Mega Shine",
       "pokemon_type": "Darkness",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -57062,7 +57062,7 @@
       "name": "Forretress",
       "pack_name": "Mega Shine",
       "pokemon_type": "Metal",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -57081,7 +57081,7 @@
       "name": "Dratini",
       "pack_name": "Mega Shine",
       "pokemon_type": "Dragon",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -57100,7 +57100,7 @@
       "name": "Dragonair",
       "pack_name": "Mega Shine",
       "pokemon_type": "Dragon",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -57119,7 +57119,7 @@
       "name": "Dragonite",
       "pack_name": "Mega Shine",
       "pokemon_type": "Dragon",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Stage2"
     },
@@ -57138,7 +57138,7 @@
       "name": "Axew",
       "pack_name": "Mega Shine",
       "pokemon_type": "Dragon",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Basic"
     },
@@ -57157,7 +57157,7 @@
       "name": "Fraxure",
       "pack_name": "Mega Shine",
       "pokemon_type": "Dragon",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -57176,7 +57176,7 @@
       "name": "Haxorus",
       "pack_name": "Mega Shine",
       "pokemon_type": "Dragon",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B2b",
       "stage": "Stage2"
     },
@@ -57196,7 +57196,7 @@
       "name": "Mega Charizard X ex",
       "pack_name": "Mega Shine",
       "pokemon_type": null,
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B2b",
       "stage": "Stage2"
     },
@@ -57215,7 +57215,7 @@
       "name": "Mega Slowbro ex",
       "pack_name": "Mega Shine",
       "pokemon_type": null,
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -57234,7 +57234,7 @@
       "name": "Mega Manectric ex",
       "pack_name": "Mega Shine",
       "pokemon_type": null,
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -57253,7 +57253,7 @@
       "name": "Mega Gengar ex",
       "pack_name": "Mega Shine",
       "pokemon_type": null,
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B2b",
       "stage": "Stage2"
     },
@@ -57272,7 +57272,7 @@
       "name": "Mega Scizor ex",
       "pack_name": "Mega Shine",
       "pokemon_type": null,
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B2b",
       "stage": "Stage1"
     },
@@ -61205,7 +61205,7 @@
       "name": "Cottonee",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Grass",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61224,7 +61224,7 @@
       "name": "Torchic",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Fire",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61243,7 +61243,7 @@
       "name": "Combusken",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Fire",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Stage1"
     },
@@ -61262,7 +61262,7 @@
       "name": "Blaziken",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Fire",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Stage2"
     },
@@ -61281,7 +61281,7 @@
       "name": "Frillish",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Water",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61300,7 +61300,7 @@
       "name": "Jellicent",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Water",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Stage1"
     },
@@ -61319,7 +61319,7 @@
       "name": "Onix",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Fighting",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61338,7 +61338,7 @@
       "name": "Zubat",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Darkness",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61357,7 +61357,7 @@
       "name": "Golbat",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Darkness",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Stage1"
     },
@@ -61376,7 +61376,7 @@
       "name": "Crobat",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Darkness",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Stage2"
     },
@@ -61395,7 +61395,7 @@
       "name": "Grimer",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Darkness",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61414,7 +61414,7 @@
       "name": "Muk",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Darkness",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Stage1"
     },
@@ -61433,7 +61433,7 @@
       "name": "Absol",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Darkness",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61452,7 +61452,7 @@
       "name": "Skrelp",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Darkness",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61471,7 +61471,7 @@
       "name": "Steelix",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Metal",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Stage1"
     },
@@ -61490,7 +61490,7 @@
       "name": "Chansey",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Colorless",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61509,7 +61509,7 @@
       "name": "Blissey",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Colorless",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Stage1"
     },
@@ -61528,7 +61528,7 @@
       "name": "Porygon",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Colorless",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61547,7 +61547,7 @@
       "name": "Porygon2",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Colorless",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Stage1"
     },
@@ -61566,7 +61566,7 @@
       "name": "Porygon-Z",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Colorless",
-      "rarity": "illustration_rare",
+      "rarity": "shiny_rare",
       "set_code": "B3",
       "stage": "Stage2"
     },
@@ -61585,7 +61585,7 @@
       "name": "Whimsicott ex",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Grass",
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B3",
       "stage": "Stage1"
     },
@@ -61604,7 +61604,7 @@
       "name": "Mega Blaziken ex",
       "pack_name": "Pulsing Aura",
       "pokemon_type": null,
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B3",
       "stage": "Stage2"
     },
@@ -61623,7 +61623,7 @@
       "name": "Greninja ex",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Water",
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B3",
       "stage": "Stage2"
     },
@@ -61642,7 +61642,7 @@
       "name": "Jolteon ex",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Lightning",
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B3",
       "stage": "Stage1"
     },
@@ -61661,7 +61661,7 @@
       "name": "Hitmonchan ex",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Fighting",
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61680,7 +61680,7 @@
       "name": "Mega Absol ex",
       "pack_name": "Pulsing Aura",
       "pokemon_type": null,
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B3",
       "stage": "Basic"
     },
@@ -61699,7 +61699,7 @@
       "name": "Dragalge ex",
       "pack_name": "Pulsing Aura",
       "pokemon_type": "Darkness",
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B3",
       "stage": "Stage1"
     },
@@ -61718,7 +61718,7 @@
       "name": "Mega Steelix ex",
       "pack_name": "Pulsing Aura",
       "pokemon_type": null,
-      "rarity": "super_rare",
+      "rarity": "shiny_super_rare",
       "set_code": "B3",
       "stage": "Stage1"
     },
@@ -61776,7 +61776,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Grass",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -61795,7 +61795,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Grass",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -61814,7 +61814,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Grass",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -61833,7 +61833,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Grass",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -61852,7 +61852,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fire",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -61871,7 +61871,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Water",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -61890,7 +61890,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Water",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -61909,7 +61909,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Water",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -61928,7 +61928,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Water",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -61947,7 +61947,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Water",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -61966,7 +61966,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Water",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -61985,7 +61985,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Water",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62004,7 +62004,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Water",
       "rarity": "double_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62023,7 +62023,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Lightning",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62042,7 +62042,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Lightning",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62061,7 +62061,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Lightning",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage2"
     },
     {
@@ -62080,7 +62080,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Lightning",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62099,7 +62099,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Lightning",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62118,7 +62118,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Lightning",
       "rarity": "double_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62137,7 +62137,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62156,7 +62156,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62175,7 +62175,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62194,7 +62194,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62213,7 +62213,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62232,7 +62232,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62251,7 +62251,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "double_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62270,7 +62270,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62289,7 +62289,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62308,7 +62308,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62327,7 +62327,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62346,7 +62346,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fighting",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62365,7 +62365,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fighting",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62384,7 +62384,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fighting",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage2"
     },
     {
@@ -62403,7 +62403,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62422,7 +62422,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fighting",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62441,7 +62441,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fighting",
       "rarity": "double_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62460,7 +62460,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62479,7 +62479,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62498,7 +62498,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62517,7 +62517,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62536,7 +62536,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62555,7 +62555,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62574,7 +62574,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage2"
     },
     {
@@ -62593,7 +62593,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62612,7 +62612,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62631,7 +62631,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62650,7 +62650,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62669,7 +62669,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Metal",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage2"
     },
     {
@@ -62688,7 +62688,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Metal",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62707,7 +62707,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Metal",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62726,7 +62726,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Metal",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62745,7 +62745,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Dragon",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62764,7 +62764,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Dragon",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62783,7 +62783,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Dragon",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62802,7 +62802,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Dragon",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62821,7 +62821,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62840,7 +62840,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62859,7 +62859,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62878,7 +62878,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62897,7 +62897,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62916,7 +62916,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62935,7 +62935,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62954,7 +62954,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -62973,7 +62973,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -62992,7 +62992,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63011,7 +63011,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -63030,7 +63030,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "common",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63049,7 +63049,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "double_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63068,7 +63068,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Pokémon Tool",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": null
     },
     {
@@ -63087,7 +63087,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Pokémon Tool",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": null
     },
     {
@@ -63106,7 +63106,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Supporter",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": null
     },
     {
@@ -63125,7 +63125,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Supporter",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": null
     },
     {
@@ -63145,7 +63145,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Supporter",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": null
     },
     {
@@ -63164,7 +63164,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Stadium",
       "rarity": "uncommon",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": null
     },
     {
@@ -63183,7 +63183,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Water",
       "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63202,7 +63202,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63221,7 +63221,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63240,7 +63240,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -63259,7 +63259,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Dragon",
       "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63278,7 +63278,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63297,7 +63297,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Water",
       "rarity": "super_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63316,7 +63316,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Lightning",
       "rarity": "super_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63335,7 +63335,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "super_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63354,7 +63354,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fighting",
       "rarity": "super_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63373,7 +63373,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "super_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63392,7 +63392,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Supporter",
       "rarity": "super_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": null
     },
     {
@@ -63411,7 +63411,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Supporter",
       "rarity": "super_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": null
     },
     {
@@ -63431,7 +63431,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Supporter",
       "rarity": "super_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": null
     },
     {
@@ -63450,7 +63450,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Water",
       "rarity": "special_illustration_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63469,7 +63469,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Lightning",
       "rarity": "special_illustration_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63488,7 +63488,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "special_illustration_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63507,7 +63507,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fighting",
       "rarity": "special_illustration_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63526,7 +63526,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
       "rarity": "immersive",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63544,8 +63544,8 @@
       "name": "Rellor",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Grass",
-      "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "rarity": "shiny_rare",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63563,8 +63563,8 @@
       "name": "Charcadet",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fire",
-      "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "rarity": "shiny_rare",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63582,8 +63582,8 @@
       "name": "Tadbulb",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Lightning",
-      "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "rarity": "shiny_rare",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63601,8 +63601,8 @@
       "name": "Rabsca",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
-      "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "rarity": "shiny_rare",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -63620,8 +63620,8 @@
       "name": "Diglett",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fighting",
-      "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "rarity": "shiny_rare",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63639,8 +63639,8 @@
       "name": "Dugtrio",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fighting",
-      "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "rarity": "shiny_rare",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -63658,8 +63658,8 @@
       "name": "Klawf",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fighting",
-      "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "rarity": "shiny_rare",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63677,8 +63677,8 @@
       "name": "Orthworm",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Metal",
-      "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "rarity": "shiny_rare",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63696,8 +63696,8 @@
       "name": "Swablu",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
-      "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "rarity": "shiny_rare",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63715,8 +63715,8 @@
       "name": "Altaria",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Colorless",
-      "rarity": "illustration_rare",
-      "set_code": "B3A",
+      "rarity": "shiny_rare",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -63734,8 +63734,8 @@
       "name": "Meowscarada ex",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Grass",
-      "rarity": "immersive",
-      "set_code": "B3A",
+      "rarity": "shiny_super_rare",
+      "set_code": "B3a",
       "stage": "Stage2"
     },
     {
@@ -63753,8 +63753,8 @@
       "name": "Armarouge ex",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Fire",
-      "rarity": "immersive",
-      "set_code": "B3A",
+      "rarity": "shiny_super_rare",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -63772,8 +63772,8 @@
       "name": "Bellibolt ex",
       "pack_name": "Paradox Drive",
       "pokemon_type": "Lightning",
-      "rarity": "immersive",
-      "set_code": "B3A",
+      "rarity": "shiny_super_rare",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -63791,8 +63791,8 @@
       "name": "Mega Altaria ex",
       "pack_name": "Paradox Drive",
       "pokemon_type": null,
-      "rarity": "immersive",
-      "set_code": "B3A",
+      "rarity": "shiny_super_rare",
+      "set_code": "B3a",
       "stage": "Stage1"
     },
     {
@@ -63811,7 +63811,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Psychic",
       "rarity": "ultra_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
@@ -63830,7 +63830,7 @@
       "pack_name": "Paradox Drive",
       "pokemon_type": "Darkness",
       "rarity": "ultra_rare",
-      "set_code": "B3A",
+      "set_code": "B3a",
       "stage": "Basic"
     },
     {
