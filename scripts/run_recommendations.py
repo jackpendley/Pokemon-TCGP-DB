@@ -160,7 +160,7 @@ def _read_player_stats() -> dict:
         return {}
 
 
-def _print_full_rankings(include_limited: bool = False) -> None:
+def _print_full_rankings(include_limited: bool = False, series: str | None = None) -> None:
     pack_ev_path = ROOT / "data" / "current" / "pack_ev.json"
     if not pack_ev_path.exists():
         return
@@ -175,30 +175,39 @@ def _print_full_rankings(include_limited: bool = False) -> None:
         key=lambda p: p.get("unified_score", 0),
         reverse=True,
     )
+    if series:
+        packs = [p for p in packs if p.get("set_code", "").upper().startswith(series.upper())]
     if not packs:
         return
 
     col_name = max(len(p.get("pack_name", "")) for p in packs)
     col_name = max(col_name, 4)
+    col_set  = max(len(p.get("set_code", "")) for p in packs)
+    col_set  = max(col_set, 3)
     max_cost = max((p.get("cost_per_unique_card_10x", 0.0) for p in packs), default=0.0)
-    col_cost = max(len(f"{max_cost:.1f}") + 1, 6)  # +1 for ⧗ suffix; min 6 for header "⧗/EV"
+    col_cost = max(len(f"{max_cost:.1f}") + 1, 6)
 
+    series_label = f" ({series.upper()}-series)" if series else ""
     print()
-    print(f"  Full Pack Rankings — {len(packs)} packs  (open with Pack Hourglasses, 120 ⧗ per 10x)")
+    print(f"  Full Pack Rankings{series_label} — {len(packs)} packs  (open with Pack Hourglasses, 120 ⧗ per 10x)")
     print()
-    print(f"  {'#':>3}  {'Pack':<{col_name}}  {'Missing':>9}  {'★+miss':>6}  {'EV/10x':>7}  {'★+cnt':>6}  {'⧗/EV':>{col_cost}}")
-    print(f"  {'─' * 3}  {'─' * col_name}  {'─' * 9}  {'─' * 6}  {'─' * 7}  {'─' * 6}  {'─' * col_cost}")
+    print(f"  {'#':>3}  {'Set':<{col_set}}  {'Pack':<{col_name}}  {'Base':>9}  {'All':>9}  {'★+miss':>6}  {'EV/10x':>7}  {'★+cnt':>6}  {'⧗/EV':>{col_cost}}")
+    print(f"  {'─' * 3}  {'─' * col_set}  {'─' * col_name}  {'─' * 9}  {'─' * 9}  {'─' * 6}  {'─' * 7}  {'─' * 6}  {'─' * col_cost}")
 
     for i, p in enumerate(packs, 1):
         name         = p.get("pack_name", "?")
-        missing      = p.get("missing_in_pool", 0)
+        set_code     = p.get("set_code", "")
+        base_owned   = p.get("base_owned_in_pool", 0)
+        base_total   = p.get("base_cards_in_pool", 0)
+        owned        = p.get("owned_in_pool", 0)
         total        = p.get("cards_in_pool", 0)
         new_ev       = p.get("new_card_ev_10x", 0.0)
         rare_miss    = p.get("missing_rare_plus", 0)
         rare_ev      = p.get("rare_plus_ev_10x", 0.0)
         cost         = p.get("cost_per_unique_card_10x", 0.0)
-        miss_str     = f"{missing}/{total}"
-        print(f"  {i:>3}  {name:<{col_name}}  {miss_str:>9}  {rare_miss:>6}  {new_ev:>6.1f}x  {rare_ev:>6.2f}  {cost:{col_cost - 1}.1f}⧗")
+        base_str     = f"{base_owned}/{base_total}"
+        all_str      = f"{owned}/{total}"
+        print(f"  {i:>3}  {set_code:<{col_set}}  {name:<{col_name}}  {base_str:>9}  {all_str:>9}  {rare_miss:>6}  {new_ev:>6.1f}x  {rare_ev:>6.2f}  {cost:{col_cost - 1}.1f}⧗")
 
 
 def _print_final_summary(show_promo: bool = False, include_limited: bool = False) -> None:
@@ -261,6 +270,8 @@ def main() -> int:
                         help="Print all 24 packs ranked to console + write review/full_pack_ranking.md")
     parser.add_argument("--include-limited", action="store_true",
                         help="Include limited-time packs not currently purchasable (e.g. Deluxe Pack: ex)")
+    parser.add_argument("--series", choices=["A", "B", "a", "b"], metavar="{A,B}",
+                        help="Filter full rankings to A-series or B-series packs only (requires --full-rankings)")
     args = parser.parse_args()
 
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -316,6 +327,23 @@ def main() -> int:
             sync_had_review_items = True
         else:
             _print_step("Sync collection", rc, _collection_status())
+
+        # ── Reconcile per-printing coords ──────────────────────────────────
+        # Sync can only update existing entries; pulls of a same-name card from a
+        # NEW set merge onto the existing entry. Reconcile splits them per printing
+        # against the fresh last_sync_raw.json. Idempotent; offline; skipped when
+        # sync is skipped (a stale raw snapshot must not overwrite newer edits).
+        rc, stdout = _run("Reconcile coords", "scripts/reconcile_coords_from_pz.py",
+                          ["--apply", "--no-fetch"])
+        if rc != 0:
+            _print_step("Reconcile coords", rc, "WARN — not applied; see data/pipeline.log")
+        else:
+            m = re.search(r"re-coorded: (\d+)\s+split: (\d+)", stdout)
+            if m and (m.group(1) != "0" or m.group(2) != "0"):
+                _print_step("Reconcile coords", 0,
+                            f"re-coorded {m.group(1)}, split {m.group(2)}")
+            else:
+                _print_step("Reconcile coords", 0, "OK")
     else:
         print(f"  -  {'Sync collection':<22}  skipped")
         _rq = ROOT / "data" / "sync" / "sync_review_queue.json"
@@ -417,7 +445,7 @@ def main() -> int:
     _print_final_summary(show_promo=args.promo, include_limited=args.include_limited)
 
     if args.full_rankings:
-        _print_full_rankings(include_limited=args.include_limited)
+        _print_full_rankings(include_limited=args.include_limited, series=args.series)
 
     if sync_had_review_items:
         print(f"\n  NOTE: Review queue has items. See: data/sync/sync_review_queue.json")

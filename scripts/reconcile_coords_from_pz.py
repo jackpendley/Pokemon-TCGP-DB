@@ -32,12 +32,16 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import sync_collection as sc
-from _collection_io import strip_comments
+from _collection_io import strip_comments, norm_card_name
 from coord_resolver import CoordResolver
 
 ROOT = Path(__file__).resolve().parent.parent
 COLLECTION_JSON = ROOT / "collection.json"
 LAST_SYNC_RAW   = ROOT / "data" / "sync" / "last_sync_raw.json"
+REPRINT_LINKS   = ROOT / "data" / "reference" / "reprint_links.json"
+CARD_REF_JSON   = ROOT / "data" / "reference" / "card_reference.json"
+
+_BASE_RARITIES = {"common", "uncommon", "rare", "double_rare"}
 
 # Pokemon-only fields that don't apply when an entry is a Trainer (kept on splits only
 # if already present; not invented).
@@ -56,6 +60,41 @@ def main() -> int:
     ext_ref = sc.load_ext_ref()
     resolver = CoordResolver(fetch=not args.no_fetch)
 
+    # Dual-location (A4b "Deluxe Pack: ex") handling. PZ exports these as HYBRID coords:
+    # the ORIGINAL set code + the A4b number (e.g. Cubone as A1/194). User-verified in-app
+    # behavior (2026-06-12): the first owned copy fills the ORIGINAL set's dex slot; further
+    # copies fill the A4b slot. So a hybrid record re-coords to the original printing, and
+    # splits 1/(n-1) across original/A4b when count >= 2.
+    ref_records = json.loads(CARD_REF_JSON.read_text(encoding="utf-8")).get("records", [])
+    ref_by_coord = {(str(r["set_code"]).upper(), r["card_number"]): r for r in ref_records}
+    link_orig = {}   # (A4B, num) -> (orig_set_upper, orig_num)
+    if REPRINT_LINKS.exists():
+        for l in json.loads(REPRINT_LINKS.read_text(encoding="utf-8")).get("links", []):
+            link_orig[(str(l["a4b"][0]).upper(), l["a4b"][1])] = \
+                (str(l["original"][0]).upper(), l["original"][1])
+
+    def find_original(name: str, pz_set: str, a4b_num: int):
+        """Original-printing coord for an A4b dual-location card, or None.
+        Prefers reprint_links; falls back to the unique base-rarity name match in
+        PZ's set (PZ's set code IS the original set)."""
+        o = link_orig.get(("A4B", a4b_num))
+        if o and o[0] == str(pz_set).upper():
+            return o
+        cands = sorted({(s, n) for (s, n), r in ref_by_coord.items()
+                        if s == str(pz_set).upper() and r.get("rarity") in _BASE_RARITIES
+                        and norm_card_name(r.get("name", "")) == norm_card_name(name)})
+        return cands[0] if len(cands) == 1 else None
+
+    def ext_hp(name: str, set_code, num) -> int | None:
+        """HP of the exact printing per ext_ref (Limitless) — printings of the same
+        Pokémon differ in HP across sets, so a split/re-coorded entry must not
+        inherit the source entry's HP."""
+        for r in ext_ref.get(norm_card_name(name), []):
+            if str(r.get("set_code", "")).upper() == str(set_code or "").upper() \
+                    and r.get("number") == num:
+                return r.get("hp")
+        return None
+
     raw = json.loads(LAST_SYNC_RAW.read_text(encoding="utf-8"))
     cards = raw if isinstance(raw, list) else next(
         (v for v in raw.values() if isinstance(v, list) and v and isinstance(v[0], dict)), [])
@@ -68,14 +107,20 @@ def main() -> int:
             entry_pz[r.entry_index].append((r.pz_card.set_code, r.pz_card.card_number, r.pz_card.count))
 
     new_collection = []
+    origins = []          # parallel to new_collection: "pz" | "preserved"
     recoord = split = unchanged = preserved = 0
     bad_confidence = []   # (name, set, num, confidence, detail)
     changes = []          # (name, old_coord, new_coords)
+
+    def _key(e: dict) -> tuple:
+        return (str(e.get("set_code") or "").upper(), e.get("card_number"),
+                norm_card_name(e.get("name", "")))
 
     for idx, entry in enumerate(collection):
         pzlist = entry_pz.get(idx)
         if not pzlist:
             new_collection.append(entry)
+            origins.append("preserved")
             preserved += 1
             continue
 
@@ -85,7 +130,34 @@ def main() -> int:
             rc = resolver.resolve(entry["name"], pz_set, pz_num)
             if rc.confidence not in _OK_CONFIDENCE:
                 bad_confidence.append((entry["name"], rc.set_code, rc.card_number, rc.confidence, rc.detail))
-            key = (rc.set_code, rc.card_number)
+            if rc.confidence == "conflict":
+                # Can't auto-resolve: keep the existing collection coord rather than
+                # overwriting it with None.  Logged above; --apply will skip this entry.
+                key = (str(entry.get("set_code") or "").upper(), entry.get("card_number"))
+            else:
+                key = (rc.set_code, rc.card_number)
+
+            # Dual-location hybrid: PZ set != A4b but the coord resolved to A4b.
+            if (str(key[0] or "").upper() == "A4B"
+                    and str(pz_set or "").upper() != "A4B"
+                    and rc.confidence in _OK_CONFIDENCE):
+                orig = find_original(entry["name"], pz_set, key[1])
+                orig_ref = ref_by_coord.get(orig) if orig else None
+                if orig_ref is None:
+                    bad_confidence.append((entry["name"], key[0], key[1], "conflict",
+                                           f"dual-location card: no original found in {pz_set}"))
+                else:
+                    if cnt >= 2:
+                        # 2nd+ copies fill the A4b slot
+                        by_coord[key][0] = rc.rarity
+                        by_coord[key][1] += cnt - 1
+                        by_coord[key][2] = rc.confidence
+                        cnt = 1
+                    key = (orig_ref["set_code"], orig_ref["card_number"])
+                    rc = type(rc)(rc.name, key[0], key[1], orig_ref.get("rarity"),
+                                  rc.confidence, rc.sources_agreed,
+                                  rc.detail + "; dual-location → original slot")
+
             by_coord[key][0] = rc.rarity
             by_coord[key][1] += cnt
             by_coord[key][2] = rc.confidence
@@ -97,8 +169,14 @@ def main() -> int:
             e["set_code"], e["card_number"], e["count"] = s, n, cnt
             if rar is not None:
                 e["rarity"] = rar
+            hp = ext_hp(entry["name"], s, n)
+            if hp is not None and entry.get("card_type") == "Pokemon":
+                e["hp"] = hp
             new_collection.append(e)
-            if (s, n) != cur or cnt != entry.get("count"):
+            origins.append("pz")
+            if (str(s).upper(), n) != cur or cnt != entry.get("count") \
+                    or s != entry.get("set_code") \
+                    or (hp is not None and hp != entry.get("hp")):
                 recoord += 1
                 changes.append((entry["name"], cur, [(s, n)]))
             else:
@@ -111,9 +189,24 @@ def main() -> int:
                 e["set_code"], e["card_number"], e["count"] = s, n, cnt
                 if rar is not None:
                     e["rarity"] = rar
+                hp = ext_hp(entry["name"], s, n)
+                if hp is not None and entry.get("card_type") == "Pokemon":
+                    e["hp"] = hp
                 new_collection.append(e)
+                origins.append("pz")
 
     resolver.save()
+
+    # Drop preserved entries shadowed by a PZ-derived entry at the same coord+name.
+    # A dual-location split re-derives BOTH coords from the one PZ record each run;
+    # the A4b-half entry written by a prior reconcile gets no PZ record of its own and
+    # would otherwise survive as a duplicate (and double-count).
+    pz_keys = {_key(e) for e, o in zip(new_collection, origins) if o == "pz"}
+    deduped = [e for e, o in zip(new_collection, origins)
+               if o == "pz" or _key(e) not in pz_keys]
+    if len(deduped) != len(new_collection):
+        preserved -= len(new_collection) - len(deduped)
+        new_collection = deduped
 
     # ── Validate ──
     total = sum(e["count"] for e in new_collection)
@@ -145,10 +238,17 @@ def main() -> int:
 
     if dups:
         print("\nABORT: duplicate coords present — not writing.", file=sys.stderr); return 1
+    unconfirmed = [b for b in bad_confidence if b[3] == "unconfirmed"]
+    if unconfirmed:
+        print("\nABORT: unconfirmed coords (new cards not in reference) — not writing.", file=sys.stderr); return 1
     if bad_confidence:
-        print("\nABORT: unconfirmed/conflict coords — not writing.", file=sys.stderr); return 1
+        # Conflicts only: existing coords preserved above; warn but allow --apply.
+        print(f"\nWARNING: {len(bad_confidence)} conflict coord(s) above kept at existing value — verify manually.")
     if total != pz_total:
         print(f"\nABORT: total {total} != PZ total {pz_total} — not writing.", file=sys.stderr); return 1
+    if new_collection == collection:
+        print("\nNo changes — collection.json left untouched.")
+        return 0
 
     full["collection"] = new_collection
     full.setdefault("meta", {})["total_cards"] = total

@@ -231,17 +231,14 @@ class CoordResolver:
         pz_s = str(pz_set or "").upper().strip()
 
         # ── Fast path: card_reference lookup (offline, no network) ─────────────
-        # 1a. Exact coord: (pz_set, number) → reference record, BUT only when there
-        #     is no ambiguity across sets. PZ is known to mislabel A4b cards as A1/A2/A3/A4;
-        #     if the same (name, number) appears in 2+ sets we cannot trust PZ's set_code
-        #     as a tiebreaker here — fall through to 1b which handles multi-set collisions.
+        # 1a. Exact coord: (pz_set, number) → reference record. When the name agrees,
+        #     PZ's coord is authoritative: for dual-location A4b reprints PZ's set_code
+        #     is the ORIGINAL set (the app's dex attribution — user-verified 2026-06-12),
+        #     so a (name, number) collision with an A4b printing is not ambiguous; the
+        #     original-set slot is the right one either way.
         ref = self.ref_by_coord.get((pz_s, num))
         if ref and _name_agrees(name, ref.get("name", "")):
-            # Only fast-path when there's exactly one set for this (name, number).
-            ref_cands_check = self.ref_name_num.get((_norm(name), num), [])
-            if len(ref_cands_check) == 1:
-                return self._coord_from_ref(name, ref)
-            # Else: fall through to 1b collision handler (don't blindly trust PZ set).
+            return self._coord_from_ref(name, ref)
         elif ref:
             # Reference has a DIFFERENT card at the PZ coord. Before declaring a conflict,
             # try resolving by (name, number): PZ emits HYBRID coords for A4b "Deluxe Pack:

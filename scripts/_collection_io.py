@@ -24,7 +24,7 @@ CACHE_MAX_AGE_DAYS = 30
 # Canonical set-code registry.
 # Keys are the canonical casing used throughout the pipeline. The value dict
 # carries: pack_type ("single"/"multi") and limitless_slug (the slug used in
-# Limitless URLs, which may differ in casing — e.g. B3A uses "B3a").
+# Limitless URLs, which may differ in casing — same casing throughout, e.g. B3a).
 # ---------------------------------------------------------------------------
 SET_REGISTRY: dict[str, dict] = {
     "A1":     {"pack_type": "multi",  "limitless_slug": "A1"},
@@ -44,7 +44,7 @@ SET_REGISTRY: dict[str, dict] = {
     "B2a":    {"pack_type": "single", "limitless_slug": "B2a"},
     "B2b":    {"pack_type": "single", "limitless_slug": "B2b"},
     "B3":     {"pack_type": "single", "limitless_slug": "B3"},
-    "B3A":    {"pack_type": "single", "limitless_slug": "B3a"},  # Limitless slug is lowercase
+    "B3a":    {"pack_type": "single", "limitless_slug": "B3a"},
     "PROMO-A":{"pack_type": "single", "limitless_slug": "PROMO-A"},
     "PROMO-B":{"pack_type": "single", "limitless_slug": "PROMO-B"},
 }
