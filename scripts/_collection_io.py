@@ -14,6 +14,32 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
+# ---------------------------------------------------------------------------
+# Canonical repo paths. Every multi-script data file is named once here so a
+# data/ reorganisation is a one-file change; scripts import these (aliasing to
+# their historical local name where it differs). Single-script outputs (review
+# markdown, per-script caches, schemas) stay local to their script.
+# ---------------------------------------------------------------------------
+ROOT = Path(__file__).resolve().parent.parent
+REFERENCE_DIR = ROOT / "data" / "reference"
+CURRENT_DIR   = ROOT / "data" / "current"
+EXPORTS_DIR   = ROOT / "data" / "exports"
+SOURCES_DIR   = REFERENCE_DIR / "sources"
+
+COLLECTION_JSON            = ROOT / "collection.json"   # canonical JSONC source of truth
+COLLECTION_NORMALIZED_JSON = CURRENT_DIR / "collection_normalized.json"
+PACK_SOURCES_JSON          = REFERENCE_DIR / "pack_sources.json"
+CARD_REF_JSON              = REFERENCE_DIR / "card_reference.json"
+EXT_REF_JSON               = REFERENCE_DIR / "external" / "external_card_reference.json"
+PZ_PACK_ODDS_JSON          = REFERENCE_DIR / "pz_pack_odds.json"
+PULL_MODEL_JSON            = REFERENCE_DIR / "pull_probability_model.json"
+REPRINT_LINKS_JSON         = REFERENCE_DIR / "reprint_links.json"
+TCGDEX_CACHE_JSON          = REFERENCE_DIR / "tcgdex_card_cache.json"
+PACK_EV_JSON               = CURRENT_DIR / "pack_ev.json"
+PROMO_EV_JSON              = CURRENT_DIR / "promo_pack_ev.json"
+DECK_VALIDATION_JSON       = EXPORTS_DIR / "deck_recommendation_validation.json"
+
+
 # Cached external lookups (TCGdex/Limitless) older than this are re-fetched, so
 # upstream corrections and newly-added sets propagate. Shared by coord_resolver
 # and validate_collection_coords so the TTL is defined once.
@@ -336,6 +362,19 @@ def strip_comments(text: str) -> str:
     values containing '//' (e.g. a URL field) are preserved.
     """
     return re.sub(r"(?m)^\s*//[^\n]*\n?", "", text)
+
+
+def load_collection_json(path: Path | None = None) -> tuple[str, dict]:
+    """Read collection.json (JSONC) and return (raw_text, parsed_dict).
+
+    The raw text is returned alongside the parse because sync edits counts
+    in place with regexes to preserve comments and formatting. Raises
+    FileNotFoundError / json.JSONDecodeError; CLI scripts that want a friendly
+    exit catch these themselves.
+    """
+    p = Path(path) if path is not None else COLLECTION_JSON
+    raw = p.read_text(encoding="utf-8")
+    return raw, json.loads(strip_comments(raw))
 
 
 def field_slug(name: str) -> str:

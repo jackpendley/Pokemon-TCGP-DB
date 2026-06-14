@@ -16,10 +16,8 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import strip_comments, is_ex_from_name, TRAINER_SUBTYPE_MAP
-
-ROOT = Path(__file__).resolve().parent.parent
-COLLECTION_JSON = ROOT / "collection.json"
+from _collection_io import (is_ex_from_name, TRAINER_SUBTYPE_MAP,
+                            load_collection_json, ROOT, COLLECTION_JSON)
 
 VALID_CARD_TYPES = {"Pokemon", "Trainer"}
 VALID_POKEMON_TYPES = {
@@ -34,10 +32,9 @@ def load_collection():
     if not COLLECTION_JSON.exists():
         print(f"ERROR: {COLLECTION_JSON} not found", file=sys.stderr)
         sys.exit(1)
-    raw = COLLECTION_JSON.read_text(encoding="utf-8")
-    cleaned = strip_comments(raw)
     try:
-        return json.loads(cleaned)
+        _, data = load_collection_json()
+        return data
     except json.JSONDecodeError as e:
         print(f"ERROR: collection.json is not valid JSON (after stripping comments): {e}", file=sys.stderr)
         sys.exit(1)

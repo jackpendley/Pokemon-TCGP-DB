@@ -42,11 +42,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import is_cache_fresh, norm_card_name, normalize_rarity
-
-ROOT         = Path(__file__).resolve().parent.parent
-SOURCES_DIR  = ROOT / "data" / "reference" / "sources"
-PACK_SOURCES = ROOT / "data" / "reference" / "pack_sources.json"
+from _collection_io import (is_cache_fresh, norm_card_name, normalize_rarity,
+                            ROOT, SOURCES_DIR, SET_REGISTRY,
+                            PACK_SOURCES_JSON as PACK_SOURCES)
 
 REQUEST_DELAY   = 0.4   # seconds between HTTP requests
 REQUEST_TIMEOUT = 15    # seconds per request
@@ -92,6 +90,17 @@ SET_ALIASES: dict[str, dict] = {
 }
 
 TCGDEX_SETS = frozenset(a["tcgdex"] for a in SET_ALIASES.values() if a["tcgdex"])
+
+# SET_ALIASES must track SET_REGISTRY (the canonical set list in _collection_io)
+# 1:1 — a set registered there but missing here would silently never get source
+# snapshots fetched. Fail loudly at import so adding a new set can't half-land.
+if set(SET_ALIASES) != set(SET_REGISTRY):
+    _missing = set(SET_REGISTRY) - set(SET_ALIASES)
+    _extra = set(SET_ALIASES) - set(SET_REGISTRY)
+    raise RuntimeError(
+        f"SET_ALIASES out of sync with SET_REGISTRY (_collection_io): "
+        f"missing={sorted(_missing)} extra={sorted(_extra)} — add source aliases "
+        f"for new sets here when registering them in SET_REGISTRY.")
 
 # Rarity normalisation: Bulbapedia uses {{Rar/TCGP|Diamond|1}} style. Mapped to the new
 # canonical vocabulary. (Bulbapedia is a cross-validator; TCGdex is the per-card authority,

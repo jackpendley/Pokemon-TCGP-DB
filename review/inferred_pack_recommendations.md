@@ -4,9 +4,9 @@
 
 | Metric | Value |
 |---|---|
-| Report generated | 2026-06-12T23:28:40+00:00 |
-| Model confidence | **user_in_app_verified** |
-| Collection total | 1240 cards |
+| Report generated | 2026-06-14T02:11:45+00:00 |
+| Model confidence | **third_party_verified_with_in_app_anchor** |
+| Collection total | 1256 cards |
 | Packs ranked | 24 |
 | Packs blocked | 0 |
 
@@ -18,8 +18,8 @@ Ranked by unified score: `new_card_ev_10x×1.0 + copy_ev×0.2 + deck_target_ev×
 
 | Rank | Pack | Expansion | Unified | New EV (10x) | Deck EV | ⧗/card | Missing |
 |---|---|---|---|---|---|---|---|
-| 1 | **Ho-Oh** | Wisdom of Sea and Sky | 61.1274 | 61.1144 | 0.0000 | 2.0 | 133 |
-| 2 | **Lugia** | Wisdom of Sea and Sky | 60.3144 | 60.2815 | 0.0000 | 2.0 | 129 |
+| 1 | **Ho-Oh** | Wisdom of Sea and Sky | 60.6185 | 60.5999 | 0.0000 | 2.0 | 132 |
+| 2 | **Lugia** | Wisdom of Sea and Sky | 59.2967 | 59.2526 | 0.0000 | 2.0 | 127 |
 | 3 | **Secluded Springs** | Secluded Springs | 58.6307 | 58.6307 | 0.0000 | 2.0 | 105 |
 | 4 | **Solgaleo** | Celestial Guardians | 58.2119 | 58.1984 | 0.0000 | 2.1 | 136 |
 | 5 | **Lunala** | Celestial Guardians | 57.5800 | 57.5646 | 0.0000 | 2.1 | 135 |
@@ -32,8 +32,8 @@ Ranked by hourglasses spent per unique new card (10-pack batch). Lower is better
 
 | Rank | Pack | ⧗/card (10x) | New EV (10x) | DR Ratio | Missing |
 |---|---|---|---|---|---|
-| 1 | Ho-Oh | 2.0 | 61.1144 | 0.839 | 133 |
-| 2 | Lugia | 2.0 | 60.2815 | 0.844 | 129 |
+| 1 | Ho-Oh | 2.0 | 60.5999 | 0.840 | 132 |
+| 2 | Lugia | 2.0 | 59.2526 | 0.846 | 127 |
 | 3 | Secluded Springs | 2.0 | 58.6307 | 0.792 | 105 |
 | 4 | Solgaleo | 2.1 | 58.1984 | 0.842 | 136 |
 | 5 | Lunala | 2.1 | 57.5646 | 0.844 | 135 |
@@ -46,15 +46,15 @@ Ranked by hourglasses spent per unique new card (10-pack batch). Lower is better
 
 | Metric | Value |
 |---|---|
-| Unified Score | **61.1274** |
-| New-card EV (10x) | 61.1144 |
-| New-card EV (1x) | 7.2841 |
+| Unified Score | **60.6185** |
+| New-card EV (10x) | 60.5999 |
+| New-card EV (1x) | 7.2144 |
 | Deck target EV | 0.0000 |
-| Cost / EV unit (10x) | 1.96 ⧗ |
-| DR ratio | 0.839 |
+| Cost / EV unit (10x) | 1.98 ⧗ |
+| DR ratio | 0.840 |
 | Pool size | 136 cards |
-| Already owned in pool | 3 |
-| Missing from pool | **133** |
+| Already owned in pool | 4 |
+| Missing from pool | **132** |
 
 Top EV cards in this pack:
 
@@ -72,15 +72,15 @@ Top EV cards in this pack:
 
 | Metric | Value |
 |---|---|
-| Unified Score | **60.3144** |
-| New-card EV (10x) | 60.2815 |
-| New-card EV (1x) | 7.1429 |
+| Unified Score | **59.2967** |
+| New-card EV (10x) | 59.2526 |
+| New-card EV (1x) | 7.0035 |
 | Deck target EV | 0.0000 |
-| Cost / EV unit (10x) | 1.99 ⧗ |
-| DR ratio | 0.844 |
+| Cost / EV unit (10x) | 2.03 ⧗ |
+| DR ratio | 0.846 |
 | Pool size | 136 cards |
-| Already owned in pool | 7 |
-| Missing from pool | **129** |
+| Already owned in pool | 9 |
+| Missing from pool | **127** |
 
 Top EV cards in this pack:
 
@@ -183,22 +183,22 @@ Top EV cards in this pack:
 
 | Rank | Pack | Expansion | Unified | New EV (10x) | New EV (1x) | Missing | Deck EV |
 |---|---|---|---|---|---|---|---|
-| 1 | Ho-Oh | Wisdom of Sea and Sky | 61.1274 | 61.1144 | 7.2841 | 133 | 0.0000 |
-| 2 | Lugia | Wisdom of Sea and Sky | 60.3144 | 60.2815 | 7.1429 | 129 | 0.0000 |
+| 1 | Ho-Oh | Wisdom of Sea and Sky | 60.6185 | 60.5999 | 7.2144 | 132 | 0.0000 |
+| 2 | Lugia | Wisdom of Sea and Sky | 59.2967 | 59.2526 | 7.0035 | 127 | 0.0000 |
 | 3 | Secluded Springs | Secluded Springs | 58.6307 | 58.6307 | 7.3990 | 105 | 0.0000 |
 | 4 | Solgaleo | Celestial Guardians | 58.2119 | 58.1984 | 6.9085 | 136 | 0.0000 |
 | 5 | Lunala | Celestial Guardians | 57.5800 | 57.5646 | 6.8188 | 135 | 0.0000 |
 | 6 | Dialga | Space-Time Smackdown | 56.6185 | 56.6099 | 6.7597 | 124 | 0.0000 |
-| 7 | Mega Blaziken | Mega Rising | 56.2840 | 56.2408 | 6.5990 | 128 | 0.0000 |
-| 8 | Mega Gyarados | Mega Rising | 56.0909 | 56.0536 | 6.5841 | 128 | 0.0000 |
-| 9 | Extradimensional Crisis | Extradimensional Crisis | 55.9698 | 55.9698 | 7.0816 | 103 | 0.0000 |
-| 10 | Shining Revelry | Shining Revelry | 55.5531 | 55.5480 | 7.0205 | 110 | 0.0000 |
-| 11 | Eevee Grove | Eevee Grove | 55.4259 | 55.4209 | 7.0003 | 106 | 0.0000 |
-| 12 | Mega Altaria | Mega Rising | 54.7301 | 54.6712 | 6.4044 | 125 | 0.0000 |
-| 13 | Palkia | Space-Time Smackdown | 53.1445 | 53.1186 | 6.3634 | 120 | 0.0000 |
-| 14 | Mew | Mythical Island | 51.8792 | 51.8689 | 6.6790 | 84 | 0.0000 |
-| 15 | Arceus | Triumphant Light | 51.7711 | 51.7711 | 6.6373 | 96 | 0.0000 |
-| 16 | Pikachu | Genetic Apex | 51.6681 | 51.6391 | 6.1131 | 116 | 0.0000 |
+| 7 | Extradimensional Crisis | Extradimensional Crisis | 55.9698 | 55.9698 | 7.0816 | 103 | 0.0000 |
+| 8 | Shining Revelry | Shining Revelry | 55.5531 | 55.5480 | 7.0205 | 110 | 0.0000 |
+| 9 | Eevee Grove | Eevee Grove | 55.4259 | 55.4209 | 7.0003 | 106 | 0.0000 |
+| 10 | Palkia | Space-Time Smackdown | 53.1445 | 53.1186 | 6.3634 | 120 | 0.0000 |
+| 11 | Mega Gyarados | Mega Rising | 53.0752 | 53.0116 | 6.1946 | 121 | 0.0000 |
+| 12 | Mew | Mythical Island | 51.8792 | 51.8689 | 6.6790 | 84 | 0.0000 |
+| 13 | Arceus | Triumphant Light | 51.7711 | 51.7711 | 6.6373 | 96 | 0.0000 |
+| 14 | Pikachu | Genetic Apex | 51.6681 | 51.6391 | 6.1131 | 116 | 0.0000 |
+| 15 | Mega Blaziken | Mega Rising | 51.6253 | 51.5413 | 6.0155 | 118 | 0.0000 |
+| 16 | Mega Altaria | Mega Rising | 50.6509 | 50.5560 | 5.8942 | 116 | 0.0000 |
 | 17 | Charizard | Genetic Apex | 50.5871 | 50.5541 | 6.0004 | 115 | 0.0000 |
 | 18 | Mewtwo | Genetic Apex | 48.0701 | 48.0217 | 5.6887 | 109 | 0.0000 |
 | 19 | Fantastical Parade | Fantastical Parade | 40.2353 | 40.1017 | 4.3680 | 159 | 0.0000 |
@@ -210,8 +210,30 @@ Top EV cards in this pack:
 
 ---
 
+## Promo Pack Rankings (Shop Tickets)
+
+> Promo packs use **Shop Tickets** — not Hourglasses. EVs below are not
+> comparable to regular pack EVs. See `review/promo_pack_ev.md` for full details.
+
+| # | Pack | Missing | New Card EV |
+|---|---|---|---|
+| 1 | Promo Pack A Series Vol. 13 | ?/? | 0.9684 |
+| 2 | Promo Pack B Series Vol. 4 | ?/? | 0.9684 |
+| 3 | Promo Pack A Series Vol. 1 | ?/? | 0.8882 |
+| 4 | Promo Pack A Series Vol. 4 | ?/? | 0.8882 |
+| 5 | Promo Pack A Series Vol. 9 | ?/? | 0.8736 |
+| 6 | Promo Pack A Series Vol. 11 | ?/? | 0.8734 |
+| 7 | Promo Pack A Series Vol. 12 | ?/? | 0.8734 |
+| 8 | Promo Pack A Series Vol. 7 | ?/? | 0.8734 |
+| 9 | Promo Pack B Series Vol. 1 | ?/? | 0.8734 |
+| 10 | Promo Pack B Series Vol. 3 | ?/? | 0.8734 |
+
+
+---
+
 ## Status
 
 - Pull rates: **pz_verified** — per-card drop chances from Pokemon Zone, no confidence haircut
 - Pack source coverage: **272/272** collection entries resolved (100%)
+- Promo packs: scored separately in `review/promo_pack_ev.md` (Shop Ticket currency)
 

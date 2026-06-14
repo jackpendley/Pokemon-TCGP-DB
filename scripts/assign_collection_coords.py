@@ -26,16 +26,13 @@ from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (
-    strip_comments, ext_ref_by_coord, card_reference_by_coord, TRAINER_SUBTYPE_MAP,
+    ext_ref_by_coord, card_reference_by_coord, TRAINER_SUBTYPE_MAP,
     TRAINER_CATEGORIES, RARE_PLUS_RARITIES, normalize_rarity, norm_card_name,
+    load_collection_json, ROOT, COLLECTION_JSON, PACK_SOURCES_JSON,
+    EXT_REF_JSON, CARD_REF_JSON, CURRENT_DIR,
 )
 
-ROOT = Path(__file__).resolve().parent.parent
-COLLECTION_JSON  = ROOT / "collection.json"
-PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
-EXT_REF_JSON     = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
-CARD_REF_JSON    = ROOT / "data" / "reference" / "card_reference.json"
-LOG_JSON         = ROOT / "data" / "current" / "coord_assignments_log.json"
+LOG_JSON         = CURRENT_DIR / "coord_assignments_log.json"
 
 
 # ---------------------------------------------------------------------------
@@ -43,8 +40,7 @@ LOG_JSON         = ROOT / "data" / "current" / "coord_assignments_log.json"
 # ---------------------------------------------------------------------------
 
 def load_collection() -> tuple[dict, list]:
-    raw = COLLECTION_JSON.read_text(encoding="utf-8")
-    data = json.loads(strip_comments(raw))
+    _, data = load_collection_json()
     return data, data["collection"]
 
 

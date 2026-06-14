@@ -213,6 +213,142 @@ def _validate_collection_data(data):
 
 
 # ---------------------------------------------------------------------------
+# Dual-location pairing: aggregated multi-set counts must survive pairing
+# ---------------------------------------------------------------------------
+
+_PAIR_LINKS = {("A4B", 10): ("A1", 5)}  # A4b 10 reprints A1 5
+
+
+def _pair_entries(orig_count=2, a4b_count=2):
+    return [
+        {"name": "Shroomish", "set_code": "A1",  "card_number": 5,  "count": orig_count},   # 0: original slot
+        {"name": "Shroomish", "set_code": "A4B", "card_number": 10, "count": a4b_count},     # 1: A4b slot
+    ]
+
+
+def test_pairing_leaves_counts_alone_when_pair_sums():
+    """One PZ record on the pair's own coord, counts already split correctly."""
+    entries = _pair_entries()
+    totals = {0: 4}
+    coords = {0: {("A1", 5)}}
+    paired = sc.pair_dual_location_entries(entries, totals, coords, {0}, _PAIR_LINKS)
+    assert paired == {1}
+    assert totals[0] == 2  # reset to entry's own count; sibling holds the rest
+
+
+def test_pairing_fires_on_pz_hybrid_stamp():
+    """Regression (the 1261 bug): Pokémon Zone stamps a dual-location card with the
+    ORIGINAL set code + the A4b card number — Shroomish here arrives as A1/10, not
+    A1/5 or A4B/10. The matcher lands the full count (3) on the original entry; the
+    A4b sibling (count 2) gets no PZ record. Pairing MUST still fire (1 + 2 == 3),
+    or sync keeps the full 3 on the original AND preserves the A4b 2 → over-counts.
+    """
+    entries = _pair_entries(orig_count=1, a4b_count=2)
+    totals = {0: 3}                       # full PZ hybrid count landed on the original
+    coords = {0: {("A1", 10)}}            # hybrid stamp: original set A1 + A4b number 10
+    paired = sc.pair_dual_location_entries(entries, totals, coords, {0}, _PAIR_LINKS)
+    assert paired == {1}                  # A4b sibling paired, not flagged missing
+    assert totals[0] == 1                 # original keeps 1; 1 + sibling 2 == PZ 3
+
+
+def test_pairing_fires_on_hybrid_stamp_from_a4b_side():
+    """The matcher may land the PZ record on the A4b entry instead of the original.
+    The hybrid coord (original set + A4b number) must be accepted from that side too."""
+    entries = _pair_entries(orig_count=1, a4b_count=2)
+    totals = {1: 3}                       # full count landed on the A4b entry (idx 1)
+    coords = {1: {("A1", 10)}}            # same hybrid stamp
+    paired = sc.pair_dual_location_entries(entries, totals, coords, {1}, _PAIR_LINKS)
+    assert paired == {0}                  # original paired
+    assert totals[1] == 2                 # A4b keeps 2; 2 + original 1 == PZ 3
+
+
+def test_pairing_skipped_when_copy_from_other_set_aggregated():
+    """A copy aggregated from a genuinely foreign set (e.g. B3) must not be
+    discarded by the pairing reset just because the pair's counts happen to
+    sum to the aggregate."""
+    entries = _pair_entries()
+    # PZ: A1 ×2 + B3 ×1 + A4B ×1 → aggregate 4 on entry 0; pair counts 2+2 == 4
+    totals = {0: 4}
+    coords = {0: {("A1", 5), ("B3", 77), ("A4B", 10)}}
+    paired = sc.pair_dual_location_entries(entries, totals, coords, {0}, _PAIR_LINKS)
+    assert paired == set()      # no pairing — B3 copy is real
+    assert totals[0] == 4       # aggregate preserved, not reset to 2
+
+
+def _real_dual_location_link():
+    """Pick a real dual-location link whose A4b number differs from its original
+    number, so the hybrid stamp (original_set + A4b number) is a DISTINCT coord
+    from the original — the only shape that exercises the 1261 over-count. Returns
+    (name, a4b_coord, original_coord) or None."""
+    from pathlib import Path as _Path
+    lp = _Path(__file__).resolve().parent.parent / "data" / "reference" / "reprint_links.json"
+    if not lp.exists():
+        return None
+    for l in json.loads(lp.read_text(encoding="utf-8")).get("links", []):
+        a4b = (str(l["a4b"][0]).upper(), int(l["a4b"][1]))
+        orig = (str(l["original"][0]).upper(), int(l["original"][1]))
+        if a4b[1] != orig[1]:                 # hybrid (orig_set, a4b_num) != original coord
+            return l.get("name"), a4b, orig
+    return None
+
+
+def test_pz_hybrid_stamp_end_to_end_count_integrity():
+    """End-to-end guard against the 1261 regression, self-contained (no fixtures).
+
+    Builds a tiny collection where a real dual-location card is already split
+    (original slot + A4b slot), then replays a Pokémon Zone snapshot that stamps
+    the card with the ORIGINAL set code + A4b number (the real-world hybrid). The
+    post-sync collection total MUST equal the PZ total — the broken guard left the
+    full count on the original AND preserved the A4b half, inflating the total.
+    """
+    link = _real_dual_location_link()
+    if link is None:
+        import pytest
+        pytest.skip("no reprint_links.json with links")
+    name, (a4b_set, a4b_num), (orig_set, orig_num) = link
+
+    collection = [
+        {"name": name, "set_code": orig_set, "card_number": orig_num, "count": 1, "card_type": "Pokemon"},
+        {"name": name, "set_code": a4b_set,  "card_number": a4b_num,  "count": 2, "card_type": "Pokemon"},
+    ]
+    # PZ stamps the dual card once, as (original_set, a4b_number), count 3.
+    pz_raw = [{"cardName": name, "setCode": orig_set, "cardNumber": a4b_num, "ownedCount": 3}]
+
+    pack_sources = sc.load_pack_sources()
+    ext_ref = sc.load_ext_ref()
+    pz_cards = [p for p in (sc.normalize_pz_record(r) for r in pz_raw) if p]
+    pz_total = sum(p.count for p in pz_cards)
+
+    results = sc.match_pz_cards(pz_cards, collection, pack_sources, ext_ref)
+    matched = [r for r in results if r.status == "MATCHED"]
+    new = [r for r in results if r.status == "NEW_CARD"]
+    matched_indices = {r.entry_index for r in matched if r.entry_index is not None}
+
+    entry_pz_total, entry_pz_coords = {}, {}
+    for r in matched:
+        i = r.entry_index
+        entry_pz_total[i] = entry_pz_total.get(i, 0) + r.pz_card.count
+        entry_pz_coords.setdefault(i, set()).add(
+            (str(r.pz_card.set_code or "").upper(), r.pz_card.card_number))
+
+    link_orig = {(a4b_set, a4b_num): (orig_set, orig_num)}
+    paired = sc.pair_dual_location_entries(
+        collection, entry_pz_total, entry_pz_coords, matched_indices, link_orig)
+
+    missing = [i for i in range(len(collection))
+               if i not in matched_indices and i not in paired]
+    post_sync_total = (
+        sum(entry_pz_total.values())
+        + sum(collection[j].get("count", 0) for j in paired)
+        + sum(collection[i].get("count", 0) for i in missing)
+        + sum(r.pz_card.count for r in new)
+    )
+    assert post_sync_total == pz_total, (
+        f"sync total {post_sync_total} != PZ total {pz_total} "
+        f"(delta {post_sync_total - pz_total}) — dual-location hybrid pairing regressed")
+
+
+# ---------------------------------------------------------------------------
 # Regression: real collection.json passes validation
 # ---------------------------------------------------------------------------
 

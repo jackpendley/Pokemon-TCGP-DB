@@ -36,13 +36,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import normalize_rarity, norm_card_name as _norm, is_cache_fresh as _fresh
+from _collection_io import (normalize_rarity, norm_card_name as _norm,
+                            is_cache_fresh as _fresh, ROOT, REFERENCE_DIR,
+                            PACK_SOURCES_JSON, CARD_REF_JSON,
+                            TCGDEX_CACHE_JSON as TCGDEX_CACHE)
 
-ROOT = Path(__file__).resolve().parent.parent
-PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
-CARD_REF_JSON     = ROOT / "data" / "reference" / "card_reference.json"
-TCGDEX_CACHE      = ROOT / "data" / "reference" / "tcgdex_card_cache.json"
-LIMITLESS_CACHE   = ROOT / "data" / "reference" / "limitless_name_cache.json"
+LIMITLESS_CACHE   = REFERENCE_DIR / "limitless_name_cache.json"
 
 # Pokémon Zone's only known set-code mislabel: it labels "Deluxe Pack: ex" (A4b) cards as
 # A1/A2/A3/A4 (keeping the right number). So a cross-set (name, number) collision is only

@@ -34,20 +34,17 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import is_ex_from_name
-
-ROOT = Path(__file__).resolve().parent.parent
-
-PACK_EV_JSON         = ROOT / "data" / "current"  / "pack_ev.json"
-COLLECTION_JSON      = ROOT / "data" / "current"  / "collection_normalized.json"
-PROMO_EV_JSON        = ROOT / "data" / "current"  / "promo_pack_ev.json"
-# TODO(deck-ev): no script writes this file; deck_target scoring is intentionally inert.
-DECK_VALIDATION_JSON = ROOT / "data" / "exports"  / "deck_recommendation_validation.json"
-COLLECTION_SOURCE    = ROOT / "collection.json"
+from _collection_io import (is_ex_from_name, ROOT, CURRENT_DIR, EXPORTS_DIR,
+                            PACK_EV_JSON, PROMO_EV_JSON,
+                            COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
+                            COLLECTION_JSON as COLLECTION_SOURCE,
+                            # TODO(deck-ev): no script writes this file; deck_target
+                            # scoring is intentionally inert.
+                            DECK_VALIDATION_JSON)
 
 OUT_MD   = ROOT / "review"         / "inferred_pack_recommendations.md"
-OUT_JSON = ROOT / "data" / "current" / "inferred_pack_recommendations.json"
-OUT_CSV  = ROOT / "data" / "exports" / "inferred_pack_recommendations.csv"
+OUT_JSON = CURRENT_DIR / "inferred_pack_recommendations.json"
+OUT_CSV  = EXPORTS_DIR / "inferred_pack_recommendations.csv"
 
 TOP_N = 5
 

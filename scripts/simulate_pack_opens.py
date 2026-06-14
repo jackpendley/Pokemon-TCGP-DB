@@ -27,14 +27,12 @@ import random
 import sys
 from pathlib import Path
 
-ROOT            = Path(__file__).resolve().parent.parent
-PZ_PACK_ODDS    = ROOT / "data" / "reference" / "pz_pack_odds.json"
-PACK_SOURCES    = ROOT / "data" / "reference" / "pack_sources.json"
-COLLECTION_FILE = ROOT / "collection.json"  # canonical source; strip JSONC comments before parsing
-
 sys.path.insert(0, str(Path(__file__).parent))
 from build_pack_ev import _norm_name as _normalize  # single canonical normalization
-from _collection_io import strip_comments
+from _collection_io import (strip_comments, ROOT,
+                            PZ_PACK_ODDS_JSON as PZ_PACK_ODDS,
+                            PACK_SOURCES_JSON as PACK_SOURCES,
+                            COLLECTION_JSON as COLLECTION_FILE)
 
 
 def _load_collection() -> dict:

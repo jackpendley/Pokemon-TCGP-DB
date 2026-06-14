@@ -49,15 +49,15 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (strip_comments, TRAINER_SUBTYPE_MAP, RARE_PLUS_RARITIES,
                             is_ex_from_name, pack_sources_by_coord as _ps_by_coord,
-                            field_slug as _normalize, RARITY_RANK, normalize_rarity)
+                            field_slug as _normalize, RARITY_RANK, normalize_rarity,
+                            load_collection_json, ROOT, COLLECTION_JSON,
+                            REPRINT_LINKS_JSON,
+                            PACK_SOURCES_JSON as PACK_SOURCES,
+                            EXT_REF_JSON as EXT_REF)
 
 
-ROOT            = Path(__file__).resolve().parent.parent
-COLLECTION_JSON = ROOT / "collection.json"
-PACK_SOURCES    = ROOT / "data" / "reference" / "pack_sources.json"
-EXT_REF         = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
-REVIEW_QUEUE    = ROOT / "data" / "sync" / "sync_review_queue.json"
 SYNC_DIR        = ROOT / "data" / "sync"
+REVIEW_QUEUE    = SYNC_DIR / "sync_review_queue.json"
 
 
 # ---------------------------------------------------------------------------
@@ -95,9 +95,7 @@ class CountChange:
 
 def load_collection() -> tuple[str, dict]:
     """Return (raw_text, parsed_dict) for collection.json."""
-    raw = COLLECTION_JSON.read_text(encoding="utf-8")
-    data = json.loads(strip_comments(raw))
-    return raw, data
+    return load_collection_json()
 
 
 def load_pack_sources() -> dict[tuple[str, int], dict]:
@@ -994,6 +992,71 @@ def review_queue_is_unresolved(q: dict) -> bool:
 # Validation subprocess
 # ---------------------------------------------------------------------------
 
+def pair_dual_location_entries(
+    collection_entries: list[dict],
+    entry_pz_total: dict[int, int],
+    entry_pz_coords: dict[int, set],
+    matched_indices: set[int],
+    link_orig: dict[tuple, tuple],
+) -> set[int]:
+    """Pair dual-location split entries so neither side is reset or flagged stale.
+
+    A dual-location card (A4b "Deluxe Pack: ex" reprint) is ONE PZ record but TWO
+    collection entries after reconcile splits it: the original-set slot (1st copy)
+    and the A4b slot (2nd+ copies). The 1:1 matcher lands the record on one entry,
+    which would reset it to the full PZ count and flag the sibling as missing
+    (eventually stale-removing it). When the pair's combined count already equals
+    the PZ count, both entries are correct: leave counts alone, don't flag the
+    sibling. When they don't sum (a genuinely new copy), the normal count update +
+    reconcile re-split applies.
+
+    Mutates entry_pz_total in place; returns the set of paired sibling indices.
+    """
+    paired_siblings: set[int] = set()
+    if not link_orig:
+        return paired_siblings
+
+    a4b_by_orig: dict[tuple, list] = {}
+    for a, o in link_orig.items():
+        a4b_by_orig.setdefault(o, []).append(a)
+
+    def _coord(e: dict) -> tuple:
+        return (str(e.get("set_code") or "").upper(), e.get("card_number"))
+
+    for idx in list(entry_pz_total):
+        e = collection_entries[idx]
+        c = _coord(e)
+        partners = a4b_by_orig.get(c) or ([link_orig[c]] if c in link_orig else [])
+        if not partners:
+            continue
+        # Only pair when every PZ coord aggregated onto this entry belongs to THIS
+        # dual-location pair — a copy from any other set is a real extra copy the
+        # reset below would silently discard. The valid coords are the pair's own
+        # two (original + A4b) PLUS the hybrid stamp Pokémon Zone actually emits:
+        # the original set code with the A4b card number (e.g. Cubone A1/194 for
+        # original A1/151 + A4b/194). Omitting the hybrid skips pairing on every
+        # real PZ sync and double-counts the A4b half.
+        # (See test_sync.py::test_pairing_fires_on_pz_hybrid_stamp.)
+        allowed = {c} | set(partners)
+        if c in a4b_by_orig:                      # entry is the original slot
+            allowed |= {(c[0], p[1]) for p in partners}
+        else:                                     # entry is the A4b slot
+            allowed |= {(p[0], c[1]) for p in partners}
+        if not entry_pz_coords.get(idx, set()) <= allowed:
+            continue
+        for j, s in enumerate(collection_entries):
+            if j in matched_indices or j in paired_siblings:
+                continue
+            if _normalize(s.get("name", "")) != _normalize(e.get("name", "")):
+                continue
+            if _coord(s) in partners and \
+                    e.get("count", 0) + s.get("count", 0) == entry_pz_total[idx]:
+                entry_pz_total[idx] = e.get("count", 0)
+                paired_siblings.add(j)
+                break
+    return paired_siblings
+
+
 def run_validation(expected_total: int | None = None) -> bool:
     cmd = [sys.executable, "scripts/validate_current_collection.py"]
     if expected_total is not None:
@@ -1326,46 +1389,14 @@ def main() -> int:
         entry_pz_coords.setdefault(idx, set()).add(
             (str(r.pz_card.set_code or "").upper(), r.pz_card.card_number))
 
-    # ── Dual-location pairing ─────────────────────────────────────────────
-    # A dual-location card (A4b "Deluxe Pack: ex" reprint) is ONE PZ record but TWO
-    # collection entries after reconcile splits it: the original-set slot (1st copy)
-    # and the A4b slot (2nd+ copies). The 1:1 matcher lands the record on one entry,
-    # which would reset it to the full PZ count and flag the sibling as missing
-    # (eventually stale-removing it). When the pair's combined count already equals
-    # the PZ count, both entries are correct: leave counts alone, don't flag the
-    # sibling. When they don't sum (a genuinely new copy), the normal count update +
-    # reconcile re-split applies.
-    paired_siblings: set[int] = set()
+    # ── Dual-location pairing (see pair_dual_location_entries) ───────────
     link_orig: dict[tuple, tuple] = {}
-    _links_path = ROOT / "data" / "reference" / "reprint_links.json"
-    if _links_path.exists():
-        for l in json.loads(_links_path.read_text(encoding="utf-8")).get("links", []):
+    if REPRINT_LINKS_JSON.exists():
+        for l in json.loads(REPRINT_LINKS_JSON.read_text(encoding="utf-8")).get("links", []):
             link_orig[(str(l["a4b"][0]).upper(), int(l["a4b"][1]))] = (
                 str(l["original"][0]).upper(), int(l["original"][1]))
-    if link_orig:
-        a4b_by_orig: dict[tuple, list] = {}
-        for a, o in link_orig.items():
-            a4b_by_orig.setdefault(o, []).append(a)
-
-        def _coord(e: dict) -> tuple:
-            return (str(e.get("set_code") or "").upper(), e.get("card_number"))
-
-        for idx in list(entry_pz_total):
-            e = collection_entries[idx]
-            c = _coord(e)
-            partners = a4b_by_orig.get(c) or ([link_orig[c]] if c in link_orig else [])
-            if not partners:
-                continue
-            for j, s in enumerate(collection_entries):
-                if j in matched_indices or j in paired_siblings:
-                    continue
-                if _normalize(s.get("name", "")) != _normalize(e.get("name", "")):
-                    continue
-                if _coord(s) in partners and \
-                        e.get("count", 0) + s.get("count", 0) == entry_pz_total[idx]:
-                    entry_pz_total[idx] = e.get("count", 0)
-                    paired_siblings.add(j)
-                    break
+    paired_siblings = pair_dual_location_entries(
+        collection_entries, entry_pz_total, entry_pz_coords, matched_indices, link_orig)
 
     missing_from_pz = [
         e for i, e in enumerate(collection_entries)

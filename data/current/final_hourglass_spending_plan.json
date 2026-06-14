@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-12",
+  "generated_at": "2026-06-13",
   "generated_by": "scripts/generate_hourglass_spending_plan.py",
   "disclaimer": "NOT OFFICIAL: Pull rates are PZ_VERIFIED — per-card drop chances sourced directly from Pokemon Zone (not the official PTCGP in-app Offering Rates screen). EV calculations reflect actual pull probabilities with no confidence haircut applied. Rankings are suitable for planning. Re-run EV after every 20+ packs to account for collection changes.",
-  "model_confidence": "user_in_app_verified",
-  "collection_total": 1240,
+  "model_confidence": "third_party_verified_with_in_app_anchor",
+  "collection_total": 1256,
   "collection_mutated": false,
   "batch_size": 10,
   "hourglass_per_pack": 12,
@@ -20,14 +20,14 @@
         "set_code": "A4",
         "packs_to_open": 10,
         "hourglass_cost": 120,
-        "unified_score": 61.127362,
-        "new_card_ev_10x": 61.114378,
-        "cost_per_unique_card_10x": 1.96,
-        "ev_diminishing_returns_ratio": 0.839,
-        "missing_in_pool": 133,
+        "unified_score": 60.618484,
+        "new_card_ev_10x": 60.599924,
+        "cost_per_unique_card_10x": 1.98,
+        "ev_diminishing_returns_ratio": 0.84,
+        "missing_in_pool": 132,
         "near_complete": true,
         "rerun_after": true,
-        "notes": "Open first batch from the top unified-score pack. WARNING: DR ratio=0.839 < 0.85 — this pool is near-complete; switch to #2 after this batch."
+        "notes": "Open first batch from the top unified-score pack. WARNING: DR ratio=0.840 < 0.85 — this pool is near-complete; switch to #2 after this batch."
       },
       {
         "batch_number": 2,
@@ -36,11 +36,11 @@
         "set_code": "A4",
         "packs_to_open": 10,
         "hourglass_cost": 120,
-        "unified_score": 60.314426,
-        "new_card_ev_10x": 60.281522,
-        "cost_per_unique_card_10x": 1.99,
-        "ev_diminishing_returns_ratio": 0.8439,
-        "missing_in_pool": 129,
+        "unified_score": 59.296669,
+        "new_card_ev_10x": 59.252613,
+        "cost_per_unique_card_10x": 2.03,
+        "ev_diminishing_returns_ratio": 0.846,
+        "missing_in_pool": 127,
         "near_complete": true,
         "rerun_after": true,
         "notes": "Switched to #2 pack (near-complete flag on batch 1)."
@@ -69,13 +69,13 @@
       2,
       3
     ],
-    "stopping_condition": "Stop any batch when cost_per_unique_card_10x exceeds 3.9⧗ (2× batch-1 baseline of 2.0⧗). Re-run EV before committing further.",
+    "stopping_condition": "Stop any batch when cost_per_unique_card_10x exceeds 4.0⧗ (2× batch-1 baseline of 2.0⧗). Re-run EV before committing further.",
     "near_complete_threshold": 0.85,
-    "cost_ceiling_per_unique_card": 3.92,
+    "cost_ceiling_per_unique_card": 3.96,
     "chase_deck_packs": {},
-    "top_pack_unified_score": 61.1274,
+    "top_pack_unified_score": 60.6185,
     "top_pack_name": "Ho-Oh",
     "include_limited_packs": false
   },
-  "inputs_hash": "ea15f15e1516c4552f0a204e39d6af5082c8ab45f77ea15a9291533202d7432f"
+  "inputs_hash": "7bed9029ea1757dd5659a54111356b5d355e90416e597f65689afcd14e1ab5b7"
 }

@@ -40,7 +40,7 @@
 | Mega Shine | B2b | four_branch | 94.706% | 5.238% | 0.050% | 0.005% | bulbapedia_branch_verified |
 | Mew | A1a | two_branch | 99.950% | — | 0.050% | — | bulbapedia_branch_verified |
 | Paldean Wonders | B2a | three_branch | 94.711% | 5.238% | 0.050% | — | bulbapedia_branch_verified |
-| Paradox Drive | B3A | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
+| Paradox Drive | B3a | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
 | Pulsing Aura | B3 | three_branch | 94.711% | 5.238% | 0.050% | — | user_in_app_verified_plus_bulbapedia |
 | Secluded Springs | A4a | three_branch | 91.620% | 8.330% | 0.050% | — | bulbapedia_branch_verified |
 | Shining Revelry | A2b | two_branch | 99.950% | — | 0.050% | — | third_party_verified |
@@ -67,11 +67,11 @@
 | Mega Altaria | Mega Rising | B1 | 139 | 49 | 33 | 15 | 5 | 8 | 7 | 1 |
 | Mega Blaziken | Mega Rising | B1 | 139 | 49 | 33 | 15 | 5 | 8 | 7 | 1 |
 | Mega Gyarados | Mega Rising | B1 | 139 | 49 | 33 | 15 | 5 | 8 | 7 | 1 |
-| Mega Shine | Mega Shine | B2b | 117 | 33 | 23 | 8 | 5 | 30 | 14 | 2 |
+| Mega Shine | Mega Shine | B2b | 117 | 33 | 23 | 8 | 5 | 6 | 9 | 2 |
 | Mew | Mythical Island | A1a | 86 | 32 | 23 | 8 | 5 | 6 | 8 | 1 |
 | Paldean Wonders | Paldean Wonders | B2a | 131 | 43 | 32 | 13 | 5 | 6 | 10 | 1 |
-| Paradox Drive | Paradox Drive | B3A | 109 | 32 | 25 | 12 | 5 | 16 | 8 | 5 |
-| Pulsing Aura | Pulsing Aura | B3 | 234 | 65 | 51 | 29 | 10 | 44 | 25 | 2 |
+| Paradox Drive | Paradox Drive | B3a | 109 | 32 | 25 | 12 | 5 | 6 | 8 | 1 |
+| Pulsing Aura | Pulsing Aura | B3 | 234 | 65 | 51 | 29 | 10 | 24 | 17 | 2 |
 | Secluded Springs | Secluded Springs | A4a | 105 | 32 | 23 | 11 | 5 | 6 | 8 | 1 |
 | Shining Revelry | Shining Revelry | A2b | 111 | 32 | 22 | 9 | 9 | 6 | 13 | 1 |
 | Dialga | Space-Time Smackdown | A2 | 126 | 46 | 34 | 14 | 5 | 12 | 8 | 1 |

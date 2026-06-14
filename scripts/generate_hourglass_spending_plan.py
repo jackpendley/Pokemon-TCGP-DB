@@ -25,17 +25,15 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import HOURGLASS_PER_PACK
+from _collection_io import (HOURGLASS_PER_PACK, ROOT as BASE, CURRENT_DIR,
+                            EXPORTS_DIR, PACK_EV_JSON, PULL_MODEL_JSON,
+                            COLLECTION_NORMALIZED_JSON)
 
-BASE = Path(__file__).resolve().parent.parent
-PACK_EV_JSON = BASE / "data/current/pack_ev.json"
-RECOMMENDATIONS_JSON = BASE / "data/current/inferred_pack_recommendations.json"
-PULL_MODEL_JSON = BASE / "data/reference/pull_probability_model.json"
-COLLECTION_NORMALIZED_JSON = BASE / "data/current/collection_normalized.json"
+RECOMMENDATIONS_JSON = CURRENT_DIR / "inferred_pack_recommendations.json"
 
-OUT_JSON = BASE / "data/current/final_hourglass_spending_plan.json"
+OUT_JSON = CURRENT_DIR / "final_hourglass_spending_plan.json"
 OUT_MD = BASE / "review/final_hourglass_spending_plan.md"
-OUT_CSV = BASE / "data/exports/final_hourglass_spending_plan.csv"
+OUT_CSV = EXPORTS_DIR / "final_hourglass_spending_plan.csv"
 
 BATCH_SIZE = 10
 # HOURGLASS_PER_PACK imported from _collection_io

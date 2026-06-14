@@ -14,9 +14,11 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import VALID_SET_CODES, RARE_PLUS_RARITIES, norm_card_name, MULTI_PACK_SETS
+from _collection_io import (VALID_SET_CODES, RARE_PLUS_RARITIES, norm_card_name,
+                            MULTI_PACK_SETS, ROOT, REFERENCE_DIR, SOURCES_DIR,
+                            PACK_SOURCES_JSON)
 
-TCGDEX_SNAPSHOTS = Path(__file__).resolve().parent.parent / "data" / "reference" / "sources" / "tcgdex"
+TCGDEX_SNAPSHOTS = SOURCES_DIR / "tcgdex"
 
 try:
     import jsonschema
@@ -24,9 +26,7 @@ try:
 except ImportError:
     _JSONSCHEMA_AVAILABLE = False
 
-ROOT = Path(__file__).resolve().parent.parent
-PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
-PACK_SOURCES_SCHEMA = ROOT / "data" / "reference" / "pack_sources.schema.json"
+PACK_SOURCES_SCHEMA = REFERENCE_DIR / "pack_sources.schema.json"
 
 VALID_RARITIES = RARE_PLUS_RARITIES | {
     "common", "uncommon", "rare", "double_rare", "promo", None,

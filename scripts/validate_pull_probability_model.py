@@ -8,9 +8,11 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-MODEL_JSON  = ROOT / "data" / "reference" / "pull_probability_model.json"
-SCHEMA_JSON = ROOT / "data" / "reference" / "pull_probability_model.schema.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import (ROOT, REFERENCE_DIR,
+                            PULL_MODEL_JSON as MODEL_JSON)
+
+SCHEMA_JSON = REFERENCE_DIR / "pull_probability_model.schema.json"
 
 try:
     import jsonschema

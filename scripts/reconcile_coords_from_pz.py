@@ -32,14 +32,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import sync_collection as sc
-from _collection_io import strip_comments, norm_card_name
+from _collection_io import (strip_comments, norm_card_name, ROOT,
+                            COLLECTION_JSON, CARD_REF_JSON,
+                            REPRINT_LINKS_JSON as REPRINT_LINKS)
 from coord_resolver import CoordResolver
 
-ROOT = Path(__file__).resolve().parent.parent
-COLLECTION_JSON = ROOT / "collection.json"
 LAST_SYNC_RAW   = ROOT / "data" / "sync" / "last_sync_raw.json"
-REPRINT_LINKS   = ROOT / "data" / "reference" / "reprint_links.json"
-CARD_REF_JSON   = ROOT / "data" / "reference" / "card_reference.json"
 
 _BASE_RARITIES = {"common", "uncommon", "rare", "double_rare"}
 
