@@ -368,6 +368,44 @@ def test_consecutive_missing_counter():
 
 
 # ---------------------------------------------------------------------------
+# Scenario 11: a corrupt review queue is recovered, not fatal
+# ---------------------------------------------------------------------------
+def test_corrupt_review_queue_recovers():
+    print("\n--- 11. corrupt review queue recovery ---")
+    import io
+    import contextlib
+
+    with tempfile.TemporaryDirectory() as tmp:
+        queue_path = Path(tmp) / "sync_review_queue.json"
+        queue_path.write_text("{ this is not valid json ", encoding="utf-8")
+
+        orig_review_queue = sc.REVIEW_QUEUE
+        sc.REVIEW_QUEUE = queue_path
+        try:
+            # load_review_queue must not raise; warns and falls back to resolved.
+            err = io.StringIO()
+            with contextlib.redirect_stderr(err):
+                q = sc.load_review_queue()
+            check("load_review_queue falls back to resolved", q.get("resolved") is True, str(q))
+            check("load_review_queue warns on corrupt file", "WARN" in err.getvalue(),
+                  err.getvalue().strip())
+
+            # write_review_queue must complete despite the corrupt prior file,
+            # resetting consecutive_missing to 1 (history unreadable).
+            err = io.StringIO()
+            with contextlib.redirect_stderr(err):
+                write_review_queue([], [{"name": "Misdreavus", "count": 2}])
+            q = json.loads(queue_path.read_text())
+            missing = q["missing_from_pz"][0]
+            check("write_review_queue recovers, consecutive=1",
+                  missing["consecutive_missing"] == 1, str(missing["consecutive_missing"]))
+            check("write_review_queue warns on corrupt prior", "WARN" in err.getvalue(),
+                  err.getvalue().strip())
+        finally:
+            sc.REVIEW_QUEUE = orig_review_queue
+
+
+# ---------------------------------------------------------------------------
 # Run all scenarios
 # ---------------------------------------------------------------------------
 
@@ -386,6 +424,7 @@ if __name__ == "__main__":
     test_pass3_rarity_assignment()
     test_ambiguous_force_match()
     test_consecutive_missing_counter()
+    test_corrupt_review_queue_recovers()
 
     print()
     if _failures:
@@ -394,5 +433,5 @@ if __name__ == "__main__":
             print(f"  - {f}")
         sys.exit(1)
     else:
-        print(f"ALL PASSED — {10 - len(_failures)} / 10 scenarios")
+        print(f"ALL PASSED — {11 - len(_failures)} / 11 scenarios")
         sys.exit(0)

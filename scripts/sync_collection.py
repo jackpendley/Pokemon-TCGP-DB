@@ -941,9 +941,9 @@ def write_review_queue(
                 name = entry.get("name")
                 if name:
                     prev_consecutive[name] = entry.get("consecutive_missing", 0)
-        except Exception:
+        except (json.JSONDecodeError, OSError) as e:
             print(
-                "  WARN: could not read previous sync_review_queue.json — "
+                f"  WARN: could not read previous sync_review_queue.json ({e}) — "
                 "consecutive_missing counts reset to 1.",
                 file=sys.stderr,
             )
@@ -980,7 +980,9 @@ def load_review_queue() -> dict:
         return {"resolved": True}
     try:
         return json.loads(REVIEW_QUEUE.read_text(encoding="utf-8"))
-    except Exception:
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"  WARN: could not read sync_review_queue.json ({e}) — "
+              "treating as resolved.", file=sys.stderr)
         return {"resolved": True}
 
 
@@ -1567,8 +1569,10 @@ def main() -> int:
                 name = entry.get("name")
                 if name:
                     prev_consecutive[name] = entry.get("consecutive_missing", 0)
-        except Exception:
-            pass
+        except (json.JSONDecodeError, OSError) as e:
+            print(f"  WARN: could not read sync_review_queue.json for stale-detection "
+                  f"({e}) — consecutive_missing history unavailable this sync.",
+                  file=sys.stderr)
 
     stale_base_indices: set[int] = set()
     alt_art_nns: set[str] = set()

@@ -34,7 +34,6 @@ Exit codes:
 
 import argparse
 import json
-import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -43,7 +42,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (norm_card_name, normalize_rarity, canonical_set_code,
                             ext_ref_by_coord, ROOT, SOURCES_DIR, REFERENCE_DIR,
                             PACK_SOURCES_JSON as PACK_SOURCES,
-                            CARD_REF_JSON as OUT_JSON, EXT_REF_JSON)
+                            CARD_REF_JSON as OUT_JSON, EXT_REF_JSON,
+                            FORME_RE as _FORME_RE, name_agrees as _name_agrees)
 
 SCHEMA_JSON   = REFERENCE_DIR / "card_reference.schema.json"
 SIR_JSON      = REFERENCE_DIR / "special_illustration_rares.json"
@@ -100,15 +100,6 @@ def load_sir_coords() -> set[tuple[str, int]]:
             coords.add((sc, int(cn)))
     return coords
 
-# Forme-qualifier stripping for name comparison (port of coord_resolver._FORME_RE).
-# Forme qualifiers (e.g. "10% Forme", "Sunny Form") are omitted by some sources but
-# included in pack_sources; the card_number still distinguishes them, so a source
-# returning just "Zygarde" is treated as agreeing with "Zygarde 10% Forme".
-_FORME_RE = re.compile(
-    r"\s+(?:\d+%\s+)?(?:complete\s+|sunny\s+|rainy\s+|snowy\s+|normal\s+)?forme?$",
-    re.I,
-)
-
 # Sources considered independent (not derived from Limitless).
 INDEPENDENT_SOURCES = ("tcgdex", "serebii", "bulbapedia")
 
@@ -119,15 +110,6 @@ INDEPENDENT_SOURCES = ("tcgdex", "serebii", "bulbapedia")
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-
-def _name_agrees(a: str, b: str) -> bool:
-    """True if a and b refer to the same card after normalization + forme-stripping."""
-    if norm_card_name(a) == norm_card_name(b):
-        return True
-    sa = _FORME_RE.sub("", str(a)).strip()
-    sb = _FORME_RE.sub("", str(b)).strip()
-    return norm_card_name(sa) == norm_card_name(sb)
 
 
 def _load_snapshot(source: str, set_code: str) -> dict:

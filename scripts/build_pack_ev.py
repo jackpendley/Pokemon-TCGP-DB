@@ -41,6 +41,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (RARE_PLUS_RARITIES, HOURGLASS_PER_PACK,
                             norm_card_name as _norm_name, normalize_rarity,
+                            load_collection_counts,
                             ROOT, COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
                             PULL_MODEL_JSON, PACK_SOURCES_JSON, PZ_PACK_ODDS_JSON,
                             DECK_VALIDATION_JSON, PACK_EV_JSON as OUT_JSON)
@@ -126,30 +127,6 @@ def hash_input_paths() -> tuple[Path, ...]:
     code = (Path(__file__).resolve(), Path(__file__).resolve().parent / "_collection_io.py")
     return (COLLECTION_JSON, PULL_MODEL_JSON, PACK_SOURCES_JSON,
             DECK_VALIDATION_JSON, PZ_PACK_ODDS_JSON, *code)
-
-
-def load_collection(path: Path) -> tuple[dict, dict]:
-    """
-    Returns (by_name, by_card):
-      by_name: {normalized_name: total_count}  — name-based fallback for all entries
-      by_card: {(set_code_upper, card_number): count}  — set-specific for entries that
-               carry set_code (added by sync for new cards from B3A onwards)
-    """
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    by_name: dict[str, int] = {}
-    by_card: dict[tuple[str, int], int] = {}
-    for e in raw.get("collection", []):
-        nn = _norm_name(e["name"])
-        by_name[nn] = by_name.get(nn, 0) + e["count"]
-        sc = str(e.get("set_code") or "").upper().strip()
-        cn_raw = e.get("card_number")
-        if sc and cn_raw is not None:
-            try:
-                cn = int(cn_raw)
-                by_card[(sc, cn)] = by_card.get((sc, cn), 0) + e["count"]
-            except (TypeError, ValueError):
-                pass
-    return by_name, by_card
 
 
 def load_pull_model(path: Path) -> dict:
@@ -499,15 +476,17 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     dr_ratio = new_card_ev_10x / ev_10x_uncapped if ev_10x_uncapped > 0 else 1.0
 
     # Unified score: single composite signal used for all downstream recommendations.
-    # TODO(deck-ev): deck_target_ev is currently ALWAYS 0 — its source file
-    # (deck_recommendation_validation.json) has no producer in the pipeline (see load at
-    # DECK_VALIDATION_JSON). So the deck_target term is inert today; do not read the ×1.5
-    # weight as a live signal until a deck producer is wired up.
+    # The deck_target term is only included when a deck producer has supplied targets.
+    # Its source file (deck_recommendation_validation.json) has no producer in the pipeline
+    # today, so deck_targets is empty and the ×1.5 term is omitted rather than silently
+    # contributing 0 — keeping the formula honest about what is actually live.
     unified_score = (
         new_card_ev_10x * UNIFIED_WEIGHTS["new_card_10x"]
         + copy_ev        * UNIFIED_WEIGHTS["copy"]
-        + deck_target_ev * UNIFIED_WEIGHTS["deck_target"]
-    ) * confidence_weight
+    )
+    if deck_targets:
+        unified_score += deck_target_ev * UNIFIED_WEIGHTS["deck_target"]
+    unified_score *= confidence_weight
 
     # Cost efficiency: hourglasses per expected unique new card
     cost_per_unique_1x  = HOURGLASS_PER_PACK / max(new_card_ev, 0.001)
@@ -874,7 +853,7 @@ def main():
         except Exception:
             pass  # corrupted prior output — recompute
 
-    collection, collection_by_card = load_collection(COLLECTION_JSON)
+    collection, collection_by_card = load_collection_counts(COLLECTION_JSON)
     pull_model       = load_pull_model(PULL_MODEL_JSON)
     pack_cards, expansion_shared = load_pack_sources(PACK_SOURCES_JSON)
     deck_targets     = load_deck_targets(DECK_VALIDATION_JSON)

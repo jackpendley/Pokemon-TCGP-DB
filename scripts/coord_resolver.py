@@ -39,7 +39,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (normalize_rarity, norm_card_name as _norm,
                             is_cache_fresh as _fresh, ROOT, REFERENCE_DIR,
                             PACK_SOURCES_JSON, CARD_REF_JSON,
-                            TCGDEX_CACHE_JSON as TCGDEX_CACHE)
+                            TCGDEX_CACHE_JSON as TCGDEX_CACHE,
+                            name_agrees as _name_agrees)
 
 LIMITLESS_CACHE   = REFERENCE_DIR / "limitless_name_cache.json"
 
@@ -67,20 +68,6 @@ _EXT_SET_ALIAS = {"PROMO-A": "P-A", "PROMO-B": "P-B"}
 
 def _ext_set(s: str) -> str:
     return _EXT_SET_ALIAS.get(s, s)
-
-
-# Forme qualifiers some sources include and others omit (e.g. Limitless titles both
-# "Zygarde 10% Forme" and "Zygarde 50% Forme" simply "Zygarde"). Stripped only for the
-# independent NAME-confirmation comparison — the card_number still distinguishes formes,
-# and " ex" is intentionally NOT stripped (base vs ex are genuinely different cards).
-_FORME_RE = re.compile(r"\s+(?:\d+%\s+)?(?:complete\s+|sunny\s+|rainy\s+|snowy\s+|normal\s+)?forme?$", re.I)
-
-
-def _name_agrees(a: str, b: str) -> bool:
-    if _norm(a) == _norm(b):
-        return True
-    sa, sb = _FORME_RE.sub("", str(a)), _FORME_RE.sub("", str(b))
-    return _norm(sa) == _norm(sb)
 
 
 @dataclass
