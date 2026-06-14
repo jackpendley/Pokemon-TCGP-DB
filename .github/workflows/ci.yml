@@ -30,10 +30,9 @@ jobs:
         run: pip install pytest jsonschema rapidfuzz beautifulsoup4 lxml requests
 
       - name: Test suite (pytest)
-        run: python -m pytest tests/ scripts/test_sync_matching.py -q
-
-      - name: New-card / alt-art harness
-        run: python scripts/test_new_card_additions.py
+        # Includes the sync-matching and new-card/alt-art harnesses, which now
+        # live in tests/ and are collected like any other module.
+        run: python -m pytest tests/ -q
 
       - name: Reference-data integrity (schemas + ranges)
         run: |

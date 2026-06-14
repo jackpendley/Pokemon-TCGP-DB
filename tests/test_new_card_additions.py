@@ -39,7 +39,8 @@ Scenarios:
  31.  Phase 4c Case A — pre-existing MATCHED alt-art triggers Case A for missing base
 
 Usage:
-    python3 scripts/test_new_card_additions.py
+    python3 -m pytest tests/test_new_card_additions.py
+    python3 tests/test_new_card_additions.py
 """
 
 import importlib.util
@@ -73,32 +74,12 @@ _PROMO_B_OVERRIDES = sc._PROMO_B_OVERRIDES
 _ALT_RARITIES = sc.RARE_PLUS_RARITIES
 
 # ---------------------------------------------------------------------------
-# Load real reference data
+# Load real reference data — via the production loaders, so the tests exercise
+# the exact parsing the sync pipeline uses (no private copies to drift).
 # ---------------------------------------------------------------------------
 
-def _load_pack_sources():
-    raw = json.loads((ROOT / "data/reference/pack_sources.json").read_text())
-    records = raw.get("records", raw) if isinstance(raw, dict) else raw
-    result = {}
-    for r in records:
-        sc_code = str(r.get("set_code", "")).upper().strip()
-        try:
-            cn = int(r["card_number"])
-        except (KeyError, ValueError, TypeError):
-            continue
-        result[(sc_code, cn)] = r
-    return result
-
-def _load_ext_ref():
-    records = json.loads((ROOT / "data/reference/external/external_card_reference.json").read_text())
-    result = {}
-    for r in records:
-        nn = _normalize(r.get("normalized_name") or r.get("name", ""))
-        result.setdefault(nn, []).append(r)
-    return result
-
-PACK_SOURCES = _load_pack_sources()
-EXT_REF      = _load_ext_ref()
+PACK_SOURCES = sc.load_pack_sources()
+EXT_REF      = sc.load_ext_ref()
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -116,6 +97,8 @@ def check(name: str, cond: bool, detail: str = "") -> None:
         msg = f"{name}" + (f": {detail}" if detail else "")
         print(f"{FAIL}  {msg}")
         _failures.append(msg)
+        # Raise so pytest registers a real failure (script mode exits 1 via main).
+        assert cond, msg
 
 
 def pz(raw_name, count=1, set_code=None, card_number=None) -> PZCard:

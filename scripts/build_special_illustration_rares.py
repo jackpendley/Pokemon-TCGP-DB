@@ -32,11 +32,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import normalize_rarity, canonical_set_code
+from _collection_io import (normalize_rarity, canonical_set_code,
+                            ROOT, SOURCES_DIR, REFERENCE_DIR)
 
-ROOT        = Path(__file__).resolve().parent.parent
-SOURCES_DIR = ROOT / "data" / "reference" / "sources"
-OUT_JSON    = ROOT / "data" / "reference" / "special_illustration_rares.json"
+OUT_JSON    = REFERENCE_DIR / "special_illustration_rares.json"
 
 GAME8_URL = "https://game8.co/games/Pokemon-TCG-Pocket/archives/483152"
 _UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"

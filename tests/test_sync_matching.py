@@ -15,7 +15,8 @@ Tests every reliability-critical scenario:
  10. consecutive_missing counter increments correctly from 0
 
 Usage:
-    python3 scripts/test_sync_matching.py
+    python3 -m pytest tests/test_sync_matching.py
+    python3 tests/test_sync_matching.py
 """
 
 import importlib.util
@@ -61,6 +62,8 @@ def check(name: str, cond: bool, detail: str = "") -> None:
         msg = f"{name}" + (f": {detail}" if detail else "")
         print(f"{FAIL}  {msg}")
         _failures.append(msg)
+        # Raise so pytest registers a real failure (script mode exits 1 via main).
+        assert cond, msg
 
 
 def make_pz(raw_name, count=1, set_code=None, card_number=None) -> PZCard:

@@ -42,17 +42,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import TRAINER_CATEGORIES, is_ex_from_name, RARITY_SYMBOLS, field_slug as _normalize
+from _collection_io import (TRAINER_CATEGORIES, is_ex_from_name, RARITY_SYMBOLS,
+                            field_slug as _normalize, ROOT,
+                            EXT_REF_JSON as EXT_REF,
+                            PACK_SOURCES_JSON as PACK_SOURCES)
 
 try:
     from bs4 import BeautifulSoup
 except ImportError:
     print("ERROR: beautifulsoup4 required. Install: python3 -m pip install beautifulsoup4 lxml")
     sys.exit(1)
-
-ROOT        = Path(__file__).resolve().parent.parent
-EXT_REF     = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
-PACK_SOURCES = ROOT / "data" / "reference" / "pack_sources.json"
 
 _BASE_URL = "https://pocket.limitlesstcg.com/cards"
 

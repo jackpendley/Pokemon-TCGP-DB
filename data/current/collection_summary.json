@@ -1,40 +1,40 @@
 {
   "meta": {
-    "total_cards": 1240,
-    "last_updated": "2026-06-12",
+    "total_cards": 1256,
+    "last_updated": "2026-06-13",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 1240,
-  "meta_total_cards": 1240,
+  "total_quantity": 1256,
+  "meta_total_cards": 1256,
   "count_matches_meta": true,
-  "unique_entries": 584,
+  "unique_entries": 600,
   "by_card_type": {
-    "Pokemon": 1137,
-    "Trainer": 103
+    "Pokemon": 1150,
+    "Trainer": 106
   },
   "by_pokemon_type": {
-    "Fire": 97,
+    "Fire": 98,
     "Grass": 138,
-    "Water": 159,
-    "Lightning": 99,
-    "Psychic": 110,
-    "Fighting": 164,
+    "Water": 162,
+    "Lightning": 101,
+    "Psychic": 112,
+    "Fighting": 165,
     "Darkness": 113,
-    "Metal": 60,
+    "Metal": 61,
     "Dragon": 22,
-    "Colorless": 175
+    "Colorless": 178
   },
   "by_stage": {
-    "Basic": 753,
-    "Stage 1": 316,
+    "Basic": 762,
+    "Stage 1": 320,
     "Stage 2": 68
   },
-  "ex_entries": 32,
-  "ex_quantity": 39,
+  "ex_entries": 33,
+  "ex_quantity": 40,
   "trainer_subtypes": {
-    "Item": 37,
+    "Item": 38,
     "Pokemon Tool": 9,
-    "Supporter": 46,
+    "Supporter": 48,
     "Stadium": 11
   },
   "top_cards_by_count": [
@@ -124,12 +124,13 @@
     "Pikachu": 2,
     "Toxel": 2,
     "Meloetta": 3,
+    "Mismagius": 2,
     "Misdreavus": 2,
     "Ralts": 2,
     "Oricorio": 2,
     "Bramblin": 2,
     "Kirlia": 2,
-    "Sandslash": 2,
+    "Sandslash": 3,
     "Mienfoo": 2,
     "Mienshao": 2,
     "Riolu": 2,
@@ -158,6 +159,7 @@
     "Eevee": 2,
     "Jigglypuff": 2,
     "Farfetch'd": 2,
+    "Pidgeotto": 2,
     "Tandemaus": 2,
     "Quick-Grow Extract": 2,
     "Rare Candy": 2,
@@ -171,10 +173,12 @@
     "Orthworm": 2,
     "Flamigo": 2,
     "Tinkatink": 2,
+    "Ludicolo": 2,
     "Swablu": 2,
     "Slowpoke": 2,
     "Toxapex": 2,
     "Zekrom": 2,
+    "Dunsparce": 2,
     "Juliana": 2,
     "Snom": 2,
     "Houndstone": 2,
@@ -183,6 +187,7 @@
     "Hawlucha": 2,
     "Haxorus": 2,
     "Delibird": 2,
+    "Chatot": 2,
     "Miltank": 2,
     "Oddish": 2
   },
@@ -605,7 +610,8 @@
       "Mega Gengar ex",
       "Mega Absol ex",
       "Flygon ex",
-      "Zoroark ex"
+      "Zoroark ex",
+      "Rapidash ex"
     ],
     "strong_evolution_lines": [
       "Charmander → Charmeleon → Charizard",
@@ -640,6 +646,6 @@
       "Rattata → Raticate"
     ],
     "partial_evolution_lines": [],
-    "total_trainer_cards": 103
+    "total_trainer_cards": 106
   }
 }

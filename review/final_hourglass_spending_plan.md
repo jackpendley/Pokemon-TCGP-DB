@@ -1,8 +1,8 @@
 # Final Hourglass Spending Plan
 
-Generated: 2026-06-12  
-Model confidence: **USER IN APP VERIFIED**  
-Collection total: 1240 cards  
+Generated: 2026-06-13  
+Model confidence: **THIRD PARTY VERIFIED WITH IN APP ANCHOR**  
+Collection total: 1256 cards  
 Batch size: 10 packs (120 ⧗ per batch)  
 
 > **DISCLAIMER**
@@ -18,12 +18,12 @@ Batch size: 10 packs (120 ⧗ per batch)
 - Total batches: 3
 - Total hourglasses: 360 ⧗
 - Rerun EV after batch(es): [1, 2, 3]
-- Stopping condition: Stop any batch when cost_per_unique_card_10x exceeds 3.9⧗ (2× batch-1 baseline of 2.0⧗). Re-run EV before committing further.
+- Stopping condition: Stop any batch when cost_per_unique_card_10x exceeds 4.0⧗ (2× batch-1 baseline of 2.0⧗). Re-run EV before committing further.
 
 | # | Pack | Set | ⧗ Cost | Unified | 10x EV | ⧗/EV | DR Ratio | Missing | Near-Complete | Rerun? |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **Ho-Oh** | A4 | 120 ⧗ | 61.1274 | 61.1144 | 2.0 | 0.839 | 133 | YES | YES |
-| 2 | **Lugia** | A4 | 120 ⧗ | 60.3144 | 60.2815 | 2.0 | 0.844 | 129 | YES | YES |
+| 1 | **Ho-Oh** | A4 | 120 ⧗ | 60.6185 | 60.5999 | 2.0 | 0.840 | 132 | YES | YES |
+| 2 | **Lugia** | A4 | 120 ⧗ | 59.2967 | 59.2526 | 2.0 | 0.846 | 127 | YES | YES |
 | 3 | **Secluded Springs** | A4a | 120 ⧗ | 58.6307 | 58.6307 | 2.0 | 0.792 | 105 | YES | YES |
 
 ---
@@ -34,23 +34,23 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 - **Pack:** Ho-Oh (Wisdom of Sea and Sky)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 61.1274
-- **New-card EV (10x):** 61.1144
+- **Unified score:** 60.6185
+- **New-card EV (10x):** 60.5999
 - **Cost per EV unit (⧗/EV):** 2.0 ⧗
-- **DR ratio:** 0.839 ← near-complete
-- **Missing in pool:** 133
-- **Notes:** Open first batch from the top unified-score pack. WARNING: DR ratio=0.839 < 0.85 — this pool is near-complete; switch to #2 after this batch.
+- **DR ratio:** 0.840 ← near-complete
+- **Missing in pool:** 132
+- **Notes:** Open first batch from the top unified-score pack. WARNING: DR ratio=0.840 < 0.85 — this pool is near-complete; switch to #2 after this batch.
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 
 #### Batch 2 — Lugia (A4)
 
 - **Pack:** Lugia (Wisdom of Sea and Sky)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 60.3144
-- **New-card EV (10x):** 60.2815
+- **Unified score:** 59.2967
+- **New-card EV (10x):** 59.2526
 - **Cost per EV unit (⧗/EV):** 2.0 ⧗
-- **DR ratio:** 0.844 ← near-complete
-- **Missing in pool:** 129
+- **DR ratio:** 0.846 ← near-complete
+- **Missing in pool:** 127
 - **Notes:** Switched to #2 pack (near-complete flag on batch 1).
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 

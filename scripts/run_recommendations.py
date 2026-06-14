@@ -31,12 +31,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import strip_comments, card_reference_freshness
+from _collection_io import (strip_comments, card_reference_freshness,
+                            ROOT, CARD_REF_JSON, SOURCES_DIR)
 
-ROOT = Path(__file__).resolve().parent.parent
 LOG_FILE = ROOT / "data" / "pipeline.log"
-CARD_REF_JSON = ROOT / "data" / "reference" / "card_reference.json"
-SOURCES_DIR   = ROOT / "data" / "reference" / "sources"
 
 PIPELINE_STEPS = [
     ("Build pack EV",        "scripts/build_pack_ev.py"),
@@ -44,9 +42,15 @@ PIPELINE_STEPS = [
     ("Spending plan",        "scripts/generate_hourglass_spending_plan.py"),
 ]
 
-_STATUS_PATTERNS: dict[str, tuple] = {
-    "Build pack EV":        (r"Packs scored:\s*(\d+)", lambda m: f"{m.group(1)} packs"),
-    "Build promo EV":       (r"Promo packs in PZ data:\s*(\d+)", lambda m: f"{m.group(1)} promo packs"),
+_STATUS_PATTERNS: dict[str, list[tuple]] = {
+    "Build pack EV": [
+        (r"Packs scored:\s*(\d+)", lambda m: f"{m.group(1)} packs"),
+        (r"skipping (?:EV )?recompute", lambda m: "cached (inputs unchanged)"),
+    ],
+    "Build promo EV": [
+        (r"Promo packs in PZ data:\s*(\d+)", lambda m: f"{m.group(1)} promo packs"),
+        (r"skipping (?:EV )?recompute", lambda m: "cached (inputs unchanged)"),
+    ],
 }
 
 
@@ -60,12 +64,16 @@ def _append_log(label: str, output: str) -> None:
 
 
 def _extract_status(label: str, stdout: str) -> str:
-    entry = _STATUS_PATTERNS.get(label)
-    if not entry:
+    entries = _STATUS_PATTERNS.get(label)
+    if not entries:
         return "OK"
-    pattern, fmt = entry
-    m = re.search(pattern, stdout)
-    return fmt(m) if m else "OK"
+    for pattern, fmt in entries:
+        m = re.search(pattern, stdout)
+        if m:
+            return fmt(m)
+    # A pattern is registered but nothing matched: the stage's output format
+    # drifted. Don't pretend it parsed — surface it so the regex gets updated.
+    return "OK (summary not parsed — see data/pipeline.log)"
 
 
 def _run(label: str, script: str, extra_args: list[str] | None = None) -> tuple[int, str]:
@@ -335,15 +343,27 @@ def main() -> int:
         # sync is skipped (a stale raw snapshot must not overwrite newer edits).
         rc, stdout = _run("Reconcile coords", "scripts/reconcile_coords_from_pz.py",
                           ["--apply", "--no-fetch"])
+        # Reconcile recomputes per-coord counts from the raw PZ snapshot and is the
+        # authoritative count. Surface its total so a sync/reconcile discrepancy (the
+        # dual-location over-count class) is visible in the status, not buried.
+        m_tot = re.search(r"total count:\s*(\d+)\s*\(PZ total:\s*(\d+)\)", stdout)
         if rc != 0:
-            _print_step("Reconcile coords", rc, "WARN — not applied; see data/pipeline.log")
+            if m_tot and m_tot.group(1) != m_tot.group(2):
+                # Collection total can't be reconciled with Pokémon Zone — a real
+                # count-integrity failure, not a benign dup/unconfirmed-coord abort.
+                _print_step("Reconcile coords", rc,
+                            f"COUNT MISMATCH — collection {m_tot.group(1)} vs PZ "
+                            f"{m_tot.group(2)}; not applied (see data/pipeline.log)")
+            else:
+                _print_step("Reconcile coords", rc, "WARN — not applied; see data/pipeline.log")
         else:
+            tot = f", total={m_tot.group(1)}" if m_tot else ""
             m = re.search(r"re-coorded: (\d+)\s+split: (\d+)", stdout)
             if m and (m.group(1) != "0" or m.group(2) != "0"):
                 _print_step("Reconcile coords", 0,
-                            f"re-coorded {m.group(1)}, split {m.group(2)}")
+                            f"re-coorded {m.group(1)}, split {m.group(2)}{tot}")
             else:
-                _print_step("Reconcile coords", 0, "OK")
+                _print_step("Reconcile coords", 0, f"OK{tot}")
     else:
         print(f"  -  {'Sync collection':<22}  skipped")
         _rq = ROOT / "data" / "sync" / "sync_review_queue.json"

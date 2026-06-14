@@ -23,12 +23,10 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import norm_card_name, normalize_rarity, RARE_PLUS_RARITIES
-
-ROOT = Path(__file__).resolve().parent.parent
-LINKS_JSON = ROOT / "data" / "reference" / "reprint_links.json"
-CARD_REF_JSON = ROOT / "data" / "reference" / "card_reference.json"
-COLLECTION_JSON = ROOT / "data" / "current" / "collection_normalized.json"
+from _collection_io import (norm_card_name, normalize_rarity, RARE_PLUS_RARITIES,
+                            ROOT, CARD_REF_JSON,
+                            REPRINT_LINKS_JSON as LINKS_JSON,
+                            COLLECTION_NORMALIZED_JSON as COLLECTION_JSON)
 
 ORIGINAL_SETS = {"A1", "A2", "A3", "A4"}
 

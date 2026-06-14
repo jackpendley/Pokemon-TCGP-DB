@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 1240,
-    "last_updated": "2026-06-12",
+    "total_cards": 1256,
+    "last_updated": "2026-06-13",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -1011,7 +1011,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Water Gun 20",
-      "count": 1,
+      "count": 2,
       "set_code": "B1",
       "card_number": 68,
       "rarity": "common"
@@ -1367,6 +1367,18 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Stored Power 60",
+      "count": 1,
+      "set_code": "B1",
+      "card_number": 100,
+      "rarity": "uncommon"
+    },
+    {
+      "name": "Mismagius",
+      "type": "Psychic",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Stored Power 60",
       "count": 2,
       "set_code": "B1a",
       "card_number": 31,
@@ -1687,6 +1699,18 @@
       "card_type": "Pokemon",
       "attack": "Slash 70",
       "count": 1,
+      "set_code": "B1",
+      "card_number": 123,
+      "rarity": "uncommon"
+    },
+    {
+      "name": "Sandslash",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Slash 70",
+      "count": 1,
       "set_code": "B2",
       "card_number": 78,
       "rarity": "common"
@@ -1710,7 +1734,7 @@
       "hp": 150,
       "card_type": "Pokemon",
       "attack": "Knocking Hammer 80",
-      "count": 4,
+      "count": 3,
       "set_code": "B2",
       "card_number": 81,
       "rarity": "uncommon"
@@ -3261,6 +3285,17 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 274,
+      "rarity": "common"
+    },
+    {
+      "name": "Pidgeotto",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "count": 1,
+      "set_code": "B1",
+      "card_number": 181,
       "rarity": "common"
     },
     {
@@ -5100,6 +5135,18 @@
     },
     {
       "name": "Dunsparce",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "set_code": "A4",
+      "card_number": 144,
+      "rarity": "common",
+      "type": "Colorless",
+      "hp": 50
+    },
+    {
+      "name": "Dunsparce",
       "count": 3,
       "card_type": "Pokemon",
       "stage": 0,
@@ -5965,6 +6012,18 @@
       "set_code": "B2",
       "card_number": 32,
       "type": "Water"
+    },
+    {
+      "name": "Chatot",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 198
     },
     {
       "name": "Chatot",
@@ -6891,6 +6950,130 @@
       "rarity": "uncommon",
       "set_code": "B2",
       "card_number": 152
+    },
+    {
+      "name": "Mareep",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "A4",
+      "card_number": 67,
+      "type": "Lightning"
+    },
+    {
+      "name": "Rapidash ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fire",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 150,
+      "rarity": "double_rare",
+      "set_code": "B1",
+      "card_number": 31
+    },
+    {
+      "name": "Bergmite",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 74
+    },
+    {
+      "name": "Blitzle",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 90
+    },
+    {
+      "name": "Carbink",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 119
+    },
+    {
+      "name": "Sudowoodo",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 90,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 125
+    },
+    {
+      "name": "Durant",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 80,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 168
+    },
+    {
+      "name": "Ludicolo",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 140,
+      "rarity": "illustration_rare",
+      "set_code": "B1",
+      "card_number": 233,
+      "variant": "alt art"
+    },
+    {
+      "name": "Plume Fossil",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 214
+    },
+    {
+      "name": "Hala",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 222
+    },
+    {
+      "name": "Fantina",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 224
     }
   ]
 }

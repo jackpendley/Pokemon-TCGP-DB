@@ -39,19 +39,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import RARE_PLUS_RARITIES, HOURGLASS_PER_PACK, norm_card_name as _norm_name, normalize_rarity
+from _collection_io import (RARE_PLUS_RARITIES, HOURGLASS_PER_PACK,
+                            norm_card_name as _norm_name, normalize_rarity,
+                            ROOT, COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
+                            PULL_MODEL_JSON, PACK_SOURCES_JSON, PZ_PACK_ODDS_JSON,
+                            DECK_VALIDATION_JSON, PACK_EV_JSON as OUT_JSON)
 
-ROOT = Path(__file__).resolve().parent.parent
-COLLECTION_JSON     = ROOT / "data" / "current"    / "collection_normalized.json"
-PULL_MODEL_JSON     = ROOT / "data" / "reference"  / "pull_probability_model.json"
-PACK_SOURCES_JSON   = ROOT / "data" / "reference"  / "pack_sources.json"
-# TODO(deck-ev): deck_recommendation_validation.json is read here but never written by any
+# TODO(deck-ev): DECK_VALIDATION_JSON is read here but never written by any
 # pipeline script — deck_target_ev is always 0 at runtime. When deck logic lands, wire up a
 # producer for this file and switch the owned-count basis to name-level (decks mix sets).
-DECK_VALIDATION_JSON = ROOT / "data" / "exports"   / "deck_recommendation_validation.json"
-PZ_PACK_ODDS_JSON   = ROOT / "data" / "reference"  / "pz_pack_odds.json"
-
-OUT_JSON = ROOT / "data" / "current"  / "pack_ev.json"
 
 # ---------------------------------------------------------------------------
 # Scoring weights
@@ -268,9 +264,13 @@ def card_pull_ev(rarity: str, combined_by_rarity: dict, slot_rates: dict) -> flo
         return 0.0
 
     P_regular  = slot_rates.get("regular_pack_probability", 0.9995)
-    P_plus_one = slot_rates.get("regular_pack_plus_one_probability") or 0.0
+    # Distinguish a missing/null plus-one probability (drifted model — warn) from a
+    # legitimate explicit 0.0 (a three-branch pack whose plus-one branch never fires).
+    P_plus_one = slot_rates.get("regular_pack_plus_one_probability")
+    _plus_one_missing = P_plus_one is None
+    P_plus_one = 0.0 if _plus_one_missing else P_plus_one
     P_rare     = slot_rates.get("rare_pack_probability", 0.0005)
-    if slot_rates.get("branch_model") == "three_branch" and P_plus_one == 0.0:
+    if slot_rates.get("branch_model") == "three_branch" and _plus_one_missing:
         print(
             f"  WARNING: three_branch pack has plus_one_probability=null — "
             f"treating as two_branch. Add regular_pack_plus_one_probability to pull_probability_model.json.",

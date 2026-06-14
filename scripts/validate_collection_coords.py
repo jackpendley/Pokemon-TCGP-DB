@@ -35,18 +35,16 @@ from pathlib import Path
 from collections import defaultdict, Counter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import (strip_comments, ext_ref_by_coord,
+from _collection_io import (ext_ref_by_coord, load_collection_json,
                             norm_card_name as norm_name, is_cache_fresh as _is_cache_fresh,
                             pack_sources_by_coord as _ps_by_coord,
-                            card_reference_by_coord as _card_ref_by_coord)
+                            card_reference_by_coord as _card_ref_by_coord,
+                            ROOT, COLLECTION_JSON as COLLECTION,
+                            PACK_SOURCES_JSON as PACK_SOURCES,
+                            CARD_REF_JSON as CARD_REF,
+                            EXT_REF_JSON as EXT_REF,
+                            TCGDEX_CACHE_JSON as TCGDEX_CACHE)
 from coord_resolver import _name_agrees
-
-ROOT           = Path(__file__).resolve().parent.parent
-COLLECTION     = ROOT / "collection.json"
-PACK_SOURCES   = ROOT / "data" / "reference" / "pack_sources.json"
-CARD_REF       = ROOT / "data" / "reference" / "card_reference.json"
-EXT_REF        = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
-TCGDEX_CACHE   = ROOT / "data" / "reference" / "tcgdex_card_cache.json"
 
 TCGDEX_BASE    = "https://api.tcgdex.net/v2/en"
 REQUEST_DELAY  = 0.35   # seconds between API calls
@@ -58,8 +56,7 @@ REQUEST_TIMEOUT = 12
 # ---------------------------------------------------------------------------
 
 def load_collection() -> list[dict]:
-    raw = COLLECTION.read_text(encoding="utf-8")
-    return json.loads(strip_comments(raw))["collection"]
+    return load_collection_json(COLLECTION)[1]["collection"]
 
 
 def load_card_reference() -> dict[tuple[str, int], dict]:

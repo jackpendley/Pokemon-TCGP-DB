@@ -47,16 +47,14 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from _collection_io import (  # noqa: E402 (after sys.path insert)
     RARITIES as RARITY_FIELDS, normalize_rarity, card_reference_by_coord,
+    PACK_SOURCES_JSON, PZ_PACK_ODDS_JSON, CARD_REF_JSON, CURRENT_DIR,
+    PULL_MODEL_JSON as OUT_JSON,
 )
 # Reuse the EV computation's PZ loaders/slug-matcher so the per-rarity-per-pack
 # probabilities are derived from the exact same Pokémon Zone source the EV model uses.
 from build_pack_ev import load_pz_pack_odds, resolve_pz_slug  # noqa: E402
 
-PACK_SOURCES_JSON = ROOT / "data" / "reference" / "pack_sources.json"
-CONFIDENCE_SCORES_JSON = ROOT / "data" / "current" / "pack_source_confidence_scores.json"
-PZ_PACK_ODDS_JSON = ROOT / "data" / "reference" / "pz_pack_odds.json"
-CARD_REF_JSON = ROOT / "data" / "reference" / "card_reference.json"
-OUT_JSON = ROOT / "data" / "reference" / "pull_probability_model.json"
+CONFIDENCE_SCORES_JSON = CURRENT_DIR / "pack_source_confidence_scores.json"
 OUT_MD = ROOT / "review" / "pull_probability_model.md"
 
 STANDARD_SLOT_MODEL = {
@@ -675,6 +673,78 @@ _PROMO_SET_CODES = {"PROMO-A", "PROMO-B"}
 _NON_HOURGLASS_PURCHASABLE = {"A4B"}
 
 
+# branch_type → (official_status, user_evidence_note, notes). One row per branch
+# type so adding a new type can't forget a field. The third_party_two_branch
+# default is NOT in this table — its note embeds the per-set Bulbapedia URL, so
+# it stays dynamic in build_pack_records.
+BRANCH_NOTES: dict[str, tuple[str, str | None, str]] = {
+    "user_in_app_plus_bulbapedia": (
+        "user_in_app_verified",
+        "User manually read Pulsing Aura Offering Rates from the PTCGP app "
+        "on 2026-05-13 and provided values in a ChatGPT conversation. "
+        "Screenshots are NOT stored in this repository.",
+        "Three-branch model: regular_pack (94.711%) + rare_pack (0.050%) "
+        "+ regular_pack_plus_one (5.238%). "
+        "Source: user-provided in-app Offering Rates (ChatGPT, not in repo). "
+        "Bulbapedia corroborates branch percentages. "
+        "Rare pack distribution corrected from in-app data: 47.058/45.098/3.921/3.921. "
+        "Card 6 shiny rates: shiny_rare=68.180%, shiny_super_rare=31.820% (EV pending shiny pool data).",
+    ),
+    "user_in_app_verified_a4": (
+        "user_in_app_verified",
+        "User-captured in-app Offering Rates screenshots stored in repo: "
+        "'Offering Rates screenshots/IMG_1692 2.PNG' – 'IMG_1722 2.PNG' (2026-05-14). "
+        "Ho-Oh verified directly; Lugia shares the same expansion — rates inferred identical.",
+        "Three-branch model verified from in-repo screenshots: "
+        "regular_pack (91.620%) + regular_pack_plus_one (8.330%) + rare_pack (0.050%). "
+        "Branch probabilities match Secluded Springs (A4a) exactly. "
+        "Slot 6: illustration_rare=12.900% (☆), rare=87.100% (◇◇◇) — standard rarity, NOT shiny. "
+        "Slot 4/5 distributions match third_party_verified standard rates. "
+        "Rare pack distribution uses 40/50/5/5 placeholder — screenshots suggest "
+        "apparent uniform per-card distribution (~2.564%), pending explicit confirmation.",
+    ),
+    "bulbapedia_three_branch_standard": (
+        "not_verified",
+        None,
+        "Three-branch model from Bulbapedia: regular_pack (94.711%) "
+        "+ regular_pack_plus_one (5.238%) + rare_pack (0.050%). "
+        "Slot 4/5 rarity distributions from third_party_verified sources. "
+        "Card 6 shiny rates unknown — EV contribution = 0. "
+        "Rare pack distribution (40/50/5/5) from third_party_verified sources.",
+    ),
+    "bulbapedia_secluded_springs": (
+        "not_verified",
+        None,
+        "Unique three-branch model from Bulbapedia: regular_pack (91.620%) "
+        "+ regular_pack_plus_one (8.330%) + rare_pack (0.050%). "
+        "Branch percentages differ from standard B-series model. "
+        "EV impact: P_combined = 0.91620+0.08330 = 0.99950 ≈ same as two-branch EV.",
+    ),
+    "bulbapedia_mega_shine": (
+        "not_verified",
+        None,
+        "Four-branch model from Bulbapedia: regular_pack (94.706%) "
+        "+ regular_pack_plus_one (5.238%) + rare_pack (0.050%) "
+        "+ themed_rare_pack (0.005%). "
+        "themed_rare_pack guarantees Mega Evolution ex — EV not modeled (card pool unknown). "
+        "Card 6 shiny rates unknown — EV contribution = 0.",
+    ),
+    "bulbapedia_two_branch": (
+        "not_verified",
+        None,
+        "Two-branch model confirmed from Bulbapedia: regular_pack (99.950%) "
+        "+ rare_pack (0.050%). No Regular Pack + 1 Card branch for this expansion.",
+    ),
+    "pending": (
+        "pending",
+        None,
+        "Branch model unconfirmed — Bulbapedia offering rates section was not "
+        "accessible during 2026-05-13 verification pass. "
+        "Placeholder two-branch rates applied. Verify in-app.",
+    ),
+}
+
+
 def build_pack_records(records: list, existing_rates: dict,
                        pz_raw: dict, pz_odds: dict, ref_rarity: dict) -> list:
     """
@@ -800,83 +870,10 @@ def build_pack_records(records: list, existing_rates: dict,
                 "branch_model": branch_model_str,
             }
 
-            if branch_type == "user_in_app_plus_bulbapedia":
-                official_status = "user_in_app_verified"
-                user_evidence_note = (
-                    "User manually read Pulsing Aura Offering Rates from the PTCGP app "
-                    "on 2026-05-13 and provided values in a ChatGPT conversation. "
-                    "Screenshots are NOT stored in this repository."
-                )
-                notes = (
-                    "Three-branch model: regular_pack (94.711%) + rare_pack (0.050%) "
-                    "+ regular_pack_plus_one (5.238%). "
-                    "Source: user-provided in-app Offering Rates (ChatGPT, not in repo). "
-                    "Bulbapedia corroborates branch percentages. "
-                    "Rare pack distribution corrected from in-app data: 47.058/45.098/3.921/3.921. "
-                    "Card 6 shiny rates: shiny_rare=68.180%, shiny_super_rare=31.820% (EV pending shiny pool data)."
-                )
-            elif branch_type == "user_in_app_verified_a4":
-                official_status = "user_in_app_verified"
-                user_evidence_note = (
-                    "User-captured in-app Offering Rates screenshots stored in repo: "
-                    "'Offering Rates screenshots/IMG_1692 2.PNG' – 'IMG_1722 2.PNG' (2026-05-14). "
-                    "Ho-Oh verified directly; Lugia shares the same expansion — rates inferred identical."
-                )
-                notes = (
-                    "Three-branch model verified from in-repo screenshots: "
-                    "regular_pack (91.620%) + regular_pack_plus_one (8.330%) + rare_pack (0.050%). "
-                    "Branch probabilities match Secluded Springs (A4a) exactly. "
-                    "Slot 6: illustration_rare=12.900% (☆), rare=87.100% (◇◇◇) — standard rarity, NOT shiny. "
-                    "Slot 4/5 distributions match third_party_verified standard rates. "
-                    "Rare pack distribution uses 40/50/5/5 placeholder — screenshots suggest "
-                    "apparent uniform per-card distribution (~2.564%), pending explicit confirmation."
-                )
-            elif branch_type == "bulbapedia_three_branch_standard":
-                official_status = "not_verified"
-                user_evidence_note = None
-                notes = (
-                    f"Three-branch model from Bulbapedia: regular_pack (94.711%) "
-                    f"+ regular_pack_plus_one (5.238%) + rare_pack (0.050%). "
-                    f"Slot 4/5 rarity distributions from third_party_verified sources. "
-                    f"Card 6 shiny rates unknown — EV contribution = 0. "
-                    f"Rare pack distribution (40/50/5/5) from third_party_verified sources."
-                )
-            elif branch_type == "bulbapedia_secluded_springs":
-                official_status = "not_verified"
-                user_evidence_note = None
-                notes = (
-                    "Unique three-branch model from Bulbapedia: regular_pack (91.620%) "
-                    "+ regular_pack_plus_one (8.330%) + rare_pack (0.050%). "
-                    "Branch percentages differ from standard B-series model. "
-                    "EV impact: P_combined = 0.91620+0.08330 = 0.99950 ≈ same as two-branch EV."
-                )
-            elif branch_type == "bulbapedia_mega_shine":
-                official_status = "not_verified"
-                user_evidence_note = None
-                notes = (
-                    "Four-branch model from Bulbapedia: regular_pack (94.706%) "
-                    "+ regular_pack_plus_one (5.238%) + rare_pack (0.050%) "
-                    "+ themed_rare_pack (0.005%). "
-                    "themed_rare_pack guarantees Mega Evolution ex — EV not modeled (card pool unknown). "
-                    "Card 6 shiny rates unknown — EV contribution = 0."
-                )
-            elif branch_type == "bulbapedia_two_branch":
-                official_status = "not_verified"
-                user_evidence_note = None
-                notes = (
-                    "Two-branch model confirmed from Bulbapedia: regular_pack (99.950%) "
-                    "+ rare_pack (0.050%). No Regular Pack + 1 Card branch for this expansion."
-                )
-            elif branch_type == "pending":
-                official_status = "pending"
-                user_evidence_note = None
-                notes = (
-                    "Branch model unconfirmed — Bulbapedia offering rates section was not "
-                    "accessible during 2026-05-13 verification pass. "
-                    "Placeholder two-branch rates applied. Verify in-app."
-                )
+            if branch_type in BRANCH_NOTES:
+                official_status, user_evidence_note, notes = BRANCH_NOTES[branch_type]
             else:
-                # third_party_two_branch
+                # third_party_two_branch — dynamic: embeds the per-set Bulbapedia URL
                 official_status = "not_verified"
                 user_evidence_note = None
                 notes = (

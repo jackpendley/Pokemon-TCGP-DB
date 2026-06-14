@@ -40,16 +40,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import norm_card_name, normalize_rarity, canonical_set_code, ext_ref_by_coord
+from _collection_io import (norm_card_name, normalize_rarity, canonical_set_code,
+                            ext_ref_by_coord, ROOT, SOURCES_DIR, REFERENCE_DIR,
+                            PACK_SOURCES_JSON as PACK_SOURCES,
+                            CARD_REF_JSON as OUT_JSON, EXT_REF_JSON)
 
-ROOT          = Path(__file__).resolve().parent.parent
-SOURCES_DIR   = ROOT / "data" / "reference" / "sources"
-PACK_SOURCES  = ROOT / "data" / "reference" / "pack_sources.json"
-OUT_JSON      = ROOT / "data" / "reference" / "card_reference.json"
-SCHEMA_JSON   = ROOT / "data" / "reference" / "card_reference.schema.json"
-SIR_JSON      = ROOT / "data" / "reference" / "special_illustration_rares.json"
-RARITY_OVR_JSON = ROOT / "data" / "reference" / "rarity_overrides.json"
-EXT_REF_JSON  = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
+SCHEMA_JSON   = REFERENCE_DIR / "card_reference.schema.json"
+SIR_JSON      = REFERENCE_DIR / "special_illustration_rares.json"
+RARITY_OVR_JSON = REFERENCE_DIR / "rarity_overrides.json"
 
 SCHEMA_VERSION = "1.0"
 

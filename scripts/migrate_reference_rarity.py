@@ -26,12 +26,10 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import normalize_rarity, card_reference_by_coord
-
-ROOT          = Path(__file__).resolve().parent.parent
-CARD_REF_JSON = ROOT / "data" / "reference" / "card_reference.json"
-PACK_SOURCES  = ROOT / "data" / "reference" / "pack_sources.json"
-EXT_REF       = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
+from _collection_io import (normalize_rarity, card_reference_by_coord,
+                            ROOT, CARD_REF_JSON,
+                            PACK_SOURCES_JSON as PACK_SOURCES,
+                            EXT_REF_JSON as EXT_REF)
 
 
 def _coord(rec, num_key):

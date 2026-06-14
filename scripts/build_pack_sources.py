@@ -35,14 +35,12 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-HTML_CACHE = ROOT / "data" / "reference" / "external" / "html_cache"
-EXT_REF_JSON = ROOT / "data" / "reference" / "external" / "external_card_reference.json"
-OUT_JSON = ROOT / "data" / "reference" / "pack_sources.json"
-
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (SINGLE_PACK_SETS, MULTI_PACK_SETS, RARITY_SYMBOLS,
-                             canonical_set_code)
+                             canonical_set_code, ROOT, REFERENCE_DIR,
+                             EXT_REF_JSON, PACK_SOURCES_JSON as OUT_JSON)
+
+HTML_CACHE = REFERENCE_DIR / "external" / "html_cache"
 
 try:
     from bs4 import BeautifulSoup

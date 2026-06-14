@@ -35,12 +35,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import norm_card_name, normalize_rarity, RARE_PLUS_RARITIES
+from _collection_io import (norm_card_name, normalize_rarity, RARE_PLUS_RARITIES,
+                            ROOT, REFERENCE_DIR, CARD_REF_JSON,
+                            REPRINT_LINKS_JSON as OUTPUT_JSON)
 
-ROOT = Path(__file__).resolve().parent.parent
-CARD_REF_JSON = ROOT / "data" / "reference" / "card_reference.json"
-OVERRIDES_JSON = ROOT / "data" / "reference" / "reprint_links_overrides.json"
-OUTPUT_JSON = ROOT / "data" / "reference" / "reprint_links.json"
+OVERRIDES_JSON = REFERENCE_DIR / "reprint_links_overrides.json"
 
 REPRINT_SET = "A4B"                       # the Deluxe Pack: ex reprint set (upper-cased)
 ORIGINAL_SETS = ["A1", "A2", "A3", "A4"]  # in debut order (earliest first)

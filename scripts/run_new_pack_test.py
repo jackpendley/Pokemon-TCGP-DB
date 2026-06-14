@@ -31,12 +31,13 @@ import sys
 import tempfile
 from pathlib import Path
 
-ROOT             = Path(__file__).resolve().parent.parent
-PZ_PACK_ODDS     = ROOT / "data" / "reference" / "pz_pack_odds.json"
-PULL_MODEL       = ROOT / "data" / "reference" / "pull_probability_model.json"
-PACK_SOURCES     = ROOT / "data" / "reference" / "pack_sources.json"
-PACK_EV          = ROOT / "data" / "current" / "pack_ev.json"
-COLLECTION       = ROOT / "collection.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import (ROOT, PZ_PACK_ODDS_JSON as PZ_PACK_ODDS,
+                            PULL_MODEL_JSON as PULL_MODEL,
+                            PACK_SOURCES_JSON as PACK_SOURCES,
+                            PACK_EV_JSON as PACK_EV,
+                            COLLECTION_JSON as COLLECTION)
+
 SIMULATE_SCRIPT  = ROOT / "scripts" / "simulate_pack_opens.py"
 RUN_PIPELINE     = ROOT / "scripts" / "run_recommendations.py"
 SYNC_SCRIPT      = ROOT / "scripts" / "sync_collection.py"

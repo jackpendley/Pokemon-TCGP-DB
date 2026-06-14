@@ -21,14 +21,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import is_ex_from_name, norm_card_name as _norm
+from _collection_io import (is_ex_from_name, norm_card_name as _norm,
+                            ROOT, PZ_PACK_ODDS_JSON, PACK_SOURCES_JSON,
+                            COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
+                            PROMO_EV_JSON as OUT_JSON)
 
-ROOT = Path(__file__).resolve().parent.parent
-
-PZ_PACK_ODDS_JSON  = ROOT / "data" / "reference" / "pz_pack_odds.json"
-PACK_SOURCES_JSON  = ROOT / "data" / "reference" / "pack_sources.json"
-COLLECTION_JSON    = ROOT / "data" / "current"   / "collection_normalized.json"
-OUT_JSON           = ROOT / "data" / "current"   / "promo_pack_ev.json"
 OUT_MD             = ROOT / "review"             / "promo_pack_ev.md"
 
 SCORING_WEIGHTS = {

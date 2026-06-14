@@ -21,8 +21,9 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-PULL_MODEL_JSON = ROOT / "data" / "reference" / "pull_probability_model.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _collection_io import ROOT, PULL_MODEL_JSON
+
 OUT_MD = ROOT / "review" / "slot_rate_verification_checklist.md"
 
 SLOT_KEYS = ["slots_1_3", "slot_4", "slot_5", "slot_6", "rare_pack_all_5_slots"]
