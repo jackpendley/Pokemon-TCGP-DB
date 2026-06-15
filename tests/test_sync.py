@@ -362,6 +362,36 @@ def test_real_collection_passes_validation(collection_data):
 
 
 # ---------------------------------------------------------------------------
+# Characterization lock for the matching disambiguation (_match_one): a PZ card
+# derived from every collection entry must round-trip back to its own identity.
+# Asserts structural invariants (not a pinned golden), so it survives collection
+# updates while catching any disambiguation regression in a refactor.
+# ---------------------------------------------------------------------------
+
+def test_match_pz_cards_roundtrip_is_a_bijection(collection_data, pack_sources, ext_ref):
+    collection = collection_data["collection"]
+    pz_cards = [
+        sc.PZCard(set_code=e.get("set_code"), card_number=e.get("card_number"),
+                  raw_name=e.get("name", ""), count=e.get("count", 1))
+        for e in collection
+    ]
+    results = sc.match_pz_cards(pz_cards, collection, pack_sources, ext_ref)
+
+    assert len(results) == len(collection)
+    non_matched = [(r.status, r.pz_card.raw_name) for r in results if r.status != "MATCHED"]
+    assert non_matched == [], f"owned cards failed to MATCH: {non_matched[:5]}"
+
+    # Every entry is matched exactly once (perfect bijection over indices).
+    matched_idx = sorted(r.entry_index for r in results)
+    assert matched_idx == list(range(len(collection))), "matched indices are not a bijection"
+
+    # Each match's canonical name agrees with the entry it bound to.
+    for r in results:
+        assert sc._normalize(r.canonical_name) == sc._normalize(collection[r.entry_index]["name"]), \
+            f"{r.canonical_name!r} bound to entry {collection[r.entry_index].get('name')!r}"
+
+
+# ---------------------------------------------------------------------------
 # JSONC in-place count editor — _strip_inline_comment / _find_count_lines /
 # apply_count_changes edit collection.json textually, preserving formatting.
 # ---------------------------------------------------------------------------
