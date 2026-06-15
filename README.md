@@ -181,6 +181,11 @@ python3 scripts/validate_pull_probability_model.py
 - Chrome136 TLS impersonation (`curl-cffi`) prevents Cloudflare 403 on headless syncs
 - Raw API response not committed (`data/sync/last_sync_raw.json` gitignored)
 - Player stats (hourglasses, shop tickets) fetched automatically on each sync
+- **Auth expiry is graceful:** PZ sessions last ~3–4 weeks. When stored auth lapses the
+  pipeline does **not** fail — it keeps going on your existing `collection.json`, still
+  prints recommendations, and surfaces the one-step refresh
+  (`python3 scripts/sync_collection.py --curl-import`, which reads your clipboard). A
+  heads-up also prints once the stored auth passes 21 days, before it lapses mid-run.
 
 ---
 
