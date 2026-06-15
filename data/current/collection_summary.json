@@ -1,36 +1,36 @@
 {
   "meta": {
-    "total_cards": 1256,
-    "last_updated": "2026-06-13",
+    "total_cards": 1276,
+    "last_updated": "2026-06-14",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 1256,
-  "meta_total_cards": 1256,
+  "total_quantity": 1276,
+  "meta_total_cards": 1276,
   "count_matches_meta": true,
-  "unique_entries": 600,
+  "unique_entries": 611,
   "by_card_type": {
-    "Pokemon": 1150,
+    "Pokemon": 1170,
     "Trainer": 106
   },
   "by_pokemon_type": {
-    "Fire": 98,
-    "Grass": 138,
+    "Fire": 99,
+    "Grass": 140,
     "Water": 162,
-    "Lightning": 101,
-    "Psychic": 112,
-    "Fighting": 165,
-    "Darkness": 113,
-    "Metal": 61,
+    "Lightning": 103,
+    "Psychic": 115,
+    "Fighting": 169,
+    "Darkness": 114,
+    "Metal": 65,
     "Dragon": 22,
-    "Colorless": 178
+    "Colorless": 181
   },
   "by_stage": {
-    "Basic": 762,
-    "Stage 1": 320,
-    "Stage 2": 68
+    "Basic": 774,
+    "Stage 1": 326,
+    "Stage 2": 70
   },
-  "ex_entries": 33,
-  "ex_quantity": 40,
+  "ex_entries": 34,
+  "ex_quantity": 41,
   "trainer_subtypes": {
     "Item": 38,
     "Pokemon Tool": 9,
@@ -41,6 +41,10 @@
     [
       "Tepig",
       12
+    ],
+    [
+      "Pawniard",
+      11
     ],
     [
       "Shroomish",
@@ -92,10 +96,6 @@
     ],
     [
       "Tangela",
-      8
-    ],
-    [
-      "Voltorb",
       8
     ]
   ],
@@ -611,7 +611,8 @@
       "Mega Absol ex",
       "Flygon ex",
       "Zoroark ex",
-      "Rapidash ex"
+      "Rapidash ex",
+      "Mega Ampharos ex"
     ],
     "strong_evolution_lines": [
       "Charmander → Charmeleon → Charizard",

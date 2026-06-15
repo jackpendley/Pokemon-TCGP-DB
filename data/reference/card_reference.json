@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-06-11T22:40:55Z",
+    "generated_at": "2026-06-15T05:48:09Z",
     "schema_version": "1.0",
     "sources": [
       "tcgdex",
@@ -8,12 +8,12 @@
       "bulbapedia"
     ],
     "stats": {
-      "confirmed": 3223,
+      "confirmed": 3228,
       "conflict": 3,
       "single": 2,
       "unconfirmed": 0
     },
-    "total_cards": 3228
+    "total_cards": 3233
   },
   "records": [
     {
@@ -64008,6 +64008,101 @@
       "rarity": "promo",
       "set_code": "PROMO-B",
       "stage": "Basic"
+    },
+    {
+      "card_category": null,
+      "card_number": 64,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": "PROMO-B",
+      "hp": null,
+      "is_ex": false,
+      "name": "Charcadet",
+      "pack_name": "Promo Pack B Series Vol. 9",
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 65,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": "PROMO-B",
+      "hp": null,
+      "is_ex": false,
+      "name": "Vaporeon",
+      "pack_name": "Promo Pack B Series Vol. 9",
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 66,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": "PROMO-B",
+      "hp": null,
+      "is_ex": true,
+      "name": "Ceruledge ex",
+      "pack_name": "Promo Pack B Series Vol. 9",
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 67,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": "PROMO-B",
+      "hp": null,
+      "is_ex": false,
+      "name": "Pawniard",
+      "pack_name": "Promo Pack B Series Vol. 9",
+      "pokemon_type": "Darkness",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 68,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": "PROMO-B",
+      "hp": null,
+      "is_ex": false,
+      "name": "Dudunsparce",
+      "pack_name": "Promo Pack B Series Vol. 9",
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
     }
   ]
 }

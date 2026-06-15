@@ -49740,5 +49740,84 @@
         }
       }
     ]
+  },
+  "promo-pack-b-series-vol-9": {
+    "pack_name": "Promo Pack B Series Vol. 9",
+    "expansion_id": "PROMO-B",
+    "expansion_slug": "promo-b",
+    "pack_slug": "promo-pack-b-series-vol-9",
+    "card_count": 5,
+    "cards": [
+      {
+        "card_url": "/cards/promo-b/64/charcadet/",
+        "name": "Charcadet",
+        "set_code": "PROMO-B",
+        "card_number": 64,
+        "drop_chance_pct": 23.84,
+        "slot_odds_pct": {
+          "1": 23.84,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/promo-b/65/vaporeon/",
+        "name": "Vaporeon",
+        "set_code": "PROMO-B",
+        "card_number": 65,
+        "drop_chance_pct": 23.84,
+        "slot_odds_pct": {
+          "1": 23.84,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/promo-b/66/ceruledge-ex/",
+        "name": "Ceruledge ex",
+        "set_code": "PROMO-B",
+        "card_number": 66,
+        "drop_chance_pct": 12.66,
+        "slot_odds_pct": {
+          "1": 12.66,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/promo-b/67/pawniard/",
+        "name": "Pawniard",
+        "set_code": "PROMO-B",
+        "card_number": 67,
+        "drop_chance_pct": 23.84,
+        "slot_odds_pct": {
+          "1": 23.84,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/promo-b/68/dudunsparce/",
+        "name": "Dudunsparce",
+        "set_code": "PROMO-B",
+        "card_number": 68,
+        "drop_chance_pct": 15.82,
+        "slot_odds_pct": {
+          "1": 15.82,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      }
+    ]
   }
 }

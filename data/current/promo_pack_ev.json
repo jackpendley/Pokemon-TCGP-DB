@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T23:29:02.044392+00:00",
+  "generated_at": "2026-06-15T05:49:14.085070+00:00",
   "generated_by": "build_promo_pack_ev.py",
   "meta": {
     "note": "Promo packs use Shop Tokens (not Hourglasses). EV is comparable within promo packs only — not directly comparable to regular pack EV.",
@@ -115,6 +115,71 @@
           "drop_chance": 0.1266,
           "value": 2.0,
           "ev": 0.2532
+        }
+      ]
+    },
+    {
+      "pack_name": "Promo Pack B Series Vol. 9",
+      "slug": "promo-pack-b-series-vol-9",
+      "expansion_id": "PROMO-B",
+      "card_count": 5,
+      "owned_in_pack": 1,
+      "missing_in_pack": 4,
+      "new_card_ev": 0.9684,
+      "copy_ev": 0.06328,
+      "ex_card_ev": 0.2532,
+      "total_ev": 1.03168,
+      "source_status": "pz_verified",
+      "cards": [
+        {
+          "name": "Charcadet",
+          "set_code": "PROMO-B",
+          "card_number": 64,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.2384,
+          "value": 1.0,
+          "ev": 0.2384
+        },
+        {
+          "name": "Vaporeon",
+          "set_code": "PROMO-B",
+          "card_number": 65,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.2384,
+          "value": 1.0,
+          "ev": 0.2384
+        },
+        {
+          "name": "Ceruledge ex",
+          "set_code": "PROMO-B",
+          "card_number": 66,
+          "is_ex": true,
+          "owned": 0,
+          "drop_chance": 0.1266,
+          "value": 2.0,
+          "ev": 0.2532
+        },
+        {
+          "name": "Pawniard",
+          "set_code": "PROMO-B",
+          "card_number": 67,
+          "is_ex": false,
+          "owned": 0,
+          "drop_chance": 0.2384,
+          "value": 1.0,
+          "ev": 0.2384
+        },
+        {
+          "name": "Dudunsparce",
+          "set_code": "PROMO-B",
+          "card_number": 68,
+          "is_ex": false,
+          "owned": 1,
+          "drop_chance": 0.1582,
+          "value": 0.4,
+          "ev": 0.06328
         }
       ]
     },
@@ -1184,5 +1249,5 @@
       ]
     }
   ],
-  "inputs_hash": "847240f5cabcea07389b955209d0bb2cfc732bd33808be4b7283d64e4d829c43"
+  "inputs_hash": "a726bd132002595783a53ecd6b887728a2a020b1396be26dadfef60b694268b4"
 }

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 1256,
-    "last_updated": "2026-06-13",
+    "total_cards": 1276,
+    "last_updated": "2026-06-14",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -1427,7 +1427,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Lead",
-      "count": 1,
+      "count": 2,
       "set_code": "A2",
       "card_number": 66,
       "rarity": "common"
@@ -1463,7 +1463,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Sweet Scent",
-      "count": 6,
+      "count": 7,
       "set_code": "B1a",
       "card_number": 35,
       "rarity": "common"
@@ -1698,7 +1698,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Slash 70",
-      "count": 1,
+      "count": 2,
       "set_code": "B1",
       "card_number": 123,
       "rarity": "uncommon"
@@ -1982,7 +1982,7 @@
       "hp": 140,
       "card_type": "Pokemon",
       "attack": "Life Sucker 70",
-      "count": 1,
+      "count": 2,
       "set_code": "B1",
       "card_number": 144,
       "rarity": "uncommon"
@@ -2729,7 +2729,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Cut Up 10",
-      "count": 3,
+      "count": 6,
       "set_code": "B3",
       "card_number": 119,
       "rarity": "common"
@@ -3271,7 +3271,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Gust 10",
-      "count": 2,
+      "count": 3,
       "set_code": "A1",
       "card_number": 186,
       "rarity": "common"
@@ -4402,7 +4402,7 @@
     },
     {
       "name": "Ferroseed",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "type": "Metal",
       "stage": 0,
@@ -7074,6 +7074,138 @@
       "rarity": "uncommon",
       "set_code": "B1",
       "card_number": 224
+    },
+    {
+      "name": "Salandit",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "rarity": "common",
+      "set_code": "A3",
+      "card_number": 35,
+      "type": "Fire"
+    },
+    {
+      "name": "Gogoat",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 120,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 22
+    },
+    {
+      "name": "Grookey",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 25
+    },
+    {
+      "name": "Mega Ampharos ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 210,
+      "rarity": "double_rare",
+      "set_code": "B1",
+      "card_number": 85
+    },
+    {
+      "name": "Pachirisu",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 89
+    },
+    {
+      "name": "Xatu",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 98
+    },
+    {
+      "name": "Archen",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 90,
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 133
+    },
+    {
+      "name": "Pancham",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 138
+    },
+    {
+      "name": "Mareanie",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 161
+    },
+    {
+      "name": "Pidgeot",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 150,
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 182
+    },
+    {
+      "name": "Dudunsparce",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "set_code": "PROMO-B",
+      "card_number": 68,
+      "rarity": "promo",
+      "type": "Colorless"
     }
   ]
 }

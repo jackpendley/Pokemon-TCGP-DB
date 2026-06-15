@@ -4,7 +4,7 @@
 > Source: Pokemon Zone direct drop chances (`pz_verified`).
 > EV model: new card = 1.0, second copy = 0.4, +1.0 bonus for ex cards.
 
-Generated: 2026-06-09  
+Generated: 2026-06-15  
 
 ## Rankings by New Card EV
 
@@ -12,25 +12,26 @@ Generated: 2026-06-09
 |---|---|---|---|---|---|---|
 | 1 | Promo Pack A Series Vol. 13 | 4 | 0 | 4 | 0.9684 | 0.9684 |
 | 2 | Promo Pack B Series Vol. 4 | 4 | 0 | 4 | 0.9684 | 0.9684 |
-| 3 | Promo Pack A Series Vol. 1 | 4 | 0 | 4 | 0.8882 | 0.8882 |
-| 4 | Promo Pack A Series Vol. 4 | 4 | 0 | 4 | 0.8882 | 0.8882 |
-| 5 | Promo Pack A Series Vol. 9 | 6 | 0 | 6 | 0.8736 | 0.8736 |
-| 6 | Promo Pack A Series Vol. 11 | 4 | 0 | 4 | 0.8734 | 0.8734 |
-| 7 | Promo Pack A Series Vol. 12 | 4 | 0 | 4 | 0.8734 | 0.8734 |
-| 8 | Promo Pack A Series Vol. 7 | 4 | 0 | 4 | 0.8734 | 0.8734 |
-| 9 | Promo Pack B Series Vol. 1 | 4 | 0 | 4 | 0.8734 | 0.8734 |
-| 10 | Promo Pack B Series Vol. 3 | 4 | 0 | 4 | 0.8734 | 0.8734 |
-| 11 | Promo Pack B Series Vol. 5 | 4 | 0 | 4 | 0.8418 | 0.8418 |
-| 12 | Promo Pack A Series Vol. 10 | 4 | 0 | 4 | 0.7616 | 0.7616 |
-| 13 | Promo Pack A Series Vol. 2 | 4 | 0 | 4 | 0.7616 | 0.7616 |
-| 14 | Promo Pack A Series Vol. 3 | 4 | 0 | 4 | 0.7616 | 0.7616 |
-| 15 | Promo Pack A Series Vol. 5 | 4 | 0 | 4 | 0.7616 | 0.7616 |
-| 16 | Promo Pack A Series Vol. 6 | 4 | 0 | 4 | 0.7616 | 0.7616 |
-| 17 | Promo Pack A Series Vol. 8 | 4 | 0 | 4 | 0.7616 | 0.7616 |
-| 18 | Promo Pack B Series Vol. 2 | 4 | 0 | 4 | 0.7616 | 0.7616 |
-| 19 | Promo Pack B Series Vol. 6 | 4 | 0 | 4 | 0.7616 | 0.7616 |
-| 20 | Promo Pack B Series Vol. 7 | 4 | 3 | 1 | 0.2330 | 0.5067 |
-| 21 | Promo Pack B Series Vol. 8 | 4 | 4 | 0 | 0.0000 | 0.1772 |
+| 3 | Promo Pack B Series Vol. 9 | 5 | 1 | 4 | 0.9684 | 1.0317 |
+| 4 | Promo Pack A Series Vol. 1 | 4 | 0 | 4 | 0.8882 | 0.8882 |
+| 5 | Promo Pack A Series Vol. 4 | 4 | 0 | 4 | 0.8882 | 0.8882 |
+| 6 | Promo Pack A Series Vol. 9 | 6 | 0 | 6 | 0.8736 | 0.8736 |
+| 7 | Promo Pack A Series Vol. 11 | 4 | 0 | 4 | 0.8734 | 0.8734 |
+| 8 | Promo Pack A Series Vol. 12 | 4 | 0 | 4 | 0.8734 | 0.8734 |
+| 9 | Promo Pack A Series Vol. 7 | 4 | 0 | 4 | 0.8734 | 0.8734 |
+| 10 | Promo Pack B Series Vol. 1 | 4 | 0 | 4 | 0.8734 | 0.8734 |
+| 11 | Promo Pack B Series Vol. 3 | 4 | 0 | 4 | 0.8734 | 0.8734 |
+| 12 | Promo Pack B Series Vol. 5 | 4 | 0 | 4 | 0.8418 | 0.8418 |
+| 13 | Promo Pack A Series Vol. 10 | 4 | 0 | 4 | 0.7616 | 0.7616 |
+| 14 | Promo Pack A Series Vol. 2 | 4 | 0 | 4 | 0.7616 | 0.7616 |
+| 15 | Promo Pack A Series Vol. 3 | 4 | 0 | 4 | 0.7616 | 0.7616 |
+| 16 | Promo Pack A Series Vol. 5 | 4 | 0 | 4 | 0.7616 | 0.7616 |
+| 17 | Promo Pack A Series Vol. 6 | 4 | 0 | 4 | 0.7616 | 0.7616 |
+| 18 | Promo Pack A Series Vol. 8 | 4 | 0 | 4 | 0.7616 | 0.7616 |
+| 19 | Promo Pack B Series Vol. 2 | 4 | 0 | 4 | 0.7616 | 0.7616 |
+| 20 | Promo Pack B Series Vol. 6 | 4 | 0 | 4 | 0.7616 | 0.7616 |
+| 21 | Promo Pack B Series Vol. 7 | 4 | 3 | 1 | 0.2330 | 0.5067 |
+| 22 | Promo Pack B Series Vol. 8 | 4 | 4 | 0 | 0.0000 | 0.1772 |
 
 ## Pack Details
 
@@ -57,6 +58,19 @@ Generated: 2026-06-09
 | Mudkip |  | 0 | 23.8% | 0.2384 |
 | Plusle |  | 0 | 23.8% | 0.2384 |
 | Ralts |  | 0 | 23.8% | 0.2384 |
+
+### Promo Pack B Series Vol. 9
+
+- Missing: 4/5 cards
+- New card EV: **0.9684**
+
+| Card | Is EX | Owned | Drop % | EV |
+|---|---|---|---|---|
+| Ceruledge ex | ✓ | 0 | 12.7% | 0.2532 |
+| Charcadet |  | 0 | 23.8% | 0.2384 |
+| Vaporeon |  | 0 | 23.8% | 0.2384 |
+| Pawniard |  | 0 | 23.8% | 0.2384 |
+| Dudunsparce |  | 1 | 15.8% | 0.0633 |
 
 ### Promo Pack A Series Vol. 1
 
