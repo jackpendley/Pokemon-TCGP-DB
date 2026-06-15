@@ -750,6 +750,23 @@ _STAGE_MAP: dict[str, tuple[int, str]] = {
 }
 
 
+def _apply_pokemon_metadata(entry: dict, src: dict) -> None:
+    """Populate a Pokémon entry's card_type/type/stage/hp from an ext_ref-style
+    record (in place). Shared by the confirmed-Pokemon and blank-category paths."""
+    entry["card_type"] = "Pokemon"
+    ptype = src.get("pokemon_type")
+    if ptype and ptype != "None":
+        entry["type"] = ptype
+    stage_str = src.get("stage", "")
+    if stage_str in _STAGE_MAP:
+        s, sl = _STAGE_MAP[stage_str]
+        entry["stage"] = s
+        entry["stage_label"] = sl
+    hp = src.get("hp")
+    if hp is not None:
+        entry["hp"] = hp
+
+
 def build_auto_entry(
     mr: "MatchResult",
     ext_ref: dict,
@@ -838,18 +855,7 @@ def build_auto_entry(
         entry: dict = {"name": mr.canonical_name, "count": pz.count}
         cat = best.get("card_category", "")
         if cat == "Pokemon":
-            entry["card_type"] = "Pokemon"
-            ptype = best.get("pokemon_type")
-            if ptype and ptype != "None":
-                entry["type"] = ptype
-            stage_str = best.get("stage", "")
-            if stage_str in _STAGE_MAP:
-                s, sl = _STAGE_MAP[stage_str]
-                entry["stage"] = s
-                entry["stage_label"] = sl
-            hp = best.get("hp")
-            if hp is not None:
-                entry["hp"] = hp
+            _apply_pokemon_metadata(entry, best)
         elif not cat:
             # Blank ext_ref category — warn and default to Pokemon (safer than Trainer;
             # run scripts/fetch_ext_ref.py to populate the missing card_category).
@@ -858,18 +864,7 @@ def build_auto_entry(
                 f"— defaulting to Pokemon. Run fetch_ext_ref.py to fix.",
                 file=sys.stderr,
             )
-            entry["card_type"] = "Pokemon"
-            ptype = best.get("pokemon_type")
-            if ptype and ptype != "None":
-                entry["type"] = ptype
-            stage_str = best.get("stage", "")
-            if stage_str in _STAGE_MAP:
-                s, sl = _STAGE_MAP[stage_str]
-                entry["stage"] = s
-                entry["stage_label"] = sl
-            hp = best.get("hp")
-            if hp is not None:
-                entry["hp"] = hp
+            _apply_pokemon_metadata(entry, best)
         else:
             entry["card_type"] = "Trainer"
             subtype = TRAINER_SUBTYPE_MAP.get(cat)
