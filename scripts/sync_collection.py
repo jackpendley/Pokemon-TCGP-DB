@@ -415,63 +415,110 @@ def match_pz_cards(
 _A4B_HYBRID_TARGET_SETS = frozenset({"A1", "A2", "A3", "A4"})
 
 
-def _match_one(
+def _resolve_canonical_name(
     pz: PZCard,
-    collection: list[dict],
     name_index: dict[str, list[int]],
     pack_sources: dict,
-    ext_ref: dict[str, list[dict]],
     mismatches: list | None = None,
-) -> MatchResult:
+) -> str:
+    """Resolve the PZ card's canonical card name via, in order: PROMO overrides →
+    exact (set_code, card_number) pack_sources lookup → direct collection name match →
+    the PZ raw_name as a last resort (so no card is ever silently dropped)."""
     # Pre-step: PROMO overrides (PZ catalog returns wrong/missing names for these slots)
-    canonical_name: str | None = None
     if pz.set_code == "PROMO-A" and pz.card_number in _PROMO_A_OVERRIDES:
-        canonical_name = _PROMO_A_OVERRIDES[pz.card_number]
-    elif pz.set_code == "PROMO-B" and pz.card_number in _PROMO_B_OVERRIDES:
-        canonical_name = _PROMO_B_OVERRIDES[pz.card_number]
+        return _PROMO_A_OVERRIDES[pz.card_number]
+    if pz.set_code == "PROMO-B" and pz.card_number in _PROMO_B_OVERRIDES:
+        return _PROMO_B_OVERRIDES[pz.card_number]
 
     # Step 1: exact (set_code, card_number) → pack_sources canonical name.
     # Sanity-check: if the raw_name is directly recognized in the collection AND
     # it disagrees with the pack_sources name, the set has a card-numbering mismatch
     # (e.g. PZ A1 uses different indices than our pack_sources). In that case skip
     # Step 1 and let Step 2's direct-name match resolve it correctly.
-    if canonical_name is None and pz.set_code and pz.card_number is not None:
+    if pz.set_code and pz.card_number is not None:
         ref = pack_sources.get((pz.set_code, pz.card_number))
         if ref:
             ps_name = ref["card_name"]
-            nn_raw = _normalize(pz.raw_name)
-            nn_ps  = _normalize(ps_name)
-            if nn_raw == nn_ps:
-                canonical_name = ps_name
-            else:
-                # Names disagree after normalization → set-numbering mismatch.
-                # Fall through to Step 2's direct-name match using the PZ raw_name,
-                # which is always safer than blindly trusting a mismatched pack_sources entry.
-                # This handles both: card is already owned (raw_name in name_index) AND
-                # card is not yet owned (raw_name not in name_index → NEW_CARD via fallback).
-                expected = str(pz.set_code).upper() in _A4B_HYBRID_TARGET_SETS
-                if mismatches is not None:
-                    mismatches.append((pz.set_code, pz.card_number, pz.raw_name, ps_name, expected))
-                elif not expected:
-                    print(
-                        f"  WARN: set-numbering mismatch {pz.set_code}#{pz.card_number} "
-                        f"({pz.raw_name!r} vs pack_sources {ps_name!r}) "
-                        f"— using direct name match.",
-                        file=sys.stderr,
-                    )
+            if _normalize(pz.raw_name) == _normalize(ps_name):
+                return ps_name
+            # Names disagree after normalization → set-numbering mismatch.
+            # Fall through to Step 2's direct-name match using the PZ raw_name,
+            # which is always safer than blindly trusting a mismatched pack_sources entry.
+            # This handles both: card is already owned (raw_name in name_index) AND
+            # card is not yet owned (raw_name not in name_index → NEW_CARD via fallback).
+            expected = str(pz.set_code).upper() in _A4B_HYBRID_TARGET_SETS
+            if mismatches is not None:
+                mismatches.append((pz.set_code, pz.card_number, pz.raw_name, ps_name, expected))
+            elif not expected:
+                print(
+                    f"  WARN: set-numbering mismatch {pz.set_code}#{pz.card_number} "
+                    f"({pz.raw_name!r} vs pack_sources {ps_name!r}) "
+                    f"— using direct name match.",
+                    file=sys.stderr,
+                )
 
     # Step 2: direct normalized-name match against collection.json.
     # Catches Trainers and cards from sets not yet in pack_sources.
-    if canonical_name is None:
-        nn_direct = _normalize(pz.raw_name)
-        if nn_direct in name_index:
-            canonical_name = pz.raw_name
+    # (Step 3, fallback: the PZ raw_name, used whether or not it is in the index.)
+    return pz.raw_name
 
-    # No match via any deterministic path — auto-add using the PZ name.
-    # This ensures no card is ever silently dropped.
-    if canonical_name is None:
-        canonical_name = pz.raw_name
 
+def _disambiguate_variants(
+    pz: PZCard,
+    indices: list[int],
+    nn: str,
+    collection: list[dict],
+    pack_sources: dict,
+    ext_ref: dict[str, list[dict]],
+    canonical_name: str,
+) -> MatchResult | None:
+    """Disambiguate multiple same-name collection entries by HP (from ext_ref) then
+    by base/alt-art rarity (from pack_sources). Returns a MATCHED result or None if
+    still ambiguous. Only called when the PZ card carries a (set_code, card_number)."""
+    # Step A: HP from external_card_reference
+    target_hp: int | None = None
+    for er in ext_ref.get(nn, []):
+        if (str(er.get("set_code", "")).upper() == pz.set_code
+                and er.get("number") == pz.card_number):
+            target_hp = er.get("hp")
+            break
+
+    if target_hp is not None:
+        hp_matches = [i for i in indices if collection[i].get("hp") == target_hp]
+        if len(hp_matches) == 1:
+            return MatchResult(status="MATCHED", pz_card=pz, entry=collection[hp_matches[0]],
+                               entry_index=hp_matches[0], canonical_name=canonical_name)
+        if hp_matches:
+            indices = hp_matches  # narrow to same-HP bucket before rarity step
+
+    # Step B: rarity-based alt-art disambiguation
+    ps_ref = pack_sources.get((pz.set_code, pz.card_number))
+    if ps_ref and _normalize(ps_ref["card_name"]) == _normalize(canonical_name):
+        rarity = normalize_rarity(ps_ref.get("rarity")) or ""
+        is_alt = rarity in RARE_PLUS_RARITIES
+        alt_idx = [i for i in indices
+                   if "alt" in str(collection[i].get("variant", "")).lower().split()]
+        reg_idx = [i for i in indices
+                   if "alt" not in str(collection[i].get("variant", "")).lower().split()]
+        if is_alt and len(alt_idx) == 1:
+            return MatchResult(status="MATCHED", pz_card=pz, entry=collection[alt_idx[0]],
+                               entry_index=alt_idx[0], canonical_name=canonical_name)
+        if not is_alt and len(reg_idx) == 1:
+            return MatchResult(status="MATCHED", pz_card=pz, entry=collection[reg_idx[0]],
+                               entry_index=reg_idx[0], canonical_name=canonical_name)
+    return None
+
+
+def _bind_to_entry(
+    pz: PZCard,
+    canonical_name: str,
+    collection: list[dict],
+    name_index: dict[str, list[int]],
+    pack_sources: dict,
+    ext_ref: dict[str, list[dict]],
+) -> MatchResult:
+    """Bind a resolved canonical name to a collection entry: NEW_CARD if unknown,
+    direct match if unique, else coord/HP/rarity disambiguation → MATCHED or AMBIGUOUS."""
     nn = _normalize(canonical_name)
     indices = name_index.get(nn, [])
 
@@ -493,13 +540,8 @@ def _match_one(
                 entry_is_alt = "alt" in str(single_entry.get("variant", "")).lower().split()
                 if is_pz_alt != entry_is_alt:
                     return MatchResult(status="NEW_CARD", pz_card=pz, canonical_name=canonical_name)
-        return MatchResult(
-            status="MATCHED",
-            pz_card=pz,
-            entry=single_entry,
-            entry_index=indices[0],
-            canonical_name=canonical_name,
-        )
+        return MatchResult(status="MATCHED", pz_card=pz, entry=single_entry,
+                           entry_index=indices[0], canonical_name=canonical_name)
 
     # Exact-name shortcut: canonical_name may contain characters that normalize
     # identically to a sibling (e.g. Nidoran♀ and Nidoran♂ both → "nidoran").
@@ -508,13 +550,8 @@ def _match_one(
     if canonical_name:
         exact = [i for i in indices if collection[i].get("name") == canonical_name]
         if len(exact) == 1:
-            return MatchResult(
-                status="MATCHED",
-                pz_card=pz,
-                entry=collection[exact[0]],
-                entry_index=exact[0],
-                canonical_name=canonical_name,
-            )
+            return MatchResult(status="MATCHED", pz_card=pz, entry=collection[exact[0]],
+                               entry_index=exact[0], canonical_name=canonical_name)
 
     # Step 0 (preferred): coord-exact match. Collection entries now carry
     # set_code/card_number, so when the PZ card's exact coord is present among the
@@ -528,70 +565,30 @@ def _match_one(
                      if str(collection[i].get("set_code") or "").upper() == pz.set_code
                      and collection[i].get("card_number") == pz.card_number]
         if len(coord_idx) == 1:
-            return MatchResult(
-                status="MATCHED",
-                pz_card=pz,
-                entry=collection[coord_idx[0]],
-                entry_index=coord_idx[0],
-                canonical_name=canonical_name,
-            )
+            return MatchResult(status="MATCHED", pz_card=pz, entry=collection[coord_idx[0]],
+                               entry_index=coord_idx[0], canonical_name=canonical_name)
 
-    # Multiple variants — try HP then rarity to disambiguate
+    # Multiple variants — HP then rarity disambiguation.
     if pz.set_code and pz.card_number is not None:
-        # Step A: HP from external_card_reference
-        ext_records = ext_ref.get(nn, [])
-        target_hp: int | None = None
-        for er in ext_records:
-            if (str(er.get("set_code", "")).upper() == pz.set_code
-                    and er.get("number") == pz.card_number):
-                target_hp = er.get("hp")
-                break
+        result = _disambiguate_variants(pz, indices, nn, collection, pack_sources,
+                                        ext_ref, canonical_name)
+        if result is not None:
+            return result
 
-        if target_hp is not None:
-            hp_matches = [i for i in indices if collection[i].get("hp") == target_hp]
-            if len(hp_matches) == 1:
-                return MatchResult(
-                    status="MATCHED",
-                    pz_card=pz,
-                    entry=collection[hp_matches[0]],
-                    entry_index=hp_matches[0],
-                    canonical_name=canonical_name,
-                )
-            if hp_matches:
-                indices = hp_matches  # narrow to same-HP bucket before rarity step
+    return MatchResult(status="AMBIGUOUS", pz_card=pz, canonical_name=canonical_name)
 
-        # Step B: rarity-based alt-art disambiguation
-        ps_ref = pack_sources.get((pz.set_code, pz.card_number))
-        if ps_ref and _normalize(ps_ref["card_name"]) == _normalize(canonical_name):
-            rarity = normalize_rarity(ps_ref.get("rarity")) or ""
-            is_alt = rarity in RARE_PLUS_RARITIES
-            alt_idx = [i for i in indices
-                       if "alt" in str(collection[i].get("variant", "")).lower().split()]
-            reg_idx = [i for i in indices
-                       if "alt" not in str(collection[i].get("variant", "")).lower().split()]
-            if is_alt and len(alt_idx) == 1:
-                return MatchResult(
-                    status="MATCHED",
-                    pz_card=pz,
-                    entry=collection[alt_idx[0]],
-                    entry_index=alt_idx[0],
-                    canonical_name=canonical_name,
-                )
-            if not is_alt and len(reg_idx) == 1:
-                return MatchResult(
-                    status="MATCHED",
-                    pz_card=pz,
-                    entry=collection[reg_idx[0]],
-                    entry_index=reg_idx[0],
-                    canonical_name=canonical_name,
-                )
 
-    # Disambiguation failed
-    return MatchResult(
-        status="AMBIGUOUS",
-        pz_card=pz,
-        canonical_name=canonical_name,
-    )
+def _match_one(
+    pz: PZCard,
+    collection: list[dict],
+    name_index: dict[str, list[int]],
+    pack_sources: dict,
+    ext_ref: dict[str, list[dict]],
+    mismatches: list | None = None,
+) -> MatchResult:
+    """Match one PZ card to a collection entry: resolve its canonical name, then bind."""
+    canonical_name = _resolve_canonical_name(pz, name_index, pack_sources, mismatches)
+    return _bind_to_entry(pz, canonical_name, collection, name_index, pack_sources, ext_ref)
 
 
 # ---------------------------------------------------------------------------
