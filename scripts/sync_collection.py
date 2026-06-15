@@ -415,63 +415,110 @@ def match_pz_cards(
 _A4B_HYBRID_TARGET_SETS = frozenset({"A1", "A2", "A3", "A4"})
 
 
-def _match_one(
+def _resolve_canonical_name(
     pz: PZCard,
-    collection: list[dict],
     name_index: dict[str, list[int]],
     pack_sources: dict,
-    ext_ref: dict[str, list[dict]],
     mismatches: list | None = None,
-) -> MatchResult:
+) -> str:
+    """Resolve the PZ card's canonical card name via, in order: PROMO overrides →
+    exact (set_code, card_number) pack_sources lookup → direct collection name match →
+    the PZ raw_name as a last resort (so no card is ever silently dropped)."""
     # Pre-step: PROMO overrides (PZ catalog returns wrong/missing names for these slots)
-    canonical_name: str | None = None
     if pz.set_code == "PROMO-A" and pz.card_number in _PROMO_A_OVERRIDES:
-        canonical_name = _PROMO_A_OVERRIDES[pz.card_number]
-    elif pz.set_code == "PROMO-B" and pz.card_number in _PROMO_B_OVERRIDES:
-        canonical_name = _PROMO_B_OVERRIDES[pz.card_number]
+        return _PROMO_A_OVERRIDES[pz.card_number]
+    if pz.set_code == "PROMO-B" and pz.card_number in _PROMO_B_OVERRIDES:
+        return _PROMO_B_OVERRIDES[pz.card_number]
 
     # Step 1: exact (set_code, card_number) → pack_sources canonical name.
     # Sanity-check: if the raw_name is directly recognized in the collection AND
     # it disagrees with the pack_sources name, the set has a card-numbering mismatch
     # (e.g. PZ A1 uses different indices than our pack_sources). In that case skip
     # Step 1 and let Step 2's direct-name match resolve it correctly.
-    if canonical_name is None and pz.set_code and pz.card_number is not None:
+    if pz.set_code and pz.card_number is not None:
         ref = pack_sources.get((pz.set_code, pz.card_number))
         if ref:
             ps_name = ref["card_name"]
-            nn_raw = _normalize(pz.raw_name)
-            nn_ps  = _normalize(ps_name)
-            if nn_raw == nn_ps:
-                canonical_name = ps_name
-            else:
-                # Names disagree after normalization → set-numbering mismatch.
-                # Fall through to Step 2's direct-name match using the PZ raw_name,
-                # which is always safer than blindly trusting a mismatched pack_sources entry.
-                # This handles both: card is already owned (raw_name in name_index) AND
-                # card is not yet owned (raw_name not in name_index → NEW_CARD via fallback).
-                expected = str(pz.set_code).upper() in _A4B_HYBRID_TARGET_SETS
-                if mismatches is not None:
-                    mismatches.append((pz.set_code, pz.card_number, pz.raw_name, ps_name, expected))
-                elif not expected:
-                    print(
-                        f"  WARN: set-numbering mismatch {pz.set_code}#{pz.card_number} "
-                        f"({pz.raw_name!r} vs pack_sources {ps_name!r}) "
-                        f"— using direct name match.",
-                        file=sys.stderr,
-                    )
+            if _normalize(pz.raw_name) == _normalize(ps_name):
+                return ps_name
+            # Names disagree after normalization → set-numbering mismatch.
+            # Fall through to Step 2's direct-name match using the PZ raw_name,
+            # which is always safer than blindly trusting a mismatched pack_sources entry.
+            # This handles both: card is already owned (raw_name in name_index) AND
+            # card is not yet owned (raw_name not in name_index → NEW_CARD via fallback).
+            expected = str(pz.set_code).upper() in _A4B_HYBRID_TARGET_SETS
+            if mismatches is not None:
+                mismatches.append((pz.set_code, pz.card_number, pz.raw_name, ps_name, expected))
+            elif not expected:
+                print(
+                    f"  WARN: set-numbering mismatch {pz.set_code}#{pz.card_number} "
+                    f"({pz.raw_name!r} vs pack_sources {ps_name!r}) "
+                    f"— using direct name match.",
+                    file=sys.stderr,
+                )
 
     # Step 2: direct normalized-name match against collection.json.
     # Catches Trainers and cards from sets not yet in pack_sources.
-    if canonical_name is None:
-        nn_direct = _normalize(pz.raw_name)
-        if nn_direct in name_index:
-            canonical_name = pz.raw_name
+    # (Step 3, fallback: the PZ raw_name, used whether or not it is in the index.)
+    return pz.raw_name
 
-    # No match via any deterministic path — auto-add using the PZ name.
-    # This ensures no card is ever silently dropped.
-    if canonical_name is None:
-        canonical_name = pz.raw_name
 
+def _disambiguate_variants(
+    pz: PZCard,
+    indices: list[int],
+    nn: str,
+    collection: list[dict],
+    pack_sources: dict,
+    ext_ref: dict[str, list[dict]],
+    canonical_name: str,
+) -> MatchResult | None:
+    """Disambiguate multiple same-name collection entries by HP (from ext_ref) then
+    by base/alt-art rarity (from pack_sources). Returns a MATCHED result or None if
+    still ambiguous. Only called when the PZ card carries a (set_code, card_number)."""
+    # Step A: HP from external_card_reference
+    target_hp: int | None = None
+    for er in ext_ref.get(nn, []):
+        if (str(er.get("set_code", "")).upper() == pz.set_code
+                and er.get("number") == pz.card_number):
+            target_hp = er.get("hp")
+            break
+
+    if target_hp is not None:
+        hp_matches = [i for i in indices if collection[i].get("hp") == target_hp]
+        if len(hp_matches) == 1:
+            return MatchResult(status="MATCHED", pz_card=pz, entry=collection[hp_matches[0]],
+                               entry_index=hp_matches[0], canonical_name=canonical_name)
+        if hp_matches:
+            indices = hp_matches  # narrow to same-HP bucket before rarity step
+
+    # Step B: rarity-based alt-art disambiguation
+    ps_ref = pack_sources.get((pz.set_code, pz.card_number))
+    if ps_ref and _normalize(ps_ref["card_name"]) == _normalize(canonical_name):
+        rarity = normalize_rarity(ps_ref.get("rarity")) or ""
+        is_alt = rarity in RARE_PLUS_RARITIES
+        alt_idx = [i for i in indices
+                   if "alt" in str(collection[i].get("variant", "")).lower().split()]
+        reg_idx = [i for i in indices
+                   if "alt" not in str(collection[i].get("variant", "")).lower().split()]
+        if is_alt and len(alt_idx) == 1:
+            return MatchResult(status="MATCHED", pz_card=pz, entry=collection[alt_idx[0]],
+                               entry_index=alt_idx[0], canonical_name=canonical_name)
+        if not is_alt and len(reg_idx) == 1:
+            return MatchResult(status="MATCHED", pz_card=pz, entry=collection[reg_idx[0]],
+                               entry_index=reg_idx[0], canonical_name=canonical_name)
+    return None
+
+
+def _bind_to_entry(
+    pz: PZCard,
+    canonical_name: str,
+    collection: list[dict],
+    name_index: dict[str, list[int]],
+    pack_sources: dict,
+    ext_ref: dict[str, list[dict]],
+) -> MatchResult:
+    """Bind a resolved canonical name to a collection entry: NEW_CARD if unknown,
+    direct match if unique, else coord/HP/rarity disambiguation → MATCHED or AMBIGUOUS."""
     nn = _normalize(canonical_name)
     indices = name_index.get(nn, [])
 
@@ -493,13 +540,8 @@ def _match_one(
                 entry_is_alt = "alt" in str(single_entry.get("variant", "")).lower().split()
                 if is_pz_alt != entry_is_alt:
                     return MatchResult(status="NEW_CARD", pz_card=pz, canonical_name=canonical_name)
-        return MatchResult(
-            status="MATCHED",
-            pz_card=pz,
-            entry=single_entry,
-            entry_index=indices[0],
-            canonical_name=canonical_name,
-        )
+        return MatchResult(status="MATCHED", pz_card=pz, entry=single_entry,
+                           entry_index=indices[0], canonical_name=canonical_name)
 
     # Exact-name shortcut: canonical_name may contain characters that normalize
     # identically to a sibling (e.g. Nidoran♀ and Nidoran♂ both → "nidoran").
@@ -508,13 +550,8 @@ def _match_one(
     if canonical_name:
         exact = [i for i in indices if collection[i].get("name") == canonical_name]
         if len(exact) == 1:
-            return MatchResult(
-                status="MATCHED",
-                pz_card=pz,
-                entry=collection[exact[0]],
-                entry_index=exact[0],
-                canonical_name=canonical_name,
-            )
+            return MatchResult(status="MATCHED", pz_card=pz, entry=collection[exact[0]],
+                               entry_index=exact[0], canonical_name=canonical_name)
 
     # Step 0 (preferred): coord-exact match. Collection entries now carry
     # set_code/card_number, so when the PZ card's exact coord is present among the
@@ -528,75 +565,54 @@ def _match_one(
                      if str(collection[i].get("set_code") or "").upper() == pz.set_code
                      and collection[i].get("card_number") == pz.card_number]
         if len(coord_idx) == 1:
-            return MatchResult(
-                status="MATCHED",
-                pz_card=pz,
-                entry=collection[coord_idx[0]],
-                entry_index=coord_idx[0],
-                canonical_name=canonical_name,
-            )
+            return MatchResult(status="MATCHED", pz_card=pz, entry=collection[coord_idx[0]],
+                               entry_index=coord_idx[0], canonical_name=canonical_name)
 
-    # Multiple variants — try HP then rarity to disambiguate
+    # Multiple variants — HP then rarity disambiguation.
     if pz.set_code and pz.card_number is not None:
-        # Step A: HP from external_card_reference
-        ext_records = ext_ref.get(nn, [])
-        target_hp: int | None = None
-        for er in ext_records:
-            if (str(er.get("set_code", "")).upper() == pz.set_code
-                    and er.get("number") == pz.card_number):
-                target_hp = er.get("hp")
-                break
+        result = _disambiguate_variants(pz, indices, nn, collection, pack_sources,
+                                        ext_ref, canonical_name)
+        if result is not None:
+            return result
 
-        if target_hp is not None:
-            hp_matches = [i for i in indices if collection[i].get("hp") == target_hp]
-            if len(hp_matches) == 1:
-                return MatchResult(
-                    status="MATCHED",
-                    pz_card=pz,
-                    entry=collection[hp_matches[0]],
-                    entry_index=hp_matches[0],
-                    canonical_name=canonical_name,
-                )
-            if hp_matches:
-                indices = hp_matches  # narrow to same-HP bucket before rarity step
+    return MatchResult(status="AMBIGUOUS", pz_card=pz, canonical_name=canonical_name)
 
-        # Step B: rarity-based alt-art disambiguation
-        ps_ref = pack_sources.get((pz.set_code, pz.card_number))
-        if ps_ref and _normalize(ps_ref["card_name"]) == _normalize(canonical_name):
-            rarity = normalize_rarity(ps_ref.get("rarity")) or ""
-            is_alt = rarity in RARE_PLUS_RARITIES
-            alt_idx = [i for i in indices
-                       if "alt" in str(collection[i].get("variant", "")).lower().split()]
-            reg_idx = [i for i in indices
-                       if "alt" not in str(collection[i].get("variant", "")).lower().split()]
-            if is_alt and len(alt_idx) == 1:
-                return MatchResult(
-                    status="MATCHED",
-                    pz_card=pz,
-                    entry=collection[alt_idx[0]],
-                    entry_index=alt_idx[0],
-                    canonical_name=canonical_name,
-                )
-            if not is_alt and len(reg_idx) == 1:
-                return MatchResult(
-                    status="MATCHED",
-                    pz_card=pz,
-                    entry=collection[reg_idx[0]],
-                    entry_index=reg_idx[0],
-                    canonical_name=canonical_name,
-                )
 
-    # Disambiguation failed
-    return MatchResult(
-        status="AMBIGUOUS",
-        pz_card=pz,
-        canonical_name=canonical_name,
-    )
+def _match_one(
+    pz: PZCard,
+    collection: list[dict],
+    name_index: dict[str, list[int]],
+    pack_sources: dict,
+    ext_ref: dict[str, list[dict]],
+    mismatches: list | None = None,
+) -> MatchResult:
+    """Match one PZ card to a collection entry: resolve its canonical name, then bind."""
+    canonical_name = _resolve_canonical_name(pz, name_index, pack_sources, mismatches)
+    return _bind_to_entry(pz, canonical_name, collection, name_index, pack_sources, ext_ref)
 
 
 # ---------------------------------------------------------------------------
 # Collection.json in-place editor
 # ---------------------------------------------------------------------------
+
+def _strip_inline_comment(line: str) -> str:
+    """Remove a trailing ``//`` comment, ignoring ``//`` that appears inside a JSON
+    string value (e.g. a URL). collection.json is machine-generated without comments,
+    so this is defensive — but it must never truncate a string value, which the older
+    ``re.sub(r"//.*", "", line)`` did (it corrupted ``"url": "https://…"``)."""
+    in_str = False
+    esc = False
+    for i, ch in enumerate(line):
+        if esc:
+            esc = False
+        elif ch == "\\":
+            esc = True
+        elif ch == '"':
+            in_str = not in_str
+        elif ch == "/" and not in_str and line[i + 1:i + 2] == "/":
+            return line[:i]
+    return line
+
 
 def _find_count_lines(raw: str, collection: list[dict]) -> dict[int, int]:
     """
@@ -604,6 +620,11 @@ def _find_count_lines(raw: str, collection: list[dict]) -> dict[int, int]:
 
     Walks the raw JSONC text, tracking object boundaries and matching each
     "name" field to the corresponding collection entry to locate its "count" line.
+
+    Invariants this relies on (true for the machine-written collection.json):
+      * within an entry object, "name" precedes "count" on earlier/equal lines;
+      * entries appear in the file in the same order as the parsed collection list,
+        so same-name variants that "hp" can't distinguish bind in list order.
     """
     lines = raw.split("\n")
     # Build a lookup: normalized_name + hp (to distinguish variants) → entry_index
@@ -623,7 +644,7 @@ def _find_count_lines(raw: str, collection: list[dict]) -> dict[int, int]:
     matched_set: set[int] = set()
 
     for lineno, line in enumerate(lines):
-        stripped = re.sub(r"//[^\n]*", "", line)  # strip inline comment
+        stripped = _strip_inline_comment(line)
         depth += stripped.count("{") - stripped.count("}")
 
         # Detect "name": "..." on this line
@@ -729,6 +750,23 @@ _STAGE_MAP: dict[str, tuple[int, str]] = {
 }
 
 
+def _apply_pokemon_metadata(entry: dict, src: dict) -> None:
+    """Populate a Pokémon entry's card_type/type/stage/hp from an ext_ref-style
+    record (in place). Shared by the confirmed-Pokemon and blank-category paths."""
+    entry["card_type"] = "Pokemon"
+    ptype = src.get("pokemon_type")
+    if ptype and ptype != "None":
+        entry["type"] = ptype
+    stage_str = src.get("stage", "")
+    if stage_str in _STAGE_MAP:
+        s, sl = _STAGE_MAP[stage_str]
+        entry["stage"] = s
+        entry["stage_label"] = sl
+    hp = src.get("hp")
+    if hp is not None:
+        entry["hp"] = hp
+
+
 def build_auto_entry(
     mr: "MatchResult",
     ext_ref: dict,
@@ -817,18 +855,7 @@ def build_auto_entry(
         entry: dict = {"name": mr.canonical_name, "count": pz.count}
         cat = best.get("card_category", "")
         if cat == "Pokemon":
-            entry["card_type"] = "Pokemon"
-            ptype = best.get("pokemon_type")
-            if ptype and ptype != "None":
-                entry["type"] = ptype
-            stage_str = best.get("stage", "")
-            if stage_str in _STAGE_MAP:
-                s, sl = _STAGE_MAP[stage_str]
-                entry["stage"] = s
-                entry["stage_label"] = sl
-            hp = best.get("hp")
-            if hp is not None:
-                entry["hp"] = hp
+            _apply_pokemon_metadata(entry, best)
         elif not cat:
             # Blank ext_ref category — warn and default to Pokemon (safer than Trainer;
             # run scripts/fetch_ext_ref.py to populate the missing card_category).
@@ -837,18 +864,7 @@ def build_auto_entry(
                 f"— defaulting to Pokemon. Run fetch_ext_ref.py to fix.",
                 file=sys.stderr,
             )
-            entry["card_type"] = "Pokemon"
-            ptype = best.get("pokemon_type")
-            if ptype and ptype != "None":
-                entry["type"] = ptype
-            stage_str = best.get("stage", "")
-            if stage_str in _STAGE_MAP:
-                s, sl = _STAGE_MAP[stage_str]
-                entry["stage"] = s
-                entry["stage_label"] = sl
-            hp = best.get("hp")
-            if hp is not None:
-                entry["hp"] = hp
+            _apply_pokemon_metadata(entry, best)
         else:
             entry["card_type"] = "Trainer"
             subtype = TRAINER_SUBTYPE_MAP.get(cat)
@@ -941,9 +957,9 @@ def write_review_queue(
                 name = entry.get("name")
                 if name:
                     prev_consecutive[name] = entry.get("consecutive_missing", 0)
-        except Exception:
+        except (json.JSONDecodeError, OSError) as e:
             print(
-                "  WARN: could not read previous sync_review_queue.json — "
+                f"  WARN: could not read previous sync_review_queue.json ({e}) — "
                 "consecutive_missing counts reset to 1.",
                 file=sys.stderr,
             )
@@ -980,7 +996,9 @@ def load_review_queue() -> dict:
         return {"resolved": True}
     try:
         return json.loads(REVIEW_QUEUE.read_text(encoding="utf-8"))
-    except Exception:
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"  WARN: could not read sync_review_queue.json ({e}) — "
+              "treating as resolved.", file=sys.stderr)
         return {"resolved": True}
 
 
@@ -1567,8 +1585,10 @@ def main() -> int:
                 name = entry.get("name")
                 if name:
                     prev_consecutive[name] = entry.get("consecutive_missing", 0)
-        except Exception:
-            pass
+        except (json.JSONDecodeError, OSError) as e:
+            print(f"  WARN: could not read sync_review_queue.json for stale-detection "
+                  f"({e}) — consecutive_missing history unavailable this sync.",
+                  file=sys.stderr)
 
     stale_base_indices: set[int] = set()
     alt_art_nns: set[str] = set()

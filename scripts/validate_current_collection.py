@@ -10,14 +10,13 @@ Usage:
 """
 
 import argparse
-import json
 import sys
 from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (is_ex_from_name, TRAINER_SUBTYPE_MAP,
-                            load_collection_json, ROOT, COLLECTION_JSON)
+                            load_collection_or_exit, ROOT, COLLECTION_JSON)
 
 VALID_CARD_TYPES = {"Pokemon", "Trainer"}
 VALID_POKEMON_TYPES = {
@@ -26,18 +25,6 @@ VALID_POKEMON_TYPES = {
 }
 # Valid trainer_subtype values, derived from the shared category map (single source).
 VALID_TRAINER_SUBTYPES = set(TRAINER_SUBTYPE_MAP.values())
-
-
-def load_collection():
-    if not COLLECTION_JSON.exists():
-        print(f"ERROR: {COLLECTION_JSON} not found", file=sys.stderr)
-        sys.exit(1)
-    try:
-        _, data = load_collection_json()
-        return data
-    except json.JSONDecodeError as e:
-        print(f"ERROR: collection.json is not valid JSON (after stripping comments): {e}", file=sys.stderr)
-        sys.exit(1)
 
 
 def validate(data, expected_total):
@@ -207,7 +194,7 @@ def main():
     print(f"\n=== validate_current_collection.py ===")
     print(f"  File: {COLLECTION_JSON}")
 
-    data = load_collection()
+    data = load_collection_or_exit()
 
     meta_total = data.get("meta", {}).get("total_cards", 0)
     expected_total = args.expected_total if args.expected_total is not None else meta_total

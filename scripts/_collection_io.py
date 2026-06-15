@@ -9,6 +9,7 @@ source of truth so fixes don't have to be copied into every script.
 import html
 import json
 import re
+import sys
 import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
@@ -117,6 +118,25 @@ def norm_card_name(name) -> str:
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
     s = s.lower()
     return re.sub(r"[^a-z0-9]", "", s)
+
+
+# Forme qualifiers some sources include and others omit (e.g. Limitless titles both
+# "Zygarde 10% Forme" and "Zygarde 50% Forme" simply "Zygarde"). Stripped only for the
+# independent NAME-confirmation comparison — the card_number still distinguishes formes,
+# and " ex" is intentionally NOT stripped (base vs ex are genuinely different cards).
+FORME_RE = re.compile(
+    r"\s+(?:\d+%\s+)?(?:complete\s+|sunny\s+|rainy\s+|snowy\s+|normal\s+)?forme?$",
+    re.I,
+)
+
+
+def name_agrees(a: str, b: str) -> bool:
+    """True if a and b refer to the same card after normalization + forme-stripping."""
+    if norm_card_name(a) == norm_card_name(b):
+        return True
+    sa = FORME_RE.sub("", str(a)).strip()
+    sb = FORME_RE.sub("", str(b)).strip()
+    return norm_card_name(sa) == norm_card_name(sb)
 
 
 def is_cache_fresh(entry: dict, max_age_days: int = CACHE_MAX_AGE_DAYS) -> bool:
@@ -375,6 +395,50 @@ def load_collection_json(path: Path | None = None) -> tuple[str, dict]:
     p = Path(path) if path is not None else COLLECTION_JSON
     raw = p.read_text(encoding="utf-8")
     return raw, json.loads(strip_comments(raw))
+
+
+def load_collection_or_exit(path: Path | None = None) -> dict:
+    """Parse collection.json, exiting(1) with a friendly stderr message on failure.
+
+    For CLI scripts (validate/normalize) that want a clean error instead of a
+    traceback. Returns the parsed dict (the raw text is discarded).
+    """
+    p = Path(path) if path is not None else COLLECTION_JSON
+    if not p.exists():
+        print(f"ERROR: {p} not found", file=sys.stderr)
+        sys.exit(1)
+    try:
+        _, data = load_collection_json(p)
+        return data
+    except json.JSONDecodeError as e:
+        print(f"ERROR: collection.json is not valid JSON (after stripping comments): {e}",
+              file=sys.stderr)
+        sys.exit(1)
+
+
+def load_collection_counts(path: Path | None = None) -> tuple[dict[str, int], dict[tuple[str, int], int]]:
+    """Aggregate owned counts from collection.json for EV scoring.
+
+    Returns (by_name, by_coord):
+      by_name:  {norm_card_name: total_count}              — name-based fallback
+      by_coord: {(set_code_upper, card_number): count}     — preferred, set-exact
+    """
+    _, data = load_collection_json(path)
+    by_name: dict[str, int] = {}
+    by_coord: dict[tuple[str, int], int] = {}
+    for e in data.get("collection", []):
+        cnt = e.get("count", 0)
+        nn = norm_card_name(e.get("name", ""))
+        by_name[nn] = by_name.get(nn, 0) + cnt
+        sc = str(e.get("set_code") or "").upper().strip()
+        cn = e.get("card_number")
+        if sc and cn is not None:
+            try:
+                key = (sc, int(cn))
+                by_coord[key] = by_coord.get(key, 0) + cnt
+            except (TypeError, ValueError):
+                pass
+    return by_name, by_coord
 
 
 def field_slug(name: str) -> str:

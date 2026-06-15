@@ -22,6 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (is_ex_from_name, norm_card_name as _norm,
+                            load_collection_counts,
                             ROOT, PZ_PACK_ODDS_JSON, PACK_SOURCES_JSON,
                             COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
                             PROMO_EV_JSON as OUT_JSON)
@@ -60,28 +61,6 @@ def value_of_next_copy(owned: int, is_ex: bool) -> float:
     if is_ex:
         v += SCORING_WEIGHTS["ex_missing"]
     return v
-
-
-def load_collection(path: Path) -> tuple[dict[str, int], dict[tuple, int]]:
-    """Returns (by_name, by_coord):
-      by_name:  {normalized_name: owned_count}              — fallback
-      by_coord: {(set_code_upper, card_number): owned_count} — preferred, set-exact
-    """
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    by_name: dict[str, int] = {}
-    by_coord: dict[tuple, int] = {}
-    for e in raw.get("collection", []):
-        cnt = e.get("count", 0)
-        name = _norm(e.get("name", ""))
-        by_name[name] = by_name.get(name, 0) + cnt
-        sc = str(e.get("set_code") or "").upper().strip()
-        cn = e.get("card_number")
-        if sc and cn is not None:
-            try:
-                by_coord[(sc, int(cn))] = by_coord.get((sc, int(cn)), 0) + cnt
-            except (TypeError, ValueError):
-                pass
-    return by_name, by_coord
 
 
 def load_promo_ps_index(path: Path) -> dict[tuple, dict]:
@@ -282,7 +261,7 @@ def main():
             pass  # corrupted prior output — recompute
 
     pz_raw     = json.loads(PZ_PACK_ODDS_JSON.read_text(encoding="utf-8"))
-    collection, collection_by_coord = load_collection(COLLECTION_JSON)
+    collection, collection_by_coord = load_collection_counts(COLLECTION_JSON)
     ps_idx     = load_promo_ps_index(PACK_SOURCES_JSON)
 
     promo_slugs = [slug for slug in pz_raw if "promo" in slug]
