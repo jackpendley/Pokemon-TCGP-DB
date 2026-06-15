@@ -35,6 +35,7 @@ import hashlib
 import json
 import sys
 from collections import defaultdict
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -312,6 +313,149 @@ def value_of_next_copy(owned: int, rarity: str | None,
     return v
 
 
+@dataclass
+class _PoolEV:
+    """Accumulated EV signals over a pack's card pool (one pass of the card loop)."""
+    owned_in_pool: int = 0
+    missing_in_pool: int = 0
+    base_owned_in_pool: int = 0
+    base_cards_in_pool: int = 0
+    new_card_ev: float = 0.0
+    new_card_ev_10x: float = 0.0   # E[rarity-weighted new cards in 10 consecutive openings]
+    copy_ev: float = 0.0
+    deck_target_ev: float = 0.0
+    missing_rare_plus: int = 0     # count of missing one_star+ cards
+    rare_plus_ev_10x: float = 0.0  # P(≥1 in 10 packs), count-based, for rare+ cards only
+    pz_hits: int = 0
+    fallback_count: int = 0
+    pz_excluded_count: int = 0
+    card_ev_list: list = field(default_factory=list)
+
+
+def _accumulate_pool_ev(all_pool_cards: list, collection: dict,
+                        collection_by_card: dict | None, deck_targets: dict,
+                        pz_card_odds: dict | None, pz_name_odds: dict | None,
+                        slot_rates: dict | None, combined_by_rarity: dict) -> _PoolEV:
+    """One pass over a pack's pool, accumulating every EV signal into a _PoolEV.
+
+    Pure aggregation (no I/O); pull rates come from PZ odds when available, else the
+    inferred slot model. Separated from compute_pack_ev_record so the orchestration
+    (confidence, scores, output shaping) reads top-to-bottom.
+    """
+    agg = _PoolEV()
+    for card in all_pool_cards:
+        card_name = card.get("card_name", "")
+        # normalize_rarity is the safety net: a stray legacy/un-migrated rarity is read as
+        # its new-vocabulary name so RARITY_BONUS / card_pull_ev / RARE_PLUS lookups match.
+        rarity    = normalize_rarity(card.get("rarity"))
+        nn        = _norm_name(card_name)
+        is_dt     = nn in deck_targets
+
+        sc  = card.get("set_code", "").upper()
+        cn  = card.get("card_number")
+
+        # Each printing is counted independently: only credits ownership if this exact
+        # (set_code, card_number) is in the collection. Dual-location A4b reprints are
+        # stored at the original-set coord by reconcile_coords_from_pz (1st copy fills the
+        # original slot, 2nd+ the A4b slot — matches the app's dex), so no cross-crediting
+        # is needed here. Falls back to name-only for genuinely coord-less legacy entries
+        # (in practice 0 since all entries carry coords).
+        # TODO(deck-ev): when deck logic lands, switch to name-count here (decks mix sets).
+        if collection_by_card and sc and cn is not None:
+            owned = collection_by_card.get((sc, cn), 0)
+        else:
+            owned = collection.get(nn, 0)
+
+        if owned > 0:
+            agg.owned_in_pool += 1
+        else:
+            agg.missing_in_pool += 1
+        if rarity in {"common", "uncommon", "rare", "double_rare"}:
+            agg.base_cards_in_pool += 1
+            if owned > 0:
+                agg.base_owned_in_pool += 1
+        pz_pull = pz_card_odds.get((sc, cn)) if (pz_card_odds and sc and cn is not None) else None
+
+        if pz_pull is None and pz_name_odds and card_name:
+            pz_pull = pz_name_odds.get(nn)
+
+        if pz_pull is not None:
+            p_pull = pz_pull
+            agg.pz_hits += 1  # count all PZ cards in coverage denominator, including zero-rate
+        elif pz_card_odds:
+            # PZ data exists for this pack but card absent from it → not pullable from packs.
+            agg.pz_excluded_count += 1
+            continue
+        else:
+            if not rarity:
+                continue
+            if not slot_rates:
+                continue
+            p_pull = card_pull_ev(rarity, combined_by_rarity, slot_rates)
+
+        if p_pull <= 0:
+            continue
+
+        if pz_pull is None:
+            agg.fallback_count += 1
+
+        v = value_of_next_copy(owned, rarity, deck_targets, nn)
+        ev = p_pull * v
+
+        if ev > 0:
+            agg.card_ev_list.append({
+                "name": card_name,
+                "rarity": rarity,
+                "is_deck_target": is_dt,
+                "owned": owned,
+                "pull_prob": round(p_pull, 7),
+                "value": round(v, 2),
+                "ev_contribution": round(ev, 7),
+                "rate_source": "pz" if pz_pull is not None else "inferred",
+            })
+
+        if owned == 0:
+            agg.new_card_ev += ev
+            # 10x model: P(get at least 1 in 10 packs) — accounts for within-batch duplicates.
+            # PZ rates are proper per-pack probabilities; use directly.
+            # Inferred rates return E[copies per pack] for multi-slot rarities (one/two/three_diamond
+            # each fill 3 regular slots), which can exceed 1.0 when the pool has < 3 cards of
+            # that rarity. Back-calculate P(≥1 in 1 pack) = 1-(1-p_per_slot)^3 in that case.
+            if pz_pull is None and p_pull > 1.0:
+                p_per_slot = p_pull / 3.0  # 3 regular slots for common rarities
+                p_at_least_one = 1.0 - (1.0 - min(p_per_slot, 1.0)) ** 3
+            else:
+                p_at_least_one = min(p_pull, 1.0)
+            p_10x = 1.0 - (1.0 - p_at_least_one) ** 10
+            v_rarity = 1.0 + RARITY_BONUS.get(rarity or "", 0.0)
+            agg.new_card_ev_10x += p_10x * v_rarity
+            if rarity in RARE_PLUS_RARITIES:
+                agg.missing_rare_plus += 1
+                agg.rare_plus_ev_10x += p_10x  # count-based for display
+        else:
+            agg.copy_ev += ev
+
+        if is_dt:
+            agg.deck_target_ev += ev
+
+    return agg
+
+
+def _confidence_weight(pz_coverage: float, slot_rates: dict | None) -> tuple[float, str]:
+    """Map PZ coverage / slot-rate verification to (confidence_weight, source_status).
+
+    Full confidence (no haircut) when EITHER PZ pack-odds cover the pack OR the slot
+    rates have been verified in-app — verification is honored even if PZ coverage drops,
+    so a user-confirmed pack never silently reverts to the inferred haircut.
+    """
+    slot_verified = (slot_rates or {}).get("confidence") in _VERIFIED_SLOT_CONFIDENCES
+    if pz_coverage >= 0.90:
+        return PZ_CONFIDENCE_WEIGHT, "pz_verified"
+    if slot_verified:
+        return PZ_CONFIDENCE_WEIGHT, "user_in_app_verified"
+    return INFERRED_CONFIDENCE_WEIGHT, "inferred"
+
+
 def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
                            collection: dict, deck_targets: dict,
                            pz_card_odds: dict | None = None,
@@ -345,135 +489,18 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
                 "pack_total_ev": 0.0,
                 "confidence_adjusted_ev": 0.0}
 
-    owned_in_pool      = 0
-    missing_in_pool    = 0
-    base_owned_in_pool = 0
-    base_cards_in_pool = 0
-    new_card_ev        = 0.0
-    new_card_ev_10x  = 0.0   # E[rarity-weighted new cards in 10 consecutive openings]
-    copy_ev          = 0.0
-    deck_target_ev   = 0.0
-    missing_rare_plus = 0    # count of missing one_star+ cards
-    rare_plus_ev_10x  = 0.0  # P(≥1 in 10 packs), count-based, for rare+ cards only
-    card_ev_list     = []
-    pz_hits          = 0
-    fallback_count   = 0
-    pz_excluded_count = 0
+    agg = _accumulate_pool_ev(all_pool_cards, collection, collection_by_card, deck_targets,
+                              pz_card_odds, pz_name_odds, slot_rates, combined_by_rarity)
 
-    for card in all_pool_cards:
-        card_name = card.get("card_name", "")
-        # normalize_rarity is the safety net: a stray legacy/un-migrated rarity is read as
-        # its new-vocabulary name so RARITY_BONUS / card_pull_ev / RARE_PLUS lookups match.
-        rarity    = normalize_rarity(card.get("rarity"))
-        nn        = _norm_name(card_name)
-        is_dt     = nn in deck_targets
-
-        sc  = card.get("set_code", "").upper()
-        cn  = card.get("card_number")
-
-        # Each printing is counted independently: only credits ownership if this exact
-        # (set_code, card_number) is in the collection. Dual-location A4b reprints are
-        # stored at the original-set coord by reconcile_coords_from_pz (1st copy fills the
-        # original slot, 2nd+ the A4b slot — matches the app's dex), so no cross-crediting
-        # is needed here. Falls back to name-only for genuinely coord-less legacy entries
-        # (in practice 0 since all entries carry coords).
-        # TODO(deck-ev): when deck logic lands, switch to name-count here (decks mix sets).
-        if collection_by_card and sc and cn is not None:
-            owned = collection_by_card.get((sc, cn), 0)
-        else:
-            owned = collection.get(nn, 0)
-
-        if owned > 0:
-            owned_in_pool += 1
-        else:
-            missing_in_pool += 1
-        if rarity in {"common", "uncommon", "rare", "double_rare"}:
-            base_cards_in_pool += 1
-            if owned > 0:
-                base_owned_in_pool += 1
-        pz_pull = pz_card_odds.get((sc, cn)) if (pz_card_odds and sc and cn is not None) else None
-
-        if pz_pull is None and pz_name_odds and card_name:
-            pz_pull = pz_name_odds.get(nn)
-
-        if pz_pull is not None:
-            p_pull = pz_pull
-            pz_hits += 1  # count all PZ cards in coverage denominator, including zero-rate
-        elif pz_card_odds:
-            # PZ data exists for this pack but card absent from it → not pullable from packs.
-            pz_excluded_count += 1
-            continue
-        else:
-            if not rarity:
-                continue
-            if not slot_rates:
-                continue
-            p_pull = card_pull_ev(rarity, combined_by_rarity, slot_rates)
-
-        if p_pull <= 0:
-            continue
-
-        if pz_pull is None:
-            fallback_count += 1
-
-        v = value_of_next_copy(owned, rarity, deck_targets, nn)
-        ev = p_pull * v
-
-        if ev > 0:
-            card_ev_list.append({
-                "name": card_name,
-                "rarity": rarity,
-                "is_deck_target": is_dt,
-                "owned": owned,
-                "pull_prob": round(p_pull, 7),
-                "value": round(v, 2),
-                "ev_contribution": round(ev, 7),
-                "rate_source": "pz" if pz_pull is not None else "inferred",
-            })
-
-        if owned == 0:
-            new_card_ev += ev
-            # 10x model: P(get at least 1 in 10 packs) — accounts for within-batch duplicates.
-            # PZ rates are proper per-pack probabilities; use directly.
-            # Inferred rates return E[copies per pack] for multi-slot rarities (one/two/three_diamond
-            # each fill 3 regular slots), which can exceed 1.0 when the pool has < 3 cards of
-            # that rarity. Back-calculate P(≥1 in 1 pack) = 1-(1-p_per_slot)^3 in that case.
-            if pz_pull is None and p_pull > 1.0:
-                p_per_slot = p_pull / 3.0  # 3 regular slots for common rarities
-                p_at_least_one = 1.0 - (1.0 - min(p_per_slot, 1.0)) ** 3
-            else:
-                p_at_least_one = min(p_pull, 1.0)
-            p_10x = 1.0 - (1.0 - p_at_least_one) ** 10
-            v_rarity = 1.0 + RARITY_BONUS.get(rarity or "", 0.0)
-            new_card_ev_10x += p_10x * v_rarity
-            if rarity in RARE_PLUS_RARITIES:
-                missing_rare_plus += 1
-                rare_plus_ev_10x += p_10x  # count-based for display
-        else:
-            copy_ev += ev
-
-        if is_dt:
-            deck_target_ev += ev
-
-    pack_total_ev = new_card_ev + copy_ev
-
-    pz_total = pz_hits + fallback_count
-    pz_coverage = pz_hits / pz_total if pz_total > 0 else 0.0
-    # Full confidence (no haircut) when EITHER PZ pack-odds cover the pack OR the slot rates
-    # have been verified in-app. Verification is honored even if PZ coverage drops, so a
-    # user-confirmed pack never silently reverts to the inferred haircut.
-    slot_verified = (slot_rates or {}).get("confidence") in _VERIFIED_SLOT_CONFIDENCES
-    if pz_coverage >= 0.90:
-        confidence_weight, source_status = PZ_CONFIDENCE_WEIGHT, "pz_verified"
-    elif slot_verified:
-        confidence_weight, source_status = PZ_CONFIDENCE_WEIGHT, "user_in_app_verified"
-    else:
-        confidence_weight, source_status = INFERRED_CONFIDENCE_WEIGHT, "inferred"
+    pack_total_ev = agg.new_card_ev + agg.copy_ev
+    pz_total = agg.pz_hits + agg.fallback_count
+    pz_coverage = agg.pz_hits / pz_total if pz_total > 0 else 0.0
+    confidence_weight, source_status = _confidence_weight(pz_coverage, slot_rates)
 
     # Diminishing returns ratio: how much 10x batch EV differs from 10 × 1x EV.
     # A ratio < 0.85 means significant within-batch duplicates (pack is near-complete).
-    ev_10x_uncapped = new_card_ev * 10
-    dr_ratio = new_card_ev_10x / ev_10x_uncapped if ev_10x_uncapped > 0 else 1.0
+    ev_10x_uncapped = agg.new_card_ev * 10
+    dr_ratio = agg.new_card_ev_10x / ev_10x_uncapped if ev_10x_uncapped > 0 else 1.0
 
     # Unified score: single composite signal used for all downstream recommendations.
     # The deck_target term is only included when a deck producer has supplied targets.
@@ -481,19 +508,19 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     # today, so deck_targets is empty and the ×1.5 term is omitted rather than silently
     # contributing 0 — keeping the formula honest about what is actually live.
     unified_score = (
-        new_card_ev_10x * UNIFIED_WEIGHTS["new_card_10x"]
-        + copy_ev        * UNIFIED_WEIGHTS["copy"]
+        agg.new_card_ev_10x * UNIFIED_WEIGHTS["new_card_10x"]
+        + agg.copy_ev        * UNIFIED_WEIGHTS["copy"]
     )
     if deck_targets:
-        unified_score += deck_target_ev * UNIFIED_WEIGHTS["deck_target"]
+        unified_score += agg.deck_target_ev * UNIFIED_WEIGHTS["deck_target"]
     unified_score *= confidence_weight
 
     # Cost efficiency: hourglasses per expected unique new card
-    cost_per_unique_1x  = HOURGLASS_PER_PACK / max(new_card_ev, 0.001)
-    cost_per_unique_10x = (HOURGLASS_PER_PACK * 10) / max(new_card_ev_10x, 0.001)
+    cost_per_unique_1x  = HOURGLASS_PER_PACK / max(agg.new_card_ev, 0.001)
+    cost_per_unique_10x = (HOURGLASS_PER_PACK * 10) / max(agg.new_card_ev_10x, 0.001)
 
-    card_ev_list.sort(key=lambda x: x["ev_contribution"], reverse=True)
-    deck_target_cards = [c for c in card_ev_list if c.get("is_deck_target")]
+    agg.card_ev_list.sort(key=lambda x: x["ev_contribution"], reverse=True)
+    deck_target_cards = [c for c in agg.card_ev_list if c.get("is_deck_target")]
 
     return {
         **base,
@@ -503,16 +530,16 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "blocked_reason": None,
         "purchasable": pack_record.get("hourglass_purchasable", True),
         "cards_in_pool": len(all_pool_cards),
-        "owned_in_pool": owned_in_pool,
-        "missing_in_pool": missing_in_pool,
-        "base_cards_in_pool": base_cards_in_pool,
-        "base_owned_in_pool": base_owned_in_pool,
-        "new_card_ev":     round(new_card_ev, 6),
-        "new_card_ev_10x": round(new_card_ev_10x, 6),
-        "copy_ev":         round(copy_ev, 6),
-        "deck_target_ev":  round(deck_target_ev, 6),
-        "missing_rare_plus": missing_rare_plus,
-        "rare_plus_ev_10x":  round(rare_plus_ev_10x, 6),
+        "owned_in_pool": agg.owned_in_pool,
+        "missing_in_pool": agg.missing_in_pool,
+        "base_cards_in_pool": agg.base_cards_in_pool,
+        "base_owned_in_pool": agg.base_owned_in_pool,
+        "new_card_ev":     round(agg.new_card_ev, 6),
+        "new_card_ev_10x": round(agg.new_card_ev_10x, 6),
+        "copy_ev":         round(agg.copy_ev, 6),
+        "deck_target_ev":  round(agg.deck_target_ev, 6),
+        "missing_rare_plus": agg.missing_rare_plus,
+        "rare_plus_ev_10x":  round(agg.rare_plus_ev_10x, 6),
         "pack_total_ev":   round(pack_total_ev, 6),
         "confidence_adjusted_ev": round(pack_total_ev * confidence_weight, 6),
         "unified_score":   round(unified_score, 6),
@@ -520,13 +547,13 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "cost_per_unique_card_1x":  round(cost_per_unique_1x, 2),
         "cost_per_unique_card_10x": round(cost_per_unique_10x, 2),
         "pz_coverage": round(pz_coverage, 3),
-        "top_ev_cards": card_ev_list[:TOP_N_CARDS],
+        "top_ev_cards": agg.card_ev_list[:TOP_N_CARDS],
         "deck_target_cards": deck_target_cards,
         "notes": (
             f"slot_rates={source_status}. "
-            f"PZ coverage: {pz_hits}/{pz_total} cards"
-            + (f" ({pz_excluded_count} excluded as non-pullable)." if pz_excluded_count else ".")
-            + f" {owned_in_pool}/{len(all_pool_cards)} cards in pool are owned. "
+            f"PZ coverage: {agg.pz_hits}/{pz_total} cards"
+            + (f" ({agg.pz_excluded_count} excluded as non-pullable)." if agg.pz_excluded_count else ".")
+            + f" {agg.owned_in_pool}/{len(all_pool_cards)} cards in pool are owned. "
             f"EV excludes low_confidence and unresolved collection entries."
         ),
     }
