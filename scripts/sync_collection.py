@@ -598,12 +598,36 @@ def _match_one(
 # Collection.json in-place editor
 # ---------------------------------------------------------------------------
 
+def _strip_inline_comment(line: str) -> str:
+    """Remove a trailing ``//`` comment, ignoring ``//`` that appears inside a JSON
+    string value (e.g. a URL). collection.json is machine-generated without comments,
+    so this is defensive — but it must never truncate a string value, which the older
+    ``re.sub(r"//.*", "", line)`` did (it corrupted ``"url": "https://…"``)."""
+    in_str = False
+    esc = False
+    for i, ch in enumerate(line):
+        if esc:
+            esc = False
+        elif ch == "\\":
+            esc = True
+        elif ch == '"':
+            in_str = not in_str
+        elif ch == "/" and not in_str and line[i + 1:i + 2] == "/":
+            return line[:i]
+    return line
+
+
 def _find_count_lines(raw: str, collection: list[dict]) -> dict[int, int]:
     """
     Return {entry_index → line_number_of_count_field} (0-based line numbers).
 
     Walks the raw JSONC text, tracking object boundaries and matching each
     "name" field to the corresponding collection entry to locate its "count" line.
+
+    Invariants this relies on (true for the machine-written collection.json):
+      * within an entry object, "name" precedes "count" on earlier/equal lines;
+      * entries appear in the file in the same order as the parsed collection list,
+        so same-name variants that "hp" can't distinguish bind in list order.
     """
     lines = raw.split("\n")
     # Build a lookup: normalized_name + hp (to distinguish variants) → entry_index
@@ -623,7 +647,7 @@ def _find_count_lines(raw: str, collection: list[dict]) -> dict[int, int]:
     matched_set: set[int] = set()
 
     for lineno, line in enumerate(lines):
-        stripped = re.sub(r"//[^\n]*", "", line)  # strip inline comment
+        stripped = _strip_inline_comment(line)
         depth += stripped.count("{") - stripped.count("}")
 
         # Detect "name": "..." on this line

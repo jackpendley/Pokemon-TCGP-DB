@@ -359,3 +359,57 @@ def test_real_collection_passes_validation(collection_data):
         collection_data.get("meta", {}).get("total_cards", 0),
     )
     assert failures == [], f"Real collection has validation failures: {failures}"
+
+
+# ---------------------------------------------------------------------------
+# JSONC in-place count editor — _strip_inline_comment / _find_count_lines /
+# apply_count_changes edit collection.json textually, preserving formatting.
+# ---------------------------------------------------------------------------
+
+def test_strip_inline_comment_preserves_string_values():
+    """A // inside a string value (e.g. a URL) must NOT be truncated; a real
+    trailing // comment and a full-line // comment must be removed."""
+    url_line = '      "source_url": "https://example.com/cards/a1/1//foo",'
+    assert sc._strip_inline_comment(url_line) == url_line  # unchanged
+    stripped = sc._strip_inline_comment('      "count": 3, // bump it')
+    assert "bump" not in stripped and '"count": 3' in stripped
+    assert sc._strip_inline_comment('   // "count": 99 decoy').strip() == ""
+
+
+def test_editor_binds_counts_ignoring_comment_lines_and_urls():
+    """Counts bind to the right entries even with a decoy commented-out count line
+    and a // inside a URL value; same-name+hp variants bind in list order."""
+    raw = (
+        '{\n'
+        '  "collection": [\n'
+        '    {\n'
+        '      "name": "Pikachu",\n'
+        '      "hp": 60,\n'
+        '      // "count": 99  <- decoy comment, must be ignored\n'
+        '      "count": 1\n'
+        '    },\n'
+        '    {\n'
+        '      "name": "Pikachu",\n'
+        '      "hp": 60,\n'
+        '      "source_url": "https://x/cards/a1/1//foo",\n'
+        '      "count": 2\n'
+        '    }\n'
+        '  ]\n'
+        '}'
+    )
+    collection = [
+        {"name": "Pikachu", "hp": 60, "count": 1},
+        {"name": "Pikachu", "hp": 60, "count": 2},
+    ]
+    lines = raw.split("\n")
+    binding = sc._find_count_lines(raw, collection)
+    assert lines[binding[0]].strip() == '"count": 1'   # not the decoy
+    assert lines[binding[1]].strip() == '"count": 2'
+
+    ch = sc.CountChange(entry=collection[1], entry_index=1, old_count=2, new_count=5)
+    edited, skipped = sc.apply_count_changes(raw, [ch], collection)
+    assert skipped == []
+    assert '"count": 5' in edited          # entry 1 updated
+    assert '"count": 1' in edited          # entry 0 untouched
+    assert '"count": 99' in edited         # decoy comment preserved verbatim
+    assert '"https://x/cards/a1/1//foo"' in edited  # URL value intact
