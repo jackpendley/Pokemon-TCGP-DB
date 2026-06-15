@@ -152,6 +152,14 @@ new_card_ev_10x = E[rarity-weighted new cards in 10 consecutive openings]
 These are not part of the daily pipeline — run them when reference data needs rebuilding (e.g., new set release).
 
 ```bash
+# New pack/cards appeared after a sync? Refresh PZ odds + reference automatically.
+# Live fetch via stored sync auth — no manual HAR export needed.
+python3 scripts/ingest_pz.py                                      # dry-run: report new packs
+python3 scripts/ingest_pz.py --apply --write-pack-sources --rebuild-refs
+#   → writes pz_pack_odds.json (drop odds), adds pack_sources records for the new
+#     cards, and rebuilds card_reference.json so validation passes. Re-run the
+#     pipeline afterwards. Use `--har FILE` to ingest a browser capture offline.
+
 # Pack source reference rebuild (if pack_sources.json needs updating)
 python3 scripts/build_pack_sources.py
 python3 scripts/validate_pack_sources.py
