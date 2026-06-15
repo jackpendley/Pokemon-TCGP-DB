@@ -1,8 +1,8 @@
 # Final Hourglass Spending Plan
 
-Generated: 2026-06-14  
+Generated: 2026-06-15  
 Model confidence: **THIRD PARTY VERIFIED WITH IN APP ANCHOR**  
-Collection total: 1276 cards  
+Collection total: 1293 cards  
 Batch size: 10 packs (120 ⧗ per batch)  
 
 > **DISCLAIMER**
@@ -22,8 +22,8 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 | # | Pack | Set | ⧗ Cost | Unified | 10x EV | ⧗/EV | DR Ratio | Missing | Near-Complete | Rerun? |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **Ho-Oh** | A4 | 120 ⧗ | 60.6185 | 60.5999 | 2.0 | 0.840 | 132 | YES | YES |
-| 2 | **Lugia** | A4 | 120 ⧗ | 59.2967 | 59.2526 | 2.0 | 0.846 | 127 | YES | YES |
+| 1 | **Ho-Oh** | A4 | 120 ⧗ | 60.1096 | 60.0855 | 2.0 | 0.841 | 131 | YES | YES |
+| 2 | **Lugia** | A4 | 120 ⧗ | 58.7878 | 58.7382 | 2.0 | 0.847 | 126 | YES | YES |
 | 3 | **Secluded Springs** | A4a | 120 ⧗ | 58.6307 | 58.6307 | 2.0 | 0.792 | 105 | YES | YES |
 
 ---
@@ -34,23 +34,23 @@ Batch size: 10 packs (120 ⧗ per batch)
 
 - **Pack:** Ho-Oh (Wisdom of Sea and Sky)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 60.6185
-- **New-card EV (10x):** 60.5999
+- **Unified score:** 60.1096
+- **New-card EV (10x):** 60.0855
 - **Cost per EV unit (⧗/EV):** 2.0 ⧗
-- **DR ratio:** 0.840 ← near-complete
-- **Missing in pool:** 132
-- **Notes:** Open first batch from the top unified-score pack. WARNING: DR ratio=0.840 < 0.85 — this pool is near-complete; switch to #2 after this batch.
+- **DR ratio:** 0.841 ← near-complete
+- **Missing in pool:** 131
+- **Notes:** Open first batch from the top unified-score pack. WARNING: DR ratio=0.841 < 0.85 — this pool is near-complete; switch to #2 after this batch.
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 
 #### Batch 2 — Lugia (A4)
 
 - **Pack:** Lugia (Wisdom of Sea and Sky)
 - **Hourglasses:** 120 ⧗ (10 packs × 12 ⧗)
-- **Unified score:** 59.2967
-- **New-card EV (10x):** 59.2526
+- **Unified score:** 58.7878
+- **New-card EV (10x):** 58.7382
 - **Cost per EV unit (⧗/EV):** 2.0 ⧗
-- **DR ratio:** 0.846 ← near-complete
-- **Missing in pool:** 127
+- **DR ratio:** 0.847 ← near-complete
+- **Missing in pool:** 126
 - **Notes:** Switched to #2 pack (near-complete flag on batch 1).
 - **Rerun after:** YES — re-run build_pack_ev.py before next batch
 

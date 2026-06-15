@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 1276,
-    "last_updated": "2026-06-14",
+    "total_cards": 1293,
+    "last_updated": "2026-06-15",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -1249,7 +1249,7 @@
       "hp": 30,
       "card_type": "Pokemon",
       "attack": "Attach 20",
-      "count": 1,
+      "count": 2,
       "set_code": "B1",
       "card_number": 92,
       "rarity": "common"
@@ -1427,9 +1427,21 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Lead",
-      "count": 2,
+      "count": 1,
       "set_code": "A2",
       "card_number": 66,
+      "rarity": "common"
+    },
+    {
+      "name": "Misdreavus",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Lead",
+      "count": 1,
+      "set_code": "B1",
+      "card_number": 99,
       "rarity": "common"
     },
     {
@@ -1463,7 +1475,19 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Sweet Scent",
-      "count": 7,
+      "count": 1,
+      "set_code": "B1",
+      "card_number": 115,
+      "rarity": "common"
+    },
+    {
+      "name": "Spritzee",
+      "type": "Psychic",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Sweet Scent",
+      "count": 6,
       "set_code": "B1a",
       "card_number": 35,
       "rarity": "common"
@@ -2729,10 +2753,22 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Cut Up 10",
-      "count": 6,
+      "count": 3,
       "set_code": "B3",
       "card_number": 119,
       "rarity": "common"
+    },
+    {
+      "name": "Pawniard",
+      "type": "Metal",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Cut Up 10",
+      "count": 3,
+      "set_code": "PROMO-B",
+      "card_number": 67,
+      "rarity": "promo"
     },
     {
       "name": "Pawniard",
@@ -3163,6 +3199,18 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Jumping Kick",
+      "count": 1,
+      "set_code": "A1",
+      "card_number": 206,
+      "rarity": "common"
+    },
+    {
+      "name": "Eevee",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Jumping Kick",
       "count": 4,
       "set_code": "B3",
       "card_number": 129,
@@ -3271,9 +3319,21 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Gust 10",
-      "count": 3,
+      "count": 2,
       "set_code": "A1",
       "card_number": 186,
+      "rarity": "common"
+    },
+    {
+      "name": "Pidgey",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Gust 10",
+      "count": 1,
+      "set_code": "B1",
+      "card_number": 180,
       "rarity": "common"
     },
     {
@@ -3293,7 +3353,7 @@
       "stage": 1,
       "hp": 90,
       "card_type": "Pokemon",
-      "count": 1,
+      "count": 2,
       "set_code": "B1",
       "card_number": 181,
       "rarity": "common"
@@ -4402,7 +4462,19 @@
     },
     {
       "name": "Ferroseed",
-      "count": 4,
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "set_code": "B1",
+      "card_number": 166,
+      "rarity": "common"
+    },
+    {
+      "name": "Ferroseed",
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Metal",
       "stage": 0,
@@ -5942,6 +6014,18 @@
     },
     {
       "name": "Trevenant",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 110,
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 24
+    },
+    {
+      "name": "Trevenant",
       "count": 2,
       "card_type": "Pokemon",
       "type": "Grass",
@@ -6060,6 +6144,18 @@
       "rarity": "common",
       "set_code": "B2b",
       "card_number": 1
+    },
+    {
+      "name": "Pineco",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "A4",
+      "card_number": 20
     },
     {
       "name": "Pineco",
@@ -7001,7 +7097,7 @@
     },
     {
       "name": "Carbink",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 0,
@@ -7112,6 +7208,18 @@
       "card_number": 25
     },
     {
+      "name": "Tympole",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 63
+    },
+    {
       "name": "Mega Ampharos ex",
       "count": 1,
       "card_type": "Pokemon",
@@ -7122,6 +7230,18 @@
       "rarity": "double_rare",
       "set_code": "B1",
       "card_number": 85
+    },
+    {
+      "name": "Luxray",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 130,
+      "rarity": "rare",
+      "set_code": "B1",
+      "card_number": 88
     },
     {
       "name": "Pachirisu",
@@ -7137,7 +7257,7 @@
     },
     {
       "name": "Xatu",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 1,
@@ -7146,6 +7266,42 @@
       "rarity": "uncommon",
       "set_code": "B1",
       "card_number": 98
+    },
+    {
+      "name": "Drifblim",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 108
+    },
+    {
+      "name": "Yamask",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 110
+    },
+    {
+      "name": "Gothitelle",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 130,
+      "rarity": "rare",
+      "set_code": "B1",
+      "card_number": 114
     },
     {
       "name": "Archen",
@@ -7160,6 +7316,18 @@
       "card_number": 133
     },
     {
+      "name": "Golett",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 80,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 135
+    },
+    {
       "name": "Pancham",
       "count": 1,
       "card_type": "Pokemon",
@@ -7170,6 +7338,18 @@
       "rarity": "common",
       "set_code": "B1",
       "card_number": 138
+    },
+    {
+      "name": "Skorupi",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 152
     },
     {
       "name": "Mareanie",
@@ -7194,6 +7374,31 @@
       "rarity": "uncommon",
       "set_code": "B1",
       "card_number": 182
+    },
+    {
+      "name": "Aipom",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 185
+    },
+    {
+      "name": "Honchkrow",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "rarity": "illustration_rare",
+      "set_code": "B1",
+      "card_number": 244,
+      "variant": "alt art"
     },
     {
       "name": "Dudunsparce",
