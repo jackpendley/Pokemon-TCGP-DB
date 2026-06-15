@@ -443,3 +443,30 @@ def test_editor_binds_counts_ignoring_comment_lines_and_urls():
     assert '"count": 1' in edited          # entry 0 untouched
     assert '"count": 99' in edited         # decoy comment preserved verbatim
     assert '"https://x/cards/a1/1//foo"' in edited  # URL value intact
+
+
+# ---------------------------------------------------------------------------
+# Recoverable auth expiry → exit code 4 (so run_recommendations can fall back to
+# the existing collection instead of FATAL-ing the whole run).
+# ---------------------------------------------------------------------------
+
+def test_auth_expiry_returns_exit_code_4(monkeypatch, tmp_path):
+    auth = tmp_path / ".auth.json"
+    auth.write_text("{}")  # exists → main() takes the stored-auth branch
+
+    class _FakePZ:
+        AUTH_CACHE = auth
+
+        class AuthNotFoundError(Exception): pass
+        class SessionNotFoundError(Exception): pass
+        class AuthExpiredError(Exception): pass
+        class SessionExpiredError(Exception): pass
+        class APIDiscoveryFailedError(Exception): pass
+
+        @staticmethod
+        def fetch_collection(login=False, discover=False):
+            raise _FakePZ.AuthExpiredError("Auth credentials expired (HTTP 403).")
+
+    monkeypatch.setattr(sc, "_load_pz_client", lambda: _FakePZ)
+    monkeypatch.setattr(sys, "argv", ["sync_collection.py"])
+    assert sc.main() == 4, "expired auth must map to recoverable exit code 4, not fatal 1"

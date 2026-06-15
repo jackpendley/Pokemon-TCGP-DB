@@ -130,6 +130,20 @@ def _find_latest_pz_json() -> Path:
     return candidates[-1]
 
 
+def _auth_age_days() -> float | None:
+    """Age of the stored PZ auth in days, or None if absent/unreadable. Used to warn
+    before a ~3–4 week session lapses mid-run."""
+    p = ROOT / "data" / "sync" / ".auth.json"
+    if not p.exists():
+        return None
+    try:
+        imported = json.loads(p.read_text(encoding="utf-8")).get("imported_at")
+        dt = datetime.fromisoformat(imported.replace("Z", "+00:00"))
+        return (datetime.now(timezone.utc) - dt).total_seconds() / 86400.0
+    except (json.JSONDecodeError, OSError, ValueError, AttributeError):
+        return None
+
+
 def _load_collection_json() -> dict:
     """Read + comment-strip + parse collection.json. Not cached: assign rewrites the
     file mid-pipeline, so _collection_status (pre-assign) and _read_meta_total
@@ -316,6 +330,13 @@ def main() -> int:
         # run_recommendations) for a live coord fetch when adding a brand-new set.
         sync_extra.append("--no-fetch")
 
+        # Proactive heads-up before a ~3–4 week stored session lapses mid-run.
+        if not args.json_import and not args.login:
+            _age = _auth_age_days()
+            if _age is not None and _age >= 21:
+                print(f"  ⓘ  Stored auth is {_age:.0f} days old (PZ sessions last ~3–4 weeks) — "
+                      "refresh soon:\n     python3 scripts/sync_collection.py --curl-import")
+
         rc, stdout = _run_with_spinner("Sync collection", "scripts/sync_collection.py", sync_extra or None)
 
         if args.dry_run_sync:
@@ -330,7 +351,23 @@ def main() -> int:
         if rc == 3:
             _print_step("Sync collection", rc, "BLOCKED — unresolved review queue")
             return 1
-        if rc == 2:
+
+        # rc == 4: auth/session expired (recoverable). Don't fail the run — fall back to
+        # the existing collection so recommendations still generate, and surface the
+        # one-command refresh prominently (sync_collection's message went to the log).
+        auth_expired = (rc == 4)
+        if auth_expired:
+            _print_step("Sync collection", rc, "auth expired — using existing collection")
+            print(
+                "\n  ⚠  Pokémon Zone auth expired (sessions last ~3–4 weeks). The numbers below\n"
+                "     use your existing collection.json. Refresh it in one step:\n"
+                "       1. pokemon-zone.com/collection-tracker/ → DevTools → Network →\n"
+                "          right-click an 'api/players/mine' request → Copy as cURL\n"
+                "       2. python3 scripts/sync_collection.py --curl-import   (reads your clipboard)\n"
+                "     …then re-run this command.\n",
+                file=sys.stderr,
+            )
+        elif rc == 2:
             _print_step("Sync collection", 0, f"{_collection_status()} (review items pending)")
             sync_had_review_items = True
         else:
@@ -340,30 +377,32 @@ def main() -> int:
         # Sync can only update existing entries; pulls of a same-name card from a
         # NEW set merge onto the existing entry. Reconcile splits them per printing
         # against the fresh last_sync_raw.json. Idempotent; offline; skipped when
-        # sync is skipped (a stale raw snapshot must not overwrite newer edits).
-        rc, stdout = _run("Reconcile coords", "scripts/reconcile_coords_from_pz.py",
-                          ["--apply", "--no-fetch"])
-        # Reconcile recomputes per-coord counts from the raw PZ snapshot and is the
-        # authoritative count. Surface its total so a sync/reconcile discrepancy (the
-        # dual-location over-count class) is visible in the status, not buried.
-        m_tot = re.search(r"total count:\s*(\d+)\s*\(PZ total:\s*(\d+)\)", stdout)
-        if rc != 0:
-            if m_tot and m_tot.group(1) != m_tot.group(2):
-                # Collection total can't be reconciled with Pokémon Zone — a real
-                # count-integrity failure, not a benign dup/unconfirmed-coord abort.
-                _print_step("Reconcile coords", rc,
-                            f"COUNT MISMATCH — collection {m_tot.group(1)} vs PZ "
-                            f"{m_tot.group(2)}; not applied (see data/pipeline.log)")
+        # sync is skipped or auth expired (a stale raw snapshot must not overwrite
+        # newer edits).
+        if not auth_expired:
+            rc, stdout = _run("Reconcile coords", "scripts/reconcile_coords_from_pz.py",
+                              ["--apply", "--no-fetch"])
+            # Reconcile recomputes per-coord counts from the raw PZ snapshot and is the
+            # authoritative count. Surface its total so a sync/reconcile discrepancy (the
+            # dual-location over-count class) is visible in the status, not buried.
+            m_tot = re.search(r"total count:\s*(\d+)\s*\(PZ total:\s*(\d+)\)", stdout)
+            if rc != 0:
+                if m_tot and m_tot.group(1) != m_tot.group(2):
+                    # Collection total can't be reconciled with Pokémon Zone — a real
+                    # count-integrity failure, not a benign dup/unconfirmed-coord abort.
+                    _print_step("Reconcile coords", rc,
+                                f"COUNT MISMATCH — collection {m_tot.group(1)} vs PZ "
+                                f"{m_tot.group(2)}; not applied (see data/pipeline.log)")
+                else:
+                    _print_step("Reconcile coords", rc, "WARN — not applied; see data/pipeline.log")
             else:
-                _print_step("Reconcile coords", rc, "WARN — not applied; see data/pipeline.log")
-        else:
-            tot = f", total={m_tot.group(1)}" if m_tot else ""
-            m = re.search(r"re-coorded: (\d+)\s+split: (\d+)", stdout)
-            if m and (m.group(1) != "0" or m.group(2) != "0"):
-                _print_step("Reconcile coords", 0,
-                            f"re-coorded {m.group(1)}, split {m.group(2)}{tot}")
-            else:
-                _print_step("Reconcile coords", 0, f"OK{tot}")
+                tot = f", total={m_tot.group(1)}" if m_tot else ""
+                m = re.search(r"re-coorded: (\d+)\s+split: (\d+)", stdout)
+                if m and (m.group(1) != "0" or m.group(2) != "0"):
+                    _print_step("Reconcile coords", 0,
+                                f"re-coorded {m.group(1)}, split {m.group(2)}{tot}")
+                else:
+                    _print_step("Reconcile coords", 0, f"OK{tot}")
     else:
         print(f"  -  {'Sync collection':<22}  skipped")
         _rq = ROOT / "data" / "sync" / "sync_review_queue.json"

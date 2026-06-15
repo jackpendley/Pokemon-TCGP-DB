@@ -1336,10 +1336,13 @@ def main() -> int:
         except (pz.AuthNotFoundError, pz.SessionNotFoundError) as e:
             print(f"ERROR: {e}", file=sys.stderr)
             return 1
-        except pz.AuthExpiredError as e:
+        except (pz.AuthExpiredError, pz.SessionExpiredError) as e:
+            # Recoverable: stored credentials lapsed (PZ sessions last ~3–4 weeks).
+            # Distinct exit code 4 lets run_recommendations keep going on the existing
+            # collection and surface the one-command refresh instead of FATAL-ing.
             print(f"ERROR: {e}", file=sys.stderr)
-            return 1
-        except (pz.SessionExpiredError, pz.APIDiscoveryFailedError) as e:
+            return 4
+        except pz.APIDiscoveryFailedError as e:
             print(f"ERROR: {e}", file=sys.stderr)
             return 1
 
