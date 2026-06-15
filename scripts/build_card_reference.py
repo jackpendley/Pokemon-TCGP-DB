@@ -140,6 +140,115 @@ def _load_pack_sources() -> dict[str, list[dict]]:
 # Reconciliation
 # ---------------------------------------------------------------------------
 
+def _is_prefix_truncation(bad: str, good: str) -> bool:
+    """True when one name is a normalised prefix of the other (either direction).
+
+    Covers two known Serebii patterns:
+      - Truncation: Serebii omits trailing words ('Mega Charizard' for 'Mega Charizard X')
+      - Appended junk: Serebii adds stray chars ('Professor Turoa' for 'Professor Turo')
+    Require at least 4 chars to avoid spurious matches on short names.
+    """
+    nb, ng = norm_card_name(bad), norm_card_name(good)
+    if nb == ng:
+        return False
+    min_len = min(len(nb), len(ng))
+    return min_len >= 4 and (ng.startswith(nb) or nb.startswith(ng))
+
+
+def _resolve_confidence(agreed: list[str], disagreed: dict[str, str],
+                        ps_name: str) -> tuple[str, str, list[str]]:
+    """Return (confidence, final_name, conflict_notes) from per-source name agreement.
+
+    Confidence rule: ≥2 genuinely independent sources (TCGdex, Serebii, Bulbapedia) must
+    agree for "confirmed". pack_sources is the Limitless-derived baseline — NOT an
+    independent vote — so 1-source+baseline never masks a genuine disagreement.
+    """
+    notes: list[str] = []
+    final_name = ps_name
+    total_reachable = len(agreed) + len(disagreed)
+
+    if total_reachable == 0:
+        return "unconfirmed", final_name, notes
+    if len(agreed) >= 2:
+        # Two or more independent sources agree → confirmed, regardless of disagreers.
+        for src, bad_name in disagreed.items():
+            notes.append(f"{src} returned {bad_name!r} (ps={ps_name!r}); overridden by majority")
+        return "confirmed", final_name, notes
+    if len(agreed) == 1 and not disagreed:
+        return "single", final_name, notes
+    if len(agreed) >= 1 and disagreed:
+        # Some agree, some disagree. A disagreement that is purely a display truncation
+        # (normalised prefix of ps_name) is advisory, not a blocking conflict.
+        if all(_is_prefix_truncation(bad, ps_name) for bad in disagreed.values()):
+            for src, bad_name in disagreed.items():
+                notes.append(
+                    f"{src} returned truncated name {bad_name!r} (prefix of {ps_name!r}); "
+                    f"treated as display truncation — not a blocking conflict")
+            return "single", final_name, notes
+        notes.append(f"UNRESOLVED: agreed={agreed} disagreed={dict(disagreed)} ps={ps_name!r}")
+        return "conflict", final_name, notes
+    # not agreed and disagreed: all reachable sources disagree with pack_sources —
+    # check whether they agree with each other.
+    dis_names = list(disagreed.values())
+    ref_name = dis_names[0]
+    all_same = all(_name_agrees(ref_name, n) for n in dis_names[1:])
+    if all_same and len(disagreed) >= 2:
+        # Multiple independent sources agree on a different name → trust them.
+        notes.append(
+            f"pack_sources name {ps_name!r} overridden by external consensus "
+            f"{ref_name!r} ({', '.join(disagreed.keys())})")
+        return "confirmed", ref_name, notes
+    if len(disagreed) == 1:
+        src = list(disagreed.keys())[0]
+        notes.append(
+            f"UNRESOLVED (single source): {src} returned {ref_name!r} "
+            f"vs pack_sources {ps_name!r} — verify and re-run")
+        return "single", final_name, notes
+    notes.append(f"UNRESOLVED: pack_sources={ps_name!r} external_names={dict(disagreed)}")
+    return "conflict", final_name, notes
+
+
+def _resolve_rarity(set_code: str, card_number: int, ps_record: dict,
+                    tcgdex_card: dict, rarity_votes: dict[str, int]) -> tuple[str | None, list[str]]:
+    """Return (rarity, conflict_notes) from the rarity authority chain:
+    TCGdex (per-card authority) → ≥2-source external vote → pack_sources baseline,
+    then the curated SIR upgrade, the curated shiny-region overrides, and the promo
+    sentinel for symbol-less promo cards."""
+    notes: list[str] = []
+    tcgdex_rarity = normalize_rarity(tcgdex_card.get("rarity"))
+    rarity_final = normalize_rarity(ps_record.get("rarity"))
+    if tcgdex_rarity:
+        if rarity_final and rarity_final != tcgdex_rarity:
+            notes.append(f"rarity: pack_sources={rarity_final!r} → tcgdex(authority)={tcgdex_rarity!r}")
+        rarity_final = tcgdex_rarity
+    elif rarity_votes:
+        best = max(rarity_votes, key=lambda k: rarity_votes[k])
+        # Override the baseline on a ≥2-source consensus, or whenever the baseline is
+        # empty (any single external vote beats an unknown rarity).
+        if best and best != rarity_final and (rarity_votes[best] >= 2 or not rarity_final):
+            notes.append(f"rarity override: pack_sources={rarity_final!r} → external={best!r} "
+                         f"(votes={rarity_votes})")
+            rarity_final = best
+
+    # Super Rare and Special Illustration Rare share the ★★ tier; the curated SIR list is
+    # the authority for the super_rare→special_illustration_rare upgrade.
+    if rarity_final == "super_rare" and (canonical_set_code(set_code), card_number) in SIR_COORDS:
+        rarity_final = "special_illustration_rare"
+        notes.append("rarity: super_rare → special_illustration_rare (curated SIR list)")
+
+    # Curated shiny-region corrections win over every source vote (wiki sources lump the
+    # 8-point-star tiers into one_star/two_star).
+    ovr = RARITY_OVERRIDES.get((canonical_set_code(set_code), card_number))
+    if ovr and ovr != rarity_final:
+        notes.append(f"rarity: {rarity_final!r} → {ovr!r} (curated rarity_overrides)")
+        rarity_final = ovr
+
+    # Promo-set cards carry no rarity symbol; keep the 'promo' sentinel when unresolved.
+    if not rarity_final and canonical_set_code(set_code) in ("PROMO-A", "PROMO-B"):
+        rarity_final = "promo"
+    return rarity_final, notes
+
+
 def reconcile_card(
     set_code: str,
     card_number: int,
@@ -199,140 +308,14 @@ def reconcile_card(
         if source == "tcgdex" and card.get("boosters"):
             boosters = card["boosters"]
 
-    # ── Name resolution ──────────────────────────────────────────────────────
-    # Rule: ≥2 independent sources must agree for "confirmed".
-    # Disagreements: one-vs-majority → resolve to majority (advisory note).
-    # True tie (no majority) → "conflict" (manual review needed, only real case).
-
-    conflict_notes: list[str] = []
-    final_name = ps_name
-
-    # ── Confidence determination ─────────────────────────────────────────────
-    # Confidence rule: ≥2 genuinely independent sources (TCGdex, Serebii, Bulbapedia)
-    # must agree for "confirmed". pack_sources is the Limitless-derived baseline —
-    # it is NOT an independent source and is NOT counted as a confirming vote.
-    # This prevents 1-source+baseline from masking a genuine disagreement.
-
-    total_reachable = len(agreed) + len(disagreed)
-    if total_reachable == 0:
-        confidence = "unconfirmed"
-    elif len(agreed) >= 2:
-        # Two or more independent sources agree → confirmed, regardless of disagreers.
-        confidence = "confirmed"
-        for src, bad_name in disagreed.items():
-            conflict_notes.append(
-                f"{src} returned {bad_name!r} (ps={ps_name!r}); overridden by majority"
-            )
-    elif len(agreed) == 1 and not disagreed:
-        # One independent source agrees, none disagree → single-source.
-        confidence = "single"
-    elif len(agreed) >= 1 and disagreed:
-        # Some agree, some disagree. Check if every disagreement is a display truncation
-        # (the disagreeing name is a strict normalised prefix of the agreed name). This
-        # pattern is known for Serebii, which sometimes truncates long card names.
-        # A prefix-match disagreement is advisory, not a blocking conflict.
-        def _is_prefix_truncation(bad: str, good: str) -> bool:
-            """True when one name is a normalised prefix of the other (either direction).
-
-            Covers two known Serebii patterns:
-            - Truncation: Serebii omits trailing words ('Mega Charizard' for 'Mega Charizard X')
-            - Appended junk: Serebii adds stray chars ('Professor Turoa' for 'Professor Turo')
-            Require at least 4 chars to avoid spurious matches on short names.
-            """
-            nb, ng = norm_card_name(bad), norm_card_name(good)
-            if nb == ng:
-                return False
-            min_len = min(len(nb), len(ng))
-            return min_len >= 4 and (ng.startswith(nb) or nb.startswith(ng))
-
-        all_prefix = all(_is_prefix_truncation(bad, ps_name) for bad in disagreed.values())
-        if all_prefix:
-            confidence = "single"
-            for src, bad_name in disagreed.items():
-                conflict_notes.append(
-                    f"{src} returned truncated name {bad_name!r} (prefix of {ps_name!r}); "
-                    f"treated as display truncation — not a blocking conflict"
-                )
-        else:
-            # Genuine disagreement: some agree, some disagree with a non-prefix name.
-            confidence = "conflict"
-            conflict_notes.append(
-                f"UNRESOLVED: agreed={agreed} disagreed={dict(disagreed)} ps={ps_name!r}"
-            )
-    elif not agreed and disagreed:
-        # All reachable sources disagree with pack_sources — check if they agree with each other
-        dis_names = list(disagreed.values())
-        ref_name = dis_names[0]
-        all_same = all(_name_agrees(ref_name, n) for n in dis_names[1:])
-        if all_same and len(disagreed) >= 2:
-            # Multiple independent sources agree on a different name than pack_sources
-            # — the external sources are likely correct; update the name.
-            confidence = "confirmed"
-            final_name = ref_name  # use the external consensus name
-            conflict_notes.append(
-                f"pack_sources name {ps_name!r} overridden by external consensus "
-                f"{ref_name!r} ({', '.join(disagreed.keys())})"
-            )
-        elif len(disagreed) == 1:
-            confidence = "single"
-            # Single disagreeing source: don't auto-update, but flag explicitly so
-            # the build surfaces it for review rather than silently keeping ps_name.
-            src = list(disagreed.keys())[0]
-            conflict_notes.append(
-                f"UNRESOLVED (single source): {src} returned {ref_name!r} "
-                f"vs pack_sources {ps_name!r} — verify and re-run"
-            )
-        else:
-            # Multiple sources disagree with pack_sources AND with each other
-            confidence = "conflict"
-            conflict_notes.append(
-                f"UNRESOLVED: pack_sources={ps_name!r} "
-                f"external_names={dict(disagreed)}"
-            )
-    else:
-        confidence = "unconfirmed"
+    # ── Name + confidence resolution ─────────────────────────────────────────
+    confidence, final_name, conflict_notes = _resolve_confidence(agreed, disagreed, ps_name)
 
     # ── Rarity resolution ─────────────────────────────────────────────────────
-    # TCGdex is the structured per-card authority — it alone distinguishes the shiny
-    # tiers and Crown. Use its value directly when present; otherwise fall back to the
-    # external-vote consensus (≥2 sources), then the pack_sources (Limitless) baseline.
     tcgdex_card = snapshots.get("tcgdex", {}).get(num_str, {})
-    tcgdex_rarity = normalize_rarity(tcgdex_card.get("rarity"))
-    rarity_final = normalize_rarity(ps_record.get("rarity"))
-    if tcgdex_rarity:
-        if rarity_final and rarity_final != tcgdex_rarity:
-            conflict_notes.append(
-                f"rarity: pack_sources={rarity_final!r} → tcgdex(authority)={tcgdex_rarity!r}"
-            )
-        rarity_final = tcgdex_rarity
-    elif rarity_votes:
-        best = max(rarity_votes, key=lambda k: rarity_votes[k])
-        # Override the baseline on a ≥2-source consensus, or whenever the baseline is
-        # empty (any single external vote beats an unknown rarity).
-        if best and best != rarity_final and (rarity_votes[best] >= 2 or not rarity_final):
-            conflict_notes.append(
-                f"rarity override: pack_sources={rarity_final!r} → external={best!r} "
-                f"(votes={rarity_votes})"
-            )
-            rarity_final = best
-
-    # Super Rare and Special Illustration Rare share the ★★ symbol/tier; the curated
-    # SIR list is the authority for the super_rare→special_illustration_rare upgrade.
-    if rarity_final == "super_rare" and (canonical_set_code(set_code), card_number) in SIR_COORDS:
-        rarity_final = "special_illustration_rare"
-        conflict_notes.append("rarity: super_rare → special_illustration_rare (curated SIR list)")
-
-    # Curated shiny-region corrections win over every source vote (wiki sources lump the
-    # 8-point-star tiers into one_star/two_star).
-    ovr = RARITY_OVERRIDES.get((canonical_set_code(set_code), card_number))
-    if ovr and ovr != rarity_final:
-        conflict_notes.append(f"rarity: {rarity_final!r} → {ovr!r} (curated rarity_overrides)")
-        rarity_final = ovr
-
-    # Promo-set cards carry no rarity symbol; keep the 'promo' sentinel when unresolved
-    # (per the keep-all-promos-as-promo decision — equivalents are not available for all).
-    if not rarity_final and canonical_set_code(set_code) in ("PROMO-A", "PROMO-B"):
-        rarity_final = "promo"
+    rarity_final, rarity_notes = _resolve_rarity(
+        set_code, card_number, ps_record, tcgdex_card, rarity_votes)
+    conflict_notes.extend(rarity_notes)
 
     pokemon_type_final = None
     if pokemon_type_votes:
