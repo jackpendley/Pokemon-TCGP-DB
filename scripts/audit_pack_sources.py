@@ -39,7 +39,6 @@ Exit codes:
 
 import argparse
 import json
-import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -48,12 +47,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (norm_card_name, normalize_rarity,
                             card_reference_by_coord as _card_ref_by_coord,
                             ROOT, PACK_SOURCES_JSON as PACK_SOURCES,
-                            CARD_REF_JSON as CARD_REF)
-
-_FORME_RE = re.compile(
-    r"\s+(?:\d+%\s+)?(?:complete\s+|sunny\s+|rainy\s+|snowy\s+|normal\s+)?forme?$",
-    re.I,
-)
+                            CARD_REF_JSON as CARD_REF,
+                            name_agrees as _name_agrees)
 
 
 # ---------------------------------------------------------------------------
@@ -62,14 +57,6 @@ _FORME_RE = re.compile(
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-
-def _name_agrees(a: str, b: str) -> bool:
-    if norm_card_name(a) == norm_card_name(b):
-        return True
-    sa = _FORME_RE.sub("", str(a)).strip()
-    sb = _FORME_RE.sub("", str(b)).strip()
-    return norm_card_name(sa) == norm_card_name(sb)
 
 
 def _load_json(path: Path) -> object:

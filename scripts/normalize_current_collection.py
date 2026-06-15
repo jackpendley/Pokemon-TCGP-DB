@@ -19,7 +19,7 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import (is_ex_from_name, load_collection_json, ROOT,
+from _collection_io import (is_ex_from_name, load_collection_or_exit, ROOT,
                             COLLECTION_JSON, CURRENT_DIR as OUT_DIR,
                             COLLECTION_NORMALIZED_JSON as NORMALIZED_JSON)
 
@@ -55,18 +55,6 @@ def stage_label(stage):
     if stage == 2:
         return "Stage 2"
     return f"Stage {stage}"
-
-
-def load_collection():
-    if not COLLECTION_JSON.exists():
-        print(f"ERROR: {COLLECTION_JSON} not found", file=sys.stderr)
-        sys.exit(1)
-    try:
-        _, data = load_collection_json()
-        return data
-    except json.JSONDecodeError as e:
-        print(f"ERROR: collection.json parse error: {e}", file=sys.stderr)
-        sys.exit(1)
 
 
 def build_normalized(collection):
@@ -244,7 +232,7 @@ def main():
     print(f"\n=== normalize_current_collection.py ===")
     print(f"  Reading: {COLLECTION_JSON}")
 
-    data = load_collection()
+    data = load_collection_or_exit()
     meta = data.get("meta", {})
     collection = data.get("collection", [])
     print(f"  Entries: {len(collection)}, Meta total: {meta.get('total_cards')}")
