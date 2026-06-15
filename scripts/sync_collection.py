@@ -568,6 +568,21 @@ def _bind_to_entry(
             return MatchResult(status="MATCHED", pz_card=pz, entry=collection[coord_idx[0]],
                                entry_index=coord_idx[0], canonical_name=canonical_name)
 
+    # A4b-reprint hybrid: PZ stamps the A4b "Deluxe Pack: ex" reprint with the ORIGINAL
+    # set code (A1–A4) + the A4b number, so the coord-exact match above can't find it
+    # (e.g. PZ "Cubone A1/194" → owned entry A4b/194). The A4b number is unique, so when
+    # exactly one same-name entry is the A4b reprint carrying that number, match it —
+    # otherwise HP/rarity can't tell the original-set print from the reprint and the card
+    # is force-matched with a noisy WARN.
+    if (pz.set_code and str(pz.set_code).upper() in _A4B_HYBRID_TARGET_SETS
+            and pz.card_number is not None):
+        a4b_idx = [i for i in indices
+                   if str(collection[i].get("set_code") or "").upper() == "A4B"
+                   and collection[i].get("card_number") == pz.card_number]
+        if len(a4b_idx) == 1:
+            return MatchResult(status="MATCHED", pz_card=pz, entry=collection[a4b_idx[0]],
+                               entry_index=a4b_idx[0], canonical_name=canonical_name)
+
     # Multiple variants — HP then rarity disambiguation.
     if pz.set_code and pz.card_number is not None:
         result = _disambiguate_variants(pz, indices, nn, collection, pack_sources,
