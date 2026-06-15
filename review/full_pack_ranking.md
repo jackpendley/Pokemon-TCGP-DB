@@ -1,6 +1,6 @@
 # Full Pack Ranking — All 24 Standard Packs
 
-Generated: 2026-06-14T02:10:21+00:00
+Generated: 2026-06-15T19:04:17+00:00
 
 Ranked by unified score. Use Pack Hourglasses to open these packs.
 
@@ -8,17 +8,17 @@ Ranked by unified score. Use Pack Hourglasses to open these packs.
 
 ## 1. Ho-Oh (Wisdom of Sea and Sky)
 
-**Score:** 60.6185 | **Missing:** 132/136 | **★+ miss:** 40 | **EV/10x:** 60.60 | **★+/10x:** 2.22 | **⧗/EV:** 2.0 | **DR:** 0.84
+**Score:** 60.1096 | **Missing:** 131/136 | **★+ miss:** 40 | **EV/10x:** 60.09 | **★+/10x:** 2.22 | **⧗/EV:** 2.0 | **DR:** 0.84
 
-Top pick. Large fresh pool — 132/136 cards unowned; expect ~60.6 new-card EV per 10x batch (rarity-weighted).
+Top pick. Large fresh pool — 131/136 cards unowned; expect ~60.1 new-card EV per 10x batch (rarity-weighted).
 
 ---
 
 ## 2. Lugia (Wisdom of Sea and Sky)
 
-**Score:** 59.2967 | **Missing:** 127/136 | **★+ miss:** 41 | **EV/10x:** 59.25 | **★+/10x:** 2.37 | **⧗/EV:** 2.0 | **DR:** 0.85
+**Score:** 58.7878 | **Missing:** 126/136 | **★+ miss:** 41 | **EV/10x:** 58.74 | **★+/10x:** 2.37 | **⧗/EV:** 2.0 | **DR:** 0.85
 
-Strong choice. Large fresh pool — 127/136 cards unowned; expect ~59.3 new-card EV per 10x batch (rarity-weighted).
+Strong choice. Large fresh pool — 126/136 cards unowned; expect ~58.7 new-card EV per 10x batch (rarity-weighted).
 
 ---
 
@@ -32,17 +32,17 @@ Good option. Large fresh pool — 105/105 cards unowned; expect ~58.6 new-card E
 
 ## 4. Solgaleo (Celestial Guardians)
 
-**Score:** 58.2119 | **Missing:** 136/140 | **★+ miss:** 42 | **EV/10x:** 58.20 | **★+/10x:** 2.12 | **⧗/EV:** 2.1 | **DR:** 0.84
+**Score:** 57.7197 | **Missing:** 135/140 | **★+ miss:** 42 | **EV/10x:** 57.70 | **★+/10x:** 2.12 | **⧗/EV:** 2.1 | **DR:** 0.84
 
-Large fresh pool — 136/140 cards unowned; expect ~58.2 new-card EV per 10x batch (rarity-weighted); 2.1 ⧗/EV.
+Large fresh pool — 135/140 cards unowned; expect ~57.7 new-card EV per 10x batch (rarity-weighted); 2.1 ⧗/EV.
 
 ---
 
 ## 5. Lunala (Celestial Guardians)
 
-**Score:** 57.5800 | **Missing:** 135/140 | **★+ miss:** 42 | **EV/10x:** 57.56 | **★+/10x:** 2.12 | **⧗/EV:** 2.1 | **DR:** 0.84
+**Score:** 57.0878 | **Missing:** 134/140 | **★+ miss:** 42 | **EV/10x:** 57.07 | **★+/10x:** 2.12 | **⧗/EV:** 2.1 | **DR:** 0.85
 
-Large fresh pool — 135/140 cards unowned; expect ~57.6 new-card EV per 10x batch (rarity-weighted); 2.1 ⧗/EV.
+Large fresh pool — 134/140 cards unowned; expect ~57.1 new-card EV per 10x batch (rarity-weighted); 2.1 ⧗/EV.
 
 ---
 
@@ -86,15 +86,7 @@ Large fresh pool — 120/126 cards unowned; expect ~53.1 new-card EV per 10x bat
 
 ---
 
-## 11. Mega Gyarados (Mega Rising)
-
-**Score:** 53.0752 | **Missing:** 121/139 | **★+ miss:** 36 | **EV/10x:** 53.01 | **★+/10x:** 2.09 | **⧗/EV:** 2.3 | **DR:** 0.86
-
-Large fresh pool — 121/139 cards unowned; expect ~53.0 new-card EV per 10x batch (rarity-weighted); 2.3 ⧗/EV.
-
----
-
-## 12. Mew (Mythical Island)
+## 11. Mew (Mythical Island)
 
 **Score:** 51.8792 | **Missing:** 84/86 | **★+ miss:** 18 | **EV/10x:** 51.87 | **★+/10x:** 1.68 | **⧗/EV:** 2.3 | **DR:** 0.78
 
@@ -102,7 +94,7 @@ Large fresh pool — 84/86 cards unowned; expect ~51.9 new-card EV per 10x batch
 
 ---
 
-## 13. Arceus (Triumphant Light)
+## 12. Arceus (Triumphant Light)
 
 **Score:** 51.7711 | **Missing:** 96/96 | **★+ miss:** 20 | **EV/10x:** 51.77 | **★+/10x:** 1.53 | **⧗/EV:** 2.3 | **DR:** 0.78
 
@@ -110,7 +102,7 @@ Large fresh pool — 96/96 cards unowned; expect ~51.8 new-card EV per 10x batch
 
 ---
 
-## 14. Pikachu (Genetic Apex)
+## 13. Pikachu (Genetic Apex)
 
 **Score:** 51.6681 | **Missing:** 116/127 | **★+ miss:** 21 | **EV/10x:** 51.64 | **★+/10x:** 1.58 | **⧗/EV:** 2.3 | **DR:** 0.84
 
@@ -118,35 +110,43 @@ Large fresh pool — 116/127 cards unowned; expect ~51.6 new-card EV per 10x bat
 
 ---
 
-## 15. Mega Blaziken (Mega Rising)
+## 14. Charizard (Genetic Apex)
 
-**Score:** 51.6253 | **Missing:** 118/139 | **★+ miss:** 36 | **EV/10x:** 51.54 | **★+/10x:** 2.09 | **⧗/EV:** 2.3 | **DR:** 0.86
+**Score:** 50.1373 | **Missing:** 114/127 | **★+ miss:** 21 | **EV/10x:** 50.10 | **★+/10x:** 1.58 | **⧗/EV:** 2.4 | **DR:** 0.84
 
-Large fresh pool — 118/139 cards unowned; expect ~51.5 new-card EV per 10x batch (rarity-weighted); 2.3 ⧗/EV.
-
----
-
-## 16. Mega Altaria (Mega Rising)
-
-**Score:** 50.6509 | **Missing:** 116/139 | **★+ miss:** 35 | **EV/10x:** 50.56 | **★+/10x:** 1.94 | **⧗/EV:** 2.4 | **DR:** 0.86
-
-Large fresh pool — 116/139 cards unowned; expect ~50.6 new-card EV per 10x batch (rarity-weighted); 2.4 ⧗/EV.
+Large fresh pool — 114/127 cards unowned; expect ~50.1 new-card EV per 10x batch (rarity-weighted); 2.4 ⧗/EV.
 
 ---
 
-## 17. Charizard (Genetic Apex)
-
-**Score:** 50.5871 | **Missing:** 115/127 | **★+ miss:** 21 | **EV/10x:** 50.55 | **★+/10x:** 1.58 | **⧗/EV:** 2.4 | **DR:** 0.84
-
-Large fresh pool — 115/127 cards unowned; expect ~50.6 new-card EV per 10x batch (rarity-weighted); 2.4 ⧗/EV.
-
----
-
-## 18. Mewtwo (Genetic Apex)
+## 15. Mewtwo (Genetic Apex)
 
 **Score:** 48.0701 | **Missing:** 109/126 | **★+ miss:** 19 | **EV/10x:** 48.02 | **★+/10x:** 1.43 | **⧗/EV:** 2.5 | **DR:** 0.84
 
 Large fresh pool — 109/126 cards unowned; expect ~48.0 new-card EV per 10x batch (rarity-weighted); 2.5 ⧗/EV.
+
+---
+
+## 16. Mega Gyarados (Mega Rising)
+
+**Score:** 46.6908 | **Missing:** 107/139 | **★+ miss:** 35 | **EV/10x:** 46.59 | **★+/10x:** 1.94 | **⧗/EV:** 2.6 | **DR:** 0.87
+
+Large fresh pool — 107/139 cards unowned; expect ~46.6 new-card EV per 10x batch (rarity-weighted); 2.6 ⧗/EV.
+
+---
+
+## 17. Mega Blaziken (Mega Rising)
+
+**Score:** 45.9246 | **Missing:** 105/139 | **★+ miss:** 36 | **EV/10x:** 45.81 | **★+/10x:** 2.09 | **⧗/EV:** 2.6 | **DR:** 0.87
+
+Large fresh pool — 105/139 cards unowned; expect ~45.8 new-card EV per 10x batch (rarity-weighted); 2.6 ⧗/EV.
+
+---
+
+## 18. Mega Altaria (Mega Rising)
+
+**Score:** 43.2070 | **Missing:** 100/139 | **★+ miss:** 35 | **EV/10x:** 43.08 | **★+/10x:** 1.94 | **⧗/EV:** 2.8 | **DR:** 0.87
+
+Large fresh pool — 100/139 cards unowned; expect ~43.1 new-card EV per 10x batch (rarity-weighted); 2.8 ⧗/EV.
 
 ---
 
