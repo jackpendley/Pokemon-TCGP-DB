@@ -470,3 +470,30 @@ def test_auth_expiry_returns_exit_code_4(monkeypatch, tmp_path):
     monkeypatch.setattr(sc, "_load_pz_client", lambda: _FakePZ)
     monkeypatch.setattr(sys, "argv", ["sync_collection.py"])
     assert sc.main() == 4, "expired auth must map to recoverable exit code 4, not fatal 1"
+
+
+# ---------------------------------------------------------------------------
+# A4b-reprint hybrid: PZ stamps the reprint with the ORIGINAL set code + the A4b
+# number. When the card is owned in both prints, the A4b number must bind it to the
+# reprint entry — HP/rarity can't tell the two prints apart, which otherwise
+# force-matches with a noisy WARN.
+# ---------------------------------------------------------------------------
+
+def test_a4b_hybrid_binds_reprint_by_number_no_warn():
+    collection = [
+        {"name": "Cubone", "set_code": "A1",  "card_number": 151, "hp": 60, "rarity": "common", "count": 1},
+        {"name": "Cubone", "set_code": "A4b", "card_number": 194, "hp": 60, "rarity": "common", "count": 1},
+    ]
+    # PZ mislabels the A4b reprint as A1/194 (original set code + A4b number).
+    pz_cards = [sc.PZCard(set_code="A1", card_number=194, raw_name="Cubone", count=1)]
+
+    import contextlib
+    err = io.StringIO()
+    with contextlib.redirect_stderr(err):
+        results = sc.match_pz_cards(pz_cards, collection, {}, {})
+
+    assert len(results) == 1
+    r = results[0]
+    assert r.status == "MATCHED"
+    assert r.entry_index == 1, "must bind to the A4b/194 reprint, not the A1/151 original"
+    assert "disambiguation failed" not in err.getvalue(), "should resolve without a force-match WARN"
