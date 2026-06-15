@@ -108,6 +108,10 @@ EV is computed directly from `pz_pack_odds.json` keyed by `(set_code, card_numbe
 
 ## Key Outputs
 
+These are **generated locally on every run** (regenerated from `collection.json` + `data/reference/*`)
+and are **gitignored** — `data/current/`, `data/exports/`, and `review/` are build artifacts, not
+version-controlled. `collection.json` is the tracked source of truth; commit it when your cards change.
+
 | File | Description |
 |---|---|
 | `review/inferred_pack_recommendations.md` | Ranked pack list with EV scores and deck-chase guide |

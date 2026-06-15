@@ -32,3 +32,17 @@ data/reference/external/scrape_log.txt
 data/sync/last_sync_raw.json
 data/sync/.auth.json
 *.har
+
+# Runtime sync caches / fetched state — re-fetched on every sync, only timestamps
+# churn otherwise; no version-control value (siblings of last_sync_raw above).
+data/sync/api_discovery_cache.json
+data/sync/player_stats.json
+data/sync/sync_review_queue.json
+
+# Generated pipeline outputs — regenerated deterministically on every run from
+# collection.json + data/reference/* (the tracked source of truth). Treated as build
+# artifacts so a sync that finds no new cards leaves the tree clean. View them by
+# running the pipeline; the scripts mkdir these dirs on first run.
+data/current/
+data/exports/
+review/
