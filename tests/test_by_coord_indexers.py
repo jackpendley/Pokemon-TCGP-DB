@@ -16,6 +16,22 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import _collection_io as io
 
 
+def test_parse_coord_normalises():
+    assert io.parse_coord("a1", "7") == ("A1", 7)
+    assert io.parse_coord(" a1 ", 7) == ("A1", 7)
+
+
+def test_parse_coord_rejects_blank_and_bad_number():
+    assert io.parse_coord("", 7) is None
+    assert io.parse_coord("A1", None) is None
+    assert io.parse_coord("A1", "x") is None
+    assert io.parse_coord(None, 1) is None
+
+
+def test_parse_coord_allows_blank_when_not_required():
+    assert io.parse_coord("", 7, require_set_code=False) == ("", 7)
+
+
 def test_index_uppercases_and_ints():
     recs = [{"set_code": "a1", "card_number": "7"}]
     assert io._index_by_coord(recs, "card_number") == {("A1", 7): recs[0]}

@@ -344,27 +344,43 @@ def load_records(path: Path) -> list:
     return raw
 
 
+def parse_coord(set_code, card_number,
+                *, require_set_code: bool = True) -> tuple[str, int] | None:
+    """Parse a (set_code, card_number) pair into a normalised coord tuple.
+
+    Returns (SET_CODE_UPPER, int(card_number)) or None when the input can't form
+    a valid coord (blank set_code unless ``require_set_code=False``, missing or
+    non-integer number). The single defensive parser so the upper-case + int
+    coercion + error handling stay identical across callers.
+
+    Note: callers that must preserve a record's original set_code casing in
+    serialized output (e.g. reprint_links) deliberately do not use this.
+    """
+    sc = str(set_code or "").upper().strip()
+    if require_set_code and not sc:
+        return None
+    if card_number is None:
+        return None
+    try:
+        return (sc, int(card_number))
+    except (TypeError, ValueError):
+        return None
+
+
 def _index_by_coord(records: list, num_key: str,
                     *, require_set_code: bool = True) -> dict[tuple[str, int], dict]:
     """Index records by (set_code_upper, int(num_key)).
 
-    Shared core for the by-coord loaders so the set_code upper-casing and the
-    malformed-number handling stay identical. ``require_set_code`` skips records
-    with a blank set_code (pack_sources / ext_ref); card_reference keeps them so
+    Shared core for the by-coord loaders. ``require_set_code`` skips records with
+    a blank set_code (pack_sources / ext_ref); card_reference keeps them so
     set_code correction can still find a card by number.
     """
     index: dict[tuple[str, int], dict] = {}
     for r in records:
-        sc = str(r.get("set_code") or "").upper().strip()
-        if require_set_code and not sc:
-            continue
-        cn_raw = r.get(num_key)
-        if cn_raw is None:
-            continue
-        try:
-            index[(sc, int(cn_raw))] = r
-        except (TypeError, ValueError):
-            pass
+        coord = parse_coord(r.get("set_code"), r.get(num_key),
+                            require_set_code=require_set_code)
+        if coord is not None:
+            index[coord] = r
     return index
 
 
