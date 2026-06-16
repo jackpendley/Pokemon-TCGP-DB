@@ -370,15 +370,17 @@ def load_records(path: Path) -> list:
 def http_get_with_retry(url: str, *, headers: dict | None = None,
                         timeout: float = REQUEST_TIMEOUT, retries: int = 3,
                         backoff: float = 1.0, backoff_factor: float = 2.0,
-                        sleep=time.sleep) -> bytes:
+                        sleep=None) -> bytes:
     """GET ``url`` and return the response body bytes, retrying transient failures.
 
     Retries timeouts, connection errors and 429/5xx responses with exponential
     backoff (``backoff``, then ×``backoff_factor`` each attempt). Other 4xx
     responses are permanent (e.g. 404 = not found) and re-raised immediately so
     callers can act on them. After the final attempt the last transient error is
-    re-raised rather than silently swallowed. ``sleep`` is injectable for tests.
+    re-raised rather than silently swallowed. ``sleep`` is injectable for tests;
+    it defaults to ``time.sleep`` resolved at call time so it stays patchable.
     """
+    _sleep = sleep if sleep is not None else time.sleep
     req = urllib.request.Request(url, headers=headers or {})
     delay = backoff
     last_exc: Exception | None = None
@@ -393,7 +395,7 @@ def http_get_with_retry(url: str, *, headers: dict | None = None,
         except (urllib.error.URLError, TimeoutError, OSError) as e:
             last_exc = e
         if attempt < retries:
-            sleep(delay)
+            _sleep(delay)
             delay *= backoff_factor
     assert last_exc is not None
     raise last_exc
