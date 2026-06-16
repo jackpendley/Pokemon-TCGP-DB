@@ -10,7 +10,10 @@ import html
 import json
 import re
 import sys
+import time
 import unicodedata
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -362,6 +365,38 @@ def load_records(path: Path) -> list:
     if isinstance(raw, dict):
         return raw.get("records", raw)
     return raw
+
+
+def http_get_with_retry(url: str, *, headers: dict | None = None,
+                        timeout: float = REQUEST_TIMEOUT, retries: int = 3,
+                        backoff: float = 1.0, backoff_factor: float = 2.0,
+                        sleep=time.sleep) -> bytes:
+    """GET ``url`` and return the response body bytes, retrying transient failures.
+
+    Retries timeouts, connection errors and 429/5xx responses with exponential
+    backoff (``backoff``, then ×``backoff_factor`` each attempt). Other 4xx
+    responses are permanent (e.g. 404 = not found) and re-raised immediately so
+    callers can act on them. After the final attempt the last transient error is
+    re-raised rather than silently swallowed. ``sleep`` is injectable for tests.
+    """
+    req = urllib.request.Request(url, headers=headers or {})
+    delay = backoff
+    last_exc: Exception | None = None
+    for attempt in range(1, retries + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as e:
+            if e.code != 429 and 400 <= e.code < 500:
+                raise  # permanent client error — don't retry
+            last_exc = e
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            last_exc = e
+        if attempt < retries:
+            sleep(delay)
+            delay *= backoff_factor
+    assert last_exc is not None
+    raise last_exc
 
 
 PACK_SOURCES_SCHEMA_JSON = REFERENCE_DIR / "pack_sources.schema.json"
