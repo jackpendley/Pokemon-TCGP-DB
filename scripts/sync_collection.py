@@ -53,7 +53,8 @@ from _collection_io import (strip_comments, TRAINER_SUBTYPE_MAP, RARE_PLUS_RARIT
                             load_collection_json, ROOT, COLLECTION_JSON,
                             REPRINT_LINKS_JSON,
                             PACK_SOURCES_JSON as PACK_SOURCES,
-                            EXT_REF_JSON as EXT_REF)
+                            EXT_REF_JSON as EXT_REF,
+                            A4B_SET_CODE, A4B_ORIGINAL_SETS)
 
 
 SYNC_DIR        = ROOT / "data" / "sync"
@@ -412,7 +413,7 @@ def match_pz_cards(
 # PZ stamps A4b "Deluxe Pack: ex" reprints with the original set code (A1–A4) + the A4b
 # number, so their (set, number) names a different card in pack_sources. This is expected and
 # resolved by the direct-name match below; only mismatches OUTSIDE these sets are surprising.
-_A4B_HYBRID_TARGET_SETS = frozenset({"A1", "A2", "A3", "A4"})
+_A4B_HYBRID_TARGET_SETS = frozenset(A4B_ORIGINAL_SETS)
 
 
 def _resolve_canonical_name(
@@ -577,7 +578,7 @@ def _bind_to_entry(
     if (pz.set_code and str(pz.set_code).upper() in _A4B_HYBRID_TARGET_SETS
             and pz.card_number is not None):
         a4b_idx = [i for i in indices
-                   if str(collection[i].get("set_code") or "").upper() == "A4B"
+                   if str(collection[i].get("set_code") or "").upper() == A4B_SET_CODE
                    and collection[i].get("card_number") == pz.card_number]
         if len(a4b_idx) == 1:
             return MatchResult(status="MATCHED", pz_card=pz, entry=collection[a4b_idx[0]],

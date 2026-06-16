@@ -40,7 +40,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (norm_card_name, normalize_rarity, canonical_set_code,
-                            ext_ref_by_coord, load_records, ROOT, SOURCES_DIR, REFERENCE_DIR,
+                            ext_ref_by_coord, load_records, PROMO_SET_CODES,
+                            ROOT, SOURCES_DIR, REFERENCE_DIR,
                             PACK_SOURCES_JSON as PACK_SOURCES,
                             CARD_REF_JSON as OUT_JSON, EXT_REF_JSON,
                             FORME_RE as _FORME_RE, name_agrees as _name_agrees)
@@ -242,7 +243,7 @@ def _resolve_rarity(set_code: str, card_number: int, ps_record: dict,
         rarity_final = ovr
 
     # Promo-set cards carry no rarity symbol; keep the 'promo' sentinel when unresolved.
-    if not rarity_final and canonical_set_code(set_code) in ("PROMO-A", "PROMO-B"):
+    if not rarity_final and canonical_set_code(set_code) in PROMO_SET_CODES:
         rarity_final = "promo"
     return rarity_final, notes
 

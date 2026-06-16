@@ -49,6 +49,7 @@ from _collection_io import (  # noqa: E402 (after sys.path insert)
     RARITIES as RARITY_FIELDS, normalize_rarity, card_reference_by_coord,
     PACK_SOURCES_JSON, PZ_PACK_ODDS_JSON, CARD_REF_JSON, CURRENT_DIR,
     PULL_MODEL_JSON as OUT_JSON,
+    A4B_SET_CODE, PROMO_SET_CODES,
 )
 # Reuse the EV computation's PZ loaders/slug-matcher so the per-rarity-per-pack
 # probabilities are derived from the exact same Pokémon Zone source the EV model uses.
@@ -665,12 +666,12 @@ def _build_slot_rates_for_set(set_code: str) -> tuple[dict, str, str, str, bool]
 
 # Promo packs (PROMO-A/-B) are bought with a different currency and scored separately by
 # build_promo_pack_ev — they are excluded from the hourglass pull model entirely.
-_PROMO_SET_CODES = {"PROMO-A", "PROMO-B"}
+_PROMO_SET_CODES = PROMO_SET_CODES
 # Packs kept in the model but NOT purchasable with Pack Hourglasses → flagged
 # hourglass_purchasable=False so the recommendation report filters them out of the default
 # rankings unless --include-limited. Deluxe Pack: ex (A4b) is a limited/event pack.
 # (Compared upper-cased.)
-_NON_HOURGLASS_PURCHASABLE = {"A4B"}
+_NON_HOURGLASS_PURCHASABLE = {A4B_SET_CODE}
 
 
 # branch_type → (official_status, user_evidence_note, notes). One row per branch

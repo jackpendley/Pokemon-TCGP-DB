@@ -26,7 +26,8 @@ from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (
-    ext_ref_by_coord, card_reference_by_coord, load_records, TRAINER_SUBTYPE_MAP,
+    ext_ref_by_coord, card_reference_by_coord, load_records, PROMO_SET_CODES,
+    TRAINER_SUBTYPE_MAP,
     TRAINER_CATEGORIES, RARE_PLUS_RARITIES, normalize_rarity, norm_card_name,
     load_collection_json, ROOT, COLLECTION_JSON, PACK_SOURCES_JSON,
     EXT_REF_JSON, CARD_REF_JSON, CURRENT_DIR,
@@ -312,7 +313,7 @@ def main() -> int:
                 rarity_alias_fixed += 1
         # 2b. Promo cards carry no rarity symbol — keep the 'promo' sentinel when
         #     unresolved (many owned promos aren't in the sparse pack_sources reference).
-        if not entry.get("rarity") and str(entry.get("set_code") or "").upper() in ("PROMO-A", "PROMO-B"):
+        if not entry.get("rarity") and str(entry.get("set_code") or "").upper() in PROMO_SET_CODES:
             entry["rarity"] = "promo"
             rarity_alias_fixed += 1
         # 3. Normalize set_code casing to match pack_sources

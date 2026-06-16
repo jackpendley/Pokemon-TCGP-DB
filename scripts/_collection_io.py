@@ -99,6 +99,18 @@ MULTI_PACK_SETS: frozenset[str] = frozenset(
 # All valid set codes (for validators):
 VALID_SET_CODES: frozenset[str] = frozenset(SET_REGISTRY)
 
+# A4b ("Deluxe Pack: ex") is a reprint set. Pokemon Zone mislabels its cards as
+# the original multi-pack they reprint from (A1–A4), keeping the card number, so
+# every script that reconciles that relationship needs the same two facts. Single
+# source of truth here (upper-cased; A4B_ORIGINAL_SETS is ordered by debut so it
+# can drive debut-order tie-breaks as well as membership tests).
+A4B_SET_CODE = "A4B"
+A4B_ORIGINAL_SETS: tuple[str, ...] = ("A1", "A2", "A3", "A4")
+
+# Promo sets (bought with a different currency, scored separately from the
+# hourglass packs).
+PROMO_SET_CODES: frozenset[str] = frozenset({"PROMO-A", "PROMO-B"})
+
 # Case-insensitive → canonical casing lookup (used by build_pack_sources to
 # normalise set_codes read from HTML-cache filenames like "card_B3a_N.html"):
 _SET_CANONICAL: dict[str, str] = {k.upper(): k for k in SET_REGISTRY}

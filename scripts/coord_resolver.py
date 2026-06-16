@@ -41,6 +41,7 @@ from _collection_io import (normalize_rarity, norm_card_name as _norm,
                             PACK_SOURCES_JSON, CARD_REF_JSON,
                             TCGDEX_CACHE_JSON as TCGDEX_CACHE,
                             name_agrees as _name_agrees, load_records,
+                            A4B_SET_CODE, A4B_ORIGINAL_SETS,
                             REQUEST_TIMEOUT, REQUEST_DELAY)
 
 LIMITLESS_CACHE   = REFERENCE_DIR / "limitless_name_cache.json"
@@ -50,8 +51,8 @@ LIMITLESS_CACHE   = REFERENCE_DIR / "limitless_name_cache.json"
 # genuinely ambiguous when PZ's set_code is one of those mislabel TARGETS *and* an A4b
 # printing (the SOURCE) of this (name, number) exists. In every other case PZ's set_code is
 # trustworthy. (Sets, upper-cased.)
-_PZ_MISLABEL_SOURCE_SETS = frozenset({"A4B"})
-_PZ_MISLABEL_TARGET_SETS = frozenset({"A1", "A2", "A3", "A4"})
+_PZ_MISLABEL_SOURCE_SETS = frozenset({A4B_SET_CODE})
+_PZ_MISLABEL_TARGET_SETS = frozenset(A4B_ORIGINAL_SETS)
 
 TCGDEX_BASE   = "https://api.tcgdex.net/v2/en"
 LIMITLESS_BASE = "https://pocket.limitlesstcg.com/cards"
