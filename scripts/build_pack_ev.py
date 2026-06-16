@@ -43,6 +43,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (RARE_PLUS_RARITIES, HOURGLASS_PER_PACK,
                             norm_card_name as _norm_name, normalize_rarity,
                             load_collection_counts, EV_BASE_SCORING_WEIGHTS,
+                            validate_pack_sources_schema,
                             ROOT, COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
                             PULL_MODEL_JSON, PACK_SOURCES_JSON, PZ_PACK_ODDS_JSON,
                             DECK_VALIDATION_JSON, PACK_EV_JSON as OUT_JSON)
@@ -141,6 +142,7 @@ def load_pack_sources(path: Path):
     expansion_shared: {expansion: [records]}  (pack_name=None → shared pool)
     """
     raw = json.loads(path.read_text(encoding="utf-8"))
+    validate_pack_sources_schema(raw, source=str(path))
     records = raw["records"] if isinstance(raw, dict) else raw
     pack_cards = defaultdict(list)
     expansion_shared = defaultdict(list)

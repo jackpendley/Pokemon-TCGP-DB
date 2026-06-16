@@ -364,6 +364,38 @@ def load_records(path: Path) -> list:
     return raw
 
 
+PACK_SOURCES_SCHEMA_JSON = REFERENCE_DIR / "pack_sources.schema.json"
+
+
+def validate_pack_sources_schema(raw, *, source: str = "") -> bool:
+    """Validate a loaded pack_sources structure against pack_sources.schema.json.
+
+    ``raw`` is the parsed JSON (flat array or {'records': [...]} envelope). Raises
+    ValueError (naming the failing field path) if the data violates the schema, so
+    malformed pack_sources fails loudly at load instead of feeding e.g. a missing
+    coord silently into EV. Returns True when validated, False when the check was
+    skipped because jsonschema or the schema file is unavailable (the dependency
+    is optional, mirroring validate_pack_sources.py).
+    """
+    try:
+        import jsonschema
+    except ImportError:
+        return False
+    if not PACK_SOURCES_SCHEMA_JSON.exists():
+        return False
+    schema = json.loads(PACK_SOURCES_SCHEMA_JSON.read_text(encoding="utf-8"))
+    instance = raw if isinstance(raw, dict) else {"records": raw}
+    try:
+        jsonschema.validate(instance=instance, schema=schema)
+    except jsonschema.ValidationError as e:
+        where = f" ({source})" if source else ""
+        raise ValueError(
+            f"pack_sources{where} failed schema validation: {e.message} "
+            f"(path: {list(e.path)})"
+        ) from e
+    return True
+
+
 def parse_coord(set_code, card_number,
                 *, require_set_code: bool = True) -> tuple[str, int] | None:
     """Parse a (set_code, card_number) pair into a normalised coord tuple.
