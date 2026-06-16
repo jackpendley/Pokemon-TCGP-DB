@@ -344,66 +344,55 @@ def load_records(path: Path) -> list:
     return raw
 
 
-def pack_sources_by_coord(path: Path) -> dict[tuple[str, int], dict]:
-    """Load pack_sources.json indexed by (set_code_upper, card_number).
+def _index_by_coord(records: list, num_key: str,
+                    *, require_set_code: bool = True) -> dict[tuple[str, int], dict]:
+    """Index records by (set_code_upper, int(num_key)).
 
-    Handles both the flat-array and {'records': [...]} envelope forms.
-    set_code is always uppercased so callers don't need to normalise.
+    Shared core for the by-coord loaders so the set_code upper-casing and the
+    malformed-number handling stay identical. ``require_set_code`` skips records
+    with a blank set_code (pack_sources / ext_ref); card_reference keeps them so
+    set_code correction can still find a card by number.
     """
-    raw = json.loads(Path(path).read_text(encoding="utf-8"))
-    records = raw.get("records", raw) if isinstance(raw, dict) else raw
     index: dict[tuple[str, int], dict] = {}
     for r in records:
         sc = str(r.get("set_code") or "").upper().strip()
-        cn_raw = r.get("card_number")
-        if sc and cn_raw is not None:
-            try:
-                index[(sc, int(cn_raw))] = r
-            except (TypeError, ValueError):
-                pass
+        if require_set_code and not sc:
+            continue
+        cn_raw = r.get(num_key)
+        if cn_raw is None:
+            continue
+        try:
+            index[(sc, int(cn_raw))] = r
+        except (TypeError, ValueError):
+            pass
     return index
+
+
+def pack_sources_by_coord(path: Path) -> dict[tuple[str, int], dict]:
+    """Load pack_sources.json indexed by (set_code_upper, card_number)."""
+    return _index_by_coord(load_records(path), "card_number")
 
 
 def card_reference_by_coord(path: Path) -> dict[tuple[str, int], dict]:
     """Load card_reference.json indexed by (set_code_upper, card_number).
 
     Returns {} when the file does not exist (not an error — reference may not
-    have been built yet for a brand-new pack).
+    have been built yet for a brand-new pack). Blank set_codes are kept so a
+    card can still be located by number for set_code correction.
     """
     p = Path(path)
     if not p.exists():
         return {}
-    raw = json.loads(p.read_text(encoding="utf-8"))
-    records = raw.get("records", []) if isinstance(raw, dict) else raw
-    index: dict[tuple[str, int], dict] = {}
-    for r in records:
-        sc = str(r.get("set_code") or "").upper().strip()
-        cn_raw = r.get("card_number")
-        if cn_raw is not None:
-            try:
-                index[(sc, int(cn_raw))] = r
-            except (TypeError, ValueError):
-                pass
-    return index
+    return _index_by_coord(load_records(p), "card_number", require_set_code=False)
 
 
 def ext_ref_by_coord(ext_ref_path: Path) -> dict[tuple[str, int], dict]:
-    """Load external_card_reference.json indexed by (set_code_upper, card_number).
+    """Load external_card_reference.json indexed by (set_code_upper, number).
 
     Shared by the coord-assignment and coord-validation scripts so the index
     shape and the malformed-number handling stay identical.
     """
-    records = json.loads(Path(ext_ref_path).read_text(encoding="utf-8"))
-    index: dict[tuple[str, int], dict] = {}
-    for r in records:
-        sc = str(r.get("set_code") or "").upper().strip()
-        num = r.get("number")
-        if sc and num is not None:
-            try:
-                index[(sc, int(num))] = r
-            except (TypeError, ValueError):
-                pass
-    return index
+    return _index_by_coord(load_records(ext_ref_path), "number")
 
 
 def strip_comments(text: str) -> str:
