@@ -44,10 +44,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (is_cache_fresh, norm_card_name, normalize_rarity,
                             ROOT, SOURCES_DIR, SET_REGISTRY,
-                            PACK_SOURCES_JSON as PACK_SOURCES)
+                            PACK_SOURCES_JSON as PACK_SOURCES,
+                            SNAPSHOT_REQUEST_TIMEOUT as REQUEST_TIMEOUT,
+                            SNAPSHOT_REQUEST_DELAY as REQUEST_DELAY)
 
-REQUEST_DELAY   = 0.4   # seconds between HTTP requests
-REQUEST_TIMEOUT = 15    # seconds per request
 CACHE_MAX_DAYS  = 30
 
 _UA_BROWSER = (

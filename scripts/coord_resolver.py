@@ -40,7 +40,8 @@ from _collection_io import (normalize_rarity, norm_card_name as _norm,
                             is_cache_fresh as _fresh, ROOT, REFERENCE_DIR,
                             PACK_SOURCES_JSON, CARD_REF_JSON,
                             TCGDEX_CACHE_JSON as TCGDEX_CACHE,
-                            name_agrees as _name_agrees)
+                            name_agrees as _name_agrees,
+                            REQUEST_TIMEOUT, REQUEST_DELAY)
 
 LIMITLESS_CACHE   = REFERENCE_DIR / "limitless_name_cache.json"
 
@@ -54,8 +55,6 @@ _PZ_MISLABEL_TARGET_SETS = frozenset({"A1", "A2", "A3", "A4"})
 
 TCGDEX_BASE   = "https://api.tcgdex.net/v2/en"
 LIMITLESS_BASE = "https://pocket.limitlesstcg.com/cards"
-REQUEST_TIMEOUT = 12
-REQUEST_DELAY   = 0.35
 
 _UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                      "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}

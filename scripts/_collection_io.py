@@ -47,6 +47,19 @@ DECK_VALIDATION_JSON       = EXPORTS_DIR / "deck_recommendation_validation.json"
 CACHE_MAX_AGE_DAYS = 30
 
 
+# HTTP request tuning, centralised so the network-timing knobs live in one place
+# instead of drifting per script. Two pairs by workload:
+#   * REQUEST_* — lightweight JSON-API / single-card page fetches
+#     (coord_resolver, validate_collection_coords).
+#   * SNAPSHOT_REQUEST_* — full-set HTML scrapes (Bulbapedia/Serebii) in
+#     fetch_source_snapshots, which are heavier so they get a longer timeout and
+#     a politer delay.
+REQUEST_TIMEOUT = 12            # seconds per request
+REQUEST_DELAY = 0.35           # seconds between requests
+SNAPSHOT_REQUEST_TIMEOUT = 15   # seconds per request
+SNAPSHOT_REQUEST_DELAY = 0.4   # seconds between requests
+
+
 # ---------------------------------------------------------------------------
 # Canonical set-code registry.
 # Keys are the canonical casing used throughout the pipeline. The value dict
