@@ -23,6 +23,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (is_ex_from_name, norm_card_name as _norm,
                             load_collection_counts, load_records,
+                            EV_BASE_SCORING_WEIGHTS,
                             ROOT, PZ_PACK_ODDS_JSON, PACK_SOURCES_JSON,
                             COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
                             PROMO_EV_JSON as OUT_JSON)
@@ -30,8 +31,7 @@ from _collection_io import (is_ex_from_name, norm_card_name as _norm,
 OUT_MD             = ROOT / "review"             / "promo_pack_ev.md"
 
 SCORING_WEIGHTS = {
-    "new_card":     1.0,
-    "copy_up_to_2": 0.4,
+    **EV_BASE_SCORING_WEIGHTS,
     "ex_missing":   1.0,
 }
 

@@ -111,6 +111,14 @@ A4B_ORIGINAL_SETS: tuple[str, ...] = ("A1", "A2", "A3", "A4")
 # hourglass packs).
 PROMO_SET_CODES: frozenset[str] = frozenset({"PROMO-A", "PROMO-B"})
 
+# EV scoring weights shared by the regular and promo pack scorers. Each scorer
+# spreads this and adds its own term (deck_target for regular, ex_missing for
+# promo), so the common weights can't drift between the two models.
+EV_BASE_SCORING_WEIGHTS: dict[str, float] = {
+    "new_card":     1.0,   # first copy of any unseen unique card
+    "copy_up_to_2": 0.4,   # second copy (can use 2 copies per deck)
+}
+
 # Case-insensitive → canonical casing lookup (used by build_pack_sources to
 # normalise set_codes read from HTML-cache filenames like "card_B3a_N.html"):
 _SET_CANONICAL: dict[str, str] = {k.upper(): k for k in SET_REGISTRY}

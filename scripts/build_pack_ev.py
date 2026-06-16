@@ -42,7 +42,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (RARE_PLUS_RARITIES, HOURGLASS_PER_PACK,
                             norm_card_name as _norm_name, normalize_rarity,
-                            load_collection_counts,
+                            load_collection_counts, EV_BASE_SCORING_WEIGHTS,
                             ROOT, COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
                             PULL_MODEL_JSON, PACK_SOURCES_JSON, PZ_PACK_ODDS_JSON,
                             DECK_VALIDATION_JSON, PACK_EV_JSON as OUT_JSON)
@@ -55,8 +55,7 @@ from _collection_io import (RARE_PLUS_RARITIES, HOURGLASS_PER_PACK,
 # Scoring weights
 # ---------------------------------------------------------------------------
 SCORING_WEIGHTS = {
-    "new_card":    1.0,   # first copy of any unseen unique card
-    "copy_up_to_2": 0.4,  # second copy (can use 2 copies per deck)
+    **EV_BASE_SCORING_WEIGHTS,
     "deck_target": 2.0,   # max bonus for a deck-target card (scaled by copies still needed)
 }
 

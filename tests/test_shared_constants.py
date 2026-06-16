@@ -47,6 +47,30 @@ def test_a4b_and_promo_constants_values():
     assert io.PROMO_SET_CODES == frozenset({"PROMO-A", "PROMO-B"})
 
 
+def test_ev_scorers_share_base_weights():
+    import build_pack_ev as ev
+    import build_promo_pack_ev as pev
+
+    for k, v in io.EV_BASE_SCORING_WEIGHTS.items():
+        assert ev.SCORING_WEIGHTS[k] == v
+        assert pev.SCORING_WEIGHTS[k] == v
+    # Per-scorer terms remain distinct.
+    assert ev.SCORING_WEIGHTS["deck_target"] == 2.0
+    assert pev.SCORING_WEIGHTS["ex_missing"] == 1.0
+
+
+def test_branch_annotations_cover_every_configured_branch_type():
+    import build_pull_probability_model as bppm
+
+    configured = set(bppm.SET_CODE_BRANCH_CONFIG.values())
+    # third_party_two_branch is the routing default -> annotation default; every
+    # other configured branch_type must have an explicit annotation entry.
+    missing = configured - set(bppm._BRANCH_ANNOTATIONS) - {"third_party_two_branch"}
+    assert not missing, f"branch types without annotations: {missing}"
+    # Default annotation is a 2-tuple of (match, notes).
+    assert len(bppm._DEFAULT_BRANCH_ANNOTATION) == 2
+
+
 def test_a4b_consumers_derive_from_shared_constants():
     import coord_resolver
     import build_reprint_links as brl

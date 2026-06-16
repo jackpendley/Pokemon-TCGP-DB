@@ -664,6 +664,59 @@ def _build_slot_rates_for_set(set_code: str) -> tuple[dict, str, str, str, bool]
     return (rates, "third_party_verified", "two_branch", None, False)
 
 
+# branch_type -> (bulbapedia_match, bulbapedia_notes) annotation pair recorded in
+# each pack's metadata. A pure lookup keyed by the same SET_CODE_BRANCH_CONFIG
+# routing as get_branch_model; the default covers third_party_two_branch.
+_BRANCH_ANNOTATIONS: dict[str, tuple[str, str]] = {
+    "user_in_app_plus_bulbapedia": (
+        "branch_selection_corroborated",
+        "Bulbapedia confirms three-branch structure (94.711%/5.238%/0.050%). "
+        "User in-app verified rates are used; Bulbapedia corroborates branch selection.",
+    ),
+    "user_in_app_verified_a4": (
+        "in_app_verified_bulbapedia_inaccessible",
+        "Branch selection (91.620%/8.330%/0.050%) and slot_6 verified from in-repo "
+        "Offering Rates screenshots (IMG_1692–IMG_1722, 2026-05-14). "
+        "Bulbapedia page was inaccessible during prior verification pass. "
+        "Branch probabilities match Secluded Springs (A4a) exactly.",
+    ),
+    "bulbapedia_three_branch_standard": (
+        "branch_verified",
+        "Offering rates section confirmed three-branch model: "
+        "regular_pack=94.711%, regular_pack_plus_one=5.238%, rare_pack=0.050%.",
+    ),
+    "bulbapedia_secluded_springs": (
+        "branch_verified_special_case",
+        "Offering rates section confirmed unique three-branch model: "
+        "regular_pack=91.620%, regular_pack_plus_one=8.330%, rare_pack=0.050%. "
+        "Branch percentages differ from standard B-series three-branch model.",
+    ),
+    "bulbapedia_mega_shine": (
+        "branch_verified_special_case",
+        "Offering rates section confirmed four-branch model: "
+        "regular_pack=94.706%, regular_pack_plus_one=5.238%, rare_pack=0.050%, "
+        "themed_rare_pack=0.005% (guarantees Mega Evolution ex).",
+    ),
+    "bulbapedia_two_branch": (
+        "two_branch_confirmed",
+        "Offering rates section confirmed two-branch model: "
+        "regular_pack=99.950%, rare_pack=0.050%. "
+        "No Regular Pack + 1 Card branch for this expansion.",
+    ),
+    "pending": (
+        "truncated_pending",
+        "Bulbapedia offering rates section was not accessible (page truncated) "
+        "during the 2026-05-13 verification pass. Branch model unconfirmed.",
+    ),
+}
+_DEFAULT_BRANCH_ANNOTATION: tuple[str, str] = (
+    "truncated_pending",
+    "Bulbapedia offering rates section was not fully accessible during "
+    "the 2026-05-13 verification pass. Two-branch model is consistent with "
+    "confirmed A-series Bulbapedia data (A1a/A2a/A3a/A3b all two-branch).",
+)
+
+
 # Promo packs (PROMO-A/-B) are bought with a different currency and scored separately by
 # build_promo_pack_ev — they are excluded from the hourglass pull model entirely.
 _PROMO_SET_CODES = PROMO_SET_CODES
@@ -796,61 +849,8 @@ def build_pack_records(records: list, existing_rates: dict,
         bulbapedia_url = BULBAPEDIA_URLS.get(set_code)
         branch_type = SET_CODE_BRANCH_CONFIG.get(set_code, "third_party_two_branch")
 
-        if branch_type == "user_in_app_plus_bulbapedia":
-            bulbapedia_match = "branch_selection_corroborated"
-            bulbapedia_notes_str = (
-                "Bulbapedia confirms three-branch structure (94.711%/5.238%/0.050%). "
-                "User in-app verified rates are used; Bulbapedia corroborates branch selection."
-            )
-        elif branch_type == "user_in_app_verified_a4":
-            bulbapedia_match = "in_app_verified_bulbapedia_inaccessible"
-            bulbapedia_notes_str = (
-                "Branch selection (91.620%/8.330%/0.050%) and slot_6 verified from in-repo "
-                "Offering Rates screenshots (IMG_1692–IMG_1722, 2026-05-14). "
-                "Bulbapedia page was inaccessible during prior verification pass. "
-                "Branch probabilities match Secluded Springs (A4a) exactly."
-            )
-        elif branch_type in ("bulbapedia_three_branch_standard",):
-            bulbapedia_match = "branch_verified"
-            bulbapedia_notes_str = (
-                "Offering rates section confirmed three-branch model: "
-                "regular_pack=94.711%, regular_pack_plus_one=5.238%, rare_pack=0.050%."
-            )
-        elif branch_type == "bulbapedia_secluded_springs":
-            bulbapedia_match = "branch_verified_special_case"
-            bulbapedia_notes_str = (
-                "Offering rates section confirmed unique three-branch model: "
-                "regular_pack=91.620%, regular_pack_plus_one=8.330%, rare_pack=0.050%. "
-                "Branch percentages differ from standard B-series three-branch model."
-            )
-        elif branch_type == "bulbapedia_mega_shine":
-            bulbapedia_match = "branch_verified_special_case"
-            bulbapedia_notes_str = (
-                "Offering rates section confirmed four-branch model: "
-                "regular_pack=94.706%, regular_pack_plus_one=5.238%, rare_pack=0.050%, "
-                "themed_rare_pack=0.005% (guarantees Mega Evolution ex)."
-            )
-        elif branch_type == "bulbapedia_two_branch":
-            bulbapedia_match = "two_branch_confirmed"
-            bulbapedia_notes_str = (
-                "Offering rates section confirmed two-branch model: "
-                "regular_pack=99.950%, rare_pack=0.050%. "
-                "No Regular Pack + 1 Card branch for this expansion."
-            )
-        elif branch_type == "pending":
-            bulbapedia_match = "truncated_pending"
-            bulbapedia_notes_str = (
-                "Bulbapedia offering rates section was not accessible (page truncated) "
-                "during the 2026-05-13 verification pass. Branch model unconfirmed."
-            )
-        else:
-            # third_party_two_branch
-            bulbapedia_match = "truncated_pending"
-            bulbapedia_notes_str = (
-                "Bulbapedia offering rates section was not fully accessible during "
-                "the 2026-05-13 verification pass. Two-branch model is consistent with "
-                "confirmed A-series Bulbapedia data (A1a/A2a/A3a/A3b all two-branch)."
-            )
+        bulbapedia_match, bulbapedia_notes_str = _BRANCH_ANNOTATIONS.get(
+            branch_type, _DEFAULT_BRANCH_ANNOTATION)
 
         for pn in sorted(named_packs):
             pack_cards = named_packs[pn]
