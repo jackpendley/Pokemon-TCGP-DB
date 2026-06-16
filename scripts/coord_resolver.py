@@ -40,7 +40,7 @@ from _collection_io import (normalize_rarity, norm_card_name as _norm,
                             is_cache_fresh as _fresh, ROOT, REFERENCE_DIR,
                             PACK_SOURCES_JSON, CARD_REF_JSON,
                             TCGDEX_CACHE_JSON as TCGDEX_CACHE,
-                            name_agrees as _name_agrees,
+                            name_agrees as _name_agrees, load_records,
                             REQUEST_TIMEOUT, REQUEST_DELAY)
 
 LIMITLESS_CACHE   = REFERENCE_DIR / "limitless_name_cache.json"
@@ -84,8 +84,7 @@ class CoordResolver:
     def __init__(self, *, fetch: bool = True, tcgdex_sets: set | None = None):
         self.fetch = fetch
         # pack_sources indexes (kept for fallback when card_reference doesn't have a card)
-        data = json.loads(PACK_SOURCES_JSON.read_text(encoding="utf-8"))
-        records = data.get("records", data) if isinstance(data, dict) else data
+        records = load_records(PACK_SOURCES_JSON)
         self.ps_by_coord: dict[tuple, dict] = {}
         self.ps_name_num: dict[tuple, list] = {}
         for r in records:

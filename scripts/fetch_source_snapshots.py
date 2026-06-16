@@ -43,7 +43,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (is_cache_fresh, norm_card_name, normalize_rarity,
-                            ROOT, SOURCES_DIR, SET_REGISTRY,
+                            load_records, ROOT, SOURCES_DIR, SET_REGISTRY,
                             PACK_SOURCES_JSON as PACK_SOURCES,
                             SNAPSHOT_REQUEST_TIMEOUT as REQUEST_TIMEOUT,
                             SNAPSHOT_REQUEST_DELAY as REQUEST_DELAY)
@@ -439,8 +439,7 @@ def _sets_from_pack_sources() -> list[str]:
     """Return ordered set list from pack_sources.json (or fall back to SET_ALIASES keys)."""
     if PACK_SOURCES.exists():
         try:
-            data = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
-            records = data.get("records", data) if isinstance(data, dict) else data
+            records = load_records(PACK_SOURCES)
             seen: list[str] = []
             for r in records:
                 sc = str(r.get("set_code", "")).strip()

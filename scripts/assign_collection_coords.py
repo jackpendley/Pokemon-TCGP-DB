@@ -26,7 +26,7 @@ from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (
-    ext_ref_by_coord, card_reference_by_coord, TRAINER_SUBTYPE_MAP,
+    ext_ref_by_coord, card_reference_by_coord, load_records, TRAINER_SUBTYPE_MAP,
     TRAINER_CATEGORIES, RARE_PLUS_RARITIES, normalize_rarity, norm_card_name,
     load_collection_json, ROOT, COLLECTION_JSON, PACK_SOURCES_JSON,
     EXT_REF_JSON, CARD_REF_JSON, CURRENT_DIR,
@@ -46,8 +46,7 @@ def load_collection() -> tuple[dict, list]:
 
 def load_pack_sources() -> dict[str, list]:
     """Returns {norm_card_name(card_name): [record, ...]}"""
-    data = json.loads(PACK_SOURCES_JSON.read_text(encoding="utf-8"))
-    records = data.get("records", data) if isinstance(data, dict) else data
+    records = load_records(PACK_SOURCES_JSON)
     by_name: dict[str, list] = defaultdict(list)
     for r in records:
         name = (r.get("card_name") or "").strip()

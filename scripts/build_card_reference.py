@@ -40,7 +40,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (norm_card_name, normalize_rarity, canonical_set_code,
-                            ext_ref_by_coord, ROOT, SOURCES_DIR, REFERENCE_DIR,
+                            ext_ref_by_coord, load_records, ROOT, SOURCES_DIR, REFERENCE_DIR,
                             PACK_SOURCES_JSON as PACK_SOURCES,
                             CARD_REF_JSON as OUT_JSON, EXT_REF_JSON,
                             FORME_RE as _FORME_RE, name_agrees as _name_agrees)
@@ -90,8 +90,7 @@ def load_sir_coords() -> set[tuple[str, int]]:
     mini-sets like A1a/B2a must not be flattened to A1A/B2A)."""
     if not SIR_JSON.exists():
         return set()
-    raw = json.loads(SIR_JSON.read_text(encoding="utf-8"))
-    records = raw.get("records", raw) if isinstance(raw, dict) else raw
+    records = load_records(SIR_JSON)
     coords: set[tuple[str, int]] = set()
     for r in records:
         sc = canonical_set_code(str(r.get("set_code", "")).strip())
@@ -126,8 +125,7 @@ def _load_snapshot(source: str, set_code: str) -> dict:
 
 def _load_pack_sources() -> dict[str, list[dict]]:
     """Return {set_code: [record, ...]} from pack_sources.json, set_code uppercased."""
-    data = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
-    records = data.get("records", data) if isinstance(data, dict) else data
+    records = load_records(PACK_SOURCES)
     by_set: dict[str, list[dict]] = {}
     for r in records:
         sc = str(r.get("set_code", "")).upper().strip()

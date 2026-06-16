@@ -326,6 +326,24 @@ def normalize_rarity(rarity: str | None) -> str | None:
     return RARITY_ALIASES.get(rarity, rarity)
 
 
+def load_records(path: Path) -> list:
+    """Read a JSON data file and return its list of records.
+
+    Accepts both the flat-array form (``[...]``) and the ``{"records": [...]}``
+    envelope form used across the reference/data files, so callers don't each
+    re-implement the unwrap. A malformed file raises ValueError naming the path
+    instead of a context-free JSONDecodeError.
+    """
+    p = Path(path)
+    try:
+        raw = json.loads(p.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        raise ValueError(f"{p}: invalid JSON ({e})") from e
+    if isinstance(raw, dict):
+        return raw.get("records", raw)
+    return raw
+
+
 def pack_sources_by_coord(path: Path) -> dict[tuple[str, int], dict]:
     """Load pack_sources.json indexed by (set_code_upper, card_number).
 

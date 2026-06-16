@@ -22,7 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (is_ex_from_name, norm_card_name as _norm,
-                            load_collection_counts,
+                            load_collection_counts, load_records,
                             ROOT, PZ_PACK_ODDS_JSON, PACK_SOURCES_JSON,
                             COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
                             PROMO_EV_JSON as OUT_JSON)
@@ -65,8 +65,7 @@ def value_of_next_copy(owned: int, is_ex: bool) -> float:
 
 def load_promo_ps_index(path: Path) -> dict[tuple, dict]:
     """Returns {(SET_CODE_UPPER, card_number): pack_sources_record} for PROMO entries."""
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    records = raw.get("records", raw) if isinstance(raw, dict) else raw
+    records = load_records(path)
     idx: dict[tuple, dict] = {}
     for r in records:
         sc = r.get("set_code", "").upper()

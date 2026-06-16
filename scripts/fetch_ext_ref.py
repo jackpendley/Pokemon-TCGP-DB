@@ -43,7 +43,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (TRAINER_CATEGORIES, is_ex_from_name, RARITY_SYMBOLS,
-                            field_slug as _normalize, ROOT,
+                            field_slug as _normalize, load_records, ROOT,
                             EXT_REF_JSON as EXT_REF,
                             PACK_SOURCES_JSON as PACK_SOURCES)
 
@@ -337,8 +337,7 @@ def _load_pack_sources_missing(ext_index: dict[tuple[str, int], int]) -> list[di
     """Return pack_sources records that have no ext_ref entry (need fetching)."""
     if not PACK_SOURCES.exists():
         return []
-    data = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
-    records = data.get("records", data) if isinstance(data, dict) else data
+    records = load_records(PACK_SOURCES)
     missing = []
     seen: set[tuple[str, int]] = set()
     for r in records:
