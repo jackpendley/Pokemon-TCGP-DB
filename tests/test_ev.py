@@ -335,3 +335,19 @@ def test_rank_top_cards_sorts_and_filters():
     assert [c["ev_contribution"] for c in top[:3]] == [3.0, 2.0, 1.0]
     assert deck == [{"ev_contribution": 3.0, "is_deck_target": True}]
     assert len(top) <= bev.TOP_N_CARDS
+
+
+# ---------------------------------------------------------------------------
+# Deck-target stub is deferred (no producer) — pin it to 0 so it can't silently
+# activate. See DEFERRED(deck-ev) in build_pack_ev.py.
+# ---------------------------------------------------------------------------
+
+def test_load_deck_targets_empty_when_file_absent(tmp_path):
+    assert bev.load_deck_targets(tmp_path / "nope.json") == {}
+
+
+def test_deck_target_ev_is_zero_at_runtime(pack_ev):
+    packs = pack_ev["packs"] if isinstance(pack_ev, dict) else pack_ev
+    for p in packs:
+        assert p.get("deck_target_ev", 0) == 0, p.get("pack_name")
+        assert p.get("deck_target_cards", []) == []

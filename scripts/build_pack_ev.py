@@ -48,9 +48,10 @@ from _collection_io import (RARE_PLUS_RARITIES, HOURGLASS_PER_PACK,
                             PULL_MODEL_JSON, PACK_SOURCES_JSON, PZ_PACK_ODDS_JSON,
                             DECK_VALIDATION_JSON, PACK_EV_JSON as OUT_JSON)
 
-# TODO(deck-ev): DECK_VALIDATION_JSON is read here but never written by any
-# pipeline script — deck_target_ev is always 0 at runtime. When deck logic lands, wire up a
-# producer for this file and switch the owned-count basis to name-level (decks mix sets).
+# DEFERRED(deck-ev): DECK_VALIDATION_JSON is read here but never written by any
+# pipeline script — deck_target_ev is always 0 at runtime (see the pin test in
+# test_ev.py). When deck logic lands, wire up a producer for this file and switch
+# the owned-count basis to name-level (decks mix sets).
 
 # ---------------------------------------------------------------------------
 # Scoring weights
