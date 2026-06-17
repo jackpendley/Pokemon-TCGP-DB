@@ -1237,7 +1237,7 @@ def _get_curl() -> str:
     return _read_curl_from_stdin()
 
 
-def main() -> int:
+def _build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Sync collection.json from Pokemon Zone.")
     parser.add_argument("--har-import",  metavar="FILE",
                         help="Import collection from a browser HAR file (no auth stored; run --curl-import afterwards for ongoing syncs)")
@@ -1257,10 +1257,15 @@ def main() -> int:
                         help="Apply updates even if review queue has items")
     parser.add_argument("--no-fetch",    action="store_true",
                         help="Skip live coord cross-validation for new cards (use caches only)")
-    args = parser.parse_args()
+    return parser
 
-    # ── Load sibling client module ────────────────────────────────────────
-    pz = _load_pz_client()
+
+def _acquire_raw_cards(args, pz) -> tuple[list | None, int | None]:
+    """Phase 0/1: obtain raw PZ card records via the selected import mode.
+
+    Returns (raw_cards, None) to continue, or (None, exit_code) when main should
+    return that exit code (error or the --discover early exit).
+    """
     AUTH_CACHE          = pz.AUTH_CACHE
     browser_session     = ROOT / ".browser_session"
 
@@ -1271,16 +1276,16 @@ def main() -> int:
         json_path = Path(args.json_import)
         if not json_path.exists():
             print(f"ERROR: file not found: {json_path}", file=sys.stderr)
-            return 1
+            return None, 1
         print(f"Importing collection from bookmarklet JSON: {json_path.name}")
         try:
             raw_cards = json.loads(json_path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as e:
             print(f"ERROR: could not read {json_path}: {e}", file=sys.stderr)
-            return 1
+            return None, 1
         if not isinstance(raw_cards, list) or not raw_cards:
             print("ERROR: JSON file must contain a non-empty array of card objects.", file=sys.stderr)
-            return 1
+            return None, 1
         print(f"  Loaded {len(raw_cards)} card records.")
 
     # --har-import: parse a HAR file directly (one-shot; no auth stored)
@@ -1290,7 +1295,7 @@ def main() -> int:
             raw_cards, _cache = pz.import_har(args.har_import)
         except (ValueError, FileNotFoundError) as e:
             print(f"\nERROR: {e}", file=sys.stderr)
-            return 1
+            return None, 1
         print()
         print("NOTE: HAR import does not save auth credentials (browser cookies are")
         print("      not included in HAR exports). For automatic future syncs, run:")
@@ -1304,30 +1309,30 @@ def main() -> int:
         curl_path = Path(args.curl_file)
         if not curl_path.exists():
             print(f"ERROR: file not found: {curl_path}", file=sys.stderr)
-            return 1
+            return None, 1
         curl_str = curl_path.read_text(encoding="utf-8").strip()
         if not curl_str:
             print("ERROR: curl file is empty.", file=sys.stderr)
-            return 1
+            return None, 1
         print(f"Reading cURL from {curl_path} ...")
         print("Parsing cURL and fetching collection...")
         try:
             raw_cards, _cache = pz.import_curl_auth(curl_str)
         except (ValueError, pz.APIDiscoveryFailedError) as e:
             print(f"\nERROR: {e}", file=sys.stderr)
-            return 1
+            return None, 1
 
     # --curl-import: read cURL (clipboard first, then stdin), save auth, sync
     elif args.curl_import:
         curl_str = _get_curl()
         if not curl_str:
-            return 1
+            return None, 1
         print("\nParsing cURL and fetching collection...")
         try:
             raw_cards, _cache = pz.import_curl_auth(curl_str)
         except (ValueError, pz.APIDiscoveryFailedError) as e:
             print(f"\nERROR: {e}", file=sys.stderr)
-            return 1
+            return None, 1
 
     # Normal headless sync using stored auth or Playwright session
     else:
@@ -1343,7 +1348,7 @@ def main() -> int:
             print()
             print("Alternative (may hit Cloudflare CAPTCHA loop):")
             print("  python3 scripts/sync_collection.py --login")
-            return 1
+            return None, 1
 
         # ── Phase 1: Fetch from Pokemon Zone ─────────────────────────────
         print("Fetching collection from Pokemon Zone...")
@@ -1351,44 +1356,25 @@ def main() -> int:
             raw_cards, _cache = pz.fetch_collection(login=args.login, discover=args.discover)
         except (pz.AuthNotFoundError, pz.SessionNotFoundError) as e:
             print(f"ERROR: {e}", file=sys.stderr)
-            return 1
+            return None, 1
         except (pz.AuthExpiredError, pz.SessionExpiredError) as e:
             # Recoverable: stored credentials lapsed (PZ sessions last ~3–4 weeks).
             # Distinct exit code 4 lets run_recommendations keep going on the existing
             # collection and surface the one-command refresh instead of FATAL-ing.
             print(f"ERROR: {e}", file=sys.stderr)
-            return 4
+            return None, 4
         except pz.APIDiscoveryFailedError as e:
             print(f"ERROR: {e}", file=sys.stderr)
-            return 1
+            return None, 1
 
         if args.discover:
-            return 0  # already printed by fetch_collection
+            return None, 0  # already printed by fetch_collection
 
-    if not raw_cards:
-        print("ERROR: No card records returned from Pokemon Zone.", file=sys.stderr)
-        return 1
+    return raw_cards, None
 
-    # ── Review queue gate (all modes except discover/dry-run/force) ───────
-    if not args.force and not args.discover and not args.dry_run:
-        q = load_review_queue()
-        if review_queue_is_unresolved(q):
-            n_new = len(q.get("new_cards", []))
-            print(f"BLOCKED: Review queue has {n_new} unresolved new card(s).")
-            print(f"  File: {REVIEW_QUEUE}")
-            print("  Resolve the items or run with --force to skip this check.")
-            return 3
 
-    print(f"  Fetched {len(raw_cards)} card records from Pokemon Zone.")
-
-    # ── Load collection.json and reference data ───────────────────────────
-    raw_text, collection_data = load_collection()
-    collection_entries: list[dict] = collection_data.get("collection", [])
-    print("Loading reference data...")
-    pack_sources = load_pack_sources()
-    ext_ref      = load_ext_ref()
-
-    # ── Phase 2: Normalize PZ records ────────────────────────────────────
+def _normalize_pz_records(raw_cards: list) -> list:
+    """Phase 2: parse raw PZ records into PZCards, dropping count=0 / nameless ones."""
     pz_cards: list[PZCard] = []
     skipped = 0
     for rec in raw_cards:
@@ -1400,85 +1386,17 @@ def main() -> int:
 
     if skipped:
         print(f"  Skipped {skipped} records with count=0 or missing name.")
+    return pz_cards
 
-    # ── Phase 3: Match ────────────────────────────────────────────────────
-    print(f"  Matching {len(pz_cards)} PZ cards to {len(collection_entries)} collection entries...")
-    try:
-        results = match_pz_cards(pz_cards, collection_entries, pack_sources, ext_ref)
-    except RuntimeError as e:
-        print(f"\nFATAL: {e}", file=sys.stderr)
-        print("Sync cannot proceed. Add disambiguation data to reference files and retry.", file=sys.stderr)
-        return 1
 
-    matched   = [r for r in results if r.status == "MATCHED"]
-    new_cards = [r for r in results if r.status == "NEW_CARD"]
+def _auto_add_new_cards(new_cards, pack_sources, ext_ref, collection_entries,
+                        *, no_fetch: bool) -> tuple[list, list]:
+    """Phase 4b: build collection entries for the auto-addable NEW_CARDs.
 
-    matched_indices = {r.entry_index for r in matched if r.entry_index is not None}
-
-    # ── Phase 4: Compute diff ─────────────────────────────────────────────
-    # Aggregate counts: the same card may appear in multiple sets in PZ
-    # (e.g. Shroomish in B2 + B3); sum all copies into one collection entry.
-    entry_pz_total: dict[int, int] = {}
-    entry_pz_coords: dict[int, set] = {}
-    for r in matched:
-        idx = r.entry_index
-        entry_pz_total[idx] = entry_pz_total.get(idx, 0) + r.pz_card.count
-        entry_pz_coords.setdefault(idx, set()).add(
-            (str(r.pz_card.set_code or "").upper(), r.pz_card.card_number))
-
-    # ── Dual-location pairing (see pair_dual_location_entries) ───────────
-    link_orig: dict[tuple, tuple] = {}
-    if REPRINT_LINKS_JSON.exists():
-        for l in json.loads(REPRINT_LINKS_JSON.read_text(encoding="utf-8")).get("links", []):
-            link_orig[(str(l["a4b"][0]).upper(), int(l["a4b"][1]))] = (
-                str(l["original"][0]).upper(), int(l["original"][1]))
-    paired_siblings = pair_dual_location_entries(
-        collection_entries, entry_pz_total, entry_pz_coords, matched_indices, link_orig)
-
-    missing_from_pz = [
-        e for i, e in enumerate(collection_entries)
-        if i not in matched_indices and i not in paired_siblings
-    ]
-
-    if missing_from_pz:
-        print(
-            f"  WARNING: {len(missing_from_pz)} collection entries not returned by PZ "
-            f"— counts unchanged (check sync_review_queue.json)",
-            file=sys.stderr,
-        )
-
-    # Split-gap detection: when PZ maps copies from >1 DISTINCT coord onto a single
-    # entry, those copies are different printings that the per-coord model wants as
-    # separate entries — but in-place count editing can only aggregate them here.
-    # Surface it so the user runs the per-coord reconcile (which splits + cross-validates).
-    multi_coord = {i: cs for i, cs in entry_pz_coords.items() if len(cs) > 1}
-    if multi_coord:
-        names = sorted({collection_entries[i].get("name", "?") for i in multi_coord})
-        shown = ", ".join(names[:5]) + ("…" if len(names) > 5 else "")
-        print(f"  NOTE: {len(multi_coord)} entry(ies) received copies from multiple coords "
-              f"({shown}) — counts aggregated onto one entry. Run "
-              f"`python3 scripts/reconcile_coords_from_pz.py --apply` to split per printing.",
-              file=sys.stderr)
-
-    changes: list[CountChange] = []
-    for idx, new_count in entry_pz_total.items():
-        entry = collection_entries[idx]
-        old_count = entry.get("count", 0)
-        if old_count != new_count:
-            changes.append(CountChange(
-                entry=entry,
-                entry_index=idx,
-                old_count=old_count,
-                new_count=new_count,
-            ))
-
-    print_diff(changes, new_cards, missing_from_pz)
-
-    if args.dry_run:
-        print("DRY RUN — no changes written.")
-        return 0
-
-    # ── Phase 4b: Auto-add new cards ─────────────────────────────────────
+    Returns (auto_added, still_new): auto_added are ready to append to
+    collection.json; still_new are cards that need manual review (blank name with
+    no recovery, or a genuine cross-source coord conflict).
+    """
     card_meta = build_card_meta(ext_ref, collection_entries)
     auto_added: list[dict] = []
     still_new: list[MatchResult] = []
@@ -1490,7 +1408,7 @@ def main() -> int:
     if new_cards:
         try:
             from coord_resolver import CoordResolver
-            resolver = CoordResolver(fetch=not args.no_fetch)
+            resolver = CoordResolver(fetch=not no_fetch)
         except Exception as e:
             print(f"  WARN: coord cross-validation unavailable ({e}); using raw PZ coords",
                   file=sys.stderr)
@@ -1588,7 +1506,126 @@ def main() -> int:
         )
     if resolver is not None:
         resolver.save()
-    new_cards = still_new
+    return auto_added, still_new
+
+
+def main() -> int:
+    args = _build_arg_parser().parse_args()
+
+    # ── Load sibling client module ────────────────────────────────────────
+    pz = _load_pz_client()
+
+    # ── Phase 0/1: acquire raw PZ records via the selected import mode ────
+    raw_cards, early_exit = _acquire_raw_cards(args, pz)
+    if early_exit is not None:
+        return early_exit
+
+    if not raw_cards:
+        print("ERROR: No card records returned from Pokemon Zone.", file=sys.stderr)
+        return 1
+
+    # ── Review queue gate (all modes except discover/dry-run/force) ───────
+    if not args.force and not args.discover and not args.dry_run:
+        q = load_review_queue()
+        if review_queue_is_unresolved(q):
+            n_new = len(q.get("new_cards", []))
+            print(f"BLOCKED: Review queue has {n_new} unresolved new card(s).")
+            print(f"  File: {REVIEW_QUEUE}")
+            print("  Resolve the items or run with --force to skip this check.")
+            return 3
+
+    print(f"  Fetched {len(raw_cards)} card records from Pokemon Zone.")
+
+    # ── Load collection.json and reference data ───────────────────────────
+    raw_text, collection_data = load_collection()
+    collection_entries: list[dict] = collection_data.get("collection", [])
+    print("Loading reference data...")
+    pack_sources = load_pack_sources()
+    ext_ref      = load_ext_ref()
+
+    # ── Phase 2: Normalize PZ records ────────────────────────────────────
+    pz_cards = _normalize_pz_records(raw_cards)
+
+    # ── Phase 3: Match ────────────────────────────────────────────────────
+    print(f"  Matching {len(pz_cards)} PZ cards to {len(collection_entries)} collection entries...")
+    try:
+        results = match_pz_cards(pz_cards, collection_entries, pack_sources, ext_ref)
+    except RuntimeError as e:
+        print(f"\nFATAL: {e}", file=sys.stderr)
+        print("Sync cannot proceed. Add disambiguation data to reference files and retry.", file=sys.stderr)
+        return 1
+
+    matched   = [r for r in results if r.status == "MATCHED"]
+    new_cards = [r for r in results if r.status == "NEW_CARD"]
+
+    matched_indices = {r.entry_index for r in matched if r.entry_index is not None}
+
+    # ── Phase 4: Compute diff ─────────────────────────────────────────────
+    # Aggregate counts: the same card may appear in multiple sets in PZ
+    # (e.g. Shroomish in B2 + B3); sum all copies into one collection entry.
+    entry_pz_total: dict[int, int] = {}
+    entry_pz_coords: dict[int, set] = {}
+    for r in matched:
+        idx = r.entry_index
+        entry_pz_total[idx] = entry_pz_total.get(idx, 0) + r.pz_card.count
+        entry_pz_coords.setdefault(idx, set()).add(
+            (str(r.pz_card.set_code or "").upper(), r.pz_card.card_number))
+
+    # ── Dual-location pairing (see pair_dual_location_entries) ───────────
+    link_orig: dict[tuple, tuple] = {}
+    if REPRINT_LINKS_JSON.exists():
+        for l in json.loads(REPRINT_LINKS_JSON.read_text(encoding="utf-8")).get("links", []):
+            link_orig[(str(l["a4b"][0]).upper(), int(l["a4b"][1]))] = (
+                str(l["original"][0]).upper(), int(l["original"][1]))
+    paired_siblings = pair_dual_location_entries(
+        collection_entries, entry_pz_total, entry_pz_coords, matched_indices, link_orig)
+
+    missing_from_pz = [
+        e for i, e in enumerate(collection_entries)
+        if i not in matched_indices and i not in paired_siblings
+    ]
+
+    if missing_from_pz:
+        print(
+            f"  WARNING: {len(missing_from_pz)} collection entries not returned by PZ "
+            f"— counts unchanged (check sync_review_queue.json)",
+            file=sys.stderr,
+        )
+
+    # Split-gap detection: when PZ maps copies from >1 DISTINCT coord onto a single
+    # entry, those copies are different printings that the per-coord model wants as
+    # separate entries — but in-place count editing can only aggregate them here.
+    # Surface it so the user runs the per-coord reconcile (which splits + cross-validates).
+    multi_coord = {i: cs for i, cs in entry_pz_coords.items() if len(cs) > 1}
+    if multi_coord:
+        names = sorted({collection_entries[i].get("name", "?") for i in multi_coord})
+        shown = ", ".join(names[:5]) + ("…" if len(names) > 5 else "")
+        print(f"  NOTE: {len(multi_coord)} entry(ies) received copies from multiple coords "
+              f"({shown}) — counts aggregated onto one entry. Run "
+              f"`python3 scripts/reconcile_coords_from_pz.py --apply` to split per printing.",
+              file=sys.stderr)
+
+    changes: list[CountChange] = []
+    for idx, new_count in entry_pz_total.items():
+        entry = collection_entries[idx]
+        old_count = entry.get("count", 0)
+        if old_count != new_count:
+            changes.append(CountChange(
+                entry=entry,
+                entry_index=idx,
+                old_count=old_count,
+                new_count=new_count,
+            ))
+
+    print_diff(changes, new_cards, missing_from_pz)
+
+    if args.dry_run:
+        print("DRY RUN — no changes written.")
+        return 0
+
+    # ── Phase 4b: Auto-add new cards ─────────────────────────────────────
+    auto_added, new_cards = _auto_add_new_cards(
+        new_cards, pack_sources, ext_ref, collection_entries, no_fetch=args.no_fetch)
 
     # ── Phase 4c: Mark stale entries for removal ─────────────────────────────
     # Two cases trigger removal:
