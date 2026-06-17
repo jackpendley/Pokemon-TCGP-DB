@@ -80,6 +80,7 @@ class MatchResult:
     entry:         dict | None = None          # the collection.json entry (MATCHED only)
     entry_index:   int | None = None
     canonical_name: str | None = None
+    match_note:    str | None = None           # "force_matched" | "overflow_merged" — needed disambiguation it lacked
 
 
 @dataclass
@@ -377,6 +378,7 @@ def match_pz_cards(
                 entry=collection[idx],
                 entry_index=idx,
                 canonical_name=r.canonical_name,
+                match_note="force_matched",
             )
             matched_indices.add(idx)
         else:
@@ -399,6 +401,7 @@ def match_pz_cards(
                     entry=collection[target_idx],
                     entry_index=target_idx,
                     canonical_name=r.canonical_name,
+                    match_note="overflow_merged",
                 )
             else:
                 results[i] = MatchResult(
@@ -408,6 +411,27 @@ def match_pz_cards(
                 )
 
     return results
+
+
+def extract_ambiguous_matches(results: list[MatchResult]) -> list[dict]:
+    """Collect matches that only resolved via a fallback (force-match / overflow-merge).
+
+    These carry a per-printing mis-attribution risk: the PZ copy could not be pinned to a
+    specific (set, number) for lack of disambiguating HP/rarity, so its count landed on
+    whichever variant was free. Surfacing them in the review queue makes the recurring
+    cases durably visible instead of scrolling past in stderr.
+    """
+    return [
+        {
+            "set_code": r.pz_card.set_code,
+            "card_number": r.pz_card.card_number,
+            "canonical_name": r.canonical_name,
+            "count": r.pz_card.count,
+            "reason": r.match_note,
+        }
+        for r in results
+        if r.match_note
+    ]
 
 
 # PZ stamps A4b "Deluxe Pack: ex" reprints with the original set code (A1–A4) + the A4b
@@ -962,10 +986,13 @@ def append_entries_to_collection(raw: str, entries: list[dict]) -> str:
 def write_review_queue(
     new_cards: list[MatchResult],
     missing_from_pz: list[dict],
+    ambiguous_matches: list[dict] | None = None,
 ) -> None:
+    ambiguous_matches = ambiguous_matches or []
     SYNC_DIR.mkdir(parents=True, exist_ok=True)
-    # Build a lookup of previous consecutive_missing counts so we can increment them.
+    # Build a lookup of previous consecutive counts so we can increment them.
     prev_consecutive: dict[str, int] = {}
+    prev_ambiguous: dict[str, int] = {}
     if REVIEW_QUEUE.exists():
         try:
             prev_q = json.loads(REVIEW_QUEUE.read_text(encoding="utf-8"))
@@ -973,10 +1000,13 @@ def write_review_queue(
                 name = entry.get("name")
                 if name:
                     prev_consecutive[name] = entry.get("consecutive_missing", 0)
+            for entry in prev_q.get("ambiguous_matches", []):
+                key = f"{entry.get('set_code')}/{entry.get('card_number')}"
+                prev_ambiguous[key] = entry.get("consecutive_unresolved", 0)
         except (json.JSONDecodeError, OSError) as e:
             print(
                 f"  WARN: could not read previous sync_review_queue.json ({e}) — "
-                "consecutive_missing counts reset to 1.",
+                "consecutive counts reset to 1.",
                 file=sys.stderr,
             )
     queue = {
@@ -993,7 +1023,21 @@ def write_review_queue(
             }
             for r in new_cards
         ],
-        "ambiguous_matches": [],
+        "ambiguous_matches": [
+            {
+                "set_code": a.get("set_code"),
+                "card_number": a.get("card_number"),
+                "canonical_name": a.get("canonical_name"),
+                "count": a.get("count"),
+                "reason": a.get("reason"),
+                "consecutive_unresolved": prev_ambiguous.get(
+                    f"{a.get('set_code')}/{a.get('card_number')}", 0
+                ) + 1,
+                "note": "Count could not be pinned to a specific printing — add HP/rarity to "
+                        "ext_ref or pack_sources to disambiguate.",
+            }
+            for a in ambiguous_matches
+        ],
         "missing_from_pz": [
             {
                 "name": e.get("name"),
@@ -1557,6 +1601,7 @@ def main() -> int:
 
     matched   = [r for r in results if r.status == "MATCHED"]
     new_cards = [r for r in results if r.status == "NEW_CARD"]
+    ambiguous_matches = extract_ambiguous_matches(results)
 
     matched_indices = {r.entry_index for r in matched if r.entry_index is not None}
 
@@ -1711,7 +1756,7 @@ def main() -> int:
 
     # ── Phase 5: Apply in-place edits ────────────────────────────────────
     if not changes and not auto_added and not stale_base_indices:
-        write_review_queue(new_cards, queue_missing)
+        write_review_queue(new_cards, queue_missing, ambiguous_matches)
         if new_cards and not args.force:
             print(f"\nReview queue written: {REVIEW_QUEUE}")
             print(f"  {len(new_cards)} new card(s) could not be auto-added — add to collection.json manually")
@@ -1781,7 +1826,7 @@ def main() -> int:
     # This ensures that if any Phase 5 step aborted (JSON parse failure, append error, etc.),
     # the old queue survives intact — stale entries retain their consecutive_missing counts
     # and removal is retried on the next sync rather than silently resetting the threshold.
-    write_review_queue(new_cards, queue_missing)
+    write_review_queue(new_cards, queue_missing, ambiguous_matches)
     if new_cards and not args.force:
         print(f"\nReview queue written: {REVIEW_QUEUE}")
         print(f"  {len(new_cards)} new card(s) could not be auto-added — add to collection.json manually")
