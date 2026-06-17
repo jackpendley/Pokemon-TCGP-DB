@@ -10,7 +10,10 @@ import html
 import json
 import re
 import sys
+import time
 import unicodedata
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -45,6 +48,19 @@ DECK_VALIDATION_JSON       = EXPORTS_DIR / "deck_recommendation_validation.json"
 # upstream corrections and newly-added sets propagate. Shared by coord_resolver
 # and validate_collection_coords so the TTL is defined once.
 CACHE_MAX_AGE_DAYS = 30
+
+
+# HTTP request tuning, centralised so the network-timing knobs live in one place
+# instead of drifting per script. Two pairs by workload:
+#   * REQUEST_* — lightweight JSON-API / single-card page fetches
+#     (coord_resolver, validate_collection_coords).
+#   * SNAPSHOT_REQUEST_* — full-set HTML scrapes (Bulbapedia/Serebii) in
+#     fetch_source_snapshots, which are heavier so they get a longer timeout and
+#     a politer delay.
+REQUEST_TIMEOUT = 12            # seconds per request
+REQUEST_DELAY = 0.35           # seconds between requests
+SNAPSHOT_REQUEST_TIMEOUT = 15   # seconds per request
+SNAPSHOT_REQUEST_DELAY = 0.4   # seconds between requests
 
 
 # ---------------------------------------------------------------------------
@@ -85,6 +101,26 @@ MULTI_PACK_SETS: frozenset[str] = frozenset(
 )
 # All valid set codes (for validators):
 VALID_SET_CODES: frozenset[str] = frozenset(SET_REGISTRY)
+
+# A4b ("Deluxe Pack: ex") is a reprint set. Pokemon Zone mislabels its cards as
+# the original multi-pack they reprint from (A1–A4), keeping the card number, so
+# every script that reconciles that relationship needs the same two facts. Single
+# source of truth here (upper-cased; A4B_ORIGINAL_SETS is ordered by debut so it
+# can drive debut-order tie-breaks as well as membership tests).
+A4B_SET_CODE = "A4B"
+A4B_ORIGINAL_SETS: tuple[str, ...] = ("A1", "A2", "A3", "A4")
+
+# Promo sets (bought with a different currency, scored separately from the
+# hourglass packs).
+PROMO_SET_CODES: frozenset[str] = frozenset({"PROMO-A", "PROMO-B"})
+
+# EV scoring weights shared by the regular and promo pack scorers. Each scorer
+# spreads this and adds its own term (deck_target for regular, ex_missing for
+# promo), so the common weights can't drift between the two models.
+EV_BASE_SCORING_WEIGHTS: dict[str, float] = {
+    "new_card":     1.0,   # first copy of any unseen unique card
+    "copy_up_to_2": 0.4,   # second copy (can use 2 copies per deck)
+}
 
 # Case-insensitive → canonical casing lookup (used by build_pack_sources to
 # normalise set_codes read from HTML-cache filenames like "card_B3a_N.html"):
@@ -313,66 +349,155 @@ def normalize_rarity(rarity: str | None) -> str | None:
     return RARITY_ALIASES.get(rarity, rarity)
 
 
-def pack_sources_by_coord(path: Path) -> dict[tuple[str, int], dict]:
-    """Load pack_sources.json indexed by (set_code_upper, card_number).
+def load_records(path: Path) -> list:
+    """Read a JSON data file and return its list of records.
 
-    Handles both the flat-array and {'records': [...]} envelope forms.
-    set_code is always uppercased so callers don't need to normalise.
+    Accepts both the flat-array form (``[...]``) and the ``{"records": [...]}``
+    envelope form used across the reference/data files, so callers don't each
+    re-implement the unwrap. A malformed file raises ValueError naming the path
+    instead of a context-free JSONDecodeError.
     """
-    raw = json.loads(Path(path).read_text(encoding="utf-8"))
-    records = raw.get("records", raw) if isinstance(raw, dict) else raw
+    p = Path(path)
+    try:
+        raw = json.loads(p.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        raise ValueError(f"{p}: invalid JSON ({e})") from e
+    if isinstance(raw, dict):
+        return raw.get("records", raw)
+    return raw
+
+
+def http_get_with_retry(url: str, *, headers: dict | None = None,
+                        timeout: float = REQUEST_TIMEOUT, retries: int = 3,
+                        backoff: float = 1.0, backoff_factor: float = 2.0,
+                        sleep=None) -> bytes:
+    """GET ``url`` and return the response body bytes, retrying transient failures.
+
+    Retries timeouts, connection errors and 429/5xx responses with exponential
+    backoff (``backoff``, then ×``backoff_factor`` each attempt). Other 4xx
+    responses are permanent (e.g. 404 = not found) and re-raised immediately so
+    callers can act on them. After the final attempt the last transient error is
+    re-raised rather than silently swallowed. ``sleep`` is injectable for tests;
+    it defaults to ``time.sleep`` resolved at call time so it stays patchable.
+    """
+    _sleep = sleep if sleep is not None else time.sleep
+    req = urllib.request.Request(url, headers=headers or {})
+    delay = backoff
+    last_exc: Exception | None = None
+    for attempt in range(1, retries + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as e:
+            if e.code != 429 and 400 <= e.code < 500:
+                raise  # permanent client error — don't retry
+            last_exc = e
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            last_exc = e
+        if attempt < retries:
+            _sleep(delay)
+            delay *= backoff_factor
+    assert last_exc is not None
+    raise last_exc
+
+
+PACK_SOURCES_SCHEMA_JSON = REFERENCE_DIR / "pack_sources.schema.json"
+
+
+def validate_pack_sources_schema(raw, *, source: str = "") -> bool:
+    """Validate a loaded pack_sources structure against pack_sources.schema.json.
+
+    ``raw`` is the parsed JSON (flat array or {'records': [...]} envelope). Raises
+    ValueError (naming the failing field path) if the data violates the schema, so
+    malformed pack_sources fails loudly at load instead of feeding e.g. a missing
+    coord silently into EV. Returns True when validated, False when the check was
+    skipped because jsonschema or the schema file is unavailable (the dependency
+    is optional, mirroring validate_pack_sources.py).
+    """
+    try:
+        import jsonschema
+    except ImportError:
+        return False
+    if not PACK_SOURCES_SCHEMA_JSON.exists():
+        return False
+    schema = json.loads(PACK_SOURCES_SCHEMA_JSON.read_text(encoding="utf-8"))
+    instance = raw if isinstance(raw, dict) else {"records": raw}
+    try:
+        jsonschema.validate(instance=instance, schema=schema)
+    except jsonschema.ValidationError as e:
+        where = f" ({source})" if source else ""
+        raise ValueError(
+            f"pack_sources{where} failed schema validation: {e.message} "
+            f"(path: {list(e.path)})"
+        ) from e
+    return True
+
+
+def parse_coord(set_code, card_number,
+                *, require_set_code: bool = True) -> tuple[str, int] | None:
+    """Parse a (set_code, card_number) pair into a normalised coord tuple.
+
+    Returns (SET_CODE_UPPER, int(card_number)) or None when the input can't form
+    a valid coord (blank set_code unless ``require_set_code=False``, missing or
+    non-integer number). The single defensive parser so the upper-case + int
+    coercion + error handling stay identical across callers.
+
+    Note: callers that must preserve a record's original set_code casing in
+    serialized output (e.g. reprint_links) deliberately do not use this.
+    """
+    sc = str(set_code or "").upper().strip()
+    if require_set_code and not sc:
+        return None
+    if card_number is None:
+        return None
+    try:
+        return (sc, int(card_number))
+    except (TypeError, ValueError):
+        return None
+
+
+def _index_by_coord(records: list, num_key: str,
+                    *, require_set_code: bool = True) -> dict[tuple[str, int], dict]:
+    """Index records by (set_code_upper, int(num_key)).
+
+    Shared core for the by-coord loaders. ``require_set_code`` skips records with
+    a blank set_code (pack_sources / ext_ref); card_reference keeps them so
+    set_code correction can still find a card by number.
+    """
     index: dict[tuple[str, int], dict] = {}
     for r in records:
-        sc = str(r.get("set_code") or "").upper().strip()
-        cn_raw = r.get("card_number")
-        if sc and cn_raw is not None:
-            try:
-                index[(sc, int(cn_raw))] = r
-            except (TypeError, ValueError):
-                pass
+        coord = parse_coord(r.get("set_code"), r.get(num_key),
+                            require_set_code=require_set_code)
+        if coord is not None:
+            index[coord] = r
     return index
+
+
+def pack_sources_by_coord(path: Path) -> dict[tuple[str, int], dict]:
+    """Load pack_sources.json indexed by (set_code_upper, card_number)."""
+    return _index_by_coord(load_records(path), "card_number")
 
 
 def card_reference_by_coord(path: Path) -> dict[tuple[str, int], dict]:
     """Load card_reference.json indexed by (set_code_upper, card_number).
 
     Returns {} when the file does not exist (not an error — reference may not
-    have been built yet for a brand-new pack).
+    have been built yet for a brand-new pack). Blank set_codes are kept so a
+    card can still be located by number for set_code correction.
     """
     p = Path(path)
     if not p.exists():
         return {}
-    raw = json.loads(p.read_text(encoding="utf-8"))
-    records = raw.get("records", []) if isinstance(raw, dict) else raw
-    index: dict[tuple[str, int], dict] = {}
-    for r in records:
-        sc = str(r.get("set_code") or "").upper().strip()
-        cn_raw = r.get("card_number")
-        if cn_raw is not None:
-            try:
-                index[(sc, int(cn_raw))] = r
-            except (TypeError, ValueError):
-                pass
-    return index
+    return _index_by_coord(load_records(p), "card_number", require_set_code=False)
 
 
 def ext_ref_by_coord(ext_ref_path: Path) -> dict[tuple[str, int], dict]:
-    """Load external_card_reference.json indexed by (set_code_upper, card_number).
+    """Load external_card_reference.json indexed by (set_code_upper, number).
 
     Shared by the coord-assignment and coord-validation scripts so the index
     shape and the malformed-number handling stay identical.
     """
-    records = json.loads(Path(ext_ref_path).read_text(encoding="utf-8"))
-    index: dict[tuple[str, int], dict] = {}
-    for r in records:
-        sc = str(r.get("set_code") or "").upper().strip()
-        num = r.get("number")
-        if sc and num is not None:
-            try:
-                index[(sc, int(num))] = r
-            except (TypeError, ValueError):
-                pass
-    return index
+    return _index_by_coord(load_records(ext_ref_path), "number")
 
 
 def strip_comments(text: str) -> str:

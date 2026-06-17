@@ -42,21 +42,22 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (RARE_PLUS_RARITIES, HOURGLASS_PER_PACK,
                             norm_card_name as _norm_name, normalize_rarity,
-                            load_collection_counts,
+                            load_collection_counts, EV_BASE_SCORING_WEIGHTS,
+                            validate_pack_sources_schema,
                             ROOT, COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
                             PULL_MODEL_JSON, PACK_SOURCES_JSON, PZ_PACK_ODDS_JSON,
                             DECK_VALIDATION_JSON, PACK_EV_JSON as OUT_JSON)
 
-# TODO(deck-ev): DECK_VALIDATION_JSON is read here but never written by any
-# pipeline script — deck_target_ev is always 0 at runtime. When deck logic lands, wire up a
-# producer for this file and switch the owned-count basis to name-level (decks mix sets).
+# DEFERRED(deck-ev): DECK_VALIDATION_JSON is read here but never written by any
+# pipeline script — deck_target_ev is always 0 at runtime (see the pin test in
+# test_ev.py). When deck logic lands, wire up a producer for this file and switch
+# the owned-count basis to name-level (decks mix sets).
 
 # ---------------------------------------------------------------------------
 # Scoring weights
 # ---------------------------------------------------------------------------
 SCORING_WEIGHTS = {
-    "new_card":    1.0,   # first copy of any unseen unique card
-    "copy_up_to_2": 0.4,  # second copy (can use 2 copies per deck)
+    **EV_BASE_SCORING_WEIGHTS,
     "deck_target": 2.0,   # max bonus for a deck-target card (scaled by copies still needed)
 }
 
@@ -142,6 +143,7 @@ def load_pack_sources(path: Path):
     expansion_shared: {expansion: [records]}  (pack_name=None → shared pool)
     """
     raw = json.loads(path.read_text(encoding="utf-8"))
+    validate_pack_sources_schema(raw, source=str(path))
     records = raw["records"] if isinstance(raw, dict) else raw
     pack_cards = defaultdict(list)
     expansion_shared = defaultdict(list)
@@ -456,6 +458,37 @@ def _confidence_weight(pz_coverage: float, slot_rates: dict | None) -> tuple[flo
     return INFERRED_CONFIDENCE_WEIGHT, "inferred"
 
 
+def _compute_unified_score(agg, deck_targets: dict, confidence_weight: float) -> float:
+    """Composite signal used for all downstream recommendations.
+
+    The deck_target term is only included when a deck producer has supplied
+    targets. Its source file (deck_recommendation_validation.json) has no producer
+    in the pipeline today, so deck_targets is empty and the ×1.5 term is omitted
+    rather than silently contributing 0 — keeping the formula honest about what is
+    actually live.
+    """
+    score = (agg.new_card_ev_10x * UNIFIED_WEIGHTS["new_card_10x"]
+             + agg.copy_ev * UNIFIED_WEIGHTS["copy"])
+    if deck_targets:
+        score += agg.deck_target_ev * UNIFIED_WEIGHTS["deck_target"]
+    return score * confidence_weight
+
+
+def _calculate_cost_efficiency(new_card_ev: float, new_card_ev_10x: float) -> tuple[float, float]:
+    """Hourglasses per expected unique new card, for the 1x and 10x batches."""
+    cost_per_unique_1x = HOURGLASS_PER_PACK / max(new_card_ev, 0.001)
+    cost_per_unique_10x = (HOURGLASS_PER_PACK * 10) / max(new_card_ev_10x, 0.001)
+    return cost_per_unique_1x, cost_per_unique_10x
+
+
+def _rank_top_cards(card_ev_list: list) -> tuple[list, list]:
+    """Sort the per-card EV list by contribution (desc, in place) and return
+    (top-N cards, deck-target cards)."""
+    card_ev_list.sort(key=lambda x: x["ev_contribution"], reverse=True)
+    deck_target_cards = [c for c in card_ev_list if c.get("is_deck_target")]
+    return card_ev_list[:TOP_N_CARDS], deck_target_cards
+
+
 def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
                            collection: dict, deck_targets: dict,
                            pz_card_odds: dict | None = None,
@@ -502,25 +535,10 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     ev_10x_uncapped = agg.new_card_ev * 10
     dr_ratio = agg.new_card_ev_10x / ev_10x_uncapped if ev_10x_uncapped > 0 else 1.0
 
-    # Unified score: single composite signal used for all downstream recommendations.
-    # The deck_target term is only included when a deck producer has supplied targets.
-    # Its source file (deck_recommendation_validation.json) has no producer in the pipeline
-    # today, so deck_targets is empty and the ×1.5 term is omitted rather than silently
-    # contributing 0 — keeping the formula honest about what is actually live.
-    unified_score = (
-        agg.new_card_ev_10x * UNIFIED_WEIGHTS["new_card_10x"]
-        + agg.copy_ev        * UNIFIED_WEIGHTS["copy"]
-    )
-    if deck_targets:
-        unified_score += agg.deck_target_ev * UNIFIED_WEIGHTS["deck_target"]
-    unified_score *= confidence_weight
-
-    # Cost efficiency: hourglasses per expected unique new card
-    cost_per_unique_1x  = HOURGLASS_PER_PACK / max(agg.new_card_ev, 0.001)
-    cost_per_unique_10x = (HOURGLASS_PER_PACK * 10) / max(agg.new_card_ev_10x, 0.001)
-
-    agg.card_ev_list.sort(key=lambda x: x["ev_contribution"], reverse=True)
-    deck_target_cards = [c for c in agg.card_ev_list if c.get("is_deck_target")]
+    unified_score = _compute_unified_score(agg, deck_targets, confidence_weight)
+    cost_per_unique_1x, cost_per_unique_10x = _calculate_cost_efficiency(
+        agg.new_card_ev, agg.new_card_ev_10x)
+    top_ev_cards, deck_target_cards = _rank_top_cards(agg.card_ev_list)
 
     return {
         **base,
@@ -547,7 +565,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "cost_per_unique_card_1x":  round(cost_per_unique_1x, 2),
         "cost_per_unique_card_10x": round(cost_per_unique_10x, 2),
         "pz_coverage": round(pz_coverage, 3),
-        "top_ev_cards": agg.card_ev_list[:TOP_N_CARDS],
+        "top_ev_cards": top_ev_cards,
         "deck_target_cards": deck_target_cards,
         "notes": (
             f"slot_rates={source_status}. "

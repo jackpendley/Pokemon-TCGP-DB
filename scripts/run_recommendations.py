@@ -35,6 +35,7 @@ from _collection_io import (strip_comments, card_reference_freshness,
                             ROOT, CARD_REF_JSON, SOURCES_DIR)
 
 LOG_FILE = ROOT / "data" / "pipeline.log"
+LOG_MAX_BLOCKS = 200  # retain only the most recent N stage blocks (the log is append-only)
 
 PIPELINE_STEPS = [
     ("Build pack EV",        "scripts/build_pack_ev.py"),
@@ -61,6 +62,24 @@ def _append_log(label: str, output: str) -> None:
         f.write(output)
         if not output.endswith("\n"):
             f.write("\n")
+    _trim_log()
+
+
+def _trim_log() -> None:
+    """Keep only the most recent LOG_MAX_BLOCKS stage blocks so the log can't grow forever.
+
+    Blocks are delimited by the ``'=' * 60`` separator line written above; keeping a
+    multiple of that delimiter preserves whole blocks (header + body) intact.
+    """
+    sep = "=" * 60
+    text = LOG_FILE.read_text(encoding="utf-8")
+    # Each block is "<sep>\n[ts] label\n<sep>\n<body>", i.e. two separators per block.
+    if text.count(sep) <= LOG_MAX_BLOCKS * 2:
+        return
+    # Split on the leading "\n<sep>\n[" that begins every block and keep the last N.
+    blocks = text.split(f"\n{sep}\n[")
+    kept = blocks[-LOG_MAX_BLOCKS:]
+    LOG_FILE.write_text(f"\n{sep}\n[".join(["", *kept]).lstrip("\n"), encoding="utf-8")
 
 
 def _extract_status(label: str, stdout: str) -> str:

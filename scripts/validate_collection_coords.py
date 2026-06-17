@@ -43,12 +43,11 @@ from _collection_io import (ext_ref_by_coord, load_collection_json,
                             PACK_SOURCES_JSON as PACK_SOURCES,
                             CARD_REF_JSON as CARD_REF,
                             EXT_REF_JSON as EXT_REF,
-                            TCGDEX_CACHE_JSON as TCGDEX_CACHE)
+                            TCGDEX_CACHE_JSON as TCGDEX_CACHE,
+                            REQUEST_TIMEOUT, REQUEST_DELAY)
 from coord_resolver import _name_agrees
 
 TCGDEX_BASE    = "https://api.tcgdex.net/v2/en"
-REQUEST_DELAY  = 0.35   # seconds between API calls
-REQUEST_TIMEOUT = 12
 
 
 # ---------------------------------------------------------------------------

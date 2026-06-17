@@ -287,3 +287,67 @@ def test_in_app_verified_slot_rates_skip_haircut_without_pz_odds():
     assert _weight_for_confidence("third_party_verified") == bev.INFERRED_CONFIDENCE_WEIGHT
 
 
+
+
+# ---------------------------------------------------------------------------
+# Extracted helpers (S2a decomposition of compute_pack_ev_record)
+# ---------------------------------------------------------------------------
+
+class _Agg:
+    """Minimal stand-in for the PoolEV accumulator used by the helpers."""
+    def __init__(self, new_card_ev_10x=0.0, copy_ev=0.0, deck_target_ev=0.0,
+                 new_card_ev=0.0, card_ev_list=None):
+        self.new_card_ev_10x = new_card_ev_10x
+        self.copy_ev = copy_ev
+        self.deck_target_ev = deck_target_ev
+        self.new_card_ev = new_card_ev
+        self.card_ev_list = card_ev_list or []
+
+
+def test_unified_score_omits_deck_term_when_no_targets():
+    agg = _Agg(new_card_ev_10x=5.0, copy_ev=2.0, deck_target_ev=9.0)
+    expected = (5.0 * bev.UNIFIED_WEIGHTS["new_card_10x"]
+                + 2.0 * bev.UNIFIED_WEIGHTS["copy"])
+    assert bev._compute_unified_score(agg, {}, 1.0) == pytest.approx(expected)
+
+
+def test_unified_score_includes_deck_term_and_confidence():
+    agg = _Agg(new_card_ev_10x=5.0, copy_ev=2.0, deck_target_ev=9.0)
+    expected = (5.0 * bev.UNIFIED_WEIGHTS["new_card_10x"]
+                + 2.0 * bev.UNIFIED_WEIGHTS["copy"]
+                + 9.0 * bev.UNIFIED_WEIGHTS["deck_target"]) * 0.85
+    assert bev._compute_unified_score(agg, {"x": 1}, 0.85) == pytest.approx(expected)
+
+
+def test_cost_efficiency_guards_against_zero():
+    c1, c10 = bev._calculate_cost_efficiency(0.0, 0.0)
+    assert c1 == bev.HOURGLASS_PER_PACK / 0.001
+    assert c10 == (bev.HOURGLASS_PER_PACK * 10) / 0.001
+
+
+def test_rank_top_cards_sorts_and_filters():
+    cards = [
+        {"ev_contribution": 1.0, "is_deck_target": False},
+        {"ev_contribution": 3.0, "is_deck_target": True},
+        {"ev_contribution": 2.0},
+    ]
+    top, deck = bev._rank_top_cards(cards)
+    assert [c["ev_contribution"] for c in top[:3]] == [3.0, 2.0, 1.0]
+    assert deck == [{"ev_contribution": 3.0, "is_deck_target": True}]
+    assert len(top) <= bev.TOP_N_CARDS
+
+
+# ---------------------------------------------------------------------------
+# Deck-target stub is deferred (no producer) — pin it to 0 so it can't silently
+# activate. See DEFERRED(deck-ev) in build_pack_ev.py.
+# ---------------------------------------------------------------------------
+
+def test_load_deck_targets_empty_when_file_absent(tmp_path):
+    assert bev.load_deck_targets(tmp_path / "nope.json") == {}
+
+
+def test_deck_target_ev_is_zero_at_runtime(pack_ev):
+    packs = pack_ev["packs"] if isinstance(pack_ev, dict) else pack_ev
+    for p in packs:
+        assert p.get("deck_target_ev", 0) == 0, p.get("pack_name")
+        assert p.get("deck_target_cards", []) == []

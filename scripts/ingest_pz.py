@@ -45,6 +45,7 @@ from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (canonical_set_code, is_ex_from_name, normalize_rarity,
+                            load_records,
                             PZ_PACK_ODDS_JSON, PACK_SOURCES_JSON, SOURCES_DIR)
 
 _PZ_BASE = "https://www.pokemon-zone.com"
@@ -369,8 +370,7 @@ def load_existing_odds() -> dict:
 def pack_sources_coords() -> set[tuple[str, int]]:
     if not PACK_SOURCES_JSON.exists():
         return set()
-    data = json.loads(PACK_SOURCES_JSON.read_text(encoding="utf-8"))
-    recs = data.get("records", data) if isinstance(data, dict) else data
+    recs = load_records(PACK_SOURCES_JSON)
     out = set()
     for r in recs:
         sc = canonical_set_code(str(r.get("set_code", "")).upper())

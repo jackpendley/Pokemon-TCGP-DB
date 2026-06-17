@@ -406,6 +406,78 @@ def test_corrupt_review_queue_recovers():
 
 
 # ---------------------------------------------------------------------------
+# Scenario 12: overflow/force matches surface via extract_ambiguous_matches
+# ---------------------------------------------------------------------------
+def test_extract_ambiguous_matches():
+    print("\n--- 12. extract_ambiguous_matches surfaces fallback matches ---")
+    import io
+    import contextlib
+
+    # Same setup as scenario 9: 3 PZ records, 2 collection entries → one overflow.
+    collection = [
+        make_entry("Charmander", count=1, hp=60),
+        make_entry("Charmander", count=1, hp=80),
+    ]
+    pz_cards = [
+        make_pz("Charmander", count=2, set_code="X1", card_number=1),
+        make_pz("Charmander", count=3, set_code="X1", card_number=2),
+        make_pz("Charmander", count=1, set_code="X1", card_number=3),  # overflow
+    ]
+
+    with contextlib.redirect_stderr(io.StringIO()):
+        results = match_pz_cards(pz_cards, collection, {}, {})
+
+    # Existing merge behavior unchanged: still 3 MATCHED.
+    matched = [r for r in results if r.status == "MATCHED"]
+    check("merge behavior unchanged (3 MATCHED)", len(matched) == 3, str(len(matched)))
+
+    ambiguous = sc.extract_ambiguous_matches(results)
+    reasons = {a["reason"] for a in ambiguous}
+    check("at least one ambiguous match surfaced", len(ambiguous) >= 1, str(ambiguous))
+    check("overflow_merged reason present", "overflow_merged" in reasons, str(reasons))
+    overflow = next(a for a in ambiguous if a["reason"] == "overflow_merged")
+    check("overflow carries coords", overflow["set_code"] == "X1" and overflow["card_number"] == 3,
+          str(overflow))
+    check("overflow carries count", overflow["count"] == 1, str(overflow["count"]))
+
+
+# ---------------------------------------------------------------------------
+# Scenario 13: ambiguous_matches written to queue with consecutive_unresolved
+# ---------------------------------------------------------------------------
+def test_ambiguous_queue_counter():
+    print("\n--- 13. ambiguous_matches queue + consecutive_unresolved ---")
+    with tempfile.TemporaryDirectory() as tmp:
+        queue_path = Path(tmp) / "sync_review_queue.json"
+        orig_review_queue = sc.REVIEW_QUEUE
+        sc.REVIEW_QUEUE = queue_path
+        try:
+            amb = [{"set_code": "B1", "card_number": 208, "canonical_name": "Furfrou",
+                    "count": 1, "reason": "overflow_merged"}]
+
+            write_review_queue([], [], amb)
+            q1 = json.loads(queue_path.read_text())
+            check("ambiguous_matches populated", len(q1["ambiguous_matches"]) == 1,
+                  str(q1["ambiguous_matches"]))
+            check("first run: consecutive_unresolved=1",
+                  q1["ambiguous_matches"][0]["consecutive_unresolved"] == 1,
+                  str(q1["ambiguous_matches"][0]))
+
+            write_review_queue([], [], amb)
+            q2 = json.loads(queue_path.read_text())
+            check("second run: consecutive_unresolved=2",
+                  q2["ambiguous_matches"][0]["consecutive_unresolved"] == 2,
+                  str(q2["ambiguous_matches"][0]))
+
+            # Resolved (no longer ambiguous) → counter clears.
+            write_review_queue([], [], [])
+            q3 = json.loads(queue_path.read_text())
+            check("after resolve: ambiguous_matches empty", q3["ambiguous_matches"] == [],
+                  str(q3["ambiguous_matches"]))
+        finally:
+            sc.REVIEW_QUEUE = orig_review_queue
+
+
+# ---------------------------------------------------------------------------
 # Run all scenarios
 # ---------------------------------------------------------------------------
 
@@ -425,6 +497,8 @@ if __name__ == "__main__":
     test_ambiguous_force_match()
     test_consecutive_missing_counter()
     test_corrupt_review_queue_recovers()
+    test_extract_ambiguous_matches()
+    test_ambiguous_queue_counter()
 
     print()
     if _failures:
@@ -433,5 +507,5 @@ if __name__ == "__main__":
             print(f"  - {f}")
         sys.exit(1)
     else:
-        print(f"ALL PASSED — {11 - len(_failures)} / 11 scenarios")
+        print(f"ALL PASSED — {13 - len(_failures)} / 13 scenarios")
         sys.exit(0)

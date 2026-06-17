@@ -27,20 +27,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (normalize_rarity, card_reference_by_coord,
-                            ROOT, CARD_REF_JSON,
+                            load_records, parse_coord, ROOT, CARD_REF_JSON,
                             PACK_SOURCES_JSON as PACK_SOURCES,
                             EXT_REF_JSON as EXT_REF)
 
 
 def _coord(rec, num_key):
-    sc = str(rec.get("set_code") or "").upper().strip()
-    cn = rec.get(num_key)
-    if not sc or cn is None:
-        return None
-    try:
-        return (sc, int(cn))
-    except (TypeError, ValueError):
-        return None
+    return parse_coord(rec.get("set_code"), rec.get(num_key))
 
 
 def _apply(records, num_key, card_ref):
@@ -71,14 +64,12 @@ def main() -> int:
     print(f"Loaded {len(card_ref)} card_reference coords (rarity authority).")
 
     # pack_sources.json (flat array or {'records': [...]})
-    ps_raw = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
-    ps_records = ps_raw.get("records", ps_raw) if isinstance(ps_raw, dict) else ps_raw
+    ps_records = load_records(PACK_SOURCES)
     ps_changed, ps_after = _apply(ps_records, "card_number", card_ref)
     print(f"pack_sources: {ps_changed} rarities updated. Distribution: {dict(ps_after.most_common())}")
 
     # external_card_reference.json (flat array; coord key is 'number')
-    ext_raw = json.loads(EXT_REF.read_text(encoding="utf-8"))
-    ext_records = ext_raw.get("records", ext_raw) if isinstance(ext_raw, dict) else ext_raw
+    ext_records = load_records(EXT_REF)
     ext_changed, ext_after = _apply(ext_records, "number", card_ref)
     print(f"ext_ref: {ext_changed} rarities updated. Distribution: {dict(ext_after.most_common())}")
 

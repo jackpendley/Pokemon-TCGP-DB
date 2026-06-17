@@ -29,7 +29,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from build_pack_ev import _norm_name as _normalize  # single canonical normalization
-from _collection_io import (strip_comments, ROOT,
+from _collection_io import (strip_comments, load_records, ROOT,
                             PZ_PACK_ODDS_JSON as PZ_PACK_ODDS,
                             PACK_SOURCES_JSON as PACK_SOURCES,
                             COLLECTION_JSON as COLLECTION_FILE)
@@ -265,8 +265,7 @@ def main() -> None:
     pulled = simulate_opens(pack_info, args.count, args.seed)
 
     collection_data = _load_collection()
-    ps_data    = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
-    ps_records = ps_data.get("records", ps_data) if isinstance(ps_data, dict) else ps_data
+    ps_records = load_records(PACK_SOURCES)
 
     print_pull_summary(pulled, pack_info, collection_data, ps_records)
 

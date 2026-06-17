@@ -36,14 +36,14 @@ import re
 import subprocess
 import sys
 import time
-import urllib.request
 import urllib.error
 from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (TRAINER_CATEGORIES, is_ex_from_name, RARITY_SYMBOLS,
-                            field_slug as _normalize, ROOT,
+                            field_slug as _normalize, load_records,
+                            http_get_with_retry, ROOT,
                             EXT_REF_JSON as EXT_REF,
                             PACK_SOURCES_JSON as PACK_SOURCES)
 
@@ -126,21 +126,23 @@ _TRAINER_KEYWORDS = {
 }
 
 
+_FETCH_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml",
+}
+
+
 def _fetch_page(url: str) -> str | None:
-    req = urllib.request.Request(
-        url,
-        headers={
-            "User-Agent": (
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/120.0.0.0 Safari/537.36"
-            ),
-            "Accept": "text/html,application/xhtml+xml",
-        },
-    )
+    # Retries transient errors (timeout/5xx) before giving up; a permanent 4xx
+    # (e.g. 404) or an exhausted retry returns None so the caller skips the card
+    # and a later re-run picks it up again (it stays in the missing set).
     try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            return resp.read().decode("utf-8", errors="replace")
+        data = http_get_with_retry(url, headers=_FETCH_HEADERS, timeout=15)
+        return data.decode("utf-8", errors="replace")
     except urllib.error.HTTPError as e:
         print(f"  HTTP {e.code}: {url}", file=sys.stderr)
         return None
@@ -337,8 +339,7 @@ def _load_pack_sources_missing(ext_index: dict[tuple[str, int], int]) -> list[di
     """Return pack_sources records that have no ext_ref entry (need fetching)."""
     if not PACK_SOURCES.exists():
         return []
-    data = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
-    records = data.get("records", data) if isinstance(data, dict) else data
+    records = load_records(PACK_SOURCES)
     missing = []
     seen: set[tuple[str, int]] = set()
     for r in records:

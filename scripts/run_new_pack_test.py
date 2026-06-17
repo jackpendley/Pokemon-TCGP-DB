@@ -32,7 +32,7 @@ import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import (ROOT, PZ_PACK_ODDS_JSON as PZ_PACK_ODDS,
+from _collection_io import (ROOT, load_records, PZ_PACK_ODDS_JSON as PZ_PACK_ODDS,
                             PULL_MODEL_JSON as PULL_MODEL,
                             PACK_SOURCES_JSON as PACK_SOURCES,
                             PACK_EV_JSON as PACK_EV,
@@ -190,8 +190,7 @@ def _remove_from_pull_model(expansion_id: str, variant_name: str, is_single_pack
 
 
 def _remove_from_pack_sources(expansion_id: str, variant_name: str, is_single_pack: bool) -> None:
-    raw     = json.loads(PACK_SOURCES.read_text(encoding="utf-8"))
-    records = raw.get("records", raw) if isinstance(raw, dict) else raw
+    records = load_records(PACK_SOURCES)
 
     def _drop(r: dict) -> bool:
         sc = str(r.get("set_code", "")).upper()

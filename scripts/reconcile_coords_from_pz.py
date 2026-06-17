@@ -34,7 +34,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import sync_collection as sc
 from _collection_io import (strip_comments, norm_card_name, ROOT,
                             COLLECTION_JSON, CARD_REF_JSON,
-                            REPRINT_LINKS_JSON as REPRINT_LINKS)
+                            REPRINT_LINKS_JSON as REPRINT_LINKS,
+                            A4B_SET_CODE)
 from coord_resolver import CoordResolver
 
 LAST_SYNC_RAW   = ROOT / "data" / "sync" / "last_sync_raw.json"
@@ -75,7 +76,7 @@ def main() -> int:
         """Original-printing coord for an A4b dual-location card, or None.
         Prefers reprint_links; falls back to the unique base-rarity name match in
         PZ's set (PZ's set code IS the original set)."""
-        o = link_orig.get(("A4B", a4b_num))
+        o = link_orig.get((A4B_SET_CODE, a4b_num))
         if o and o[0] == str(pz_set).upper():
             return o
         cands = sorted({(s, n) for (s, n), r in ref_by_coord.items()
@@ -136,8 +137,8 @@ def main() -> int:
                 key = (rc.set_code, rc.card_number)
 
             # Dual-location hybrid: PZ set != A4b but the coord resolved to A4b.
-            if (str(key[0] or "").upper() == "A4B"
-                    and str(pz_set or "").upper() != "A4B"
+            if (str(key[0] or "").upper() == A4B_SET_CODE
+                    and str(pz_set or "").upper() != A4B_SET_CODE
                     and rc.confidence in _OK_CONFIDENCE):
                 orig = find_original(entry["name"], pz_set, key[1])
                 orig_ref = ref_by_coord.get(orig) if orig else None

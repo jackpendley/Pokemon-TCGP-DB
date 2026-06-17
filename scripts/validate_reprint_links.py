@@ -26,9 +26,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (norm_card_name, normalize_rarity, RARE_PLUS_RARITIES,
                             ROOT, CARD_REF_JSON,
                             REPRINT_LINKS_JSON as LINKS_JSON,
-                            COLLECTION_NORMALIZED_JSON as COLLECTION_JSON)
+                            COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
+                            A4B_SET_CODE, A4B_ORIGINAL_SETS)
 
-ORIGINAL_SETS = {"A1", "A2", "A3", "A4"}
+ORIGINAL_SETS = frozenset(A4B_ORIGINAL_SETS)
 
 
 def main():
@@ -56,7 +57,7 @@ def main():
         a4b_rec = by_coord.get(a4b_key)
         og_rec = by_coord.get(og_key)
 
-        if a4b_sc.upper() != "A4B":
+        if a4b_sc.upper() != A4B_SET_CODE:
             print(f"FAIL  link[{i}] a4b set is {a4b_sc!r}, expected A4b"); failures += 1
         if og_sc.upper() not in ORIGINAL_SETS:
             print(f"FAIL  link[{i}] original set {og_sc!r} not in {sorted(ORIGINAL_SETS)}"); failures += 1
@@ -91,16 +92,16 @@ def main():
                 ).append(r)
         col = json.loads(COLLECTION_JSON.read_text(encoding="utf-8"))["collection"]
         for e in col:
-            if str(e.get("set_code") or "").upper() != "A4B" or e.get("card_number") is None:
+            if str(e.get("set_code") or "").upper() != A4B_SET_CODE or e.get("card_number") is None:
                 continue
-            rec = by_coord.get(("A4B", e["card_number"]))
+            rec = by_coord.get((A4B_SET_CODE, e["card_number"]))
             if not rec:
                 continue
             rar = normalize_rarity(rec.get("rarity"))
             if rar in RARE_PLUS_RARITIES:
                 continue  # rare-plus stays independent — fine
             has_original = bool(orig_by_nr.get((norm_card_name(rec.get("name", "")), rar)))
-            if has_original and ("A4B", e["card_number"]) not in seen_a4b:
+            if has_original and (A4B_SET_CODE, e["card_number"]) not in seen_a4b:
                 print(f"FAIL  owned A4b dual card NOT linked: {rec.get('name')!r} A4b/{e['card_number']} "
                       f"({rar}) — its original-set slot would read unowned in EV")
                 owned_unlinked += 1

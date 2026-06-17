@@ -29,7 +29,6 @@ import json
 import re
 import sys
 import time
-import urllib.request
 import urllib.error
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -40,7 +39,10 @@ from _collection_io import (normalize_rarity, norm_card_name as _norm,
                             is_cache_fresh as _fresh, ROOT, REFERENCE_DIR,
                             PACK_SOURCES_JSON, CARD_REF_JSON,
                             TCGDEX_CACHE_JSON as TCGDEX_CACHE,
-                            name_agrees as _name_agrees)
+                            name_agrees as _name_agrees, load_records,
+                            http_get_with_retry,
+                            A4B_SET_CODE, A4B_ORIGINAL_SETS,
+                            REQUEST_TIMEOUT, REQUEST_DELAY)
 
 LIMITLESS_CACHE   = REFERENCE_DIR / "limitless_name_cache.json"
 
@@ -49,13 +51,11 @@ LIMITLESS_CACHE   = REFERENCE_DIR / "limitless_name_cache.json"
 # genuinely ambiguous when PZ's set_code is one of those mislabel TARGETS *and* an A4b
 # printing (the SOURCE) of this (name, number) exists. In every other case PZ's set_code is
 # trustworthy. (Sets, upper-cased.)
-_PZ_MISLABEL_SOURCE_SETS = frozenset({"A4B"})
-_PZ_MISLABEL_TARGET_SETS = frozenset({"A1", "A2", "A3", "A4"})
+_PZ_MISLABEL_SOURCE_SETS = frozenset({A4B_SET_CODE})
+_PZ_MISLABEL_TARGET_SETS = frozenset(A4B_ORIGINAL_SETS)
 
 TCGDEX_BASE   = "https://api.tcgdex.net/v2/en"
 LIMITLESS_BASE = "https://pocket.limitlesstcg.com/cards"
-REQUEST_TIMEOUT = 12
-REQUEST_DELAY   = 0.35
 
 _UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                      "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
@@ -85,8 +85,7 @@ class CoordResolver:
     def __init__(self, *, fetch: bool = True, tcgdex_sets: set | None = None):
         self.fetch = fetch
         # pack_sources indexes (kept for fallback when card_reference doesn't have a card)
-        data = json.loads(PACK_SOURCES_JSON.read_text(encoding="utf-8"))
-        records = data.get("records", data) if isinstance(data, dict) else data
+        records = load_records(PACK_SOURCES_JSON)
         self.ps_by_coord: dict[tuple, dict] = {}
         self.ps_name_num: dict[tuple, list] = {}
         for r in records:
@@ -128,9 +127,8 @@ class CoordResolver:
         if not self.fetch:
             return {k.rsplit("-", 1)[0].upper() for k in self.tcgdex_cache}
         try:
-            req = urllib.request.Request(f"{TCGDEX_BASE}/series/tcgp", headers=_UA)
-            with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
-                d = json.loads(resp.read())
+            d = json.loads(http_get_with_retry(
+                f"{TCGDEX_BASE}/series/tcgp", headers=_UA, timeout=REQUEST_TIMEOUT))
             return {s["id"].upper() for s in d.get("sets", [])}
         except Exception:
             return {k.rsplit("-", 1)[0].upper() for k in self.tcgdex_cache}
@@ -147,9 +145,8 @@ class CoordResolver:
         if not self.fetch:
             return ent.get("name") if ent and not ent.get("error") else None
         try:
-            req = urllib.request.Request(f"{TCGDEX_BASE}/cards/{s}-{n:03d}", headers=_UA)
-            with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
-                d = json.loads(resp.read())
+            d = json.loads(http_get_with_retry(
+                f"{TCGDEX_BASE}/cards/{s}-{n:03d}", headers=_UA, timeout=REQUEST_TIMEOUT))
             rec = {"name": d.get("name"), "hp": d.get("hp"), "source": "tcgdex",
                    "cached_at": datetime.now(timezone.utc).isoformat()}
         except urllib.error.HTTPError as e:
@@ -173,9 +170,9 @@ class CoordResolver:
             return ent.get("name") if ent else None
         name = None
         try:
-            req = urllib.request.Request(f"{LIMITLESS_BASE}/{s}/{n}", headers=_UA)
-            with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
-                html = resp.read().decode("utf-8", errors="replace")
+            html = http_get_with_retry(
+                f"{LIMITLESS_BASE}/{s}/{n}", headers=_UA, timeout=REQUEST_TIMEOUT
+            ).decode("utf-8", errors="replace")
             m = re.search(r'<span class="card-text-name">\s*<a[^>]*>([^<]+)</a>', html) \
                 or re.search(r'<span class="card-text-name">([^<]+)</span>', html) \
                 or re.search(r"<title>\s*([^<·–|]+)", html)

@@ -1,0 +1,84 @@
+"""
+Regression guards for constants centralised in _collection_io.
+
+These exist to prevent the "silently divergent per-script knob" drift that the
+HTTP request timeouts had before centralisation: each consumer must keep using
+the shared object, not re-declare its own local copy.
+"""
+
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import _collection_io as io
+
+
+def test_request_constants_values():
+    # Lightweight API / single-card fetches vs. heavier full-set HTML scrapes.
+    assert (io.REQUEST_TIMEOUT, io.REQUEST_DELAY) == (12, 0.35)
+    assert (io.SNAPSHOT_REQUEST_TIMEOUT, io.SNAPSHOT_REQUEST_DELAY) == (15, 0.4)
+
+
+def test_lightweight_consumers_use_shared_constants():
+    import coord_resolver
+    import validate_collection_coords as vcc
+
+    # Identity, not just equality: catches a re-introduced local shadow.
+    assert coord_resolver.REQUEST_TIMEOUT is io.REQUEST_TIMEOUT
+    assert coord_resolver.REQUEST_DELAY is io.REQUEST_DELAY
+    assert vcc.REQUEST_TIMEOUT is io.REQUEST_TIMEOUT
+    assert vcc.REQUEST_DELAY is io.REQUEST_DELAY
+
+
+def test_snapshot_consumer_uses_shared_constants():
+    import fetch_source_snapshots as fss
+
+    # Imported under the historical local names but bound to the snapshot pair.
+    assert fss.REQUEST_TIMEOUT is io.SNAPSHOT_REQUEST_TIMEOUT
+    assert fss.REQUEST_DELAY is io.SNAPSHOT_REQUEST_DELAY
+
+
+def test_a4b_and_promo_constants_values():
+    assert io.A4B_SET_CODE == "A4B"
+    # Ordered by debut so it can drive tie-breaks, not just membership.
+    assert io.A4B_ORIGINAL_SETS == ("A1", "A2", "A3", "A4")
+    assert io.PROMO_SET_CODES == frozenset({"PROMO-A", "PROMO-B"})
+
+
+def test_ev_scorers_share_base_weights():
+    import build_pack_ev as ev
+    import build_promo_pack_ev as pev
+
+    for k, v in io.EV_BASE_SCORING_WEIGHTS.items():
+        assert ev.SCORING_WEIGHTS[k] == v
+        assert pev.SCORING_WEIGHTS[k] == v
+    # Per-scorer terms remain distinct.
+    assert ev.SCORING_WEIGHTS["deck_target"] == 2.0
+    assert pev.SCORING_WEIGHTS["ex_missing"] == 1.0
+
+
+def test_branch_annotations_cover_every_configured_branch_type():
+    import build_pull_probability_model as bppm
+
+    configured = set(bppm.SET_CODE_BRANCH_CONFIG.values())
+    # third_party_two_branch is the routing default -> annotation default; every
+    # other configured branch_type must have an explicit annotation entry.
+    missing = configured - set(bppm._BRANCH_ANNOTATIONS) - {"third_party_two_branch"}
+    assert not missing, f"branch types without annotations: {missing}"
+    # Default annotation is a 2-tuple of (match, notes).
+    assert len(bppm._DEFAULT_BRANCH_ANNOTATION) == 2
+
+
+def test_a4b_consumers_derive_from_shared_constants():
+    import coord_resolver
+    import build_reprint_links as brl
+    import build_pull_probability_model as bppm
+
+    assert coord_resolver._PZ_MISLABEL_SOURCE_SETS == frozenset({io.A4B_SET_CODE})
+    assert coord_resolver._PZ_MISLABEL_TARGET_SETS == frozenset(io.A4B_ORIGINAL_SETS)
+    assert brl.REPRINT_SET == io.A4B_SET_CODE
+    assert brl.ORIGINAL_SETS == list(io.A4B_ORIGINAL_SETS)
+    assert bppm._NON_HOURGLASS_PURCHASABLE == {io.A4B_SET_CODE}
+    assert bppm._PROMO_SET_CODES is io.PROMO_SET_CODES
