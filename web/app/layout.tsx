@@ -5,6 +5,7 @@ import "./globals.css";
 import { AppShell } from "@/components/layout/app-shell";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +41,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AppShell>{children}</AppShell>
+          <TooltipProvider>
+            <AppShell>{children}</AppShell>
+          </TooltipProvider>
           <Toaster />
         </ThemeProvider>
       </body>
