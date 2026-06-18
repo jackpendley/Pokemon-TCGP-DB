@@ -79,3 +79,20 @@ def test_a4b_mislabel_sets_are_registered():
         assert canonical_set_code(raw) in VALID_SET_CODES, (
             f"A4b set list has unregistered code: {raw!r}"
         )
+
+
+def test_promo_overrides_match_pack_sources():
+    """The hardcoded PROMO name overrides (used because PZ returns wrong/blank names)
+    must agree with pack_sources for the same coord. If the catalog shifts and
+    pack_sources is rebuilt but a dict isn't (or vice-versa), this catches the drift."""
+    ps = sc.load_pack_sources()
+    for set_code, overrides in (("PROMO-A", sc._PROMO_A_OVERRIDES),
+                                ("PROMO-B", sc._PROMO_B_OVERRIDES)):
+        for num, name in overrides.items():
+            rec = ps.get((set_code, num))
+            assert rec is not None, (
+                f"{set_code}/{num} override {name!r} has no pack_sources record"
+            )
+            assert sc._normalize(rec["card_name"]) == sc._normalize(name), (
+                f"{set_code}/{num} override {name!r} != pack_sources {rec['card_name']!r}"
+            )
