@@ -269,6 +269,31 @@ def validate_entry(
             advisory_issues.append(f"coord {sc}/{cn} in uncovered set {sc} — cannot validate "
                                    f"(run fetch_source_snapshots + build_card_reference)")
 
+    # Type validation (Pokemon only) — SERIOUS. Unlike HP, a Pokémon's energy type has a
+    # single authoritative answer in the cross-validated reference, so a disagreement is a
+    # genuine data error (it skews every type-aware count/analysis), not an upstream-data
+    # ambiguity. Authority chain mirrors the name check: card_reference 'confirmed' →
+    # ext_ref → card_reference (lower confidence). type_check records coverage so the
+    # report can prove the collection is 100% type-validated (no silent blind spots).
+    type_check = "n/a"
+    if entry.get("card_type") == "Pokemon":
+        coll_type = entry.get("type")
+        ref_rec_t = card_ref.get(key) if card_ref is not None else None
+        auth_type = auth_src = None
+        if ref_rec_t and ref_rec_t.get("pokemon_type") and ref_rec_t.get("confidence") == "confirmed":
+            auth_type, auth_src = ref_rec_t["pokemon_type"], f"card_reference({ref_rec_t['confidence']})"
+        elif ext_rec and ext_rec.get("pokemon_type"):
+            auth_type, auth_src = ext_rec["pokemon_type"], "ext_ref"
+        elif ref_rec_t and ref_rec_t.get("pokemon_type"):
+            auth_type, auth_src = ref_rec_t["pokemon_type"], f"card_reference({ref_rec_t.get('confidence')})"
+        if auth_type is None:
+            type_check = "uncovered"
+        elif coll_type != auth_type:
+            type_check = "mismatch"
+            serious_issues.append(f"type mismatch: collection='{coll_type}' vs {auth_src}='{auth_type}'")
+        else:
+            type_check = "ok"
+
     # HP validation (Pokemon only) — advisory, NOT fatal. An HP mismatch with a
     # matching name is ambiguous: it can mean (a) the coord points at the WRONG
     # same-name VARIANT (e.g. A1 vs A2a Charmander — the real corruption that skews
@@ -299,8 +324,9 @@ def validate_entry(
     issues = serious_issues + advisory_issues
     if issues:
         return {"status": "mismatch", "issues": issues, "serious": bool(serious_issues),
-                "set_code": sc, "card_number": cn, "source": source}
-    return {"status": "ok", "issues": [], "serious": False, "source": source}
+                "set_code": sc, "card_number": cn, "source": source, "type_check": type_check}
+    return {"status": "ok", "issues": [], "serious": False, "source": source,
+            "type_check": type_check}
 
 
 # ---------------------------------------------------------------------------
@@ -420,6 +446,21 @@ def main() -> int:
     print(f"  Cross-checked vs TCGdex (fallback):  {tcgdex_checked}")
     print(f"  Cross-checked vs Limitless (fallback): {limitless_checked}")
     print(f"  Local-only (ext_ref/pack_sources, weaker): {local_only}")
+
+    # Type cross-check coverage (Pokémon only). 'uncovered' = owned Pokémon with no
+    # authoritative type in any source → a silent type-validation blind spot. Surfacing
+    # the count (and the cards) keeps "100% type-validated" honest.
+    type_results = [r.get("type_check") for _, r in checked if r.get("type_check") not in (None, "n/a")]
+    type_ok        = type_results.count("ok")
+    type_mismatch  = type_results.count("mismatch")
+    type_uncovered = [(e, r) for e, r in checked if r.get("type_check") == "uncovered"]
+    print(f"  Type cross-check (Pokémon): {type_ok} ok, {type_mismatch} mismatch, "
+          f"{len(type_uncovered)} uncovered")
+    if type_uncovered:
+        print(f"\n── Pokémon with no authoritative type ({len(type_uncovered)}) — type-validation blind spot ──")
+        for entry, _ in type_uncovered:
+            print(f"  {entry.get('name')} {entry.get('set_code')}/{entry.get('card_number')} "
+                  f"(collection type={entry.get('type')})")
 
     if low_conf_owned:
         print(f"\n── Owned cards with <confirmed identity ({len(low_conf_owned)}) — verify printing ──")

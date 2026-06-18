@@ -185,3 +185,28 @@ def test_all_a1_mismatches():
               f"got canonical={r.canonical_name!r} status={r.status}")
         if not correct:
             all_pass = False
+
+
+def test_describe_new_entry():
+    print("\n--- 17. _describe_new_entry surfaces assigned metadata for the log ---")
+    # Pokémon: resolved coord, rarity, card type, stage label, type, HP all shown so the
+    # synced card can be validated against the in-app card straight from pipeline.log.
+    poke = {"name": "Duskull", "count": 1, "card_type": "Pokemon", "stage": 0,
+            "stage_label": "Basic", "type": "Darkness", "hp": 50, "rarity": "common",
+            "set_code": "B1", "card_number": 103}
+    desc = sc._describe_new_entry(poke)
+    for token in ("B1/103", "common", "Pokemon", "Basic", "Darkness", "HP50"):
+        check(f"describe contains {token!r}", token in desc, desc)
+
+    # Trainer: card_type/subtype shown instead of Pokémon attributes.
+    trainer = {"name": "Rare Candy", "count": 1, "card_type": "Trainer",
+               "trainer_subtype": "Item", "rarity": "uncommon",
+               "set_code": "A3", "card_number": 144}
+    tdesc = sc._describe_new_entry(trainer)
+    for token in ("A3/144", "uncommon", "Trainer/Item"):
+        check(f"trainer describe contains {token!r}", token in tdesc, tdesc)
+
+    # Alt-art variant is surfaced.
+    alt = {"name": "Bulbasaur", "count": 1, "card_type": "Pokemon", "rarity": "illustration_rare",
+           "set_code": "A1", "card_number": 227, "variant": "alt art"}
+    check("variant shown", "alt art" in sc._describe_new_entry(alt), sc._describe_new_entry(alt))

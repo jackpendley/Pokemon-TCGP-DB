@@ -55,6 +55,9 @@ _STATUS_PATTERNS: dict[str, list[tuple]] = {
 }
 
 
+_REPEAT_LABEL = "repeated, no changes"
+
+
 def _append_log(label: str, output: str) -> None:
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     with LOG_FILE.open("a", encoding="utf-8") as f:
@@ -80,6 +83,51 @@ def _trim_log() -> None:
     blocks = text.split(f"\n{sep}\n[")
     kept = blocks[-LOG_MAX_BLOCKS:]
     LOG_FILE.write_text(f"\n{sep}\n[".join(["", *kept]).lstrip("\n"), encoding="utf-8")
+
+
+_ISO_TS_RE = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z")
+_RUN_DELIM = f"\n{'=' * 60}\nPipeline run: "  # main() writes this at the start of every run
+
+
+def _run_marker(count: int) -> str:
+    """A collapsed-repeat 'run' chunk (sits where the duplicate run would have been)."""
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return (f"{ts}  ({_REPEAT_LABEL} ×{count})\n{'=' * 60}\n"
+            f"The previous run repeated identically; collapsed to keep the log readable.\n")
+
+
+def _collapse_repeated_run() -> None:
+    """Collapse the just-finished run when it's identical (modulo timestamps) to the
+    previous one. Splits the log on the ``Pipeline run:`` banner main() writes per run.
+
+    Targets the repeated ``--skip-sync`` reruns that bloat the log; a real sync never
+    matches (its body carries a per-run taskId) so it stays logged in full. The tail is
+    kept as ``[…][reference run][<repeat-marker ×N>]`` so each further identical rerun
+    just bumps the marker instead of appending another copy.
+    """
+    if not LOG_FILE.exists():
+        return
+    chunks = LOG_FILE.read_text(encoding="utf-8").split(_RUN_DELIM)
+    if len(chunks) < 3:  # preamble + at least two runs
+        return
+    preamble, runs = chunks[0], chunks[1:]
+    cur = runs[-1]
+
+    def same(a: str, b: str) -> bool:
+        return _ISO_TS_RE.sub("<ts>", a) == _ISO_TS_RE.sub("<ts>", b)
+
+    if f"{_REPEAT_LABEL} ×" in runs[-2].split("\n", 1)[0]:
+        # Previous chunk is a marker from an earlier collapse; the reference is before it.
+        if len(runs) < 3 or not same(cur, runs[-3]):
+            return
+        count = int(re.search(r"×(\d+)", runs[-2].split("\n", 1)[0]).group(1)) + 1
+        new_runs = runs[:-2] + [_run_marker(count)]
+    else:
+        if not same(cur, runs[-2]):
+            return
+        new_runs = runs[:-1] + [_run_marker(2)]
+
+    LOG_FILE.write_text(preamble + _RUN_DELIM + _RUN_DELIM.join(new_runs), encoding="utf-8")
 
 
 def _extract_status(label: str, stdout: str) -> str:
@@ -465,7 +513,14 @@ def main() -> int:
     elif rc == 1:
         _print_step("Validate coords", rc, "WARN — advisory HP diff(s); see data/pipeline.log")
     else:
-        _print_step("Validate coords", rc, "OK")
+        # Surface owned cards whose printing isn't fully cross-validated (single-source /
+        # cross-set conflict). validate_collection_coords already lists each one in the log;
+        # echo the count here so it's visible without log-diving.
+        m = re.search(r"single:\s*(\d+),\s*conflict:\s*(\d+)", stdout)
+        n_low = (int(m.group(1)) + int(m.group(2))) if m else 0
+        status = ("OK" if not n_low
+                  else f"OK — {n_low} owned card(s) <confirmed; verify printing (see data/pipeline.log)")
+        _print_step("Validate coords", rc, status)
 
     # ── Validate ──────────────────────────────────────────────────────────
     rc, stdout = _run("Validate collection", "scripts/validate_current_collection.py",
@@ -527,6 +582,9 @@ def main() -> int:
 
     if sync_had_review_items:
         print(f"\n  NOTE: Review queue has items. See: data/sync/sync_review_queue.json")
+
+    # Cosmetic: collapse this run in the log if it was identical to the previous one.
+    _collapse_repeated_run()
 
     return 2 if sync_had_review_items else 0
 

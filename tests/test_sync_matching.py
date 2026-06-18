@@ -461,6 +461,9 @@ def test_ambiguous_queue_counter():
             check("first run: consecutive_unresolved=1",
                   q1["ambiguous_matches"][0]["consecutive_unresolved"] == 1,
                   str(q1["ambiguous_matches"][0]))
+            # Guardrail: overflow/force-match alone (no new cards) must gate the
+            # next run, so run_recommendations surfaces it instead of burying in stderr.
+            check("ambiguous-only queue is unresolved", q1["resolved"] is False, str(q1))
 
             write_review_queue([], [], amb)
             q2 = json.loads(queue_path.read_text())
@@ -473,6 +476,7 @@ def test_ambiguous_queue_counter():
             q3 = json.loads(queue_path.read_text())
             check("after resolve: ambiguous_matches empty", q3["ambiguous_matches"] == [],
                   str(q3["ambiguous_matches"]))
+            check("clean queue is resolved", q3["resolved"] is True, str(q3))
         finally:
             sc.REVIEW_QUEUE = orig_review_queue
 

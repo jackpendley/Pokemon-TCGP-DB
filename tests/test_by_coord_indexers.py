@@ -37,6 +37,22 @@ def test_index_uppercases_and_ints():
     assert io._index_by_coord(recs, "card_number") == {("A1", 7): recs[0]}
 
 
+def test_parse_coord_is_the_index_key_builder_not_canonical_set_code():
+    """Regression guard for a real footgun: the by-coord indexes are keyed by plain
+    .upper() (parse_coord), while canonical_set_code returns mixed-case *display* casing
+    ("B3a"). For every mixed-case sub-set the two DISAGREE, so a lookup built with
+    canonical_set_code silently misses. This pins parse_coord as the correct key-builder
+    and documents that canonical_set_code must not be used for index lookups."""
+    recs = [{"set_code": "B3a", "card_number": 41}]   # collection casing for a sub-set
+    index = io._index_by_coord(recs, "card_number")
+    key = io.parse_coord("B3a", 41)
+    assert key == ("B3A", 41)
+    assert index.get(key) is recs[0]                  # parse_coord hits
+    # canonical_set_code is display-only and provably the WRONG key for sub-sets:
+    assert io.canonical_set_code("B3a") == "B3a" != "B3A"
+    assert index.get((io.canonical_set_code("B3a"), 41)) is None   # would silently miss
+
+
 def test_index_skips_blank_set_code_by_default():
     recs = [{"set_code": "", "card_number": 5}, {"set_code": "A1", "card_number": 6}]
     assert io._index_by_coord(recs, "card_number") == {("A1", 6): recs[1]}

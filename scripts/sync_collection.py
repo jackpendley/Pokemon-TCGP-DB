@@ -1011,7 +1011,10 @@ def write_review_queue(
             )
     queue = {
         "generated_at": date.today().isoformat(),
-        "resolved": not bool(new_cards),
+        # Unresolved if there are new cards OR fallback matches (overflow-merge / force-match):
+        # the latter carry a per-printing mis-attribution risk and must gate the next run instead
+        # of scrolling past in stderr.
+        "resolved": not (bool(new_cards) or bool(ambiguous_matches)),
         "new_cards": [
             {
                 "set_code": r.pz_card.set_code,
@@ -1433,6 +1436,37 @@ def _normalize_pz_records(raw_cards: list) -> list:
     return pz_cards
 
 
+def _describe_new_entry(entry: dict) -> str:
+    """Compact one-line summary of an auto-added entry's assigned metadata.
+
+    Surfaces the fields a human needs to validate a freshly-synced card against the
+    in-app card (resolved coord, rarity, card type, stage/type/HP) so accuracy can be
+    checked from pipeline.log without opening collection.json.
+    """
+    sc = entry.get("set_code") or "?"
+    cn = entry.get("card_number")
+    cn = cn if cn is not None else "?"
+    parts = [f"{sc}/{cn}", entry.get("rarity") or "rarity?"]
+    if entry.get("card_type") == "Pokemon":
+        bits = []
+        if entry.get("stage_label"):
+            bits.append(entry["stage_label"])
+        elif entry.get("stage") is not None:
+            bits.append(f"Stage{entry['stage']}")
+        if entry.get("type"):
+            bits.append(entry["type"])
+        if entry.get("hp") is not None:
+            bits.append(f"HP{entry['hp']}")
+        parts.append("Pokemon" + (f" {' '.join(bits)}" if bits else ""))
+    else:
+        ct = entry.get("card_type") or "?"
+        sub = entry.get("trainer_subtype")
+        parts.append(f"{ct}/{sub}" if sub else ct)
+    if entry.get("variant"):
+        parts.append(entry["variant"])
+    return " · ".join(parts)
+
+
 def _auto_add_new_cards(new_cards, pack_sources, ext_ref, collection_entries,
                         *, no_fetch: bool) -> tuple[list, list]:
     """Phase 4b: build collection entries for the auto-addable NEW_CARDs.
@@ -1536,7 +1570,8 @@ def _auto_add_new_cards(new_cards, pack_sources, ext_ref, collection_entries,
                     and normalize_rarity(ps_r.get("rarity")) in _ALT_RARITIES):
                 entry["variant"] = "alt art"
         auto_added.append(entry)
-        print(f"  Auto-adding: {mr.canonical_name} ×{mr.pz_card.count}")
+        print(f"  Auto-adding: {mr.canonical_name} ×{mr.pz_card.count}  "
+              f"→ {_describe_new_entry(entry)}")
         if (not ext_ref.get(nn)
                 and not is_ex_from_name(mr.canonical_name)
                 and not (card_meta and nn in card_meta)):

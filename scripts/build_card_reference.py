@@ -431,6 +431,38 @@ def main() -> int:
                     f"{sc}/{cn}: {'; '.join(entry['conflict_notes'])}"
                 )
 
+        # Cards present in the independent snapshots but absent from pack_sources (e.g.
+        # newer promos Limitless hasn't catalogued yet). Without these, owned copies have
+        # no card_reference record and can't be type-validated. Synthesize a baseline from
+        # the snapshot name so the normal cross-source reconciliation runs unchanged.
+        ps_nums = {int(r["card_number"]) for r in records
+                   if str(r.get("card_number", "")).strip().lstrip("-").isdigit()}
+        snap_nums: set[int] = set()
+        for src in INDEPENDENT_SOURCES:
+            for k in set_snapshots[src]:
+                try:
+                    snap_nums.add(int(k))
+                except (TypeError, ValueError):
+                    pass
+        for cn in sorted(snap_nums - ps_nums):
+            name = next((set_snapshots[src].get(str(cn), {}).get("name")
+                         for src in INDEPENDENT_SOURCES
+                         if set_snapshots[src].get(str(cn), {}).get("name")), None)
+            if not name:
+                continue
+            synth = {"card_number": cn, "card_name": name,
+                     "rarity": None, "pack_name": None, "expansion": None}
+            ext_stage = (ext_ref.get((sc.upper(), cn)) or {}).get("stage")
+            entry = reconcile_card(sc, cn, synth, set_snapshots, ext_stage)
+            results.append(entry)
+            conf = entry["confidence"]
+            stats[conf] = stats.get(conf, 0) + 1
+            sc_stats[conf] = sc_stats.get(conf, 0) + 1
+            if conf == "conflict" and any("UNRESOLVED" in n for n in entry["conflict_notes"]):
+                stats["unresolved_conflicts"].append(
+                    f"{sc}/{cn}: {'; '.join(entry['conflict_notes'])}"
+                )
+
         stats["sets"][sc] = sc_stats
         conf_count = sc_stats["confirmed"]
         total = sum(sc_stats.values())
