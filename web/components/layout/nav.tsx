@@ -2,25 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  LayoutDashboard,
-  Package,
-  Layers,
-  Wallet,
-  RefreshCw,
-  Search,
-} from "lucide-react";
 
 import { cn } from "@/lib/utils";
-
-const NAV_ITEMS = [
-  { href: "/", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/packs", label: "Pack Recommendations", icon: Package },
-  { href: "/cards", label: "Cards", icon: Search },
-  { href: "/sets", label: "Sets", icon: Layers },
-  { href: "/plan", label: "Spending Plan", icon: Wallet },
-  { href: "/sync", label: "Sync Status", icon: RefreshCw },
-] as const;
+import { NAV_ITEMS } from "@/components/layout/nav-items";
 
 export function Nav() {
   const pathname = usePathname();
