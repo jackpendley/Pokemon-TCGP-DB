@@ -128,7 +128,14 @@ _SET_CANONICAL: dict[str, str] = {k.upper(): k for k in SET_REGISTRY}
 
 
 def canonical_set_code(raw: str) -> str:
-    """Return the canonical casing for a set code, or the original if unknown."""
+    """Return the canonical *display* casing for a set code, or the original if unknown.
+
+    Display/serialization only — e.g. "B3A" → "B3a". Do NOT use this to build keys for
+    the by-coord indexes (card_reference/ext_ref/pack_sources): those are keyed by plain
+    .upper() (see parse_coord), so canonical_set_code("B3a") == "B3a" would MISS the
+    "B3A" key for every mixed-case sub-set. To look up an index, build the key with
+    parse_coord(set_code, num); never with canonical_set_code.
+    """
     return _SET_CANONICAL.get(raw.upper(), raw)
 
 
