@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 1386,
-    "last_updated": "2026-06-17",
+    "total_cards": 1401,
+    "last_updated": "2026-06-18",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -89,7 +89,7 @@
       "count": 7,
       "set_code": "PROMO-B",
       "card_number": 58,
-      "rarity": "common"
+      "rarity": "promo"
     },
     {
       "name": "Pignite",
@@ -187,7 +187,7 @@
       "count": 1,
       "set_code": "PROMO-B",
       "card_number": 49,
-      "rarity": "rare"
+      "rarity": "promo"
     },
     {
       "name": "Turtonator",
@@ -283,7 +283,7 @@
       "count": 3,
       "set_code": "PROMO-B",
       "card_number": 57,
-      "rarity": "common"
+      "rarity": "promo"
     },
     {
       "name": "Mega Camerupt ex",
@@ -462,7 +462,7 @@
       "count": 4,
       "set_code": "PROMO-B",
       "card_number": 61,
-      "rarity": "common"
+      "rarity": "promo"
     },
     {
       "name": "Surskit",
@@ -717,7 +717,7 @@
     },
     {
       "name": "Shaymin",
-      "type": "Grass",
+      "type": "Colorless",
       "stage": 0,
       "hp": 70,
       "card_type": "Pokemon",
@@ -898,7 +898,7 @@
     },
     {
       "name": "Paldean Tauros",
-      "type": "Water",
+      "type": "Fire",
       "stage": 0,
       "hp": 100,
       "card_type": "Pokemon",
@@ -1061,6 +1061,17 @@
       "count": 1,
       "set_code": "A4b",
       "card_number": 110,
+      "rarity": "common"
+    },
+    {
+      "name": "Froakie",
+      "type": "Water",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "count": 1,
+      "set_code": "B1",
+      "card_number": 71,
       "rarity": "common"
     },
     {
@@ -1324,7 +1335,7 @@
       "count": 1,
       "set_code": "PROMO-B",
       "card_number": 1,
-      "rarity": "common"
+      "rarity": "promo"
     },
     {
       "name": "Toxel",
@@ -1362,7 +1373,7 @@
     },
     {
       "name": "Meloetta",
-      "type": "Psychic",
+      "type": "Fighting",
       "stage": 0,
       "hp": 70,
       "card_type": "Pokemon",
@@ -1554,7 +1565,7 @@
     },
     {
       "name": "Oricorio",
-      "type": "Psychic",
+      "type": "Fire",
       "stage": 0,
       "hp": 70,
       "card_type": "Pokemon",
@@ -1590,7 +1601,7 @@
     },
     {
       "name": "Bramblin",
-      "type": "Psychic",
+      "type": "Grass",
       "stage": 0,
       "hp": 50,
       "card_type": "Pokemon",
@@ -1680,7 +1691,7 @@
     },
     {
       "name": "Weezing",
-      "type": "Psychic",
+      "type": "Darkness",
       "stage": 1,
       "hp": 110,
       "card_type": "Pokemon",
@@ -1750,6 +1761,18 @@
       "set_code": "B2",
       "card_number": 78,
       "rarity": "common"
+    },
+    {
+      "name": "Hariyama",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 130,
+      "card_type": "Pokemon",
+      "attack": "Megaton Slap Push 90",
+      "count": 1,
+      "set_code": "B1",
+      "card_number": 127,
+      "rarity": "uncommon"
     },
     {
       "name": "Hariyama",
@@ -2202,7 +2225,7 @@
       "count": 3,
       "set_code": "PROMO-B",
       "card_number": 59,
-      "rarity": "common"
+      "rarity": "promo"
     },
     {
       "name": "Stufful",
@@ -2637,7 +2660,7 @@
       "count": 1,
       "set_code": "PROMO-B",
       "card_number": 60,
-      "rarity": "rare"
+      "rarity": "promo"
     },
     {
       "name": "Galarian Linoone",
@@ -2761,7 +2784,7 @@
     },
     {
       "name": "Bisharp",
-      "type": "Metal",
+      "type": "Darkness",
       "stage": 1,
       "hp": 80,
       "card_type": "Pokemon",
@@ -2797,7 +2820,7 @@
     },
     {
       "name": "Pawniard",
-      "type": "Metal",
+      "type": "Darkness",
       "stage": 0,
       "hp": 60,
       "card_type": "Pokemon",
@@ -2809,7 +2832,7 @@
     },
     {
       "name": "Pawniard",
-      "type": "Metal",
+      "type": "Darkness",
       "stage": 0,
       "hp": 50,
       "card_type": "Pokemon",
@@ -2976,7 +2999,7 @@
     },
     {
       "name": "Corviknight ex",
-      "type": "Colorless",
+      "type": "Metal",
       "stage": 2,
       "hp": 180,
       "card_type": "Pokemon",
@@ -3754,7 +3777,7 @@
       "count": 4,
       "set_code": "PROMO-A",
       "card_number": 7,
-      "rarity": "super_rare"
+      "rarity": "promo"
     },
     {
       "name": "Lyra",
@@ -3861,7 +3884,7 @@
       "hp": 150,
       "set_code": "PROMO-B",
       "card_number": 62,
-      "rarity": "rare"
+      "rarity": "promo"
     },
     {
       "name": "Arven",
@@ -4487,7 +4510,7 @@
     },
     {
       "name": "Palpitoad",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Water",
       "stage": 1,
@@ -4585,7 +4608,7 @@
       "name": "Slowpoke",
       "count": 1,
       "card_type": "Pokemon",
-      "type": "Water",
+      "type": "Psychic",
       "stage": 0,
       "stage_label": "Basic",
       "hp": 70,
@@ -4701,7 +4724,7 @@
     },
     {
       "name": "Toxapex",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -5815,7 +5838,7 @@
       "set_code": "B2b",
       "card_number": 36,
       "rarity": "common",
-      "type": "Colorless"
+      "type": "Fighting"
     },
     {
       "name": "Hawlucha",
@@ -6932,6 +6955,18 @@
       "name": "Litwick",
       "count": 1,
       "card_type": "Pokemon",
+      "type": "Fire",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 41
+    },
+    {
+      "name": "Litwick",
+      "count": 1,
+      "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 0,
       "stage_label": "Basic",
@@ -7194,7 +7229,7 @@
     },
     {
       "name": "Carbink",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 0,
@@ -7218,7 +7253,7 @@
     },
     {
       "name": "Durant",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Metal",
       "stage": 0,
@@ -7232,7 +7267,7 @@
       "name": "Durant",
       "count": 1,
       "card_type": "Pokemon",
-      "type": "Metal",
+      "type": "Grass",
       "stage": 0,
       "stage_label": "Basic",
       "hp": 70,
@@ -7242,7 +7277,7 @@
     },
     {
       "name": "Ludicolo",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Water",
       "stage": 2,
@@ -7462,7 +7497,7 @@
     },
     {
       "name": "Mareanie",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Darkness",
       "stage": 0,
@@ -7562,6 +7597,7 @@
       "name": "Ceruledge ex",
       "count": 1,
       "card_type": "Pokemon",
+      "stage": 1,
       "rarity": "promo",
       "set_code": "PROMO-B",
       "card_number": 66,
@@ -7661,6 +7697,63 @@
       "set_code": "B1",
       "card_number": 238,
       "variant": "alt art"
+    },
+    {
+      "name": "Heatmor",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fire",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 80,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 44
+    },
+    {
+      "name": "Swirlix",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 117
+    },
+    {
+      "name": "Crabominable",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 120,
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 140
+    },
+    {
+      "name": "Absol",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 80,
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 150
+    },
+    {
+      "name": "Cover Fossil",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 216
     }
   ]
 }
