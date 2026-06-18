@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-06-15T05:48:09Z",
+    "generated_at": "2026-06-18T18:41:51Z",
     "schema_version": "1.0",
     "sources": [
       "tcgdex",
@@ -8,12 +8,12 @@
       "bulbapedia"
     ],
     "stats": {
-      "confirmed": 3228,
+      "confirmed": 3401,
       "conflict": 3,
       "single": 2,
       "unconfirmed": 0
     },
-    "total_cards": 3233
+    "total_cards": 3406
   },
   "records": [
     {
@@ -63915,6 +63915,28 @@
     },
     {
       "card_category": "Trainer",
+      "card_number": 5,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Poké Ball",
+      "pack_name": null,
+      "pokemon_type": "Item",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": "Trainer",
       "card_number": 6,
       "confidence": "confirmed",
       "confirmations": [
@@ -63931,6 +63953,3401 @@
       "pokemon_type": "Item",
       "rarity": "promo",
       "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": "Trainer",
+      "card_number": 7,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Professor's Research",
+      "pack_name": null,
+      "pokemon_type": "Supporter",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": "Trainer",
+      "card_number": 8,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Pokédex",
+      "pack_name": null,
+      "pokemon_type": "Item",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 9,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Pikachu",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 10,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 120,
+      "is_ex": false,
+      "name": "Mewtwo",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 11,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 120,
+      "is_ex": false,
+      "name": "Chansey",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 12,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Meowth",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 13,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 120,
+      "is_ex": false,
+      "name": "Butterfree",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage2"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 14,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 140,
+      "is_ex": true,
+      "name": "Lapras ex",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 15,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Pikachu",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 16,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Clefairy",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 17,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 50,
+      "is_ex": false,
+      "name": "Mankey",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 18,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 160,
+      "is_ex": false,
+      "name": "Venusaur",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage2"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 19,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 120,
+      "is_ex": false,
+      "name": "Greninja",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage2"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 20,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 70,
+      "is_ex": false,
+      "name": "Haunter",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 21,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 110,
+      "is_ex": false,
+      "name": "Onix",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 22,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 50,
+      "is_ex": false,
+      "name": "Jigglypuff",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 23,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 70,
+      "is_ex": false,
+      "name": "Bulbasaur",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 24,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Magnemite",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 25,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 140,
+      "is_ex": true,
+      "name": "Moltres ex",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 26,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Pikachu",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 27,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Snivy",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 28,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 120,
+      "is_ex": false,
+      "name": "Volcarona",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 29,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 150,
+      "is_ex": false,
+      "name": "Blastoise",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage2"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 30,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Eevee",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 31,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 90,
+      "is_ex": false,
+      "name": "Cinccino",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 32,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Charmander",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 33,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Squirtle",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 34,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Piplup",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 35,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 80,
+      "is_ex": false,
+      "name": "Turtwig",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 36,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 120,
+      "is_ex": false,
+      "name": "Electivire",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 37,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "serebii returned 'Cresselia' (ps='Cresselia ex'); overridden by majority",
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 140,
+      "is_ex": true,
+      "name": "Cresselia ex",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 38,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Misdreavus",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 39,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 80,
+      "is_ex": false,
+      "name": "Skarmory",
+      "pack_name": null,
+      "pokemon_type": "Metal",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 40,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Chimchar",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 41,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 50,
+      "is_ex": false,
+      "name": "Togepi",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 42,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 140,
+      "is_ex": true,
+      "name": "Darkrai ex",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 43,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 80,
+      "is_ex": false,
+      "name": "Cherrim",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 44,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 90,
+      "is_ex": false,
+      "name": "Raichu",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 45,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Nosepass",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 46,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Gible",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 47,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 140,
+      "is_ex": false,
+      "name": "Staraptor",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage2"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 48,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 50,
+      "is_ex": false,
+      "name": "Manaphy",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 49,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 140,
+      "is_ex": false,
+      "name": "Snorlax",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 50,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 150,
+      "is_ex": true,
+      "name": "Mewtwo ex",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 51,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 80,
+      "is_ex": false,
+      "name": "Cyclizar",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 52,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Sprigatito",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 53,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 100,
+      "is_ex": false,
+      "name": "Floatzel",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 54,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 140,
+      "is_ex": false,
+      "name": "Pawmot",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage2"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 55,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 150,
+      "is_ex": false,
+      "name": "Machamp",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Stage2"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 56,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Ekans",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 57,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 70,
+      "is_ex": false,
+      "name": "Bidoof",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 58,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 70,
+      "is_ex": false,
+      "name": "Pachirisu",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 59,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 70,
+      "is_ex": false,
+      "name": "Riolu",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 60,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 50,
+      "is_ex": false,
+      "name": "Exeggcute",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 61,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Froakie",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 62,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Farfetch'd",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 63,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 100,
+      "is_ex": false,
+      "name": "Rayquaza",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 64,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 140,
+      "is_ex": true,
+      "name": "Rayquaza ex",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "double_rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 65,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 140,
+      "is_ex": true,
+      "name": "Rayquaza ex",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "super_rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 66,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 70,
+      "is_ex": false,
+      "name": "Mimikyu",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "illustration_rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 67,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Cosmog",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 68,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 100,
+      "is_ex": false,
+      "name": "Lycanroc",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 69,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 150,
+      "is_ex": false,
+      "name": "Alolan Exeggutor",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 70,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 110,
+      "is_ex": false,
+      "name": "Alolan Ninetales",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "illustration_rare",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 71,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 70,
+      "is_ex": false,
+      "name": "Crabrawler",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 72,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 70,
+      "is_ex": false,
+      "name": "Alolan Grimer",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 73,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 140,
+      "is_ex": false,
+      "name": "Toucannon",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Stage2"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 74,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 90,
+      "is_ex": false,
+      "name": "Zeraora",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "illustration_rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 75,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Kartana",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 76,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": 100,
+      "is_ex": false,
+      "name": "Blacephalon",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 77,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 100,
+      "is_ex": false,
+      "name": "Xurkitree",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 78,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 110,
+      "is_ex": false,
+      "name": "Dawn Wings Necrozma",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 79,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 110,
+      "is_ex": false,
+      "name": "Dusk Mane Necrozma",
+      "pack_name": null,
+      "pokemon_type": "Metal",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 80,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 110,
+      "is_ex": false,
+      "name": "Stakataka",
+      "pack_name": null,
+      "pokemon_type": "Metal",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 81,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 150,
+      "is_ex": true,
+      "name": "Ultra Necrozma ex",
+      "pack_name": null,
+      "pokemon_type": "Dragon",
+      "rarity": "double_rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 82,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Poipole",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 83,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 70,
+      "is_ex": false,
+      "name": "Stufful",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 84,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 130,
+      "is_ex": true,
+      "name": "Tapu Koko ex",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "double_rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 85,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Vanillite",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 86,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 90,
+      "is_ex": false,
+      "name": "Jolteon",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 87,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 80,
+      "is_ex": false,
+      "name": "Alcremie",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "illustration_rare",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 88,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 100,
+      "is_ex": false,
+      "name": "Dragonair",
+      "pack_name": null,
+      "pokemon_type": "Dragon",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 89,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 100,
+      "is_ex": false,
+      "name": "Audino",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 90,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 80,
+      "is_ex": false,
+      "name": "Togedemaru",
+      "pack_name": null,
+      "pokemon_type": "Metal",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 91,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 120,
+      "is_ex": false,
+      "name": "Greedent",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 92,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Eevee",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 93,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 30,
+      "is_ex": false,
+      "name": "Cleffa",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "illustration_rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 94,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Horsea",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 95,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Chinchou",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 96,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 110,
+      "is_ex": false,
+      "name": "Houndoom",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "common",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 97,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 100,
+      "is_ex": false,
+      "name": "Kangaskhan",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 98,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 180,
+      "is_ex": true,
+      "name": "Blissey ex",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "double_rare",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 99,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 60,
+      "is_ex": false,
+      "name": "Marill",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Basic"
+    },
+    {
+      "card_category": "Pokemon",
+      "card_number": 100,
+      "confidence": "confirmed",
+      "confirmations": [
+        "tcgdex",
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [],
+      "expansion": null,
+      "hp": 80,
+      "is_ex": false,
+      "name": "Weavile",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "rare",
+      "set_code": "PROMO-A",
+      "stage": "Stage1"
+    },
+    {
+      "card_category": null,
+      "card_number": 101,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Latias",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 102,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Tropius",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 103,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Poliwag",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 104,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Milotic",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 105,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Zorua",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 106,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Zoroark",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 107,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Miltank",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 108,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Phanpy",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 109,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": true,
+      "name": "Eevee ex",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 110,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": true,
+      "name": "Entei ex",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 111,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Pikachu",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 112,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": true,
+      "name": "Raichu ex",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 113,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Mimikyu",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 114,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Machamp",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 115,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Regigigas",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 116,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Shaymin",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 117,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Absol",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "promo",
+      "set_code": "PROMO-A",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 1,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Pikachu",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 2,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Petilil",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 3,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Froakie",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 4,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Luxray",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 5,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Pidgey",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 6,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": true,
+      "name": "Mega Pidgeot ex",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 7,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Torchic",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 8,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Psyduck",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 9,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": true,
+      "name": "Mega Absol ex",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 10,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Drifblim",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 11,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Eevee",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 12,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Ditto",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 13,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Arcanine",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 14,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Magikarp",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 15,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Mareep",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 16,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Krookodile",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 17,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Swablu",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 18,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Heliolisk",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 19,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Buneary",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 20,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Charmeleon",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 21,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Onix",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 22,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Hawlucha",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 23,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Genesect",
+      "pack_name": null,
+      "pokemon_type": "Metal",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 24,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": true,
+      "name": "Mega Latios ex",
+      "pack_name": null,
+      "pokemon_type": "Dragon",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 25,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Jirachi",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 26,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Mudkip",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 27,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Plusle",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 28,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Ralts",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 29,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": true,
+      "name": "Mega Medicham ex",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 30,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Tornadus",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 31,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Cinderace",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 32,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Alolan Vulpix",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 33,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Quaxly",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 34,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Smoliv",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 35,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Charcadet",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 36,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Tatsugiri",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 37,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Frigibax",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 38,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Tinkaton",
+      "pack_name": null,
+      "pokemon_type": "Metal",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 39,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Pawmi",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 40,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Paldean Clodsire",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 41,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": true,
+      "name": "Chien-Pao ex",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 42,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Slowpoke",
+      "pack_name": null,
+      "pokemon_type": "Water",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 43,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Electrike",
+      "pack_name": null,
+      "pokemon_type": "Lightning",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 44,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Varoom",
+      "pack_name": null,
+      "pokemon_type": "Metal",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 45,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Haxorus",
+      "pack_name": null,
+      "pokemon_type": "Dragon",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 46,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Chatot",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 47,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Gastly",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 48,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Wigglytuff",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 49,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Victini",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 50,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Meloetta",
+      "pack_name": null,
+      "pokemon_type": "Psychic",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
       "stage": null
     },
     {
@@ -63992,6 +67409,48 @@
     },
     {
       "card_category": null,
+      "card_number": 54,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Eevee",
+      "pack_name": null,
+      "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 55,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": true,
+      "name": "Zygarde ex",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
       "card_number": 56,
       "confidence": "confirmed",
       "confirmations": [
@@ -64008,6 +67467,153 @@
       "rarity": "promo",
       "set_code": "PROMO-B",
       "stage": "Basic"
+    },
+    {
+      "card_category": null,
+      "card_number": 57,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Castform Sunny Form",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 58,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Tepig",
+      "pack_name": null,
+      "pokemon_type": "Fire",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 59,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Dwebble",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 60,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Zarude",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 61,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Treecko",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 62,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Gallade",
+      "pack_name": null,
+      "pokemon_type": "Fighting",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 63,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": true,
+      "name": "Meowscarada ex",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
     },
     {
       "card_category": null,
@@ -64100,6 +67706,48 @@
       "name": "Dudunsparce",
       "pack_name": "Promo Pack B Series Vol. 9",
       "pokemon_type": "Colorless",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 69,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Floragato",
+      "pack_name": null,
+      "pokemon_type": "Grass",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "stage": null
+    },
+    {
+      "card_category": null,
+      "card_number": 70,
+      "confidence": "confirmed",
+      "confirmations": [
+        "serebii",
+        "bulbapedia"
+      ],
+      "conflict_notes": [
+        "rarity override: pack_sources=None → external='promo' (votes={'promo': 1})"
+      ],
+      "expansion": null,
+      "hp": null,
+      "is_ex": false,
+      "name": "Sableye",
+      "pack_name": null,
+      "pokemon_type": "Darkness",
       "rarity": "promo",
       "set_code": "PROMO-B",
       "stage": null
