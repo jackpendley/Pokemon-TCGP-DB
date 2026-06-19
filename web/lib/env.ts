@@ -13,10 +13,11 @@ const envSchema = z.object({
   // Absolute or relative path to the Python pipeline's repo root (the dir that
   // contains data/current + data/reference). Defaults to the monorepo parent.
   PIPELINE_ROOT: z.string().default(path.resolve(process.cwd(), "..")),
-  // Gate for the dev-only sync trigger; never enabled in production.
+  // Dev-only sync trigger. On by default in local dev; always force-disabled in
+  // production regardless of this value. Set to "false" to disable it locally.
   ENABLE_LOCAL_SYNC: z
     .enum(["true", "false"])
-    .default("false")
+    .default("true")
     .transform((v) => v === "true"),
 });
 

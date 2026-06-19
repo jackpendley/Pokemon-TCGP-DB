@@ -78,13 +78,11 @@ export default async function SyncPage() {
         </CardContent>
       </Card>
 
-      {!enabled ? (
-        <p className="text-xs text-muted-foreground">
-          The Sync button runs the local Python pipeline and is enabled only in
-          local dev with <code>ENABLE_LOCAL_SYNC=true</code>. In production this
-          is handled by the cloud sync worker.
-        </p>
-      ) : null}
+      <p className="text-xs text-muted-foreground">
+        {enabled
+          ? "Sync runs the local Python pipeline (scripts/run_recommendations.py) and refreshes the data when it finishes."
+          : "Sync is available only in local dev; in production this is handled by the cloud sync worker."}
+      </p>
     </div>
   );
 }

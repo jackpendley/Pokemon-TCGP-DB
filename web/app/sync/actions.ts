@@ -8,9 +8,9 @@ export type EnqueueResult =
   | { ok: true; job: SyncJob }
   | { ok: false; reason: string };
 
-/** True only in local dev with the explicit opt-in flag. Never in production. */
+/** Enabled in local dev (unless ENABLE_LOCAL_SYNC=false); never in production. */
 function syncEnabled(): boolean {
-  return env.ENABLE_LOCAL_SYNC && process.env.NODE_ENV !== "production";
+  return process.env.NODE_ENV !== "production" && env.ENABLE_LOCAL_SYNC;
 }
 
 export async function enqueueSync(): Promise<EnqueueResult> {
@@ -18,7 +18,7 @@ export async function enqueueSync(): Promise<EnqueueResult> {
     return {
       ok: false,
       reason:
-        "Sync is disabled here. Enable it locally with ENABLE_LOCAL_SYNC=true, or run `python3 scripts/run_recommendations.py` in the repo.",
+        "Sync runs the local Python pipeline and is available only in local dev. In production this is handled by the cloud sync worker.",
     };
   }
   return { ok: true, job: localSyncRunner.enqueue() };
