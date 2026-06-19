@@ -1,4 +1,4 @@
-import { CardsTable } from "@/components/cards/cards-table";
+import { CardsBrowser } from "@/components/cards/cards-browser";
 import { dataSource } from "@/lib/data";
 import { formatNumber } from "@/lib/domain/format";
 
@@ -19,7 +19,7 @@ export default async function CardsPage() {
         </p>
       </header>
 
-      <CardsTable cards={catalog} />
+      <CardsBrowser cards={catalog} />
     </div>
   );
 }
