@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { dataSource } from "@/lib/data";
 import { formatPercent } from "@/lib/domain/format";
@@ -41,35 +43,41 @@ export default async function SetsPage() {
         {sets.map((s) => {
           const ratio = s.total > 0 ? s.owned / s.total : 0;
           return (
-            <Card key={s.set_code}>
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center justify-between text-base">
-                  <span>{s.expansion}</span>
-                  <span className="text-xs font-normal text-muted-foreground">
-                    {s.set_code}
-                  </span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex items-end justify-between">
-                  <span className="text-2xl font-semibold tabular-nums">
-                    {s.owned}
-                    <span className="text-base text-muted-foreground">
-                      /{s.total}
+            <Link
+              key={s.set_code}
+              href={`/sets/${encodeURIComponent(s.set_code)}`}
+              className="block"
+            >
+              <Card className="h-full transition-colors hover:border-primary/50">
+                <CardHeader className="pb-2">
+                  <CardTitle className="flex items-center justify-between text-base">
+                    <span>{s.expansion}</span>
+                    <span className="text-xs font-normal text-muted-foreground">
+                      {s.set_code}
                     </span>
-                  </span>
-                  <span className="text-sm text-muted-foreground tabular-nums">
-                    {formatPercent(ratio)}
-                  </span>
-                </div>
-                <div className="h-2 overflow-hidden rounded-full bg-muted">
-                  <div
-                    className="h-full rounded-full bg-primary"
-                    style={{ width: `${ratio * 100}%` }}
-                  />
-                </div>
-              </CardContent>
-            </Card>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  <div className="flex items-end justify-between">
+                    <span className="text-2xl font-semibold tabular-nums">
+                      {s.owned}
+                      <span className="text-base text-muted-foreground">
+                        /{s.total}
+                      </span>
+                    </span>
+                    <span className="text-sm text-muted-foreground tabular-nums">
+                      {formatPercent(ratio)}
+                    </span>
+                  </div>
+                  <div className="h-2 overflow-hidden rounded-full bg-muted">
+                    <div
+                      className="h-full rounded-full bg-primary"
+                      style={{ width: `${ratio * 100}%` }}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           );
         })}
       </div>
