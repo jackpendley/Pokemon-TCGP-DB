@@ -2,9 +2,10 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowDown, ArrowUp, ChevronsUpDown } from "lucide-react";
+import { ArrowDown, ArrowUp, ChevronsUpDown, Info } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -13,6 +14,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { formatEv, formatPercent, packSlug, titleCase } from "@/lib/domain/format";
 import type { PackRecord } from "@/types";
@@ -32,6 +38,7 @@ interface Column {
   label: string;
   numeric: boolean;
   align: "left" | "right";
+  info?: string;
   render: (p: PackRecord) => React.ReactNode;
 }
 
@@ -49,7 +56,9 @@ const COLUMNS: Column[] = [
         >
           {p.pack_name}
         </Link>
-        <div className="text-xs text-muted-foreground">{p.expansion}</div>
+        <div className="text-xs text-muted-foreground">
+          {p.expansion} · {p.set_code}
+        </div>
       </>
     ),
   },
@@ -79,6 +88,7 @@ const COLUMNS: Column[] = [
     label: "DR",
     numeric: true,
     align: "right",
+    info: "Diminishing returns: how well a 10-pack holds its value versus single packs. Lower means the pool is near-complete, so returns drop off — consider switching packs.",
     render: (p) => formatPercent(p.ev_diminishing_returns_ratio, 0),
   },
   {
@@ -108,20 +118,33 @@ const COLUMNS: Column[] = [
   },
 ];
 
+type Series = "all" | "A" | "B";
+
+const SERIES_OPTIONS: { value: Series; label: string }[] = [
+  { value: "all", label: "All" },
+  { value: "A", label: "A-series" },
+  { value: "B", label: "B-series" },
+];
+
 export function PacksTable({ packs }: { packs: PackRecord[] }) {
   const [sortKey, setSortKey] = useState<SortKey>("unified_score");
   const [dir, setDir] = useState<"asc" | "desc">("desc");
+  const [series, setSeries] = useState<Series>("all");
 
   const sorted = useMemo(() => {
     const col = COLUMNS.find((c) => c.key === sortKey)!;
     const factor = dir === "asc" ? 1 : -1;
-    return [...packs].sort((a, b) => {
-      if (col.numeric) {
-        return ((a[sortKey] as number) - (b[sortKey] as number)) * factor;
-      }
-      return String(a[sortKey]).localeCompare(String(b[sortKey])) * factor;
-    });
-  }, [packs, sortKey, dir]);
+    return [...packs]
+      .filter(
+        (p) => series === "all" || p.set_code.toUpperCase().startsWith(series),
+      )
+      .sort((a, b) => {
+        if (col.numeric) {
+          return ((a[sortKey] as number) - (b[sortKey] as number)) * factor;
+        }
+        return String(a[sortKey]).localeCompare(String(b[sortKey])) * factor;
+      });
+  }, [packs, sortKey, dir, series]);
 
   function toggle(key: SortKey, numeric: boolean) {
     if (key === sortKey) {
@@ -134,8 +157,23 @@ export function PacksTable({ packs }: { packs: PackRecord[] }) {
   }
 
   return (
-    <div className="overflow-x-auto rounded-lg border">
-      <Table>
+    <div className="space-y-3">
+      <div className="inline-flex rounded-md border p-0.5">
+        {SERIES_OPTIONS.map((opt) => (
+          <Button
+            key={opt.value}
+            type="button"
+            size="sm"
+            variant={series === opt.value ? "secondary" : "ghost"}
+            className="h-7"
+            onClick={() => setSeries(opt.value)}
+          >
+            {opt.label}
+          </Button>
+        ))}
+      </div>
+      <div className="overflow-x-auto rounded-lg border">
+        <Table>
         <TableHeader>
           <TableRow>
             <TableHead className="w-10">#</TableHead>
@@ -144,26 +182,46 @@ export function PacksTable({ packs }: { packs: PackRecord[] }) {
                 key={c.key}
                 className={c.align === "right" ? "text-right" : undefined}
               >
-                <button
-                  type="button"
-                  onClick={() => toggle(c.key, c.numeric)}
+                <span
                   className={cn(
-                    "inline-flex items-center gap-1 hover:text-foreground",
+                    "inline-flex items-center gap-1",
                     c.align === "right" && "flex-row-reverse",
-                    sortKey === c.key ? "text-foreground" : "text-muted-foreground",
                   )}
                 >
-                  {c.label}
-                  {sortKey === c.key ? (
-                    dir === "asc" ? (
-                      <ArrowUp className="size-3.5" />
+                  <button
+                    type="button"
+                    onClick={() => toggle(c.key, c.numeric)}
+                    className={cn(
+                      "inline-flex items-center gap-1 hover:text-foreground",
+                      c.align === "right" && "flex-row-reverse",
+                      sortKey === c.key
+                        ? "text-foreground"
+                        : "text-muted-foreground",
+                    )}
+                  >
+                    {c.label}
+                    {sortKey === c.key ? (
+                      dir === "asc" ? (
+                        <ArrowUp className="size-3.5" />
+                      ) : (
+                        <ArrowDown className="size-3.5" />
+                      )
                     ) : (
-                      <ArrowDown className="size-3.5" />
-                    )
-                  ) : (
-                    <ChevronsUpDown className="size-3.5 opacity-50" />
-                  )}
-                </button>
+                      <ChevronsUpDown className="size-3.5 opacity-50" />
+                    )}
+                  </button>
+                  {c.info ? (
+                    <Tooltip>
+                      <TooltipTrigger
+                        className="text-muted-foreground/70 hover:text-foreground"
+                        aria-label={`About ${c.label}`}
+                      >
+                        <Info className="size-3.5" />
+                      </TooltipTrigger>
+                      <TooltipContent>{c.info}</TooltipContent>
+                    </Tooltip>
+                  ) : null}
+                </span>
               </TableHead>
             ))}
           </TableRow>
@@ -187,7 +245,8 @@ export function PacksTable({ packs }: { packs: PackRecord[] }) {
             </TableRow>
           ))}
         </TableBody>
-      </Table>
+        </Table>
+      </div>
     </div>
   );
 }

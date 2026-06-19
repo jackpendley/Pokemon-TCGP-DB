@@ -10,6 +10,10 @@ export default async function PacksPage() {
     dataSource.getRecommendations(),
   ]);
 
+  // Exclude non-purchasable packs (e.g. "Deluxe Pack: ex"), which aren't a
+  // normal hourglass purchase and would skew the ranking.
+  const packs = packEv.packs.filter((p) => p.purchasable);
+
   return (
     <div className="space-y-6">
       <header className="space-y-1">
@@ -17,13 +21,13 @@ export default async function PacksPage() {
           Pack Recommendations
         </h1>
         <p className="text-sm text-muted-foreground">
-          All {packEv.packs.length} packs ranked by unified score. Click a column
-          to re-sort.
+          All {packs.length} purchasable packs ranked by unified score. Click a
+          column to re-sort.
         </p>
         <p className="text-xs text-muted-foreground">{recs.disclaimer}</p>
       </header>
 
-      <PacksTable packs={packEv.packs} />
+      <PacksTable packs={packs} />
     </div>
   );
 }
