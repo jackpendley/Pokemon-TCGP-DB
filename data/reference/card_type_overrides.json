@@ -1,0 +1,12 @@
+{
+  "_comment": "Curated Pokemon-type corrections for cards no structured source types. Applied by build_card_reference.py before Pokemon/Trainer classification. Keep minimal; prefer fixing the source snapshots when possible.",
+  "records": [
+    {
+      "set_code": "B3a",
+      "card_number": 107,
+      "name": "Mega Altaria ex",
+      "pokemon_type": "Psychic",
+      "note": "TCGdex doesn't cover B3a and the wiki type cell is blank; Mega Altaria ex is Psychic in all its other printings (B1 102/259/286)."
+    }
+  ]
+}

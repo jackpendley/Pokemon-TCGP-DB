@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/table";
 import type { CatalogCard } from "@/types";
 import { titleCase } from "@/lib/domain/format";
+import { displayType } from "@/lib/domain/card";
 
 const ROW_LIMIT = 300;
 
@@ -98,7 +99,7 @@ export function CardsTable({ cards }: { cards: CatalogCard[] }) {
                   {c.set_code} · {c.card_number}
                 </TableCell>
                 <TableCell>{titleCase(c.rarity)}</TableCell>
-                <TableCell>{c.pokemon_type ?? titleCase(c.card_category)}</TableCell>
+                <TableCell>{displayType(c)}</TableCell>
                 <TableCell className="text-right">
                   {c.owned > 0 ? (
                     <span className="tabular-nums">{c.owned}</span>

@@ -87,6 +87,7 @@ async function loadCatalog(): Promise<CatalogCard[]> {
     rarity: r.rarity,
     pokemon_type: r.pokemon_type,
     card_category: r.card_category,
+    trainer_subtype: r.trainer_subtype ?? null,
     expansion: r.expansion ?? r.set_code,
     is_ex: r.is_ex ?? false,
     owned: ownedByCoord.get(`${r.set_code.toUpperCase()}:${r.card_number}`) ?? 0,

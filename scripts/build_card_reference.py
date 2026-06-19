@@ -49,8 +49,26 @@ from _collection_io import (norm_card_name, normalize_rarity, canonical_set_code
 SCHEMA_JSON   = REFERENCE_DIR / "card_reference.schema.json"
 SIR_JSON      = REFERENCE_DIR / "special_illustration_rares.json"
 RARITY_OVR_JSON = REFERENCE_DIR / "rarity_overrides.json"
+TYPE_OVR_JSON = REFERENCE_DIR / "card_type_overrides.json"
 
 SCHEMA_VERSION = "1.0"
+
+# Canonical Pokémon energy types. Used to tell a real type apart from a trainer
+# subtype token: some wiki sources put the trainer kind (Item/Supporter/…) in the
+# "type" column, so a non-energy "type" actually identifies a Trainer.
+ENERGY_TYPES = frozenset({
+    "Grass", "Fire", "Water", "Lightning", "Psychic", "Fighting",
+    "Darkness", "Metal", "Dragon", "Colorless",
+})
+# Trainer subtype tokens as they appear in external_card_reference / wiki type cells.
+TRAINER_SUBTYPE_TOKENS = frozenset({"Supporter", "Item", "Stadium", "Tool", "Pokemon Tool"})
+
+
+def _norm_trainer_subtype(tok: str | None) -> str | None:
+    """Normalize a trainer-subtype token to the collection.json vocabulary."""
+    if not tok:
+        return None
+    return "Pokemon Tool" if tok in ("Tool", "Pokémon Tool") else tok
 
 # TCGdex is the only structured stage source, but it covers only A1–B2a (A4b/B2b/B3/B3a and
 # the promo sets are tcgdex:None). For those sets, fall back to the Limitless-derived
@@ -69,6 +87,25 @@ SIR_COORDS: set[tuple[str, int]] = set()
 # list (derived from PZ drop-chance clusters + user in-app verification) wins over all
 # votes. Populated by load_rarity_overrides() in main(): (set_code, card_number) -> rarity.
 RARITY_OVERRIDES: dict[tuple[str, int], str] = {}
+
+# Curated Pokémon-type corrections for cards no structured source types (e.g.
+# Mega cards in sets TCGdex doesn't cover whose wiki "type" cell is blank).
+# Populated by load_type_overrides() in main(): (set_code, card_number) -> type.
+TYPE_OVERRIDES: dict[tuple[str, int], str] = {}
+
+
+def load_type_overrides() -> dict[tuple[str, int], str]:
+    """Load curated per-coord Pokémon-type overrides. Empty if absent."""
+    if not TYPE_OVR_JSON.exists():
+        return {}
+    raw = json.loads(TYPE_OVR_JSON.read_text(encoding="utf-8"))
+    out: dict[tuple[str, int], str] = {}
+    for r in raw.get("records", []):
+        sc = canonical_set_code(str(r.get("set_code", "")).strip())
+        cn = r.get("card_number")
+        if sc and cn is not None and r.get("pokemon_type"):
+            out[(sc, int(cn))] = r["pokemon_type"]
+    return out
 
 
 def load_rarity_overrides() -> dict[tuple[str, int], str]:
@@ -253,15 +290,18 @@ def reconcile_card(
     card_number: int,
     ps_record: dict,
     snapshots: dict[str, dict],  # source → {str(num): card_dict}
-    ext_stage: str | None = None,  # Limitless stage fallback (sets TCGdex doesn't cover)
+    ext_rec: dict | None = None,  # external_card_reference record (Limitless gap-filler)
+    type_override: str | None = None,  # curated pokemon_type for typeless cards
 ) -> dict:
     """
     Produce a reconciled card_reference entry for one (set_code, card_number).
 
     Returns:
-        {set_code, card_number, name, rarity, pokemon_type, card_category, stage, hp,
-         is_ex, pack_name, confirmations, confidence, conflict_notes}
+        {set_code, card_number, name, rarity, pokemon_type, card_category, trainer_subtype,
+         stage, hp, is_ex, pack_name, confirmations, confidence, conflict_notes}
     """
+    ext_rec = ext_rec or {}
+    ext_stage = ext_rec.get("stage")  # Limitless stage fallback (sets TCGdex doesn't cover)
     num_str = str(card_number)
     ps_name = ps_record.get("card_name") or ""
 
@@ -327,6 +367,42 @@ def reconcile_card(
     stage_final = tcgdex_card.get("stage") or _EXT_STAGE_TO_TCGDEX.get(ext_stage)
     hp_final = tcgdex_card.get("hp")
 
+    # ── Type / category / trainer-subtype completion ─────────────────────────
+    # external_card_reference (Limitless) is a *gap-filler only*: it has known
+    # errors (it mislabels some Pokémon as "Supporter"), so it never overrides a
+    # cross-validated value — it only fills nulls, and its trainer subtype is
+    # trusted only once we've otherwise concluded the card is a Trainer.
+    ext_type = ext_rec.get("pokemon_type")
+    ext_cat = ext_rec.get("card_category")  # Pokemon | Supporter | Item | Stadium | Tool
+
+    # Some wiki sources put the trainer kind in the "type" cell, so a non-energy
+    # pokemon_type is really a subtype token, not a Pokémon type.
+    subtype_candidate = None
+    if pokemon_type_final and pokemon_type_final not in ENERGY_TYPES:
+        if pokemon_type_final in TRAINER_SUBTYPE_TOKENS:
+            subtype_candidate = pokemon_type_final
+        pokemon_type_final = None
+    if subtype_candidate is None and ext_cat in TRAINER_SUBTYPE_TOKENS:
+        subtype_candidate = ext_cat
+
+    # Fill a missing energy type: curated override first, then Limitless (covers
+    # Mega cards in sets TCGdex doesn't cover). A real energy type ⇒ Pokémon.
+    if pokemon_type_final is None and type_override in ENERGY_TYPES:
+        pokemon_type_final = type_override
+    if pokemon_type_final is None and ext_type in ENERGY_TYPES:
+        pokemon_type_final = ext_type
+
+    if category_final is None:
+        if pokemon_type_final is not None or ext_cat == "Pokemon":
+            category_final = "Pokemon"
+        elif subtype_candidate is not None:
+            category_final = "Trainer"
+
+    trainer_subtype = None
+    if category_final == "Trainer":
+        trainer_subtype = _norm_trainer_subtype(subtype_candidate)
+        pokemon_type_final = None  # Trainers carry no energy type
+
     # pack_name: trust pack_sources; TCGdex boosters validate for A1–B2a
     pack_name = ps_record.get("pack_name")
     if boosters and pack_name:
@@ -345,6 +421,7 @@ def reconcile_card(
         "rarity":         normalize_rarity(rarity_final),
         "pokemon_type":   pokemon_type_final,
         "card_category":  category_final,
+        "trainer_subtype": trainer_subtype,
         "stage":          stage_final,
         "hp":             hp_final,
         "is_ex":          final_name.lower().endswith(" ex"),
@@ -374,6 +451,9 @@ def main() -> int:
     global RARITY_OVERRIDES
     RARITY_OVERRIDES = load_rarity_overrides()
     print(f"Loaded {len(RARITY_OVERRIDES)} curated rarity-override coords.")
+    global TYPE_OVERRIDES
+    TYPE_OVERRIDES = load_type_overrides()
+    print(f"Loaded {len(TYPE_OVERRIDES)} curated type-override coords.")
 
     ps_by_set = _load_pack_sources()
 
@@ -419,8 +499,9 @@ def main() -> int:
             except (TypeError, ValueError):
                 continue
 
-            ext_stage = (ext_ref.get((sc.upper(), cn)) or {}).get("stage")
-            entry = reconcile_card(sc, cn, r, set_snapshots, ext_stage)
+            ext_r = ext_ref.get((sc.upper(), cn))
+            t_ovr = TYPE_OVERRIDES.get((canonical_set_code(sc), cn))
+            entry = reconcile_card(sc, cn, r, set_snapshots, ext_r, t_ovr)
             results.append(entry)
 
             conf = entry["confidence"]
@@ -452,8 +533,9 @@ def main() -> int:
                 continue
             synth = {"card_number": cn, "card_name": name,
                      "rarity": None, "pack_name": None, "expansion": None}
-            ext_stage = (ext_ref.get((sc.upper(), cn)) or {}).get("stage")
-            entry = reconcile_card(sc, cn, synth, set_snapshots, ext_stage)
+            ext_r = ext_ref.get((sc.upper(), cn))
+            t_ovr = TYPE_OVERRIDES.get((canonical_set_code(sc), cn))
+            entry = reconcile_card(sc, cn, synth, set_snapshots, ext_r, t_ovr)
             results.append(entry)
             conf = entry["confidence"]
             stats[conf] = stats.get(conf, 0) + 1

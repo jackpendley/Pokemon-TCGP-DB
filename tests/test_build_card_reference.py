@@ -17,7 +17,7 @@ def _reconcile(tcgdex_stage, ext_stage, set_code="B3A", num=3, name="Psyduck"):
     if tcgdex_stage is not None:
         snapshots["tcgdex"] = {str(num): {"name": name, "stage": tcgdex_stage}}
     ps_record = {"card_name": name, "expansion": "Test"}
-    return bcr.reconcile_card(set_code, num, ps_record, snapshots, ext_stage)
+    return bcr.reconcile_card(set_code, num, ps_record, snapshots, {"stage": ext_stage})
 
 
 def test_tcgdex_stage_wins_over_ext():
@@ -50,7 +50,7 @@ def test_snapshot_only_card_reconciles_with_type():
     }
     synth = {"card_number": 58, "card_name": "Tepig",
              "rarity": None, "pack_name": None, "expansion": None}
-    rec = bcr.reconcile_card("PROMO-B", 58, synth, snapshots, ext_stage=None)
+    rec = bcr.reconcile_card("PROMO-B", 58, synth, snapshots, ext_rec=None)
     assert rec["name"] == "Tepig"
     assert rec["pokemon_type"] == "Fire"
     assert rec["confidence"] == "confirmed"  # bulbapedia + serebii agree on the name
@@ -66,7 +66,7 @@ def test_snapshot_only_single_source_is_single():
     }
     synth = {"card_number": 99, "card_name": "Solo",
              "rarity": None, "pack_name": None, "expansion": None}
-    rec = bcr.reconcile_card("PROMO-B", 99, synth, snapshots, ext_stage=None)
+    rec = bcr.reconcile_card("PROMO-B", 99, synth, snapshots, ext_rec=None)
     assert rec["name"] == "Solo"
     assert rec["pokemon_type"] == "Water"
     assert rec["confidence"] == "single"

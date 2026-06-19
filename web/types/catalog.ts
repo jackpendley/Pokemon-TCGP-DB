@@ -15,6 +15,7 @@ export const cardReferenceFileSchema = z.object({
         rarity: z.string().nullable(),
         pokemon_type: z.string().nullable(),
         card_category: z.string().nullable(),
+        trainer_subtype: z.string().nullable().optional(),
         expansion: z.string().nullable(),
         is_ex: z.boolean().nullable(),
       })
@@ -42,6 +43,7 @@ export interface CatalogCard {
   rarity: string | null;
   pokemon_type: string | null;
   card_category: string | null;
+  trainer_subtype: string | null;
   expansion: string;
   is_ex: boolean;
   owned: number;
