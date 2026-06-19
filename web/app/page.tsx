@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { StatCard } from "@/components/dashboard/stat-card";
+import { TypePieChart } from "@/components/dashboard/type-pie-chart";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { dataSource } from "@/lib/data";
@@ -88,7 +89,14 @@ export default async function DashboardPage() {
       ) : null}
 
       <section className="grid gap-4 md:grid-cols-2">
-        <BreakdownCard title="By type" data={summary.by_pokemon_type} />
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base">By type</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <TypePieChart data={summary.by_pokemon_type} />
+          </CardContent>
+        </Card>
         <BreakdownCard title="By stage" data={summary.by_stage} />
       </section>
     </div>
