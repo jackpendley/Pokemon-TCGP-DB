@@ -7,15 +7,20 @@ import { cn } from "@/lib/utils";
 import type { CatalogCard } from "@/types";
 
 /**
- * Card artwork hot-linked from TCGdex, with a graceful fallback to the card
- * number when no image exists (uncovered sets) or the request fails. Not-owned
- * cards are desaturated so the collection state reads at a glance.
+ * Card artwork hot-linked from a CDN, with a graceful fallback to the card
+ * number when the request fails. In grid thumbnails (size="sm") not-owned cards
+ * are desaturated; the enlarged view (size="lg") always shows full color.
  */
-export function CardImage({ card }: { card: CatalogCard }) {
-  const url = cardImageUrl(card);
+export function CardImage({
+  card,
+  size = "sm",
+}: {
+  card: CatalogCard;
+  size?: "sm" | "lg";
+}) {
   const [errored, setErrored] = useState(false);
 
-  if (!url || errored) {
+  if (errored) {
     return (
       <span className="flex size-full items-center justify-center text-sm font-semibold tabular-nums text-muted-foreground/60">
         #{card.card_number}
@@ -26,11 +31,14 @@ export function CardImage({ card }: { card: CatalogCard }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element -- external CDN hot-link with onError fallback; next/image optimization is unnecessary here.
     <img
-      src={url}
+      src={cardImageUrl(card, size)}
       alt={card.name}
       loading="lazy"
       onError={() => setErrored(true)}
-      className={cn("size-full object-cover", card.owned <= 0 && "grayscale")}
+      className={cn(
+        "size-full object-cover",
+        size === "sm" && card.owned <= 0 && "grayscale",
+      )}
     />
   );
 }
