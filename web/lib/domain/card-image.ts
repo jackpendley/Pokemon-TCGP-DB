@@ -22,14 +22,18 @@ const LIMITLESS_SET_ID: Record<string, string> = {
 const LIMITLESS_BASE =
   "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket";
 
-export function cardImageUrl(card: CatalogCard): string {
+export function cardImageUrl(card: CatalogCard, size: "sm" | "lg" = "sm"): string {
   const num = String(card.card_number).padStart(3, "0");
 
   if (TCGDEX_COVERED.has(card.set_code)) {
+    // TCGdex high.webp is already full-size; use low.webp for grid thumbnails.
     const setId = TCGDEX_SET_ID[card.set_code] ?? card.set_code;
-    return `https://assets.tcgdex.net/en/tcgp/${setId}/${num}/high.webp`;
+    const quality = size === "lg" ? "high" : "low";
+    return `https://assets.tcgdex.net/en/tcgp/${setId}/${num}/${quality}.webp`;
   }
 
+  // Limitless: _SM.webp thumbnail vs full-resolution _EN.png.
   const lset = LIMITLESS_SET_ID[card.set_code] ?? card.set_code;
-  return `${LIMITLESS_BASE}/${lset}/${lset}_${num}_EN_SM.webp`;
+  const file = size === "lg" ? `${lset}_${num}_EN.png` : `${lset}_${num}_EN_SM.webp`;
+  return `${LIMITLESS_BASE}/${lset}/${file}`;
 }
