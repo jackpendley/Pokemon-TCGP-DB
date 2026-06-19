@@ -26,11 +26,19 @@ export default async function DashboardPage() {
         </p>
       </header>
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         <StatCard
           title="Total cards"
           value={formatNumber(summary.total_quantity)}
           hint={`${formatNumber(summary.unique_entries)} unique entries`}
+        />
+        <StatCard
+          title="Pokémon"
+          value={formatNumber(summary.by_card_type.Pokemon ?? 0)}
+        />
+        <StatCard
+          title="Trainers"
+          value={formatNumber(summary.by_card_type.Trainer ?? 0)}
         />
         <StatCard
           title="ex cards"
@@ -40,12 +48,8 @@ export default async function DashboardPage() {
         <StatCard
           title="Evolution lines complete"
           value={`${completeLines} / ${summary.evolution_groups.length}`}
-        />
-        <StatCard
-          title="Pokémon / Trainers"
-          value={`${formatNumber(summary.by_card_type.Pokemon ?? 0)} / ${formatNumber(
-            summary.by_card_type.Trainer ?? 0,
-          )}`}
+          hint="fully owned by name"
+          info="Of the evolution lines you've started collecting, how many you own every stage of (counted by card name, one copy each)."
         />
       </section>
 
