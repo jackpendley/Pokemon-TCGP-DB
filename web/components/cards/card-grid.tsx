@@ -1,3 +1,4 @@
+import { CardImage } from "@/components/cards/card-image";
 import { TypeBadge } from "@/components/cards/type-badge";
 import { displayType } from "@/lib/domain/card";
 import { typeColor } from "@/lib/domain/type-colors";
@@ -37,9 +38,7 @@ function CardTile({ card }: { card: CatalogCard }) {
         className="relative flex aspect-[5/7] items-center justify-center overflow-hidden rounded-md border"
         style={{ backgroundColor: `${typeColor(type)}22` }}
       >
-        <span className="text-sm font-semibold text-muted-foreground/60 tabular-nums">
-          #{card.card_number}
-        </span>
+        <CardImage card={card} />
         {owned ? (
           <span className="absolute left-1 top-1 rounded bg-primary px-1 text-[10px] font-medium text-primary-foreground">
             ×{card.owned}
