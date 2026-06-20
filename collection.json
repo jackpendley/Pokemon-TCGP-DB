@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 1401,
-    "last_updated": "2026-06-18",
+    "total_cards": 1423,
+    "last_updated": "2026-06-19",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -212,6 +212,18 @@
       "set_code": "B1",
       "card_number": 29,
       "rarity": "uncommon"
+    },
+    {
+      "name": "Darumaka",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Headbutt 10",
+      "count": 1,
+      "set_code": "A4",
+      "card_number": 35,
+      "rarity": "common"
     },
     {
       "name": "Darumaka",
@@ -666,6 +678,18 @@
       "count": 2,
       "set_code": "B1a",
       "card_number": 5,
+      "rarity": "common"
+    },
+    {
+      "name": "Sunkern",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Seed Bomb 20",
+      "count": 1,
+      "set_code": "A4a",
+      "card_number": 4,
       "rarity": "common"
     },
     {
@@ -1462,7 +1486,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Lead",
-      "count": 1,
+      "count": 2,
       "set_code": "B1",
       "card_number": 99,
       "rarity": "common"
@@ -2754,6 +2778,18 @@
       "card_type": "Pokemon",
       "attack": "Dual Blades 40+",
       "count": 1,
+      "set_code": "B1",
+      "card_number": 171,
+      "rarity": "uncommon"
+    },
+    {
+      "name": "Doublade",
+      "type": "Metal",
+      "stage": 1,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Dual Blades 40+",
+      "count": 1,
       "set_code": "B2",
       "card_number": 119,
       "rarity": "uncommon"
@@ -3089,7 +3125,7 @@
       "card_type": "Pokemon",
       "ability": "Fur Coat",
       "attack": "Tackle 30",
-      "count": 1,
+      "count": 2,
       "set_code": "B1",
       "card_number": 208,
       "rarity": "uncommon"
@@ -3404,7 +3440,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Gust 10",
-      "count": 1,
+      "count": 2,
       "set_code": "B1",
       "card_number": 180,
       "rarity": "common"
@@ -3942,6 +3978,18 @@
       "set_code": "B2a",
       "card_number": 19,
       "rarity": "common"
+    },
+    {
+      "name": "Charcadet",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fire",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "set_code": "PROMO-B",
+      "card_number": 64,
+      "rarity": "promo"
     },
     {
       "name": "Quaxwell",
@@ -5770,7 +5818,7 @@
     },
     {
       "name": "Vaporeon",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -6312,6 +6360,18 @@
       "rarity": "common",
       "set_code": "B2b",
       "card_number": 4
+    },
+    {
+      "name": "Phantump",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 23
     },
     {
       "name": "Phantump",
@@ -7308,7 +7368,7 @@
     },
     {
       "name": "Fantina",
-      "count": 2,
+      "count": 3,
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "rarity": "uncommon",
@@ -7341,7 +7401,7 @@
     },
     {
       "name": "Grookey",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Grass",
       "stage": 0,
@@ -7425,7 +7485,7 @@
     },
     {
       "name": "Yamask",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 0,
@@ -7461,7 +7521,7 @@
     },
     {
       "name": "Golett",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Fighting",
       "stage": 0,
@@ -7700,7 +7760,7 @@
     },
     {
       "name": "Heatmor",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Fire",
       "stage": 0,
@@ -7754,6 +7814,91 @@
       "rarity": "common",
       "set_code": "B1",
       "card_number": 216
+    },
+    {
+      "name": "Lycanroc",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "rarity": "rare",
+      "set_code": "A3",
+      "card_number": 101,
+      "type": "Fighting"
+    },
+    {
+      "name": "Thwackey",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 90,
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 26
+    },
+    {
+      "name": "Natu",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 97
+    },
+    {
+      "name": "Cobalion",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 110,
+      "rarity": "rare",
+      "set_code": "B1",
+      "card_number": 169
+    },
+    {
+      "name": "Goomy",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Dragon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 40,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 177
+    },
+    {
+      "name": "Exploud",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 150,
+      "rarity": "rare",
+      "set_code": "B1",
+      "card_number": 192
+    },
+    {
+      "name": "Dartrix",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 80,
+      "rarity": "shiny_rare",
+      "set_code": "B1",
+      "card_number": 291,
+      "variant": "alt art"
     }
   ]
 }

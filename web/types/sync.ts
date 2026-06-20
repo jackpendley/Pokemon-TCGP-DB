@@ -23,9 +23,29 @@ export const reviewQueueSchema = z
   .loose();
 export type ReviewQueue = z.infer<typeof reviewQueueSchema>;
 
+/** data/sync/last_sync_delta.json — cards added by the most recent sync. */
+export const syncDeltaEntrySchema = z.object({
+  name: z.string().nullable(),
+  set_code: z.string().nullable(),
+  card_number: z.number().nullable(),
+  previous_count: z.number(),
+  new_count: z.number(),
+  added: z.number(),
+  is_new: z.boolean(),
+});
+export type SyncDeltaEntry = z.infer<typeof syncDeltaEntrySchema>;
+
+export const syncDeltaSchema = z.object({
+  generated_at: z.string(),
+  added_count: z.number(),
+  added: z.array(syncDeltaEntrySchema),
+});
+export type SyncDelta = z.infer<typeof syncDeltaSchema>;
+
 export interface SyncStatus {
   stats: PlayerStats | null;
   reviewQueue: ReviewQueue | null;
+  delta: SyncDelta | null;
 }
 
 /**

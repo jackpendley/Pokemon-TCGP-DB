@@ -13,6 +13,7 @@ import {
   recommendationsSchema,
   reviewQueueSchema,
   spendingPlanSchema,
+  syncDeltaSchema,
 } from "@/types";
 import type { CatalogCard, SyncStatus } from "@/types";
 import type { DataSource } from "@/lib/data/source";
@@ -112,10 +113,11 @@ export const localJsonSource: DataSource = {
     ),
   getCatalog: loadCatalog,
   getSyncStatus: async (): Promise<SyncStatus> => {
-    const [stats, reviewQueue] = await Promise.all([
+    const [stats, reviewQueue, delta] = await Promise.all([
       readOptional(SYNC_DIR, "player_stats.json", playerStatsSchema),
       readOptional(SYNC_DIR, "sync_review_queue.json", reviewQueueSchema),
+      readOptional(SYNC_DIR, "last_sync_delta.json", syncDeltaSchema),
     ]);
-    return { stats, reviewQueue };
+    return { stats, reviewQueue, delta };
   },
 };

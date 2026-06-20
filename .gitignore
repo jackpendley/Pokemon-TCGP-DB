@@ -38,6 +38,7 @@ data/sync/.auth.json
 data/sync/api_discovery_cache.json
 data/sync/player_stats.json
 data/sync/sync_review_queue.json
+data/sync/last_sync_delta.json
 
 # Generated pipeline outputs — regenerated deterministically on every run from
 # collection.json + data/reference/* (the tracked source of truth). Treated as build
