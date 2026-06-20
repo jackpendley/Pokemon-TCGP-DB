@@ -1,6 +1,6 @@
 {
   "meta": {
-    "total_cards": 1423,
+    "total_cards": 1433,
     "last_updated": "2026-06-19",
     "format": "Pokemon TCG Pocket"
   },
@@ -223,6 +223,18 @@
       "count": 1,
       "set_code": "A4",
       "card_number": 35,
+      "rarity": "common"
+    },
+    {
+      "name": "Darumaka",
+      "type": "Fire",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Headbutt 10",
+      "count": 1,
+      "set_code": "B1",
+      "card_number": 39,
       "rarity": "common"
     },
     {
@@ -7674,7 +7686,7 @@
     },
     {
       "name": "Duskull",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 0,
@@ -7760,7 +7772,7 @@
     },
     {
       "name": "Heatmor",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Fire",
       "stage": 0,
@@ -7899,6 +7911,66 @@
       "set_code": "B1",
       "card_number": 291,
       "variant": "alt art"
+    },
+    {
+      "name": "Mega Pinsir ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 170,
+      "rarity": "double_rare",
+      "set_code": "B1",
+      "card_number": 2
+    },
+    {
+      "name": "Avalugg",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 140,
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 75
+    },
+    {
+      "name": "Zebstrika",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 91
+    },
+    {
+      "name": "Krokorok",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 90,
+      "rarity": "uncommon",
+      "set_code": "B1",
+      "card_number": 131
+    },
+    {
+      "name": "Zigzagoon",
+      "count": 3,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 188
     }
   ]
 }
