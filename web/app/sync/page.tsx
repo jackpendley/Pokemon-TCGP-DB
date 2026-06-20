@@ -1,5 +1,9 @@
 import { StatCard } from "@/components/dashboard/stat-card";
 import { SyncButton } from "@/components/sync/sync-button";
+import {
+  SyncAdditions,
+  type AdditionItem,
+} from "@/components/sync/sync-additions";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { dataSource } from "@/lib/data";
@@ -10,9 +14,10 @@ export const dynamic = "force-dynamic";
 export const metadata = { title: "Sync Status · TCGP Optimizer" };
 
 export default async function SyncPage() {
-  const [{ stats, reviewQueue }, enabled] = await Promise.all([
+  const [{ stats, reviewQueue, delta }, enabled, catalog] = await Promise.all([
     dataSource.getSyncStatus(),
     isSyncEnabled(),
+    dataSource.getCatalog(),
   ]);
 
   const reviewItems = reviewQueue
@@ -20,6 +25,15 @@ export default async function SyncPage() {
       reviewQueue.ambiguous_matches.length +
       reviewQueue.missing_from_pz.length
     : 0;
+
+  // Join the sync delta to the catalog (for images/type) by coordinate.
+  const byCoord = new Map(
+    catalog.map((c) => [`${c.set_code}:${c.card_number}`, c]),
+  );
+  const additions: AdditionItem[] = (delta?.added ?? []).map((entry) => ({
+    entry,
+    card: byCoord.get(`${entry.set_code}:${entry.card_number}`) ?? null,
+  }));
 
   return (
     <div className="space-y-6">
@@ -74,6 +88,27 @@ export default async function SyncPage() {
               <li>Ambiguous matches: {reviewQueue.ambiguous_matches.length}</li>
               <li>Missing from PZ: {reviewQueue.missing_from_pz.length}</li>
             </ul>
+          )}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center justify-between text-base">
+            <span>Added in the last sync</span>
+            {delta ? (
+              <Badge variant="secondary">{delta.added_count} cards</Badge>
+            ) : null}
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {!delta ? (
+            <p className="text-sm text-muted-foreground">
+              No sync has run yet — added cards will appear here after your next
+              sync.
+            </p>
+          ) : (
+            <SyncAdditions items={additions} />
           )}
         </CardContent>
       </Card>

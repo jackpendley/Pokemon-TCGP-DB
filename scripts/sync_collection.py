@@ -59,6 +59,7 @@ from _collection_io import (strip_comments, TRAINER_SUBTYPE_MAP, RARE_PLUS_RARIT
 
 SYNC_DIR        = ROOT / "data" / "sync"
 REVIEW_QUEUE    = SYNC_DIR / "sync_review_queue.json"
+SYNC_DELTA      = SYNC_DIR / "last_sync_delta.json"
 
 
 # ---------------------------------------------------------------------------
@@ -983,6 +984,52 @@ def append_entries_to_collection(raw: str, entries: list[dict]) -> str:
 # Review queue
 # ---------------------------------------------------------------------------
 
+def build_sync_delta(changes: list[CountChange], auto_added: list[dict]) -> dict:
+    """Build the per-sync 'what was added' delta the web Sync page displays.
+
+    Captures count increases on existing entries (is_new when 0→N) plus brand-new
+    auto-added cards (always is_new). Count decreases (trades away) are ignored.
+    """
+    added: list[dict] = []
+    for ch in changes:
+        if ch.new_count > ch.old_count:
+            e = ch.entry or {}
+            added.append({
+                "name": e.get("name"),
+                "set_code": e.get("set_code"),
+                "card_number": e.get("card_number"),
+                "previous_count": ch.old_count,
+                "new_count": ch.new_count,
+                "added": ch.new_count - ch.old_count,
+                "is_new": ch.old_count == 0,
+            })
+    for e in auto_added:
+        cnt = e.get("count", 0)
+        added.append({
+            "name": e.get("name"),
+            "set_code": e.get("set_code"),
+            "card_number": e.get("card_number"),
+            "previous_count": 0,
+            "new_count": cnt,
+            "added": cnt,
+            "is_new": True,
+        })
+    return {
+        "generated_at": date.today().isoformat(),
+        "added_count": len(added),
+        "added": added,
+    }
+
+
+def write_sync_delta(changes: list[CountChange], auto_added: list[dict]) -> None:
+    """Write last_sync_delta.json (overwrites the previous sync's delta)."""
+    SYNC_DIR.mkdir(parents=True, exist_ok=True)
+    SYNC_DELTA.write_text(
+        json.dumps(build_sync_delta(changes, auto_added), indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+
 def write_review_queue(
     new_cards: list[MatchResult],
     missing_from_pz: list[dict],
@@ -1706,6 +1753,10 @@ def main() -> int:
     # ── Phase 4b: Auto-add new cards ─────────────────────────────────────
     auto_added, new_cards = _auto_add_new_cards(
         new_cards, pack_sources, ext_ref, collection_entries, no_fetch=args.no_fetch)
+
+    # Record what this sync added (count increases + brand-new cards) for the
+    # web Sync page's "added since last sync" view.
+    write_sync_delta(changes, auto_added)
 
     # ── Phase 4c: Mark stale entries for removal ─────────────────────────────
     # Two cases trigger removal:
