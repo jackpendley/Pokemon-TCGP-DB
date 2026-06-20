@@ -1,9 +1,10 @@
 import { StatCard } from "@/components/dashboard/stat-card";
 import { SyncButton } from "@/components/sync/sync-button";
 import {
-  SyncAdditions,
+  SyncReveal,
   type AdditionItem,
-} from "@/components/sync/sync-additions";
+  type SetProgressItem,
+} from "@/components/sync/sync-reveal";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { dataSource } from "@/lib/data";
@@ -34,6 +35,41 @@ export default async function SyncPage() {
     entry,
     card: byCoord.get(`${entry.set_code}:${entry.card_number}`) ?? null,
   }));
+
+  // Per-set completion gain: a card going 0→owned (is_new) adds one unique to
+  // its set. "after" is current owned-unique from the catalog; "before" backs
+  // out this sync's new uniques.
+  const setTotals = new Map<string, { total: number; owned: number; expansion: string }>();
+  for (const c of catalog) {
+    const s = setTotals.get(c.set_code) ?? {
+      total: 0,
+      owned: 0,
+      expansion: c.expansion,
+    };
+    s.total += 1;
+    if (c.owned > 0) s.owned += 1;
+    setTotals.set(c.set_code, s);
+  }
+  const gainedBySet = new Map<string, number>();
+  for (const e of delta?.added ?? []) {
+    if (e.is_new && e.set_code) {
+      gainedBySet.set(e.set_code, (gainedBySet.get(e.set_code) ?? 0) + 1);
+    }
+  }
+  const setProgress: SetProgressItem[] = [...gainedBySet.entries()]
+    .map(([set_code, gained]) => {
+      const t = setTotals.get(set_code);
+      const after = t?.owned ?? 0;
+      return {
+        set_code,
+        expansion: t?.expansion ?? set_code,
+        total: t?.total ?? 0,
+        after,
+        before: Math.max(0, after - gained),
+        gained,
+      };
+    })
+    .sort((a, b) => b.gained - a.gained);
 
   return (
     <div className="space-y-6">
@@ -108,7 +144,7 @@ export default async function SyncPage() {
               sync.
             </p>
           ) : (
-            <SyncAdditions items={additions} />
+            <SyncReveal items={additions} setProgress={setProgress} />
           )}
         </CardContent>
       </Card>
