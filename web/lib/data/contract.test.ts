@@ -54,7 +54,12 @@ const fixtureSource: DataSource = {
     },
   }),
   getCatalog: async () => catalogStub,
-  getSyncStatus: async () => ({ stats: null, reviewQueue: null, delta: null }),
+  getSyncStatus: async () => ({
+    stats: null,
+    reviewQueue: null,
+    delta: null,
+    history: [],
+  }),
 };
 
 describe("DataSource contract", () => {
