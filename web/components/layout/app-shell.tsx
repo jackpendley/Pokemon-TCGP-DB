@@ -10,7 +10,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <aside className="hidden w-64 shrink-0 border-r bg-sidebar text-sidebar-foreground md:flex md:flex-col">
         <Link href="/" className="flex items-center gap-2 border-b px-5 py-4">
           <Pokeball className="size-6" />
-          <span className="font-semibold leading-tight">TCGP Optimizer</span>
+          <span className="font-heading text-[0.95rem] font-semibold tracking-tight leading-tight">
+            TCGP Optimizer
+          </span>
         </Link>
         <Nav />
       </aside>
