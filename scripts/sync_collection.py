@@ -43,7 +43,7 @@ import subprocess
 import sys
 from collections import defaultdict
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -60,6 +60,8 @@ from _collection_io import (strip_comments, TRAINER_SUBTYPE_MAP, RARE_PLUS_RARIT
 SYNC_DIR        = ROOT / "data" / "sync"
 REVIEW_QUEUE    = SYNC_DIR / "sync_review_queue.json"
 SYNC_DELTA      = SYNC_DIR / "last_sync_delta.json"
+SYNC_HISTORY    = SYNC_DIR / "sync_history.json"
+MAX_SYNC_HISTORY = 50  # cap retained history entries (newest kept)
 
 
 # ---------------------------------------------------------------------------
@@ -1021,13 +1023,46 @@ def build_sync_delta(changes: list[CountChange], auto_added: list[dict]) -> dict
     }
 
 
-def write_sync_delta(changes: list[CountChange], auto_added: list[dict]) -> None:
-    """Write last_sync_delta.json (overwrites the previous sync's delta)."""
+def append_sync_history(delta: dict) -> None:
+    """Append a non-empty sync delta to sync_history.json (newest last, capped).
+
+    last_sync_delta.json is overwritten each run; this keeps a running log so the
+    web Sync page can show past additions. Empty syncs (added_count == 0) are
+    skipped to keep the history meaningful. Each entry carries a precise
+    timestamp because the delta's generated_at is date-only.
+    """
+    if delta.get("added_count", 0) <= 0:
+        return
     SYNC_DIR.mkdir(parents=True, exist_ok=True)
-    SYNC_DELTA.write_text(
-        json.dumps(build_sync_delta(changes, auto_added), indent=2, ensure_ascii=False),
+    entries: list = []
+    if SYNC_HISTORY.exists():
+        try:
+            entries = json.loads(SYNC_HISTORY.read_text(encoding="utf-8")).get("entries", [])
+        except (json.JSONDecodeError, OSError) as e:
+            print(f"  WARN: could not read sync_history.json ({e}) — starting fresh.",
+                  file=sys.stderr)
+            entries = []
+    entries.append({
+        "synced_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "added_count": delta["added_count"],
+        "added": delta["added"],
+    })
+    SYNC_HISTORY.write_text(
+        json.dumps({"entries": entries[-MAX_SYNC_HISTORY:]}, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
+
+
+def write_sync_delta(changes: list[CountChange], auto_added: list[dict]) -> None:
+    """Write last_sync_delta.json (overwrites the previous sync's delta) and
+    append it to the running sync history."""
+    SYNC_DIR.mkdir(parents=True, exist_ok=True)
+    delta = build_sync_delta(changes, auto_added)
+    SYNC_DELTA.write_text(
+        json.dumps(delta, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    append_sync_history(delta)
 
 
 def write_review_queue(

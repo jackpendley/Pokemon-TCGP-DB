@@ -42,10 +42,23 @@ export const syncDeltaSchema = z.object({
 });
 export type SyncDelta = z.infer<typeof syncDeltaSchema>;
 
+/** data/sync/sync_history.json — running log of past sync additions (newest last). */
+export const syncHistoryEntrySchema = z.object({
+  synced_at: z.string(),
+  added_count: z.number(),
+  added: z.array(syncDeltaEntrySchema),
+});
+export type SyncHistoryEntry = z.infer<typeof syncHistoryEntrySchema>;
+
+export const syncHistoryFileSchema = z.object({
+  entries: z.array(syncHistoryEntrySchema),
+});
+
 export interface SyncStatus {
   stats: PlayerStats | null;
   reviewQueue: ReviewQueue | null;
   delta: SyncDelta | null;
+  history: SyncHistoryEntry[];
 }
 
 /**

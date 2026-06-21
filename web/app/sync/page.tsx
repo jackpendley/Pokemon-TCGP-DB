@@ -1,5 +1,6 @@
 import { StatCard } from "@/components/dashboard/stat-card";
 import { SyncButton } from "@/components/sync/sync-button";
+import { SyncHistory } from "@/components/sync/sync-history";
 import {
   SyncReveal,
   type AdditionItem,
@@ -15,11 +16,12 @@ export const dynamic = "force-dynamic";
 export const metadata = { title: "Sync Status · TCGP Optimizer" };
 
 export default async function SyncPage() {
-  const [{ stats, reviewQueue, delta }, enabled, catalog] = await Promise.all([
-    dataSource.getSyncStatus(),
-    isSyncEnabled(),
-    dataSource.getCatalog(),
-  ]);
+  const [{ stats, reviewQueue, delta, history }, enabled, catalog] =
+    await Promise.all([
+      dataSource.getSyncStatus(),
+      isSyncEnabled(),
+      dataSource.getCatalog(),
+    ]);
 
   const reviewItems = reviewQueue
     ? reviewQueue.new_cards.length +
@@ -146,6 +148,20 @@ export default async function SyncPage() {
           ) : (
             <SyncReveal items={additions} setProgress={setProgress} />
           )}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center justify-between text-base">
+            <span>Sync history</span>
+            {history.length > 0 ? (
+              <Badge variant="secondary">{history.length} syncs</Badge>
+            ) : null}
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <SyncHistory entries={history} />
         </CardContent>
       </Card>
 

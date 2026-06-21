@@ -53,3 +53,56 @@ def test_combines_changes_and_auto_added():
     assert delta["added_count"] == 2
     assert {r["name"] for r in delta["added"]} == {"Pikachu", "Gengar ex"}
     assert "generated_at" in delta
+
+
+# ---------------------------------------------------------------------------
+# append_sync_history — running log the web Sync page reads
+# ---------------------------------------------------------------------------
+
+import json
+
+import pytest
+
+
+@pytest.fixture
+def history_path(tmp_path, monkeypatch):
+    p = tmp_path / "sync_history.json"
+    monkeypatch.setattr(sc, "SYNC_DIR", tmp_path)
+    monkeypatch.setattr(sc, "SYNC_HISTORY", p)
+    return p
+
+
+def _delta(added_count, names=("Pikachu",)):
+    return {
+        "generated_at": "2026-06-21",
+        "added_count": added_count,
+        "added": [{"name": n, "is_new": True, "added": 1} for n in names],
+    }
+
+
+def test_empty_delta_is_not_recorded(history_path):
+    sc.append_sync_history(_delta(0, names=()))
+    assert not history_path.exists()
+
+
+def test_append_records_newest_last_with_timestamp(history_path):
+    sc.append_sync_history(_delta(1, ("Pikachu",)))
+    sc.append_sync_history(_delta(2, ("Mew", "Eevee")))
+    entries = json.loads(history_path.read_text())["entries"]
+    assert [e["added_count"] for e in entries] == [1, 2]  # newest last
+    assert all("synced_at" in e for e in entries)
+    assert entries[1]["added"][0]["name"] == "Mew"
+
+
+def test_history_is_capped(history_path):
+    for _ in range(sc.MAX_SYNC_HISTORY + 5):
+        sc.append_sync_history(_delta(1))
+    entries = json.loads(history_path.read_text())["entries"]
+    assert len(entries) == sc.MAX_SYNC_HISTORY
+
+
+def test_corrupt_history_is_replaced_not_fatal(history_path):
+    history_path.write_text("{ not json")
+    sc.append_sync_history(_delta(1))
+    entries = json.loads(history_path.read_text())["entries"]
+    assert len(entries) == 1
