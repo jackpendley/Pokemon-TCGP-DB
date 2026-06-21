@@ -80,8 +80,10 @@ export default async function PackDetailPage({
               </TableRow>
             </TableHeader>
             <TableBody>
-              {pack.top_ev_cards.map((c) => (
-                <TableRow key={c.name}>
+              {pack.top_ev_cards.map((c, i) => (
+                // Same card name can appear as multiple printings (e.g. base +
+                // alt-art ex), and top_ev_cards carries no coord — key by index.
+                <TableRow key={`${c.name}-${i}`}>
                   <TableCell className="font-medium">{c.name}</TableCell>
                   <TableCell>{titleCase(c.rarity)}</TableCell>
                   <TableCell className="text-right tabular-nums">
