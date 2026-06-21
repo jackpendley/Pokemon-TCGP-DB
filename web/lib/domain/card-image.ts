@@ -9,12 +9,12 @@ import type { CatalogCard } from "@/types";
  *   Limitless: https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/{set}/{set}_{NNN}_EN_SM.webp
  * with the card number zero-padded to 3 digits and promos mapped to P-A / P-B.
  */
-const TCGDEX_COVERED = new Set([
+export const TCGDEX_COVERED = new Set([
   "A1", "A1a", "A2", "A2a", "A2b", "A3", "A3a", "A3b", "A4", "A4a",
   "B1", "B1a", "B2", "B2a", "PROMO-A",
 ]);
 
-const TCGDEX_SET_ID: Record<string, string> = { "PROMO-A": "P-A" };
+export const TCGDEX_SET_ID: Record<string, string> = { "PROMO-A": "P-A" };
 const LIMITLESS_SET_ID: Record<string, string> = {
   "PROMO-A": "P-A",
   "PROMO-B": "P-B",
