@@ -7,7 +7,7 @@ import {
   SetScopeToggle,
   type SetScope,
 } from "@/components/sets/set-scope-toggle";
-import { formatPercent } from "@/lib/domain/format";
+import { CountUp } from "@/components/ui/count-up";
 import { isBaseRarity } from "@/lib/domain/rarity";
 import type { CatalogCard } from "@/types";
 
@@ -29,10 +29,17 @@ export function SetDetailView({ cards }: { cards: CatalogCard[] }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm text-muted-foreground">
-          {owned} / {shown.length} owned ({formatPercent(ratio)})
+        <p className="text-sm text-muted-foreground tabular-nums">
+          <CountUp value={owned} /> / {shown.length} owned (
+          <CountUp value={ratio * 100} format={(n) => `${Math.round(n)}%`} />)
         </p>
         <SetScopeToggle scope={scope} onChange={setScope} />
+      </div>
+      <div className="h-2 overflow-hidden rounded-full bg-muted">
+        <div
+          className="h-full rounded-full bg-primary transition-[width] duration-500 ease-out"
+          style={{ width: `${ratio * 100}%` }}
+        />
       </div>
       <CardGrid cards={shown} />
     </div>
