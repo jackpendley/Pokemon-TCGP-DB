@@ -24,6 +24,7 @@ const catalogCardSchema = z.object({
   pokemon_type: z.string().nullable(),
   card_category: z.string().nullable(),
   trainer_subtype: z.string().nullable(),
+  stage: z.string().nullable(),
   expansion: z.string(),
   is_ex: z.boolean(),
   owned: z.number(),

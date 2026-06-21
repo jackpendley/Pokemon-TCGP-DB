@@ -61,27 +61,30 @@ function CardTile({
       )}
     >
       <div
-        className="relative flex aspect-[5/7] items-center justify-center overflow-hidden rounded-md border"
+        className="flex aspect-[5/7] items-center justify-center overflow-hidden rounded-md border"
         style={{ backgroundColor: `${typeColor(type)}22` }}
       >
         <CardImage card={card} />
-        {owned ? (
-          <span className="absolute left-1 top-1 rounded bg-primary px-1 text-[10px] font-medium text-primary-foreground">
-            ×{card.owned}
-          </span>
-        ) : (
-          <span className="absolute left-1 top-1 rounded border bg-background/80 px-1 text-[10px] text-muted-foreground">
-            missing
-          </span>
-        )}
       </div>
       <div className="mt-1 truncate text-xs font-medium" title={card.name}>
         {card.name}
       </div>
+      {/* Ownership lives with the metadata so it never covers the art. */}
       <div className="flex items-center justify-between gap-1">
         <TypeBadge type={type} />
-        <span className="shrink-0 text-[10px] text-muted-foreground tabular-nums">
-          {card.set_code}
+        <span className="flex shrink-0 items-center gap-1">
+          {owned ? (
+            <span className="rounded bg-primary px-1 text-[10px] font-medium text-primary-foreground tabular-nums">
+              ×{card.owned}
+            </span>
+          ) : (
+            <span className="rounded border px-1 text-[10px] text-muted-foreground">
+              missing
+            </span>
+          )}
+          <span className="text-[10px] text-muted-foreground tabular-nums">
+            {card.set_code}
+          </span>
         </span>
       </div>
     </button>
