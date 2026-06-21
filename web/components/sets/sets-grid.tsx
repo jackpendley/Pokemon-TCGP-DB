@@ -3,8 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  SetScopeToggle,
+  type SetScope,
+} from "@/components/sets/set-scope-toggle";
 import { formatPercent } from "@/lib/domain/format";
 
 export interface SetProgress {
@@ -16,27 +19,12 @@ export interface SetProgress {
   baseOwned: number;
 }
 
-type Mode = "total" | "base";
-
 export function SetsGrid({ sets }: { sets: SetProgress[] }) {
-  const [mode, setMode] = useState<Mode>("total");
+  const [mode, setMode] = useState<SetScope>("total");
 
   return (
     <div className="space-y-4">
-      <div className="inline-flex rounded-md border p-0.5">
-        {(["total", "base"] as Mode[]).map((m) => (
-          <Button
-            key={m}
-            type="button"
-            size="sm"
-            variant={mode === m ? "secondary" : "ghost"}
-            className="h-7 capitalize"
-            onClick={() => setMode(m)}
-          >
-            {m === "total" ? "Full set" : "Base set"}
-          </Button>
-        ))}
-      </div>
+      <SetScopeToggle scope={mode} onChange={setMode} />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {sets.map((s) => {
