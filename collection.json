@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 1433,
-    "last_updated": "2026-06-19",
+    "total_cards": 1451,
+    "last_updated": "2026-06-20",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -804,7 +804,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Comet Punch 20+",
-      "count": 1,
+      "count": 2,
       "set_code": "B2",
       "card_number": 1,
       "rarity": "common"
@@ -1305,6 +1305,18 @@
       "name": "Joltik",
       "type": "Lightning",
       "stage": 0,
+      "hp": 40,
+      "card_type": "Pokemon",
+      "attack": "Attach 20",
+      "count": 1,
+      "set_code": "A3b",
+      "card_number": 26,
+      "rarity": "common"
+    },
+    {
+      "name": "Joltik",
+      "type": "Lightning",
+      "stage": 0,
       "hp": 30,
       "card_type": "Pokemon",
       "attack": "Attach 20",
@@ -1402,7 +1414,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Inspiring Dance 30",
-      "count": 1,
+      "count": 2,
       "set_code": "B2",
       "card_number": 70,
       "rarity": "uncommon"
@@ -1676,7 +1688,7 @@
       "stage": 0,
       "hp": 80,
       "card_type": "Pokemon",
-      "count": 1,
+      "count": 2,
       "set_code": "B2",
       "card_number": 76,
       "rarity": "common"
@@ -3850,7 +3862,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Stadium",
       "effect": "Each Basic Pokemon in play gets +20 HP",
-      "count": 1,
+      "count": 2,
       "set_code": "B2",
       "card_number": 154,
       "rarity": "uncommon"
@@ -4766,6 +4778,18 @@
       "stage_label": "Basic",
       "set_code": "A3",
       "card_number": 93,
+      "rarity": "common",
+      "type": "Fighting",
+      "hp": 60
+    },
+    {
+      "name": "Drilbur",
+      "count": 2,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "set_code": "B2",
+      "card_number": 88,
       "rarity": "common",
       "type": "Fighting",
       "hp": 60
@@ -7073,7 +7097,7 @@
     },
     {
       "name": "Tyrunt",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Fighting",
       "stage": 1,
@@ -7244,7 +7268,7 @@
     },
     {
       "name": "Piers",
-      "count": 1,
+      "count": 2,
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "rarity": "uncommon",
@@ -7971,6 +7995,102 @@
       "rarity": "common",
       "set_code": "B1",
       "card_number": 188
+    },
+    {
+      "name": "Snorunt",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "A2a",
+      "card_number": 18,
+      "type": "Water"
+    },
+    {
+      "name": "Emolga",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "A4",
+      "card_number": 72,
+      "type": "Lightning"
+    },
+    {
+      "name": "Cinderace",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fire",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 130,
+      "rarity": "rare",
+      "set_code": "B2",
+      "card_number": 26
+    },
+    {
+      "name": "Marshtomp",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 90,
+      "rarity": "uncommon",
+      "set_code": "B2",
+      "card_number": 34
+    },
+    {
+      "name": "Vanillish",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 80,
+      "rarity": "common",
+      "set_code": "B2",
+      "card_number": 38
+    },
+    {
+      "name": "Purrloin",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B2",
+      "card_number": 104
+    },
+    {
+      "name": "Galarian Meowth",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B2",
+      "card_number": 110
+    },
+    {
+      "name": "Ferrothorn",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 120,
+      "rarity": "common",
+      "set_code": "B2",
+      "card_number": 116
     }
   ]
 }
