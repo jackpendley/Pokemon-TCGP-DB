@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { formatEv, formatPercent, packSlug, titleCase } from "@/lib/domain/format";
+import { PackLogo } from "@/components/packs/pack-logo";
 import type { PackRecord } from "@/types";
 
 type SortKey =
@@ -49,17 +50,24 @@ const COLUMNS: Column[] = [
     numeric: false,
     align: "left",
     render: (p) => (
-      <>
-        <Link
-          href={`/packs/${packSlug(p.pack_name)}`}
-          className="font-medium hover:underline"
-        >
-          {p.pack_name}
-        </Link>
-        <div className="text-xs text-muted-foreground">
-          {p.expansion} · {p.set_code}
+      <div className="flex items-center gap-2.5">
+        <PackLogo
+          setCode={p.set_code}
+          name={p.pack_name}
+          className="h-9 w-12 shrink-0"
+        />
+        <div className="min-w-0">
+          <Link
+            href={`/packs/${packSlug(p.pack_name)}`}
+            className="font-medium hover:underline"
+          >
+            {p.pack_name}
+          </Link>
+          <div className="text-xs text-muted-foreground">
+            {p.expansion} · {p.set_code}
+          </div>
         </div>
-      </>
+      </div>
     ),
   },
   {

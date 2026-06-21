@@ -1,22 +1,67 @@
 import Link from "next/link";
 
+import { CompletionCard } from "@/components/dashboard/completion-card";
+import { CountGrid, type CountItem } from "@/components/dashboard/count-grid";
+import { RaritySymbol } from "@/components/dashboard/rarity-symbol";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { TypePieChart } from "@/components/dashboard/type-pie-chart";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { dataSource } from "@/lib/data";
+import { isMegaEx } from "@/lib/domain/card";
 import { formatEv, formatNumber, titleCase } from "@/lib/domain/format";
+import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
 
 export const dynamic = "force-dynamic";
 
+const STAGE_ORDER = ["Basic", "Stage 1", "Stage 2", "Stage 3"];
+
 export default async function DashboardPage() {
-  const [summary, recs] = await Promise.all([
+  const [summary, recs, catalog] = await Promise.all([
     dataSource.getCollectionSummary(),
     dataSource.getRecommendations(),
+    dataSource.getCatalog(),
   ]);
 
   const completeLines = summary.evolution_groups.filter((g) => g.complete).length;
   const topPack = recs.top_packs_unified[0];
+
+  // Completion — derived web-side from the catalog (owned counts merged in).
+  const totalOwned = catalog.filter((c) => c.owned > 0).length;
+  const baseCards = catalog.filter((c) => isBaseRarity(c.rarity));
+  const baseOwned = baseCards.filter((c) => c.owned > 0).length;
+
+  // Mega ex (subset of ex), unique owned of total.
+  const megaCards = catalog.filter(isMegaEx);
+  const megaOwned = megaCards.filter((c) => c.owned > 0).length;
+
+  // Per-rarity collected (unique owned / total).
+  const byRarity = new Map<string, { owned: number; total: number }>();
+  for (const c of catalog) {
+    const key = c.rarity ?? "unknown";
+    const e = byRarity.get(key) ?? { owned: 0, total: 0 };
+    e.total += 1;
+    if (c.owned > 0) e.owned += 1;
+    byRarity.set(key, e);
+  }
+  const rarityItems: CountItem[] = [...byRarity.keys()]
+    .sort(compareRarity)
+    .map((rarity) => ({
+      key: rarity,
+      label: titleCase(rarity),
+      value: byRarity.get(rarity)!.owned,
+      total: byRarity.get(rarity)!.total,
+      icon: <RaritySymbol rarity={rarity} />,
+    }));
+
+  const stageItems: CountItem[] = Object.entries(summary.by_stage)
+    .sort(([a], [b]) => {
+      const ia = STAGE_ORDER.indexOf(a);
+      const ib = STAGE_ORDER.indexOf(b);
+      if (ia === -1 && ib === -1) return a.localeCompare(b);
+      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+    })
+    .map(([label, value]) => ({ key: label, label, value }));
 
   return (
     <div className="space-y-8">
@@ -26,6 +71,11 @@ export default async function DashboardPage() {
           Collection snapshot · updated {summary.meta.last_updated}
         </p>
       </header>
+
+      <CompletionCard
+        total={{ owned: totalOwned, total: catalog.length }}
+        base={{ owned: baseOwned, total: baseCards.length }}
+      />
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         <StatCard
@@ -41,11 +91,24 @@ export default async function DashboardPage() {
           title="Trainers"
           value={formatNumber(summary.by_card_type.Trainer ?? 0)}
         />
-        <StatCard
-          title="ex cards"
-          value={formatNumber(summary.ex_quantity)}
-          hint={`${formatNumber(summary.ex_entries)} unique`}
-        />
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="flex items-center justify-between gap-2 text-sm font-medium text-muted-foreground">
+              ex cards
+              <Badge variant="secondary" className="font-normal tabular-nums">
+                Mega {formatNumber(megaOwned)}/{formatNumber(megaCards.length)}
+              </Badge>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-semibold tabular-nums">
+              {formatNumber(summary.ex_quantity)}
+            </div>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {formatNumber(summary.ex_entries)} unique
+            </p>
+          </CardContent>
+        </Card>
         <StatCard
           title="Evolution lines complete"
           value={`${completeLines} / ${summary.evolution_groups.length}`}
@@ -97,45 +160,10 @@ export default async function DashboardPage() {
             <TypePieChart data={summary.by_pokemon_type} />
           </CardContent>
         </Card>
-        <BreakdownCard title="By stage" data={summary.by_stage} />
+        <CountGrid title="By stage" items={stageItems} />
       </section>
+
+      <CountGrid title="By rarity · collected" items={rarityItems} />
     </div>
-  );
-}
-
-function BreakdownCard({
-  title,
-  data,
-}: {
-  title: string;
-  data: Record<string, number>;
-}) {
-  const rows = Object.entries(data).sort((a, b) => b[1] - a[1]);
-  const max = Math.max(...rows.map(([, v]) => v), 1);
-
-  return (
-    <Card>
-      <CardHeader className="pb-2">
-        <CardTitle className="text-base">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-2">
-        {rows.map(([label, value]) => (
-          <div key={label} className="space-y-1">
-            <div className="flex justify-between text-sm">
-              <span>{label}</span>
-              <span className="tabular-nums text-muted-foreground">
-                {formatNumber(value)}
-              </span>
-            </div>
-            <div className="h-1.5 overflow-hidden rounded-full bg-muted">
-              <div
-                className="h-full rounded-full bg-primary"
-                style={{ width: `${(value / max) * 100}%` }}
-              />
-            </div>
-          </div>
-        ))}
-      </CardContent>
-    </Card>
   );
 }
