@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { BreakdownBars, type BarItem } from "@/components/dashboard/breakdown-bars";
 import { CompletionCard } from "@/components/dashboard/completion-card";
 import { CountGrid, type CountItem } from "@/components/dashboard/count-grid";
 import { RaritySymbol } from "@/components/dashboard/rarity-symbol";
@@ -54,14 +55,14 @@ export default async function DashboardPage() {
       icon: <RaritySymbol rarity={rarity} />,
     }));
 
-  const stageItems: CountItem[] = Object.entries(summary.by_stage)
+  const stageItems: BarItem[] = Object.entries(summary.by_stage)
     .sort(([a], [b]) => {
       const ia = STAGE_ORDER.indexOf(a);
       const ib = STAGE_ORDER.indexOf(b);
       if (ia === -1 && ib === -1) return a.localeCompare(b);
       return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
     })
-    .map(([label, value]) => ({ key: label, label, value }));
+    .map(([label, value]) => ({ label, value }));
 
   return (
     <div className="space-y-8">
@@ -139,7 +140,7 @@ export default async function DashboardPage() {
         </Card>
       ) : null}
 
-      {/* Collection breakdown: type, stage, rarity grouped together. */}
+      {/* Collection breakdown: the two Pokémon views together, rarity below. */}
       <section className="space-y-4">
         <div className="grid gap-4 lg:grid-cols-3">
           <Card className="lg:col-span-2">
@@ -150,7 +151,7 @@ export default async function DashboardPage() {
               <TypePieChart data={summary.by_pokemon_type} />
             </CardContent>
           </Card>
-          <CountGrid title="By stage" items={stageItems} />
+          <BreakdownBars title="By stage" items={stageItems} />
         </div>
         <CountGrid title="By rarity · collected" items={rarityItems} />
       </section>

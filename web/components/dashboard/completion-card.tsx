@@ -19,14 +19,14 @@ const CIRC = 2 * Math.PI * R;
 /** Radial progress ring with the percentage centred. */
 function Ring({ ratio }: { ratio: number }) {
   return (
-    <div className="relative size-32 shrink-0">
+    <div className="relative size-44">
       <svg viewBox="0 0 100 100" className="size-full -rotate-90">
         <circle
           cx="50"
           cy="50"
           r={R}
           fill="none"
-          strokeWidth="9"
+          strokeWidth="8"
           className="stroke-muted"
         />
         <circle
@@ -34,14 +34,14 @@ function Ring({ ratio }: { ratio: number }) {
           cy="50"
           r={R}
           fill="none"
-          strokeWidth="9"
+          strokeWidth="8"
           strokeLinecap="round"
           strokeDasharray={CIRC}
           strokeDashoffset={CIRC * (1 - ratio)}
           className="stroke-primary transition-[stroke-dashoffset] duration-700 ease-out"
         />
       </svg>
-      <span className="absolute inset-0 flex items-center justify-center text-2xl font-semibold tabular-nums">
+      <span className="absolute inset-0 flex items-center justify-center text-3xl font-semibold tabular-nums">
         {formatPercent(ratio, 1)}
       </span>
     </div>
@@ -65,17 +65,11 @@ export function CompletionCard({
 
   return (
     <Card className="h-full">
-      <CardContent className="flex h-full items-center gap-6 py-2">
-        <Ring ratio={ratio} />
-        <div className="space-y-3">
-          <div>
-            <h2 className="font-heading text-base font-medium">
-              Collection completion
-            </h2>
-            <p className="text-sm text-muted-foreground tabular-nums">
-              {formatNumber(stat.owned)} / {formatNumber(stat.total)} cards
-            </p>
-          </div>
+      <CardContent className="flex h-full flex-col gap-4 py-5">
+        <div className="flex items-start justify-between gap-2">
+          <h2 className="font-heading text-base font-medium">
+            Collection completion
+          </h2>
           <div className="inline-flex rounded-md border p-0.5">
             {(["total", "base"] as Mode[]).map((m) => (
               <button
@@ -83,7 +77,7 @@ export function CompletionCard({
                 type="button"
                 onClick={() => setMode(m)}
                 className={cn(
-                  "h-7 w-16 rounded text-sm font-medium transition-colors",
+                  "h-7 w-14 rounded text-sm font-medium transition-colors",
                   mode === m
                     ? "bg-secondary text-secondary-foreground"
                     : "text-muted-foreground hover:text-foreground",
@@ -93,6 +87,12 @@ export function CompletionCard({
               </button>
             ))}
           </div>
+        </div>
+        <div className="flex flex-1 flex-col items-center justify-center gap-3">
+          <Ring ratio={ratio} />
+          <p className="text-sm text-muted-foreground tabular-nums">
+            {formatNumber(stat.owned)} / {formatNumber(stat.total)} cards
+          </p>
         </div>
       </CardContent>
     </Card>
