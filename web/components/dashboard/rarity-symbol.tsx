@@ -9,19 +9,13 @@ import { raritySymbol } from "@/lib/domain/rarity";
 
 type IconProps = { className?: string };
 
-// Brilliant-cut diamond with a table line + crown/pavilion facets.
+// Simple solid diamond (the in-app symbol is a flat rhombus, not a faceted gem),
+// with a subtle top highlight for a hint of depth.
 function GemIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <path d="M5 4h14l3 5-10 12L2 9z" fill="currentColor" />
-      <path
-        d="M2 9h20M5 4l3 5M19 4l-3 5M8 9l4 12M16 9l-4 12"
-        fill="none"
-        stroke="#fff"
-        strokeOpacity="0.55"
-        strokeWidth="0.9"
-        strokeLinejoin="round"
-      />
+      <path d="M12 2 19.5 12 12 22 4.5 12Z" fill="currentColor" />
+      <path d="M12 2 19.5 12 12 12Z" fill="#fff" fillOpacity="0.28" />
     </svg>
   );
 }
@@ -66,6 +60,8 @@ const ICONS = {
   star: StarIcon,
   crown: CrownIcon,
   sparkle: SparkleIcon,
+  // Promo cards carry a dark star stamp in-app — a slate star is the closest match.
+  promo: StarIcon,
 } as const;
 
 const COLORS = {
@@ -73,11 +69,12 @@ const COLORS = {
   star: "text-amber-400",
   crown: "text-amber-500",
   sparkle: "text-fuchsia-400",
+  promo: "text-slate-500",
 } as const;
 
 /**
- * Renders a rarity's symbol (1–4 diamonds, 1–3 stars, crown, shiny sparkles).
- * Promo has no tier symbol → a "P" chip.
+ * Renders a rarity's symbol: 1–4 diamonds, 1–3 stars, crown, shiny sparkles,
+ * or a slate promo star.
  */
 export function RaritySymbol({
   rarity,
@@ -87,21 +84,8 @@ export function RaritySymbol({
   className?: string;
 }) {
   const { kind, count } = raritySymbol(rarity);
-
-  if (kind === "promo") {
-    return (
-      <span
-        className={cn(
-          "inline-flex size-3.5 items-center justify-center rounded-[3px] bg-muted text-[9px] font-bold text-muted-foreground",
-          className,
-        )}
-      >
-        P
-      </span>
-    );
-  }
-
   const Icon = ICONS[kind];
+
   return (
     <span className={cn("inline-flex items-center gap-px", COLORS[kind], className)}>
       {Array.from({ length: count }).map((_, i) => (
