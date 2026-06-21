@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { CardGrid } from "@/components/cards/card-grid";
+import { SetDetailView } from "@/components/sets/set-detail-view";
 import { dataSource } from "@/lib/data";
-import { formatPercent } from "@/lib/domain/format";
 
 export const dynamic = "force-dynamic";
 
@@ -22,9 +21,6 @@ export default async function SetDetailPage({
 
   if (cards.length === 0) notFound();
 
-  const owned = cards.filter((c) => c.owned > 0).length;
-  const ratio = owned / cards.length;
-
   return (
     <div className="space-y-6">
       <div>
@@ -40,12 +36,9 @@ export default async function SetDetailPage({
             {decoded}
           </span>
         </h1>
-        <p className="text-sm text-muted-foreground">
-          {owned} / {cards.length} owned ({formatPercent(ratio)})
-        </p>
       </div>
 
-      <CardGrid cards={cards} />
+      <SetDetailView cards={cards} />
     </div>
   );
 }
