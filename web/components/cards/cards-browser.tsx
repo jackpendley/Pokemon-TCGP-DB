@@ -1,18 +1,22 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { CardGrid } from "@/components/cards/card-grid";
 import { displayType } from "@/lib/domain/card";
 import type { CatalogCard } from "@/types";
 
-const SHOW_LIMIT = 300;
+// Cards render in batches as the user scrolls (IntersectionObserver), so the
+// full ~3,400-card catalog is reachable without dropping a 300-item cap and
+// without mounting every tile at once. Images already lazy-load.
+const BATCH = 150;
 
 export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
   const [query, setQuery] = useState("");
   const [setFilter, setSetFilter] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
   const [ownership, setOwnership] = useState<"all" | "owned" | "missing">("all");
+  const [visible, setVisible] = useState(BATCH);
 
   const setCodes = useMemo(
     () => [...new Set(cards.map((c) => c.set_code))],
@@ -35,7 +39,33 @@ export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
     });
   }, [cards, query, setFilter, typeFilter, ownership]);
 
-  const shown = filtered.slice(0, SHOW_LIMIT);
+  // Reset the window when filters change — adjust state during render (the
+  // React-recommended alternative to a reset effect) keyed on the filter combo.
+  const filterKey = `${query}|${setFilter}|${typeFilter}|${ownership}`;
+  const [prevKey, setPrevKey] = useState(filterKey);
+  if (filterKey !== prevKey) {
+    setPrevKey(filterKey);
+    setVisible(BATCH);
+  }
+
+  // Grow the window when the sentinel scrolls into view.
+  const sentinel = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const el = sentinel.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setVisible((v) => Math.min(v + BATCH, filtered.length));
+        }
+      },
+      { rootMargin: "600px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [filtered.length]);
+
+  const shown = filtered.slice(0, visible);
 
   return (
     <div className="space-y-4">
@@ -86,10 +116,14 @@ export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
 
       <p className="text-sm text-muted-foreground">
         Showing {shown.length} of {filtered.length}
-        {filtered.length > SHOW_LIMIT ? " (refine filters to see more)" : ""}
       </p>
 
       <CardGrid cards={shown} />
+
+      {/* Sentinel: when it scrolls near the viewport, render the next batch. */}
+      {shown.length < filtered.length ? (
+        <div ref={sentinel} className="h-1" aria-hidden />
+      ) : null}
     </div>
   );
 }

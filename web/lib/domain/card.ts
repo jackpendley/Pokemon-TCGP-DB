@@ -10,3 +10,11 @@ export function displayType(card: CatalogCard): string {
     card.pokemon_type ?? card.trainer_subtype ?? card.card_category ?? "—"
   );
 }
+
+/**
+ * Mega-Evolution ex card. Detected by the "Mega " name prefix (every such card
+ * is is_ex); name-substring matching is unsafe ("Yanmega ex" is not a Mega).
+ */
+export function isMegaEx(card: CatalogCard): boolean {
+  return card.is_ex && card.name.startsWith("Mega ");
+}
