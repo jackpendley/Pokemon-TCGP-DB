@@ -66,25 +66,26 @@ function CardTile({
       >
         <CardImage card={card} />
       </div>
-      <div className="mt-1 truncate text-xs font-medium" title={card.name}>
-        {card.name}
+      {/* Name + ownership on one line; type + set code below. Ownership never
+          covers the art. */}
+      <div className="mt-1 flex items-center justify-between gap-1">
+        <span className="truncate text-xs font-medium" title={card.name}>
+          {card.name}
+        </span>
+        {owned ? (
+          <span className="shrink-0 rounded bg-primary px-1 text-[10px] font-medium text-primary-foreground tabular-nums">
+            ×{card.owned}
+          </span>
+        ) : (
+          <span className="shrink-0 rounded border px-1 text-[10px] text-muted-foreground">
+            missing
+          </span>
+        )}
       </div>
-      {/* Ownership lives with the metadata so it never covers the art. */}
       <div className="flex items-center justify-between gap-1">
         <TypeBadge type={type} />
-        <span className="flex shrink-0 items-center gap-1">
-          {owned ? (
-            <span className="rounded bg-primary px-1 text-[10px] font-medium text-primary-foreground tabular-nums">
-              ×{card.owned}
-            </span>
-          ) : (
-            <span className="rounded border px-1 text-[10px] text-muted-foreground">
-              missing
-            </span>
-          )}
-          <span className="text-[10px] text-muted-foreground tabular-nums">
-            {card.set_code}
-          </span>
+        <span className="shrink-0 text-[10px] text-muted-foreground tabular-nums">
+          {card.set_code}
         </span>
       </div>
     </button>
