@@ -37,23 +37,36 @@ export function SyncHistory({ entries }: { entries: HistoryEntryView[] }) {
 
 function HistoryRow({ entry }: { entry: HistoryEntryView }) {
   const [open, setOpen] = useState(false);
+  const newCount = entry.items.filter((i) => i.entry.is_new).length;
   return (
-    <li className="overflow-hidden rounded-lg border">
+    <li
+      className={cn(
+        "overflow-hidden rounded-xl border transition-colors",
+        open ? "bg-muted/30" : "hover:bg-muted/40",
+      )}
+    >
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        className="flex w-full items-center justify-between gap-2 px-3 py-2.5 text-left transition-colors hover:bg-muted/50"
+        className="flex w-full items-center justify-between gap-3 px-4 py-3.5 text-left"
       >
-        <span className="flex items-center gap-2">
+        <span className="flex items-center gap-3">
           <ChevronDown
             className={cn(
-              "size-4 text-muted-foreground transition-transform",
+              "size-5 text-muted-foreground transition-transform duration-300",
               open && "rotate-180",
             )}
           />
-          <span className="text-sm font-medium">
-            {new Date(entry.syncedAt).toLocaleString()}
+          <span>
+            <span className="block text-sm font-medium">
+              {new Date(entry.syncedAt).toLocaleString()}
+            </span>
+            {newCount > 0 ? (
+              <span className="text-xs text-muted-foreground">
+                {newCount} new · {entry.addedCount - newCount} more copies
+              </span>
+            ) : null}
           </span>
         </span>
         <Badge variant="secondary" className="tabular-nums">
@@ -61,7 +74,7 @@ function HistoryRow({ entry }: { entry: HistoryEntryView }) {
         </Badge>
       </button>
       {open ? (
-        <div className="border-t px-3 py-3">
+        <div className="animate-in fade-in slide-in-from-top-1 border-t px-4 py-4 duration-300">
           <RevealGrid items={entry.items} />
         </div>
       ) : null}
