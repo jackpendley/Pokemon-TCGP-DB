@@ -76,6 +76,27 @@ def _stage_match(entry_stage, ext_stage) -> bool:
     return entry_label in ext_stage.lower()
 
 
+def reconcile_pokemon_type(entry: dict, ref_type: str | None) -> str | None:
+    """Make card_reference authoritative for a Pokémon entry's energy type.
+
+    card_reference is the cross-validated authority (the coord validator FATALs on
+    a mismatch), and same-name cards span printings with different types (e.g.
+    Sableye A3:70 is Psychic but B3a:40 is Darkness), so an entry can carry a
+    sibling's type. Backfills a missing type and corrects a wrong one in place.
+    Returns "backfilled", "corrected", or None. Trainers / no ref_type: no-op.
+    """
+    if entry.get("card_type") != "Pokemon" or not ref_type:
+        return None
+    cur = entry.get("type")
+    if not cur:
+        entry["type"] = ref_type
+        return "backfilled"
+    if cur != ref_type:
+        entry["type"] = ref_type
+        return "corrected"
+    return None
+
+
 def _type_match(entry_type, ext_type) -> bool:
     if not entry_type or not ext_type:
         return True
@@ -298,6 +319,8 @@ def main() -> int:
     case_fixed = 0
     rarity_alias_fixed = 0
     type_backfilled = 0
+    type_corrected = 0
+    type_corrections: list[str] = []
     stage_backfilled = 0
     card_type_flips: list[str] = []
     for entry in entries:
@@ -359,11 +382,16 @@ def main() -> int:
             except (TypeError, ValueError):
                 ref_coord = None
         ref_rec = card_ref.get(ref_coord) if ref_coord else None
-        if entry.get("card_type") == "Pokemon" and not entry.get("type"):
-            ref_type = ref_rec.get("pokemon_type") if ref_rec else None
-            if ref_type:
-                entry["type"] = ref_type
-                type_backfilled += 1
+        cur_type = entry.get("type")
+        action = reconcile_pokemon_type(
+            entry, ref_rec.get("pokemon_type") if ref_rec else None)
+        if action == "backfilled":
+            type_backfilled += 1
+        elif action == "corrected":
+            type_corrected += 1
+            type_corrections.append(
+                f"{entry.get('name')} ({entry['set_code']}/{cn}): "
+                f"{cur_type}→{entry['type']}")
 
         # 6. Backfill missing Pokémon stage from card_reference (same authority).
         #    A-series ext_ref has no stage, so older entries lack it; card_reference covers it.
@@ -381,6 +409,10 @@ def main() -> int:
         print(f"  Fixed {rarity_alias_fixed} rarity aliases")
     if type_backfilled:
         print(f"  Backfilled Pokémon type on {type_backfilled} entries from card_reference")
+    if type_corrected:
+        print(f"  Corrected Pokémon type on {type_corrected} entries from card_reference:")
+        for fix in type_corrections:
+            print(f"    {fix}")
     if stage_backfilled:
         print(f"  Backfilled Pokémon stage on {stage_backfilled} entries from card_reference")
     if card_type_flips:
