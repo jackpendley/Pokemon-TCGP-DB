@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { BreakdownBars, type BarItem } from "@/components/dashboard/breakdown-bars";
 import { CompletionCard } from "@/components/dashboard/completion-card";
 import { CountGrid, type CountItem } from "@/components/dashboard/count-grid";
 import { RaritySymbol } from "@/components/dashboard/rarity-symbol";
@@ -23,7 +24,6 @@ export default async function DashboardPage() {
     dataSource.getCatalog(),
   ]);
 
-  const completeLines = summary.evolution_groups.filter((g) => g.complete).length;
   const topPack = recs.top_packs_unified[0];
 
   // Completion — derived web-side from the catalog (owned counts merged in).
@@ -31,9 +31,10 @@ export default async function DashboardPage() {
   const baseCards = catalog.filter((c) => isBaseRarity(c.rarity));
   const baseOwned = baseCards.filter((c) => c.owned > 0).length;
 
-  // Mega ex (subset of ex), unique owned of total.
+  // Mega ex (subset of ex) — own quantity + unique, mirroring the ex card.
   const megaCards = catalog.filter(isMegaEx);
-  const megaOwned = megaCards.filter((c) => c.owned > 0).length;
+  const megaQuantity = megaCards.reduce((n, c) => n + c.owned, 0);
+  const megaUnique = megaCards.filter((c) => c.owned > 0).length;
 
   // Per-rarity collected (unique owned / total).
   const byRarity = new Map<string, { owned: number; total: number }>();
@@ -54,14 +55,14 @@ export default async function DashboardPage() {
       icon: <RaritySymbol rarity={rarity} />,
     }));
 
-  const stageItems: CountItem[] = Object.entries(summary.by_stage)
+  const stageItems: BarItem[] = Object.entries(summary.by_stage)
     .sort(([a], [b]) => {
       const ia = STAGE_ORDER.indexOf(a);
       const ib = STAGE_ORDER.indexOf(b);
       if (ia === -1 && ib === -1) return a.localeCompare(b);
       return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
     })
-    .map(([label, value]) => ({ key: label, label, value }));
+    .map(([label, value]) => ({ label, value }));
 
   return (
     <div className="space-y-8">
@@ -72,49 +73,37 @@ export default async function DashboardPage() {
         </p>
       </header>
 
-      <CompletionCard
-        total={{ owned: totalOwned, total: catalog.length }}
-        base={{ owned: baseOwned, total: baseCards.length }}
-      />
-
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-        <StatCard
-          title="Total cards"
-          value={formatNumber(summary.total_quantity)}
-          hint={`${formatNumber(summary.unique_entries)} unique entries`}
+      {/* Overview: completion ring beside the headline collection counts. */}
+      <section className="grid gap-4 lg:grid-cols-3">
+        <CompletionCard
+          total={{ owned: totalOwned, total: catalog.length }}
+          base={{ owned: baseOwned, total: baseCards.length }}
         />
-        <StatCard
-          title="Pokémon"
-          value={formatNumber(summary.by_card_type.Pokemon ?? 0)}
-        />
-        <StatCard
-          title="Trainers"
-          value={formatNumber(summary.by_card_type.Trainer ?? 0)}
-        />
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="flex items-center justify-between gap-2 text-sm font-medium text-muted-foreground">
-              ex cards
-              <Badge variant="secondary" className="font-normal tabular-nums">
-                Mega {formatNumber(megaOwned)}/{formatNumber(megaCards.length)}
-              </Badge>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-semibold tabular-nums">
-              {formatNumber(summary.ex_quantity)}
-            </div>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {formatNumber(summary.ex_entries)} unique
-            </p>
-          </CardContent>
-        </Card>
-        <StatCard
-          title="Evolution lines complete"
-          value={`${completeLines} / ${summary.evolution_groups.length}`}
-          hint="fully owned by name"
-          info="Of the evolution lines you've started collecting, how many you own every stage of (counted by card name, one copy each)."
-        />
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:col-span-2">
+          <StatCard
+            title="Total cards"
+            value={formatNumber(summary.total_quantity)}
+            hint={`${formatNumber(summary.unique_entries)} unique entries`}
+          />
+          <StatCard
+            title="Pokémon"
+            value={formatNumber(summary.by_card_type.Pokemon ?? 0)}
+          />
+          <StatCard
+            title="Trainers"
+            value={formatNumber(summary.by_card_type.Trainer ?? 0)}
+          />
+          <StatCard
+            title="ex cards"
+            value={formatNumber(summary.ex_quantity)}
+            hint={`${formatNumber(summary.ex_entries)} unique`}
+          />
+          <StatCard
+            title="Mega ex cards"
+            value={formatNumber(megaQuantity)}
+            hint={`${formatNumber(megaUnique)} of ${formatNumber(megaCards.length)} unique`}
+          />
+        </div>
       </section>
 
       {topPack ? (
@@ -151,19 +140,21 @@ export default async function DashboardPage() {
         </Card>
       ) : null}
 
-      <section className="grid gap-4 lg:grid-cols-3">
-        <Card className="lg:col-span-2">
-          <CardHeader className="pb-2">
-            <CardTitle className="text-base">By type</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <TypePieChart data={summary.by_pokemon_type} />
-          </CardContent>
-        </Card>
-        <CountGrid title="By stage" items={stageItems} />
+      {/* Collection breakdown: the two Pokémon views together, rarity below. */}
+      <section className="space-y-4">
+        <div className="grid gap-4 lg:grid-cols-3">
+          <Card className="lg:col-span-2">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">By type</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <TypePieChart data={summary.by_pokemon_type} />
+            </CardContent>
+          </Card>
+          <BreakdownBars title="By stage" items={stageItems} />
+        </div>
+        <CountGrid title="By rarity · collected" items={rarityItems} />
       </section>
-
-      <CountGrid title="By rarity · collected" items={rarityItems} />
     </div>
   );
 }
