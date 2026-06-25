@@ -35,7 +35,9 @@ export function SetsGrid({ sets }: { sets: SetProgress[] }) {
           return (
             <Link
               key={s.set_code}
-              href={`/cards?set=${encodeURIComponent(s.set_code)}`}
+              href={`/cards?set=${encodeURIComponent(s.set_code)}${
+                mode === "base" ? "&scope=base" : ""
+              }`}
               className="block"
             >
               <Card className="h-full transition-colors hover:border-primary/50">
