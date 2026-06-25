@@ -1,13 +1,35 @@
-import { CardsBrowser } from "@/components/cards/cards-browser";
+import {
+  CardsBrowser,
+  type CardsFilter,
+} from "@/components/cards/cards-browser";
 import { dataSource } from "@/lib/data";
 import { formatNumber } from "@/lib/domain/format";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Cards · TCGP Optimizer" };
 
-export default async function CardsPage() {
-  const catalog = await dataSource.getCatalog();
+export default async function CardsPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const [catalog, sp] = await Promise.all([
+    dataSource.getCatalog(),
+    searchParams,
+  ]);
   const owned = catalog.filter((c) => c.owned > 0).length;
+
+  const pick = (k: string): string | undefined =>
+    typeof sp[k] === "string" ? (sp[k] as string) : undefined;
+  const initial: CardsFilter = {
+    q: pick("q"),
+    set: pick("set"),
+    type: pick("type"),
+    rarity: pick("rarity"),
+    stage: pick("stage"),
+    class: pick("class"),
+    owned: pick("owned"),
+  };
 
   return (
     <div className="space-y-6">
@@ -19,7 +41,7 @@ export default async function CardsPage() {
         </p>
       </header>
 
-      <CardsBrowser cards={catalog} />
+      <CardsBrowser cards={catalog} initial={initial} />
     </div>
   );
 }

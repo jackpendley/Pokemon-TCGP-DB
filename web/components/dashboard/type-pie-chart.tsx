@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Cell, Label, Pie, PieChart } from "recharts";
 
 import {
@@ -11,7 +13,10 @@ import {
 import { typeColor } from "@/lib/domain/type-colors";
 import { formatNumber } from "@/lib/domain/format";
 
+const typeHref = (type: string) => `/cards?type=${encodeURIComponent(type)}`;
+
 export function TypePieChart({ data }: { data: Record<string, number> }) {
+  const router = useRouter();
   const rows = Object.entries(data)
     .map(([type, count]) => ({ type, count, fill: typeColor(type) }))
     .sort((a, b) => b.count - a.count);
@@ -37,6 +42,11 @@ export function TypePieChart({ data }: { data: Record<string, number> }) {
             innerRadius={75}
             outerRadius={130}
             strokeWidth={2}
+            className="cursor-pointer focus:outline-none"
+            onClick={(slice) => {
+              const t = (slice as unknown as { type?: string }).type;
+              if (t) router.push(typeHref(t));
+            }}
           >
             {rows.map((r) => (
               <Cell key={r.type} fill={r.fill} />
@@ -73,20 +83,25 @@ export function TypePieChart({ data }: { data: Record<string, number> }) {
         </PieChart>
       </ChartContainer>
 
-      <ul className="grid w-full max-w-sm gap-1.5 sm:w-auto sm:min-w-52">
+      <ul className="grid w-full max-w-sm gap-0.5 sm:w-auto sm:min-w-52">
         {rows.map((r) => (
-          <li key={r.type} className="flex items-center gap-2.5 text-sm">
-            <span
-              className="size-3 shrink-0 rounded-[3px]"
-              style={{ backgroundColor: r.fill }}
-            />
-            <span className="flex-1">{r.type}</span>
-            <span className="tabular-nums font-medium">
-              {formatNumber(r.count)}
-            </span>
-            <span className="w-11 text-right text-xs tabular-nums text-muted-foreground">
-              {total > 0 ? ((r.count / total) * 100).toFixed(1) : "0.0"}%
-            </span>
+          <li key={r.type}>
+            <Link
+              href={typeHref(r.type)}
+              className="flex items-center gap-2.5 rounded-md px-2 py-1 text-sm transition-colors hover:bg-muted/60"
+            >
+              <span
+                className="size-3 shrink-0 rounded-[3px]"
+                style={{ backgroundColor: r.fill }}
+              />
+              <span className="flex-1">{r.type}</span>
+              <span className="tabular-nums font-medium">
+                {formatNumber(r.count)}
+              </span>
+              <span className="w-11 text-right text-xs tabular-nums text-muted-foreground">
+                {total > 0 ? ((r.count / total) * 100).toFixed(1) : "0.0"}%
+              </span>
+            </Link>
           </li>
         ))}
       </ul>

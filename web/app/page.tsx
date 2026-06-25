@@ -53,6 +53,7 @@ export default async function DashboardPage() {
       value: byRarity.get(rarity)!.owned,
       total: byRarity.get(rarity)!.total,
       icon: <RaritySymbol rarity={rarity} />,
+      href: `/cards?rarity=${encodeURIComponent(rarity)}`,
     }));
 
   const stageItems: BarItem[] = Object.entries(summary.by_stage)
@@ -62,7 +63,12 @@ export default async function DashboardPage() {
       if (ia === -1 && ib === -1) return a.localeCompare(b);
       return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
     })
-    .map(([label, value]) => ({ label, value }));
+    // card_reference stages have no space ("Stage1"); the summary labels do.
+    .map(([label, value]) => ({
+      label,
+      value,
+      href: `/cards?stage=${encodeURIComponent(label.replace(/\s+/g, ""))}`,
+    }));
 
   return (
     <div className="space-y-8">
