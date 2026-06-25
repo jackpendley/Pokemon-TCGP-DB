@@ -30,9 +30,12 @@ export function SyncButton({ enabled }: { enabled: boolean }) {
       if (!job || !TERMINAL.includes(job.status)) return;
       clearInterval(poll);
       setRunning(false);
+      // Always refresh on a terminal outcome: even a partial/errored run may have
+      // written new collection + delta data before stopping, and the page is the
+      // source of truth for what actually landed.
+      router.refresh();
       if (job.status === "done") {
         toast.success("Sync complete");
-        router.refresh();
       } else if (job.status === "needs_reauth") {
         toast.error("Re-authentication needed to sync");
       } else {
