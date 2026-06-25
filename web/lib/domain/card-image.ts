@@ -22,18 +22,33 @@ const LIMITLESS_SET_ID: Record<string, string> = {
 const LIMITLESS_BASE =
   "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket";
 
-export function cardImageUrl(card: CatalogCard, size: "sm" | "lg" = "sm"): string {
+/**
+ * Ordered image URLs to try for a card. TCGdex is preferred where it has the set,
+ * but its coverage is patchy within a set (e.g. PROMO-A only goes up to ~#73), so
+ * Limitless — which carries every card — is always appended as a fallback. The
+ * <CardImage> advances through these on error before showing a placeholder.
+ */
+export function cardImageCandidates(
+  card: CatalogCard,
+  size: "sm" | "lg" = "sm",
+): string[] {
   const num = String(card.card_number).padStart(3, "0");
+  const urls: string[] = [];
 
   if (TCGDEX_COVERED.has(card.set_code)) {
-    // TCGdex high.webp is already full-size; use low.webp for grid thumbnails.
     const setId = TCGDEX_SET_ID[card.set_code] ?? card.set_code;
     const quality = size === "lg" ? "high" : "low";
-    return `https://assets.tcgdex.net/en/tcgp/${setId}/${num}/${quality}.webp`;
+    urls.push(`https://assets.tcgdex.net/en/tcgp/${setId}/${num}/${quality}.webp`);
   }
 
-  // Limitless: _SM.webp thumbnail vs full-resolution _EN.png.
   const lset = LIMITLESS_SET_ID[card.set_code] ?? card.set_code;
   const file = size === "lg" ? `${lset}_${num}_EN.png` : `${lset}_${num}_EN_SM.webp`;
-  return `${LIMITLESS_BASE}/${lset}/${file}`;
+  urls.push(`${LIMITLESS_BASE}/${lset}/${file}`);
+
+  return urls;
+}
+
+/** First-choice image URL (kept for non-fallback callers). */
+export function cardImageUrl(card: CatalogCard, size: "sm" | "lg" = "sm"): string {
+  return cardImageCandidates(card, size)[0];
 }

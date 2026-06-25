@@ -16,6 +16,7 @@ export const cardReferenceFileSchema = z.object({
         pokemon_type: z.string().nullable(),
         card_category: z.string().nullable(),
         trainer_subtype: z.string().nullable().optional(),
+        stage: z.string().nullable().optional(),
         expansion: z.string().nullable(),
         is_ex: z.boolean().nullable(),
       })
@@ -44,6 +45,7 @@ export interface CatalogCard {
   pokemon_type: string | null;
   card_category: string | null;
   trainer_subtype: string | null;
+  stage: string | null;
   expansion: string;
   is_ex: boolean;
   owned: number;

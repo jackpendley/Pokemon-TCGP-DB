@@ -1822,9 +1822,11 @@ def main() -> int:
     auto_added, new_cards = _auto_add_new_cards(
         new_cards, pack_sources, ext_ref, collection_entries, no_fetch=args.no_fetch)
 
-    # Record what this sync added (count increases + brand-new cards) for the
-    # web Sync page's "added since last sync" view.
-    write_sync_delta(changes, auto_added)
+    # NOTE: the "added since last sync" delta is computed by the pipeline AFTER
+    # reconcile_coords_from_pz splits multi-coord aggregations (see
+    # scripts/compute_sync_delta.py). Writing it here — before reconcile — mislabels
+    # new alt-art pulls (e.g. an Illustration Rare merged onto its base coord) as
+    # copies, so it's intentionally not written at this point.
 
     # ── Phase 4c: Mark stale entries for removal ─────────────────────────────
     # Two cases trigger removal:

@@ -3,7 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { CardGrid } from "@/components/cards/card-grid";
-import { displayType } from "@/lib/domain/card";
+import { displayType, isMegaEx } from "@/lib/domain/card";
+import { titleCase } from "@/lib/domain/format";
+import { compareRarity } from "@/lib/domain/rarity";
 import type { CatalogCard } from "@/types";
 
 // Cards render in batches as the user scrolls (IntersectionObserver), so the
@@ -11,10 +13,18 @@ import type { CatalogCard } from "@/types";
 // without mounting every tile at once. Images already lazy-load.
 const BATCH = 150;
 
+// card_reference stores stages as "Basic" / "Stage1" / "Stage2" (no space).
+const STAGE_ORDER = ["Basic", "Stage1", "Stage2", "Stage3"];
+const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
+type CardClass = "all" | "ex" | "mega";
+
 export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
   const [query, setQuery] = useState("");
   const [setFilter, setSetFilter] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
+  const [rarityFilter, setRarityFilter] = useState("");
+  const [stageFilter, setStageFilter] = useState("");
+  const [classFilter, setClassFilter] = useState<CardClass>("all");
   const [ownership, setOwnership] = useState<"all" | "owned" | "missing">("all");
   const [visible, setVisible] = useState(BATCH);
 
@@ -26,6 +36,24 @@ export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
     () => [...new Set(cards.map((c) => displayType(c)))].sort(),
     [cards],
   );
+  const rarities = useMemo(
+    () =>
+      [...new Set(cards.map((c) => c.rarity).filter((r): r is string => !!r))].sort(
+        compareRarity,
+      ),
+    [cards],
+  );
+  const stages = useMemo(
+    () =>
+      [...new Set(cards.map((c) => c.stage).filter((s): s is string => !!s))].sort(
+        (a, b) => {
+          const ia = STAGE_ORDER.indexOf(a);
+          const ib = STAGE_ORDER.indexOf(b);
+          return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+        },
+      ),
+    [cards],
+  );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -33,15 +61,28 @@ export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
       if (q && !c.name.toLowerCase().includes(q)) return false;
       if (setFilter && c.set_code !== setFilter) return false;
       if (typeFilter && displayType(c) !== typeFilter) return false;
+      if (rarityFilter && c.rarity !== rarityFilter) return false;
+      if (stageFilter && c.stage !== stageFilter) return false;
+      if (classFilter === "ex" && !c.is_ex) return false;
+      if (classFilter === "mega" && !isMegaEx(c)) return false;
       if (ownership === "owned" && c.owned <= 0) return false;
       if (ownership === "missing" && c.owned > 0) return false;
       return true;
     });
-  }, [cards, query, setFilter, typeFilter, ownership]);
+  }, [
+    cards,
+    query,
+    setFilter,
+    typeFilter,
+    rarityFilter,
+    stageFilter,
+    classFilter,
+    ownership,
+  ]);
 
   // Reset the window when filters change — adjust state during render (the
   // React-recommended alternative to a reset effect) keyed on the filter combo.
-  const filterKey = `${query}|${setFilter}|${typeFilter}|${ownership}`;
+  const filterKey = `${query}|${setFilter}|${typeFilter}|${rarityFilter}|${stageFilter}|${classFilter}|${ownership}`;
   const [prevKey, setPrevKey] = useState(filterKey);
   if (filterKey !== prevKey) {
     setPrevKey(filterKey);
@@ -66,6 +107,7 @@ export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
   }, [filtered.length]);
 
   const shown = filtered.slice(0, visible);
+  const selectClass = "h-9 rounded-md border bg-background px-2 text-sm";
 
   return (
     <div className="space-y-4">
@@ -80,7 +122,7 @@ export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
         <select
           value={setFilter}
           onChange={(e) => setSetFilter(e.target.value)}
-          className="h-9 rounded-md border bg-background px-2 text-sm"
+          className={selectClass}
         >
           <option value="">All sets</option>
           {setCodes.map((s) => (
@@ -92,7 +134,7 @@ export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
         <select
           value={typeFilter}
           onChange={(e) => setTypeFilter(e.target.value)}
-          className="h-9 rounded-md border bg-background px-2 text-sm"
+          className={selectClass}
         >
           <option value="">All types</option>
           {types.map((t) => (
@@ -102,11 +144,44 @@ export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
           ))}
         </select>
         <select
+          value={rarityFilter}
+          onChange={(e) => setRarityFilter(e.target.value)}
+          className={selectClass}
+        >
+          <option value="">All rarities</option>
+          {rarities.map((r) => (
+            <option key={r} value={r}>
+              {titleCase(r)}
+            </option>
+          ))}
+        </select>
+        <select
+          value={stageFilter}
+          onChange={(e) => setStageFilter(e.target.value)}
+          className={selectClass}
+        >
+          <option value="">All stages</option>
+          {stages.map((s) => (
+            <option key={s} value={s}>
+              {stageLabel(s)}
+            </option>
+          ))}
+        </select>
+        <select
+          value={classFilter}
+          onChange={(e) => setClassFilter(e.target.value as CardClass)}
+          className={selectClass}
+        >
+          <option value="all">All cards</option>
+          <option value="ex">ex</option>
+          <option value="mega">Mega ex</option>
+        </select>
+        <select
           value={ownership}
           onChange={(e) =>
             setOwnership(e.target.value as "all" | "owned" | "missing")
           }
-          className="h-9 rounded-md border bg-background px-2 text-sm"
+          className={selectClass}
         >
           <option value="all">All</option>
           <option value="owned">Owned</option>

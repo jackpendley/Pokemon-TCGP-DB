@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { formatEv, formatPercent, packSlug, titleCase } from "@/lib/domain/format";
-import { PackLogo } from "@/components/packs/pack-logo";
+import { SetLogo } from "@/components/sets/set-logo";
 import type { PackRecord } from "@/types";
 
 type SortKey =
@@ -51,9 +51,9 @@ const COLUMNS: Column[] = [
     align: "left",
     render: (p) => (
       <div className="flex items-center gap-2.5">
-        <PackLogo
+        <SetLogo
           setCode={p.set_code}
-          name={p.pack_name}
+          label={p.pack_name}
           className="h-9 w-12 shrink-0"
         />
         <div className="min-w-0">

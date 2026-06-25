@@ -146,7 +146,14 @@ export default async function SyncPage() {
               sync.
             </p>
           ) : (
-            <SyncReveal items={additions} setProgress={setProgress} />
+            // Key on the sync timestamp so a fresh sync remounts the reveal —
+            // re-running the staggered animation (the delta's generated_at is
+            // date-only, so same-day syncs need the precise fetched_at here).
+            <SyncReveal
+              key={stats?.fetched_at ?? delta.generated_at}
+              items={additions}
+              setProgress={setProgress}
+            />
           )}
         </CardContent>
       </Card>
