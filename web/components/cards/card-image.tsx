@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 
-import { cardImageUrl } from "@/lib/domain/card-image";
+import { cardImageCandidates } from "@/lib/domain/card-image";
 import { cn } from "@/lib/utils";
 import type { CatalogCard } from "@/types";
 
 /**
- * Card artwork hot-linked from a CDN, with a graceful fallback to the card
- * number when the request fails. In grid thumbnails (size="sm") not-owned cards
- * are desaturated; the enlarged view (size="lg") always shows full color.
+ * Card artwork hot-linked from a CDN. Tries each candidate URL in turn (TCGdex →
+ * Limitless) and only falls back to the card number once all fail. In grid
+ * thumbnails (size="sm") not-owned cards are desaturated.
  */
 export function CardImage({
   card,
@@ -18,9 +18,11 @@ export function CardImage({
   card: CatalogCard;
   size?: "sm" | "lg";
 }) {
-  const [errored, setErrored] = useState(false);
+  const candidates = cardImageCandidates(card, size);
+  const [idx, setIdx] = useState(0);
+  const src = candidates[idx];
 
-  if (errored) {
+  if (!src) {
     return (
       <span className="flex size-full items-center justify-center text-sm font-semibold tabular-nums text-muted-foreground/60">
         #{card.card_number}
@@ -31,10 +33,10 @@ export function CardImage({
   return (
     // eslint-disable-next-line @next/next/no-img-element -- external CDN hot-link with onError fallback; next/image optimization is unnecessary here.
     <img
-      src={cardImageUrl(card, size)}
+      src={src}
       alt={card.name}
       loading="lazy"
-      onError={() => setErrored(true)}
+      onError={() => setIdx((i) => i + 1)}
       className={cn(
         "size-full object-cover",
         size === "sm" && card.owned <= 0 && "grayscale",

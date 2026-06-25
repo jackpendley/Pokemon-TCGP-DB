@@ -23,6 +23,7 @@ import argparse
 import itertools
 import json
 import re
+import shutil
 import subprocess
 import sys
 import threading
@@ -369,10 +370,22 @@ def main() -> int:
         _f.write(f"\n{'=' * 60}\nPipeline run: {ts}\n{'=' * 60}\n")
 
     sync_had_review_items = False
+    # Snapshot the pre-sync collection so the post-reconcile delta (compute_sync_delta)
+    # is a true before/after diff. Only set when we actually take the snapshot.
+    prev_snapshot_taken = False
     print()
 
     # ── Sync ─────────────────────────────────────────────────────────────
     if not args.skip_sync:
+        # Snapshot the collection as it stood before this sync (the previous run's
+        # final, reconciled state) for the before/after delta computed post-reconcile.
+        _norm_before = ROOT / "data" / "current" / "collection_normalized.json"
+        if _norm_before.exists():
+            _prev_snapshot = ROOT / "data" / "sync" / ".prev_collection.json"
+            _prev_snapshot.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(_norm_before, _prev_snapshot)
+            prev_snapshot_taken = True
+
         sync_extra: list[str] = []
         if args.json_import:
             if args.json_import == "auto":
@@ -537,6 +550,15 @@ def main() -> int:
         _print_step("Normalize collection", rc, "FATAL — check data/pipeline.log")
         return 1
     _print_step("Normalize collection", rc, "OK")
+
+    # ── Sync delta ────────────────────────────────────────────────────────
+    # Compute "added since last sync" from the pre-sync snapshot vs the final
+    # (reconciled, normalized) collection — see scripts/compute_sync_delta.py.
+    # Skipped on --skip-sync and on auth-expired (collection unchanged), so the
+    # last real sync's delta is preserved.
+    if prev_snapshot_taken and not auth_expired:
+        rc, _ = _run("Sync delta", "scripts/compute_sync_delta.py")
+        _print_step("Sync delta", rc, "OK" if rc == 0 else "WARN — see data/pipeline.log")
 
     # ── EV pipeline ───────────────────────────────────────────────────────
     for label, script in PIPELINE_STEPS:
