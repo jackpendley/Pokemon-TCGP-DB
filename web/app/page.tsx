@@ -6,9 +6,16 @@ import { CountGrid, type CountItem } from "@/components/dashboard/count-grid";
 import { RaritySymbol } from "@/components/dashboard/rarity-symbol";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { TypePieChart } from "@/components/dashboard/type-pie-chart";
+import { SyncButton } from "@/components/sync/sync-button";
+import {
+  SyncReveal,
+  type AdditionItem,
+  type SetProgressItem,
+} from "@/components/sync/sync-reveal";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { dataSource } from "@/lib/data";
+import { isSyncEnabled } from "@/app/sync/actions";
 import { isMegaEx } from "@/lib/domain/card";
 import { formatEv, formatNumber, titleCase } from "@/lib/domain/format";
 import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
@@ -16,12 +23,16 @@ import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
 export const dynamic = "force-dynamic";
 
 const STAGE_ORDER = ["Basic", "Stage 1", "Stage 2", "Stage 3"];
+// Animate sync results on the dashboard only right after a sync, not every visit.
+const RECENT_SYNC_MS = 10 * 60 * 1000;
 
 export default async function DashboardPage() {
-  const [summary, recs, catalog] = await Promise.all([
+  const [summary, recs, catalog, sync, syncEnabled] = await Promise.all([
     dataSource.getCollectionSummary(),
     dataSource.getRecommendations(),
     dataSource.getCatalog(),
+    dataSource.getSyncStatus(),
+    isSyncEnabled(),
   ]);
 
   const topPack = recs.top_packs_unified[0];
@@ -70,20 +81,100 @@ export default async function DashboardPage() {
       href: `/cards?stage=${encodeURIComponent(label.replace(/\s+/g, ""))}`,
     }));
 
+  // ── Latest sync surfaced on the dashboard ──────────────────────────────
+  const { stats, delta } = sync;
+  const byCoord = new Map(
+    catalog.map((c) => [`${c.set_code}:${c.card_number}`, c]),
+  );
+  const additions: AdditionItem[] = (delta?.added ?? []).map((entry) => ({
+    entry,
+    card: byCoord.get(`${entry.set_code}:${entry.card_number}`) ?? null,
+  }));
+
+  const setTotals = new Map<string, { total: number; owned: number; expansion: string }>();
+  for (const c of catalog) {
+    const s = setTotals.get(c.set_code) ?? { total: 0, owned: 0, expansion: c.expansion };
+    s.total += 1;
+    if (c.owned > 0) s.owned += 1;
+    setTotals.set(c.set_code, s);
+  }
+  const gainedBySet = new Map<string, number>();
+  for (const e of delta?.added ?? []) {
+    if (e.is_new && e.set_code)
+      gainedBySet.set(e.set_code, (gainedBySet.get(e.set_code) ?? 0) + 1);
+  }
+  const setProgress: SetProgressItem[] = [...gainedBySet.entries()]
+    .map(([set_code, gained]) => {
+      const t = setTotals.get(set_code);
+      const after = t?.owned ?? 0;
+      return {
+        set_code,
+        expansion: t?.expansion ?? set_code,
+        total: t?.total ?? 0,
+        after,
+        before: Math.max(0, after - gained),
+        gained,
+      };
+    })
+    .sort((a, b) => b.gained - a.gained);
+
+  // New unique cards this sync (for the completion ring "count-up"). Only honored
+  // when the sync just happened, so old syncs don't re-animate on every visit.
+  // Request-time check in this async Server Component; the purity rule targets
+  // client render, where Date.now() would be non-deterministic.
+  // eslint-disable-next-line react-hooks/purity
+  const now = Date.now();
+  const isRecentSync =
+    !!stats && now - new Date(stats.fetched_at).getTime() < RECENT_SYNC_MS;
+  const newOnes = additions.filter((a) => a.entry.is_new);
+  const newUnique = {
+    total: newOnes.length,
+    base: newOnes.filter((a) => isBaseRarity(a.card?.rarity ?? null)).length,
+  };
+  const recentGain = isRecentSync ? newUnique : undefined;
+  const showReveal = isRecentSync && additions.length > 0;
+
   return (
     <div className="space-y-8">
-      <header className="space-y-1">
-        <h1 className="text-2xl font-semibold tracking-tight">Dashboard</h1>
-        <p className="text-sm text-muted-foreground">
-          Collection snapshot · updated {summary.meta.last_updated}
-        </p>
+      <header className="flex flex-wrap items-start justify-between gap-4">
+        <div className="space-y-1">
+          <h1 className="text-2xl font-semibold tracking-tight">Dashboard</h1>
+          <p className="text-sm text-muted-foreground">
+            {stats
+              ? `Last synced ${new Date(stats.fetched_at).toLocaleString()}`
+              : `Collection snapshot · updated ${summary.meta.last_updated}`}
+          </p>
+        </div>
+        <SyncButton enabled={syncEnabled} />
       </header>
+
+      {/* Right after a sync: the cards you just got, with the reveal animation. */}
+      {showReveal ? (
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="flex items-center justify-between text-base">
+              <span>Added in your latest sync</span>
+              {delta ? (
+                <Badge variant="secondary">{delta.added_count} cards</Badge>
+              ) : null}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <SyncReveal
+              key={stats?.fetched_at}
+              items={additions}
+              setProgress={setProgress}
+            />
+          </CardContent>
+        </Card>
+      ) : null}
 
       {/* Overview: completion ring beside the headline collection counts. */}
       <section className="grid gap-4 lg:grid-cols-3">
         <CompletionCard
           total={{ owned: totalOwned, total: catalog.length }}
           base={{ owned: baseOwned, total: baseCards.length }}
+          recentGain={recentGain}
         />
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:col-span-2">
           <StatCard
