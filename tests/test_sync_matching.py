@@ -482,6 +482,42 @@ def test_ambiguous_queue_counter():
 
 
 # ---------------------------------------------------------------------------
+# Scenario 14: a new printing of an owned card (coord-bearing entries) becomes a
+# NEW_CARD, not an overflow-merge onto a sibling printing.
+# ---------------------------------------------------------------------------
+def test_new_printing_of_owned_card_is_new_not_overflow():
+    print("\n--- 14. New printing of owned card → NEW_CARD ---")
+    import io
+    import contextlib
+
+    # Own two Sableye printings (with coords); PZ also reports a third (A3:70).
+    collection = [
+        {**make_entry("Sableye", count=2), "set_code": "B3a", "card_number": 40},
+        {**make_entry("Sableye", count=5), "set_code": "PROMO-B", "card_number": 70},
+    ]
+    pack_sources = {
+        ("A3", 70): {"card_name": "Sableye", "rarity": "uncommon"},
+        ("B3A", 40): {"card_name": "Sableye", "rarity": "uncommon"},
+        ("PROMO-B", 70): {"card_name": "Sableye", "rarity": "promo"},
+    }
+    pz_cards = [
+        make_pz("Sableye", count=2, set_code="B3A", card_number=40),
+        make_pz("Sableye", count=5, set_code="PROMO-B", card_number=70),
+        make_pz("Sableye", count=1, set_code="A3", card_number=70),  # new printing
+    ]
+
+    with contextlib.redirect_stderr(io.StringIO()):
+        results = match_pz_cards(pz_cards, collection, pack_sources, {})
+
+    by_coord = {(r.pz_card.set_code, r.pz_card.card_number): r for r in results}
+    a3 = by_coord[("A3", 70)]
+    check("A3:70 is NEW_CARD (not overflow)", a3.status == "NEW_CARD", a3.status)
+    check("A3:70 not overflow_merged", a3.match_note != "overflow_merged", str(a3.match_note))
+    check("B3a:40 matched its own entry", by_coord[("B3A", 40)].status == "MATCHED")
+    check("PROMO-B:70 matched its own entry", by_coord[("PROMO-B", 70)].status == "MATCHED")
+
+
+# ---------------------------------------------------------------------------
 # Run all scenarios
 # ---------------------------------------------------------------------------
 
@@ -503,6 +539,7 @@ if __name__ == "__main__":
     test_corrupt_review_queue_recovers()
     test_extract_ambiguous_matches()
     test_ambiguous_queue_counter()
+    test_new_printing_of_owned_card_is_new_not_overflow()
 
     print()
     if _failures:
@@ -511,5 +548,5 @@ if __name__ == "__main__":
             print(f"  - {f}")
         sys.exit(1)
     else:
-        print(f"ALL PASSED — {13 - len(_failures)} / 13 scenarios")
+        print(f"ALL PASSED — {14 - len(_failures)} / 14 scenarios")
         sys.exit(0)
