@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import { CardGrid } from "@/components/cards/card-grid";
 import { displayType, isMegaEx } from "@/lib/domain/card";
@@ -17,15 +18,38 @@ const BATCH = 150;
 const STAGE_ORDER = ["Basic", "Stage1", "Stage2", "Stage3"];
 const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
 type CardClass = "all" | "ex" | "mega";
+type Ownership = "all" | "owned" | "missing";
 
-export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
-  const [query, setQuery] = useState("");
-  const [setFilter, setSetFilter] = useState("");
-  const [typeFilter, setTypeFilter] = useState("");
-  const [rarityFilter, setRarityFilter] = useState("");
-  const [stageFilter, setStageFilter] = useState("");
-  const [classFilter, setClassFilter] = useState<CardClass>("all");
-  const [ownership, setOwnership] = useState<"all" | "owned" | "missing">("all");
+/** Filters that can be seeded from the URL (set/type/rarity links, etc.). */
+export interface CardsFilter {
+  q?: string;
+  set?: string;
+  type?: string;
+  rarity?: string;
+  stage?: string;
+  class?: string;
+  owned?: string;
+}
+
+export function CardsBrowser({
+  cards,
+  initial,
+}: {
+  cards: CatalogCard[];
+  initial?: CardsFilter;
+}) {
+  const pathname = usePathname();
+  const [query, setQuery] = useState(initial?.q ?? "");
+  const [setFilter, setSetFilter] = useState(initial?.set ?? "");
+  const [typeFilter, setTypeFilter] = useState(initial?.type ?? "");
+  const [rarityFilter, setRarityFilter] = useState(initial?.rarity ?? "");
+  const [stageFilter, setStageFilter] = useState(initial?.stage ?? "");
+  const [classFilter, setClassFilter] = useState<CardClass>(
+    (initial?.class as CardClass) ?? "all",
+  );
+  const [ownership, setOwnership] = useState<Ownership>(
+    (initial?.owned as Ownership) ?? "all",
+  );
   const [visible, setVisible] = useState(BATCH);
 
   const setCodes = useMemo(
@@ -88,6 +112,27 @@ export function CardsBrowser({ cards }: { cards: CatalogCard[] }) {
     setPrevKey(filterKey);
     setVisible(BATCH);
   }
+
+  // Reflect the active filters in the URL (shareable / back-navigable) without a
+  // server round-trip — history.replaceState avoids re-fetching the catalog.
+  const firstSync = useRef(true);
+  useEffect(() => {
+    if (firstSync.current) {
+      firstSync.current = false;
+      return;
+    }
+    const params = new URLSearchParams();
+    if (query.trim()) params.set("q", query.trim());
+    if (setFilter) params.set("set", setFilter);
+    if (typeFilter) params.set("type", typeFilter);
+    if (rarityFilter) params.set("rarity", rarityFilter);
+    if (stageFilter) params.set("stage", stageFilter);
+    if (classFilter !== "all") params.set("class", classFilter);
+    if (ownership !== "all") params.set("owned", ownership);
+    const qs = params.toString();
+    window.history.replaceState(null, "", qs ? `${pathname}?${qs}` : pathname);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filterKey]);
 
   // Grow the window when the sentinel scrolls into view.
   const sentinel = useRef<HTMLDivElement | null>(null);
