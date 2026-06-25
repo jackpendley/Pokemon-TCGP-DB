@@ -2,26 +2,25 @@
 
 import { useState } from "react";
 
-import { packLogoUrl } from "@/lib/domain/pack-image";
+import { setLogoUrl } from "@/lib/domain/pack-image";
 import { cn } from "@/lib/utils";
 
 /**
- * Expansion logo shown beside a pack name. Degrades to a set-code chip when the
- * logo is missing (uncovered set) or fails to load.
+ * Expansion logo (shared by the Packs table and the Sets pages). Degrades to a
+ * set-code chip if the logo fails to load.
  */
-export function PackLogo({
+export function SetLogo({
   setCode,
-  name,
+  label,
   className,
 }: {
   setCode: string;
-  name: string;
+  label: string;
   className?: string;
 }) {
-  const url = packLogoUrl(setCode);
   const [errored, setErrored] = useState(false);
 
-  if (!url || errored) {
+  if (errored) {
     return (
       <span
         className={cn(
@@ -37,8 +36,8 @@ export function PackLogo({
   return (
     // eslint-disable-next-line @next/next/no-img-element -- external CDN hot-link with onError fallback.
     <img
-      src={url}
-      alt={`${name} pack`}
+      src={setLogoUrl(setCode)}
+      alt={`${label} logo`}
       loading="lazy"
       onError={() => setErrored(true)}
       className={cn("object-contain", className)}
