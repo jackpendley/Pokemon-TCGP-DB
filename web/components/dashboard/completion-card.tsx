@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -9,6 +9,12 @@ import { formatNumber, formatPercent } from "@/lib/domain/format";
 export interface CompletionStat {
   owned: number;
   total: number;
+}
+
+/** Unique cards a recent sync added, per scope — used to animate the ring up. */
+export interface RecentGain {
+  total: number;
+  base: number;
 }
 
 type Mode = "total" | "base";
@@ -55,13 +61,25 @@ function Ring({ ratio }: { ratio: number }) {
 export function CompletionCard({
   total,
   base,
+  recentGain,
 }: {
   total: CompletionStat;
   base: CompletionStat;
+  recentGain?: RecentGain;
 }) {
   const [mode, setMode] = useState<Mode>("total");
   const stat = mode === "base" ? base : total;
   const ratio = stat.total > 0 ? stat.owned / stat.total : 0;
+
+  // Animate the ring up from its pre-sync value when a recent sync added cards.
+  const gain = recentGain ? (mode === "base" ? recentGain.base : recentGain.total) : 0;
+  const fromRatio =
+    stat.total > 0 ? Math.max(0, stat.owned - gain) / stat.total : 0;
+  const [displayRatio, setDisplayRatio] = useState(gain > 0 ? fromRatio : ratio);
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setDisplayRatio(ratio));
+    return () => cancelAnimationFrame(id);
+  }, [ratio]);
 
   return (
     <Card className="h-full">
@@ -89,7 +107,7 @@ export function CompletionCard({
           </div>
         </div>
         <div className="flex flex-1 flex-col items-center justify-center gap-3">
-          <Ring ratio={ratio} />
+          <Ring ratio={displayRatio} />
           <p className="text-sm text-muted-foreground tabular-nums">
             {formatNumber(stat.owned)} / {formatNumber(stat.total)} cards
           </p>
