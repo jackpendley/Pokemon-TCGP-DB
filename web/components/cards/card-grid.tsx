@@ -66,8 +66,8 @@ function CardTile({
       >
         <CardImage card={card} />
       </div>
-      {/* Name + ownership on one line; type + set code below. Ownership never
-          covers the art. */}
+      {/* Name + owned count on one line; type + set code below. Not-owned cards
+          are already signalled by the grayscale art, so no "missing" badge. */}
       <div className="mt-1 flex items-center justify-between gap-1">
         <span className="truncate text-xs font-medium" title={card.name}>
           {card.name}
@@ -76,11 +76,7 @@ function CardTile({
           <span className="shrink-0 rounded bg-primary px-1 text-[10px] font-medium text-primary-foreground tabular-nums">
             ×{card.owned}
           </span>
-        ) : (
-          <span className="shrink-0 rounded border px-1 text-[10px] text-muted-foreground">
-            missing
-          </span>
-        )}
+        ) : null}
       </div>
       <div className="flex items-center justify-between gap-1">
         <TypeBadge type={type} />
