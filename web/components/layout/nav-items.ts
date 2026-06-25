@@ -3,7 +3,6 @@ import {
   Package,
   Layers,
   Wallet,
-  RefreshCw,
   Search,
   type LucideIcon,
 } from "lucide-react";
@@ -20,5 +19,4 @@ export const NAV_ITEMS: NavItem[] = [
   { href: "/cards", label: "Cards", icon: Search },
   { href: "/sets", label: "Sets", icon: Layers },
   { href: "/plan", label: "Spending Plan", icon: Wallet },
-  { href: "/sync", label: "Sync Status", icon: RefreshCw },
 ];

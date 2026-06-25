@@ -1,12 +1,15 @@
 import Link from "next/link";
 
-import { BreakdownBars, type BarItem } from "@/components/dashboard/breakdown-bars";
 import { CompletionCard } from "@/components/dashboard/completion-card";
 import { CountGrid, type CountItem } from "@/components/dashboard/count-grid";
 import { RaritySymbol } from "@/components/dashboard/rarity-symbol";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { TypePieChart } from "@/components/dashboard/type-pie-chart";
 import { SyncButton } from "@/components/sync/sync-button";
+import {
+  SyncHistory,
+  type HistoryEntryView,
+} from "@/components/sync/sync-history";
 import {
   SyncReveal,
   type AdditionItem,
@@ -19,10 +22,12 @@ import { isSyncEnabled } from "@/app/sync/actions";
 import { isMegaEx } from "@/lib/domain/card";
 import { formatEv, formatNumber, titleCase } from "@/lib/domain/format";
 import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
+import type { SyncDeltaEntry } from "@/types";
 
 export const dynamic = "force-dynamic";
 
-const STAGE_ORDER = ["Basic", "Stage 1", "Stage 2", "Stage 3"];
+const STAGE_ORDER = ["Basic", "Stage1", "Stage2", "Stage3"];
+const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
 // Animate sync results on the dashboard only right after a sync, not every visit.
 const RECENT_SYNC_MS = 10 * 60 * 1000;
 
@@ -35,6 +40,7 @@ export default async function DashboardPage() {
     isSyncEnabled(),
   ]);
 
+  const { stats, reviewQueue, delta, history } = sync;
   const topPack = recs.top_packs_unified[0];
 
   // Completion — derived web-side from the catalog (owned counts merged in).
@@ -42,7 +48,6 @@ export default async function DashboardPage() {
   const baseCards = catalog.filter((c) => isBaseRarity(c.rarity));
   const baseOwned = baseCards.filter((c) => c.owned > 0).length;
 
-  // Mega ex (subset of ex) — own quantity + unique, mirroring the ex card.
   const megaCards = catalog.filter(isMegaEx);
   const megaQuantity = megaCards.reduce((n, c) => n + c.owned, 0);
   const megaUnique = megaCards.filter((c) => c.owned > 0).length;
@@ -67,29 +72,48 @@ export default async function DashboardPage() {
       href: `/cards?rarity=${encodeURIComponent(rarity)}`,
     }));
 
-  const stageItems: BarItem[] = Object.entries(summary.by_stage)
-    .sort(([a], [b]) => {
-      const ia = STAGE_ORDER.indexOf(a);
-      const ib = STAGE_ORDER.indexOf(b);
-      if (ia === -1 && ib === -1) return a.localeCompare(b);
-      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
-    })
-    // card_reference stages have no space ("Stage1"); the summary labels do.
-    .map(([label, value]) => ({
-      label,
-      value,
-      href: `/cards?stage=${encodeURIComponent(label.replace(/\s+/g, ""))}`,
+  // Per-stage collected (unique owned / total) — same shape as rarity.
+  const byStage = new Map<string, { owned: number; total: number }>();
+  for (const c of catalog) {
+    if (!c.stage) continue;
+    const e = byStage.get(c.stage) ?? { owned: 0, total: 0 };
+    e.total += 1;
+    if (c.owned > 0) e.owned += 1;
+    byStage.set(c.stage, e);
+  }
+  const stageItems: CountItem[] = [...byStage.keys()]
+    .sort(
+      (a, b) =>
+        (STAGE_ORDER.indexOf(a) === -1 ? 99 : STAGE_ORDER.indexOf(a)) -
+        (STAGE_ORDER.indexOf(b) === -1 ? 99 : STAGE_ORDER.indexOf(b)),
+    )
+    .map((stage) => ({
+      key: stage,
+      label: stageLabel(stage),
+      value: byStage.get(stage)!.owned,
+      total: byStage.get(stage)!.total,
+      href: `/cards?stage=${encodeURIComponent(stage)}`,
     }));
 
-  // ── Latest sync surfaced on the dashboard ──────────────────────────────
-  const { stats, delta } = sync;
+  // ── Sync data surfaced on the dashboard ────────────────────────────────
   const byCoord = new Map(
     catalog.map((c) => [`${c.set_code}:${c.card_number}`, c]),
   );
-  const additions: AdditionItem[] = (delta?.added ?? []).map((entry) => ({
+  const join = (entry: SyncDeltaEntry): AdditionItem => ({
     entry,
     card: byCoord.get(`${entry.set_code}:${entry.card_number}`) ?? null,
+  });
+  const additions: AdditionItem[] = (delta?.added ?? []).map(join);
+  const historyEntries: HistoryEntryView[] = [...history].reverse().map((h) => ({
+    syncedAt: h.synced_at,
+    addedCount: h.added_count,
+    items: h.added.map(join),
   }));
+  const reviewItems = reviewQueue
+    ? reviewQueue.new_cards.length +
+      reviewQueue.ambiguous_matches.length +
+      reviewQueue.missing_from_pz.length
+    : 0;
 
   const setTotals = new Map<string, { total: number; owned: number; expansion: string }>();
   for (const c of catalog) {
@@ -118,8 +142,6 @@ export default async function DashboardPage() {
     })
     .sort((a, b) => b.gained - a.gained);
 
-  // New unique cards this sync (for the completion ring "count-up"). Only honored
-  // when the sync just happened, so old syncs don't re-animate on every visit.
   // Request-time check in this async Server Component; the purity rule targets
   // client render, where Date.now() would be non-deterministic.
   // eslint-disable-next-line react-hooks/purity
@@ -177,11 +199,22 @@ export default async function DashboardPage() {
           recentGain={recentGain}
         />
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:col-span-2">
-          <StatCard
-            title="Total cards"
-            value={formatNumber(summary.total_quantity)}
-            hint={`${formatNumber(summary.unique_entries)} unique entries`}
-          />
+          {/* Total cards — the headline stat, given visual weight. */}
+          <Card className="ring-2 ring-primary/30">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground">
+                Total cards
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-4xl font-bold tabular-nums text-primary">
+                {formatNumber(summary.total_quantity)}
+              </div>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {formatNumber(summary.unique_entries)} unique entries
+              </p>
+            </CardContent>
+          </Card>
           <StatCard
             title="Pokémon"
             value={formatNumber(summary.by_card_type.Pokemon ?? 0)}
@@ -202,6 +235,39 @@ export default async function DashboardPage() {
           />
         </div>
       </section>
+
+      {/* Currency balances + review queue (merged from the old Sync page). */}
+      {stats ? (
+        <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <StatCard
+            title="Pack hourglasses"
+            value={formatNumber(stats.pack_hourglasses)}
+          />
+          <StatCard
+            title="Wonder hourglasses"
+            value={formatNumber(stats.wonder_hourglasses)}
+          />
+          <StatCard
+            title="Shop tickets"
+            value={formatNumber(stats.shop_tickets)}
+          />
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="flex items-center justify-between gap-2 text-sm font-medium text-muted-foreground">
+                Review queue
+                <Badge variant={reviewItems === 0 ? "secondary" : "outline"}>
+                  {reviewItems === 0 ? "Clear" : `${reviewItems}`}
+                </Badge>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              {reviewItems === 0
+                ? "Nothing needs attention."
+                : `${reviewQueue?.new_cards.length ?? 0} new · ${reviewQueue?.ambiguous_matches.length ?? 0} ambiguous`}
+            </CardContent>
+          </Card>
+        </section>
+      ) : null}
 
       {topPack ? (
         <Card>
@@ -237,21 +303,40 @@ export default async function DashboardPage() {
         </Card>
       ) : null}
 
-      {/* Collection breakdown: the two Pokémon views together, rarity below. */}
+      {/* Collection breakdown: type chart, then rarity + stage grids together. */}
       <section className="space-y-4">
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base">By type</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <TypePieChart data={summary.by_pokemon_type} />
+          </CardContent>
+        </Card>
         <div className="grid gap-4 lg:grid-cols-3">
-          <Card className="lg:col-span-2">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-base">By type</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <TypePieChart data={summary.by_pokemon_type} />
-            </CardContent>
-          </Card>
-          <BreakdownBars title="By stage" items={stageItems} />
+          <CountGrid
+            title="By rarity · collected"
+            items={rarityItems}
+            className="lg:col-span-2"
+          />
+          <CountGrid title="By stage · collected" items={stageItems} />
         </div>
-        <CountGrid title="By rarity · collected" items={rarityItems} />
       </section>
+
+      {/* Sync history (merged from the old Sync page). */}
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center justify-between text-base">
+            <span>Sync history</span>
+            {history.length > 0 ? (
+              <Badge variant="secondary">{history.length} syncs</Badge>
+            ) : null}
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <SyncHistory entries={historyEntries} />
+        </CardContent>
+      </Card>
     </div>
   );
 }

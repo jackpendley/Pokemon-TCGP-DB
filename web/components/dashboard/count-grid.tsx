@@ -23,12 +23,14 @@ export type CountItem = {
 export function CountGrid({
   title,
   items,
+  className,
 }: {
   title: string;
   items: CountItem[];
+  className?: string;
 }) {
   return (
-    <Card>
+    <Card className={className}>
       <CardHeader className="pb-2">
         <CardTitle className="text-base">{title}</CardTitle>
       </CardHeader>
