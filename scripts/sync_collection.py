@@ -385,15 +385,48 @@ def match_pz_cards(
             )
             matched_indices.add(idx)
         else:
-            # All variants already claimed — merge overflow count into first matched variant.
-            # Creating a NEW_CARD here would duplicate an existing entry in collection.json;
-            # instead, re-point to an already-matched index so Phase 5 aggregates the count.
-            nn_idxs = [idx for idx in name_index.get(nn, []) if idx in matched_indices]
+            # All same-name collection entries are already claimed. Distinguish a NEW
+            # printing of an owned Pokémon (PZ stamps an exact coord we don't own yet —
+            # e.g. an Illustration Rare alongside the base, or Sableye A3:70 next to
+            # B3a/PROMO-B) from a genuine extra copy of an owned printing.
+            same_name = name_index.get(nn, [])
+            # Only trust "PZ coord not owned ⇒ new printing" when every same-name
+            # entry carries a coord — otherwise absence is ambiguous (a coordless
+            # legacy entry might BE this printing) and overflow-merge stays safest.
+            coords_known = bool(same_name) and all(
+                collection[idx].get("set_code")
+                and collection[idx].get("card_number") is not None
+                for idx in same_name
+            )
+            owns_coord = bool(
+                r.pz_card.set_code
+                and r.pz_card.card_number is not None
+                and any(
+                    str(collection[idx].get("set_code") or "").upper() == r.pz_card.set_code
+                    and collection[idx].get("card_number") == r.pz_card.card_number
+                    for idx in same_name
+                )
+            )
+            if (r.pz_card.set_code and r.pz_card.card_number is not None
+                    and coords_known and not owns_coord):
+                # New printing → add at its own coord instead of overflow-merging onto a
+                # sibling (which mislabels it as a copy and needs reconcile to unpick).
+                # Upstream fix for the alt-art "shown as a copy" class.
+                results[i] = MatchResult(
+                    status="NEW_CARD",
+                    pz_card=r.pz_card,
+                    canonical_name=r.canonical_name,
+                )
+                continue
+
+            # True overflow: every owned printing is matched and PZ's coord is one we
+            # own — merge the extra count into an existing variant (reconcile re-splits).
+            nn_idxs = [idx for idx in same_name if idx in matched_indices]
             target_idx = nn_idxs[0] if nn_idxs else None
             print(
                 f"  WARN: overflow copies of '{r.canonical_name}' "
                 f"(set={r.pz_card.set_code}, num={r.pz_card.card_number}) "
-                f"— all {len(name_index.get(nn, []))} collection variant(s) already matched; "
+                f"— all {len(same_name)} collection variant(s) already matched; "
                 f"merging {r.pz_card.count} count into existing variant.",
                 file=sys.stderr,
             )
