@@ -19,7 +19,7 @@ const CIRC = 2 * Math.PI * R;
 /** Radial progress ring with the percentage centred. */
 function Ring({ ratio }: { ratio: number }) {
   return (
-    <div className="relative size-44">
+    <div className="relative size-52">
       <svg viewBox="0 0 100 100" className="size-full -rotate-90">
         <circle
           cx="50"
@@ -65,19 +65,19 @@ export function CompletionCard({
 
   return (
     <Card className="h-full">
-      <CardContent className="flex h-full flex-col gap-4 py-5">
-        <div className="flex items-start justify-between gap-2">
+      <CardContent className="flex h-full flex-col gap-3 pt-4 pb-5">
+        <div className="flex items-center justify-between gap-2">
           <h2 className="font-heading text-base font-medium">
             Collection completion
           </h2>
-          <div className="inline-flex rounded-md border p-0.5">
+          <div className="inline-flex shrink-0 rounded-md border p-0.5">
             {(["total", "base"] as Mode[]).map((m) => (
               <button
                 key={m}
                 type="button"
                 onClick={() => setMode(m)}
                 className={cn(
-                  "h-7 w-14 rounded text-sm font-medium transition-colors",
+                  "h-7 rounded px-3 text-sm font-medium transition-colors",
                   mode === m
                     ? "bg-secondary text-secondary-foreground"
                     : "text-muted-foreground hover:text-foreground",
