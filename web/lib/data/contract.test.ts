@@ -27,6 +27,7 @@ const catalogStub: CatalogCard[] = [
     pokemon_type: "Grass",
     card_category: "Pokemon",
     trainer_subtype: null,
+    stage: "Basic",
     expansion: "Genetic Apex",
     is_ex: false,
     owned: 2,
