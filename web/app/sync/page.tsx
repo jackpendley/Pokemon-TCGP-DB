@@ -1,6 +1,9 @@
 import { StatCard } from "@/components/dashboard/stat-card";
 import { SyncButton } from "@/components/sync/sync-button";
-import { SyncHistory } from "@/components/sync/sync-history";
+import {
+  SyncHistory,
+  type HistoryEntryView,
+} from "@/components/sync/sync-history";
 import {
   SyncReveal,
   type AdditionItem,
@@ -11,6 +14,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { dataSource } from "@/lib/data";
 import { formatNumber } from "@/lib/domain/format";
 import { isSyncEnabled } from "@/app/sync/actions";
+import type { SyncDeltaEntry } from "@/types";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Sync Status · TCGP Optimizer" };
@@ -33,9 +37,18 @@ export default async function SyncPage() {
   const byCoord = new Map(
     catalog.map((c) => [`${c.set_code}:${c.card_number}`, c]),
   );
-  const additions: AdditionItem[] = (delta?.added ?? []).map((entry) => ({
+  const join = (entry: SyncDeltaEntry): AdditionItem => ({
     entry,
     card: byCoord.get(`${entry.set_code}:${entry.card_number}`) ?? null,
+  });
+  const additions: AdditionItem[] = (delta?.added ?? []).map(join);
+
+  // Past syncs (newest first), each joined to the catalog so its row can expand
+  // to the same clickable, animated card reveal as the latest sync.
+  const historyEntries: HistoryEntryView[] = [...history].reverse().map((h) => ({
+    syncedAt: h.synced_at,
+    addedCount: h.added_count,
+    items: h.added.map(join),
   }));
 
   // Per-set completion gain: a card going 0→owned (is_new) adds one unique to
@@ -168,7 +181,7 @@ export default async function SyncPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <SyncHistory entries={history} />
+          <SyncHistory entries={historyEntries} />
         </CardContent>
       </Card>
 
