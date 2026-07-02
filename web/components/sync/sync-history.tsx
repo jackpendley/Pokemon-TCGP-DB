@@ -37,6 +37,9 @@ export function SyncHistory({ entries }: { entries: HistoryEntryView[] }) {
 
 function HistoryRow({ entry }: { entry: HistoryEntryView }) {
   const [open, setOpen] = useState(false);
+  // Mount the reveal grid only once opened, so all rows don't animate on load;
+  // it then stays mounted so the collapse can animate closed.
+  const [everOpened, setEverOpened] = useState(false);
   const newCount = entry.items.filter((i) => i.entry.is_new).length;
   return (
     <li
@@ -47,7 +50,10 @@ function HistoryRow({ entry }: { entry: HistoryEntryView }) {
     >
       <button
         type="button"
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => {
+          setOpen((o) => !o);
+          setEverOpened(true);
+        }}
         aria-expanded={open}
         className="flex w-full items-center justify-between gap-3 px-4 py-3.5 text-left"
       >
@@ -73,11 +79,19 @@ function HistoryRow({ entry }: { entry: HistoryEntryView }) {
           +{entry.addedCount} {entry.addedCount === 1 ? "card" : "cards"}
         </Badge>
       </button>
-      {open ? (
-        <div className="animate-in fade-in slide-in-from-top-1 border-t px-4 py-4 duration-300">
-          <RevealGrid items={entry.items} />
+      {/* Height animates on open AND close via a 0fr→1fr grid-rows transition. */}
+      <div
+        className={cn(
+          "grid transition-[grid-template-rows] duration-300 ease-out",
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+        )}
+      >
+        <div className="overflow-hidden">
+          <div className="border-t px-4 py-4">
+            {everOpened ? <RevealGrid items={entry.items} /> : null}
+          </div>
         </div>
-      ) : null}
+      </div>
     </li>
   );
 }

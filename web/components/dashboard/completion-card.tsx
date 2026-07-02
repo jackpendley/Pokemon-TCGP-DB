@@ -83,7 +83,7 @@ export function CompletionCard({
 
   return (
     <Card className="h-full">
-      <CardContent className="flex h-full flex-col gap-3 pt-4 pb-5">
+      <CardContent className="flex h-full flex-col gap-3">
         <div className="flex items-center justify-between gap-2">
           <h2 className="font-heading text-base font-medium">
             Collection completion

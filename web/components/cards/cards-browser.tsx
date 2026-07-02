@@ -20,6 +20,8 @@ type Ownership = "all" | "owned" | "missing";
 type Scope = "total" | "base";
 type Sort = "default" | "power";
 
+type Category = "all" | "Pokemon" | "Trainer";
+
 export interface CardsFilter {
   q?: string;
   set?: string;
@@ -27,6 +29,7 @@ export interface CardsFilter {
   rarity?: string;
   stage?: string;
   class?: string;
+  category?: string;
   owned?: string;
   scope?: string;
   sort?: string;
@@ -84,6 +87,9 @@ export function CardsBrowser({
   const [classFilter, setClassFilter] = useState<CardClass>(
     (initial?.class as CardClass) ?? "all",
   );
+  const [category, setCategory] = useState<Category>(
+    (initial?.category as Category) ?? "all",
+  );
   const [ownership, setOwnership] = useState<Ownership>(
     (initial?.owned as Ownership) ?? "all",
   );
@@ -135,13 +141,14 @@ export function CardsBrowser({
       if (rarities.length && !(c.rarity && rarities.includes(c.rarity))) return false;
       if (stages.length && !(c.stage && stages.includes(c.stage))) return false;
       if (scope === "base" && !isBaseRarity(c.rarity)) return false;
+      if (category !== "all" && c.card_category !== category) return false;
       if (classFilter === "ex" && !c.is_ex) return false;
       if (classFilter === "mega" && !isMegaEx(c)) return false;
       if (ownership === "owned" && c.owned <= 0) return false;
       if (ownership === "missing" && c.owned > 0) return false;
       return true;
     });
-  }, [cards, query, sets, types, rarities, stages, scope, classFilter, ownership]);
+  }, [cards, query, sets, types, rarities, stages, scope, category, classFilter, ownership]);
 
   const ordered = useMemo(
     () =>
@@ -160,7 +167,7 @@ export function CardsBrowser({
     ? cards.find((c) => c.set_code === singleSet)?.expansion ?? singleSet
     : null;
 
-  const filterKey = `${query}|${sets}|${types}|${rarities}|${stages}|${classFilter}|${ownership}|${scope}|${sort}`;
+  const filterKey = `${query}|${sets}|${types}|${rarities}|${stages}|${category}|${classFilter}|${ownership}|${scope}|${sort}`;
   const [prevKey, setPrevKey] = useState(filterKey);
   if (filterKey !== prevKey) {
     setPrevKey(filterKey);
@@ -179,6 +186,7 @@ export function CardsBrowser({
     if (types.length) p.set("type", types.join(","));
     if (rarities.length) p.set("rarity", rarities.join(","));
     if (stages.length) p.set("stage", stages.join(","));
+    if (category !== "all") p.set("category", category);
     if (classFilter !== "all") p.set("class", classFilter);
     if (ownership !== "all") p.set("owned", ownership);
     if (scope === "base") p.set("scope", scope);
@@ -290,6 +298,16 @@ export function CardsBrowser({
           selected={stages}
           onChange={setStages}
         />
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value as Category)}
+          className={selectCls}
+          aria-label="Category"
+        >
+          <option value="all">All categories</option>
+          <option value="Pokemon">Pokémon</option>
+          <option value="Trainer">Trainers</option>
+        </select>
         <select
           value={classFilter}
           onChange={(e) => setClassFilter(e.target.value as CardClass)}
