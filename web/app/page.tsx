@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { CompletionCard } from "@/components/dashboard/completion-card";
 import { CountGrid, type CountItem } from "@/components/dashboard/count-grid";
+import { NextPackCard } from "@/components/dashboard/next-pack-card";
 import { RaritySymbol } from "@/components/dashboard/rarity-symbol";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { TypePieChart } from "@/components/dashboard/type-pie-chart";
@@ -20,7 +21,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { dataSource } from "@/lib/data";
 import { isSyncEnabled } from "@/app/sync/actions";
 import { isMegaEx } from "@/lib/domain/card";
-import { formatEv, formatNumber, titleCase } from "@/lib/domain/format";
+import { formatNumber, titleCase } from "@/lib/domain/format";
 import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
 import type { SyncDeltaEntry } from "@/types";
 
@@ -32,16 +33,23 @@ const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
 const RECENT_SYNC_MS = 10 * 60 * 1000;
 
 export default async function DashboardPage() {
-  const [summary, recs, catalog, sync, syncEnabled] = await Promise.all([
+  const [summary, recs, packEv, catalog, sync, syncEnabled] = await Promise.all([
     dataSource.getCollectionSummary(),
     dataSource.getRecommendations(),
+    dataSource.getPackEv(),
     dataSource.getCatalog(),
     dataSource.getSyncStatus(),
     isSyncEnabled(),
   ]);
 
   const { stats, reviewQueue, delta, history } = sync;
-  const topPack = recs.top_packs_unified[0];
+
+  // "What to open next": the top unified picks, each joined to its strongest
+  // unowned pull targets (top_power_cards live on pack_ev, not recommendations).
+  const powerByPack = new Map(
+    packEv.packs.map((p) => [p.pack_name, p.top_power_cards]),
+  );
+  const topPacks = recs.top_packs_unified.slice(0, 3);
 
   // Completion — derived web-side from the catalog (owned counts merged in).
   const totalOwned = catalog.filter((c) => c.owned > 0).length;
@@ -191,30 +199,96 @@ export default async function DashboardPage() {
         </Card>
       ) : null}
 
-      {/* Overview: completion ring beside the headline collection counts. */}
+      {/* State band: completion ring · headline total · spendable currency. */}
       <section className="grid gap-4 lg:grid-cols-3">
         <CompletionCard
           total={{ owned: totalOwned, total: catalog.length }}
           base={{ owned: baseOwned, total: baseCards.length }}
           recentGain={recentGain}
         />
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:col-span-2">
-          {/* Total cards — the headline stat, given visual weight. */}
-          <Card className="ring-2 ring-primary/30">
+        <Card className="ring-2 ring-primary/30">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground">
+              Total cards
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-4xl font-bold tabular-nums text-primary">
+              {formatNumber(summary.total_quantity)}
+            </div>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {formatNumber(summary.unique_entries)} unique entries
+            </p>
+          </CardContent>
+        </Card>
+        {stats ? (
+          <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
-                Total cards
+                Currency
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="text-4xl font-bold tabular-nums text-primary">
-                {formatNumber(summary.total_quantity)}
+            <CardContent className="space-y-2">
+              <div className="flex items-baseline justify-between">
+                <span className="text-sm text-muted-foreground">
+                  Pack hourglasses
+                </span>
+                <span className="text-2xl font-semibold tabular-nums text-primary">
+                  {formatNumber(stats.pack_hourglasses)}
+                </span>
               </div>
-              <p className="mt-1 text-xs text-muted-foreground">
-                {formatNumber(summary.unique_entries)} unique entries
-              </p>
+              <div className="flex items-baseline justify-between text-sm">
+                <span className="text-muted-foreground">Wonder hourglasses</span>
+                <span className="tabular-nums">
+                  {formatNumber(stats.wonder_hourglasses)}
+                </span>
+              </div>
+              <div className="flex items-baseline justify-between text-sm">
+                <span className="text-muted-foreground">Shop tickets</span>
+                <span className="tabular-nums">
+                  {formatNumber(stats.shop_tickets)}
+                </span>
+              </div>
             </CardContent>
           </Card>
+        ) : (
+          <StatCard
+            title="Unique entries"
+            value={formatNumber(summary.unique_entries)}
+            hint={`${formatNumber(summary.ex_quantity)} ex cards`}
+          />
+        )}
+      </section>
+
+      {/* Centerpiece: what to open next. */}
+      {topPacks.length > 0 ? (
+        <section className="space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-medium">What to open next</h2>
+            <Link
+              href="/packs"
+              className="text-sm font-medium text-primary hover:underline"
+            >
+              View all packs →
+            </Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {topPacks.map((p, i) => (
+              <NextPackCard
+                key={p.pack_name}
+                pack={p}
+                powerCards={powerByPack.get(p.pack_name) ?? []}
+                rank={i + 1}
+              />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {/* Collection: secondary counts, then compact type/rarity/stage breakdowns. */}
+      <section className="space-y-4">
+        <h2 className="text-lg font-medium">Collection</h2>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           <StatCard
             title="Pokémon"
             value={formatNumber(summary.by_card_type.Pokemon ?? 0)}
@@ -234,103 +308,37 @@ export default async function DashboardPage() {
             hint={`${formatNumber(megaUnique)} of ${formatNumber(megaCards.length)} unique`}
           />
         </div>
-      </section>
-
-      {/* Currency balances + review queue (merged from the old Sync page). */}
-      {stats ? (
-        <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <StatCard
-            title="Pack hourglasses"
-            value={formatNumber(stats.pack_hourglasses)}
-          />
-          <StatCard
-            title="Wonder hourglasses"
-            value={formatNumber(stats.wonder_hourglasses)}
-          />
-          <StatCard
-            title="Shop tickets"
-            value={formatNumber(stats.shop_tickets)}
-          />
-          <Card>
+        <div className="grid gap-4 lg:grid-cols-3">
+          <Card className="lg:col-span-1">
             <CardHeader className="pb-2">
-              <CardTitle className="flex items-center justify-between gap-2 text-sm font-medium text-muted-foreground">
-                Review queue
-                <Badge variant={reviewItems === 0 ? "secondary" : "outline"}>
-                  {reviewItems === 0 ? "Clear" : `${reviewItems}`}
-                </Badge>
-              </CardTitle>
+              <CardTitle className="text-base">By type</CardTitle>
             </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              {reviewItems === 0
-                ? "Nothing needs attention."
-                : `${reviewQueue?.new_cards.length ?? 0} new · ${reviewQueue?.ambiguous_matches.length ?? 0} ambiguous`}
+            <CardContent>
+              <TypePieChart data={summary.by_pokemon_type} />
             </CardContent>
           </Card>
-        </section>
-      ) : null}
-
-      {topPack ? (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center justify-between gap-2 text-base">
-              <span>Top recommended pack</span>
-              <Badge variant="secondary">
-                {titleCase(topPack.slot_rates_confidence)}
-              </Badge>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <div className="text-xl font-semibold">{topPack.pack_name}</div>
-              <div className="text-sm text-muted-foreground">
-                {topPack.expansion} · {topPack.missing_in_pool} missing of{" "}
-                {topPack.cards_in_pool}
-              </div>
-            </div>
-            <div className="text-right">
-              <div className="text-2xl font-semibold tabular-nums">
-                {formatEv(topPack.unified_score)}
-              </div>
-              <div className="text-xs text-muted-foreground">unified score</div>
-            </div>
-            <Link
-              href="/packs"
-              className="text-sm font-medium text-primary hover:underline"
-            >
-              View all packs →
-            </Link>
-          </CardContent>
-        </Card>
-      ) : null}
-
-      {/* Collection breakdown: type chart, then rarity + stage grids together. */}
-      <section className="space-y-4">
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-base">By type</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <TypePieChart data={summary.by_pokemon_type} />
-          </CardContent>
-        </Card>
-        <div className="grid gap-4 lg:grid-cols-3">
           <CountGrid
             title="By rarity · collected"
             items={rarityItems}
             className="lg:col-span-2"
           />
-          <CountGrid title="By stage · collected" items={stageItems} />
         </div>
+        <CountGrid title="By stage · collected" items={stageItems} />
       </section>
 
-      {/* Sync history (merged from the old Sync page). */}
+      {/* Recent activity: sync history (+ review-queue chip). */}
       <Card>
         <CardHeader className="pb-2">
-          <CardTitle className="flex items-center justify-between text-base">
+          <CardTitle className="flex items-center justify-between gap-2 text-base">
             <span>Sync history</span>
-            {history.length > 0 ? (
-              <Badge variant="secondary">{history.length} syncs</Badge>
-            ) : null}
+            <span className="flex items-center gap-2">
+              {reviewItems > 0 ? (
+                <Badge variant="outline">{reviewItems} to review</Badge>
+              ) : null}
+              {history.length > 0 ? (
+                <Badge variant="secondary">{history.length} syncs</Badge>
+              ) : null}
+            </span>
           </CardTitle>
         </CardHeader>
         <CardContent>
