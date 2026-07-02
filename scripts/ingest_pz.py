@@ -529,6 +529,16 @@ def main() -> int:
                     if rc == 1:
                         print("  ERROR: build_card_reference.py failed", file=sys.stderr)
                         return 1
+                    # Rebuild the pull-probability model too: EV/recommendations only
+                    # score packs present in it, so a newly-ingested pack would stay
+                    # invisible in EV until this runs. Doing it here closes that loop.
+                    print("Rebuilding pull_probability_model.json…")
+                    rc = subprocess.run(
+                        [sys.executable, str(Path(__file__).with_name("build_pull_probability_model.py"))]
+                    ).returncode
+                    if rc != 0:
+                        print("  ERROR: build_pull_probability_model.py failed", file=sys.stderr)
+                        return 1
                     print("Done. Re-run run_recommendations.py to pick up the new cards.")
                 else:
                     print("Next: python3 scripts/build_card_reference.py   "

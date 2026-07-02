@@ -43,7 +43,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (RARE_PLUS_RARITIES, HOURGLASS_PER_PACK,
                             norm_card_name as _norm_name, normalize_rarity,
                             load_collection_counts, EV_BASE_SCORING_WEIGHTS,
-                            validate_pack_sources_schema,
+                            validate_pack_sources_schema, canonical_set_code,
+                            PROMO_SET_CODES,
                             ROOT, COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
                             PULL_MODEL_JSON, PACK_SOURCES_JSON, PZ_PACK_ODDS_JSON,
                             DECK_VALIDATION_JSON, PACK_EV_JSON as OUT_JSON)
@@ -912,6 +913,28 @@ def main():
         print(f"  PZ pack odds:       {len(pz_raw)} packs — using direct PZ drop chances")
     else:
         print(f"  PZ pack odds:       not found — falling back to inferred slot rates")
+
+    # Safety net for the silent-drop failure mode: build() scores only packs that
+    # exist in pull_model, so a pack with PZ odds but no model entry is dropped
+    # from EV with no error (how a freshly-ingested set stays invisible). Flag any
+    # PZ pack that no model pack resolves to — using resolve_pz_slug, the same
+    # matcher build() uses, so pack-name format differences don't false-positive.
+    # Promos are excluded (scored separately by build_promo_pack_ev).
+    if pz_raw:
+        claimed = {
+            resolve_pz_slug(pn, rec.get("set_code", ""), pz_raw)
+            for pn, rec in pull_model.items()
+        }
+        unmodeled = sorted({
+            pdata.get("pack_name") or slug
+            for slug, pdata in pz_raw.items()
+            if slug not in claimed
+            and canonical_set_code(str(pdata.get("expansion_id", ""))) not in PROMO_SET_CODES
+        })
+        if unmodeled:
+            print(f"  WARN: {len(unmodeled)} pack(s) have PZ odds but no pull_probability_model "
+                  f"entry — they will NOT be scored. Run build_pull_probability_model.py. "
+                  f"Missing: {', '.join(unmodeled)}", file=sys.stderr)
 
     pack_ev_records, blocked = build(
         collection, pull_model, pack_cards, expansion_shared, deck_targets,
