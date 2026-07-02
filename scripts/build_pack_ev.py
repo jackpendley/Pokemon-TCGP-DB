@@ -515,8 +515,12 @@ def _top_power_cards(card_ev_list: list, power_by_coord: dict,
                      n: int = TOP_N_CARDS) -> list:
     """Top-N missing (owned==0) pullable cards ranked by power score — the
     strongest cards this pack can still give you, each with its pull probability.
-    Informational only; never affects an EV field."""
-    picks = []
+    Informational only; never affects an EV field.
+
+    Alt-art printings of one card share a single power score, so a raw power
+    ranking fills every slot with the same Pokémon. Collapse printings by name,
+    keeping the most-pullable one, so the list shows N *distinct* cards."""
+    best: dict = {}
     for c in card_ev_list:
         if c.get("owned", 0) > 0:
             continue
@@ -524,15 +528,18 @@ def _top_power_cards(card_ev_list: list, power_by_coord: dict,
             (str(c.get("set_code") or "").upper(), c.get("card_number")))
         if ps is None:
             continue
-        picks.append({
+        pick = {
             "name": c["name"],
             "set_code": c.get("set_code"),
             "card_number": c.get("card_number"),
             "rarity": c["rarity"],
             "power_score": ps,
             "pull_prob": c["pull_prob"],
-        })
-    picks.sort(key=lambda x: x["power_score"], reverse=True)
+        }
+        prev = best.get(c["name"])
+        if prev is None or pick["pull_prob"] > prev["pull_prob"]:
+            best[c["name"]] = pick
+    picks = sorted(best.values(), key=lambda x: x["power_score"], reverse=True)
     return picks[:n]
 
 

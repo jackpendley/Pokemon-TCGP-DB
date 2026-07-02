@@ -378,3 +378,24 @@ def test_top_power_cards_empty_without_power_map():
     lst = [{"name": "X", "set_code": "A1", "card_number": 1, "rarity": "rare",
             "owned": 0, "pull_prob": 0.1}]
     assert bev._top_power_cards(lst, {}) == []
+
+
+def test_top_power_cards_dedups_printings_keeping_most_pullable():
+    # Same card, three printings sharing one power score — the list must show it
+    # once, via its most-pullable printing, not fill every slot with dupes.
+    card_ev_list = [
+        {"name": "Charizard ex", "set_code": "A1", "card_number": 36,
+         "rarity": "double_rare", "owned": 0, "pull_prob": 0.017},
+        {"name": "Charizard ex", "set_code": "A1", "card_number": 253,
+         "rarity": "super_rare", "owned": 0, "pull_prob": 0.003},
+        {"name": "Charizard ex", "set_code": "A1", "card_number": 280,
+         "rarity": "immersive", "owned": 0, "pull_prob": 0.011},
+        {"name": "Melmetal", "set_code": "A1", "card_number": 182,
+         "rarity": "rare", "owned": 0, "pull_prob": 0.018},
+    ]
+    power = {("A1", 36): 81.3, ("A1", 253): 81.3, ("A1", 280): 81.3,
+             ("A1", 182): 65.7}
+    top = bev._top_power_cards(card_ev_list, power, n=5)
+    assert [c["name"] for c in top] == ["Charizard ex", "Melmetal"]  # distinct
+    # kept the highest-pull_prob printing (double_rare 0.017, card 36)
+    assert top[0]["card_number"] == 36 and top[0]["pull_prob"] == 0.017
