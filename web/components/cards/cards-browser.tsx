@@ -18,6 +18,7 @@ const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
 type CardClass = "all" | "ex" | "mega";
 type Ownership = "all" | "owned" | "missing";
 type Scope = "total" | "base";
+type Sort = "default" | "power";
 
 export interface CardsFilter {
   q?: string;
@@ -28,6 +29,7 @@ export interface CardsFilter {
   class?: string;
   owned?: string;
   scope?: string;
+  sort?: string;
 }
 
 const splitCsv = (v?: string) => (v ? v.split(",").filter(Boolean) : []);
@@ -88,6 +90,9 @@ export function CardsBrowser({
   const [scope, setScope] = useState<Scope>(
     initial?.scope === "base" ? "base" : "total",
   );
+  const [sort, setSort] = useState<Sort>(
+    initial?.sort === "power" ? "power" : "default",
+  );
   const [visible, setVisible] = useState(BATCH);
 
   const setCodes = useMemo(() => [...new Set(cards.map((c) => c.set_code))], [cards]);
@@ -138,6 +143,16 @@ export function CardsBrowser({
     });
   }, [cards, query, sets, types, rarities, stages, scope, classFilter, ownership]);
 
+  const ordered = useMemo(
+    () =>
+      sort === "power"
+        ? [...filtered].sort(
+            (a, b) => (b.power_score ?? -1) - (a.power_score ?? -1),
+          )
+        : filtered,
+    [filtered, sort],
+  );
+
   const ownedShown = filtered.filter((c) => c.owned > 0).length;
   const ratio = filtered.length > 0 ? ownedShown / filtered.length : 0;
   const singleSet = sets.length === 1 ? sets[0] : null;
@@ -145,7 +160,7 @@ export function CardsBrowser({
     ? cards.find((c) => c.set_code === singleSet)?.expansion ?? singleSet
     : null;
 
-  const filterKey = `${query}|${sets}|${types}|${rarities}|${stages}|${classFilter}|${ownership}|${scope}`;
+  const filterKey = `${query}|${sets}|${types}|${rarities}|${stages}|${classFilter}|${ownership}|${scope}|${sort}`;
   const [prevKey, setPrevKey] = useState(filterKey);
   if (filterKey !== prevKey) {
     setPrevKey(filterKey);
@@ -167,6 +182,7 @@ export function CardsBrowser({
     if (classFilter !== "all") p.set("class", classFilter);
     if (ownership !== "all") p.set("owned", ownership);
     if (scope === "base") p.set("scope", scope);
+    if (sort !== "default") p.set("sort", sort);
     const qs = p.toString();
     window.history.replaceState(null, "", qs ? `${pathname}?${qs}` : pathname);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -187,7 +203,7 @@ export function CardsBrowser({
     return () => observer.disconnect();
   }, [filtered.length]);
 
-  const shown = filtered.slice(0, visible);
+  const shown = ordered.slice(0, visible);
   const selectCls = "h-9 rounded-md border bg-background px-2 text-sm";
 
   return (
@@ -291,6 +307,15 @@ export function CardsBrowser({
           <option value="all">All</option>
           <option value="owned">Owned</option>
           <option value="missing">Missing</option>
+        </select>
+        <select
+          value={sort}
+          onChange={(e) => setSort(e.target.value as Sort)}
+          className={selectCls}
+          aria-label="Sort"
+        >
+          <option value="default">Sort: default</option>
+          <option value="power">Sort: power ▾</option>
         </select>
       </div>
 

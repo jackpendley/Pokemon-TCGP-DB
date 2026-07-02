@@ -36,6 +36,23 @@ export const collectionFileSchema = z.object({
   ),
 });
 
+/** data/reference/card_power_scores.json — HP+attack+ability power model. */
+export const powerScoresFileSchema = z.object({
+  generated_at: z.string(),
+  scores: z.record(
+    z.string(),
+    z
+      .object({
+        power_score: z.number(),
+        hp: z.number().nullable(),
+        max_damage: z.number().nullable(),
+        has_ability: z.boolean(),
+        estimated: z.boolean(),
+      })
+      .loose(),
+  ),
+});
+
 /** One catalog card as the UI consumes it. */
 export interface CatalogCard {
   set_code: string;
@@ -49,4 +66,6 @@ export interface CatalogCard {
   expansion: string;
   is_ex: boolean;
   owned: number;
+  /** 0–100 power/value score (HP + attack + ability); null for non-Pokémon. */
+  power_score: number | null;
 }

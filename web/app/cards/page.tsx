@@ -28,6 +28,7 @@ export default async function CardsPage({
     class: pick("class"),
     owned: pick("owned"),
     scope: pick("scope"),
+    sort: pick("sort"),
   };
 
   return (

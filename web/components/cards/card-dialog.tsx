@@ -51,6 +51,14 @@ export function CardDialog({
               <Row label="Owned">
                 {card.owned > 0 ? `×${card.owned}` : "Not owned"}
               </Row>
+              {card.power_score != null ? (
+                <Row label="Power score">
+                  <span className="font-semibold tabular-nums text-primary">
+                    {card.power_score.toFixed(1)}
+                  </span>
+                  <span className="text-xs text-muted-foreground"> / 100</span>
+                </Row>
+              ) : null}
             </dl>
           </div>
         ) : null}
