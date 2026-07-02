@@ -104,6 +104,46 @@ export default async function PackDetailPage({
           <p className="mt-3 text-xs text-muted-foreground">{pack.notes}</p>
         ) : null}
       </div>
+
+      {pack.top_power_cards.length > 0 ? (
+        <div>
+          <h2 className="mb-1 text-lg font-medium">Top pull targets by power</h2>
+          <p className="mb-3 text-sm text-muted-foreground">
+            The strongest cards you don&apos;t own yet in this pack, with the
+            chance of pulling each from a single pack.
+          </p>
+          <div className="rounded-lg border">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Card</TableHead>
+                  <TableHead>Set</TableHead>
+                  <TableHead>Rarity</TableHead>
+                  <TableHead className="text-right">Power</TableHead>
+                  <TableHead className="text-right">Pull prob (1 pack)</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {pack.top_power_cards.map((c, i) => (
+                  <TableRow key={`${c.set_code}-${c.card_number}-${i}`}>
+                    <TableCell className="font-medium">{c.name}</TableCell>
+                    <TableCell className="tabular-nums text-muted-foreground">
+                      {c.set_code}:{c.card_number}
+                    </TableCell>
+                    <TableCell>{titleCase(c.rarity)}</TableCell>
+                    <TableCell className="text-right font-semibold tabular-nums text-primary">
+                      {c.power_score.toFixed(1)}
+                    </TableCell>
+                    <TableCell className="text-right tabular-nums">
+                      {formatPercent(c.pull_prob, 2)}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

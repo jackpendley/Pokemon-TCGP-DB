@@ -128,8 +128,9 @@ def hash_input_paths() -> tuple[Path, ...]:
     such a change (e.g. the reprint-ownership snapshot fix, whose effect was missed until an
     input file happened to change)."""
     code = (Path(__file__).resolve(), Path(__file__).resolve().parent / "_collection_io.py")
+    power = (ROOT / "data" / "reference" / "card_power_scores.json",)
     return (COLLECTION_JSON, PULL_MODEL_JSON, PACK_SOURCES_JSON,
-            DECK_VALIDATION_JSON, PZ_PACK_ODDS_JSON, *code)
+            DECK_VALIDATION_JSON, PZ_PACK_ODDS_JSON, *power, *code)
 
 
 def load_pull_model(path: Path) -> dict:
@@ -408,6 +409,8 @@ def _accumulate_pool_ev(all_pool_cards: list, collection: dict,
         if ev > 0:
             agg.card_ev_list.append({
                 "name": card_name,
+                "set_code": card.get("set_code"),
+                "card_number": cn,
                 "rarity": rarity,
                 "is_deck_target": is_dt,
                 "owned": owned,
@@ -490,11 +493,55 @@ def _rank_top_cards(card_ev_list: list) -> tuple[list, list]:
     return card_ev_list[:TOP_N_CARDS], deck_target_cards
 
 
+CARD_POWER_JSON = ROOT / "data" / "reference" / "card_power_scores.json"
+
+
+def load_power_scores(path: Path = CARD_POWER_JSON) -> dict:
+    """{(SET_CODE_UPPER, card_number): power_score} from card_power_scores.json."""
+    if not path.exists():
+        return {}
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    out: dict = {}
+    for key, v in raw.get("scores", {}).items():
+        sc, _, num = key.rpartition(":")
+        try:
+            out[(sc.upper(), int(num))] = v.get("power_score")
+        except ValueError:
+            continue
+    return out
+
+
+def _top_power_cards(card_ev_list: list, power_by_coord: dict,
+                     n: int = TOP_N_CARDS) -> list:
+    """Top-N missing (owned==0) pullable cards ranked by power score — the
+    strongest cards this pack can still give you, each with its pull probability.
+    Informational only; never affects an EV field."""
+    picks = []
+    for c in card_ev_list:
+        if c.get("owned", 0) > 0:
+            continue
+        ps = power_by_coord.get(
+            (str(c.get("set_code") or "").upper(), c.get("card_number")))
+        if ps is None:
+            continue
+        picks.append({
+            "name": c["name"],
+            "set_code": c.get("set_code"),
+            "card_number": c.get("card_number"),
+            "rarity": c["rarity"],
+            "power_score": ps,
+            "pull_prob": c["pull_prob"],
+        })
+    picks.sort(key=lambda x: x["power_score"], reverse=True)
+    return picks[:n]
+
+
 def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
                            collection: dict, deck_targets: dict,
                            pz_card_odds: dict | None = None,
                            pz_name_odds: dict | None = None,
-                           collection_by_card: dict | None = None) -> dict:
+                           collection_by_card: dict | None = None,
+                           power_by_coord: dict | None = None) -> dict:
     """Compute all EV fields for one pack.
 
     pz_card_odds: {(set_code_upper, card_number): drop_chance_decimal} — primary PZ lookup.
@@ -540,6 +587,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     cost_per_unique_1x, cost_per_unique_10x = _calculate_cost_efficiency(
         agg.new_card_ev, agg.new_card_ev_10x)
     top_ev_cards, deck_target_cards = _rank_top_cards(agg.card_ev_list)
+    top_power_cards = _top_power_cards(agg.card_ev_list, power_by_coord or {})
 
     return {
         **base,
@@ -567,6 +615,7 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
         "cost_per_unique_card_10x": round(cost_per_unique_10x, 2),
         "pz_coverage": round(pz_coverage, 3),
         "top_ev_cards": top_ev_cards,
+        "top_power_cards": top_power_cards,
         "deck_target_cards": deck_target_cards,
         "notes": (
             f"slot_rates={source_status}. "
@@ -586,6 +635,7 @@ def build(collection, pull_model, pack_cards, expansion_shared, deck_targets,
           pz_raw=None, pz_odds=None, collection_by_card=None):
     pack_ev_records = []
     blocked = []
+    power_by_coord = load_power_scores()
 
     for pack_name, pack_record in sorted(pull_model.items()):
         expansion = pack_record["expansion"]
@@ -621,7 +671,7 @@ def build(collection, pull_model, pack_cards, expansion_shared, deck_targets,
                                 pz_name_odds[name_l] = rate
         record = compute_pack_ev_record(
             pack_record, all_pool_cards, collection, deck_targets,
-            pz_card_odds, pz_name_odds, collection_by_card,
+            pz_card_odds, pz_name_odds, collection_by_card, power_by_coord,
         )
         if record.get("blocked"):
             blocked.append(record)

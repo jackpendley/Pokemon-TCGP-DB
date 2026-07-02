@@ -351,3 +351,30 @@ def test_deck_target_ev_is_zero_at_runtime(pack_ev):
     for p in packs:
         assert p.get("deck_target_ev", 0) == 0, p.get("pack_name")
         assert p.get("deck_target_cards", []) == []
+
+
+# ---------------------------------------------------------------------------
+# _top_power_cards — strongest missing pullable cards per pack (informational)
+# ---------------------------------------------------------------------------
+
+def test_top_power_cards_ranks_missing_by_power():
+    card_ev_list = [
+        {"name": "Weak", "set_code": "A1", "card_number": 1, "rarity": "common",
+         "owned": 0, "pull_prob": 0.5},
+        {"name": "Strong", "set_code": "A1", "card_number": 2, "rarity": "double_rare",
+         "owned": 0, "pull_prob": 0.02},
+        {"name": "Owned", "set_code": "A1", "card_number": 3, "rarity": "rare",
+         "owned": 1, "pull_prob": 0.1},          # excluded (already owned)
+        {"name": "NoPower", "set_code": "A1", "card_number": 4, "rarity": "rare",
+         "owned": 0, "pull_prob": 0.1},          # excluded (no power score)
+    ]
+    power = {("A1", 1): 30.0, ("A1", 2): 80.0, ("A1", 3): 90.0}
+    top = bev._top_power_cards(card_ev_list, power, n=5)
+    assert [c["name"] for c in top] == ["Strong", "Weak"]   # power desc, missing only
+    assert top[0]["power_score"] == 80.0 and top[0]["pull_prob"] == 0.02
+
+
+def test_top_power_cards_empty_without_power_map():
+    lst = [{"name": "X", "set_code": "A1", "card_number": 1, "rarity": "rare",
+            "owned": 0, "pull_prob": 0.1}]
+    assert bev._top_power_cards(lst, {}) == []

@@ -21,6 +21,17 @@ export const topEvCardSchema = z.object({
 });
 export type TopEvCard = z.infer<typeof topEvCardSchema>;
 
+/** Strongest missing cards obtainable from a pack, ranked by power score. */
+export const topPowerCardSchema = z.object({
+  name: z.string(),
+  set_code: z.string().nullable(),
+  card_number: z.number().nullable(),
+  rarity: z.string().nullable(),
+  power_score: z.number(),
+  pull_prob: z.number(),
+});
+export type TopPowerCard = z.infer<typeof topPowerCardSchema>;
+
 /** Per-pack EV fields shared by pack_ev.json packs[] and recommendations. */
 export const packRecordSchema = z.object({
   pack_name: z.string(),
@@ -55,9 +66,10 @@ export const packRecordSchema = z.object({
 });
 export type PackRecord = z.infer<typeof packRecordSchema>;
 
-/** pack_ev.json packs[] additionally carries the top-cards breakdown. */
+/** pack_ev.json packs[] additionally carries the top-cards breakdowns. */
 export const packEvRecordSchema = packRecordSchema.extend({
   top_ev_cards: z.array(topEvCardSchema),
+  top_power_cards: z.array(topPowerCardSchema).default([]),
 });
 export type PackEvRecord = z.infer<typeof packEvRecordSchema>;
 
