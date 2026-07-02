@@ -45,7 +45,7 @@ export const powerScoresFileSchema = z.object({
       .object({
         power_score: z.number(),
         hp: z.number().nullable(),
-        max_damage: z.number().nullable(),
+        effective_damage: z.number().nullable(),
         has_ability: z.boolean(),
         estimated: z.boolean(),
       })

@@ -9,7 +9,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from build_card_power_score import power_score
+from build_card_power_score import power_score, best_effective_attack
+
+
+def _atk(damage, cost, **kw):
+    return {"damage": damage, "cost": cost,
+            "discards_energy": kw.get("discards_energy", False),
+            "self_damage": kw.get("self_damage", False),
+            "self_damage_amount": kw.get("self_damage_amount", 0)}
 
 
 def test_none_hp_returns_none():
@@ -48,3 +55,41 @@ def test_estimated_uses_hp_proxy_when_no_attack_data():
     assert est > power_score(60, 0, False, False)
     # The same HP scores higher with real attack data than with the HP proxy.
     assert power_score(150, 150, False, True) > power_score(150, 0, False, False)
+
+
+def test_scores_capped_at_100_with_bonuses():
+    # HP + big attack + ability + low-retreat bonus must not exceed 100.
+    assert power_score(210, 300, True, True, retreat=0) <= 100.0
+
+
+def test_low_retreat_adds_bonus():
+    assert power_score(90, 60, False, True, retreat=0) > power_score(90, 60, False, True, retreat=3)
+
+
+# ── best_effective_attack: one attack per turn, tempo-adjusted ──────────────
+def test_picks_higher_effective_not_higher_raw():
+    # A cheap 60 (2 energy) beats a costly 90 (4 energy): 60 vs 90-40=50.
+    assert best_effective_attack([_atk(60, 2), _atk(90, 4)]) == 60
+
+
+def test_cheaper_attack_scores_higher_for_same_damage():
+    cheap = power_score(90, best_effective_attack([_atk(80, 1)]), False, True)
+    costly = power_score(90, best_effective_attack([_atk(80, 3)]), False, True)
+    assert cheap > costly
+
+
+def test_energy_discard_attack_demoted_below_repeatable():
+    repeatable = best_effective_attack([_atk(100, 3)])
+    one_shot = best_effective_attack([_atk(100, 3, discards_energy=True)])
+    assert one_shot < repeatable
+
+
+def test_self_damage_lowers_effective():
+    clean = best_effective_attack([_atk(80, 2)])
+    hurts = best_effective_attack([_atk(80, 2, self_damage=True, self_damage_amount=30)])
+    assert hurts < clean
+
+
+def test_effective_never_negative():
+    assert best_effective_attack([_atk(0, 4)]) == 0.0
+    assert best_effective_attack([]) == 0.0
