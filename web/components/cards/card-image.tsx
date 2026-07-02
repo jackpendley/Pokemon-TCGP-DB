@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 
-import { cardImageCandidates } from "@/lib/domain/card-image";
+import { cardImageCandidates, type CardImageInput } from "@/lib/domain/card-image";
 import { cn } from "@/lib/utils";
-import type { CatalogCard } from "@/types";
 
 /**
  * Card artwork hot-linked from a CDN. Tries each candidate URL in turn (TCGdex →
@@ -15,7 +14,7 @@ export function CardImage({
   card,
   size = "sm",
 }: {
-  card: CatalogCard;
+  card: CardImageInput;
   size?: "sm" | "lg";
 }) {
   const candidates = cardImageCandidates(card, size);
@@ -25,7 +24,7 @@ export function CardImage({
   if (!src) {
     return (
       <span className="flex size-full items-center justify-center text-sm font-semibold tabular-nums text-muted-foreground/60">
-        #{card.card_number}
+        {card.card_number != null ? `#${card.card_number}` : "?"}
       </span>
     );
   }
@@ -39,7 +38,7 @@ export function CardImage({
       onError={() => setIdx((i) => i + 1)}
       className={cn(
         "size-full object-cover",
-        size === "sm" && card.owned <= 0 && "grayscale",
+        size === "sm" && (card.owned ?? 0) <= 0 && "grayscale",
       )}
     />
   );
