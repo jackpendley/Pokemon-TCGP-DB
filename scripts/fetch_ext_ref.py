@@ -55,6 +55,20 @@ except ImportError:
 
 _BASE_URL = "https://pocket.limitlesstcg.com/cards"
 
+# ext_ref's parser reads Limitless card-page HTML, so the fetch must hit Limitless —
+# build the URL from (set_code, number) rather than trusting a record's stored
+# source_url. PZ-ingested pack_sources records carry pokemon-zone.com URLs (a
+# different site whose HTML this parser can't read, and which Cloudflare-blocks
+# plain requests with 403), so following them fails on every card of a
+# newly-ingested set. Promos live under P-A/P-B on Limitless (mirrors
+# coord_resolver._EXT_SET_ALIAS).
+_LIMITLESS_SET_ALIAS = {"PROMO-A": "P-A", "PROMO-B": "P-B"}
+
+
+def _limitless_card_url(set_code: str, number: int) -> str:
+    slug = _LIMITLESS_SET_ALIAS.get(set_code, set_code)
+    return f"{_BASE_URL}/{slug}/{number}"
+
 # A re-fetch that flips more than this fraction of records' card_category is
 # treated as a likely parser/site-layout regression and aborts the write
 # (override with --allow-category-flips). Single-card flips (genuine fixes)
@@ -356,7 +370,7 @@ def _load_pack_sources_missing(ext_index: dict[tuple[str, int], int]) -> list[di
         missing.append({
             "set_code": sc,
             "number": cn,
-            "source_url": r.get("source_url") or f"{_BASE_URL}/{sc}/{cn}",
+            "source_url": _limitless_card_url(sc, cn),
         })
     return missing
 
