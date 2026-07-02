@@ -17,9 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 EXPECTED_OUTPUTS = [
     ROOT / "data" / "current" / "pack_ev.json",
     ROOT / "data" / "current" / "inferred_pack_recommendations.json",
-    ROOT / "data" / "current" / "final_hourglass_spending_plan.json",
     ROOT / "review" / "inferred_pack_recommendations.md",
-    ROOT / "review" / "final_hourglass_spending_plan.md",
 ]
 
 
@@ -64,11 +62,6 @@ def test_recommendation_report_exits_0():
     assert r.returncode == 0, f"generate_pack_recommendation_report.py failed:\n{r.stderr}"
 
 
-def test_spending_plan_exits_0():
-    r = _run("generate_hourglass_spending_plan.py")
-    assert r.returncode == 0, f"generate_hourglass_spending_plan.py failed:\n{r.stderr}"
-
-
 def test_all_output_files_exist():
     for path in EXPECTED_OUTPUTS:
         assert path.exists(), f"Expected output missing: {path.relative_to(ROOT)}"
@@ -89,12 +82,6 @@ def test_all_json_outputs_valid():
 
 def test_recommendation_report_validate_passes():
     r = _run("generate_pack_recommendation_report.py", "--validate")
-    assert r.returncode == 0, f"--validate failed:\n{r.stdout}\n{r.stderr}"
-    assert "PASS" in r.stdout
-
-
-def test_spending_plan_validate_passes():
-    r = _run("generate_hourglass_spending_plan.py", "--validate")
     assert r.returncode == 0, f"--validate failed:\n{r.stdout}\n{r.stderr}"
     assert "PASS" in r.stdout
 
@@ -135,13 +122,3 @@ def test_recommendations_no_legacy_keys():
         assert bad_key not in rec, f"Legacy key '{bad_key}' still present"
     assert "top_packs_unified" in rec
     assert "cost_efficiency_ranking" in rec
-
-
-def test_spending_plan_has_single_plan():
-    doc = json.loads(
-        (ROOT / "data" / "current" / "final_hourglass_spending_plan.json").read_text(encoding="utf-8")
-    )
-    assert "spending_plan" in doc
-    assert "scenarios" not in doc
-    batches = doc["spending_plan"].get("batches", [])
-    assert len(batches) >= 1

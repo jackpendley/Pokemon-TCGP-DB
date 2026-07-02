@@ -41,7 +41,6 @@ LOG_MAX_BLOCKS = 200  # retain only the most recent N stage blocks (the log is a
 PIPELINE_STEPS = [
     ("Build pack EV",        "scripts/build_pack_ev.py"),
     ("Recommendations",      "scripts/generate_pack_recommendation_report.py"),
-    ("Spending plan",        "scripts/generate_hourglass_spending_plan.py"),
 ]
 
 _STATUS_PATTERNS: dict[str, list[tuple]] = {
@@ -592,9 +591,6 @@ def main() -> int:
             if args.include_limited:
                 extra.append("--include-limited")
             extra = extra or None
-
-        if label == "Spending plan" and args.include_limited:
-            extra = ["--include-limited"]
 
         rc, stdout = _run(label, script, extra)
         if rc != 0:

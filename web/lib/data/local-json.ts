@@ -13,7 +13,6 @@ import {
   powerScoresFileSchema,
   recommendationsSchema,
   reviewQueueSchema,
-  spendingPlanSchema,
   syncDeltaSchema,
   syncHistoryFileSchema,
 } from "@/types";
@@ -110,12 +109,6 @@ export const localJsonSource: DataSource = {
       CURRENT_DIR,
       "inferred_pack_recommendations.json",
       recommendationsSchema,
-    ),
-  getSpendingPlan: () =>
-    readArtifact(
-      CURRENT_DIR,
-      "final_hourglass_spending_plan.json",
-      spendingPlanSchema,
     ),
   getCatalog: loadCatalog,
   getSyncStatus: async (): Promise<SyncStatus> => {

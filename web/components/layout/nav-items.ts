@@ -2,7 +2,6 @@ import {
   LayoutDashboard,
   Package,
   Layers,
-  Wallet,
   Search,
   type LucideIcon,
 } from "lucide-react";
@@ -18,5 +17,4 @@ export const NAV_ITEMS: NavItem[] = [
   { href: "/packs", label: "Pack Recommendations", icon: Package },
   { href: "/cards", label: "Cards", icon: Search },
   { href: "/sets", label: "Sets", icon: Layers },
-  { href: "/plan", label: "Spending Plan", icon: Wallet },
 ];

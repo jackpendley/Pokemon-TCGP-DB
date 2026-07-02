@@ -4,7 +4,6 @@ import {
   collectionSummarySchema,
   packEvSchema,
   recommendationsSchema,
-  spendingPlanSchema,
 } from "@/types";
 import type { DataSource } from "@/lib/data/source";
 
@@ -42,7 +41,6 @@ const methodSchemas = {
   getCollectionSummary: collectionSummarySchema,
   getPackEv: packEvSchema,
   getRecommendations: recommendationsSchema,
-  getSpendingPlan: spendingPlanSchema,
   getCatalog: z.array(catalogCardSchema),
   getSyncStatus: syncStatusSchema,
 } as const;

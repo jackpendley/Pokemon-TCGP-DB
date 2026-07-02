@@ -17,7 +17,6 @@ Syncs collection from Pokemon Zone, runs the full EV pipeline, and prints a cond
   ✓  Build pack EV           25 packs
   ✓  Build promo EV          21 promo packs
   ✓  Recommendations         OK
-  ✓  Spending plan           OK
 
   Top pack:   Deluxe Pack: ex (unified=70.3026) — 228/279 cards unowned
   Top promo:  Promo Pack A Series Vol. 8 (new_ev=0.9198) — Shop Tokens
@@ -99,7 +98,6 @@ normalize_current_collection.py ← clean JSON, no comments
 build_pack_ev.py                ← EV for 24 regular packs
 build_promo_pack_ev.py          ← EV for 21 promo packs (Shop Tokens)
 generate_pack_recommendation_report.py
-generate_hourglass_spending_plan.py
 ```
 
 EV is computed directly from `pz_pack_odds.json` keyed by `(set_code, card_number)` — no fuzzy matching or confidence scoring. Pokemon Zone provides exact card identity on sync.
@@ -115,7 +113,6 @@ version-controlled. `collection.json` is the tracked source of truth; commit it 
 | File | Description |
 |---|---|
 | `review/inferred_pack_recommendations.md` | Ranked pack list with EV scores and deck-chase guide |
-| `review/final_hourglass_spending_plan.md` | Scenario-based spending plan (conservative / moderate / aggressive) |
 | `review/promo_pack_ev.md` | Promo pack rankings (Shop Token currency) |
 | `data/pipeline.log` | Full verbose output from last run (gitignored) |
 

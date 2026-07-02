@@ -141,8 +141,7 @@ def canonical_set_code(raw: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Pack Hourglasses cost (single pack). Single source for build_pack_ev and
-# generate_hourglass_spending_plan.
+# Pack Hourglasses cost (single pack). Single source of truth for build_pack_ev.
 # ---------------------------------------------------------------------------
 HOURGLASS_PER_PACK: int = 12
 

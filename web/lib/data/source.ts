@@ -3,7 +3,6 @@ import type {
   CollectionSummary,
   PackEv,
   Recommendations,
-  SpendingPlan,
   SyncStatus,
 } from "@/types";
 
@@ -16,7 +15,6 @@ export interface DataSource {
   getCollectionSummary(): Promise<CollectionSummary>;
   getPackEv(): Promise<PackEv>;
   getRecommendations(): Promise<Recommendations>;
-  getSpendingPlan(): Promise<SpendingPlan>;
   /** Full card catalog merged with owned counts (Cards + Sets pages). */
   getCatalog(): Promise<CatalogCard[]>;
   /** Sync state (balances + review queue); fields are null when absent. */
