@@ -31,6 +31,7 @@ const catalogStub: CatalogCard[] = [
     expansion: "Genetic Apex",
     is_ex: false,
     owned: 2,
+    power_score: 42,
   },
 ];
 
