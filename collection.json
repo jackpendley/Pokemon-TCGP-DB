@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 1633,
-    "last_updated": "2026-07-01",
+    "total_cards": 1639,
+    "last_updated": "2026-07-02",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -918,6 +918,18 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 39,
+      "rarity": "uncommon"
+    },
+    {
+      "name": "Quagsire",
+      "type": "Fighting",
+      "stage": 1,
+      "hp": 130,
+      "card_type": "Pokemon",
+      "attack": "Muddy Headbutt 60+",
+      "count": 1,
+      "set_code": "B3b",
+      "card_number": 37,
       "rarity": "uncommon"
     },
     {
@@ -5682,6 +5694,18 @@
       "stage_label": "Basic"
     },
     {
+      "name": "Psyduck",
+      "count": 1,
+      "card_type": "Pokemon",
+      "set_code": "PROMO-B",
+      "card_number": 71,
+      "rarity": "promo",
+      "hp": 70,
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic"
+    },
+    {
       "name": "Buizel",
       "count": 9,
       "card_type": "Pokemon",
@@ -7796,6 +7820,18 @@
       "card_number": 161
     },
     {
+      "name": "Mareanie",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 46
+    },
+    {
       "name": "Pidgeot",
       "count": 1,
       "card_type": "Pokemon",
@@ -8959,7 +8995,7 @@
     },
     {
       "name": "Eevee",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -9028,6 +9064,26 @@
       "set_code": "B3b",
       "card_number": 84,
       "variant": "alt art"
+    },
+    {
+      "name": "Petilil",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 6,
+      "type": "Grass"
+    },
+    {
+      "name": "Puppy-Loving Girl",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 67
     }
   ]
 }
