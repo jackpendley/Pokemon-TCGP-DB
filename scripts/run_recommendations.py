@@ -503,6 +503,18 @@ def main() -> int:
         return 1
     _print_step("Normalize entries", rc, "OK")
 
+    # ── Normalize collection (web-facing artifacts) ───────────────────────
+    # Produces collection_normalized.json + collection_summary.json, which the web
+    # reads for owned counts. Run BEFORE validation so the collection view is always
+    # current after a sync: a validate FATAL below still gates recommendations, but
+    # must not leave the web showing a stale collection (the earlier regression where
+    # a validate abort skipped this step and froze the displayed count).
+    rc, stdout = _run("Normalize collection", "scripts/normalize_current_collection.py")
+    if rc != 0:
+        _print_step("Normalize collection", rc, "FATAL — check data/pipeline.log")
+        return 1
+    _print_step("Normalize collection", rc, "OK")
+
     # ── Reference freshness gate (non-fatal) ──────────────────────────────
     # Card metadata is validated against the frozen card_reference.json. Warn (don't block)
     # if it's stale relative to its source snapshots or older than the cache TTL, so syncs
@@ -543,13 +555,6 @@ def main() -> int:
         return 1
     m = re.search(r"VALIDATION PASSED\s*\((.+?)\)", stdout)
     _print_step("Validate collection", rc, m.group(1) if m else "OK")
-
-    # ── Normalize ─────────────────────────────────────────────────────────
-    rc, stdout = _run("Normalize collection", "scripts/normalize_current_collection.py")
-    if rc != 0:
-        _print_step("Normalize collection", rc, "FATAL — check data/pipeline.log")
-        return 1
-    _print_step("Normalize collection", rc, "OK")
 
     # ── Sync delta ────────────────────────────────────────────────────────
     # Compute "added since last sync" from the pre-sync snapshot vs the final
