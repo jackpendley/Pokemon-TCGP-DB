@@ -2,7 +2,7 @@ import type { CatalogCard } from "@/types";
 
 /**
  * Card image URL. TCGdex carries 15 sets at high quality; for the sets it
- * doesn't cover (A4b, B2b, B3, B3a, PROMO-B) we fall back to the Limitless CDN,
+ * doesn't cover (A4b, B2b, B3, B3a, B3b, PROMO-B) we fall back to the Limitless CDN,
  * which covers every set. Either way a failed load degrades to a placeholder
  * (see CardImage's onError). Patterns verified against the live CDNs:
  *   TCGdex:    https://assets.tcgdex.net/en/tcgp/{setId}/{NNN}/high.webp

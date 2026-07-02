@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "cached_at": "2026-06-01T19:02:22Z",
-    "card_count": 70,
+    "cached_at": "2026-07-02T02:40:12Z",
+    "card_count": 78,
     "set_code": "PROMO-B",
     "source": "serebii"
   },
@@ -209,6 +209,30 @@
     },
     "70": {
       "name": "Sableye"
+    },
+    "71": {
+      "name": "Psyduck"
+    },
+    "72": {
+      "name": "Feebas"
+    },
+    "73": {
+      "name": "Froslass"
+    },
+    "74": {
+      "name": "Raichu"
+    },
+    "75": {
+      "name": "Quagsire"
+    },
+    "76": {
+      "name": "Hisuian Zorua"
+    },
+    "77": {
+      "name": "Growlithe"
+    },
+    "78": {
+      "name": "Emolga"
     },
     "8": {
       "name": "Psyduck"

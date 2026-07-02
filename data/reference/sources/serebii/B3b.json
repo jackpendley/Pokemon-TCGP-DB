@@ -1,0 +1,328 @@
+{
+  "_meta": {
+    "cached_at": "2026-07-02T02:22:57Z",
+    "card_count": 106,
+    "set_code": "B3b",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Caterpie"
+    },
+    "10": {
+      "name": "Growlithe"
+    },
+    "100": {
+      "name": "Snorlax"
+    },
+    "101": {
+      "name": "Mega Gyarados ex"
+    },
+    "102": {
+      "name": "Vaporeon ex"
+    },
+    "103": {
+      "name": "Mega Ampharos ex"
+    },
+    "104": {
+      "name": "Indeedee ex"
+    },
+    "105": {
+      "name": "Munchlax"
+    },
+    "106": {
+      "name": "Small Balloon"
+    },
+    "11": {
+      "name": "Psyduck"
+    },
+    "12": {
+      "name": "Goldeen"
+    },
+    "13": {
+      "name": "Seaking"
+    },
+    "14": {
+      "name": "Feebas"
+    },
+    "15": {
+      "name": "Milotic ex"
+    },
+    "16": {
+      "name": "Snorunt"
+    },
+    "17": {
+      "name": "Froslass"
+    },
+    "18": {
+      "name": "Luvdisc"
+    },
+    "19": {
+      "name": "Piplup"
+    },
+    "2": {
+      "name": "Metapod"
+    },
+    "20": {
+      "name": "Iron Bundle"
+    },
+    "21": {
+      "name": "Pikachu"
+    },
+    "22": {
+      "name": "Raichu"
+    },
+    "23": {
+      "name": "Emolga"
+    },
+    "24": {
+      "name": "Dedenne ex"
+    },
+    "25": {
+      "name": "Yamper"
+    },
+    "26": {
+      "name": "Slowpoke"
+    },
+    "27": {
+      "name": "Slowbro"
+    },
+    "28": {
+      "name": "Munna"
+    },
+    "29": {
+      "name": "Musharna"
+    },
+    "3": {
+      "name": "Butterfree"
+    },
+    "30": {
+      "name": "Sylveon"
+    },
+    "31": {
+      "name": "Carbink"
+    },
+    "32": {
+      "name": "Mega Diancie ex"
+    },
+    "33": {
+      "name": "Enamorus"
+    },
+    "34": {
+      "name": "Fidough"
+    },
+    "35": {
+      "name": "Flutter Mane"
+    },
+    "36": {
+      "name": "Wooper"
+    },
+    "37": {
+      "name": "Quagsire"
+    },
+    "38": {
+      "name": "Rockruff"
+    },
+    "39": {
+      "name": "Sandygast"
+    },
+    "4": {
+      "name": "Cacnea"
+    },
+    "40": {
+      "name": "Palossand"
+    },
+    "41": {
+      "name": "Mega Sableye ex"
+    },
+    "42": {
+      "name": "Cacturne"
+    },
+    "43": {
+      "name": "Spiritomb"
+    },
+    "44": {
+      "name": "Scraggy"
+    },
+    "45": {
+      "name": "Scrafty"
+    },
+    "46": {
+      "name": "Mareanie"
+    },
+    "47": {
+      "name": "Toxapex"
+    },
+    "48": {
+      "name": "Goomy"
+    },
+    "49": {
+      "name": "Hisuian Sliggoo"
+    },
+    "5": {
+      "name": "Tropius"
+    },
+    "50": {
+      "name": "Hisuian Goodra"
+    },
+    "51": {
+      "name": "Jigglypuff"
+    },
+    "52": {
+      "name": "Wigglytuff"
+    },
+    "53": {
+      "name": "Eevee"
+    },
+    "54": {
+      "name": "Munchlax"
+    },
+    "55": {
+      "name": "Snorlax"
+    },
+    "56": {
+      "name": "Teddiursa"
+    },
+    "57": {
+      "name": "Ursaring"
+    },
+    "58": {
+      "name": "Ursaluna"
+    },
+    "59": {
+      "name": "Hisuian Zorua"
+    },
+    "6": {
+      "name": "Petilil"
+    },
+    "60": {
+      "name": "Hisuian Zoroark ex"
+    },
+    "61": {
+      "name": "Furfrou"
+    },
+    "62": {
+      "name": "Skwovet"
+    },
+    "63": {
+      "name": "Greedent"
+    },
+    "64": {
+      "name": "Small Balloon"
+    },
+    "65": {
+      "name": "Elegant Cape"
+    },
+    "66": {
+      "name": "Elesa"
+    },
+    "67": {
+      "name": "Puppy-Loving Girl"
+    },
+    "68": {
+      "name": "Wallace"
+    },
+    "69": {
+      "name": "Kid's Room"
+    },
+    "7": {
+      "name": "Hisuian Lilligant"
+    },
+    "70": {
+      "name": "Vulpix"
+    },
+    "71": {
+      "name": "Piplup"
+    },
+    "72": {
+      "name": "Pikachu"
+    },
+    "73": {
+      "name": "Sylveon"
+    },
+    "74": {
+      "name": "Mareanie"
+    },
+    "75": {
+      "name": "Jigglypuff"
+    },
+    "76": {
+      "name": "Snorlax"
+    },
+    "77": {
+      "name": "Greedent"
+    },
+    "78": {
+      "name": "Milotic ex"
+    },
+    "79": {
+      "name": "Dedenne ex"
+    },
+    "8": {
+      "name": "Vulpix"
+    },
+    "80": {
+      "name": "Mega Diancie ex"
+    },
+    "81": {
+      "name": "Mega Sableye ex"
+    },
+    "82": {
+      "name": "Hisuian Zoroark ex"
+    },
+    "83": {
+      "name": "Elesa"
+    },
+    "84": {
+      "name": "Puppy-Loving Girl"
+    },
+    "85": {
+      "name": "Wallace"
+    },
+    "86": {
+      "name": "Milotic ex"
+    },
+    "87": {
+      "name": "Mega Diancie ex"
+    },
+    "88": {
+      "name": "Mega Sableye ex"
+    },
+    "89": {
+      "name": "Hisuian Zoroark ex"
+    },
+    "9": {
+      "name": "Ninetales"
+    },
+    "90": {
+      "name": "Dedenne ex"
+    },
+    "91": {
+      "name": "Caterpie"
+    },
+    "92": {
+      "name": "Metapod"
+    },
+    "93": {
+      "name": "Butterfree"
+    },
+    "94": {
+      "name": "Mareep"
+    },
+    "95": {
+      "name": "Flaaffy"
+    },
+    "96": {
+      "name": "Ampharos"
+    },
+    "97": {
+      "name": "Slowbro"
+    },
+    "98": {
+      "name": "Kangaskhan"
+    },
+    "99": {
+      "name": "Ditto"
+    }
+  }
+}

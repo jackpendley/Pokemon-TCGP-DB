@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "cached_at": "2026-06-01T18:57:41Z",
-    "card_count": 70,
+    "cached_at": "2026-07-02T02:40:11Z",
+    "card_count": 78,
     "set_code": "PROMO-B",
     "source": "bulbapedia"
   },
@@ -344,6 +344,46 @@
     "70": {
       "name": "Sableye",
       "pokemon_type": "Darkness",
+      "rarity": "promo"
+    },
+    "71": {
+      "name": "Psyduck",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "72": {
+      "name": "Feebas",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "73": {
+      "name": "Froslass",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "74": {
+      "name": "Raichu",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "75": {
+      "name": "Quagsire",
+      "pokemon_type": "Fighting",
+      "rarity": "promo"
+    },
+    "76": {
+      "name": "Hisuian Zorua",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "77": {
+      "name": "Growlithe",
+      "pokemon_type": "Fire",
+      "rarity": "promo"
+    },
+    "78": {
+      "name": "Emolga",
+      "pokemon_type": "Lightning",
       "rarity": "promo"
     },
     "8": {

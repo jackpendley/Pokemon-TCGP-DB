@@ -61,7 +61,10 @@ ENERGY_TYPES = frozenset({
     "Darkness", "Metal", "Dragon", "Colorless",
 })
 # Trainer subtype tokens as they appear in external_card_reference / wiki type cells.
-TRAINER_SUBTYPE_TOKENS = frozenset({"Supporter", "Item", "Stadium", "Tool", "Pokemon Tool"})
+# Bulbapedia writes the accented "Pokémon Tool"; include it so tool cards in sets
+# where Bulbapedia is the only classifier (TCGdex-uncovered, e.g. B3b) are still
+# recognised as Trainers. _norm_trainer_subtype folds it to "Pokemon Tool".
+TRAINER_SUBTYPE_TOKENS = frozenset({"Supporter", "Item", "Stadium", "Tool", "Pokemon Tool", "Pokémon Tool"})
 
 
 def _norm_trainer_subtype(tok: str | None) -> str | None:

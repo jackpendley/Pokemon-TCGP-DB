@@ -7,6 +7,62 @@
       "name": "Mega Altaria ex",
       "pokemon_type": "Psychic",
       "note": "TCGdex doesn't cover B3a and the wiki type cell is blank; Mega Altaria ex is Psychic in all its other printings (B1 102/259/286)."
+    },
+    {
+      "set_code": "B3b",
+      "card_number": 32,
+      "name": "Mega Diancie ex",
+      "pokemon_type": "Psychic",
+      "note": "TCGdex doesn't cover B3b; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read directly from Bulbapedia Everyday Wonders page ({{TCG Icon|Psychic}})."
+    },
+    {
+      "set_code": "B3b",
+      "card_number": 80,
+      "name": "Mega Diancie ex",
+      "pokemon_type": "Psychic",
+      "note": "Alt-art printing of B3b/32; see that entry."
+    },
+    {
+      "set_code": "B3b",
+      "card_number": 87,
+      "name": "Mega Diancie ex",
+      "pokemon_type": "Psychic",
+      "note": "Alt-art printing of B3b/32; see that entry."
+    },
+    {
+      "set_code": "B3b",
+      "card_number": 41,
+      "name": "Mega Sableye ex",
+      "pokemon_type": "Darkness",
+      "note": "TCGdex doesn't cover B3b; Mega ex row type dropped by snapshot parser. Type from Bulbapedia Everyday Wonders page ({{TCG Icon|Darkness}})."
+    },
+    {
+      "set_code": "B3b",
+      "card_number": 81,
+      "name": "Mega Sableye ex",
+      "pokemon_type": "Darkness",
+      "note": "Alt-art printing of B3b/41; see that entry."
+    },
+    {
+      "set_code": "B3b",
+      "card_number": 88,
+      "name": "Mega Sableye ex",
+      "pokemon_type": "Darkness",
+      "note": "Alt-art printing of B3b/41; see that entry."
+    },
+    {
+      "set_code": "B3b",
+      "card_number": 101,
+      "name": "Mega Gyarados ex",
+      "pokemon_type": "Water",
+      "note": "TCGdex doesn't cover B3b; Mega ex row type dropped by snapshot parser. Type from Bulbapedia Everyday Wonders page ({{TCG Icon|Water}}); PZ collection confirms Water family."
+    },
+    {
+      "set_code": "B3b",
+      "card_number": 103,
+      "name": "Mega Ampharos ex",
+      "pokemon_type": "Lightning",
+      "note": "TCGdex doesn't cover B3b; Mega ex row type dropped by snapshot parser. Type from Bulbapedia Everyday Wonders page ({{TCG Icon|Lightning}}); confirmed by owned PZ card (type=Lightning)."
     }
   ]
 }
