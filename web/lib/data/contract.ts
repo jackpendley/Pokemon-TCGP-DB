@@ -28,6 +28,7 @@ const catalogCardSchema = z.object({
   expansion: z.string(),
   is_ex: z.boolean(),
   owned: z.number(),
+  power_score: z.number().nullable(),
 });
 
 const syncStatusSchema = z.object({

@@ -10,6 +10,7 @@ import {
   collectionSummarySchema,
   packEvSchema,
   playerStatsSchema,
+  powerScoresFileSchema,
   recommendationsSchema,
   reviewQueueSchema,
   spendingPlanSchema,
@@ -71,9 +72,10 @@ async function readArtifact<T>(
 }
 
 async function loadCatalog(): Promise<CatalogCard[]> {
-  const [ref, coll] = await Promise.all([
+  const [ref, coll, power] = await Promise.all([
     readArtifact(REFERENCE_DIR, "card_reference.json", cardReferenceFileSchema),
     readArtifact(CURRENT_DIR, "collection_normalized.json", collectionFileSchema),
+    readOptional(REFERENCE_DIR, "card_power_scores.json", powerScoresFileSchema),
   ]);
 
   const ownedByCoord = new Map<string, number>();
@@ -81,6 +83,7 @@ async function loadCatalog(): Promise<CatalogCard[]> {
     const key = `${entry.set_code.toUpperCase()}:${entry.card_number}`;
     ownedByCoord.set(key, (ownedByCoord.get(key) ?? 0) + entry.count);
   }
+  const scores = power?.scores ?? {};
 
   return ref.records.map((r) => ({
     set_code: r.set_code,
@@ -94,6 +97,7 @@ async function loadCatalog(): Promise<CatalogCard[]> {
     expansion: r.expansion ?? r.set_code,
     is_ex: r.is_ex ?? false,
     owned: ownedByCoord.get(`${r.set_code.toUpperCase()}:${r.card_number}`) ?? 0,
+    power_score: scores[`${r.set_code}:${r.card_number}`]?.power_score ?? null,
   }));
 }
 
