@@ -1,6 +1,18 @@
 import type { CatalogCard } from "@/types";
 
 /**
+ * Minimal card shape needed to render artwork. A full CatalogCard satisfies it,
+ * but pack-EV rows (top EV / top power) also fit — their coords are nullable, so
+ * a missing coord degrades to the numeric placeholder.
+ */
+export type CardImageInput = {
+  set_code: string | null;
+  card_number: number | null;
+  name: string;
+  owned?: number;
+};
+
+/**
  * Card image URL. TCGdex carries 15 sets at high quality; for the sets it
  * doesn't cover (A4b, B2b, B3, B3a, B3b, PROMO-B) we fall back to the Limitless CDN,
  * which covers every set. Either way a failed load degrades to a placeholder
@@ -29,9 +41,10 @@ const LIMITLESS_BASE =
  * <CardImage> advances through these on error before showing a placeholder.
  */
 export function cardImageCandidates(
-  card: CatalogCard,
+  card: CardImageInput,
   size: "sm" | "lg" = "sm",
 ): string[] {
+  if (!card.set_code || card.card_number == null) return [];
   const num = String(card.card_number).padStart(3, "0");
   const urls: string[] = [];
 

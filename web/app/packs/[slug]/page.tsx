@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
+import { CardImage } from "@/components/cards/card-image";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -20,6 +21,22 @@ import {
 } from "@/lib/domain/format";
 
 export const dynamic = "force-dynamic";
+
+/** Thumbnail + name, shared by both pack card tables. */
+function CardCell({
+  card,
+}: {
+  card: { set_code: string | null; card_number: number | null; name: string; owned?: number };
+}) {
+  return (
+    <div className="flex items-center gap-3">
+      <div className="aspect-[5/7] w-9 shrink-0 overflow-hidden rounded border">
+        <CardImage card={card} />
+      </div>
+      <span className="font-medium">{card.name}</span>
+    </div>
+  );
+}
 
 export default async function PackDetailPage({
   params,
@@ -82,9 +99,11 @@ export default async function PackDetailPage({
             <TableBody>
               {pack.top_ev_cards.map((c, i) => (
                 // Same card name can appear as multiple printings (e.g. base +
-                // alt-art ex), and top_ev_cards carries no coord — key by index.
+                // alt-art ex), so key by index rather than coord.
                 <TableRow key={`${c.name}-${i}`}>
-                  <TableCell className="font-medium">{c.name}</TableCell>
+                  <TableCell>
+                    <CardCell card={c} />
+                  </TableCell>
                   <TableCell>{titleCase(c.rarity)}</TableCell>
                   <TableCell className="text-right tabular-nums">
                     {c.owned}
@@ -126,7 +145,9 @@ export default async function PackDetailPage({
               <TableBody>
                 {pack.top_power_cards.map((c, i) => (
                   <TableRow key={`${c.set_code}-${c.card_number}-${i}`}>
-                    <TableCell className="font-medium">{c.name}</TableCell>
+                    <TableCell>
+                      <CardCell card={{ ...c, owned: 0 }} />
+                    </TableCell>
                     <TableCell className="tabular-nums text-muted-foreground">
                       {c.set_code}:{c.card_number}
                     </TableCell>

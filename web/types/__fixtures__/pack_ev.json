@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-18T18:55:37+00:00",
+  "generated_at": "2026-07-02T18:08:39+00:00",
   "generated_by": "build_pack_ev.py",
   "meta": {
     "model_confidence": "third_party_verified_with_in_app_anchor",
-    "collection_total": 1401,
+    "collection_total": 1633,
     "collection_mutated": false,
-    "inputs_hash": "a340ab2b66b073988f027fde4052b928f484b9d44ddc46bae5d47584f08b3eaf",
+    "inputs_hash": "667400f56145b0ce0456bb863f6887a1a866c11f7cd34e97bd4fd289fbd08ef8",
     "warnings": [
       "Slot rates are THIRD_PARTY_VERIFIED_WITH_IN_APP_ANCHOR — 12 packs bulbapedia_branch_verified (branch percentages confirmed from Bulbapedia offering rates), 1 pack user_in_app_verified_plus_bulbapedia (Pulsing Aura B3: in-app verified + Bulbapedia corroborated), 8 packs third_party_verified (pattern-consistent two-branch), 3 packs pending_verification (A4/A4b). Rarity distributions within slots remain third_party_verified. EV rankings are suitable for planning but not final recommendations."
     ]
@@ -42,38 +42,38 @@
       {
         "pack_name": "Ho-Oh",
         "expansion": "Wisdom of Sea and Sky",
-        "unified_score": 60.109605,
-        "new_card_ev": 7.14467,
-        "new_card_ev_10x": 60.085469,
+        "unified_score": 58.582971,
+        "new_card_ev": 6.93557,
+        "new_card_ev_10x": 58.542107,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 7.26535
-      },
-      {
-        "pack_name": "Lugia",
-        "expansion": "Wisdom of Sea and Sky",
-        "unified_score": 58.787791,
-        "new_card_ev": 6.93377,
-        "new_card_ev_10x": 58.738159,
-        "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 7.18193
+        "confidence_adjusted_ev": 7.13989
       },
       {
         "pack_name": "Secluded Springs",
         "expansion": "Secluded Springs",
-        "unified_score": 58.630726,
-        "new_card_ev": 7.39903,
-        "new_card_ev_10x": 58.630726,
+        "unified_score": 57.556637,
+        "new_card_ev": 7.24633,
+        "new_card_ev_10x": 57.544421,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 7.39903
+        "confidence_adjusted_ev": 7.30741
+      },
+      {
+        "pack_name": "Lugia",
+        "expansion": "Wisdom of Sea and Sky",
+        "unified_score": 56.88733,
+        "new_card_ev": 6.67837,
+        "new_card_ev_10x": 56.817266,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 7.02869
       },
       {
         "pack_name": "Solgaleo",
         "expansion": "Celestial Guardians",
-        "unified_score": 57.719726,
-        "new_card_ev": 6.84197,
-        "new_card_ev_10x": 57.700926,
+        "unified_score": 56.388512,
+        "new_card_ev": 6.66677,
+        "new_card_ev_10x": 56.355696,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 6.93597
+        "confidence_adjusted_ev": 6.83085
       }
     ],
     "top_packs_by_new_card_ev": [
@@ -89,20 +89,11 @@
       {
         "pack_name": "Secluded Springs",
         "expansion": "Secluded Springs",
-        "unified_score": 58.630726,
-        "new_card_ev": 7.39903,
-        "new_card_ev_10x": 58.630726,
+        "unified_score": 57.556637,
+        "new_card_ev": 7.24633,
+        "new_card_ev_10x": 57.544421,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 7.39903
-      },
-      {
-        "pack_name": "Ho-Oh",
-        "expansion": "Wisdom of Sea and Sky",
-        "unified_score": 60.109605,
-        "new_card_ev": 7.14467,
-        "new_card_ev_10x": 60.085469,
-        "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 7.26535
+        "confidence_adjusted_ev": 7.30741
       },
       {
         "pack_name": "Extradimensional Crisis",
@@ -114,42 +105,51 @@
         "confidence_adjusted_ev": 7.08165
       },
       {
+        "pack_name": "Ho-Oh",
+        "expansion": "Wisdom of Sea and Sky",
+        "unified_score": 58.582971,
+        "new_card_ev": 6.93557,
+        "new_card_ev_10x": 58.542107,
+        "deck_target_ev": 0.0,
+        "confidence_adjusted_ev": 7.13989
+      },
+      {
         "pack_name": "Eevee Grove",
         "expansion": "Eevee Grove",
-        "unified_score": 55.425897,
-        "new_card_ev": 7.00025,
-        "new_card_ev_10x": 55.420937,
+        "unified_score": 54.351808,
+        "new_card_ev": 6.84755,
+        "new_card_ev_10x": 54.334632,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 7.02505
+        "confidence_adjusted_ev": 6.93343
       }
     ],
     "top_packs_by_deck_target_ev": [
       {
         "pack_name": "Arceus",
         "expansion": "Triumphant Light",
-        "unified_score": 51.771093,
-        "new_card_ev": 6.63729,
-        "new_card_ev_10x": 51.771093,
+        "unified_score": 51.152054,
+        "new_card_ev": 6.54349,
+        "new_card_ev_10x": 51.14455,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 6.63729
+        "confidence_adjusted_ev": 6.58101
       },
       {
         "pack_name": "Charizard",
         "expansion": "Genetic Apex",
-        "unified_score": 50.137349,
-        "new_card_ev": 5.9416,
-        "new_card_ev_10x": 50.099613,
+        "unified_score": 48.992501,
+        "new_card_ev": 5.7982,
+        "new_card_ev_10x": 48.943293,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 6.13028
+        "confidence_adjusted_ev": 6.04424
       },
       {
         "pack_name": "Crimson Blaze",
         "expansion": "Crimson Blaze",
-        "unified_score": 27.150779,
-        "new_card_ev": 3.09904,
-        "new_card_ev_10x": 27.023875,
+        "unified_score": 26.324427,
+        "new_card_ev": 3.00994,
+        "new_card_ev_10x": 26.196203,
         "deck_target_ev": 0.0,
-        "confidence_adjusted_ev": 3.73356
+        "confidence_adjusted_ev": 3.65106
       },
       {
         "pack_name": "Deluxe Pack: ex",
@@ -172,7 +172,7 @@
     ],
     "highest_unified_pack": "Deluxe Pack: ex",
     "highest_new_card_ev_pack": "Deluxe Pack: ex",
-    "total_packs_scored": 25
+    "total_packs_scored": 26
   },
   "packs": [
     {
@@ -186,26 +186,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 96,
-      "owned_in_pool": 0,
-      "missing_in_pool": 96,
+      "owned_in_pool": 1,
+      "missing_in_pool": 95,
       "base_cards_in_pool": 75,
-      "base_owned_in_pool": 0,
-      "new_card_ev": 6.63729,
-      "new_card_ev_10x": 51.771093,
-      "copy_ev": 0.0,
+      "base_owned_in_pool": 1,
+      "new_card_ev": 6.54349,
+      "new_card_ev_10x": 51.14455,
+      "copy_ev": 0.03752,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 20,
       "rare_plus_ev_10x": 1.531342,
-      "pack_total_ev": 6.63729,
-      "confidence_adjusted_ev": 6.63729,
-      "unified_score": 51.771093,
-      "ev_diminishing_returns_ratio": 0.78,
-      "cost_per_unique_card_1x": 1.81,
-      "cost_per_unique_card_10x": 2.32,
+      "pack_total_ev": 6.58101,
+      "confidence_adjusted_ev": 6.58101,
+      "unified_score": 51.152054,
+      "ev_diminishing_returns_ratio": 0.7816,
+      "cost_per_unique_card_1x": 1.83,
+      "cost_per_unique_card_10x": 2.35,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Houndoom",
+          "set_code": "A2a",
+          "card_number": 76,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -216,6 +218,8 @@
         },
         {
           "name": "Marill",
+          "set_code": "A2a",
+          "card_number": 77,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -226,6 +230,8 @@
         },
         {
           "name": "Unown",
+          "set_code": "A2a",
+          "card_number": 78,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -236,6 +242,8 @@
         },
         {
           "name": "Sudowoodo",
+          "set_code": "A2a",
+          "card_number": 79,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -246,6 +254,8 @@
         },
         {
           "name": "Magnemite",
+          "set_code": "A2a",
+          "card_number": 80,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -255,8 +265,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Tyranitar",
+          "set_code": "A2a",
+          "card_number": 41,
+          "rarity": "rare",
+          "power_score": 66.3,
+          "pull_prob": 0.0191
+        },
+        {
+          "name": "Glaceon ex",
+          "set_code": "A2a",
+          "card_number": 22,
+          "rarity": "double_rare",
+          "power_score": 60.7,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Garchomp ex",
+          "set_code": "A2a",
+          "card_number": 47,
+          "rarity": "double_rare",
+          "power_score": 57.4,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Leafeon ex",
+          "set_code": "A2a",
+          "card_number": 10,
+          "rarity": "double_rare",
+          "power_score": 56.6,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Magnezone",
+          "set_code": "A2a",
+          "card_number": 55,
+          "rarity": "rare",
+          "power_score": 55.6,
+          "pull_prob": 0.0191
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 95/95 cards (1 excluded as non-pullable). 0/96 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 95/95 cards (1 excluded as non-pullable). 1/96 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Charizard",
@@ -269,26 +321,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 127,
-      "owned_in_pool": 13,
-      "missing_in_pool": 114,
+      "owned_in_pool": 16,
+      "missing_in_pool": 111,
       "base_cards_in_pool": 104,
-      "base_owned_in_pool": 13,
-      "new_card_ev": 5.9416,
-      "new_card_ev_10x": 50.099613,
-      "copy_ev": 0.18868,
+      "base_owned_in_pool": 16,
+      "new_card_ev": 5.7982,
+      "new_card_ev_10x": 48.943293,
+      "copy_ev": 0.24604,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 21,
       "rare_plus_ev_10x": 1.581951,
-      "pack_total_ev": 6.13028,
-      "confidence_adjusted_ev": 6.13028,
-      "unified_score": 50.137349,
-      "ev_diminishing_returns_ratio": 0.8432,
-      "cost_per_unique_card_1x": 2.02,
-      "cost_per_unique_card_10x": 2.4,
+      "pack_total_ev": 6.04424,
+      "confidence_adjusted_ev": 6.04424,
+      "unified_score": 48.992501,
+      "ev_diminishing_returns_ratio": 0.8441,
+      "cost_per_unique_card_1x": 2.07,
+      "cost_per_unique_card_10x": 2.45,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Charizard ex",
+          "set_code": "A1",
+          "card_number": 280,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -299,6 +353,8 @@
         },
         {
           "name": "Exeggutor ex",
+          "set_code": "A1",
+          "card_number": 23,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -309,6 +365,8 @@
         },
         {
           "name": "Charizard ex",
+          "set_code": "A1",
+          "card_number": 36,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -319,6 +377,8 @@
         },
         {
           "name": "Starmie ex",
+          "set_code": "A1",
+          "card_number": 76,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -329,6 +389,8 @@
         },
         {
           "name": "Machamp ex",
+          "set_code": "A1",
+          "card_number": 146,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -338,8 +400,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Machamp ex",
+          "set_code": "A1",
+          "card_number": 146,
+          "rarity": "double_rare",
+          "power_score": 60.8,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Charizard ex",
+          "set_code": "A1",
+          "card_number": 36,
+          "rarity": "double_rare",
+          "power_score": 60.0,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Poliwrath",
+          "set_code": "A1",
+          "card_number": 61,
+          "rarity": "rare",
+          "power_score": 57.9,
+          "pull_prob": 0.0178
+        },
+        {
+          "name": "Melmetal",
+          "set_code": "A1",
+          "card_number": 182,
+          "rarity": "rare",
+          "power_score": 57.5,
+          "pull_prob": 0.0178
+        },
+        {
+          "name": "Victreebel",
+          "set_code": "A1",
+          "card_number": 20,
+          "rarity": "rare",
+          "power_score": 55.6,
+          "pull_prob": 0.0178
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 125/125 cards (2 excluded as non-pullable). 13/127 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 125/125 cards (2 excluded as non-pullable). 16/127 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Crimson Blaze",
@@ -352,26 +456,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 103,
-      "owned_in_pool": 52,
-      "missing_in_pool": 51,
+      "owned_in_pool": 53,
+      "missing_in_pool": 50,
       "base_cards_in_pool": 69,
-      "base_owned_in_pool": 50,
-      "new_card_ev": 3.09904,
-      "new_card_ev_10x": 27.023875,
-      "copy_ev": 0.63452,
+      "base_owned_in_pool": 51,
+      "new_card_ev": 3.00994,
+      "new_card_ev_10x": 26.196203,
+      "copy_ev": 0.64112,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 32,
       "rare_plus_ev_10x": 2.031333,
-      "pack_total_ev": 3.73356,
-      "confidence_adjusted_ev": 3.73356,
-      "unified_score": 27.150779,
-      "ev_diminishing_returns_ratio": 0.872,
-      "cost_per_unique_card_1x": 3.87,
-      "cost_per_unique_card_10x": 4.44,
+      "pack_total_ev": 3.65106,
+      "confidence_adjusted_ev": 3.65106,
+      "unified_score": 26.324427,
+      "ev_diminishing_returns_ratio": 0.8703,
+      "cost_per_unique_card_1x": 3.99,
+      "cost_per_unique_card_10x": 4.58,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Venusaur",
+          "set_code": "B1a",
+          "card_number": 3,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -382,6 +488,8 @@
         },
         {
           "name": "Blastoise",
+          "set_code": "B1a",
+          "card_number": 19,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -392,6 +500,8 @@
         },
         {
           "name": "Magnezone",
+          "set_code": "B1a",
+          "card_number": 26,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -402,6 +512,8 @@
         },
         {
           "name": "Reuniclus",
+          "set_code": "B1a",
+          "card_number": 34,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -412,6 +524,8 @@
         },
         {
           "name": "Xerneas",
+          "set_code": "B1a",
+          "card_number": 37,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -421,8 +535,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Mega Charizard Y ex",
+          "set_code": "B1a",
+          "card_number": 87,
+          "rarity": "immersive",
+          "power_score": 84.9,
+          "pull_prob": 0.0112
+        },
+        {
+          "name": "Solgaleo ex",
+          "set_code": "B1a",
+          "card_number": 101,
+          "rarity": "shiny_super_rare",
+          "power_score": 75.9,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Lunala ex",
+          "set_code": "B1a",
+          "card_number": 99,
+          "rarity": "shiny_super_rare",
+          "power_score": 71.7,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Mega Blastoise ex",
+          "set_code": "B1a",
+          "card_number": 78,
+          "rarity": "super_rare",
+          "power_score": 69.5,
+          "pull_prob": 0.0023
+        },
+        {
+          "name": "Mega Lopunny ex",
+          "set_code": "B1a",
+          "card_number": 42,
+          "rarity": "double_rare",
+          "power_score": 64.0,
+          "pull_prob": 0.0165
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 102/102 cards (1 excluded as non-pullable). 52/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 102/102 cards (1 excluded as non-pullable). 53/103 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Deluxe Pack: ex",
@@ -455,6 +611,8 @@
       "top_ev_cards": [
         {
           "name": "Rare Candy",
+          "set_code": "A4b",
+          "card_number": 379,
           "rarity": "ultra_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -465,6 +623,8 @@
         },
         {
           "name": "Floragato",
+          "set_code": "A4b",
+          "card_number": 354,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -475,6 +635,8 @@
         },
         {
           "name": "Crawdaunt",
+          "set_code": "A4b",
+          "card_number": 355,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -485,6 +647,8 @@
         },
         {
           "name": "Greninja",
+          "set_code": "A4b",
+          "card_number": 356,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -495,6 +659,8 @@
         },
         {
           "name": "Gardevoir",
+          "set_code": "A4b",
+          "card_number": 357,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -502,6 +668,48 @@
           "value": 4.7,
           "ev_contribution": 0.10105,
           "rate_source": "pz"
+        }
+      ],
+      "top_power_cards": [
+        {
+          "name": "Solgaleo ex",
+          "set_code": "A4b",
+          "card_number": 259,
+          "rarity": "double_rare",
+          "power_score": 75.9,
+          "pull_prob": 0.0133
+        },
+        {
+          "name": "Dragonite ex",
+          "set_code": "A4b",
+          "card_number": 271,
+          "rarity": "double_rare",
+          "power_score": 73.1,
+          "pull_prob": 0.0133
+        },
+        {
+          "name": "Lunala ex",
+          "set_code": "A4b",
+          "card_number": 184,
+          "rarity": "double_rare",
+          "power_score": 68.7,
+          "pull_prob": 0.0133
+        },
+        {
+          "name": "Gengar ex",
+          "set_code": "A4b",
+          "card_number": 155,
+          "rarity": "double_rare",
+          "power_score": 66.4,
+          "pull_prob": 0.0133
+        },
+        {
+          "name": "Giratina ex",
+          "set_code": "A4b",
+          "card_number": 172,
+          "rarity": "double_rare",
+          "power_score": 62.0,
+          "pull_prob": 0.0133
         }
       ],
       "deck_target_cards": [],
@@ -538,6 +746,8 @@
       "top_ev_cards": [
         {
           "name": "Dialga ex",
+          "set_code": "A2",
+          "card_number": 207,
           "rarity": "ultra_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -548,6 +758,8 @@
         },
         {
           "name": "Dialga ex",
+          "set_code": "A2",
+          "card_number": 205,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -558,6 +770,8 @@
         },
         {
           "name": "Yanmega ex",
+          "set_code": "A2",
+          "card_number": 7,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -568,6 +782,8 @@
         },
         {
           "name": "Pachirisu ex",
+          "set_code": "A2",
+          "card_number": 61,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -578,6 +794,8 @@
         },
         {
           "name": "Gallade ex",
+          "set_code": "A2",
+          "card_number": 95,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -585,6 +803,48 @@
           "value": 5.4,
           "ev_contribution": 0.0891,
           "rate_source": "pz"
+        }
+      ],
+      "top_power_cards": [
+        {
+          "name": "Mamoswine",
+          "set_code": "A2",
+          "card_number": 33,
+          "rarity": "rare",
+          "power_score": 64.2,
+          "pull_prob": 0.0178
+        },
+        {
+          "name": "Rampardos",
+          "set_code": "A2",
+          "card_number": 89,
+          "rarity": "rare",
+          "power_score": 59.2,
+          "pull_prob": 0.0178
+        },
+        {
+          "name": "Darkrai ex",
+          "set_code": "A2",
+          "card_number": 110,
+          "rarity": "double_rare",
+          "power_score": 55.6,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Gallade ex",
+          "set_code": "A2",
+          "card_number": 95,
+          "rarity": "double_rare",
+          "power_score": 55.4,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Dusknoir",
+          "set_code": "A2",
+          "card_number": 72,
+          "rarity": "rare",
+          "power_score": 51.3,
+          "pull_prob": 0.0178
         }
       ],
       "deck_target_cards": [],
@@ -601,26 +861,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 107,
-      "owned_in_pool": 1,
-      "missing_in_pool": 106,
+      "owned_in_pool": 3,
+      "missing_in_pool": 104,
       "base_cards_in_pool": 69,
-      "base_owned_in_pool": 1,
-      "new_card_ev": 7.00025,
-      "new_card_ev_10x": 55.420937,
-      "copy_ev": 0.0248,
+      "base_owned_in_pool": 3,
+      "new_card_ev": 6.84755,
+      "new_card_ev_10x": 54.334632,
+      "copy_ev": 0.08588,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 37,
       "rare_plus_ev_10x": 2.081725,
-      "pack_total_ev": 7.02505,
-      "confidence_adjusted_ev": 7.02505,
-      "unified_score": 55.425897,
-      "ev_diminishing_returns_ratio": 0.7917,
-      "cost_per_unique_card_1x": 1.71,
-      "cost_per_unique_card_10x": 2.17,
+      "pack_total_ev": 6.93343,
+      "confidence_adjusted_ev": 6.93343,
+      "unified_score": 54.351808,
+      "ev_diminishing_returns_ratio": 0.7935,
+      "cost_per_unique_card_1x": 1.75,
+      "cost_per_unique_card_10x": 2.21,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Leafeon",
+          "set_code": "A3b",
+          "card_number": 2,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -631,6 +893,8 @@
         },
         {
           "name": "Flareon",
+          "set_code": "A3b",
+          "card_number": 8,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -641,6 +905,8 @@
         },
         {
           "name": "Vaporeon",
+          "set_code": "A3b",
+          "card_number": 16,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -651,6 +917,8 @@
         },
         {
           "name": "Glaceon",
+          "set_code": "A3b",
+          "card_number": 17,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -661,6 +929,8 @@
         },
         {
           "name": "Jolteon",
+          "set_code": "A3b",
+          "card_number": 25,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -670,8 +940,185 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Dragonite ex",
+          "set_code": "A3b",
+          "card_number": 53,
+          "rarity": "double_rare",
+          "power_score": 73.1,
+          "pull_prob": 0.0139
+        },
+        {
+          "name": "Snorlax ex",
+          "set_code": "A3b",
+          "card_number": 57,
+          "rarity": "double_rare",
+          "power_score": 66.3,
+          "pull_prob": 0.0139
+        },
+        {
+          "name": "Sylveon ex",
+          "set_code": "A3b",
+          "card_number": 34,
+          "rarity": "double_rare",
+          "power_score": 60.7,
+          "pull_prob": 0.0139
+        },
+        {
+          "name": "Flareon ex",
+          "set_code": "A3b",
+          "card_number": 9,
+          "rarity": "double_rare",
+          "power_score": 59.1,
+          "pull_prob": 0.0139
+        },
+        {
+          "name": "Primarina ex",
+          "set_code": "A3b",
+          "card_number": 24,
+          "rarity": "double_rare",
+          "power_score": 56.7,
+          "pull_prob": 0.0139
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 106/106 cards (1 excluded as non-pullable). 1/107 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 106/106 cards (1 excluded as non-pullable). 3/107 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+    },
+    {
+      "pack_name": "Everyday Wonders",
+      "expansion": "Everyday Wonders",
+      "set_code": "B3b",
+      "source_status": "pz_verified",
+      "slot_rates_confidence": "third_party_verified",
+      "confidence_weight": 1.0,
+      "blocked": false,
+      "blocked_reason": null,
+      "purchasable": true,
+      "cards_in_pool": 106,
+      "owned_in_pool": 21,
+      "missing_in_pool": 85,
+      "base_cards_in_pool": 67,
+      "base_owned_in_pool": 19,
+      "new_card_ev": 5.21532,
+      "new_card_ev_10x": 41.50258,
+      "copy_ev": 0.44496,
+      "deck_target_ev": 0.0,
+      "missing_rare_plus": 30,
+      "rare_plus_ev_10x": 1.91613,
+      "pack_total_ev": 5.66028,
+      "confidence_adjusted_ev": 5.66028,
+      "unified_score": 41.591572,
+      "ev_diminishing_returns_ratio": 0.7958,
+      "cost_per_unique_card_1x": 2.3,
+      "cost_per_unique_card_10x": 2.89,
+      "pz_coverage": 1.0,
+      "top_ev_cards": [
+        {
+          "name": "Froslass",
+          "set_code": "B3b",
+          "card_number": 17,
+          "rarity": "rare",
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.031,
+          "value": 3.7,
+          "ev_contribution": 0.1147,
+          "rate_source": "pz"
+        },
+        {
+          "name": "Sylveon",
+          "set_code": "B3b",
+          "card_number": 30,
+          "rarity": "rare",
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.031,
+          "value": 3.7,
+          "ev_contribution": 0.1147,
+          "rate_source": "pz"
+        },
+        {
+          "name": "Enamorus",
+          "set_code": "B3b",
+          "card_number": 33,
+          "rarity": "rare",
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.031,
+          "value": 3.7,
+          "ev_contribution": 0.1147,
+          "rate_source": "pz"
+        },
+        {
+          "name": "Hisuian Goodra",
+          "set_code": "B3b",
+          "card_number": 50,
+          "rarity": "rare",
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.031,
+          "value": 3.7,
+          "ev_contribution": 0.1147,
+          "rate_source": "pz"
+        },
+        {
+          "name": "Snorlax",
+          "set_code": "B3b",
+          "card_number": 55,
+          "rarity": "rare",
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.031,
+          "value": 3.7,
+          "ev_contribution": 0.1147,
+          "rate_source": "pz"
+        }
+      ],
+      "top_power_cards": [
+        {
+          "name": "Mega Gyarados ex",
+          "set_code": "B3b",
+          "card_number": 101,
+          "rarity": "promo",
+          "power_score": 67.5,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Hisuian Goodra",
+          "set_code": "B3b",
+          "card_number": 50,
+          "rarity": "rare",
+          "power_score": 66.1,
+          "pull_prob": 0.031
+        },
+        {
+          "name": "Vaporeon ex",
+          "set_code": "B3b",
+          "card_number": 102,
+          "rarity": "shiny_super_rare",
+          "power_score": 64.2,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Ursaluna",
+          "set_code": "B3b",
+          "card_number": 58,
+          "rarity": "rare",
+          "power_score": 62.2,
+          "pull_prob": 0.031
+        },
+        {
+          "name": "Milotic ex",
+          "set_code": "B3b",
+          "card_number": 15,
+          "rarity": "double_rare",
+          "power_score": 55.6,
+          "pull_prob": 0.0165
+        }
+      ],
+      "deck_target_cards": [],
+      "notes": "slot_rates=pz_verified. PZ coverage: 106/106 cards. 21/106 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Extradimensional Crisis",
@@ -704,6 +1151,8 @@
       "top_ev_cards": [
         {
           "name": "Decidueye",
+          "set_code": "A3a",
+          "card_number": 5,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -714,6 +1163,8 @@
         },
         {
           "name": "Luxray",
+          "set_code": "A3a",
+          "card_number": 15,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -724,6 +1175,8 @@
         },
         {
           "name": "Zeraora",
+          "set_code": "A3a",
+          "card_number": 21,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -734,6 +1187,8 @@
         },
         {
           "name": "Shiinotic",
+          "set_code": "A3a",
+          "card_number": 27,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -744,6 +1199,8 @@
         },
         {
           "name": "Nihilego",
+          "set_code": "A3a",
+          "card_number": 42,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -751,6 +1208,48 @@
           "value": 3.7,
           "ev_contribution": 0.11396,
           "rate_source": "pz"
+        }
+      ],
+      "top_power_cards": [
+        {
+          "name": "Aerodactyl ex",
+          "set_code": "A3a",
+          "card_number": 101,
+          "rarity": "shiny_super_rare",
+          "power_score": 62.7,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Luxray",
+          "set_code": "A3a",
+          "card_number": 15,
+          "rarity": "rare",
+          "power_score": 58.4,
+          "pull_prob": 0.0308
+        },
+        {
+          "name": "Aggron",
+          "set_code": "A3a",
+          "card_number": 50,
+          "rarity": "uncommon",
+          "power_score": 58.4,
+          "pull_prob": 0.0595
+        },
+        {
+          "name": "Pidgeot",
+          "set_code": "A3a",
+          "card_number": 97,
+          "rarity": "shiny_rare",
+          "power_score": 58.4,
+          "pull_prob": 0.0036
+        },
+        {
+          "name": "Stoutland",
+          "set_code": "A3a",
+          "card_number": 56,
+          "rarity": "uncommon",
+          "power_score": 57.7,
+          "pull_prob": 0.0595
         }
       ],
       "deck_target_cards": [],
@@ -767,26 +1266,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 234,
-      "owned_in_pool": 75,
-      "missing_in_pool": 159,
+      "owned_in_pool": 111,
+      "missing_in_pool": 123,
       "base_cards_in_pool": 155,
-      "base_owned_in_pool": 70,
-      "new_card_ev": 4.368,
-      "new_card_ev_10x": 40.101688,
-      "copy_ev": 0.668,
+      "base_owned_in_pool": 100,
+      "new_card_ev": 3.1038,
+      "new_card_ev_10x": 29.082329,
+      "copy_ev": 0.50248,
       "deck_target_ev": 0.0,
-      "missing_rare_plus": 73,
-      "rare_plus_ev_10x": 1.927866,
-      "pack_total_ev": 5.036,
-      "confidence_adjusted_ev": 5.036,
-      "unified_score": 40.235288,
-      "ev_diminishing_returns_ratio": 0.9181,
-      "cost_per_unique_card_1x": 2.75,
-      "cost_per_unique_card_10x": 2.99,
+      "missing_rare_plus": 67,
+      "rare_plus_ev_10x": 1.653388,
+      "pack_total_ev": 3.60628,
+      "confidence_adjusted_ev": 3.60628,
+      "unified_score": 29.182825,
+      "ev_diminishing_returns_ratio": 0.937,
+      "cost_per_unique_card_1x": 3.87,
+      "cost_per_unique_card_10x": 4.13,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Mega Gardevoir ex",
+          "set_code": "B2",
+          "card_number": 203,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -797,6 +1298,8 @@
         },
         {
           "name": "Teal Mask Ogerpon ex",
+          "set_code": "B2",
+          "card_number": 17,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -807,6 +1310,8 @@
         },
         {
           "name": "Blacephalon ex",
+          "set_code": "B2",
+          "card_number": 23,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -817,6 +1322,8 @@
         },
         {
           "name": "Alolan Ninetales ex",
+          "set_code": "B2",
+          "card_number": 29,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -827,6 +1334,8 @@
         },
         {
           "name": "Mega Swampert ex",
+          "set_code": "B2",
+          "card_number": 36,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -836,8 +1345,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Mega Swampert ex",
+          "set_code": "B2",
+          "card_number": 36,
+          "rarity": "double_rare",
+          "power_score": 73.6,
+          "pull_prob": 0.0084
+        },
+        {
+          "name": "Mega Gardevoir ex",
+          "set_code": "B2",
+          "card_number": 66,
+          "rarity": "double_rare",
+          "power_score": 72.5,
+          "pull_prob": 0.0084
+        },
+        {
+          "name": "Slaking",
+          "set_code": "B2",
+          "card_number": 136,
+          "rarity": "rare",
+          "power_score": 63.8,
+          "pull_prob": 0.0089
+        },
+        {
+          "name": "Espeon ex",
+          "set_code": "B2",
+          "card_number": 228,
+          "rarity": "shiny_super_rare",
+          "power_score": 62.7,
+          "pull_prob": 0.0021
+        },
+        {
+          "name": "Sylveon ex",
+          "set_code": "B2",
+          "card_number": 229,
+          "rarity": "shiny_super_rare",
+          "power_score": 60.7,
+          "pull_prob": 0.0021
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 233/233 cards (1 excluded as non-pullable). 75/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 233/233 cards (1 excluded as non-pullable). 111/234 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Ho-Oh",
@@ -850,26 +1401,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 136,
-      "owned_in_pool": 5,
-      "missing_in_pool": 131,
+      "owned_in_pool": 8,
+      "missing_in_pool": 128,
       "base_cards_in_pool": 95,
-      "base_owned_in_pool": 5,
-      "new_card_ev": 7.14467,
-      "new_card_ev_10x": 60.085469,
-      "copy_ev": 0.12068,
+      "base_owned_in_pool": 8,
+      "new_card_ev": 6.93557,
+      "new_card_ev_10x": 58.542107,
+      "copy_ev": 0.20432,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 40,
       "rare_plus_ev_10x": 2.220351,
-      "pack_total_ev": 7.26535,
-      "confidence_adjusted_ev": 7.26535,
-      "unified_score": 60.109605,
-      "ev_diminishing_returns_ratio": 0.841,
-      "cost_per_unique_card_1x": 1.68,
-      "cost_per_unique_card_10x": 2.0,
+      "pack_total_ev": 7.13989,
+      "confidence_adjusted_ev": 7.13989,
+      "unified_score": 58.582971,
+      "ev_diminishing_returns_ratio": 0.8441,
+      "cost_per_unique_card_1x": 1.73,
+      "cost_per_unique_card_10x": 2.05,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Ho-Oh ex",
+          "set_code": "A4",
+          "card_number": 210,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -880,6 +1433,8 @@
         },
         {
           "name": "Magby",
+          "set_code": "A4",
+          "card_number": 32,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -890,6 +1445,8 @@
         },
         {
           "name": "Smoochum",
+          "set_code": "A4",
+          "card_number": 75,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -900,6 +1457,8 @@
         },
         {
           "name": "Tyrogue",
+          "set_code": "A4",
+          "card_number": 101,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -910,6 +1469,8 @@
         },
         {
           "name": "Ho-Oh ex",
+          "set_code": "A4",
+          "card_number": 34,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -919,8 +1480,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Tyranitar",
+          "set_code": "A4",
+          "card_number": 119,
+          "rarity": "rare",
+          "power_score": 66.3,
+          "pull_prob": 0.0176
+        },
+        {
+          "name": "Mamoswine",
+          "set_code": "A4",
+          "card_number": 98,
+          "rarity": "rare",
+          "power_score": 60.4,
+          "pull_prob": 0.0176
+        },
+        {
+          "name": "Umbreon ex",
+          "set_code": "A4",
+          "card_number": 112,
+          "rarity": "double_rare",
+          "power_score": 59.7,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Crobat ex",
+          "set_code": "A4",
+          "card_number": 109,
+          "rarity": "double_rare",
+          "power_score": 59.5,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Jumpluff",
+          "set_code": "A4",
+          "card_number": 15,
+          "rarity": "rare",
+          "power_score": 58.3,
+          "pull_prob": 0.0176
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 135/135 cards (1 excluded as non-pullable). 5/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 135/135 cards (1 excluded as non-pullable). 8/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Lugia",
@@ -933,26 +1536,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 136,
-      "owned_in_pool": 10,
-      "missing_in_pool": 126,
+      "owned_in_pool": 14,
+      "missing_in_pool": 122,
       "base_cards_in_pool": 95,
-      "base_owned_in_pool": 10,
-      "new_card_ev": 6.93377,
-      "new_card_ev_10x": 58.738159,
-      "copy_ev": 0.24816,
+      "base_owned_in_pool": 14,
+      "new_card_ev": 6.67837,
+      "new_card_ev_10x": 56.817266,
+      "copy_ev": 0.35032,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 41,
       "rare_plus_ev_10x": 2.372633,
-      "pack_total_ev": 7.18193,
-      "confidence_adjusted_ev": 7.18193,
-      "unified_score": 58.787791,
-      "ev_diminishing_returns_ratio": 0.8471,
-      "cost_per_unique_card_1x": 1.73,
-      "cost_per_unique_card_10x": 2.04,
+      "pack_total_ev": 7.02869,
+      "confidence_adjusted_ev": 7.02869,
+      "unified_score": 56.88733,
+      "ev_diminishing_returns_ratio": 0.8508,
+      "cost_per_unique_card_1x": 1.8,
+      "cost_per_unique_card_10x": 2.11,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Lugia ex",
+          "set_code": "A4",
+          "card_number": 241,
           "rarity": "ultra_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -963,6 +1568,8 @@
         },
         {
           "name": "Lugia ex",
+          "set_code": "A4",
+          "card_number": 211,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -973,6 +1580,8 @@
         },
         {
           "name": "Pichu",
+          "set_code": "A4",
+          "card_number": 66,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -983,6 +1592,8 @@
         },
         {
           "name": "Elekid",
+          "set_code": "A4",
+          "card_number": 70,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -993,6 +1604,8 @@
         },
         {
           "name": "Cleffa",
+          "set_code": "A4",
+          "card_number": 77,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1002,8 +1615,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Espeon ex",
+          "set_code": "A4",
+          "card_number": 83,
+          "rarity": "double_rare",
+          "power_score": 62.7,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Gyarados ex",
+          "set_code": "A4",
+          "card_number": 234,
+          "rarity": "shiny_super_rare",
+          "power_score": 60.8,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Glaceon ex",
+          "set_code": "A4",
+          "card_number": 235,
+          "rarity": "shiny_super_rare",
+          "power_score": 60.7,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Kingdra ex",
+          "set_code": "A4",
+          "card_number": 43,
+          "rarity": "double_rare",
+          "power_score": 59.5,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Politoed",
+          "set_code": "A4",
+          "card_number": 40,
+          "rarity": "rare",
+          "power_score": 58.6,
+          "pull_prob": 0.0176
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 136/136 cards. 10/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 136/136 cards. 14/136 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Lunala",
@@ -1016,26 +1671,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 140,
-      "owned_in_pool": 6,
-      "missing_in_pool": 134,
+      "owned_in_pool": 10,
+      "missing_in_pool": 130,
       "base_cards_in_pool": 97,
-      "base_owned_in_pool": 6,
-      "new_card_ev": 6.75227,
-      "new_card_ev_10x": 57.067086,
-      "copy_ev": 0.10372,
+      "base_owned_in_pool": 10,
+      "new_card_ev": 6.51195,
+      "new_card_ev_10x": 55.119883,
+      "copy_ev": 0.18084,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 42,
       "rare_plus_ev_10x": 2.12329,
-      "pack_total_ev": 6.85599,
-      "confidence_adjusted_ev": 6.85599,
-      "unified_score": 57.08783,
-      "ev_diminishing_returns_ratio": 0.8452,
-      "cost_per_unique_card_1x": 1.78,
-      "cost_per_unique_card_10x": 2.1,
+      "pack_total_ev": 6.69279,
+      "confidence_adjusted_ev": 6.69279,
+      "unified_score": 55.156051,
+      "ev_diminishing_returns_ratio": 0.8464,
+      "cost_per_unique_card_1x": 1.84,
+      "cost_per_unique_card_10x": 2.18,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Guzma",
+          "set_code": "A3",
+          "card_number": 208,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -1046,6 +1703,8 @@
         },
         {
           "name": "Decidueye ex",
+          "set_code": "A3",
+          "card_number": 12,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1056,6 +1715,8 @@
         },
         {
           "name": "Wishiwashi ex",
+          "set_code": "A3",
+          "card_number": 51,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1066,6 +1727,8 @@
         },
         {
           "name": "Lunala ex",
+          "set_code": "A3",
+          "card_number": 87,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1076,6 +1739,8 @@
         },
         {
           "name": "Passimian ex",
+          "set_code": "A3",
+          "card_number": 104,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1085,8 +1750,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Lunala ex",
+          "set_code": "A3",
+          "card_number": 87,
+          "rarity": "double_rare",
+          "power_score": 71.7,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Gengar ex",
+          "set_code": "A3",
+          "card_number": 234,
+          "rarity": "shiny_super_rare",
+          "power_score": 66.4,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Alolan Exeggutor",
+          "set_code": "A3",
+          "card_number": 2,
+          "rarity": "rare",
+          "power_score": 60.2,
+          "pull_prob": 0.0176
+        },
+        {
+          "name": "Kommo-o",
+          "set_code": "A3",
+          "card_number": 127,
+          "rarity": "rare",
+          "power_score": 60.2,
+          "pull_prob": 0.0176
+        },
+        {
+          "name": "Conkeldurr",
+          "set_code": "A3",
+          "card_number": 96,
+          "rarity": "rare",
+          "power_score": 57.9,
+          "pull_prob": 0.0176
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 139/139 cards (1 excluded as non-pullable). 6/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 139/139 cards (1 excluded as non-pullable). 10/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Mega Altaria",
@@ -1099,26 +1806,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 139,
-      "owned_in_pool": 44,
-      "missing_in_pool": 95,
+      "owned_in_pool": 53,
+      "missing_in_pool": 86,
       "base_cards_in_pool": 102,
-      "base_owned_in_pool": 43,
-      "new_card_ev": 4.66441,
-      "new_card_ev_10x": 40.666772,
-      "copy_ev": 0.56568,
+      "base_owned_in_pool": 52,
+      "new_card_ev": 4.17001,
+      "new_card_ev_10x": 36.794921,
+      "copy_ev": 0.59572,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 35,
       "rare_plus_ev_10x": 1.937721,
-      "pack_total_ev": 5.23009,
-      "confidence_adjusted_ev": 5.23009,
-      "unified_score": 40.779908,
-      "ev_diminishing_returns_ratio": 0.8719,
-      "cost_per_unique_card_1x": 2.57,
-      "cost_per_unique_card_10x": 2.95,
+      "pack_total_ev": 4.76573,
+      "confidence_adjusted_ev": 4.76573,
+      "unified_score": 36.914065,
+      "ev_diminishing_returns_ratio": 0.8824,
+      "cost_per_unique_card_1x": 2.88,
+      "cost_per_unique_card_10x": 3.26,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Mega Altaria ex",
+          "set_code": "B1",
+          "card_number": 286,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -1129,6 +1838,8 @@
         },
         {
           "name": "Whimsicott ex",
+          "set_code": "B1",
+          "card_number": 16,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1139,6 +1850,8 @@
         },
         {
           "name": "Mega Altaria ex",
+          "set_code": "B1",
+          "card_number": 102,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1149,6 +1862,8 @@
         },
         {
           "name": "Indeedee ex",
+          "set_code": "B1",
+          "card_number": 121,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1159,6 +1874,8 @@
         },
         {
           "name": "Tauros ex",
+          "set_code": "B1",
+          "card_number": 183,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1168,8 +1885,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Mega Ampharos ex",
+          "set_code": "B1",
+          "card_number": 258,
+          "rarity": "super_rare",
+          "power_score": 63.4,
+          "pull_prob": 0.0023
+        },
+        {
+          "name": "Rillaboom",
+          "set_code": "B1",
+          "card_number": 27,
+          "rarity": "rare",
+          "power_score": 62.0,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Chandelure",
+          "set_code": "B1",
+          "card_number": 43,
+          "rarity": "rare",
+          "power_score": 59.7,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Primarina ex",
+          "set_code": "B1",
+          "card_number": 320,
+          "rarity": "shiny_super_rare",
+          "power_score": 56.7,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Victreebel",
+          "set_code": "B1",
+          "card_number": 289,
+          "rarity": "shiny_rare",
+          "power_score": 55.6,
+          "pull_prob": 0.0036
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 44/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 53/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Mega Blaziken",
@@ -1182,26 +1941,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 139,
-      "owned_in_pool": 39,
-      "missing_in_pool": 100,
+      "owned_in_pool": 52,
+      "missing_in_pool": 87,
       "base_cards_in_pool": 102,
-      "base_owned_in_pool": 39,
-      "new_card_ev": 5.02558,
-      "new_card_ev_10x": 43.691296,
-      "copy_ev": 0.45068,
+      "base_owned_in_pool": 51,
+      "new_card_ev": 4.30255,
+      "new_card_ev_10x": 37.726243,
+      "copy_ev": 0.49536,
       "deck_target_ev": 0.0,
-      "missing_rare_plus": 36,
-      "rare_plus_ev_10x": 2.086549,
-      "pack_total_ev": 5.47626,
-      "confidence_adjusted_ev": 5.47626,
-      "unified_score": 43.781432,
-      "ev_diminishing_returns_ratio": 0.8694,
-      "cost_per_unique_card_1x": 2.39,
-      "cost_per_unique_card_10x": 2.75,
+      "missing_rare_plus": 35,
+      "rare_plus_ev_10x": 2.051127,
+      "pack_total_ev": 4.79791,
+      "confidence_adjusted_ev": 4.79791,
+      "unified_score": 37.825315,
+      "ev_diminishing_returns_ratio": 0.8768,
+      "cost_per_unique_card_1x": 2.79,
+      "cost_per_unique_card_10x": 3.18,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Mega Blaziken ex",
+          "set_code": "B1",
+          "card_number": 284,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -1211,17 +1972,9 @@
           "rate_source": "pz"
         },
         {
-          "name": "Mega Pinsir ex",
-          "rarity": "double_rare",
-          "is_deck_target": false,
-          "owned": 0,
-          "pull_prob": 0.0165,
-          "value": 5.4,
-          "ev_contribution": 0.0891,
-          "rate_source": "pz"
-        },
-        {
           "name": "Mega Blaziken ex",
+          "set_code": "B1",
+          "card_number": 36,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1232,6 +1985,8 @@
         },
         {
           "name": "Hitmonchan ex",
+          "set_code": "B1",
+          "card_number": 124,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1242,6 +1997,8 @@
         },
         {
           "name": "Dragalge ex",
+          "set_code": "B1",
+          "card_number": 160,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1249,10 +2006,64 @@
           "value": 5.4,
           "ev_contribution": 0.0891,
           "rate_source": "pz"
+        },
+        {
+          "name": "Beautifly",
+          "set_code": "B1",
+          "card_number": 227,
+          "rarity": "illustration_rare",
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0161,
+          "value": 4.7,
+          "ev_contribution": 0.07567,
+          "rate_source": "pz"
+        }
+      ],
+      "top_power_cards": [
+        {
+          "name": "Mega Blaziken ex",
+          "set_code": "B1",
+          "card_number": 36,
+          "rarity": "double_rare",
+          "power_score": 64.8,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Dragalge ex",
+          "set_code": "B1",
+          "card_number": 160,
+          "rarity": "double_rare",
+          "power_score": 62.0,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Dusknoir",
+          "set_code": "B1",
+          "card_number": 105,
+          "rarity": "rare",
+          "power_score": 62.0,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Decidueye ex",
+          "set_code": "B1",
+          "card_number": 317,
+          "rarity": "shiny_super_rare",
+          "power_score": 57.4,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Luxray",
+          "set_code": "B1",
+          "card_number": 237,
+          "rarity": "illustration_rare",
+          "power_score": 54.6,
+          "pull_prob": 0.0161
         }
       ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 39/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 52/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Mega Gyarados",
@@ -1265,26 +2076,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 139,
-      "owned_in_pool": 43,
-      "missing_in_pool": 96,
+      "owned_in_pool": 55,
+      "missing_in_pool": 84,
       "base_cards_in_pool": 102,
-      "base_owned_in_pool": 40,
-      "new_card_ev": 4.79828,
-      "new_card_ev_10x": 41.852416,
-      "copy_ev": 0.53572,
+      "base_owned_in_pool": 51,
+      "new_card_ev": 4.1191,
+      "new_card_ev_10x": 36.15006,
+      "copy_ev": 0.50308,
       "deck_target_ev": 0.0,
-      "missing_rare_plus": 33,
-      "rare_plus_ev_10x": 1.765135,
-      "pack_total_ev": 5.334,
-      "confidence_adjusted_ev": 5.334,
-      "unified_score": 41.95956,
-      "ev_diminishing_returns_ratio": 0.8722,
-      "cost_per_unique_card_1x": 2.5,
-      "cost_per_unique_card_10x": 2.87,
+      "missing_rare_plus": 32,
+      "rare_plus_ev_10x": 1.729713,
+      "pack_total_ev": 4.62218,
+      "confidence_adjusted_ev": 4.62218,
+      "unified_score": 36.250676,
+      "ev_diminishing_returns_ratio": 0.8776,
+      "cost_per_unique_card_1x": 2.91,
+      "cost_per_unique_card_10x": 3.32,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Mega Gyarados ex",
+          "set_code": "B1",
+          "card_number": 285,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -1295,6 +2108,8 @@
         },
         {
           "name": "Mega Gyarados ex",
+          "set_code": "B1",
+          "card_number": 52,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1305,16 +2120,8 @@
         },
         {
           "name": "Greninja ex",
-          "rarity": "double_rare",
-          "is_deck_target": false,
-          "owned": 0,
-          "pull_prob": 0.0165,
-          "value": 5.4,
-          "ev_contribution": 0.0891,
-          "rate_source": "pz"
-        },
-        {
-          "name": "Jolteon ex",
+          "set_code": "B1",
+          "card_number": 73,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1325,6 +2132,20 @@
         },
         {
           "name": "Mega Absol ex",
+          "set_code": "B1",
+          "card_number": 151,
+          "rarity": "double_rare",
+          "is_deck_target": false,
+          "owned": 0,
+          "pull_prob": 0.0165,
+          "value": 5.4,
+          "ev_contribution": 0.0891,
+          "rate_source": "pz"
+        },
+        {
+          "name": "Melmetal ex",
+          "set_code": "B1",
+          "card_number": 174,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1334,8 +2155,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Greninja ex",
+          "set_code": "B1",
+          "card_number": 73,
+          "rarity": "double_rare",
+          "power_score": 70.5,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Mega Gyarados ex",
+          "set_code": "B1",
+          "card_number": 52,
+          "rarity": "double_rare",
+          "power_score": 67.5,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Jolteon ex",
+          "set_code": "B1",
+          "card_number": 257,
+          "rarity": "super_rare",
+          "power_score": 62.7,
+          "pull_prob": 0.0023
+        },
+        {
+          "name": "Hydreigon",
+          "set_code": "B1",
+          "card_number": 157,
+          "rarity": "rare",
+          "power_score": 59.1,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Poliwrath",
+          "set_code": "B1",
+          "card_number": 297,
+          "rarity": "shiny_rare",
+          "power_score": 57.9,
+          "pull_prob": 0.0036
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 43/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 138/138 cards (1 excluded as non-pullable). 55/139 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Mega Shine",
@@ -1368,6 +2231,8 @@
       "top_ev_cards": [
         {
           "name": "Empoleon",
+          "set_code": "B2b",
+          "card_number": 20,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1378,6 +2243,8 @@
         },
         {
           "name": "Darkrai",
+          "set_code": "B2b",
+          "card_number": 40,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1388,6 +2255,8 @@
         },
         {
           "name": "Revavroom",
+          "set_code": "B2b",
+          "card_number": 50,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1398,6 +2267,8 @@
         },
         {
           "name": "Dragonite",
+          "set_code": "B2b",
+          "card_number": 53,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1408,6 +2279,8 @@
         },
         {
           "name": "Lapras",
+          "set_code": "B2b",
+          "card_number": 70,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1415,6 +2288,48 @@
           "value": 4.7,
           "ev_contribution": 0.10058,
           "rate_source": "pz"
+        }
+      ],
+      "top_power_cards": [
+        {
+          "name": "Mega Charizard X ex",
+          "set_code": "B2b",
+          "card_number": 9,
+          "rarity": "double_rare",
+          "power_score": 63.4,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Mega Gengar ex",
+          "set_code": "B2b",
+          "card_number": 79,
+          "rarity": "super_rare",
+          "power_score": 63.4,
+          "pull_prob": 0.0029
+        },
+        {
+          "name": "Mega Scizor ex",
+          "set_code": "B2b",
+          "card_number": 47,
+          "rarity": "double_rare",
+          "power_score": 61.2,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Mega Slowbro ex",
+          "set_code": "B2b",
+          "card_number": 16,
+          "rarity": "double_rare",
+          "power_score": 59.1,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Mega Manectric ex",
+          "set_code": "B2b",
+          "card_number": 27,
+          "rarity": "double_rare",
+          "power_score": 56.7,
+          "pull_prob": 0.0165
         }
       ],
       "deck_target_cards": [],
@@ -1451,6 +2366,8 @@
       "top_ev_cards": [
         {
           "name": "Mew ex",
+          "set_code": "A1a",
+          "card_number": 86,
           "rarity": "ultra_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1461,6 +2378,8 @@
         },
         {
           "name": "Serperior",
+          "set_code": "A1a",
+          "card_number": 6,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1471,6 +2390,8 @@
         },
         {
           "name": "Volcarona",
+          "set_code": "A1a",
+          "card_number": 14,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1481,6 +2402,8 @@
         },
         {
           "name": "Vaporeon",
+          "set_code": "A1a",
+          "card_number": 19,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1491,6 +2414,8 @@
         },
         {
           "name": "Raichu",
+          "set_code": "A1a",
+          "card_number": 26,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1498,6 +2423,48 @@
           "value": 3.7,
           "ev_contribution": 0.1147,
           "rate_source": "pz"
+        }
+      ],
+      "top_power_cards": [
+        {
+          "name": "Aerodactyl ex",
+          "set_code": "A1a",
+          "card_number": 46,
+          "rarity": "double_rare",
+          "power_score": 62.7,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Gyarados ex",
+          "set_code": "A1a",
+          "card_number": 18,
+          "rarity": "double_rare",
+          "power_score": 60.8,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Pidgeot ex",
+          "set_code": "A1a",
+          "card_number": 59,
+          "rarity": "double_rare",
+          "power_score": 53.3,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Golem",
+          "set_code": "A1a",
+          "card_number": 45,
+          "rarity": "rare",
+          "power_score": 52.2,
+          "pull_prob": 0.031
+        },
+        {
+          "name": "Druddigon",
+          "set_code": "A1a",
+          "card_number": 56,
+          "rarity": "uncommon",
+          "power_score": 48.7,
+          "pull_prob": 0.0641
         }
       ],
       "deck_target_cards": [],
@@ -1514,26 +2481,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 126,
-      "owned_in_pool": 17,
-      "missing_in_pool": 109,
+      "owned_in_pool": 20,
+      "missing_in_pool": 106,
       "base_cards_in_pool": 104,
-      "base_owned_in_pool": 16,
-      "new_card_ev": 5.68868,
-      "new_card_ev_10x": 48.02166,
-      "copy_ev": 0.2422,
+      "base_owned_in_pool": 19,
+      "new_card_ev": 5.52878,
+      "new_card_ev_10x": 46.761796,
+      "copy_ev": 0.30616,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 19,
       "rare_plus_ev_10x": 1.430912,
-      "pack_total_ev": 5.93088,
-      "confidence_adjusted_ev": 5.93088,
-      "unified_score": 48.0701,
-      "ev_diminishing_returns_ratio": 0.8442,
-      "cost_per_unique_card_1x": 2.11,
-      "cost_per_unique_card_10x": 2.5,
+      "pack_total_ev": 5.83494,
+      "confidence_adjusted_ev": 5.83494,
+      "unified_score": 46.823028,
+      "ev_diminishing_returns_ratio": 0.8458,
+      "cost_per_unique_card_1x": 2.17,
+      "cost_per_unique_card_10x": 2.57,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Mewtwo ex",
+          "set_code": "A1",
+          "card_number": 282,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -1544,6 +2513,8 @@
         },
         {
           "name": "Venusaur ex",
+          "set_code": "A1",
+          "card_number": 4,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1554,6 +2525,8 @@
         },
         {
           "name": "Articuno ex",
+          "set_code": "A1",
+          "card_number": 84,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1564,6 +2537,8 @@
         },
         {
           "name": "Gengar ex",
+          "set_code": "A1",
+          "card_number": 123,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1574,6 +2549,8 @@
         },
         {
           "name": "Mewtwo ex",
+          "set_code": "A1",
+          "card_number": 129,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1583,8 +2560,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Gengar ex",
+          "set_code": "A1",
+          "card_number": 123,
+          "rarity": "double_rare",
+          "power_score": 66.4,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Charizard ex",
+          "set_code": "A1",
+          "card_number": 284,
+          "rarity": "ultra_rare",
+          "power_score": 60.0,
+          "pull_prob": 0.0006
+        },
+        {
+          "name": "Pidgeot",
+          "set_code": "A1",
+          "card_number": 188,
+          "rarity": "rare",
+          "power_score": 58.4,
+          "pull_prob": 0.0178
+        },
+        {
+          "name": "Venusaur ex",
+          "set_code": "A1",
+          "card_number": 4,
+          "rarity": "double_rare",
+          "power_score": 54.8,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Marowak ex",
+          "set_code": "A1",
+          "card_number": 264,
+          "rarity": "super_rare",
+          "power_score": 50.7,
+          "pull_prob": 0.0029
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 124/124 cards (2 excluded as non-pullable). 17/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 124/124 cards (2 excluded as non-pullable). 20/126 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Paldean Wonders",
@@ -1617,6 +2636,8 @@
       "top_ev_cards": [
         {
           "name": "Fuecoco",
+          "set_code": "B2a",
+          "card_number": 94,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1627,6 +2648,8 @@
         },
         {
           "name": "Greavard",
+          "set_code": "B2a",
+          "card_number": 95,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1637,6 +2660,8 @@
         },
         {
           "name": "Paldean Wooper",
+          "set_code": "B2a",
+          "card_number": 97,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1647,6 +2672,8 @@
         },
         {
           "name": "Maushold",
+          "set_code": "B2a",
+          "card_number": 99,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1657,6 +2684,8 @@
         },
         {
           "name": "Arven",
+          "set_code": "B2a",
+          "card_number": 115,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -1664,6 +2693,48 @@
           "value": 8.5,
           "ev_contribution": 0.0952,
           "rate_source": "pz"
+        }
+      ],
+      "top_power_cards": [
+        {
+          "name": "Skeledirge",
+          "set_code": "B2a",
+          "card_number": 18,
+          "rarity": "rare",
+          "power_score": 59.9,
+          "pull_prob": 0.0208
+        },
+        {
+          "name": "Quaquaval",
+          "set_code": "B2a",
+          "card_number": 24,
+          "rarity": "rare",
+          "power_score": 59.9,
+          "pull_prob": 0.0208
+        },
+        {
+          "name": "Tinkaton",
+          "set_code": "B2a",
+          "card_number": 74,
+          "rarity": "rare",
+          "power_score": 58.2,
+          "pull_prob": 0.0208
+        },
+        {
+          "name": "Baxcalibur",
+          "set_code": "B2a",
+          "card_number": 130,
+          "rarity": "ultra_rare",
+          "power_score": 57.7,
+          "pull_prob": 0.0011
+        },
+        {
+          "name": "Armarouge ex",
+          "set_code": "B2a",
+          "card_number": 20,
+          "rarity": "double_rare",
+          "power_score": 55.6,
+          "pull_prob": 0.0165
         }
       ],
       "deck_target_cards": [],
@@ -1700,6 +2771,8 @@
       "top_ev_cards": [
         {
           "name": "Palkia ex",
+          "set_code": "A2",
+          "card_number": 204,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -1710,6 +2783,8 @@
         },
         {
           "name": "Infernape ex",
+          "set_code": "A2",
+          "card_number": 29,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1720,6 +2795,8 @@
         },
         {
           "name": "Palkia ex",
+          "set_code": "A2",
+          "card_number": 49,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1730,6 +2807,8 @@
         },
         {
           "name": "Mismagius ex",
+          "set_code": "A2",
+          "card_number": 67,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1740,6 +2819,8 @@
         },
         {
           "name": "Weavile ex",
+          "set_code": "A2",
+          "card_number": 99,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1747,6 +2828,48 @@
           "value": 5.4,
           "ev_contribution": 0.0891,
           "rate_source": "pz"
+        }
+      ],
+      "top_power_cards": [
+        {
+          "name": "Garchomp",
+          "set_code": "A2",
+          "card_number": 123,
+          "rarity": "rare",
+          "power_score": 66.8,
+          "pull_prob": 0.0178
+        },
+        {
+          "name": "Bastiodon",
+          "set_code": "A2",
+          "card_number": 114,
+          "rarity": "rare",
+          "power_score": 60.1,
+          "pull_prob": 0.0178
+        },
+        {
+          "name": "Torterra",
+          "set_code": "A2",
+          "card_number": 12,
+          "rarity": "rare",
+          "power_score": 58.4,
+          "pull_prob": 0.0178
+        },
+        {
+          "name": "Rhyperior",
+          "set_code": "A2",
+          "card_number": 82,
+          "rarity": "rare",
+          "power_score": 58.4,
+          "pull_prob": 0.0178
+        },
+        {
+          "name": "Infernape ex",
+          "set_code": "A2",
+          "card_number": 29,
+          "rarity": "double_rare",
+          "power_score": 58.3,
+          "pull_prob": 0.0165
         }
       ],
       "deck_target_cards": [],
@@ -1763,26 +2886,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 109,
-      "owned_in_pool": 73,
-      "missing_in_pool": 36,
+      "owned_in_pool": 75,
+      "missing_in_pool": 34,
       "base_cards_in_pool": 74,
-      "base_owned_in_pool": 64,
-      "new_card_ev": 2.2585,
-      "new_card_ev_10x": 20.886904,
-      "copy_ev": 0.21892,
+      "base_owned_in_pool": 66,
+      "new_card_ev": 2.1078,
+      "new_card_ev_10x": 19.81665,
+      "copy_ev": 0.2792,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 26,
       "rare_plus_ev_10x": 1.898619,
-      "pack_total_ev": 2.47742,
-      "confidence_adjusted_ev": 2.47742,
-      "unified_score": 20.930688,
-      "ev_diminishing_returns_ratio": 0.9248,
-      "cost_per_unique_card_1x": 5.31,
-      "cost_per_unique_card_10x": 5.75,
+      "pack_total_ev": 2.387,
+      "confidence_adjusted_ev": 2.387,
+      "unified_score": 19.87249,
+      "ev_diminishing_returns_ratio": 0.9402,
+      "cost_per_unique_card_1x": 5.69,
+      "cost_per_unique_card_10x": 6.06,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Charcadet",
+          "set_code": "B3a",
+          "card_number": 95,
           "rarity": "shiny_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1793,6 +2918,8 @@
         },
         {
           "name": "Tadbulb",
+          "set_code": "B3a",
+          "card_number": 96,
           "rarity": "shiny_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1803,6 +2930,8 @@
         },
         {
           "name": "Diglett",
+          "set_code": "B3a",
+          "card_number": 98,
           "rarity": "shiny_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1813,6 +2942,8 @@
         },
         {
           "name": "Dugtrio",
+          "set_code": "B3a",
+          "card_number": 99,
           "rarity": "shiny_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1823,6 +2954,8 @@
         },
         {
           "name": "Klawf",
+          "set_code": "B3a",
+          "card_number": 100,
           "rarity": "shiny_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1832,8 +2965,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Koraidon ex",
+          "set_code": "B3a",
+          "card_number": 36,
+          "rarity": "double_rare",
+          "power_score": 64.0,
+          "pull_prob": 0.008
+        },
+        {
+          "name": "Garganacl",
+          "set_code": "B3a",
+          "card_number": 33,
+          "rarity": "rare",
+          "power_score": 59.9,
+          "pull_prob": 0.023
+        },
+        {
+          "name": "Armarouge ex",
+          "set_code": "B3a",
+          "card_number": 105,
+          "rarity": "shiny_super_rare",
+          "power_score": 55.6,
+          "pull_prob": 0.0018
+        },
+        {
+          "name": "Meowscarada ex",
+          "set_code": "B3a",
+          "card_number": 104,
+          "rarity": "shiny_super_rare",
+          "power_score": 52.2,
+          "pull_prob": 0.0018
+        },
+        {
+          "name": "Mega Altaria ex",
+          "set_code": "B3a",
+          "card_number": 107,
+          "rarity": "shiny_super_rare",
+          "power_score": 50.7,
+          "pull_prob": 0.0018
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 109/109 cards. 73/109 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 109/109 cards. 75/109 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Pikachu",
@@ -1846,26 +3021,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 127,
-      "owned_in_pool": 11,
-      "missing_in_pool": 116,
+      "owned_in_pool": 13,
+      "missing_in_pool": 114,
       "base_cards_in_pool": 104,
-      "base_owned_in_pool": 11,
-      "new_card_ev": 6.11306,
-      "new_card_ev_10x": 51.639102,
-      "copy_ev": 0.14484,
+      "base_owned_in_pool": 13,
+      "new_card_ev": 6.01196,
+      "new_card_ev_10x": 50.833708,
+      "copy_ev": 0.18528,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 21,
       "rare_plus_ev_10x": 1.581951,
-      "pack_total_ev": 6.2579,
-      "confidence_adjusted_ev": 6.2579,
-      "unified_score": 51.66807,
-      "ev_diminishing_returns_ratio": 0.8447,
-      "cost_per_unique_card_1x": 1.96,
-      "cost_per_unique_card_10x": 2.32,
+      "pack_total_ev": 6.19724,
+      "confidence_adjusted_ev": 6.19724,
+      "unified_score": 50.870764,
+      "ev_diminishing_returns_ratio": 0.8455,
+      "cost_per_unique_card_1x": 2.0,
+      "cost_per_unique_card_10x": 2.36,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Pikachu ex",
+          "set_code": "A1",
+          "card_number": 281,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -1876,6 +3053,8 @@
         },
         {
           "name": "Arcanine ex",
+          "set_code": "A1",
+          "card_number": 41,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1886,6 +3065,8 @@
         },
         {
           "name": "Blastoise ex",
+          "set_code": "A1",
+          "card_number": 56,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1896,6 +3077,8 @@
         },
         {
           "name": "Pikachu ex",
+          "set_code": "A1",
+          "card_number": 96,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1906,6 +3089,8 @@
         },
         {
           "name": "Zapdos ex",
+          "set_code": "A1",
+          "card_number": 104,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1915,8 +3100,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Charizard ex",
+          "set_code": "A1",
+          "card_number": 284,
+          "rarity": "ultra_rare",
+          "power_score": 60.0,
+          "pull_prob": 0.0006
+        },
+        {
+          "name": "Blastoise ex",
+          "set_code": "A1",
+          "card_number": 56,
+          "rarity": "double_rare",
+          "power_score": 56.7,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Golem",
+          "set_code": "A1",
+          "card_number": 149,
+          "rarity": "rare",
+          "power_score": 53.2,
+          "pull_prob": 0.0178
+        },
+        {
+          "name": "Arcanine ex",
+          "set_code": "A1",
+          "card_number": 41,
+          "rarity": "double_rare",
+          "power_score": 52.0,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Butterfree",
+          "set_code": "A1",
+          "card_number": 7,
+          "rarity": "rare",
+          "power_score": 50.1,
+          "pull_prob": 0.0178
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 125/125 cards (2 excluded as non-pullable). 11/127 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 125/125 cards (2 excluded as non-pullable). 13/127 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Pulsing Aura",
@@ -1949,6 +3176,8 @@
       "top_ev_cards": [
         {
           "name": "Mega Sceptile ex",
+          "set_code": "B3",
+          "card_number": 8,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1959,6 +3188,8 @@
         },
         {
           "name": "Crustle ex",
+          "set_code": "B3",
+          "card_number": 88,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1969,6 +3200,8 @@
         },
         {
           "name": "Mega Audino ex",
+          "set_code": "B3",
+          "card_number": 141,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1979,6 +3212,8 @@
         },
         {
           "name": "Celebi",
+          "set_code": "B3",
+          "card_number": 4,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1989,6 +3224,8 @@
         },
         {
           "name": "Flapple",
+          "set_code": "B3",
+          "card_number": 20,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -1996,6 +3233,48 @@
           "value": 3.7,
           "ev_contribution": 0.03182,
           "rate_source": "pz"
+        }
+      ],
+      "top_power_cards": [
+        {
+          "name": "Flygon ex",
+          "set_code": "B3",
+          "card_number": 188,
+          "rarity": "super_rare",
+          "power_score": 76.9,
+          "pull_prob": 0.0011
+        },
+        {
+          "name": "Greninja ex",
+          "set_code": "B3",
+          "card_number": 227,
+          "rarity": "shiny_super_rare",
+          "power_score": 70.5,
+          "pull_prob": 0.0021
+        },
+        {
+          "name": "Vaporeon ex",
+          "set_code": "B3",
+          "card_number": 182,
+          "rarity": "super_rare",
+          "power_score": 64.2,
+          "pull_prob": 0.0011
+        },
+        {
+          "name": "Mega Steelix ex",
+          "set_code": "B3",
+          "card_number": 232,
+          "rarity": "shiny_super_rare",
+          "power_score": 63.4,
+          "pull_prob": 0.0021
+        },
+        {
+          "name": "Mega Sceptile ex",
+          "set_code": "B3",
+          "card_number": 8,
+          "rarity": "double_rare",
+          "power_score": 63.0,
+          "pull_prob": 0.0084
         }
       ],
       "deck_target_cards": [],
@@ -2012,26 +3291,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 105,
-      "owned_in_pool": 0,
-      "missing_in_pool": 105,
+      "owned_in_pool": 2,
+      "missing_in_pool": 103,
       "base_cards_in_pool": 71,
-      "base_owned_in_pool": 0,
-      "new_card_ev": 7.39903,
-      "new_card_ev_10x": 58.630726,
-      "copy_ev": 0.0,
+      "base_owned_in_pool": 2,
+      "new_card_ev": 7.24633,
+      "new_card_ev_10x": 57.544421,
+      "copy_ev": 0.06108,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 33,
       "rare_plus_ev_10x": 2.134224,
-      "pack_total_ev": 7.39903,
-      "confidence_adjusted_ev": 7.39903,
-      "unified_score": 58.630726,
-      "ev_diminishing_returns_ratio": 0.7924,
-      "cost_per_unique_card_1x": 1.62,
-      "cost_per_unique_card_10x": 2.05,
+      "pack_total_ev": 7.30741,
+      "confidence_adjusted_ev": 7.30741,
+      "unified_score": 57.556637,
+      "ev_diminishing_returns_ratio": 0.7941,
+      "cost_per_unique_card_1x": 1.66,
+      "cost_per_unique_card_10x": 2.09,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Milotic",
+          "set_code": "A4a",
+          "card_number": 72,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2042,6 +3323,8 @@
         },
         {
           "name": "Stunfisk",
+          "set_code": "A4a",
+          "card_number": 73,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2052,6 +3335,8 @@
         },
         {
           "name": "Yamper",
+          "set_code": "A4a",
+          "card_number": 74,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2062,6 +3347,8 @@
         },
         {
           "name": "Latios",
+          "set_code": "A4a",
+          "card_number": 75,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2072,6 +3359,8 @@
         },
         {
           "name": "Phanpy",
+          "set_code": "A4a",
+          "card_number": 76,
           "rarity": "illustration_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2081,8 +3370,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Infernape ex",
+          "set_code": "A4a",
+          "card_number": 101,
+          "rarity": "shiny_super_rare",
+          "power_score": 58.3,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Garchomp ex",
+          "set_code": "A4a",
+          "card_number": 103,
+          "rarity": "shiny_super_rare",
+          "power_score": 57.4,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Jumpluff ex",
+          "set_code": "A4a",
+          "card_number": 3,
+          "rarity": "double_rare",
+          "power_score": 57.3,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Poliwrath ex",
+          "set_code": "A4a",
+          "card_number": 42,
+          "rarity": "double_rare",
+          "power_score": 56.7,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Entei ex",
+          "set_code": "A4a",
+          "card_number": 10,
+          "rarity": "double_rare",
+          "power_score": 55.6,
+          "pull_prob": 0.0165
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 104/104 cards (1 excluded as non-pullable). 0/105 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 104/104 cards (1 excluded as non-pullable). 2/105 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Shining Revelry",
@@ -2095,26 +3426,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 111,
-      "owned_in_pool": 2,
-      "missing_in_pool": 109,
+      "owned_in_pool": 5,
+      "missing_in_pool": 106,
       "base_cards_in_pool": 72,
-      "base_owned_in_pool": 2,
-      "new_card_ev": 6.92977,
-      "new_card_ev_10x": 54.934401,
-      "copy_ev": 0.06216,
+      "base_owned_in_pool": 5,
+      "new_card_ev": 6.68367,
+      "new_card_ev_10x": 53.219545,
+      "copy_ev": 0.1606,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 38,
       "rare_plus_ev_10x": 2.0619,
-      "pack_total_ev": 6.99193,
-      "confidence_adjusted_ev": 6.99193,
-      "unified_score": 54.946833,
-      "ev_diminishing_returns_ratio": 0.7927,
-      "cost_per_unique_card_1x": 1.73,
-      "cost_per_unique_card_10x": 2.18,
+      "pack_total_ev": 6.84427,
+      "confidence_adjusted_ev": 6.84427,
+      "unified_score": 53.251665,
+      "ev_diminishing_returns_ratio": 0.7963,
+      "cost_per_unique_card_1x": 1.8,
+      "cost_per_unique_card_10x": 2.25,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Meowscarada",
+          "set_code": "A2b",
+          "card_number": 7,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2125,6 +3458,8 @@
         },
         {
           "name": "Magmortar",
+          "set_code": "A2b",
+          "card_number": 12,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2135,6 +3470,8 @@
         },
         {
           "name": "Dondozo",
+          "set_code": "A2b",
+          "card_number": 20,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2145,6 +3482,8 @@
         },
         {
           "name": "Pawmot",
+          "set_code": "A2b",
+          "card_number": 28,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2155,6 +3494,8 @@
         },
         {
           "name": "Alakazam",
+          "set_code": "A2b",
+          "card_number": 31,
           "rarity": "rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2164,8 +3505,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Giratina ex",
+          "set_code": "A2b",
+          "card_number": 96,
+          "rarity": "immersive",
+          "power_score": 62.0,
+          "pull_prob": 0.0111
+        },
+        {
+          "name": "Pawmot",
+          "set_code": "A2b",
+          "card_number": 28,
+          "rarity": "rare",
+          "power_score": 60.7,
+          "pull_prob": 0.0274
+        },
+        {
+          "name": "Charizard ex",
+          "set_code": "A2b",
+          "card_number": 10,
+          "rarity": "double_rare",
+          "power_score": 58.7,
+          "pull_prob": 0.0092
+        },
+        {
+          "name": "Beedrill ex",
+          "set_code": "A2b",
+          "card_number": 3,
+          "rarity": "double_rare",
+          "power_score": 57.4,
+          "pull_prob": 0.0092
+        },
+        {
+          "name": "Tinkaton ex",
+          "set_code": "A2b",
+          "card_number": 54,
+          "rarity": "double_rare",
+          "power_score": 50.3,
+          "pull_prob": 0.0092
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 110/110 cards (1 excluded as non-pullable). 2/111 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 110/110 cards (1 excluded as non-pullable). 5/111 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     },
     {
       "pack_name": "Solgaleo",
@@ -2178,26 +3561,28 @@
       "blocked_reason": null,
       "purchasable": true,
       "cards_in_pool": 140,
-      "owned_in_pool": 5,
-      "missing_in_pool": 135,
+      "owned_in_pool": 8,
+      "missing_in_pool": 132,
       "base_cards_in_pool": 97,
-      "base_owned_in_pool": 5,
-      "new_card_ev": 6.84197,
-      "new_card_ev_10x": 57.700926,
-      "copy_ev": 0.094,
+      "base_owned_in_pool": 8,
+      "new_card_ev": 6.66677,
+      "new_card_ev_10x": 56.355696,
+      "copy_ev": 0.16408,
       "deck_target_ev": 0.0,
       "missing_rare_plus": 42,
       "rare_plus_ev_10x": 2.122299,
-      "pack_total_ev": 6.93597,
-      "confidence_adjusted_ev": 6.93597,
-      "unified_score": 57.719726,
-      "ev_diminishing_returns_ratio": 0.8433,
-      "cost_per_unique_card_1x": 1.75,
-      "cost_per_unique_card_10x": 2.08,
+      "pack_total_ev": 6.83085,
+      "confidence_adjusted_ev": 6.83085,
+      "unified_score": 56.388512,
+      "ev_diminishing_returns_ratio": 0.8453,
+      "cost_per_unique_card_1x": 1.8,
+      "cost_per_unique_card_10x": 2.13,
       "pz_coverage": 1.0,
       "top_ev_cards": [
         {
           "name": "Lillie",
+          "set_code": "A3",
+          "card_number": 209,
           "rarity": "immersive",
           "is_deck_target": false,
           "owned": 0,
@@ -2208,6 +3593,8 @@
         },
         {
           "name": "Dhelmise ex",
+          "set_code": "A3",
+          "card_number": 23,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2218,6 +3605,8 @@
         },
         {
           "name": "Incineroar ex",
+          "set_code": "A3",
+          "card_number": 33,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2228,6 +3617,8 @@
         },
         {
           "name": "Crabominable ex",
+          "set_code": "A3",
+          "card_number": 49,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2238,6 +3629,8 @@
         },
         {
           "name": "Alolan Raichu ex",
+          "set_code": "A3",
+          "card_number": 58,
           "rarity": "double_rare",
           "is_deck_target": false,
           "owned": 0,
@@ -2247,8 +3640,50 @@
           "rate_source": "pz"
         }
       ],
+      "top_power_cards": [
+        {
+          "name": "Solgaleo ex",
+          "set_code": "A3",
+          "card_number": 122,
+          "rarity": "double_rare",
+          "power_score": 75.9,
+          "pull_prob": 0.0165
+        },
+        {
+          "name": "Lunala ex",
+          "set_code": "A3",
+          "card_number": 238,
+          "rarity": "ultra_rare",
+          "power_score": 71.7,
+          "pull_prob": 0.001
+        },
+        {
+          "name": "Machamp ex",
+          "set_code": "A3",
+          "card_number": 235,
+          "rarity": "shiny_super_rare",
+          "power_score": 60.8,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Venusaur ex",
+          "set_code": "A3",
+          "card_number": 230,
+          "rarity": "shiny_super_rare",
+          "power_score": 54.8,
+          "pull_prob": 0.0042
+        },
+        {
+          "name": "Incineroar ex",
+          "set_code": "A3",
+          "card_number": 33,
+          "rarity": "double_rare",
+          "power_score": 52.6,
+          "pull_prob": 0.0165
+        }
+      ],
       "deck_target_cards": [],
-      "notes": "slot_rates=pz_verified. PZ coverage: 139/139 cards (1 excluded as non-pullable). 5/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
+      "notes": "slot_rates=pz_verified. PZ coverage: 139/139 cards (1 excluded as non-pullable). 8/140 cards in pool are owned. EV excludes low_confidence and unresolved collection entries."
     }
   ],
   "blocked_packs": [],

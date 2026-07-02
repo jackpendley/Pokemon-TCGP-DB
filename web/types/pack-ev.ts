@@ -11,6 +11,8 @@ import { z } from "zod";
 
 export const topEvCardSchema = z.object({
   name: z.string(),
+  set_code: z.string().nullable(),
+  card_number: z.number().nullable(),
   rarity: z.string().nullable(),
   owned: z.number(),
   pull_prob: z.number(),
