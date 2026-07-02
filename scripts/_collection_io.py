@@ -88,6 +88,7 @@ SET_REGISTRY: dict[str, dict] = {
     "B2b":    {"pack_type": "single", "limitless_slug": "B2b"},
     "B3":     {"pack_type": "single", "limitless_slug": "B3"},
     "B3a":    {"pack_type": "single", "limitless_slug": "B3a"},
+    "B3b":    {"pack_type": "single", "limitless_slug": "B3b"},
     "PROMO-A":{"pack_type": "single", "limitless_slug": "PROMO-A"},
     "PROMO-B":{"pack_type": "single", "limitless_slug": "PROMO-B"},
 }

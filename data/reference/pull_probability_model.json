@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-13T01:53:30+00:00",
+  "generated_at": "2026-07-02T02:28:16+00:00",
   "generated_by": "build_pull_probability_model.py",
   "meta": {
-    "generated_at": "2026-06-13T01:53:30+00:00",
+    "generated_at": "2026-07-02T02:28:16+00:00",
     "model_version": "0.6.0",
     "source_status": "third_party_verified_with_in_app_anchor",
     "verified_source": null,
@@ -24,7 +24,7 @@
       "Deluxe Pack: ex (A4b) — pack unavailable in app; Offering Rates inaccessible; 4 cards/pack"
     ],
     "confidence_note": "third_party_verified_with_in_app_anchor: A4 (Ho-Oh/Lugia) user_in_app_verified from in-repo screenshots (2026-05-14). Pulsing Aura (B3) user_in_app_verified_plus_bulbapedia (2026-05-13). Most other packs branch-verified via Bulbapedia (2026-05-13). A-series packs confirmed two-branch (Bulbapedia + third-party sources). A4b pending — pack unavailable in app, Offering Rates inaccessible. Rarity distributions within slots still third_party_verified. NOT official in-app verified for any non-A4/non-B3 pack.",
-    "notes": "A4 in-app verified model (v0.6.0, 2026-05-14). user_in_app_verified: 2 packs (A4 Ho-Oh/Lugia, in-repo screenshots). user_in_app_verified_plus_bulbapedia: 1 pack (Pulsing Aura B3, user in-app + Bulbapedia). bulbapedia_branch_verified: 12 packs (branch selection from Bulbapedia offering rates). third_party_verified: 9 packs (two-branch, A-series, Bulbapedia truncated but pattern consistent). pending_verification: 1 packs (A4b Deluxe Pack: ex — pack unavailable in app, 4 cards/pack). rarity_probabilities = exact expected copies of each rarity per pack, summed per pack from Pokémon Zone per-card drop chances (slot-model fallback only when PZ data is absent). A4 (Wisdom of Sea and Sky): three-branch 91.620%/8.330%/0.050%, slot_6 verified (illustration_rare=12.9%, rare=87.1%). Secluded Springs (A4a): unique three-branch (91.620%/8.330%/0.050%). Mega Shine (B2b): four-branch with themed_rare_pack=0.005%."
+    "notes": "A4 in-app verified model (v0.6.0, 2026-05-14). user_in_app_verified: 2 packs (A4 Ho-Oh/Lugia, in-repo screenshots). user_in_app_verified_plus_bulbapedia: 1 pack (Pulsing Aura B3, user in-app + Bulbapedia). bulbapedia_branch_verified: 12 packs (branch selection from Bulbapedia offering rates). third_party_verified: 10 packs (two-branch, A-series, Bulbapedia truncated but pattern consistent). pending_verification: 1 packs (A4b Deluxe Pack: ex — pack unavailable in app, 4 cards/pack). rarity_probabilities = exact expected copies of each rarity per pack, summed per pack from Pokémon Zone per-card drop chances (slot-model fallback only when PZ data is absent). A4 (Wisdom of Sea and Sky): three-branch 91.620%/8.330%/0.050%, slot_6 verified (illustration_rare=12.9%, rare=87.1%). Secluded Springs (A4a): unique three-branch (91.620%/8.330%/0.050%). Mega Shine (B2b): four-branch with themed_rare_pack=0.005%."
   },
   "probability_source_required": {
     "status": "IN_APP_VERIFIED_PARTIAL",
@@ -141,17 +141,17 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
+          "common": 44,
           "special_illustration_rare": 5,
-          "super_rare": 9,
-          "ultra_rare": 2,
-          "immersive": 1,
-          "uncommon": 34,
+          "illustration_rare": 12,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 14,
-          "illustration_rare": 12,
-          "common": 44,
-          "double_rare": 5
+          "ultra_rare": 2,
+          "super_rare": 9,
+          "double_rare": 5,
+          "uncommon": 34
         }
       },
       "rarity_probabilities": {
@@ -280,17 +280,17 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
+          "common": 44,
           "special_illustration_rare": 5,
-          "super_rare": 9,
-          "ultra_rare": 2,
-          "immersive": 1,
-          "uncommon": 34,
+          "illustration_rare": 12,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 14,
-          "illustration_rare": 12,
-          "common": 44,
-          "double_rare": 5
+          "ultra_rare": 2,
+          "super_rare": 9,
+          "double_rare": 5,
+          "uncommon": 34
         }
       },
       "rarity_probabilities": {
@@ -416,17 +416,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
+          "common": 32,
           "special_illustration_rare": 4,
-          "super_rare": 7,
-          "ultra_rare": 2,
-          "immersive": 1,
-          "uncommon": 24,
+          "illustration_rare": 6,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 8,
-          "illustration_rare": 6,
-          "common": 32,
-          "double_rare": 5
+          "ultra_rare": 2,
+          "super_rare": 7,
+          "double_rare": 5,
+          "uncommon": 24
         }
       },
       "rarity_probabilities": {
@@ -549,14 +549,14 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "super_rare": 18,
-          "ultra_rare": 1,
-          "immersive": 1,
-          "uncommon": 100,
-          "rare": 50,
-          "illustration_rare": 6,
           "common": 128,
-          "double_rare": 75
+          "illustration_rare": 6,
+          "immersive": 1,
+          "rare": 50,
+          "ultra_rare": 1,
+          "super_rare": 18,
+          "double_rare": 75,
+          "uncommon": 100
         }
       },
       "rarity_probabilities": {
@@ -682,17 +682,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
+          "common": 32,
           "special_illustration_rare": 5,
-          "super_rare": 8,
-          "ultra_rare": 1,
-          "immersive": 1,
-          "uncommon": 23,
+          "illustration_rare": 10,
           "shiny_rare": 9,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 8,
-          "illustration_rare": 10,
-          "common": 32,
-          "double_rare": 6
+          "ultra_rare": 1,
+          "super_rare": 8,
+          "double_rare": 6,
+          "uncommon": 23
         }
       },
       "rarity_probabilities": {
@@ -711,6 +711,142 @@
         "unknown": 0.0
       },
       "notes": "Two-branch model confirmed from Bulbapedia: regular_pack (99.950%) + rare_pack (0.050%). No Regular Pack + 1 Card branch for this expansion."
+    },
+    {
+      "pack_name": "Everyday Wonders",
+      "expansion": "Everyday Wonders",
+      "set_code": "B3b",
+      "is_shared_pool": false,
+      "hourglass_purchasable": true,
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
+      "source_name": "game8_co_ptcgp_offering_rates",
+      "source_accessed_at": "2026-05-12",
+      "confidence": "third_party_verified",
+      "bulbapedia_url": null,
+      "bulbapedia_match_status": "truncated_pending",
+      "bulbapedia_notes": "Bulbapedia offering rates section was not fully accessible during the 2026-05-13 verification pass. Two-branch model is consistent with confirmed A-series Bulbapedia data (A1a/A2a/A3a/A3b all two-branch).",
+      "stale_model_warning": null,
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
+      "slot_model": {
+        "cards_per_pack": 5,
+        "slot_count": 5,
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
+        "branch_model": "two_branch"
+      },
+      "slot_rates": {
+        "regular_pack_probability": 0.9995,
+        "rare_pack_probability": 0.0005,
+        "regular_pack_plus_one_probability": null,
+        "slots_1_3": {
+          "common": 1.0
+        },
+        "slot_4": {
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
+        },
+        "slot_5": {
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
+        },
+        "slot_6": null,
+        "rare_pack_all_5_slots": {
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
+        },
+        "confidence": "third_party_verified",
+        "source_name": "game8_co_ptcgp_offering_rates",
+        "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
+        "source_accessed_at": "2026-05-12",
+        "source_notes": "Per-slot rates sourced from Game8 (trusted third-party PTCGP guide), independently confirmed by ONE Esports, CGMagazine, ShackNews. 4 independent third-party sources report identical values. Two-branch model (regular=99.950%, rare=0.050%) confirmed for A-series packs by Bulbapedia (A1a/A2a/A3a/A3b confirmed; A1/A2/A2b/A3 consistent with pattern).",
+        "cross_checked_sources": [
+          {
+            "source_name": "one_esports_ptcgp_pull_rates",
+            "publisher": "ONE Esports",
+            "url": "https://www.oneesports.gg/gaming/pokemon-tcg-pocket-pity-system-explained/",
+            "accessed_at": "2026-05-12",
+            "match_result": "full_match",
+            "notes": "ALL slot rates match: regular=99.95%, rare=0.05%, slot4 and slot5 rates identical. Rare pack rates identical."
+          },
+          {
+            "source_name": "cgmagonline_pull_rates_lowered",
+            "publisher": "CGMagazine",
+            "url": "https://www.cgmagonline.com/news/pokemon-tcg-pocket-pull-rates-lowered/",
+            "accessed_at": "2026-05-12",
+            "match_result": "partial_match_confirms_universality",
+            "notes": "Explicitly compares two packs and confirms rates are universal."
+          },
+          {
+            "source_name": "shacknews_ptcgp_drop_rates",
+            "publisher": "ShackNews",
+            "url": "https://www.shacknews.com/article/142035/pokemon-trading-card-game-pocket-card-drop-chance-rate",
+            "accessed_at": "2026-05-12",
+            "match_result": "partial_match_non_shiny_rates",
+            "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
+          }
+        ],
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+      },
+      "card_pool": {
+        "pack_specific_total": 106,
+        "shared_pool_total": 0,
+        "combined_total": 106,
+        "pack_specific_by_rarity": {
+          "common": 29,
+          "uncommon": 27,
+          "rare": 8,
+          "double_rare": 3,
+          "illustration_rare": 8,
+          "super_rare": 8,
+          "immersive": 1,
+          "shiny_rare": 10,
+          "shiny_super_rare": 2,
+          "ultra_rare": 2,
+          "promo": 8
+        },
+        "shared_pool_by_rarity": {},
+        "combined_by_rarity": {
+          "promo": 8,
+          "common": 29,
+          "illustration_rare": 8,
+          "shiny_rare": 10,
+          "immersive": 1,
+          "shiny_super_rare": 2,
+          "rare": 8,
+          "ultra_rare": 2,
+          "super_rare": 8,
+          "double_rare": 3,
+          "uncommon": 27
+        }
+      },
+      "rarity_probabilities": {
+        "common": 2.8971,
+        "uncommon": 1.4769,
+        "rare": 0.248,
+        "double_rare": 0.0495,
+        "illustration_rare": 0.1288,
+        "super_rare": 0.0176,
+        "special_illustration_rare": 0.0,
+        "immersive": 0.0112,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0084,
+        "ultra_rare": 0.0022,
+        "promo": 0.0502,
+        "unknown": 0.0
+      },
+      "notes": "Two-branch model (third_party_verified): regular_pack (99.950%) + rare_pack (0.050%). Consistent with Bulbapedia confirmed A-series packs. Bulbapedia page was truncated before offering rates section in 2026-05-13 check. Verify directly: "
     },
     {
       "pack_name": "Extradimensional Crisis",
@@ -818,17 +954,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
+          "common": 32,
           "special_illustration_rare": 4,
-          "super_rare": 8,
-          "ultra_rare": 1,
-          "immersive": 1,
-          "uncommon": 24,
+          "illustration_rare": 6,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 8,
-          "illustration_rare": 6,
-          "common": 32,
-          "double_rare": 5
+          "ultra_rare": 1,
+          "super_rare": 8,
+          "double_rare": 5,
+          "uncommon": 24
         }
       },
       "rarity_probabilities": {
@@ -954,17 +1090,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
+          "common": 66,
           "special_illustration_rare": 9,
-          "super_rare": 14,
-          "ultra_rare": 2,
-          "immersive": 2,
-          "uncommon": 51,
+          "illustration_rare": 24,
           "shiny_rare": 20,
+          "immersive": 2,
           "shiny_super_rare": 8,
           "rare": 28,
-          "illustration_rare": 24,
-          "common": 66,
-          "double_rare": 10
+          "ultra_rare": 2,
+          "super_rare": 14,
+          "double_rare": 10,
+          "uncommon": 51
         }
       },
       "rarity_probabilities": {
@@ -1092,15 +1228,15 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "special_illustration_rare": 2,
-          "super_rare": 8,
-          "ultra_rare": 3,
-          "immersive": 2,
-          "uncommon": 35,
-          "rare": 14,
-          "illustration_rare": 8,
           "common": 50,
-          "double_rare": 5
+          "special_illustration_rare": 2,
+          "illustration_rare": 8,
+          "immersive": 2,
+          "rare": 14,
+          "ultra_rare": 3,
+          "super_rare": 8,
+          "double_rare": 5,
+          "uncommon": 35
         }
       },
       "rarity_probabilities": {
@@ -1228,15 +1364,15 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "special_illustration_rare": 2,
-          "super_rare": 7,
-          "ultra_rare": 3,
-          "immersive": 2,
-          "uncommon": 35,
-          "rare": 14,
-          "illustration_rare": 8,
           "common": 50,
-          "double_rare": 5
+          "special_illustration_rare": 2,
+          "illustration_rare": 8,
+          "immersive": 2,
+          "rare": 14,
+          "ultra_rare": 3,
+          "super_rare": 7,
+          "double_rare": 5,
+          "uncommon": 35
         }
       },
       "rarity_probabilities": {
@@ -1364,15 +1500,15 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "special_illustration_rare": 1,
-          "super_rare": 9,
-          "ultra_rare": 3,
-          "immersive": 2,
-          "uncommon": 35,
-          "rare": 14,
-          "illustration_rare": 8,
           "common": 50,
-          "double_rare": 5
+          "special_illustration_rare": 1,
+          "illustration_rare": 8,
+          "immersive": 2,
+          "rare": 14,
+          "ultra_rare": 3,
+          "super_rare": 9,
+          "double_rare": 5,
+          "uncommon": 35
         }
       },
       "rarity_probabilities": {
@@ -1502,17 +1638,17 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
+          "common": 49,
           "special_illustration_rare": 4,
-          "super_rare": 7,
-          "ultra_rare": 3,
-          "immersive": 1,
-          "uncommon": 33,
+          "illustration_rare": 8,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 15,
-          "illustration_rare": 8,
-          "common": 49,
-          "double_rare": 5
+          "ultra_rare": 3,
+          "super_rare": 7,
+          "double_rare": 5,
+          "uncommon": 33
         }
       },
       "rarity_probabilities": {
@@ -1642,17 +1778,17 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
+          "common": 49,
           "special_illustration_rare": 4,
-          "super_rare": 7,
-          "ultra_rare": 3,
-          "immersive": 1,
-          "uncommon": 33,
+          "illustration_rare": 8,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 15,
-          "illustration_rare": 8,
-          "common": 49,
-          "double_rare": 5
+          "ultra_rare": 3,
+          "super_rare": 7,
+          "double_rare": 5,
+          "uncommon": 33
         }
       },
       "rarity_probabilities": {
@@ -1782,17 +1918,17 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
+          "common": 49,
           "special_illustration_rare": 4,
-          "super_rare": 7,
-          "ultra_rare": 3,
-          "immersive": 1,
-          "uncommon": 33,
+          "illustration_rare": 8,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 15,
-          "illustration_rare": 8,
-          "common": 49,
-          "double_rare": 5
+          "ultra_rare": 3,
+          "super_rare": 7,
+          "double_rare": 5,
+          "uncommon": 33
         }
       },
       "rarity_probabilities": {
@@ -1919,16 +2055,16 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "super_rare": 9,
-          "ultra_rare": 2,
-          "immersive": 2,
-          "uncommon": 23,
+          "common": 33,
+          "illustration_rare": 6,
           "shiny_rare": 24,
+          "immersive": 2,
           "shiny_super_rare": 5,
           "rare": 8,
-          "illustration_rare": 6,
-          "common": 33,
-          "double_rare": 5
+          "ultra_rare": 2,
+          "super_rare": 9,
+          "double_rare": 5,
+          "uncommon": 23
         }
       },
       "rarity_probabilities": {
@@ -2052,15 +2188,15 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "special_illustration_rare": 2,
-          "super_rare": 8,
-          "ultra_rare": 1,
-          "immersive": 1,
-          "uncommon": 23,
-          "rare": 8,
-          "illustration_rare": 6,
           "common": 32,
-          "double_rare": 5
+          "special_illustration_rare": 2,
+          "illustration_rare": 6,
+          "immersive": 1,
+          "rare": 8,
+          "ultra_rare": 1,
+          "super_rare": 8,
+          "double_rare": 5,
+          "uncommon": 23
         }
       },
       "rarity_probabilities": {
@@ -2186,17 +2322,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
+          "common": 43,
           "special_illustration_rare": 5,
-          "super_rare": 10,
-          "ultra_rare": 2,
-          "immersive": 1,
-          "uncommon": 32,
+          "illustration_rare": 6,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 13,
-          "illustration_rare": 6,
-          "common": 43,
-          "double_rare": 5
+          "ultra_rare": 2,
+          "super_rare": 10,
+          "double_rare": 5,
+          "uncommon": 32
         }
       },
       "rarity_probabilities": {
@@ -2322,17 +2458,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
+          "common": 32,
           "special_illustration_rare": 4,
-          "super_rare": 8,
-          "ultra_rare": 2,
-          "immersive": 1,
-          "uncommon": 25,
+          "illustration_rare": 6,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 12,
-          "illustration_rare": 6,
-          "common": 32,
-          "double_rare": 5
+          "ultra_rare": 2,
+          "super_rare": 8,
+          "double_rare": 5,
+          "uncommon": 25
         }
       },
       "rarity_probabilities": {
@@ -2446,17 +2582,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
+          "common": 65,
           "special_illustration_rare": 6,
-          "super_rare": 17,
-          "ultra_rare": 2,
-          "immersive": 2,
-          "uncommon": 51,
+          "illustration_rare": 24,
           "shiny_rare": 20,
+          "immersive": 2,
           "shiny_super_rare": 8,
           "rare": 29,
-          "illustration_rare": 24,
-          "common": 65,
-          "double_rare": 10
+          "ultra_rare": 2,
+          "super_rare": 17,
+          "double_rare": 10,
+          "uncommon": 51
         }
       },
       "rarity_probabilities": {
@@ -2582,17 +2718,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
+          "common": 32,
           "special_illustration_rare": 4,
-          "super_rare": 8,
-          "ultra_rare": 1,
-          "immersive": 1,
-          "uncommon": 23,
+          "illustration_rare": 6,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 11,
-          "illustration_rare": 6,
-          "common": 32,
-          "double_rare": 5
+          "ultra_rare": 1,
+          "super_rare": 8,
+          "double_rare": 5,
+          "uncommon": 23
         }
       },
       "rarity_probabilities": {
@@ -2718,17 +2854,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
+          "common": 32,
           "special_illustration_rare": 4,
-          "super_rare": 13,
-          "ultra_rare": 1,
-          "immersive": 1,
-          "uncommon": 22,
+          "illustration_rare": 6,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 9,
-          "illustration_rare": 6,
-          "common": 32,
-          "double_rare": 9
+          "ultra_rare": 1,
+          "super_rare": 13,
+          "double_rare": 9,
+          "uncommon": 22
         }
       },
       "rarity_probabilities": {
@@ -2856,15 +2992,15 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "special_illustration_rare": 4,
-          "super_rare": 8,
-          "ultra_rare": 2,
-          "immersive": 1,
-          "uncommon": 34,
-          "rare": 14,
-          "illustration_rare": 12,
           "common": 46,
-          "double_rare": 5
+          "special_illustration_rare": 4,
+          "illustration_rare": 12,
+          "immersive": 1,
+          "rare": 14,
+          "ultra_rare": 2,
+          "super_rare": 8,
+          "double_rare": 5,
+          "uncommon": 34
         }
       },
       "rarity_probabilities": {
@@ -2992,15 +3128,15 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "special_illustration_rare": 4,
-          "super_rare": 8,
-          "ultra_rare": 2,
-          "immersive": 1,
-          "uncommon": 36,
-          "rare": 14,
-          "illustration_rare": 12,
           "common": 44,
-          "double_rare": 5
+          "special_illustration_rare": 4,
+          "illustration_rare": 12,
+          "immersive": 1,
+          "rare": 14,
+          "ultra_rare": 2,
+          "super_rare": 8,
+          "double_rare": 5,
+          "uncommon": 36
         }
       },
       "rarity_probabilities": {
@@ -3124,15 +3260,15 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "special_illustration_rare": 4,
-          "super_rare": 9,
-          "ultra_rare": 1,
-          "immersive": 1,
-          "uncommon": 26,
-          "rare": 13,
-          "illustration_rare": 6,
           "common": 31,
-          "double_rare": 5
+          "special_illustration_rare": 4,
+          "illustration_rare": 6,
+          "immersive": 1,
+          "rare": 13,
+          "ultra_rare": 1,
+          "super_rare": 9,
+          "double_rare": 5,
+          "uncommon": 26
         }
       },
       "rarity_probabilities": {
@@ -3239,17 +3375,17 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
+          "common": 42,
           "special_illustration_rare": 4,
-          "super_rare": 8,
-          "ultra_rare": 2,
-          "immersive": 1,
-          "uncommon": 31,
+          "illustration_rare": 12,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 17,
-          "illustration_rare": 12,
-          "common": 42,
-          "double_rare": 5
+          "ultra_rare": 2,
+          "super_rare": 8,
+          "double_rare": 5,
+          "uncommon": 31
         }
       },
       "rarity_probabilities": {
@@ -3356,17 +3492,17 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
+          "common": 42,
           "special_illustration_rare": 4,
-          "super_rare": 8,
-          "ultra_rare": 2,
-          "immersive": 1,
-          "uncommon": 31,
+          "illustration_rare": 12,
           "shiny_rare": 10,
+          "immersive": 1,
           "shiny_super_rare": 4,
           "rare": 17,
-          "illustration_rare": 12,
-          "common": 42,
-          "double_rare": 5
+          "ultra_rare": 2,
+          "super_rare": 8,
+          "double_rare": 5,
+          "uncommon": 31
         }
       },
       "rarity_probabilities": {

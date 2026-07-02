@@ -64,8 +64,12 @@ _TITLE_RE = re.compile(r'<title>([^<]+)</title>')
 #   promo:   "Promo Pack B Series Vol. 9 Card List - Promo B - Pokémon TCG Pocket"
 # The pack name is always the text before " Card List"; the expansion code only
 # appears parenthesised on regular packs (promos fall back to the cards' set_code).
+# The readable expansion name sits between " Card List - " and the " (CODE)" on
+# regular packs (e.g. "… Card List - Everyday Wonders (B3b) …"); promos have no
+# parenthesised code so there's nothing to capture and we fall back to the code.
 _PACK_NAME_RE = re.compile(r'^(.+?)\s+Card List')
 _EXPANSION_RE = re.compile(r'\(([A-Za-z0-9-]+)\)')
+_EXPANSION_NAME_RE = re.compile(r'Card List\s*[-–]\s*(.+?)\s*\([A-Za-z0-9-]+\)')
 
 
 # ---------------------------------------------------------------------------
@@ -181,6 +185,8 @@ def parse_pack_odds_page(html: str, pack_slug: str) -> dict | None:
     pack_name = name_m.group(1).strip() if name_m else pack_slug
     exp_m = _EXPANSION_RE.search(title)
     expansion_id = canonical_set_code(exp_m.group(1).upper()) if exp_m else ""
+    expname_m = _EXPANSION_NAME_RE.search(title)
+    expansion_name = expname_m.group(1).strip() if expname_m else ""
 
     cards = []
     links = list(_CARD_LINK_RE.finditer(html))
@@ -217,10 +223,15 @@ def parse_pack_odds_page(html: str, pack_slug: str) -> dict | None:
         return None
     if not expansion_id:
         expansion_id = cards[0]["set_code"]
+    # Regular packs carry a readable expansion name; promos (no parenthesised code)
+    # keep the set code, matching the existing source=pokemon_zone promo records.
+    if not expansion_name:
+        expansion_name = expansion_id
 
     return {
         "pack_name": pack_name,
         "expansion_id": expansion_id,
+        "expansion_name": expansion_name,
         "expansion_slug": expansion_id.lower(),
         "pack_slug": pack_slug,
         "card_count": len(cards),
@@ -335,6 +346,7 @@ def build_pack_sources_records(odds: dict[str, dict],
     seen: set[tuple[str, int]] = set()
     for entry in odds.values():
         exp = entry["expansion_id"]
+        exp_name = entry.get("expansion_name") or exp
         snap = snap_cache.setdefault(exp, _load_snapshot_meta(exp))
         for c in entry["cards"]:
             key = (c["set_code"], c["card_number"])
@@ -347,7 +359,7 @@ def build_pack_sources_records(odds: dict[str, dict],
                 "card_number": c["card_number"],
                 "card_name": c["name"],
                 "pack_name": entry["pack_name"],
-                "expansion": exp,
+                "expansion": exp_name,
                 "rarity": normalize_rarity(meta.get("rarity")) or "promo",
                 "card_category": None,
                 "pokemon_type": meta.get("pokemon_type"),

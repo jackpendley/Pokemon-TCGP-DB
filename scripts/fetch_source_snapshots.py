@@ -85,6 +85,7 @@ SET_ALIASES: dict[str, dict] = {
     "B2b":    {"tcgdex": None,  "serebii": "megashine",                "bulbapedia": "Mega Shine (TCG Pocket)",              "limitless": "B2b"},
     "B3":     {"tcgdex": None,  "serebii": "pulsingaura",              "bulbapedia": "Pulsing Aura (TCG Pocket)",            "limitless": "B3"},
     "B3a":    {"tcgdex": None,  "serebii": "paradoxdrive",             "bulbapedia": "Paradox Drive (TCG Pocket)",           "limitless": "B3a"},
+    "B3b":    {"tcgdex": None,  "serebii": "everydaywonders",          "bulbapedia": "Everyday Wonders (TCG Pocket)",        "limitless": "B3b"},
     "PROMO-A":{"tcgdex": "P-A", "serebii": "promo-a",                  "bulbapedia": "Promo-A (TCG Pocket)",                 "limitless": "PROMO-A"},
     "PROMO-B":{"tcgdex": None,  "serebii": "promo-b",                  "bulbapedia": "Promo-B (TCG Pocket)",                 "limitless": "PROMO-B"},
 }
