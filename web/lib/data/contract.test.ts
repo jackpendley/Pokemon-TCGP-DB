@@ -41,20 +41,6 @@ const fixtureSource: DataSource = {
   getPackEv: async () => loadFixture("pack_ev.json") as never,
   getRecommendations: async () =>
     loadFixture("inferred_pack_recommendations.json") as never,
-  getSpendingPlan: async () => ({
-    generated_at: "2026-01-01T00:00:00Z",
-    collection_total: 1,
-    hourglass_per_pack: 12,
-    spending_plan: {
-      label: "stub",
-      description: "stub",
-      batches: [],
-      total_batches: 0,
-      total_hourglasses: 0,
-      stopping_condition: "stub",
-      top_pack_name: "stub",
-    },
-  }),
   getCatalog: async () => catalogStub,
   getSyncStatus: async () => ({
     stats: null,
@@ -69,7 +55,7 @@ describe("DataSource contract", () => {
     const verified = await verifyDataSourceContract(fixtureSource);
     expect(verified).toContain("getCollectionSummary");
     expect(verified).toContain("getCatalog");
-    expect(verified.length).toBe(6);
+    expect(verified.length).toBe(5);
   });
 
   it("catches a drifting implementation", async () => {

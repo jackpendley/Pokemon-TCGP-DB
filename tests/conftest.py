@@ -1,9 +1,9 @@
 """Shared pytest fixtures.
 
 `test_ev.py` and `test_results.py` validate the pipeline's generated outputs
-(data/current/pack_ev.json, inferred_pack_recommendations.json, final_hourglass_
-spending_plan.json). Those are gitignored build artifacts (regenerated from
-collection.json + data/reference/*), so they are absent in a fresh checkout / CI.
+(data/current/pack_ev.json, inferred_pack_recommendations.json). Those are
+gitignored build artifacts (regenerated from collection.json + data/reference/*),
+so they are absent in a fresh checkout / CI.
 
 This session-scoped autouse fixture generates them once if missing, making the suite
 hermetic anywhere. Locally the files already exist, so it is a no-op.

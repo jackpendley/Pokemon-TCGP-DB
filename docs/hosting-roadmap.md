@@ -31,7 +31,7 @@ sync history), the schema captures them **once** instead of being migrated twice
   `pack_top_cards` (both `top_ev_cards` and `top_power_cards`),
   `pull_probability_model`.
 - **Per-user (carry `user_id`, RLS on, seed one owner):** `collections`,
-  `collection_summaries`, `pack_ev`, `recommendations`, `spending_plans`,
+  `collection_summaries`, `pack_ev`, `recommendations`,
   `sync_status`, `sync_history`.
 - Every per-user table gets an RLS policy `user_id = auth.uid()`; seed the
   current owner's UUID so single-tenant reads work before auth ships.

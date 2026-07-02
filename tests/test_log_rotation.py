@@ -57,7 +57,7 @@ def test_append_log_below_cap_keeps_everything(tmp_path, monkeypatch):
 # A canonical --skip-sync run's stage blocks.
 _RUN = [("Normalize entries", "assigned 0\n"),
         ("Validate coords", "OK\n"),
-        ("Spending plan", "  Inputs unchanged (hash=abc…) — skipping recompute.\n")]
+        ("Recommendations", "  Inputs unchanged (hash=abc…) — skipping recompute.\n")]
 
 
 def _emit_run(blocks, ts="2026-06-18T01:21:41Z"):
@@ -81,7 +81,7 @@ def test_collapse_identical_reruns(tmp_path, monkeypatch):
     assert text.count("] Normalize entries\n") == 1
     assert rr._REPEAT_LABEL not in text
 
-    # run 2 — identical except its Spending timestamp → still collapses into a ×2 marker
+    # run 2 — identical except its Recommendations timestamp → still collapses into a ×2 marker
     _emit_run(_RUN, ts="2026-06-18T02:00:00Z")
     text = log.read_text()
     assert text.count("] Normalize entries\n") == 1, "second run's blocks were not collapsed"

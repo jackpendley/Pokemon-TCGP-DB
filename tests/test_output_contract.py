@@ -5,8 +5,8 @@ contract the Next.js Zod schemas mirror.
 
 Scope here is the *frontend-facing contract*: the set of keys each consumer reads
 plus cross-artifact / structural invariants. The EV *math* (rarity ordering, 10x
-formula, confidence weighting) is covered by test_ev.py; the recommendation /
-spending-plan output is covered by test_results.py. This module fills the gap:
+formula, confidence weighting) is covered by test_ev.py; the recommendation
+output is covered by test_results.py. This module fills the gap:
 collection_summary.json had no coverage, and no test pinned the per-pack field set.
 
 "Required keys" use subset semantics (all listed keys must be present): a consumer
