@@ -8,14 +8,17 @@ import { cn } from "@/lib/utils";
 /**
  * Card artwork hot-linked from a CDN. Tries each candidate URL in turn (TCGdex →
  * Limitless) and only falls back to the card number once all fail. In grid
- * thumbnails (size="sm") not-owned cards are desaturated.
+ * thumbnails (size="sm") not-owned cards are desaturated — pass `dimUnowned={false}`
+ * to keep previews in full color (e.g. pull-target thumbnails).
  */
 export function CardImage({
   card,
   size = "sm",
+  dimUnowned = true,
 }: {
   card: CardImageInput;
   size?: "sm" | "lg";
+  dimUnowned?: boolean;
 }) {
   const candidates = cardImageCandidates(card, size);
   const [idx, setIdx] = useState(0);
@@ -38,7 +41,7 @@ export function CardImage({
       onError={() => setIdx((i) => i + 1)}
       className={cn(
         "size-full object-cover",
-        size === "sm" && (card.owned ?? 0) <= 0 && "grayscale",
+        dimUnowned && size === "sm" && (card.owned ?? 0) <= 0 && "grayscale",
       )}
     />
   );

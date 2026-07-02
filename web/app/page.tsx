@@ -1,8 +1,9 @@
-import Link from "next/link";
-
 import { CompletionCard } from "@/components/dashboard/completion-card";
 import { CountGrid, type CountItem } from "@/components/dashboard/count-grid";
-import { NextPackCard } from "@/components/dashboard/next-pack-card";
+import {
+  NextToOpen,
+  type NextPackEntry,
+} from "@/components/dashboard/next-to-open";
 import { RaritySymbol } from "@/components/dashboard/rarity-symbol";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { TypePieChart } from "@/components/dashboard/type-pie-chart";
@@ -33,9 +34,8 @@ const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
 const RECENT_SYNC_MS = 10 * 60 * 1000;
 
 export default async function DashboardPage() {
-  const [summary, recs, packEv, catalog, sync, syncEnabled] = await Promise.all([
+  const [summary, packEv, catalog, sync, syncEnabled] = await Promise.all([
     dataSource.getCollectionSummary(),
-    dataSource.getRecommendations(),
     dataSource.getPackEv(),
     dataSource.getCatalog(),
     dataSource.getSyncStatus(),
@@ -44,12 +44,27 @@ export default async function DashboardPage() {
 
   const { stats, reviewQueue, delta, history } = sync;
 
-  // "What to open next": the top unified picks, each joined to its strongest
-  // unowned pull targets (top_power_cards live on pack_ev, not recommendations).
-  const powerByPack = new Map(
-    packEv.packs.map((p) => [p.pack_name, p.top_power_cards]),
+  // "What to open next": every purchasable pack (so series/type filters have the
+  // full set to work with), joined to its strongest unowned pull targets resolved
+  // to full catalog cards (types + enlarge info). Ranking happens client-side.
+  const catalogByCoord = new Map(
+    catalog.map((c) => [`${c.set_code}:${c.card_number}`, c]),
   );
-  const topPacks = recs.top_packs_unified.slice(0, 3);
+  const nextEntries: NextPackEntry[] = packEv.packs
+    .filter((p) => p.purchasable && !p.blocked)
+    .map((pack) => ({
+      pack,
+      targets: pack.top_power_cards
+        .map((t) => catalogByCoord.get(`${t.set_code}:${t.card_number}`))
+        .filter((c): c is NonNullable<typeof c> => c != null),
+    }));
+  const currency = stats
+    ? {
+        pack_hourglasses: stats.pack_hourglasses,
+        wonder_hourglasses: stats.wonder_hourglasses,
+        shop_tickets: stats.shop_tickets,
+      }
+    : null;
 
   // Completion — derived web-side from the catalog (owned counts merged in).
   const totalOwned = catalog.filter((c) => c.owned > 0).length;
@@ -199,91 +214,30 @@ export default async function DashboardPage() {
         </Card>
       ) : null}
 
-      {/* State band: completion ring · headline total · spendable currency. */}
-      <section className="grid gap-4 lg:grid-cols-3">
+      {/* State band: completion ring beside the headline total. */}
+      <section className="grid gap-4 lg:grid-cols-2">
         <CompletionCard
           total={{ owned: totalOwned, total: catalog.length }}
           base={{ owned: baseOwned, total: baseCards.length }}
           recentGain={recentGain}
         />
         <Card className="ring-2 ring-primary/30">
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
-              Total cards
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-4xl font-bold tabular-nums text-primary">
+          <CardContent className="flex h-full flex-col items-center justify-center py-2 text-center">
+            <div className="text-7xl font-bold tabular-nums leading-none text-primary">
               {formatNumber(summary.total_quantity)}
+            </div>
+            <div className="mt-3 text-sm font-medium text-muted-foreground">
+              Total cards
             </div>
             <p className="mt-1 text-xs text-muted-foreground">
               {formatNumber(summary.unique_entries)} unique entries
             </p>
           </CardContent>
         </Card>
-        {stats ? (
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">
-                Currency
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <div className="flex items-baseline justify-between">
-                <span className="text-sm text-muted-foreground">
-                  Pack hourglasses
-                </span>
-                <span className="text-2xl font-semibold tabular-nums text-primary">
-                  {formatNumber(stats.pack_hourglasses)}
-                </span>
-              </div>
-              <div className="flex items-baseline justify-between text-sm">
-                <span className="text-muted-foreground">Wonder hourglasses</span>
-                <span className="tabular-nums">
-                  {formatNumber(stats.wonder_hourglasses)}
-                </span>
-              </div>
-              <div className="flex items-baseline justify-between text-sm">
-                <span className="text-muted-foreground">Shop tickets</span>
-                <span className="tabular-nums">
-                  {formatNumber(stats.shop_tickets)}
-                </span>
-              </div>
-            </CardContent>
-          </Card>
-        ) : (
-          <StatCard
-            title="Unique entries"
-            value={formatNumber(summary.unique_entries)}
-            hint={`${formatNumber(summary.ex_quantity)} ex cards`}
-          />
-        )}
       </section>
 
-      {/* Centerpiece: what to open next. */}
-      {topPacks.length > 0 ? (
-        <section className="space-y-3">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-medium">What to open next</h2>
-            <Link
-              href="/packs"
-              className="text-sm font-medium text-primary hover:underline"
-            >
-              View all packs →
-            </Link>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {topPacks.map((p, i) => (
-              <NextPackCard
-                key={p.pack_name}
-                pack={p}
-                powerCards={powerByPack.get(p.pack_name) ?? []}
-                rank={i + 1}
-              />
-            ))}
-          </div>
-        </section>
-      ) : null}
+      {/* Centerpiece: what to open next (filters + pack-hourglass balance). */}
+      <NextToOpen entries={nextEntries} currency={currency} />
 
       {/* Collection: secondary counts, then compact type/rarity/stage breakdowns. */}
       <section className="space-y-4">
@@ -292,24 +246,32 @@ export default async function DashboardPage() {
           <StatCard
             title="Pokémon"
             value={formatNumber(summary.by_card_type.Pokemon ?? 0)}
+            href="/cards?category=Pokemon"
+            align="center"
           />
           <StatCard
             title="Trainers"
             value={formatNumber(summary.by_card_type.Trainer ?? 0)}
+            href="/cards?category=Trainer"
+            align="center"
           />
           <StatCard
             title="ex cards"
             value={formatNumber(summary.ex_quantity)}
             hint={`${formatNumber(summary.ex_entries)} unique`}
+            href="/cards?class=ex"
+            align="center"
           />
           <StatCard
             title="Mega ex cards"
             value={formatNumber(megaQuantity)}
             hint={`${formatNumber(megaUnique)} of ${formatNumber(megaCards.length)} unique`}
+            href="/cards?class=mega"
+            align="center"
           />
         </div>
-        <div className="grid gap-4 lg:grid-cols-3">
-          <Card className="lg:col-span-1">
+        <div className="grid gap-4 lg:grid-cols-2">
+          <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-base">By type</CardTitle>
             </CardHeader>
@@ -317,11 +279,7 @@ export default async function DashboardPage() {
               <TypePieChart data={summary.by_pokemon_type} />
             </CardContent>
           </Card>
-          <CountGrid
-            title="By rarity · collected"
-            items={rarityItems}
-            className="lg:col-span-2"
-          />
+          <CountGrid title="By rarity · collected" items={rarityItems} />
         </div>
         <CountGrid title="By stage · collected" items={stageItems} />
       </section>

@@ -28,10 +28,10 @@ export function TypePieChart({ data }: { data: Record<string, number> }) {
   );
 
   return (
-    <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-center sm:justify-around">
+    <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-center lg:gap-6">
       <ChartContainer
         config={config}
-        className="aspect-square h-[300px] w-[300px] shrink-0"
+        className="aspect-square h-[210px] w-[210px] shrink-0"
       >
         <PieChart>
           <ChartTooltip content={<ChartTooltipContent nameKey="type" hideLabel />} />
@@ -39,8 +39,8 @@ export function TypePieChart({ data }: { data: Record<string, number> }) {
             data={rows}
             dataKey="count"
             nameKey="type"
-            innerRadius={75}
-            outerRadius={130}
+            innerRadius={55}
+            outerRadius={95}
             strokeWidth={2}
             className="cursor-pointer focus:outline-none"
             onClick={(slice) => {

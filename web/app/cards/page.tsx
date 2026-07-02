@@ -26,6 +26,7 @@ export default async function CardsPage({
     rarity: pick("rarity"),
     stage: pick("stage"),
     class: pick("class"),
+    category: pick("category"),
     owned: pick("owned"),
     scope: pick("scope"),
     sort: pick("sort"),

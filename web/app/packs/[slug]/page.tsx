@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-import { CardImage } from "@/components/cards/card-image";
+import { EnlargeableCard } from "@/components/cards/enlargeable-card";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -19,20 +19,25 @@ import {
   packSlug,
   titleCase,
 } from "@/lib/domain/format";
+import type { CatalogCard } from "@/types";
 
 export const dynamic = "force-dynamic";
 
-/** Thumbnail + name, shared by both pack card tables. */
-function CardCell({
-  card,
-}: {
-  card: { set_code: string | null; card_number: number | null; name: string; owned?: number };
-}) {
+/** A pack-table row (top EV or top power) carries a coord + name; may be null. */
+type CardRow = {
+  set_code: string | null;
+  card_number: number | null;
+  name: string;
+  rarity: string | null;
+  owned?: number;
+  power_score?: number;
+};
+
+/** Enlargeable thumbnail + name, shared by both pack card tables. */
+function CardCell({ card }: { card: CatalogCard }) {
   return (
     <div className="flex items-center gap-3">
-      <div className="aspect-[5/7] w-9 shrink-0 overflow-hidden rounded border">
-        <CardImage card={card} />
-      </div>
+      <EnlargeableCard card={card} className="w-14" />
       <span className="font-medium">{card.name}</span>
     </div>
   );
@@ -44,10 +49,34 @@ export default async function PackDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const packEv = await dataSource.getPackEv();
+  const [packEv, catalog] = await Promise.all([
+    dataSource.getPackEv(),
+    dataSource.getCatalog(),
+  ]);
   const pack = packEv.packs.find((p) => packSlug(p.pack_name) === slug);
 
   if (!pack) notFound();
+
+  // Resolve a table row to a full CatalogCard (for the enlarged dialog), falling
+  // back to a minimal card when the coord isn't in the catalog.
+  const byCoord = new Map(
+    catalog.map((c) => [`${c.set_code}:${c.card_number}`, c]),
+  );
+  const resolve = (row: CardRow): CatalogCard =>
+    byCoord.get(`${row.set_code}:${row.card_number}`) ?? {
+      set_code: row.set_code ?? "",
+      card_number: row.card_number ?? 0,
+      name: row.name,
+      rarity: row.rarity,
+      pokemon_type: null,
+      card_category: null,
+      trainer_subtype: null,
+      stage: null,
+      expansion: pack.expansion,
+      is_ex: false,
+      owned: row.owned ?? 0,
+      power_score: row.power_score ?? null,
+    };
 
   return (
     <div className="space-y-6">
@@ -102,7 +131,7 @@ export default async function PackDetailPage({
                 // alt-art ex), so key by index rather than coord.
                 <TableRow key={`${c.name}-${i}`}>
                   <TableCell>
-                    <CardCell card={c} />
+                    <CardCell card={resolve(c)} />
                   </TableCell>
                   <TableCell>{titleCase(c.rarity)}</TableCell>
                   <TableCell className="text-right tabular-nums">
@@ -146,7 +175,7 @@ export default async function PackDetailPage({
                 {pack.top_power_cards.map((c, i) => (
                   <TableRow key={`${c.set_code}-${c.card_number}-${i}`}>
                     <TableCell>
-                      <CardCell card={{ ...c, owned: 0 }} />
+                      <CardCell card={resolve({ ...c, owned: 0 })} />
                     </TableCell>
                     <TableCell className="tabular-nums text-muted-foreground">
                       {c.set_code}:{c.card_number}
