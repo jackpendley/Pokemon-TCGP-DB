@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 1733,
-    "last_updated": "2026-07-04",
+    "total_cards": 1743,
+    "last_updated": "2026-07-05",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -927,7 +927,7 @@
       "hp": 130,
       "card_type": "Pokemon",
       "attack": "Muddy Headbutt 60+",
-      "count": 1,
+      "count": 2,
       "set_code": "B3b",
       "card_number": 37,
       "rarity": "uncommon"
@@ -6699,7 +6699,7 @@
     },
     {
       "name": "Piplup",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Water",
       "stage": 0,
@@ -7613,7 +7613,7 @@
     },
     {
       "name": "Carbink",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 0,
@@ -8237,7 +8237,7 @@
     },
     {
       "name": "Goomy",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "type": "Dragon",
       "stage": 0,
@@ -9025,7 +9025,7 @@
     },
     {
       "name": "Hisuian Zorua",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "rarity": "common",
       "set_code": "B3b",
@@ -9103,7 +9103,7 @@
     },
     {
       "name": "Jigglypuff",
-      "count": 4,
+      "count": 5,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -9228,7 +9228,7 @@
     },
     {
       "name": "Ninetales",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -9360,7 +9360,7 @@
     },
     {
       "name": "Cacturne",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Darkness",
       "stage": 1,
@@ -9426,7 +9426,7 @@
     },
     {
       "name": "Skwovet",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -9490,6 +9490,18 @@
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 68
+    },
+    {
+      "name": "Munna",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 28,
+      "type": "Psychic"
     }
   ]
 }
