@@ -24,7 +24,7 @@ import { isSyncEnabled } from "@/app/sync/actions";
 import { isMegaEx } from "@/lib/domain/card";
 import { formatNumber, titleCase } from "@/lib/domain/format";
 import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
-import type { SyncDeltaEntry } from "@/types";
+import type { CatalogCard, SyncDeltaEntry } from "@/types";
 
 export const dynamic = "force-dynamic";
 
@@ -126,38 +126,8 @@ export default async function DashboardPage() {
     entry,
     card: byCoord.get(`${entry.set_code}:${entry.card_number}`) ?? null,
   });
-  const additions: AdditionItem[] = (delta?.added ?? []).map(join);
 
-  // Per-sync set increases (which sets gained new cards, and how many) — surfaced
-  // on every history entry, not just the fresh reveal.
-  const expansionBySet = new Map<string, string>();
-  for (const c of catalog)
-    if (!expansionBySet.has(c.set_code)) expansionBySet.set(c.set_code, c.expansion);
-  const setGainsFor = (added: SyncDeltaEntry[]) => {
-    const g = new Map<string, number>();
-    for (const e of added)
-      if (e.is_new && e.set_code) g.set(e.set_code, (g.get(e.set_code) ?? 0) + 1);
-    return [...g.entries()]
-      .map(([set_code, gained]) => ({
-        set_code,
-        expansion: expansionBySet.get(set_code) ?? set_code,
-        gained,
-      }))
-      .sort((a, b) => b.gained - a.gained);
-  };
-
-  const historyEntries: HistoryEntryView[] = [...history].reverse().map((h) => ({
-    syncedAt: h.synced_at,
-    addedCount: h.added_count,
-    items: h.added.map(join),
-    setGains: setGainsFor(h.added),
-  }));
-  const reviewItems = reviewQueue
-    ? reviewQueue.new_cards.length +
-      reviewQueue.ambiguous_matches.length +
-      reviewQueue.missing_from_pz.length
-    : 0;
-
+  // Current owned/total per set — drives each sync's progress rings.
   const setTotals = new Map<string, { total: number; owned: number; expansion: string }>();
   for (const c of catalog) {
     const s = setTotals.get(c.set_code) ?? { total: 0, owned: 0, expansion: c.expansion };
@@ -165,25 +135,54 @@ export default async function DashboardPage() {
     if (c.owned > 0) s.owned += 1;
     setTotals.set(c.set_code, s);
   }
-  const gainedBySet = new Map<string, number>();
-  for (const e of delta?.added ?? []) {
-    if (e.is_new && e.set_code)
-      gainedBySet.set(e.set_code, (gainedBySet.get(e.set_code) ?? 0) + 1);
-  }
-  const setProgress: SetProgressItem[] = [...gainedBySet.entries()]
-    .map(([set_code, gained]) => {
-      const t = setTotals.get(set_code);
-      const after = t?.owned ?? 0;
-      return {
-        set_code,
-        expansion: t?.expansion ?? set_code,
-        total: t?.total ?? 0,
-        after,
-        before: Math.max(0, after - gained),
-        gained,
-      };
-    })
-    .sort((a, b) => b.gained - a.gained);
+
+  // Per-sync set progress (sets that gained, ranked by gain) with a before→after fill.
+  const setProgressFor = (added: SyncDeltaEntry[]): SetProgressItem[] => {
+    const gained = new Map<string, number>();
+    for (const e of added)
+      if (e.is_new && e.set_code)
+        gained.set(e.set_code, (gained.get(e.set_code) ?? 0) + 1);
+    return [...gained.entries()]
+      .map(([set_code, g]) => {
+        const t = setTotals.get(set_code);
+        const after = t?.owned ?? 0;
+        return {
+          set_code,
+          expansion: t?.expansion ?? set_code,
+          total: t?.total ?? 0,
+          after,
+          before: Math.max(0, after - g),
+          gained: g,
+        };
+      })
+      .sort((a, b) => b.gained - a.gained);
+  };
+  // Strongest newly-acquired cards in a sync (by power), for the row preview.
+  const bestCardsOf = (items: AdditionItem[]): CatalogCard[] =>
+    items
+      .filter((i) => i.entry.is_new && i.card)
+      .map((i) => i.card as CatalogCard)
+      .sort((a, b) => (b.power_score ?? -1) - (a.power_score ?? -1))
+      .slice(0, 3);
+
+  const additions: AdditionItem[] = (delta?.added ?? []).map(join);
+  const setProgress = delta ? setProgressFor(delta.added) : [];
+
+  const historyEntries: HistoryEntryView[] = [...history].reverse().map((h) => {
+    const items = h.added.map(join);
+    return {
+      syncedAt: h.synced_at,
+      addedCount: h.added_count,
+      items,
+      setProgress: setProgressFor(h.added),
+      bestCards: bestCardsOf(items),
+    };
+  });
+  const reviewItems = reviewQueue
+    ? reviewQueue.new_cards.length +
+      reviewQueue.ambiguous_matches.length +
+      reviewQueue.missing_from_pz.length
+    : 0;
 
   // Request-time check in this async Server Component; the purity rule targets
   // client render, where Date.now() would be non-deterministic.
@@ -222,6 +221,7 @@ export default async function DashboardPage() {
           items={additions}
           setProgress={setProgress}
           count={delta.added_count}
+          defaultOpen
         />
       ) : null}
 
