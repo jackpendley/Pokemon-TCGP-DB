@@ -24,7 +24,7 @@ import { isSyncEnabled } from "@/app/sync/actions";
 import { isMegaEx } from "@/lib/domain/card";
 import { formatNumber, titleCase } from "@/lib/domain/format";
 import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
-import type { CatalogCard, SyncDeltaEntry } from "@/types";
+import type { SyncDeltaEntry } from "@/types";
 
 export const dynamic = "force-dynamic";
 
@@ -95,6 +95,15 @@ export default async function DashboardPage() {
       href: `/cards?rarity=${encodeURIComponent(rarity)}`,
     }));
 
+  // Pokémon-type distribution (owned quantity) — derived from the catalog, not the
+  // collection summary, so it matches the /cards type filter (displayType) and has no
+  // "Unknown" bucket (some collection.json entries miscategorize Trainers as Pokémon).
+  const byPokemonType: Record<string, number> = {};
+  for (const c of catalog) {
+    if (!c.pokemon_type || c.owned <= 0) continue;
+    byPokemonType[c.pokemon_type] = (byPokemonType[c.pokemon_type] ?? 0) + c.owned;
+  }
+
   // Per-stage collected (unique owned / total) — same shape as rarity.
   const byStage = new Map<string, { owned: number; total: number }>();
   for (const c of catalog) {
@@ -157,27 +166,15 @@ export default async function DashboardPage() {
       })
       .sort((a, b) => b.gained - a.gained);
   };
-  // Strongest newly-acquired cards in a sync (by power), for the row preview.
-  const bestCardsOf = (items: AdditionItem[]): CatalogCard[] =>
-    items
-      .filter((i) => i.entry.is_new && i.card)
-      .map((i) => i.card as CatalogCard)
-      .sort((a, b) => (b.power_score ?? -1) - (a.power_score ?? -1))
-      .slice(0, 3);
-
   const additions: AdditionItem[] = (delta?.added ?? []).map(join);
   const setProgress = delta ? setProgressFor(delta.added) : [];
 
-  const historyEntries: HistoryEntryView[] = [...history].reverse().map((h) => {
-    const items = h.added.map(join);
-    return {
-      syncedAt: h.synced_at,
-      addedCount: h.added_count,
-      items,
-      setProgress: setProgressFor(h.added),
-      bestCards: bestCardsOf(items),
-    };
-  });
+  const historyEntries: HistoryEntryView[] = [...history].reverse().map((h) => ({
+    syncedAt: h.synced_at,
+    addedCount: h.added_count,
+    items: h.added.map(join),
+    setProgress: setProgressFor(h.added),
+  }));
   const reviewItems = reviewQueue
     ? reviewQueue.new_cards.length +
       reviewQueue.ambiguous_matches.length +
@@ -287,7 +284,7 @@ export default async function DashboardPage() {
               <CardTitle className="text-base">By type</CardTitle>
             </CardHeader>
             <CardContent>
-              <TypePieChart data={summary.by_pokemon_type} />
+              <TypePieChart data={byPokemonType} />
             </CardContent>
           </Card>
           <CountGrid title="By rarity · collected" items={rarityItems} />
