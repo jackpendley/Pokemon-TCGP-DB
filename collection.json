@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 1639,
-    "last_updated": "2026-07-02",
+    "total_cards": 1733,
+    "last_updated": "2026-07-04",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -1026,6 +1026,18 @@
       "count": 2,
       "set_code": "B3",
       "card_number": 38,
+      "rarity": "common"
+    },
+    {
+      "name": "Wooper",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Tail Whap 30",
+      "count": 1,
+      "set_code": "B3b",
+      "card_number": 36,
       "rarity": "common"
     },
     {
@@ -2180,6 +2192,18 @@
       "rarity": "common"
     },
     {
+      "name": "Sandygast",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Sand Attack 20",
+      "count": 2,
+      "set_code": "B3b",
+      "card_number": 39,
+      "rarity": "common"
+    },
+    {
       "name": "Palossand",
       "type": "Fighting",
       "stage": 1,
@@ -2689,7 +2713,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Headbutt 20",
-      "count": 1,
+      "count": 6,
       "set_code": "B3b",
       "card_number": 44,
       "rarity": "common"
@@ -3320,7 +3344,7 @@
       "hp": 110,
       "card_type": "Pokemon",
       "attack": "Raging Claws 40+",
-      "count": 1,
+      "count": 2,
       "set_code": "B3b",
       "card_number": 57,
       "rarity": "uncommon"
@@ -3677,6 +3701,18 @@
       "count": 3,
       "set_code": "B3",
       "card_number": 131,
+      "rarity": "common"
+    },
+    {
+      "name": "Teddiursa",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 60,
+      "card_type": "Pokemon",
+      "attack": "Scratch 20",
+      "count": 3,
+      "set_code": "B3b",
+      "card_number": 56,
       "rarity": "common"
     },
     {
@@ -4532,6 +4568,18 @@
       "rarity": "common"
     },
     {
+      "name": "Growlithe",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Fire",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "set_code": "B3b",
+      "card_number": 10,
+      "rarity": "common"
+    },
+    {
       "name": "Spidops",
       "count": 2,
       "card_type": "Pokemon",
@@ -4638,6 +4686,18 @@
       "set_code": "B2b",
       "card_number": 59,
       "rarity": "common"
+    },
+    {
+      "name": "Wigglytuff",
+      "count": 3,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 110,
+      "set_code": "B3b",
+      "card_number": 52,
+      "rarity": "uncommon"
     },
     {
       "name": "Rookidee",
@@ -6638,6 +6698,18 @@
       "card_number": 18
     },
     {
+      "name": "Piplup",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 19
+    },
+    {
       "name": "Prinplup",
       "count": 1,
       "card_type": "Pokemon",
@@ -6848,7 +6920,7 @@
     },
     {
       "name": "Yamper",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Lightning",
       "stage": 0,
@@ -7154,6 +7226,18 @@
       "rarity": "common",
       "set_code": "B2",
       "card_number": 6
+    },
+    {
+      "name": "Cacnea",
+      "count": 3,
+      "card_type": "Pokemon",
+      "type": "Grass",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 4
     },
     {
       "name": "Quilladin",
@@ -7526,6 +7610,18 @@
       "rarity": "common",
       "set_code": "B1",
       "card_number": 119
+    },
+    {
+      "name": "Carbink",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 31
     },
     {
       "name": "Sudowoodo",
@@ -8140,6 +8236,18 @@
       "card_number": 177
     },
     {
+      "name": "Goomy",
+      "count": 3,
+      "card_type": "Pokemon",
+      "type": "Dragon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 40,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 48
+    },
+    {
       "name": "Exploud",
       "count": 1,
       "card_type": "Pokemon",
@@ -8238,7 +8346,7 @@
     },
     {
       "name": "Snorunt",
-      "count": 2,
+      "count": 5,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -8262,7 +8370,7 @@
     },
     {
       "name": "Emolga",
-      "count": 2,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -8765,6 +8873,18 @@
       "card_number": 60
     },
     {
+      "name": "Luvdisc",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 18
+    },
+    {
       "name": "Slurpuff",
       "count": 1,
       "card_type": "Pokemon",
@@ -8926,7 +9046,7 @@
     },
     {
       "name": "Butterfree",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 2,
       "stage_label": "Stage 2",
@@ -8938,7 +9058,7 @@
     },
     {
       "name": "Vulpix",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -8950,7 +9070,7 @@
     },
     {
       "name": "Feebas",
-      "count": 3,
+      "count": 7,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -8962,7 +9082,7 @@
     },
     {
       "name": "Iron Bundle",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "rarity": "uncommon",
       "set_code": "B3b",
@@ -8971,7 +9091,7 @@
     },
     {
       "name": "Pikachu",
-      "count": 1,
+      "count": 5,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -8983,7 +9103,7 @@
     },
     {
       "name": "Jigglypuff",
-      "count": 1,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -8995,7 +9115,7 @@
     },
     {
       "name": "Eevee",
-      "count": 2,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -9050,7 +9170,7 @@
     },
     {
       "name": "Kid’s Room",
-      "count": 1,
+      "count": 5,
       "card_type": "Pokemon",
       "rarity": "uncommon",
       "set_code": "B3b",
@@ -9084,6 +9204,292 @@
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 67
+    },
+    {
+      "name": "Jigglypuff",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "A2b",
+      "card_number": 60,
+      "type": "Colorless"
+    },
+    {
+      "name": "Psyduck",
+      "count": 2,
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 11
+    },
+    {
+      "name": "Ninetales",
+      "count": 3,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 90,
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 9,
+      "type": "Fire"
+    },
+    {
+      "name": "Goldeen",
+      "count": 2,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 12,
+      "type": "Water"
+    },
+    {
+      "name": "Milotic ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "double_rare",
+      "set_code": "B3b",
+      "card_number": 15,
+      "type": "Water"
+    },
+    {
+      "name": "Dedenne ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "double_rare",
+      "set_code": "B3b",
+      "card_number": 24,
+      "type": "Lightning"
+    },
+    {
+      "name": "Slowpoke",
+      "count": 3,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 26,
+      "type": "Psychic"
+    },
+    {
+      "name": "Slowbro",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 130,
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 27,
+      "type": "Psychic"
+    },
+    {
+      "name": "Musharna",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 110,
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 29,
+      "type": "Psychic"
+    },
+    {
+      "name": "Sylveon",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 90,
+      "rarity": "rare",
+      "set_code": "B3b",
+      "card_number": 30,
+      "type": "Psychic"
+    },
+    {
+      "name": "Enamorus",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "rare",
+      "set_code": "B3b",
+      "card_number": 33,
+      "type": "Psychic"
+    },
+    {
+      "name": "Fidough",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 34
+    },
+    {
+      "name": "Flutter Mane",
+      "count": 2,
+      "card_type": "Pokemon",
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 35,
+      "type": "Psychic"
+    },
+    {
+      "name": "Rockruff",
+      "count": 2,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 38,
+      "type": "Fighting"
+    },
+    {
+      "name": "Cacturne",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 120,
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 42
+    },
+    {
+      "name": "Scrafty",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Darkness",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 110,
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 45
+    },
+    {
+      "name": "Toxapex",
+      "count": 4,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 110,
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 47,
+      "type": "Darkness"
+    },
+    {
+      "name": "Hisuian Sliggoo",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 49,
+      "type": "Dragon"
+    },
+    {
+      "name": "Ursaluna",
+      "count": 2,
+      "card_type": "Pokemon",
+      "rarity": "rare",
+      "set_code": "B3b",
+      "card_number": 58,
+      "type": "Colorless"
+    },
+    {
+      "name": "Furfrou",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 80,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 61
+    },
+    {
+      "name": "Skwovet",
+      "count": 2,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 62,
+      "type": "Colorless"
+    },
+    {
+      "name": "Vulpix",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "rarity": "illustration_rare",
+      "set_code": "B3b",
+      "card_number": 70,
+      "type": "Fire",
+      "variant": "alt art"
+    },
+    {
+      "name": "Pikachu",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "illustration_rare",
+      "set_code": "B3b",
+      "card_number": 72,
+      "type": "Lightning",
+      "variant": "alt art"
+    },
+    {
+      "name": "Mareanie",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "illustration_rare",
+      "set_code": "B3b",
+      "card_number": 74,
+      "type": "Darkness",
+      "variant": "alt art"
+    },
+    {
+      "name": "Small Balloon",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 64
+    },
+    {
+      "name": "Wallace",
+      "count": 2,
+      "card_type": "Pokemon",
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 68
     }
   ]
 }
