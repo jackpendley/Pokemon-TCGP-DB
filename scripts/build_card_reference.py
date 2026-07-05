@@ -47,6 +47,7 @@ from _collection_io import (norm_card_name, normalize_rarity, canonical_set_code
                             FORME_RE as _FORME_RE, name_agrees as _name_agrees)
 
 SCHEMA_JSON   = REFERENCE_DIR / "card_reference.schema.json"
+COMBAT_JSON   = REFERENCE_DIR / "card_combat_stats.json"
 SIR_JSON      = REFERENCE_DIR / "special_illustration_rares.json"
 RARITY_OVR_JSON = REFERENCE_DIR / "rarity_overrides.json"
 TYPE_OVR_JSON = REFERENCE_DIR / "card_type_overrides.json"
@@ -440,6 +441,21 @@ def reconcile_card(
 # Main
 # ---------------------------------------------------------------------------
 
+def _attach_evolves_from(records: list[dict]) -> int:
+    """Attach `evolves_from` (predecessor Pokémon name, or None) to each record from
+    card_combat_stats.json — keyed by `SET|normalized-name`, exactly as
+    fetch_combat_stats writes it. Every printing of a species shares one entry."""
+    combat = json.loads(COMBAT_JSON.read_text(encoding="utf-8")) if COMBAT_JSON.exists() else {}
+    n = 0
+    for rec in records:
+        key = f"{rec['set_code']}|{' '.join(rec['name'].lower().split())}"
+        evo = (combat.get(key) or {}).get("evolve_from")
+        rec["evolves_from"] = evo
+        if evo:
+            n += 1
+    return n
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build cross-validated card_reference.json.")
     parser.add_argument("--dry-run", action="store_true",
@@ -554,6 +570,9 @@ def main() -> int:
         print(f"  {sc:8s}: {conf_count:3d}/{total:3d} confirmed  "
               f"single={sc_stats['single']}  conflict={sc_stats['conflict']}  "
               f"unconfirmed={sc_stats['unconfirmed']}")
+
+    evo_count = _attach_evolves_from(results)
+    print(f"\n  evolves_from attached: {evo_count} cards have a predecessor")
 
     total_cards = len(results)
     print(f"\n  Total: {total_cards} cards")

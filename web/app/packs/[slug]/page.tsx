@@ -76,6 +76,7 @@ export default async function PackDetailPage({
       is_ex: false,
       owned: row.owned ?? 0,
       power_score: row.power_score ?? null,
+      evolves_from: null,
     };
 
   return (

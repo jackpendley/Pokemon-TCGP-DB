@@ -1,6 +1,7 @@
 "use client";
 
 import { CardImage } from "@/components/cards/card-image";
+import { EvolutionTabs } from "@/components/cards/evolution-tabs";
 import { TypeBadge } from "@/components/cards/type-badge";
 import {
   Dialog,
@@ -15,13 +16,19 @@ import type { CatalogCard } from "@/types";
 export function CardDialog({
   card,
   onClose,
+  allCards,
+  onSelect,
 }: {
   card: CatalogCard | null;
   onClose: () => void;
+  /** When provided, the dialog shows evolution/versions tabs. */
+  allCards?: CatalogCard[];
+  /** Navigate the dialog to a related card (from the evolution tabs). */
+  onSelect?: (c: CatalogCard) => void;
 }) {
   return (
     <Dialog open={card !== null} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-md">
+      <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-lg">
         {card ? (
           <div className="space-y-4">
             <div className="mx-auto w-56 overflow-hidden rounded-lg border">
@@ -60,6 +67,10 @@ export function CardDialog({
                 </Row>
               ) : null}
             </dl>
+
+            {allCards && onSelect ? (
+              <EvolutionTabs card={card} allCards={allCards} onSelect={onSelect} />
+            ) : null}
           </div>
         ) : null}
       </DialogContent>

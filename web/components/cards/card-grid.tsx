@@ -14,7 +14,14 @@ import type { CatalogCard } from "@/types";
  * Responsive grid of card tiles, shared by the Cards page and the Set detail
  * page. Clicking a tile opens an enlarged view (full-resolution image + details).
  */
-export function CardGrid({ cards }: { cards: CatalogCard[] }) {
+export function CardGrid({
+  cards,
+  allCards,
+}: {
+  cards: CatalogCard[];
+  /** Full catalog for the evolution/versions tabs (defaults to `cards`). */
+  allCards?: CatalogCard[];
+}) {
   const [selected, setSelected] = useState<CatalogCard | null>(null);
 
   if (cards.length === 0) {
@@ -36,7 +43,12 @@ export function CardGrid({ cards }: { cards: CatalogCard[] }) {
           />
         ))}
       </div>
-      <CardDialog card={selected} onClose={() => setSelected(null)} />
+      <CardDialog
+        card={selected}
+        onClose={() => setSelected(null)}
+        allCards={allCards ?? cards}
+        onSelect={setSelected}
+      />
     </>
   );
 }
