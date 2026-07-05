@@ -12,8 +12,8 @@ import {
   SyncHistory,
   type HistoryEntryView,
 } from "@/components/sync/sync-history";
+import { SyncRevealDialog } from "@/components/sync/sync-reveal-dialog";
 import {
-  SyncReveal,
   type AdditionItem,
   type SetProgressItem,
 } from "@/components/sync/sync-reveal";
@@ -127,10 +127,30 @@ export default async function DashboardPage() {
     card: byCoord.get(`${entry.set_code}:${entry.card_number}`) ?? null,
   });
   const additions: AdditionItem[] = (delta?.added ?? []).map(join);
+
+  // Per-sync set increases (which sets gained new cards, and how many) — surfaced
+  // on every history entry, not just the fresh reveal.
+  const expansionBySet = new Map<string, string>();
+  for (const c of catalog)
+    if (!expansionBySet.has(c.set_code)) expansionBySet.set(c.set_code, c.expansion);
+  const setGainsFor = (added: SyncDeltaEntry[]) => {
+    const g = new Map<string, number>();
+    for (const e of added)
+      if (e.is_new && e.set_code) g.set(e.set_code, (g.get(e.set_code) ?? 0) + 1);
+    return [...g.entries()]
+      .map(([set_code, gained]) => ({
+        set_code,
+        expansion: expansionBySet.get(set_code) ?? set_code,
+        gained,
+      }))
+      .sort((a, b) => b.gained - a.gained);
+  };
+
   const historyEntries: HistoryEntryView[] = [...history].reverse().map((h) => ({
     syncedAt: h.synced_at,
     addedCount: h.added_count,
     items: h.added.map(join),
+    setGains: setGainsFor(h.added),
   }));
   const reviewItems = reviewQueue
     ? reviewQueue.new_cards.length +
@@ -193,25 +213,16 @@ export default async function DashboardPage() {
         <SyncButton enabled={syncEnabled} />
       </header>
 
-      {/* Right after a sync: the cards you just got, with the reveal animation. */}
-      {showReveal ? (
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="flex items-center justify-between text-base">
-              <span>Added in your latest sync</span>
-              {delta ? (
-                <Badge variant="secondary">{delta.added_count} cards</Badge>
-              ) : null}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <SyncReveal
-              key={stats?.fetched_at}
-              items={additions}
-              setProgress={setProgress}
-            />
-          </CardContent>
-        </Card>
+      {/* Right after a sync: a dismissable popup of the cards you just got. On
+          dismiss the dashboard stays as-is (refreshed numbers); the sync remains
+          listed in Sync history below. */}
+      {showReveal && delta ? (
+        <SyncRevealDialog
+          key={stats?.fetched_at}
+          items={additions}
+          setProgress={setProgress}
+          count={delta.added_count}
+        />
       ) : null}
 
       {/* State band: completion ring beside the headline total. */}
