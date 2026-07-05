@@ -19,6 +19,7 @@ export const cardReferenceFileSchema = z.object({
         stage: z.string().nullable().optional(),
         expansion: z.string().nullable(),
         is_ex: z.boolean().nullable(),
+        evolves_from: z.string().nullable().optional(),
       })
       .loose(),
   ),
@@ -68,4 +69,6 @@ export interface CatalogCard {
   owned: number;
   /** 0–100 power/value score (HP + attack + ability); null for non-Pokémon. */
   power_score: number | null;
+  /** Name of the Pokémon this evolves from (for the evolution tabs); null for Basics. */
+  evolves_from: string | null;
 }

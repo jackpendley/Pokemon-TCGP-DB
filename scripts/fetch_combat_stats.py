@@ -92,8 +92,11 @@ def _attack_entry(damage: int, cost: int, effect: str) -> dict:
     }
 
 
-def _combat_record(hp, attacks: list[dict], ability_count: int, retreat) -> dict:
-    """Shared cache shape. Keeps max_damage/attack_count for quick inspection."""
+def _combat_record(hp, attacks: list[dict], ability_count: int, retreat,
+                   evolve_from=None) -> dict:
+    """Shared cache shape. Keeps max_damage/attack_count for quick inspection.
+    `evolve_from` is the predecessor's name (None for Basics), used to build the
+    evolution families the web dialog shows."""
     return {
         "hp": hp,
         "attacks": attacks,
@@ -101,6 +104,7 @@ def _combat_record(hp, attacks: list[dict], ability_count: int, retreat) -> dict
         "max_damage": max((a["damage"] for a in attacks), default=0),
         "ability_count": ability_count,
         "retreat": retreat,
+        "evolve_from": evolve_from,
     }
 
 
@@ -115,7 +119,8 @@ def _extract_tcgdex(card: dict) -> dict:
         for a in (card.get("attacks") or [])
     ]
     return _combat_record(
-        card.get("hp"), attacks, len(card.get("abilities") or []), card.get("retreat")
+        card.get("hp"), attacks, len(card.get("abilities") or []), card.get("retreat"),
+        card.get("evolveFrom") or None,
     )
 
 
@@ -139,6 +144,13 @@ def _extract_limitless(html: str) -> dict | None:
     if hp is None:
         return None  # Trainer or parse miss — skip so a re-run retries.
 
+    # Evolution predecessor: ".card-text-type" reads e.g. "Pokémon - Stage 2 -
+    # Evolves from Ivysaur" (None for Basics).
+    type_el = soup.select_one(".card-text-type")
+    evo = re.search(r"Evolves from\s+(.+)$",
+                    type_el.get_text(" ", strip=True)) if type_el else None
+    evolve_from = evo.group(1).strip() if evo else None
+
     attacks: list[dict] = []
     for att in soup.select(".card-text-attack"):
         info = att.select_one(".card-text-attack-info")
@@ -157,7 +169,7 @@ def _extract_limitless(html: str) -> dict | None:
         )
 
     ability_count = len(soup.select(".card-text-ability"))
-    return _combat_record(hp, attacks, ability_count, None)
+    return _combat_record(hp, attacks, ability_count, None, evolve_from)
 
 
 def _fetch_tcgdex(set_code: str, number: int) -> dict | None:
@@ -209,9 +221,15 @@ def main() -> int:
         if key not in reps or r["card_number"] < reps[key]["rec"]["card_number"]:
             reps[key] = {"rec": r, "fetch": fetch}
 
-    # Re-fetch entries missing the per-attack `attacks` field (older cache format).
-    todo = [(k, v) for k, v in reps.items()
-            if k not in cache or "attacks" not in cache[k]]
+    # Re-fetch when the cache is missing the per-attack `attacks` field (older
+    # format) or, for evolving Pokémon (Stage 1/2), the `evolve_from` field. Basics
+    # never evolve from anything, so they don't need a refetch for evolve_from.
+    def _needs(rec: dict, entry: dict | None) -> bool:
+        if entry is None or "attacks" not in entry:
+            return True
+        return rec.get("stage") in ("Stage1", "Stage2") and "evolve_from" not in entry
+
+    todo = [(k, v) for k, v in reps.items() if _needs(v["rec"], cache.get(k))]
     print(f"  {len(reps)} unique cards; {len(cache)} cached; {len(todo)} to fetch.")
 
     fetched = failed = 0

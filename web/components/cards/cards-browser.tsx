@@ -341,7 +341,7 @@ export function CardsBrowser({
         Showing {shown.length} of {filtered.length}
       </p>
 
-      <CardGrid cards={shown} />
+      <CardGrid cards={shown} allCards={cards} />
 
       {shown.length < filtered.length ? (
         <div ref={sentinel} className="h-1" aria-hidden />

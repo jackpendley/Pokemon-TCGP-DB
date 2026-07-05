@@ -32,6 +32,7 @@ const catalogStub: CatalogCard[] = [
     is_ex: false,
     owned: 2,
     power_score: 42,
+    evolves_from: null,
   },
 ];
 
