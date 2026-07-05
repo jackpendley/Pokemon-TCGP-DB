@@ -39,6 +39,11 @@ const LIMITLESS_BASE =
  * but its coverage is patchy within a set (e.g. PROMO-A only goes up to ~#73), so
  * Limitless — which carries every card — is always appended as a fallback. The
  * <CardImage> advances through these on error before showing a placeholder.
+ *
+ * Limitless variants differ by set: older sets ship `_EN.png`, but the newest sets
+ * (B3a/B3b/PROMO-B) only ship `_EN.webp` (the `.png` 403s). `_EN.webp` is present
+ * everywhere and `_EN_SM.webp` always exists, so we try the large webp first and
+ * fall back through png → sm so real art loads for every card and size.
  */
 export function cardImageCandidates(
   card: CardImageInput,
@@ -46,6 +51,8 @@ export function cardImageCandidates(
 ): string[] {
   if (!card.set_code || card.card_number == null) return [];
   const num = String(card.card_number).padStart(3, "0");
+  const lset = LIMITLESS_SET_ID[card.set_code] ?? card.set_code;
+  const lim = (file: string) => `${LIMITLESS_BASE}/${lset}/${lset}_${num}_EN${file}`;
   const urls: string[] = [];
 
   if (TCGDEX_COVERED.has(card.set_code)) {
@@ -54,9 +61,11 @@ export function cardImageCandidates(
     urls.push(`https://assets.tcgdex.net/en/tcgp/${setId}/${num}/${quality}.webp`);
   }
 
-  const lset = LIMITLESS_SET_ID[card.set_code] ?? card.set_code;
-  const file = size === "lg" ? `${lset}_${num}_EN.png` : `${lset}_${num}_EN_SM.webp`;
-  urls.push(`${LIMITLESS_BASE}/${lset}/${file}`);
+  if (size === "lg") {
+    urls.push(lim(".webp"), lim(".png"), lim("_SM.webp"));
+  } else {
+    urls.push(lim("_SM.webp"), lim(".webp"));
+  }
 
   return urls;
 }

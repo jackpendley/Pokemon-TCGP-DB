@@ -7,10 +7,17 @@ import { RevealGrid, type AdditionItem } from "@/components/sync/reveal-grid";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
+export interface SetGain {
+  set_code: string;
+  expansion: string;
+  gained: number;
+}
+
 export interface HistoryEntryView {
   syncedAt: string;
   addedCount: number;
   items: AdditionItem[];
+  setGains: SetGain[];
 }
 
 /**
@@ -87,7 +94,19 @@ function HistoryRow({ entry }: { entry: HistoryEntryView }) {
         )}
       >
         <div className="overflow-hidden">
-          <div className="border-t px-4 py-4">
+          <div className="space-y-4 border-t px-4 py-4">
+            {entry.setGains.length > 0 ? (
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="text-xs font-medium text-muted-foreground">
+                  Set increase
+                </span>
+                {entry.setGains.map((g) => (
+                  <Badge key={g.set_code} variant="outline" className="tabular-nums">
+                    {g.expansion} +{g.gained}
+                  </Badge>
+                ))}
+              </div>
+            ) : null}
             {everOpened ? <RevealGrid items={entry.items} /> : null}
           </div>
         </div>
