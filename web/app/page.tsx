@@ -99,9 +99,14 @@ export default async function DashboardPage() {
   // collection summary, so it matches the /cards type filter (displayType) and has no
   // "Unknown" bucket (some collection.json entries miscategorize Trainers as Pokémon).
   const byPokemonType: Record<string, number> = {};
+  let pokemonQuantity = 0;
+  let trainerQuantity = 0;
   for (const c of catalog) {
-    if (!c.pokemon_type || c.owned <= 0) continue;
-    byPokemonType[c.pokemon_type] = (byPokemonType[c.pokemon_type] ?? 0) + c.owned;
+    if (c.owned <= 0) continue;
+    if (c.pokemon_type)
+      byPokemonType[c.pokemon_type] = (byPokemonType[c.pokemon_type] ?? 0) + c.owned;
+    if (c.card_category === "Pokemon") pokemonQuantity += c.owned;
+    else if (c.card_category === "Trainer") trainerQuantity += c.owned;
   }
 
   // Per-stage collected (unique owned / total) — same shape as rarity.
@@ -253,13 +258,13 @@ export default async function DashboardPage() {
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           <StatCard
             title="Pokémon"
-            value={formatNumber(summary.by_card_type.Pokemon ?? 0)}
+            value={formatNumber(pokemonQuantity)}
             href="/cards?category=Pokemon"
             align="center"
           />
           <StatCard
             title="Trainers"
-            value={formatNumber(summary.by_card_type.Trainer ?? 0)}
+            value={formatNumber(trainerQuantity)}
             href="/cards?category=Trainer"
             align="center"
           />
