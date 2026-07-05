@@ -4,13 +4,20 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { CardGrid } from "@/components/cards/card-grid";
+import { TypeSymbol, ENERGY_TYPES } from "@/components/cards/type-symbol";
+import { RaritySymbol } from "@/components/dashboard/rarity-symbol";
 import { SetLogo } from "@/components/sets/set-logo";
-import { MultiSelect, type MSGroup } from "@/components/ui/multi-select";
+import { FilterDropdown, FilterCheck } from "@/components/ui/filter-dropdown";
+import { MultiSelect } from "@/components/ui/multi-select";
 import { displayType, isMegaEx } from "@/lib/domain/card";
 import { formatNumber, formatPercent, titleCase } from "@/lib/domain/format";
 import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
 import { cn } from "@/lib/utils";
 import type { CatalogCard } from "@/types";
+
+/** Toggle a value in a string[] filter state. */
+const toggleValue = (arr: string[], v: string) =>
+  arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v];
 
 const BATCH = 150;
 const STAGE_ORDER = ["Basic", "Stage1", "Stage2", "Stage3"];
@@ -123,14 +130,17 @@ export function CardsBrowser({
     [cards],
   );
 
-  const setGroups: MSGroup[] = useMemo(() => {
-    const a = setCodes.filter((s) => seriesOf(s) === "A");
-    const b = setCodes.filter((s) => seriesOf(s) === "B");
-    return [
-      ...(a.length ? [{ label: "All Series A", values: a }] : []),
-      ...(b.length ? [{ label: "All Series B", values: b }] : []),
-    ];
-  }, [setCodes]);
+  const aSets = useMemo(() => setCodes.filter((s) => seriesOf(s) === "A"), [setCodes]);
+  const bSets = useMemo(() => setCodes.filter((s) => seriesOf(s) === "B"), [setCodes]);
+  // Type filter splits Pokémon energy types (canonical order) from Trainer subtypes.
+  const pokeTypes = useMemo(
+    () => ENERGY_TYPES.filter((t) => typeOpts.includes(t)),
+    [typeOpts],
+  );
+  const trainerTypes = useMemo(
+    () => typeOpts.filter((t) => !ENERGY_TYPES.includes(t)).sort(),
+    [typeOpts],
+  );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -273,25 +283,101 @@ export function CardsBrowser({
           onChange={(e) => setQuery(e.target.value)}
           className="h-9 w-56 rounded-md border bg-background px-3 text-sm"
         />
-        <MultiSelect
+        {/* Sets: Series A on the left, Series B on the right. */}
+        <FilterDropdown
           label="sets"
-          options={setCodes.map((s) => ({ value: s, label: s }))}
-          selected={sets}
-          onChange={setSets}
-          groups={setGroups}
-        />
-        <MultiSelect
+          count={sets.length}
+          onClear={() => setSets([])}
+          panelClassName="w-[24rem]"
+        >
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { series: "A", list: aSets },
+              { series: "B", list: bSets },
+            ].map(({ series, list }) => (
+              <div key={series}>
+                <button
+                  type="button"
+                  onClick={() => setSets([...new Set([...sets, ...list])])}
+                  className="mb-1 w-full rounded bg-muted px-2 py-1 text-left text-xs font-medium hover:bg-muted/70"
+                >
+                  All Series {series}
+                </button>
+                {list.map((s) => (
+                  <FilterCheck
+                    key={s}
+                    checked={sets.includes(s)}
+                    onToggle={() => setSets(toggleValue(sets, s))}
+                  >
+                    <SetLogo setCode={s} label={s} className="h-4 w-8 shrink-0" />
+                    <span>{s}</span>
+                  </FilterCheck>
+                ))}
+              </div>
+            ))}
+          </div>
+        </FilterDropdown>
+
+        {/* Types: Pokémon energy types (with icons), then Trainer subtypes. */}
+        <FilterDropdown
           label="types"
-          options={typeOpts.map((t) => ({ value: t, label: t }))}
-          selected={types}
-          onChange={setTypes}
-        />
-        <MultiSelect
+          count={types.length}
+          onClear={() => setTypes([])}
+          panelClassName="w-72"
+        >
+          <div className="grid grid-cols-2 gap-x-2">
+            {pokeTypes.map((t) => (
+              <FilterCheck
+                key={t}
+                checked={types.includes(t)}
+                onToggle={() => setTypes(toggleValue(types, t))}
+              >
+                <TypeSymbol type={t} />
+                <span>{t}</span>
+              </FilterCheck>
+            ))}
+          </div>
+          {trainerTypes.length > 0 ? (
+            <>
+              <div className="mt-2 border-t px-2 pt-2 pb-1 text-xs font-medium text-muted-foreground">
+                Trainers
+              </div>
+              <div className="grid grid-cols-2 gap-x-2">
+                {trainerTypes.map((t) => (
+                  <FilterCheck
+                    key={t}
+                    checked={types.includes(t)}
+                    onToggle={() => setTypes(toggleValue(types, t))}
+                  >
+                    <span>{t}</span>
+                  </FilterCheck>
+                ))}
+              </div>
+            </>
+          ) : null}
+        </FilterDropdown>
+
+        {/* Rarities: multi-column with the rarity symbols. */}
+        <FilterDropdown
           label="rarities"
-          options={rarityOpts.map((r) => ({ value: r, label: titleCase(r) }))}
-          selected={rarities}
-          onChange={setRarities}
-        />
+          count={rarities.length}
+          onClear={() => setRarities([])}
+          panelClassName="w-[26rem]"
+        >
+          <div className="grid grid-cols-2 gap-x-2 sm:grid-cols-3">
+            {rarityOpts.map((r) => (
+              <FilterCheck
+                key={r}
+                checked={rarities.includes(r)}
+                onToggle={() => setRarities(toggleValue(rarities, r))}
+              >
+                <RaritySymbol rarity={r} />
+                <span>{titleCase(r)}</span>
+              </FilterCheck>
+            ))}
+          </div>
+        </FilterDropdown>
+
         <MultiSelect
           label="stages"
           options={stageOpts.map((s) => ({ value: s, label: stageLabel(s) }))}
