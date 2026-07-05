@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import type { ReactNode } from "react";
 
 import {
   SyncReveal,
@@ -13,29 +13,43 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
+import { cn } from "@/lib/utils";
 
 /**
- * The just-synced reveal, shown as a dismissable popup right after a sync. Same
- * content/animation as before, but overlaid so dismissing returns the dashboard to
- * normal (with refreshed numbers) — the sync itself stays listed in Sync history.
+ * A sync's added cards + set progress, shown as a large dismissable popup (with the
+ * Dialog's built-in appear/fade animations). Used both for the fresh sync
+ * (`defaultOpen`, no trigger) and for each history row (`trigger` = the row).
  */
 export function SyncRevealDialog({
   items,
   setProgress,
   count,
+  title = "Added in your latest sync",
+  trigger,
+  triggerClassName,
+  defaultOpen = false,
 }: {
   items: AdditionItem[];
   setProgress: SetProgressItem[];
   count: number;
+  title?: string;
+  trigger?: ReactNode;
+  triggerClassName?: string;
+  defaultOpen?: boolean;
 }) {
-  const [open, setOpen] = useState(true);
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-3xl">
+    <Dialog defaultOpen={defaultOpen}>
+      {trigger ? (
+        <DialogTrigger className={cn("text-left", triggerClassName)}>
+          {trigger}
+        </DialogTrigger>
+      ) : null}
+      <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-5xl">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            Added in your latest sync
+            {title}
             <Badge variant="secondary">{count} cards</Badge>
           </DialogTitle>
         </DialogHeader>
