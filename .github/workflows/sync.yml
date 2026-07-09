@@ -13,7 +13,8 @@
 #   - workflow_dispatch: manual refresh from the Actions tab
 #   - push to main: keeps Supabase current with the committed sources
 #
-# Secrets required: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
+# Secrets required: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, OWNER_USER_ID
+# (the auth owner UUID printed by scripts/create_owner_user.py).
 
 name: Sync & Publish
 
@@ -57,4 +58,5 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          OWNER_USER_ID: ${{ secrets.OWNER_USER_ID }}
         run: python scripts/publish_to_supabase.py

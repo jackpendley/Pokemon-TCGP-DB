@@ -1,10 +1,14 @@
 # Roadmap — Phases 4–7 (Hosting, Auth, Postgres Features)
 
-**Status:** Phases 0–4 shipped. Phase 4 (Supabase read layer) landed in PR #83:
+**Status:** Phases 0–6 shipped. Phase 4 (Supabase read layer) landed in PR #83:
 schema + RLS live on project `dayqowttwgftuaxqhyej`, publisher verified
 idempotent, and `DATA_SOURCE=supabase` renders byte-identically to local-json
-on every page. This document covers the remaining infrastructure track:
-Vercel deploy + hosted sync (P5), auth scaffolding (P6), Postgres features (P7).
+on every page. Phase 5 landed in PR #84 + #85: live on Vercel
+(https://pokemon-tcgp-db-ten.vercel.app) with hosted sync via GitHub Actions.
+Phase 6 landed in two PRs: web reads moved to the server-only service-role
+key, then the real auth owner was seeded and `0002_auth_owner.sql` backfilled
+`user_id`, added the FK, and dropped the anon policies. Remaining:
+Postgres features (P7).
 
 **Audience:** "Me now, multi-user later." Model the data for multi-user (carry
 `user_id`, enable RLS, seed a single owner) but do **not** build login UX yet.
@@ -86,13 +90,21 @@ refreshes data without a redeploy.
 
 ## Phase 6 — Auth scaffolding (modeled, not user-facing)
 
-- Supabase Auth server client (`web/lib/supabase/server.ts`) + middleware.
-- Seed the single owner; backfill `user_id` on existing rows; verify RLS.
+- Seed the single owner (`scripts/create_owner_user.py`); backfill `user_id`
+  on existing rows, add the `auth.users` FK, and drop the temporary anon
+  policies (`supabase/migrations/0002_auth_owner.sql`); verify RLS.
+- The web read path uses the **service-role key** server-side
+  (`web/lib/data/supabase.ts` is server-only), since without a login UI no
+  session exists to satisfy `auth.uid()` policies.
+- The `@supabase/ssr` server client + middleware from the original sketch are
+  **deferred to the login-UI phase** — they exist to refresh browser auth
+  cookies, and no browser session exists yet; adding them now would be dead
+  code. Nothing in this phase changes when they land.
 - **No login UI** surfaced — single-tenant stays the default. Flipping to
   multi-user later is "enable the UI + per-user sync," not a migration.
 
-**Checkpoint:** RLS verified (owner sees data, anon sees nothing);
-single-user behavior unchanged.
+**Checkpoint:** RLS verified (owner sees data, anon sees nothing on per-user
+tables); single-user behavior unchanged.
 
 ---
 
@@ -125,6 +137,6 @@ Now trivial with timestamps in Postgres.
 | Scope creep | One PR per increment, green CI before each merge |
 
 ## End-to-end verification (post-Phase 5)
-1. `python3 scripts/run_recommendations.py --skip-sync && python3 scripts/build_card_power_score.py && python3 scripts/publish_to_supabase.py` → data in Supabase.
+1. `python3 scripts/run_recommendations.py --skip-sync && python3 scripts/build_card_power_score.py && OWNER_USER_ID=... python3 scripts/publish_to_supabase.py` → data in Supabase.
 2. `cd web && DATA_SOURCE=supabase npm run dev` → every page renders identically to local-json.
 3. `npm run build` green; Vercel preview renders live data; a GitHub Action refresh reflects on the deployed dashboard without a redeploy.

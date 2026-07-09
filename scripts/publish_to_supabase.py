@@ -16,10 +16,11 @@ per user so cards removed from the collection don't linger.
 Env (service-role, server-side only — never expose to a browser bundle):
     SUPABASE_URL                 https://<project-ref>.supabase.co
     SUPABASE_SERVICE_ROLE_KEY    service_role API key
+    OWNER_USER_ID                auth owner UUID (scripts/create_owner_user.py)
 
 Usage:
     pip install supabase   # optional dep, not needed by the pipeline or CI
-    SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... \
+    SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... OWNER_USER_ID=... \
         python3 scripts/publish_to_supabase.py
 
 The row-builder functions below are pure (no I/O, no supabase import) so
@@ -37,8 +38,9 @@ CURRENT_DIR = ROOT / "data" / "current"
 REFERENCE_DIR = ROOT / "data" / "reference"
 SYNC_DIR = ROOT / "data" / "sync"
 
-# Single-tenant placeholder owner. Must match the anon RLS policies in
-# supabase/migrations/0001_init.sql; replaced by a real auth user in Phase 6.
+# Single-tenant placeholder owner from Phase 4; kept as the row-builder
+# default for tests. Since Phase 6, main() requires the real auth owner UUID
+# via the OWNER_USER_ID env var (see scripts/create_owner_user.py).
 OWNER_USER_ID = "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"
 
 UPSERT_CHUNK_SIZE = 500
@@ -304,6 +306,12 @@ def main() -> None:
     key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
     if not url or not key:
         sys.exit("Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY (service role).")
+    owner = os.environ.get("OWNER_USER_ID")
+    if not owner:
+        sys.exit(
+            "Set OWNER_USER_ID to the auth owner UUID printed by "
+            "scripts/create_owner_user.py (Phase 6)."
+        )
 
     # Lazy import: the pipeline and CI never need the supabase package.
     try:
@@ -312,9 +320,9 @@ def main() -> None:
         sys.exit("The `supabase` package is required: pip install supabase")
 
     print("Loading artifacts...")
-    rows_by_table = build_all_rows(load_artifacts())
-    print(f"Publishing to {url} as owner {OWNER_USER_ID}:")
-    publish(create_client(url, key), rows_by_table)
+    rows_by_table = build_all_rows(load_artifacts(), user_id=owner)
+    print(f"Publishing to {url} as owner {owner}:")
+    publish(create_client(url, key), rows_by_table, user_id=owner)
     print("Done.")
 
 
