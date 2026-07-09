@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { CardDialog } from "@/components/cards/card-dialog";
 import { CardImage } from "@/components/cards/card-image";
+import { compareRarity } from "@/lib/domain/rarity";
 import { cn } from "@/lib/utils";
 import type { CatalogCard, SyncDeltaEntry } from "@/types";
 
@@ -32,8 +33,10 @@ export function RevealGrid({ items }: { items: AdditionItem[] }) {
     );
   }
 
-  const newItems = items.filter((i) => i.entry.is_new);
-  const ownedItems = items.filter((i) => !i.entry.is_new);
+  const byRarityDesc = (a: AdditionItem, b: AdditionItem) =>
+    compareRarity(b.card?.rarity ?? "", a.card?.rarity ?? "");
+  const newItems = items.filter((i) => i.entry.is_new).sort(byRarityDesc);
+  const ownedItems = items.filter((i) => !i.entry.is_new).sort(byRarityDesc);
   const ownedStartMs = newItems.length * STAGGER_MS + PHASE_GAP_MS;
 
   return (

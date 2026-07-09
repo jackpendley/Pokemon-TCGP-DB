@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { RevealGrid, type AdditionItem } from "@/components/sync/reveal-grid";
-import { formatPercent } from "@/lib/domain/format";
+import { CountUp } from "@/components/ui/count-up";
 
 export type { AdditionItem } from "@/components/sync/reveal-grid";
 
@@ -71,7 +71,10 @@ export function SyncReveal({
                     />
                   </div>
                   <div className="text-right text-[10px] text-muted-foreground tabular-nums">
-                    {formatPercent(afterPct)}
+                    <CountUp
+                      value={(barsFilled ? afterPct : beforePct) * 100}
+                      format={(n) => `${Math.round(n)}%`}
+                    />
                   </div>
                 </div>
               );
