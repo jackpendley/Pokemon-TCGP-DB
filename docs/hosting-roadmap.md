@@ -1,9 +1,10 @@
 # Roadmap — Phases 4–7 (Hosting, Auth, Postgres Features)
 
-**Status:** Phases 0–3 shipped (contract lock, design system, dashboard/browsing,
-card power model + top pull targets, sync-on-dashboard). This document covers the
-remaining infrastructure track: lifting the local-JSON app to a hosted Supabase +
-Vercel stack, then unlocking Postgres-native features.
+**Status:** Phases 0–4 shipped. Phase 4 (Supabase read layer) landed in PR #83:
+schema + RLS live on project `dayqowttwgftuaxqhyej`, publisher verified
+idempotent, and `DATA_SOURCE=supabase` renders byte-identically to local-json
+on every page. This document covers the remaining infrastructure track:
+Vercel deploy + hosted sync (P5), auth scaffolding (P6), Postgres features (P7).
 
 **Audience:** "Me now, multi-user later." Model the data for multi-user (carry
 `user_id`, enable RLS, seed a single owner) but do **not** build login UX yet.
