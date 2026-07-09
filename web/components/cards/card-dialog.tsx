@@ -28,10 +28,10 @@ export function CardDialog({
 }) {
   return (
     <Dialog open={card !== null} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-lg">
+      <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-2xl">
         {card ? (
           <div className="space-y-4">
-            <div className="mx-auto w-56 overflow-hidden rounded-lg border">
+            <div className="mx-auto w-80 overflow-hidden rounded-lg border">
               <div className="aspect-[5/7]">
                 {/* key remounts on card change so the error state resets */}
                 <CardImage
