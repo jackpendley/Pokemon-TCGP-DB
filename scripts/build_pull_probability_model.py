@@ -935,19 +935,18 @@ def determine_source_status(pack_records: list) -> str:
     has_mid = bool(confs & mid_tier)
     has_low = bool(confs & low_tier)
 
-    if has_top and not has_mid and not has_low:
+    if has_top:
+        if has_mid or has_low:
+            return "third_party_verified_with_in_app_anchor"
         if "user_in_app_verified_plus_bulbapedia" in confs or "user_in_app_verified" in confs:
             return "third_party_verified_with_in_app_anchor"
         return "bulbapedia_branch_verified"
 
-    if has_top or has_mid:
-        if has_low:
-            return "third_party_verified_with_in_app_anchor"
-        return "third_party_verified_with_in_app_anchor"
-
-    if confs <= {"third_party_verified"}:
+    # No top-tier anchor: never claim one. And a mid tier mixed with low-tier
+    # packs is not fully third-party verified — label by the weakest link.
+    if has_mid and not has_low:
         return "third_party_verified"
-    if "inferred" in confs:
+    if has_mid or "inferred" in confs:
         return "inferred"
     return "scaffold_only"
 

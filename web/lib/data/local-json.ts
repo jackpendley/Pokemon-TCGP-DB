@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 
 import type { ZodType } from "zod";
@@ -23,23 +23,61 @@ const CURRENT_DIR = path.join(env.PIPELINE_ROOT, "data", "current");
 const REFERENCE_DIR = path.join(env.PIPELINE_ROOT, "data", "reference");
 const SYNC_DIR = path.join(env.PIPELINE_ROOT, "data", "sync");
 
+/**
+ * Artifacts are immutable between pipeline runs, so parse + Zod results are
+ * memoized on file mtime+size: one fs.stat per read replaces re-parsing and
+ * re-validating multi-MB JSON on every navigation. Cached values are shared
+ * across requests — treat them as read-only.
+ */
+const artifactCache = new Map<
+  string,
+  { mtimeMs: number; size: number; value: unknown }
+>();
+
+/** True only for "file absent" — other fs failures (EACCES, EISDIR…) must
+ * surface loudly rather than read as "no sync data yet". */
+function isFileAbsent(err: unknown): boolean {
+  return (
+    typeof err === "object" &&
+    err !== null &&
+    "code" in err &&
+    (err.code === "ENOENT" || err.code === "ENOTDIR")
+  );
+}
+
+async function readValidated<T>(
+  full: string,
+  file: string,
+  schema: ZodType<T>,
+): Promise<T> {
+  const s = await stat(full); // fs errors (ENOENT…) propagate to callers
+  const hit = artifactCache.get(full);
+  if (hit && hit.mtimeMs === s.mtimeMs && hit.size === s.size) {
+    return hit.value as T;
+  }
+  const raw = await readFile(full, "utf-8");
+  const parsed = schema.safeParse(JSON.parse(raw));
+  if (!parsed.success) {
+    throw new Error(
+      `Pipeline artifact ${file} failed schema validation:\n${parsed.error.message}`,
+    );
+  }
+  artifactCache.set(full, { mtimeMs: s.mtimeMs, size: s.size, value: parsed.data });
+  return parsed.data;
+}
+
 /** Like readArtifact but returns null if the (gitignored) file is absent. */
 async function readOptional<T>(
   dir: string,
   file: string,
   schema: ZodType<T>,
 ): Promise<T | null> {
-  let raw: string;
   try {
-    raw = await readFile(path.join(dir, file), "utf-8");
-  } catch {
-    return null;
+    return await readValidated(path.join(dir, file), file, schema);
+  } catch (err) {
+    if (isFileAbsent(err)) return null;
+    throw err; // schema failures still surface loudly
   }
-  const parsed = schema.safeParse(JSON.parse(raw));
-  if (!parsed.success) {
-    throw new Error(`${file} failed schema validation:\n${parsed.error.message}`);
-  }
-  return parsed.data;
 }
 
 /**
@@ -53,22 +91,25 @@ async function readArtifact<T>(
   schema: ZodType<T>,
 ): Promise<T> {
   const full = path.join(dir, file);
-  let raw: string;
   try {
-    raw = await readFile(full, "utf-8");
-  } catch {
-    throw new Error(
-      `Pipeline artifact not found: ${full}. Run \`python3 scripts/run_recommendations.py --skip-sync\` in the repo root, or set PIPELINE_ROOT.`,
-    );
+    return await readValidated(full, file, schema);
+  } catch (err) {
+    if (isFileAbsent(err)) {
+      throw new Error(
+        `Pipeline artifact not found: ${full}. Run \`python3 scripts/run_recommendations.py --skip-sync\` in the repo root, or set PIPELINE_ROOT.`,
+      );
+    }
+    throw err;
   }
-  const parsed = schema.safeParse(JSON.parse(raw));
-  if (!parsed.success) {
-    throw new Error(
-      `Pipeline artifact ${file} failed schema validation:\n${parsed.error.message}`,
-    );
-  }
-  return parsed.data;
 }
+
+/** Rebuilt only when one of its three source artifacts re-parses (see cache above). */
+let catalogMemo: {
+  ref: unknown;
+  coll: unknown;
+  power: unknown;
+  value: CatalogCard[];
+} | null = null;
 
 async function loadCatalog(): Promise<CatalogCard[]> {
   const [ref, coll, power] = await Promise.all([
@@ -77,6 +118,15 @@ async function loadCatalog(): Promise<CatalogCard[]> {
     readOptional(REFERENCE_DIR, "card_power_scores.json", powerScoresFileSchema),
   ]);
 
+  if (
+    catalogMemo &&
+    catalogMemo.ref === ref &&
+    catalogMemo.coll === coll &&
+    catalogMemo.power === power
+  ) {
+    return catalogMemo.value;
+  }
+
   const ownedByCoord = new Map<string, number>();
   for (const entry of coll.collection) {
     const key = `${entry.set_code.toUpperCase()}:${entry.card_number}`;
@@ -84,7 +134,7 @@ async function loadCatalog(): Promise<CatalogCard[]> {
   }
   const scores = power?.scores ?? {};
 
-  return ref.records.map((r) => ({
+  const value: CatalogCard[] = ref.records.map((r) => ({
     set_code: r.set_code,
     card_number: r.card_number,
     name: r.name,
@@ -99,6 +149,8 @@ async function loadCatalog(): Promise<CatalogCard[]> {
     power_score: scores[`${r.set_code}:${r.card_number}`]?.power_score ?? null,
     evolves_from: r.evolves_from ?? null,
   }));
+  catalogMemo = { ref, coll, power, value };
+  return value;
 }
 
 export const localJsonSource: DataSource = {

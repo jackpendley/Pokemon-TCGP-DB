@@ -221,6 +221,30 @@ def resolve_pz_slug(pack_name: str, set_code: str, pz_raw: dict) -> str | None:
     return None
 
 
+def build_pz_name_odds(pz_pack: dict, pool_keys: set) -> dict:
+    """Name fallback rates: PZ cards whose (set_code, card_number) has no matching
+    pack_sources entry — catches A4b replacements and cross-set cards.
+
+    Returns {name_lower: [rates descending]}. Each rate is consumed at most once
+    during pool aggregation (pop() hands the LOWEST remaining rate to the first
+    same-name printing encountered): PZ rates carry no rarity/coord, so the
+    rate→printing pairing is unavoidably heuristic, and assigning low-first keeps
+    the old "lower rate wins" conservatism when rates outnumber printings while
+    still preserving total PZ pull mass when they match up.
+    """
+    name_odds: dict = {}
+    for pz_card in pz_pack.get("cards", []):
+        sc_cn = (pz_card["set_code"].upper(), pz_card["card_number"])
+        if sc_cn not in pool_keys:
+            name_l = _norm_name(pz_card.get("name", ""))
+            pct = pz_card.get("drop_chance_pct")
+            if name_l and pct is not None:
+                name_odds.setdefault(name_l, []).append(pct / 100.0)
+    for rates in name_odds.values():
+        rates.sort(reverse=True)
+    return name_odds
+
+
 # ---------------------------------------------------------------------------
 # EV computation
 # ---------------------------------------------------------------------------
@@ -381,7 +405,12 @@ def _accumulate_pool_ev(all_pool_cards: list, collection: dict,
         pz_pull = pz_card_odds.get((sc, cn)) if (pz_card_odds and sc and cn is not None) else None
 
         if pz_pull is None and pz_name_odds and card_name:
-            pz_pull = pz_name_odds.get(nn)
+            # Each unmatched PZ rate is consumed at most once per pack: several
+            # pool printings can share a name (base + alt arts), and handing the
+            # same rate to all of them double-counts that card's pull mass.
+            rates = pz_name_odds.get(nn)
+            if rates:
+                pz_pull = rates.pop()
 
         if pz_pull is not None:
             p_pull = pz_pull
@@ -552,10 +581,11 @@ def compute_pack_ev_record(pack_record: dict, all_pool_cards: list,
     """Compute all EV fields for one pack.
 
     pz_card_odds: {(set_code_upper, card_number): drop_chance_decimal} — primary PZ lookup.
-    pz_name_odds: {name_lower: drop_chance_decimal} — name fallback for replacement/cross-set
-                  cards that don't match by (set_code, card_number). Built only from PZ cards
-                  that have no corresponding pack_sources entry, so no double-counting.
-                  When a name appeared with conflicting rates, the lower rate is stored.
+    pz_name_odds: {name_lower: [drop_chance_decimal, ...]} — name fallback for
+                  replacement/cross-set cards that don't match by (set_code, card_number).
+                  Built by build_pz_name_odds from PZ cards with no pack_sources entry;
+                  each rate is consumed at most once during aggregation (the lists are
+                  mutated), so same-name printings never double-count PZ pull mass.
     """
     pack_name = pack_record["pack_name"]
     slot_rates = pack_record.get("slot_rates")
@@ -657,25 +687,11 @@ def build(collection, pull_model, pack_cards, expansion_shared, deck_targets,
             slug = resolve_pz_slug(pack_name, set_code, pz_raw)
             if slug:
                 pz_card_odds = pz_odds.get(slug, {})
-                # Name fallback: PZ cards whose (set_code, card_number) has no matching
-                # pack_sources entry — catches A4b replacements and cross-set cards.
-                # When the same name appears with conflicting rates, the lower rate wins.
                 pool_keys = {
                     (r.get("set_code", "").upper(), r.get("card_number"))
                     for r in all_pool_cards
                 }
-                pz_name_odds = {}
-                for pz_card in pz_raw[slug].get("cards", []):
-                    sc_cn = (pz_card["set_code"].upper(), pz_card["card_number"])
-                    if sc_cn not in pool_keys:
-                        name_l = _norm_name(pz_card.get("name", ""))
-                        pct = pz_card.get("drop_chance_pct")
-                        if name_l and pct is not None:
-                            rate = pct / 100.0
-                            if name_l in pz_name_odds and pz_name_odds[name_l] != rate:
-                                pz_name_odds[name_l] = min(pz_name_odds[name_l], rate)
-                            else:
-                                pz_name_odds[name_l] = rate
+                pz_name_odds = build_pz_name_odds(pz_raw[slug], pool_keys)
         record = compute_pack_ev_record(
             pack_record, all_pool_cards, collection, deck_targets,
             pz_card_odds, pz_name_odds, collection_by_card, power_by_coord,

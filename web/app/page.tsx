@@ -133,12 +133,9 @@ export default async function DashboardPage() {
     }));
 
   // ── Sync data surfaced on the dashboard ────────────────────────────────
-  const byCoord = new Map(
-    catalog.map((c) => [`${c.set_code}:${c.card_number}`, c]),
-  );
   const join = (entry: SyncDeltaEntry): AdditionItem => ({
     entry,
-    card: byCoord.get(`${entry.set_code}:${entry.card_number}`) ?? null,
+    card: catalogByCoord.get(`${entry.set_code}:${entry.card_number}`) ?? null,
   });
 
   // Current owned/total per set — drives each sync's progress rings.
@@ -151,7 +148,11 @@ export default async function DashboardPage() {
   }
 
   // Per-sync set progress (sets that gained, ranked by gain) with a before→after fill.
-  const setProgressFor = (added: SyncDeltaEntry[]): SetProgressItem[] => {
+  // ownedAfter supplies the per-set owned count as of that sync's completion.
+  const setProgressFor = (
+    added: SyncDeltaEntry[],
+    ownedAfter: Map<string, number>,
+  ): SetProgressItem[] => {
     const gained = new Map<string, number>();
     for (const e of added)
       if (e.is_new && e.set_code)
@@ -159,7 +160,7 @@ export default async function DashboardPage() {
     return [...gained.entries()]
       .map(([set_code, g]) => {
         const t = setTotals.get(set_code);
-        const after = t?.owned ?? 0;
+        const after = ownedAfter.get(set_code) ?? 0;
         return {
           set_code,
           expansion: t?.expansion ?? set_code,
@@ -171,15 +172,26 @@ export default async function DashboardPage() {
       })
       .sort((a, b) => b.gained - a.gained);
   };
+  const currentOwned = new Map(
+    [...setTotals].map(([code, t]) => [code, t.owned]),
+  );
   const additions: AdditionItem[] = (delta?.added ?? []).map(join);
-  const setProgress = delta ? setProgressFor(delta.added) : [];
+  const setProgress = delta ? setProgressFor(delta.added, currentOwned) : [];
 
-  const historyEntries: HistoryEntryView[] = [...history].reverse().map((h) => ({
-    syncedAt: h.synced_at,
-    addedCount: h.added_count,
-    items: h.added.map(join),
-    setProgress: setProgressFor(h.added),
-  }));
+  // History is stored oldest→newest; walk newest→oldest rolling the owned
+  // counts back by each sync's gains, so every entry shows the totals as they
+  // stood at that sync rather than today's.
+  const runningOwned = new Map(currentOwned);
+  const historyEntries: HistoryEntryView[] = [...history].reverse().map((h) => {
+    const setProgress = setProgressFor(h.added, runningOwned);
+    for (const p of setProgress) runningOwned.set(p.set_code, p.before);
+    return {
+      syncedAt: h.synced_at,
+      addedCount: h.added_count,
+      items: h.added.map(join),
+      setProgress,
+    };
+  });
   const reviewItems = reviewQueue
     ? reviewQueue.new_cards.length +
       reviewQueue.ambiguous_matches.length +

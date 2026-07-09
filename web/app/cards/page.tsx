@@ -4,6 +4,12 @@ import {
 } from "@/components/cards/cards-browser";
 import { dataSource } from "@/lib/data";
 
+// Pages render per-request (not ISR): pipeline artifacts are gitignored, so CI
+// and fresh checkouts build without them — prerendering would fail there. The
+// mtime-keyed cache in lib/data/local-json.ts makes the per-request cost a few
+// fs.stat calls; the full-catalog RSC payload this page ships is a localhost
+// concern only until the hosted phase (docs/hosting-roadmap.md), where this
+// should move to cached rendering with on-demand invalidation.
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Cards · TCGP Optimizer" };
 

@@ -19,8 +19,8 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import (is_ex_from_name, load_collection_or_exit, ROOT,
-                            COLLECTION_JSON, CURRENT_DIR as OUT_DIR,
+from _collection_io import (is_ex_from_name, load_collection_or_exit, meta_errors,
+                            ROOT, COLLECTION_JSON, CURRENT_DIR as OUT_DIR,
                             COLLECTION_NORMALIZED_JSON as NORMALIZED_JSON)
 
 SUMMARY_JSON = OUT_DIR / "collection_summary.json"
@@ -236,6 +236,13 @@ def main():
     meta = data.get("meta", {})
     collection = data.get("collection", [])
     print(f"  Entries: {len(collection)}, Meta total: {meta.get('total_cards')}")
+
+    errors = meta_errors(meta)
+    if errors:
+        for err in errors:
+            print(f"  ERROR: {err}", file=sys.stderr)
+        print("  collection.json meta is malformed; fix it before normalizing.", file=sys.stderr)
+        sys.exit(1)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 

@@ -23,10 +23,10 @@ jobs:
 
       - name: Install test dependencies
         # Subset of requirements.txt actually exercised by the tests and validators.
-        # The OCR/browser deps (opencv-python, pytesseract, imagehash, Pillow, playwright,
-        # curl-cffi) are optional and not imported on any tested code path — curl-cffi has a
-        # `requests` fallback and playwright is lazy-imported — so they're skipped here to keep
-        # CI fast and free of system-library/binary requirements.
+        # The browser deps (playwright, curl-cffi) are optional and not imported on any
+        # tested code path — curl-cffi has a `requests` fallback and playwright is
+        # lazy-imported — so they're skipped here to keep CI fast and free of
+        # system-library/binary requirements.
         run: pip install pytest jsonschema rapidfuzz beautifulsoup4 lxml requests
 
       - name: Test suite (pytest)
