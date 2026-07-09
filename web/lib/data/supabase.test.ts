@@ -2,7 +2,11 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+
+vi.mock("@supabase/supabase-js", () => ({
+  createClient: vi.fn(() => ({}) as unknown),
+}));
 
 import { verifyDataSourceContract } from "@/lib/data/contract";
 import { createSupabaseSource } from "@/lib/data/supabase";
@@ -221,5 +225,30 @@ describe("SupabaseSource", () => {
     await expect(empty.getPackEv()).rejects.toThrow(
       /publish_to_supabase\.py/,
     );
+  });
+});
+
+describe("createDefaultSupabaseSource", () => {
+  it("builds the client with the service-role key (Phase 6)", async () => {
+    vi.stubEnv("DATA_SOURCE", "supabase");
+    vi.stubEnv("SUPABASE_URL", "https://example.supabase.co");
+    vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service-key");
+    vi.resetModules();
+    try {
+      // env.ts parses process.env at module load, so import after stubbing.
+      const { createDefaultSupabaseSource } = await import(
+        "@/lib/data/supabase"
+      );
+      const { createClient } = await import("@supabase/supabase-js");
+      createDefaultSupabaseSource();
+      expect(createClient).toHaveBeenCalledWith(
+        "https://example.supabase.co",
+        "service-key",
+        { auth: { persistSession: false } },
+      );
+    } finally {
+      vi.unstubAllEnvs();
+      vi.resetModules();
+    }
   });
 });

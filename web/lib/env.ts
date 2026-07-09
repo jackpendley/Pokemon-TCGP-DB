@@ -7,8 +7,8 @@ import { z } from "zod";
  * Fails loudly at startup if a required variable is malformed.
  */
 const envSchema = z.object({
-  // Which data backend the app reads from. Only local-json is implemented today;
-  // "supabase" is reserved for the deferred hosted phase.
+  // Which data backend the app reads from: local pipeline artifacts or the
+  // hosted Supabase project (web/lib/data/index.ts switches on this).
   DATA_SOURCE: z.enum(["local-json", "supabase"]).default("local-json"),
   // Absolute or relative path to the Python pipeline's repo root (the dir that
   // contains data/current + data/reference). Defaults to the monorepo parent.
@@ -23,9 +23,12 @@ const envSchema = z.object({
   // config; required together when DATA_SOURCE=supabase (checked below). None
   // are NEXT_PUBLIC_, so Next.js can never inline them into the client bundle.
   SUPABASE_URL: z.url().optional(),
+  // Reserved for the future login UI; unused since Phase 6 moved the web
+  // read path to the service role.
   SUPABASE_ANON_KEY: z.string().min(1).optional(),
-  // Service-role key: server-side writes only (publisher / future sync
-  // trigger). Never used by the web read path.
+  // Service-role key: used server-side only — by the publisher and, since
+  // Phase 6 dropped the anon RLS policies, by the web read path
+  // (web/lib/data/supabase.ts, a server-only module).
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
   // Hosted sync trigger (Phase 5): a fine-grained GitHub token with Contents
   // read/write on the repo below, used to fire repository_dispatch. When both
@@ -41,7 +44,10 @@ const envSchema = z.object({
 export const env = envSchema
   .superRefine((cfg, ctx) => {
     if (cfg.DATA_SOURCE === "supabase") {
-      for (const key of ["SUPABASE_URL", "SUPABASE_ANON_KEY"] as const) {
+      for (const key of [
+        "SUPABASE_URL",
+        "SUPABASE_SERVICE_ROLE_KEY",
+      ] as const) {
         if (!cfg[key]) {
           ctx.addIssue({
             code: "custom",
