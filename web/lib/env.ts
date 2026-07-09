@@ -19,6 +19,28 @@ const envSchema = z.object({
     .enum(["true", "false"])
     .default("true")
     .transform((v) => v === "true"),
+  // Supabase connection (hosted phase). Optional so local-json mode needs no
+  // config; required together when DATA_SOURCE=supabase (checked below). None
+  // are NEXT_PUBLIC_, so Next.js can never inline them into the client bundle.
+  SUPABASE_URL: z.url().optional(),
+  SUPABASE_ANON_KEY: z.string().min(1).optional(),
+  // Service-role key: server-side writes only (publisher / future sync
+  // trigger). Never used by the web read path.
+  SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
 });
 
-export const env = envSchema.parse(process.env);
+export const env = envSchema
+  .superRefine((cfg, ctx) => {
+    if (cfg.DATA_SOURCE === "supabase") {
+      for (const key of ["SUPABASE_URL", "SUPABASE_ANON_KEY"] as const) {
+        if (!cfg[key]) {
+          ctx.addIssue({
+            code: "custom",
+            path: [key],
+            message: `${key} is required when DATA_SOURCE=supabase`,
+          });
+        }
+      }
+    }
+  })
+  .parse(process.env);

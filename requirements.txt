@@ -8,3 +8,5 @@ lxml
 # Browser automation for Pokemon Zone sync
 playwright
 # After installing: run `playwright install chromium`
+# Hosted publish to Supabase (optional — only for scripts/publish_to_supabase.py)
+supabase

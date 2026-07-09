@@ -1,0 +1,225 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
+
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { describe, expect, it } from "vitest";
+
+import { verifyDataSourceContract } from "@/lib/data/contract";
+import { createSupabaseSource } from "@/lib/data/supabase";
+import {
+  collectionSummarySchema,
+  packEvSchema,
+  recommendationsSchema,
+} from "@/types";
+import type { CatalogCard } from "@/types";
+
+const FIXTURES = path.join(__dirname, "..", "..", "types", "__fixtures__");
+
+function loadFixture(name: string): unknown {
+  return JSON.parse(readFileSync(path.join(FIXTURES, name), "utf-8"));
+}
+
+/**
+ * Minimal in-memory fake of the supabase-js fluent query builder, covering
+ * only the chains supabase.ts uses. The builder is a thenable resolving to
+ * PostgREST's { data, error } — awaiting it mid-chain works like the real
+ * client. Exercises the real row→shape mapping code against the same fixture
+ * seed data as contract.test.ts (roadmap §4.4: same shape on identical seed).
+ */
+type Row = Record<string, unknown>;
+
+class FakeQueryBuilder implements PromiseLike<{ data: Row[]; error: null }> {
+  private rows: Row[];
+  private columns: string[] = [];
+
+  constructor(rows: Row[]) {
+    this.rows = [...rows];
+  }
+
+  select(columns: string) {
+    this.columns = columns.split(",").map((c) => c.trim());
+    return this;
+  }
+
+  order(column: string) {
+    const key = column as keyof Row;
+    this.rows.sort((a, b) =>
+      (a[key] as never) < (b[key] as never)
+        ? -1
+        : (a[key] as never) > (b[key] as never)
+          ? 1
+          : 0,
+    );
+    return this;
+  }
+
+  limit(n: number) {
+    this.rows = this.rows.slice(0, n);
+    return this;
+  }
+
+  range(from: number, to: number) {
+    this.rows = this.rows.slice(from, to + 1);
+    return this;
+  }
+
+  then<R1, R2>(
+    onfulfilled?: (value: { data: Row[]; error: null }) => R1 | PromiseLike<R1>,
+    onrejected?: (reason: unknown) => R2 | PromiseLike<R2>,
+  ): PromiseLike<R1 | R2> {
+    const data = this.rows.map((row) =>
+      Object.fromEntries(this.columns.map((c) => [c, row[c]])),
+    );
+    return Promise.resolve({ data, error: null }).then(onfulfilled, onrejected);
+  }
+}
+
+function fakeClient(tables: Record<string, Row[]>): SupabaseClient {
+  return {
+    from(table: string) {
+      const rows = tables[table];
+      if (!rows) throw new Error(`fakeClient: unseeded table ${table}`);
+      return new FakeQueryBuilder(rows);
+    },
+  } as unknown as SupabaseClient;
+}
+
+const collectionSummaryFixture = loadFixture("collection_summary.json");
+const packEvFixture = loadFixture("pack_ev.json");
+const recommendationsFixture = loadFixture(
+  "inferred_pack_recommendations.json",
+);
+
+/** Same seed card as contract.test.ts's catalogStub, as a cards-table row. */
+const bulbasaurRow: Row = {
+  set_code: "A1",
+  card_number: 1,
+  name: "Bulbasaur",
+  rarity: "common",
+  pokemon_type: "Grass",
+  card_category: "Pokemon",
+  trainer_subtype: null,
+  stage: "Basic",
+  expansion: "Genetic Apex",
+  is_ex: false,
+  evolves_from: null,
+  power_score: 42,
+};
+
+const seededTables: Record<string, Row[]> = {
+  collection_summaries: [{ payload: collectionSummaryFixture }],
+  pack_ev: [{ payload: packEvFixture }],
+  recommendations: [{ payload: recommendationsFixture }],
+  cards: [bulbasaurRow],
+  collections: [{ set_code: "A1", card_number: 1, count: 2 }],
+  sync_status: [],
+  sync_history: [],
+};
+
+describe("SupabaseSource", () => {
+  const source = createSupabaseSource(fakeClient(seededTables));
+
+  it("passes the shared DataSource contract", async () => {
+    const verified = await verifyDataSourceContract(source);
+    expect(verified.length).toBe(5);
+  });
+
+  it("returns documents identical to what localJsonSource yields", async () => {
+    // localJsonSource returns schema.parse(artifact); the JSONB round-trip
+    // must produce the exact same value.
+    expect(await source.getCollectionSummary()).toEqual(
+      collectionSummarySchema.parse(collectionSummaryFixture),
+    );
+    expect(await source.getPackEv()).toEqual(packEvSchema.parse(packEvFixture));
+    expect(await source.getRecommendations()).toEqual(
+      recommendationsSchema.parse(recommendationsFixture),
+    );
+  });
+
+  it("merges cards + collections like loadCatalog", async () => {
+    const expected: CatalogCard[] = [
+      {
+        set_code: "A1",
+        card_number: 1,
+        name: "Bulbasaur",
+        rarity: "common",
+        pokemon_type: "Grass",
+        card_category: "Pokemon",
+        trainer_subtype: null,
+        stage: "Basic",
+        expansion: "Genetic Apex",
+        is_ex: false,
+        owned: 2,
+        power_score: 42,
+        evolves_from: null,
+      },
+    ];
+    expect(await source.getCatalog()).toEqual(expected);
+  });
+
+  it("paginates past the 1000-row response cap", async () => {
+    const manyCards = Array.from({ length: 2500 }, (_, i) => ({
+      ...bulbasaurRow,
+      card_number: i + 1,
+      name: `Card ${i + 1}`,
+    }));
+    const bigSource = createSupabaseSource(
+      fakeClient({ ...seededTables, cards: manyCards }),
+    );
+    const catalog = await bigSource.getCatalog();
+    expect(catalog.length).toBe(2500);
+    expect(catalog[2499].name).toBe("Card 2500");
+  });
+
+  it("maps an empty sync_status table to the all-null contract state", async () => {
+    expect(await source.getSyncStatus()).toEqual({
+      stats: null,
+      reviewQueue: null,
+      delta: null,
+      history: [],
+    });
+  });
+
+  it("maps populated sync rows onto the SyncStatus shape", async () => {
+    const stats = {
+      fetched_at: "2026-01-01T00:00:00",
+      pack_hourglasses: 10,
+      wonder_hourglasses: 5,
+      shop_tickets: 3,
+    };
+    const entry = { synced_at: "2026-01-02T03:04:05", added_count: 0, added: [] };
+    const syncedSource = createSupabaseSource(
+      fakeClient({
+        ...seededTables,
+        sync_status: [{ stats, review_queue: null, delta: null }],
+        sync_history: [entry],
+      }),
+    );
+    const status = await syncedSource.getSyncStatus();
+    expect(status.stats).toEqual(stats);
+    expect(status.history).toEqual([entry]);
+  });
+
+  it("surfaces PostgREST errors loudly with the table name", async () => {
+    const failing = {
+      from: () => ({
+        select: () => ({
+          limit: () =>
+            Promise.resolve({ data: null, error: { message: "boom" } }),
+        }),
+      }),
+    } as unknown as SupabaseClient;
+    await expect(
+      createSupabaseSource(failing).getCollectionSummary(),
+    ).rejects.toThrow(/collection_summaries.*boom/);
+  });
+
+  it("fails loudly when no document has been published", async () => {
+    const empty = createSupabaseSource(
+      fakeClient({ ...seededTables, pack_ev: [] }),
+    );
+    await expect(empty.getPackEv()).rejects.toThrow(
+      /publish_to_supabase\.py/,
+    );
+  });
+});
