@@ -27,6 +27,15 @@ const envSchema = z.object({
   // Service-role key: server-side writes only (publisher / future sync
   // trigger). Never used by the web read path.
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
+  // Hosted sync trigger (Phase 5): a fine-grained GitHub token with Contents
+  // read/write on the repo below, used to fire repository_dispatch. When both
+  // are set, the sync button dispatches .github/workflows/sync.yml instead of
+  // spawning the local pipeline. Server-only.
+  GITHUB_SYNC_TOKEN: z.string().min(1).optional(),
+  GITHUB_SYNC_REPO: z
+    .string()
+    .regex(/^[\w.-]+\/[\w.-]+$/, "expected owner/repo")
+    .optional(),
 });
 
 export const env = envSchema

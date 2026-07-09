@@ -1,0 +1,60 @@
+# Hosted sync (Phase 5, docs/hosting-roadmap.md §5.2): rebuild the pipeline
+# artifacts from the committed sources (collection.json + data/reference/*)
+# and publish them to Supabase — so the deployed app refreshes without a
+# redeploy.
+#
+# --skip-sync: a live Pokémon Zone sync needs an authenticated browser session
+# and cannot run headless in CI. The collection itself updates when a local
+# sync commits collection.json; this workflow recomputes + publishes.
+#
+# Triggers:
+#   - repository_dispatch "sync": fired by the web app's remote sync runner
+#     (web/lib/sync/remote-runner.ts)
+#   - workflow_dispatch: manual refresh from the Actions tab
+#   - push to main: keeps Supabase current with the committed sources
+#
+# Secrets required: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
+
+name: Sync & Publish
+
+on:
+  repository_dispatch:
+    types: [sync]
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+# One publish at a time; queue (don't cancel) so a publish never runs half-way.
+concurrency:
+  group: sync-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install pipeline dependencies
+        # Same subset CI's test job uses (enough for --skip-sync) + the
+        # publisher client.
+        run: pip install jsonschema rapidfuzz beautifulsoup4 lxml requests supabase
+
+      - name: Rebuild artifacts (data/current)
+        # Exit 2 = "completed with review-queue items" — still a successful
+        # rebuild (see scripts/run_recommendations.py exit codes).
+        run: python scripts/run_recommendations.py --skip-sync || [ $? -eq 2 ]
+
+      - name: Rebuild card power scores
+        run: python scripts/build_card_power_score.py
+
+      - name: Publish to Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/publish_to_supabase.py
