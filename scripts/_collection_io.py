@@ -529,6 +529,28 @@ def load_collection_json(path: Path | None = None) -> tuple[str, dict]:
     return raw, json.loads(strip_comments(raw))
 
 
+def meta_errors(meta: dict) -> list[str]:
+    """Validate collection.json's meta block against the web contract.
+
+    Single definition consumed by both normalize_current_collection (hard gate
+    before writing collection_summary.json) and validate_current_collection, so
+    the two pipeline steps can't disagree about what a valid meta looks like.
+    The webapp's Zod schema (web/types/collection-summary.ts) requires these
+    fields as non-nullable — a bad hand-edit must fail in the pipeline, not at
+    page render. bool is excluded explicitly: isinstance(True, int) is True in
+    Python, but the web contract needs a real number.
+    """
+    errors = []
+    total = meta.get("total_cards")
+    if not isinstance(total, int) or isinstance(total, bool):
+        errors.append("meta.total_cards must be an integer")
+    if not isinstance(meta.get("last_updated"), str):
+        errors.append("meta.last_updated must be a string")
+    if not isinstance(meta.get("format"), str):
+        errors.append("meta.format must be a string")
+    return errors
+
+
 def load_collection_or_exit(path: Path | None = None) -> dict:
     """Parse collection.json, exiting(1) with a friendly stderr message on failure.
 

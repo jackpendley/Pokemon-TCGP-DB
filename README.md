@@ -11,17 +11,14 @@ python3 scripts/run_recommendations.py
 Syncs collection from Pokemon Zone, runs the full EV pipeline, and prints a condensed summary. Full verbose output logged to `data/pipeline.log`.
 
 ```
-  ✓  Sync collection         1060 cards, 512 unique
-  ✓  Validate collection     512 entries, total=1060
+  ✓  Sync collection         1793 cards, 820 unique
+  ✓  Validate collection     820 entries, total=1793
   ✓  Normalize collection    OK
-  ✓  Build pack EV           25 packs
-  ✓  Build promo EV          21 promo packs
+  ✓  Build pack EV           26 packs
   ✓  Recommendations         OK
 
-  Top pack:   Deluxe Pack: ex (unified=70.3026) — 228/279 cards unowned
-  Top promo:  Promo Pack A Series Vol. 8 (new_ev=0.9198) — Shop Tokens
-  Pack Hourglasses: 1260  → buy 10x Deluxe Pack: ex (costs 120 ⧗), then re-run
-  Shop Tickets:     347
+  Top pack:   Ho-Oh (unified=58.5830) — 128/136 cards unowned
+  Pack Hourglasses: 615  → buy 10x Ho-Oh (costs 120 ⧗), then re-run
   Log:        data/pipeline.log
 ```
 
@@ -35,6 +32,14 @@ Syncs collection from Pokemon Zone, runs the full EV pipeline, and prints a cond
 | `--json-import FILE` | Import specific bookmarklet JSON |
 | `--dry-run-sync` | Preview sync diff, stop before EV |
 | `--login` | Re-authenticate browser before sync |
+| `--promo` | Also run promo EV + Shop Ticket summary |
+| `--full-rankings` | Print all packs ranked + write `review/full_pack_ranking.md` |
+| `--include-limited` | Include limited-time packs (e.g. Deluxe Pack: ex) |
+| `--series {A,B}` | Filter `--full-rankings` to one series |
+
+**Exit codes:** `0` OK · `1` fatal · `2` review-queue items · `3` completed but PZ
+auth expired (collection not refreshed — consumed by the web sync runner as
+*needs re-auth*).
 
 ---
 
@@ -44,9 +49,9 @@ Syncs collection from Pokemon Zone, runs the full EV pipeline, and prints a cond
 
 | Stat | Value |
 |---|---|
-| Total cards | 1060 |
-| Unique entries | 512 |
-| Last synced | 2026-06-04 |
+| Total cards | 1793 |
+| Unique entries | 820 |
+| Last synced | 2026-07-08 |
 
 ---
 
@@ -95,8 +100,8 @@ python3 scripts/run_recommendations.py --json-import ~/Downloads/pz_collection.j
 sync_collection.py              ← fetch from Pokemon Zone (stored auth or bookmarklet JSON)
 validate_current_collection.py  ← sum(count) == meta.total_cards
 normalize_current_collection.py ← clean JSON, no comments
-build_pack_ev.py                ← EV for 24 regular packs
-build_promo_pack_ev.py          ← EV for 21 promo packs (Shop Tokens)
+build_pack_ev.py                ← EV for all regular packs
+build_promo_pack_ev.py          ← promo pack EV (Shop Tokens, with --promo)
 generate_pack_recommendation_report.py
 ```
 
@@ -140,11 +145,14 @@ new_card_ev_10x = E[rarity-weighted new cards in 10 consecutive openings]
 
 | File | Contents |
 |---|---|
-| `data/reference/pack_sources.json` | 3228 card → pack mappings (A1–B3A + PROMO-A/B) |
-| `data/reference/pz_pack_odds.json` | PZ per-card drop chances (45 packs: 24 regular + 21 promo) |
-| `data/reference/pull_probability_model.json` | Pull rate model v0.6.0, `pz_verified` |
+| `data/reference/pack_sources.json` | 3,344 card → pack mappings (A1–B3b + PROMO-A/B) |
+| `data/reference/pz_pack_odds.json` | PZ per-card drop chances (49 packs, regular + promo) |
+| `data/reference/pull_probability_model.json` | Per-slot pull rate model with per-pack confidence |
 
-**Pull rate source:** Pokemon Zone pack pages (`?show_pack_odds=1&show_pack_slot_odds=1`). All 24 regular packs and 21 promo packs are `pz_verified`. No in-app verification required.
+**Pull rate source:** Pokemon Zone pack pages (`?show_pack_odds=1&show_pack_slot_odds=1`),
+cross-checked against Bulbapedia offering-rates sections and in-app screenshots. Pack
+confidences are mixed (see `meta.source_status` in the model); the EV layer applies a
+confidence haircut to packs that aren't fully verified.
 
 ---
 

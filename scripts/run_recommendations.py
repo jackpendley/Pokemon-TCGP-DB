@@ -17,6 +17,8 @@ Exit codes:
     0  Full pipeline completed
     1  Fatal error in any step
     2  Sync had review items; pipeline ran with existing collection.json
+    3  Pipeline completed but PZ auth expired — collection NOT refreshed.
+       Consumed by the web sync runner (web/lib/sync/runner.ts) as needs_reauth.
 """
 
 import argparse
@@ -34,6 +36,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (strip_comments, card_reference_freshness,
                             ROOT, CARD_REF_JSON, SOURCES_DIR)
+
+# Exit-code contract (see module docstring). The web sync runner
+# (web/lib/sync/runner.ts mapExitCode) matches on these values; a renumber
+# silently breaks its needs_reauth handling, so tests pin them.
+EXIT_OK = 0
+EXIT_FATAL = 1
+EXIT_REVIEW_ITEMS = 2
+EXIT_AUTH_EXPIRED = 3
 
 LOG_FILE = ROOT / "data" / "pipeline.log"
 LOG_MAX_BLOCKS = 200  # retain only the most recent N stage blocks (the log is append-only)
@@ -369,6 +379,7 @@ def main() -> int:
         _f.write(f"\n{'=' * 60}\nPipeline run: {ts}\n{'=' * 60}\n")
 
     sync_had_review_items = False
+    auth_expired = False
     # Snapshot the pre-sync collection so the post-reconcile delta (compute_sync_delta)
     # is a true before/after diff. Only set when we actually take the snapshot.
     prev_snapshot_taken = False
@@ -609,7 +620,11 @@ def main() -> int:
     # Cosmetic: collapse this run in the log if it was identical to the previous one.
     _collapse_repeated_run()
 
-    return 2 if sync_had_review_items else 0
+    # Auth expiry outranks review items: the numbers above came from a stale
+    # collection, and callers (web sync runner) must not report a clean sync.
+    if auth_expired:
+        return EXIT_AUTH_EXPIRED
+    return EXIT_REVIEW_ITEMS if sync_had_review_items else EXIT_OK
 
 
 if __name__ == "__main__":

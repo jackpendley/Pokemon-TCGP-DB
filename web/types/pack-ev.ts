@@ -63,7 +63,9 @@ export const packRecordSchema = z.object({
   cost_per_unique_card_1x: z.number(),
   cost_per_unique_card_10x: z.number(),
   pz_coverage: z.number(),
-  deck_target_cards: z.array(z.string()),
+  // build_pack_ev.py emits full card-EV objects here (same shape as top_ev_cards);
+  // the list is empty until the deck-validation producer lands (DEFERRED(deck-ev)).
+  deck_target_cards: z.array(topEvCardSchema),
   notes: z.string(),
 });
 export type PackRecord = z.infer<typeof packRecordSchema>;

@@ -38,3 +38,21 @@ describe("artifact schemas parse real fixtures", () => {
     expect(result.success, result.error?.message).toBe(true);
   });
 });
+
+/**
+ * deck_target_cards is empty in every fixture (the deck-validation producer is
+ * deferred), so fixture parsing alone can't catch schema drift on it. Pin the
+ * emitted element shape here: build_pack_ev.py fills it with full card-EV
+ * objects, not name strings.
+ */
+describe("deck_target_cards element shape", () => {
+  it("accepts the card-EV objects build_pack_ev.py emits", () => {
+    const fixture = loadFixture("pack_ev.json") as { packs: unknown[] };
+    const pack = structuredClone(fixture.packs[0]) as Record<string, unknown> & {
+      top_ev_cards: unknown[];
+    };
+    pack.deck_target_cards = [pack.top_ev_cards[0]];
+    const result = packEvSchema.safeParse({ ...fixture, packs: [pack] });
+    expect(result.success, result.error?.message).toBe(true);
+  });
+});

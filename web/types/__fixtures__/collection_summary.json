@@ -1,41 +1,42 @@
 {
   "meta": {
-    "total_cards": 1401,
-    "last_updated": "2026-06-18",
+    "total_cards": 1793,
+    "last_updated": "2026-07-08",
     "format": "Pokemon TCG Pocket"
   },
-  "total_quantity": 1401,
-  "meta_total_cards": 1401,
+  "total_quantity": 1793,
+  "meta_total_cards": 1793,
   "count_matches_meta": true,
-  "unique_entries": 657,
+  "unique_entries": 820,
   "by_card_type": {
-    "Pokemon": 1284,
-    "Trainer": 117
+    "Pokemon": 1659,
+    "Trainer": 134
   },
   "by_pokemon_type": {
-    "Fire": 110,
-    "Grass": 153,
-    "Colorless": 195,
-    "Water": 172,
-    "Lightning": 111,
-    "Psychic": 125,
-    "Fighting": 191,
-    "Darkness": 143,
-    "Metal": 62,
-    "Dragon": 22
+    "Fire": 139,
+    "Grass": 181,
+    "Colorless": 267,
+    "Water": 235,
+    "Fighting": 223,
+    "Lightning": 140,
+    "Psychic": 168,
+    "Darkness": 185,
+    "Metal": 73,
+    "Dragon": 32,
+    "Unknown": 16
   },
   "by_stage": {
-    "Basic": 847,
-    "Stage 1": 360,
-    "Stage 2": 77
+    "Basic": 1086,
+    "Stage 1": 448,
+    "Stage 2": 88
   },
-  "ex_entries": 37,
-  "ex_quantity": 45,
+  "ex_entries": 47,
+  "ex_quantity": 58,
   "trainer_subtypes": {
-    "Item": 42,
-    "Pokemon Tool": 9,
-    "Supporter": 54,
-    "Stadium": 12
+    "Item": 46,
+    "Pokemon Tool": 10,
+    "Supporter": 63,
+    "Stadium": 15
   },
   "top_cards_by_count": [
     [
@@ -43,11 +44,31 @@
       14
     ],
     [
+      "Eevee",
+      13
+    ],
+    [
       "Tepig",
       12
     ],
     [
       "Shroomish",
+      12
+    ],
+    [
+      "Pikachu",
+      12
+    ],
+    [
+      "Oricorio",
+      12
+    ],
+    [
+      "Scraggy",
+      12
+    ],
+    [
+      "Jigglypuff",
       12
     ],
     [
@@ -59,6 +80,10 @@
       11
     ],
     [
+      "Toxel",
+      11
+    ],
+    [
       "Riolu",
       11
     ],
@@ -67,36 +92,12 @@
       11
     ],
     [
-      "Oricorio",
-      10
-    ],
-    [
-      "Minccino",
-      10
-    ],
-    [
-      "Pignite",
-      9
-    ],
-    [
-      "Larvesta",
-      9
-    ],
-    [
-      "Treecko",
-      9
-    ],
-    [
-      "Tangela",
-      9
+      "Furfrou",
+      11
     ],
     [
       "Voltorb",
-      9
-    ],
-    [
-      "Croagunk",
-      9
+      10
     ]
   ],
   "variant_names": {
@@ -104,6 +105,7 @@
     "Charmeleon": 2,
     "Tepig": 3,
     "Victini": 2,
+    "Darumaka": 3,
     "Castform Sunny Form": 2,
     "Bulbasaur": 3,
     "Shroomish": 3,
@@ -111,37 +113,46 @@
     "Treecko": 2,
     "Surskit": 2,
     "Masquerain": 2,
+    "Sunkern": 2,
     "Exeggcute": 2,
     "Grovyle": 2,
     "Sobble": 2,
-    "Quagsire": 2,
+    "Quagsire": 3,
+    "Poliwhirl": 2,
     "Paldean Tauros": 2,
+    "Wooper": 2,
     "Chewtle": 2,
     "Froakie": 2,
     "Magneton": 2,
     "Magnemite": 2,
     "Morpeko": 2,
+    "Joltik": 2,
+    "Voltorb": 2,
     "Chinchou": 2,
-    "Pikachu": 2,
+    "Pikachu": 5,
     "Toxel": 2,
     "Meloetta": 3,
     "Mismagius": 2,
+    "Aromatisse": 2,
     "Misdreavus": 3,
     "Spritzee": 2,
     "Ralts": 2,
-    "Oricorio": 2,
+    "Oricorio": 3,
     "Bramblin": 2,
+    "Galarian Ponyta": 2,
+    "Hypno": 2,
     "Kirlia": 2,
     "Sandslash": 3,
     "Hariyama": 2,
     "Mienfoo": 2,
     "Mienshao": 2,
     "Riolu": 3,
-    "Sandshrew": 2,
+    "Sandshrew": 3,
     "Cubone": 3,
     "Onix": 2,
     "Nosepass": 2,
-    "Rockruff": 2,
+    "Sandygast": 2,
+    "Rockruff": 3,
     "Dwebble": 2,
     "Zubat": 2,
     "Garbodor": 2,
@@ -149,29 +160,35 @@
     "Trubbish": 2,
     "Zorua": 3,
     "Seviper": 2,
+    "Scraggy": 2,
     "Sneasel": 3,
     "Zarude": 2,
     "Meltan": 2,
     "Steelix": 2,
+    "Doublade": 2,
     "Bisharp": 2,
     "Pawniard": 3,
     "Lillipup": 2,
     "Corvisquire": 2,
-    "Furfrou": 4,
+    "Furfrou": 5,
+    "Ursaring": 2,
     "Cinccino": 4,
     "Minccino": 2,
-    "Eevee": 3,
-    "Jigglypuff": 2,
+    "Eevee": 4,
+    "Jigglypuff": 5,
     "Farfetch'd": 2,
     "Pidgey": 2,
     "Pidgeotto": 2,
+    "Spinda": 2,
     "Tandemaus": 2,
+    "Teddiursa": 2,
     "Quick-Grow Extract": 2,
     "Rare Candy": 2,
     "Giant Cape": 2,
     "Clemont": 2,
     "Gallade": 2,
     "Rellor": 2,
+    "Charcadet": 2,
     "Pawmi": 2,
     "Pawmo": 2,
     "Pawmot": 2,
@@ -179,18 +196,27 @@
     "Orthworm": 2,
     "Flamigo": 2,
     "Paldean Wooper": 2,
+    "Growlithe": 2,
     "Tinkatink": 2,
+    "Wigglytuff": 2,
+    "Rookidee": 2,
     "Ludicolo": 2,
     "Swablu": 2,
     "Ferroseed": 2,
-    "Slowpoke": 2,
-    "Toxapex": 2,
+    "Slowpoke": 3,
+    "Drilbur": 2,
+    "Toxapex": 3,
+    "Skrelp": 2,
+    "Meowth": 2,
+    "Floragato": 2,
     "Zekrom": 2,
     "Mega Lucario ex": 2,
     "Dunsparce": 3,
     "Juliana": 2,
+    "Psyduck": 3,
     "Snom": 2,
     "Houndstone": 2,
+    "Sableye": 3,
     "Glimmora": 2,
     "Terapagos ex": 2,
     "Vaporeon": 2,
@@ -200,10 +226,28 @@
     "Delibird": 2,
     "Chatot": 2,
     "Pineco": 2,
+    "Phantump": 2,
+    "Piplup": 2,
     "Miltank": 2,
+    "Yamper": 2,
     "Oddish": 2,
+    "Cacnea": 2,
     "Litwick": 2,
-    "Durant": 2
+    "Reshiram": 2,
+    "Carbink": 2,
+    "Durant": 2,
+    "Mega Ampharos ex": 2,
+    "Pachirisu": 2,
+    "Mareanie": 3,
+    "Goomy": 2,
+    "Snorunt": 2,
+    "Emolga": 2,
+    "Purrloin": 2,
+    "Litleo": 2,
+    "Luvdisc": 2,
+    "Vulpix": 2,
+    "Elesa": 2,
+    "Puppy-Loving Girl": 2
   },
   "evolution_groups": [
     {
@@ -627,9 +671,19 @@
       "Zoroark ex",
       "Rapidash ex",
       "Mega Ampharos ex",
+      "Mega Ampharos ex",
       "Mega Lucario ex",
       "Ceruledge ex",
-      "Greninja ex"
+      "Greninja ex",
+      "Mega Pinsir ex",
+      "Jolteon ex",
+      "Mega Blastoise ex",
+      "Mega Swampert ex",
+      "Hisuian Zoroark ex",
+      "Milotic ex",
+      "Dedenne ex",
+      "Mega Diancie ex",
+      "Mega Sableye ex"
     ],
     "strong_evolution_lines": [
       "Charmander → Charmeleon → Charizard",
@@ -664,6 +718,6 @@
       "Rattata → Raticate"
     ],
     "partial_evolution_lines": [],
-    "total_trainer_cards": 117
+    "total_trainer_cards": 134
   }
 }

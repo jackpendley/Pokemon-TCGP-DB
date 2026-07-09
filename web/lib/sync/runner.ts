@@ -6,9 +6,10 @@ import type { SyncJob, SyncJobStatus } from "@/types";
 
 /**
  * Maps a `run_recommendations.py` exit code to a job status. Pure + exported so
- * the state machine is unit-tested without spawning a process. Exit codes:
- *   0 success · 2 sync completed with review-queue items · 3 review queue blocks
- *   sync (treated as re-auth/attention needed) · anything else = error.
+ * the state machine is unit-tested without spawning a process. Exit codes
+ * (documented in scripts/run_recommendations.py):
+ *   0 success · 2 completed with review-queue items · 3 completed but PZ auth
+ *   expired, collection NOT refreshed → needs_reauth · anything else = error.
  */
 export function mapExitCode(code: number | null): SyncJobStatus {
   switch (code) {

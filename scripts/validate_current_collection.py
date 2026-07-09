@@ -15,7 +15,7 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import (is_ex_from_name, TRAINER_SUBTYPE_MAP,
+from _collection_io import (is_ex_from_name, TRAINER_SUBTYPE_MAP, meta_errors,
                             load_collection_or_exit, ROOT, COLLECTION_JSON)
 
 VALID_CARD_TYPES = {"Pokemon", "Trainer"}
@@ -31,25 +31,15 @@ def validate(data, expected_total):
     failures = []
     warnings = []
 
-    # --- Meta validation ---
+    # --- Meta validation (shared contract: _collection_io.meta_errors) ---
+    # Hard failures, not warnings: normalize_current_collection exits 1 on the
+    # same errors one pipeline step later, so passing here would just move the
+    # failure downstream.
     meta = data.get("meta")
     if not isinstance(meta, dict):
         failures.append("meta field is missing or not an object")
         meta = {}
-
-    meta_total = meta.get("total_cards")
-    if meta_total is None:
-        failures.append("meta.total_cards is missing")
-    elif not isinstance(meta_total, int):
-        failures.append(f"meta.total_cards is not an integer: {meta_total!r}")
-
-    last_updated = meta.get("last_updated")
-    if not last_updated:
-        warnings.append("meta.last_updated is missing")
-
-    fmt = meta.get("format")
-    if not fmt:
-        warnings.append("meta.format is missing")
+    failures.extend(meta_errors(meta))
 
     # --- Collection array ---
     collection = data.get("collection")
