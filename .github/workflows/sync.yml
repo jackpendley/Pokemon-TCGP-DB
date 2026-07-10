@@ -1,20 +1,24 @@
-# Hosted sync (Phase 5, docs/hosting-roadmap.md §5.2): rebuild the pipeline
-# artifacts from the committed sources (collection.json + data/reference/*)
-# and publish them to Supabase — so the deployed app refreshes without a
-# redeploy.
+# Hosted sync (docs/hosting-roadmap.md §5.2, revised for CI live sync):
+# fetch the live Pokémon Zone collection using stored auth, rebuild the
+# pipeline artifacts, publish them to Supabase, and commit the refreshed
+# collection.json — so the dashboard's Sync button refreshes real data
+# without a terminal or a redeploy.
 #
-# --skip-sync: a live Pokémon Zone sync needs an authenticated browser session
-# and cannot run headless in CI. The collection itself updates when a local
-# sync commits collection.json; this workflow recomputes + publishes.
+# Modes:
+#   live (repository_dispatch "sync" from the web app's remote sync runner,
+#         and workflow_dispatch default): full sync against Pokémon Zone
+#         using the PZ_AUTH_JSON secret (contents of data/sync/.auth.json).
+#   skip (push to main, or workflow_dispatch mode=skip): rebuild + publish
+#         from the committed collection.json only; no PZ auth needed.
 #
-# Triggers:
-#   - repository_dispatch "sync": fired by the web app's remote sync runner
-#     (web/lib/sync/remote-runner.ts)
-#   - workflow_dispatch: manual refresh from the Actions tab
-#   - push to main: keeps Supabase current with the committed sources
+# PZ auth lasts ~3–4 weeks. To refresh, locally run:
+#   python3 scripts/sync_collection.py --curl-import
+#   gh secret set PZ_AUTH_JSON < data/sync/.auth.json
 #
 # Secrets required: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, OWNER_USER_ID
-# (the auth owner UUID printed by scripts/create_owner_user.py).
+# (the auth owner UUID printed by scripts/create_owner_user.py),
+# PZ_AUTH_JSON (live mode), GH_PUSH_TOKEN (fine-grained PAT, contents:write,
+# with branch-protection bypass — pushes the collection.json commit).
 
 name: Sync & Publish
 
@@ -22,6 +26,11 @@ on:
   repository_dispatch:
     types: [sync]
   workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [live, skip]
+        default: live
   push:
     branches: [main]
 
@@ -33,8 +42,12 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      MODE: ${{ github.event_name == 'push' && 'skip' || (github.event.inputs.mode || 'live') }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PUSH_TOKEN }}
 
       - uses: actions/setup-python@v5
         with:
@@ -42,14 +55,36 @@ jobs:
           cache: pip
 
       - name: Install pipeline dependencies
-        # Same subset CI's test job uses (enough for --skip-sync) + the
-        # publisher client.
-        run: pip install jsonschema rapidfuzz beautifulsoup4 lxml requests supabase
+        # Test-job subset + the publisher client + curl_cffi (Chrome TLS
+        # impersonation for the live Pokémon Zone fetch).
+        run: pip install jsonschema rapidfuzz beautifulsoup4 lxml requests supabase curl_cffi
 
-      - name: Rebuild artifacts (data/current)
-        # Exit 2 = "completed with review-queue items" — still a successful
-        # rebuild (see scripts/run_recommendations.py exit codes).
-        run: python scripts/run_recommendations.py --skip-sync || [ $? -eq 2 ]
+      - name: Write Pokémon Zone auth
+        if: env.MODE == 'live'
+        env:
+          PZ_AUTH_JSON: ${{ secrets.PZ_AUTH_JSON }}
+        run: |
+          mkdir -p data/sync
+          printf '%s' "$PZ_AUTH_JSON" > data/sync/.auth.json
+
+      - name: Run pipeline
+        id: pipeline
+        # Exit codes (scripts/run_recommendations.py): 0 ok, 2 completed with
+        # review-queue items, 3 PZ auth expired (pipeline completed, collection
+        # NOT refreshed). All three still publish; anything else fails.
+        run: |
+          args=""
+          [ "$MODE" = "skip" ] && args="--skip-sync"
+          set +e
+          python scripts/run_recommendations.py $args
+          code=$?
+          set -e
+          case $code in
+            0) echo "outcome=ok" >> "$GITHUB_OUTPUT" ;;
+            2) echo "outcome=review" >> "$GITHUB_OUTPUT" ;;
+            3) echo "outcome=auth_expired" >> "$GITHUB_OUTPUT" ;;
+            *) exit $code ;;
+          esac
 
       - name: Rebuild card power scores
         run: python scripts/build_card_power_score.py
@@ -59,4 +94,18 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           OWNER_USER_ID: ${{ secrets.OWNER_USER_ID }}
+          SYNC_OUTCOME: ${{ steps.pipeline.outputs.outcome }}
+          SYNC_MODE: ${{ env.MODE }}
         run: python scripts/publish_to_supabase.py
+
+      - name: Commit refreshed collection
+        # Publish already ran, so a push failure never leaves the dashboard
+        # stale. [skip ci] keeps this data-only commit from re-triggering CI.
+        if: env.MODE == 'live' && steps.pipeline.outputs.outcome != 'auth_expired'
+        run: |
+          git diff --quiet collection.json && exit 0
+          git config user.name "sync-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add collection.json
+          git commit -m "chore: live sync collection refresh [skip ci]"
+          git push origin "HEAD:${{ github.ref_name }}"

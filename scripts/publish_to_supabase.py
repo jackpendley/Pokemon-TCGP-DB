@@ -17,6 +17,8 @@ Env (service-role, server-side only — never expose to a browser bundle):
     SUPABASE_URL                 https://<project-ref>.supabase.co
     SUPABASE_SERVICE_ROLE_KEY    service_role API key
     OWNER_USER_ID                auth owner UUID (scripts/create_owner_user.py)
+    SYNC_OUTCOME                 optional: ok|review|auth_expired (CI sync marker)
+    SYNC_MODE                    optional: live|skip (CI sync marker)
 
 Usage:
     pip install supabase   # optional dep, not needed by the pipeline or CI
@@ -31,6 +33,7 @@ web/types/__fixtures__ contract without the supabase package installed.
 import json
 import os
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -186,14 +189,21 @@ def build_sync_status_row(
     review_queue: dict | None,
     delta: dict | None,
     user_id: str,
+    last_run: dict | None = None,
 ) -> list[dict]:
-    """sync_status snapshot row; absent local files publish as nulls."""
+    """sync_status snapshot row; absent local files publish as nulls.
+
+    published_at is set explicitly so it advances on every publish — the web
+    remote sync runner uses it as the completion baseline.
+    """
     return [
         {
             "user_id": user_id,
             "stats": stats,
             "review_queue": review_queue,
             "delta": delta,
+            "last_run": last_run,
+            "published_at": datetime.now(timezone.utc).isoformat(),
         }
     ]
 
@@ -211,7 +221,26 @@ def build_sync_history_rows(history: dict | None, user_id: str) -> list[dict]:
     ]
 
 
-def build_all_rows(artifacts: dict, user_id: str = OWNER_USER_ID) -> dict:
+def build_last_run() -> dict | None:
+    """Sync outcome marker from CI env (SYNC_OUTCOME/SYNC_MODE), or None.
+
+    The web remote sync runner reads sync_status.last_run to distinguish a
+    finished live sync (ok/review), an expired PZ auth (auth_expired), and a
+    plain republish. Set by .github/workflows/sync.yml.
+    """
+    outcome = os.environ.get("SYNC_OUTCOME")
+    if not outcome:
+        return None
+    return {
+        "finished_at": datetime.now(timezone.utc).isoformat(),
+        "outcome": outcome,
+        "mode": os.environ.get("SYNC_MODE"),
+    }
+
+
+def build_all_rows(
+    artifacts: dict, user_id: str = OWNER_USER_ID, last_run: dict | None = None
+) -> dict:
     """Map every table to its rows from the loaded artifacts dict."""
     return {
         "cards": build_card_rows(
@@ -238,6 +267,7 @@ def build_all_rows(artifacts: dict, user_id: str = OWNER_USER_ID) -> dict:
             artifacts.get("sync_review_queue"),
             artifacts.get("last_sync_delta"),
             user_id,
+            last_run,
         ),
         "sync_history": build_sync_history_rows(
             artifacts.get("sync_history"), user_id
@@ -320,7 +350,9 @@ def main() -> None:
         sys.exit("The `supabase` package is required: pip install supabase")
 
     print("Loading artifacts...")
-    rows_by_table = build_all_rows(load_artifacts(), user_id=owner)
+    rows_by_table = build_all_rows(
+        load_artifacts(), user_id=owner, last_run=build_last_run()
+    )
     print(f"Publishing to {url} as owner {owner}:")
     publish(create_client(url, key), rows_by_table, user_id=owner)
     print("Done.")

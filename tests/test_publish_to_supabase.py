@@ -23,6 +23,7 @@ from publish_to_supabase import (  # noqa: E402
     OWNER_USER_ID,
     TABLE_CONFLICT_KEYS,
     build_all_rows,
+    build_last_run,
     build_card_rows,
     build_collection_rows,
     build_pack_card_rows,
@@ -211,10 +212,34 @@ def test_build_all_rows_stamps_a_custom_user_id(artifacts):
 
 def test_sync_rows_absent_files_publish_nulls(rows):
     (status,) = rows["sync_status"]
-    assert status == {"user_id": OWNER_USER_ID, "stats": None,
-                      "review_queue": None, "delta": None}
+    assert status["user_id"] == OWNER_USER_ID
+    assert status["stats"] is None
+    assert status["review_queue"] is None
+    assert status["delta"] is None
+    assert status["last_run"] is None
+    # Explicit so it advances on every publish (the web remote runner's
+    # completion baseline).
+    assert status["published_at"]
     (entry,) = rows["sync_history"]
     assert entry["synced_at"] == "2026-01-02T03:04:05"
+
+
+def test_sync_status_carries_the_ci_last_run_marker(artifacts):
+    marker = {"finished_at": "2026-07-10T00:00:00+00:00",
+              "outcome": "ok", "mode": "live"}
+    rows = build_all_rows(artifacts, last_run=marker)
+    assert rows["sync_status"][0]["last_run"] == marker
+
+
+def test_build_last_run_reads_ci_env(monkeypatch):
+    monkeypatch.delenv("SYNC_OUTCOME", raising=False)
+    assert build_last_run() is None
+    monkeypatch.setenv("SYNC_OUTCOME", "auth_expired")
+    monkeypatch.setenv("SYNC_MODE", "live")
+    marker = build_last_run()
+    assert marker["outcome"] == "auth_expired"
+    assert marker["mode"] == "live"
+    assert marker["finished_at"]
 
 
 def test_all_tables_have_a_conflict_strategy(rows):
