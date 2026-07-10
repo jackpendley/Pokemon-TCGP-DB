@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 1808,
-    "last_updated": "2026-07-09",
+    "total_cards": 1813,
+    "last_updated": "2026-07-10",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -3344,7 +3344,7 @@
       "hp": 110,
       "card_type": "Pokemon",
       "attack": "Raging Claws 40+",
-      "count": 3,
+      "count": 4,
       "set_code": "B3b",
       "card_number": 57,
       "rarity": "uncommon"
@@ -6699,7 +6699,7 @@
     },
     {
       "name": "Piplup",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "type": "Water",
       "stage": 0,
@@ -8564,6 +8564,18 @@
       "type": "Colorless"
     },
     {
+      "name": "Greedent",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 120,
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 63,
+      "type": "Colorless"
+    },
+    {
       "name": "Mega Blastoise ex",
       "count": 1,
       "card_type": "Pokemon",
@@ -9348,7 +9360,7 @@
     },
     {
       "name": "Rockruff",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -9635,6 +9647,18 @@
       "set_code": "B3b",
       "card_number": 83,
       "variant": "alt art"
+    },
+    {
+      "name": "Caterpie",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 50,
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 1,
+      "type": "Grass"
     }
   ]
 }
