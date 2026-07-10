@@ -43,3 +43,5 @@ data/sync/.prev_collection.json
 data/current/
 data/exports/
 review/
+.vercel
+.env*

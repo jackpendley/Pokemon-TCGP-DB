@@ -201,6 +201,14 @@ def test_document_rows_round_trip_fixtures_verbatim(rows, artifacts):
         assert rows[table][0]["user_id"] == OWNER_USER_ID
 
 
+def test_build_all_rows_stamps_a_custom_user_id(artifacts):
+    # Phase 6: main() passes the real auth owner UUID via OWNER_USER_ID env.
+    custom = build_all_rows(artifacts, user_id="custom-uuid")
+    for table in ("collections", "collection_summaries", "pack_ev",
+                  "recommendations", "sync_status", "sync_history"):
+        assert all(row["user_id"] == "custom-uuid" for row in custom[table])
+
+
 def test_sync_rows_absent_files_publish_nulls(rows):
     (status,) = rows["sync_status"]
     assert status == {"user_id": OWNER_USER_ID, "stats": None,
