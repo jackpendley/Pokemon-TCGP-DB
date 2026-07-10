@@ -82,6 +82,18 @@ Python can't run on Vercel, so sync moves to CI.
 - Local dev keeps the spawn runner. Prod without CI configured degrades to
   read-only "last synced" (the existing `ENABLE_LOCAL_SYNC` flag already
   force-disables spawning in prod).
+- **Revised (post-Phase 6):** CI now performs the **live** Pokémon Zone sync
+  by explicit decision, superseding the original "sync can't run headless in
+  CI" stance. The stored-auth fetch is pure HTTP (`curl_cffi` Chrome
+  impersonation), so the workflow injects `data/sync/.auth.json` from the
+  `PZ_AUTH_JSON` secret, runs the full pipeline on `repository_dispatch`
+  (push-to-main stays `--skip-sync`), publishes with a
+  `sync_status.last_run` outcome marker, and commits the refreshed
+  `collection.json` back to main via `GH_PUSH_TOKEN` (branch-protection
+  bypass). Auth lasts ~3–4 weeks; refresh with
+  `python3 scripts/sync_collection.py --curl-import` then
+  `gh secret set PZ_AUTH_JSON < data/sync/.auth.json`. The web remote runner
+  polls `sync_status.published_at`/`last_run` for honest completion.
 
 **Checkpoint:** app live on Vercel reading Supabase; a manual Action run
 refreshes data without a redeploy.
