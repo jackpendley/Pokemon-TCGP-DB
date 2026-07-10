@@ -49,7 +49,7 @@ export function SyncButton({ enabled }: { enabled: boolean }) {
       } else {
         toast.error(job.message ?? "Sync failed");
       }
-    }, 4000);
+    }, 2500);
   }
 
   return (

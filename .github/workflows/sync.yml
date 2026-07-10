@@ -55,6 +55,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PUSH_TOKEN }}
+          # Keep gitignored pipeline state (data/current/, data/sync/) between
+          # runs on the self-hosted runner — the pre-sync snapshot, sync delta
+          # (dashboard reveal popup), and sync history all depend on the
+          # previous run's outputs, same as local runs. No-op on the ephemeral
+          # cloud runner.
+          clean: false
 
       - uses: actions/setup-python@v5
         if: runner.os == 'Linux'
