@@ -67,6 +67,12 @@ jobs:
           mkdir -p data/sync
           printf '%s' "$PZ_AUTH_JSON" > data/sync/.auth.json
 
+      - name: Debug live sync preflight (temporary)
+        if: env.MODE == 'live'
+        run: |
+          sha256sum data/sync/.auth.json
+          python -c "import curl_cffi; print('curl_cffi', curl_cffi.__version__)"
+
       - name: Run pipeline
         id: pipeline
         # Exit codes (scripts/run_recommendations.py): 0 ok, 2 completed with
