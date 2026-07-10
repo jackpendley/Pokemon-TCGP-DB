@@ -13,7 +13,7 @@ import {
   syncDeltaSchema,
   syncHistoryEntrySchema,
 } from "@/types";
-import type { CatalogCard, SyncStatus } from "@/types";
+import type { CatalogCard, SyncRunState, SyncStatus } from "@/types";
 import type { DataSource } from "@/lib/data/source";
 
 /**
@@ -189,15 +189,43 @@ export function createSupabaseSource(client: SupabaseClient): DataSource {
   };
 }
 
-/** Default source from validated env (service-role key, server-only). */
-export function createDefaultSupabaseSource(): DataSource {
+function defaultClient(): SupabaseClient {
   if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) {
     // env.ts already rejects this combination at startup; this narrows types.
     throw new Error("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required.");
   }
-  return createSupabaseSource(
-    createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY, {
-      auth: { persistSession: false },
-    }),
-  );
+  return createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY, {
+    auth: { persistSession: false },
+  });
+}
+
+/** Default source from validated env (service-role key, server-only). */
+export function createDefaultSupabaseSource(): DataSource {
+  return createSupabaseSource(defaultClient());
+}
+
+const syncRunStateRowSchema = z.object({
+  published_at: z.string().nullable(),
+  last_run: z.object({ outcome: z.string().nullish() }).nullable(),
+});
+
+/**
+ * sync_status completion marker for the remote sync runner
+ * (web/lib/sync/remote-runner.ts): published_at advances on every publish;
+ * last_run carries the CI sync outcome.
+ */
+export async function fetchSyncRunState(
+  client: SupabaseClient = defaultClient(),
+): Promise<SyncRunState> {
+  const { data, error } = await client
+    .from("sync_status")
+    .select("published_at, last_run")
+    .limit(1);
+  if (error) {
+    throw new Error(`Supabase read from sync_status failed: ${error.message}`);
+  }
+  const row = data?.[0];
+  if (!row) return { publishedAt: null, lastRun: null };
+  const parsed = syncRunStateRowSchema.parse(row);
+  return { publishedAt: parsed.published_at, lastRun: parsed.last_run };
 }

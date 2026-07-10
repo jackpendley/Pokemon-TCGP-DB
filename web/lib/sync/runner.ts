@@ -29,8 +29,8 @@ export function mapExitCode(code: number | null): SyncJobStatus {
  * interface in the cloud phase without any UI change.
  */
 export interface SyncRunner {
-  enqueue(): SyncJob;
-  get(id: string): SyncJob | null;
+  enqueue(): SyncJob | Promise<SyncJob>;
+  get(id: string): SyncJob | null | Promise<SyncJob | null>;
 }
 
 const jobs = new Map<string, SyncJob>();

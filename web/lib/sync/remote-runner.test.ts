@@ -1,24 +1,32 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { createRemoteSyncRunner } from "@/lib/sync/remote-runner";
+import type { SyncRunState } from "@/types";
 
 const CONFIG = { repo: "jackpendley/Pokemon-TCGP-DB", token: "gh_test_token" };
+
+const BASELINE = "2026-07-10T00:00:00.000Z";
+const ADVANCED = "2026-07-10T00:03:00.000Z";
 
 function fetchReturning(status: number) {
   return vi.fn(async () => ({ status }) as Response);
 }
 
-async function settled() {
-  // Let the enqueue's fetch promise chain resolve.
-  await new Promise((r) => setTimeout(r, 0));
+function stateReturning(state: SyncRunState) {
+  return vi.fn(async () => state);
 }
+
+const idle: SyncRunState = { publishedAt: BASELINE, lastRun: null };
+
+afterEach(() => {
+  vi.useRealTimers();
+});
 
 describe("remoteSyncRunner", () => {
   it("fires repository_dispatch with the sync event", async () => {
     const fetchMock = fetchReturning(204);
-    const runner = createRemoteSyncRunner(CONFIG, fetchMock);
-    runner.enqueue();
-    await settled();
+    const runner = createRemoteSyncRunner(CONFIG, fetchMock, stateReturning(idle));
+    await runner.enqueue();
 
     expect(fetchMock).toHaveBeenCalledWith(
       "https://api.github.com/repos/jackpendley/Pokemon-TCGP-DB/dispatches",
@@ -32,42 +40,100 @@ describe("remoteSyncRunner", () => {
     );
   });
 
-  it("marks the job done when GitHub accepts the dispatch (204)", async () => {
-    const runner = createRemoteSyncRunner(CONFIG, fetchReturning(204));
-    const job = runner.enqueue();
+  it("returns a running job encoding the published_at baseline (204)", async () => {
+    const runner = createRemoteSyncRunner(
+      CONFIG,
+      fetchReturning(204),
+      stateReturning(idle),
+    );
+    const job = await runner.enqueue();
     expect(job.status).toBe("running");
-    await settled();
-
-    const finished = runner.get(job.id);
-    expect(finished?.status).toBe("done");
-    expect(finished?.finishedAt).not.toBeNull();
-    expect(finished?.message).toMatch(/GitHub Actions/);
+    expect(job.id).toContain(BASELINE);
   });
 
-  it("marks the job errored on a non-204 response", async () => {
-    const runner = createRemoteSyncRunner(CONFIG, fetchReturning(401));
-    const job = runner.enqueue();
-    await settled();
-
-    const finished = runner.get(job.id);
-    expect(finished?.status).toBe("error");
-    expect(finished?.message).toMatch(/HTTP 401/);
+  it("errors at enqueue on a non-204 response", async () => {
+    const runner = createRemoteSyncRunner(
+      CONFIG,
+      fetchReturning(401),
+      stateReturning(idle),
+    );
+    const job = await runner.enqueue();
+    expect(job.status).toBe("error");
+    expect(job.message).toMatch(/HTTP 401/);
   });
 
-  it("marks the job errored when the request itself fails", async () => {
+  it("errors at enqueue when the request itself fails", async () => {
     const failingFetch = vi.fn(async () => {
       throw new Error("network down");
     });
-    const runner = createRemoteSyncRunner(CONFIG, failingFetch);
-    const job = runner.enqueue();
-    await settled();
-
-    expect(runner.get(job.id)?.status).toBe("error");
-    expect(runner.get(job.id)?.message).toBe("network down");
+    const runner = createRemoteSyncRunner(
+      CONFIG,
+      failingFetch,
+      stateReturning(idle),
+    );
+    const job = await runner.enqueue();
+    expect(job.status).toBe("error");
+    expect(job.message).toBe("network down");
   });
 
-  it("returns null for unknown job ids", () => {
-    const runner = createRemoteSyncRunner(CONFIG, fetchReturning(204));
-    expect(runner.get("nope")).toBeNull();
+  it("stays running while published_at has not advanced", async () => {
+    const runner = createRemoteSyncRunner(
+      CONFIG,
+      fetchReturning(204),
+      stateReturning(idle),
+    );
+    const job = await runner.enqueue();
+    expect((await runner.get(job.id))?.status).toBe("running");
+  });
+
+  it("reports done once a publish lands after the baseline", async () => {
+    const state = stateReturning(idle);
+    const runner = createRemoteSyncRunner(CONFIG, fetchReturning(204), state);
+    const job = await runner.enqueue();
+
+    state.mockResolvedValue({
+      publishedAt: ADVANCED,
+      lastRun: { outcome: "ok" },
+    });
+    const finished = await runner.get(job.id);
+    expect(finished?.status).toBe("done");
+    expect(finished?.finishedAt).toBe(ADVANCED);
+  });
+
+  it("reports needs_reauth when the run's outcome is auth_expired", async () => {
+    const state = stateReturning(idle);
+    const runner = createRemoteSyncRunner(CONFIG, fetchReturning(204), state);
+    const job = await runner.enqueue();
+
+    state.mockResolvedValue({
+      publishedAt: ADVANCED,
+      lastRun: { outcome: "auth_expired" },
+    });
+    expect((await runner.get(job.id))?.status).toBe("needs_reauth");
+  });
+
+  it("times out with a helpful error after ~6 minutes without a publish", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date(BASELINE));
+    const runner = createRemoteSyncRunner(
+      CONFIG,
+      fetchReturning(204),
+      stateReturning(idle),
+    );
+    const job = await runner.enqueue();
+
+    vi.setSystemTime(new Date(Date.parse(BASELINE) + 7 * 60 * 1000));
+    const timedOut = await runner.get(job.id);
+    expect(timedOut?.status).toBe("error");
+    expect(timedOut?.message).toMatch(/Actions tab/);
+  });
+
+  it("returns null for ids it did not mint", async () => {
+    const runner = createRemoteSyncRunner(
+      CONFIG,
+      fetchReturning(204),
+      stateReturning(idle),
+    );
+    expect(await runner.get("nope")).toBeNull();
   });
 });
