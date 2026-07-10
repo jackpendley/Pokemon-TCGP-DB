@@ -18,8 +18,10 @@ import type { DataSource } from "@/lib/data/source";
 
 /**
  * DataSource backed by the Supabase schema from supabase/migrations/0001_init.sql
- * (populated by scripts/publish_to_supabase.py). Reads use the anon key only —
- * RLS scopes per-user rows to the seeded owner until auth ships.
+ * (populated by scripts/publish_to_supabase.py). Reads use the service-role
+ * key server-side (Phase 6 dropped the anon RLS policies); RLS still guards
+ * anon/browser access, and this module is server-only so the key can never
+ * reach a client bundle.
  *
  * Derived artifacts are stored as whole JSONB documents, so every method ends
  * in the same Zod parse localJsonSource uses: identical validation at the
@@ -187,14 +189,14 @@ export function createSupabaseSource(client: SupabaseClient): DataSource {
   };
 }
 
-/** Default source from validated env (anon key — never the service role). */
+/** Default source from validated env (service-role key, server-only). */
 export function createDefaultSupabaseSource(): DataSource {
-  if (!env.SUPABASE_URL || !env.SUPABASE_ANON_KEY) {
+  if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) {
     // env.ts already rejects this combination at startup; this narrows types.
-    throw new Error("SUPABASE_URL and SUPABASE_ANON_KEY are required.");
+    throw new Error("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required.");
   }
   return createSupabaseSource(
-    createClient(env.SUPABASE_URL, env.SUPABASE_ANON_KEY, {
+    createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY, {
       auth: { persistSession: false },
     }),
   );
