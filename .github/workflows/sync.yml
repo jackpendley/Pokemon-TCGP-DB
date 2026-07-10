@@ -8,8 +8,14 @@
 #   live (repository_dispatch "sync" from the web app's remote sync runner,
 #         and workflow_dispatch default): full sync against Pokémon Zone
 #         using the PZ_AUTH_JSON secret (contents of data/sync/.auth.json).
+#         Runs on the SELF-HOSTED runner (residential IP) — Cloudflare blocks
+#         the PZ fetch from GitHub-hosted datacenter IPs (verified 2026-07-10).
+#         The runner machine's system python3 must have the pipeline deps +
+#         supabase + curl_cffi installed. If the runner is offline, runs queue
+#         until it comes back.
 #   skip (push to main, or workflow_dispatch mode=skip): rebuild + publish
-#         from the committed collection.json only; no PZ auth needed.
+#         from the committed collection.json only; no PZ auth needed. Runs on
+#         ubuntu-latest.
 #
 # PZ auth lasts ~3–4 weeks. To refresh, locally run:
 #   python3 scripts/sync_collection.py --curl-import
@@ -41,7 +47,8 @@ concurrency:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    # live → self-hosted (residential IP for the PZ fetch); skip → cloud.
+    runs-on: ${{ (github.event_name == 'push' || github.event.inputs.mode == 'skip') && 'ubuntu-latest' || 'self-hosted' }}
     env:
       MODE: ${{ github.event_name == 'push' && 'skip' || (github.event.inputs.mode || 'live') }}
     steps:
@@ -50,13 +57,15 @@ jobs:
           token: ${{ secrets.GH_PUSH_TOKEN }}
 
       - uses: actions/setup-python@v5
+        if: runner.os == 'Linux'
         with:
           python-version: "3.11"
           cache: pip
 
       - name: Install pipeline dependencies
-        # Test-job subset + the publisher client + curl_cffi (Chrome TLS
-        # impersonation for the live Pokémon Zone fetch).
+        # Cloud runner only. The self-hosted runner uses its system python3,
+        # which already has the pipeline deps + supabase + curl_cffi.
+        if: runner.os == 'Linux'
         run: pip install jsonschema rapidfuzz beautifulsoup4 lxml requests supabase curl_cffi
 
       - name: Write Pokémon Zone auth
@@ -67,12 +76,6 @@ jobs:
           mkdir -p data/sync
           printf '%s' "$PZ_AUTH_JSON" > data/sync/.auth.json
 
-      - name: Debug live sync preflight (temporary)
-        if: env.MODE == 'live'
-        run: |
-          sha256sum data/sync/.auth.json
-          python -c "import curl_cffi; print('curl_cffi', curl_cffi.__version__)"
-
       - name: Run pipeline
         id: pipeline
         # Exit codes (scripts/run_recommendations.py): 0 ok, 2 completed with
@@ -82,7 +85,7 @@ jobs:
           args=""
           [ "$MODE" = "skip" ] && args="--skip-sync"
           set +e
-          python scripts/run_recommendations.py $args
+          python3 scripts/run_recommendations.py $args
           code=$?
           set -e
           case $code in
@@ -93,7 +96,7 @@ jobs:
           esac
 
       - name: Rebuild card power scores
-        run: python scripts/build_card_power_score.py
+        run: python3 scripts/build_card_power_score.py
 
       - name: Publish to Supabase
         env:
@@ -102,7 +105,7 @@ jobs:
           OWNER_USER_ID: ${{ secrets.OWNER_USER_ID }}
           SYNC_OUTCOME: ${{ steps.pipeline.outputs.outcome }}
           SYNC_MODE: ${{ env.MODE }}
-        run: python scripts/publish_to_supabase.py
+        run: python3 scripts/publish_to_supabase.py
 
       - name: Commit refreshed collection
         # Publish already ran, so a push failure never leaves the dashboard
