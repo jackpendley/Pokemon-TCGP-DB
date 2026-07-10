@@ -80,3 +80,14 @@ export interface SyncJob {
   finishedAt: string | null;
   message: string | null;
 }
+
+/**
+ * Completion marker published by scripts/publish_to_supabase.py into the
+ * sync_status row. published_at advances on every publish; last_run carries
+ * the CI sync outcome (sync.yml). The remote sync runner polls this to
+ * report honest completion instead of dispatch acceptance.
+ */
+export interface SyncRunState {
+  publishedAt: string | null;
+  lastRun: { outcome?: string | null } | null;
+}

@@ -34,11 +34,11 @@ export async function enqueueSync(): Promise<EnqueueResult> {
         "Sync is not configured for this deployment. Locally it runs the Python pipeline; hosted it needs GITHUB_SYNC_TOKEN/GITHUB_SYNC_REPO to trigger the sync workflow.",
     };
   }
-  return { ok: true, job: runner.enqueue() };
+  return { ok: true, job: await runner.enqueue() };
 }
 
 export async function getSyncJob(id: string): Promise<SyncJob | null> {
-  return selectRunner()?.get(id) ?? null;
+  return (await selectRunner()?.get(id)) ?? null;
 }
 
 export async function isSyncEnabled(): Promise<boolean> {

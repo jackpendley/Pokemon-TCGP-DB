@@ -21,6 +21,12 @@ export function SyncButton({ enabled }: { enabled: boolean }) {
       toast.error(res.reason);
       return;
     }
+    // The remote runner can fail at enqueue time (dispatch rejected) — the
+    // job arrives already terminal, so don't start polling.
+    if (TERMINAL.includes(res.job.status)) {
+      toast.error(res.job.message ?? "Sync failed");
+      return;
+    }
     setRunning(true);
     toast.info("Sync started…");
 
@@ -37,11 +43,13 @@ export function SyncButton({ enabled }: { enabled: boolean }) {
       if (job.status === "done") {
         toast.success("Sync complete");
       } else if (job.status === "needs_reauth") {
-        toast.error("Re-authentication needed to sync");
+        toast.error(
+          "Pokémon Zone auth expired — run scripts/sync_collection.py --curl-import and update the PZ_AUTH_JSON secret.",
+        );
       } else {
         toast.error(job.message ?? "Sync failed");
       }
-    }, 1500);
+    }, 4000);
   }
 
   return (
