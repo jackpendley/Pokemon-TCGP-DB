@@ -226,16 +226,16 @@ export default async function DashboardPage() {
         <SyncButton enabled={syncEnabled} />
       </header>
 
-      {/* Right after a sync: a dismissable popup of the cards you just got. On
-          dismiss the dashboard stays as-is (refreshed numbers); the sync remains
-          listed in Sync history below. */}
-      {showReveal && delta ? (
+      {/* Right after a sync: a dismissable popup of the cards you just got.
+          Shown once per sync (dismissal remembered client-side); the sync
+          remains listed in Sync history below. */}
+      {showReveal && delta && stats ? (
         <SyncRevealDialog
-          key={stats?.fetched_at}
+          key={stats.fetched_at}
           items={additions}
           setProgress={setProgress}
           count={delta.added_count}
-          defaultOpen
+          revealId={stats.fetched_at}
         />
       ) : null}
 
