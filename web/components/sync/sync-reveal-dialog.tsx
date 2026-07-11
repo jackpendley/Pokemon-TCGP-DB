@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import {
   SyncReveal,
@@ -17,10 +17,16 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
+/** Last dismissed fresh-sync reveal (a stats.fetched_at value). */
+const DISMISSED_KEY = "sync-reveal-dismissed";
+
 /**
  * A sync's added cards + set progress, shown as a large dismissable popup (with the
- * Dialog's built-in appear/fade animations). Used both for the fresh sync
- * (`defaultOpen`, no trigger) and for each history row (`trigger` = the row).
+ * Dialog's built-in appear/fade animations). Two modes:
+ * - fresh sync (`revealId` = the sync's fetched_at): auto-opens once per sync;
+ *   dismissal is remembered in localStorage so navigating back to the
+ *   dashboard doesn't relaunch it.
+ * - history row (`trigger` = the row): plain uncontrolled dialog.
  */
 export function SyncRevealDialog({
   items,
@@ -29,7 +35,7 @@ export function SyncRevealDialog({
   title = "Added in your latest sync",
   trigger,
   triggerClassName,
-  defaultOpen = false,
+  revealId,
 }: {
   items: AdditionItem[];
   setProgress: SetProgressItem[];
@@ -37,16 +43,37 @@ export function SyncRevealDialog({
   title?: string;
   trigger?: ReactNode;
   triggerClassName?: string;
-  defaultOpen?: boolean;
+  revealId?: string;
 }) {
+  const [open, setOpen] = useState(false);
+
+  // Open after mount (localStorage is client-only) unless this sync's reveal
+  // was already dismissed. Deferred a frame so the dialog mounts closed and
+  // animates in.
+  useEffect(() => {
+    if (!revealId || localStorage.getItem(DISMISSED_KEY) === revealId) return;
+    const id = requestAnimationFrame(() => setOpen(true));
+    return () => cancelAnimationFrame(id);
+  }, [revealId]);
+
+  function onOpenChange(next: boolean) {
+    setOpen(next);
+    if (!next && revealId) localStorage.setItem(DISMISSED_KEY, revealId);
+  }
+
   return (
-    <Dialog defaultOpen={defaultOpen}>
+    <Dialog {...(revealId ? { open, onOpenChange } : {})}>
       {trigger ? (
         <DialogTrigger className={cn("text-left", triggerClassName)}>
           {trigger}
         </DialogTrigger>
       ) : null}
-      <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-5xl">
+      <DialogContent
+        className="max-h-[90vh] overflow-y-auto sm:max-w-5xl"
+        // Auto-opened: leave focus alone so the first card / close button
+        // doesn't render with a focus ring the user never asked for.
+        initialFocus={revealId ? false : undefined}
+      >
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             {title}
