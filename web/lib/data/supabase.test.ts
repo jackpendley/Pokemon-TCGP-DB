@@ -9,7 +9,10 @@ vi.mock("@supabase/supabase-js", () => ({
 }));
 
 import { verifyDataSourceContract } from "@/lib/data/contract";
-import { createSupabaseSource } from "@/lib/data/supabase";
+import {
+  createSupabaseSource,
+  fetchOwnerSyncMeta,
+} from "@/lib/data/supabase";
 import {
   collectionSummarySchema,
   packEvSchema,
@@ -225,6 +228,49 @@ describe("SupabaseSource", () => {
     await expect(empty.getPackEv()).rejects.toThrow(
       /publish_to_supabase\.py/,
     );
+  });
+});
+
+describe("fetchOwnerSyncMeta", () => {
+  it("returns published_at and the full last_run marker", async () => {
+    const client = fakeClient({
+      sync_status: [
+        {
+          published_at: "2026-07-23T19:00:00.000Z",
+          last_run: {
+            finished_at: "2026-07-23T18:59:40.000Z",
+            outcome: "ok",
+            mode: "live",
+          },
+        },
+      ],
+    });
+    expect(await fetchOwnerSyncMeta(client)).toEqual({
+      publishedAt: "2026-07-23T19:00:00.000Z",
+      lastRun: {
+        finishedAt: "2026-07-23T18:59:40.000Z",
+        outcome: "ok",
+        mode: "live",
+      },
+    });
+  });
+
+  it("returns nulls when last_run is absent", async () => {
+    const client = fakeClient({
+      sync_status: [{ published_at: null, last_run: null }],
+    });
+    expect(await fetchOwnerSyncMeta(client)).toEqual({
+      publishedAt: null,
+      lastRun: null,
+    });
+  });
+
+  it("returns nulls when the sync_status row is missing", async () => {
+    const client = fakeClient({ sync_status: [] });
+    expect(await fetchOwnerSyncMeta(client)).toEqual({
+      publishedAt: null,
+      lastRun: null,
+    });
   });
 });
 

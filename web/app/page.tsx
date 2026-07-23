@@ -1,5 +1,6 @@
 import { CompletionCard } from "@/components/dashboard/completion-card";
 import { CountGrid, type CountItem } from "@/components/dashboard/count-grid";
+import { OwnerStatusCard } from "@/components/dashboard/owner-status-card";
 import {
   NextToOpen,
   type NextPackEntry,
@@ -20,6 +21,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { dataSource } from "@/lib/data";
+import { fetchOwnerSyncMeta } from "@/lib/data/supabase";
+import { isOwner } from "@/lib/auth/server";
 import { canTriggerSync, isSyncEnabled } from "@/app/sync/actions";
 import { isMegaEx } from "@/lib/domain/card";
 import { formatNumber, titleCase } from "@/lib/domain/format";
@@ -34,7 +37,7 @@ const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
 const RECENT_SYNC_MS = 10 * 60 * 1000;
 
 export default async function DashboardPage() {
-  const [summary, packEv, catalog, sync, syncEnabled, ownerCanSync] =
+  const [summary, packEv, catalog, sync, syncEnabled, ownerCanSync, owner] =
     await Promise.all([
       dataSource.getCollectionSummary(),
       dataSource.getPackEv(),
@@ -42,7 +45,11 @@ export default async function DashboardPage() {
       dataSource.getSyncStatus(),
       isSyncEnabled(),
       canTriggerSync(),
+      isOwner(),
     ]);
+  // Owner-only operator panel. Fetched only for the authenticated owner (never
+  // in local-json dev, where isOwner() is false and no Supabase exists).
+  const ownerMeta = owner ? await fetchOwnerSyncMeta() : null;
 
   const { stats, reviewQueue, delta, history } = sync;
 
@@ -227,6 +234,19 @@ export default async function DashboardPage() {
         </div>
         {ownerCanSync ? <SyncButton enabled={syncEnabled} /> : null}
       </header>
+
+      {owner && ownerMeta ? (
+        <OwnerStatusCard
+          publishedAt={ownerMeta.publishedAt}
+          lastRun={ownerMeta.lastRun}
+          counts={{
+            cards: catalog.length,
+            packs: packEv.packs.length,
+            uniqueEntries: summary.unique_entries,
+            totalQuantity: summary.total_quantity,
+          }}
+        />
+      ) : null}
 
       {/* Right after a sync: a dismissable popup of the cards you just got.
           Shown once per sync (dismissal remembered client-side); the sync
