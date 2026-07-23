@@ -1,5 +1,6 @@
 "use server";
 
+import { isOwner } from "@/lib/auth/server";
 import { env } from "@/lib/env";
 import { localSyncRunner, type SyncRunner } from "@/lib/sync/runner";
 import {
@@ -25,7 +26,22 @@ function selectRunner(): SyncRunner | null {
   return null;
 }
 
+/**
+ * Whether the current request may trigger a sync. When an owner is configured
+ * (hosted), only that signed-in user qualifies — sync is the public site's
+ * write surface. In local-json dev OWNER_USER_ID is unset, so local sync is
+ * unaffected.
+ */
+export async function canTriggerSync(): Promise<boolean> {
+  if (env.OWNER_USER_ID) return isOwner();
+  return true;
+}
+
 export async function enqueueSync(): Promise<EnqueueResult> {
+  if (!(await canTriggerSync())) {
+    return { ok: false, reason: "Sign in as the owner to sync." };
+  }
+
   const runner = selectRunner();
   if (!runner) {
     return {

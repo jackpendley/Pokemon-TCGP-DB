@@ -233,6 +233,8 @@ describe("createDefaultSupabaseSource", () => {
     vi.stubEnv("DATA_SOURCE", "supabase");
     vi.stubEnv("SUPABASE_URL", "https://example.supabase.co");
     vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service-key");
+    vi.stubEnv("SUPABASE_ANON_KEY", "anon-key");
+    vi.stubEnv("OWNER_USER_ID", "49aa8ac8-41ff-4ec1-9a11-2a7e4c171464");
     vi.resetModules();
     try {
       // env.ts parses process.env at module load, so import after stubbing.
