@@ -1,6 +1,6 @@
 {
   "meta": {
-    "total_cards": 1977,
+    "total_cards": 1979,
     "last_updated": "2026-07-23",
     "format": "Pokemon TCG Pocket"
   },
@@ -9115,6 +9115,15 @@
       "type": "Colorless"
     },
     {
+      "name": "Hisuian Zorua",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "card_number": 76,
+      "type": "Colorless"
+    },
+    {
       "name": "Metapod",
       "count": 5,
       "card_type": "Pokemon",
@@ -9668,7 +9677,7 @@
     },
     {
       "name": "Raichu",
-      "count": 4,
+      "count": 5,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
