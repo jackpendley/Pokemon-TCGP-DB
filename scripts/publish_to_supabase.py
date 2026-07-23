@@ -238,6 +238,42 @@ def build_last_run() -> dict | None:
     }
 
 
+def build_recommendation_snapshot_rows(
+    recommendations: dict, pack_ev: dict, user_id: str = OWNER_USER_ID
+) -> list[dict]:
+    """Append-only snapshot of the current recommendation + pack-EV state.
+
+    One row per real sync (captured_at defaults to now() in Postgres), feeding
+    the /history drift view (Phase 7). Kept out of build_all_rows/publish because
+    those tables are idempotent upserts, whereas this is a pure append.
+    """
+    return [
+        {
+            "user_id": user_id,
+            "payload": {"recommendations": recommendations, "pack_ev": pack_ev},
+        }
+    ]
+
+
+def should_snapshot() -> bool:
+    """Snapshot on real syncs, not pure republishes.
+
+    push-to-main runs the workflow in --skip-sync republish mode (SYNC_MODE=skip)
+    on every commit; appending a snapshot there would flood the history with
+    identical rows. A live sync (SYNC_MODE=live) or a local manual publish
+    (SYNC_MODE unset) does append one.
+    """
+    return os.environ.get("SYNC_MODE") != "skip"
+
+
+def publish_recommendation_snapshot(client, rows: list[dict]) -> None:
+    """Append snapshot rows (no delete, no upsert) — history is append-only."""
+    if not rows:
+        return
+    client.table("recommendation_snapshots").insert(rows).execute()
+    print(f"  recommendation_snapshots: +{len(rows)} row")
+
+
 def build_all_rows(
     artifacts: dict, user_id: str = OWNER_USER_ID, last_run: dict | None = None
 ) -> dict:
@@ -350,11 +386,20 @@ def main() -> None:
         sys.exit("The `supabase` package is required: pip install supabase")
 
     print("Loading artifacts...")
+    artifacts = load_artifacts()
     rows_by_table = build_all_rows(
-        load_artifacts(), user_id=owner, last_run=build_last_run()
+        artifacts, user_id=owner, last_run=build_last_run()
     )
     print(f"Publishing to {url} as owner {owner}:")
-    publish(create_client(url, key), rows_by_table, user_id=owner)
+    client = create_client(url, key)
+    publish(client, rows_by_table, user_id=owner)
+    if should_snapshot():
+        publish_recommendation_snapshot(
+            client,
+            build_recommendation_snapshot_rows(
+                artifacts["recommendations"], artifacts["pack_ev"], owner
+            ),
+        )
     print("Done.")
 
 

@@ -27,8 +27,11 @@ from publish_to_supabase import (  # noqa: E402
     build_card_rows,
     build_collection_rows,
     build_pack_card_rows,
+    build_recommendation_snapshot_rows,
     is_mega,
     publish,
+    publish_recommendation_snapshot,
+    should_snapshot,
 )
 
 FIXTURES = ROOT / "web" / "types" / "__fixtures__"
@@ -280,3 +283,46 @@ def test_publish_chunks_large_tables(rows):
 def test_supabase_package_not_imported():
     # The builders/publish path must stay importable in CI's minimal env.
     assert "supabase" not in sys.modules
+
+
+# ---------------------------------------------------------------------------
+# recommendation_snapshots: append-only history (Phase 7)
+# ---------------------------------------------------------------------------
+
+def test_snapshot_row_bundles_recommendations_and_pack_ev(artifacts):
+    rows = build_recommendation_snapshot_rows(
+        artifacts["recommendations"], artifacts["pack_ev"], "custom-uuid"
+    )
+    assert len(rows) == 1
+    (row,) = rows
+    assert row["user_id"] == "custom-uuid"
+    # Byte-identical to the artifacts; captured_at is stamped by Postgres.
+    assert row["payload"] == {
+        "recommendations": artifacts["recommendations"],
+        "pack_ev": artifacts["pack_ev"],
+    }
+    assert "captured_at" not in row
+
+
+def test_snapshot_is_not_an_idempotent_table():
+    # Append-only: deliberately excluded from the upsert/replace strategy map.
+    assert "recommendation_snapshots" not in TABLE_CONFLICT_KEYS
+
+
+def test_publish_snapshot_inserts_without_delete_or_upsert(artifacts):
+    client = FakeClient()
+    rows = build_recommendation_snapshot_rows(
+        artifacts["recommendations"], artifacts["pack_ev"], OWNER_USER_ID
+    )
+    publish_recommendation_snapshot(client, rows)
+    ops = [(op, t) for op, t, _, _ in client.log]
+    assert ops == [("insert", "recommendation_snapshots")]
+
+
+def test_should_snapshot_skips_republishes(monkeypatch):
+    monkeypatch.delenv("SYNC_MODE", raising=False)
+    assert should_snapshot() is True  # local manual publish
+    monkeypatch.setenv("SYNC_MODE", "live")
+    assert should_snapshot() is True  # live CI sync
+    monkeypatch.setenv("SYNC_MODE", "skip")
+    assert should_snapshot() is False  # push-to-main republish
