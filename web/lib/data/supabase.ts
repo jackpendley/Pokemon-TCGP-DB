@@ -204,6 +204,80 @@ export function createDefaultSupabaseSource(): DataSource {
   return createSupabaseSource(defaultClient());
 }
 
+// A single recommendation_snapshots row (Phase 7). Only the fields the /history
+// drift view charts are pulled out; .loose() keeps it resilient to the rest of
+// the payload.
+const historyRowSchema = z.object({
+  captured_at: z.string(),
+  payload: z
+    .object({
+      pack_ev: z
+        .object({
+          meta: z.object({ collection_total: z.number() }).loose(),
+          packs: z.array(
+            z
+              .object({
+                pack_name: z.string(),
+                unified_score: z.number(),
+                pack_total_ev: z.number(),
+                purchasable: z.boolean(),
+                blocked: z.boolean(),
+              })
+              .loose(),
+          ),
+        })
+        .loose(),
+    })
+    .loose(),
+});
+
+export interface RecommendationHistoryEntry {
+  capturedAt: string;
+  collectionTotal: number;
+  packs: {
+    packName: string;
+    unifiedScore: number;
+    totalEv: number;
+    purchasable: boolean;
+    blocked: boolean;
+  }[];
+}
+
+/**
+ * Append-only recommendation history (Phase 7), oldest→newest, for the
+ * /history drift view. Supabase-only — there is no local-json equivalent — so
+ * it's a standalone export rather than a DataSource method (same pattern as
+ * fetchOwnerSyncMeta / fetchSyncRunState).
+ */
+export async function fetchRecommendationHistory(
+  client: SupabaseClient = defaultClient(),
+): Promise<RecommendationHistoryEntry[]> {
+  const { data, error } = await client
+    .from("recommendation_snapshots")
+    .select("captured_at, payload")
+    .order("captured_at");
+  if (error) {
+    throw new Error(
+      `Supabase read from recommendation_snapshots failed: ${error.message}`,
+    );
+  }
+  return (data ?? []).map((row) => {
+    const parsed = historyRowSchema.parse(row);
+    const { pack_ev } = parsed.payload;
+    return {
+      capturedAt: parsed.captured_at,
+      collectionTotal: pack_ev.meta.collection_total,
+      packs: pack_ev.packs.map((p) => ({
+        packName: p.pack_name,
+        unifiedScore: p.unified_score,
+        totalEv: p.pack_total_ev,
+        purchasable: p.purchasable,
+        blocked: p.blocked,
+      })),
+    };
+  });
+}
+
 const syncRunStateRowSchema = z.object({
   published_at: z.string().nullable(),
   last_run: z.object({ outcome: z.string().nullish() }).nullable(),

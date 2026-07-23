@@ -12,6 +12,7 @@ import { verifyDataSourceContract } from "@/lib/data/contract";
 import {
   createSupabaseSource,
   fetchOwnerSyncMeta,
+  fetchRecommendationHistory,
 } from "@/lib/data/supabase";
 import {
   collectionSummarySchema,
@@ -271,6 +272,58 @@ describe("fetchOwnerSyncMeta", () => {
       publishedAt: null,
       lastRun: null,
     });
+  });
+});
+
+describe("fetchRecommendationHistory", () => {
+  const snap = (capturedAt: string, total: number, score: number) => ({
+    captured_at: capturedAt,
+    payload: {
+      pack_ev: {
+        meta: { collection_total: total },
+        packs: [
+          {
+            pack_name: "Mewtwo pack",
+            unified_score: score,
+            pack_total_ev: score / 2,
+            purchasable: true,
+            blocked: false,
+          },
+        ],
+      },
+    },
+  });
+
+  it("returns entries oldest→newest with charted fields extracted", async () => {
+    const client = fakeClient({
+      recommendation_snapshots: [
+        snap("2026-07-20T00:00:00Z", 1800, 9.0),
+        snap("2026-07-10T00:00:00Z", 1700, 8.0),
+      ],
+    });
+    const history = await fetchRecommendationHistory(client);
+    expect(history.map((h) => h.capturedAt)).toEqual([
+      "2026-07-10T00:00:00Z",
+      "2026-07-20T00:00:00Z",
+    ]);
+    expect(history[0]).toEqual({
+      capturedAt: "2026-07-10T00:00:00Z",
+      collectionTotal: 1700,
+      packs: [
+        {
+          packName: "Mewtwo pack",
+          unifiedScore: 8.0,
+          totalEv: 4.0,
+          purchasable: true,
+          blocked: false,
+        },
+      ],
+    });
+  });
+
+  it("returns an empty array when there are no snapshots", async () => {
+    const client = fakeClient({ recommendation_snapshots: [] });
+    expect(await fetchRecommendationHistory(client)).toEqual([]);
   });
 });
 
