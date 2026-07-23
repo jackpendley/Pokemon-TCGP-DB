@@ -209,6 +209,57 @@ const syncRunStateRowSchema = z.object({
   last_run: z.object({ outcome: z.string().nullish() }).nullable(),
 });
 
+const ownerSyncMetaRowSchema = z.object({
+  published_at: z.string().nullable(),
+  last_run: z
+    .object({
+      finished_at: z.string().nullish(),
+      outcome: z.string().nullish(),
+      mode: z.string().nullish(),
+    })
+    .nullable(),
+});
+
+export interface OwnerSyncMeta {
+  publishedAt: string | null;
+  lastRun: {
+    finishedAt: string | null;
+    outcome: string | null;
+    mode: string | null;
+  } | null;
+}
+
+/**
+ * Owner dashboard status (Phase 2): the full sync_status.last_run
+ * ({finished_at, outcome, mode}, migration 0003) plus published_at. Distinct
+ * from fetchSyncRunState, which the remote runner uses and only needs outcome —
+ * kept separate so that hot path stays untouched.
+ */
+export async function fetchOwnerSyncMeta(
+  client: SupabaseClient = defaultClient(),
+): Promise<OwnerSyncMeta> {
+  const { data, error } = await client
+    .from("sync_status")
+    .select("published_at, last_run")
+    .limit(1);
+  if (error) {
+    throw new Error(`Supabase read from sync_status failed: ${error.message}`);
+  }
+  const row = data?.[0];
+  if (!row) return { publishedAt: null, lastRun: null };
+  const parsed = ownerSyncMetaRowSchema.parse(row);
+  return {
+    publishedAt: parsed.published_at,
+    lastRun: parsed.last_run
+      ? {
+          finishedAt: parsed.last_run.finished_at ?? null,
+          outcome: parsed.last_run.outcome ?? null,
+          mode: parsed.last_run.mode ?? null,
+        }
+      : null,
+  };
+}
+
 /**
  * sync_status completion marker for the remote sync runner
  * (web/lib/sync/remote-runner.ts): published_at advances on every publish;
