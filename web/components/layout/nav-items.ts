@@ -3,6 +3,7 @@ import {
   Package,
   Layers,
   Search,
+  TrendingUp,
   type LucideIcon,
 } from "lucide-react";
 
@@ -17,4 +18,5 @@ export const NAV_ITEMS: NavItem[] = [
   { href: "/packs", label: "Pack Recommendations", icon: Package },
   { href: "/cards", label: "Cards", icon: Search },
   { href: "/sets", label: "Sets", icon: Layers },
+  { href: "/history", label: "History", icon: TrendingUp },
 ];
