@@ -20,7 +20,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { dataSource } from "@/lib/data";
-import { isSyncEnabled } from "@/app/sync/actions";
+import { canTriggerSync, isSyncEnabled } from "@/app/sync/actions";
 import { isMegaEx } from "@/lib/domain/card";
 import { formatNumber, titleCase } from "@/lib/domain/format";
 import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
@@ -34,13 +34,15 @@ const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
 const RECENT_SYNC_MS = 10 * 60 * 1000;
 
 export default async function DashboardPage() {
-  const [summary, packEv, catalog, sync, syncEnabled] = await Promise.all([
-    dataSource.getCollectionSummary(),
-    dataSource.getPackEv(),
-    dataSource.getCatalog(),
-    dataSource.getSyncStatus(),
-    isSyncEnabled(),
-  ]);
+  const [summary, packEv, catalog, sync, syncEnabled, ownerCanSync] =
+    await Promise.all([
+      dataSource.getCollectionSummary(),
+      dataSource.getPackEv(),
+      dataSource.getCatalog(),
+      dataSource.getSyncStatus(),
+      isSyncEnabled(),
+      canTriggerSync(),
+    ]);
 
   const { stats, reviewQueue, delta, history } = sync;
 
@@ -223,7 +225,7 @@ export default async function DashboardPage() {
               : `Collection snapshot · updated ${summary.meta.last_updated}`}
           </p>
         </div>
-        <SyncButton enabled={syncEnabled} />
+        {ownerCanSync ? <SyncButton enabled={syncEnabled} /> : null}
       </header>
 
       {/* Right after a sync: a dismissable popup of the cards you just got.

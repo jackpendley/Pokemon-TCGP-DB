@@ -23,8 +23,9 @@ const envSchema = z.object({
   // config; required together when DATA_SOURCE=supabase (checked below). None
   // are NEXT_PUBLIC_, so Next.js can never inline them into the client bundle.
   SUPABASE_URL: z.url().optional(),
-  // Reserved for the future login UI; unused since Phase 6 moved the web
-  // read path to the service role.
+  // Anon key: used by the auth layer (@supabase/ssr) for owner sign-in and the
+  // session-refresh proxy. Safe to expose by design, but kept server-side here
+  // since login/logout run as server actions. Required in supabase mode.
   SUPABASE_ANON_KEY: z.string().min(1).optional(),
   // Service-role key: used server-side only — by the publisher and, since
   // Phase 6 dropped the anon RLS policies, by the web read path
@@ -39,6 +40,9 @@ const envSchema = z.object({
     .string()
     .regex(/^[\w.-]+\/[\w.-]+$/, "expected owner/repo")
     .optional(),
+  // Auth (Phase 1): the single owner's auth.users UUID. Writes (sync) are gated
+  // to this user; reads stay public. Required in supabase mode. Server-only.
+  OWNER_USER_ID: z.uuid().optional(),
 });
 
 export const env = envSchema
@@ -47,6 +51,8 @@ export const env = envSchema
       for (const key of [
         "SUPABASE_URL",
         "SUPABASE_SERVICE_ROLE_KEY",
+        "SUPABASE_ANON_KEY",
+        "OWNER_USER_ID",
       ] as const) {
         if (!cfg[key]) {
           ctx.addIssue({

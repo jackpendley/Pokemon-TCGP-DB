@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { AuthControl } from "@/components/layout/auth-control";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Pokeball } from "@/components/brand/pokeball";
@@ -14,7 +15,8 @@ export function TopBar() {
         <Pokeball />
         <span className="font-semibold">TCGP Optimizer</span>
       </Link>
-      <div className="ml-auto">
+      <div className="ml-auto flex items-center gap-1">
+        <AuthControl />
         <ThemeToggle />
       </div>
     </header>
