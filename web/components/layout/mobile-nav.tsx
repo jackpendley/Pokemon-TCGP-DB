@@ -9,6 +9,17 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { NAV_ITEMS } from "@/components/layout/nav-items";
 
+/** Static hamburger for the Suspense fallback while <MobileNav> streams in. */
+export function MobileNavFallback() {
+  return (
+    <div className="md:hidden">
+      <Button variant="ghost" size="icon" aria-label="Open navigation">
+        <Menu className="size-5" />
+      </Button>
+    </div>
+  );
+}
+
 /** Hamburger menu for viewports where the sidebar is hidden (< md). */
 export function MobileNav() {
   const pathname = usePathname();

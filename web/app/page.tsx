@@ -18,9 +18,18 @@ import {
   type AdditionItem,
   type SetProgressItem,
 } from "@/components/sync/sync-reveal";
+import { Suspense } from "react";
+import { connection } from "next/server";
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { dataSource } from "@/lib/data";
+import { Skeleton } from "@/components/ui/skeleton";
+import {
+  getCachedCatalog,
+  getCachedCollectionSummary,
+  getCachedPackEv,
+  getCachedSyncStatus,
+} from "@/lib/data/cached";
 import { fetchOwnerSyncMeta } from "@/lib/data/supabase";
 import { isOwner } from "@/lib/auth/server";
 import { canTriggerSync, isSyncEnabled } from "@/app/sync/actions";
@@ -29,20 +38,22 @@ import { formatNumber, titleCase } from "@/lib/domain/format";
 import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
 import type { SyncDeltaEntry } from "@/types";
 
-export const dynamic = "force-dynamic";
-
 const STAGE_ORDER = ["Basic", "Stage1", "Stage2", "Stage3"];
 const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
 // Animate sync results on the dashboard only right after a sync, not every visit.
 const RECENT_SYNC_MS = 10 * 60 * 1000;
 
-export default async function DashboardPage() {
+async function DashboardContent() {
+  // Dynamic hole: reads cookies (owner state) and the current time (recent-sync
+  // animation). connection() marks it request-time so those are allowed and the
+  // build never prerenders it against the gitignored local-json artifacts.
+  await connection();
   const [summary, packEv, catalog, sync, syncEnabled, ownerCanSync, owner] =
     await Promise.all([
-      dataSource.getCollectionSummary(),
-      dataSource.getPackEv(),
-      dataSource.getCatalog(),
-      dataSource.getSyncStatus(),
+      getCachedCollectionSummary(),
+      getCachedPackEv(),
+      getCachedCatalog(),
+      getCachedSyncStatus(),
       isSyncEnabled(),
       canTriggerSync(),
       isOwner(),
@@ -351,5 +362,15 @@ export default async function DashboardPage() {
         </CardContent>
       </Card>
     </div>
+  );
+}
+
+export default function DashboardPage() {
+  // The dashboard reads cookies (owner state) and the just-synced timestamp, so
+  // it streams as one dynamic hole; the cached data reads inside are hits.
+  return (
+    <Suspense fallback={<Skeleton className="h-[80vh] w-full" />}>
+      <DashboardContent />
+    </Suspense>
   );
 }

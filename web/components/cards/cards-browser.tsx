@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { CardGrid } from "@/components/cards/card-grid";
@@ -107,6 +107,9 @@ export function CardsBrowser({
     initial?.sort === "power" ? "power" : "default",
   );
   const [visible, setVisible] = useState(BATCH);
+  // Defer the search text so each keystroke keeps the input responsive while the
+  // ~3,500-card filter recompute runs at a lower priority (INP).
+  const deferredQuery = useDeferredValue(query);
 
   const setCodes = useMemo(() => [...new Set(cards.map((c) => c.set_code))], [cards]);
   const typeOpts = useMemo(
@@ -143,7 +146,7 @@ export function CardsBrowser({
   );
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = deferredQuery.trim().toLowerCase();
     return cards.filter((c) => {
       if (q && !c.name.toLowerCase().includes(q)) return false;
       if (sets.length && !sets.includes(c.set_code)) return false;
@@ -158,7 +161,7 @@ export function CardsBrowser({
       if (ownership === "missing" && c.owned > 0) return false;
       return true;
     });
-  }, [cards, query, sets, types, rarities, stages, scope, category, classFilter, ownership]);
+  }, [cards, deferredQuery, sets, types, rarities, stages, scope, category, classFilter, ownership]);
 
   const ordered = useMemo(
     () =>

@@ -1,18 +1,19 @@
-import { HistoryView } from "@/components/history/history-view";
-import { fetchRecommendationHistory } from "@/lib/data/supabase";
-import { env } from "@/lib/env";
+import { Suspense } from "react";
+import { connection } from "next/server";
 
-// Reads recommendation_snapshots via the service role (public, like the other
-// pages). Force-dynamic for the same reason as the rest of the app until the
-// Phase 5 caching pass (docs/hosting-roadmap.md).
-export const dynamic = "force-dynamic";
+import { HistoryView } from "@/components/history/history-view";
+import { Skeleton } from "@/components/ui/skeleton";
+import { getCachedRecommendationHistory } from "@/lib/data/cached";
+
 export const metadata = { title: "History · TCGP Optimizer" };
 
-export default async function HistoryPage() {
-  // Snapshots live only in Supabase; local-json dev has none.
-  const entries =
-    env.DATA_SOURCE === "supabase" ? await fetchRecommendationHistory() : [];
+async function HistoryContent() {
+  await connection();
+  const entries = await getCachedRecommendationHistory();
+  return <HistoryView entries={entries} />;
+}
 
+export default function HistoryPage() {
   return (
     <div className="space-y-6">
       <div className="space-y-1">
@@ -21,7 +22,9 @@ export default async function HistoryPage() {
           How your collection and pack recommendations have drifted over time.
         </p>
       </div>
-      <HistoryView entries={entries} />
+      <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+        <HistoryContent />
+      </Suspense>
     </div>
   );
 }

@@ -113,6 +113,22 @@ jobs:
           SYNC_MODE: ${{ env.MODE }}
         run: python3 scripts/publish_to_supabase.py
 
+      - name: Revalidate web cache
+        # Invalidate the site's cached data (Cache Components DATA_TAG) so the
+        # fresh publish is served immediately. Non-fatal: on failure the data
+        # still refreshes on its own TTL. Skips cleanly until the secret is set.
+        continue-on-error: true
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          if [ -z "$REVALIDATE_SECRET" ]; then
+            echo "REVALIDATE_SECRET unset; skipping cache revalidation."
+            exit 0
+          fi
+          curl -fsS -X POST \
+            "https://pokemon-tcgp-db-ten.vercel.app/api/revalidate" \
+            -H "Authorization: Bearer $REVALIDATE_SECRET"
+
       - name: Commit refreshed collection
         # Publish already ran, so a push failure never leaves the dashboard
         # stale. [skip ci] keeps this data-only commit from re-triggering CI.
