@@ -14,9 +14,11 @@ async function CardsContent({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  // searchParams is per-request (dynamic), so this streams at runtime; the
-  // catalog read below is a cache hit.
-  const [catalog, sp] = await Promise.all([getCachedCatalog(), searchParams]);
+  // Await searchParams (per-request) FIRST so prerender bails here — otherwise
+  // getCachedCatalog() would run at build and fail on the local-json CI's
+  // missing artifacts. At runtime this streams and the catalog read is a hit.
+  const sp = await searchParams;
+  const catalog = await getCachedCatalog();
 
   const pick = (k: string): string | undefined =>
     typeof sp[k] === "string" ? (sp[k] as string) : undefined;
