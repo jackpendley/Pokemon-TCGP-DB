@@ -1,9 +1,11 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
 import { EnlargeableCard } from "@/components/cards/enlargeable-card";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
   TableBody,
@@ -12,7 +14,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { dataSource } from "@/lib/data";
+import { getCachedCatalog, getCachedPackEv } from "@/lib/data/cached";
 import {
   formatEv,
   formatPercent,
@@ -20,8 +22,6 @@ import {
   titleCase,
 } from "@/lib/domain/format";
 import type { CatalogCard } from "@/types";
-
-export const dynamic = "force-dynamic";
 
 /** A pack-table row (top EV or top power) carries a coord + name; may be null. */
 type CardRow = {
@@ -43,15 +43,15 @@ function CardCell({ card }: { card: CatalogCard }) {
   );
 }
 
-export default async function PackDetailPage({
+async function PackDetailContent({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
   const [packEv, catalog] = await Promise.all([
-    dataSource.getPackEv(),
-    dataSource.getCatalog(),
+    getCachedPackEv(),
+    getCachedCatalog(),
   ]);
   const pack = packEv.packs.find((p) => packSlug(p.pack_name) === slug);
 
@@ -196,5 +196,17 @@ export default async function PackDetailPage({
         </div>
       ) : null}
     </div>
+  );
+}
+
+export default function PackDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  return (
+    <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+      <PackDetailContent params={params} />
+    </Suspense>
   );
 }

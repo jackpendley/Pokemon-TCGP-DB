@@ -1,12 +1,16 @@
+import { Suspense } from "react";
+import { connection } from "next/server";
+
 import { SetsGrid, type SetProgress } from "@/components/sets/sets-grid";
-import { dataSource } from "@/lib/data";
+import { Skeleton } from "@/components/ui/skeleton";
+import { getCachedCatalog } from "@/lib/data/cached";
 import { isBaseRarity } from "@/lib/domain/rarity";
 
-export const dynamic = "force-dynamic";
 export const metadata = { title: "Sets · TCGP Optimizer" };
 
-export default async function SetsPage() {
-  const catalog = await dataSource.getCatalog();
+async function SetsContent() {
+  await connection();
+  const catalog = await getCachedCatalog();
 
   // Preserve first-seen order (≈ release order) while aggregating per set.
   const bySet = new Map<string, SetProgress>();
@@ -33,16 +37,25 @@ export default async function SetsPage() {
   const sets = [...bySet.values()];
 
   return (
+    <>
+      <p className="text-sm text-muted-foreground">
+        Unique cards owned per set ({sets.length} sets). Toggle between the full
+        set and the base set (no secret/chase rarities).
+      </p>
+      <SetsGrid sets={sets} />
+    </>
+  );
+}
+
+export default function SetsPage() {
+  return (
     <div className="space-y-6">
       <header className="space-y-1">
         <h1 className="text-2xl font-semibold tracking-tight">Set Completion</h1>
-        <p className="text-sm text-muted-foreground">
-          Unique cards owned per set ({sets.length} sets). Toggle between the full
-          set and the base set (no secret/chase rarities).
-        </p>
       </header>
-
-      <SetsGrid sets={sets} />
+      <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+        <SetsContent />
+      </Suspense>
     </div>
   );
 }

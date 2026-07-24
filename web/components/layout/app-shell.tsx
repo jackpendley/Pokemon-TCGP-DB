@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import Link from "next/link";
 
 import { Nav } from "@/components/layout/nav";
+import { NavList } from "@/components/layout/nav-list";
 import { TopBar } from "@/components/layout/top-bar";
 import { Pokeball } from "@/components/brand/pokeball";
 
@@ -14,7 +16,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             TCGP Optimizer
           </span>
         </Link>
-        <Nav />
+        <Suspense fallback={<NavList pathname={null} />}>
+          <Nav />
+        </Suspense>
       </aside>
       <div className="flex flex-1 flex-col overflow-x-hidden">
         <TopBar />

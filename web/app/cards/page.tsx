@@ -1,27 +1,22 @@
+import { Suspense } from "react";
+
 import {
   CardsBrowser,
   type CardsFilter,
 } from "@/components/cards/cards-browser";
-import { dataSource } from "@/lib/data";
+import { Skeleton } from "@/components/ui/skeleton";
+import { getCachedCatalog } from "@/lib/data/cached";
 
-// Pages render per-request (not ISR): pipeline artifacts are gitignored, so CI
-// and fresh checkouts build without them — prerendering would fail there. The
-// mtime-keyed cache in lib/data/local-json.ts makes the per-request cost a few
-// fs.stat calls; the full-catalog RSC payload this page ships is a localhost
-// concern only until the hosted phase (docs/hosting-roadmap.md), where this
-// should move to cached rendering with on-demand invalidation.
-export const dynamic = "force-dynamic";
 export const metadata = { title: "Cards · TCGP Optimizer" };
 
-export default async function CardsPage({
+async function CardsContent({
   searchParams,
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const [catalog, sp] = await Promise.all([
-    dataSource.getCatalog(),
-    searchParams,
-  ]);
+  // searchParams is per-request (dynamic), so this streams at runtime; the
+  // catalog read below is a cache hit.
+  const [catalog, sp] = await Promise.all([getCachedCatalog(), searchParams]);
 
   const pick = (k: string): string | undefined =>
     typeof sp[k] === "string" ? (sp[k] as string) : undefined;
@@ -38,10 +33,20 @@ export default async function CardsPage({
     sort: pick("sort"),
   };
 
+  return <CardsBrowser cards={catalog} initial={initial} />;
+}
+
+export default function CardsPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-semibold tracking-tight">Cards</h1>
-      <CardsBrowser cards={catalog} initial={initial} />
+      <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+        <CardsContent searchParams={searchParams} />
+      </Suspense>
     </div>
   );
 }
