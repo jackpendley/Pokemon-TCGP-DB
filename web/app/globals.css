@@ -167,6 +167,43 @@
   }
 }
 
+/* Card flip (components/cards/card-flip.tsx). The scene owns the perspective so
+   the rotation reads as depth rather than a squash; both faces are stacked and
+   hidden from behind, so only one is ever visible. */
+.flip-scene {
+  perspective: 1400px;
+}
+
+.flip-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.flip-inner[data-flipped="true"] {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-face-back {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner {
+    transition: none;
+  }
+}
+
 /* Indeterminate progress for a running sync (components/sync/sync-progress-dialog.tsx).
    The job reports no completion fraction, so the bar sweeps rather than fills. */
 @keyframes sync-sweep {

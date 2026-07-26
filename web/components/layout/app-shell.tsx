@@ -23,7 +23,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <div className="flex flex-1 flex-col overflow-x-hidden">
         <TopBar />
         <main className="flex-1">
-          <div className="mx-auto w-full max-w-6xl px-6 py-8">{children}</div>
+          {/* Tighter gutters on phones — 24px each side costs real width at 375px. */}
+          <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
+            {children}
+          </div>
         </main>
       </div>
     </div>
