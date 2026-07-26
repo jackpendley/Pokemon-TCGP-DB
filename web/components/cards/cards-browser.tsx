@@ -166,9 +166,17 @@ export function CardsBrowser({
   const ordered = useMemo(
     () =>
       sort === "power"
-        ? [...filtered].sort(
-            (a, b) => (b.power_score ?? -1) - (a.power_score ?? -1),
-          )
+        ? // Grouped by which model produced the score, then ranked within the
+          // group. Pokémon are scored on HP and damage, Trainers on rule text —
+          // interleaving them would rank a Supporter against a Charizard on
+          // scales that only share their range.
+          [...filtered].sort((a, b) => {
+            const kindRank = (c: CatalogCard) =>
+              c.power_score == null ? 2 : c.power_score_kind === "trainer" ? 1 : 0;
+            const byKind = kindRank(a) - kindRank(b);
+            if (byKind !== 0) return byKind;
+            return (b.power_score ?? -1) - (a.power_score ?? -1);
+          })
         : filtered,
     [filtered, sort],
   );

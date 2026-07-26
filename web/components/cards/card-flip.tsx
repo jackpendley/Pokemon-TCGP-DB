@@ -1,7 +1,7 @@
 "use client";
 
 import { CardImage } from "@/components/cards/card-image";
-import { displayType } from "@/lib/domain/card";
+import { displayType, powerScoreLabel } from "@/lib/domain/card";
 import { titleCase } from "@/lib/domain/format";
 import { readableInk, typeColor } from "@/lib/domain/type-colors";
 import { cn } from "@/lib/utils";
@@ -84,7 +84,7 @@ export function CardFlip({
                 {card.owned > 0 ? `×${card.owned}` : "Not owned"}
               </BackRow>
               {card.power_score != null ? (
-                <BackRow label="Power score" ink={ink}>
+                <BackRow label={powerScoreLabel(card)} ink={ink}>
                   <span className="tabular-nums">
                     {card.power_score.toFixed(1)}
                   </span>

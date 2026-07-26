@@ -112,6 +112,7 @@ const bulbasaurRow: Row = {
   is_ex: false,
   evolves_from: null,
   power_score: 42,
+  power_score_kind: "pokemon",
 };
 
 const seededTables: Record<string, Row[]> = {
@@ -159,6 +160,7 @@ describe("SupabaseSource", () => {
         is_ex: false,
         owned: 2,
         power_score: 42,
+        power_score_kind: "pokemon",
         evolves_from: null,
       },
     ];

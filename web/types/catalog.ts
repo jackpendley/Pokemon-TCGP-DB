@@ -37,7 +37,15 @@ export const collectionFileSchema = z.object({
   ),
 });
 
-/** data/reference/card_power_scores.json — HP+attack+ability power model. */
+/**
+ * data/reference/card_power_scores.json — two models sharing one file.
+ *
+ * `score_kind: "pokemon"` is the HP + attack + ability model and carries the
+ * combat fields. `score_kind: "trainer"` is scored from rule text instead
+ * (scripts/trainer_power.py) and has none of them, so those fields are optional
+ * here. Entries written before score_kind existed were all Pokémon, hence the
+ * default.
+ */
 export const powerScoresFileSchema = z.object({
   generated_at: z.string(),
   scores: z.record(
@@ -45,10 +53,12 @@ export const powerScoresFileSchema = z.object({
     z
       .object({
         power_score: z.number(),
-        hp: z.number().nullable(),
-        effective_damage: z.number().nullable(),
-        has_ability: z.boolean(),
-        estimated: z.boolean(),
+        score_kind: z.enum(["pokemon", "trainer"]).default("pokemon"),
+        hp: z.number().nullable().optional(),
+        effective_damage: z.number().nullable().optional(),
+        has_ability: z.boolean().optional(),
+        estimated: z.boolean().optional(),
+        trainer_subtype: z.string().nullable().optional(),
       })
       .loose(),
   ),
@@ -67,8 +77,14 @@ export interface CatalogCard {
   expansion: string;
   is_ex: boolean;
   owned: number;
-  /** 0–100 power/value score (HP + attack + ability); null for non-Pokémon. */
+  /** 0–100 power/value score; null when the card could not be scored. */
   power_score: number | null;
+  /**
+   * Which model produced `power_score`. Pokémon are scored on HP and attack
+   * damage, Trainers on their rule text — the two share a range but measure
+   * different things, so never rank one against the other.
+   */
+  power_score_kind: "pokemon" | "trainer" | null;
   /** Name of the Pokémon this evolves from (for the evolution tabs); null for Basics. */
   evolves_from: string | null;
 }

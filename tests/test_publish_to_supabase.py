@@ -39,7 +39,7 @@ FIXTURES = ROOT / "web" / "types" / "__fixtures__"
 CARD_COLUMNS = {
     "set_code", "card_number", "name", "rarity", "pokemon_type", "card_category",
     "trainer_subtype", "stage", "expansion", "is_ex", "is_mega", "evolves_from",
-    "hp", "pack_name", "power_score",
+    "hp", "pack_name", "power_score", "power_score_kind",
 }
 
 
@@ -73,9 +73,9 @@ def artifacts():
         "card_reference": card_reference,
         "card_power_scores": {
             "generated_at": "2026-01-01",
-            "scores": {"A1:1": {"power_score": 42.5, "hp": 70,
-                                "effective_damage": 30, "has_ability": False,
-                                "estimated": False}},
+            "scores": {"A1:1": {"power_score": 42.5, "score_kind": "pokemon",
+                                "hp": 70, "effective_damage": 30,
+                                "has_ability": False, "estimated": False}},
         },
         "pull_probability_model": {"generated_at": "2026-01-01", "packs": {}},
         "collection_normalized": {
@@ -151,6 +151,9 @@ def test_card_rows_carry_every_column(rows):
     by_coord = {(r["set_code"], r["card_number"]): r for r in rows["cards"]}
     assert by_coord[("A1", 1)]["power_score"] == 42.5
     assert by_coord[("A3", 200)]["power_score"] is None
+    # The kind travels with the score so consumers can't mix the two models.
+    assert by_coord[("A1", 1)]["power_score_kind"] == "pokemon"
+    assert by_coord[("A3", 200)]["power_score_kind"] is None
     # expansion falls back to set_code like loadCatalog does.
     assert by_coord[("A3", 200)]["expansion"] == "A3"
 

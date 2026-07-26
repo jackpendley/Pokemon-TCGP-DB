@@ -1,0 +1,702 @@
+{
+ "A1|helix fossil": {
+  "effect": "Play this card as if it were a 40-HP Basic {C} Pokémon. At any time during your turn, you may discard this card from play. This card can't retreat.",
+  "subtype": "Item"
+ },
+ "A1|dome fossil": {
+  "effect": "Play this card as if it were a 40-HP Basic {C} Pokémon. At any time during your turn, you may discard this card from play. This card can't retreat.",
+  "subtype": "Item"
+ },
+ "A1|old amber": {
+  "effect": "Play this card as if it were a 40-HP Basic {C} Pokémon. At any time during your turn, you may discard this card from play. This card can't retreat.",
+  "subtype": "Item"
+ },
+ "A1|erika": {
+  "effect": "Heal 50 damage from 1 of your {G} Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A1|misty": {
+  "effect": "Choose 1 of your {W} Pokémon, and flip a coin until you get tails. For each heads, take a {W} Energy from your Energy Zone and attach it to that Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A1|blaine": {
+  "effect": "During this turn, attacks used by your Ninetales, Rapidash, or Magmar do +30 damage to your opponent's Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A1|koga": {
+  "effect": "Put your Muk or Weezing in the Active Spot into your hand.",
+  "subtype": "Supporter"
+ },
+ "A1|giovanni": {
+  "effect": "During this turn, attacks used by your Pokémon do +10 damage to your opponent's Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A1|brock": {
+  "effect": "Take 1 {F} Energy from your Energy Zone and attach it to your Golem or Onix.",
+  "subtype": "Supporter"
+ },
+ "A1|sabrina": {
+  "effect": "Switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)",
+  "subtype": "Supporter"
+ },
+ "A1|lt. surge": {
+  "effect": "Move all {L} Energy from your Benched Pokémon to your Raichu, Electrode, or Electabuzz in the Active Spot.",
+  "subtype": "Supporter"
+ },
+ "A1a|old amber": {
+  "effect": "Play this card as if it were a 40-HP Basic {C} Pokémon. At any time during your turn, you may discard this card from play. This card can't retreat.",
+  "subtype": "Item"
+ },
+ "A1a|pokémon flute": {
+  "effect": "Put a Basic Pokémon from your opponent's discard pile onto their Bench.",
+  "subtype": "Item"
+ },
+ "A1a|mythical slab": {
+  "effect": "Look at the top card of your deck. If that card is a {P} Pokémon, put it into your hand. If it is not a {P} Pokémon, put it on the bottom of your deck.",
+  "subtype": "Item"
+ },
+ "A1a|budding expeditioner": {
+  "effect": "Put your Mew ex in the Active Spot into your hand.",
+  "subtype": "Supporter"
+ },
+ "A1a|blue": {
+  "effect": "During your opponent's next turn, all of your Pokémon take −10 damage from attacks from your opponent's Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A1a|leaf": {
+  "effect": "During this turn, the Retreat Cost of your Active Pokémon is 2 less.",
+  "subtype": "Supporter"
+ },
+ "A2|skull fossil": {
+  "effect": "Play this card as if it were a 40-HP Basic {C} Pokémon. At any time during your turn, you may discard this card from play. This card can't retreat.",
+  "subtype": "Item"
+ },
+ "A2|armor fossil": {
+  "effect": "Play this card as if it were a 40-HP Basic {C} Pokémon. At any time during your turn, you may discard this card from play. This card can't retreat.",
+  "subtype": "Item"
+ },
+ "A2|pokémon communication": {
+  "effect": "Choose a Pokémon in your hand and switch it with a random Pokémon in your deck.",
+  "subtype": "Item"
+ },
+ "A2|giant cape": {
+  "effect": "The Pokémon this card is attached to gets +20 HP.",
+  "subtype": "Tool"
+ },
+ "A2|rocky helmet": {
+  "effect": "If the Pokémon this card is attached to is in the Active Spot and is damaged by an attack from your opponent's Pokémon, do 20 damage to the Attacking Pokémon.",
+  "subtype": "Tool"
+ },
+ "A2|lum berry": {
+  "effect": "At the end of each turn, if the Pokémon this card is attached to is affected by any Special Conditions, it recovers from all of them, and discard this card.",
+  "subtype": "Tool"
+ },
+ "A2|cyrus": {
+  "effect": "Switch in 1 of your opponent's Benched Pokémon that has damage on it to the Active Spot.",
+  "subtype": "Supporter"
+ },
+ "A2|team galactic grunt": {
+  "effect": "Put 1 random Glameow, Stunky, or Croagunk from your deck into your hand.",
+  "subtype": "Supporter"
+ },
+ "A2|cynthia": {
+  "effect": "During this turn, attacks used by your Garchomp or Togekiss do +50 damage to your opponent's Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A2|volkner": {
+  "effect": "Choose 1 of your Electivire or Luxray. Attach 2 {L} Energy from your discard pile to that Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A2|dawn": {
+  "effect": "Move an Energy from 1 of your Benched Pokémon to your Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A2|mars": {
+  "effect": "Your opponent shuffles their hand into their deck and draws a card for each of their remaining points needed to win.",
+  "subtype": "Supporter"
+ },
+ "A2a|irida": {
+  "effect": "Heal 40 damage from each of your Pokémon that has any {W} Energy attached.",
+  "subtype": "Supporter"
+ },
+ "A2a|celestic town elder": {
+  "effect": "Put 1 random Basic Pokémon from your discard pile into your hand.",
+  "subtype": "Supporter"
+ },
+ "A2a|barry": {
+  "effect": "During this turn, attacks used by your Snorlax, Heracross, and Staraptor cost 2 less {C} Energy.",
+  "subtype": "Supporter"
+ },
+ "A2a|adaman": {
+  "effect": "During your opponent's next turn, all of your {M} Pokémon take −20 damage from attacks from your opponent's Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A2b|iono": {
+  "effect": "Each player shuffles the cards in their hand into their deck, then draws that many cards.",
+  "subtype": "Supporter"
+ },
+ "A2b|pokémon center lady": {
+  "effect": "Heal 30 damage from 1 of your Pokémon, and it recovers from all Special Conditions.",
+  "subtype": "Supporter"
+ },
+ "A2b|red": {
+  "effect": "During this turn, attacks used by your Pokémon do +20 damage to your opponent's Active Pokémon ex.",
+  "subtype": "Supporter"
+ },
+ "A2b|team rocket grunt": {
+  "effect": "Flip a coin until you get tails. For each heads, discard a random Energy from your opponent's Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A2b|poké ball": {
+  "effect": "Put a random Basic Pokémon from your deck into your hand.",
+  "subtype": "Item"
+ },
+ "A3|big malasada": {
+  "effect": "Heal 10 damage and remove a random Special Condition from your Active Pokémon.",
+  "subtype": "Item"
+ },
+ "A3|fishing net": {
+  "effect": "Put a random Basic {W} Pokémon from your discard pile into your hand.",
+  "subtype": "Item"
+ },
+ "A3|rare candy": {
+  "effect": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card onto the Basic Pokémon to evolve it, skipping the Stage 1. You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.",
+  "subtype": "Item"
+ },
+ "A3|rotom dex": {
+  "effect": "Look at the top card of your deck. Then, you may shuffle your deck.",
+  "subtype": "Item"
+ },
+ "A3|poison barb": {
+  "effect": "If the Pokémon this card is attached to is your Active Pokémon and is damaged by an attack from your opponent's Pokémon, the Attacking Pokémon is now Poisoned.",
+  "subtype": "Tool"
+ },
+ "A3|leaf cape": {
+  "effect": "The {G} Pokémon this card is attached to gets +30 HP.",
+  "subtype": "Tool"
+ },
+ "A3|acerola": {
+  "effect": "Choose 1 of your Palossand or Mimikyu that has damage on it, and move 40 of its damage to your opponent's Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A3|ilima": {
+  "effect": "Put 1 of your {C} Pokémon that has damage on it into your hand.",
+  "subtype": "Supporter"
+ },
+ "A3|kiawe": {
+  "effect": "Choose 1 of your Alolan Marowak or Turtonator. Take 2 {R} Energy from your Energy Zone and attach it to that Pokémon. Your turn ends.",
+  "subtype": "Supporter"
+ },
+ "A3|guzma": {
+  "effect": "Discard all Pokémon Tool cards attached to each of your opponent's Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A3|lana": {
+  "effect": "You can use this card only if you have Araquanid in play. Switch in 1 of your opponent's Benched Pokémon to the Active Spot.",
+  "subtype": "Supporter"
+ },
+ "A3|sophocles": {
+  "effect": "During this turn, attacks used by your Alolan Golem, Vikavolt, or Togedemaru do +30 damage to your opponent's Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A3|mallow": {
+  "effect": "Heal all damage from 1 of your Shiinotic or Tsareena. If you do, discard all Energy from that Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A3|lillie": {
+  "effect": "Heal 60 damage from 1 of your Stage 2 Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A3a|beast wall": {
+  "effect": "You can use this card only if your opponent hasn't gotten any points. During your opponent's next turn, all of your Ultra Beasts take −20 damage from attacks from your opponent's Pokémon.",
+  "subtype": "Item"
+ },
+ "A3a|repel": {
+  "effect": "Switch out your opponent's Active Basic Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)",
+  "subtype": "Item"
+ },
+ "A3a|electrical cord": {
+  "effect": "If the {L} Pokémon this card is attached to is in the Active Spot and is Knocked Out by damage from an attack from your opponent's Pokémon, move 2 {L} Energy from that Pokémon and attach 1 Energy each to 2 of your Benched Pokémon.",
+  "subtype": "Tool"
+ },
+ "A3a|beastite": {
+  "effect": "Attacks used by the Ultra Beast this card is attached to do +10 damage to your opponent's Active Pokémon for each point you have gotten.",
+  "subtype": "Tool"
+ },
+ "A3a|gladion": {
+  "effect": "Put 1 random Type: Null or Silvally from your deck into your hand.",
+  "subtype": "Supporter"
+ },
+ "A3a|looker": {
+  "effect": "Your opponent reveals all of the Supporter cards in their deck.",
+  "subtype": "Supporter"
+ },
+ "A3a|lusamine": {
+  "effect": "You can use this card only if your opponent has gotten at least 1 point. Choose 1 of your Ultra Beasts. Attach 2 random Energy from your discard pile to that Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A3b|eevee bag": {
+  "effect": "Choose 1: During this turn, attacks used by your Pokémon that evolve from Eevee do +10 damage to your opponent's Active Pokémon. Heal 20 damage from each of your Pokémon that evolves from Eevee.",
+  "subtype": "Item"
+ },
+ "A3b|leftovers": {
+  "effect": "At the end of your turn, if the Pokémon this card is attached to is in the Active Spot, heal 10 damage from that Pokémon.",
+  "subtype": "Tool"
+ },
+ "A3b|hau": {
+  "effect": "During this turn, attacks used by your Decidueye ex, Incineroar ex, or Primarina ex do +30 damage to your opponent's Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A3b|penny": {
+  "effect": "Look at a random Supporter card that's not Penny from your opponent's deck and shuffle it back into their deck. Use the effect of that card as the effect of this card.",
+  "subtype": "Supporter"
+ },
+ "A4|elemental switch": {
+  "effect": "Move a {R}, {W}, or {L} Energy from 1 of your Benched Pokémon to your Active Pokémon.",
+  "subtype": "Item"
+ },
+ "A4|squirt bottle": {
+  "effect": "Discard a {R} Energy from your opponent's Active Pokémon.",
+  "subtype": "Item"
+ },
+ "A4|steel apron": {
+  "effect": "The {M} Pokémon this card is attached to takes −10 damage from attacks from your opponent's Pokémon, recovers from all Special Conditions, and can't be affected by any Special Conditions.",
+  "subtype": "Tool"
+ },
+ "A4|dark pendant": {
+  "effect": "If the {D} Pokémon this card is attached to is in the Active Spot and is damaged by an attack from your opponent's Pokémon, your opponent reveals a random card from their hand and shuffles it into their deck.",
+  "subtype": "Tool"
+ },
+ "A4|rescue scarf": {
+  "effect": "If the Pokémon this card is attached to is Knocked Out by damage from an attack from your opponent's Pokémon, put it into your hand instead of the discard pile.",
+  "subtype": "Tool"
+ },
+ "A4|will": {
+  "effect": "The next time you flip any number of coins for the effect of an attack, Ability, or Trainer card after using this card on this turn, the first coin flip will definitely be heads.",
+  "subtype": "Supporter"
+ },
+ "A4|lyra": {
+  "effect": "Switch your Active Pokémon that has damage on it with 1 of your Benched Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A4|silver": {
+  "effect": "Your opponent reveals their hand. Choose a Supporter card you find there and shuffle it into your opponent's deck.",
+  "subtype": "Supporter"
+ },
+ "A4|fisher": {
+  "effect": "Flip 3 coins. For each heads, a {W} Pokémon is chosen at random from your discard pile and put into your hand.",
+  "subtype": "Supporter"
+ },
+ "A4|jasmine": {
+  "effect": "During your opponent's next turn, all of your Steelix and Skarmory ex take −50 damage from attacks from your opponent's Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A4|hiker": {
+  "effect": "For each of your {F} Pokémon in play, look at that many cards from the top of your deck and put them back in any order.",
+  "subtype": "Supporter"
+ },
+ "A4a|inflatable boat": {
+  "effect": "The Retreat Cost of the {W} Pokémon this card is attached to is 1 less.",
+  "subtype": "Tool"
+ },
+ "A4a|memory light": {
+  "effect": "The Pokémon this card is attached to can use any attack from its previous Evolutions. (You still need the necessary Energy to use each attack.)",
+  "subtype": "Tool"
+ },
+ "A4a|whitney": {
+  "effect": "Heal 60 damage from 1 of your Miltank, and it recovers from being Asleep, Paralyzed, and Confused.",
+  "subtype": "Supporter"
+ },
+ "A4a|traveling merchant": {
+  "effect": "Look at the top 4 cards of your deck. Put all Pokémon Tool cards you find there into your hand. Shuffle the other cards back into your deck.",
+  "subtype": "Supporter"
+ },
+ "A4a|morty": {
+  "effect": "For each of your {P} Pokémon in play, look at that many cards from the top of your opponent's deck and put them back in any order.",
+  "subtype": "Supporter"
+ },
+ "B1|prank spinner": {
+  "effect": "A card from among both player's hands is chosen at random, revealed to the other player, and shuffled into its owner's deck.",
+  "subtype": "Item"
+ },
+ "B1|plume fossil": {
+  "effect": "Play this card as if it were a 40-HP Basic {C} Pokémon. At any time during your turn, you may discard this card from play. This card can't retreat.",
+  "subtype": "Item"
+ },
+ "B1|hitting hammer": {
+  "effect": "Flip 2 coins. If both of them are heads, discard a random Energy from your opponent's Active Pokémon.",
+  "subtype": "Item"
+ },
+ "B1|cover fossil": {
+  "effect": "Play this card as if it were a 40-HP Basic {C} Pokémon. At any time during your turn, you may discard this card from play. This card can't retreat.",
+  "subtype": "Item"
+ },
+ "B1|flame patch": {
+  "effect": "Attach a {R} Energy from your discard pile to your Active {R} Pokémon.",
+  "subtype": "Item"
+ },
+ "B1|sitrus berry": {
+  "effect": "At the end of each turn, if the Pokémon this card is attached to has half of its maximum HP or less remaining, heal 30 damage from it. If you do, discard this card.",
+  "subtype": "Tool"
+ },
+ "B1|heavy helmet": {
+  "effect": "If the Pokémon this card is attached to has a Retreat Cost of 3 or more, it takes −20 damage from attacks from your opponent's Pokémon.",
+  "subtype": "Tool"
+ },
+ "B1|lucky mittens": {
+  "effect": "Whenever your opponent's Pokémon is Knocked Out by damage from an attack used by the Pokémon this card is attached to, draw a card.",
+  "subtype": "Tool"
+ },
+ "B1|marlon": {
+  "effect": "Heal 70 damage from 1 of your Carracosta or Jellicent.",
+  "subtype": "Supporter"
+ },
+ "B1|hala": {
+  "effect": "During your opponent's next turn, if your Hariyama or Crabominable would be Knocked Out by damage from an attack, it is not Knocked Out and its remaining HP becomes 10.",
+  "subtype": "Supporter"
+ },
+ "B1|may": {
+  "effect": "Put 2 random Pokémon from your deck into your hand. For each Pokémon you put into your hand in this way, choose a Pokémon to shuffle from your hand into your deck.",
+  "subtype": "Supporter"
+ },
+ "B1|fantina": {
+  "effect": "Take a {P} Energy from your Energy Zone and attach it to each of your Drifblim and Mismagius.",
+  "subtype": "Supporter"
+ },
+ "B1|copycat": {
+  "effect": "Shuffle your hand into your deck. Draw a card for each card in your opponent's hand.",
+  "subtype": "Supporter"
+ },
+ "B1|lisia": {
+  "effect": "Put 2 random Basic Pokémon with 50 HP or less from your deck into your hand.",
+  "subtype": "Supporter"
+ },
+ "B1a|clemont's backpack": {
+  "effect": "During this turn, attacks used by your Magneton or Heliolisk do +20 damage to your opponent's Pokémon.",
+  "subtype": "Item"
+ },
+ "B1a|quick-grow extract": {
+  "effect": "Choose 1 of your {G} Pokémon in play. Put a random {G} Pokémon from your deck that evolves from that Pokémon onto that Pokémon to evolve it. You can't use this card during your first turn or on a Pokémon that was put into play this turn.",
+  "subtype": "Item"
+ },
+ "B1a|clemont": {
+  "effect": "Put 2 random cards from among Magneton, Heliolisk, and Clemont's Backpack from your deck into your hand.",
+  "subtype": "Supporter"
+ },
+ "B1a|serena": {
+  "effect": "Put a random Mega Evolution Pokémon ex from your deck into your hand.",
+  "subtype": "Supporter"
+ },
+ "B2|jaw fossil": {
+  "effect": "Play this card as if it were a 40-HP Basic {C} Pokémon. At any time during your turn, you may discard this card from play. This card can't retreat.",
+  "subtype": "Item"
+ },
+ "B2|lucky ice pop": {
+  "effect": "Heal 20 damage from your Active Pokémon. If you healed any damage in this way, flip a coin. If heads, put this Lucky Ice Pop into your hand instead of the discard pile.",
+  "subtype": "Item"
+ },
+ "B2|sail fossil": {
+  "effect": "Play this card as if it were a 40-HP Basic {C} Pokémon. At any time during your turn, you may discard this card from play. This card can't retreat.",
+  "subtype": "Item"
+ },
+ "B2|protective poncho": {
+  "effect": "As long as the Pokémon this card is attached to is on your Bench, prevent all damage done to that Pokémon by your opponent's attacks and Abilities.",
+  "subtype": "Tool"
+ },
+ "B2|metal core barrier": {
+  "effect": "If this card is attached to 1 of your Pokémon, discard it at the end of your opponent's turn. The {M} Pokémon this card is attached to takes −50 damage from attacks from your opponent's Pokémon.",
+  "subtype": "Tool"
+ },
+ "B2|diantha": {
+  "effect": "Heal 90 damage from 1 of your {P} Pokémon that has 2 or more {P} Energy attached. If you healed any damage in this way, discard 2 {P} Energy from that Pokémon.",
+  "subtype": "Supporter"
+ },
+ "B2|sightseer": {
+  "effect": "Look at the top 4 cards of your deck. Put all Stage 1 Pokémon you find there into your hand. Shuffle the other cards back into your deck.",
+  "subtype": "Supporter"
+ },
+ "B2|juggler": {
+  "effect": "You can use this card only if your Pokémon in play have 3 or more different types of Energy attached. Move all Energy from each of your Benched Pokémon to your Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "B2|piers": {
+  "effect": "You can use this card only if you have Galarian Obstagoon in play. Discard 2 random Energy from your opponent's Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "B2|training area": {
+  "effect": "Attacks used by Stage 1 Pokémon in play (both yours and your opponent's) do +10 damage to the opponent's Active Pokémon.",
+  "subtype": "Stadium"
+ },
+ "B2|starting plains": {
+  "effect": "Each Basic Pokémon in play (both yours and your opponent's) gets +20 HP.",
+  "subtype": "Stadium"
+ },
+ "B2|peculiar plaza": {
+  "effect": "The Retreat Cost of each {P} Pokémon in play (both yours and your opponent's) is 2 less.",
+  "subtype": "Stadium"
+ },
+ "B2a|electric generator": {
+  "effect": "Flip a coin. If heads, take a Lightning Energy from your Energy Zone and attach it to 1 of your Benched Lightning Pokémon.",
+  "subtype": "Item"
+ },
+ "B2a|big air balloon": {
+  "effect": "The Stage 2 Pokémon this card is attached to has no Retreat Cost.",
+  "subtype": "Tool"
+ },
+ "B2a|team star grunt": {
+  "effect": "Discard a random Energy from among the Energy attached to all of your opponent's Pokémon that have an Ability.",
+  "subtype": "Supporter"
+ },
+ "B2a|iono": {
+  "effect": "Each player shuffles the cards in their hand into their deck, then draws that many cards.",
+  "subtype": "Supporter"
+ },
+ "B2a|nemona": {
+  "effect": "During this turn, attacks used by your Pawmot do +80 damage to your opponent's Active Pokémon ex.",
+  "subtype": "Supporter"
+ },
+ "B2a|arven": {
+  "effect": "Flip a coin. If heads, put a random Item card from your deck into your hand. If tails, put a random Pokémon Tool card from your deck into your hand.",
+  "subtype": "Supporter"
+ },
+ "B2a|penny": {
+  "effect": "Look at a random Supporter card that's not Penny from your opponent's deck and shuffle it back into their deck. Use the effect of that card as the effect of this card.",
+  "subtype": "Supporter"
+ },
+ "B2a|mesagoza": {
+  "effect": "Once during each player's turn, that player may flip a coin. If heads, that player puts a random Pokémon from their deck into their hand. You may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played.",
+  "subtype": "Stadium"
+ },
+ "PROMO-A|potion": {
+  "effect": "Heal 20 damage from 1 of your Pokémon.",
+  "subtype": "Item"
+ },
+ "PROMO-A|x speed": {
+  "effect": "During this turn, the Retreat Cost of your Active Pokémon is 1 less.",
+  "subtype": "Item"
+ },
+ "PROMO-A|hand scope": {
+  "effect": "Your opponent reveals their hand.",
+  "subtype": "Item"
+ },
+ "PROMO-A|pokédex": {
+  "effect": "Look at the top 3 cards of your deck.",
+  "subtype": "Item"
+ },
+ "PROMO-A|poké ball": {
+  "effect": "Put a random Basic Pokémon from your deck into your hand.",
+  "subtype": "Item"
+ },
+ "PROMO-A|red card": {
+  "effect": "Your opponent shuffles their hand into their deck and draws 3 cards.",
+  "subtype": "Item"
+ },
+ "PROMO-A|professor's research": {
+  "effect": "Draw 2 cards.",
+  "subtype": "Supporter"
+ },
+ "A4b|eevee bag": {
+  "effect": "Choose 1: ① During this turn, attacks used by your Pokémon that evolve from Eevee do +10 damage to your opponent's Active Pokémon. ② Heal 20 damage from each of your Pokémon that evolves from Eevee.",
+  "subtype": "Item"
+ },
+ "A4b|elemental switch": {
+  "effect": "Move a [ R ] , [ W ] , or [ L ] Energy from 1 of your Benched Pokémon to your Active Pokémon.",
+  "subtype": "Item"
+ },
+ "A4b|old amber": {
+  "effect": "Play this card as if it were a 40-HP Basic [ C ] Pokémon. At any time during your turn, you may discard this card from play. This card can't retreat.",
+  "subtype": "Item"
+ },
+ "A4b|rare candy": {
+  "effect": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card onto the Basic Pokémon to evolve it, skipping the Stage 1. You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.",
+  "subtype": "Item"
+ },
+ "A4b|pokémon communication": {
+  "effect": "Choose a Pokémon in your hand and switch it with a random Pokémon in your deck.",
+  "subtype": "Item"
+ },
+ "A4b|electrical cord": {
+  "effect": "If the [ L ] Pokémon this card is attached to is in the Active Spot and is Knocked Out by damage from an attack from your opponent's Pokémon, move 2 [ L ] Energy from that Pokémon and attach 1 Energy each to 2 of your Benched Pokémon.",
+  "subtype": "Tool"
+ },
+ "A4b|giant cape": {
+  "effect": "The Pokémon this card is attached to gets +20 HP.",
+  "subtype": "Tool"
+ },
+ "A4b|rocky helmet": {
+  "effect": "If the Pokémon this card is attached to is in the Active Spot and is damaged by an attack from your opponent's Pokémon, do 20 damage to the Attacking Pokémon.",
+  "subtype": "Tool"
+ },
+ "A4b|leaf cape": {
+  "effect": "The [ G ] Pokémon this card is attached to gets +30 HP.",
+  "subtype": "Tool"
+ },
+ "A4b|cyrus": {
+  "effect": "Switch in 1 of your opponent's Benched Pokémon that has damage on it to the Active Spot.",
+  "subtype": "Supporter"
+ },
+ "A4b|erika": {
+  "effect": "Heal 50 damage from 1 of your [ G ] Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A4b|irida": {
+  "effect": "Heal 40 damage from each of your Pokémon that has any [ W ] Energy attached.",
+  "subtype": "Supporter"
+ },
+ "A4b|lyra": {
+  "effect": "Switch your Active Pokémon that has damage on it with 1 of your Benched Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A4b|giovanni": {
+  "effect": "During this turn, attacks used by your Pokémon do +10 damage to your opponent's Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A4b|silver": {
+  "effect": "Your opponent reveals their hand. Choose a Supporter card you find there and shuffle it into your opponent's deck.",
+  "subtype": "Supporter"
+ },
+ "A4b|sabrina": {
+  "effect": "Switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)",
+  "subtype": "Supporter"
+ },
+ "A4b|iono": {
+  "effect": "Each player shuffles the cards in their hand into their deck, then draws that many cards.",
+  "subtype": "Supporter"
+ },
+ "A4b|dawn": {
+  "effect": "Move an Energy from 1 of your Benched Pokémon to your Active Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A4b|mars": {
+  "effect": "Your opponent shuffles their hand into their deck and draws a card for each of their remaining points needed to win.",
+  "subtype": "Supporter"
+ },
+ "A4b|leaf": {
+  "effect": "During this turn, the Retreat Cost of your Active Pokémon is 2 less.",
+  "subtype": "Supporter"
+ },
+ "A4b|lillie": {
+  "effect": "Heal 60 damage from 1 of your Stage 2 Pokemon.",
+  "subtype": "Supporter"
+ },
+ "A4b|lusamine": {
+  "effect": "You can use this card only if your opponent has gotten at least 1 point. Choose 1 of your Ultra Beasts. Attach 2 random Energy from your discard pile to that Pokémon.",
+  "subtype": "Supporter"
+ },
+ "A4b|red": {
+  "effect": "During this turn, attacks used by your Pokémon do +20 damage to your opponent's Active Pokémon ex.",
+  "subtype": "Supporter"
+ },
+ "A4b|professor's research": {
+  "effect": "Draw 2 cards.",
+  "subtype": "Supporter"
+ },
+ "B2b|nasty notice": {
+  "effect": "Your opponent discards cards from their hand until they have 4 cards in their hand.",
+  "subtype": "Item"
+ },
+ "B2b|maintenance": {
+  "effect": "Shuffle 2 cards from your hand into your deck. Draw a card. If you can't shuffle in 2 cards, you can't use this card.",
+  "subtype": "Item"
+ },
+ "B2b|iris": {
+  "effect": "During this turn, if your opponent's Active Pokémon is Knocked Out by damage from an attack used by your Haxorus, you get 1 more point.",
+  "subtype": "Supporter"
+ },
+ "B2b|calem": {
+  "effect": "Draw a card for each Mega Evolution Pokémon ex in play (both yours and your opponent's) .",
+  "subtype": "Supporter"
+ },
+ "B2b|hiking trail": {
+  "effect": "At the end of each player's turn, that player draws cards until they have 3 cards in their hand.",
+  "subtype": "Stadium"
+ },
+ "B2b|metal core barrier": {
+  "effect": "If this card is attached to 1 of your Pokémon, discard it at the end of your opponent's turn. The [ M ] Pokémon this card is attached to takes −50 damage from attacks from your opponent's Pokémon.",
+  "subtype": "Tool"
+ },
+ "B3|field blower": {
+  "effect": "Discard a Pokémon Tool card from a Pokémon (yours or your opponent's) , or discard a Stadium card in play.",
+  "subtype": "Item"
+ },
+ "B3|lucky egg": {
+  "effect": "If the Pokémon this card is attached to is Knocked Out by damage from an attack from your opponent's Pokémon, draw cards until you have 5 cards in your hand.",
+  "subtype": "Tool"
+ },
+ "B3|korrina": {
+  "effect": "During this turn, attacks used by your [ F ] Pokémon do +30 damage to your opponent's Active Pokémon ex.",
+  "subtype": "Supporter"
+ },
+ "B3|cabbie": {
+  "effect": "Put a random Stadium card from your deck into your hand.",
+  "subtype": "Supporter"
+ },
+ "B3|cheren": {
+  "effect": "During your opponent's next turn, all of your Watchog and Stoutland take −100 damage from attacks from your opponent's Pokémon ex.",
+  "subtype": "Supporter"
+ },
+ "B3|parasol lady": {
+  "effect": "Put 1 of your [ W ] Pokémon in play, except any Pokémon ex, into your hand.",
+  "subtype": "Supporter"
+ },
+ "B3|fragrant forest": {
+  "effect": "Once during each player's turn, that player may put a random Basic [ G ] Pokémon from their deck into their hand.",
+  "subtype": "Stadium"
+ },
+ "B3|arena of antiquity": {
+  "effect": "Attacks used by each [ F ] Pokémon in play (both yours and your opponent's) do +20 damage to the opponent's Active Pokémon ex.",
+  "subtype": "Stadium"
+ },
+ "B3|bounded field": {
+  "effect": "When applying the opponent's Active Pokémon's Weakness to damage from attacks used by Pokémon in play (both yours and your opponent's) that aren't Mega Evolution Pokémon ex, apply Weakness as ×2.",
+  "subtype": "Stadium"
+ },
+ "B3a|ancient booster energy capsule": {
+  "effect": "The Ancient Pokémon this card is attached to gets +40 HP.",
+  "subtype": "Tool"
+ },
+ "B3a|future booster energy capsule": {
+  "effect": "Attacks used by the Future Pokémon this card is attached to do +20 damage to your opponent's Active Pokémon.",
+  "subtype": "Tool"
+ },
+ "B3a|juliana": {
+  "effect": "Put a random Stage 2 Pokémon from your deck into your hand.",
+  "subtype": "Supporter"
+ },
+ "B3a|professor sada": {
+  "effect": "Attach 3 different types of Energy from your discard pile to your Ancient Pokémon in any way you like.",
+  "subtype": "Supporter"
+ },
+ "B3a|professor turo": {
+  "effect": "Shuffle 1 of your Future Pokémon in play into your deck.",
+  "subtype": "Supporter"
+ },
+ "B3a|area zero": {
+  "effect": "Once during each player's turn, that player may shuffle a Basic Pokémon from their hand into their deck. If they do, they draw a card.",
+  "subtype": "Stadium"
+ },
+ "B3b|small balloon": {
+  "effect": "The Retreat Cost of the Basic Pokémon this card is attached to is 1 less.",
+  "subtype": "Tool"
+ },
+ "B3b|elegant cape": {
+  "effect": "The Stage 1 Pokémon this card is attached to gets +30 HP.",
+  "subtype": "Tool"
+ },
+ "B3b|elesa": {
+  "effect": "Return all Pokémon Tools attached to each Pokémon (both yours and your opponent's) to their owner's hand.",
+  "subtype": "Supporter"
+ },
+ "B3b|puppy-loving girl": {
+  "effect": "Look at the top 4 cards of your deck. Put all Pokémon you find there that have the Puppy Pile attack into your hand. Shuffle the other cards back into your deck.",
+  "subtype": "Supporter"
+ },
+ "B3b|wallace": {
+  "effect": "Choose 1 of your [ W ] Pokémon in play with a maximum HP of 50 or less. Put a random [ W ] Pokémon from your deck that evolves from that Pokémon onto that Pokémon to evolve it.",
+  "subtype": "Supporter"
+ },
+ "B3b|kid’s room": {
+  "effect": "Once during each player's turn, that player may choose a card in their hand and switch it with a random Pokémon Tool card in their deck.",
+  "subtype": "Stadium"
+ }
+}

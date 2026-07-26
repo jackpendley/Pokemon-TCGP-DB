@@ -11,7 +11,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useIsMobile } from "@/lib/hooks/use-media-query";
-import { displayType } from "@/lib/domain/card";
+import { displayType, powerScoreLabel } from "@/lib/domain/card";
 import { titleCase } from "@/lib/domain/format";
 import type { CatalogCard } from "@/types";
 
@@ -96,7 +96,7 @@ export function CardDialog({
                     {card.owned > 0 ? `×${card.owned}` : "Not owned"}
                   </Row>
                   {card.power_score != null ? (
-                    <Row label="Power score">
+                    <Row label={powerScoreLabel(card)}>
                       <span className="font-semibold tabular-nums text-primary">
                         {card.power_score.toFixed(1)}
                       </span>

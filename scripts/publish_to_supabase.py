@@ -96,6 +96,9 @@ def build_card_rows(card_reference: dict, power_scores: dict | None) -> list[dic
                 "hp": r.get("hp"),
                 "pack_name": r.get("pack_name"),
                 "power_score": score["power_score"] if score else None,
+                # Which model produced the score — Pokémon and Trainer scores
+                # are not comparable, so the kind travels with the number.
+                "power_score_kind": score.get("score_kind") if score else None,
             }
         )
     return rows
