@@ -1,208 +1,225 @@
-# Pokemon TCG Pocket Collection Database
+# Pokémon TCG Pocket — Collection Optimizer
 
-Personal collection tracker and pack-opening optimizer for Pokémon TCG Pocket.
+A full-stack collection tracker and **pack-opening optimizer** for Pokémon TCG
+Pocket. It syncs a live collection from [Pokémon Zone](https://pokemon-zone.com/),
+runs an expected-value model over every purchasable pack, and serves the results
+as a fast, cached dashboard — telling you exactly which pack to open next for the
+most new cards per in-game currency.
 
-## Quick Start
+**Live:** https://pokemon-tcgp-db-ten.vercel.app
 
-```bash
-python3 scripts/run_recommendations.py
+> A personal tool built as a study in modern full-stack engineering: a Python
+> analytics pipeline, a Postgres data layer with row-level security, and a
+> Next.js 16 front end using Cache Components / Partial Prerendering — wired
+> together by a CI-driven sync that runs on a self-hosted runner.
+
+<!-- Screenshots: drop dashboard / cards / history images in docs/ and reference them here. -->
+
+---
+
+## What it does
+
+- **Syncs** your collection from Pokémon Zone (exact card identity, no fuzzy matching).
+- **Scores** all ~26 purchasable packs with an EV model that weights new cards,
+  duplicates, and rarity, adjusted by a per-pack confidence factor.
+- **Recommends** what to open next given your hourglass balance.
+- **Tracks drift** — an append-only history of how your collection and pack
+  rankings change over time, charted on `/history`.
+- **Public read, owner-gated writes** — anyone can browse the collection and
+  recommendations; only the authenticated owner can trigger a sync.
+
+---
+
+## Architecture
+
+The Python pipeline stays the **source of truth** for all analytics; hosting is
+purely additive behind two seams (`DataSource` for reads, `SyncRunner` for
+writes), so the same code runs locally against JSON files or in production
+against Postgres.
+
+```mermaid
+flowchart LR
+    PZ[Pokémon Zone API] -->|curl_cffi<br/>Chrome TLS| RUN[Self-hosted GitHub<br/>Actions runner]
+    subgraph CI[GitHub Actions · sync.yml]
+      RUN --> PIPE[Python pipeline<br/>sync → EV → recommendations]
+      PIPE --> PUB[publish_to_supabase.py]
+    end
+    PUB -->|service role| DB[(Supabase Postgres<br/>RLS + migrations)]
+    PUB -->|POST /api/revalidate| WEB
+    PIPE -->|commit collection.json| REPO[(GitHub repo)]
+    DB -->|service role, server-only| WEB[Next.js 16 on Vercel<br/>Cache Components + PPR]
+    WEB -->|static shell from edge +<br/>streamed cached data| USER((Visitor))
+    USER -->|Sign in → Sync now| WEB
+    WEB -->|repository_dispatch| CI
 ```
 
-Syncs collection from Pokemon Zone, runs the full EV pipeline, and prints a condensed summary. Full verbose output logged to `data/pipeline.log`.
+### Data flow: sync → publish → serve
 
-```
-  ✓  Sync collection         1793 cards, 820 unique
-  ✓  Validate collection     820 entries, total=1793
-  ✓  Normalize collection    OK
-  ✓  Build pack EV           26 packs
-  ✓  Recommendations         OK
+1. **Trigger** — the owner clicks *Sync now* on the dashboard. A stateless
+   `SyncRunner` fires a GitHub `repository_dispatch` (it does **not** run Python
+   on Vercel — Python can't run there).
+2. **Sync** — the workflow runs on a **self-hosted runner** (GitHub's cloud IPs
+   are blocked by Cloudflare; a home-network runner is not). It fetches the
+   collection using `curl_cffi` Chrome impersonation with stored auth.
+3. **Compute** — the untouched pipeline builds pack EV + recommendations.
+4. **Publish** — `publish_to_supabase.py` upserts the artifacts into Postgres
+   with the service-role key and appends a recommendation snapshot.
+5. **Invalidate** — the workflow POSTs to a secret-guarded `/api/revalidate`,
+   which calls `revalidateTag()` so the next request re-reads fresh data.
+6. **Serve** — the web app returns a prerendered static shell from the CDN edge
+   and streams the cached, per-request data into it.
 
-  Top pack:   Ho-Oh (unified=58.5830) — 128/136 cards unowned
-  Pack Hourglasses: 615  → buy 10x Ho-Oh (costs 120 ⧗), then re-run
-  Log:        data/pipeline.log
-```
+The web app never blocks the deploy on pipeline artifacts (they're gitignored),
+so CI and fresh checkouts build cleanly in a data-free `local-json` mode.
 
-**Flags:**
+---
 
-| Flag | Effect |
+## Tech stack
+
+| Layer | Choices |
 |---|---|
-| _(none)_ | Full run: headless PZ sync + EV pipeline |
-| `--skip-sync` | Skip sync, use current `collection.json` |
-| `--json-import` | Auto-import newest `~/Downloads/pz_collection*.json` |
-| `--json-import FILE` | Import specific bookmarklet JSON |
-| `--dry-run-sync` | Preview sync diff, stop before EV |
-| `--login` | Re-authenticate browser before sync |
-| `--promo` | Also run promo EV + Shop Ticket summary |
-| `--full-rankings` | Print all packs ranked + write `review/full_pack_ranking.md` |
-| `--include-limited` | Include limited-time packs (e.g. Deluxe Pack: ex) |
-| `--series {A,B}` | Filter `--full-rankings` to one series |
-
-**Exit codes:** `0` OK · `1` fatal · `2` review-queue items · `3` completed but PZ
-auth expired (collection not refreshed — consumed by the web sync runner as
-*needs re-auth*).
+| **Front end** | Next.js 16 (App Router, **Cache Components / PPR**), React 19, TypeScript, Tailwind CSS v4, Base UI + shadcn-style components, Recharts |
+| **Data / auth** | Supabase Postgres, Row-Level Security, `@supabase/ssr` (session cookies via Next 16 `proxy.ts`), Zod-validated contracts |
+| **Pipeline** | Python 3, `curl_cffi` (Chrome TLS impersonation), a pure-function EV model |
+| **Infra / CI** | Vercel (Fluid Compute), GitHub Actions (self-hosted + cloud runners), tag-based cache invalidation |
+| **Testing** | Vitest (web) + a `DataSource` parity contract, pytest with a golden-snapshot regression gate |
 
 ---
 
-## Collection
+## Engineering highlights
 
-**Source of truth:** `collection.json` — synced from [Pokemon Zone](https://pokemon-zone.com/collection-tracker/).
+The parts that were interesting to build:
 
-| Stat | Value |
+- **Cache Components + PPR, not `force-dynamic`.** Every page renders a
+  prerendered static shell (served from the edge) plus `<Suspense>` dynamic
+  holes streaming cached data. Data readers are wrapped in `use cache` +
+  `cacheTag`, so ~3,500-row Supabase reads become cache hits invalidated only on
+  publish — turning a ~2.4 s cold TTFB into an edge cache hit (`x-vercel-cache: HIT`).
+- **Keeping the CI build green under Cache Components.** Because the CI build
+  runs data-free, cached reads are forced runtime-only (via `connection()` or
+  the request's own `searchParams`/`params`) so they never execute during
+  prerender against missing artifacts.
+- **Public read / owner-gated writes.** Reads use the service-role key
+  server-side (never shipped to the client); the sync **write** path is gated to
+  the authenticated owner's UUID — closing a would-be public trigger for the
+  whole pipeline.
+- **Cloudflare-aware sync.** The sync is pure HTTP with stored auth, but
+  Cloudflare blocks datacenter IPs — so the live sync runs on a self-hosted
+  runner, with graceful `needs-reauth` handling surfaced in the UI when the
+  ~3–4-week PZ session lapses.
+- **One data model, two backends.** A `DataSource` interface
+  (`web/lib/data/`) has a `local-json` and a `supabase` implementation, both
+  validated through the **same Zod schemas** and checked by a parity contract
+  test — so hosting never forked the read logic.
+
+---
+
+## Data model
+
+Postgres schema in `supabase/migrations/` (applied in order):
+
+| Migration | Adds |
 |---|---|
-| Total cards | 1793 |
-| Unique entries | 820 |
-| Last synced | 2026-07-08 |
+| `0001_init` | Global catalog tables + per-user tables (collection, EV, recommendations, sync status) with RLS |
+| `0002_auth_owner` | Seeds the auth owner, backfills `user_id`, adds the FK, drops temporary anon policies |
+| `0003_sync_last_run` | `sync_status.last_run` completion marker for honest sync-completion reporting |
+| `0004_recommendation_snapshots` | Append-only history table powering `/history` |
+
+Global data (cards, packs, odds) has no `user_id`; per-user data carries
+`user_id` with `user_id = auth.uid()` policies — modeled multi-user, run
+single-tenant.
 
 ---
 
-## Sync Options
-
-### Option A — Browser bookmarklet (recommended)
-
-Add this as a browser bookmark named "PZ Sync":
-
-```
-javascript:(async()=>{const b='https://www.pokemon-zone.com/api/';const[cr,or]=await Promise.all([fetch(b+'cards/search/'),fetch(b+'players/mine/')]);const cb=await cr.json();const ob=await or.json();const cat={};for(const i of(cb.data?.results??cb.data??[])){const m=(i.url||'').match(/\/cards\/[^/]+\/(\d+)\//);cat[i.cardDefKey]={name:i.name,set_code:i.expansionId||'',card_number:m?parseInt(m[1]):null}}const cards=[];for(const c of(ob.data?.cards??[])){if(!c.amount||c.amount<=0)continue;const info=cat[c.cardId];if(!info)continue;const sc=((c.expansionIds||[])[0]||info.set_code||'').toUpperCase();cards.push({cardName:info.name,setCode:sc,cardNumber:info.card_number,ownedCount:c.amount})}const bl=new Blob([JSON.stringify(cards,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download='pz_collection.json';a.click();alert('Done: '+cards.length+' cards downloaded as pz_collection.json')})();
-```
-
-To install in Chrome: Bookmarks → Bookmark Manager (Cmd+Option+B) → three-dot menu → Add new bookmark → paste the full `javascript:` one-liner as the URL.
-
-Usage:
-1. Open `https://www.pokemon-zone.com/collection-tracker/` (must be logged in)
-2. Click the "PZ Sync" bookmark — `pz_collection.json` downloads automatically
-3. Run: `python3 scripts/run_recommendations.py --json-import`
-
-### Option B — Stored auth / headless (default pipeline)
-
-```bash
-# First-time setup — paste a cURL command copied from DevTools:
-python3 scripts/sync_collection.py --curl-import
-
-# All subsequent syncs (Chrome TLS impersonation via curl-cffi):
-python3 scripts/run_recommendations.py
-```
-
-Auth stored in `data/sync/.auth.json` (gitignored). Re-run `--curl-import` when auth expires.
-
-### Option C — HAR import (fallback)
-
-```bash
-# 1. Open https://www.pokemon-zone.com/collection-tracker/ (logged in)
-# 2. DevTools → Network tab → reload → wait for cards → Export HAR
-python3 scripts/run_recommendations.py --json-import ~/Downloads/pz_collection.json
-```
-
----
-
-## Pipeline Architecture
-
-```
-sync_collection.py              ← fetch from Pokemon Zone (stored auth or bookmarklet JSON)
-validate_current_collection.py  ← sum(count) == meta.total_cards
-normalize_current_collection.py ← clean JSON, no comments
-build_pack_ev.py                ← EV for all regular packs
-build_promo_pack_ev.py          ← promo pack EV (Shop Tokens, with --promo)
-generate_pack_recommendation_report.py
-```
-
-EV is computed directly from `pz_pack_odds.json` keyed by `(set_code, card_number)` — no fuzzy matching or confidence scoring. Pokemon Zone provides exact card identity on sync.
-
----
-
-## Key Outputs
-
-These are **generated locally on every run** (regenerated from `collection.json` + `data/reference/*`)
-and are **gitignored** — `data/current/`, `data/exports/`, and `review/` are build artifacts, not
-version-controlled. `collection.json` is the tracked source of truth; commit it when your cards change.
-
-| File | Description |
-|---|---|
-| `review/inferred_pack_recommendations.md` | Ranked pack list with EV scores and deck-chase guide |
-| `review/promo_pack_ev.md` | Promo pack rankings (Shop Token currency) |
-| `data/pipeline.log` | Full verbose output from last run (gitignored) |
-
----
-
-## EV Model
+## EV model
 
 ```
 EV per pack = Σ (p_pull × value_of_next_copy)
 
-value_of_next_copy (per printing — each set coord counted independently):
-  owned=0  →  1.0 + RARITY_BONUS[rarity]  (ultra_rare=10.0, immersive=7.5 … uncommon=0.0)
-  owned=1  →  0.4
-  owned≥2  →  0.0
+value_of_next_copy (per printing, each set coordinate counted independently):
+  owned = 0  →  1.0 + RARITY_BONUS[rarity]   (ultra_rare 10.0 … uncommon 0.0)
+  owned = 1  →  0.4
+  owned ≥ 2  →  0.0
 
 unified_score = new_card_ev_10x×1.0 + copy_ev×0.2 + deck_target_ev×1.5
-               (× confidence_weight: 1.0 for pz_verified)
-
-new_card_ev_10x = E[rarity-weighted new cards in 10 consecutive openings]
+               (× confidence_weight; 1.0 for pz_verified packs)
 ```
 
----
-
-## Reference Data
-
-| File | Contents |
-|---|---|
-| `data/reference/pack_sources.json` | 3,344 card → pack mappings (A1–B3b + PROMO-A/B) |
-| `data/reference/pz_pack_odds.json` | PZ per-card drop chances (49 packs, regular + promo) |
-| `data/reference/pull_probability_model.json` | Per-slot pull rate model with per-pack confidence |
-
-**Pull rate source:** Pokemon Zone pack pages (`?show_pack_odds=1&show_pack_slot_odds=1`),
-cross-checked against Bulbapedia offering-rates sections and in-app screenshots. Pack
-confidences are mixed (see `meta.source_status` in the model); the EV layer applies a
-confidence haircut to packs that aren't fully verified.
+Pull odds come from Pokémon Zone pack pages, cross-checked against Bulbapedia;
+packs that aren't fully verified take a confidence haircut.
 
 ---
 
-## Utility Scripts
+## Local development
 
-These are not part of the daily pipeline — run them when reference data needs rebuilding (e.g., new set release).
+### Web app
 
 ```bash
-# New pack/cards appeared after a sync? Refresh PZ odds + reference automatically.
-# Live fetch via stored sync auth — no manual HAR export needed.
-python3 scripts/ingest_pz.py                                      # dry-run: report new packs
-python3 scripts/ingest_pz.py --apply --write-pack-sources --rebuild-refs
-#   → writes pz_pack_odds.json (drop odds), adds pack_sources records for the new
-#     cards, and rebuilds card_reference.json so validation passes. Re-run the
-#     pipeline afterwards. Use `--har FILE` to ingest a browser capture offline.
+cd web
+npm install
+npm run dev          # DATA_SOURCE defaults to local-json (reads pipeline artifacts)
+npm run build        # production build (Cache Components)
+npm test             # Vitest + DataSource parity contract
+```
 
-# Pack source reference rebuild (if pack_sources.json needs updating)
-python3 scripts/build_pack_sources.py
-python3 scripts/validate_pack_sources.py
+To run against Supabase locally, set `DATA_SOURCE=supabase` plus the Supabase
+env vars (see `web/lib/env.ts` — all server-only, none `NEXT_PUBLIC_`).
 
-# Pull probability model rebuild/validation
-python3 scripts/build_pull_probability_model.py
-python3 scripts/validate_pull_probability_model.py
+### Python pipeline
+
+```bash
+python3 scripts/run_recommendations.py            # full run: sync + EV + recommendations
+python3 scripts/run_recommendations.py --skip-sync # recompute from current collection.json
+python3 -m pytest tests/ -q                        # full suite incl. golden snapshot
+```
+
+**Common flags:** `--skip-sync`, `--json-import [FILE]`, `--dry-run-sync`,
+`--promo`, `--full-rankings`, `--include-limited`, `--series {A,B}`.
+**Exit codes:** `0` OK · `1` fatal · `2` review-queue items · `3` PZ auth expired
+(collection not refreshed; consumed by the web sync runner as *needs re-auth*).
+
+Sync options (bookmarklet / stored-auth headless / HAR import) and reference-data
+rebuild scripts are documented inline in `scripts/` and
+[`docs/`](docs/). `collection.json` is the tracked source of truth; `data/current/`,
+`data/exports/`, and `review/` are gitignored build artifacts.
+
+---
+
+## Testing & CI
+
+`.github/workflows/ci.yml` runs on every PR:
+
+- **`test`** — `pytest tests/` including a **golden-snapshot** test that fails if
+  EV/recommendation output drifts (the pipeline is never edited for hosting).
+- **`web`** — `lint`, `typecheck`, Vitest, and `next build` in data-free mode
+  (the same constraint production caching had to satisfy).
+
+`sync.yml` handles live syncs (self-hosted, `repository_dispatch`) and
+`--skip-sync` republishes (cloud runner, on push to main).
+
+---
+
+## Project structure
+
+```
+scripts/                Python pipeline (sync, EV model, publisher) — 31 scripts
+tests/                  pytest suite + golden snapshot
+supabase/migrations/    Postgres schema (0001–0004)
+web/
+  app/                  Next.js App Router pages + /api/revalidate + proxy.ts
+  components/           UI (dashboard, cards, packs, sets, history, layout)
+  lib/data/             DataSource seam: local-json | supabase | cached wrappers
+  lib/auth/             @supabase/ssr server client + owner checks
+  types/                Zod schemas — the single validated contract
+.github/workflows/      ci.yml, sync.yml
 ```
 
 ---
 
-## Sync Notes
+## Roadmap / limitations
 
-- Rate-limited to once per ~24h by Pokemon Zone (skips gracefully if too early)
-- Chrome136 TLS impersonation (`curl-cffi`) prevents Cloudflare 403 on headless syncs
-- Raw API response not committed (`data/sync/last_sync_raw.json` gitignored)
-- Player stats (hourglasses, shop tickets) fetched automatically on each sync
-- **Auth expiry is graceful:** PZ sessions last ~3–4 weeks. When stored auth lapses the
-  pipeline does **not** fail — it keeps going on your existing `collection.json`, still
-  prints recommendations, and surfaces the one-step refresh
-  (`python3 scripts/sync_collection.py --curl-import`, which reads your clipboard). A
-  heads-up also prints once the stored auth passes 21 days, before it lapses mid-run.
-
----
-
-## Roadmap / Known Limitations
-
-- **Deck-building EV (deferred):** The model currently optimizes purely for collection
-  completion (owned 0 / 1 / 2+ per printing). A deck-target scoring layer
-  (`deck_recommendation_validation.json`) is stubbed in `build_pack_ev.py` and
-  `generate_pack_recommendation_report.py` but intentionally inert — `deck_target_ev`
-  is always 0 at runtime. When deck logic lands, the owned-count basis will switch to
-  name-level counting (decks can mix sets) and the `SCORING_WEIGHTS["deck_target"]`
-  term will become active.
+- **Deck-building EV (deferred):** the model optimizes for collection completion;
+  a `deck_target_ev` term is stubbed but inert until deck logic lands.
 - **Wonder Pick / trade / craft:** not modelled.
-- **Event / limited packs:** included via `--include-limited` flag; ranked on the same
-  EV metric but noted separately.
+- **Multi-user:** data is modeled for it (per-user rows + RLS), but the app runs
+  single-tenant — flipping it on is "enable signup + per-user sync," not a migration.
