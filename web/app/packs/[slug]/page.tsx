@@ -6,6 +6,7 @@ import { EnlargeableCard } from "@/components/cards/enlargeable-card";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { StatTilesSkeleton, TableSkeleton } from "@/components/ui/skeletons";
 import {
   Table,
   TableBody,
@@ -80,15 +81,9 @@ async function PackDetailContent({
     };
 
   return (
-    <div className="space-y-6">
+    <>
       <div>
-        <Link
-          href="/packs"
-          className="text-sm text-muted-foreground hover:underline"
-        >
-          ← Pack Recommendations
-        </Link>
-        <h1 className="mt-2 flex items-center gap-3 text-2xl font-semibold tracking-tight">
+        <h1 className="flex items-center gap-3 text-2xl font-semibold tracking-tight">
           {pack.pack_name}
           <Badge variant={pack.confidence_weight >= 1 ? "secondary" : "outline"}>
             {titleCase(pack.slot_rates_confidence)}
@@ -195,7 +190,26 @@ async function PackDetailContent({
           </div>
         </div>
       ) : null}
-    </div>
+    </>
+  );
+}
+
+/** Matches PackDetailContent's layout: title block, stat row, two card tables. */
+function PackDetailSkeleton() {
+  return (
+    <>
+      <div>
+        <Skeleton className="h-8 w-72 max-w-full" />
+        <Skeleton className="mt-2 h-4 w-40" />
+      </div>
+      <StatTilesSkeleton count={4} className="sm:grid-cols-2 lg:grid-cols-4" />
+      {[0, 1].map((i) => (
+        <div key={i}>
+          <Skeleton className="mb-3 h-6 w-40" />
+          <TableSkeleton rows={6} columns={5} />
+        </div>
+      ))}
+    </>
   );
 }
 
@@ -204,9 +218,18 @@ export default function PackDetailPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  // The back-link is static shell, so PPR paints it before the pack resolves.
   return (
-    <Suspense fallback={<Skeleton className="h-96 w-full" />}>
-      <PackDetailContent params={params} />
-    </Suspense>
+    <div className="space-y-6">
+      <Link
+        href="/packs"
+        className="text-sm text-muted-foreground hover:underline"
+      >
+        ← Pack Recommendations
+      </Link>
+      <Suspense fallback={<PackDetailSkeleton />}>
+        <PackDetailContent params={params} />
+      </Suspense>
+    </div>
   );
 }

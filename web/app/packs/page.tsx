@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { connection } from "next/server";
 
 import { PacksTable } from "@/components/packs/packs-table";
-import { Skeleton } from "@/components/ui/skeleton";
+import { TableSkeleton, TextLinesSkeleton } from "@/components/ui/skeletons";
 import { getCachedPackEv, getCachedRecommendations } from "@/lib/data/cached";
 
 export const metadata = { title: "Pack Recommendations · TCGP Optimizer" };
@@ -40,7 +40,14 @@ export default function PacksPage() {
           Pack Recommendations
         </h1>
       </header>
-      <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+      <Suspense
+        fallback={
+          <>
+            <TextLinesSkeleton lines={2} width="w-[32rem] max-w-full" />
+            <TableSkeleton rows={10} columns={6} />
+          </>
+        }
+      >
         <PacksContent />
       </Suspense>
     </div>

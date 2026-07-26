@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import { NAV_ITEMS } from "@/components/layout/nav-items";
+import { NavPending } from "@/components/layout/nav-pending";
 
 /**
  * Presentational sidebar nav. Split out so it renders statically with
@@ -31,6 +32,7 @@ export function NavList({ pathname }: { pathname: string | null }) {
           >
             <Icon className="size-4 shrink-0" />
             {label}
+            <NavPending />
           </Link>
         );
       })}
