@@ -166,3 +166,28 @@
     animation: none;
   }
 }
+
+/* Indeterminate progress for a running sync (components/sync/sync-progress-dialog.tsx).
+   The job reports no completion fraction, so the bar sweeps rather than fills. */
+@keyframes sync-sweep {
+  from {
+    left: -40%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.animate-sync-sweep {
+  width: 40%;
+  animation: sync-sweep 1.3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sync-sweep {
+    left: 0;
+    width: 100%;
+    animation: none;
+    opacity: 0.5;
+  }
+}
