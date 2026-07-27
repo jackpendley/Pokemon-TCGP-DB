@@ -64,3 +64,34 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
+
+  e2e:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - run: npm ci
+
+      # Chromium only: the mobile project runs an iPhone viewport on Chromium
+      # (see playwright.config.ts), so no second browser download is needed.
+      - run: npx playwright install --with-deps chromium
+
+      # playwright.config.ts builds and starts the app itself. No pipeline
+      # artifacts are present, so this also exercises the data-free render path.
+      - run: npm run test:e2e
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: web/playwright-report/
+          retention-days: 7
