@@ -1,7 +1,11 @@
 import { expect, test } from "@playwright/test";
 
+import { HAS_PIPELINE_DATA } from "./fixtures";
+
 test.describe("desktop navigation", () => {
   test.skip(({ isMobile }) => !!isMobile, "sidebar is hidden below md");
+  // Navigation asserts on hydrated, data-backed pages.
+  test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
 
   test("sidebar links navigate", async ({ page }) => {
     await page.goto("/");
@@ -33,6 +37,7 @@ test.describe("desktop navigation", () => {
 
 test.describe("mobile", () => {
   test.skip(({ isMobile }) => !isMobile, "covers the phone-only UI");
+  test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
 
   test("the drawer opens, navigates and closes on Escape", async ({ page }) => {
     await page.goto("/");

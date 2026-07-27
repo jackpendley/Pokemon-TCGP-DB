@@ -85,8 +85,10 @@ jobs:
       # (see playwright.config.ts), so no second browser download is needed.
       - run: npx playwright install --with-deps chromium
 
-      # playwright.config.ts builds and starts the app itself. No pipeline
-      # artifacts are present, so this also exercises the data-free render path.
+      # playwright.config.ts builds and starts the app itself. CI has no pipeline
+      # artifacts (they're gitignored), so this run covers the data-free path:
+      # static shells, page errors and layout. Tests needing real cards gate
+      # themselves on the artifacts and skip here — see web/e2e/fixtures.ts.
       - run: npm run test:e2e
 
       - uses: actions/upload-artifact@v4

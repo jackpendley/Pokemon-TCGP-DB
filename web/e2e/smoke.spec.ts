@@ -1,5 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 
+import { HAS_PIPELINE_DATA } from "./fixtures";
+
 /**
  * Every page must render its own heading with no page errors.
  *
@@ -59,6 +61,7 @@ test("the page never scrolls horizontally", async ({ page }) => {
 });
 
 test("cards search filters the grid", async ({ page }) => {
+  test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
   await page.goto("/cards");
   const search = page.getByPlaceholder(/search cards/i).first();
   await search.waitFor();
@@ -69,6 +72,7 @@ test("cards search filters the grid", async ({ page }) => {
 });
 
 test("the deck builder validates an empty deck", async ({ page }) => {
+  test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
   // The rules engine wired end to end: an empty deck reports all three errors.
   await page.goto("/decks/new");
   await expect(page.getByText(/add 20 more/i)).toBeVisible();
