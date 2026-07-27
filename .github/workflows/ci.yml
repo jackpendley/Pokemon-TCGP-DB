@@ -56,8 +56,10 @@ jobs:
 
       - run: npm ci
 
-      # Schema tests run against committed fixtures and pages are force-dynamic,
-      # so none of these steps need the (gitignored) pipeline artifacts.
+      # Schema tests run against committed fixtures, and every cached read sits
+      # behind a runtime bail (connection()/params) so prerender never touches
+      # the (gitignored) pipeline artifacts. Reproduce this build locally with
+      # `npm run build:ci` — see web/AGENTS.md.
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
