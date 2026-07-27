@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { DeckBuilder } from "@/components/decks/deck-builder";
+import { DeleteDeckButton } from "@/components/decks/delete-deck-button";
 import { PanelSkeleton } from "@/components/ui/skeletons";
 import { getCachedCatalog, getCachedDeck } from "@/lib/data/cached";
 import { canEditDecks } from "@/app/decks/actions";
@@ -20,8 +21,16 @@ async function DeckContent({ params }: { params: Promise<{ id: string }> }) {
 
   return (
     <>
-      <h1 className="text-2xl font-semibold tracking-tight">{deck.name}</h1>
-      <DeckBuilder catalog={catalog} existing={deck} canEdit={canEdit} />
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="text-2xl font-semibold tracking-tight">{deck.name}</h1>
+        {canEdit ? <DeleteDeckButton id={deck.id} name={deck.name} /> : null}
+      </div>
+      <DeckBuilder
+        key={deck.id}
+        catalog={catalog}
+        existing={deck}
+        canEdit={canEdit}
+      />
     </>
   );
 }

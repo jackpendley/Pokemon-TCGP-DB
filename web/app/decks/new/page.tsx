@@ -15,7 +15,11 @@ async function NewDeckContent() {
     getCachedCatalog(),
     canEditDecks(),
   ]);
-  return <DeckBuilder catalog={catalog} existing={null} canEdit={canEdit} />;
+  // Keyed so navigating here from an existing deck remounts the builder;
+  // without it React reuses the component and keeps the old deck's state.
+  return (
+    <DeckBuilder key="new" catalog={catalog} existing={null} canEdit={canEdit} />
+  );
 }
 
 export default function NewDeckPage() {
