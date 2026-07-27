@@ -14,7 +14,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from trainer_power import trainer_features, trainer_power_score
+from trainer_power import (
+    _RE_NARROW_NAMED,
+    _RE_NARROW_TYPE,
+    trainer_boosts,
+    trainer_features,
+    trainer_power_score,
+)
 
 EFFECTS = ROOT / "data" / "reference" / "card_trainer_effects.json"
 
@@ -123,6 +129,133 @@ def test_limitless_energy_symbol_spelling_is_recognised():
         "During this turn, attacks used by your [ F ] Pokémon do +30 damage."
     )
     assert braces == brackets
+
+
+# ── Boost extraction ───────────────────────────────────────────────────────
+
+def test_generic_trainers_boost_nothing_in_particular():
+    """Emptiness is how "works in every deck" is represented."""
+    for text in (
+        "Draw 2 cards.",
+        "Put 1 random Basic Pokémon from your deck into your hand.",
+        "During this turn, attacks used by your Pokémon do +10 damage.",
+        "",
+    ):
+        assert trainer_boosts(text) == {"names": [], "types": []}
+
+
+def test_single_named_pokemon_is_extracted():
+    assert trainer_boosts(
+        "During this turn, attacks used by your Pawmot do +80 damage to your "
+        "opponent's Active Pokémon ex."
+    ) == {"names": ["Pawmot"], "types": []}
+
+
+def test_every_name_in_a_list_is_extracted():
+    """Regression: only the first name in a list used to be seen."""
+    assert trainer_boosts(
+        "During this turn, attacks used by your Ninetales, Rapidash, or Magmar "
+        "do +30 damage to your opponent's Active Pokémon."
+    )["names"] == ["Ninetales", "Rapidash", "Magmar"]
+    assert trainer_boosts(
+        "attacks used by your Snorlax, Heracross, and Staraptor cost 2 less"
+    )["names"] == ["Snorlax", "Heracross", "Staraptor"]
+    assert trainer_boosts("Put your Muk or Weezing in the Active Spot into your hand.")[
+        "names"
+    ] == ["Muk", "Weezing"]
+
+
+def test_multi_word_and_ex_names_survive_intact():
+    assert trainer_boosts(
+        "attacks used by your Alolan Golem, Vikavolt, or Togedemaru do +30 damage"
+    )["names"] == ["Alolan Golem", "Vikavolt", "Togedemaru"]
+    assert trainer_boosts("Put your Mew ex in the Active Spot into your hand.")[
+        "names"
+    ] == ["Mew ex"]
+
+
+def test_a_name_does_not_run_past_the_end_of_its_sentence():
+    """Regression: "…to your Luxray. Attach 2 {L} Energy…" yielded
+    "Luxray. Attach" while the name regex allowed periods mid-name."""
+    assert trainer_boosts(
+        "Choose 1 of your Electivire or Luxray. Attach 2 {L} Energy from your "
+        "discard pile to that Pokémon."
+    )["names"] == ["Electivire", "Luxray"]
+
+
+def test_board_zones_and_card_traits_are_not_names():
+    """"your Basic Pokémon" and "your Ultra Beasts" restrict the card, but they
+    name no card, so there is nothing to recommend them alongside."""
+    for text in (
+        "Choose 1 of your Basic Pokémon in play.",
+        "Choose 1 of your Ultra Beasts.",
+        "Heal 60 damage from 1 of your Stage 2 Pokémon.",
+        "Shuffle 1 of your Future Pokémon in play into your deck.",
+        "Move all {L} Energy from your Benched Pokémon to your Active Pokémon.",
+    ):
+        assert trainer_boosts(text)["names"] == [], text
+
+
+def test_energy_types_are_extracted_in_both_spellings():
+    assert trainer_boosts("Heal 50 damage from 1 of your {G} Pokémon.")["types"] == [
+        "Grass"
+    ]
+    assert trainer_boosts("Heal 50 damage from 1 of your [ G ] Pokémon.")["types"] == [
+        "Grass"
+    ]
+
+
+def test_a_fossil_does_not_boost_colorless():
+    """A fossil *becomes* a Colorless Pokémon; it doesn't help one."""
+    assert trainer_boosts(
+        "Play this card as if it were a 40-HP Basic {C} Pokémon. At any time "
+        "during your turn, you may discard this card from play."
+    ) == {"names": [], "types": []}
+
+
+def test_a_boosting_card_always_took_the_narrowness_discount():
+    """The two readings of narrowness must stay consistent in one direction: the
+    scoring signal is broader (it also fires on trait groups), so anything the
+    extractor claims must already have been discounted as narrow. If this fails,
+    a card gained a boost relationship without paying for it."""
+    if not EFFECTS.exists():
+        return
+    effects = json.loads(EFFECTS.read_text(encoding="utf-8"))
+    for key, v in effects.items():
+        boosts = trainer_boosts(v["effect"])
+        if not (boosts["names"] or boosts["types"]):
+            continue
+        assert _RE_NARROW_NAMED.search(v["effect"]) or _RE_NARROW_TYPE.search(
+            v["effect"]
+        ), key
+
+
+def test_real_cards_extract_the_expected_boosts():
+    if not EFFECTS.exists():
+        return
+    effects = json.loads(EFFECTS.read_text(encoding="utf-8"))
+    expected = {
+        "A1|erika": {"names": [], "types": ["Grass"]},
+        "B2a|nemona": {"names": ["Pawmot"], "types": []},
+        "A1|blaine": {"names": ["Ninetales", "Rapidash", "Magmar"], "types": []},
+        "A1|helix fossil": {"names": [], "types": []},
+    }
+    for key, want in expected.items():
+        if key not in effects:
+            continue  # card not in this data set
+        assert trainer_boosts(effects[key]["effect"]) == want, key
+
+
+def test_no_extracted_name_is_a_sentence_fragment():
+    """A name with a period or a lowercase-initial word in it is a parse leak."""
+    if not EFFECTS.exists():
+        return
+    effects = json.loads(EFFECTS.read_text(encoding="utf-8"))
+    for key, v in effects.items():
+        for name in trainer_boosts(v["effect"])["names"]:
+            assert "." not in name or name.startswith("Mr."), f"{key}: {name!r}"
+            for word in name.split()[1:]:
+                assert word == "ex" or word[0].isupper(), f"{key}: {name!r}"
 
 
 # ── Against the real cached data ───────────────────────────────────────────

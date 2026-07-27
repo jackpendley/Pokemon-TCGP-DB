@@ -39,7 +39,7 @@ FIXTURES = ROOT / "web" / "types" / "__fixtures__"
 CARD_COLUMNS = {
     "set_code", "card_number", "name", "rarity", "pokemon_type", "card_category",
     "trainer_subtype", "stage", "expansion", "is_ex", "is_mega", "evolves_from",
-    "hp", "pack_name", "power_score", "power_score_kind",
+    "hp", "pack_name", "power_score", "power_score_kind", "boosts",
 }
 
 
@@ -154,6 +154,8 @@ def test_card_rows_carry_every_column(rows):
     # The kind travels with the score so consumers can't mix the two models.
     assert by_coord[("A1", 1)]["power_score_kind"] == "pokemon"
     assert by_coord[("A3", 200)]["power_score_kind"] is None
+    # Boosts travel with the score too; a card with no score has no boosts.
+    assert by_coord[("A3", 200)]["boosts"] is None
     # expansion falls back to set_code like loadCatalog does.
     assert by_coord[("A3", 200)]["expansion"] == "A3"
 

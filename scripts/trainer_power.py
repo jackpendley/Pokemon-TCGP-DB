@@ -88,10 +88,86 @@ _RE_COIN = re.compile(r"flip a coin", re.I)
 _RE_NARROW_TYPE = re.compile(r"(\{[A-Z]\}|\[\s*[A-Z]\s*\])\s*Pok[eé]mon")
 # Named-Pokémon restriction ("your Pawmot", "your Ninetales, Rapidash, or
 # Magmar"). The lookahead excludes the generic board nouns that follow "your".
+#
+# This is deliberately *broader* than the boost extraction below: it also fires on
+# trait groups ("your Ultra Beasts", "your Basic Pokémon", "your Stage 2 Pokémon"),
+# which are restrictions worth discounting even though they name no card. Keep it
+# that way — narrowing it here would silently re-score already-published cards.
 _RE_NARROW_NAMED = re.compile(
     r"\byour\s+(?!Pok[eé]mon|Bench|Active|Energy|Deck|Hand|Discard|Opponent)"
     r"[A-Z][A-Za-z'\u2019\-]+"
 )
+
+# \u2500\u2500 Boost extraction \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+# The same restriction that makes a Trainer score *lower* is what makes it
+# *findable*: a card that only works with your Water Pok\u00e9mon is exactly the card a
+# Water deck wants recommended. So the narrowness signal is read twice \u2014 once as a
+# scoring penalty above, once as a relationship here.
+
+# Energy symbol letter \u2192 canonical type name. Same vocabulary as
+# build_card_reference.ENERGY_TYPES, so these values join to `pokemon_type`.
+_ENERGY_LETTERS: dict[str, str] = {
+    "G": "Grass", "R": "Fire", "W": "Water", "L": "Lightning", "P": "Psychic",
+    "F": "Fighting", "D": "Darkness", "M": "Metal", "N": "Dragon", "C": "Colorless",
+}
+
+# Words that can follow "your" while naming a zone, a stage or a card trait rather
+# than a Pok\u00e9mon. A name list starting with one of these is discarded.
+_NOT_A_CARD_NAME = frozenset({
+    "Ancient", "Active", "Basic", "Bench", "Benched", "Deck", "Discard",
+    "Energy", "Future", "Hand", "Opponent", "Retreat", "Stage", "Ultra",
+})
+
+# One Pok\u00e9mon name: capitalised words plus the lowercase " ex" suffix
+# ("Mew ex", "Alolan Marowak", "Farfetch'd", "Ho-Oh").
+#
+# The lookbehind pair is what stops a name running past the end of its sentence:
+# "...attach it to your Luxray. Attach 2 {L} Energy..." must yield "Luxray", not
+# "Luxray. Attach". A word may still follow a period when the period belongs to an
+# abbreviated name ("Mr. Mime"). Trailing periods are stripped after the split.
+_WORD = r"[A-Z][A-Za-z'\u2019\-]*\.?"
+_NAME = rf"{_WORD}(?:(?:(?<=Mr\.)|(?<!\.))\s+(?:ex|{_WORD}))*"
+# "your A", "your A or B", "your A, B, or C", "your A, B, and C".
+_RE_NAME_LIST = re.compile(
+    rf"\byour\s+({_NAME}(?:\s*,\s*{_NAME})*(?:\s*,?\s+(?:or|and)\s+{_NAME})?)"
+)
+# A separator is a comma, a conjunction, or both ("Ninetales, Rapidash, or Magmar").
+_RE_NAME_SPLIT = re.compile(r"\s*,\s*(?:or\s+|and\s+)?|\s+(?:or|and)\s+")
+# Fossils read "Play this card as if it were a 40-HP Basic {C} Pok\u00e9mon" \u2014 the card
+# *becomes* a Colorless Pok\u00e9mon, it doesn't boost one. Drop that clause before
+# looking for a type restriction.
+_RE_AS_IF_CLAUSE = re.compile(r"as if it were[^.]*\.?", re.I)
+
+
+def trainer_boosts(effect: str) -> dict[str, list[str]]:
+    """Which Pok\u00e9mon this Trainer is restricted to helping.
+
+    Returns ``{"names": [...], "types": [...]}`` \u2014 Pok\u00e9mon it calls out by name,
+    and energy types it calls out by symbol. Both lists empty means the card is
+    generic (Giovanni, Pok\u00e9 Ball) and therefore applies to every deck; that is the
+    common case, and it is represented by emptiness rather than by a flag.
+    """
+    text = effect or ""
+
+    names: list[str] = []
+    for m in _RE_NAME_LIST.finditer(text):
+        for part in _RE_NAME_SPLIT.split(m.group(1)):
+            name = part.strip().rstrip(".")
+            # "Pok" catches "Benched Pok\u00e9mon" and the unaccented "Pokemon Tool".
+            if not name or "Pok" in name:
+                continue
+            if name.split()[0] in _NOT_A_CARD_NAME:
+                continue
+            if name not in names:
+                names.append(name)
+
+    types: list[str] = []
+    for m in _RE_NARROW_TYPE.finditer(_RE_AS_IF_CLAUSE.sub("", text)):
+        kind = _ENERGY_LETTERS.get(m.group(1).strip("{}[] "))
+        if kind and kind not in types:
+            types.append(kind)
+
+    return {"names": names, "types": types}
 
 
 def _first_int(pattern: re.Pattern, text: str, default: int = 0) -> int:

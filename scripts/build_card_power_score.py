@@ -42,7 +42,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from trainer_power import trainer_power_score
+from trainer_power import trainer_boosts, trainer_power_score
 
 ROOT = Path(__file__).resolve().parent.parent
 CARD_REF = ROOT / "data" / "reference" / "card_reference.json"
@@ -116,6 +116,9 @@ def main() -> int:
                 "power_score": ts,
                 "score_kind": "trainer",
                 "trainer_subtype": r.get("trainer_subtype"),
+                # Which Pokémon this Trainer is restricted to helping, so the deck
+                # builder can recommend it. Empty lists mean "works in any deck".
+                "boosts": trainer_boosts(effect),
             }
             scored += 1
             trainers += 1

@@ -29,6 +29,7 @@ function card(partial: Partial<CatalogCard> & { name: string }): CatalogCard {
     owned: 0,
     power_score: 30,
     power_score_kind: "pokemon",
+    boosts: null,
     evolves_from: null,
     ...partial,
   };

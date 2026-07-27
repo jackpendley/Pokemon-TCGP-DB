@@ -79,3 +79,26 @@ test("the deck builder validates an empty deck", async ({ page }) => {
   await expect(page.getByText(/at least 1 Basic/i)).toBeVisible();
   await expect(page.getByText(/at least 1 energy type/i)).toBeVisible();
 });
+
+test("a Trainer card shows what it boosts", async ({ page }) => {
+  test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
+  // Erika's rule text is restricted to "your {G} Pokémon", so the relationship
+  // has to survive the pipeline → artifact → catalog → tabs path.
+  await page.goto("/cards");
+  const search = page.getByPlaceholder(/search cards/i).first();
+  await search.waitFor();
+  await search.fill("Erika");
+  await page.getByRole("button", { name: /Erika/ }).first().click();
+  await expect(page.getByRole("tab", { name: /Boosts/ })).toBeVisible();
+});
+
+test("a boosted Pokémon shows the Trainers that help it", async ({ page }) => {
+  test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
+  // The inverse direction: Pawmot is named by Nemona.
+  await page.goto("/cards");
+  const search = page.getByPlaceholder(/search cards/i).first();
+  await search.waitFor();
+  await search.fill("Pawmot");
+  await page.getByRole("button", { name: /Pawmot/ }).first().click();
+  await expect(page.getByRole("tab", { name: /Trainers that help/ })).toBeVisible();
+});

@@ -6,11 +6,13 @@ import { Save } from "lucide-react";
 
 import { DeckPicker } from "@/components/decks/deck-picker";
 import { DeckSlots } from "@/components/decks/deck-slots";
+import { CardImage } from "@/components/cards/card-image";
 import { TypeSymbol } from "@/components/cards/type-symbol";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { saveDeck } from "@/app/decks/actions";
+import { recommendedTrainers } from "@/lib/domain/boosts";
 import {
   DECK_SIZE,
   MAX_ENERGY_TYPES,
@@ -29,6 +31,9 @@ import type { CatalogCard, DeckCardRef, StoredDeck } from "@/types";
 
 const coord = (c: { set_code: string; card_number: number }) =>
   `${c.set_code}:${c.card_number}`;
+
+/** Enough to be a suggestion, few enough not to become a second card picker. */
+const BOOST_SUGGESTIONS = 6;
 
 /**
  * The deck builder.
@@ -128,6 +133,23 @@ export function DeckBuilder({
     }
     return by;
   }, [deck]);
+
+  /**
+   * Trainers whose rule text calls out something already in this deck. Driven by
+   * the deck's Pokémon names and the chosen Energy Zone, so it sharpens as the
+   * deck takes shape and says nothing while the deck is empty.
+   */
+  const recommended = useMemo(
+    () =>
+      recommendedTrainers(catalog, {
+        names: deck.entries
+          .filter((e) => e.card.card_category === "Pokemon")
+          .map((e) => e.card.name),
+        types: energyTypes,
+        inDeck: new Set(countByName.keys()),
+      }).slice(0, BOOST_SUGGESTIONS),
+    [catalog, deck, energyTypes, countByName],
+  );
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_22rem]">
@@ -229,6 +251,12 @@ export function DeckBuilder({
         </Card>
 
         <SummaryCard summary={summary} />
+
+        <BoostCard
+          trainers={recommended}
+          canEdit={canEdit}
+          onAdd={(card) => adjust(card, 1)}
+        />
       </div>
     </div>
   );
@@ -301,6 +329,67 @@ function SummaryCard({ summary }: { summary: DeckSummary }) {
             </ul>
           </div>
         ) : null}
+      </CardContent>
+    </Card>
+  );
+}
+
+/**
+ * Trainers that specifically support this deck. Generic staples (Giovanni, Poké
+ * Ball) are deliberately absent — they help every deck, so listing them here
+ * would carry no information. Empty until the deck has Pokémon or an Energy Zone.
+ */
+function BoostCard({
+  trainers,
+  canEdit,
+  onAdd,
+}: {
+  trainers: CatalogCard[];
+  canEdit: boolean;
+  onAdd: (card: CatalogCard) => void;
+}) {
+  if (trainers.length === 0) return null;
+  return (
+    <Card>
+      <CardHeader className="pb-2">
+        <CardTitle className="text-base">Trainers that boost this deck</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <ul className="space-y-1">
+          {trainers.map((card) => (
+            <li key={coord(card)}>
+              <button
+                type="button"
+                disabled={!canEdit}
+                onClick={() => onAdd(card)}
+                title={canEdit ? `Add ${card.name}` : card.name}
+                className={cn(
+                  "flex w-full items-center gap-2 rounded-md px-1 py-1 text-left transition-colors",
+                  canEdit ? "hover:bg-accent" : "cursor-default",
+                )}
+              >
+                <span className="h-11 w-8 shrink-0 overflow-hidden rounded border">
+                  <CardImage card={card} />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-xs font-medium">
+                    {card.name}
+                  </span>
+                  <span className="block truncate text-[10px] text-muted-foreground">
+                    {card.boosts?.types.length
+                      ? card.boosts.types.join(", ")
+                      : card.boosts?.names.join(", ")}
+                  </span>
+                </span>
+                {card.owned <= 0 ? (
+                  <Badge variant="outline" className="shrink-0 text-[10px]">
+                    Not owned
+                  </Badge>
+                ) : null}
+              </button>
+            </li>
+          ))}
+        </ul>
       </CardContent>
     </Card>
   );

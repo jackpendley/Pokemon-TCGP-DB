@@ -38,6 +38,19 @@ export const collectionFileSchema = z.object({
 });
 
 /**
+ * Which Pokémon a Trainer is restricted to helping — names it calls out
+ * ("your Ninetales, Rapidash, or Magmar") and energy types it calls out
+ * ("your {W} Pokémon"). Both lists empty means it works in any deck, which is the
+ * common case; that is deliberately represented by emptiness, not by a flag.
+ */
+export const trainerBoostsSchema = z.object({
+  names: z.array(z.string()),
+  types: z.array(z.string()),
+});
+
+export type TrainerBoosts = z.infer<typeof trainerBoostsSchema>;
+
+/**
  * data/reference/card_power_scores.json — two models sharing one file.
  *
  * `score_kind: "pokemon"` is the HP + attack + ability model and carries the
@@ -59,6 +72,7 @@ export const powerScoresFileSchema = z.object({
         has_ability: z.boolean().optional(),
         estimated: z.boolean().optional(),
         trainer_subtype: z.string().nullable().optional(),
+        boosts: trainerBoostsSchema.optional(),
       })
       .loose(),
   ),
@@ -85,6 +99,12 @@ export interface CatalogCard {
    * different things, so never rank one against the other.
    */
   power_score_kind: "pokemon" | "trainer" | null;
+  /**
+   * Trainers only: which Pokémon this card is restricted to helping. Both lists
+   * empty means it works in any deck (Giovanni, Poké Ball); null means the card
+   * is not a scored Trainer at all.
+   */
+  boosts: TrainerBoosts | null;
   /** Name of the Pokémon this evolves from (for the evolution tabs); null for Basics. */
   evolves_from: string | null;
 }
