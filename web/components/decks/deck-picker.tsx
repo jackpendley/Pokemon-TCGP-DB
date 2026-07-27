@@ -5,8 +5,9 @@ import { Info, Search } from "lucide-react";
 
 import { CardDialog } from "@/components/cards/card-dialog";
 import { CardImage } from "@/components/cards/card-image";
-import { ENERGY_TYPES, TypeSymbol } from "@/components/cards/type-symbol";
+import { ENERGY_TYPES } from "@/components/cards/type-symbol";
 import { MultiSelect } from "@/components/ui/multi-select";
+import { compareRarity } from "@/lib/domain/rarity";
 import { displayType, powerScoreLabel } from "@/lib/domain/card";
 import { MAX_COPIES_PER_NAME } from "@/lib/domain/deck";
 import { cn } from "@/lib/utils";
@@ -17,12 +18,13 @@ const PAGE = 60;
 
 const STAGES = ["Basic", "Stage1", "Stage2"];
 
-type Sort = "default" | "score" | "owned" | "name";
+type Sort = "default" | "score" | "owned" | "rarity" | "name";
 
 const SORTS: { value: Sort; label: string }[] = [
   { value: "default", label: "Sort: set order" },
   { value: "score", label: "Sort: score" },
   { value: "owned", label: "Sort: owned" },
+  { value: "rarity", label: "Sort: rarity" },
   { value: "name", label: "Sort: name" },
 ];
 const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
@@ -51,6 +53,7 @@ export function DeckPicker({
   const [types, setTypes] = useState<string[]>([]);
   const [stages, setStages] = useState<string[]>([]);
   const [category, setCategory] = useState<string[]>([]);
+  const [sets, setSets] = useState<string[]>([]);
   const [ownedOnly, setOwnedOnly] = useState(false);
   const [sort, setSort] = useState<Sort>("default");
   const [inspecting, setInspecting] = useState<CatalogCard | null>(null);
@@ -64,11 +67,12 @@ export function DeckPicker({
       if (stages.length > 0 && !(c.stage && stages.includes(c.stage))) return false;
       if (category.length > 0 && !(c.card_category && category.includes(c.card_category)))
         return false;
+      if (sets.length > 0 && !sets.includes(c.set_code)) return false;
       // Ownership is per printing here — you can only build with copies you hold.
       if (ownedOnly && c.owned <= 0) return false;
       return true;
     });
-  }, [catalog, query, types, stages, category, ownedOnly]);
+  }, [catalog, query, types, stages, category, sets, ownedOnly]);
 
   /**
    * Pokémon power and Trainer utility come from different models, so sorting by
@@ -80,6 +84,9 @@ export function DeckPicker({
     const copy = [...filtered];
     if (sort === "name") return copy.sort((a, b) => a.name.localeCompare(b.name));
     if (sort === "owned") return copy.sort((a, b) => b.owned - a.owned);
+    // Rarest first, reusing the display ladder the rest of the app sorts by.
+    if (sort === "rarity")
+      return copy.sort((a, b) => compareRarity(b.rarity ?? "", a.rarity ?? ""));
     const kindRank = (c: CatalogCard) =>
       c.power_score == null ? 2 : c.power_score_kind === "trainer" ? 1 : 0;
     return copy.sort(
@@ -87,6 +94,12 @@ export function DeckPicker({
         kindRank(a) - kindRank(b) || (b.power_score ?? -1) - (a.power_score ?? -1),
     );
   }, [filtered, sort]);
+
+  const setOptions = useMemo(() => {
+    const seen = new Map<string, string>();
+    for (const c of catalog) if (!seen.has(c.set_code)) seen.set(c.set_code, c.expansion);
+    return [...seen].map(([value, label]) => ({ value, label: `${label} · ${value}` }));
+  }, [catalog]);
 
   const visible = ordered.slice(0, shown);
 
@@ -120,6 +133,12 @@ export function DeckPicker({
           options={STAGES.map((s) => ({ value: s, label: stageLabel(s) }))}
           selected={stages}
           onChange={(v) => reset(setStages, v)}
+        />
+        <MultiSelect
+          label="sets"
+          options={setOptions}
+          selected={sets}
+          onChange={(v) => reset(setSets, v)}
         />
         <MultiSelect
           label="categories"
@@ -186,26 +205,24 @@ export function DeckPicker({
                 <div className="relative aspect-[5/7] overflow-hidden rounded-md border">
                   <CardImage card={card} />
                   {count > 0 ? (
-                    <span className="absolute top-1 right-1 rounded bg-primary px-1.5 text-[10px] font-bold text-primary-foreground tabular-nums">
+                    <span className="absolute top-1 left-1 rounded bg-primary px-1.5 text-[10px] font-bold text-primary-foreground tabular-nums">
                       ×{count}
                     </span>
                   ) : null}
-                  {/* Owned count: you can only build with copies you actually hold. */}
-                  <span
-                    className={cn(
-                      "absolute bottom-1 left-1 rounded px-1 text-[10px] font-semibold tabular-nums",
-                      card.owned > 0
-                        ? "bg-background/85 text-foreground"
-                        : "bg-background/70 text-muted-foreground",
-                    )}
-                  >
-                    {card.owned > 0 ? `${card.owned} owned` : "none"}
-                  </span>
                 </div>
                 <span className="mt-1 truncate text-xs font-medium">{card.name}</span>
-                <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
-                  <TypeSymbol type={displayType(card)} className="size-3" />
-                  <span className="truncate">{card.set_code}</span>
+                {/* Owned count sits under the art: deck-building is constrained
+                    by copies you actually hold. Type and set are readable from
+                    the art itself, so they'd only add noise here. */}
+                <span className="flex items-center gap-2 text-[10px] text-muted-foreground">
+                  <span
+                    className={cn(
+                      "tabular-nums",
+                      card.owned > 0 ? "font-semibold text-foreground" : undefined,
+                    )}
+                  >
+                    {card.owned > 0 ? `${card.owned} owned` : "none owned"}
+                  </span>
                   {card.power_score != null ? (
                     <span
                       className="ml-auto shrink-0 tabular-nums"
@@ -223,7 +240,7 @@ export function DeckPicker({
                 aria-label={`Details for ${card.name}`}
                 title={`Details for ${card.name}`}
                 onClick={() => setInspecting(card)}
-                className="absolute top-1 left-1 rounded-full bg-background/85 p-1 text-muted-foreground hover:text-foreground"
+                className="absolute top-1 right-1 rounded-full bg-background/85 p-1 text-muted-foreground hover:text-foreground"
               >
                 <Info className="size-3.5" />
               </button>
