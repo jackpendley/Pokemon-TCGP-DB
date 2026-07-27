@@ -68,19 +68,26 @@ export function SyncRevealDialog({
           {trigger}
         </DialogTrigger>
       ) : null}
+      {/* The popup itself no longer scrolls — only the body does — so the title
+          and the absolutely-positioned close button stay put. Previously the
+          whole dialog scrolled and both disappeared off the top. */}
       <DialogContent
-        className="max-h-[90vh] overflow-y-auto sm:max-w-5xl"
+        className="flex max-h-[90vh] flex-col overflow-hidden sm:max-w-5xl"
         // Auto-opened: leave focus alone so the first card / close button
         // doesn't render with a focus ring the user never asked for.
         initialFocus={revealId ? false : undefined}
       >
-        <DialogHeader>
+        <DialogHeader className="shrink-0 pr-10">
           <DialogTitle className="flex items-center gap-2">
             {title}
             <Badge variant="secondary">{count} cards</Badge>
           </DialogTitle>
         </DialogHeader>
-        <SyncReveal items={items} setProgress={setProgress} />
+        {/* Negative margins let the scrollbar sit at the popup edge while the
+            content keeps the dialog's own padding. */}
+        <div className="-mx-4 min-h-0 flex-1 overflow-y-auto px-4 pb-1">
+          <SyncReveal items={items} setProgress={setProgress} />
+        </div>
       </DialogContent>
     </Dialog>
   );

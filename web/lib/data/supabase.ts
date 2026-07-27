@@ -44,11 +44,13 @@ const cardRowSchema = z.object({
   is_ex: z.boolean().nullable(),
   evolves_from: z.string().nullable(),
   power_score: z.number().nullable(),
+  power_score_kind: z.enum(["pokemon", "trainer"]).nullable(),
 });
 
 const CARD_COLUMNS =
   "set_code, card_number, name, rarity, pokemon_type, card_category, " +
-  "trainer_subtype, stage, expansion, is_ex, evolves_from, power_score";
+  "trainer_subtype, stage, expansion, is_ex, evolves_from, power_score, " +
+  "power_score_kind";
 
 const collectionRowSchema = z.object({
   set_code: z.string(),
@@ -157,6 +159,7 @@ export function createSupabaseSource(client: SupabaseClient): DataSource {
         owned:
           ownedByCoord.get(`${r.set_code.toUpperCase()}:${r.card_number}`) ?? 0,
         power_score: r.power_score,
+        power_score_kind: r.power_score_kind,
         evolves_from: r.evolves_from,
       }));
     },

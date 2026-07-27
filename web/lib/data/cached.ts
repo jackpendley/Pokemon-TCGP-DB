@@ -3,6 +3,7 @@ import "server-only";
 import { cacheLife, cacheTag } from "next/cache";
 
 import { dataSource } from "@/lib/data";
+import { fetchDeck, fetchDecks } from "@/lib/data/decks";
 import {
   fetchRecommendationHistory,
   type RecommendationHistoryEntry,
@@ -13,6 +14,7 @@ import type {
   CollectionSummary,
   PackEv,
   Recommendations,
+  StoredDeck,
   SyncStatus,
 } from "@/types";
 
@@ -27,6 +29,28 @@ import type {
  * fail on the gitignored artifacts.
  */
 export const DATA_TAG = "app-data";
+
+/**
+ * Decks get their own tag. They are user-written rather than published by the
+ * pipeline, so a publish must not invalidate them and saving a deck must not
+ * dump the whole catalog cache. Deck writes call updateTag(DECKS_TAG) from
+ * their server action so the author sees their own change immediately.
+ */
+export const DECKS_TAG = "decks";
+
+export async function getCachedDecks(): Promise<StoredDeck[]> {
+  "use cache";
+  cacheTag(DECKS_TAG);
+  cacheLife("max");
+  return fetchDecks();
+}
+
+export async function getCachedDeck(id: string): Promise<StoredDeck | null> {
+  "use cache";
+  cacheTag(DECKS_TAG);
+  cacheLife("max");
+  return fetchDeck(id);
+}
 
 export async function getCachedCatalog(): Promise<CatalogCard[]> {
   "use cache";

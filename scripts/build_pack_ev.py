@@ -526,12 +526,21 @@ CARD_POWER_JSON = ROOT / "data" / "reference" / "card_power_scores.json"
 
 
 def load_power_scores(path: Path = CARD_POWER_JSON) -> dict:
-    """{(SET_CODE_UPPER, card_number): power_score} from card_power_scores.json."""
+    """{(SET_CODE_UPPER, card_number): power_score} from card_power_scores.json.
+
+    Pokémon only. Trainers are now scored too, but by a different model reading
+    rule text (scripts/trainer_power.py), and the two scales measure different
+    things — mixing them would rank a Supporter's utility against a Pokémon's
+    HP-and-damage power in one "strongest pulls" list. Entries predating
+    `score_kind` are treated as Pokémon, which is what they were.
+    """
     if not path.exists():
         return {}
     raw = json.loads(path.read_text(encoding="utf-8"))
     out: dict = {}
     for key, v in raw.get("scores", {}).items():
+        if v.get("score_kind", "pokemon") != "pokemon":
+            continue
         sc, _, num = key.rpartition(":")
         try:
             out[(sc.upper(), int(num))] = v.get("power_score")

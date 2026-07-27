@@ -166,3 +166,98 @@
     animation: none;
   }
 }
+
+/* Sidebar collapse (components/layout/sidebar-state.tsx).
+
+   Width is driven entirely by a data attribute on <html>, set before paint by a
+   blocking script, rather than by React state. That keeps the root layout static
+   — reading the preference from a cookie there would force the whole layout
+   dynamic and discard the prerendered shell — and means no width flash on load. */
+.sidebar-rail {
+  width: 16rem;
+  transition: width 0.2s ease;
+}
+
+[data-sidebar="collapsed"] .sidebar-rail {
+  width: 4rem;
+}
+
+/* Labels and other text that has no room in the 4rem rail. */
+[data-sidebar="collapsed"] .sidebar-label {
+  display: none;
+}
+
+/* Icons centre themselves once their labels are gone. */
+[data-sidebar="collapsed"] .sidebar-row {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-rail {
+    transition: none;
+  }
+}
+
+/* Card flip (components/cards/card-flip.tsx). The scene owns the perspective so
+   the rotation reads as depth rather than a squash; both faces are stacked and
+   hidden from behind, so only one is ever visible. */
+.flip-scene {
+  perspective: 1400px;
+}
+
+.flip-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.flip-inner[data-flipped="true"] {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-face-back {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner {
+    transition: none;
+  }
+}
+
+/* Indeterminate progress for a running sync (components/sync/sync-progress-dialog.tsx).
+   The job reports no completion fraction, so the bar sweeps rather than fills. */
+@keyframes sync-sweep {
+  from {
+    left: -40%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.animate-sync-sweep {
+  width: 40%;
+  animation: sync-sweep 1.3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sync-sweep {
+    left: 0;
+    width: 100%;
+    animation: none;
+    opacity: 0.5;
+  }
+}

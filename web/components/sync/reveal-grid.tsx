@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { CardDialog } from "@/components/cards/card-dialog";
 import { CardImage } from "@/components/cards/card-image";
-import { compareRarity } from "@/lib/domain/rarity";
+import { usePrefersReducedMotion } from "@/lib/hooks/use-reduced-motion";
+import { compareRevealRarity } from "@/lib/domain/rarity";
+import { ownedStartMs, staggerMs } from "@/lib/domain/reveal-timing";
 import { cn } from "@/lib/utils";
 import type { CatalogCard, SyncDeltaEntry } from "@/types";
 
@@ -12,9 +14,6 @@ export interface AdditionItem {
   entry: SyncDeltaEntry;
   card: CatalogCard | null;
 }
-
-const STAGGER_MS = 90;
-const PHASE_GAP_MS = 350;
 
 /**
  * Staggered reveal of the cards a sync added — new cards first, then extra
@@ -24,6 +23,7 @@ const PHASE_GAP_MS = 350;
  */
 export function RevealGrid({ items }: { items: AdditionItem[] }) {
   const [selected, setSelected] = useState<CatalogCard | null>(null);
+  const followRevealed = useFollowReveal(items.length);
 
   if (items.length === 0) {
     return (
@@ -33,11 +33,14 @@ export function RevealGrid({ items }: { items: AdditionItem[] }) {
     );
   }
 
+  // Rarest first, with promos and unrecognised rarities trailing — see
+  // compareRevealRarity for why RARITY_ORDER can't be sorted directly.
   const byRarityDesc = (a: AdditionItem, b: AdditionItem) =>
-    compareRarity(b.card?.rarity ?? "", a.card?.rarity ?? "");
+    compareRevealRarity(a.card?.rarity, b.card?.rarity);
   const newItems = items.filter((i) => i.entry.is_new).sort(byRarityDesc);
   const ownedItems = items.filter((i) => !i.entry.is_new).sort(byRarityDesc);
-  const ownedStartMs = newItems.length * STAGGER_MS + PHASE_GAP_MS;
+  const stagger = staggerMs(items.length);
+  const ownedStart = ownedStartMs(items.length, newItems.length);
 
   return (
     <>
@@ -50,9 +53,10 @@ export function RevealGrid({ items }: { items: AdditionItem[] }) {
                 <RevealTile
                   key={`${item.entry.set_code}-${item.entry.card_number}`}
                   item={item}
-                  delayMs={i * STAGGER_MS}
+                  delayMs={i * stagger}
                   isNew
                   onSelect={setSelected}
+                  onRevealed={followRevealed}
                 />
               ))}
             </Grid>
@@ -69,8 +73,9 @@ export function RevealGrid({ items }: { items: AdditionItem[] }) {
                 <RevealTile
                   key={`${item.entry.set_code}-${item.entry.card_number}`}
                   item={item}
-                  delayMs={ownedStartMs + i * STAGGER_MS}
+                  delayMs={ownedStart + i * stagger}
                   onSelect={setSelected}
+                  onRevealed={followRevealed}
                 />
               ))}
             </Grid>
@@ -78,7 +83,14 @@ export function RevealGrid({ items }: { items: AdditionItem[] }) {
         ) : null}
       </div>
 
-      <CardDialog card={selected} onClose={() => setSelected(null)} />
+      <CardDialog
+        card={selected}
+        onClose={() => setSelected(null)}
+        onSelect={setSelected}
+        siblings={items
+          .map((i) => i.card)
+          .filter((c): c is CatalogCard => c != null)}
+      />
     </>
   );
 }
@@ -91,20 +103,56 @@ function Grid({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * Keeps the animating tile on screen while the reveal runs.
+ *
+ * `block: "nearest"` is what makes this unobtrusive: it scrolls only when the
+ * tile is actually out of view, so the popup advances a row at a time instead of
+ * jumping on every card. Disabled entirely under reduced-motion.
+ */
+function useFollowReveal(count: number) {
+  const reduced = usePrefersReducedMotion();
+  // Ignore late callbacks once the user takes over by scrolling themselves.
+  const cancelled = useRef(false);
+  useEffect(() => {
+    cancelled.current = false;
+  }, [count]);
+
+  return useCallback(
+    (el: HTMLElement | null) => {
+      if (reduced || cancelled.current || !el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    },
+    [reduced],
+  );
+}
+
 function RevealTile({
   item,
   delayMs,
   isNew = false,
   onSelect,
+  onRevealed,
 }: {
   item: AdditionItem;
   delayMs: number;
   isNew?: boolean;
   onSelect: (card: CatalogCard) => void;
+  onRevealed?: (el: HTMLElement | null) => void;
 }) {
   const { entry, card } = item;
+  const ref = useRef<HTMLButtonElement>(null);
+
+  // Fire when this tile's turn comes up, on the same schedule as its CSS delay.
+  useEffect(() => {
+    if (!onRevealed) return;
+    const t = setTimeout(() => onRevealed(ref.current), delayMs);
+    return () => clearTimeout(t);
+  }, [delayMs, onRevealed]);
+
   return (
     <button
+      ref={ref}
       type="button"
       onClick={() => card && onSelect(card)}
       disabled={!card}

@@ -18,3 +18,15 @@ export function displayType(card: CatalogCard): string {
 export function isMegaEx(card: CatalogCard): boolean {
   return card.is_ex && card.name.startsWith("Mega ");
 }
+
+/**
+ * How to label a card's power score.
+ *
+ * Pokémon are scored on HP and attack damage; Trainers on their rule text
+ * (scripts/trainer_power.py). The two share a 0–100 range but measure different
+ * things, so the label says which one the number is — showing a bare "Power
+ * score" on both would invite comparing a Supporter to a Charizard.
+ */
+export function powerScoreLabel(card: CatalogCard): string {
+  return card.power_score_kind === "trainer" ? "Utility score" : "Power score";
+}

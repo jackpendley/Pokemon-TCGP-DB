@@ -61,6 +61,39 @@ export function raritySymbol(rarity: string | null): RaritySymbol {
   return RARITY_SYMBOLS[rarity ?? ""] ?? { kind: "diamond", count: 1 };
 }
 
+// Ranks below every real tier, so descending order puts these last.
+const RANK_PROMO = -1;
+const RANK_UNKNOWN = -2;
+
+/**
+ * Tier rank for the post-sync reveal, where the intent is "rarest first".
+ *
+ * Two cases need special handling and neither is served by RARITY_ORDER, which
+ * is a *display* ladder used by the pack EV model and must not be reordered:
+ *
+ *  - `promo` sits at the top of RARITY_ORDER (index 11, above ultra_rare), so
+ *    sorting that ladder descending puts promos ahead of every chase card.
+ *  - Cards with no rarity — including a delta entry whose coord missed the
+ *    catalog join — should trail everything, but compareRarity's unknown-last
+ *    handling inverts when its arguments are swapped to sort descending.
+ *
+ * Both are pushed below the real tiers here instead.
+ */
+export function revealRank(rarity: string | null | undefined): number {
+  if (!rarity) return RANK_UNKNOWN;
+  if (rarity === "promo") return RANK_PROMO;
+  const i = RARITY_ORDER.indexOf(rarity);
+  return i === -1 ? RANK_UNKNOWN : i;
+}
+
+/** Comparator for the reveal grid: rarest first, then promos, then unknowns. */
+export function compareRevealRarity(
+  a: string | null | undefined,
+  b: string | null | undefined,
+): number {
+  return revealRank(b) - revealRank(a);
+}
+
 /** Sort known rarities by tier; unknown rarities fall to the end alphabetically. */
 export function compareRarity(a: string, b: string): number {
   const ia = RARITY_ORDER.indexOf(a);

@@ -21,18 +21,33 @@ Scoring (0–100, higher = stronger card):
     power     = round(min(0.47*hp + 0.41*dmg + ability + retreat, 1) * 100, 1)
 
 Pokémon in sets with no combat data get HP-proxied damage and are flagged
-`estimated`. Trainers (no HP) get no score. Deliberately independent of the EV
-model — it never touches pack_ev.json.
+`estimated`.
+
+Trainers have no HP or attacks, so they are scored from their rule text by a
+separate model (trainer_power.py, fed by fetch_trainer_effects.py). Every entry
+carries `score_kind` — "pokemon" or "trainer" — because the two scales measure
+different things and must not be ranked against each other. Trainer scores
+occupy a lower band by construction; they are deliberately *not* normalised to
+the observed maximum, which would rescale every existing card each time a new
+set landed.
+
+Deliberately independent of the EV model — it never touches pack_ev.json.
 """
 
 import json
 import re
+import sys
 from datetime import date
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from trainer_power import trainer_power_score
 
 ROOT = Path(__file__).resolve().parent.parent
 CARD_REF = ROOT / "data" / "reference" / "card_reference.json"
 COMBAT = ROOT / "data" / "reference" / "card_combat_stats.json"
+TRAINER_EFFECTS = ROOT / "data" / "reference" / "card_trainer_effects.json"
 OUT = ROOT / "data" / "reference" / "card_power_scores.json"
 
 # Tunable model constants (see module docstring).
@@ -80,14 +95,35 @@ def power_score(hp, effective_damage, has_ability: bool, has_attack_data: bool,
 def main() -> int:
     ref = json.loads(CARD_REF.read_text(encoding="utf-8"))["records"]
     combat = json.loads(COMBAT.read_text(encoding="utf-8")) if COMBAT.exists() else {}
+    effects = (
+        json.loads(TRAINER_EFFECTS.read_text(encoding="utf-8"))
+        if TRAINER_EFFECTS.exists()
+        else {}
+    )
 
     scores: dict = {}
-    scored = estimated = skipped = 0
+    scored = estimated = skipped = trainers = 0
     for r in ref:
+        key = f"{r['set_code']}|{_norm(r['name'])}"
+
+        if r.get("card_category") == "Trainer":
+            effect = (effects.get(key) or {}).get("effect")
+            ts = trainer_power_score(effect) if effect else None
+            if ts is None:
+                skipped += 1
+                continue
+            scores[f"{r['set_code']}:{r['card_number']}"] = {
+                "power_score": ts,
+                "score_kind": "trainer",
+                "trainer_subtype": r.get("trainer_subtype"),
+            }
+            scored += 1
+            trainers += 1
+            continue
+
         if r.get("card_category") != "Pokemon":
             skipped += 1
             continue
-        key = f"{r['set_code']}|{_norm(r['name'])}"
         stats = combat.get(key)
         hp = (stats or {}).get("hp") or r.get("hp")
         has_attack = stats is not None
@@ -104,6 +140,7 @@ def main() -> int:
             continue
         scores[f"{r['set_code']}:{r['card_number']}"] = {
             "power_score": ps,
+            "score_kind": "pokemon",
             "hp": hp,
             "effective_damage": round(eff, 1) if has_attack else None,
             "has_ability": bool((stats or {}).get("ability_count")),
@@ -122,8 +159,9 @@ def main() -> int:
         encoding="utf-8",
     )
     print(
-        f"  Power scores: {scored} cards ({estimated} estimated from HP), "
-        f"{skipped} skipped (trainers / no HP)."
+        f"  Power scores: {scored} cards "
+        f"({scored - trainers} Pokémon, {estimated} estimated from HP; "
+        f"{trainers} Trainers), {skipped} skipped (no HP / no rule text)."
     )
     return 0
 
