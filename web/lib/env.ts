@@ -43,6 +43,11 @@ const envSchema = z.object({
   // Auth (Phase 1): the single owner's auth.users UUID. Writes (sync) are gated
   // to this user; reads stay public. Required in supabase mode. Server-only.
   OWNER_USER_ID: z.uuid().optional(),
+  // Canonical public origin, used to build auth email links. Must not come from
+  // the request's Origin header — that is attacker-controlled, and a recovery
+  // link is exactly the thing you never want pointed at someone else's domain.
+  // Falls back to Vercel's injected production hostname.
+  SITE_URL: z.url().optional(),
   // Phase 5: shared secret guarding POST /api/revalidate, which the sync
   // workflow calls after a publish to invalidate the cached data (revalidateTag).
   // When unset the route is disabled (returns 401). Server-only.

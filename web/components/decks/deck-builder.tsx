@@ -2,9 +2,10 @@
 
 import { useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { Minus, Plus, Save, Search } from "lucide-react";
+import { Save } from "lucide-react";
 
-import { CardImage } from "@/components/cards/card-image";
+import { DeckPicker } from "@/components/decks/deck-picker";
+import { DeckSlots } from "@/components/decks/deck-slots";
 import { TypeSymbol } from "@/components/cards/type-symbol";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -50,7 +51,6 @@ export function DeckBuilder({
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [name, setName] = useState(existing?.name ?? "New deck");
-  const [query, setQuery] = useState("");
 
   const byCoord = useMemo(
     () => new Map(catalog.map((c) => [coord(c), c])),
@@ -120,53 +120,17 @@ export function DeckBuilder({
     });
   }
 
-  // Search is capped: the picker is a browsing aid, not a second /cards page.
-  const results = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return [];
-    return catalog.filter((c) => c.name.toLowerCase().includes(q)).slice(0, 36);
-  }, [catalog, query]);
+  /** Copies held of a card's *name* — the limit is per name, not per printing. */
+  const countByName = useMemo(() => {
+    const by = new Map<string, number>();
+    for (const { card, count } of deck.entries) {
+      by.set(card.name, (by.get(card.name) ?? 0) + count);
+    }
+    return by;
+  }, [deck]);
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_22rem]">
-      <div className="space-y-4">
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-base">Add cards</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <label className="flex items-center gap-2 rounded-md border px-3">
-              <Search className="size-4 shrink-0 text-muted-foreground" />
-              <input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search cards by name…"
-                aria-label="Search cards by name"
-                className="h-10 w-full bg-transparent text-sm outline-none"
-              />
-            </label>
-
-            {query.trim() && results.length === 0 ? (
-              <p className="text-sm text-muted-foreground">No cards match.</p>
-            ) : null}
-
-            <div className="grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-6">
-              {results.map((card) => (
-                <PickerTile
-                  key={coord(card)}
-                  card={card}
-                  count={counts.get(coord(card)) ?? 0}
-                  disabled={!canEdit}
-                  onAdd={() => adjust(card, 1)}
-                />
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        <DeckList deck={deck} canEdit={canEdit} onAdjust={adjust} />
-      </div>
-
       <div className="space-y-4">
         <Card>
           <CardHeader className="pb-2">
@@ -176,6 +140,35 @@ export function DeckBuilder({
                 {total} / {DECK_SIZE}
               </Badge>
             </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <DeckSlots
+              deck={deck}
+              canEdit={canEdit}
+              onRemove={(card) => adjust(card, -1)}
+            />
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base">Add cards</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <DeckPicker
+              catalog={catalog}
+              countFor={(card) => countByName.get(card.name) ?? 0}
+              disabled={!canEdit}
+              onAdd={(card) => adjust(card, 1)}
+            />
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="space-y-4">
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base">Details</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <input
@@ -238,105 +231,6 @@ export function DeckBuilder({
         <SummaryCard summary={summary} />
       </div>
     </div>
-  );
-}
-
-function PickerTile({
-  card,
-  count,
-  disabled,
-  onAdd,
-}: {
-  card: CatalogCard;
-  count: number;
-  disabled: boolean;
-  onAdd: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onAdd}
-      disabled={disabled}
-      title={`Add ${card.name}`}
-      className="flex flex-col text-left disabled:opacity-60"
-    >
-      <div className="relative aspect-[5/7] overflow-hidden rounded-md border">
-        <CardImage card={card} />
-        {count > 0 ? (
-          <span className="absolute top-1 right-1 rounded bg-primary px-1.5 text-[10px] font-bold text-primary-foreground tabular-nums">
-            ×{count}
-          </span>
-        ) : null}
-      </div>
-      <span className="mt-1 truncate text-xs font-medium">{card.name}</span>
-    </button>
-  );
-}
-
-function DeckList({
-  deck,
-  canEdit,
-  onAdjust,
-}: {
-  deck: Deck;
-  canEdit: boolean;
-  onAdjust: (card: CatalogCard, delta: number) => void;
-}) {
-  if (deck.entries.length === 0) {
-    return (
-      <Card>
-        <CardContent className="py-10 text-center text-sm text-muted-foreground">
-          Search above to add your first card.
-        </CardContent>
-      </Card>
-    );
-  }
-  return (
-    <Card>
-      <CardHeader className="pb-2">
-        <CardTitle className="text-base">Cards in this deck</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <ul className="divide-y">
-          {deck.entries.map(({ card, count }) => (
-            <li key={coord(card)} className="flex items-center gap-3 py-2">
-              <div className="aspect-[5/7] w-9 shrink-0 overflow-hidden rounded border">
-                <CardImage card={card} />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-medium">{card.name}</p>
-                <p className="text-xs text-muted-foreground">
-                  {card.set_code} · {card.stage ?? card.trainer_subtype ?? "—"}
-                </p>
-              </div>
-              <div className="flex items-center gap-1">
-                <Button
-                  variant="ghost"
-                  size="icon-sm"
-                  aria-label={`Remove one ${card.name}`}
-                  disabled={!canEdit}
-                  onClick={() => onAdjust(card, -1)}
-                >
-                  <Minus className="size-4" />
-                </Button>
-                <span className="w-6 text-center text-sm font-semibold tabular-nums">
-                  {count}
-                </span>
-                <Button
-                  variant="ghost"
-                  size="icon-sm"
-                  aria-label={`Add one ${card.name}`}
-                  disabled={!canEdit}
-                  onClick={() => onAdjust(card, 1)}
-                >
-                  <Plus className="size-4" />
-                </Button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-    </Card>
   );
 }
 
