@@ -936,7 +936,7 @@
       "name": "Quagsire",
       "type": "Fighting",
       "stage": 1,
-      "hp": 130,
+      "hp": 120,
       "card_type": "Pokemon",
       "attack": "Muddy Headbutt 60+",
       "count": 4,
@@ -2243,7 +2243,7 @@
       "name": "Palossand",
       "type": "Fighting",
       "stage": 1,
-      "hp": 140,
+      "hp": 130,
       "card_type": "Pokemon",
       "attack": "Life Sucker 70",
       "count": 2,
@@ -2746,7 +2746,7 @@
       "name": "Scraggy",
       "type": "Darkness",
       "stage": 0,
-      "hp": 60,
+      "hp": 70,
       "card_type": "Pokemon",
       "attack": "Headbutt 20",
       "count": 11,
@@ -4593,7 +4593,8 @@
       "stage_label": "Basic",
       "set_code": "A2b",
       "card_number": 47,
-      "rarity": "common"
+      "rarity": "common",
+      "hp": 50
     },
     {
       "name": "Paldean Wooper",
@@ -4604,7 +4605,8 @@
       "stage_label": "Basic",
       "set_code": "B2a",
       "card_number": 64,
-      "rarity": "common"
+      "rarity": "common",
+      "hp": 60
     },
     {
       "name": "Electric Generator",
@@ -4643,7 +4645,7 @@
       "type": "Fire",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 70,
+      "hp": 80,
       "set_code": "B3b",
       "card_number": 10,
       "rarity": "common"
@@ -4763,7 +4765,7 @@
       "type": "Colorless",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 110,
+      "hp": 100,
       "set_code": "B3b",
       "card_number": 52,
       "rarity": "uncommon"
@@ -4969,7 +4971,8 @@
       "rarity": "double_rare",
       "type": "Lightning",
       "stage": 1,
-      "stage_label": "Stage 1"
+      "stage_label": "Stage 1",
+      "hp": 150
     },
     {
       "name": "Monferno",
@@ -5028,7 +5031,8 @@
       "set_code": "A3",
       "card_number": 56,
       "rarity": "rare",
-      "type": "Water"
+      "type": "Water",
+      "hp": 100
     },
     {
       "name": "Drilbur",
@@ -5087,7 +5091,8 @@
       "rarity": "common",
       "type": "Water",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 70
     },
     {
       "name": "Passimian",
@@ -5183,7 +5188,8 @@
       "set_code": "A1",
       "card_number": 198,
       "rarity": "common",
-      "type": "Colorless"
+      "type": "Colorless",
+      "hp": 60
     },
     {
       "name": "Meowscarada",
@@ -5586,7 +5592,8 @@
       "rarity": "common",
       "type": "Psychic",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 70
     },
     {
       "name": "Great Tusk",
@@ -5597,7 +5604,8 @@
       "rarity": "uncommon",
       "type": "Fighting",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 120
     },
     {
       "name": "Corviknight",
@@ -5632,7 +5640,8 @@
       "rarity": "uncommon",
       "type": "Metal",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 100
     },
     {
       "name": "Girafarig",
@@ -5754,7 +5763,8 @@
       "rarity": "double_rare",
       "type": "Lightning",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 140
     },
     {
       "name": "Rufflet",
@@ -5808,7 +5818,8 @@
       "rarity": "common",
       "type": "Grass",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 100
     },
     {
       "name": "Psyduck",
@@ -5879,7 +5890,8 @@
       "rarity": "double_rare",
       "type": "Water",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 130
     },
     {
       "name": "Iron Hands",
@@ -5890,7 +5902,8 @@
       "rarity": "common",
       "type": "Lightning",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 120
     },
     {
       "name": "Iron Thorns",
@@ -5901,7 +5914,8 @@
       "rarity": "uncommon",
       "type": "Lightning",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 110
     },
     {
       "name": "Espeon",
@@ -5960,7 +5974,8 @@
       "rarity": "rare",
       "type": "Psychic",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 100
     },
     {
       "name": "Sandy Shocks",
@@ -5971,7 +5986,8 @@
       "rarity": "uncommon",
       "type": "Fighting",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 100
     },
     {
       "name": "Umbreon",
@@ -6066,7 +6082,8 @@
       "rarity": "uncommon",
       "type": "Darkness",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 100
     },
     {
       "name": "Copperajah",
@@ -6089,7 +6106,8 @@
       "rarity": "rare",
       "type": "Dragon",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 110
     },
     {
       "name": "Terapagos ex",
@@ -6100,7 +6118,8 @@
       "rarity": "double_rare",
       "type": "Colorless",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 150
     },
     {
       "name": "Rellor",
@@ -8114,7 +8133,8 @@
       "rarity": "promo",
       "set_code": "PROMO-B",
       "card_number": 66,
-      "type": "Psychic"
+      "type": "Psychic",
+      "hp": 150
     },
     {
       "name": "Bounded Field",
@@ -8335,7 +8355,7 @@
       "type": "Dragon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 40,
+      "hp": 50,
       "rarity": "common",
       "set_code": "B3b",
       "card_number": 48
@@ -8662,7 +8682,7 @@
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 120,
+      "hp": 130,
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 63,
@@ -8725,7 +8745,8 @@
       "card_number": 31,
       "type": "Water",
       "stage": 1,
-      "stage_label": "Stage 1"
+      "stage_label": "Stage 1",
+      "hp": 110
     },
     {
       "name": "Cramorant",
@@ -8863,7 +8884,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 90,
+      "hp": 80,
       "rarity": "uncommon",
       "set_code": "A1",
       "card_number": 126,
@@ -9149,7 +9170,8 @@
       "card_number": 59,
       "type": "Colorless",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 60
     },
     {
       "name": "Hisuian Zorua",
@@ -9160,7 +9182,8 @@
       "card_number": 76,
       "type": "Colorless",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 60
     },
     {
       "name": "Metapod",
@@ -9180,7 +9203,7 @@
       "card_type": "Pokemon",
       "stage": 2,
       "stage_label": "Stage 2",
-      "hp": 120,
+      "hp": 130,
       "rarity": "rare",
       "set_code": "B3b",
       "card_number": 3,
@@ -9192,7 +9215,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 50,
+      "hp": 60,
       "rarity": "common",
       "set_code": "B3b",
       "card_number": 8,
@@ -9231,7 +9254,8 @@
       "card_number": 20,
       "type": "Water",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 80
     },
     {
       "name": "Pikachu",
@@ -9263,7 +9287,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 60,
+      "hp": 70,
       "rarity": "common",
       "set_code": "B3b",
       "card_number": 53,
@@ -9278,7 +9302,8 @@
       "card_number": 54,
       "type": "Colorless",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 50
     },
     {
       "name": "Hisuian Zoroark ex",
@@ -9289,7 +9314,8 @@
       "card_number": 60,
       "type": "Colorless",
       "stage": 1,
-      "stage_label": "Stage 1"
+      "stage_label": "Stage 1",
+      "hp": 150
     },
     {
       "name": "Old Amber",
@@ -9397,7 +9423,7 @@
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 90,
+      "hp": 100,
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 9,
@@ -9409,7 +9435,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 60,
+      "hp": 50,
       "rarity": "common",
       "set_code": "B3b",
       "card_number": 12,
@@ -9424,7 +9450,8 @@
       "card_number": 15,
       "type": "Water",
       "stage": 1,
-      "stage_label": "Stage 1"
+      "stage_label": "Stage 1",
+      "hp": 140
     },
     {
       "name": "Dedenne ex",
@@ -9435,7 +9462,8 @@
       "card_number": 24,
       "type": "Lightning",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 120
     },
     {
       "name": "Slowpoke",
@@ -9479,7 +9507,7 @@
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 110,
+      "hp": 100,
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 29,
@@ -9491,7 +9519,7 @@
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 90,
+      "hp": 100,
       "rarity": "rare",
       "set_code": "B3b",
       "card_number": 30,
@@ -9506,7 +9534,8 @@
       "card_number": 33,
       "type": "Psychic",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 100
     },
     {
       "name": "Fidough",
@@ -9515,7 +9544,7 @@
       "type": "Psychic",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 60,
+      "hp": 40,
       "rarity": "common",
       "set_code": "B3b",
       "card_number": 34
@@ -9529,7 +9558,8 @@
       "card_number": 35,
       "type": "Psychic",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 80
     },
     {
       "name": "Rockruff",
@@ -9550,7 +9580,7 @@
       "type": "Darkness",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 120,
+      "hp": 100,
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 42
@@ -9588,7 +9618,8 @@
       "card_number": 49,
       "type": "Dragon",
       "stage": 1,
-      "stage_label": "Stage 1"
+      "stage_label": "Stage 1",
+      "hp": 100
     },
     {
       "name": "Ursaluna",
@@ -9599,7 +9630,8 @@
       "card_number": 58,
       "type": "Colorless",
       "stage": 2,
-      "stage_label": "Stage 2"
+      "stage_label": "Stage 2",
+      "hp": 160
     },
     {
       "name": "Furfrou",
@@ -9608,7 +9640,7 @@
       "type": "Colorless",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 80,
+      "hp": 70,
       "rarity": "common",
       "set_code": "B3b",
       "card_number": 61
@@ -9619,7 +9651,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 70,
+      "hp": 60,
       "rarity": "common",
       "set_code": "B3b",
       "card_number": 62,
@@ -9631,7 +9663,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 50,
+      "hp": 60,
       "rarity": "illustration_rare",
       "set_code": "B3b",
       "card_number": 70,
@@ -9657,7 +9689,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 70,
+      "hp": 60,
       "rarity": "illustration_rare",
       "set_code": "B3b",
       "card_number": 74,
@@ -9688,7 +9720,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 70,
+      "hp": 60,
       "rarity": "common",
       "set_code": "B3b",
       "card_number": 28,
@@ -9724,7 +9756,7 @@
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 90,
+      "hp": 100,
       "rarity": "rare",
       "set_code": "B3b",
       "card_number": 17,
@@ -9736,7 +9768,7 @@
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 90,
+      "hp": 100,
       "rarity": "promo",
       "set_code": "PROMO-B",
       "card_number": 73,
@@ -9748,7 +9780,7 @@
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 100,
+      "hp": 110,
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 22,
@@ -9760,7 +9792,7 @@
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 100,
+      "hp": 110,
       "rarity": "promo",
       "set_code": "PROMO-B",
       "card_number": 74,
@@ -9784,7 +9816,7 @@
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 100,
+      "hp": 90,
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 13,
@@ -9799,7 +9831,8 @@
       "card_number": 32,
       "type": "Psychic",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 170
     },
     {
       "name": "Mega Sableye ex",
@@ -9810,7 +9843,8 @@
       "card_number": 41,
       "type": "Darkness",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 170
     },
     {
       "name": "Snorlax",
@@ -9818,7 +9852,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 150,
+      "hp": 130,
       "rarity": "rare",
       "set_code": "B3b",
       "card_number": 55,
@@ -9862,7 +9896,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 50,
+      "hp": 40,
       "rarity": "common",
       "set_code": "B3b",
       "card_number": 1,
@@ -9973,7 +10007,8 @@
       "card_number": 7,
       "type": "Grass",
       "stage": 1,
-      "stage_label": "Stage 1"
+      "stage_label": "Stage 1",
+      "hp": 100
     },
     {
       "name": "Mareep",
@@ -9981,7 +10016,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 60,
+      "hp": 70,
       "rarity": "shiny_rare",
       "set_code": "B3b",
       "card_number": 94,
@@ -9998,7 +10033,8 @@
       "type": "Lightning",
       "variant": "alt art",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 120
     },
     {
       "name": "Dedenne ex",
@@ -10010,7 +10046,8 @@
       "type": "Lightning",
       "variant": "alt art",
       "stage": 0,
-      "stage_label": "Basic"
+      "stage_label": "Basic",
+      "hp": 120
     },
     {
       "name": "Slowbro",
@@ -10031,7 +10068,7 @@
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 90,
+      "hp": 100,
       "rarity": "illustration_rare",
       "set_code": "B3b",
       "card_number": 73,
@@ -10044,7 +10081,7 @@
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
-      "hp": 130,
+      "hp": 120,
       "rarity": "promo",
       "set_code": "PROMO-B",
       "card_number": 75,
@@ -10056,7 +10093,7 @@
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
-      "hp": 70,
+      "hp": 80,
       "rarity": "promo",
       "set_code": "PROMO-B",
       "card_number": 77,
