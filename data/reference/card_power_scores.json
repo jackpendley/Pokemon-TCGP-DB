@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-26",
+ "generated_at": "2026-07-27",
  "scores": {
   "A1:1": {
    "power_score": 26.9,
@@ -1724,57 +1724,119 @@
   "A1:216": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1:217": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1:218": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1:219": {
    "power_score": 25.1,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Grass"
+    ]
+   }
   },
   "A1:220": {
    "power_score": 21.7,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Water"
+    ]
+   }
   },
   "A1:221": {
    "power_score": 19.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Ninetales",
+     "Rapidash",
+     "Magmar"
+    ],
+    "types": []
+   }
   },
   "A1:222": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Muk",
+     "Weezing"
+    ],
+    "types": []
+   }
   },
   "A1:223": {
    "power_score": 20.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1:224": {
    "power_score": 18.7,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Golem",
+     "Onix"
+    ],
+    "types": []
+   }
   },
   "A1:225": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1:226": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Raichu",
+     "Electrode",
+     "Electabuzz"
+    ],
+    "types": []
+   }
   },
   "A1:227": {
    "power_score": 26.9,
@@ -2091,42 +2153,92 @@
   "A1:266": {
    "power_score": 25.1,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Grass"
+    ]
+   }
   },
   "A1:267": {
    "power_score": 21.7,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Water"
+    ]
+   }
   },
   "A1:268": {
    "power_score": 19.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Ninetales",
+     "Rapidash",
+     "Magmar"
+    ],
+    "types": []
+   }
   },
   "A1:269": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Muk",
+     "Weezing"
+    ],
+    "types": []
+   }
   },
   "A1:270": {
    "power_score": 20.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1:271": {
    "power_score": 18.7,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Golem",
+     "Onix"
+    ],
+    "types": []
+   }
   },
   "A1:272": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1:273": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Raichu",
+     "Electrode",
+     "Electabuzz"
+    ],
+    "types": []
+   }
   },
   "A1:274": {
    "power_score": 41.6,
@@ -2731,32 +2843,60 @@
   "A1a:63": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1a:64": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1a:65": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Psychic"
+    ]
+   }
   },
   "A1a:66": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Mew ex"
+    ],
+    "types": []
+   }
   },
   "A1a:67": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1a:68": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1a:69": {
    "power_score": 37.3,
@@ -2849,17 +2989,31 @@
   "A1a:80": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Mew ex"
+    ],
+    "types": []
+   }
   },
   "A1a:81": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1a:82": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A1a:83": {
    "power_score": 40.3,
@@ -4040,62 +4194,116 @@
   "A2:144": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:145": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:146": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:147": {
    "power_score": 24.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:148": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:149": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:150": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:151": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:152": {
    "power_score": 19.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Garchomp",
+     "Togekiss"
+    ],
+    "types": []
+   }
   },
   "A2:153": {
    "power_score": 13.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Electivire",
+     "Luxray"
+    ],
+    "types": []
+   }
   },
   "A2:154": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:155": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:156": {
    "power_score": 39.3,
@@ -4372,32 +4580,62 @@
   "A2:190": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:191": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:192": {
    "power_score": 19.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Garchomp",
+     "Togekiss"
+    ],
+    "types": []
+   }
   },
   "A2:193": {
    "power_score": 13.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Electivire",
+     "Luxray"
+    ],
+    "types": []
+   }
   },
   "A2:194": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:195": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2:196": {
    "power_score": 46.6,
@@ -5066,22 +5304,44 @@
   "A2a:72": {
    "power_score": 26.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2a:73": {
    "power_score": 25.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2a:74": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Snorlax",
+     "Heracross",
+     "Staraptor"
+    ],
+    "types": []
+   }
   },
   "A2a:75": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Metal"
+    ]
+   }
   },
   "A2a:76": {
    "power_score": 34.7,
@@ -5174,22 +5434,44 @@
   "A2a:87": {
    "power_score": 26.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2a:88": {
    "power_score": 25.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2a:89": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Snorlax",
+     "Heracross",
+     "Staraptor"
+    ],
+    "types": []
+   }
   },
   "A2a:90": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Metal"
+    ]
+   }
   },
   "A2a:91": {
    "power_score": 56.6,
@@ -5786,22 +6068,38 @@
   "A2b:69": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2b:70": {
    "power_score": 22.5,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2b:71": {
    "power_score": 28.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2b:72": {
    "power_score": 9.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2b:73": {
    "power_score": 46.6,
@@ -5926,22 +6224,38 @@
   "A2b:88": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2b:89": {
    "power_score": 22.5,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2b:90": {
    "power_score": 28.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2b:91": {
    "power_score": 9.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A2b:92": {
    "power_score": 45.8,
@@ -6098,7 +6412,11 @@
   "A2b:111": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:1": {
    "power_score": 22.6,
@@ -7231,72 +7549,147 @@
   "A3:142": {
    "power_score": 15.5,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:143": {
    "power_score": 21.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Water"
+    ]
+   }
   },
   "A3:144": {
    "power_score": 15.4,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:145": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:146": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:147": {
    "power_score": 25.5,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Grass"
+    ]
+   }
   },
   "A3:148": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Palossand",
+     "Mimikyu"
+    ],
+    "types": []
+   }
   },
   "A3:149": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Colorless"
+    ]
+   }
   },
   "A3:150": {
    "power_score": 18.7,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Alolan Marowak",
+     "Turtonator"
+    ],
+    "types": []
+   }
   },
   "A3:151": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:152": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:153": {
    "power_score": 19.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Alolan Golem",
+     "Vikavolt",
+     "Togedemaru"
+    ],
+    "types": []
+   }
   },
   "A3:154": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Shiinotic",
+     "Tsareena"
+    ],
+    "types": []
+   }
   },
   "A3:155": {
    "power_score": 18.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:156": {
    "power_score": 60.2,
@@ -7573,42 +7966,89 @@
   "A3:190": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Palossand",
+     "Mimikyu"
+    ],
+    "types": []
+   }
   },
   "A3:191": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Colorless"
+    ]
+   }
   },
   "A3:192": {
    "power_score": 18.7,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Alolan Marowak",
+     "Turtonator"
+    ],
+    "types": []
+   }
   },
   "A3:193": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:194": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:195": {
    "power_score": 19.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Alolan Golem",
+     "Vikavolt",
+     "Togedemaru"
+    ],
+    "types": []
+   }
   },
   "A3:196": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Shiinotic",
+     "Tsareena"
+    ],
+    "types": []
+   }
   },
   "A3:197": {
    "power_score": 18.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:198": {
    "power_score": 57.4,
@@ -7693,12 +8133,20 @@
   "A3:208": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:209": {
    "power_score": 18.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3:210": {
    "power_score": 26.9,
@@ -8439,37 +8887,67 @@
   "A3a:63": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3a:64": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3a:65": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Lightning"
+    ]
+   }
   },
   "A3a:66": {
    "power_score": 20.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3a:67": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3a:68": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3a:69": {
    "power_score": 13.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3a:70": {
    "power_score": 22.6,
@@ -8562,17 +9040,29 @@
   "A3a:81": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3a:82": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3a:83": {
    "power_score": 13.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3a:84": {
    "power_score": 46.4,
@@ -9257,22 +9747,42 @@
   "A3b:66": {
    "power_score": 43.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3b:67": {
    "power_score": 15.5,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3b:68": {
    "power_score": 19.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Decidueye ex",
+     "Incineroar ex",
+     "Primarina ex"
+    ],
+    "types": []
+   }
   },
   "A3b:69": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3b:70": {
    "power_score": 29.3,
@@ -9397,12 +9907,24 @@
   "A3b:85": {
    "power_score": 19.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Decidueye ex",
+     "Incineroar ex",
+     "Primarina ex"
+    ],
+    "types": []
+   }
   },
   "A3b:86": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A3b:87": {
    "power_score": 59.1,
@@ -9567,7 +10089,11 @@
   "A3b:107": {
    "power_score": 43.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4:1": {
    "power_score": 20.3,
@@ -10772,57 +11298,112 @@
   "A4:151": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4:152": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4:153": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Metal"
+    ]
+   }
   },
   "A4:154": {
    "power_score": 22.9,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Darkness"
+    ]
+   }
   },
   "A4:155": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4:156": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4:157": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4:158": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4:159": {
    "power_score": 21.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Water"
+    ]
+   }
   },
   "A4:160": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Steelix",
+     "Skarmory ex"
+    ],
+    "types": []
+   }
   },
   "A4:161": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Fighting"
+    ]
+   }
   },
   "A4:162": {
    "power_score": 24.6,
@@ -11099,32 +11680,63 @@
   "A4:196": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4:197": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4:198": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4:199": {
    "power_score": 21.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Water"
+    ]
+   }
   },
   "A4:200": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Steelix",
+     "Skarmory ex"
+    ],
+    "types": []
+   }
   },
   "A4:201": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Fighting"
+    ]
+   }
   },
   "A4:202": {
    "power_score": 50.1,
@@ -11977,27 +12589,53 @@
   "A4a:67": {
    "power_score": 17.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Water"
+    ]
+   }
   },
   "A4a:68": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4a:69": {
    "power_score": 18.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Miltank"
+    ],
+    "types": []
+   }
   },
   "A4a:70": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4a:71": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Psychic"
+    ]
+   }
   },
   "A4a:72": {
    "power_score": 51.2,
@@ -12090,17 +12728,33 @@
   "A4a:83": {
    "power_score": 18.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Miltank"
+    ],
+    "types": []
+   }
   },
   "A4a:84": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4a:85": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Psychic"
+    ]
+   }
   },
   "A4a:86": {
    "power_score": 57.3,
@@ -14721,232 +15375,428 @@
   "A4b:308": {
    "power_score": 43.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:309": {
    "power_score": 43.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:310": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:311": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:312": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:313": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:314": {
    "power_score": 15.4,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:315": {
    "power_score": 15.4,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:316": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:317": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:318": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Lightning"
+    ]
+   }
   },
   "A4b:319": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Lightning"
+    ]
+   }
   },
   "A4b:320": {
    "power_score": 24.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:321": {
    "power_score": 24.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:322": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:323": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:324": {
    "power_score": 25.5,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Grass"
+    ]
+   }
   },
   "A4b:325": {
    "power_score": 25.5,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Grass"
+    ]
+   }
   },
   "A4b:326": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:327": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:328": {
    "power_score": 25.1,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Grass"
+    ]
+   }
   },
   "A4b:329": {
    "power_score": 25.1,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Grass"
+    ]
+   }
   },
   "A4b:330": {
    "power_score": 26.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:331": {
    "power_score": 26.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:332": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:333": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:334": {
    "power_score": 20.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:335": {
    "power_score": 20.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:336": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:337": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:338": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:339": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:340": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:341": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:342": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:343": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:344": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:345": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:346": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:347": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:348": {
    "power_score": 18.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:349": {
    "power_score": 18.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:350": {
    "power_score": 13.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:351": {
    "power_score": 13.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:352": {
    "power_score": 28.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:353": {
    "power_score": 28.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:354": {
    "power_score": 28.3,
@@ -15103,17 +15953,29 @@
   "A4b:373": {
    "power_score": 30.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:374": {
    "power_score": 18.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:375": {
    "power_score": 13.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "A4b:376": {
    "power_score": 33.0,
@@ -15142,7 +16004,11 @@
   "A4b:379": {
    "power_score": 15.4,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:1": {
    "power_score": 26.3,
@@ -16843,72 +17709,139 @@
   "B1:213": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:214": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:215": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:216": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:217": {
    "power_score": 21.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Fire"
+    ]
+   }
   },
   "B1:218": {
    "power_score": 22.5,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:219": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:220": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:221": {
    "power_score": 20.1,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Carracosta",
+     "Jellicent"
+    ],
+    "types": []
+   }
   },
   "B1:222": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Hariyama",
+     "Crabominable"
+    ],
+    "types": []
+   }
   },
   "B1:223": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:224": {
    "power_score": 18.7,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Drifblim",
+     "Mismagius"
+    ],
+    "types": []
+   }
   },
   "B1:225": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:226": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:227": {
    "power_score": 36.2,
@@ -17225,32 +18158,65 @@
   "B1:266": {
    "power_score": 20.1,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Carracosta",
+     "Jellicent"
+    ],
+    "types": []
+   }
   },
   "B1:267": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Hariyama",
+     "Crabominable"
+    ],
+    "types": []
+   }
   },
   "B1:268": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:269": {
    "power_score": 18.7,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Drifblim",
+     "Mismagius"
+    ],
+    "types": []
+   }
   },
   "B1:270": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:271": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1:272": {
    "power_score": 50.3,
@@ -17727,7 +18693,13 @@
   "B1:331": {
    "power_score": 21.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Fire"
+    ]
+   }
   },
   "B1a:1": {
    "power_score": 24.6,
@@ -18252,22 +19224,43 @@
   "B1a:66": {
    "power_score": 15.4,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [
+     "Magneton",
+     "Heliolisk"
+    ],
+    "types": []
+   }
   },
   "B1a:67": {
    "power_score": 40.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Grass"
+    ]
+   }
   },
   "B1a:68": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1a:69": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1a:70": {
    "power_score": 45.4,
@@ -18360,12 +19353,20 @@
   "B1a:81": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1a:82": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B1a:83": {
    "power_score": 63.4,
@@ -18530,7 +19531,13 @@
   "B1a:103": {
    "power_score": 40.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Grass"
+    ]
+   }
   },
   "B2:1": {
    "power_score": 22.6,
@@ -19679,62 +20686,116 @@
   "B2:144": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:145": {
    "power_score": 14.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:146": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:147": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:148": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Metal"
+    ]
+   }
   },
   "B2:149": {
    "power_score": 37.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Psychic"
+    ]
+   }
   },
   "B2:150": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:151": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:152": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:153": {
    "power_score": 20.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Stadium"
+   "trainer_subtype": "Stadium",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:154": {
    "power_score": 24.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Stadium"
+   "trainer_subtype": "Stadium",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:155": {
    "power_score": 17.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Stadium"
+   "trainer_subtype": "Stadium",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Psychic"
+    ]
+   }
   },
   "B2:156": {
    "power_score": 22.6,
@@ -20011,22 +21072,40 @@
   "B2:190": {
    "power_score": 37.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Psychic"
+    ]
+   }
   },
   "B2:191": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:192": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:193": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2:194": {
    "power_score": 56.4,
@@ -20351,7 +21430,11 @@
   "B2:234": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:1": {
    "power_score": 24.6,
@@ -21036,42 +22119,76 @@
   "B2a:86": {
    "power_score": 25.5,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:87": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:88": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:89": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:90": {
    "power_score": 19.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Pawmot"
+    ],
+    "types": []
+   }
   },
   "B2a:91": {
    "power_score": 24.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:92": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:93": {
    "power_score": 9.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Stadium"
+   "trainer_subtype": "Stadium",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:94": {
    "power_score": 19.8,
@@ -21164,27 +22281,49 @@
   "B2a:105": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:106": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:107": {
    "power_score": 19.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Pawmot"
+    ],
+    "types": []
+   }
   },
   "B2a:108": {
    "power_score": 24.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:109": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:110": {
    "power_score": 55.2,
@@ -21229,7 +22368,11 @@
   "B2a:115": {
    "power_score": 24.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2a:116": {
    "power_score": 24.6,
@@ -21354,7 +22497,11 @@
   "B2a:131": {
    "power_score": 25.5,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2b:1": {
    "power_score": 21.8,
@@ -21871,27 +23018,49 @@
   "B2b:65": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2b:66": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2b:67": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Haxorus"
+    ],
+    "types": []
+   }
   },
   "B2b:68": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2b:69": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Stadium"
+   "trainer_subtype": "Stadium",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2b:70": {
    "power_score": 30.6,
@@ -21984,12 +23153,22 @@
   "B2b:81": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Haxorus"
+    ],
+    "types": []
+   }
   },
   "B2b:82": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B2b:83": {
    "power_score": 59.1,
@@ -22266,7 +23445,13 @@
   "B2b:117": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Metal"
+    ]
+   }
   },
   "B3:1": {
    "power_score": 22.0,
@@ -23439,47 +24624,94 @@
   "B3:147": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3:148": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3:149": {
    "power_score": 30.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Fighting"
+    ]
+   }
   },
   "B3:150": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3:151": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Watchog",
+     "Stoutland"
+    ],
+    "types": []
+   }
   },
   "B3:152": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Water"
+    ]
+   }
   },
   "B3:153": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Stadium"
+   "trainer_subtype": "Stadium",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Grass"
+    ]
+   }
   },
   "B3:154": {
    "power_score": 23.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Stadium"
+   "trainer_subtype": "Stadium",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Fighting"
+    ]
+   }
   },
   "B3:155": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Stadium"
+   "trainer_subtype": "Stadium",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3:156": {
    "power_score": 21.6,
@@ -23756,22 +24988,45 @@
   "B3:190": {
    "power_score": 30.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Fighting"
+    ]
+   }
   },
   "B3:191": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3:192": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [
+     "Watchog",
+     "Stoutland"
+    ],
+    "types": []
+   }
   },
   "B3:193": {
    "power_score": 10.2,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Water"
+    ]
+   }
   },
   "B3:194": {
    "power_score": 63.0,
@@ -24648,32 +25903,56 @@
   "B3a:69": {
    "power_score": 36.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3a:70": {
    "power_score": 28.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3a:71": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3a:72": {
    "power_score": 13.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3a:73": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3a:74": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Stadium"
+   "trainer_subtype": "Stadium",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3a:75": {
    "power_score": 19.4,
@@ -24766,17 +26045,29 @@
   "B3a:86": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3a:87": {
    "power_score": 13.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3a:88": {
    "power_score": 6.6,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3a:89": {
    "power_score": 37.3,
@@ -25453,32 +26744,58 @@
   "B3b:64": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3b:65": {
    "power_score": 30.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3b:66": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3b:67": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3b:68": {
    "power_score": 40.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Water"
+    ]
+   }
   },
   "B3b:69": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Stadium"
+   "trainer_subtype": "Stadium",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3b:70": {
    "power_score": 17.5,
@@ -25587,17 +26904,31 @@
   "B3b:83": {
    "power_score": 12.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3b:84": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "B3b:85": {
    "power_score": 40.8,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": [
+     "Water"
+    ]
+   }
   },
   "B3b:86": {
    "power_score": 55.6,
@@ -25762,47 +27093,83 @@
   "B3b:106": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Pokemon Tool"
+   "trainer_subtype": "Pokemon Tool",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "PROMO-A:1": {
    "power_score": 19.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "PROMO-A:2": {
    "power_score": 21.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "PROMO-A:3": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "PROMO-A:4": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "PROMO-A:5": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "PROMO-A:6": {
    "power_score": 27.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "PROMO-A:7": {
    "power_score": 30.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Supporter"
+   "trainer_subtype": "Supporter",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "PROMO-A:8": {
    "power_score": 32.0,
    "score_kind": "trainer",
-   "trainer_subtype": "Item"
+   "trainer_subtype": "Item",
+   "boosts": {
+    "names": [],
+    "types": []
+   }
   },
   "PROMO-A:9": {
    "power_score": 24.6,

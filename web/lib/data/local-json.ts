@@ -149,6 +149,7 @@ async function loadCatalog(): Promise<CatalogCard[]> {
     power_score: scores[`${r.set_code}:${r.card_number}`]?.power_score ?? null,
     power_score_kind:
       scores[`${r.set_code}:${r.card_number}`]?.score_kind ?? null,
+    boosts: scores[`${r.set_code}:${r.card_number}`]?.boosts ?? null,
     evolves_from: r.evolves_from ?? null,
   }));
   catalogMemo = { ref, coll, power, value };

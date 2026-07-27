@@ -79,6 +79,7 @@ async function PackDetailContent({
       power_score: row.power_score ?? null,
       // Pack tables list Pokémon pull targets; unknown when there's no score.
       power_score_kind: row.power_score != null ? "pokemon" : null,
+      boosts: null,
       evolves_from: null,
     };
 

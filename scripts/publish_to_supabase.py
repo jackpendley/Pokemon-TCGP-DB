@@ -99,6 +99,9 @@ def build_card_rows(card_reference: dict, power_scores: dict | None) -> list[dic
                 # Which model produced the score — Pokémon and Trainer scores
                 # are not comparable, so the kind travels with the number.
                 "power_score_kind": score.get("score_kind") if score else None,
+                # Trainers only: which Pokémon names / energy types this card is
+                # restricted to helping. Empty lists mean it works in any deck.
+                "boosts": score.get("boosts") if score else None,
             }
         )
     return rows

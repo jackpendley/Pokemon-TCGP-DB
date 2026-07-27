@@ -9,14 +9,20 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
+import { pokemonBoostedBy, trainersBoosting } from "@/lib/domain/boosts";
 import { buildEvolution } from "@/lib/domain/evolution";
 import { cn } from "@/lib/utils";
 import type { CatalogCard } from "@/types";
 
+/** A type restriction covers hundreds of Pokémon; show a useful slice, not all. */
+const BOOST_LIMIT = 12;
+
 /**
- * Evolution context for the enlarged card: its line-mates in the same set, its
- * other printings (base/ex/Mega), and the whole line across all sets. Unowned
- * cards are greyed (CardImage default); clicking one navigates the dialog to it.
+ * Context for the enlarged card: its line-mates in the same set, its other
+ * printings (base/ex/Mega), the whole line across all sets, and — for cards in a
+ * boost relationship — the Trainers that support it or the Pokémon it supports.
+ * Unowned cards are greyed (CardImage default); clicking one navigates the dialog
+ * to it.
  */
 export function EvolutionTabs({
   card,
@@ -28,10 +34,28 @@ export function EvolutionTabs({
   onSelect: (c: CatalogCard) => void;
 }) {
   const evo = useMemo(() => buildEvolution(allCards), [allCards]);
+  const boosts = useMemo(() => {
+    // A Pokémon wants to know which Trainers support it; a Trainer wants to know
+    // what it supports. Only one of the two can ever be non-empty.
+    const trainers = trainersBoosting(allCards, card);
+    if (trainers.length > 0) {
+      return { label: "Trainers that help", cards: trainers, total: trainers.length };
+    }
+    const supported = pokemonBoostedBy(allCards, card);
+    // A type restriction ("your {W} Pokémon") covers hundreds of cards; show the
+    // ones you own and the strongest, and say so rather than listing the lot.
+    return {
+      label: "Boosts",
+      cards: supported.slice(0, BOOST_LIMIT),
+      total: supported.length,
+    };
+  }, [allCards, card]);
+
   const tabs = [
     { value: "set", label: "Set evolution", cards: evo.setEvolution(card) },
     { value: "versions", label: "Other versions", cards: evo.otherVersions(card) },
     { value: "related", label: "Related cards", cards: evo.relatedCards(card) },
+    { value: "boosts", label: boosts.label, cards: boosts.cards },
   ].filter((t) => t.cards.length > 0);
 
   if (tabs.length === 0) return null;
@@ -59,6 +83,12 @@ export function EvolutionTabs({
               />
             ))}
           </div>
+          {t.value === "boosts" && boosts.total > t.cards.length ? (
+            <p className="mt-2 text-xs text-muted-foreground">
+              Showing {t.cards.length} of {boosts.total} — owned and
+              highest-scoring first.
+            </p>
+          ) : null}
         </TabsContent>
       ))}
     </Tabs>

@@ -12,6 +12,7 @@ import {
   reviewQueueSchema,
   syncDeltaSchema,
   syncHistoryEntrySchema,
+  trainerBoostsSchema,
 } from "@/types";
 import type { CatalogCard, SyncRunState, SyncStatus } from "@/types";
 import type { DataSource } from "@/lib/data/source";
@@ -45,12 +46,13 @@ const cardRowSchema = z.object({
   evolves_from: z.string().nullable(),
   power_score: z.number().nullable(),
   power_score_kind: z.enum(["pokemon", "trainer"]).nullable(),
+  boosts: trainerBoostsSchema.nullable(),
 });
 
 const CARD_COLUMNS =
   "set_code, card_number, name, rarity, pokemon_type, card_category, " +
   "trainer_subtype, stage, expansion, is_ex, evolves_from, power_score, " +
-  "power_score_kind";
+  "power_score_kind, boosts";
 
 const collectionRowSchema = z.object({
   set_code: z.string(),
@@ -160,6 +162,7 @@ export function createSupabaseSource(client: SupabaseClient): DataSource {
           ownedByCoord.get(`${r.set_code.toUpperCase()}:${r.card_number}`) ?? 0,
         power_score: r.power_score,
         power_score_kind: r.power_score_kind,
+        boosts: r.boosts,
         evolves_from: r.evolves_from,
       }));
     },

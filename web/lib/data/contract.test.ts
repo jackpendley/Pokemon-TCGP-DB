@@ -33,6 +33,7 @@ const catalogStub: CatalogCard[] = [
     owned: 2,
     power_score: 42,
     power_score_kind: "pokemon" as const,
+    boosts: null,
     evolves_from: null,
   },
 ];
