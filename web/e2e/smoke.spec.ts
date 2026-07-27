@@ -80,6 +80,37 @@ test("the deck builder validates an empty deck", async ({ page }) => {
   await expect(page.getByText(/at least 1 energy type/i)).toBeVisible();
 });
 
+test("a long card name never stretches its tile past the grid", async ({ page }) => {
+  test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
+  /*
+   * Regression: a <button> sizes to fit-content, so a tile whose label was wider
+   * than its grid track grew to the label's width and overlapped its neighbours
+   * — Ancient Booster Energy Capsule rendered 211px wide in an 85px track. Only
+   * long names were affected, which is why it showed up while filtering Trainers.
+   */
+  for (const path of ["/decks/new", "/cards"]) {
+    await page.goto(path);
+    const search = page.getByPlaceholder(/search cards/i).first();
+    await search.waitFor();
+    // The longest card names in the game, and the ones originally reported.
+    await search.fill("Booster Energy");
+    const overflowing = await page
+      .locator("button")
+      .filter({ has: page.locator('[class*="aspect-[5/7]"]') })
+      // Annotated: evaluateAll widens to HTMLElement | SVGElement, and these are
+      // all <button>s by construction.
+      .evaluateAll((buttons: HTMLElement[]) =>
+        buttons
+          .filter((b) => {
+            const parent = b.parentElement;
+            return parent != null && b.offsetWidth > parent.offsetWidth + 1;
+          })
+          .map((b) => `${(b.textContent ?? "").slice(0, 40)} @ ${b.offsetWidth}px`),
+      );
+    expect(overflowing, `${path} has tiles wider than their track`).toEqual([]);
+  }
+});
+
 test("a picker tile reads as one line of name plus owned count", async ({
   page,
 }) => {

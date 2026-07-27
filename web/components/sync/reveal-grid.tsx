@@ -153,8 +153,12 @@ function RevealTile({
       type="button"
       onClick={() => card && onSelect(card)}
       disabled={!card}
+      // w-full is load-bearing: a <button> sizes to fit-content, so without it a
+      // long card name (Ancient Booster Energy Capsule, Puppy-Loving Girl) made
+      // the tile wider than its grid track and it overlapped its neighbours,
+      // instead of the name truncating. min-w-0 keeps that true in a flex parent.
       className={cn(
-        "animate-card-reveal flex flex-col text-left",
+        "animate-card-reveal flex w-full min-w-0 flex-col text-left",
         card && "transition-transform hover:scale-[1.03]",
       )}
       style={{ animationDelay: `${delayMs}ms` }}
