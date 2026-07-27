@@ -97,6 +97,29 @@ def reconcile_pokemon_type(entry: dict, ref_type: str | None) -> str | None:
     return None
 
 
+def reconcile_hp(entry: dict, ref_hp: int | None) -> str | None:
+    """Make card_reference authoritative for a Pokémon entry's HP.
+
+    Same reasoning as reconcile_pokemon_type, and now load-bearing rather than
+    cosmetic: HP is pick_candidate's *primary* filter (step 2), so an entry
+    carrying a sibling printing's HP steers coord assignment to the wrong card.
+    That was harmless while ext_ref had no HP for B3b/PROMO-B — nothing to filter
+    on — and became a hazard the moment those sets gained it.
+
+    Returns "backfilled", "corrected", or None. Trainers / no ref_hp: no-op.
+    """
+    if entry.get("card_type") != "Pokemon" or not ref_hp:
+        return None
+    cur = entry.get("hp")
+    if not cur:
+        entry["hp"] = ref_hp
+        return "backfilled"
+    if cur != ref_hp:
+        entry["hp"] = ref_hp
+        return "corrected"
+    return None
+
+
 def _type_match(entry_type, ext_type) -> bool:
     if not entry_type or not ext_type:
         return True
@@ -320,6 +343,9 @@ def main() -> int:
     rarity_alias_fixed = 0
     type_backfilled = 0
     type_corrected = 0
+    hp_backfilled = 0
+    hp_corrected = 0
+    hp_corrections: list[str] = []
     type_corrections: list[str] = []
     stage_backfilled = 0
     card_type_flips: list[str] = []
@@ -393,6 +419,16 @@ def main() -> int:
                 f"{entry.get('name')} ({entry['set_code']}/{cn}): "
                 f"{cur_type}→{entry['type']}")
 
+        cur_hp = entry.get("hp")
+        hp_action = reconcile_hp(entry, ref_rec.get("hp") if ref_rec else None)
+        if hp_action == "backfilled":
+            hp_backfilled += 1
+        elif hp_action == "corrected":
+            hp_corrected += 1
+            hp_corrections.append(
+                f"{entry.get('name')} ({entry['set_code']}/{cn}): "
+                f"{cur_hp}→{entry['hp']}")
+
         # 6. Backfill missing Pokémon stage from card_reference (same authority).
         #    A-series ext_ref has no stage, so older entries lack it; card_reference covers it.
         if entry.get("card_type") == "Pokemon" and entry.get("stage") is None and ref_rec:
@@ -412,6 +448,12 @@ def main() -> int:
     if type_corrected:
         print(f"  Corrected Pokémon type on {type_corrected} entries from card_reference:")
         for fix in type_corrections:
+            print(f"    {fix}")
+    if hp_backfilled:
+        print(f"  Backfilled Pokémon HP on {hp_backfilled} entries from card_reference")
+    if hp_corrected:
+        print(f"  Corrected Pokémon HP on {hp_corrected} entries from card_reference:")
+        for fix in hp_corrections:
             print(f"    {fix}")
     if stage_backfilled:
         print(f"  Backfilled Pokémon stage on {stage_backfilled} entries from card_reference")
