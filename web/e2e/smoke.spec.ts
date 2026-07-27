@@ -80,8 +80,16 @@ test("the deck builder validates an empty deck", async ({ page }) => {
   await expect(page.getByText(/at least 1 energy type/i)).toBeVisible();
 });
 
-test("a Trainer card shows what it boosts", async ({ page }) => {
+/**
+ * The relationship tabs are a desktop-only surface today: on a phone CardDialog
+ * hands off to CardViewerMobile, which renders the card and its flip side but no
+ * tabs at all. Drop this guard when the mobile viewer gains them.
+ */
+const DESKTOP_ONLY = "the mobile card viewer has no relationship tabs yet";
+
+test("a Trainer card shows what it boosts", async ({ page }, testInfo) => {
   test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
+  test.skip(testInfo.project.name === "mobile", DESKTOP_ONLY);
   // Erika's rule text is restricted to "your {G} Pokémon", so the relationship
   // has to survive the pipeline → artifact → catalog → tabs path.
   await page.goto("/cards");
@@ -92,8 +100,11 @@ test("a Trainer card shows what it boosts", async ({ page }) => {
   await expect(page.getByRole("tab", { name: /Boosts/ })).toBeVisible();
 });
 
-test("a boosted Pokémon shows the Trainers that help it", async ({ page }) => {
+test("a boosted Pokémon shows the Trainers that help it", async ({
+  page,
+}, testInfo) => {
   test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
+  test.skip(testInfo.project.name === "mobile", DESKTOP_ONLY);
   // The inverse direction: Pawmot is named by Nemona.
   await page.goto("/cards");
   const search = page.getByPlaceholder(/search cards/i).first();
