@@ -1,7 +1,7 @@
 """
-Guards card_reference.json type completeness so the web Cards/Sets views never
-show a typeless ("—") card:
-  - every Pokémon has a pokemon_type,
+Guards card_reference.json completeness so the web Cards/Sets views never show a
+typeless ("—") card and the deck rules engine is never left guessing:
+  - every Pokémon has a pokemon_type, a stage and an hp,
   - every Trainer has a trainer_subtype (Item/Supporter/Stadium/Pokemon Tool),
   - every card is classified (no null card_category),
   - pokemon_type only ever holds a real energy type (never a trainer token).
@@ -20,6 +20,8 @@ ENERGY_TYPES = {
     "Darkness", "Metal", "Dragon", "Colorless",
 }
 TRAINER_SUBTYPES = {"Item", "Supporter", "Stadium", "Pokemon Tool"}
+# card_reference stores the spaceless TCGdex spelling (see _EXT_STAGE_TO_TCGDEX).
+STAGES = {"Basic", "Stage1", "Stage2"}
 
 
 @pytest.fixture(scope="module")
@@ -59,6 +61,29 @@ def test_trainer_subtype_vocabulary(records):
     bad = [(_coord(r), r.get("trainer_subtype")) for r in records
            if r.get("trainer_subtype") and r["trainer_subtype"] not in TRAINER_SUBTYPES]
     assert not bad, f"unexpected trainer_subtype values: {bad[:10]}"
+
+
+def test_every_pokemon_has_a_stage(records):
+    """The deck builder's "at least 1 Basic" rule can only be checked when every
+    Pokémon has a stage. 190 didn't (B3b 96, PROMO-B 74, PROMO-A 17, A4b 3), so the
+    rule degraded to an "unverifiable-basic" warning for any deck containing one.
+    """
+    bad = [_coord(r) for r in records
+           if r.get("card_category") == "Pokemon" and not r.get("stage")]
+    assert not bad, f"{len(bad)} Pokémon missing a stage: {bad[:10]}"
+
+
+def test_stage_vocabulary(records):
+    bad = [(_coord(r), r.get("stage")) for r in records
+           if r.get("stage") and r["stage"] not in STAGES]
+    assert not bad, f"unexpected stage values: {bad[:10]}"
+
+
+def test_every_pokemon_has_hp(records):
+    """HP feeds the power-score model, which skipped any Pokémon without it."""
+    bad = [_coord(r) for r in records
+           if r.get("card_category") == "Pokemon" and not r.get("hp")]
+    assert not bad, f"{len(bad)} Pokémon missing HP: {bad[:10]}"
 
 
 def test_no_card_shows_dash(records):

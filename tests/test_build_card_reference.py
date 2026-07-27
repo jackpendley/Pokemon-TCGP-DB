@@ -12,12 +12,24 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import build_card_reference as bcr
 
 
-def _reconcile(tcgdex_stage, ext_stage, set_code="B3A", num=3, name="Psyduck"):
+def _reconcile(
+    tcgdex_stage,
+    ext_stage,
+    set_code="B3A",
+    num=3,
+    name="Psyduck",
+    tcgdex_hp=None,
+    ext_hp=None,
+):
     snapshots = {"serebii": {}, "bulbapedia": {}, "tcgdex": {}}
-    if tcgdex_stage is not None:
-        snapshots["tcgdex"] = {str(num): {"name": name, "stage": tcgdex_stage}}
+    if tcgdex_stage is not None or tcgdex_hp is not None:
+        snapshots["tcgdex"] = {
+            str(num): {"name": name, "stage": tcgdex_stage, "hp": tcgdex_hp}
+        }
     ps_record = {"card_name": name, "expansion": "Test"}
-    return bcr.reconcile_card(set_code, num, ps_record, snapshots, {"stage": ext_stage})
+    return bcr.reconcile_card(
+        set_code, num, ps_record, snapshots, {"stage": ext_stage, "hp": ext_hp}
+    )
 
 
 def test_tcgdex_stage_wins_over_ext():
@@ -30,6 +42,20 @@ def test_ext_stage_fallback_when_tcgdex_absent():
     assert _reconcile(None, "Basic")["stage"] == "Basic"
     assert _reconcile(None, "Stage 1")["stage"] == "Stage1"
     assert _reconcile(None, "Stage 2")["stage"] == "Stage2"
+
+
+def test_ext_hp_fallback_when_tcgdex_absent():
+    """hp gets the same fallback as stage. It didn't, which left 953 Pokémon with
+    hp: null while ext_ref already held the number for 763 of them."""
+    assert _reconcile(None, "Basic", ext_hp=70)["hp"] == 70
+
+
+def test_tcgdex_hp_wins_over_ext():
+    assert _reconcile("Basic", "Basic", tcgdex_hp=60, ext_hp=70)["hp"] == 60
+
+
+def test_no_hp_anywhere_is_none():
+    assert _reconcile(None, "Basic")["hp"] is None
 
 
 def test_no_stage_anywhere_is_none():

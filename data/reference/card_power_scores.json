@@ -27907,6 +27907,86 @@
    "has_ability": false,
    "estimated": false
   },
+  "PROMO-A:101": {
+   "power_score": 30.3,
+   "score_kind": "pokemon",
+   "hp": 90,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
+  "PROMO-A:102": {
+   "power_score": 33.7,
+   "score_kind": "pokemon",
+   "hp": 100,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
+  "PROMO-A:103": {
+   "power_score": 20.2,
+   "score_kind": "pokemon",
+   "hp": 60,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
+  "PROMO-A:104": {
+   "power_score": 40.4,
+   "score_kind": "pokemon",
+   "hp": 120,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
+  "PROMO-A:105": {
+   "power_score": 20.2,
+   "score_kind": "pokemon",
+   "hp": 60,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
+  "PROMO-A:106": {
+   "power_score": 33.7,
+   "score_kind": "pokemon",
+   "hp": 100,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
+  "PROMO-A:107": {
+   "power_score": 37.0,
+   "score_kind": "pokemon",
+   "hp": 110,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
+  "PROMO-A:108": {
+   "power_score": 23.6,
+   "score_kind": "pokemon",
+   "hp": 70,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
+  "PROMO-A:109": {
+   "power_score": 30.3,
+   "score_kind": "pokemon",
+   "hp": 90,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
+  "PROMO-A:110": {
+   "power_score": 47.1,
+   "score_kind": "pokemon",
+   "hp": 140,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
   "PROMO-A:111": {
    "power_score": 24.6,
    "score_kind": "pokemon",
@@ -27914,6 +27994,14 @@
    "effective_damage": 40.0,
    "has_ability": false,
    "estimated": false
+  },
+  "PROMO-A:112": {
+   "power_score": 47.1,
+   "score_kind": "pokemon",
+   "hp": 140,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
   },
   "PROMO-A:113": {
    "power_score": 31.0,
@@ -27930,6 +28018,30 @@
    "effective_damage": 70.0,
    "has_ability": false,
    "estimated": false
+  },
+  "PROMO-A:115": {
+   "power_score": 47.1,
+   "score_kind": "pokemon",
+   "hp": 140,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
+  "PROMO-A:116": {
+   "power_score": 20.2,
+   "score_kind": "pokemon",
+   "hp": 60,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
+  },
+  "PROMO-A:117": {
+   "power_score": 26.9,
+   "score_kind": "pokemon",
+   "hp": 80,
+   "effective_damage": null,
+   "has_ability": false,
+   "estimated": true
   },
   "PROMO-B:1": {
    "power_score": 19.6,

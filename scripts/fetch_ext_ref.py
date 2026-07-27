@@ -44,6 +44,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (TRAINER_CATEGORIES, is_ex_from_name, RARITY_SYMBOLS,
                             field_slug as _normalize, load_records,
                             http_get_with_retry, ROOT,
+                            CARD_REF_JSON as CARD_REF,
                             EXT_REF_JSON as EXT_REF,
                             PACK_SOURCES_JSON as PACK_SOURCES)
 
@@ -349,28 +350,41 @@ def _load_ext_ref() -> tuple[list[dict], dict[tuple[str, int], int]]:
     return records, index
 
 
-def _load_pack_sources_missing(ext_index: dict[tuple[str, int], int]) -> list[dict]:
-    """Return pack_sources records that have no ext_ref entry (need fetching)."""
-    if not PACK_SOURCES.exists():
+def _coords_from(path: Path, number_field: str) -> list[tuple[str, int]]:
+    """(set_code, number) pairs from a records file, skipping unusable rows."""
+    if not path.exists():
         return []
-    records = load_records(PACK_SOURCES)
-    missing = []
-    seen: set[tuple[str, int]] = set()
-    for r in records:
+    coords = []
+    for r in load_records(path):
         sc = str(r.get("set_code", "")).strip()
-        cn_raw = r.get("card_number")
         try:
-            cn = int(cn_raw)
+            coords.append((sc, int(r.get(number_field))))
         except (TypeError, ValueError):
             continue
-        key = (sc, cn)
+    return coords
+
+
+def _load_missing_coords(ext_index: dict[tuple[str, int], int]) -> list[dict]:
+    """Cards with no ext_ref entry, from every catalog that names one.
+
+    pack_sources alone is not enough: 81 promo cards exist only in
+    card_reference, which build_card_reference synthesizes from the wiki
+    snapshots for sets with no pack data. Those were unreachable here, which is
+    why 190 Pokémon still carry stage: null — a scope gap, not a parser gap.
+    """
+    missing = []
+    seen: set[tuple[str, int]] = set()
+    for key in [
+        *_coords_from(PACK_SOURCES, "card_number"),
+        *_coords_from(CARD_REF, "card_number"),
+    ]:
         if key in seen or key in ext_index:
             continue
         seen.add(key)
         missing.append({
-            "set_code": sc,
-            "number": cn,
-            "source_url": _limitless_card_url(sc, cn),
+            "set_code": key[0],
+            "number": key[1],
+            "source_url": _limitless_card_url(*key),
         })
     return missing
 
@@ -416,7 +430,7 @@ def main() -> int:
     else:
         ext_index_complete = ext_index
 
-    missing = _load_pack_sources_missing(ext_index_complete)
+    missing = _load_missing_coords(ext_index_complete)
 
     if args.set:
         missing = [m for m in missing if m["set_code"].upper() == args.set.upper()]
