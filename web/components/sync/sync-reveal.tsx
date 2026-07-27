@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { RevealGrid, type AdditionItem } from "@/components/sync/reveal-grid";
 import { CountUp } from "@/components/ui/count-up";
+import { usePrefersReducedMotion } from "@/lib/hooks/use-reduced-motion";
+import { BARS_FILL_MS, barsStartMs } from "@/lib/domain/reveal-timing";
 
 export type { AdditionItem } from "@/components/sync/reveal-grid";
 
@@ -16,9 +18,6 @@ export interface SetProgressItem {
   gained: number;
 }
 
-const STAGGER_MS = 90;
-const PHASE_GAP_MS = 350;
-
 export function SyncReveal({
   items,
   setProgress,
@@ -27,19 +26,42 @@ export function SyncReveal({
   setProgress: SetProgressItem[];
 }) {
   // Bars fill after the cards have revealed.
-  const barsStartMs = items.length * STAGGER_MS + 2 * PHASE_GAP_MS;
+  const barsAt = barsStartMs(items.length);
   const [barsFilled, setBarsFilled] = useState(false);
   useEffect(() => {
-    const t = setTimeout(() => setBarsFilled(true), barsStartMs);
+    const t = setTimeout(() => setBarsFilled(true), barsAt);
     return () => clearTimeout(t);
-  }, [barsStartMs]);
+  }, [barsAt]);
+
+  const rootRef = useRef<HTMLDivElement>(null);
+  const barsRef = useRef<HTMLElement>(null);
+  const reduced = usePrefersReducedMotion();
+
+  /**
+   * Tail of the auto-scroll the grid starts: bring the set-progress bars into
+   * view for their fill, then return to the top so the popup is left where the
+   * user can read it from the beginning.
+   */
+  useEffect(() => {
+    if (reduced || setProgress.length === 0) return;
+    const toBars = setTimeout(() => {
+      barsRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }, barsAt);
+    const toTop = setTimeout(() => {
+      rootRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, barsAt + BARS_FILL_MS + 600);
+    return () => {
+      clearTimeout(toBars);
+      clearTimeout(toTop);
+    };
+  }, [barsAt, reduced, setProgress.length]);
 
   return (
-    <div className="space-y-6">
+    <div ref={rootRef} className="space-y-6">
       <RevealGrid items={items} />
 
       {setProgress.length > 0 ? (
-        <section className="space-y-3">
+        <section ref={barsRef} className="space-y-3">
           <h3 className="text-sm font-medium">Set progress</h3>
           <div className="space-y-3">
             {setProgress.map((s) => {
