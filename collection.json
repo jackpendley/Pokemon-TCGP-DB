@@ -9147,7 +9147,9 @@
       "rarity": "common",
       "set_code": "B3b",
       "card_number": 59,
-      "type": "Colorless"
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Hisuian Zorua",
@@ -9156,7 +9158,9 @@
       "rarity": "promo",
       "set_code": "PROMO-B",
       "card_number": 76,
-      "type": "Colorless"
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Metapod",
@@ -9225,7 +9229,9 @@
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 20,
-      "type": "Water"
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Pikachu",
@@ -9270,7 +9276,9 @@
       "rarity": "rare",
       "set_code": "B3b",
       "card_number": 54,
-      "type": "Colorless"
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Hisuian Zoroark ex",
@@ -9279,7 +9287,9 @@
       "rarity": "double_rare",
       "set_code": "B3b",
       "card_number": 60,
-      "type": "Colorless"
+      "type": "Colorless",
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Old Amber",
@@ -9302,35 +9312,39 @@
     {
       "name": "Elegant Cape",
       "count": 3,
-      "card_type": "Pokemon",
+      "card_type": "Trainer",
       "rarity": "uncommon",
       "set_code": "B3b",
-      "card_number": 65
+      "card_number": 65,
+      "trainer_subtype": "Pokemon Tool"
     },
     {
       "name": "Elesa",
       "count": 7,
-      "card_type": "Pokemon",
+      "card_type": "Trainer",
       "rarity": "uncommon",
       "set_code": "B3b",
-      "card_number": 66
+      "card_number": 66,
+      "trainer_subtype": "Supporter"
     },
     {
       "name": "Kid’s Room",
       "count": 5,
-      "card_type": "Pokemon",
+      "card_type": "Trainer",
       "rarity": "uncommon",
       "set_code": "B3b",
-      "card_number": 69
+      "card_number": 69,
+      "trainer_subtype": "Stadium"
     },
     {
       "name": "Puppy-Loving Girl",
       "count": 1,
-      "card_type": "Pokemon",
+      "card_type": "Trainer",
       "rarity": "super_rare",
       "set_code": "B3b",
       "card_number": 84,
-      "variant": "alt art"
+      "variant": "alt art",
+      "trainer_subtype": "Supporter"
     },
     {
       "name": "Petilil",
@@ -9347,10 +9361,11 @@
     {
       "name": "Puppy-Loving Girl",
       "count": 7,
-      "card_type": "Pokemon",
+      "card_type": "Trainer",
       "rarity": "uncommon",
       "set_code": "B3b",
-      "card_number": 67
+      "card_number": 67,
+      "trainer_subtype": "Supporter"
     },
     {
       "name": "Jigglypuff",
@@ -9367,11 +9382,14 @@
     {
       "name": "Psyduck",
       "count": 4,
-      "card_type": "Trainer",
-      "trainer_subtype": "Supporter",
+      "card_type": "Pokemon",
       "rarity": "common",
       "set_code": "B3b",
-      "card_number": 11
+      "card_number": 11,
+      "hp": 70,
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Ninetales",
@@ -9404,7 +9422,9 @@
       "rarity": "double_rare",
       "set_code": "B3b",
       "card_number": 15,
-      "type": "Water"
+      "type": "Water",
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Dedenne ex",
@@ -9413,7 +9433,9 @@
       "rarity": "double_rare",
       "set_code": "B3b",
       "card_number": 24,
-      "type": "Lightning"
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Slowpoke",
@@ -9482,7 +9504,9 @@
       "rarity": "rare",
       "set_code": "B3b",
       "card_number": 33,
-      "type": "Psychic"
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Fidough",
@@ -9503,7 +9527,9 @@
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 35,
-      "type": "Psychic"
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Rockruff",
@@ -9560,7 +9586,9 @@
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 49,
-      "type": "Dragon"
+      "type": "Dragon",
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Ursaluna",
@@ -9569,7 +9597,9 @@
       "rarity": "rare",
       "set_code": "B3b",
       "card_number": 58,
-      "type": "Colorless"
+      "type": "Colorless",
+      "stage": 2,
+      "stage_label": "Stage 2"
     },
     {
       "name": "Furfrou",
@@ -9637,18 +9667,20 @@
     {
       "name": "Small Balloon",
       "count": 4,
-      "card_type": "Pokemon",
+      "card_type": "Trainer",
       "rarity": "uncommon",
       "set_code": "B3b",
-      "card_number": 64
+      "card_number": 64,
+      "trainer_subtype": "Pokemon Tool"
     },
     {
       "name": "Wallace",
       "count": 3,
-      "card_type": "Pokemon",
+      "card_type": "Trainer",
       "rarity": "uncommon",
       "set_code": "B3b",
-      "card_number": 68
+      "card_number": 68,
+      "trainer_subtype": "Supporter"
     },
     {
       "name": "Munna",
@@ -9765,7 +9797,9 @@
       "rarity": "promo",
       "set_code": "B3b",
       "card_number": 32,
-      "type": "Psychic"
+      "type": "Psychic",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Mega Sableye ex",
@@ -9774,7 +9808,9 @@
       "rarity": "promo",
       "set_code": "B3b",
       "card_number": 41,
-      "type": "Darkness"
+      "type": "Darkness",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Snorlax",
@@ -9813,11 +9849,12 @@
     {
       "name": "Elesa",
       "count": 1,
-      "card_type": "Pokemon",
+      "card_type": "Trainer",
       "rarity": "super_rare",
       "set_code": "B3b",
       "card_number": 83,
-      "variant": "alt art"
+      "variant": "alt art",
+      "trainer_subtype": "Supporter"
     },
     {
       "name": "Caterpie",
@@ -9934,7 +9971,9 @@
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 7,
-      "type": "Grass"
+      "type": "Grass",
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Mareep",
@@ -9957,7 +9996,9 @@
       "set_code": "B3b",
       "card_number": 79,
       "type": "Lightning",
-      "variant": "alt art"
+      "variant": "alt art",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Dedenne ex",
@@ -9967,7 +10008,9 @@
       "set_code": "B3b",
       "card_number": 90,
       "type": "Lightning",
-      "variant": "alt art"
+      "variant": "alt art",
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Slowbro",
