@@ -44,7 +44,13 @@ export function DeckSlots({
           className="group relative aspect-[5/7] overflow-hidden rounded-md border disabled:cursor-default"
           style={{ backgroundColor: `${typeColor(displayType(card))}22` }}
         >
-          <CardImage card={card} dimUnowned={false} />
+          {/* key remounts on card change so the CDN-fallback index resets —
+              removing a card shifts every later slot onto a different card. */}
+          <CardImage
+            key={`${card.set_code}-${card.card_number}`}
+            card={card}
+            dimUnowned={false}
+          />
           {canEdit ? (
             <span className="absolute inset-0 hidden items-center justify-center bg-black/55 group-hover:flex">
               <X className="size-5 text-white" />

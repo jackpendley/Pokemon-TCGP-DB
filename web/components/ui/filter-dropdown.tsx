@@ -73,6 +73,13 @@ export function FilterDropdown({
   );
 }
 
+/**
+ * Toggle a value in a string[] filter state — the state update every FilterCheck
+ * makes. Lives here so the Cards page and the deck picker share one copy.
+ */
+export const toggleValue = (arr: string[], v: string) =>
+  arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v];
+
 /** A checkbox row for a filter option; children render the icon + label. */
 export function FilterCheck({
   checked,

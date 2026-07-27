@@ -5,7 +5,13 @@ import { Info, Search } from "lucide-react";
 
 import { CardDialog } from "@/components/cards/card-dialog";
 import { CardImage } from "@/components/cards/card-image";
-import { ENERGY_TYPES } from "@/components/cards/type-symbol";
+import { ENERGY_TYPES, TypeSymbol } from "@/components/cards/type-symbol";
+import { SetLogo } from "@/components/sets/set-logo";
+import {
+  FilterCheck,
+  FilterDropdown,
+  toggleValue,
+} from "@/components/ui/filter-dropdown";
 import { MultiSelect } from "@/components/ui/multi-select";
 import { compareRarity } from "@/lib/domain/rarity";
 import { displayType, powerScoreLabel } from "@/lib/domain/card";
@@ -122,24 +128,55 @@ export function DeckPicker({
       </label>
 
       <div className="flex flex-wrap items-center gap-2">
-        <MultiSelect
+        {/* Types and sets carry icons, so they use the same FilterDropdown the
+            Cards page uses; MultiSelect's renderOption returns a string and so
+            can't hold a <TypeSymbol>. Stages and categories need no icon. */}
+        <FilterDropdown
           label="types"
-          options={ENERGY_TYPES.map((t) => ({ value: t, label: t }))}
-          selected={types}
-          onChange={(v) => reset(setTypes, v)}
-        />
+          count={types.length}
+          onClear={() => reset(setTypes, [])}
+          panelClassName="w-72"
+        >
+          <div className="grid grid-cols-2 gap-x-2">
+            {ENERGY_TYPES.map((t) => (
+              <FilterCheck
+                key={t}
+                checked={types.includes(t)}
+                onToggle={() => reset(setTypes, toggleValue(types, t))}
+              >
+                <TypeSymbol type={t} />
+                <span>{t}</span>
+              </FilterCheck>
+            ))}
+          </div>
+        </FilterDropdown>
         <MultiSelect
           label="stages"
           options={STAGES.map((s) => ({ value: s, label: stageLabel(s) }))}
           selected={stages}
           onChange={(v) => reset(setStages, v)}
         />
-        <MultiSelect
+        <FilterDropdown
           label="sets"
-          options={setOptions}
-          selected={sets}
-          onChange={(v) => reset(setSets, v)}
-        />
+          count={sets.length}
+          onClear={() => reset(setSets, [])}
+          panelClassName="w-[22rem]"
+        >
+          {setOptions.map((o) => (
+            <FilterCheck
+              key={o.value}
+              checked={sets.includes(o.value)}
+              onToggle={() => reset(setSets, toggleValue(sets, o.value))}
+            >
+              <SetLogo
+                setCode={o.value}
+                label={o.value}
+                className="h-4 w-8 shrink-0"
+              />
+              <span className="truncate">{o.label}</span>
+            </FilterCheck>
+          ))}
+        </FilterDropdown>
         <MultiSelect
           label="categories"
           options={[
@@ -203,7 +240,14 @@ export function DeckPicker({
                 className="flex flex-col text-left disabled:opacity-45"
               >
                 <div className="relative aspect-[5/7] overflow-hidden rounded-md border">
-                  <CardImage card={card} />
+                  {/* key remounts on card change so the CDN-fallback index resets:
+                      a sort or filter change remaps a tile onto a different card,
+                      and without this the new card inherits the old one's
+                      already-advanced index and can render the wrong art. */}
+                  <CardImage
+                    key={`${card.set_code}-${card.card_number}`}
+                    card={card}
+                  />
                   {count > 0 ? (
                     <span className="absolute top-1 left-1 rounded bg-primary px-1.5 text-[10px] font-bold text-primary-foreground tabular-nums">
                       ×{count}
@@ -255,7 +299,10 @@ export function DeckPicker({
         onClose={() => setInspecting(null)}
         allCards={catalog}
         onSelect={setInspecting}
-        siblings={visible}
+        // Adding from the dialog keeps it open, so an evolution line can be built
+        // in one visit instead of reopening the dialog per card.
+        onAdd={disabled ? undefined : onAdd}
+        canAdd={(c) => countFor(c) < MAX_COPIES_PER_NAME}
       />
 
       {shown < ordered.length ? (
