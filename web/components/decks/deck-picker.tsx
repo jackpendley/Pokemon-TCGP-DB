@@ -238,7 +238,11 @@ export function DeckPicker({
                     ? `${card.name} — already at ${MAX_COPIES_PER_NAME} copies`
                     : `Add ${card.name}`
                 }
-                className="flex flex-col text-left disabled:opacity-45"
+                // w-full is load-bearing: a <button> sizes to fit-content, so without it a
+                // long card name (Ancient Booster Energy Capsule, Puppy-Loving Girl) made
+                // the tile wider than its grid track and it overlapped its neighbours,
+                // instead of the name truncating. min-w-0 keeps that true in a flex parent.
+                className="flex w-full min-w-0 flex-col text-left disabled:opacity-45"
               >
                 <div className="relative aspect-[5/7] overflow-hidden rounded-md border">
                   {/* key remounts on card change so the CDN-fallback index resets:

@@ -67,8 +67,12 @@ function CardTile({
     <button
       type="button"
       onClick={onClick}
+      // w-full is load-bearing: a <button> sizes to fit-content, so without it a
+      // long card name (Ancient Booster Energy Capsule, Puppy-Loving Girl) made
+      // the tile wider than its grid track and it overlapped its neighbours,
+      // instead of the name truncating. min-w-0 keeps that true in a flex parent.
       className={cn(
-        "flex flex-col text-left transition-transform hover:scale-[1.03]",
+        "flex w-full min-w-0 flex-col text-left transition-transform hover:scale-[1.03]",
         !owned && "opacity-55",
       )}
     >
