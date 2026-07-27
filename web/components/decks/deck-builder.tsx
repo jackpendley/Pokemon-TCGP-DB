@@ -299,6 +299,16 @@ function SummaryCard({ summary }: { summary: DeckSummary }) {
       <CardContent className="space-y-3 text-sm">
         <Line label="Pokémon" value={String(summary.pokemon)} />
         <Line label="Trainers" value={String(summary.trainers)} />
+        {/*
+          Advice, not a rule — the game has no Trainer minimum. It sits here
+          rather than in IssueList so it can't be mistaken for something that
+          blocks registration.
+        */}
+        {summary.ratioHint ? (
+          <p className="rounded-md bg-muted px-3 py-2 text-xs text-muted-foreground">
+            <span className="font-medium">Tip:</span> {summary.ratioHint}
+          </p>
+        ) : null}
         {stages.map(([stage, n]) => (
           <Line key={stage} label={stage} value={String(n)} muted />
         ))}

@@ -247,6 +247,48 @@ export function isDeckLegal(deck: Deck): boolean {
   return !validateDeck(deck).some((i) => i.severity === "error");
 }
 
+// ── Ratio guidance ─────────────────────────────────────────────────────────
+//
+// Guidance, not a rule. The game imposes no Trainer minimum — 20 Pokémon and 0
+// Trainers registers fine — so this can never be an issue, only advice, and it is
+// rendered in the summary rather than alongside the legality errors.
+//
+// The numbers come from published deck-building guidance and meta lists, not from
+// this codebase: keep Pokémon at no more than half the deck and run 8–16 Trainers
+// (Game8's deck-building guide), and a representative meta Mewtwo ex list is
+// 8 Pokémon / 12 Trainers. Hence a comfortable band of 8–12 each, and a nudge only
+// once a deck leaves it clearly.
+//   https://game8.co/games/Pokemon-TCG-Pocket/archives/474427
+//   https://www.pokemon.com/us/strategy/learn-how-to-build-a-deck-in-pokemon-tcg-pocket
+
+/** The Pokémon count most decks sit between, inclusive. Advisory only. */
+export const TYPICAL_POKEMON_RANGE = [8, 12] as const;
+
+/**
+ * A one-line nudge about the deck's Pokémon/Trainer split, or null when the split
+ * is unremarkable or the deck is too empty to judge.
+ *
+ * Expressed in terms of the Pokémon count alone, because in a fixed 20-card deck
+ * the Trainer count is its complement — a separate "too few Trainers" rule would
+ * be unreachable (fewer than 6 Trainers always means more than 14 Pokémon).
+ */
+export function deckRatioHint(summary: {
+  total: number;
+  pokemon: number;
+  trainers: number;
+}): string | null {
+  // A part-built deck is on its way somewhere; nagging about it is noise.
+  if (summary.total < DECK_SIZE) return null;
+  const [low, high] = TYPICAL_POKEMON_RANGE;
+  if (summary.pokemon > high) {
+    return `${summary.pokemon} Pokémon is a lot — most decks run ${low}–${high} and spend the rest on Trainers for draw, search and tempo.`;
+  }
+  if (summary.pokemon < low) {
+    return `Only ${summary.pokemon} Pokémon — Trainer-heavy decks can stall with an empty Bench, which loses on the spot. Most run ${low}–${high}.`;
+  }
+  return null;
+}
+
 // ── Summary ────────────────────────────────────────────────────────────────
 
 export interface MissingCard {
@@ -268,6 +310,11 @@ export interface DeckSummary {
   averageTrainerUtility: number | null;
   /** Cards you don't own enough copies of to actually build this. */
   missing: MissingCard[];
+  /**
+   * Advisory note on the Pokémon/Trainer split, or null when there's nothing to
+   * say. Never a legality issue — see deckRatioHint.
+   */
+  ratioHint: string | null;
 }
 
 /**
@@ -323,13 +370,15 @@ export function deckSummary(deck: Deck, catalog: CatalogCard[]): DeckSummary {
   const mean = (sum: number, n: number) =>
     n > 0 ? Math.round((sum / n) * 10) / 10 : null;
 
+  const total = deckCardCount(deck);
   return {
-    total: deckCardCount(deck),
+    total,
     pokemon,
     trainers,
     stageCounts,
     averagePokemonPower: mean(powerSum, powerCount),
     averageTrainerUtility: mean(utilitySum, utilityCount),
     missing,
+    ratioHint: deckRatioHint({ total, pokemon, trainers }),
   };
 }

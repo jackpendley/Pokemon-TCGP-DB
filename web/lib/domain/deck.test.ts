@@ -5,10 +5,12 @@ import {
   type Deck,
   copiesByName,
   deckCardCount,
+  deckRatioHint,
   deckSummary,
   isDeckLegal,
   ownedByName,
   validateDeck,
+  type DeckSlot,
 } from "@/lib/domain/deck";
 import type { CatalogCard } from "@/types";
 
@@ -337,3 +339,68 @@ describe("deckSummary", () => {
     expect(deckSummary(deck, catalog).missing).toEqual([]);
   });
 });
+
+describe("ratio guidance", () => {
+  /** A full 20-card deck with the requested split. */
+  function split(pokemon: number, trainers: number): Deck {
+    const entries: DeckSlot[] = [];
+    for (let i = 0; i < pokemon; i += 1) {
+      entries.push({ card: card({ name: `Mon ${i}` }), count: 1 });
+    }
+    for (let i = 0; i < trainers; i += 1) {
+      entries.push({ card: trainer(`Item ${i}`), count: 1 });
+    }
+    return { entries, energyTypes: ["Grass"] };
+  }
+
+  it("says nothing about a typical split", () => {
+    for (const [p, t] of [
+      [8, 12],
+      [10, 10],
+      [12, 8],
+    ]) {
+      expect(deckRatioHint(summaryOf(split(p, t))), `${p}/${t}`).toBeNull();
+    }
+  });
+
+  it("nudges a Pokémon-heavy deck", () => {
+    // Legal — there is no Trainer minimum — but usually a mistake.
+    expect(deckRatioHint(summaryOf(split(20, 0)))).toMatch(/20 Pokémon is a lot/);
+    expect(deckRatioHint(summaryOf(split(13, 7)))).toMatch(/13 Pokémon/);
+  });
+
+  it("nudges a Trainer-heavy deck about its Bench", () => {
+    expect(deckRatioHint(summaryOf(split(4, 16)))).toMatch(/Only 4 Pokémon/);
+    expect(deckRatioHint(summaryOf(split(7, 13)))).toMatch(/empty Bench/);
+  });
+
+  it("prefers the Pokémon-heavy message when both ends could apply", () => {
+    // 15/5 is over the top of the band, so it reads as too many Pokémon — not as
+    // too few Trainers, which in a fixed-20 deck is the same fact said backwards.
+    expect(deckRatioHint(summaryOf(split(15, 5)))).toMatch(/15 Pokémon is a lot/);
+  });
+
+  it("stays quiet while the deck is still being built", () => {
+    // 0 Trainers in a 4-card deck is not yet a Trainer problem.
+    expect(deckRatioHint(summaryOf(split(4, 0)))).toBeNull();
+    expect(deckRatioHint({ total: 0, pokemon: 0, trainers: 0 })).toBeNull();
+  });
+
+  it("reaches the summary, which is where it is rendered", () => {
+    expect(deckSummary(split(20, 0), []).ratioHint).toMatch(/Pokémon is a lot/);
+    expect(deckSummary(split(10, 10), []).ratioHint).toBeNull();
+  });
+
+  it("never makes a deck illegal", () => {
+    // The whole point: guidance cannot block registration.
+    const heavy = split(20, 0);
+    expect(deckRatioHint(summaryOf(heavy))).not.toBeNull();
+    expect(isDeckLegal(heavy)).toBe(true);
+    expect(validateDeck(heavy)).toEqual([]);
+  });
+});
+
+function summaryOf(deck: Deck) {
+  const s = deckSummary(deck, []);
+  return { total: s.total, pokemon: s.pokemon, trainers: s.trainers };
+}
