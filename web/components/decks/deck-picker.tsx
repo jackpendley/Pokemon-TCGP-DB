@@ -5,6 +5,7 @@ import { Info, Search } from "lucide-react";
 
 import { CardDialog } from "@/components/cards/card-dialog";
 import { CardImage } from "@/components/cards/card-image";
+import { OwnedChip } from "@/components/cards/owned-chip";
 import { ENERGY_TYPES, TypeSymbol } from "@/components/cards/type-symbol";
 import { SetLogo } from "@/components/sets/set-logo";
 import {
@@ -14,7 +15,7 @@ import {
 } from "@/components/ui/filter-dropdown";
 import { MultiSelect } from "@/components/ui/multi-select";
 import { compareRarity } from "@/lib/domain/rarity";
-import { displayType, powerScoreLabel } from "@/lib/domain/card";
+import { displayType } from "@/lib/domain/card";
 import { MAX_COPIES_PER_NAME } from "@/lib/domain/deck";
 import { cn } from "@/lib/utils";
 import type { CatalogCard } from "@/types";
@@ -254,26 +255,19 @@ export function DeckPicker({
                     </span>
                   ) : null}
                 </div>
-                <span className="mt-1 truncate text-xs font-medium">{card.name}</span>
-                {/* Owned count sits under the art: deck-building is constrained
-                    by copies you actually hold. Type and set are readable from
-                    the art itself, so they'd only add noise here. */}
-                <span className="flex items-center gap-2 text-[10px] text-muted-foreground">
-                  <span
-                    className={cn(
-                      "tabular-nums",
-                      card.owned > 0 ? "font-semibold text-foreground" : undefined,
-                    )}
-                  >
-                    {card.owned > 0 ? `${card.owned} owned` : "none owned"}
+                {/*
+                  One line: name, then how many copies you hold as a chip on the
+                  right. Deck-building is constrained by copies you actually hold,
+                  so the count earns its place — but as "2x" rather than a wordy
+                  "2 owned" second line. Unowned cards show no chip: the art is
+                  already greyscaled, so a "0x" would only repeat that.
+                */}
+                <span className="mt-1 flex items-baseline gap-1.5">
+                  <span className="min-w-0 flex-1 truncate text-xs font-medium">
+                    {card.name}
                   </span>
-                  {card.power_score != null ? (
-                    <span
-                      className="ml-auto shrink-0 tabular-nums"
-                      title={powerScoreLabel(card)}
-                    >
-                      {card.power_score.toFixed(0)}
-                    </span>
+                  {card.owned > 0 ? (
+                    <OwnedChip owned={card.owned} />
                   ) : null}
                 </span>
               </button>
