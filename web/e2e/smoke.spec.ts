@@ -80,6 +80,24 @@ test("the deck builder validates an empty deck", async ({ page }) => {
   await expect(page.getByText(/at least 1 energy type/i)).toBeVisible();
 });
 
+test("a picker tile reads as one line of name plus owned count", async ({
+  page,
+}) => {
+  test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
+  // Was three pieces over two lines: name, "N owned"/"none owned", and the score.
+  await page.goto("/decks/new");
+  const search = page.getByPlaceholder(/search cards/i).first();
+  await search.waitFor();
+  await search.fill("Pikachu");
+  const tiles = page.locator('button[title^="Add "]');
+  await tiles.first().waitFor();
+
+  const texts = await tiles.allInnerTexts();
+  expect(texts.join("\n")).not.toMatch(/owned/i);
+  // At least one Pikachu printing is held, and it reads as a bare "Nx" chip.
+  expect(texts.some((t) => /^Pikachu[\s\S]*\n\d+x$/.test(t))).toBe(true);
+});
+
 test("a Trainer card shows what it boosts", async ({ page }, testInfo) => {
   test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
   // The mobile viewer keeps the tabs in a sheet, reached by swipe or button.

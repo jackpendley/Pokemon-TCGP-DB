@@ -2,11 +2,13 @@
 
 import { useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { Save } from "lucide-react";
+import { Info, Save } from "lucide-react";
 
 import { DeckPicker } from "@/components/decks/deck-picker";
 import { DeckSlots } from "@/components/decks/deck-slots";
+import { CardDialog } from "@/components/cards/card-dialog";
 import { CardImage } from "@/components/cards/card-image";
+import { OwnedChip } from "@/components/cards/owned-chip";
 import { TypeSymbol } from "@/components/cards/type-symbol";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -15,6 +17,7 @@ import { saveDeck } from "@/app/decks/actions";
 import { recommendedTrainers } from "@/lib/domain/boosts";
 import {
   DECK_SIZE,
+  MAX_COPIES_PER_NAME,
   MAX_ENERGY_TYPES,
   SELECTABLE_ENERGY_TYPES,
   deckCardCount,
@@ -254,8 +257,10 @@ export function DeckBuilder({
 
         <BoostCard
           trainers={recommended}
+          catalog={catalog}
           canEdit={canEdit}
           onAdd={(card) => adjust(card, 1)}
+          countFor={(card) => countByName.get(card.name) ?? 0}
         />
       </div>
     </div>
@@ -351,13 +356,19 @@ function SummaryCard({ summary }: { summary: DeckSummary }) {
  */
 function BoostCard({
   trainers,
+  catalog,
   canEdit,
   onAdd,
+  countFor,
 }: {
   trainers: CatalogCard[];
+  catalog: CatalogCard[];
   canEdit: boolean;
   onAdd: (card: CatalogCard) => void;
+  countFor: (card: CatalogCard) => number;
 }) {
+  const [inspecting, setInspecting] = useState<CatalogCard | null>(null);
+
   if (trainers.length === 0) return null;
   return (
     <Card>
@@ -365,42 +376,75 @@ function BoostCard({
         <CardTitle className="text-base">Trainers that boost this deck</CardTitle>
       </CardHeader>
       <CardContent>
-        <ul className="space-y-1">
+        {/*
+          Tiles rather than the thumbnail rows this started as: a Trainer's whole
+          value is its rule text, and at 32px the art was unreadable — you had to
+          already know the card. Two columns is as large as the right rail allows;
+          the ⓘ opens the full-size viewer, matching the picker's affordance.
+        */}
+        <div className="grid grid-cols-2 gap-3">
           {trainers.map((card) => (
-            <li key={coord(card)}>
+            <div key={coord(card)} className="relative">
               <button
                 type="button"
                 disabled={!canEdit}
                 onClick={() => onAdd(card)}
                 title={canEdit ? `Add ${card.name}` : card.name}
-                className={cn(
-                  "flex w-full items-center gap-2 rounded-md px-1 py-1 text-left transition-colors",
-                  canEdit ? "hover:bg-accent" : "cursor-default",
-                )}
+                className="flex w-full flex-col text-left disabled:opacity-45"
               >
-                <span className="h-11 w-8 shrink-0 overflow-hidden rounded border">
-                  <CardImage card={card} />
+                {/*
+                  Greyscale is applied here rather than left to CardImage, which
+                  only dims at size="sm" — and this art is "lg" so it stays
+                  readable. Without it an unowned card would look identical to an
+                  owned one, since the count chip renders nothing for zero.
+                */}
+                <span
+                  className={cn(
+                    "block aspect-[5/7] overflow-hidden rounded-md border",
+                    card.owned <= 0 && "grayscale",
+                  )}
+                >
+                  <CardImage
+                    key={`${card.set_code}-${card.card_number}`}
+                    card={card}
+                    size="lg"
+                  />
                 </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block truncate text-xs font-medium">
+                <span className="mt-1 flex items-baseline gap-1.5">
+                  <span className="min-w-0 flex-1 truncate text-xs font-medium">
                     {card.name}
                   </span>
-                  <span className="block truncate text-[10px] text-muted-foreground">
-                    {card.boosts?.types.length
-                      ? card.boosts.types.join(", ")
-                      : card.boosts?.names.join(", ")}
-                  </span>
+                  <OwnedChip owned={card.owned} />
                 </span>
-                {card.owned <= 0 ? (
-                  <Badge variant="outline" className="shrink-0 text-[10px]">
-                    Not owned
-                  </Badge>
-                ) : null}
+                {/* Why it's here — the whole point of the section. */}
+                <span className="block truncate text-[10px] text-muted-foreground">
+                  {card.boosts?.types.length
+                    ? card.boosts.types.join(", ")
+                    : card.boosts?.names.join(", ")}
+                </span>
               </button>
-            </li>
+              <button
+                type="button"
+                aria-label={`Details for ${card.name}`}
+                title={`Details for ${card.name}`}
+                onClick={() => setInspecting(card)}
+                className="absolute top-1 right-1 rounded-full bg-background/85 p-1 text-muted-foreground hover:text-foreground"
+              >
+                <Info className="size-3.5" />
+              </button>
+            </div>
           ))}
-        </ul>
+        </div>
       </CardContent>
+
+      <CardDialog
+        card={inspecting}
+        onClose={() => setInspecting(null)}
+        allCards={catalog}
+        onSelect={setInspecting}
+        onAdd={canEdit ? onAdd : undefined}
+        canAdd={(c) => countFor(c) < MAX_COPIES_PER_NAME}
+      />
     </Card>
   );
 }
