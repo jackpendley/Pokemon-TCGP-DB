@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { Plus } from "lucide-react";
 
 import { CardImage } from "@/components/cards/card-image";
 import {
@@ -10,6 +11,7 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs";
 import { pokemonBoostedBy, trainersBoosting } from "@/lib/domain/boosts";
+import { MAX_COPIES_PER_NAME } from "@/lib/domain/deck";
 import { buildEvolution } from "@/lib/domain/evolution";
 import { cn } from "@/lib/utils";
 import type { CatalogCard } from "@/types";
@@ -28,10 +30,17 @@ export function EvolutionTabs({
   card,
   allCards,
   onSelect,
+  onAdd,
+  canAdd,
 }: {
   card: CatalogCard;
   allCards: CatalogCard[];
   onSelect: (c: CatalogCard) => void;
+  /** Deck builder only: adds a related card to the deck without leaving the card
+   *  you're looking at. Absent everywhere else, and then no add control renders. */
+  onAdd?: (c: CatalogCard) => void;
+  /** Whether a card can still be added — the copy limit lives in the builder. */
+  canAdd?: (c: CatalogCard) => boolean;
 }) {
   const evo = useMemo(() => buildEvolution(allCards), [allCards]);
   const boosts = useMemo(() => {
@@ -62,7 +71,15 @@ export function EvolutionTabs({
 
   return (
     <Tabs defaultValue={tabs[0].value} className="gap-3">
-      <TabsList variant="line" className="flex-wrap">
+      {/*
+        TabsList is h-8 when horizontal, so a wrapped second row overflows the
+        container and lands on top of the grid — visible once a card has four
+        tabs on a narrow screen. Let the list grow to fit the rows it wraps into.
+      */}
+      <TabsList
+        variant="line"
+        className="group-data-horizontal/tabs:h-auto flex-wrap gap-y-1"
+      >
         {tabs.map((t) => (
           <TabsTrigger key={t.value} value={t.value}>
             {t.label}
@@ -80,6 +97,8 @@ export function EvolutionTabs({
                 key={`${c.set_code}-${c.card_number}`}
                 card={c}
                 onSelect={onSelect}
+                onAdd={onAdd}
+                canAdd={canAdd}
               />
             ))}
           </div>
@@ -98,11 +117,17 @@ export function EvolutionTabs({
 function MiniCard({
   card,
   onSelect,
+  onAdd,
+  canAdd,
 }: {
   card: CatalogCard;
   onSelect: (c: CatalogCard) => void;
+  onAdd?: (c: CatalogCard) => void;
+  canAdd?: (c: CatalogCard) => boolean;
 }) {
+  const addable = onAdd != null && (canAdd == null || canAdd(card));
   return (
+    <div className="relative">
     <button
       type="button"
       onClick={() => onSelect(card)}
@@ -122,5 +147,24 @@ function MiniCard({
         {card.set_code}
       </span>
     </button>
+    {/* The whole tile navigates, so adding needs its own target — overlaid the
+        same way the deck picker overlays its info button. */}
+    {onAdd ? (
+      <button
+        type="button"
+        disabled={!addable}
+        aria-label={`Add ${card.name} to deck`}
+        title={
+          addable
+            ? `Add ${card.name} to deck`
+            : `${card.name} — already at ${MAX_COPIES_PER_NAME} copies`
+        }
+        onClick={() => onAdd(card)}
+        className="absolute top-1 right-1 rounded-full bg-background/85 p-1 text-muted-foreground hover:text-foreground disabled:opacity-40 disabled:hover:text-muted-foreground"
+      >
+        <Plus className="size-3.5" />
+      </button>
+    ) : null}
+    </div>
   );
 }

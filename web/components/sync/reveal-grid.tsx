@@ -87,9 +87,6 @@ export function RevealGrid({ items }: { items: AdditionItem[] }) {
         card={selected}
         onClose={() => setSelected(null)}
         onSelect={setSelected}
-        siblings={items
-          .map((i) => i.card)
-          .filter((c): c is CatalogCard => c != null)}
       />
     </>
   );

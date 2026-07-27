@@ -48,9 +48,6 @@ export function CardGrid({
         onClose={() => setSelected(null)}
         allCards={allCards ?? cards}
         onSelect={setSelected}
-        // The cards actually on screen — a sideways swipe browses this grid,
-        // not the whole catalog.
-        siblings={cards}
       />
     </>
   );

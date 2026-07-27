@@ -7,17 +7,17 @@ import { CardGrid } from "@/components/cards/card-grid";
 import { TypeSymbol, ENERGY_TYPES } from "@/components/cards/type-symbol";
 import { RaritySymbol } from "@/components/dashboard/rarity-symbol";
 import { SetLogo } from "@/components/sets/set-logo";
-import { FilterDropdown, FilterCheck } from "@/components/ui/filter-dropdown";
+import {
+  FilterCheck,
+  FilterDropdown,
+  toggleValue,
+} from "@/components/ui/filter-dropdown";
 import { MultiSelect } from "@/components/ui/multi-select";
 import { displayType, isMegaEx } from "@/lib/domain/card";
 import { formatNumber, formatPercent, titleCase } from "@/lib/domain/format";
 import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
 import { cn } from "@/lib/utils";
 import type { CatalogCard } from "@/types";
-
-/** Toggle a value in a string[] filter state. */
-const toggleValue = (arr: string[], v: string) =>
-  arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v];
 
 const BATCH = 150;
 const STAGE_ORDER = ["Basic", "Stage1", "Stage2", "Stage3"];

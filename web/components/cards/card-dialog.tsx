@@ -1,5 +1,7 @@
 "use client";
 
+import { Plus } from "lucide-react";
+
 import { CardImage } from "@/components/cards/card-image";
 import { CardViewerMobile } from "@/components/cards/card-viewer-mobile";
 import { EvolutionTabs } from "@/components/cards/evolution-tabs";
@@ -12,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { useIsMobile } from "@/lib/hooks/use-media-query";
 import { displayType, powerScoreLabel } from "@/lib/domain/card";
+import { MAX_COPIES_PER_NAME } from "@/lib/domain/deck";
 import { titleCase } from "@/lib/domain/format";
 import type { CatalogCard } from "@/types";
 
@@ -20,7 +23,8 @@ import type { CatalogCard } from "@/types";
  *
  * On a phone the card takes the whole screen and flips to reveal its details
  * (CardViewerMobile) — there isn't room to show art and metadata at once, and
- * shrinking the art to fit both wastes the one thing worth looking at.
+ * shrinking the art to fit both wastes the one thing worth looking at. The
+ * relationship tabs live in a sheet there rather than below the card.
  *
  * On larger screens both fit side by side, so nothing is hidden behind an
  * interaction and the evolution tabs stay in view. Previously this was a fixed
@@ -32,7 +36,8 @@ export function CardDialog({
   onClose,
   allCards,
   onSelect,
-  siblings,
+  onAdd,
+  canAdd,
 }: {
   card: CatalogCard | null;
   onClose: () => void;
@@ -40,8 +45,10 @@ export function CardDialog({
   allCards?: CatalogCard[];
   /** Navigate the dialog to a related card (from the evolution tabs). */
   onSelect?: (c: CatalogCard) => void;
-  /** Cards a horizontal swipe steps through on mobile — usually the grid behind. */
-  siblings?: CatalogCard[];
+  /** Deck builder only: add a card to the deck from here. */
+  onAdd?: (c: CatalogCard) => void;
+  /** Whether a given card can still be added (copy limit, read-only deck). */
+  canAdd?: (c: CatalogCard) => boolean;
 }) {
   const isMobile = useIsMobile();
 
@@ -57,8 +64,10 @@ export function CardDialog({
               </DialogHeader>
               <CardViewerMobile
                 card={card}
-                siblings={siblings}
-                onNavigate={onSelect}
+                allCards={allCards}
+                onSelect={onSelect}
+                onAdd={onAdd}
+                canAdd={canAdd}
               />
             </>
           ) : null}
@@ -70,6 +79,10 @@ export function CardDialog({
               <DialogHeader>
                 <DialogTitle>{card.name}</DialogTitle>
               </DialogHeader>
+
+              {onAdd ? (
+                <AddToDeckButton card={card} onAdd={onAdd} canAdd={canAdd} />
+              ) : null}
 
               <div className="grid gap-5 sm:grid-cols-[minmax(0,17rem)_1fr]">
                 <div className="overflow-hidden rounded-lg border">
@@ -111,6 +124,8 @@ export function CardDialog({
                   card={card}
                   allCards={allCards}
                   onSelect={onSelect}
+                  onAdd={onAdd}
+                  canAdd={canAdd}
                 />
               ) : null}
             </div>
@@ -118,6 +133,29 @@ export function CardDialog({
         </DialogContent>
       )}
     </Dialog>
+  );
+}
+
+function AddToDeckButton({
+  card,
+  onAdd,
+  canAdd,
+}: {
+  card: CatalogCard;
+  onAdd: (c: CatalogCard) => void;
+  canAdd?: (c: CatalogCard) => boolean;
+}) {
+  const allowed = canAdd == null || canAdd(card);
+  return (
+    <button
+      type="button"
+      onClick={() => onAdd(card)}
+      disabled={!allowed}
+      className="inline-flex h-9 items-center gap-1.5 self-start rounded-md border px-3 text-sm font-medium transition-colors hover:bg-accent disabled:opacity-45"
+    >
+      <Plus className="size-4" />
+      {allowed ? "Add to deck" : `Already at ${MAX_COPIES_PER_NAME} copies`}
+    </button>
   );
 }
 

@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 
 import { HAS_PIPELINE_DATA } from "./fixtures";
 
@@ -77,5 +77,55 @@ test.describe("mobile", () => {
     await page.getByLabel("Show details", { exact: true }).click();
     await expect(flip).toHaveAttribute("data-flipped", "true");
     await expect(page.locator(".flip-face-back")).toContainText(/rarity/i);
+  });
+
+  /**
+   * Swipes are dispatched as pointer events rather than driven with page.mouse:
+   * on a touch-enabled context (iPhone 14 → hasTouch) the mouse API hangs, and
+   * the handlers under test read nothing but clientX/clientY off the event.
+   */
+  async function swipe(
+    page: Page,
+    from: { x: number; y: number },
+    to: { x: number; y: number },
+  ) {
+    const flip = page.locator(".flip-inner");
+    await flip.dispatchEvent("pointerdown", { clientX: from.x, clientY: from.y });
+    await flip.dispatchEvent("pointerup", { clientX: to.x, clientY: to.y });
+  }
+
+  async function openFirstCard(page: Page) {
+    await page.goto("/cards");
+    const tile = page.locator("div.grid button").first();
+    await tile.waitFor();
+    await tile.click();
+    return (await page.locator(".flip-inner").boundingBox())!;
+  }
+
+  test("a sideways swipe flips the card", async ({ page }) => {
+    // The gesture, not just the button: sideways used to page through the grid.
+    const box = await openFirstCard(page);
+    const flip = page.locator(".flip-inner");
+    await expect(flip).toHaveAttribute("data-flipped", "false");
+    const y = box.y + box.height / 2;
+    await swipe(page, { x: box.x + box.width * 0.8, y }, { x: box.x + box.width * 0.2, y });
+    await expect(flip).toHaveAttribute("data-flipped", "true");
+  });
+
+  test("a downward swipe reveals the related-cards tabs", async ({ page }) => {
+    const box = await openFirstCard(page);
+    const x = box.x + box.width / 2;
+    await swipe(page, { x, y: box.y + 20 }, { x, y: box.y + 220 });
+
+    // Tabs are a phone-visible surface now; they used to be desktop-only.
+    await expect(page.getByRole("tablist")).toBeVisible();
+    await page.getByLabel("Hide related cards").click();
+    await expect(page.getByRole("tablist")).toBeHidden();
+  });
+
+  test("the Related button reaches the tabs without a gesture", async ({ page }) => {
+    await openFirstCard(page);
+    await page.getByLabel("Show related cards").click();
+    await expect(page.getByRole("tablist")).toBeVisible();
   });
 });
