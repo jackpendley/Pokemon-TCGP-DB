@@ -1,12 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Search } from "lucide-react";
+import { Info, Search } from "lucide-react";
 
+import { CardDialog } from "@/components/cards/card-dialog";
 import { CardImage } from "@/components/cards/card-image";
 import { ENERGY_TYPES, TypeSymbol } from "@/components/cards/type-symbol";
 import { MultiSelect } from "@/components/ui/multi-select";
-import { displayType } from "@/lib/domain/card";
+import { displayType, powerScoreLabel } from "@/lib/domain/card";
 import { MAX_COPIES_PER_NAME } from "@/lib/domain/deck";
 import { cn } from "@/lib/utils";
 import type { CatalogCard } from "@/types";
@@ -15,6 +16,15 @@ import type { CatalogCard } from "@/types";
 const PAGE = 60;
 
 const STAGES = ["Basic", "Stage1", "Stage2"];
+
+type Sort = "default" | "score" | "owned" | "name";
+
+const SORTS: { value: Sort; label: string }[] = [
+  { value: "default", label: "Sort: set order" },
+  { value: "score", label: "Sort: score" },
+  { value: "owned", label: "Sort: owned" },
+  { value: "name", label: "Sort: name" },
+];
 const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
 
 /**
@@ -42,6 +52,8 @@ export function DeckPicker({
   const [stages, setStages] = useState<string[]>([]);
   const [category, setCategory] = useState<string[]>([]);
   const [ownedOnly, setOwnedOnly] = useState(false);
+  const [sort, setSort] = useState<Sort>("default");
+  const [inspecting, setInspecting] = useState<CatalogCard | null>(null);
   const [shown, setShown] = useState(PAGE);
 
   const filtered = useMemo(() => {
@@ -58,7 +70,25 @@ export function DeckPicker({
     });
   }, [catalog, query, types, stages, category, ownedOnly]);
 
-  const visible = filtered.slice(0, shown);
+  /**
+   * Pokémon power and Trainer utility come from different models, so sorting by
+   * "score" groups by kind first and ranks within the group — the same rule the
+   * Cards page uses. Ranking a Supporter against a Charizard would be nonsense.
+   */
+  const ordered = useMemo(() => {
+    if (sort === "default") return filtered;
+    const copy = [...filtered];
+    if (sort === "name") return copy.sort((a, b) => a.name.localeCompare(b.name));
+    if (sort === "owned") return copy.sort((a, b) => b.owned - a.owned);
+    const kindRank = (c: CatalogCard) =>
+      c.power_score == null ? 2 : c.power_score_kind === "trainer" ? 1 : 0;
+    return copy.sort(
+      (a, b) =>
+        kindRank(a) - kindRank(b) || (b.power_score ?? -1) - (a.power_score ?? -1),
+    );
+  }, [filtered, sort]);
+
+  const visible = ordered.slice(0, shown);
 
   function reset<T>(setter: (v: T) => void, value: T) {
     setter(value);
@@ -100,6 +130,18 @@ export function DeckPicker({
           selected={category}
           onChange={(v) => reset(setCategory, v)}
         />
+        <select
+          value={sort}
+          onChange={(e) => setSort(e.target.value as Sort)}
+          aria-label="Sort cards"
+          className="h-9 rounded-md border bg-transparent px-2 text-sm"
+        >
+          {SORTS.map((o) => (
+            <option key={o.value} value={o.value}>
+              {o.label}
+            </option>
+          ))}
+        </select>
         <button
           type="button"
           onClick={() => reset(setOwnedOnly, !ownedOnly)}
@@ -129,8 +171,8 @@ export function DeckPicker({
             const count = countFor(card);
             const maxed = count >= MAX_COPIES_PER_NAME;
             return (
+              <div key={`${card.set_code}:${card.card_number}`} className="relative">
               <button
-                key={`${card.set_code}:${card.card_number}`}
                 type="button"
                 onClick={() => onAdd(card)}
                 disabled={disabled || maxed}
@@ -148,19 +190,58 @@ export function DeckPicker({
                       ×{count}
                     </span>
                   ) : null}
+                  {/* Owned count: you can only build with copies you actually hold. */}
+                  <span
+                    className={cn(
+                      "absolute bottom-1 left-1 rounded px-1 text-[10px] font-semibold tabular-nums",
+                      card.owned > 0
+                        ? "bg-background/85 text-foreground"
+                        : "bg-background/70 text-muted-foreground",
+                    )}
+                  >
+                    {card.owned > 0 ? `${card.owned} owned` : "none"}
+                  </span>
                 </div>
                 <span className="mt-1 truncate text-xs font-medium">{card.name}</span>
                 <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
                   <TypeSymbol type={displayType(card)} className="size-3" />
                   <span className="truncate">{card.set_code}</span>
+                  {card.power_score != null ? (
+                    <span
+                      className="ml-auto shrink-0 tabular-nums"
+                      title={powerScoreLabel(card)}
+                    >
+                      {card.power_score.toFixed(0)}
+                    </span>
+                  ) : null}
                 </span>
               </button>
+              {/* Inspect: evolution line, other printings and related cards —
+                  the same dialog the Cards page uses. */}
+              <button
+                type="button"
+                aria-label={`Details for ${card.name}`}
+                title={`Details for ${card.name}`}
+                onClick={() => setInspecting(card)}
+                className="absolute top-1 left-1 rounded-full bg-background/85 p-1 text-muted-foreground hover:text-foreground"
+              >
+                <Info className="size-3.5" />
+              </button>
+              </div>
             );
           })}
         </div>
       )}
 
-      {shown < filtered.length ? (
+      <CardDialog
+        card={inspecting}
+        onClose={() => setInspecting(null)}
+        allCards={catalog}
+        onSelect={setInspecting}
+        siblings={visible}
+      />
+
+      {shown < ordered.length ? (
         <button
           type="button"
           onClick={() => setShown((n) => n + PAGE)}
