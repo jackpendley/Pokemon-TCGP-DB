@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 2028,
-    "last_updated": "2026-07-26",
+    "total_cards": 2053,
+    "last_updated": "2026-07-27",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -547,6 +547,18 @@
       "set_code": "B3a",
       "card_number": 2,
       "rarity": "common"
+    },
+    {
+      "name": "Carnivine",
+      "type": "Grass",
+      "stage": 0,
+      "hp": 90,
+      "card_type": "Pokemon",
+      "attack": "Bite 30",
+      "count": 1,
+      "set_code": "A2",
+      "card_number": 19,
+      "rarity": "uncommon"
     },
     {
       "name": "Carnivine",
@@ -1510,7 +1522,7 @@
       "hp": 90,
       "card_type": "Pokemon",
       "attack": "Stored Power 60",
-      "count": 1,
+      "count": 2,
       "set_code": "B1",
       "card_number": 100,
       "rarity": "uncommon"
@@ -3196,6 +3208,18 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Joust 30",
+      "count": 1,
+      "set_code": "B1",
+      "card_number": 210,
+      "rarity": "uncommon"
+    },
+    {
+      "name": "Corvisquire",
+      "type": "Colorless",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Joust 30",
       "count": 3,
       "set_code": "B3",
       "card_number": 146,
@@ -3317,7 +3341,7 @@
       "card_type": "Pokemon",
       "ability": "Fur Coat",
       "attack": "Tackle 30",
-      "count": 2,
+      "count": 3,
       "set_code": "B1",
       "card_number": 208,
       "rarity": "uncommon"
@@ -3644,7 +3668,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Gust 10",
-      "count": 2,
+      "count": 3,
       "set_code": "B1",
       "card_number": 180,
       "rarity": "common"
@@ -3710,7 +3734,7 @@
       "stage": 0,
       "hp": 60,
       "card_type": "Pokemon",
-      "count": 1,
+      "count": 2,
       "set_code": "B1",
       "card_number": 199,
       "rarity": "common"
@@ -4844,7 +4868,7 @@
     },
     {
       "name": "Palpitoad",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Water",
       "stage": 1,
@@ -4856,7 +4880,7 @@
     },
     {
       "name": "Boltund",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Lightning",
       "stage": 1,
@@ -4892,7 +4916,7 @@
     },
     {
       "name": "Ferroseed",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Metal",
       "stage": 0,
@@ -4916,7 +4940,7 @@
     },
     {
       "name": "Sunflora",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Grass",
       "stage": 1,
@@ -5606,6 +5630,18 @@
       "stage": 0,
       "stage_label": "Basic",
       "hp": 120
+    },
+    {
+      "name": "Corviknight",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Metal",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 140,
+      "set_code": "B1",
+      "card_number": 175,
+      "rarity": "rare"
     },
     {
       "name": "Corviknight",
@@ -7701,7 +7737,7 @@
     },
     {
       "name": "Blitzle",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Lightning",
       "stage": 0,
@@ -7921,7 +7957,7 @@
     },
     {
       "name": "Xatu",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 1,
@@ -7945,7 +7981,7 @@
     },
     {
       "name": "Yamask",
-      "count": 4,
+      "count": 5,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 0,
@@ -8017,7 +8053,7 @@
     },
     {
       "name": "Mareanie",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Darkness",
       "stage": 0,
@@ -8411,7 +8447,7 @@
     },
     {
       "name": "Zebstrika",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Lightning",
       "stage": 1,
@@ -10137,7 +10173,7 @@
     },
     {
       "name": "Linoone",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Colorless",
       "stage": 1,
@@ -10158,6 +10194,103 @@
       "set_code": "PROMO-B",
       "card_number": 78,
       "type": "Lightning"
+    },
+    {
+      "name": "Psyduck",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 48
+    },
+    {
+      "name": "Lotad",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 53
+    },
+    {
+      "name": "Corphish",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Water",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 70,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 58
+    },
+    {
+      "name": "Shinx",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 86
+    },
+    {
+      "name": "Crabrawler",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 80,
+      "rarity": "common",
+      "set_code": "B1",
+      "card_number": 139
+    },
+    {
+      "name": "Spiritomb",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 80,
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 43,
+      "type": "Darkness"
+    },
+    {
+      "name": "Hisuian Goodra",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 150,
+      "rarity": "rare",
+      "set_code": "B3b",
+      "card_number": 50,
+      "type": "Dragon"
+    },
+    {
+      "name": "Tapu Koko ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Lightning",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 130,
+      "rarity": "shiny_super_rare",
+      "set_code": "B1",
+      "card_number": 322,
+      "variant": "alt art"
     }
   ]
 }
