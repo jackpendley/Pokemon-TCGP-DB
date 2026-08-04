@@ -1,7 +1,7 @@
 {
   "meta": {
     "total_cards": 2053,
-    "last_updated": "2026-07-27",
+    "last_updated": "2026-08-03",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -296,30 +296,6 @@
       "set_code": "B3",
       "card_number": 21,
       "rarity": "common"
-    },
-    {
-      "name": "Castform Sunny Form",
-      "type": "Fire",
-      "stage": 0,
-      "hp": 70,
-      "card_type": "Pokemon",
-      "attack": "Sunny Scorching 30",
-      "count": 5,
-      "set_code": "B3",
-      "card_number": 24,
-      "rarity": "common"
-    },
-    {
-      "name": "Castform Sunny Form",
-      "type": "Fire",
-      "stage": 0,
-      "hp": 70,
-      "card_type": "Pokemon",
-      "attack": "Sunny Scorching 30",
-      "count": 3,
-      "set_code": "PROMO-B",
-      "card_number": 57,
-      "rarity": "promo"
     },
     {
       "name": "Mega Camerupt ex",
@@ -1062,30 +1038,6 @@
       "count": 4,
       "set_code": "B3b",
       "card_number": 36,
-      "rarity": "common"
-    },
-    {
-      "name": "Castform Rainy Form",
-      "type": "Water",
-      "stage": 0,
-      "hp": 70,
-      "card_type": "Pokemon",
-      "attack": "Rainy Absorbing 30",
-      "count": 5,
-      "set_code": "B3",
-      "card_number": 40,
-      "rarity": "common"
-    },
-    {
-      "name": "Castform Snowy Form",
-      "type": "Water",
-      "stage": 0,
-      "hp": 70,
-      "card_type": "Pokemon",
-      "attack": "Snowy Chilling 40",
-      "count": 3,
-      "set_code": "B3",
-      "card_number": 41,
       "rarity": "common"
     },
     {
@@ -1868,19 +1820,6 @@
       "set_code": "A1",
       "card_number": 153,
       "rarity": "double_rare"
-    },
-    {
-      "name": "Single Strike Urshifu",
-      "type": "Darkness",
-      "stage": 0,
-      "hp": 120,
-      "card_type": "Pokemon",
-      "ability": "Double Type",
-      "attack": "Power Blast 110",
-      "count": 1,
-      "set_code": "B3",
-      "card_number": 113,
-      "rarity": "rare"
     },
     {
       "name": "Sandslash",
@@ -7328,18 +7267,6 @@
       "card_number": 41
     },
     {
-      "name": "Rapid Strike Urshifu",
-      "count": 1,
-      "card_type": "Pokemon",
-      "type": "Water",
-      "stage": 1,
-      "stage_label": "Stage 1",
-      "hp": 120,
-      "rarity": "rare",
-      "set_code": "B3",
-      "card_number": 51
-    },
-    {
       "name": "Greninja",
       "count": 1,
       "card_type": "Pokemon",
@@ -9198,30 +9125,6 @@
       "type": "Darkness"
     },
     {
-      "name": "Hisuian Zorua",
-      "count": 4,
-      "card_type": "Pokemon",
-      "rarity": "common",
-      "set_code": "B3b",
-      "card_number": 59,
-      "type": "Colorless",
-      "stage": 0,
-      "stage_label": "Basic",
-      "hp": 60
-    },
-    {
-      "name": "Hisuian Zorua",
-      "count": 1,
-      "card_type": "Pokemon",
-      "rarity": "promo",
-      "set_code": "PROMO-B",
-      "card_number": 76,
-      "type": "Colorless",
-      "stage": 0,
-      "stage_label": "Basic",
-      "hp": 60
-    },
-    {
       "name": "Metapod",
       "count": 5,
       "card_type": "Pokemon",
@@ -9340,18 +9243,6 @@
       "stage": 0,
       "stage_label": "Basic",
       "hp": 50
-    },
-    {
-      "name": "Hisuian Zoroark ex",
-      "count": 2,
-      "card_type": "Pokemon",
-      "rarity": "double_rare",
-      "set_code": "B3b",
-      "card_number": 60,
-      "type": "Colorless",
-      "stage": 1,
-      "stage_label": "Stage 1",
-      "hp": 150
     },
     {
       "name": "Old Amber",
@@ -9644,18 +9535,6 @@
       "set_code": "B3b",
       "card_number": 47,
       "type": "Darkness"
-    },
-    {
-      "name": "Hisuian Sliggoo",
-      "count": 4,
-      "card_type": "Pokemon",
-      "rarity": "uncommon",
-      "set_code": "B3b",
-      "card_number": 49,
-      "type": "Dragon",
-      "stage": 1,
-      "stage_label": "Stage 1",
-      "hp": 100
     },
     {
       "name": "Ursaluna",
@@ -10035,18 +9914,6 @@
       "type": "Colorless"
     },
     {
-      "name": "Hisuian Lilligant",
-      "count": 1,
-      "card_type": "Pokemon",
-      "rarity": "uncommon",
-      "set_code": "B3b",
-      "card_number": 7,
-      "type": "Grass",
-      "stage": 1,
-      "stage_label": "Stage 1",
-      "hp": 100
-    },
-    {
       "name": "Mareep",
       "count": 1,
       "card_type": "Pokemon",
@@ -10268,18 +10135,6 @@
       "type": "Darkness"
     },
     {
-      "name": "Hisuian Goodra",
-      "count": 1,
-      "card_type": "Pokemon",
-      "stage": 2,
-      "stage_label": "Stage 2",
-      "hp": 150,
-      "rarity": "rare",
-      "set_code": "B3b",
-      "card_number": 50,
-      "type": "Dragon"
-    },
-    {
       "name": "Tapu Koko ex",
       "count": 1,
       "card_type": "Pokemon",
@@ -10291,6 +10146,150 @@
       "set_code": "B1",
       "card_number": 322,
       "variant": "alt art"
+    },
+    {
+      "name": "CastformSunny Form",
+      "count": 5,
+      "card_type": "Pokemon",
+      "rarity": "common",
+      "set_code": "B3",
+      "card_number": 24,
+      "type": "Fire",
+      "hp": 70,
+      "stage": 0,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "CastformSunny Form",
+      "count": 3,
+      "card_type": "Pokemon",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "card_number": 57,
+      "type": "Fire",
+      "hp": 70,
+      "stage": 0,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "CastformRainy Form",
+      "count": 5,
+      "card_type": "Pokemon",
+      "rarity": "common",
+      "set_code": "B3",
+      "card_number": 40,
+      "type": "Water",
+      "hp": 70,
+      "stage": 0,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "CastformSnowy Form",
+      "count": 3,
+      "card_type": "Pokemon",
+      "rarity": "common",
+      "set_code": "B3",
+      "card_number": 41,
+      "type": "Water",
+      "hp": 70,
+      "stage": 0,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "Rapid StrikeUrshifu",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "rare",
+      "set_code": "B3",
+      "card_number": 51,
+      "type": "Water",
+      "hp": 120,
+      "stage": 1,
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "Single StrikeUrshifu",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "rare",
+      "set_code": "B3",
+      "card_number": 113,
+      "type": "Darkness",
+      "hp": 120,
+      "stage": 1,
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "HisuianZorua",
+      "count": 4,
+      "card_type": "Pokemon",
+      "rarity": "common",
+      "set_code": "B3b",
+      "card_number": 59,
+      "type": "Colorless",
+      "hp": 60,
+      "stage": 0,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "HisuianZorua",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "card_number": 76,
+      "type": "Colorless",
+      "hp": 60,
+      "stage": 0,
+      "stage_label": "Basic"
+    },
+    {
+      "name": "HisuianLilligant",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 7,
+      "type": "Grass",
+      "hp": 100,
+      "stage": 1,
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "HisuianSliggoo",
+      "count": 4,
+      "card_type": "Pokemon",
+      "rarity": "uncommon",
+      "set_code": "B3b",
+      "card_number": 49,
+      "type": "Dragon",
+      "hp": 100,
+      "stage": 1,
+      "stage_label": "Stage 1"
+    },
+    {
+      "name": "HisuianGoodra",
+      "count": 1,
+      "card_type": "Pokemon",
+      "rarity": "rare",
+      "set_code": "B3b",
+      "card_number": 50,
+      "type": "Dragon",
+      "hp": 150,
+      "stage": 2,
+      "stage_label": "Stage 2"
+    },
+    {
+      "name": "HisuianZoroark ex",
+      "count": 2,
+      "card_type": "Pokemon",
+      "rarity": "double_rare",
+      "set_code": "B3b",
+      "card_number": 60,
+      "type": "Colorless",
+      "hp": 150,
+      "stage": 1,
+      "stage_label": "Stage 1"
     }
   ]
 }
