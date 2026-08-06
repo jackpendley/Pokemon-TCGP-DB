@@ -96,4 +96,9 @@ export interface SyncRunState {
    * snapshot — the sync itself worked, but nothing new could have arrived.
    */
   playerSynced: boolean | null;
+  /**
+   * When Pokémon Zone will next permit a collection refresh. Non-null means a
+   * retry before then can only return the same snapshot.
+   */
+  syncBlockedUntil: string | null;
 }

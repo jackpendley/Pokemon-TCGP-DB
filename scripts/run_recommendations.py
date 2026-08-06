@@ -252,8 +252,14 @@ def _collection_status() -> str:
         total = meta.get("total_cards", "?")
         unique = len(data.get("collection", []))
         status = f"{total} cards, {unique} unique"
-        if _read_player_stats().get("player_synced") is False:
-            status += " — STALE: Pokémon Zone did not refresh from the game"
+        stats = _read_player_stats()
+        if stats.get("player_synced") is False:
+            blocked = stats.get("sync_blocked_until")
+            status += (
+                f" — STALE: Pokémon Zone rate-limits refreshes; next one at {blocked}"
+                if blocked
+                else " — STALE: Pokémon Zone did not refresh from the game"
+            )
         return status
     except Exception:
         return "synced"

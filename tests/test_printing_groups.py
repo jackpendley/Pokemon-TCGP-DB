@@ -216,3 +216,34 @@ def test_hybrid_with_ambiguous_original_is_skipped(tmp_path, monkeypatch):
     ]), encoding="utf-8")
     monkeypatch.setattr(bpg, "LAST_SYNC_RAW", raw)
     assert bpg.hybrid_edges(bpg._Union(), records) == (0, 1)
+
+
+def test_absent_snapshot_never_clobbers_existing_groups(tmp_path, monkeypatch):
+    """No source data must not be written as 'no groups'.
+
+    last_sync_raw.json is gitignored while printing_groups.json is committed, so a
+    run on a fresh clone, in CI, or after the runner workdir is cleaned would
+    otherwise replace real grouping with an empty file — dropping every
+    multi-expansion credit with nothing but smaller numbers to show for it. This
+    actually happened once: the test suite's own pipeline run wiped all 24 groups.
+    """
+    groups = tmp_path / "printing_groups.json"
+    groups.write_text(json.dumps({
+        "_meta": {"group_count": 1},
+        "groups": [{"id": "g0001", "name": "Cubone", "debut": ["A1", 151],
+                    "coords": [["A1", 151], ["A4B", 194]]}],
+    }), encoding="utf-8")
+    monkeypatch.setattr(bpg, "PRINTING_GROUPS_JSON", groups)
+    monkeypatch.setattr(bpg, "LAST_SYNC_RAW", tmp_path / "does-not-exist.json")
+    monkeypatch.setattr(sys, "argv", ["build_printing_groups.py"])
+
+    assert bpg.main() == 0
+    kept = json.loads(groups.read_text(encoding="utf-8"))
+    assert len(kept["groups"]) == 1, "existing groups must survive a missing snapshot"
+
+
+def test_absent_snapshot_with_no_existing_file_is_not_an_error(tmp_path, monkeypatch):
+    monkeypatch.setattr(bpg, "PRINTING_GROUPS_JSON", tmp_path / "printing_groups.json")
+    monkeypatch.setattr(bpg, "LAST_SYNC_RAW", tmp_path / "does-not-exist.json")
+    monkeypatch.setattr(sys, "argv", ["build_printing_groups.py"])
+    assert bpg.main() == 0

@@ -327,6 +327,23 @@ def main() -> int:
         print("\n  (dry run — nothing written)")
         return 0
 
+    # Absence of the source snapshot is not evidence of no groups. last_sync_raw
+    # is gitignored while printing_groups.json is committed, so a run on a fresh
+    # clone, in CI, or after the runner workdir is cleaned would otherwise
+    # overwrite real grouping with an empty file — silently dropping every
+    # multi-expansion credit, with nothing worse than smaller numbers to show for
+    # it. Keep what is there and say why.
+    if not LAST_SYNC_RAW.exists():
+        if PRINTING_GROUPS_JSON.exists():
+            existing = json.loads(PRINTING_GROUPS_JSON.read_text(encoding="utf-8"))
+            print(f"\n  {LAST_SYNC_RAW.name} is absent — keeping the existing "
+                  f"{len(existing.get('groups', []))} group(s) rather than "
+                  f"writing an empty file.")
+        else:
+            print(f"\n  {LAST_SYNC_RAW.name} is absent and no groups exist yet — "
+                  f"nothing to write.")
+        return 0
+
     PRINTING_GROUPS_JSON.write_text(
         json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"\nWritten → {PRINTING_GROUPS_JSON.relative_to(ROOT)}")

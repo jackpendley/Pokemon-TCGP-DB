@@ -299,7 +299,8 @@ def _fetch_catalog(cookies: dict, auth_headers: dict) -> dict[str, dict]:
 
 
 def _save_player_stats(body: dict | list | None, catalog_misses: dict | None = None,
-                       player_synced: bool | None = None) -> None:
+                       player_synced: bool | None = None,
+                       sync_blocked_until: str | None = None) -> None:
     """Extract and persist player currency/resource stats from the raw API body.
 
     catalog_misses (owned cards the PZ catalog could not name) and player_synced
@@ -354,6 +355,10 @@ def _save_player_stats(body: dict | list | None, catalog_misses: dict | None = N
         # False means the numbers below are PZ's previous snapshot of the
         # collection, not a fresh read from the game.
         stats["player_synced"] = player_synced
+    if sync_blocked_until:
+        # PZ's cooldown: no refresh is possible until this time, so a retry before
+        # it can only return the same snapshot.
+        stats["sync_blocked_until"] = sync_blocked_until
 
     if stats:
         PLAYER_STATS_CACHE.parent.mkdir(parents=True, exist_ok=True)
@@ -564,12 +569,34 @@ def import_curl_auth(curl_str: str) -> tuple[list, dict]:
     return arr, cache
 
 
+# Set by trigger_player_sync when Pokémon Zone's cooldown blocked the refresh, so
+# the pipeline can say *when* fresh data becomes available rather than only that
+# this run used a stale snapshot. Single-element list: one process, one sync.
+_SYNC_BLOCKED_UNTIL: list = [None]
+
+
+def _parse_next_sync_at(value) -> "datetime | None":
+    """Parse Pokémon Zone's nextSyncPlayerAt, or None when absent/unparseable.
+
+    Always returns an aware datetime so callers can compare it directly; a naive
+    value is read as UTC, which is what the API sends.
+    """
+    if not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+
+
 def trigger_player_sync(cookies: dict, auth_headers: dict, poll_interval: float = 2.0, timeout: int = 90) -> bool:
     """
     Trigger the Pokemon Zone 'Sync Player' button programmatically.
 
     Flow:
-      1. GET /api/users/identity/ → get friendId, check nextSyncPlayerAt rate limit
+      1. GET /api/users/identity/ → friendId, and honour the nextSyncPlayerAt
+         cooldown (a request inside it is accepted but never run)
       2. POST /api/players/sync/ with {"friendId": ...} + x-csrftoken
       3. Poll /api/players/sync/status/{taskId}/ until ready=true or timeout
 
@@ -599,6 +626,26 @@ def trigger_player_sync(cookies: dict, auth_headers: dict, poll_interval: float 
     if not friend_id:
         print("  Player sync: friendId missing — skipping.")
         return False
+
+    # Rate limit. Pokémon Zone allows one collection refresh per cooldown window
+    # and reports when the next one is permitted. A request sent inside the window
+    # is still answered 200 with a taskId, but the task is never run — it simply
+    # stays PENDING, which is exactly what "sync is taking longer than expected"
+    # was. Firing blind also risks pushing the window further out, so an early
+    # return here is what actually lets the next real sync through.
+    next_at = _parse_next_sync_at(identity.get("nextSyncPlayerAt"))
+    if next_at is not None:
+        now = datetime.now(timezone.utc)
+        if next_at > now:
+            wait = next_at - now
+            hours = wait.total_seconds() / 3600
+            print(f"  Player sync: Pokémon Zone is rate-limiting refreshes — the next one "
+                  f"is allowed at {next_at.isoformat(timespec='minutes')} "
+                  f"({hours:.1f}h away). Not triggering; using its current snapshot.",
+                  file=sys.stderr)
+            _SYNC_BLOCKED_UNTIL[0] = next_at.isoformat(timespec="minutes")
+            return False
+    _SYNC_BLOCKED_UNTIL[0] = None
 
     # Step 2: trigger sync
     csrftoken = cookies.get("csrftoken", "")
@@ -726,7 +773,8 @@ def fetch_with_stored_auth() -> tuple[list, dict]:
     DISCOVERY_CACHE.parent.mkdir(parents=True, exist_ok=True)
     DISCOVERY_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
     RAW_CACHE.write_text(json.dumps(arr, indent=2, ensure_ascii=False), encoding="utf-8")
-    _save_player_stats(body, catalog_misses, player_synced=player_synced)
+    _save_player_stats(body, catalog_misses, player_synced=player_synced,
+                       sync_blocked_until=_SYNC_BLOCKED_UNTIL[0])
     print(f"  Fetched {len(arr)} cards via stored auth.")
 
     return arr, cache

@@ -109,3 +109,96 @@ def test_catalog_misses_reach_player_stats(monkeypatch, tmp_path):
     import json
 
     assert json.loads(target.read_text())["catalog_misses"]["copies"] == 5
+
+
+# ---------------------------------------------------------------------------
+# Pokémon Zone's refresh cooldown
+# ---------------------------------------------------------------------------
+# PZ allows one collection refresh per cooldown window and reports the next
+# permitted time as nextSyncPlayerAt. A request sent inside that window is still
+# answered 200 with a taskId — the task simply never runs and the status stays
+# PENDING. trigger_player_sync documented this check for months without
+# implementing it, so every sync fired blind, waited out its 90s timeout, and
+# republished a stale snapshot while reporting success.
+
+from datetime import datetime, timedelta, timezone  # noqa: E402
+
+
+def test_parses_the_cooldown_timestamp():
+    got = pz._parse_next_sync_at("2026-08-07T08:59:49.647480+00:00")
+    assert got == datetime(2026, 8, 7, 8, 59, 49, 647480, tzinfo=timezone.utc)
+
+
+def test_naive_and_zulu_timestamps_are_read_as_utc():
+    assert pz._parse_next_sync_at("2026-08-07T08:59:49Z").tzinfo is not None
+    assert pz._parse_next_sync_at("2026-08-07T08:59:49").tzinfo == timezone.utc
+
+
+def test_missing_or_junk_cooldown_is_ignored():
+    for value in (None, "", "not a date", 12345):
+        assert pz._parse_next_sync_at(value) is None
+
+
+def _identity(next_sync):
+    return {"data": {"players": [{"friendId": "1"}], "nextSyncPlayerAt": next_sync}}
+
+
+class _R:
+    status_code = 200
+
+    def __init__(self, body):
+        self._b = body
+
+    def json(self):
+        return self._b
+
+
+def test_does_not_trigger_while_rate_limited(monkeypatch):
+    """The fix: inside the window, skip the POST entirely.
+
+    Sending it anyway is what produced an eternally PENDING task, and it risks
+    pushing the window further out — so the retry that would finally work never
+    gets a chance.
+    """
+    future = (datetime.now(timezone.utc) + timedelta(hours=6)).isoformat()
+    monkeypatch.setattr(pz, "_get", lambda *a, **k: _R(_identity(future)))
+    posted = []
+    monkeypatch.setattr(pz, "_post", lambda *a, **k: posted.append(1))
+
+    assert pz.trigger_player_sync({}, {}) is False
+    assert posted == [], "must not POST a sync while PZ is rate-limiting"
+    assert pz._SYNC_BLOCKED_UNTIL[0], "the next permitted time must be recorded"
+
+
+def test_triggers_once_the_cooldown_has_passed(monkeypatch):
+    past = (datetime.now(timezone.utc) - timedelta(hours=1)).isoformat()
+    monkeypatch.setattr(pz, "_get", lambda *a, **k: _R(_identity(past)))
+    posted = []
+
+    def fake_post(*a, **k):
+        posted.append(1)
+        return _R({"data": {}})          # no taskId -> returns False, POST happened
+
+    monkeypatch.setattr(pz, "_post", fake_post)
+    pz.trigger_player_sync({}, {})
+    assert posted == [1], "an expired cooldown must not block the sync"
+    assert pz._SYNC_BLOCKED_UNTIL[0] is None
+
+
+def test_absent_cooldown_does_not_block(monkeypatch):
+    monkeypatch.setattr(pz, "_get", lambda *a, **k: _R(_identity(None)))
+    posted = []
+    monkeypatch.setattr(pz, "_post", lambda *a, **k: (posted.append(1), _R({"data": {}}))[1])
+    pz.trigger_player_sync({}, {})
+    assert posted == [1]
+
+
+def test_blocked_until_reaches_player_stats(monkeypatch, tmp_path):
+    target = tmp_path / "player_stats.json"
+    monkeypatch.setattr(pz, "PLAYER_STATS_CACHE", target)
+    pz._save_player_stats({}, None, player_synced=False,
+                          sync_blocked_until="2026-08-07T08:59+00:00")
+    import json as _json
+    saved = _json.loads(target.read_text())
+    assert saved["player_synced"] is False
+    assert saved["sync_blocked_until"] == "2026-08-07T08:59+00:00"
