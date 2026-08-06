@@ -14,12 +14,20 @@ collection.json (you own three cards, not six), ownership stays stored per-coord
 exactly as Pokémon Zone reports it and is *propagated* across a printing group when
 read — for dex completion, for the cards browser, and for EV.
 
-SOURCES, in precedence order:
-  1. Pokémon Zone `expansionIds` (authoritative). A player record lists every
-     expansion the card registers in. It names expansions, not coords, so the
-     partner coord inside each expansion is resolved by name + base rarity.
-  2. reprint_links.json (fallback, offline). The curated/heuristic A4b→original
-     map, which is what the pipeline used before PZ exposed expansionIds.
+SOURCE: Pokémon Zone `expansionIds`, and nothing else. A player record lists
+every expansion the card registers in — the game's own answer to "is this card
+included in multiple booster packs", which is precisely the question the dex rule
+turns on. It names expansions rather than coords, so the partner coord inside each
+expansion is resolved by name + base rarity, and an ambiguous match is skipped
+rather than guessed.
+
+Deliberately NOT sourced from reprint_links.json. That map pairs A4b printings to
+their originals by a name+rarity heuristic (245 links, 12 of them user-confirmed)
+and was built for a different job. Using it to synthesise dex registrations
+credited 87 of 353 A4b base slots when the game showed 49 and Pokémon Zone's own
+data showed 27 — inference presented as fact, inflating completion by ~3x the
+sourced signal. Being behind a stale upstream is recoverable; being confidently
+wrong is not.
 
 A group is a set of coords closed under those edges (union-find), with a `debut`
 coord — the earliest printing, which is where "first appeared" display rules point.
@@ -39,7 +47,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (  # noqa: E402
     CARD_REF_JSON,
     REFERENCE_DIR,
-    REPRINT_LINKS_JSON,
     ROOT,
     norm_card_name,
     normalize_rarity,
@@ -94,23 +101,19 @@ def load_reference() -> list[dict]:
     return json.loads(CARD_REF_JSON.read_text(encoding="utf-8")).get("records", [])
 
 
-def reprint_edges(uf: _Union) -> int:
-    """Edges from the curated/heuristic A4b → original-printing map."""
-    if not REPRINT_LINKS_JSON.exists():
-        return 0
-    links = json.loads(REPRINT_LINKS_JSON.read_text(encoding="utf-8")).get("links", [])
-    for l in links:
-        uf.union(_coord(*l["a4b"]), _coord(*l["original"]))
-    return len(links)
-
-
 def pz_edges(uf: _Union, records: list[dict]) -> tuple[int, int]:
     """Edges from Pokémon Zone's expansionIds.
 
-    PZ names the expansions a card registers in but not the coord inside each, so
-    the partner is resolved by normalized name + base rarity within that expansion.
-    Ambiguous or absent matches are skipped — reprint_links already covers the
-    curated cases, and a wrong merge would silently mark an unowned card owned.
+    PZ names the expansions a card registers in, not the coord inside each, and its
+    own coord is a HYBRID for exactly these cards: the *original* set code carrying
+    the *reprint's* card number (Cubone arrives as A1/194, whose real printings are
+    A1/151 and A4b/194). Trusting setCode would look the coord up as whatever card
+    happens to sit at A1/194 — Wigglytuff — and resolve nothing.
+
+    So the number is treated as reliable and the set code is not: the anchor is
+    whichever listed expansion actually holds a card of that number with this name.
+    Remaining expansions resolve by name + base rarity, and anything ambiguous or
+    missing is skipped rather than guessed.
 
     Returns (edges_added, unresolved).
     """
@@ -123,7 +126,8 @@ def pz_edges(uf: _Union, records: list[dict]) -> tuple[int, int]:
     cards = raw if isinstance(raw, list) else next(
         (v for v in raw.values() if isinstance(v, list) and v and isinstance(v[0], dict)), [])
 
-    # (set, normalized name, normalized rarity) -> [coords]
+    # (set, normalized name, normalized rarity) -> [coords], base rarities only.
+    # Full-art and secret printings are independent dex slots on both sides.
     by_name: dict[tuple, list] = defaultdict(list)
     for r in records:
         rar = normalize_rarity(r.get("rarity"))
@@ -141,20 +145,32 @@ def pz_edges(uf: _Union, records: list[dict]) -> tuple[int, int]:
         exps = [str(e).upper() for e in (c.get("expansionIds") or []) if e]
         if len(exps) < 2:
             continue
-        home = _coord(c.get("setCode") or exps[0], c.get("cardNumber") or 0)
-        ref = ref_by_coord.get(home)
-        if ref is None:
+        num = c.get("cardNumber")
+        name = norm_card_name(c.get("cardName", ""))
+        if num is None or not name:
             continue
-        rar = normalize_rarity(ref.get("rarity"))
+
+        # Anchor: the listed expansion that genuinely holds this number+name.
+        anchor = None
+        for exp in exps:
+            ref = ref_by_coord.get((exp, num))
+            if ref and norm_card_name(ref.get("name", "")) == name:
+                anchor = (exp, num)
+                break
+        if anchor is None:
+            unresolved += 1
+            continue
+
+        rar = normalize_rarity(ref_by_coord[anchor].get("rarity"))
         if rar not in BASE_RARITIES:
             continue
-        nn = norm_card_name(ref.get("name", ""))
+
         for exp in exps:
-            if exp == home[0]:
+            if exp == anchor[0]:
                 continue
-            cands = by_name.get((exp, nn, rar), [])
+            cands = [x for x in by_name.get((exp, name, rar), []) if x != anchor]
             if len(cands) == 1:
-                uf.union(home, cands[0])
+                uf.union(anchor, cands[0])
                 added += 1
             else:
                 unresolved += 1
@@ -165,7 +181,6 @@ def build() -> dict:
     records = load_reference()
     uf = _Union()
 
-    n_links = reprint_edges(uf)
     n_pz, n_unresolved = pz_edges(uf, records)
 
     clusters: dict = defaultdict(set)
@@ -194,12 +209,12 @@ def build() -> dict:
             "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "schema_version": "1.0",
             "description": (
-                "Coords that are the same physical card. Since the 2026-07-29 update a "
-                "card registers in the dex under every expansion it appears in, so "
-                "ownership of any coord in a group credits the whole group."
+                "Coords that are the same physical card, per Pokémon Zone's expansionIds. "
+                "Since the 2026-07-29 update a card registers in the dex under every "
+                "expansion it appears in, so ownership of any coord in a group credits "
+                "the whole group. Sourced only — never inferred from name matching."
             ),
             "sources": {
-                "reprint_links": n_links,
                 "pz_expansion_edges": n_pz,
                 "pz_unresolved": n_unresolved,
             },
@@ -217,7 +232,6 @@ def main() -> int:
 
     data = build()
     m = data["_meta"]
-    print(f"  reprint_links edges : {m['sources']['reprint_links']}")
     print(f"  PZ expansion edges  : {m['sources']['pz_expansion_edges']} "
           f"({m['sources']['pz_unresolved']} unresolved)")
     print(f"  groups              : {m['group_count']} "
