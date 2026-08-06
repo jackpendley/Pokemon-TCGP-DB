@@ -296,7 +296,13 @@ const syncRunStateRowSchema = z.object({
   last_run: z.object({ outcome: z.string().nullish() }).nullable(),
   // False when Pokémon Zone did not finish refreshing its snapshot from the game,
   // so the published numbers are its previous snapshot.
-  stats: z.object({ player_synced: z.boolean().nullish() }).loose().nullish(),
+  stats: z
+    .object({
+      player_synced: z.boolean().nullish(),
+      sync_blocked_until: z.string().nullish(),
+    })
+    .loose()
+    .nullish(),
 });
 
 const ownerSyncMetaRowSchema = z.object({
@@ -419,11 +425,18 @@ export async function fetchSyncRunState(
     throw new Error(`Supabase read from sync_status failed: ${error.message}`);
   }
   const row = data?.[0];
-  if (!row) return { publishedAt: null, lastRun: null, playerSynced: null };
+  if (!row)
+    return {
+      publishedAt: null,
+      lastRun: null,
+      playerSynced: null,
+      syncBlockedUntil: null,
+    };
   const parsed = syncRunStateRowSchema.parse(row);
   return {
     publishedAt: parsed.published_at,
     lastRun: parsed.last_run,
     playerSynced: parsed.stats?.player_synced ?? null,
+    syncBlockedUntil: parsed.stats?.sync_blocked_until ?? null,
   };
 }

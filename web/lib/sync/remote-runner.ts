@@ -42,8 +42,22 @@ const RUN_MATCH_SKEW_MS = 30 * 1000;
  */
 const STALE_SOURCE_MESSAGE =
   "Sync finished, but Pokémon Zone hadn't refreshed your collection from the game, " +
-  "so this republished its previous snapshot. Recent pulls may be missing — open " +
-  "the game, then try again in a few minutes.";
+  "so this republished its previous snapshot. Recent pulls may be missing.";
+
+/**
+ * Pokémon Zone rate-limits collection refreshes and reports when the next one is
+ * allowed. Naming that time matters: a retry before it cannot return anything
+ * new, so "try again in a few minutes" would send the user in circles.
+ */
+function staleMessage(blockedUntil: string | null | undefined): string {
+  if (!blockedUntil) return `${STALE_SOURCE_MESSAGE} Try again shortly.`;
+  const when = new Date(blockedUntil);
+  if (Number.isNaN(when.getTime())) return STALE_SOURCE_MESSAGE;
+  return (
+    `${STALE_SOURCE_MESSAGE} Pokémon Zone limits how often it will refresh — ` +
+    `the next one is allowed at ${when.toLocaleString()}.`
+  );
+}
 
 const TIMEOUT_MESSAGE =
   "Sync is taking longer than expected — check the repo's Actions tab. " +
@@ -262,7 +276,7 @@ export function createRemoteSyncRunner(
             finishedAt: recheck!.publishedAt,
             message:
               recheck?.playerSynced === false
-                ? STALE_SOURCE_MESSAGE
+                ? staleMessage(recheck.syncBlockedUntil)
                 : "Sync complete.",
           };
         }
