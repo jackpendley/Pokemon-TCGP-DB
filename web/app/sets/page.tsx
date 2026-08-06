@@ -29,10 +29,10 @@ async function SetsContent() {
       bySet.set(c.set_code, s);
     }
     s.total += 1;
-    if (c.owned > 0) s.owned += 1;
+    if (c.dex_owned) s.owned += 1;
     if (isBaseRarity(c.rarity)) {
       s.baseTotal += 1;
-      if (c.owned > 0) s.baseOwned += 1;
+      if (c.dex_owned) s.baseOwned += 1;
     }
   }
   const sets = [...bySet.values()];

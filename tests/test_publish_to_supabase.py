@@ -40,6 +40,7 @@ CARD_COLUMNS = {
     "set_code", "card_number", "name", "rarity", "pokemon_type", "card_category",
     "trainer_subtype", "stage", "expansion", "is_ex", "is_mega", "evolves_from",
     "hp", "pack_name", "power_score", "power_score_kind", "boosts",
+    "printing_group",
 }
 
 
@@ -143,6 +144,36 @@ class FakeClient:
 # ---------------------------------------------------------------------------
 # Builders: payload shapes match the artifact contract
 # ---------------------------------------------------------------------------
+
+def test_card_rows_carry_printing_group():
+    """Coords in a printing group publish their group; singles publish null.
+
+    The group is what lets the catalog read credit one owned copy to every dex
+    slot the card now registers in (game update 2026-07-29).
+    """
+    card_reference = {"records": [
+        {"set_code": "A1", "card_number": 151, "name": "Cubone"},
+        {"set_code": "A4b", "card_number": 194, "name": "Cubone"},
+        {"set_code": "B4", "card_number": 1, "name": "Wurmple"},
+    ]}
+    groups = {"groups": [{"id": "g0042", "coords": [["A1", 151], ["A4b", 194]]}]}
+
+    by_coord = {(r["set_code"], r["card_number"]): r
+                for r in build_card_rows(card_reference, None, groups)}
+
+    assert by_coord[("A1", 151)]["printing_group"] == "g0042"
+    assert by_coord[("A4b", 194)]["printing_group"] == "g0042"
+    assert by_coord[("B4", 1)]["printing_group"] is None
+
+
+def test_card_rows_publish_without_printing_groups():
+    """A checkout predating printing_groups.json still publishes."""
+    card_reference = {"records": [
+        {"set_code": "B4", "card_number": 1, "name": "Wurmple"},
+    ]}
+    rows = build_card_rows(card_reference, None, None)
+    assert rows[0]["printing_group"] is None
+
 
 def test_card_rows_carry_every_column(rows):
     assert len(rows["cards"]) == 2

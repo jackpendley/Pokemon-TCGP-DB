@@ -92,6 +92,45 @@ BULBAPEDIA_URLS = {
 }
 
 # ---------------------------------------------------------------------------
+# "◆◆◆◆ or Higher Guaranteed" booster category (game update 2026-07-29)
+#
+# "If certain conditions are fulfilled, the next time a booster pack from the same
+# expansion as the booster pack for which the conditions have been fulfilled is
+# opened, a ◆◆◆◆ or higher card will now be obtained. For details, please see
+# Offering Rates > Attention."
+#
+# The exact condition, read off the in-app Offering Rates > Attention screen
+# (2026-08-05): "A ◆◆◆◆ or higher card did not get generated after 12 consecutive
+# openings of packs from the same expansion." So the 13th pack in an unlucky run
+# is guaranteed, and the counter is per expansion and resets on any hit.
+#
+# Consequence for EV, and it is the whole story: 10 // (12 + 1) == 0. A 10-pack
+# batch is shorter than one full pity cycle, so the guarantee can never be forced
+# within a batch and contributes no floor. The 10x model is unchanged. This is
+# recorded rather than dropped because it is a *verified* zero, not an unknown —
+# and because a future batch size or threshold change makes it bite immediately.
+#
+# The same screen notes the guarantee is not its own exclusive branch: "the
+# ◆◆◆◆ or higher guaranteed pack category will be added but will not be the only
+# category offered … In that case, a ◆◆◆◆ or higher card is still guaranteed to
+# be generated." So it is a floor on the outcome, not a separate slot model —
+# which is exactly how _apply_double_rare_guarantee treats it.
+DOUBLE_RARE_GUARANTEE = {
+    "kind": "double_rare_plus",
+    "scope": "expansion",
+    "trigger": "packs_without_double_rare_plus",
+    "threshold": 12,
+    "source": "in_app_offering_rates_attention",
+    "source_accessed_at": "2026-08-05",
+    "note": (
+        "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: "
+        "a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the "
+        "same expansion produced none. Longer than a 10-pack batch, so it adds no "
+        "floor to the 10x EV model."
+    ),
+}
+
+# ---------------------------------------------------------------------------
 # Per-set-code branch routing
 # Types: bulbapedia_two_branch, third_party_two_branch, pending,
 #        bulbapedia_three_branch_standard, bulbapedia_secluded_springs,
@@ -845,6 +884,7 @@ def build_pack_records(records: list, existing_rates: dict,
         # Normalize any legacy symbol-tier keys in the slot distributions to the new
         # vocabulary (deep-copied so shared constants are not mutated).
         slot_rates = _remap_rarity_keys(slot_rates)
+        slot_rates["guarantee"] = dict(DOUBLE_RARE_GUARANTEE)
 
         bulbapedia_url = BULBAPEDIA_URLS.get(set_code)
         branch_type = SET_CODE_BRANCH_CONFIG.get(set_code, "third_party_two_branch")

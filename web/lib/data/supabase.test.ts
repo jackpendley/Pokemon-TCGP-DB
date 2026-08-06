@@ -160,6 +160,8 @@ describe("SupabaseSource", () => {
         expansion: "Genetic Apex",
         is_ex: false,
         owned: 2,
+        dex_owned: true,
+        printing_group: null,
         power_score: 42,
         power_score_kind: "pokemon",
         boosts: null,
@@ -257,6 +259,9 @@ describe("fetchOwnerSyncMeta", () => {
         outcome: "ok",
         mode: "live",
       },
+      catalogMisses: null,
+      playerSynced: null,
+      pendingSets: [],
     });
   });
 
@@ -267,7 +272,52 @@ describe("fetchOwnerSyncMeta", () => {
     expect(await fetchOwnerSyncMeta(client)).toEqual({
       publishedAt: null,
       lastRun: null,
+      catalogMisses: null,
+      playerSynced: null,
+      pendingSets: [],
     });
+  });
+
+  it("surfaces a detected but unregistered set", async () => {
+    // Drives the dashboard's "new set detected" banner: PZ is serving an
+    // expansion SET_REGISTRY has never heard of.
+    const client = fakeClient({
+      sync_status: [
+        {
+          published_at: "2026-08-05T00:00:00.000Z",
+          last_run: null,
+          pending_sets: [{ set_code: "B5", card_count: 210, copies: 240 }],
+        },
+      ],
+    });
+    const meta = await fetchOwnerSyncMeta(client);
+    expect(meta.pendingSets).toEqual([
+      { setCode: "B5", cardCount: 210, copies: 240 },
+    ]);
+  });
+
+  it("reads a sync_status row published before pending_sets existed", async () => {
+    const client = fakeClient({
+      sync_status: [{ published_at: "2026-07-01T00:00:00.000Z", last_run: null }],
+    });
+    expect((await fetchOwnerSyncMeta(client)).pendingSets).toEqual([]);
+  });
+
+  it("surfaces cards the PZ catalog could not name", async () => {
+    const client = fakeClient({
+      sync_status: [
+        {
+          published_at: "2026-08-04T05:04:00.000Z",
+          last_run: null,
+          stats: {
+            pack_hourglasses: 12,
+            catalog_misses: { count: 41, copies: 63, card_ids: ["x"] },
+          },
+        },
+      ],
+    });
+    const meta = await fetchOwnerSyncMeta(client);
+    expect(meta.catalogMisses).toEqual({ count: 41, copies: 63 });
   });
 
   it("returns nulls when the sync_status row is missing", async () => {
@@ -275,6 +325,9 @@ describe("fetchOwnerSyncMeta", () => {
     expect(await fetchOwnerSyncMeta(client)).toEqual({
       publishedAt: null,
       lastRun: null,
+      catalogMisses: null,
+      playerSynced: null,
+      pendingSets: [],
     });
   });
 });

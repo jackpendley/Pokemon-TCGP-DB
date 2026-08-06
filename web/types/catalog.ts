@@ -78,6 +78,20 @@ export const powerScoresFileSchema = z.object({
   ),
 });
 
+/**
+ * data/reference/printing_groups.json — coords that are the same physical card.
+ * Written by scripts/build_printing_groups.py; optional, since a checkout that
+ * predates it still has to render.
+ */
+export const printingGroupsFileSchema = z.object({
+  groups: z.array(
+    z.object({
+      id: z.string(),
+      coords: z.array(z.tuple([z.string(), z.number()])),
+    }),
+  ),
+});
+
 /** One catalog card as the UI consumes it. */
 export interface CatalogCard {
   set_code: string;
@@ -90,7 +104,24 @@ export interface CatalogCard {
   stage: string | null;
   expansion: string;
   is_ex: boolean;
+  /**
+   * Physical copies held at THIS coord, as Pokémon Zone reports them. Use this
+   * for anything counting cards ("×3", quantity totals, deck copy limits) — it
+   * is never inflated by multi-expansion registration.
+   */
   owned: number;
+  /**
+   * Whether this dex slot is filled. Since the 2026-07-29 update a card obtained
+   * from any pack registers under every expansion it appears in, so a slot can
+   * read filled while `owned` at this coord is 0 (the copy sits at a sibling
+   * printing). Use this for completion, ownership filters and owned styling.
+   */
+  dex_owned: boolean;
+  /**
+   * Group shared by every coord that is the same physical card; null for a
+   * single-printing card. See scripts/build_printing_groups.py.
+   */
+  printing_group: string | null;
   /** 0–100 power/value score; null when the card could not be scored. */
   power_score: number | null;
   /**

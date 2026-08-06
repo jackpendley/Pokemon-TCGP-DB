@@ -40,11 +40,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _collection_io import (RARE_PLUS_RARITIES, HOURGLASS_PER_PACK,
+from _collection_io import (RARE_PLUS_RARITIES, DOUBLE_RARE_PLUS_RARITIES,
+                            HOURGLASS_PER_PACK,
                             norm_card_name as _norm_name, normalize_rarity,
-                            load_collection_counts, EV_BASE_SCORING_WEIGHTS,
+                            load_collection_counts, credit_printing_groups,
+                            EV_BASE_SCORING_WEIGHTS,
                             validate_pack_sources_schema, canonical_set_code,
-                            PROMO_SET_CODES,
+                            PROMO_SET_CODES, PRINTING_GROUPS_JSON,
                             ROOT, COLLECTION_NORMALIZED_JSON as COLLECTION_JSON,
                             PULL_MODEL_JSON, PACK_SOURCES_JSON, PZ_PACK_ODDS_JSON,
                             DECK_VALIDATION_JSON, PACK_EV_JSON as OUT_JSON)
@@ -129,14 +131,43 @@ def hash_input_paths() -> tuple[Path, ...]:
     input file happened to change)."""
     code = (Path(__file__).resolve(), Path(__file__).resolve().parent / "_collection_io.py")
     power = (ROOT / "data" / "reference" / "card_power_scores.json",)
+    # printing_groups.json decides which coords share ownership, so a regrouping
+    # changes every affected pack's EV without any other input moving.
+    groups = (PRINTING_GROUPS_JSON,)
     return (COLLECTION_JSON, PULL_MODEL_JSON, PACK_SOURCES_JSON,
-            DECK_VALIDATION_JSON, PZ_PACK_ODDS_JSON, *power, *code)
+            DECK_VALIDATION_JSON, PZ_PACK_ODDS_JSON, *power, *groups, *code)
 
 
 def load_pull_model(path: Path) -> dict:
     """Returns {pack_name: pack_record}."""
     raw = json.loads(path.read_text(encoding="utf-8"))
     return {p["pack_name"]: p for p in raw["packs"]}
+
+
+# Packs opened per batch in the 10x model — the in-app "open 10" flow.
+BATCH_SIZE = 10
+
+
+def guaranteed_hits_per_batch(guarantee: dict | None, batch: int = BATCH_SIZE) -> int:
+    """Floor on ◆◆◆◆-or-higher cards across `batch` packs from one expansion.
+
+    The 2026-07-29 update added a "◆◆◆◆ or Higher Guaranteed" booster category:
+    once certain conditions are met, the next pack from that expansion yields a
+    ◆◆◆◆-or-better card. The pity counter is per expansion and resets on a hit,
+    so in the worst case a batch of `batch` packs still contains at least
+    batch // (threshold + 1) such cards.
+
+    The exact trigger is published only on the in-game Offering Rates > Attention
+    screen, so `threshold` is null until it is read off that screen — and a null
+    threshold returns 0, leaving every EV number exactly as it was. Do not guess
+    a value here: a wrong pity threshold silently reprices every pack.
+    """
+    if not guarantee:
+        return 0
+    threshold = guarantee.get("threshold")
+    if not isinstance(threshold, int) or threshold < 1:
+        return 0
+    return batch // (threshold + 1)
 
 
 def load_pack_sources(path: Path):
@@ -354,6 +385,11 @@ class _PoolEV:
     deck_target_ev: float = 0.0
     missing_rare_plus: int = 0     # count of missing one_star+ cards
     rare_plus_ev_10x: float = 0.0  # P(≥1 in 10 packs), count-based, for rare+ cards only
+    # ◆◆◆◆-or-higher slice, kept separately so the "◆◆◆◆ or Higher Guaranteed"
+    # pity floor can be applied to exactly the tier it guarantees.
+    drp_p10x_sum: float = 0.0      # Σ P(≥1 in 10 packs) over missing ◆◆◆◆+ cards
+    drp_value_sum: float = 0.0     # their rarity-weighted 10x contribution
+    guaranteed_drp: int = 0        # pity floor actually applied to this pack
     pz_hits: int = 0
     fallback_count: int = 0
     pz_excluded_count: int = 0
@@ -382,12 +418,13 @@ def _accumulate_pool_ev(all_pool_cards: list, collection: dict,
         sc  = card.get("set_code", "").upper()
         cn  = card.get("card_number")
 
-        # Each printing is counted independently: only credits ownership if this exact
-        # (set_code, card_number) is in the collection. Dual-location A4b reprints are
-        # stored at the original-set coord by reconcile_coords_from_pz (1st copy fills the
-        # original slot, 2nd+ the A4b slot — matches the app's dex), so no cross-crediting
-        # is needed here. Falls back to name-only for genuinely coord-less legacy entries
-        # (in practice 0 since all entries carry coords).
+        # Ownership is read per coord, but collection_by_card has already been
+        # credited across printing groups (credit_printing_groups): since the
+        # 2026-07-29 update a card registers in the dex under every expansion it
+        # appears in, so its printings are the same card — pulling the A4b printing
+        # of a Cubone you already hold is a duplicate, not a new card. Falls back to
+        # name-only for genuinely coord-less legacy entries (in practice 0 since all
+        # entries carry coords).
         # TODO(deck-ev): when deck logic lands, switch to name-count here (decks mix sets).
         if collection_by_card and sc and cn is not None:
             owned = collection_by_card.get((sc, cn), 0)
@@ -467,13 +504,41 @@ def _accumulate_pool_ev(all_pool_cards: list, collection: dict,
             if rarity in RARE_PLUS_RARITIES:
                 agg.missing_rare_plus += 1
                 agg.rare_plus_ev_10x += p_10x  # count-based for display
+            if rarity in DOUBLE_RARE_PLUS_RARITIES:
+                agg.drp_p10x_sum += p_10x
+                agg.drp_value_sum += p_10x * v_rarity
         else:
             agg.copy_ev += ev
 
         if is_dt:
             agg.deck_target_ev += ev
 
+    _apply_double_rare_guarantee(agg, slot_rates)
     return agg
+
+
+def _apply_double_rare_guarantee(agg: _PoolEV, slot_rates: dict | None) -> None:
+    """Lift the 10x ◆◆◆◆+ expectation to the pity floor the pack now guarantees.
+
+    The i.i.d. batch model (p_10x = 1-(1-p)^10) assumes packs are independent. The
+    "◆◆◆◆ or Higher Guaranteed" category breaks that: a run of misses forces a hit,
+    so a batch cannot contain fewer than `guaranteed_hits_per_batch` such cards.
+
+    When the natural expectation already clears the floor the guarantee is
+    inactive and nothing changes. Otherwise the shortfall is spread over the
+    missing ◆◆◆◆+ cards in proportion to how likely each already was, which keeps
+    the relative ranking inside the tier while raising the pack's total.
+
+    Inert while the trigger is unknown (threshold null → floor 0), so today this
+    is a no-op on every pack.
+    """
+    guarantee = (slot_rates or {}).get("guarantee")
+    floor = guaranteed_hits_per_batch(guarantee)
+    agg.guaranteed_drp = floor
+    if floor <= 0 or agg.drp_p10x_sum <= 0 or agg.drp_p10x_sum >= floor:
+        return
+    uplift = floor / agg.drp_p10x_sum
+    agg.new_card_ev_10x += agg.drp_value_sum * (uplift - 1.0)
 
 
 def _confidence_weight(pz_coverage: float, slot_rates: dict | None) -> tuple[float, str]:
@@ -982,6 +1047,8 @@ def main():
             pass  # corrupted prior output — recompute
 
     collection, collection_by_card = load_collection_counts(COLLECTION_JSON)
+    # Same physical card across expansions = same dex entry since 2026-07-29.
+    collection_by_card = credit_printing_groups(collection_by_card)
     pull_model       = load_pull_model(PULL_MODEL_JSON)
     pack_cards, expansion_shared = load_pack_sources(PACK_SOURCES_JSON)
     deck_targets     = load_deck_targets(DECK_VALIDATION_JSON)

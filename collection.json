@@ -1,7 +1,7 @@
 {
   "meta": {
     "total_cards": 2053,
-    "last_updated": "2026-08-05",
+    "last_updated": "2026-08-03",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -766,7 +766,7 @@
       "name": "Mega Heracross ex",
       "type": "Grass",
       "stage": 2,
-      "hp": 210,
+      "hp": 180,
       "card_type": "Pokemon",
       "count": 1,
       "set_code": "PROMO-B",
@@ -10151,145 +10151,145 @@
       "name": "Castform Sunny Form",
       "count": 5,
       "card_type": "Pokemon",
-      "type": "Fire",
-      "stage": 0,
-      "stage_label": "Basic",
-      "hp": 70,
       "rarity": "common",
       "set_code": "B3",
-      "card_number": 24
+      "card_number": 24,
+      "type": "Fire",
+      "hp": 70,
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Castform Sunny Form",
       "count": 3,
       "card_type": "Pokemon",
-      "type": "Fire",
-      "stage": 0,
-      "stage_label": "Basic",
-      "hp": 70,
       "rarity": "promo",
       "set_code": "PROMO-B",
-      "card_number": 57
+      "card_number": 57,
+      "type": "Fire",
+      "hp": 70,
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Castform Rainy Form",
       "count": 5,
       "card_type": "Pokemon",
-      "type": "Water",
-      "stage": 0,
-      "stage_label": "Basic",
-      "hp": 70,
       "rarity": "common",
       "set_code": "B3",
-      "card_number": 40
+      "card_number": 40,
+      "type": "Water",
+      "hp": 70,
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Castform Snowy Form",
       "count": 3,
       "card_type": "Pokemon",
-      "type": "Water",
-      "stage": 0,
-      "stage_label": "Basic",
-      "hp": 70,
       "rarity": "common",
       "set_code": "B3",
-      "card_number": 41
+      "card_number": 41,
+      "type": "Water",
+      "hp": 70,
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Rapid Strike Urshifu",
       "count": 1,
       "card_type": "Pokemon",
-      "type": "Water",
-      "stage": 1,
-      "stage_label": "Stage 1",
-      "hp": 120,
       "rarity": "rare",
       "set_code": "B3",
-      "card_number": 51
+      "card_number": 51,
+      "type": "Water",
+      "hp": 120,
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Single Strike Urshifu",
       "count": 1,
       "card_type": "Pokemon",
-      "type": "Darkness",
-      "stage": 1,
-      "stage_label": "Stage 1",
-      "hp": 120,
       "rarity": "rare",
       "set_code": "B3",
-      "card_number": 113
+      "card_number": 113,
+      "type": "Darkness",
+      "hp": 120,
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Hisuian Zorua",
       "count": 4,
       "card_type": "Pokemon",
-      "stage": 0,
-      "stage_label": "Basic",
-      "hp": 60,
       "rarity": "common",
       "set_code": "B3b",
       "card_number": 59,
-      "type": "Colorless"
+      "type": "Colorless",
+      "hp": 60,
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Hisuian Zorua",
       "count": 1,
       "card_type": "Pokemon",
-      "stage": 0,
-      "stage_label": "Basic",
-      "hp": 60,
       "rarity": "promo",
       "set_code": "PROMO-B",
       "card_number": 76,
-      "type": "Colorless"
+      "type": "Colorless",
+      "hp": 60,
+      "stage": 0,
+      "stage_label": "Basic"
     },
     {
       "name": "Hisuian Lilligant",
       "count": 1,
       "card_type": "Pokemon",
-      "stage": 1,
-      "stage_label": "Stage 1",
-      "hp": 100,
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 7,
-      "type": "Grass"
+      "type": "Grass",
+      "hp": 100,
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Hisuian Sliggoo",
       "count": 4,
       "card_type": "Pokemon",
-      "stage": 1,
-      "stage_label": "Stage 1",
-      "hp": 100,
       "rarity": "uncommon",
       "set_code": "B3b",
       "card_number": 49,
-      "type": "Dragon"
+      "type": "Dragon",
+      "hp": 100,
+      "stage": 1,
+      "stage_label": "Stage 1"
     },
     {
       "name": "Hisuian Goodra",
       "count": 1,
       "card_type": "Pokemon",
-      "stage": 2,
-      "stage_label": "Stage 2",
-      "hp": 150,
       "rarity": "rare",
       "set_code": "B3b",
       "card_number": 50,
-      "type": "Dragon"
+      "type": "Dragon",
+      "hp": 150,
+      "stage": 2,
+      "stage_label": "Stage 2"
     },
     {
       "name": "Hisuian Zoroark ex",
       "count": 2,
       "card_type": "Pokemon",
-      "stage": 1,
-      "stage_label": "Stage 1",
-      "hp": 150,
       "rarity": "double_rare",
       "set_code": "B3b",
       "card_number": 60,
-      "type": "Colorless"
+      "type": "Colorless",
+      "hp": 150,
+      "stage": 1,
+      "stage_label": "Stage 1"
     }
   ]
 }

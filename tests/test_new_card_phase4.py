@@ -284,19 +284,31 @@ def test_phase4c_nidoran_cross_contamination():
     check("Squirtle (index 2) NOT marked stale", 2 not in stale_base_indices,
           str(stale_base_indices))
 
-    # Confirm the OLD _normalize-based logic WOULD have incorrectly marked ♂ stale
-    old_alt_art_nns = {_normalize(e["name"]) for e in auto_added if e.get("variant") == "alt art"}
+    # Regression reference: the collapse this guards against came from field_slug,
+    # which maps ♀/♂ to a separator so both Nidorans key as "nidoran". The matcher
+    # imported field_slug as _normalize until it was migrated to norm_card_name, so
+    # name the culprit directly rather than via the alias — otherwise this block
+    # silently stops demonstrating anything once the alias is fixed.
+    from _collection_io import field_slug
+    assert field_slug("Nidoran♀") == field_slug("Nidoran♂") == "nidoran"
+    old_alt_art_nns = {field_slug(e["name"]) for e in auto_added if e.get("variant") == "alt art"}
+    old_missing_nns = {field_slug(e.get("name", "")) for e in missing_from_pz}
     old_stale: set = set()
     for i, e in enumerate(collection_entries):
         if i in matched_indices:
             continue
-        nn = _normalize(e.get("name", ""))
-        if nn not in missing_nns:
+        nn = field_slug(e.get("name", ""))
+        if nn not in old_missing_nns:
             continue
         if nn in old_alt_art_nns:
             old_stale.add(i)
-    check("old _normalize logic WOULD have marked ♂ stale (regression reference)",
+    check("field_slug-based logic WOULD have marked ♂ stale (regression reference)",
           1 in old_stale, str(old_stale))
+
+    # And the migrated matcher keeps them apart at the source.
+    check("norm_card_name keeps Nidoran♀ and Nidoran♂ distinct",
+          _normalize("Nidoran♀") != _normalize("Nidoran♂"),
+          f'{_normalize("Nidoran♀")} vs {_normalize("Nidoran♂")}')
 
 def test_phase4c_case_b_named_art_immune():
     print("\n--- 32. Phase 4c Case B — named-art variants immune (never returned by PZ) ---")

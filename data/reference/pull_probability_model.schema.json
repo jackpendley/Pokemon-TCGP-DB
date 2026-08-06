@@ -3,14 +3,25 @@
   "title": "Pokemon TCG Pocket Pull Probability Model",
   "description": "Per-pack pull probability model for PTCGP. Supports two-branch (regular+rare), three-branch (regular+rare+regular_plus_one), and four-branch (regular+rare+regular_plus_one+themed_rare) models. rarity_probabilities = exact expected copies of each rarity per pack, summed per pack from Pokémon Zone per-card drop chances (slot-model fallback only when PZ data is absent).",
   "type": "object",
-  "required": ["meta", "packs"],
+  "required": [
+    "meta",
+    "packs"
+  ],
   "properties": {
     "meta": {
       "type": "object",
-      "required": ["generated_at", "model_version", "source_status"],
+      "required": [
+        "generated_at",
+        "model_version",
+        "source_status"
+      ],
       "properties": {
-        "generated_at": { "type": "string" },
-        "model_version": { "type": "string" },
+        "generated_at": {
+          "type": "string"
+        },
+        "model_version": {
+          "type": "string"
+        },
         "source_status": {
           "type": "string",
           "enum": [
@@ -28,26 +39,63 @@
             "scaffold_only"
           ]
         },
-        "verified_source": { "type": ["string", "null"] },
-        "notes": { "type": ["string", "null"] }
+        "verified_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "packs": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["pack_name", "expansion", "set_code", "confidence", "rarity_probabilities"],
+        "required": [
+          "pack_name",
+          "expansion",
+          "set_code",
+          "confidence",
+          "rarity_probabilities"
+        ],
         "properties": {
-          "pack_name": { "type": "string" },
-          "expansion": { "type": "string" },
-          "set_code": { "type": "string" },
+          "pack_name": {
+            "type": "string"
+          },
+          "expansion": {
+            "type": "string"
+          },
+          "set_code": {
+            "type": "string"
+          },
           "is_shared_pool": {
             "type": "boolean",
             "description": "True if this represents the shared pool of an expansion, not a directly pullable pack"
           },
-          "source_url": { "type": ["string", "null"] },
-          "source_name": { "type": ["string", "null"] },
-          "source_accessed_at": { "type": ["string", "null"] },
+          "source_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_accessed_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "confidence": {
             "type": "string",
             "enum": [
@@ -65,11 +113,17 @@
             ]
           },
           "bulbapedia_url": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "URL of the Bulbapedia TCG Pocket expansion page used for branch verification."
           },
           "bulbapedia_match_status": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Result of cross-checking this pack against the Bulbapedia offering rates section.",
             "enum": [
               "branch_verified",
@@ -85,116 +139,286 @@
             ]
           },
           "bulbapedia_notes": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Notes from the Bulbapedia offering rates cross-check for this pack."
           },
           "stale_model_warning": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Warning note when this pack's slot_rates use an unconfirmed branch structure."
           },
           "user_in_app_evidence_note": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Note describing the source of user-provided in-app verification evidence (e.g. location of screenshots)."
           },
           "external_matching_sources": {
-            "type": ["array", "null"],
+            "type": [
+              "array",
+              "null"
+            ],
             "description": "External reputable sources that match or corroborate this pack's rates.",
             "items": {
               "type": "object",
               "properties": {
-                "source_name": { "type": "string" },
-                "url": { "type": "string" },
-                "match_result": { "type": "string" },
-                "notes": { "type": ["string", "null"] }
+                "source_name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "match_result": {
+                  "type": "string"
+                },
+                "notes": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
               }
             }
           },
           "generalization_status": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Whether the branch model was independently verified or generalized from another pack.",
-            "enum": ["generalized_from_anchor", "pack_specific_verified", "pending", "not_applicable", null]
+            "enum": [
+              "generalized_from_anchor",
+              "pack_specific_verified",
+              "pending",
+              "not_applicable",
+              null
+            ]
           },
           "official_verification_status": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Whether official in-app verification has been completed for this pack.",
-            "enum": ["verified", "user_in_app_verified", "pending", "not_verified", null]
+            "enum": [
+              "verified",
+              "user_in_app_verified",
+              "pending",
+              "not_verified",
+              null
+            ]
           },
           "slot_model": {
-            "type": ["object", "null"],
+            "type": [
+              "object",
+              "null"
+            ],
             "properties": {
-              "cards_per_pack": { "type": ["integer", "null"] },
-              "slot_count": { "type": ["integer", "null"] },
+              "cards_per_pack": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "slot_count": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
               "branch_model": {
-                "type": ["string", "null"],
-                "enum": ["two_branch", "three_branch", "four_branch", null],
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "two_branch",
+                  "three_branch",
+                  "four_branch",
+                  null
+                ],
                 "description": "two_branch: regular+rare only. three_branch: regular+rare+regular_plus_one. four_branch: regular+rare+regular_plus_one+themed_rare."
               },
-              "notes": { "type": ["string", "null"] }
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
             }
           },
           "slot_rates": {
-            "type": ["object", "null"],
+            "type": [
+              "object",
+              "null"
+            ],
             "description": "Per-slot pull probability tables.",
             "properties": {
               "regular_pack_probability": {
-                "type": ["number", "null"],
-                "minimum": 0, "maximum": 1,
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1,
                 "description": "Probability that a given pack opening is a regular (non-rare, non-plus-one) pack."
               },
               "rare_pack_probability": {
-                "type": ["number", "null"],
-                "minimum": 0, "maximum": 1,
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1,
                 "description": "Probability that a given pack opening is a rare/god pack."
               },
               "regular_pack_plus_one_probability": {
-                "type": ["number", "null"],
-                "minimum": 0, "maximum": 1,
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1,
                 "description": "Probability of a Regular Pack + 1 Card opening (6-card pack; card 6 is shiny rarity). Null for two-branch packs."
               },
               "themed_rare_pack_probability": {
-                "type": ["number", "null"],
-                "minimum": 0, "maximum": 1,
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1,
                 "description": "Probability of a Themed Rare Pack opening (guarantees specific featured cards). Only present in four-branch packs (e.g. Mega Shine). Null otherwise."
               },
               "slots_1_3": {
-                "type": ["object", "null"],
+                "type": [
+                  "object",
+                  "null"
+                ],
                 "description": "Rarity distribution for slots 1, 2, and 3 in a regular or regular+1 pack (always common)"
               },
               "slot_4": {
-                "type": ["object", "null"],
+                "type": [
+                  "object",
+                  "null"
+                ],
                 "description": "Rarity distribution for slot 4 in a regular or regular+1 pack"
               },
               "slot_5": {
-                "type": ["object", "null"],
+                "type": [
+                  "object",
+                  "null"
+                ],
                 "description": "Rarity distribution for slot 5 in a regular or regular+1 pack"
               },
               "slot_6": {
-                "type": ["object", "null"],
+                "type": [
+                  "object",
+                  "null"
+                ],
                 "description": "Rarity distribution for slot 6 in a regular+1 pack. B-series packs use shiny rarities (one_shiny, two_shiny); A4 packs use standard rarities (one_star, three_diamond). Null for two-branch packs or when unknown.",
                 "properties": {
-                  "one_shiny":      { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "two_shiny":      { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "one_star":       { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "three_diamond":  { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+                  "one_shiny": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "two_shiny": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "one_star": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "three_diamond": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 1
+                  }
                 }
               },
               "rare_pack_all_5_slots": {
-                "type": ["object", "null"],
+                "type": [
+                  "object",
+                  "null"
+                ],
                 "description": "Rarity distribution applied uniformly to all 5 slots in a rare/god pack.",
                 "properties": {
-                  "one_star":              { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "two_star":              { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "three_star":            { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "crown":                 { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-                  "crown_or_highest_rare": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+                  "one_star": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "two_star": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "three_star": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "crown": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "crown_or_highest_rare": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 1
+                  }
                 }
               },
               "themed_rare_pack_all_5_slots": {
-                "type": ["object", "null"],
+                "type": [
+                  "object",
+                  "null"
+                ],
                 "description": "Rarity distribution for all 5 slots in a themed rare pack (e.g. Mega Shine guarantees Mega Evolution ex). Null when not modeled."
               },
               "confidence": {
-                "type": ["string", "null"],
+                "type": [
+                  "string",
+                  "null"
+                ],
                 "enum": [
                   "verified",
                   "bulbapedia_verified",
@@ -210,53 +434,169 @@
                   null
                 ]
               },
-              "source_name": { "type": ["string", "null"] },
-              "source_url": { "type": ["string", "null"] },
-              "source_accessed_at": { "type": ["string", "null"] },
-              "source_notes": { "type": ["string", "null"] },
+              "source_name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source_url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source_accessed_at": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source_notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
               "cross_checked_sources": {
-                "type": ["array", "null"],
+                "type": [
+                  "array",
+                  "null"
+                ],
                 "items": {
                   "type": "object",
                   "properties": {
-                    "source_name": { "type": "string" },
-                    "publisher": { "type": "string" },
-                    "url": { "type": "string" },
-                    "accessed_at": { "type": "string" },
-                    "match_result": { "type": "string" },
-                    "notes": { "type": ["string", "null"] }
+                    "source_name": {
+                      "type": "string"
+                    },
+                    "publisher": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "accessed_at": {
+                      "type": "string"
+                    },
+                    "match_result": {
+                      "type": "string"
+                    },
+                    "notes": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
                   }
                 }
               },
-              "confidence_note": { "type": ["string", "null"] }
+              "confidence_note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "guarantee": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "description": "\"◆◆◆◆ or Higher Guaranteed\" booster category (game update 2026-07-29): once the trigger condition is met, the next pack from the same expansion yields a ◆◆◆◆-or-better card. threshold is null until the condition is read off the in-app Offering Rates > Attention screen; null means the pity floor is not modelled and EV is unaffected.",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "double_rare_plus"
+                    ]
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "expansion"
+                    ]
+                  },
+                  "trigger": {
+                    "type": "string"
+                  },
+                  "threshold": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 1,
+                    "description": "Packs without a ◆◆◆◆+ before the next is guaranteed; null = unknown/not modelled."
+                  },
+                  "source": {
+                    "type": "string"
+                  },
+                  "note": {
+                    "type": "string"
+                  }
+                }
+              }
             }
           },
           "card_pool": {
             "type": "object",
             "description": "Card counts by rarity in this pack's pullable pool. Does not include shiny cards (one_shiny/two_shiny) which are not in pack_sources.json.",
             "properties": {
-              "pack_specific_total": { "type": "integer" },
-              "shared_pool_total": { "type": "integer" },
-              "combined_total": { "type": "integer" },
-              "pack_specific_by_rarity": { "type": "object" },
-              "shared_pool_by_rarity": { "type": "object" },
-              "combined_by_rarity": { "type": "object" }
+              "pack_specific_total": {
+                "type": "integer"
+              },
+              "shared_pool_total": {
+                "type": "integer"
+              },
+              "combined_total": {
+                "type": "integer"
+              },
+              "pack_specific_by_rarity": {
+                "type": "object"
+              },
+              "shared_pool_by_rarity": {
+                "type": "object"
+              },
+              "combined_by_rarity": {
+                "type": "object"
+              }
             }
           },
           "rarity_probabilities": {
-            "type": ["object", "null"],
+            "type": [
+              "object",
+              "null"
+            ],
             "description": "Exact expected number of cards of each rarity opened per pack, summed independently per pack from Pokémon Zone per-card drop chances (pz_pack_odds.json) joined to card_reference rarity. Keyed by the 11 canonical rarity tiers (+ promo/unknown). Values are expected counts >= 0 (e.g. common ~2.9/pack); a slot-model approximation is used only as a fallback when a pack has no PZ data.",
             "propertyNames": {
-              "enum": ["common", "uncommon", "rare", "double_rare", "illustration_rare",
-                       "super_rare", "special_illustration_rare", "immersive", "shiny_rare",
-                       "shiny_super_rare", "ultra_rare", "promo", "unknown"]
+              "enum": [
+                "common",
+                "uncommon",
+                "rare",
+                "double_rare",
+                "illustration_rare",
+                "super_rare",
+                "special_illustration_rare",
+                "immersive",
+                "shiny_rare",
+                "shiny_super_rare",
+                "ultra_rare",
+                "promo",
+                "unknown"
+              ]
             },
             "additionalProperties": {
-              "type": ["number", "null"],
+              "type": [
+                "number",
+                "null"
+              ],
               "minimum": 0
             }
           },
-          "notes": { "type": ["string", "null"] }
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       }
     }

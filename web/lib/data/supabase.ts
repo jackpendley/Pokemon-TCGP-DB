@@ -15,6 +15,7 @@ import {
   trainerBoostsSchema,
 } from "@/types";
 import type { CatalogCard, SyncRunState, SyncStatus } from "@/types";
+import { creditPrintingGroups } from "@/lib/domain/printing-groups";
 import type { DataSource } from "@/lib/data/source";
 
 /**
@@ -47,12 +48,15 @@ const cardRowSchema = z.object({
   power_score: z.number().nullable(),
   power_score_kind: z.enum(["pokemon", "trainer"]).nullable(),
   boosts: trainerBoostsSchema.nullable(),
+  // Nullish, not nullable: the column arrives with migration 0008, and a read
+  // against a database that has not run it yet must still parse.
+  printing_group: z.string().nullish(),
 });
 
 const CARD_COLUMNS =
   "set_code, card_number, name, rarity, pokemon_type, card_category, " +
   "trainer_subtype, stage, expansion, is_ex, evolves_from, power_score, " +
-  "power_score_kind, boosts";
+  "power_score_kind, boosts, printing_group";
 
 const collectionRowSchema = z.object({
   set_code: z.string(),
@@ -147,24 +151,27 @@ export function createSupabaseSource(client: SupabaseClient): DataSource {
         const key = `${entry.set_code.toUpperCase()}:${entry.card_number}`;
         ownedByCoord.set(key, (ownedByCoord.get(key) ?? 0) + entry.count);
       }
-      return cards.map((r) => ({
-        set_code: r.set_code,
-        card_number: r.card_number,
-        name: r.name,
-        rarity: r.rarity,
-        pokemon_type: r.pokemon_type,
-        card_category: r.card_category,
-        trainer_subtype: r.trainer_subtype,
-        stage: r.stage,
-        expansion: r.expansion ?? r.set_code,
-        is_ex: r.is_ex ?? false,
-        owned:
-          ownedByCoord.get(`${r.set_code.toUpperCase()}:${r.card_number}`) ?? 0,
-        power_score: r.power_score,
-        power_score_kind: r.power_score_kind,
-        boosts: r.boosts,
-        evolves_from: r.evolves_from,
-      }));
+      return creditPrintingGroups(
+        cards.map((r) => ({
+          set_code: r.set_code,
+          card_number: r.card_number,
+          name: r.name,
+          rarity: r.rarity,
+          pokemon_type: r.pokemon_type,
+          card_category: r.card_category,
+          trainer_subtype: r.trainer_subtype,
+          stage: r.stage,
+          expansion: r.expansion ?? r.set_code,
+          is_ex: r.is_ex ?? false,
+          owned:
+            ownedByCoord.get(`${r.set_code.toUpperCase()}:${r.card_number}`) ?? 0,
+          printing_group: r.printing_group ?? null,
+          power_score: r.power_score,
+          power_score_kind: r.power_score_kind,
+          boosts: r.boosts,
+          evolves_from: r.evolves_from,
+        })),
+      );
     },
 
     async getSyncStatus(): Promise<SyncStatus> {
@@ -287,6 +294,9 @@ export async function fetchRecommendationHistory(
 const syncRunStateRowSchema = z.object({
   published_at: z.string().nullable(),
   last_run: z.object({ outcome: z.string().nullish() }).nullable(),
+  // False when Pokémon Zone did not finish refreshing its snapshot from the game,
+  // so the published numbers are its previous snapshot.
+  stats: z.object({ player_synced: z.boolean().nullish() }).loose().nullish(),
 });
 
 const ownerSyncMetaRowSchema = z.object({
@@ -298,6 +308,26 @@ const ownerSyncMetaRowSchema = z.object({
       mode: z.string().nullish(),
     })
     .nullable(),
+  stats: z
+    .object({
+      catalog_misses: z
+        .object({ count: z.number(), copies: z.number() })
+        .nullish(),
+      player_synced: z.boolean().nullish(),
+    })
+    .loose()
+    .nullable()
+    .optional(),
+  // Arrives with the detection change; a database published before it must parse.
+  pending_sets: z
+    .array(
+      z.object({
+        set_code: z.string(),
+        card_count: z.number(),
+        copies: z.number(),
+      }),
+    )
+    .nullish(),
 });
 
 export interface OwnerSyncMeta {
@@ -307,6 +337,22 @@ export interface OwnerSyncMeta {
     outcome: string | null;
     mode: string | null;
   } | null;
+  /**
+   * Owned cards the PZ catalog could not name, so the sync skipped them.
+   * Normally absent; a non-zero count means PZ is missing card definitions —
+   * usually a set released in-game that PZ has not ingested yet.
+   */
+  catalogMisses: { count: number; copies: number } | null;
+  /**
+   * Whether Pokémon Zone finished refreshing its snapshot from the game on the
+   * last run. False means the published numbers are its previous snapshot.
+   */
+  playerSynced: boolean | null;
+  /**
+   * Sets Pokémon Zone is serving that SET_REGISTRY doesn't know — a newly
+   * released expansion nothing has registered yet.
+   */
+  pendingSets: { setCode: string; cardCount: number; copies: number }[];
 }
 
 /**
@@ -320,14 +366,22 @@ export async function fetchOwnerSyncMeta(
 ): Promise<OwnerSyncMeta> {
   const { data, error } = await client
     .from("sync_status")
-    .select("published_at, last_run")
+    .select("published_at, last_run, stats, pending_sets")
     .limit(1);
   if (error) {
     throw new Error(`Supabase read from sync_status failed: ${error.message}`);
   }
   const row = data?.[0];
-  if (!row) return { publishedAt: null, lastRun: null };
+  if (!row)
+    return {
+      publishedAt: null,
+      lastRun: null,
+      catalogMisses: null,
+      playerSynced: null,
+      pendingSets: [],
+    };
   const parsed = ownerSyncMetaRowSchema.parse(row);
+  const misses = parsed.stats?.catalog_misses;
   return {
     publishedAt: parsed.published_at,
     lastRun: parsed.last_run
@@ -337,6 +391,15 @@ export async function fetchOwnerSyncMeta(
           mode: parsed.last_run.mode ?? null,
         }
       : null,
+    catalogMisses: misses
+      ? { count: misses.count, copies: misses.copies }
+      : null,
+    playerSynced: parsed.stats?.player_synced ?? null,
+    pendingSets: (parsed.pending_sets ?? []).map((s) => ({
+      setCode: s.set_code,
+      cardCount: s.card_count,
+      copies: s.copies,
+    })),
   };
 }
 
@@ -350,13 +413,17 @@ export async function fetchSyncRunState(
 ): Promise<SyncRunState> {
   const { data, error } = await client
     .from("sync_status")
-    .select("published_at, last_run")
+    .select("published_at, last_run, stats")
     .limit(1);
   if (error) {
     throw new Error(`Supabase read from sync_status failed: ${error.message}`);
   }
   const row = data?.[0];
-  if (!row) return { publishedAt: null, lastRun: null };
+  if (!row) return { publishedAt: null, lastRun: null, playerSynced: null };
   const parsed = syncRunStateRowSchema.parse(row);
-  return { publishedAt: parsed.published_at, lastRun: parsed.last_run };
+  return {
+    publishedAt: parsed.published_at,
+    lastRun: parsed.last_run,
+    playerSynced: parsed.stats?.player_synced ?? null,
+  };
 }

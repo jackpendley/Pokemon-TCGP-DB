@@ -76,6 +76,8 @@ async function PackDetailContent({
       expansion: pack.expansion,
       is_ex: false,
       owned: row.owned ?? 0,
+      dex_owned: (row.owned ?? 0) > 0,
+      printing_group: null,
       power_score: row.power_score ?? null,
       // Pack tables list Pokémon pull targets; unknown when there's no score.
       power_score_kind: row.power_score != null ? "pokemon" : null,

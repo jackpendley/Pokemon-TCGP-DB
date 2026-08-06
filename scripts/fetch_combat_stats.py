@@ -48,7 +48,7 @@ TCGDEX_SET_ID = {"PROMO-A": "P-A"}
 TCGDEX_API = "https://api.tcgdex.net/v2/en/cards/{sid}-{num:03d}"
 
 # Newer sets TCGdex hasn't published yet — scraped from Limitless instead.
-LIMITLESS_COVERED = {"A4b", "B2b", "B3", "B3a", "B3b", "PROMO-B"}
+LIMITLESS_COVERED = {"A4b", "B2b", "B3", "B3a", "B3b", "B4", "PROMO-B"}
 LIMITLESS_SET_ID = {"PROMO-A": "P-A", "PROMO-B": "P-B"}
 LIMITLESS_URL = "https://pocket.limitlesstcg.com/cards/{sid}/{num}"
 

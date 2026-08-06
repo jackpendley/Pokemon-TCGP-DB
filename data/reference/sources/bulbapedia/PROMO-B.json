@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "cached_at": "2026-07-02T02:40:11Z",
-    "card_count": 78,
+    "cached_at": "2026-08-05T03:08:34Z",
+    "card_count": 86,
     "set_code": "PROMO-B",
     "source": "bulbapedia"
   },
@@ -386,9 +386,49 @@
       "pokemon_type": "Lightning",
       "rarity": "promo"
     },
+    "79": {
+      "name": "Celebi",
+      "pokemon_type": "Grass",
+      "rarity": "promo"
+    },
     "8": {
       "name": "Psyduck",
       "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "80": {
+      "name": "Mega Houndoom ex",
+      "pokemon_type": null,
+      "rarity": "promo"
+    },
+    "81": {
+      "name": "Carvanha",
+      "pokemon_type": "Water",
+      "rarity": "promo"
+    },
+    "82": {
+      "name": "Pikachu",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "83": {
+      "name": "Noivern",
+      "pokemon_type": "Dragon",
+      "rarity": "promo"
+    },
+    "84": {
+      "name": "Skitty",
+      "pokemon_type": "Colorless",
+      "rarity": "promo"
+    },
+    "85": {
+      "name": "Pachirisu",
+      "pokemon_type": "Lightning",
+      "rarity": "promo"
+    },
+    "86": {
+      "name": "Beldum",
+      "pokemon_type": "Metal",
       "rarity": "promo"
     },
     "9": {

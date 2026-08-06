@@ -41,7 +41,7 @@ export function CardImage({
       onError={() => setIdx((i) => i + 1)}
       className={cn(
         "size-full object-cover",
-        dimUnowned && size === "sm" && (card.owned ?? 0) <= 0 && "grayscale",
+        dimUnowned && size === "sm" && !card.dex_owned && "grayscale",
       )}
     />
   );

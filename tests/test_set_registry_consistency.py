@@ -45,6 +45,32 @@ def test_set_aliases_match_registry_exactly():
     )
 
 
+def test_combat_stat_sources_partition_the_registry():
+    """Every set must draw HP/stage/effects from exactly one source.
+
+    These two tables were hand-maintained with no guard, and forgetting a new
+    set there silently leaves it without HP or stage rather than failing —
+    the B3b release hit exactly that (docs/adding-a-set.md gap #9).
+    """
+    import fetch_combat_stats as fcs
+    import fetch_trainer_effects as fte
+
+    for name, mod in (("fetch_combat_stats", fcs), ("fetch_trainer_effects", fte)):
+        covered = mod.TCGDEX_COVERED | mod.LIMITLESS_COVERED
+        assert covered == set(VALID_SET_CODES), (
+            f"{name} coverage drift: "
+            f"missing={set(VALID_SET_CODES) - covered}, "
+            f"extra={covered - set(VALID_SET_CODES)}"
+        )
+        overlap = mod.TCGDEX_COVERED & mod.LIMITLESS_COVERED
+        assert not overlap, f"{name}: set(s) claimed by both sources: {sorted(overlap)}"
+
+    # The trainer-effects module documents itself as "kept in sync" with combat
+    # stats; make that a fact rather than a comment.
+    assert fcs.TCGDEX_COVERED == fte.TCGDEX_COVERED
+    assert fcs.LIMITLESS_COVERED == fte.LIMITLESS_COVERED
+
+
 def test_pull_model_tables_have_no_unknown_set_codes():
     """Pull-model tables may omit sets (pending/promo) but must not carry unknown codes."""
     for name, table in (("BULBAPEDIA_URLS", bppm.BULBAPEDIA_URLS),
