@@ -2075,21 +2075,9 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Growl",
-      "count": 1,
+      "count": 3,
       "set_code": "A1",
       "card_number": 151,
-      "rarity": "common"
-    },
-    {
-      "name": "Cubone",
-      "type": "Fighting",
-      "stage": 0,
-      "hp": 60,
-      "card_type": "Pokemon",
-      "attack": "Growl",
-      "count": 2,
-      "set_code": "A4b",
-      "card_number": 194,
       "rarity": "common"
     },
     {
@@ -3772,19 +3760,9 @@
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "effect": "Evolve Basic to Stage 2, skipping Stage 1",
-      "count": 1,
+      "count": 3,
       "set_code": "A3",
       "card_number": 144,
-      "rarity": "uncommon"
-    },
-    {
-      "name": "Rare Candy",
-      "card_type": "Trainer",
-      "trainer_subtype": "Item",
-      "effect": "Evolve Basic to Stage 2, skipping Stage 1",
-      "count": 2,
-      "set_code": "A4b",
-      "card_number": 314,
       "rarity": "uncommon"
     },
     {
@@ -3802,19 +3780,9 @@
       "card_type": "Trainer",
       "trainer_subtype": "Pokemon Tool",
       "effect": "Attached Pokemon gets +20 HP",
-      "count": 1,
+      "count": 2,
       "set_code": "A2",
       "card_number": 147,
-      "rarity": "uncommon"
-    },
-    {
-      "name": "Giant Cape",
-      "card_type": "Trainer",
-      "trainer_subtype": "Pokemon Tool",
-      "effect": "Attached Pokemon gets +20 HP",
-      "count": 1,
-      "set_code": "A4b",
-      "card_number": 320,
       "rarity": "uncommon"
     },
     {
@@ -3931,19 +3899,9 @@
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "effect": "Switch opponent's Active to Bench",
-      "count": 1,
+      "count": 2,
       "set_code": "A1",
       "card_number": 225,
-      "rarity": "uncommon"
-    },
-    {
-      "name": "Sabrina",
-      "card_type": "Trainer",
-      "trainer_subtype": "Supporter",
-      "effect": "Switch opponent's Active to Bench",
-      "count": 1,
-      "set_code": "A4b",
-      "card_number": 338,
       "rarity": "uncommon"
     },
     {
@@ -9246,21 +9204,12 @@
     },
     {
       "name": "Old Amber",
-      "count": 1,
+      "count": 2,
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "rarity": "common",
       "set_code": "A1",
       "card_number": 218
-    },
-    {
-      "name": "Old Amber",
-      "count": 1,
-      "card_type": "Trainer",
-      "trainer_subtype": "Item",
-      "rarity": "common",
-      "set_code": "A4b",
-      "card_number": 312
     },
     {
       "name": "Elegant Cape",
