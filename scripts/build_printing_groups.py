@@ -14,7 +14,17 @@ collection.json (you own three cards, not six), ownership stays stored per-coord
 exactly as Pokémon Zone reports it and is *propagated* across a printing group when
 read — for dex completion, for the cards browser, and for EV.
 
-SOURCE: Pokémon Zone `expansionIds`, and nothing else. A player record lists
+SOURCES, both of them Pokémon Zone's own data — nothing is inferred from name
+matching across the catalog:
+
+  1. HYBRID COORDS. For a card that occupies a reprint slot, PZ reports the
+     *original's* set code carrying the *reprint's* card number — Cubone arrives
+     as A1/194, where A1/194 is Wigglytuff and the real printings are A1/151 and
+     A4b/194. That coord is direct evidence the card fills the A4b slot, and the
+     pipeline already decodes the convention in reconcile_coords_from_pz and
+     coord_resolver. This is the bulk of the signal: 24 of the 49 Deluxe Pack: ex
+     slots the game credits arrive this way.
+  2. `expansionIds`. A player record lists
 every expansion the card registers in — the game's own answer to "is this card
 included in multiple booster packs", which is precisely the question the dex rule
 turns on. It names expansions rather than coords, so the partner coord inside each
@@ -45,6 +55,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from _collection_io import (  # noqa: E402
+    A4B_SET_CODE,
     CARD_REF_JSON,
     REFERENCE_DIR,
     ROOT,
@@ -59,6 +70,10 @@ LAST_SYNC_RAW = ROOT / "data" / "sync" / "last_sync_raw.json"
 # secret and crown printings are independent dex slots on both sides — the same
 # rule build_reprint_links.py applies.
 BASE_RARITIES = frozenset({"common", "uncommon", "rare", "double_rare"})
+
+# The set PZ reports via hybrid coords. A4b "Deluxe Pack: ex" is the only reprint
+# set today; A4B_SET_CODE is the shared constant every other consumer uses.
+REPRINT_SET = A4B_SET_CODE
 
 # Debut ordering. Sets released earlier come first; a card's debut is the earliest
 # printing in this order, then the lowest card number.
@@ -101,6 +116,79 @@ def load_reference() -> list[dict]:
     return json.loads(CARD_REF_JSON.read_text(encoding="utf-8")).get("records", [])
 
 
+def _load_pz_records() -> list[dict]:
+    if not LAST_SYNC_RAW.exists():
+        return []
+    try:
+        raw = json.loads(LAST_SYNC_RAW.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    if isinstance(raw, list):
+        return raw
+    return next((v for v in raw.values()
+                 if isinstance(v, list) and v and isinstance(v[0], dict)), [])
+
+
+def hybrid_edges(uf: _Union, records: list[dict]) -> tuple[int, int]:
+    """Edges from Pokémon Zone's hybrid reprint coords.
+
+    A record whose (set_code, card_number) does not name its own card, but whose
+    card_number DOES name it inside the reprint set, is PZ telling us the card
+    occupies that reprint slot. Both coords follow: the reprint slot is
+    (REPRINT_SET, number) directly, and the original is that name at the same base
+    rarity inside the set PZ stamped.
+
+    This is the signal the pipeline used to throw away. reconcile_coords_from_pz
+    re-coords these records onto the original printing, so the reprint slot was
+    left reading unowned — Deluxe Pack: ex showed 25 of the 49 slots the game
+    credits, and every attempt to close that gap by matching names across the
+    catalog overshot instead.
+
+    Returns (edges_added, unresolved).
+    """
+    ref_by_coord = {_coord(r["set_code"], r["card_number"]): r for r in records}
+    by_name: dict[tuple, list] = defaultdict(list)
+    for r in records:
+        rar = normalize_rarity(r.get("rarity"))
+        if rar not in BASE_RARITIES:
+            continue
+        by_name[(str(r["set_code"]).upper(),
+                 norm_card_name(r.get("name", "")), rar)].append(
+            _coord(r["set_code"], r["card_number"]))
+
+    added = unresolved = 0
+    for c in _load_pz_records():
+        if not isinstance(c, dict):
+            continue
+        num = c.get("cardNumber")
+        stamped = str(c.get("setCode") or "").upper()
+        name = norm_card_name(c.get("cardName", ""))
+        if num is None or not stamped or not name:
+            continue
+        if stamped == REPRINT_SET:
+            continue  # already filed under the reprint set; no hybrid to decode
+
+        here = ref_by_coord.get((stamped, num))
+        if here and norm_card_name(here.get("name", "")) == name:
+            continue  # coord names its own card — not a hybrid
+
+        slot = ref_by_coord.get((REPRINT_SET, num))
+        if not slot or norm_card_name(slot.get("name", "")) != name:
+            continue  # not a reprint-slot coord either; leave it alone
+
+        rar = normalize_rarity(slot.get("rarity"))
+        if rar not in BASE_RARITIES:
+            continue
+        originals = [x for x in by_name.get((stamped, name, rar), [])
+                     if x != (REPRINT_SET, num)]
+        if len(originals) == 1:
+            uf.union(originals[0], (REPRINT_SET, num))
+            added += 1
+        else:
+            unresolved += 1
+    return added, unresolved
+
+
 def pz_edges(uf: _Union, records: list[dict]) -> tuple[int, int]:
     """Edges from Pokémon Zone's expansionIds.
 
@@ -117,14 +205,7 @@ def pz_edges(uf: _Union, records: list[dict]) -> tuple[int, int]:
 
     Returns (edges_added, unresolved).
     """
-    if not LAST_SYNC_RAW.exists():
-        return 0, 0
-    try:
-        raw = json.loads(LAST_SYNC_RAW.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return 0, 0
-    cards = raw if isinstance(raw, list) else next(
-        (v for v in raw.values() if isinstance(v, list) and v and isinstance(v[0], dict)), [])
+    cards = _load_pz_records()
 
     # (set, normalized name, normalized rarity) -> [coords], base rarities only.
     # Full-art and secret printings are independent dex slots on both sides.
@@ -181,6 +262,7 @@ def build() -> dict:
     records = load_reference()
     uf = _Union()
 
+    n_hybrid, n_hybrid_unresolved = hybrid_edges(uf, records)
     n_pz, n_unresolved = pz_edges(uf, records)
 
     clusters: dict = defaultdict(set)
@@ -215,6 +297,8 @@ def build() -> dict:
                 "the whole group. Sourced only — never inferred from name matching."
             ),
             "sources": {
+                "pz_hybrid_coord_edges": n_hybrid,
+                "pz_hybrid_unresolved": n_hybrid_unresolved,
                 "pz_expansion_edges": n_pz,
                 "pz_unresolved": n_unresolved,
             },
@@ -232,6 +316,8 @@ def main() -> int:
 
     data = build()
     m = data["_meta"]
+    print(f"  PZ hybrid-coord edges: {m['sources']['pz_hybrid_coord_edges']} "
+          f"({m['sources']['pz_hybrid_unresolved']} unresolved)")
     print(f"  PZ expansion edges  : {m['sources']['pz_expansion_edges']} "
           f"({m['sources']['pz_unresolved']} unresolved)")
     print(f"  groups              : {m['group_count']} "
