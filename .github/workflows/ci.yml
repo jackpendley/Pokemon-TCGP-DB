@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ]
   pull_request:
+  # On-demand re-run. Data-only sync commits carry [skip ci], so main's tip is
+  # often a commit CI deliberately skipped; this gives a way to validate main
+  # without pushing a no-op commit, and to re-run after an infrastructure blip.
+  workflow_dispatch:
 
 # Cancel superseded runs on the same ref to save minutes.
 concurrency:
