@@ -81,7 +81,11 @@ export function CardFlip({
                 {type}
               </BackRow>
               <BackRow label="Owned" ink={ink}>
-                {card.owned > 0 ? `×${card.owned}` : "Not owned"}
+                {card.owned > 0
+                  ? `×${card.owned}`
+                  : card.dex_owned
+                    ? "In dex (other printing)"
+                    : "Not owned"}
               </BackRow>
               {card.power_score != null ? (
                 <BackRow label={powerScoreLabel(card)} ink={ink}>

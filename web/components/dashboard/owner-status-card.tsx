@@ -11,6 +11,8 @@ interface LastRun {
 export interface OwnerStatusCardProps {
   publishedAt: string | null;
   lastRun: LastRun | null;
+  catalogMisses?: { count: number; copies: number } | null;
+  playerSynced?: boolean | null;
   counts: {
     cards: number;
     packs: number;
@@ -58,6 +60,8 @@ function Field({
 export function OwnerStatusCard({
   publishedAt,
   lastRun,
+  catalogMisses,
+  playerSynced,
   counts,
 }: OwnerStatusCardProps) {
   return (
@@ -91,6 +95,22 @@ export function OwnerStatusCard({
             {formatNumber(counts.totalQuantity)}
           </Field>
         </div>
+        {playerSynced === false ? (
+          <p className="mt-4 rounded-md bg-destructive/10 px-3 py-2 text-xs text-destructive">
+            Pokémon Zone did not finish refreshing your collection from the game on
+            the last run, so these numbers are its previous snapshot. Recent pulls
+            may be missing.
+          </p>
+        ) : null}
+        {catalogMisses && catalogMisses.count > 0 ? (
+          <p className="mt-4 rounded-md bg-destructive/10 px-3 py-2 text-xs text-destructive">
+            The last sync skipped {formatNumber(catalogMisses.count)} owned card
+            {catalogMisses.count === 1 ? "" : "s"} (
+            {formatNumber(catalogMisses.copies)} copies) that Pokémon Zone has no
+            definition for — usually a set released in-game that PZ has not
+            ingested yet.
+          </p>
+        ) : null}
       </CardContent>
     </Card>
   );

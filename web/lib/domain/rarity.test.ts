@@ -75,3 +75,4 @@ describe("compareRarity", () => {
     expect([...RARITY_ORDER].sort(compareRarity)).toEqual(RARITY_ORDER);
   });
 });
+

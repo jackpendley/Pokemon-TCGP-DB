@@ -106,7 +106,11 @@ export function CardDialog({
                     <TypeBadge type={displayType(card)} />
                   </Row>
                   <Row label="Owned">
-                    {card.owned > 0 ? `×${card.owned}` : "Not owned"}
+                    {card.owned > 0
+                      ? `×${card.owned}`
+                      : card.dex_owned
+                        ? "In dex (other printing)"
+                        : "Not owned"}
                   </Row>
                   {card.power_score != null ? (
                     <Row label={powerScoreLabel(card)}>

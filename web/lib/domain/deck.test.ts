@@ -29,11 +29,14 @@ function card(partial: Partial<CatalogCard> & { name: string }): CatalogCard {
     expansion: "Genetic Apex",
     is_ex: false,
     owned: 0,
+    printing_group: null,
     power_score: 30,
     power_score_kind: "pokemon",
     boosts: null,
     evolves_from: null,
     ...partial,
+    // Derived last so overriding `owned` alone keeps the dex slot consistent.
+    dex_owned: partial.dex_owned ?? (partial.owned ?? 0) > 0,
   };
 }
 

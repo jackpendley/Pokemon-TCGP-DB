@@ -401,7 +401,7 @@ function BoostCard({
                 <span
                   className={cn(
                     "block aspect-[5/7] overflow-hidden rounded-md border",
-                    card.owned <= 0 && "grayscale",
+                    !card.dex_owned && "grayscale",
                   )}
                 >
                   <CardImage

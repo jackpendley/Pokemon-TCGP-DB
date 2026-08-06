@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "cached_at": "2026-07-02T02:40:12Z",
-    "card_count": 78,
+    "cached_at": "2026-08-05T03:08:33Z",
+    "card_count": 86,
     "set_code": "PROMO-B",
     "source": "serebii"
   },
@@ -234,8 +234,32 @@
     "78": {
       "name": "Emolga"
     },
+    "79": {
+      "name": "Celebi"
+    },
     "8": {
       "name": "Psyduck"
+    },
+    "80": {
+      "name": "Mega Houndoom ex"
+    },
+    "81": {
+      "name": "Carvanha"
+    },
+    "82": {
+      "name": "Pikachu"
+    },
+    "83": {
+      "name": "Noivern"
+    },
+    "84": {
+      "name": "Skitty"
+    },
+    "85": {
+      "name": "Pachirisu"
+    },
+    "86": {
+      "name": "Beldum"
     },
     "9": {
       "name": "Mega Absol ex"

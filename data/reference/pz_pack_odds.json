@@ -51392,5 +51392,3357 @@
         }
       }
     ]
+  },
+  "promo-pack-b-series-vol-11": {
+    "pack_name": "Promo Pack B Series Vol. 11",
+    "expansion_id": "PROMO-B",
+    "expansion_name": "PROMO-B",
+    "expansion_slug": "promo-b",
+    "pack_slug": "promo-pack-b-series-vol-11",
+    "card_count": 5,
+    "cards": [
+      {
+        "card_url": "/cards/promo-b/80/mega-houndoom-ex/",
+        "name": "Mega Houndoom ex",
+        "set_code": "PROMO-B",
+        "card_number": 80,
+        "drop_chance_pct": 12.66,
+        "slot_odds_pct": {
+          "1": 12.66,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/promo-b/81/carvanha/",
+        "name": "Carvanha",
+        "set_code": "PROMO-B",
+        "card_number": 81,
+        "drop_chance_pct": 23.84,
+        "slot_odds_pct": {
+          "1": 23.84,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/promo-b/82/pikachu/",
+        "name": "Pikachu",
+        "set_code": "PROMO-B",
+        "card_number": 82,
+        "drop_chance_pct": 23.84,
+        "slot_odds_pct": {
+          "1": 23.84,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/promo-b/83/noivern/",
+        "name": "Noivern",
+        "set_code": "PROMO-B",
+        "card_number": 83,
+        "drop_chance_pct": 15.82,
+        "slot_odds_pct": {
+          "1": 15.82,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/promo-b/84/skitty/",
+        "name": "Skitty",
+        "set_code": "PROMO-B",
+        "card_number": 84,
+        "drop_chance_pct": 23.84,
+        "slot_odds_pct": {
+          "1": 23.84,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      }
+    ]
+  },
+  "ruler-of-the-skies": {
+    "pack_name": "Ruler of the Skies",
+    "expansion_id": "B4",
+    "expansion_name": "Ruler of the Skies",
+    "expansion_slug": "b4",
+    "pack_slug": "ruler-of-the-skies",
+    "card_count": 233,
+    "cards": [
+      {
+        "card_url": "/cards/b4/1/wurmple/",
+        "name": "Wurmple",
+        "set_code": "B4",
+        "card_number": 1,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/2/silcoon/",
+        "name": "Silcoon",
+        "set_code": "B4",
+        "card_number": 2,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/3/beautifly/",
+        "name": "Beautifly",
+        "set_code": "B4",
+        "card_number": 3,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/4/cascoon/",
+        "name": "Cascoon",
+        "set_code": "B4",
+        "card_number": 4,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/5/dustox/",
+        "name": "Dustox",
+        "set_code": "B4",
+        "card_number": 5,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/6/lileep/",
+        "name": "Lileep",
+        "set_code": "B4",
+        "card_number": 6,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/7/cradily/",
+        "name": "Cradily",
+        "set_code": "B4",
+        "card_number": 7,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/8/kricketot/",
+        "name": "Kricketot",
+        "set_code": "B4",
+        "card_number": 8,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/9/kricketune/",
+        "name": "Kricketune",
+        "set_code": "B4",
+        "card_number": 9,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/10/combee/",
+        "name": "Combee",
+        "set_code": "B4",
+        "card_number": 10,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/11/vespiquen-ex/",
+        "name": "Vespiquen ex",
+        "set_code": "B4",
+        "card_number": 11,
+        "drop_chance_pct": 0.84,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.17,
+          "5": 0.67
+        }
+      },
+      {
+        "card_url": "/cards/b4/12/karrablast/",
+        "name": "Karrablast",
+        "set_code": "B4",
+        "card_number": 12,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/13/shelmet/",
+        "name": "Shelmet",
+        "set_code": "B4",
+        "card_number": 13,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/14/accelgor/",
+        "name": "Accelgor",
+        "set_code": "B4",
+        "card_number": 14,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/15/dhelmise/",
+        "name": "Dhelmise",
+        "set_code": "B4",
+        "card_number": 15,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/16/pheromosa/",
+        "name": "Pheromosa",
+        "set_code": "B4",
+        "card_number": 16,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/17/poltchageist/",
+        "name": "Poltchageist",
+        "set_code": "B4",
+        "card_number": 17,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/18/sinistcha/",
+        "name": "Sinistcha",
+        "set_code": "B4",
+        "card_number": 18,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/19/teal-maskogerpon/",
+        "name": "Teal MaskOgerpon",
+        "set_code": "B4",
+        "card_number": 19,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/20/ponyta/",
+        "name": "Ponyta",
+        "set_code": "B4",
+        "card_number": 20,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/21/rapidash/",
+        "name": "Rapidash",
+        "set_code": "B4",
+        "card_number": 21,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/22/flareon/",
+        "name": "Flareon",
+        "set_code": "B4",
+        "card_number": 22,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/23/moltres/",
+        "name": "Moltres",
+        "set_code": "B4",
+        "card_number": 23,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/24/cyndaquil/",
+        "name": "Cyndaquil",
+        "set_code": "B4",
+        "card_number": 24,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/25/quilava/",
+        "name": "Quilava",
+        "set_code": "B4",
+        "card_number": 25,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/26/typhlosion-ex/",
+        "name": "Typhlosion ex",
+        "set_code": "B4",
+        "card_number": 26,
+        "drop_chance_pct": 0.84,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.17,
+          "5": 0.67
+        }
+      },
+      {
+        "card_url": "/cards/b4/27/houndour/",
+        "name": "Houndour",
+        "set_code": "B4",
+        "card_number": 27,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/28/houndoom/",
+        "name": "Houndoom",
+        "set_code": "B4",
+        "card_number": 28,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/29/heatmor/",
+        "name": "Heatmor",
+        "set_code": "B4",
+        "card_number": 29,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/30/psyduck/",
+        "name": "Psyduck",
+        "set_code": "B4",
+        "card_number": 30,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/31/golduck/",
+        "name": "Golduck",
+        "set_code": "B4",
+        "card_number": 31,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/32/staryu/",
+        "name": "Staryu",
+        "set_code": "B4",
+        "card_number": 32,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/33/starmie/",
+        "name": "Starmie",
+        "set_code": "B4",
+        "card_number": 33,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/34/carvanha/",
+        "name": "Carvanha",
+        "set_code": "B4",
+        "card_number": 34,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/35/mega-sharpedo-ex/",
+        "name": "Mega Sharpedo ex",
+        "set_code": "B4",
+        "card_number": 35,
+        "drop_chance_pct": 0.84,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.17,
+          "5": 0.67
+        }
+      },
+      {
+        "card_url": "/cards/b4/36/wailmer/",
+        "name": "Wailmer",
+        "set_code": "B4",
+        "card_number": 36,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/37/wailord-ex/",
+        "name": "Wailord ex",
+        "set_code": "B4",
+        "card_number": 37,
+        "drop_chance_pct": 0.84,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.17,
+          "5": 0.67
+        }
+      },
+      {
+        "card_url": "/cards/b4/38/spheal/",
+        "name": "Spheal",
+        "set_code": "B4",
+        "card_number": 38,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/39/sealeo/",
+        "name": "Sealeo",
+        "set_code": "B4",
+        "card_number": 39,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/40/walrein/",
+        "name": "Walrein",
+        "set_code": "B4",
+        "card_number": 40,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/41/kyogre/",
+        "name": "Kyogre",
+        "set_code": "B4",
+        "card_number": 41,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/42/oshawott/",
+        "name": "Oshawott",
+        "set_code": "B4",
+        "card_number": 42,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/43/dewott/",
+        "name": "Dewott",
+        "set_code": "B4",
+        "card_number": 43,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/44/samurott/",
+        "name": "Samurott",
+        "set_code": "B4",
+        "card_number": 44,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/45/alomomola/",
+        "name": "Alomomola",
+        "set_code": "B4",
+        "card_number": 45,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/46/dewpider/",
+        "name": "Dewpider",
+        "set_code": "B4",
+        "card_number": 46,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/47/araquanid/",
+        "name": "Araquanid",
+        "set_code": "B4",
+        "card_number": 47,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/48/bruxish/",
+        "name": "Bruxish",
+        "set_code": "B4",
+        "card_number": 48,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/49/pikachu/",
+        "name": "Pikachu",
+        "set_code": "B4",
+        "card_number": 49,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/50/raichu/",
+        "name": "Raichu",
+        "set_code": "B4",
+        "card_number": 50,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/51/shinx/",
+        "name": "Shinx",
+        "set_code": "B4",
+        "card_number": 51,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/52/luxio/",
+        "name": "Luxio",
+        "set_code": "B4",
+        "card_number": 52,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/53/luxray/",
+        "name": "Luxray",
+        "set_code": "B4",
+        "card_number": 53,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/54/pachirisu/",
+        "name": "Pachirisu",
+        "set_code": "B4",
+        "card_number": 54,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/55/rotom-ex/",
+        "name": "Rotom ex",
+        "set_code": "B4",
+        "card_number": 55,
+        "drop_chance_pct": 0.84,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.17,
+          "5": 0.67
+        }
+      },
+      {
+        "card_url": "/cards/b4/56/tynamo/",
+        "name": "Tynamo",
+        "set_code": "B4",
+        "card_number": 56,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/57/eelektrik/",
+        "name": "Eelektrik",
+        "set_code": "B4",
+        "card_number": 57,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/58/eelektross/",
+        "name": "Eelektross",
+        "set_code": "B4",
+        "card_number": 58,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/59/thundurus/",
+        "name": "Thundurus",
+        "set_code": "B4",
+        "card_number": 59,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/60/helioptile/",
+        "name": "Helioptile",
+        "set_code": "B4",
+        "card_number": 60,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/61/heliolisk/",
+        "name": "Heliolisk",
+        "set_code": "B4",
+        "card_number": 61,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/62/wattrel/",
+        "name": "Wattrel",
+        "set_code": "B4",
+        "card_number": 62,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/63/kilowattrel/",
+        "name": "Kilowattrel",
+        "set_code": "B4",
+        "card_number": 63,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/64/clefairy/",
+        "name": "Clefairy",
+        "set_code": "B4",
+        "card_number": 64,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/65/clefable/",
+        "name": "Clefable",
+        "set_code": "B4",
+        "card_number": 65,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/66/drowzee/",
+        "name": "Drowzee",
+        "set_code": "B4",
+        "card_number": 66,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/67/hypno/",
+        "name": "Hypno",
+        "set_code": "B4",
+        "card_number": 67,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/68/mime-jr/",
+        "name": "Mime Jr.",
+        "set_code": "B4",
+        "card_number": 68,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/69/mr-mime/",
+        "name": "Mr. Mime",
+        "set_code": "B4",
+        "card_number": 69,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/70/mewtwo/",
+        "name": "Mewtwo",
+        "set_code": "B4",
+        "card_number": 70,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/71/ralts/",
+        "name": "Ralts",
+        "set_code": "B4",
+        "card_number": 71,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/72/kirlia/",
+        "name": "Kirlia",
+        "set_code": "B4",
+        "card_number": 72,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/73/chimecho/",
+        "name": "Chimecho",
+        "set_code": "B4",
+        "card_number": 73,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/74/wynaut/",
+        "name": "Wynaut",
+        "set_code": "B4",
+        "card_number": 74,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/75/woobat/",
+        "name": "Woobat",
+        "set_code": "B4",
+        "card_number": 75,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/76/swoobat/",
+        "name": "Swoobat",
+        "set_code": "B4",
+        "card_number": 76,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/77/hoopa/",
+        "name": "Hoopa",
+        "set_code": "B4",
+        "card_number": 77,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/78/oricorio/",
+        "name": "Oricorio",
+        "set_code": "B4",
+        "card_number": 78,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/79/makuhita/",
+        "name": "Makuhita",
+        "set_code": "B4",
+        "card_number": 79,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/80/hariyama/",
+        "name": "Hariyama",
+        "set_code": "B4",
+        "card_number": 80,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/81/anorith/",
+        "name": "Anorith",
+        "set_code": "B4",
+        "card_number": 81,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/82/armaldo/",
+        "name": "Armaldo",
+        "set_code": "B4",
+        "card_number": 82,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/83/groudon/",
+        "name": "Groudon",
+        "set_code": "B4",
+        "card_number": 83,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/84/mega-gallade-ex/",
+        "name": "Mega Gallade ex",
+        "set_code": "B4",
+        "card_number": 84,
+        "drop_chance_pct": 0.84,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.17,
+          "5": 0.67
+        }
+      },
+      {
+        "card_url": "/cards/b4/85/drilbur/",
+        "name": "Drilbur",
+        "set_code": "B4",
+        "card_number": 85,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/86/excadrill/",
+        "name": "Excadrill",
+        "set_code": "B4",
+        "card_number": 86,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/87/timburr/",
+        "name": "Timburr",
+        "set_code": "B4",
+        "card_number": 87,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/88/gurdurr/",
+        "name": "Gurdurr",
+        "set_code": "B4",
+        "card_number": 88,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/89/conkeldurr/",
+        "name": "Conkeldurr",
+        "set_code": "B4",
+        "card_number": 89,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/90/minior/",
+        "name": "Minior",
+        "set_code": "B4",
+        "card_number": 90,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/91/grimer/",
+        "name": "Grimer",
+        "set_code": "B4",
+        "card_number": 91,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/92/muk/",
+        "name": "Muk",
+        "set_code": "B4",
+        "card_number": 92,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/93/poochyena/",
+        "name": "Poochyena",
+        "set_code": "B4",
+        "card_number": 93,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/94/mightyena/",
+        "name": "Mightyena",
+        "set_code": "B4",
+        "card_number": 94,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/95/galarian-zigzagoon/",
+        "name": "Galarian Zigzagoon",
+        "set_code": "B4",
+        "card_number": 95,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/96/galarian-linoone/",
+        "name": "Galarian Linoone",
+        "set_code": "B4",
+        "card_number": 96,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/97/galarian-obstagoon/",
+        "name": "Galarian Obstagoon",
+        "set_code": "B4",
+        "card_number": 97,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/98/gulpin/",
+        "name": "Gulpin",
+        "set_code": "B4",
+        "card_number": 98,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/99/swalot/",
+        "name": "Swalot",
+        "set_code": "B4",
+        "card_number": 99,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/100/absol/",
+        "name": "Absol",
+        "set_code": "B4",
+        "card_number": 100,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/101/vullaby/",
+        "name": "Vullaby",
+        "set_code": "B4",
+        "card_number": 101,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/102/mandibuzz/",
+        "name": "Mandibuzz",
+        "set_code": "B4",
+        "card_number": 102,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/103/hoopa-ex/",
+        "name": "Hoopa ex",
+        "set_code": "B4",
+        "card_number": 103,
+        "drop_chance_pct": 0.84,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.17,
+          "5": 0.67
+        }
+      },
+      {
+        "card_url": "/cards/b4/104/skarmory/",
+        "name": "Skarmory",
+        "set_code": "B4",
+        "card_number": 104,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/105/mawile/",
+        "name": "Mawile",
+        "set_code": "B4",
+        "card_number": 105,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/106/beldum/",
+        "name": "Beldum",
+        "set_code": "B4",
+        "card_number": 106,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/107/metang/",
+        "name": "Metang",
+        "set_code": "B4",
+        "card_number": 107,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/108/metagross/",
+        "name": "Metagross",
+        "set_code": "B4",
+        "card_number": 108,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/109/mega-metagross-ex/",
+        "name": "Mega Metagross ex",
+        "set_code": "B4",
+        "card_number": 109,
+        "drop_chance_pct": 0.84,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.17,
+          "5": 0.67
+        }
+      },
+      {
+        "card_url": "/cards/b4/110/escavalier/",
+        "name": "Escavalier",
+        "set_code": "B4",
+        "card_number": 110,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/111/genesect/",
+        "name": "Genesect",
+        "set_code": "B4",
+        "card_number": 111,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/112/duraludon/",
+        "name": "Duraludon",
+        "set_code": "B4",
+        "card_number": 112,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/113/archaludon/",
+        "name": "Archaludon",
+        "set_code": "B4",
+        "card_number": 113,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/114/varoom/",
+        "name": "Varoom",
+        "set_code": "B4",
+        "card_number": 114,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/115/revavroom/",
+        "name": "Revavroom",
+        "set_code": "B4",
+        "card_number": 115,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/116/dratini/",
+        "name": "Dratini",
+        "set_code": "B4",
+        "card_number": 116,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/117/dragonair/",
+        "name": "Dragonair",
+        "set_code": "B4",
+        "card_number": 117,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/118/dragonite/",
+        "name": "Dragonite",
+        "set_code": "B4",
+        "card_number": 118,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/119/rayquaza/",
+        "name": "Rayquaza",
+        "set_code": "B4",
+        "card_number": 119,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/120/mega-rayquaza-ex/",
+        "name": "Mega Rayquaza ex",
+        "set_code": "B4",
+        "card_number": 120,
+        "drop_chance_pct": 0.84,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.17,
+          "5": 0.67
+        }
+      },
+      {
+        "card_url": "/cards/b4/121/noibat/",
+        "name": "Noibat",
+        "set_code": "B4",
+        "card_number": 121,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/122/noivern/",
+        "name": "Noivern",
+        "set_code": "B4",
+        "card_number": 122,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/123/turtonator/",
+        "name": "Turtonator",
+        "set_code": "B4",
+        "card_number": 123,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/124/drampa/",
+        "name": "Drampa",
+        "set_code": "B4",
+        "card_number": 124,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/125/applin/",
+        "name": "Applin",
+        "set_code": "B4",
+        "card_number": 125,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/126/dipplin/",
+        "name": "Dipplin",
+        "set_code": "B4",
+        "card_number": 126,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/127/hydrapple/",
+        "name": "Hydrapple",
+        "set_code": "B4",
+        "card_number": 127,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/128/cyclizar/",
+        "name": "Cyclizar",
+        "set_code": "B4",
+        "card_number": 128,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/129/rattata/",
+        "name": "Rattata",
+        "set_code": "B4",
+        "card_number": 129,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/130/raticate/",
+        "name": "Raticate",
+        "set_code": "B4",
+        "card_number": 130,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/131/eevee/",
+        "name": "Eevee",
+        "set_code": "B4",
+        "card_number": 131,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/132/aipom/",
+        "name": "Aipom",
+        "set_code": "B4",
+        "card_number": 132,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/133/ambipom/",
+        "name": "Ambipom",
+        "set_code": "B4",
+        "card_number": 133,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/134/skitty/",
+        "name": "Skitty",
+        "set_code": "B4",
+        "card_number": 134,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/135/delcatty/",
+        "name": "Delcatty",
+        "set_code": "B4",
+        "card_number": 135,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/136/kecleon/",
+        "name": "Kecleon",
+        "set_code": "B4",
+        "card_number": 136,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/137/pidove/",
+        "name": "Pidove",
+        "set_code": "B4",
+        "card_number": 137,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/138/tranquill/",
+        "name": "Tranquill",
+        "set_code": "B4",
+        "card_number": 138,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/139/unfezant/",
+        "name": "Unfezant",
+        "set_code": "B4",
+        "card_number": 139,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/140/ducklett/",
+        "name": "Ducklett",
+        "set_code": "B4",
+        "card_number": 140,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/141/swanna-ex/",
+        "name": "Swanna ex",
+        "set_code": "B4",
+        "card_number": 141,
+        "drop_chance_pct": 0.84,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.17,
+          "5": 0.67
+        }
+      },
+      {
+        "card_url": "/cards/b4/142/furfrou/",
+        "name": "Furfrou",
+        "set_code": "B4",
+        "card_number": 142,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/143/type-null/",
+        "name": "Type: Null",
+        "set_code": "B4",
+        "card_number": 143,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/144/silvally/",
+        "name": "Silvally",
+        "set_code": "B4",
+        "card_number": 144,
+        "drop_chance_pct": 0.89,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.18,
+          "5": 0.71
+        }
+      },
+      {
+        "card_url": "/cards/b4/145/order-pad/",
+        "name": "Order Pad",
+        "set_code": "B4",
+        "card_number": 145,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/146/claw-fossil/",
+        "name": "Claw Fossil",
+        "set_code": "B4",
+        "card_number": 146,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/147/root-fossil/",
+        "name": "Root Fossil",
+        "set_code": "B4",
+        "card_number": 147,
+        "drop_chance_pct": 4.46,
+        "slot_odds_pct": {
+          "1": 1.51,
+          "2": 1.51,
+          "3": 1.51,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/148/deceptive-needle/",
+        "name": "Deceptive Needle",
+        "set_code": "B4",
+        "card_number": 148,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/149/clear-veil/",
+        "name": "Clear Veil",
+        "set_code": "B4",
+        "card_number": 149,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/150/psychic/",
+        "name": "Psychic",
+        "set_code": "B4",
+        "card_number": 150,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/151/drayden/",
+        "name": "Drayden",
+        "set_code": "B4",
+        "card_number": 151,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/152/skyla/",
+        "name": "Skyla",
+        "set_code": "B4",
+        "card_number": 152,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/153/wally/",
+        "name": "Wally",
+        "set_code": "B4",
+        "card_number": 153,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/154/soothing-shore/",
+        "name": "Soothing Shore",
+        "set_code": "B4",
+        "card_number": 154,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/155/rainbow-cave/",
+        "name": "Rainbow Cave",
+        "set_code": "B4",
+        "card_number": 155,
+        "drop_chance_pct": 2.92,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 1.76,
+          "5": 1.18
+        }
+      },
+      {
+        "card_url": "/cards/b4/156/wurmple/",
+        "name": "Wurmple",
+        "set_code": "B4",
+        "card_number": 156,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/157/lileep/",
+        "name": "Lileep",
+        "set_code": "B4",
+        "card_number": 157,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/158/kricketune/",
+        "name": "Kricketune",
+        "set_code": "B4",
+        "card_number": 158,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/159/accelgor/",
+        "name": "Accelgor",
+        "set_code": "B4",
+        "card_number": 159,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/160/ponyta/",
+        "name": "Ponyta",
+        "set_code": "B4",
+        "card_number": 160,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/161/quilava/",
+        "name": "Quilava",
+        "set_code": "B4",
+        "card_number": 161,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/162/kyogre/",
+        "name": "Kyogre",
+        "set_code": "B4",
+        "card_number": 162,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/163/samurott/",
+        "name": "Samurott",
+        "set_code": "B4",
+        "card_number": 163,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/164/raichu/",
+        "name": "Raichu",
+        "set_code": "B4",
+        "card_number": 164,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/165/wattrel/",
+        "name": "Wattrel",
+        "set_code": "B4",
+        "card_number": 165,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/166/clefairy/",
+        "name": "Clefairy",
+        "set_code": "B4",
+        "card_number": 166,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/167/ralts/",
+        "name": "Ralts",
+        "set_code": "B4",
+        "card_number": 167,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/168/wynaut/",
+        "name": "Wynaut",
+        "set_code": "B4",
+        "card_number": 168,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/169/oricorio/",
+        "name": "Oricorio",
+        "set_code": "B4",
+        "card_number": 169,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/170/anorith/",
+        "name": "Anorith",
+        "set_code": "B4",
+        "card_number": 170,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/171/poochyena/",
+        "name": "Poochyena",
+        "set_code": "B4",
+        "card_number": 171,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/172/gulpin/",
+        "name": "Gulpin",
+        "set_code": "B4",
+        "card_number": 172,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/173/vullaby/",
+        "name": "Vullaby",
+        "set_code": "B4",
+        "card_number": 173,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/174/genesect/",
+        "name": "Genesect",
+        "set_code": "B4",
+        "card_number": 174,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/175/dragonair/",
+        "name": "Dragonair",
+        "set_code": "B4",
+        "card_number": 175,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/176/noivern/",
+        "name": "Noivern",
+        "set_code": "B4",
+        "card_number": 176,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/177/cyclizar/",
+        "name": "Cyclizar",
+        "set_code": "B4",
+        "card_number": 177,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/178/raticate/",
+        "name": "Raticate",
+        "set_code": "B4",
+        "card_number": 178,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/179/aipom/",
+        "name": "Aipom",
+        "set_code": "B4",
+        "card_number": 179,
+        "drop_chance_pct": 0.54,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.43
+        }
+      },
+      {
+        "card_url": "/cards/b4/180/vespiquen-ex/",
+        "name": "Vespiquen ex",
+        "set_code": "B4",
+        "card_number": 180,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/181/typhlosion-ex/",
+        "name": "Typhlosion ex",
+        "set_code": "B4",
+        "card_number": 181,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/182/mega-sharpedo-ex/",
+        "name": "Mega Sharpedo ex",
+        "set_code": "B4",
+        "card_number": 182,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/183/wailord-ex/",
+        "name": "Wailord ex",
+        "set_code": "B4",
+        "card_number": 183,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/184/rotom-ex/",
+        "name": "Rotom ex",
+        "set_code": "B4",
+        "card_number": 184,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/185/mega-gallade-ex/",
+        "name": "Mega Gallade ex",
+        "set_code": "B4",
+        "card_number": 185,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/186/hoopa-ex/",
+        "name": "Hoopa ex",
+        "set_code": "B4",
+        "card_number": 186,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/187/mega-metagross-ex/",
+        "name": "Mega Metagross ex",
+        "set_code": "B4",
+        "card_number": 187,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/188/mega-rayquaza-ex/",
+        "name": "Mega Rayquaza ex",
+        "set_code": "B4",
+        "card_number": 188,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/189/swanna-ex/",
+        "name": "Swanna ex",
+        "set_code": "B4",
+        "card_number": 189,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/190/psychic/",
+        "name": "Psychic",
+        "set_code": "B4",
+        "card_number": 190,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/191/drayden/",
+        "name": "Drayden",
+        "set_code": "B4",
+        "card_number": 191,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/192/skyla/",
+        "name": "Skyla",
+        "set_code": "B4",
+        "card_number": 192,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/193/wally/",
+        "name": "Wally",
+        "set_code": "B4",
+        "card_number": 193,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/194/vespiquen-ex/",
+        "name": "Vespiquen ex",
+        "set_code": "B4",
+        "card_number": 194,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/195/typhlosion-ex/",
+        "name": "Typhlosion ex",
+        "set_code": "B4",
+        "card_number": 195,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/196/mega-sharpedo-ex/",
+        "name": "Mega Sharpedo ex",
+        "set_code": "B4",
+        "card_number": 196,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/197/wailord-ex/",
+        "name": "Wailord ex",
+        "set_code": "B4",
+        "card_number": 197,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/198/mega-gallade-ex/",
+        "name": "Mega Gallade ex",
+        "set_code": "B4",
+        "card_number": 198,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/199/hoopa-ex/",
+        "name": "Hoopa ex",
+        "set_code": "B4",
+        "card_number": 199,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/200/mega-metagross-ex/",
+        "name": "Mega Metagross ex",
+        "set_code": "B4",
+        "card_number": 200,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/201/swanna-ex/",
+        "name": "Swanna ex",
+        "set_code": "B4",
+        "card_number": 201,
+        "drop_chance_pct": 0.11,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.09
+        }
+      },
+      {
+        "card_url": "/cards/b4/202/rotom-ex/",
+        "name": "Rotom ex",
+        "set_code": "B4",
+        "card_number": 202,
+        "drop_chance_pct": 0.55,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.44
+        }
+      },
+      {
+        "card_url": "/cards/b4/203/mega-rayquaza-ex/",
+        "name": "Mega Rayquaza ex",
+        "set_code": "B4",
+        "card_number": 203,
+        "drop_chance_pct": 0.55,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.11,
+          "5": 0.44
+        }
+      },
+      {
+        "card_url": "/cards/b4/204/alolan-vulpix/",
+        "name": "Alolan Vulpix",
+        "set_code": "B4",
+        "card_number": 204,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/205/mudkip/",
+        "name": "Mudkip",
+        "set_code": "B4",
+        "card_number": 205,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/206/marshtomp/",
+        "name": "Marshtomp",
+        "set_code": "B4",
+        "card_number": 206,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/207/swampert/",
+        "name": "Swampert",
+        "set_code": "B4",
+        "card_number": 207,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/208/electabuzz/",
+        "name": "Electabuzz",
+        "set_code": "B4",
+        "card_number": 208,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/209/plusle/",
+        "name": "Plusle",
+        "set_code": "B4",
+        "card_number": 209,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/210/minun/",
+        "name": "Minun",
+        "set_code": "B4",
+        "card_number": 210,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/211/mr-mime/",
+        "name": "Mr. Mime",
+        "set_code": "B4",
+        "card_number": 211,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/212/mewtwo/",
+        "name": "Mewtwo",
+        "set_code": "B4",
+        "card_number": 212,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/213/roggenrola/",
+        "name": "Roggenrola",
+        "set_code": "B4",
+        "card_number": 213,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/214/boldore/",
+        "name": "Boldore",
+        "set_code": "B4",
+        "card_number": 214,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/215/falinks/",
+        "name": "Falinks",
+        "set_code": "B4",
+        "card_number": 215,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/216/koffing/",
+        "name": "Koffing",
+        "set_code": "B4",
+        "card_number": 216,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/217/weezing/",
+        "name": "Weezing",
+        "set_code": "B4",
+        "card_number": 217,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/218/galarian-meowth/",
+        "name": "Galarian Meowth",
+        "set_code": "B4",
+        "card_number": 218,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/219/galarian-perrserker/",
+        "name": "Galarian Perrserker",
+        "set_code": "B4",
+        "card_number": 219,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/220/rattata/",
+        "name": "Rattata",
+        "set_code": "B4",
+        "card_number": 220,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/221/raticate/",
+        "name": "Raticate",
+        "set_code": "B4",
+        "card_number": 221,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/222/smeargle/",
+        "name": "Smeargle",
+        "set_code": "B4",
+        "card_number": 222,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/223/buneary/",
+        "name": "Buneary",
+        "set_code": "B4",
+        "card_number": 223,
+        "drop_chance_pct": 0.18,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/224/blacephalon-ex/",
+        "name": "Blacephalon ex",
+        "set_code": "B4",
+        "card_number": 224,
+        "drop_chance_pct": 0.21,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/225/alolan-ninetales-ex/",
+        "name": "Alolan Ninetales ex",
+        "set_code": "B4",
+        "card_number": 225,
+        "drop_chance_pct": 0.21,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/226/mega-swampert-ex/",
+        "name": "Mega Swampert ex",
+        "set_code": "B4",
+        "card_number": 226,
+        "drop_chance_pct": 0.21,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/227/mega-gardevoir-ex/",
+        "name": "Mega Gardevoir ex",
+        "set_code": "B4",
+        "card_number": 227,
+        "drop_chance_pct": 0.21,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/228/mega-lopunny-ex/",
+        "name": "Mega Lopunny ex",
+        "set_code": "B4",
+        "card_number": 228,
+        "drop_chance_pct": 0.21,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/229/gigalith-ex/",
+        "name": "Gigalith ex",
+        "set_code": "B4",
+        "card_number": 229,
+        "drop_chance_pct": 0.21,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/230/zoroark-ex/",
+        "name": "Zoroark ex",
+        "set_code": "B4",
+        "card_number": 230,
+        "drop_chance_pct": 0.21,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/231/mega-kangaskhan-ex/",
+        "name": "Mega Kangaskhan ex",
+        "set_code": "B4",
+        "card_number": 231,
+        "drop_chance_pct": 0.21,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      {
+        "card_url": "/cards/b4/232/raichu/",
+        "name": "Raichu",
+        "set_code": "B4",
+        "card_number": 232,
+        "drop_chance_pct": 0.1,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.08
+        }
+      },
+      {
+        "card_url": "/cards/b4/233/dragonair/",
+        "name": "Dragonair",
+        "set_code": "B4",
+        "card_number": 233,
+        "drop_chance_pct": 0.1,
+        "slot_odds_pct": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.02,
+          "5": 0.08
+        }
+      }
+    ]
   }
 }

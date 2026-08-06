@@ -63,12 +63,16 @@ export function SyncProgressDialog({
   const failed = phase === "error" || phase === "needs_reauth";
   const succeeded = phase === "done";
   const copy = STATUS_COPY[phase] ?? STATUS_COPY.running;
+  // A completed sync can still carry something the user needs to read — notably
+  // that Pokémon Zone served its previous snapshot, which is why the collection
+  // did not change. Keep the dialog open and show it instead of auto-closing.
+  const noteOnSuccess = succeeded && message ? message : null;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         className="sm:max-w-md"
-        showCloseButton={failed}
+        showCloseButton={failed || noteOnSuccess !== null}
         // Don't yank focus mid-task; the dialog is a status report, not a prompt.
         initialFocus={false}
       >
@@ -84,7 +88,9 @@ export function SyncProgressDialog({
             {failed ? "Sync failed" : copy.title}
           </DialogTitle>
           <DialogDescription>
-            {failed ? (message ?? "The sync did not finish.") : copy.detail}
+            {failed
+              ? (message ?? "The sync did not finish.")
+              : (noteOnSuccess ?? copy.detail)}
           </DialogDescription>
         </DialogHeader>
 

@@ -238,13 +238,23 @@ def _read_meta_total() -> str:
 
 
 def _collection_status() -> str:
-    """Read total/unique from collection.json for the sync status line."""
+    """Read total/unique from collection.json for the sync status line.
+
+    Flags a run whose numbers came from Pokémon Zone's previous snapshot rather
+    than a fresh read of the game — otherwise a sync that changed nothing because
+    the upstream never refreshed is indistinguishable from one that found nothing
+    new, which is exactly how the missing Ruler of the Skies pulls stayed
+    invisible across three syncs.
+    """
     try:
         data = _load_collection_json()
         meta = data.get("meta", {})
         total = meta.get("total_cards", "?")
         unique = len(data.get("collection", []))
-        return f"{total} cards, {unique} unique"
+        status = f"{total} cards, {unique} unique"
+        if _read_player_stats().get("player_synced") is False:
+            status += " — STALE: Pokémon Zone did not refresh from the game"
+        return status
     except Exception:
         return "synced"
 
@@ -512,6 +522,16 @@ def main() -> int:
         _print_step("Normalize entries", rc, "FATAL — check data/pipeline.log")
         return 1
     _print_step("Normalize entries", rc, "OK")
+
+    # ── Printing groups (multi-expansion dex registration) ────────────────
+    # Coords that are the same physical card. Since the 2026-07-29 update one copy
+    # registers in the dex under every expansion the card appears in, so EV and the
+    # web catalog credit ownership across a group. Derived from reprint_links plus
+    # Pokémon Zone's expansionIds, so it has to be rebuilt after a sync refreshes
+    # the raw snapshot. Non-fatal: a stale grouping only under-credits.
+    rc, _ = _run("Printing groups", "scripts/build_printing_groups.py")
+    _print_step("Printing groups", 0 if rc == 0 else rc,
+                "OK" if rc == 0 else "WARN — ownership credited per coord only")
 
     # ── Normalize collection (web-facing artifacts) ───────────────────────
     # Produces collection_normalized.json + collection_summary.json, which the web

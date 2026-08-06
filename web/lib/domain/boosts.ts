@@ -53,7 +53,7 @@ export function pokemonBoostedBy(
     .filter((c) => c.card_category === "Pokemon" && boostsPokemon(trainer, c))
     .sort(
       (a, b) =>
-        Number(b.owned > 0) - Number(a.owned > 0) ||
+        Number(b.dex_owned) - Number(a.dex_owned) ||
         (b.power_score ?? 0) - (a.power_score ?? 0) ||
         a.name.localeCompare(b.name),
     );
@@ -88,7 +88,7 @@ export function recommendedTrainers(
     const held = best.get(card.name);
     if (
       held == null ||
-      Number(card.owned > 0) - Number(held.owned > 0) > 0 ||
+      Number(card.dex_owned) - Number(held.dex_owned) > 0 ||
       (card.power_score ?? 0) > (held.power_score ?? 0)
     ) {
       best.set(card.name, card);

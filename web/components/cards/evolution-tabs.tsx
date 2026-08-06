@@ -138,7 +138,7 @@ function MiniCard({
       // instead of the name truncating. min-w-0 keeps that true in a flex parent.
       className={cn(
         "flex w-full min-w-0 flex-col text-left transition-transform hover:scale-[1.04]",
-        card.owned <= 0 && "opacity-60",
+        !card.dex_owned && "opacity-60",
       )}
     >
       <div className="aspect-[5/7] overflow-hidden rounded border">

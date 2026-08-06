@@ -63,6 +63,132 @@
       "name": "Mega Ampharos ex",
       "pokemon_type": "Lightning",
       "note": "TCGdex doesn't cover B3b; Mega ex row type dropped by snapshot parser. Type from Bulbapedia Everyday Wonders page ({{TCG Icon|Lightning}}); confirmed by owned PZ card (type=Lightning)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 35,
+      "name": "Mega Sharpedo ex",
+      "pokemon_type": "Water",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/35)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 84,
+      "name": "Mega Gallade ex",
+      "pokemon_type": "Fighting",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/84)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 109,
+      "name": "Mega Metagross ex",
+      "pokemon_type": "Metal",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/109)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 120,
+      "name": "Mega Rayquaza ex",
+      "pokemon_type": "Dragon",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/120)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 182,
+      "name": "Mega Sharpedo ex",
+      "pokemon_type": "Water",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/182)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 185,
+      "name": "Mega Gallade ex",
+      "pokemon_type": "Fighting",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/185)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 187,
+      "name": "Mega Metagross ex",
+      "pokemon_type": "Metal",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/187)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 188,
+      "name": "Mega Rayquaza ex",
+      "pokemon_type": "Dragon",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/188)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 196,
+      "name": "Mega Sharpedo ex",
+      "pokemon_type": "Water",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/196)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 198,
+      "name": "Mega Gallade ex",
+      "pokemon_type": "Fighting",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/198)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 200,
+      "name": "Mega Metagross ex",
+      "pokemon_type": "Metal",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/200)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 203,
+      "name": "Mega Rayquaza ex",
+      "pokemon_type": "Dragon",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/203)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 226,
+      "name": "Mega Swampert ex",
+      "pokemon_type": "Water",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/226)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 227,
+      "name": "Mega Gardevoir ex",
+      "pokemon_type": "Psychic",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/227)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 228,
+      "name": "Mega Lopunny ex",
+      "pokemon_type": "Fighting",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/228)."
+    },
+    {
+      "set_code": "B4",
+      "card_number": 231,
+      "name": "Mega Kangaskhan ex",
+      "pokemon_type": "Colorless",
+      "note": "TCGdex doesn't cover B4; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/B4/231)."
+    },
+    {
+      "set_code": "PROMO-B",
+      "card_number": 80,
+      "name": "Mega Houndoom ex",
+      "pokemon_type": "Fire",
+      "note": "TCGdex doesn't cover PROMO-B; the Bulbapedia Mega ex row format ({{TCGP Icon|Mega ex}}) isn't parsed by the snapshot fetcher so the type cell is dropped. Type read from the Limitless card page title (https://pocket.limitlesstcg.com/cards/P-B/80)."
+    },
+    {
+      "set_code": "PROMO-B",
+      "card_number": 56,
+      "name": "Mega Heracross ex",
+      "pokemon_type": "Grass",
+      "note": "Same unparsed {{TCGP Icon|Mega ex}} row as the other Mega ex overrides; surfaced when the PROMO-B snapshot was force-refreshed for the B4 release. Type from https://pocket.limitlesstcg.com/cards/P-B/56."
     }
   ]
 }

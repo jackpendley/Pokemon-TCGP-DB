@@ -766,7 +766,7 @@
       "name": "Mega Heracross ex",
       "type": "Grass",
       "stage": 2,
-      "hp": 210,
+      "hp": 180,
       "card_type": "Pokemon",
       "count": 1,
       "set_code": "PROMO-B",
@@ -10148,7 +10148,7 @@
       "variant": "alt art"
     },
     {
-      "name": "CastformSunny Form",
+      "name": "Castform Sunny Form",
       "count": 5,
       "card_type": "Pokemon",
       "rarity": "common",
@@ -10160,7 +10160,7 @@
       "stage_label": "Basic"
     },
     {
-      "name": "CastformSunny Form",
+      "name": "Castform Sunny Form",
       "count": 3,
       "card_type": "Pokemon",
       "rarity": "promo",
@@ -10172,7 +10172,7 @@
       "stage_label": "Basic"
     },
     {
-      "name": "CastformRainy Form",
+      "name": "Castform Rainy Form",
       "count": 5,
       "card_type": "Pokemon",
       "rarity": "common",
@@ -10184,7 +10184,7 @@
       "stage_label": "Basic"
     },
     {
-      "name": "CastformSnowy Form",
+      "name": "Castform Snowy Form",
       "count": 3,
       "card_type": "Pokemon",
       "rarity": "common",
@@ -10196,7 +10196,7 @@
       "stage_label": "Basic"
     },
     {
-      "name": "Rapid StrikeUrshifu",
+      "name": "Rapid Strike Urshifu",
       "count": 1,
       "card_type": "Pokemon",
       "rarity": "rare",
@@ -10208,7 +10208,7 @@
       "stage_label": "Stage 1"
     },
     {
-      "name": "Single StrikeUrshifu",
+      "name": "Single Strike Urshifu",
       "count": 1,
       "card_type": "Pokemon",
       "rarity": "rare",
@@ -10220,7 +10220,7 @@
       "stage_label": "Stage 1"
     },
     {
-      "name": "HisuianZorua",
+      "name": "Hisuian Zorua",
       "count": 4,
       "card_type": "Pokemon",
       "rarity": "common",
@@ -10232,7 +10232,7 @@
       "stage_label": "Basic"
     },
     {
-      "name": "HisuianZorua",
+      "name": "Hisuian Zorua",
       "count": 1,
       "card_type": "Pokemon",
       "rarity": "promo",
@@ -10244,7 +10244,7 @@
       "stage_label": "Basic"
     },
     {
-      "name": "HisuianLilligant",
+      "name": "Hisuian Lilligant",
       "count": 1,
       "card_type": "Pokemon",
       "rarity": "uncommon",
@@ -10256,7 +10256,7 @@
       "stage_label": "Stage 1"
     },
     {
-      "name": "HisuianSliggoo",
+      "name": "Hisuian Sliggoo",
       "count": 4,
       "card_type": "Pokemon",
       "rarity": "uncommon",
@@ -10268,7 +10268,7 @@
       "stage_label": "Stage 1"
     },
     {
-      "name": "HisuianGoodra",
+      "name": "Hisuian Goodra",
       "count": 1,
       "card_type": "Pokemon",
       "rarity": "rare",
@@ -10280,7 +10280,7 @@
       "stage_label": "Stage 2"
     },
     {
-      "name": "HisuianZoroark ex",
+      "name": "Hisuian Zoroark ex",
       "count": 2,
       "card_type": "Pokemon",
       "rarity": "double_rare",

@@ -76,7 +76,7 @@ export function DeckPicker({
         return false;
       if (sets.length > 0 && !sets.includes(c.set_code)) return false;
       // Ownership is per printing here — you can only build with copies you hold.
-      if (ownedOnly && c.owned <= 0) return false;
+      if (ownedOnly && !c.dex_owned) return false;
       return true;
     });
   }, [catalog, query, types, stages, category, sets, ownedOnly]);

@@ -3,6 +3,7 @@ import { connection } from "next/server";
 
 import { CompletionCard } from "@/components/dashboard/completion-card";
 import { CountGrid, type CountItem } from "@/components/dashboard/count-grid";
+import { NewSetBanner } from "@/components/dashboard/new-set-banner";
 import { OwnerStatusCard } from "@/components/dashboard/owner-status-card";
 import {
   NextToOpen,
@@ -124,16 +125,21 @@ async function OwnerPanel() {
   if (!ownerMeta) return null;
 
   return (
-    <OwnerStatusCard
-      publishedAt={ownerMeta.publishedAt}
-      lastRun={ownerMeta.lastRun}
-      counts={{
-        cards: catalog.length,
-        packs: packEv.packs.length,
-        uniqueEntries: summary.unique_entries,
-        totalQuantity: summary.total_quantity,
-      }}
-    />
+    <>
+      <NewSetBanner sets={ownerMeta.pendingSets} />
+      <OwnerStatusCard
+        publishedAt={ownerMeta.publishedAt}
+        lastRun={ownerMeta.lastRun}
+        catalogMisses={ownerMeta.catalogMisses}
+        playerSynced={ownerMeta.playerSynced}
+        counts={{
+          cards: catalog.length,
+          packs: packEv.packs.length,
+          uniqueEntries: summary.unique_entries,
+          totalQuantity: summary.total_quantity,
+        }}
+      />
+    </>
   );
 }
 

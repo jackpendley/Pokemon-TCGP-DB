@@ -80,17 +80,22 @@ export function SyncButton({ enabled }: { enabled: boolean }) {
         setMessage(REAUTH_MESSAGE);
       } else if (job.status === "error") {
         setMessage(job.message ?? "Sync failed");
+      } else if (job.status === "done" && job.message && job.message !== "Sync complete.") {
+        // e.g. Pokémon Zone served a stale snapshot: the sync worked, but the
+        // reason nothing changed has to reach the person who just ran it.
+        setMessage(job.message);
       }
     }, POLL_MS);
     return () => clearInterval(timer);
   }, [jobId, router]);
 
-  // Hand off to the reveal popup, which the refreshed dashboard renders.
+  // Hand off to the reveal popup, which the refreshed dashboard renders. A
+  // success carrying a note stays put so it can be read.
   useEffect(() => {
-    if (phase !== "done") return;
+    if (phase !== "done" || message) return;
     const t = setTimeout(() => setOpen(false), HANDOFF_MS);
     return () => clearTimeout(t);
-  }, [phase]);
+  }, [phase, message]);
 
   return (
     <>

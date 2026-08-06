@@ -10,6 +10,8 @@ export type CardImageInput = {
   card_number: number | null;
   name: string;
   owned?: number;
+  /** Whether the dex slot is filled; drives the not-owned grayscale. */
+  dex_owned?: boolean;
 };
 
 /**

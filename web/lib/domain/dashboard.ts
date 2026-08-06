@@ -49,11 +49,11 @@ export function completionStats(catalog: CatalogCard[]): {
   const baseCards = catalog.filter((c) => isBaseRarity(c.rarity));
   return {
     total: {
-      owned: catalog.filter((c) => c.owned > 0).length,
+      owned: catalog.filter((c) => c.dex_owned).length,
       total: catalog.length,
     },
     base: {
-      owned: baseCards.filter((c) => c.owned > 0).length,
+      owned: baseCards.filter((c) => c.dex_owned).length,
       total: baseCards.length,
     },
   };
@@ -68,7 +68,7 @@ export function megaStats(catalog: CatalogCard[]): {
   const mega = catalog.filter(isMegaEx);
   return {
     quantity: mega.reduce((n, c) => n + c.owned, 0),
-    unique: mega.filter((c) => c.owned > 0).length,
+    unique: mega.filter((c) => c.dex_owned).length,
     total: mega.length,
   };
 }
@@ -110,7 +110,7 @@ function tally(
     const key = keyOf(c);
     const e = by.get(key) ?? { key, owned: 0, total: 0 };
     e.total += 1;
-    if (c.owned > 0) e.owned += 1;
+    if (c.dex_owned) e.owned += 1;
     by.set(key, e);
   }
   return [...by.values()];
@@ -157,7 +157,7 @@ export function buildSetTotals(catalog: CatalogCard[]): Map<string, SetTotal> {
       expansion: c.expansion,
     };
     s.total += 1;
-    if (c.owned > 0) s.owned += 1;
+    if (c.dex_owned) s.owned += 1;
     totals.set(c.set_code, s);
   }
   return totals;

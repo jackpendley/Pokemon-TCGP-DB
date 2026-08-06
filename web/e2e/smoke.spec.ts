@@ -166,3 +166,36 @@ test("a boosted Pokémon shows the Trainers that help it", async ({
   await openTabs();
   await expect(page.getByRole("tab", { name: /Trainers that help/ })).toBeVisible();
 });
+
+test("a multi-expansion card is listed per printing only in order sorts", async ({
+  page,
+}) => {
+  test.skip(!HAS_PIPELINE_DATA, "needs pipeline artifacts");
+  /*
+   * Game rule (2026-07-29): under expansion order or collector card number a card
+   * that appears in several expansions is shown in each of them; under any other
+   * sort it collapses to the expansion it first appeared in.
+   *
+   * Bulbasaur is the canonical case — A1/1 plus two Deluxe Pack: ex printings.
+   */
+  await page.goto("/cards");
+  const search = page.getByPlaceholder(/search cards/i).first();
+  await search.waitFor();
+  await search.fill("Bulbasaur");
+
+  const count = page.getByText(/showing \d+ of \d+/i).first();
+  const readTotal = async () =>
+    Number(/of (\d+)/.exec((await count.textContent()) ?? "")?.[1] ?? 0);
+
+  await expect(count).toContainText(/of [1-9]/);
+  const inExpansionOrder = await readTotal();
+
+  await page.getByLabel("Sort").selectOption("power");
+  await expect
+    .poll(readTotal, { message: "power sort collapses reprints to the debut printing" })
+    .toBeLessThan(inExpansionOrder);
+
+  // Card number is the other order sort, so every printing comes back.
+  await page.getByLabel("Sort").selectOption("number");
+  await expect.poll(readTotal).toBe(inExpansionOrder);
+});

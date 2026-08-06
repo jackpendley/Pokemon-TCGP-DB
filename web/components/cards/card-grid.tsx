@@ -60,7 +60,11 @@ function CardTile({
   card: CatalogCard;
   onClick: () => void;
 }) {
-  const owned = card.owned > 0;
+  // Dim by dex slot, but count by copies held at this printing. Since the
+  // 2026-07-29 update a card registers under every expansion it appears in, so a
+  // sibling printing can fill this slot while this coord holds no copies — that
+  // tile should read as collected, just without a "×N" chip.
+  const owned = card.dex_owned;
   const type = displayType(card);
 
   return (
@@ -88,7 +92,7 @@ function CardTile({
         <span className="truncate text-xs font-medium" title={card.name}>
           {card.name}
         </span>
-        {owned ? (
+        {card.owned > 0 ? (
           <span className="shrink-0 rounded bg-primary px-1 text-[10px] font-medium text-primary-foreground tabular-nums">
             ×{card.owned}
           </span>

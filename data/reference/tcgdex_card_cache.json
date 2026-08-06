@@ -1,18 +1,18 @@
 {
   "A1-001": {
-    "cached_at": "2026-05-31T04:10:20.426361+00:00",
+    "cached_at": "2026-08-05T23:18:34.642677+00:00",
     "hp": 70,
     "name": "Bulbasaur",
     "source": "tcgdex"
   },
   "A1-011": {
-    "cached_at": "2026-06-12T03:48:38.475882+00:00",
+    "cached_at": "2026-08-05T23:21:15.126113+00:00",
     "hp": 60,
     "name": "Oddish",
     "source": "tcgdex"
   },
   "A1-016": {
-    "cached_at": "2026-05-31T04:10:32.852938+00:00",
+    "cached_at": "2026-08-05T23:18:40.923862+00:00",
     "hp": 60,
     "name": "Venonat",
     "source": "tcgdex"
@@ -27,6 +27,12 @@
     "cached_at": "2026-05-31T04:10:31.928637+00:00",
     "hp": 80,
     "name": "Tangela",
+    "source": "tcgdex"
+  },
+  "A1-027": {
+    "cached_at": "2026-08-05T23:22:49.280263+00:00",
+    "hp": 50,
+    "name": "Cottonee",
     "source": "tcgdex"
   },
   "A1-033": {
@@ -48,9 +54,15 @@
     "source": "tcgdex"
   },
   "A1-047": {
-    "cached_at": "2026-05-31T04:10:15.747449+00:00",
+    "cached_at": "2026-08-05T23:18:30.141146+00:00",
     "hp": 140,
     "name": "Moltres ex",
+    "source": "tcgdex"
+  },
+  "A1-052": {
+    "cached_at": "2026-08-05T23:22:29.886978+00:00",
+    "hp": 130,
+    "name": "Centiskorch",
     "source": "tcgdex"
   },
   "A1-059": {
@@ -60,13 +72,13 @@
     "source": "tcgdex"
   },
   "A1-060": {
-    "cached_at": "2026-05-31T04:10:41.802836+00:00",
+    "cached_at": "2026-08-05T23:18:46.017595+00:00",
     "hp": 90,
     "name": "Poliwhirl",
     "source": "tcgdex"
   },
   "A1-066": {
-    "cached_at": "2026-05-31T04:10:42.781790+00:00",
+    "cached_at": "2026-08-05T23:18:46.682624+00:00",
     "hp": 60,
     "name": "Shellder",
     "source": "tcgdex"
@@ -78,7 +90,7 @@
     "source": "tcgdex"
   },
   "A1-089": {
-    "cached_at": "2026-06-25T18:31:08.260792+00:00",
+    "cached_at": "2026-08-05T23:21:17.047545+00:00",
     "hp": 120,
     "name": "Greninja",
     "source": "tcgdex"
@@ -108,7 +120,7 @@
     "source": "tcgdex"
   },
   "A1-109": {
-    "cached_at": "2026-05-31T04:10:50.696568+00:00",
+    "cached_at": "2026-08-05T23:18:52.484648+00:00",
     "hp": 140,
     "name": "Eelektross",
     "source": "tcgdex"
@@ -125,10 +137,22 @@
     "name": "Slowpoke",
     "source": "tcgdex"
   },
+  "A1-119": {
+    "cached_at": "2026-08-05T23:22:46.154147+00:00",
+    "hp": 130,
+    "name": "Slowbro",
+    "source": "tcgdex"
+  },
   "A1-125": {
     "cached_at": "2026-05-31T04:11:07.366816+00:00",
     "hp": 100,
     "name": "Hypno",
+    "source": "tcgdex"
+  },
+  "A1-126": {
+    "cached_at": "2026-08-05T23:22:30.509036+00:00",
+    "hp": 80,
+    "name": "Mr. Mime",
     "source": "tcgdex"
   },
   "A1-130": {
@@ -143,16 +167,28 @@
     "name": "Kirlia",
     "source": "tcgdex"
   },
+  "A1-136": {
+    "cached_at": "2026-08-05T23:22:48.654237+00:00",
+    "hp": 140,
+    "name": "Golurk",
+    "source": "tcgdex"
+  },
   "A1-137": {
-    "cached_at": "2026-05-31T04:11:19.653147+00:00",
+    "cached_at": "2026-08-05T23:19:21.603067+00:00",
     "hp": 70,
     "name": "Sandshrew",
     "source": "tcgdex"
   },
   "A1-138": {
-    "cached_at": "2026-05-31T04:11:11.031400+00:00",
+    "cached_at": "2026-08-05T23:19:12.093718+00:00",
     "hp": 100,
     "name": "Sandslash",
+    "source": "tcgdex"
+  },
+  "A1-140": {
+    "cached_at": "2026-08-05T23:21:04.536175+00:00",
+    "hp": 70,
+    "name": "Dugtrio",
     "source": "tcgdex"
   },
   "A1-141": {
@@ -174,39 +210,45 @@
     "source": "tcgdex"
   },
   "A1-150": {
-    "cached_at": "2026-05-31T04:11:20.876026+00:00",
+    "cached_at": "2026-08-05T23:19:24.779766+00:00",
     "hp": 110,
     "name": "Onix",
     "source": "tcgdex"
   },
   "A1-151": {
-    "cached_at": "2026-05-31T04:11:20.263275+00:00",
+    "cached_at": "2026-08-05T23:19:23.467937+00:00",
     "hp": 60,
     "name": "Cubone",
     "source": "tcgdex"
   },
   "A1-153": {
-    "cached_at": "2026-05-31T04:11:10.225093+00:00",
+    "cached_at": "2026-08-05T23:19:11.429473+00:00",
     "hp": 140,
     "name": "Marowak ex",
     "source": "tcgdex"
   },
   "A1-155": {
-    "cached_at": "2026-05-31T04:11:15.109276+00:00",
+    "cached_at": "2026-08-05T23:19:17.752748+00:00",
     "hp": 80,
     "name": "Hitmonchan",
     "source": "tcgdex"
   },
   "A1-160": {
-    "cached_at": "2026-05-31T04:11:16.062295+00:00",
+    "cached_at": "2026-08-05T23:19:18.396819+00:00",
     "hp": 60,
     "name": "Mienfoo",
     "source": "tcgdex"
   },
   "A1-161": {
-    "cached_at": "2026-05-31T04:11:17.444647+00:00",
+    "cached_at": "2026-08-05T23:19:19.667977+00:00",
     "hp": 80,
     "name": "Mienshao",
+    "source": "tcgdex"
+  },
+  "A1-164": {
+    "cached_at": "2026-08-05T23:22:44.274519+00:00",
+    "hp": 60,
+    "name": "Ekans",
     "source": "tcgdex"
   },
   "A1-172": {
@@ -240,49 +282,49 @@
     "source": "tcgdex"
   },
   "A1-183": {
-    "cached_at": "2026-05-31T04:11:53.254306+00:00",
+    "cached_at": "2026-08-05T23:19:39.781700+00:00",
     "hp": 70,
     "name": "Dratini",
     "source": "tcgdex"
   },
   "A1-186": {
-    "cached_at": "2026-05-31T04:12:09.322846+00:00",
+    "cached_at": "2026-08-05T23:19:52.930335+00:00",
     "hp": 60,
     "name": "Pidgey",
     "source": "tcgdex"
   },
   "A1-189": {
-    "cached_at": "2026-05-31T04:12:06.374450+00:00",
+    "cached_at": "2026-08-05T23:19:51.094097+00:00",
     "hp": 40,
     "name": "Rattata",
     "source": "tcgdex"
   },
   "A1-190": {
-    "cached_at": "2026-05-31T04:12:05.563518+00:00",
+    "cached_at": "2026-08-05T23:19:50.477464+00:00",
     "hp": 80,
     "name": "Raticate",
     "source": "tcgdex"
   },
   "A1-193": {
-    "cached_at": "2026-05-31T04:12:06.998923+00:00",
+    "cached_at": "2026-08-05T23:19:51.701872+00:00",
     "hp": 60,
     "name": "Jigglypuff",
     "source": "tcgdex"
   },
   "A1-198": {
-    "cached_at": "2026-05-31T04:12:07.755017+00:00",
+    "cached_at": "2026-08-05T23:20:55.550671+00:00",
     "hp": 60,
     "name": "Farfetch'd",
     "source": "tcgdex"
   },
   "A1-200": {
-    "cached_at": "2026-05-31T04:11:56.502641+00:00",
+    "cached_at": "2026-08-05T23:19:41.047843+00:00",
     "hp": 80,
     "name": "Dodrio",
     "source": "tcgdex"
   },
   "A1-206": {
-    "cached_at": "2026-05-31T04:12:04.917770+00:00",
+    "cached_at": "2026-08-05T23:19:49.859754+00:00",
     "hp": 60,
     "name": "Eevee",
     "source": "tcgdex"
@@ -294,25 +336,31 @@
     "source": "tcgdex"
   },
   "A1-215": {
-    "cached_at": "2026-05-31T04:12:03.655960+00:00",
+    "cached_at": "2026-08-05T23:19:48.598453+00:00",
     "hp": 120,
     "name": "Dubwool",
     "source": "tcgdex"
   },
+  "A1-218": {
+    "cached_at": "2026-08-05T23:22:44.908113+00:00",
+    "hp": null,
+    "name": "Old Amber",
+    "source": "tcgdex"
+  },
   "A1-223": {
-    "cached_at": "2026-05-31T04:12:20.109163+00:00",
+    "cached_at": "2026-08-05T23:20:02.908500+00:00",
     "hp": null,
     "name": "Giovanni",
     "source": "tcgdex"
   },
   "A1-225": {
-    "cached_at": "2026-05-31T04:12:20.727829+00:00",
+    "cached_at": "2026-08-05T23:20:03.526190+00:00",
     "hp": null,
     "name": "Sabrina",
     "source": "tcgdex"
   },
   "A1-227": {
-    "cached_at": "2026-05-31T04:10:21.116216+00:00",
+    "cached_at": "2026-08-05T23:18:35.310369+00:00",
     "hp": 70,
     "name": "Bulbasaur",
     "source": "tcgdex"
@@ -330,7 +378,7 @@
     "source": "tcgdex"
   },
   "A1A-027": {
-    "cached_at": "2026-06-12T03:48:31.678376+00:00",
+    "cached_at": "2026-08-05T23:21:05.152948+00:00",
     "hp": 70,
     "name": "Electabuzz",
     "source": "tcgdex"
@@ -342,7 +390,7 @@
     "source": "tcgdex"
   },
   "A1A-068": {
-    "cached_at": "2026-05-31T04:12:21.462777+00:00",
+    "cached_at": "2026-08-05T23:20:04.141928+00:00",
     "hp": null,
     "name": "Leaf",
     "source": "tcgdex"
@@ -359,8 +407,20 @@
     "name": "Wormadam",
     "source": "tcgdex"
   },
+  "A2-019": {
+    "cached_at": "2026-08-06T04:09:44.626665+00:00",
+    "hp": 90,
+    "name": "Carnivine",
+    "source": "tcgdex"
+  },
+  "A2-021": {
+    "cached_at": "2026-08-05T23:22:49.914861+00:00",
+    "hp": 80,
+    "name": "Mow Rotom",
+    "source": "tcgdex"
+  },
   "A2-028": {
-    "cached_at": "2026-05-31T04:13:10.432404+00:00",
+    "cached_at": "2026-08-05T23:20:46.658537+00:00",
     "hp": 80,
     "name": "Monferno",
     "source": "tcgdex"
@@ -372,13 +432,13 @@
     "source": "tcgdex"
   },
   "A2-044": {
-    "cached_at": "2026-05-31T04:13:11.367041+00:00",
+    "cached_at": "2026-08-05T23:20:47.302740+00:00",
     "hp": 70,
     "name": "Snover",
     "source": "tcgdex"
   },
   "A2-050": {
-    "cached_at": "2026-05-31T04:13:12.392358+00:00",
+    "cached_at": "2026-08-05T23:20:47.915567+00:00",
     "hp": 50,
     "name": "Manaphy",
     "source": "tcgdex"
@@ -390,7 +450,7 @@
     "source": "tcgdex"
   },
   "A2-066": {
-    "cached_at": "2026-06-25T18:30:56.893123+00:00",
+    "cached_at": "2026-08-05T23:19:02.601242+00:00",
     "hp": 60,
     "name": "Misdreavus",
     "source": "tcgdex"
@@ -408,7 +468,7 @@
     "source": "tcgdex"
   },
   "A2-091": {
-    "cached_at": "2026-05-31T04:11:19.046286+00:00",
+    "cached_at": "2026-08-05T23:19:20.930156+00:00",
     "hp": 60,
     "name": "Riolu",
     "source": "tcgdex"
@@ -438,7 +498,7 @@
     "source": "tcgdex"
   },
   "A2-115": {
-    "cached_at": "2026-06-01T02:13:52.581042+00:00",
+    "cached_at": "2026-08-05T23:20:48.530828+00:00",
     "hp": 110,
     "name": "Wormadam",
     "source": "tcgdex"
@@ -491,15 +551,21 @@
     "source": "tcgdex"
   },
   "A2-147": {
-    "cached_at": "2026-05-31T04:12:16.693060+00:00",
+    "cached_at": "2026-08-05T23:20:00.393983+00:00",
     "hp": null,
     "name": "Giant Cape",
     "source": "tcgdex"
   },
   "A2-150": {
-    "cached_at": "2026-05-31T04:12:22.079505+00:00",
+    "cached_at": "2026-08-05T23:20:04.746877+00:00",
     "hp": null,
     "name": "Cyrus",
+    "source": "tcgdex"
+  },
+  "A2-155": {
+    "cached_at": "2026-08-05T23:22:48.027659+00:00",
+    "hp": null,
+    "name": "Mars",
     "source": "tcgdex"
   },
   "A2A-006": {
@@ -521,7 +587,7 @@
     "source": "tcgdex"
   },
   "A2A-018": {
-    "cached_at": "2026-06-25T18:31:45.401142+00:00",
+    "cached_at": "2026-08-05T23:22:10.416678+00:00",
     "hp": 60,
     "name": "Snorunt",
     "source": "tcgdex"
@@ -556,6 +622,18 @@
     "name": "Shaymin",
     "source": "tcgdex"
   },
+  "A2B-006": {
+    "cached_at": "2026-08-05T23:22:50.536457+00:00",
+    "hp": 90,
+    "name": "Floragato",
+    "source": "tcgdex"
+  },
+  "A2B-011": {
+    "cached_at": "2026-08-05T23:21:10.161439+00:00",
+    "hp": 70,
+    "name": "Magmar",
+    "source": "tcgdex"
+  },
   "A2B-018": {
     "cached_at": "2026-05-31T04:12:33.436221+00:00",
     "hp": 60,
@@ -563,7 +641,7 @@
     "source": "tcgdex"
   },
   "A2B-023": {
-    "cached_at": "2026-06-25T18:30:55.641477+00:00",
+    "cached_at": "2026-08-05T23:18:56.902302+00:00",
     "hp": 70,
     "name": "Voltorb",
     "source": "tcgdex"
@@ -575,7 +653,7 @@
     "source": "tcgdex"
   },
   "A2B-025": {
-    "cached_at": "2026-06-25T18:31:20.717578+00:00",
+    "cached_at": "2026-08-05T23:21:46.753994+00:00",
     "hp": 70,
     "name": "Pachirisu",
     "source": "tcgdex"
@@ -599,13 +677,37 @@
     "source": "tcgdex"
   },
   "A2B-030": {
-    "cached_at": "2026-06-12T03:48:35.396298+00:00",
+    "cached_at": "2026-08-05T23:21:11.996621+00:00",
     "hp": 80,
     "name": "Kadabra",
     "source": "tcgdex"
   },
+  "A2B-032": {
+    "cached_at": "2026-08-05T23:22:31.124341+00:00",
+    "hp": 90,
+    "name": "Mr. Mime",
+    "source": "tcgdex"
+  },
+  "A2B-039": {
+    "cached_at": "2026-08-05T23:19:15.278966+00:00",
+    "hp": 150,
+    "name": "Machamp",
+    "source": "tcgdex"
+  },
+  "A2B-044": {
+    "cached_at": "2026-08-05T23:22:51.155622+00:00",
+    "hp": 80,
+    "name": "Flamigo",
+    "source": "tcgdex"
+  },
+  "A2B-046": {
+    "cached_at": "2026-08-05T23:22:51.776802+00:00",
+    "hp": 110,
+    "name": "Arbok",
+    "source": "tcgdex"
+  },
   "A2B-047": {
-    "cached_at": "2026-05-31T04:12:52.013476+00:00",
+    "cached_at": "2026-08-05T23:20:31.949694+00:00",
     "hp": 50,
     "name": "Paldean Wooper",
     "source": "tcgdex"
@@ -620,6 +722,12 @@
     "cached_at": "2026-05-31T04:11:51.793524+00:00",
     "hp": 70,
     "name": "Varoom",
+    "source": "tcgdex"
+  },
+  "A2B-060": {
+    "cached_at": "2026-08-05T23:22:45.532678+00:00",
+    "hp": 60,
+    "name": "Jigglypuff",
     "source": "tcgdex"
   },
   "A2B-073": {
@@ -647,7 +755,7 @@
     "source": "tcgdex"
   },
   "A3-029": {
-    "cached_at": "2026-06-01T06:55:38.079590+00:00",
+    "cached_at": "2026-08-05T23:21:03.895141+00:00",
     "hp": 120,
     "name": "Talonflame",
     "source": "tcgdex"
@@ -665,19 +773,19 @@
     "source": "tcgdex"
   },
   "A3-035": {
-    "cached_at": "2026-06-25T18:31:16.939885+00:00",
+    "cached_at": "2026-08-05T23:21:42.990119+00:00",
     "hp": 50,
     "name": "Salandit",
     "source": "tcgdex"
   },
   "A3-056": {
-    "cached_at": "2026-05-31T04:13:14.147990+00:00",
+    "cached_at": "2026-08-05T23:20:49.162094+00:00",
     "hp": 100,
     "name": "Tapu Fini",
     "source": "tcgdex"
   },
   "A3-070": {
-    "cached_at": "2026-06-25T18:31:04.846838+00:00",
+    "cached_at": "2026-08-05T23:21:02.650245+00:00",
     "hp": 80,
     "name": "Sableye",
     "source": "tcgdex"
@@ -695,19 +803,19 @@
     "source": "tcgdex"
   },
   "A3-093": {
-    "cached_at": "2026-05-31T04:13:14.785734+00:00",
+    "cached_at": "2026-08-05T23:20:49.787605+00:00",
     "hp": 60,
     "name": "Drilbur",
     "source": "tcgdex"
   },
   "A3-098": {
-    "cached_at": "2026-05-31T04:11:26.196540+00:00",
+    "cached_at": "2026-08-05T23:19:28.528618+00:00",
     "hp": 60,
     "name": "Rockruff",
     "source": "tcgdex"
   },
   "A3-101": {
-    "cached_at": "2026-06-25T18:31:37.462448+00:00",
+    "cached_at": "2026-08-05T23:22:02.889598+00:00",
     "hp": 100,
     "name": "Lycanroc",
     "source": "tcgdex"
@@ -719,13 +827,19 @@
     "source": "tcgdex"
   },
   "A3-116": {
-    "cached_at": "2026-05-31T04:13:15.533587+00:00",
+    "cached_at": "2026-08-05T23:20:51.061897+00:00",
     "hp": 110,
     "name": "Toxapex",
     "source": "tcgdex"
   },
+  "A3-117": {
+    "cached_at": "2026-08-05T23:22:31.746879+00:00",
+    "hp": 50,
+    "name": "Alolan Diglett",
+    "source": "tcgdex"
+  },
   "A3-118": {
-    "cached_at": "2026-06-25T18:31:55.527407+00:00",
+    "cached_at": "2026-08-05T23:22:19.848527+00:00",
     "hp": 90,
     "name": "Alolan Dugtrio",
     "source": "tcgdex"
@@ -749,13 +863,13 @@
     "source": "tcgdex"
   },
   "A3-144": {
-    "cached_at": "2026-05-31T04:12:15.938200+00:00",
+    "cached_at": "2026-08-05T23:19:59.777477+00:00",
     "hp": null,
     "name": "Rare Candy",
     "source": "tcgdex"
   },
   "A3-155": {
-    "cached_at": "2026-05-31T04:12:24.001448+00:00",
+    "cached_at": "2026-08-05T23:20:06.657393+00:00",
     "hp": null,
     "name": "Lillie",
     "source": "tcgdex"
@@ -785,7 +899,7 @@
     "source": "tcgdex"
   },
   "A3B-026": {
-    "cached_at": "2026-06-25T18:30:55.024924+00:00",
+    "cached_at": "2026-08-05T23:18:55.655824+00:00",
     "hp": 40,
     "name": "Joltik",
     "source": "tcgdex"
@@ -803,13 +917,13 @@
     "source": "tcgdex"
   },
   "A3B-063": {
-    "cached_at": "2026-06-12T03:48:29.850618+00:00",
+    "cached_at": "2026-08-05T23:19:49.243526+00:00",
     "hp": 90,
     "name": "Cinccino",
     "source": "tcgdex"
   },
   "A3B-065": {
-    "cached_at": "2026-06-25T18:31:56.178447+00:00",
+    "cached_at": "2026-08-05T23:22:20.481480+00:00",
     "hp": 120,
     "name": "Greedent",
     "source": "tcgdex"
@@ -821,9 +935,15 @@
     "source": "tcgdex"
   },
   "A4-001": {
-    "cached_at": "2026-06-12T03:48:39.088280+00:00",
+    "cached_at": "2026-08-05T23:21:15.751706+00:00",
     "hp": 50,
     "name": "Oddish",
+    "source": "tcgdex"
+  },
+  "A4-002": {
+    "cached_at": "2026-08-05T23:22:32.367183+00:00",
+    "hp": 80,
+    "name": "Gloom",
     "source": "tcgdex"
   },
   "A4-011": {
@@ -833,13 +953,13 @@
     "source": "tcgdex"
   },
   "A4-017": {
-    "cached_at": "2026-06-01T02:13:47.083850+00:00",
+    "cached_at": "2026-08-05T23:20:44.078360+00:00",
     "hp": 90,
     "name": "Sunflora",
     "source": "tcgdex"
   },
   "A4-020": {
-    "cached_at": "2026-06-25T18:31:07.012101+00:00",
+    "cached_at": "2026-08-05T23:21:08.927969+00:00",
     "hp": 60,
     "name": "Pineco",
     "source": "tcgdex"
@@ -851,13 +971,13 @@
     "source": "tcgdex"
   },
   "A4-027": {
-    "cached_at": "2026-06-12T03:48:36.010321+00:00",
+    "cached_at": "2026-08-05T23:21:12.611822+00:00",
     "hp": 60,
     "name": "Cyndaquil",
     "source": "tcgdex"
   },
   "A4-035": {
-    "cached_at": "2026-06-25T18:30:53.142430+00:00",
+    "cached_at": "2026-08-05T23:18:32.676026+00:00",
     "hp": 70,
     "name": "Darumaka",
     "source": "tcgdex"
@@ -881,37 +1001,37 @@
     "source": "tcgdex"
   },
   "A4-057": {
-    "cached_at": "2026-06-12T03:48:32.949022+00:00",
+    "cached_at": "2026-08-05T23:21:07.040491+00:00",
     "hp": 70,
     "name": "Delibird",
     "source": "tcgdex"
   },
   "A4-064": {
-    "cached_at": "2026-06-25T18:31:03.169030+00:00",
+    "cached_at": "2026-08-05T23:20:44.708585+00:00",
     "hp": 70,
     "name": "Chinchou",
     "source": "tcgdex"
   },
   "A4-065": {
-    "cached_at": "2026-05-31T04:13:09.636223+00:00",
+    "cached_at": "2026-08-05T23:20:45.964095+00:00",
     "hp": 150,
     "name": "Lanturn ex",
     "source": "tcgdex"
   },
   "A4-067": {
-    "cached_at": "2026-06-25T18:31:09.515205+00:00",
+    "cached_at": "2026-08-05T23:21:35.993598+00:00",
     "hp": 60,
     "name": "Mareep",
     "source": "tcgdex"
   },
   "A4-072": {
-    "cached_at": "2026-06-25T18:31:46.058682+00:00",
+    "cached_at": "2026-08-05T23:22:11.022476+00:00",
     "hp": 70,
     "name": "Emolga",
     "source": "tcgdex"
   },
   "A4-073": {
-    "cached_at": "2026-06-01T02:13:48.923770+00:00",
+    "cached_at": "2026-08-05T23:20:45.323033+00:00",
     "hp": 70,
     "name": "Slowpoke",
     "source": "tcgdex"
@@ -928,6 +1048,18 @@
     "name": "Onix",
     "source": "tcgdex"
   },
+  "A4-095": {
+    "cached_at": "2026-08-05T23:22:52.406179+00:00",
+    "hp": 100,
+    "name": "Gliscor",
+    "source": "tcgdex"
+  },
+  "A4-102": {
+    "cached_at": "2026-08-05T23:22:32.981044+00:00",
+    "hp": 80,
+    "name": "Hitmontop",
+    "source": "tcgdex"
+  },
   "A4-109": {
     "cached_at": "2026-05-31T04:11:42.792604+00:00",
     "hp": 170,
@@ -941,7 +1073,7 @@
     "source": "tcgdex"
   },
   "A4-115": {
-    "cached_at": "2026-06-01T02:12:01.259290+00:00",
+    "cached_at": "2026-08-05T23:19:34.165205+00:00",
     "hp": 60,
     "name": "Sneasel",
     "source": "tcgdex"
@@ -958,14 +1090,26 @@
     "name": "Chansey",
     "source": "tcgdex"
   },
+  "A4-136": {
+    "cached_at": "2026-08-05T23:19:41.658542+00:00",
+    "hp": 80,
+    "name": "Porygon2",
+    "source": "tcgdex"
+  },
   "A4-140": {
-    "cached_at": "2026-05-31T04:13:32.641874+00:00",
+    "cached_at": "2026-08-05T23:21:03.265681+00:00",
     "hp": 50,
     "name": "Hoothoot",
     "source": "tcgdex"
   },
+  "A4-143": {
+    "cached_at": "2026-08-05T23:22:53.016799+00:00",
+    "hp": 100,
+    "name": "Ambipom",
+    "source": "tcgdex"
+  },
   "A4-144": {
-    "cached_at": "2026-05-31T04:13:31.251714+00:00",
+    "cached_at": "2026-08-05T23:21:01.376832+00:00",
     "hp": 50,
     "name": "Dunsparce",
     "source": "tcgdex"
@@ -995,7 +1139,7 @@
     "source": "tcgdex"
   },
   "A4A-004": {
-    "cached_at": "2026-05-31T04:10:35.408688+00:00",
+    "cached_at": "2026-08-05T23:18:42.877420+00:00",
     "hp": 50,
     "name": "Sunkern",
     "source": "tcgdex"
@@ -1036,290 +1180,380 @@
     "name": "Swablu",
     "source": "tcgdex"
   },
+  "A4A-065": {
+    "cached_at": "2026-08-05T23:22:46.782176+00:00",
+    "hp": 80,
+    "name": "Zangoose",
+    "source": "tcgdex"
+  },
+  "A4A-068": {
+    "cached_at": "2026-08-05T23:22:42.417952+00:00",
+    "hp": null,
+    "name": "Memory Light",
+    "source": "tcgdex"
+  },
+  "B1-001": {
+    "cached_at": "2026-08-05T23:22:53.652286+00:00",
+    "hp": 90,
+    "name": "Pinsir",
+    "source": "tcgdex"
+  },
   "B1-002": {
-    "cached_at": "2026-06-25T18:31:42.150782+00:00",
+    "cached_at": "2026-08-05T23:22:07.251964+00:00",
     "hp": 170,
     "name": "Mega Pinsir ex",
     "source": "tcgdex"
   },
   "B1-004": {
-    "cached_at": "2026-05-31T04:10:28.480202+00:00",
+    "cached_at": "2026-08-05T23:18:38.457449+00:00",
     "hp": 80,
     "name": "Silcoon",
     "source": "tcgdex"
   },
   "B1-008": {
-    "cached_at": "2026-05-31T04:10:29.250686+00:00",
+    "cached_at": "2026-08-05T23:18:39.076172+00:00",
     "hp": 50,
     "name": "Seedot",
     "source": "tcgdex"
   },
+  "B1-009": {
+    "cached_at": "2026-08-05T23:22:33.602262+00:00",
+    "hp": 80,
+    "name": "Nuzleaf",
+    "source": "tcgdex"
+  },
   "B1-011": {
-    "cached_at": "2026-05-31T04:10:24.147409+00:00",
+    "cached_at": "2026-08-05T23:18:37.791001+00:00",
     "hp": 60,
     "name": "Shroomish",
     "source": "tcgdex"
   },
   "B1-022": {
-    "cached_at": "2026-06-25T18:31:17.576834+00:00",
+    "cached_at": "2026-08-05T23:21:43.619034+00:00",
     "hp": 120,
     "name": "Gogoat",
     "source": "tcgdex"
   },
   "B1-023": {
-    "cached_at": "2026-06-25T18:31:07.635634+00:00",
+    "cached_at": "2026-08-05T23:21:09.544534+00:00",
     "hp": 60,
     "name": "Phantump",
     "source": "tcgdex"
   },
   "B1-024": {
-    "cached_at": "2026-06-25T18:31:05.769491+00:00",
+    "cached_at": "2026-08-05T23:21:06.420238+00:00",
     "hp": 110,
     "name": "Trevenant",
     "source": "tcgdex"
   },
   "B1-025": {
-    "cached_at": "2026-06-25T18:31:18.221464+00:00",
+    "cached_at": "2026-08-05T23:21:44.245030+00:00",
     "hp": 60,
     "name": "Grookey",
     "source": "tcgdex"
   },
   "B1-026": {
-    "cached_at": "2026-06-25T18:31:38.086138+00:00",
+    "cached_at": "2026-08-05T23:22:03.505110+00:00",
     "hp": 90,
     "name": "Thwackey",
     "source": "tcgdex"
   },
   "B1-029": {
-    "cached_at": "2026-05-31T04:10:17.706199+00:00",
+    "cached_at": "2026-08-05T23:18:32.041967+00:00",
     "hp": 120,
     "name": "Arcanine",
     "source": "tcgdex"
   },
   "B1-031": {
-    "cached_at": "2026-06-25T18:31:10.141170+00:00",
+    "cached_at": "2026-08-05T23:21:36.628422+00:00",
     "hp": 150,
     "name": "Rapidash ex",
     "source": "tcgdex"
   },
+  "B1-033": {
+    "cached_at": "2026-08-05T23:22:34.227077+00:00",
+    "hp": 60,
+    "name": "Torchic",
+    "source": "tcgdex"
+  },
   "B1-039": {
-    "cached_at": "2026-06-25T18:30:53.757946+00:00",
+    "cached_at": "2026-08-05T23:18:33.351120+00:00",
     "hp": 70,
     "name": "Darumaka",
     "source": "tcgdex"
   },
+  "B1-040": {
+    "cached_at": "2026-08-05T23:18:33.983568+00:00",
+    "hp": 130,
+    "name": "Darmanitan",
+    "source": "tcgdex"
+  },
   "B1-041": {
-    "cached_at": "2026-06-25T18:31:08.877726+00:00",
+    "cached_at": "2026-08-05T23:21:23.390584+00:00",
     "hp": 50,
     "name": "Litwick",
     "source": "tcgdex"
   },
   "B1-044": {
-    "cached_at": "2026-06-25T18:31:34.368054+00:00",
+    "cached_at": "2026-08-05T23:21:59.809765+00:00",
     "hp": 80,
     "name": "Heatmor",
     "source": "tcgdex"
   },
+  "B1-045": {
+    "cached_at": "2026-08-05T23:22:34.860831+00:00",
+    "hp": 60,
+    "name": "Litleo",
+    "source": "tcgdex"
+  },
   "B1-047": {
-    "cached_at": "2026-05-31T04:10:17.061578+00:00",
+    "cached_at": "2026-08-05T23:18:31.396780+00:00",
     "hp": 110,
     "name": "Turtonator",
     "source": "tcgdex"
   },
+  "B1-048": {
+    "cached_at": "2026-08-06T04:09:46.521052+00:00",
+    "hp": 60,
+    "name": "Psyduck",
+    "source": "tcgdex"
+  },
+  "B1-051": {
+    "cached_at": "2026-08-05T23:22:36.136505+00:00",
+    "hp": 140,
+    "name": "Gyarados",
+    "source": "tcgdex"
+  },
+  "B1-053": {
+    "cached_at": "2026-08-06T04:09:47.155686+00:00",
+    "hp": 60,
+    "name": "Lotad",
+    "source": "tcgdex"
+  },
   "B1-055": {
-    "cached_at": "2026-05-31T04:13:03.480517+00:00",
+    "cached_at": "2026-08-05T23:20:39.485390+00:00",
     "hp": 140,
     "name": "Ludicolo",
     "source": "tcgdex"
   },
+  "B1-058": {
+    "cached_at": "2026-08-06T04:09:47.800632+00:00",
+    "hp": 70,
+    "name": "Corphish",
+    "source": "tcgdex"
+  },
+  "B1-060": {
+    "cached_at": "2026-08-05T23:22:36.758816+00:00",
+    "hp": 70,
+    "name": "Luvdisc",
+    "source": "tcgdex"
+  },
   "B1-061": {
-    "cached_at": "2026-05-31T04:13:04.443253+00:00",
+    "cached_at": "2026-08-05T23:20:40.131540+00:00",
     "hp": 60,
     "name": "Panpour",
     "source": "tcgdex"
   },
   "B1-063": {
-    "cached_at": "2026-06-25T18:31:18.836458+00:00",
+    "cached_at": "2026-08-05T23:21:44.878557+00:00",
     "hp": 60,
     "name": "Tympole",
     "source": "tcgdex"
   },
   "B1-064": {
-    "cached_at": "2026-05-31T04:13:05.191067+00:00",
+    "cached_at": "2026-08-05T23:20:40.778541+00:00",
     "hp": 90,
     "name": "Palpitoad",
     "source": "tcgdex"
   },
+  "B1-065": {
+    "cached_at": "2026-08-05T23:22:54.276655+00:00",
+    "hp": 150,
+    "name": "Seismitoad",
+    "source": "tcgdex"
+  },
   "B1-068": {
-    "cached_at": "2026-06-01T02:10:41.360627+00:00",
+    "cached_at": "2026-08-05T23:18:48.591522+00:00",
     "hp": 60,
     "name": "Frillish",
     "source": "tcgdex"
   },
   "B1-071": {
-    "cached_at": "2026-06-25T18:30:54.382673+00:00",
+    "cached_at": "2026-08-05T23:18:50.612680+00:00",
     "hp": 60,
     "name": "Froakie",
     "source": "tcgdex"
   },
   "B1-074": {
-    "cached_at": "2026-06-25T18:31:10.760533+00:00",
+    "cached_at": "2026-08-05T23:21:37.282569+00:00",
     "hp": 70,
     "name": "Bergmite",
     "source": "tcgdex"
   },
   "B1-075": {
-    "cached_at": "2026-06-25T18:31:42.780119+00:00",
+    "cached_at": "2026-08-05T23:22:07.895352+00:00",
     "hp": 140,
     "name": "Avalugg",
     "source": "tcgdex"
   },
   "B1-076": {
-    "cached_at": "2026-06-01T02:10:42.584342+00:00",
+    "cached_at": "2026-08-05T23:18:49.285526+00:00",
     "hp": 80,
     "name": "Chewtle",
     "source": "tcgdex"
   },
   "B1-081": {
-    "cached_at": "2026-06-25T18:31:51.008346+00:00",
+    "cached_at": "2026-08-05T23:22:15.413012+00:00",
     "hp": 140,
     "name": "Jolteon ex",
     "source": "tcgdex"
   },
   "B1-085": {
-    "cached_at": "2026-06-25T18:31:19.467039+00:00",
+    "cached_at": "2026-08-05T23:21:45.506678+00:00",
     "hp": 210,
     "name": "Mega Ampharos ex",
     "source": "tcgdex"
   },
+  "B1-086": {
+    "cached_at": "2026-08-06T04:09:48.424029+00:00",
+    "hp": 60,
+    "name": "Shinx",
+    "source": "tcgdex"
+  },
   "B1-088": {
-    "cached_at": "2026-06-25T18:31:20.086970+00:00",
+    "cached_at": "2026-08-05T23:21:46.129433+00:00",
     "hp": 130,
     "name": "Luxray",
     "source": "tcgdex"
   },
   "B1-089": {
-    "cached_at": "2026-06-25T18:31:21.340015+00:00",
+    "cached_at": "2026-08-05T23:21:47.396077+00:00",
     "hp": 70,
     "name": "Pachirisu",
     "source": "tcgdex"
   },
   "B1-090": {
-    "cached_at": "2026-06-25T18:31:11.387604+00:00",
+    "cached_at": "2026-08-05T23:21:37.895108+00:00",
     "hp": 70,
     "name": "Blitzle",
     "source": "tcgdex"
   },
   "B1-091": {
-    "cached_at": "2026-06-25T18:31:43.459735+00:00",
+    "cached_at": "2026-08-05T23:22:08.515065+00:00",
     "hp": 100,
     "name": "Zebstrika",
     "source": "tcgdex"
   },
   "B1-092": {
-    "cached_at": "2026-05-31T04:10:56.426434+00:00",
+    "cached_at": "2026-08-05T23:18:56.275910+00:00",
     "hp": 30,
     "name": "Joltik",
     "source": "tcgdex"
   },
   "B1-094": {
-    "cached_at": "2026-06-12T03:48:34.780339+00:00",
+    "cached_at": "2026-08-05T23:21:11.381804+00:00",
     "hp": 70,
     "name": "Dedenne",
     "source": "tcgdex"
   },
   "B1-095": {
-    "cached_at": "2026-06-12T03:48:34.166668+00:00",
+    "cached_at": "2026-08-05T23:21:10.774425+00:00",
     "hp": 60,
     "name": "Yamper",
     "source": "tcgdex"
   },
   "B1-096": {
-    "cached_at": "2026-05-31T04:13:05.840351+00:00",
+    "cached_at": "2026-08-05T23:20:41.551337+00:00",
     "hp": 110,
     "name": "Boltund",
     "source": "tcgdex"
   },
   "B1-097": {
-    "cached_at": "2026-06-25T18:31:38.719988+00:00",
+    "cached_at": "2026-08-05T23:22:04.120253+00:00",
     "hp": 60,
     "name": "Natu",
     "source": "tcgdex"
   },
   "B1-098": {
-    "cached_at": "2026-06-25T18:31:21.959076+00:00",
+    "cached_at": "2026-08-05T23:21:48.022764+00:00",
     "hp": 100,
     "name": "Xatu",
     "source": "tcgdex"
   },
   "B1-099": {
-    "cached_at": "2026-06-25T18:30:57.503241+00:00",
+    "cached_at": "2026-08-05T23:19:03.244399+00:00",
     "hp": 60,
     "name": "Misdreavus",
     "source": "tcgdex"
   },
   "B1-100": {
-    "cached_at": "2026-05-31T04:11:00.234040+00:00",
+    "cached_at": "2026-08-05T23:18:59.478802+00:00",
     "hp": 90,
     "name": "Mismagius",
     "source": "tcgdex"
   },
   "B1-103": {
-    "cached_at": "2026-06-25T18:31:29.687161+00:00",
+    "cached_at": "2026-08-05T23:21:55.459306+00:00",
     "hp": 50,
     "name": "Duskull",
     "source": "tcgdex"
   },
   "B1-108": {
-    "cached_at": "2026-06-25T18:31:22.602054+00:00",
+    "cached_at": "2026-08-05T23:21:48.639260+00:00",
     "hp": 100,
     "name": "Drifblim",
     "source": "tcgdex"
   },
   "B1-110": {
-    "cached_at": "2026-06-25T18:31:23.224704+00:00",
+    "cached_at": "2026-08-05T23:21:49.262573+00:00",
     "hp": 70,
     "name": "Yamask",
     "source": "tcgdex"
   },
   "B1-114": {
-    "cached_at": "2026-06-25T18:31:23.857070+00:00",
+    "cached_at": "2026-08-05T23:21:49.890951+00:00",
     "hp": 130,
     "name": "Gothitelle",
     "source": "tcgdex"
   },
   "B1-115": {
-    "cached_at": "2026-05-31T04:11:03.858719+00:00",
+    "cached_at": "2026-08-05T23:19:05.138597+00:00",
     "hp": 60,
     "name": "Spritzee",
     "source": "tcgdex"
   },
   "B1-116": {
-    "cached_at": "2026-06-25T18:30:56.276921+00:00",
+    "cached_at": "2026-08-05T23:19:00.713306+00:00",
     "hp": 90,
     "name": "Aromatisse",
     "source": "tcgdex"
   },
   "B1-117": {
-    "cached_at": "2026-06-25T18:31:34.996629+00:00",
+    "cached_at": "2026-08-05T23:22:00.428143+00:00",
     "hp": 60,
     "name": "Swirlix",
     "source": "tcgdex"
   },
+  "B1-118": {
+    "cached_at": "2026-08-05T23:22:37.374502+00:00",
+    "hp": 110,
+    "name": "Slurpuff",
+    "source": "tcgdex"
+  },
   "B1-119": {
-    "cached_at": "2026-06-25T18:31:12.000277+00:00",
+    "cached_at": "2026-08-05T23:21:38.513076+00:00",
     "hp": 50,
     "name": "Carbink",
     "source": "tcgdex"
   },
   "B1-123": {
-    "cached_at": "2026-06-25T18:30:58.743020+00:00",
+    "cached_at": "2026-08-05T23:19:12.714186+00:00",
     "hp": 90,
     "name": "Sandslash",
     "source": "tcgdex"
   },
   "B1-125": {
-    "cached_at": "2026-06-25T18:31:12.694867+00:00",
+    "cached_at": "2026-08-05T23:21:39.136914+00:00",
     "hp": 90,
     "name": "Sudowoodo",
     "source": "tcgdex"
@@ -1331,217 +1565,241 @@
     "source": "tcgdex"
   },
   "B1-127": {
-    "cached_at": "2026-06-25T18:30:59.370412+00:00",
+    "cached_at": "2026-08-05T23:19:13.994098+00:00",
     "hp": 130,
     "name": "Hariyama",
     "source": "tcgdex"
   },
   "B1-131": {
-    "cached_at": "2026-06-25T18:31:44.120261+00:00",
+    "cached_at": "2026-08-05T23:22:09.167912+00:00",
     "hp": 90,
     "name": "Krokorok",
     "source": "tcgdex"
   },
   "B1-132": {
-    "cached_at": "2026-05-31T04:11:30.401208+00:00",
+    "cached_at": "2026-08-05T23:19:29.788510+00:00",
     "hp": 160,
     "name": "Krookodile",
     "source": "tcgdex"
   },
   "B1-133": {
-    "cached_at": "2026-06-25T18:31:24.498575+00:00",
+    "cached_at": "2026-08-05T23:21:50.516465+00:00",
     "hp": 90,
     "name": "Archen",
     "source": "tcgdex"
   },
   "B1-135": {
-    "cached_at": "2026-06-25T18:31:25.117103+00:00",
+    "cached_at": "2026-08-05T23:21:51.135554+00:00",
     "hp": 80,
     "name": "Golett",
     "source": "tcgdex"
   },
   "B1-138": {
-    "cached_at": "2026-06-25T18:31:25.738008+00:00",
+    "cached_at": "2026-08-05T23:21:51.760709+00:00",
     "hp": 60,
     "name": "Pancham",
     "source": "tcgdex"
   },
+  "B1-139": {
+    "cached_at": "2026-08-06T04:09:49.068015+00:00",
+    "hp": 80,
+    "name": "Crabrawler",
+    "source": "tcgdex"
+  },
   "B1-140": {
-    "cached_at": "2026-06-25T18:31:35.618396+00:00",
+    "cached_at": "2026-08-05T23:22:01.036848+00:00",
     "hp": 120,
     "name": "Crabominable",
     "source": "tcgdex"
   },
   "B1-143": {
-    "cached_at": "2026-06-01T02:11:35.284228+00:00",
+    "cached_at": "2026-08-05T23:19:26.642020+00:00",
     "hp": 80,
     "name": "Sandygast",
     "source": "tcgdex"
   },
   "B1-144": {
-    "cached_at": "2026-05-31T04:11:23.705069+00:00",
+    "cached_at": "2026-08-05T23:19:27.275927+00:00",
     "hp": 140,
     "name": "Palossand",
     "source": "tcgdex"
   },
   "B1-148": {
-    "cached_at": "2026-06-25T18:31:30.651282+00:00",
+    "cached_at": "2026-08-05T23:21:56.075254+00:00",
     "hp": 70,
     "name": "Murkrow",
     "source": "tcgdex"
   },
+  "B1-149": {
+    "cached_at": "2026-08-05T23:22:54.887042+00:00",
+    "hp": 100,
+    "name": "Honchkrow",
+    "source": "tcgdex"
+  },
   "B1-150": {
-    "cached_at": "2026-06-25T18:31:36.240068+00:00",
+    "cached_at": "2026-08-05T23:22:01.653244+00:00",
     "hp": 80,
     "name": "Absol",
     "source": "tcgdex"
   },
   "B1-152": {
-    "cached_at": "2026-06-25T18:31:26.503811+00:00",
+    "cached_at": "2026-08-05T23:21:52.390526+00:00",
     "hp": 60,
     "name": "Skorupi",
     "source": "tcgdex"
   },
   "B1-154": {
-    "cached_at": "2026-06-25T18:31:31.267915+00:00",
+    "cached_at": "2026-08-05T23:21:56.684554+00:00",
     "hp": 120,
     "name": "Darkrai",
     "source": "tcgdex"
   },
   "B1-156": {
-    "cached_at": "2026-06-25T18:31:31.873243+00:00",
+    "cached_at": "2026-08-05T23:21:57.364303+00:00",
     "hp": 90,
     "name": "Zweilous",
     "source": "tcgdex"
   },
+  "B1-159": {
+    "cached_at": "2026-08-05T23:22:38.004150+00:00",
+    "hp": 60,
+    "name": "Skrelp",
+    "source": "tcgdex"
+  },
   "B1-161": {
-    "cached_at": "2026-06-25T18:31:27.118264+00:00",
+    "cached_at": "2026-08-05T23:21:53.004856+00:00",
     "hp": 60,
     "name": "Mareanie",
     "source": "tcgdex"
   },
   "B1-162": {
-    "cached_at": "2026-06-01T02:13:55.501745+00:00",
+    "cached_at": "2026-08-05T23:20:51.761771+00:00",
     "hp": 100,
     "name": "Toxapex",
     "source": "tcgdex"
   },
   "B1-166": {
-    "cached_at": "2026-06-25T18:31:02.550525+00:00",
+    "cached_at": "2026-08-05T23:20:42.852384+00:00",
     "hp": 60,
     "name": "Ferroseed",
     "source": "tcgdex"
   },
   "B1-168": {
-    "cached_at": "2026-06-25T18:31:13.307261+00:00",
+    "cached_at": "2026-08-05T23:21:39.773173+00:00",
     "hp": 80,
     "name": "Durant",
     "source": "tcgdex"
   },
   "B1-169": {
-    "cached_at": "2026-06-25T18:31:39.337384+00:00",
+    "cached_at": "2026-08-05T23:22:04.748104+00:00",
     "hp": 110,
     "name": "Cobalion",
     "source": "tcgdex"
   },
   "B1-171": {
-    "cached_at": "2026-05-31T04:11:48.084246+00:00",
+    "cached_at": "2026-08-05T23:19:37.295725+00:00",
     "hp": 90,
     "name": "Doublade",
     "source": "tcgdex"
   },
   "B1-175": {
-    "cached_at": "2026-05-31T04:13:29.935938+00:00",
+    "cached_at": "2026-08-06T04:09:45.893073+00:00",
     "hp": 140,
     "name": "Corviknight",
     "source": "tcgdex"
   },
   "B1-177": {
-    "cached_at": "2026-06-25T18:31:39.951399+00:00",
+    "cached_at": "2026-08-05T23:22:05.368660+00:00",
     "hp": 40,
     "name": "Goomy",
     "source": "tcgdex"
   },
   "B1-180": {
-    "cached_at": "2026-06-25T18:31:01.264418+00:00",
+    "cached_at": "2026-08-05T23:19:53.547774+00:00",
     "hp": 60,
     "name": "Pidgey",
     "source": "tcgdex"
   },
   "B1-181": {
-    "cached_at": "2026-06-25T18:31:01.898210+00:00",
+    "cached_at": "2026-08-05T23:19:54.164597+00:00",
     "hp": 90,
     "name": "Pidgeotto",
     "source": "tcgdex"
   },
   "B1-182": {
-    "cached_at": "2026-06-25T18:31:27.786530+00:00",
+    "cached_at": "2026-08-05T23:21:53.614360+00:00",
     "hp": 150,
     "name": "Pidgeot",
     "source": "tcgdex"
   },
   "B1-185": {
-    "cached_at": "2026-06-25T18:31:28.416466+00:00",
+    "cached_at": "2026-08-05T23:21:54.227780+00:00",
     "hp": 60,
     "name": "Aipom",
     "source": "tcgdex"
   },
   "B1-187": {
-    "cached_at": "2026-06-12T03:48:36.608072+00:00",
+    "cached_at": "2026-08-05T23:21:13.230645+00:00",
     "hp": 100,
     "name": "Miltank",
     "source": "tcgdex"
   },
   "B1-188": {
-    "cached_at": "2026-06-25T18:31:44.763697+00:00",
+    "cached_at": "2026-08-05T23:22:09.792154+00:00",
     "hp": 60,
     "name": "Zigzagoon",
     "source": "tcgdex"
   },
+  "B1-189": {
+    "cached_at": "2026-08-05T23:22:55.505111+00:00",
+    "hp": 100,
+    "name": "Linoone",
+    "source": "tcgdex"
+  },
   "B1-191": {
-    "cached_at": "2026-06-25T18:31:32.504316+00:00",
+    "cached_at": "2026-08-05T23:21:57.978267+00:00",
     "hp": 90,
     "name": "Loudred",
     "source": "tcgdex"
   },
   "B1-192": {
-    "cached_at": "2026-06-25T18:31:40.714774+00:00",
+    "cached_at": "2026-08-05T23:22:05.984807+00:00",
     "hp": 150,
     "name": "Exploud",
     "source": "tcgdex"
   },
   "B1-193": {
-    "cached_at": "2026-06-25T18:31:51.674471+00:00",
+    "cached_at": "2026-08-05T23:22:16.043135+00:00",
     "hp": 50,
     "name": "Skitty",
     "source": "tcgdex"
   },
   "B1-195": {
-    "cached_at": "2026-05-31T04:12:10.565241+00:00",
+    "cached_at": "2026-08-05T23:19:54.779628+00:00",
     "hp": 70,
     "name": "Spinda",
     "source": "tcgdex"
   },
   "B1-196": {
-    "cached_at": "2026-06-01T02:13:44.754049+00:00",
+    "cached_at": "2026-08-05T23:20:42.203763+00:00",
     "hp": 50,
     "name": "Swablu",
     "source": "tcgdex"
   },
   "B1-198": {
-    "cached_at": "2026-06-25T18:31:06.396466+00:00",
+    "cached_at": "2026-08-05T23:21:08.304149+00:00",
     "hp": 70,
     "name": "Chatot",
     "source": "tcgdex"
   },
   "B1-199": {
-    "cached_at": "2026-05-31T04:12:12.381931+00:00",
+    "cached_at": "2026-08-05T23:19:56.011325+00:00",
     "hp": 60,
     "name": "Patrat",
     "source": "tcgdex"
   },
   "B1-201": {
-    "cached_at": "2026-06-12T03:48:28.636562+00:00",
+    "cached_at": "2026-08-05T23:19:40.405369+00:00",
     "hp": 60,
     "name": "Lillipup",
     "source": "tcgdex"
@@ -1565,7 +1823,7 @@
     "source": "tcgdex"
   },
   "B1-208": {
-    "cached_at": "2026-06-25T18:31:00.639210+00:00",
+    "cached_at": "2026-08-05T23:19:46.058789+00:00",
     "hp": 80,
     "name": "Furfrou",
     "source": "tcgdex"
@@ -1577,115 +1835,127 @@
     "source": "tcgdex"
   },
   "B1-210": {
-    "cached_at": "2026-05-31T04:11:57.104220+00:00",
+    "cached_at": "2026-08-06T04:09:45.237814+00:00",
     "hp": 80,
     "name": "Corvisquire",
     "source": "tcgdex"
   },
   "B1-214": {
-    "cached_at": "2026-06-25T18:31:14.596626+00:00",
+    "cached_at": "2026-08-05T23:21:41.011875+00:00",
     "hp": null,
     "name": "Plume Fossil",
     "source": "tcgdex"
   },
   "B1-216": {
-    "cached_at": "2026-06-25T18:31:36.847968+00:00",
+    "cached_at": "2026-08-05T23:22:02.278839+00:00",
     "hp": null,
     "name": "Cover Fossil",
     "source": "tcgdex"
   },
   "B1-217": {
-    "cached_at": "2026-05-31T04:12:15.320736+00:00",
+    "cached_at": "2026-08-05T23:19:59.160395+00:00",
     "hp": null,
     "name": "Flame Patch",
     "source": "tcgdex"
   },
   "B1-222": {
-    "cached_at": "2026-06-25T18:31:15.704668+00:00",
+    "cached_at": "2026-08-05T23:21:41.647409+00:00",
     "hp": null,
     "name": "Hala",
     "source": "tcgdex"
   },
   "B1-223": {
-    "cached_at": "2026-05-31T04:12:22.688937+00:00",
+    "cached_at": "2026-08-05T23:20:05.422463+00:00",
     "hp": null,
     "name": "May",
     "source": "tcgdex"
   },
   "B1-224": {
-    "cached_at": "2026-06-25T18:31:16.320254+00:00",
+    "cached_at": "2026-08-05T23:21:42.301020+00:00",
     "hp": null,
     "name": "Fantina",
     "source": "tcgdex"
   },
   "B1-225": {
-    "cached_at": "2026-05-31T04:12:23.384373+00:00",
+    "cached_at": "2026-08-05T23:20:06.037984+00:00",
     "hp": null,
     "name": "Copycat",
     "source": "tcgdex"
   },
   "B1-226": {
-    "cached_at": "2026-06-12T03:48:37.831590+00:00",
+    "cached_at": "2026-08-05T23:21:14.502150+00:00",
     "hp": null,
     "name": "Lisia",
     "source": "tcgdex"
   },
   "B1-233": {
-    "cached_at": "2026-06-25T18:31:13.940789+00:00",
+    "cached_at": "2026-08-05T23:21:40.393553+00:00",
     "hp": 140,
     "name": "Ludicolo",
     "source": "tcgdex"
   },
   "B1-238": {
-    "cached_at": "2026-06-25T18:31:33.757091+00:00",
+    "cached_at": "2026-08-05T23:21:59.201289+00:00",
     "hp": 120,
     "name": "Cofagrigus",
     "source": "tcgdex"
   },
   "B1-244": {
-    "cached_at": "2026-06-25T18:31:29.051731+00:00",
+    "cached_at": "2026-08-05T23:21:54.836727+00:00",
     "hp": 100,
     "name": "Honchkrow",
     "source": "tcgdex"
   },
   "B1-256": {
-    "cached_at": "2026-06-25T18:31:33.138262+00:00",
+    "cached_at": "2026-08-05T23:21:58.584561+00:00",
     "hp": 170,
     "name": "Greninja ex",
     "source": "tcgdex"
   },
   "B1-291": {
-    "cached_at": "2026-06-25T18:31:41.403488+00:00",
+    "cached_at": "2026-08-05T23:22:06.622385+00:00",
     "hp": 80,
     "name": "Dartrix",
     "source": "tcgdex"
   },
+  "B1-306": {
+    "cached_at": "2026-08-05T23:22:41.743341+00:00",
+    "hp": 100,
+    "name": "Hypno",
+    "source": "tcgdex"
+  },
+  "B1-322": {
+    "cached_at": "2026-08-06T04:09:49.699124+00:00",
+    "hp": 130,
+    "name": "Tapu Koko ex",
+    "source": "tcgdex"
+  },
   "B1A-001": {
-    "cached_at": "2026-05-31T04:10:21.938511+00:00",
+    "cached_at": "2026-08-05T23:18:35.941404+00:00",
     "hp": 60,
     "name": "Bulbasaur",
     "source": "tcgdex"
   },
   "B1A-002": {
-    "cached_at": "2026-05-31T04:10:22.582354+00:00",
+    "cached_at": "2026-08-05T23:18:36.551289+00:00",
     "hp": 100,
     "name": "Ivysaur",
     "source": "tcgdex"
   },
   "B1A-004": {
-    "cached_at": "2026-05-31T04:10:23.330530+00:00",
+    "cached_at": "2026-08-05T23:18:37.177025+00:00",
     "hp": 240,
     "name": "Mega Venusaur ex",
     "source": "tcgdex"
   },
   "B1A-005": {
-    "cached_at": "2026-05-31T04:10:34.402369+00:00",
+    "cached_at": "2026-08-05T23:18:42.260963+00:00",
     "hp": 50,
     "name": "Spinarak",
     "source": "tcgdex"
   },
   "B1A-007": {
-    "cached_at": "2026-06-01T02:10:23.684896+00:00",
+    "cached_at": "2026-08-05T23:18:43.512339+00:00",
     "hp": 50,
     "name": "Sunkern",
     "source": "tcgdex"
@@ -1697,19 +1967,19 @@
     "source": "tcgdex"
   },
   "B1A-009": {
-    "cached_at": "2026-06-01T02:10:20.151228+00:00",
+    "cached_at": "2026-08-05T23:18:40.307776+00:00",
     "hp": 60,
     "name": "Burmy",
     "source": "tcgdex"
   },
   "B1A-010": {
-    "cached_at": "2026-05-31T04:10:30.393114+00:00",
+    "cached_at": "2026-08-05T23:18:39.698994+00:00",
     "hp": 100,
     "name": "Mothim",
     "source": "tcgdex"
   },
   "B1A-011": {
-    "cached_at": "2026-06-01T02:07:29.496878+00:00",
+    "cached_at": "2026-08-05T23:18:26.814405+00:00",
     "hp": 60,
     "name": "Charmander",
     "source": "tcgdex"
@@ -1721,1189 +1991,1249 @@
     "source": "tcgdex"
   },
   "B1A-013": {
-    "cached_at": "2026-06-01T02:09:53.755514+00:00",
+    "cached_at": "2026-08-05T23:18:27.498756+00:00",
     "hp": 150,
     "name": "Charizard",
     "source": "tcgdex"
   },
   "B1A-014": {
-    "cached_at": "2026-05-31T04:10:12.319062+00:00",
+    "cached_at": "2026-08-05T23:18:28.138136+00:00",
     "hp": 220,
     "name": "Mega Charizard Y ex",
     "source": "tcgdex"
   },
   "B1A-015": {
-    "cached_at": "2026-06-01T02:09:57.287147+00:00",
+    "cached_at": "2026-08-05T23:18:28.833094+00:00",
     "hp": 60,
     "name": "Houndour",
     "source": "tcgdex"
   },
   "B1A-016": {
-    "cached_at": "2026-05-31T04:10:14.743632+00:00",
+    "cached_at": "2026-08-05T23:18:29.484425+00:00",
     "hp": 90,
     "name": "Houndoom",
     "source": "tcgdex"
   },
   "B1A-018": {
-    "cached_at": "2026-05-31T04:10:39.752972+00:00",
+    "cached_at": "2026-08-05T23:18:44.751096+00:00",
     "hp": 90,
     "name": "Wartortle",
     "source": "tcgdex"
   },
   "B1A-020": {
-    "cached_at": "2026-06-25T18:31:56.795092+00:00",
+    "cached_at": "2026-08-05T23:22:21.114560+00:00",
     "hp": 230,
     "name": "Mega Blastoise ex",
     "source": "tcgdex"
   },
   "B1A-021": {
-    "cached_at": "2026-05-31T04:10:44.726880+00:00",
+    "cached_at": "2026-08-05T23:18:47.964543+00:00",
     "hp": 80,
     "name": "Basculin",
     "source": "tcgdex"
   },
   "B1A-022": {
-    "cached_at": "2026-05-31T04:10:43.806696+00:00",
+    "cached_at": "2026-08-05T23:18:47.307165+00:00",
     "hp": 60,
     "name": "Clauncher",
     "source": "tcgdex"
   },
   "B1A-023": {
-    "cached_at": "2026-05-31T04:10:40.555558+00:00",
+    "cached_at": "2026-08-05T23:18:45.407161+00:00",
     "hp": 100,
     "name": "Clawitzer",
     "source": "tcgdex"
   },
   "B1A-024": {
-    "cached_at": "2026-05-31T04:10:52.846952+00:00",
+    "cached_at": "2026-08-05T23:18:53.752444+00:00",
     "hp": 50,
     "name": "Magnemite",
     "source": "tcgdex"
   },
   "B1A-025": {
-    "cached_at": "2026-06-01T02:10:50.929249+00:00",
+    "cached_at": "2026-08-05T23:18:53.099383+00:00",
     "hp": 80,
     "name": "Magneton",
     "source": "tcgdex"
   },
   "B1A-028": {
-    "cached_at": "2026-06-01T02:10:54.433705+00:00",
+    "cached_at": "2026-08-05T23:18:55.024714+00:00",
     "hp": 60,
     "name": "Helioptile",
     "source": "tcgdex"
   },
   "B1A-029": {
-    "cached_at": "2026-05-31T04:10:54.966256+00:00",
+    "cached_at": "2026-08-05T23:18:54.388240+00:00",
     "hp": 100,
     "name": "Heliolisk",
     "source": "tcgdex"
   },
   "B1A-030": {
-    "cached_at": "2026-06-01T02:11:03.286760+00:00",
+    "cached_at": "2026-08-05T23:19:03.900507+00:00",
     "hp": 50,
     "name": "Misdreavus",
     "source": "tcgdex"
   },
   "B1A-031": {
-    "cached_at": "2026-06-01T02:10:59.746085+00:00",
+    "cached_at": "2026-08-05T23:19:00.098414+00:00",
     "hp": 90,
     "name": "Mismagius",
     "source": "tcgdex"
   },
   "B1A-032": {
-    "cached_at": "2026-05-31T04:11:03.246674+00:00",
+    "cached_at": "2026-08-05T23:19:04.523421+00:00",
     "hp": 40,
     "name": "Solosis",
     "source": "tcgdex"
   },
   "B1A-035": {
-    "cached_at": "2026-06-01T02:11:05.086259+00:00",
+    "cached_at": "2026-08-05T23:19:05.752611+00:00",
     "hp": 60,
     "name": "Spritzee",
     "source": "tcgdex"
   },
   "B1A-036": {
-    "cached_at": "2026-05-31T04:11:01.037698+00:00",
+    "cached_at": "2026-08-05T23:19:01.334839+00:00",
     "hp": 100,
     "name": "Aromatisse",
     "source": "tcgdex"
   },
   "B1A-038": {
-    "cached_at": "2026-06-01T02:11:32.245503+00:00",
+    "cached_at": "2026-08-05T23:19:25.412366+00:00",
     "hp": 100,
     "name": "Onix",
     "source": "tcgdex"
   },
   "B1A-039": {
-    "cached_at": "2026-06-01T02:11:22.193165+00:00",
+    "cached_at": "2026-08-05T23:19:17.139922+00:00",
     "hp": 80,
     "name": "Makuhita",
     "source": "tcgdex"
   },
   "B1A-040": {
-    "cached_at": "2026-06-01T02:11:18.626090+00:00",
+    "cached_at": "2026-08-05T23:19:14.613053+00:00",
     "hp": 120,
     "name": "Hariyama",
     "source": "tcgdex"
   },
   "B1A-041": {
-    "cached_at": "2026-06-01T02:11:34.005828+00:00",
+    "cached_at": "2026-08-05T23:19:26.023320+00:00",
     "hp": 70,
     "name": "Nosepass",
     "source": "tcgdex"
   },
   "B1A-043": {
-    "cached_at": "2026-05-31T04:11:16.676983+00:00",
+    "cached_at": "2026-08-05T23:19:19.019350+00:00",
     "hp": 50,
     "name": "Mienfoo",
     "source": "tcgdex"
   },
   "B1A-044": {
-    "cached_at": "2026-06-01T02:11:25.705716+00:00",
+    "cached_at": "2026-08-05T23:19:20.310749+00:00",
     "hp": 90,
     "name": "Mienshao",
     "source": "tcgdex"
   },
   "B1A-045": {
-    "cached_at": "2026-05-31T04:11:35.168393+00:00",
+    "cached_at": "2026-08-05T23:19:32.271277+00:00",
     "hp": 80,
     "name": "Grimer",
     "source": "tcgdex"
   },
   "B1A-049": {
-    "cached_at": "2026-05-31T04:11:35.777421+00:00",
+    "cached_at": "2026-08-05T23:19:32.904189+00:00",
     "hp": 70,
     "name": "Trubbish",
     "source": "tcgdex"
   },
   "B1A-050": {
-    "cached_at": "2026-05-31T04:11:34.518547+00:00",
+    "cached_at": "2026-08-05T23:19:31.645375+00:00",
     "hp": 130,
     "name": "Garbodor",
     "source": "tcgdex"
   },
   "B1A-051": {
-    "cached_at": "2026-06-01T02:12:08.926319+00:00",
+    "cached_at": "2026-08-05T23:19:36.033420+00:00",
     "hp": 150,
     "name": "Steelix",
     "source": "tcgdex"
   },
   "B1A-053": {
-    "cached_at": "2026-06-01T02:12:10.124738+00:00",
+    "cached_at": "2026-08-05T23:19:36.661282+00:00",
     "hp": 130,
     "name": "Probopass",
     "source": "tcgdex"
   },
   "B1A-054": {
-    "cached_at": "2026-05-31T04:11:43.565241+00:00",
+    "cached_at": "2026-08-05T23:19:35.424102+00:00",
     "hp": 110,
     "name": "Genesect",
     "source": "tcgdex"
   },
   "B1A-055": {
-    "cached_at": "2026-05-31T04:12:02.337317+00:00",
+    "cached_at": "2026-08-05T23:19:47.978450+00:00",
     "hp": 60,
     "name": "Ditto",
     "source": "tcgdex"
   },
   "B1A-056": {
-    "cached_at": "2026-06-01T02:12:24.263074+00:00",
+    "cached_at": "2026-08-05T23:19:42.900566+00:00",
     "hp": 60,
     "name": "Porygon",
     "source": "tcgdex"
   },
   "B1A-057": {
-    "cached_at": "2026-05-31T04:11:57.721928+00:00",
+    "cached_at": "2026-08-05T23:19:42.288451+00:00",
     "hp": 90,
     "name": "Porygon2",
     "source": "tcgdex"
   },
   "B1A-059": {
-    "cached_at": "2026-06-01T02:12:27.877821+00:00",
+    "cached_at": "2026-08-05T23:19:44.783021+00:00",
     "hp": 60,
     "name": "Starly",
     "source": "tcgdex"
   },
   "B1A-060": {
-    "cached_at": "2026-06-01T02:12:26.694053+00:00",
+    "cached_at": "2026-08-05T23:19:44.160141+00:00",
     "hp": 80,
     "name": "Staravia",
     "source": "tcgdex"
   },
   "B1A-061": {
-    "cached_at": "2026-06-01T02:12:25.494193+00:00",
+    "cached_at": "2026-08-05T23:19:43.527730+00:00",
     "hp": 140,
     "name": "Staraptor",
     "source": "tcgdex"
   },
   "B1A-062": {
-    "cached_at": "2026-06-01T02:12:40.777056+00:00",
+    "cached_at": "2026-08-05T23:19:52.315162+00:00",
     "hp": 60,
     "name": "Buneary",
     "source": "tcgdex"
   },
   "B1A-064": {
-    "cached_at": "2026-06-01T02:12:29.066017+00:00",
+    "cached_at": "2026-08-05T23:19:45.425178+00:00",
     "hp": 100,
     "name": "Bouffalant",
     "source": "tcgdex"
   },
   "B1A-065": {
-    "cached_at": "2026-05-31T04:12:01.685349+00:00",
+    "cached_at": "2026-08-05T23:19:46.691171+00:00",
     "hp": 70,
     "name": "Furfrou",
     "source": "tcgdex"
   },
   "B1A-066": {
-    "cached_at": "2026-05-31T04:12:17.327473+00:00",
+    "cached_at": "2026-08-05T23:20:01.009195+00:00",
     "hp": null,
     "name": "Clemont's Backpack",
     "source": "tcgdex"
   },
   "B1A-067": {
-    "cached_at": "2026-05-31T04:12:14.648029+00:00",
+    "cached_at": "2026-08-05T23:19:57.845948+00:00",
     "hp": null,
     "name": "Quick-Grow Extract",
     "source": "tcgdex"
   },
   "B1A-068": {
-    "cached_at": "2026-05-31T04:12:18.779535+00:00",
+    "cached_at": "2026-08-05T23:20:01.650921+00:00",
     "hp": null,
     "name": "Clemont",
     "source": "tcgdex"
   },
   "B1A-069": {
-    "cached_at": "2026-05-31T04:12:19.447990+00:00",
+    "cached_at": "2026-08-05T23:20:02.287682+00:00",
     "hp": null,
     "name": "Serena",
     "source": "tcgdex"
   },
   "B1A-081": {
-    "cached_at": "2026-05-31T04:13:26.194568+00:00",
+    "cached_at": "2026-08-05T23:21:00.742869+00:00",
     "hp": null,
     "name": "Clemont",
     "source": "tcgdex"
   },
   "B1A-103": {
-    "cached_at": "2026-06-01T02:12:47.252270+00:00",
+    "cached_at": "2026-08-05T23:19:58.460606+00:00",
     "hp": null,
     "name": "Quick-Grow Extract",
     "source": "tcgdex"
   },
   "B2-001": {
-    "cached_at": "2026-06-01T02:10:29.098592+00:00",
+    "cached_at": "2026-08-05T23:18:44.129334+00:00",
     "hp": 60,
     "name": "Ledyba",
     "source": "tcgdex"
   },
   "B2-003": {
-    "cached_at": "2026-06-12T03:48:40.315838+00:00",
+    "cached_at": "2026-08-05T23:21:17.674364+00:00",
     "hp": 80,
     "name": "Shuckle",
     "source": "tcgdex"
   },
   "B2-004": {
-    "cached_at": "2026-05-31T04:10:33.621979+00:00",
+    "cached_at": "2026-08-05T23:18:41.578975+00:00",
     "hp": 60,
     "name": "Roselia",
     "source": "tcgdex"
   },
   "B2-006": {
-    "cached_at": "2026-06-12T03:48:40.931503+00:00",
+    "cached_at": "2026-08-05T23:21:18.301509+00:00",
     "hp": 60,
     "name": "Cacnea",
     "source": "tcgdex"
   },
   "B2-008": {
-    "cached_at": "2026-06-25T18:31:57.500017+00:00",
+    "cached_at": "2026-08-05T23:22:21.750437+00:00",
     "hp": 60,
     "name": "Chespin",
     "source": "tcgdex"
   },
   "B2-009": {
-    "cached_at": "2026-06-12T03:48:41.542270+00:00",
+    "cached_at": "2026-08-05T23:21:18.939717+00:00",
     "hp": 90,
     "name": "Quilladin",
     "source": "tcgdex"
   },
+  "B2-011": {
+    "cached_at": "2026-08-05T23:22:47.400334+00:00",
+    "hp": 50,
+    "name": "Scatterbug",
+    "source": "tcgdex"
+  },
   "B2-012": {
-    "cached_at": "2026-06-12T03:48:42.154200+00:00",
+    "cached_at": "2026-08-05T23:21:19.556455+00:00",
     "hp": 80,
     "name": "Spewpa",
     "source": "tcgdex"
   },
   "B2-016": {
-    "cached_at": "2026-06-25T18:31:58.109467+00:00",
+    "cached_at": "2026-08-05T23:22:22.388287+00:00",
     "hp": 90,
     "name": "Eldegoss",
     "source": "tcgdex"
   },
   "B2-019": {
-    "cached_at": "2026-06-25T18:31:58.727129+00:00",
+    "cached_at": "2026-08-05T23:22:23.015737+00:00",
     "hp": 120,
     "name": "Reshiram",
     "source": "tcgdex"
   },
+  "B2-020": {
+    "cached_at": "2026-08-05T23:22:35.496310+00:00",
+    "hp": 70,
+    "name": "Litleo",
+    "source": "tcgdex"
+  },
   "B2-021": {
-    "cached_at": "2026-06-25T18:31:52.340531+00:00",
+    "cached_at": "2026-08-05T23:22:16.668483+00:00",
     "hp": 90,
     "name": "Pyroar",
     "source": "tcgdex"
   },
   "B2-022": {
-    "cached_at": "2026-06-12T03:48:27.389795+00:00",
+    "cached_at": "2026-08-05T23:19:07.639545+00:00",
     "hp": 70,
     "name": "Oricorio",
     "source": "tcgdex"
   },
   "B2-024": {
-    "cached_at": "2026-06-12T03:48:32.291699+00:00",
+    "cached_at": "2026-08-05T23:21:05.803850+00:00",
     "hp": 60,
     "name": "Scorbunny",
     "source": "tcgdex"
   },
   "B2-026": {
-    "cached_at": "2026-06-25T18:31:46.693446+00:00",
+    "cached_at": "2026-08-05T23:22:11.639703+00:00",
     "hp": 130,
     "name": "Cinderace",
     "source": "tcgdex"
   },
   "B2-027": {
-    "cached_at": "2026-05-31T04:10:16.388436+00:00",
+    "cached_at": "2026-08-05T23:18:30.771920+00:00",
     "hp": 80,
     "name": "Hearthflame Mask Ogerpon",
     "source": "tcgdex"
   },
   "B2-030": {
-    "cached_at": "2026-05-31T04:13:16.149733+00:00",
+    "cached_at": "2026-08-05T23:20:52.407474+00:00",
     "hp": 70,
     "name": "Galarian Mr. Mime",
     "source": "tcgdex"
   },
   "B2-031": {
-    "cached_at": "2026-06-25T18:31:59.358476+00:00",
+    "cached_at": "2026-08-05T23:22:23.627248+00:00",
     "hp": 110,
     "name": "Galarian Mr. Rime",
     "source": "tcgdex"
   },
   "B2-032": {
-    "cached_at": "2026-06-12T03:48:33.560586+00:00",
+    "cached_at": "2026-08-05T23:21:07.678717+00:00",
     "hp": 80,
     "name": "Delibird",
     "source": "tcgdex"
   },
   "B2-034": {
-    "cached_at": "2026-06-25T18:31:47.304086+00:00",
+    "cached_at": "2026-08-05T23:22:12.256493+00:00",
     "hp": 90,
     "name": "Marshtomp",
     "source": "tcgdex"
   },
   "B2-037": {
-    "cached_at": "2026-06-12T03:48:42.765668+00:00",
+    "cached_at": "2026-08-05T23:21:20.169016+00:00",
     "hp": 60,
     "name": "Vanillite",
     "source": "tcgdex"
   },
   "B2-038": {
-    "cached_at": "2026-06-25T18:31:48.368349+00:00",
+    "cached_at": "2026-08-05T23:22:12.871251+00:00",
     "hp": 80,
     "name": "Vanillish",
     "source": "tcgdex"
   },
   "B2-039": {
-    "cached_at": "2026-06-01T02:10:45.604348+00:00",
+    "cached_at": "2026-08-05T23:18:51.247543+00:00",
     "hp": 140,
     "name": "Vanilluxe",
     "source": "tcgdex"
   },
   "B2-040": {
-    "cached_at": "2026-05-31T04:10:49.232772+00:00",
+    "cached_at": "2026-08-05T23:18:51.856844+00:00",
     "hp": 70,
     "name": "Cryogonal",
     "source": "tcgdex"
   },
   "B2-041": {
-    "cached_at": "2026-06-12T03:48:39.704896+00:00",
+    "cached_at": "2026-08-05T23:21:16.413407+00:00",
     "hp": 100,
     "name": "Amaura",
     "source": "tcgdex"
   },
   "B2-043": {
-    "cached_at": "2026-06-01T02:10:43.782107+00:00",
+    "cached_at": "2026-08-05T23:18:49.969674+00:00",
     "hp": 80,
     "name": "Chewtle",
     "source": "tcgdex"
   },
   "B2-045": {
-    "cached_at": "2026-06-25T18:31:59.985065+00:00",
+    "cached_at": "2026-08-05T23:22:24.262628+00:00",
     "hp": 80,
     "name": "Cramorant",
     "source": "tcgdex"
   },
   "B2-046": {
-    "cached_at": "2026-06-25T18:31:53.026071+00:00",
+    "cached_at": "2026-08-05T23:22:17.306511+00:00",
     "hp": 60,
     "name": "Arrokuda",
     "source": "tcgdex"
   },
   "B2-047": {
-    "cached_at": "2026-06-12T03:48:43.409011+00:00",
+    "cached_at": "2026-08-05T23:21:20.787531+00:00",
     "hp": 100,
     "name": "Barraskewda",
     "source": "tcgdex"
   },
+  "B2-048": {
+    "cached_at": "2026-08-05T23:22:38.629347+00:00",
+    "hp": 80,
+    "name": "Wellspring Mask Ogerpon",
+    "source": "tcgdex"
+  },
+  "B2-049": {
+    "cached_at": "2026-08-05T23:18:57.586839+00:00",
+    "hp": 60,
+    "name": "Pikachu",
+    "source": "tcgdex"
+  },
   "B2-052": {
-    "cached_at": "2026-06-12T03:48:44.035283+00:00",
+    "cached_at": "2026-08-05T23:21:21.437217+00:00",
     "hp": 70,
     "name": "Plusle",
     "source": "tcgdex"
   },
   "B2-054": {
-    "cached_at": "2026-05-31T04:10:58.619634+00:00",
+    "cached_at": "2026-08-05T23:18:58.207754+00:00",
     "hp": 60,
     "name": "Toxel",
     "source": "tcgdex"
   },
   "B2-058": {
-    "cached_at": "2026-05-31T04:11:05.826123+00:00",
+    "cached_at": "2026-08-05T23:19:09.540275+00:00",
     "hp": 60,
     "name": "Galarian Ponyta",
     "source": "tcgdex"
   },
   "B2-059": {
-    "cached_at": "2026-05-31T04:11:01.669765+00:00",
+    "cached_at": "2026-08-05T23:19:01.958461+00:00",
     "hp": 100,
     "name": "Galarian Rapidash",
     "source": "tcgdex"
   },
   "B2-060": {
-    "cached_at": "2026-06-12T03:48:44.658784+00:00",
+    "cached_at": "2026-08-05T23:21:22.139314+00:00",
     "hp": 100,
     "name": "Wobbuffet",
     "source": "tcgdex"
   },
+  "B2-061": {
+    "cached_at": "2026-08-05T23:22:43.046523+00:00",
+    "hp": 60,
+    "name": "Snubbull",
+    "source": "tcgdex"
+  },
   "B2-062": {
-    "cached_at": "2026-06-12T03:48:45.276194+00:00",
+    "cached_at": "2026-08-05T23:21:22.779362+00:00",
     "hp": 120,
     "name": "Granbull",
     "source": "tcgdex"
   },
   "B2-063": {
-    "cached_at": "2026-06-01T02:11:06.269838+00:00",
+    "cached_at": "2026-08-05T23:19:06.394639+00:00",
     "hp": 60,
     "name": "Ralts",
     "source": "tcgdex"
   },
   "B2-064": {
-    "cached_at": "2026-06-01T02:11:13.906797+00:00",
+    "cached_at": "2026-08-05T23:19:10.793865+00:00",
     "hp": 80,
     "name": "Kirlia",
     "source": "tcgdex"
   },
+  "B2-065": {
+    "cached_at": "2026-08-05T23:22:39.248238+00:00",
+    "hp": 130,
+    "name": "Gardevoir",
+    "source": "tcgdex"
+  },
   "B2-067": {
-    "cached_at": "2026-06-12T03:48:45.894048+00:00",
+    "cached_at": "2026-08-05T23:21:24.024041+00:00",
     "hp": 50,
     "name": "Litwick",
     "source": "tcgdex"
   },
   "B2-070": {
-    "cached_at": "2026-05-31T04:10:59.424715+00:00",
+    "cached_at": "2026-08-05T23:18:58.852326+00:00",
     "hp": 70,
     "name": "Meloetta",
     "source": "tcgdex"
   },
   "B2-071": {
-    "cached_at": "2026-06-12T03:48:46.501125+00:00",
+    "cached_at": "2026-08-05T23:21:24.642190+00:00",
     "hp": 60,
     "name": "Pumpkaboo",
     "source": "tcgdex"
   },
   "B2-072": {
-    "cached_at": "2026-06-25T18:32:00.593084+00:00",
+    "cached_at": "2026-08-05T23:22:24.882887+00:00",
     "hp": 110,
     "name": "Gourgeist",
     "source": "tcgdex"
   },
   "B2-074": {
-    "cached_at": "2026-05-31T04:11:05.188991+00:00",
+    "cached_at": "2026-08-05T23:19:07.015093+00:00",
     "hp": 30,
     "name": "Sinistea",
     "source": "tcgdex"
   },
   "B2-076": {
-    "cached_at": "2026-05-31T04:11:06.491744+00:00",
+    "cached_at": "2026-08-05T23:19:10.167302+00:00",
     "hp": 80,
     "name": "Indeedee",
     "source": "tcgdex"
   },
   "B2-077": {
-    "cached_at": "2026-06-01T02:11:28.657244+00:00",
+    "cached_at": "2026-08-05T23:19:22.233107+00:00",
     "hp": 60,
     "name": "Sandshrew",
     "source": "tcgdex"
   },
   "B2-078": {
-    "cached_at": "2026-06-12T03:48:28.001715+00:00",
+    "cached_at": "2026-08-05T23:19:13.369812+00:00",
     "hp": 90,
     "name": "Sandslash",
     "source": "tcgdex"
   },
   "B2-079": {
-    "cached_at": "2026-06-01T02:11:21.010597+00:00",
+    "cached_at": "2026-08-05T23:19:16.518069+00:00",
     "hp": 70,
     "name": "Machop",
     "source": "tcgdex"
   },
   "B2-081": {
-    "cached_at": "2026-06-01T02:11:19.823045+00:00",
+    "cached_at": "2026-08-05T23:19:15.898373+00:00",
     "hp": 150,
     "name": "Machamp",
     "source": "tcgdex"
   },
   "B2-082": {
-    "cached_at": "2026-06-01T02:11:30.478014+00:00",
+    "cached_at": "2026-08-05T23:19:24.123003+00:00",
     "hp": 70,
     "name": "Cubone",
     "source": "tcgdex"
   },
   "B2-083": {
-    "cached_at": "2026-06-01T02:11:42.325626+00:00",
+    "cached_at": "2026-08-05T23:19:29.167485+00:00",
     "hp": 60,
     "name": "Meditite",
     "source": "tcgdex"
   },
   "B2-084": {
-    "cached_at": "2026-06-12T03:48:47.103146+00:00",
+    "cached_at": "2026-08-05T23:21:25.265652+00:00",
     "hp": 100,
     "name": "Medicham",
     "source": "tcgdex"
   },
   "B2-085": {
-    "cached_at": "2026-05-31T04:11:25.483593+00:00",
+    "cached_at": "2026-08-05T23:19:27.886893+00:00",
     "hp": 70,
     "name": "Roggenrola",
     "source": "tcgdex"
   },
   "B2-088": {
-    "cached_at": "2026-06-25T18:31:03.792572+00:00",
+    "cached_at": "2026-08-05T23:20:50.438895+00:00",
     "hp": 60,
     "name": "Drilbur",
     "source": "tcgdex"
   },
   "B2-089": {
-    "cached_at": "2026-06-12T03:48:47.751369+00:00",
+    "cached_at": "2026-08-05T23:21:25.898877+00:00",
     "hp": 90,
     "name": "Tyrunt",
     "source": "tcgdex"
   },
   "B2-091": {
-    "cached_at": "2026-05-31T04:13:16.865611+00:00",
+    "cached_at": "2026-08-05T23:20:53.038191+00:00",
     "hp": 90,
     "name": "Passimian",
     "source": "tcgdex"
   },
+  "B2-092": {
+    "cached_at": "2026-08-05T23:22:39.872466+00:00",
+    "hp": 70,
+    "name": "Falinks",
+    "source": "tcgdex"
+  },
   "B2-094": {
-    "cached_at": "2026-06-25T18:32:01.211312+00:00",
+    "cached_at": "2026-08-05T23:22:25.512705+00:00",
     "hp": 60,
     "name": "Alolan Meowth",
     "source": "tcgdex"
   },
   "B2-095": {
-    "cached_at": "2026-06-01T02:11:53.089937+00:00",
+    "cached_at": "2026-08-05T23:19:31.035346+00:00",
     "hp": 100,
     "name": "Alolan Persian",
     "source": "tcgdex"
   },
   "B2-096": {
-    "cached_at": "2026-05-31T04:13:17.549964+00:00",
+    "cached_at": "2026-08-05T23:20:53.654205+00:00",
     "hp": 80,
     "name": "Alolan Grimer",
     "source": "tcgdex"
   },
   "B2-098": {
-    "cached_at": "2026-05-31T04:13:18.249578+00:00",
+    "cached_at": "2026-08-05T23:20:54.305855+00:00",
     "hp": 60,
     "name": "Galarian Zigzagoon",
     "source": "tcgdex"
   },
   "B2-099": {
-    "cached_at": "2026-05-31T04:11:42.072451+00:00",
+    "cached_at": "2026-08-05T23:19:34.788820+00:00",
     "hp": 80,
     "name": "Galarian Linoone",
     "source": "tcgdex"
   },
   "B2-101": {
-    "cached_at": "2026-06-12T03:48:48.379072+00:00",
+    "cached_at": "2026-08-05T23:21:26.532907+00:00",
     "hp": 70,
     "name": "Stunky",
     "source": "tcgdex"
   },
   "B2-102": {
-    "cached_at": "2026-06-12T03:48:49.025754+00:00",
+    "cached_at": "2026-08-05T23:21:27.160285+00:00",
     "hp": 110,
     "name": "Skuntank",
     "source": "tcgdex"
   },
   "B2-104": {
-    "cached_at": "2026-06-25T18:31:49.000134+00:00",
+    "cached_at": "2026-08-05T23:22:13.521945+00:00",
     "hp": 60,
     "name": "Purrloin",
     "source": "tcgdex"
   },
   "B2-106": {
-    "cached_at": "2026-05-31T04:11:37.187167+00:00",
+    "cached_at": "2026-08-05T23:19:33.529974+00:00",
     "hp": 60,
     "name": "Scraggy",
     "source": "tcgdex"
   },
   "B2-108": {
-    "cached_at": "2026-05-31T04:11:31.721315+00:00",
+    "cached_at": "2026-08-05T23:19:30.409376+00:00",
     "hp": 120,
     "name": "Yveltal",
     "source": "tcgdex"
   },
   "B2-110": {
-    "cached_at": "2026-06-25T18:31:49.620277+00:00",
+    "cached_at": "2026-08-05T23:22:14.145445+00:00",
     "hp": 60,
     "name": "Galarian Meowth",
     "source": "tcgdex"
   },
   "B2-112": {
-    "cached_at": "2026-05-31T04:11:51.186340+00:00",
+    "cached_at": "2026-08-05T23:19:38.547040+00:00",
     "hp": 80,
     "name": "Mawile",
     "source": "tcgdex"
   },
   "B2-113": {
-    "cached_at": "2026-05-31T04:11:52.619390+00:00",
+    "cached_at": "2026-08-05T23:19:39.164078+00:00",
     "hp": 170,
     "name": "Mega Mawile ex",
     "source": "tcgdex"
   },
   "B2-115": {
-    "cached_at": "2026-05-31T04:13:07.249084+00:00",
+    "cached_at": "2026-08-05T23:20:43.461788+00:00",
     "hp": 70,
     "name": "Ferroseed",
     "source": "tcgdex"
   },
   "B2-116": {
-    "cached_at": "2026-06-25T18:31:50.281684+00:00",
+    "cached_at": "2026-08-05T23:22:14.780616+00:00",
     "hp": 120,
     "name": "Ferrothorn",
     "source": "tcgdex"
   },
   "B2-119": {
-    "cached_at": "2026-06-01T02:12:11.313195+00:00",
+    "cached_at": "2026-08-05T23:19:37.906733+00:00",
     "hp": 90,
     "name": "Doublade",
     "source": "tcgdex"
   },
   "B2-120": {
-    "cached_at": "2026-06-12T03:48:49.641970+00:00",
+    "cached_at": "2026-08-05T23:21:27.780149+00:00",
     "hp": 140,
     "name": "Aegislash",
     "source": "tcgdex"
   },
   "B2-121": {
-    "cached_at": "2026-06-12T03:48:50.262864+00:00",
+    "cached_at": "2026-08-05T23:21:28.414456+00:00",
     "hp": 60,
     "name": "Bagon",
     "source": "tcgdex"
   },
   "B2-122": {
-    "cached_at": "2026-06-25T18:32:01.833784+00:00",
+    "cached_at": "2026-08-05T23:22:26.133259+00:00",
     "hp": 100,
     "name": "Shelgon",
     "source": "tcgdex"
   },
   "B2-124": {
-    "cached_at": "2026-06-25T18:32:02.908263+00:00",
+    "cached_at": "2026-08-05T23:22:26.762446+00:00",
     "hp": 50,
     "name": "Meowth",
     "source": "tcgdex"
   },
   "B2-125": {
-    "cached_at": "2026-06-12T03:48:50.893554+00:00",
+    "cached_at": "2026-08-05T23:21:29.065752+00:00",
     "hp": 100,
     "name": "Persian",
     "source": "tcgdex"
   },
   "B2-126": {
-    "cached_at": "2026-06-12T03:48:51.500017+00:00",
+    "cached_at": "2026-08-05T23:21:29.705294+00:00",
     "hp": 110,
     "name": "Kangaskhan",
     "source": "tcgdex"
   },
   "B2-128": {
-    "cached_at": "2026-06-12T03:48:37.225217+00:00",
+    "cached_at": "2026-08-05T23:21:13.861944+00:00",
     "hp": 60,
     "name": "Sentret",
     "source": "tcgdex"
   },
   "B2-129": {
-    "cached_at": "2026-06-25T18:32:03.594057+00:00",
+    "cached_at": "2026-08-05T23:22:27.378890+00:00",
     "hp": 100,
     "name": "Furret",
     "source": "tcgdex"
   },
   "B2-130": {
-    "cached_at": "2026-05-31T04:13:18.894682+00:00",
+    "cached_at": "2026-08-05T23:20:54.937813+00:00",
     "hp": 60,
     "name": "Smeargle",
     "source": "tcgdex"
   },
+  "B2-131": {
+    "cached_at": "2026-08-05T23:22:40.514986+00:00",
+    "hp": 120,
+    "name": "Lugia",
+    "source": "tcgdex"
+  },
+  "B2-134": {
+    "cached_at": "2026-08-05T23:22:41.128644+00:00",
+    "hp": 70,
+    "name": "Slakoth",
+    "source": "tcgdex"
+  },
   "B2-135": {
-    "cached_at": "2026-06-25T18:32:04.267573+00:00",
+    "cached_at": "2026-08-05T23:22:27.998226+00:00",
     "hp": 100,
     "name": "Vigoroth",
     "source": "tcgdex"
   },
   "B2-137": {
-    "cached_at": "2026-06-01T02:12:43.120065+00:00",
+    "cached_at": "2026-08-05T23:19:55.399297+00:00",
     "hp": 70,
     "name": "Spinda",
     "source": "tcgdex"
   },
   "B2-139": {
-    "cached_at": "2026-06-12T03:48:52.097929+00:00",
+    "cached_at": "2026-08-05T23:21:30.330653+00:00",
     "hp": 60,
     "name": "Bunnelby",
     "source": "tcgdex"
   },
   "B2-141": {
-    "cached_at": "2026-06-12T03:48:29.243082+00:00",
+    "cached_at": "2026-08-05T23:19:47.325410+00:00",
     "hp": 80,
     "name": "Furfrou",
     "source": "tcgdex"
   },
   "B2-142": {
-    "cached_at": "2026-05-31T04:12:13.093779+00:00",
+    "cached_at": "2026-08-05T23:19:56.626593+00:00",
     "hp": 40,
     "name": "Tandemaus",
     "source": "tcgdex"
   },
   "B2-144": {
-    "cached_at": "2026-06-12T03:48:54.569097+00:00",
+    "cached_at": "2026-08-05T23:21:32.834238+00:00",
     "hp": null,
     "name": "Jaw Fossil",
     "source": "tcgdex"
   },
   "B2-145": {
-    "cached_at": "2026-06-12T03:48:55.200334+00:00",
+    "cached_at": "2026-08-05T23:21:33.446209+00:00",
     "hp": null,
     "name": "Lucky Ice Pop",
     "source": "tcgdex"
   },
   "B2-146": {
-    "cached_at": "2026-05-31T04:13:25.423622+00:00",
+    "cached_at": "2026-08-05T23:21:00.056254+00:00",
     "hp": null,
     "name": "Sail Fossil",
     "source": "tcgdex"
   },
   "B2-147": {
-    "cached_at": "2026-06-12T03:48:55.841425+00:00",
+    "cached_at": "2026-08-05T23:21:34.094404+00:00",
     "hp": null,
     "name": "Protective Poncho",
     "source": "tcgdex"
   },
   "B2-148": {
-    "cached_at": "2026-06-12T03:48:56.456313+00:00",
+    "cached_at": "2026-08-05T23:21:34.730460+00:00",
     "hp": null,
     "name": "Metal Core Barrier",
     "source": "tcgdex"
   },
   "B2-149": {
-    "cached_at": "2026-06-25T18:32:05.529061+00:00",
+    "cached_at": "2026-08-05T23:22:29.230527+00:00",
     "hp": null,
     "name": "Diantha",
     "source": "tcgdex"
   },
+  "B2-151": {
+    "cached_at": "2026-08-05T23:22:43.660036+00:00",
+    "hp": null,
+    "name": "Juggler",
+    "source": "tcgdex"
+  },
   "B2-152": {
-    "cached_at": "2026-06-12T03:48:57.082444+00:00",
+    "cached_at": "2026-08-05T23:21:35.366184+00:00",
     "hp": null,
     "name": "Piers",
     "source": "tcgdex"
   },
   "B2-154": {
-    "cached_at": "2026-05-31T04:12:25.268095+00:00",
+    "cached_at": "2026-08-05T23:20:07.283610+00:00",
     "hp": null,
     "name": "Starting Plains",
     "source": "tcgdex"
   },
   "B2-155": {
-    "cached_at": "2026-05-31T04:12:26.209110+00:00",
+    "cached_at": "2026-08-05T23:20:07.907652+00:00",
     "hp": null,
     "name": "Peculiar Plaza",
     "source": "tcgdex"
   },
   "B2-160": {
-    "cached_at": "2026-06-12T03:48:53.337002+00:00",
+    "cached_at": "2026-08-05T23:21:31.601980+00:00",
     "hp": 120,
     "name": "Reshiram",
     "source": "tcgdex"
   },
   "B2-161": {
-    "cached_at": "2026-06-25T18:30:58.122492+00:00",
+    "cached_at": "2026-08-05T23:19:08.273738+00:00",
     "hp": 70,
     "name": "Oricorio",
     "source": "tcgdex"
   },
   "B2-165": {
-    "cached_at": "2026-06-25T18:31:53.635266+00:00",
+    "cached_at": "2026-08-05T23:22:17.935610+00:00",
     "hp": 70,
     "name": "Minun",
     "source": "tcgdex"
   },
   "B2-167": {
-    "cached_at": "2026-06-25T18:31:54.288564+00:00",
+    "cached_at": "2026-08-05T23:22:18.573645+00:00",
     "hp": 60,
     "name": "Galarian Ponyta",
     "source": "tcgdex"
   },
   "B2-170": {
-    "cached_at": "2026-06-25T18:31:00.003156+00:00",
+    "cached_at": "2026-08-05T23:19:22.853164+00:00",
     "hp": 60,
     "name": "Sandshrew",
     "source": "tcgdex"
   },
   "B2-171": {
-    "cached_at": "2026-05-31T04:13:22.013137+00:00",
+    "cached_at": "2026-08-05T23:20:56.876019+00:00",
     "hp": 150,
     "name": "Tyrantrum",
     "source": "tcgdex"
   },
   "B2-174": {
-    "cached_at": "2026-06-25T18:31:54.899726+00:00",
+    "cached_at": "2026-08-05T23:22:19.209975+00:00",
     "hp": 60,
     "name": "Purrloin",
     "source": "tcgdex"
   },
   "B2-177": {
-    "cached_at": "2026-06-12T03:48:53.958453+00:00",
+    "cached_at": "2026-08-05T23:21:32.214653+00:00",
     "hp": 100,
     "name": "Galarian Perrserker",
     "source": "tcgdex"
   },
   "B2-183": {
-    "cached_at": "2026-06-25T18:32:04.891164+00:00",
+    "cached_at": "2026-08-05T23:22:28.611146+00:00",
     "hp": 230,
     "name": "Mega Swampert ex",
     "source": "tcgdex"
   },
   "B2-204": {
-    "cached_at": "2026-05-31T04:13:22.941602+00:00",
+    "cached_at": "2026-08-05T23:20:57.501343+00:00",
     "hp": 50,
     "name": "Meowth",
     "source": "tcgdex"
   },
   "B2-218": {
-    "cached_at": "2026-06-12T03:48:52.718173+00:00",
+    "cached_at": "2026-08-05T23:21:30.967335+00:00",
     "hp": 80,
     "name": "Hitmonlee",
     "source": "tcgdex"
   },
   "B2A-004": {
-    "cached_at": "2026-05-31T04:12:29.996825+00:00",
+    "cached_at": "2026-08-05T23:20:11.033351+00:00",
     "hp": 50,
     "name": "Tarountula",
     "source": "tcgdex"
   },
   "B2A-005": {
-    "cached_at": "2026-05-31T04:12:55.207204+00:00",
+    "cached_at": "2026-08-05T23:20:34.506385+00:00",
     "hp": 100,
     "name": "Spidops",
     "source": "tcgdex"
   },
   "B2A-006": {
-    "cached_at": "2026-05-31T04:12:55.991126+00:00",
+    "cached_at": "2026-08-05T23:20:35.132431+00:00",
     "hp": 40,
     "name": "Nymble",
     "source": "tcgdex"
   },
   "B2A-010": {
-    "cached_at": "2026-06-01T02:11:10.384533+00:00",
+    "cached_at": "2026-08-05T23:19:08.920195+00:00",
     "hp": 50,
     "name": "Bramblin",
     "source": "tcgdex"
   },
   "B2A-013": {
-    "cached_at": "2026-05-31T04:12:30.737674+00:00",
+    "cached_at": "2026-08-05T23:20:11.641954+00:00",
     "hp": 100,
     "name": "Scovillain",
     "source": "tcgdex"
   },
   "B2A-014": {
-    "cached_at": "2026-05-31T04:12:31.539889+00:00",
+    "cached_at": "2026-08-05T23:20:12.254379+00:00",
     "hp": 50,
     "name": "Rellor",
     "source": "tcgdex"
   },
   "B2A-019": {
-    "cached_at": "2026-05-31T04:12:32.190688+00:00",
+    "cached_at": "2026-08-05T23:20:12.870405+00:00",
     "hp": 60,
     "name": "Charcadet",
     "source": "tcgdex"
   },
   "B2A-022": {
-    "cached_at": "2026-05-31T04:12:56.852522+00:00",
+    "cached_at": "2026-08-05T23:20:35.751479+00:00",
     "hp": 60,
     "name": "Quaxly",
     "source": "tcgdex"
   },
   "B2A-023": {
-    "cached_at": "2026-05-31T04:12:32.811426+00:00",
+    "cached_at": "2026-08-05T23:20:13.493786+00:00",
     "hp": 80,
     "name": "Quaxwell",
     "source": "tcgdex"
   },
   "B2A-025": {
-    "cached_at": "2026-06-01T02:13:12.482199+00:00",
+    "cached_at": "2026-08-05T23:20:14.143860+00:00",
     "hp": 60,
     "name": "Wiglett",
     "source": "tcgdex"
   },
   "B2A-026": {
-    "cached_at": "2026-05-31T04:12:34.049971+00:00",
+    "cached_at": "2026-08-05T23:20:14.783907+00:00",
     "hp": 90,
     "name": "Wugtrio",
     "source": "tcgdex"
   },
   "B2A-029": {
-    "cached_at": "2026-05-31T04:12:26.906460+00:00",
+    "cached_at": "2026-08-05T23:20:08.526421+00:00",
     "hp": 100,
     "name": "Cetoddle",
     "source": "tcgdex"
   },
   "B2A-030": {
-    "cached_at": "2026-05-31T04:12:57.851122+00:00",
+    "cached_at": "2026-08-05T23:20:36.369127+00:00",
     "hp": 150,
     "name": "Cetitan",
     "source": "tcgdex"
   },
   "B2A-031": {
-    "cached_at": "2026-05-31T04:12:27.532876+00:00",
+    "cached_at": "2026-08-05T23:20:09.150322+00:00",
     "hp": 100,
     "name": "Veluza",
     "source": "tcgdex"
   },
   "B2A-034": {
-    "cached_at": "2026-05-31T04:12:34.695160+00:00",
+    "cached_at": "2026-08-05T23:20:15.419357+00:00",
     "hp": 60,
     "name": "Frigibax",
     "source": "tcgdex"
   },
   "B2A-035": {
-    "cached_at": "2026-05-31T04:12:35.426728+00:00",
+    "cached_at": "2026-08-05T23:20:16.028308+00:00",
     "hp": 90,
     "name": "Arctibax",
     "source": "tcgdex"
   },
   "B2A-036": {
-    "cached_at": "2026-05-31T04:12:36.078950+00:00",
+    "cached_at": "2026-08-05T23:20:16.674337+00:00",
     "hp": 140,
     "name": "Baxcalibur",
     "source": "tcgdex"
   },
   "B2A-038": {
-    "cached_at": "2026-06-01T02:13:16.105383+00:00",
+    "cached_at": "2026-08-05T23:20:17.288291+00:00",
     "hp": 60,
     "name": "Pawmi",
     "source": "tcgdex"
   },
   "B2A-039": {
-    "cached_at": "2026-06-01T02:13:17.898760+00:00",
+    "cached_at": "2026-08-05T23:20:17.899155+00:00",
     "hp": 90,
     "name": "Pawmo",
     "source": "tcgdex"
   },
   "B2A-040": {
-    "cached_at": "2026-06-01T02:13:19.668754+00:00",
+    "cached_at": "2026-08-05T23:20:18.592188+00:00",
     "hp": 140,
     "name": "Pawmot",
     "source": "tcgdex"
   },
   "B2A-041": {
-    "cached_at": "2026-05-31T04:12:39.113863+00:00",
+    "cached_at": "2026-08-05T23:20:19.228878+00:00",
     "hp": 60,
     "name": "Tadbulb",
     "source": "tcgdex"
   },
   "B2A-047": {
-    "cached_at": "2026-05-31T04:12:58.460726+00:00",
+    "cached_at": "2026-08-05T23:20:37.004646+00:00",
     "hp": 100,
     "name": "Dachsbun",
     "source": "tcgdex"
   },
   "B2A-049": {
-    "cached_at": "2026-05-31T04:12:39.726722+00:00",
+    "cached_at": "2026-08-05T23:20:21.038453+00:00",
     "hp": 70,
     "name": "Rabsca",
     "source": "tcgdex"
   },
   "B2A-053": {
-    "cached_at": "2026-06-12T03:48:31.069151+00:00",
+    "cached_at": "2026-08-05T23:21:02.034008+00:00",
     "hp": 130,
     "name": "Houndstone",
     "source": "tcgdex"
   },
   "B2A-055": {
-    "cached_at": "2026-06-01T02:13:22.612728+00:00",
+    "cached_at": "2026-08-05T23:20:21.728948+00:00",
     "hp": 60,
     "name": "Mankey",
     "source": "tcgdex"
   },
   "B2A-059": {
-    "cached_at": "2026-05-31T04:12:28.253600+00:00",
+    "cached_at": "2026-08-05T23:20:09.771974+00:00",
     "hp": 60,
     "name": "Toedscool",
     "source": "tcgdex"
   },
   "B2A-061": {
-    "cached_at": "2026-05-31T04:12:41.464884+00:00",
+    "cached_at": "2026-08-05T23:20:22.472127+00:00",
     "hp": 100,
     "name": "Klawf",
     "source": "tcgdex"
   },
   "B2A-062": {
-    "cached_at": "2026-05-31T04:13:02.461462+00:00",
+    "cached_at": "2026-08-05T23:20:38.866019+00:00",
     "hp": 120,
     "name": "Ting-Lu",
     "source": "tcgdex"
   },
   "B2A-063": {
-    "cached_at": "2026-05-31T04:12:42.389030+00:00",
+    "cached_at": "2026-08-05T23:20:23.092696+00:00",
     "hp": 120,
     "name": "Koraidon",
     "source": "tcgdex"
   },
   "B2A-064": {
-    "cached_at": "2026-06-01T02:13:31.858727+00:00",
+    "cached_at": "2026-08-05T23:20:32.575698+00:00",
     "hp": 60,
     "name": "Paldean Wooper",
     "source": "tcgdex"
   },
   "B2A-067": {
-    "cached_at": "2026-05-31T04:12:43.110348+00:00",
+    "cached_at": "2026-08-05T23:20:23.819233+00:00",
     "hp": 70,
     "name": "Maschiff",
     "source": "tcgdex"
   },
   "B2A-068": {
-    "cached_at": "2026-05-31T04:12:44.228815+00:00",
+    "cached_at": "2026-08-05T23:20:24.480996+00:00",
     "hp": 120,
     "name": "Mabosstiff",
     "source": "tcgdex"
   },
   "B2A-071": {
-    "cached_at": "2026-05-31T04:12:44.847017+00:00",
+    "cached_at": "2026-08-05T23:20:25.477813+00:00",
     "hp": 90,
     "name": "Bombirdier",
     "source": "tcgdex"
   },
   "B2A-072": {
-    "cached_at": "2026-06-01T02:13:38.330601+00:00",
+    "cached_at": "2026-08-05T23:20:37.638996+00:00",
     "hp": 60,
     "name": "Tinkatink",
     "source": "tcgdex"
   },
   "B2A-073": {
-    "cached_at": "2026-05-31T04:12:45.611875+00:00",
+    "cached_at": "2026-08-05T23:20:26.202366+00:00",
     "hp": 80,
     "name": "Tinkatuff",
     "source": "tcgdex"
   },
   "B2A-077": {
-    "cached_at": "2026-05-31T04:12:46.262869+00:00",
+    "cached_at": "2026-08-05T23:20:26.836645+00:00",
     "hp": 100,
     "name": "Orthworm",
     "source": "tcgdex"
   },
   "B2A-079": {
-    "cached_at": "2026-05-31T04:12:46.974965+00:00",
+    "cached_at": "2026-08-05T23:20:27.745264+00:00",
     "hp": 60,
     "name": "Lechonk",
     "source": "tcgdex"
   },
   "B2A-080": {
-    "cached_at": "2026-05-31T04:12:48.018428+00:00",
+    "cached_at": "2026-08-05T23:20:28.391348+00:00",
     "hp": 110,
     "name": "Oinkologne",
     "source": "tcgdex"
   },
   "B2A-081": {
-    "cached_at": "2026-06-12T03:48:30.465186+00:00",
+    "cached_at": "2026-08-05T23:19:57.241215+00:00",
     "hp": 30,
     "name": "Tandemaus",
     "source": "tcgdex"
   },
   "B2A-082": {
-    "cached_at": "2026-05-31T04:12:48.643020+00:00",
+    "cached_at": "2026-08-05T23:20:29.026888+00:00",
     "hp": 60,
     "name": "Maushold",
     "source": "tcgdex"
   },
   "B2A-083": {
-    "cached_at": "2026-05-31T04:13:00.038233+00:00",
+    "cached_at": "2026-08-05T23:20:38.249047+00:00",
     "hp": 70,
     "name": "Squawkabilly",
     "source": "tcgdex"
   },
   "B2A-084": {
-    "cached_at": "2026-05-31T04:12:49.303485+00:00",
+    "cached_at": "2026-08-05T23:20:29.986858+00:00",
     "hp": 90,
     "name": "Cyclizar",
     "source": "tcgdex"
   },
   "B2A-085": {
-    "cached_at": "2026-05-31T04:12:50.246243+00:00",
+    "cached_at": "2026-08-05T23:20:30.722462+00:00",
     "hp": 90,
     "name": "Flamigo",
     "source": "tcgdex"
   },
   "B2A-086": {
-    "cached_at": "2026-05-31T04:12:52.935957+00:00",
+    "cached_at": "2026-08-05T23:20:33.235973+00:00",
     "hp": null,
     "name": "Electric Generator",
     "source": "tcgdex"
   },
   "B2A-087": {
-    "cached_at": "2026-05-31T04:12:53.857000+00:00",
+    "cached_at": "2026-08-05T23:20:33.868200+00:00",
     "hp": null,
     "name": "Big Air Balloon",
     "source": "tcgdex"
   },
   "B2A-090": {
-    "cached_at": "2026-05-31T04:12:51.088628+00:00",
+    "cached_at": "2026-08-05T23:20:31.338226+00:00",
     "hp": null,
     "name": "Nemona",
     "source": "tcgdex"
   },
   "B2A-091": {
-    "cached_at": "2026-05-31T04:12:29.055405+00:00",
+    "cached_at": "2026-08-05T23:20:10.409863+00:00",
     "hp": null,
     "name": "Arven",
     "source": "tcgdex"
   },
   "B2A-096": {
-    "cached_at": "2026-05-31T04:13:23.858765+00:00",
+    "cached_at": "2026-08-05T23:20:58.770567+00:00",
     "hp": 60,
     "name": "Gimmighoul",
     "source": "tcgdex"
   },
   "B2A-098": {
-    "cached_at": "2026-05-31T04:13:24.643343+00:00",
+    "cached_at": "2026-08-05T23:20:59.389241+00:00",
     "hp": 100,
     "name": "Orthworm",
     "source": "tcgdex"
   },
   "B2A-117": {
-    "cached_at": "2026-06-01T02:14:06.066829+00:00",
+    "cached_at": "2026-08-05T23:20:58.120272+00:00",
     "hp": 90,
     "name": "Floragato",
     "source": "tcgdex"
   },
   "B2A-118": {
-    "cached_at": "2026-06-01T02:14:01.929470+00:00",
+    "cached_at": "2026-08-05T23:20:56.240185+00:00",
     "hp": 140,
     "name": "Meowscarada",
     "source": "tcgdex"
