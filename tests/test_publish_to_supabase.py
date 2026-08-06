@@ -362,3 +362,79 @@ def test_should_snapshot_skips_republishes(monkeypatch):
     assert should_snapshot() is True  # live CI sync
     monkeypatch.setenv("SYNC_MODE", "skip")
     assert should_snapshot() is False  # push-to-main republish
+
+
+# ---------------------------------------------------------------------------
+# Every published column must exist in the schema
+# ---------------------------------------------------------------------------
+# Adding a field to a row builder without the matching migration fails only at
+# publish time, against the live database, after the run has already rewritten
+# collection.json — which is how sync_status.pending_sets shipped and broke the
+# first publish of the B4 release with PGRST204.
+
+import re as _re
+
+MIGRATIONS_DIR = ROOT / "supabase" / "migrations"
+
+
+def _declared_columns() -> dict[str, set[str]]:
+    """{table: columns} from CREATE TABLE bodies and ALTER TABLE ADD COLUMN."""
+    sql = "\n".join(
+        p.read_text(encoding="utf-8") for p in sorted(MIGRATIONS_DIR.glob("*.sql"))
+    )
+    sql = _re.sub(r"--[^\n]*", "", sql)          # strip comments
+    cols: dict[str, set[str]] = {}
+
+    for m in _re.finditer(
+        r"create\s+table\s+(?:if\s+not\s+exists\s+)?(?:public\.)?(\w+)\s*\((.*?)\n\s*\);",
+        sql, _re.S | _re.I,
+    ):
+        table, body = m.group(1), m.group(2)
+        found = set()
+        for line in body.split("\n"):
+            line = line.strip().lstrip("(").strip()
+            if not line or line.startswith(")"):
+                continue
+            word = _re.match(r"(\w+)", line)
+            if not word:
+                continue
+            name = word.group(1).lower()
+            if name in {"primary", "foreign", "unique", "check", "constraint"}:
+                continue
+            found.add(name)
+        cols.setdefault(table, set()).update(found)
+
+    for m in _re.finditer(
+        r"alter\s+table\s+(?:public\.)?(\w+)\s+add\s+column\s+"
+        r"(?:if\s+not\s+exists\s+)?(\w+)",
+        sql, _re.S | _re.I,
+    ):
+        cols.setdefault(m.group(1), set()).add(m.group(2).lower())
+    return cols
+
+
+def test_every_published_column_has_a_migration(rows):
+    declared = _declared_columns()
+    missing: list[str] = []
+    for table, table_rows in rows.items():
+        if not table_rows:
+            continue
+        known = declared.get(table)
+        assert known, f"no migration creates table {table!r}"
+        for column in table_rows[0]:
+            if column.lower() not in known:
+                missing.append(f"{table}.{column}")
+    assert not missing, (
+        "publisher writes columns with no migration: "
+        f"{sorted(set(missing))} — add one under supabase/migrations/"
+    )
+
+
+def test_column_parser_sees_a_known_late_added_column():
+    """Guards the parser itself: last_run arrives via ALTER in 0003, and
+    pending_sets via 0009, so both forms must be picked up."""
+    declared = _declared_columns()
+    assert "last_run" in declared["sync_status"]
+    assert "pending_sets" in declared["sync_status"]
+    assert "printing_group" in declared["cards"]
+    assert "set_code" in declared["cards"]
