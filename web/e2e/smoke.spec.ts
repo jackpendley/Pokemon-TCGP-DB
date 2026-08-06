@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-import { HAS_PIPELINE_DATA } from "./fixtures";
+import { HAS_PIPELINE_DATA, groupedCardName } from "./fixtures";
 
 /**
  * Every page must render its own heading with no page errors.
@@ -176,12 +176,17 @@ test("a multi-expansion card is listed per printing only in order sorts", async 
    * that appears in several expansions is shown in each of them; under any other
    * sort it collapses to the expansion it first appeared in.
    *
-   * Bulbasaur is the canonical case — A1/1 plus two Deluxe Pack: ex printings.
+   * The subject comes from printing_groups.json rather than a hardcoded name:
+   * groups are sourced from Pokémon Zone, so which cards are grouped follows the
+   * collection and a fixed name goes stale.
    */
+  const subject = groupedCardName();
+  test.skip(!subject, "no multi-printing group in the current data");
+
   await page.goto("/cards");
   const search = page.getByPlaceholder(/search cards/i).first();
   await search.waitFor();
-  await search.fill("Bulbasaur");
+  await search.fill(subject!);
 
   const count = page.getByText(/showing \d+ of \d+/i).first();
   const readTotal = async () =>
