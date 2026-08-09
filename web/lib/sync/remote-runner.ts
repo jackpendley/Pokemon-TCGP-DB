@@ -45,18 +45,20 @@ const STALE_SOURCE_MESSAGE =
   "so this republished its previous snapshot. Recent pulls may be missing.";
 
 /**
- * Pokémon Zone rate-limits collection refreshes and reports when the next one is
- * allowed. Naming that time matters: a retry before it cannot return anything
- * new, so "try again in a few minutes" would send the user in circles.
+ * How old Pokémon Zone's snapshot is, when we know. The age is what makes a stale
+ * run actionable: hours reads as a blip worth retrying, days reads as an outage on
+ * their side worth reporting rather than retrying into.
  */
-function staleMessage(blockedUntil: string | null | undefined): string {
-  if (!blockedUntil) return `${STALE_SOURCE_MESSAGE} Try again shortly.`;
-  const when = new Date(blockedUntil);
+function staleMessage(sourceUpdatedAt: string | null | undefined): string {
+  if (!sourceUpdatedAt) return `${STALE_SOURCE_MESSAGE} Try again shortly.`;
+  const when = new Date(sourceUpdatedAt);
   if (Number.isNaN(when.getTime())) return STALE_SOURCE_MESSAGE;
-  return (
-    `${STALE_SOURCE_MESSAGE} Pokémon Zone limits how often it will refresh — ` +
-    `the next one is allowed at ${when.toLocaleString()}.`
-  );
+  const days = (Date.now() - when.getTime()) / 86_400_000;
+  return days >= 1
+    ? `${STALE_SOURCE_MESSAGE} Their copy is ${days.toFixed(1)} days old ` +
+      `(last updated ${when.toLocaleString()}), which points at an outage on their ` +
+      `side rather than something retrying will fix.`
+    : `${STALE_SOURCE_MESSAGE} Try again shortly.`;
 }
 
 const TIMEOUT_MESSAGE =
@@ -276,7 +278,7 @@ export function createRemoteSyncRunner(
             finishedAt: recheck!.publishedAt,
             message:
               recheck?.playerSynced === false
-                ? staleMessage(recheck.syncBlockedUntil)
+                ? staleMessage(recheck.sourceUpdatedAt)
                 : "Sync complete.",
           };
         }

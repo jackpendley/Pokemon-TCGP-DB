@@ -299,7 +299,7 @@ const syncRunStateRowSchema = z.object({
   stats: z
     .object({
       player_synced: z.boolean().nullish(),
-      sync_blocked_until: z.string().nullish(),
+      source_last_updated_at: z.string().nullish(),
     })
     .loose()
     .nullish(),
@@ -430,13 +430,13 @@ export async function fetchSyncRunState(
       publishedAt: null,
       lastRun: null,
       playerSynced: null,
-      syncBlockedUntil: null,
+      sourceUpdatedAt: null,
     };
   const parsed = syncRunStateRowSchema.parse(row);
   return {
     publishedAt: parsed.published_at,
     lastRun: parsed.last_run,
     playerSynced: parsed.stats?.player_synced ?? null,
-    syncBlockedUntil: parsed.stats?.sync_blocked_until ?? null,
+    sourceUpdatedAt: parsed.stats?.source_last_updated_at ?? null,
   };
 }
