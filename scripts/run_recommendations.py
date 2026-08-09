@@ -543,7 +543,17 @@ def main() -> int:
     if rc != 0:
         _print_step("Normalize entries", rc, "FATAL — check data/pipeline.log")
         return 1
-    _print_step("Normalize entries", rc, "OK")
+    # Surface name repairs. Entry names are pinned to card_reference, so a Pokémon
+    # Zone scrape regression (it has shipped run-together names like
+    # "CastformSunny Form" before) gets corrected automatically — and would
+    # otherwise be invisible, since the fix is exactly what hides the symptom.
+    # A count that stays non-zero run after run means PZ is still sending them.
+    m_name = re.search(r"Corrected card name on (\d+) entries", stdout)
+    detail = "OK"
+    if m_name:
+        n = int(m_name.group(1))
+        detail = f"OK — repaired {n} card name(s) from card_reference"
+    _print_step("Normalize entries", rc, detail)
 
     # ── Printing groups (multi-expansion dex registration) ────────────────
     # Coords that are the same physical card. Since the 2026-07-29 update one copy
