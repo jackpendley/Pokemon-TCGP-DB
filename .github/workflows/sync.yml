@@ -37,6 +37,13 @@ on:
   # the missing cards and Pokémon Zone's own outage were both invisible until
   # they were noticed by hand. A nightly run turns "the data is wrong and nobody
   # knows" into "the data is stale and the dashboard says so".
+  #
+  # GitHub disables a scheduled workflow after 60 days with no new commit on the
+  # default branch, and the nightly run only commits when collection.json actually
+  # changes — so a long enough quiet spell would switch off the very thing meant to
+  # notice quiet spells. Any commit resets the timer (development counts, not just
+  # syncs), which makes this unlikely rather than impossible. If the nightly run
+  # stops appearing in the Actions tab, re-enable it there first.
   schedule:
     - cron: "0 9 * * *"
   repository_dispatch:

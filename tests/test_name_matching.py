@@ -167,3 +167,27 @@ def test_collection_carries_no_run_together_names():
     bad = [e["name"] for e in data["collection"]
            if re.search(r"[a-z][A-Z]", e.get("name", ""))]
     assert not bad, f"entries still carry run-together names: {bad}"
+
+
+def test_name_repairs_are_surfaced_not_just_logged():
+    """A repair count must reach the pipeline summary, not only pipeline.log.
+
+    Entry names are pinned to card_reference, so a Pokémon Zone scrape regression
+    is corrected automatically — which means the fix is exactly what hides the
+    symptom. If the count never surfaced, PZ could start shipping corrupted names
+    again and the only evidence would be a silent repair buried in a log file.
+    """
+    import re
+
+    src = (ROOT / "scripts" / "run_recommendations.py").read_text(encoding="utf-8")
+    assert re.search(r'Corrected card name on \(\\?\\d\+\) entries', src), (
+        "run_recommendations no longer parses the name-repair count out of "
+        "assign_collection_coords' output"
+    )
+    assert "repaired" in src, "the repair count is parsed but not shown in the step status"
+
+    # And the producer still emits the line that parser depends on.
+    producer = (ROOT / "scripts" / "assign_collection_coords.py").read_text(encoding="utf-8")
+    assert "Corrected card name on" in producer, (
+        "assign_collection_coords stopped printing the line the summary parses"
+    )
