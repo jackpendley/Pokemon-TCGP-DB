@@ -1,6 +1,6 @@
 {
   "meta": {
-    "total_cards": 2248,
+    "total_cards": 2270,
     "last_updated": "2026-08-09",
     "format": "Pokemon TCG Pocket"
   },
@@ -1356,7 +1356,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Thunder Shock 10",
-      "count": 1,
+      "count": 2,
       "set_code": "B4",
       "card_number": 60,
       "rarity": "common"
@@ -3196,7 +3196,7 @@
       "hp": 70,
       "card_type": "Pokemon",
       "attack": "Suffocating Gas 40",
-      "count": 2,
+      "count": 3,
       "set_code": "B4",
       "card_number": 114,
       "rarity": "common"
@@ -5941,7 +5941,7 @@
     },
     {
       "name": "Golduck",
-      "count": 5,
+      "count": 6,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -7185,6 +7185,18 @@
       "rarity": "uncommon",
       "set_code": "B2b",
       "card_number": 52
+    },
+    {
+      "name": "Dragonair",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Dragon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 80,
+      "rarity": "uncommon",
+      "set_code": "B4",
+      "card_number": 117
     },
     {
       "name": "Druddigon",
@@ -10758,7 +10770,7 @@
     },
     {
       "name": "Shelmet",
-      "count": 4,
+      "count": 5,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -10770,7 +10782,7 @@
     },
     {
       "name": "Dhelmise",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -10806,7 +10818,7 @@
     },
     {
       "name": "Starmie",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -10818,7 +10830,7 @@
     },
     {
       "name": "Wailmer",
-      "count": 4,
+      "count": 5,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -10866,7 +10878,7 @@
     },
     {
       "name": "Oshawott",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -10902,7 +10914,7 @@
     },
     {
       "name": "Bruxish",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -10974,7 +10986,7 @@
     },
     {
       "name": "Clefable",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -11058,7 +11070,7 @@
     },
     {
       "name": "Drilbur",
-      "count": 2,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11130,7 +11142,7 @@
     },
     {
       "name": "Galarian Obstagoon",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 2,
       "stage_label": "Stage 2",
@@ -11351,7 +11363,7 @@
     },
     {
       "name": "Clear Veil",
-      "count": 2,
+      "count": 3,
       "card_type": "Trainer",
       "trainer_subtype": "Pokemon Tool",
       "rarity": "uncommon",
@@ -11384,6 +11396,81 @@
       "rarity": "uncommon",
       "set_code": "B4",
       "card_number": 154
+    },
+    {
+      "name": "Brionne",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 90,
+      "rarity": "common",
+      "set_code": "A3b",
+      "card_number": 23,
+      "type": "Water"
+    },
+    {
+      "name": "Totodile",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "A4",
+      "card_number": 46,
+      "type": "Water"
+    },
+    {
+      "name": "Mega Sharpedo ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 190,
+      "rarity": "promo",
+      "set_code": "B4",
+      "card_number": 35,
+      "type": "Water"
+    },
+    {
+      "name": "Luxio",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 70,
+      "rarity": "uncommon",
+      "set_code": "B4",
+      "card_number": 52,
+      "type": "Lightning"
+    },
+    {
+      "name": "Root Fossil",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Item",
+      "rarity": "common",
+      "set_code": "B4",
+      "card_number": 147
+    },
+    {
+      "name": "Drayden",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "rarity": "uncommon",
+      "set_code": "B4",
+      "card_number": 151
+    },
+    {
+      "name": "Wally",
+      "count": 1,
+      "card_type": "Trainer",
+      "trainer_subtype": "Supporter",
+      "rarity": "uncommon",
+      "set_code": "B4",
+      "card_number": 153
     }
   ]
 }
