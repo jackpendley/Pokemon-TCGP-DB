@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { connection } from "next/server";
 
 import { HistoryView } from "@/components/history/history-view";
-import { Skeleton } from "@/components/ui/skeleton";
+import { PanelSkeleton } from "@/components/ui/skeletons";
 import { getCachedRecommendationHistory } from "@/lib/data/cached";
 
 export const metadata = { title: "History · TCGP Optimizer" };
@@ -22,7 +22,14 @@ export default function HistoryPage() {
           How your collection and pack recommendations have drifted over time.
         </p>
       </div>
-      <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+      <Suspense
+        fallback={
+          <div className="space-y-6">
+            <PanelSkeleton titleWidth="w-40" bodyClassName="h-64" />
+            <PanelSkeleton titleWidth="w-48" bodyClassName="h-64" />
+          </div>
+        }
+      >
         <HistoryContent />
       </Suspense>
     </div>

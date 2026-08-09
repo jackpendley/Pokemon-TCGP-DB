@@ -4,6 +4,7 @@ import {
   collectionSummarySchema,
   packEvSchema,
   recommendationsSchema,
+  trainerBoostsSchema,
 } from "@/types";
 import type { DataSource } from "@/lib/data/source";
 
@@ -28,6 +29,8 @@ const catalogCardSchema = z.object({
   is_ex: z.boolean(),
   owned: z.number(),
   power_score: z.number().nullable(),
+  power_score_kind: z.enum(["pokemon", "trainer"]).nullable(),
+  boosts: trainerBoostsSchema.nullable(),
   evolves_from: z.string().nullable(),
 });
 

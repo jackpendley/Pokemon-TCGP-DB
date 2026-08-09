@@ -32577,7 +32577,8 @@
   "attack_count": 1,
   "max_damage": 100,
   "ability_count": 1,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Haunter"
  },
  "A4b|jynx": {
   "hp": 80,
@@ -34109,7 +34110,8 @@
   "attack_count": 1,
   "max_damage": 50,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Type: Null"
  },
  "A4b|celesteela": {
   "hp": 120,
@@ -39341,7 +39343,8 @@
   "attack_count": 1,
   "max_damage": 30,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Caterpie"
  },
  "B3b|butterfree": {
   "hp": 130,
@@ -39357,7 +39360,8 @@
   "attack_count": 1,
   "max_damage": 60,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Metapod"
  },
  "B3b|cacnea": {
   "hp": 60,
@@ -39421,7 +39425,8 @@
   "attack_count": 1,
   "max_damage": 40,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Petilil"
  },
  "B3b|vulpix": {
   "hp": 60,
@@ -39453,7 +39458,8 @@
   "attack_count": 1,
   "max_damage": 20,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Vulpix"
  },
  "B3b|growlithe": {
   "hp": 80,
@@ -39517,7 +39523,8 @@
   "attack_count": 1,
   "max_damage": 30,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Goldeen"
  },
  "B3b|feebas": {
   "hp": 30,
@@ -39549,7 +39556,8 @@
   "attack_count": 1,
   "max_damage": 80,
   "ability_count": 1,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Feebas"
  },
  "B3b|snorunt": {
   "hp": 60,
@@ -39581,7 +39589,8 @@
   "attack_count": 1,
   "max_damage": 70,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Snorunt"
  },
  "B3b|luvdisc": {
   "hp": 70,
@@ -39661,7 +39670,8 @@
   "attack_count": 1,
   "max_damage": 70,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Pikachu"
  },
  "B3b|emolga": {
   "hp": 70,
@@ -39741,7 +39751,8 @@
   "attack_count": 1,
   "max_damage": 70,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Slowpoke"
  },
  "B3b|munna": {
   "hp": 60,
@@ -39773,7 +39784,8 @@
   "attack_count": 1,
   "max_damage": 50,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Munna"
  },
  "B3b|sylveon": {
   "hp": 100,
@@ -39789,7 +39801,8 @@
   "attack_count": 1,
   "max_damage": 60,
   "ability_count": 1,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Eevee"
  },
  "B3b|carbink": {
   "hp": 50,
@@ -39901,7 +39914,8 @@
   "attack_count": 1,
   "max_damage": 60,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Wooper"
  },
  "B3b|rockruff": {
   "hp": 60,
@@ -39949,7 +39963,8 @@
   "attack_count": 1,
   "max_damage": 30,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Sandygast"
  },
  "B3b|mega sableye ex": {
   "hp": 170,
@@ -39981,7 +39996,8 @@
   "attack_count": 1,
   "max_damage": 10,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Cacnea"
  },
  "B3b|spiritomb": {
   "hp": 80,
@@ -40029,7 +40045,8 @@
   "attack_count": 1,
   "max_damage": 70,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Scraggy"
  },
  "B3b|mareanie": {
   "hp": 60,
@@ -40061,7 +40078,8 @@
   "attack_count": 1,
   "max_damage": 0,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Mareanie"
  },
  "B3b|goomy": {
   "hp": 50,
@@ -40093,7 +40111,8 @@
   "attack_count": 1,
   "max_damage": 60,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Goomy"
  },
  "B3b|hisuian goodra": {
   "hp": 150,
@@ -40109,7 +40128,8 @@
   "attack_count": 1,
   "max_damage": 120,
   "ability_count": 1,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Hisuian Sliggoo"
  },
  "B3b|jigglypuff": {
   "hp": 60,
@@ -40141,7 +40161,8 @@
   "attack_count": 1,
   "max_damage": 50,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Jigglypuff"
  },
  "B3b|eevee": {
   "hp": 70,
@@ -40221,7 +40242,8 @@
   "attack_count": 1,
   "max_damage": 70,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Teddiursa"
  },
  "B3b|ursaluna": {
   "hp": 160,
@@ -40237,7 +40259,8 @@
   "attack_count": 1,
   "max_damage": 110,
   "ability_count": 1,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Ursaring"
  },
  "B3b|hisuian zorua": {
   "hp": 60,
@@ -40269,7 +40292,8 @@
   "attack_count": 1,
   "max_damage": 80,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Hisuian Zorua"
  },
  "B3b|furfrou": {
   "hp": 70,
@@ -40317,7 +40341,8 @@
   "attack_count": 1,
   "max_damage": 100,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Skwovet"
  },
  "B3b|mareep": {
   "hp": 70,
@@ -40349,7 +40374,8 @@
   "attack_count": 1,
   "max_damage": 40,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Mareep"
  },
  "B3b|ampharos": {
   "hp": 140,
@@ -40365,7 +40391,8 @@
   "attack_count": 1,
   "max_damage": 90,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Flaaffy"
  },
  "B3b|kangaskhan": {
   "hp": 110,
@@ -40413,7 +40440,8 @@
   "attack_count": 1,
   "max_damage": 140,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Magikarp"
  },
  "B3b|vaporeon ex": {
   "hp": 160,
@@ -40429,7 +40457,8 @@
   "attack_count": 1,
   "max_damage": 80,
   "ability_count": 1,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Eevee"
  },
  "B3b|mega ampharos ex": {
   "hp": 210,
@@ -40445,7 +40474,8 @@
   "attack_count": 1,
   "max_damage": 100,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Flaaffy"
  },
  "B3b|indeedee ex": {
   "hp": 130,
@@ -40525,7 +40555,8 @@
   "attack_count": 1,
   "max_damage": 110,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Luxio"
  },
  "PROMO-B|pidgey": {
   "hp": 60,
@@ -40557,7 +40588,8 @@
   "attack_count": 1,
   "max_damage": 100,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Pidgeotto"
  },
  "PROMO-B|torchic": {
   "hp": 60,
@@ -40621,7 +40653,8 @@
   "attack_count": 1,
   "max_damage": 20,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Drifloon"
  },
  "PROMO-B|eevee": {
   "hp": 50,
@@ -40669,7 +40702,8 @@
   "attack_count": 1,
   "max_damage": 50,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Growlithe"
  },
  "PROMO-B|magikarp": {
   "hp": 30,
@@ -40717,7 +40751,8 @@
   "attack_count": 1,
   "max_damage": 90,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Krokorok"
  },
  "PROMO-B|swablu": {
   "hp": 50,
@@ -40749,7 +40784,8 @@
   "attack_count": 1,
   "max_damage": 120,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Helioptile"
  },
  "PROMO-B|buneary": {
   "hp": 60,
@@ -40781,7 +40817,8 @@
   "attack_count": 1,
   "max_damage": 50,
   "ability_count": 1,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Charmander"
  },
  "PROMO-B|onix": {
   "hp": 100,
@@ -40925,7 +40962,8 @@
   "attack_count": 1,
   "max_damage": 100,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Meditite"
  },
  "PROMO-B|tornadus": {
   "hp": 90,
@@ -40957,7 +40995,8 @@
   "attack_count": 1,
   "max_damage": 120,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Raboot"
  },
  "PROMO-B|alolan vulpix": {
   "hp": 60,
@@ -41069,7 +41108,8 @@
   "attack_count": 1,
   "max_damage": 140,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Tinkatuff"
  },
  "PROMO-B|pawmi": {
   "hp": 60,
@@ -41101,7 +41141,8 @@
   "attack_count": 1,
   "max_damage": 70,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Paldean Wooper"
  },
  "PROMO-B|chien-pao ex": {
   "hp": 130,
@@ -41188,7 +41229,8 @@
   "attack_count": 1,
   "max_damage": 50,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Fraxure"
  },
  "PROMO-B|chatot": {
   "hp": 70,
@@ -41236,7 +41278,8 @@
   "attack_count": 1,
   "max_damage": 80,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Jigglypuff"
  },
  "PROMO-B|victini": {
   "hp": 70,
@@ -41428,7 +41471,8 @@
   "attack_count": 1,
   "max_damage": 70,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Kirlia"
  },
  "PROMO-B|meowscarada ex": {
   "hp": 160,
@@ -41451,7 +41495,8 @@
   "attack_count": 2,
   "max_damage": 80,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Floragato"
  },
  "PROMO-B|vaporeon": {
   "hp": 120,
@@ -41467,7 +41512,8 @@
   "attack_count": 1,
   "max_damage": 60,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Eevee"
  },
  "PROMO-B|ceruledge ex": {
   "hp": 150,
@@ -41483,7 +41529,8 @@
   "attack_count": 1,
   "max_damage": 80,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Charcadet"
  },
  "PROMO-B|pawniard": {
   "hp": 60,
@@ -41515,7 +41562,8 @@
   "attack_count": 1,
   "max_damage": 60,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Dunsparce"
  },
  "PROMO-B|floragato": {
   "hp": 90,
@@ -41531,7 +41579,8 @@
   "attack_count": 1,
   "max_damage": 30,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Sprigatito"
  },
  "PROMO-B|sableye": {
   "hp": 60,
@@ -41579,7 +41628,8 @@
   "attack_count": 1,
   "max_damage": 70,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Snorunt"
  },
  "PROMO-B|raichu": {
   "hp": 110,
@@ -41595,7 +41645,8 @@
   "attack_count": 1,
   "max_damage": 70,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Pikachu"
  },
  "PROMO-B|quagsire": {
   "hp": 120,
@@ -41611,7 +41662,8 @@
   "attack_count": 1,
   "max_damage": 40,
   "ability_count": 0,
-  "retreat": null
+  "retreat": null,
+  "evolve_from": "Wooper"
  },
  "PROMO-B|hisuian zorua": {
   "hp": 60,
@@ -41660,5 +41712,2739 @@
   "max_damage": 30,
   "ability_count": 0,
   "retreat": null
+ },
+ "B4|wurmple": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|silcoon": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Wurmple"
+ },
+ "B4|beautifly": {
+  "hp": 130,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Silcoon"
+ },
+ "B4|cascoon": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Wurmple"
+ },
+ "B4|dustox": {
+  "hp": 120,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": "Cascoon"
+ },
+ "B4|lileep": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Root Fossil"
+ },
+ "B4|cradily": {
+  "hp": 150,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Lileep"
+ },
+ "B4|kricketot": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|kricketune": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Kricketot"
+ },
+ "B4|combee": {
+  "hp": 50,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": true,
+    "self_damage_amount": 10
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|vespiquen ex": {
+  "hp": 140,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Combee"
+ },
+ "B4|karrablast": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|shelmet": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|accelgor": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Shelmet"
+ },
+ "B4|dhelmise": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|pheromosa": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|poltchageist": {
+  "hp": 40,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|sinistcha": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Poltchageist"
+ },
+ "B4|teal maskogerpon": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|ponyta": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|rapidash": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 80,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 80,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Ponyta"
+ },
+ "B4|flareon": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 2,
+    "discards_energy": true,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Eevee"
+ },
+ "B4|moltres": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 150,
+    "cost": 4,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 150,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|cyndaquil": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|quilava": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Cyndaquil"
+ },
+ "B4|typhlosion ex": {
+  "hp": 180,
+  "attacks": [
+   {
+    "damage": 110,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 110,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Quilava"
+ },
+ "B4|houndour": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|houndoom": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Houndour"
+ },
+ "B4|heatmor": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|psyduck": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|golduck": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 80,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 80,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Psyduck"
+ },
+ "B4|staryu": {
+  "hp": 50,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|starmie": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Staryu"
+ },
+ "B4|carvanha": {
+  "hp": 50,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|wailmer": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|wailord ex": {
+  "hp": 250,
+  "attacks": [
+   {
+    "damage": 100,
+    "cost": 4,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 100,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Wailmer"
+ },
+ "B4|spheal": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|sealeo": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Spheal"
+ },
+ "B4|walrein": {
+  "hp": 160,
+  "attacks": [
+   {
+    "damage": 110,
+    "cost": 4,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 110,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Sealeo"
+ },
+ "B4|kyogre": {
+  "hp": 120,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 4,
+    "discards_energy": true,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|oshawott": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|dewott": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Oshawott"
+ },
+ "B4|samurott": {
+  "hp": 150,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": "Dewott"
+ },
+ "B4|alomomola": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|dewpider": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|araquanid": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Dewpider"
+ },
+ "B4|bruxish": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|pikachu": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|raichu": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": "Pikachu"
+ },
+ "B4|shinx": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|luxio": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Shinx"
+ },
+ "B4|luxray": {
+  "hp": 140,
+  "attacks": [
+   {
+    "damage": 80,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 80,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Luxio"
+ },
+ "B4|pachirisu": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|rotom ex": {
+  "hp": 120,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|tynamo": {
+  "hp": 40,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|eelektrik": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Tynamo"
+ },
+ "B4|eelektross": {
+  "hp": 140,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Eelektrik"
+ },
+ "B4|thundurus": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 100,
+    "cost": 3,
+    "discards_energy": true,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 100,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|helioptile": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|heliolisk": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Helioptile"
+ },
+ "B4|wattrel": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|kilowattrel": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Wattrel"
+ },
+ "B4|clefairy": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|clefable": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Clefairy"
+ },
+ "B4|drowzee": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|hypno": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Drowzee"
+ },
+ "B4|mime jr.": {
+  "hp": 30,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|mr. mime": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|mewtwo": {
+  "hp": 120,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|ralts": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|kirlia": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Ralts"
+ },
+ "B4|chimecho": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|wynaut": {
+  "hp": 30,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|woobat": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|swoobat": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Woobat"
+ },
+ "B4|hoopa": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|oricorio": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|makuhita": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|hariyama": {
+  "hp": 120,
+  "attacks": [
+   {
+    "damage": 120,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 120,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Makuhita"
+ },
+ "B4|anorith": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Claw Fossil"
+ },
+ "B4|armaldo": {
+  "hp": 150,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 3,
+    "discards_energy": true,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Anorith"
+ },
+ "B4|groudon": {
+  "hp": 130,
+  "attacks": [
+   {
+    "damage": 100,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 100,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|drilbur": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|excadrill": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Drilbur"
+ },
+ "B4|timburr": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|gurdurr": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Timburr"
+ },
+ "B4|conkeldurr": {
+  "hp": 150,
+  "attacks": [
+   {
+    "damage": 100,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 100,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Gurdurr"
+ },
+ "B4|minior": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|grimer": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|muk": {
+  "hp": 130,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Grimer"
+ },
+ "B4|poochyena": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|mightyena": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Poochyena"
+ },
+ "B4|galarian zigzagoon": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|galarian linoone": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "GalarianZigzagoon"
+ },
+ "B4|galarian obstagoon": {
+  "hp": 140,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "GalarianLinoone"
+ },
+ "B4|gulpin": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|swalot": {
+  "hp": 120,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Gulpin"
+ },
+ "B4|absol": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|vullaby": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|mandibuzz": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Vullaby"
+ },
+ "B4|hoopa ex": {
+  "hp": 150,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   },
+   {
+    "damage": 100,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": true,
+    "self_damage_amount": 20
+   }
+  ],
+  "attack_count": 2,
+  "max_damage": 100,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|skarmory": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|mawile": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|beldum": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|metang": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Beldum"
+ },
+ "B4|metagross": {
+  "hp": 160,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Metang"
+ },
+ "B4|escavalier": {
+  "hp": 120,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Karrablast"
+ },
+ "B4|genesect": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|duraludon": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|archaludon": {
+  "hp": 140,
+  "attacks": [
+   {
+    "damage": 80,
+    "cost": 4,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 80,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Duraludon"
+ },
+ "B4|varoom": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|revavroom": {
+  "hp": 120,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 4,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": "Varoom"
+ },
+ "B4|dratini": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|dragonair": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": "Dratini"
+ },
+ "B4|dragonite": {
+  "hp": 150,
+  "attacks": [
+   {
+    "damage": 110,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 110,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Dragonair"
+ },
+ "B4|rayquaza": {
+  "hp": 120,
+  "attacks": [
+   {
+    "damage": 140,
+    "cost": 4,
+    "discards_energy": true,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 140,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|noibat": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|noivern": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Noibat"
+ },
+ "B4|turtonator": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|drampa": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 2,
+    "discards_energy": true,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|applin": {
+  "hp": 40,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|dipplin": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Applin"
+ },
+ "B4|hydrapple": {
+  "hp": 150,
+  "attacks": [
+   {
+    "damage": 100,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 100,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Dipplin"
+ },
+ "B4|cyclizar": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|rattata": {
+  "hp": 50,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|raticate": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": "Rattata"
+ },
+ "B4|eevee": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|aipom": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|ambipom": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Aipom"
+ },
+ "B4|skitty": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|delcatty": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 50,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 50,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Skitty"
+ },
+ "B4|kecleon": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|pidove": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|tranquill": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Pidove"
+ },
+ "B4|unfezant": {
+  "hp": 130,
+  "attacks": [
+   {
+    "damage": 90,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 90,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Tranquill"
+ },
+ "B4|ducklett": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|swanna ex": {
+  "hp": 150,
+  "attacks": [
+   {
+    "damage": 140,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 140,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Ducklett"
+ },
+ "B4|furfrou": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|type: null": {
+  "hp": 80,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|silvally": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 60,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 60,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Type: Null"
+ },
+ "B4|alolan vulpix": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|mudkip": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|marshtomp": {
+  "hp": 90,
+  "attacks": [
+   {
+    "damage": 40,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 40,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Mudkip"
+ },
+ "B4|swampert": {
+  "hp": 150,
+  "attacks": [
+   {
+    "damage": 100,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 100,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Marshtomp"
+ },
+ "B4|electabuzz": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|plusle": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 10,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 10,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|minun": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|roggenrola": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|boldore": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 3,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Roggenrola"
+ },
+ "B4|falinks": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|koffing": {
+  "hp": 70,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": true,
+    "self_damage_amount": 10
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|weezing": {
+  "hp": 110,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Koffing"
+ },
+ "B4|galarian meowth": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|galarian perrserker": {
+  "hp": 100,
+  "attacks": [
+   {
+    "damage": 70,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 70,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": "Galarian Meowth"
+ },
+ "B4|smeargle": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 1,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|buneary": {
+  "hp": 60,
+  "attacks": [
+   {
+    "damage": 20,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 20,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|blacephalon ex": {
+  "hp": 140,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   },
+   {
+    "damage": 140,
+    "cost": 3,
+    "discards_energy": true,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 2,
+  "max_damage": 140,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": null
+ },
+ "B4|alolan ninetales ex": {
+  "hp": 150,
+  "attacks": [
+   {
+    "damage": 80,
+    "cost": 2,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 80,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Alolan Vulpix"
+ },
+ "B4|gigalith ex": {
+  "hp": 190,
+  "attacks": [
+   {
+    "damage": 0,
+    "cost": 4,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 0,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Boldore"
+ },
+ "B4|zoroark ex": {
+  "hp": 150,
+  "attacks": [
+   {
+    "damage": 30,
+    "cost": 1,
+    "discards_energy": false,
+    "self_damage": false,
+    "self_damage_amount": 0
+   }
+  ],
+  "attack_count": 1,
+  "max_damage": 30,
+  "ability_count": 0,
+  "retreat": null,
+  "evolve_from": "Zorua"
  }
 }

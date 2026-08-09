@@ -1,0 +1,449 @@
+{
+  "_meta": {
+    "generated_at": "2026-08-06T20:58:45Z",
+    "schema_version": "1.0",
+    "description": "Coords that are the same physical card, per Pokémon Zone's expansionIds. Since the 2026-07-29 update a card registers in the dex under every expansion it appears in, so ownership of any coord in a group credits the whole group. Sourced only — never inferred from name matching.",
+    "sources": {
+      "pz_hybrid_coord_edges": 24,
+      "pz_hybrid_unresolved": 0,
+      "pz_expansion_edges": 3,
+      "pz_unresolved": 0
+    },
+    "group_count": 24,
+    "grouped_coord_count": 48
+  },
+  "groups": [
+    {
+      "id": "g0001",
+      "name": "Moltres ex",
+      "debut": [
+        "A1",
+        47
+      ],
+      "coords": [
+        [
+          "A1",
+          47
+        ],
+        [
+          "A4B",
+          67
+        ]
+      ]
+    },
+    {
+      "id": "g0002",
+      "name": "Greninja",
+      "debut": [
+        "A1",
+        89
+      ],
+      "coords": [
+        [
+          "A1",
+          89
+        ],
+        [
+          "A4B",
+          114
+        ]
+      ]
+    },
+    {
+      "id": "g0003",
+      "name": "Cubone",
+      "debut": [
+        "A1",
+        151
+      ],
+      "coords": [
+        [
+          "A1",
+          151
+        ],
+        [
+          "A4B",
+          194
+        ]
+      ]
+    },
+    {
+      "id": "g0004",
+      "name": "Marowak ex",
+      "debut": [
+        "A1",
+        153
+      ],
+      "coords": [
+        [
+          "A1",
+          153
+        ],
+        [
+          "A4B",
+          196
+        ]
+      ]
+    },
+    {
+      "id": "g0005",
+      "name": "Jigglypuff",
+      "debut": [
+        "A1",
+        193
+      ],
+      "coords": [
+        [
+          "A1",
+          193
+        ],
+        [
+          "A4B",
+          277
+        ]
+      ]
+    },
+    {
+      "id": "g0006",
+      "name": "Farfetch'd",
+      "debut": [
+        "A1",
+        198
+      ],
+      "coords": [
+        [
+          "A1",
+          198
+        ],
+        [
+          "A4B",
+          280
+        ]
+      ]
+    },
+    {
+      "id": "g0007",
+      "name": "Old Amber",
+      "debut": [
+        "A1",
+        218
+      ],
+      "coords": [
+        [
+          "A1",
+          218
+        ],
+        [
+          "A4B",
+          312
+        ]
+      ]
+    },
+    {
+      "id": "g0008",
+      "name": "Giovanni",
+      "debut": [
+        "A1",
+        223
+      ],
+      "coords": [
+        [
+          "A1",
+          223
+        ],
+        [
+          "A4B",
+          334
+        ]
+      ]
+    },
+    {
+      "id": "g0009",
+      "name": "Sabrina",
+      "debut": [
+        "A1",
+        225
+      ],
+      "coords": [
+        [
+          "A1",
+          225
+        ],
+        [
+          "A4B",
+          338
+        ]
+      ]
+    },
+    {
+      "id": "g0010",
+      "name": "Leaf",
+      "debut": [
+        "A1A",
+        68
+      ],
+      "coords": [
+        [
+          "A1A",
+          68
+        ],
+        [
+          "A4B",
+          346
+        ]
+      ]
+    },
+    {
+      "id": "g0011",
+      "name": "Monferno",
+      "debut": [
+        "A2",
+        28
+      ],
+      "coords": [
+        [
+          "A2",
+          28
+        ],
+        [
+          "A4B",
+          73
+        ]
+      ]
+    },
+    {
+      "id": "g0012",
+      "name": "Manaphy",
+      "debut": [
+        "A2",
+        50
+      ],
+      "coords": [
+        [
+          "A2",
+          50
+        ],
+        [
+          "A4B",
+          108
+        ]
+      ]
+    },
+    {
+      "id": "g0013",
+      "name": "Misdreavus",
+      "debut": [
+        "A2",
+        66
+      ],
+      "coords": [
+        [
+          "A2",
+          66
+        ],
+        [
+          "A4B",
+          161
+        ]
+      ]
+    },
+    {
+      "id": "g0014",
+      "name": "Giant Cape",
+      "debut": [
+        "A2",
+        147
+      ],
+      "coords": [
+        [
+          "A2",
+          147
+        ],
+        [
+          "A4B",
+          320
+        ]
+      ]
+    },
+    {
+      "id": "g0015",
+      "name": "Cyrus",
+      "debut": [
+        "A2",
+        150
+      ],
+      "coords": [
+        [
+          "A2",
+          150
+        ],
+        [
+          "A4B",
+          326
+        ]
+      ]
+    },
+    {
+      "id": "g0016",
+      "name": "Mars",
+      "debut": [
+        "A2",
+        155
+      ],
+      "coords": [
+        [
+          "A2",
+          155
+        ],
+        [
+          "A4B",
+          344
+        ]
+      ]
+    },
+    {
+      "id": "g0017",
+      "name": "Floragato",
+      "debut": [
+        "A2B",
+        6
+      ],
+      "coords": [
+        [
+          "A2B",
+          6
+        ],
+        [
+          "A4B",
+          51
+        ]
+      ]
+    },
+    {
+      "id": "g0018",
+      "name": "Pachirisu",
+      "debut": [
+        "A2B",
+        25
+      ],
+      "coords": [
+        [
+          "A2B",
+          25
+        ],
+        [
+          "A4B",
+          143
+        ]
+      ]
+    },
+    {
+      "id": "g0019",
+      "name": "Paldean Wooper",
+      "debut": [
+        "A2B",
+        47
+      ],
+      "coords": [
+        [
+          "A2B",
+          47
+        ],
+        [
+          "A4B",
+          236
+        ]
+      ]
+    },
+    {
+      "id": "g0020",
+      "name": "Drilbur",
+      "debut": [
+        "A3",
+        93
+      ],
+      "coords": [
+        [
+          "A3",
+          93
+        ],
+        [
+          "A4B",
+          216
+        ]
+      ]
+    },
+    {
+      "id": "g0021",
+      "name": "Rare Candy",
+      "debut": [
+        "A3",
+        144
+      ],
+      "coords": [
+        [
+          "A3",
+          144
+        ],
+        [
+          "A4B",
+          314
+        ]
+      ]
+    },
+    {
+      "id": "g0022",
+      "name": "Lillie",
+      "debut": [
+        "A3",
+        155
+      ],
+      "coords": [
+        [
+          "A3",
+          155
+        ],
+        [
+          "A4B",
+          348
+        ]
+      ]
+    },
+    {
+      "id": "g0023",
+      "name": "Chinchou",
+      "debut": [
+        "A4",
+        64
+      ],
+      "coords": [
+        [
+          "A4",
+          64
+        ],
+        [
+          "A4B",
+          140
+        ]
+      ]
+    },
+    {
+      "id": "g0024",
+      "name": "Lanturn ex",
+      "debut": [
+        "A4",
+        65
+      ],
+      "coords": [
+        [
+          "A4",
+          65
+        ],
+        [
+          "A4B",
+          142
+        ]
+      ]
+    }
+  ]
+}

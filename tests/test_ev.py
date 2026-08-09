@@ -9,6 +9,7 @@ without mocking external files — they use the live pack_ev.json output.
 import json
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 import pytest
@@ -17,6 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_pack_ev as bev
+import _collection_io as io
 
 PACK_EV_PATH = ROOT / "data" / "current" / "pack_ev.json"
 
@@ -259,15 +261,62 @@ def test_cost_metrics_are_positive(packs):
 
 
 # ---------------------------------------------------------------------------
-# Ownership is strictly per-coord (no reprint cross-crediting)
+# Ownership is credited across printing groups
 # ---------------------------------------------------------------------------
-# apply_reprint_links was removed 2026-06-12: dual-location A4b reprints are stored
-# at the original-set coord by reconcile_coords_from_pz (1st copy fills the original
-# slot, 2nd+ fill the A4b slot — matches the in-app dex), so EV reads ownership
-# directly and any cross-crediting would double-count.
+# History: apply_reprint_links was removed 2026-06-12 because the dex then filled
+# one slot at a time — reconcile_coords_from_pz split copies across the original
+# and A4b coords, so cross-crediting would have double-counted.
+#
+# The 2026-07-29 update reversed that premise: "when you obtain a card that is
+# included in multiple booster packs, it will now be registered in your card dex
+# under each of those expansions", retroactively. One copy fills every slot, so
+# EV must credit the whole group — a pull of a printing you already hold under
+# another expansion is a duplicate, not a new card.
 
-def test_no_reprint_cross_crediting():
-    assert not hasattr(bev, "apply_reprint_links")
+def test_printing_group_ownership_is_credited():
+    """A copy held at one coord counts at every coord in its group."""
+    groups = {"groups": [{"id": "g1", "coords": [["A1", 151], ["A4B", 194]]}]}
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(groups, f)
+        path = Path(f.name)
+    try:
+        credited = io.credit_printing_groups({("A1", 151): 1}, path)
+        assert credited[("A1", 151)] == 1
+        assert credited[("A4B", 194)] == 1, "sibling printing must read as owned"
+    finally:
+        path.unlink()
+
+
+def test_printing_group_credit_sums_copies_across_coords():
+    """Copies split across a group by the old reconcile still total correctly."""
+    groups = {"groups": [{"id": "g1", "coords": [["A1", 151], ["A4B", 194]]}]}
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(groups, f)
+        path = Path(f.name)
+    try:
+        credited = io.credit_printing_groups({("A1", 151): 1, ("A4B", 194): 2}, path)
+        assert credited[("A1", 151)] == 3
+        assert credited[("A4B", 194)] == 3
+    finally:
+        path.unlink()
+
+
+def test_printing_group_credit_leaves_unheld_groups_alone():
+    groups = {"groups": [{"id": "g1", "coords": [["A1", 151], ["A4B", 194]]}]}
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(groups, f)
+        path = Path(f.name)
+    try:
+        credited = io.credit_printing_groups({("A1", 1): 4}, path)
+        assert ("A4B", 194) not in credited
+        assert credited[("A1", 1)] == 4
+    finally:
+        path.unlink()
+
+
+def test_printing_group_credit_is_a_noop_without_the_artifact():
+    by_coord = {("A1", 1): 2}
+    assert io.credit_printing_groups(by_coord, Path("/nonexistent/groups.json")) == by_coord
 
 
 def _weight_for_confidence(conf):
@@ -399,3 +448,76 @@ def test_top_power_cards_dedups_printings_keeping_most_pullable():
     assert [c["name"] for c in top] == ["Charizard ex", "Melmetal"]  # distinct
     # kept the highest-pull_prob printing (double_rare 0.017, card 36)
     assert top[0]["card_number"] == 36 and top[0]["pull_prob"] == 0.017
+
+
+# ---------------------------------------------------------------------------
+# "◆◆◆◆ or Higher Guaranteed" pity floor (game update 2026-07-29)
+# ---------------------------------------------------------------------------
+# The batch model p_10x = 1-(1-p)^10 assumes independent packs. The guarantee
+# breaks that: a run of misses forces a hit. The trigger condition is published
+# only on the in-app Offering Rates > Attention screen, so the threshold ships
+# null and the floor is inert until it is read off that screen.
+
+def test_guarantee_is_inert_when_the_threshold_is_unknown():
+    """A null/absent threshold must not move any EV number."""
+    assert bev.guaranteed_hits_per_batch(None) == 0
+    assert bev.guaranteed_hits_per_batch({"threshold": None}) == 0
+    assert bev.guaranteed_hits_per_batch({}) == 0
+
+
+def test_shipped_threshold_matches_the_in_app_condition():
+    """Pinned to the verified condition, not a guess.
+
+    Offering Rates > Attention, read 2026-08-05: "A ◆◆◆◆ or higher card did not
+    get generated after 12 consecutive openings of packs from the same expansion."
+    """
+    model = json.loads(io.PULL_MODEL_JSON.read_text(encoding="utf-8"))
+    for pack in model["packs"]:
+        g = pack["slot_rates"].get("guarantee")
+        assert g is not None, f"{pack['pack_name']}: missing guarantee block"
+        assert g["threshold"] == 12, (
+            f"{pack['pack_name']}: pity threshold {g['threshold']} disagrees with the "
+            "in-app Offering Rates > Attention screen (12)"
+        )
+
+
+def test_verified_threshold_adds_no_floor_to_a_ten_pack_batch():
+    """12 consecutive misses is longer than a batch, so the pity never fires in one.
+
+    This is the practical consequence of the real condition: the guaranteed
+    category cannot be forced inside 10 packs, so it leaves the 10x model alone.
+    """
+    assert bev.guaranteed_hits_per_batch({"threshold": 12}) == 0
+    # It does bite once the run is long enough to complete a cycle.
+    assert bev.guaranteed_hits_per_batch({"threshold": 12}, batch=13) == 1
+    assert bev.guaranteed_hits_per_batch({"threshold": 12}, batch=39) == 3
+
+
+def test_guaranteed_hits_floor_matches_pity_semantics():
+    """With threshold N the counter resets on a hit, so a batch of 10 has >= 10//(N+1)."""
+    assert bev.guaranteed_hits_per_batch({"threshold": 4}) == 2   # 10 // 5
+    assert bev.guaranteed_hits_per_batch({"threshold": 9}) == 1   # 10 // 10
+    assert bev.guaranteed_hits_per_batch({"threshold": 1}) == 5   # 10 // 2
+    assert bev.guaranteed_hits_per_batch({"threshold": 20}) == 0  # never fires in 10
+
+
+def test_guarantee_lifts_a_pool_below_the_floor():
+    agg = bev._PoolEV()
+    agg.drp_p10x_sum = 0.5           # naturally expect half a ◆◆◆◆+ per batch
+    agg.drp_value_sum = 2.0
+    agg.new_card_ev_10x = 10.0
+    bev._apply_double_rare_guarantee(agg, {"guarantee": {"threshold": 4}})
+
+    assert agg.guaranteed_drp == 2
+    # Shortfall 0.5 -> 2 is a 4x uplift on the tier's contribution: +2.0 * 3.
+    assert agg.new_card_ev_10x == pytest.approx(16.0)
+
+
+def test_guarantee_does_not_lower_a_pool_already_above_the_floor():
+    agg = bev._PoolEV()
+    agg.drp_p10x_sum = 5.0           # already clears the floor naturally
+    agg.drp_value_sum = 20.0
+    agg.new_card_ev_10x = 30.0
+    bev._apply_double_rare_guarantee(agg, {"guarantee": {"threshold": 4}})
+
+    assert agg.new_card_ev_10x == 30.0, "an inactive guarantee must never reprice a pack"

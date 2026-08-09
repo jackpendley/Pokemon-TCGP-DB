@@ -11,12 +11,14 @@ import {
   packEvSchema,
   playerStatsSchema,
   powerScoresFileSchema,
+  printingGroupsFileSchema,
   recommendationsSchema,
   reviewQueueSchema,
   syncDeltaSchema,
   syncHistoryFileSchema,
 } from "@/types";
 import type { CatalogCard, SyncStatus } from "@/types";
+import { creditPrintingGroups } from "@/lib/domain/printing-groups";
 import type { DataSource } from "@/lib/data/source";
 
 const CURRENT_DIR = path.join(env.PIPELINE_ROOT, "data", "current");
@@ -103,26 +105,29 @@ async function readArtifact<T>(
   }
 }
 
-/** Rebuilt only when one of its three source artifacts re-parses (see cache above). */
+/** Rebuilt only when one of its four source artifacts re-parses (see cache above). */
 let catalogMemo: {
   ref: unknown;
   coll: unknown;
   power: unknown;
+  groups: unknown;
   value: CatalogCard[];
 } | null = null;
 
 async function loadCatalog(): Promise<CatalogCard[]> {
-  const [ref, coll, power] = await Promise.all([
+  const [ref, coll, power, groups] = await Promise.all([
     readArtifact(REFERENCE_DIR, "card_reference.json", cardReferenceFileSchema),
     readArtifact(CURRENT_DIR, "collection_normalized.json", collectionFileSchema),
     readOptional(REFERENCE_DIR, "card_power_scores.json", powerScoresFileSchema),
+    readOptional(REFERENCE_DIR, "printing_groups.json", printingGroupsFileSchema),
   ]);
 
   if (
     catalogMemo &&
     catalogMemo.ref === ref &&
     catalogMemo.coll === coll &&
-    catalogMemo.power === power
+    catalogMemo.power === power &&
+    catalogMemo.groups === groups
   ) {
     return catalogMemo.value;
   }
@@ -134,22 +139,36 @@ async function loadCatalog(): Promise<CatalogCard[]> {
   }
   const scores = power?.scores ?? {};
 
-  const value: CatalogCard[] = ref.records.map((r) => ({
-    set_code: r.set_code,
-    card_number: r.card_number,
-    name: r.name,
-    rarity: r.rarity,
-    pokemon_type: r.pokemon_type,
-    card_category: r.card_category,
-    trainer_subtype: r.trainer_subtype ?? null,
-    stage: r.stage ?? null,
-    expansion: r.expansion ?? r.set_code,
-    is_ex: r.is_ex ?? false,
-    owned: ownedByCoord.get(`${r.set_code.toUpperCase()}:${r.card_number}`) ?? 0,
-    power_score: scores[`${r.set_code}:${r.card_number}`]?.power_score ?? null,
-    evolves_from: r.evolves_from ?? null,
-  }));
-  catalogMemo = { ref, coll, power, value };
+  const groupOfCoord = new Map<string, string>();
+  for (const g of groups?.groups ?? []) {
+    for (const [setCode, num] of g.coords) {
+      groupOfCoord.set(`${setCode.toUpperCase()}:${num}`, g.id);
+    }
+  }
+
+  const value: CatalogCard[] = creditPrintingGroups(
+    ref.records.map((r) => ({
+      set_code: r.set_code,
+      card_number: r.card_number,
+      name: r.name,
+      rarity: r.rarity,
+      pokemon_type: r.pokemon_type,
+      card_category: r.card_category,
+      trainer_subtype: r.trainer_subtype ?? null,
+      stage: r.stage ?? null,
+      expansion: r.expansion ?? r.set_code,
+      is_ex: r.is_ex ?? false,
+      owned: ownedByCoord.get(`${r.set_code.toUpperCase()}:${r.card_number}`) ?? 0,
+      printing_group:
+        groupOfCoord.get(`${r.set_code.toUpperCase()}:${r.card_number}`) ?? null,
+      power_score: scores[`${r.set_code}:${r.card_number}`]?.power_score ?? null,
+      power_score_kind:
+        scores[`${r.set_code}:${r.card_number}`]?.score_kind ?? null,
+      boosts: scores[`${r.set_code}:${r.card_number}`]?.boosts ?? null,
+      evolves_from: r.evolves_from ?? null,
+    })),
+  );
+  catalogMemo = { ref, coll, power, groups, value };
   return value;
 }
 

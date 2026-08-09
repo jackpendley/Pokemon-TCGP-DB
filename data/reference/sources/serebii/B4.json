@@ -1,0 +1,709 @@
+{
+  "_meta": {
+    "cached_at": "2026-08-05T02:58:58Z",
+    "card_count": 233,
+    "set_code": "B4",
+    "source": "serebii"
+  },
+  "cards": {
+    "1": {
+      "name": "Wurmple"
+    },
+    "10": {
+      "name": "Combee"
+    },
+    "100": {
+      "name": "Absol"
+    },
+    "101": {
+      "name": "Vullaby"
+    },
+    "102": {
+      "name": "Mandibuzz"
+    },
+    "103": {
+      "name": "Hoopa ex"
+    },
+    "104": {
+      "name": "Skarmory"
+    },
+    "105": {
+      "name": "Mawile"
+    },
+    "106": {
+      "name": "Beldum"
+    },
+    "107": {
+      "name": "Metang"
+    },
+    "108": {
+      "name": "Metagross"
+    },
+    "109": {
+      "name": "Mega Metagross ex"
+    },
+    "11": {
+      "name": "Vespiquen ex"
+    },
+    "110": {
+      "name": "Escavalier"
+    },
+    "111": {
+      "name": "Genesect"
+    },
+    "112": {
+      "name": "Duraludon"
+    },
+    "113": {
+      "name": "Archaludon"
+    },
+    "114": {
+      "name": "Varoom"
+    },
+    "115": {
+      "name": "Revavroom"
+    },
+    "116": {
+      "name": "Dratini"
+    },
+    "117": {
+      "name": "Dragonair"
+    },
+    "118": {
+      "name": "Dragonite"
+    },
+    "119": {
+      "name": "Rayquaza"
+    },
+    "12": {
+      "name": "Karrablast"
+    },
+    "120": {
+      "name": "Mega Rayquaza ex"
+    },
+    "121": {
+      "name": "Noibat"
+    },
+    "122": {
+      "name": "Noivern"
+    },
+    "123": {
+      "name": "Turtonator"
+    },
+    "124": {
+      "name": "Drampa"
+    },
+    "125": {
+      "name": "Applin"
+    },
+    "126": {
+      "name": "Dipplin"
+    },
+    "127": {
+      "name": "Hydrapple"
+    },
+    "128": {
+      "name": "Cyclizar"
+    },
+    "129": {
+      "name": "Rattata"
+    },
+    "13": {
+      "name": "Shelmet"
+    },
+    "130": {
+      "name": "Raticate"
+    },
+    "131": {
+      "name": "Eevee"
+    },
+    "132": {
+      "name": "Aipom"
+    },
+    "133": {
+      "name": "Ambipom"
+    },
+    "134": {
+      "name": "Skitty"
+    },
+    "135": {
+      "name": "Delcatty"
+    },
+    "136": {
+      "name": "Kecleon"
+    },
+    "137": {
+      "name": "Pidove"
+    },
+    "138": {
+      "name": "Tranquill"
+    },
+    "139": {
+      "name": "Unfezant"
+    },
+    "14": {
+      "name": "Accelgor"
+    },
+    "140": {
+      "name": "Ducklett"
+    },
+    "141": {
+      "name": "Swanna ex"
+    },
+    "142": {
+      "name": "Furfrou"
+    },
+    "143": {
+      "name": "Type: Null"
+    },
+    "144": {
+      "name": "Silvally"
+    },
+    "145": {
+      "name": "Order Pad"
+    },
+    "146": {
+      "name": "Claw Fossil"
+    },
+    "147": {
+      "name": "Root Fossil"
+    },
+    "148": {
+      "name": "Deceptive Needle"
+    },
+    "149": {
+      "name": "Clear Veil"
+    },
+    "15": {
+      "name": "Dhelmise"
+    },
+    "150": {
+      "name": "Psychic"
+    },
+    "151": {
+      "name": "Drayden"
+    },
+    "152": {
+      "name": "Skyla"
+    },
+    "153": {
+      "name": "Wally"
+    },
+    "154": {
+      "name": "Soothing Shore"
+    },
+    "155": {
+      "name": "Rainbow Cave"
+    },
+    "156": {
+      "name": "Wurmple"
+    },
+    "157": {
+      "name": "Lileep"
+    },
+    "158": {
+      "name": "Kricketune"
+    },
+    "159": {
+      "name": "Accelgor"
+    },
+    "16": {
+      "name": "Pheromosa"
+    },
+    "160": {
+      "name": "Ponyta"
+    },
+    "161": {
+      "name": "Quilava"
+    },
+    "162": {
+      "name": "Kyogre"
+    },
+    "163": {
+      "name": "Samurott"
+    },
+    "164": {
+      "name": "Raichu"
+    },
+    "165": {
+      "name": "Wattrel"
+    },
+    "166": {
+      "name": "Clefairy"
+    },
+    "167": {
+      "name": "Ralts"
+    },
+    "168": {
+      "name": "Wynaut"
+    },
+    "169": {
+      "name": "Oricorio"
+    },
+    "17": {
+      "name": "Poltchageist"
+    },
+    "170": {
+      "name": "Anorith"
+    },
+    "171": {
+      "name": "Poochyena"
+    },
+    "172": {
+      "name": "Gulpin"
+    },
+    "173": {
+      "name": "Vullaby"
+    },
+    "174": {
+      "name": "Genesect"
+    },
+    "175": {
+      "name": "Dragonair"
+    },
+    "176": {
+      "name": "Noivern"
+    },
+    "177": {
+      "name": "Cyclizar"
+    },
+    "178": {
+      "name": "Raticate"
+    },
+    "179": {
+      "name": "Aipom"
+    },
+    "18": {
+      "name": "Sinistcha"
+    },
+    "180": {
+      "name": "Vespiquen ex"
+    },
+    "181": {
+      "name": "Typhlosion ex"
+    },
+    "182": {
+      "name": "Mega Sharpedo ex"
+    },
+    "183": {
+      "name": "Wailord ex"
+    },
+    "184": {
+      "name": "Rotom ex"
+    },
+    "185": {
+      "name": "Mega Gallade ex"
+    },
+    "186": {
+      "name": "Hoopa ex"
+    },
+    "187": {
+      "name": "Mega Metagross ex"
+    },
+    "188": {
+      "name": "Mega Rayquaza ex"
+    },
+    "189": {
+      "name": "Swanna ex"
+    },
+    "19": {
+      "name": "Teal Mask Ogerpon"
+    },
+    "190": {
+      "name": "Psychic"
+    },
+    "191": {
+      "name": "Drayden"
+    },
+    "192": {
+      "name": "Skyla"
+    },
+    "193": {
+      "name": "Wally"
+    },
+    "194": {
+      "name": "Vespiquen ex"
+    },
+    "195": {
+      "name": "Typhlosion ex"
+    },
+    "196": {
+      "name": "Mega Sharpedo ex"
+    },
+    "197": {
+      "name": "Wailord ex"
+    },
+    "198": {
+      "name": "Mega Gallade ex"
+    },
+    "199": {
+      "name": "Hoopa ex"
+    },
+    "2": {
+      "name": "Silcoon"
+    },
+    "20": {
+      "name": "Ponyta"
+    },
+    "200": {
+      "name": "Mega Metagross ex"
+    },
+    "201": {
+      "name": "Swanna ex"
+    },
+    "202": {
+      "name": "Rotom ex"
+    },
+    "203": {
+      "name": "Mega Rayquaza ex"
+    },
+    "204": {
+      "name": "Alolan Vulpix"
+    },
+    "205": {
+      "name": "Mudkip"
+    },
+    "206": {
+      "name": "Marshtomp"
+    },
+    "207": {
+      "name": "Swampert"
+    },
+    "208": {
+      "name": "Electabuzz"
+    },
+    "209": {
+      "name": "Plusle"
+    },
+    "21": {
+      "name": "Rapidash"
+    },
+    "210": {
+      "name": "Minun"
+    },
+    "211": {
+      "name": "Mr. Mime"
+    },
+    "212": {
+      "name": "Mewtwo"
+    },
+    "213": {
+      "name": "Roggenrola"
+    },
+    "214": {
+      "name": "Boldore"
+    },
+    "215": {
+      "name": "Falinks"
+    },
+    "216": {
+      "name": "Koffing"
+    },
+    "217": {
+      "name": "Weezing"
+    },
+    "218": {
+      "name": "Galarian Meowth"
+    },
+    "219": {
+      "name": "Galarian Perrserker"
+    },
+    "22": {
+      "name": "Flareon"
+    },
+    "220": {
+      "name": "Rattata"
+    },
+    "221": {
+      "name": "Raticate"
+    },
+    "222": {
+      "name": "Smeargle"
+    },
+    "223": {
+      "name": "Buneary"
+    },
+    "224": {
+      "name": "Blacephalon ex"
+    },
+    "225": {
+      "name": "Alolan Ninetales ex"
+    },
+    "226": {
+      "name": "Mega Swampert ex"
+    },
+    "227": {
+      "name": "Mega Gardevoir ex"
+    },
+    "228": {
+      "name": "Mega Lopunny ex"
+    },
+    "229": {
+      "name": "Gigalith ex"
+    },
+    "23": {
+      "name": "Moltres"
+    },
+    "230": {
+      "name": "Zoroark ex"
+    },
+    "231": {
+      "name": "Mega Kangaskhan ex"
+    },
+    "232": {
+      "name": "Raichu"
+    },
+    "233": {
+      "name": "Dragonair"
+    },
+    "24": {
+      "name": "Cyndaquil"
+    },
+    "25": {
+      "name": "Quilava"
+    },
+    "26": {
+      "name": "Typhlosion ex"
+    },
+    "27": {
+      "name": "Houndour"
+    },
+    "28": {
+      "name": "Houndoom"
+    },
+    "29": {
+      "name": "Heatmor"
+    },
+    "3": {
+      "name": "Beautifly"
+    },
+    "30": {
+      "name": "Psyduck"
+    },
+    "31": {
+      "name": "Golduck"
+    },
+    "32": {
+      "name": "Staryu"
+    },
+    "33": {
+      "name": "Starmie"
+    },
+    "34": {
+      "name": "Carvanha"
+    },
+    "35": {
+      "name": "Mega Sharpedo ex"
+    },
+    "36": {
+      "name": "Wailmer"
+    },
+    "37": {
+      "name": "Wailord ex"
+    },
+    "38": {
+      "name": "Spheal"
+    },
+    "39": {
+      "name": "Sealeo"
+    },
+    "4": {
+      "name": "Cascoon"
+    },
+    "40": {
+      "name": "Walrein"
+    },
+    "41": {
+      "name": "Kyogre"
+    },
+    "42": {
+      "name": "Oshawott"
+    },
+    "43": {
+      "name": "Dewott"
+    },
+    "44": {
+      "name": "Samurott"
+    },
+    "45": {
+      "name": "Alomomola"
+    },
+    "46": {
+      "name": "Dewpider"
+    },
+    "47": {
+      "name": "Araquanid"
+    },
+    "48": {
+      "name": "Bruxish"
+    },
+    "49": {
+      "name": "Pikachu"
+    },
+    "5": {
+      "name": "Dustox"
+    },
+    "50": {
+      "name": "Raichu"
+    },
+    "51": {
+      "name": "Shinx"
+    },
+    "52": {
+      "name": "Luxio"
+    },
+    "53": {
+      "name": "Luxray"
+    },
+    "54": {
+      "name": "Pachirisu"
+    },
+    "55": {
+      "name": "Rotom ex"
+    },
+    "56": {
+      "name": "Tynamo"
+    },
+    "57": {
+      "name": "Eelektrik"
+    },
+    "58": {
+      "name": "Eelektross"
+    },
+    "59": {
+      "name": "Thundurus"
+    },
+    "6": {
+      "name": "Lileep"
+    },
+    "60": {
+      "name": "Helioptile"
+    },
+    "61": {
+      "name": "Heliolisk"
+    },
+    "62": {
+      "name": "Wattrel"
+    },
+    "63": {
+      "name": "Kilowattrel"
+    },
+    "64": {
+      "name": "Clefairy"
+    },
+    "65": {
+      "name": "Clefable"
+    },
+    "66": {
+      "name": "Drowzee"
+    },
+    "67": {
+      "name": "Hypno"
+    },
+    "68": {
+      "name": "Mime Jr."
+    },
+    "69": {
+      "name": "Mr. Mime"
+    },
+    "7": {
+      "name": "Cradily"
+    },
+    "70": {
+      "name": "Mewtwo"
+    },
+    "71": {
+      "name": "Ralts"
+    },
+    "72": {
+      "name": "Kirlia"
+    },
+    "73": {
+      "name": "Chimecho"
+    },
+    "74": {
+      "name": "Wynaut"
+    },
+    "75": {
+      "name": "Woobat"
+    },
+    "76": {
+      "name": "Swoobat"
+    },
+    "77": {
+      "name": "Hoopa"
+    },
+    "78": {
+      "name": "Oricorio"
+    },
+    "79": {
+      "name": "Makuhita"
+    },
+    "8": {
+      "name": "Kricketot"
+    },
+    "80": {
+      "name": "Hariyama"
+    },
+    "81": {
+      "name": "Anorith"
+    },
+    "82": {
+      "name": "Armaldo"
+    },
+    "83": {
+      "name": "Groudon"
+    },
+    "84": {
+      "name": "Mega Gallade ex"
+    },
+    "85": {
+      "name": "Drilbur"
+    },
+    "86": {
+      "name": "Excadrill"
+    },
+    "87": {
+      "name": "Timburr"
+    },
+    "88": {
+      "name": "Gurdurr"
+    },
+    "89": {
+      "name": "Conkeldurr"
+    },
+    "9": {
+      "name": "Kricketune"
+    },
+    "90": {
+      "name": "Minior"
+    },
+    "91": {
+      "name": "Grimer"
+    },
+    "92": {
+      "name": "Muk"
+    },
+    "93": {
+      "name": "Poochyena"
+    },
+    "94": {
+      "name": "Mightyena"
+    },
+    "95": {
+      "name": "Galarian Zigzagoon"
+    },
+    "96": {
+      "name": "Galarian Linoone"
+    },
+    "97": {
+      "name": "Galarian Obstagoon"
+    },
+    "98": {
+      "name": "Gulpin"
+    },
+    "99": {
+      "name": "Swalot"
+    }
+  }
+}

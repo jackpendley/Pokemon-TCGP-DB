@@ -1,0 +1,103 @@
+# Adopt a newly released set (docs/adding-a-set.md, automated).
+#
+# Triggered by the dashboard's "new set detected" banner (repository_dispatch
+# "adopt-set" with {"set_code": "B4"}), or by hand from the Actions tab.
+#
+# Runs on the SELF-HOSTED runner for the same reason sync does: the ingest step
+# fetches Pokémon Zone, and Cloudflare blocks GitHub's datacenter IPs.
+#
+# scripts/adopt_set.py verifies every source URL before writing a registry entry
+# and reverts the registration if the guard tests fail afterwards, so a failed
+# run leaves the repo exactly as it was. Only a clean run reaches the commit step.
+#
+# Secrets: same set as sync.yml (SUPABASE_*, OWNER_USER_ID, PZ_AUTH_JSON,
+# GH_PUSH_TOKEN, REVALIDATE_SECRET).
+
+name: Adopt Set
+
+on:
+  repository_dispatch:
+    types: [adopt-set]
+  workflow_dispatch:
+    inputs:
+      set_code:
+        description: "Set code to adopt (e.g. B4)"
+        required: true
+        type: string
+
+# Shares sync's group: both rewrite the same reference data and publish, so they
+# must never interleave.
+concurrency:
+  group: sync-publish
+  cancel-in-progress: false
+
+jobs:
+  adopt:
+    runs-on: self-hosted
+    env:
+      SET_CODE: ${{ github.event.client_payload.set_code || inputs.set_code }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PUSH_TOKEN }}
+          clean: false
+
+      - name: Write Pokémon Zone auth
+        env:
+          PZ_AUTH_JSON: ${{ secrets.PZ_AUTH_JSON }}
+        run: |
+          mkdir -p data/sync
+          printf '%s' "$PZ_AUTH_JSON" > data/sync/.auth.json
+
+      - name: Adopt the set
+        run: |
+          if [ -z "$SET_CODE" ]; then
+            echo "No set_code supplied." >&2
+            exit 1
+          fi
+          python3 scripts/adopt_set.py "$SET_CODE"
+
+      - name: Rebuild card power scores
+        run: python3 scripts/build_card_power_score.py
+
+      - name: Publish to Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          OWNER_USER_ID: ${{ secrets.OWNER_USER_ID }}
+          SYNC_OUTCOME: ok
+          SYNC_MODE: adopt
+        run: python3 scripts/publish_to_supabase.py
+
+      - name: Revalidate web cache
+        continue-on-error: true
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          if [ -z "$REVALIDATE_SECRET" ]; then
+            echo "REVALIDATE_SECRET unset; skipping cache revalidation."
+            exit 0
+          fi
+          curl -fsS -X POST \
+            "https://pokemon-tcgp-db-ten.vercel.app/api/revalidate" \
+            -H "Authorization: Bearer $REVALIDATE_SECRET"
+
+      # Registry edits are code, so unlike sync's data-only commit this lands on a
+      # branch and opens a PR — the diff is small and worth one look before it is
+      # part of main.
+      - name: Open a PR with the registration
+        env:
+          GH_TOKEN: ${{ secrets.GH_PUSH_TOKEN }}
+        run: |
+          git diff --quiet && exit 0
+          BRANCH="adopt-set/${SET_CODE}"
+          git config user.name "sync-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "feat(sets): adopt ${SET_CODE}"
+          git push -f origin "$BRANCH"
+          gh pr create \
+            --title "feat(sets): adopt ${SET_CODE}" \
+            --body "Automated adoption of \`${SET_CODE}\` by scripts/adopt_set.py. Source URLs were verified before registration and the registry/classification guard tests passed after the rebuild." \
+            --base main --head "$BRANCH" || true

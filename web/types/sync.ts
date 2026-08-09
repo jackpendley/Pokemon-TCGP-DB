@@ -90,4 +90,12 @@ export interface SyncJob {
 export interface SyncRunState {
   publishedAt: string | null;
   lastRun: { outcome?: string | null } | null;
+  /**
+   * Whether Pokémon Zone finished refreshing its snapshot of the collection from
+   * the game before we read it. False means the run republished PZ's previous
+   * snapshot — the sync itself worked, but nothing new could have arrived.
+   */
+  playerSynced: boolean | null;
+  /** When Pokémon Zone last ingested the collection from the game. */
+  sourceUpdatedAt: string | null;
 }

@@ -26,7 +26,7 @@ const cache = new WeakMap<CatalogCard[], EvolutionIndex>();
 function sortCards(cards: CatalogCard[]): CatalogCard[] {
   return [...cards].sort(
     (a, b) =>
-      Number(b.owned > 0) - Number(a.owned > 0) ||
+      Number(b.dex_owned) - Number(a.dex_owned) ||
       a.set_code.localeCompare(b.set_code) ||
       a.card_number - b.card_number,
   );

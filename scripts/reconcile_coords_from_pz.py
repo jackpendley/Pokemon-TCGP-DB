@@ -146,12 +146,14 @@ def main() -> int:
                     bad_confidence.append((entry["name"], key[0], key[1], "conflict",
                                            f"dual-location card: no original found in {pz_set}"))
                 else:
-                    if cnt >= 2:
-                        # 2nd+ copies fill the A4b slot
-                        by_coord[key][0] = rc.rarity
-                        by_coord[key][1] += cnt - 1
-                        by_coord[key][2] = rc.confidence
-                        cnt = 1
+                    # All copies land on the original printing — the coord PZ
+                    # actually stamps. Before 2026-07-29 the dex filled one slot
+                    # at a time, so copies were split here (1st → original,
+                    # 2nd+ → A4b). That update made one copy register under every
+                    # expansion the card appears in, so splitting would now
+                    # understate the original slot and invent copies at the A4b
+                    # one. Both slots read as owned via printing groups instead
+                    # (see scripts/build_printing_groups.py).
                     key = (orig_ref["set_code"], orig_ref["card_number"])
                     rc = type(rc)(rc.name, key[0], key[1], orig_ref.get("rarity"),
                                   rc.confidence, rc.sources_agreed,

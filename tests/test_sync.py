@@ -497,3 +497,41 @@ def test_a4b_hybrid_binds_reprint_by_number_no_warn():
     assert r.status == "MATCHED"
     assert r.entry_index == 1, "must bind to the A4b/194 reprint, not the A1/151 original"
     assert "disambiguation failed" not in err.getvalue(), "should resolve without a force-match WARN"
+
+
+# ---------------------------------------------------------------------------
+# New-set detection (game update 2026-07-29 fallout)
+# ---------------------------------------------------------------------------
+# Nothing used to notice a released expansion: run_recommendations syncs with
+# --no-fetch, so an unregistered set's cards became loose "new cards" in the
+# review queue with no signal that a whole set was missing (docs/adding-a-set.md
+# gap #7). This is what the dashboard banner and adopt button read.
+
+class _PZ:
+    def __init__(self, set_code, count=1):
+        self.set_code = set_code
+        self.count = count
+
+
+def test_detects_a_set_the_registry_does_not_know():
+    found = sc.detect_unregistered_sets([_PZ("B9", 2), _PZ("B9", 1), _PZ("A1", 5)])
+    assert found == [{"set_code": "B9", "card_count": 2, "copies": 3}]
+
+
+def test_registered_sets_are_never_flagged():
+    assert sc.detect_unregistered_sets([_PZ("A1"), _PZ("B4"), _PZ("PROMO-B")]) == []
+
+
+def test_detection_canonicalizes_pz_casing():
+    """PZ sends B3B/b4; a casing difference must not read as a new set."""
+    assert sc.detect_unregistered_sets([_PZ("B3B"), _PZ("b4")]) == []
+
+
+def test_detection_ranks_by_card_count():
+    found = sc.detect_unregistered_sets(
+        [_PZ("B9"), _PZ("C1"), _PZ("C1"), _PZ("C1")])
+    assert [f["set_code"] for f in found] == ["C1", "B9"]
+
+
+def test_detection_ignores_blank_set_codes():
+    assert sc.detect_unregistered_sets([_PZ(""), _PZ(None)]) == []

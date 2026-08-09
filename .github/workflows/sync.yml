@@ -5,8 +5,8 @@
 # without a terminal or a redeploy.
 #
 # Modes:
-#   live (repository_dispatch "sync" from the web app's remote sync runner,
-#         and workflow_dispatch default): full sync against Pokémon Zone
+#   live (nightly schedule, repository_dispatch "sync" from the web app's remote
+#         sync runner, and workflow_dispatch default): full sync against Pokémon Zone
 #         using the PZ_AUTH_JSON secret (contents of data/sync/.auth.json).
 #         Runs on the SELF-HOSTED runner (residential IP) — Cloudflare blocks
 #         the PZ fetch from GitHub-hosted datacenter IPs (verified 2026-07-10).
@@ -29,6 +29,16 @@
 name: Sync & Publish
 
 on:
+  # Nightly at 02:00 America/Phoenix. Phoenix does not observe DST, so 09:00 UTC
+  # is 2am year-round and no seasonal drift handling is needed.
+  #
+  # This exists because the gap, not the upstream, was the bigger problem: after
+  # Ruler of the Skies released on 2026-07-29 nobody ran a sync for six days, so
+  # the missing cards and Pokémon Zone's own outage were both invisible until
+  # they were noticed by hand. A nightly run turns "the data is wrong and nobody
+  # knows" into "the data is stale and the dashboard says so".
+  schedule:
+    - cron: "0 9 * * *"
   repository_dispatch:
     types: [sync]
   workflow_dispatch:
@@ -49,6 +59,7 @@ jobs:
   publish:
     # live → self-hosted (residential IP for the PZ fetch); skip → cloud.
     runs-on: ${{ (github.event_name == 'push' || github.event.inputs.mode == 'skip') && 'ubuntu-latest' || 'self-hosted' }}
+    # A scheduled run is a live sync: same runner, same mode as a dispatch.
     env:
       MODE: ${{ github.event_name == 'push' && 'skip' || (github.event.inputs.mode || 'live') }}
     steps:

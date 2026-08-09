@@ -3,6 +3,7 @@ import { connection } from "next/server";
 
 import { SetsGrid, type SetProgress } from "@/components/sets/sets-grid";
 import { Skeleton } from "@/components/ui/skeleton";
+import { PanelSkeleton, TextLinesSkeleton } from "@/components/ui/skeletons";
 import { getCachedCatalog } from "@/lib/data/cached";
 import { isBaseRarity } from "@/lib/domain/rarity";
 
@@ -28,10 +29,10 @@ async function SetsContent() {
       bySet.set(c.set_code, s);
     }
     s.total += 1;
-    if (c.owned > 0) s.owned += 1;
+    if (c.dex_owned) s.owned += 1;
     if (isBaseRarity(c.rarity)) {
       s.baseTotal += 1;
-      if (c.owned > 0) s.baseOwned += 1;
+      if (c.dex_owned) s.baseOwned += 1;
     }
   }
   const sets = [...bySet.values()];
@@ -53,7 +54,19 @@ export default function SetsPage() {
       <header className="space-y-1">
         <h1 className="text-2xl font-semibold tracking-tight">Set Completion</h1>
       </header>
-      <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+      <Suspense
+        fallback={
+          <>
+            <TextLinesSkeleton width="w-[28rem] max-w-full" />
+            <Skeleton className="h-9 w-48" />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {Array.from({ length: 9 }, (_, i) => (
+                <PanelSkeleton key={i} titleWidth="w-36" bodyClassName="h-20" />
+              ))}
+            </div>
+          </>
+        }
+      >
         <SetsContent />
       </Suspense>
     </div>

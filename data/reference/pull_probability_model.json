@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-02T02:28:16+00:00",
+  "generated_at": "2026-08-06T00:41:44+00:00",
   "generated_by": "build_pull_probability_model.py",
   "meta": {
-    "generated_at": "2026-07-02T02:28:16+00:00",
+    "generated_at": "2026-08-06T00:41:44+00:00",
     "model_version": "0.6.0",
     "source_status": "third_party_verified_with_in_app_anchor",
     "verified_source": null,
@@ -24,7 +24,7 @@
       "Deluxe Pack: ex (A4b) — pack unavailable in app; Offering Rates inaccessible; 4 cards/pack"
     ],
     "confidence_note": "third_party_verified_with_in_app_anchor: A4 (Ho-Oh/Lugia) user_in_app_verified from in-repo screenshots (2026-05-14). Pulsing Aura (B3) user_in_app_verified_plus_bulbapedia (2026-05-13). Most other packs branch-verified via Bulbapedia (2026-05-13). A-series packs confirmed two-branch (Bulbapedia + third-party sources). A4b pending — pack unavailable in app, Offering Rates inaccessible. Rarity distributions within slots still third_party_verified. NOT official in-app verified for any non-A4/non-B3 pack.",
-    "notes": "A4 in-app verified model (v0.6.0, 2026-05-14). user_in_app_verified: 2 packs (A4 Ho-Oh/Lugia, in-repo screenshots). user_in_app_verified_plus_bulbapedia: 1 pack (Pulsing Aura B3, user in-app + Bulbapedia). bulbapedia_branch_verified: 12 packs (branch selection from Bulbapedia offering rates). third_party_verified: 10 packs (two-branch, A-series, Bulbapedia truncated but pattern consistent). pending_verification: 1 packs (A4b Deluxe Pack: ex — pack unavailable in app, 4 cards/pack). rarity_probabilities = exact expected copies of each rarity per pack, summed per pack from Pokémon Zone per-card drop chances (slot-model fallback only when PZ data is absent). A4 (Wisdom of Sea and Sky): three-branch 91.620%/8.330%/0.050%, slot_6 verified (illustration_rare=12.9%, rare=87.1%). Secluded Springs (A4a): unique three-branch (91.620%/8.330%/0.050%). Mega Shine (B2b): four-branch with themed_rare_pack=0.005%."
+    "notes": "A4 in-app verified model (v0.6.0, 2026-05-14). user_in_app_verified: 2 packs (A4 Ho-Oh/Lugia, in-repo screenshots). user_in_app_verified_plus_bulbapedia: 1 pack (Pulsing Aura B3, user in-app + Bulbapedia). bulbapedia_branch_verified: 12 packs (branch selection from Bulbapedia offering rates). third_party_verified: 11 packs (two-branch, A-series, Bulbapedia truncated but pattern consistent). pending_verification: 1 packs (A4b Deluxe Pack: ex — pack unavailable in app, 4 cards/pack). rarity_probabilities = exact expected copies of each rarity per pack, summed per pack from Pokémon Zone per-card drop chances (slot-model fallback only when PZ data is absent). A4 (Wisdom of Sea and Sky): three-branch 91.620%/8.330%/0.050%, slot_6 verified (illustration_rare=12.9%, rare=87.1%). Secluded Springs (A4a): unique three-branch (91.620%/8.330%/0.050%). Mega Shine (B2b): four-branch with themed_rare_pack=0.005%."
   },
   "probability_source_required": {
     "status": "IN_APP_VERIFIED_PARTIAL",
@@ -117,7 +117,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 99,
@@ -141,17 +150,17 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "common": 44,
           "special_illustration_rare": 5,
+          "super_rare": 9,
+          "immersive": 1,
           "illustration_rare": 12,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 14,
-          "ultra_rare": 2,
-          "super_rare": 9,
           "double_rare": 5,
-          "uncommon": 34
+          "uncommon": 34,
+          "shiny_super_rare": 4,
+          "ultra_rare": 2,
+          "common": 44,
+          "rare": 14
         }
       },
       "rarity_probabilities": {
@@ -256,7 +265,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 99,
@@ -280,17 +298,17 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "common": 44,
           "special_illustration_rare": 5,
+          "super_rare": 9,
+          "immersive": 1,
           "illustration_rare": 12,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 14,
-          "ultra_rare": 2,
-          "super_rare": 9,
           "double_rare": 5,
-          "uncommon": 34
+          "uncommon": 34,
+          "shiny_super_rare": 4,
+          "ultra_rare": 2,
+          "common": 44,
+          "rare": 14
         }
       },
       "rarity_probabilities": {
@@ -395,7 +413,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 103,
@@ -416,17 +443,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 32,
           "special_illustration_rare": 4,
+          "super_rare": 7,
+          "immersive": 1,
           "illustration_rare": 6,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 8,
-          "ultra_rare": 2,
-          "super_rare": 7,
           "double_rare": 5,
-          "uncommon": 24
+          "uncommon": 24,
+          "shiny_super_rare": 4,
+          "ultra_rare": 2,
+          "common": 32,
+          "rare": 8
         }
       },
       "rarity_probabilities": {
@@ -531,7 +558,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "pending_verification: branch model not confirmed from Bulbapedia or in-app. Two-branch rates shown are a placeholder."
+        "confidence_note": "pending_verification: branch model not confirmed from Bulbapedia or in-app. Two-branch rates shown are a placeholder.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 379,
@@ -549,14 +585,14 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 128,
-          "illustration_rare": 6,
-          "immersive": 1,
-          "rare": 50,
-          "ultra_rare": 1,
           "super_rare": 18,
+          "immersive": 1,
+          "illustration_rare": 6,
           "double_rare": 75,
-          "uncommon": 100
+          "uncommon": 100,
+          "ultra_rare": 1,
+          "common": 128,
+          "rare": 50
         }
       },
       "rarity_probabilities": {
@@ -661,7 +697,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: two-branch model confirmed from Bulbapedia offering rates. The Regular Pack + 1 Card branch does NOT apply to this expansion. NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: two-branch model confirmed from Bulbapedia offering rates. The Regular Pack + 1 Card branch does NOT apply to this expansion. NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 107,
@@ -682,17 +727,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 32,
           "special_illustration_rare": 5,
+          "super_rare": 8,
+          "immersive": 1,
           "illustration_rare": 10,
           "shiny_rare": 9,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 8,
-          "ultra_rare": 1,
-          "super_rare": 8,
           "double_rare": 6,
-          "uncommon": 23
+          "uncommon": 23,
+          "shiny_super_rare": 4,
+          "ultra_rare": 1,
+          "common": 32,
+          "rare": 8
         }
       },
       "rarity_probabilities": {
@@ -797,7 +842,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 106,
@@ -818,17 +872,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "promo": 8,
-          "common": 29,
+          "super_rare": 8,
+          "immersive": 1,
           "illustration_rare": 8,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 2,
-          "rare": 8,
-          "ultra_rare": 2,
-          "super_rare": 8,
           "double_rare": 3,
-          "uncommon": 27
+          "uncommon": 27,
+          "shiny_super_rare": 2,
+          "ultra_rare": 2,
+          "common": 29,
+          "rare": 8,
+          "promo": 8
         }
       },
       "rarity_probabilities": {
@@ -933,7 +987,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: two-branch model confirmed from Bulbapedia offering rates. The Regular Pack + 1 Card branch does NOT apply to this expansion. NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: two-branch model confirmed from Bulbapedia offering rates. The Regular Pack + 1 Card branch does NOT apply to this expansion. NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 103,
@@ -954,17 +1017,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 32,
           "special_illustration_rare": 4,
+          "super_rare": 8,
+          "immersive": 1,
           "illustration_rare": 6,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 8,
-          "ultra_rare": 1,
-          "super_rare": 8,
           "double_rare": 5,
-          "uncommon": 24
+          "uncommon": 24,
+          "shiny_super_rare": 4,
+          "ultra_rare": 1,
+          "common": 32,
+          "rare": 8
         }
       },
       "rarity_probabilities": {
@@ -1069,7 +1132,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 234,
@@ -1090,17 +1162,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 66,
           "special_illustration_rare": 9,
+          "super_rare": 14,
+          "immersive": 2,
           "illustration_rare": 24,
           "shiny_rare": 20,
-          "immersive": 2,
-          "shiny_super_rare": 8,
-          "rare": 28,
-          "ultra_rare": 2,
-          "super_rare": 14,
           "double_rare": 10,
-          "uncommon": 51
+          "uncommon": 51,
+          "shiny_super_rare": 8,
+          "ultra_rare": 2,
+          "common": 66,
+          "rare": 28
         }
       },
       "rarity_probabilities": {
@@ -1205,7 +1277,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 80,
@@ -1228,15 +1309,15 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "common": 50,
           "special_illustration_rare": 2,
-          "illustration_rare": 8,
-          "immersive": 2,
-          "rare": 14,
-          "ultra_rare": 3,
           "super_rare": 8,
+          "immersive": 2,
+          "illustration_rare": 8,
           "double_rare": 5,
-          "uncommon": 35
+          "uncommon": 35,
+          "ultra_rare": 3,
+          "common": 50,
+          "rare": 14
         }
       },
       "rarity_probabilities": {
@@ -1341,7 +1422,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 79,
@@ -1364,15 +1454,15 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "common": 50,
           "special_illustration_rare": 2,
-          "illustration_rare": 8,
-          "immersive": 2,
-          "rare": 14,
-          "ultra_rare": 3,
           "super_rare": 7,
+          "immersive": 2,
+          "illustration_rare": 8,
           "double_rare": 5,
-          "uncommon": 35
+          "uncommon": 35,
+          "ultra_rare": 3,
+          "common": 50,
+          "rare": 14
         }
       },
       "rarity_probabilities": {
@@ -1477,7 +1567,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 80,
@@ -1500,15 +1599,15 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "common": 50,
           "special_illustration_rare": 1,
-          "illustration_rare": 8,
-          "immersive": 2,
-          "rare": 14,
-          "ultra_rare": 3,
           "super_rare": 9,
+          "immersive": 2,
+          "illustration_rare": 8,
           "double_rare": 5,
-          "uncommon": 35
+          "uncommon": 35,
+          "ultra_rare": 3,
+          "common": 50,
+          "rare": 14
         }
       },
       "rarity_probabilities": {
@@ -1613,7 +1712,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 96,
@@ -1638,17 +1746,17 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "common": 49,
           "special_illustration_rare": 4,
+          "super_rare": 7,
+          "immersive": 1,
           "illustration_rare": 8,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 15,
-          "ultra_rare": 3,
-          "super_rare": 7,
           "double_rare": 5,
-          "uncommon": 33
+          "uncommon": 33,
+          "shiny_super_rare": 4,
+          "ultra_rare": 3,
+          "common": 49,
+          "rare": 15
         }
       },
       "rarity_probabilities": {
@@ -1753,7 +1861,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 96,
@@ -1778,17 +1895,17 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "common": 49,
           "special_illustration_rare": 4,
+          "super_rare": 7,
+          "immersive": 1,
           "illustration_rare": 8,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 15,
-          "ultra_rare": 3,
-          "super_rare": 7,
           "double_rare": 5,
-          "uncommon": 33
+          "uncommon": 33,
+          "shiny_super_rare": 4,
+          "ultra_rare": 3,
+          "common": 49,
+          "rare": 15
         }
       },
       "rarity_probabilities": {
@@ -1893,7 +2010,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 96,
@@ -1918,17 +2044,17 @@
           "ultra_rare": 3
         },
         "combined_by_rarity": {
-          "common": 49,
           "special_illustration_rare": 4,
+          "super_rare": 7,
+          "immersive": 1,
           "illustration_rare": 8,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 15,
-          "ultra_rare": 3,
-          "super_rare": 7,
           "double_rare": 5,
-          "uncommon": 33
+          "uncommon": 33,
+          "shiny_super_rare": 4,
+          "ultra_rare": 3,
+          "common": 49,
+          "rare": 15
         }
       },
       "rarity_probabilities": {
@@ -2035,7 +2161,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: four-branch selection confirmed from Bulbapedia Mega Shine page. themed_rare_pack (0.005%) guarantees Mega Evolution ex; EV not modeled (card pool unknown). NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: four-branch selection confirmed from Bulbapedia Mega Shine page. themed_rare_pack (0.005%) guarantees Mega Evolution ex; EV not modeled (card pool unknown). NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 117,
@@ -2055,16 +2190,16 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 33,
+          "super_rare": 9,
+          "immersive": 2,
           "illustration_rare": 6,
           "shiny_rare": 24,
-          "immersive": 2,
-          "shiny_super_rare": 5,
-          "rare": 8,
-          "ultra_rare": 2,
-          "super_rare": 9,
           "double_rare": 5,
-          "uncommon": 23
+          "uncommon": 23,
+          "shiny_super_rare": 5,
+          "ultra_rare": 2,
+          "common": 33,
+          "rare": 8
         }
       },
       "rarity_probabilities": {
@@ -2169,7 +2304,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: two-branch model confirmed from Bulbapedia offering rates. The Regular Pack + 1 Card branch does NOT apply to this expansion. NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: two-branch model confirmed from Bulbapedia offering rates. The Regular Pack + 1 Card branch does NOT apply to this expansion. NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 86,
@@ -2188,15 +2332,15 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 32,
           "special_illustration_rare": 2,
-          "illustration_rare": 6,
-          "immersive": 1,
-          "rare": 8,
-          "ultra_rare": 1,
           "super_rare": 8,
+          "immersive": 1,
+          "illustration_rare": 6,
           "double_rare": 5,
-          "uncommon": 23
+          "uncommon": 23,
+          "ultra_rare": 1,
+          "common": 32,
+          "rare": 8
         }
       },
       "rarity_probabilities": {
@@ -2301,7 +2445,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 131,
@@ -2322,17 +2475,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 43,
           "special_illustration_rare": 5,
+          "super_rare": 10,
+          "immersive": 1,
           "illustration_rare": 6,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 13,
-          "ultra_rare": 2,
-          "super_rare": 10,
           "double_rare": 5,
-          "uncommon": 32
+          "uncommon": 32,
+          "shiny_super_rare": 4,
+          "ultra_rare": 2,
+          "common": 43,
+          "rare": 13
         }
       },
       "rarity_probabilities": {
@@ -2437,7 +2590,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 109,
@@ -2458,17 +2620,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 32,
           "special_illustration_rare": 4,
+          "super_rare": 8,
+          "immersive": 1,
           "illustration_rare": 6,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 12,
-          "ultra_rare": 2,
-          "super_rare": 8,
           "double_rare": 5,
-          "uncommon": 25
+          "uncommon": 25,
+          "shiny_super_rare": 4,
+          "ultra_rare": 2,
+          "common": 32,
+          "rare": 12
         }
       },
       "rarity_probabilities": {
@@ -2561,7 +2723,16 @@
             "notes": "Bulbapedia Pulsing Aura page corroborates the three-branch model: Regular pack=94.711%, Regular pack + 1 card=5.238%, Rare pack=0.050%. Also confirms regular_pack_plus_one uses same first-5-card rates as regular pack. Slot 6 shiny rates not verified from Bulbapedia (page truncated before that section)."
           }
         ],
-        "confidence_note": "user_in_app_verified_plus_bulbapedia: rates provided by user directly from in-app Offering Rates screen (ChatGPT conversation; screenshots NOT in repo). Bulbapedia corroborates branch selection percentages. Rare pack distribution (47/45/4/4) is user-in-app only — may differ from other packs."
+        "confidence_note": "user_in_app_verified_plus_bulbapedia: rates provided by user directly from in-app Offering Rates screen (ChatGPT conversation; screenshots NOT in repo). Bulbapedia corroborates branch selection percentages. Rare pack distribution (47/45/4/4) is user-in-app only — may differ from other packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 234,
@@ -2582,17 +2753,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 65,
           "special_illustration_rare": 6,
+          "super_rare": 17,
+          "immersive": 2,
           "illustration_rare": 24,
           "shiny_rare": 20,
-          "immersive": 2,
-          "shiny_super_rare": 8,
-          "rare": 29,
-          "ultra_rare": 2,
-          "super_rare": 17,
           "double_rare": 10,
-          "uncommon": 51
+          "uncommon": 51,
+          "shiny_super_rare": 8,
+          "ultra_rare": 2,
+          "common": 65,
+          "rare": 29
         }
       },
       "rarity_probabilities": {
@@ -2611,6 +2782,151 @@
         "unknown": 0.0
       },
       "notes": "Three-branch model: regular_pack (94.711%) + rare_pack (0.050%) + regular_pack_plus_one (5.238%). Source: user-provided in-app Offering Rates (ChatGPT, not in repo). Bulbapedia corroborates branch percentages. Rare pack distribution corrected from in-app data: 47.058/45.098/3.921/3.921. Card 6 shiny rates: shiny_rare=68.180%, shiny_super_rare=31.820% (EV pending shiny pool data)."
+    },
+    {
+      "pack_name": "Ruler of the Skies",
+      "expansion": "Ruler of the Skies",
+      "set_code": "B4",
+      "is_shared_pool": false,
+      "hourglass_purchasable": true,
+      "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
+      "source_name": "game8_co_ptcgp_offering_rates",
+      "source_accessed_at": "2026-05-12",
+      "confidence": "third_party_verified",
+      "bulbapedia_url": null,
+      "bulbapedia_match_status": "truncated_pending",
+      "bulbapedia_notes": "Bulbapedia offering rates section was not fully accessible during the 2026-05-13 verification pass. Two-branch model is consistent with confirmed A-series Bulbapedia data (A1a/A2a/A3a/A3b all two-branch).",
+      "stale_model_warning": null,
+      "user_in_app_evidence_note": null,
+      "official_verification_status": "not_verified",
+      "slot_model": {
+        "cards_per_pack": 5,
+        "slot_count": 5,
+        "notes": "Standard PTCGP pack: 5 cards (or 6 in regular_pack_plus_one branch). Slot-level probability breakdown stored in slot_rates. Aggregate rarity_probabilities = expected copies/rarity/pack from Pokémon Zone drop chances.",
+        "branch_model": "two_branch"
+      },
+      "slot_rates": {
+        "regular_pack_probability": 0.9995,
+        "rare_pack_probability": 0.0005,
+        "regular_pack_plus_one_probability": null,
+        "slots_1_3": {
+          "common": 1.0
+        },
+        "slot_4": {
+          "uncommon": 0.9,
+          "rare": 0.05,
+          "double_rare": 0.01666,
+          "illustration_rare": 0.02572,
+          "super_rare": 0.005,
+          "immersive": 0.00222,
+          "ultra_rare": 0.0004
+        },
+        "slot_5": {
+          "uncommon": 0.6,
+          "rare": 0.2,
+          "double_rare": 0.06664,
+          "illustration_rare": 0.10288,
+          "super_rare": 0.02,
+          "immersive": 0.00888,
+          "ultra_rare": 0.0016
+        },
+        "slot_6": null,
+        "rare_pack_all_5_slots": {
+          "illustration_rare": 0.4,
+          "super_rare": 0.5,
+          "immersive": 0.05,
+          "ultra_rare": 0.05
+        },
+        "confidence": "third_party_verified",
+        "source_name": "game8_co_ptcgp_offering_rates",
+        "source_url": "https://game8.co/games/Pokemon-TCG-Pocket/archives/482685",
+        "source_accessed_at": "2026-05-12",
+        "source_notes": "Per-slot rates sourced from Game8 (trusted third-party PTCGP guide), independently confirmed by ONE Esports, CGMagazine, ShackNews. 4 independent third-party sources report identical values. Two-branch model (regular=99.950%, rare=0.050%) confirmed for A-series packs by Bulbapedia (A1a/A2a/A3a/A3b confirmed; A1/A2/A2b/A3 consistent with pattern).",
+        "cross_checked_sources": [
+          {
+            "source_name": "one_esports_ptcgp_pull_rates",
+            "publisher": "ONE Esports",
+            "url": "https://www.oneesports.gg/gaming/pokemon-tcg-pocket-pity-system-explained/",
+            "accessed_at": "2026-05-12",
+            "match_result": "full_match",
+            "notes": "ALL slot rates match: regular=99.95%, rare=0.05%, slot4 and slot5 rates identical. Rare pack rates identical."
+          },
+          {
+            "source_name": "cgmagonline_pull_rates_lowered",
+            "publisher": "CGMagazine",
+            "url": "https://www.cgmagonline.com/news/pokemon-tcg-pocket-pull-rates-lowered/",
+            "accessed_at": "2026-05-12",
+            "match_result": "partial_match_confirms_universality",
+            "notes": "Explicitly compares two packs and confirms rates are universal."
+          },
+          {
+            "source_name": "shacknews_ptcgp_drop_rates",
+            "publisher": "ShackNews",
+            "url": "https://www.shacknews.com/article/142035/pokemon-trading-card-game-pocket-card-drop-chance-rate",
+            "accessed_at": "2026-05-12",
+            "match_result": "partial_match_non_shiny_rates",
+            "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
+          }
+        ],
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
+      },
+      "card_pool": {
+        "pack_specific_total": 233,
+        "shared_pool_total": 0,
+        "combined_total": 233,
+        "pack_specific_by_rarity": {
+          "common": 66,
+          "uncommon": 51,
+          "rare": 28,
+          "double_rare": 6,
+          "illustration_rare": 24,
+          "super_rare": 15,
+          "immersive": 1,
+          "shiny_rare": 20,
+          "shiny_super_rare": 4,
+          "ultra_rare": 2,
+          "promo": 16
+        },
+        "shared_pool_by_rarity": {},
+        "combined_by_rarity": {
+          "super_rare": 15,
+          "immersive": 1,
+          "illustration_rare": 24,
+          "shiny_rare": 20,
+          "double_rare": 6,
+          "uncommon": 51,
+          "shiny_super_rare": 4,
+          "ultra_rare": 2,
+          "common": 66,
+          "rare": 28,
+          "promo": 16
+        }
+      },
+      "rarity_probabilities": {
+        "common": 2.9436,
+        "uncommon": 1.4892,
+        "rare": 0.2492,
+        "double_rare": 0.0504,
+        "illustration_rare": 0.1296,
+        "super_rare": 0.0165,
+        "special_illustration_rare": 0.0,
+        "immersive": 0.0055,
+        "shiny_rare": 0.036,
+        "shiny_super_rare": 0.0084,
+        "ultra_rare": 0.002,
+        "promo": 0.0552,
+        "unknown": 0.0
+      },
+      "notes": "Two-branch model (third_party_verified): regular_pack (99.950%) + rare_pack (0.050%). Consistent with Bulbapedia confirmed A-series packs. Bulbapedia page was truncated before offering rates section in 2026-05-13 check. Verify directly: "
     },
     {
       "pack_name": "Secluded Springs",
@@ -2697,7 +3013,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: branch selection confirmed from Bulbapedia offering rates. Rarity distributions within slots are from third_party_verified sources. NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 105,
@@ -2718,17 +3043,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 32,
           "special_illustration_rare": 4,
+          "super_rare": 8,
+          "immersive": 1,
           "illustration_rare": 6,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 11,
-          "ultra_rare": 1,
-          "super_rare": 8,
           "double_rare": 5,
-          "uncommon": 23
+          "uncommon": 23,
+          "shiny_super_rare": 4,
+          "ultra_rare": 1,
+          "common": 32,
+          "rare": 11
         }
       },
       "rarity_probabilities": {
@@ -2833,7 +3158,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 111,
@@ -2854,17 +3188,17 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 32,
           "special_illustration_rare": 4,
+          "super_rare": 13,
+          "immersive": 1,
           "illustration_rare": 6,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 9,
-          "ultra_rare": 1,
-          "super_rare": 13,
           "double_rare": 9,
-          "uncommon": 22
+          "uncommon": 22,
+          "shiny_super_rare": 4,
+          "ultra_rare": 1,
+          "common": 32,
+          "rare": 9
         }
       },
       "rarity_probabilities": {
@@ -2969,7 +3303,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 81,
@@ -2992,15 +3335,15 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "common": 46,
           "special_illustration_rare": 4,
-          "illustration_rare": 12,
-          "immersive": 1,
-          "rare": 14,
-          "ultra_rare": 2,
           "super_rare": 8,
+          "immersive": 1,
+          "illustration_rare": 12,
           "double_rare": 5,
-          "uncommon": 34
+          "uncommon": 34,
+          "ultra_rare": 2,
+          "common": 46,
+          "rare": 14
         }
       },
       "rarity_probabilities": {
@@ -3105,7 +3448,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs."
+        "confidence_note": "third_party_verified: confirmed by 4 independent reputable third-party sources (Game8, ONE Esports, CGMagazine, ShackNews). NOT official in-app verified. Two-branch model (no regular_pack_plus_one) confirmed correct for A-series packs.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 81,
@@ -3128,15 +3480,15 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "common": 44,
           "special_illustration_rare": 4,
-          "illustration_rare": 12,
-          "immersive": 1,
-          "rare": 14,
-          "ultra_rare": 2,
           "super_rare": 8,
+          "immersive": 1,
+          "illustration_rare": 12,
           "double_rare": 5,
-          "uncommon": 36
+          "uncommon": 36,
+          "ultra_rare": 2,
+          "common": 44,
+          "rare": 14
         }
       },
       "rarity_probabilities": {
@@ -3241,7 +3593,16 @@
             "notes": "Confirms non-shiny slot rates for 2◆ and 3◆ positions."
           }
         ],
-        "confidence_note": "bulbapedia_branch_verified: two-branch model confirmed from Bulbapedia offering rates. The Regular Pack + 1 Card branch does NOT apply to this expansion. NOT official in-app verified."
+        "confidence_note": "bulbapedia_branch_verified: two-branch model confirmed from Bulbapedia offering rates. The Regular Pack + 1 Card branch does NOT apply to this expansion. NOT official in-app verified.",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 96,
@@ -3260,15 +3621,15 @@
         },
         "shared_pool_by_rarity": {},
         "combined_by_rarity": {
-          "common": 31,
           "special_illustration_rare": 4,
-          "illustration_rare": 6,
-          "immersive": 1,
-          "rare": 13,
-          "ultra_rare": 1,
           "super_rare": 9,
+          "immersive": 1,
+          "illustration_rare": 6,
           "double_rare": 5,
-          "uncommon": 26
+          "uncommon": 26,
+          "ultra_rare": 1,
+          "common": 31,
+          "rare": 13
         }
       },
       "rarity_probabilities": {
@@ -3351,7 +3712,16 @@
         "source_url": "https://bulbapedia.bulbagarden.net/wiki/Wisdom_of_Sea_and_Sky_(TCG_Pocket)",
         "source_accessed_at": "2026-05-14",
         "source_notes": "Branch selection (regular_pack=91.620%, regular_pack_plus_one=8.330%, rare_pack=0.050%) and slot_6 (illustration_rare=12.900%, rare=87.100%) verified from in-repo Offering Rates screenshots (IMG_1692 2.PNG – IMG_1722 2.PNG, 'Offering Rates screenshots/' folder). Ho-Oh (A4) verified directly; Lugia (A4) shares the same expansion — identical rates inferred. Branch probabilities match Secluded Springs (A4a) exactly. Rare pack shows apparent uniform per-card distribution (~2.564% = 1/39 pool cards); standard 40/50/5/5 tier placeholder retained pending explicit rate confirmation. Screenshots stored in 'Offering Rates screenshots/' (gitignored — not committed to repo).",
-        "confidence_note": "user_in_app_verified: branch selection and slot_6 rates confirmed from PTCGP app screenshots stored in 'Offering Rates screenshots/'. Slot 4/5 distributions match third_party_verified standard rates. NOT Bulbapedia-corroborated (page was inaccessible during prior verification pass)."
+        "confidence_note": "user_in_app_verified: branch selection and slot_6 rates confirmed from PTCGP app screenshots stored in 'Offering Rates screenshots/'. Slot 4/5 distributions match third_party_verified standard rates. NOT Bulbapedia-corroborated (page was inaccessible during prior verification pass).",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 105,
@@ -3375,17 +3745,17 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "common": 42,
           "special_illustration_rare": 4,
+          "super_rare": 8,
+          "immersive": 1,
           "illustration_rare": 12,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 17,
-          "ultra_rare": 2,
-          "super_rare": 8,
           "double_rare": 5,
-          "uncommon": 31
+          "uncommon": 31,
+          "shiny_super_rare": 4,
+          "ultra_rare": 2,
+          "common": 42,
+          "rare": 17
         }
       },
       "rarity_probabilities": {
@@ -3468,7 +3838,16 @@
         "source_url": "https://bulbapedia.bulbagarden.net/wiki/Wisdom_of_Sea_and_Sky_(TCG_Pocket)",
         "source_accessed_at": "2026-05-14",
         "source_notes": "Branch selection (regular_pack=91.620%, regular_pack_plus_one=8.330%, rare_pack=0.050%) and slot_6 (illustration_rare=12.900%, rare=87.100%) verified from in-repo Offering Rates screenshots (IMG_1692 2.PNG – IMG_1722 2.PNG, 'Offering Rates screenshots/' folder). Ho-Oh (A4) verified directly; Lugia (A4) shares the same expansion — identical rates inferred. Branch probabilities match Secluded Springs (A4a) exactly. Rare pack shows apparent uniform per-card distribution (~2.564% = 1/39 pool cards); standard 40/50/5/5 tier placeholder retained pending explicit rate confirmation. Screenshots stored in 'Offering Rates screenshots/' (gitignored — not committed to repo).",
-        "confidence_note": "user_in_app_verified: branch selection and slot_6 rates confirmed from PTCGP app screenshots stored in 'Offering Rates screenshots/'. Slot 4/5 distributions match third_party_verified standard rates. NOT Bulbapedia-corroborated (page was inaccessible during prior verification pass)."
+        "confidence_note": "user_in_app_verified: branch selection and slot_6 rates confirmed from PTCGP app screenshots stored in 'Offering Rates screenshots/'. Slot 4/5 distributions match third_party_verified standard rates. NOT Bulbapedia-corroborated (page was inaccessible during prior verification pass).",
+        "guarantee": {
+          "kind": "double_rare_plus",
+          "scope": "expansion",
+          "trigger": "packs_without_double_rare_plus",
+          "threshold": 12,
+          "source": "in_app_offering_rates_attention",
+          "source_accessed_at": "2026-08-05",
+          "note": "Guaranteed ◆◆◆◆-or-higher pack category added 2026-07-29. Verified in-app: a ◆◆◆◆+ is generated on the next pack once 12 consecutive openings from the same expansion produced none. Longer than a 10-pack batch, so it adds no floor to the 10x EV model."
+        }
       },
       "card_pool": {
         "pack_specific_total": 105,
@@ -3492,17 +3871,17 @@
           "ultra_rare": 2
         },
         "combined_by_rarity": {
-          "common": 42,
           "special_illustration_rare": 4,
+          "super_rare": 8,
+          "immersive": 1,
           "illustration_rare": 12,
           "shiny_rare": 10,
-          "immersive": 1,
-          "shiny_super_rare": 4,
-          "rare": 17,
-          "ultra_rare": 2,
-          "super_rare": 8,
           "double_rare": 5,
-          "uncommon": 31
+          "uncommon": 31,
+          "shiny_super_rare": 4,
+          "ultra_rare": 2,
+          "common": 42,
+          "rare": 17
         }
       },
       "rarity_probabilities": {

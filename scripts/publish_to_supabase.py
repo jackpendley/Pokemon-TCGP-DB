@@ -72,9 +72,19 @@ def is_mega(record: dict) -> bool:
     )
 
 
-def build_card_rows(card_reference: dict, power_scores: dict | None) -> list[dict]:
-    """cards rows from card_reference.json + card_power_scores.json."""
+def build_card_rows(card_reference: dict, power_scores: dict | None,
+                    printing_groups: dict | None = None) -> list[dict]:
+    """cards rows from card_reference.json + card_power_scores.json.
+
+    printing_groups (printing_groups.json) stamps each coord with the group of
+    coords that are the same physical card, so the catalog read can credit
+    ownership across all of a card's dex slots — the 2026-07-29 registration rule.
+    """
     scores = (power_scores or {}).get("scores", {})
+    group_of: dict[tuple, str] = {}
+    for g in (printing_groups or {}).get("groups", []):
+        for sc, cn in g["coords"]:
+            group_of[(str(sc).upper(), cn)] = g["id"]
     rows = []
     for r in card_reference["records"]:
         coord = f"{r['set_code']}:{r['card_number']}"
@@ -96,6 +106,15 @@ def build_card_rows(card_reference: dict, power_scores: dict | None) -> list[dic
                 "hp": r.get("hp"),
                 "pack_name": r.get("pack_name"),
                 "power_score": score["power_score"] if score else None,
+                # Which model produced the score — Pokémon and Trainer scores
+                # are not comparable, so the kind travels with the number.
+                "power_score_kind": score.get("score_kind") if score else None,
+                # Trainers only: which Pokémon names / energy types this card is
+                # restricted to helping. Empty lists mean it works in any deck.
+                "boosts": score.get("boosts") if score else None,
+                # Coords that are the same physical card; null for single printings.
+                "printing_group": group_of.get(
+                    (str(r["set_code"]).upper(), r["card_number"])),
             }
         )
     return rows
@@ -190,6 +209,7 @@ def build_sync_status_row(
     delta: dict | None,
     user_id: str,
     last_run: dict | None = None,
+    pending_sets: dict | None = None,
 ) -> list[dict]:
     """sync_status snapshot row; absent local files publish as nulls.
 
@@ -203,6 +223,9 @@ def build_sync_status_row(
             "review_queue": review_queue,
             "delta": delta,
             "last_run": last_run,
+            # Sets Pokémon Zone is serving that SET_REGISTRY doesn't know — drives
+            # the dashboard's "new set detected" banner and its adopt button.
+            "pending_sets": (pending_sets or {}).get("sets", []),
             "published_at": datetime.now(timezone.utc).isoformat(),
         }
     ]
@@ -280,7 +303,9 @@ def build_all_rows(
     """Map every table to its rows from the loaded artifacts dict."""
     return {
         "cards": build_card_rows(
-            artifacts["card_reference"], artifacts.get("card_power_scores")
+            artifacts["card_reference"],
+            artifacts.get("card_power_scores"),
+            artifacts.get("printing_groups"),
         ),
         "packs": build_pack_rows(artifacts["pack_ev"]),
         "pack_cards": build_pack_card_rows(artifacts["card_reference"]),
@@ -304,6 +329,7 @@ def build_all_rows(
             artifacts.get("last_sync_delta"),
             user_id,
             last_run,
+            artifacts.get("new_sets_detected"),
         ),
         "sync_history": build_sync_history_rows(
             artifacts.get("sync_history"), user_id
@@ -349,6 +375,11 @@ def load_artifacts() -> dict:
         "pull_probability_model": load_json(
             REFERENCE_DIR / "pull_probability_model.json"
         ),
+        # Coords that are the same physical card (multi-expansion dex registration).
+        # Optional so a checkout that predates build_printing_groups.py still publishes.
+        "printing_groups": load_json(
+            REFERENCE_DIR / "printing_groups.json", required=False
+        ),
         "collection_normalized": load_json(CURRENT_DIR / "collection_normalized.json"),
         "collection_summary": load_json(CURRENT_DIR / "collection_summary.json"),
         "pack_ev": load_json(CURRENT_DIR / "pack_ev.json"),
@@ -364,6 +395,9 @@ def load_artifacts() -> dict:
             SYNC_DIR / "last_sync_delta.json", required=False
         ),
         "sync_history": load_json(SYNC_DIR / "sync_history.json", required=False),
+        "new_sets_detected": load_json(
+            SYNC_DIR / "new_sets_detected.json", required=False
+        ),
     }
 
 

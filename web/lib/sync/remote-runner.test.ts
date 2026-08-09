@@ -16,7 +16,12 @@ function stateReturning(state: SyncRunState) {
   return vi.fn(async () => state);
 }
 
-const idle: SyncRunState = { publishedAt: BASELINE, lastRun: null };
+const idle: SyncRunState = {
+  publishedAt: BASELINE,
+  lastRun: null,
+  playerSynced: true,
+  sourceUpdatedAt: null,
+};
 
 afterEach(() => {
   vi.useRealTimers();
@@ -94,6 +99,8 @@ describe("remoteSyncRunner", () => {
     state.mockResolvedValue({
       publishedAt: ADVANCED,
       lastRun: { outcome: "ok" },
+      playerSynced: true,
+      sourceUpdatedAt: null,
     });
     const finished = await runner.get(job.id);
     expect(finished?.status).toBe("done");
@@ -108,6 +115,8 @@ describe("remoteSyncRunner", () => {
     state.mockResolvedValue({
       publishedAt: ADVANCED,
       lastRun: { outcome: "auth_expired" },
+      playerSynced: true,
+      sourceUpdatedAt: null,
     });
     expect((await runner.get(job.id))?.status).toBe("needs_reauth");
   });
@@ -135,5 +144,177 @@ describe("remoteSyncRunner", () => {
       stateReturning(idle),
     );
     expect(await runner.get("nope")).toBeNull();
+  });
+});
+
+/**
+ * The runner used to report only "published_at advanced" vs "6 minutes passed",
+ * so an offline runner, a crashed pipeline, and a healthy slow run were
+ * indistinguishable — which is exactly how the 2026-08-03 sync looked.
+ */
+describe("remoteSyncRunner GitHub run reporting", () => {
+  const RUNNERS_URL = "/actions/runners";
+  const RUNS_URL = "/actions/workflows/sync.yml/runs";
+
+  function ok(body: unknown) {
+    return { ok: true, status: 200, json: async () => body } as unknown as Response;
+  }
+
+  /** Routes GitHub calls by URL so one mock can serve dispatch + both APIs. */
+  function githubFetch(opts: {
+    runnerStatus?: string;
+    run?: { status: string; conclusion: string | null; created_at: string };
+  }) {
+    return vi.fn(async (url: string | URL | Request) => {
+      const u = String(url);
+      if (u.includes(RUNNERS_URL)) {
+        return ok({
+          runners: [
+            {
+              status: opts.runnerStatus ?? "online",
+              labels: [{ name: "self-hosted" }],
+            },
+          ],
+        });
+      }
+      if (u.includes(RUNS_URL)) {
+        return ok({
+          workflow_runs: opts.run
+            ? [{ ...opts.run, html_url: "https://github.com/run/1" }]
+            : [],
+        });
+      }
+      return { status: 204 } as Response;
+    });
+  }
+
+  /** Advances past RUN_LOOKUP_AFTER_MS so get() actually consults GitHub. */
+  async function jobPastLookupGrace(fetchMock: typeof fetch, state = stateReturning(idle)) {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date(BASELINE));
+    const runner = createRemoteSyncRunner(CONFIG, fetchMock, state);
+    const job = await runner.enqueue();
+    vi.setSystemTime(new Date(Date.parse(BASELINE) + 60 * 1000));
+    return { runner, job };
+  }
+
+  it("refuses to dispatch when the self-hosted runner is offline", async () => {
+    const runner = createRemoteSyncRunner(
+      CONFIG,
+      githubFetch({ runnerStatus: "offline" }),
+      stateReturning(idle),
+    );
+    const job = await runner.enqueue();
+
+    expect(job.status).toBe("error");
+    expect(job.message).toMatch(/offline/i);
+  });
+
+  it("dispatches normally when the runner is online", async () => {
+    const runner = createRemoteSyncRunner(
+      CONFIG,
+      githubFetch({ runnerStatus: "online" }),
+      stateReturning(idle),
+    );
+    expect((await runner.enqueue()).status).toBe("running");
+  });
+
+  it("reports queued while the run waits for a runner", async () => {
+    const { runner, job } = await jobPastLookupGrace(
+      githubFetch({
+        run: { status: "queued", conclusion: null, created_at: BASELINE },
+      }),
+    );
+    const polled = await runner.get(job.id);
+
+    expect(polled?.status).toBe("queued");
+    expect(polled?.message).toMatch(/waiting for the self-hosted runner/i);
+  });
+
+  it("surfaces a failed run with its conclusion and URL", async () => {
+    const { runner, job } = await jobPastLookupGrace(
+      githubFetch({
+        run: { status: "completed", conclusion: "failure", created_at: BASELINE },
+      }),
+    );
+    const polled = await runner.get(job.id);
+
+    expect(polled?.status).toBe("error");
+    expect(polled?.message).toMatch(/failure/);
+    expect(polled?.message).toMatch(/github\.com\/run\/1/);
+  });
+
+  it("flags a run that completed successfully but published nothing", async () => {
+    const { runner, job } = await jobPastLookupGrace(
+      githubFetch({
+        run: { status: "completed", conclusion: "success", created_at: BASELINE },
+      }),
+    );
+    const polled = await runner.get(job.id);
+
+    expect(polled?.status).toBe("error");
+    expect(polled?.message).toMatch(/published no data/i);
+  });
+
+  it("prefers a publish that lands during the completed-run recheck", async () => {
+    const state = stateReturning(idle);
+    const { runner, job } = await jobPastLookupGrace(
+      githubFetch({
+        run: { status: "completed", conclusion: "success", created_at: BASELINE },
+      }),
+      state,
+    );
+    state.mockResolvedValue({
+      publishedAt: ADVANCED,
+      lastRun: { outcome: "ok" },
+      playerSynced: true,
+      sourceUpdatedAt: null,
+    });
+    const polled = await runner.get(job.id);
+
+    expect(polled?.status).toBe("done");
+  });
+
+  it("says so when Pokémon Zone republished a stale snapshot", async () => {
+    // The sync genuinely succeeds; PZ just never refreshed from the game. Without
+    // this the dialog reports plain success and the unchanged collection looks
+    // like a bug here rather than a stall upstream.
+    const state = stateReturning(idle);
+    const runner = createRemoteSyncRunner(CONFIG, fetchReturning(204), state);
+    const job = await runner.enqueue();
+
+    state.mockResolvedValue({
+      publishedAt: ADVANCED,
+      lastRun: { outcome: "ok" },
+      playerSynced: false,
+      sourceUpdatedAt: null,
+    });
+    const polled = await runner.get(job.id);
+
+    expect(polled?.status).toBe("done");
+    expect(polled?.message).toMatch(/hadn't refreshed your collection/i);
+  });
+
+  it("stays running while the run is in progress", async () => {
+    const { runner, job } = await jobPastLookupGrace(
+      githubFetch({
+        run: { status: "in_progress", conclusion: null, created_at: BASELINE },
+      }),
+    );
+    expect((await runner.get(job.id))?.status).toBe("running");
+  });
+
+  it("ignores runs created before this job was dispatched", async () => {
+    const { runner, job } = await jobPastLookupGrace(
+      githubFetch({
+        run: {
+          status: "completed",
+          conclusion: "failure",
+          created_at: "2026-07-09T00:00:00.000Z",
+        },
+      }),
+    );
+    // The stale failure must not be attributed to this dispatch.
+    expect((await runner.get(job.id))?.status).toBe("running");
   });
 });

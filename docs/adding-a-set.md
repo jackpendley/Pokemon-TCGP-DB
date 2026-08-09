@@ -7,6 +7,19 @@ Written while integrating the **2026-06-29** release:
 This is both the step-by-step runbook and a record of the gaps hit, so the next
 release goes faster.
 
+## The short version (since 2026-08-05)
+
+`python3 scripts/adopt_set.py <SET>` does steps 1–5 below, or click **Adopt** on
+the dashboard banner (which fires `.github/workflows/adopt-set.yml` on the
+self-hosted runner and opens a PR). It verifies every source URL *before*
+touching the registry and reverts the registration if
+`test_set_registry_consistency` / `test_card_type_completeness` fail afterwards,
+so a failed run leaves the tree clean.
+
+It still can't invent a Mega ex's type — if the classification gate fails, add the
+`data/reference/card_type_overrides.json` entry (gap #3) and re-run. The manual
+runbook below remains the reference for what it automates.
+
 ## Runbook
 
 1. **Discover** what dropped:
@@ -64,8 +77,8 @@ release goes faster.
 | 4 | Bulbapedia emits the **accented** `"Pokémon Tool"`, but `TRAINER_SUBTYPE_TOKENS` only had the un-accented `"Pokemon Tool"`, so tool cards (Small Balloon, Elegant Cape) were left unclassified when Bulbapedia is the only source. | Med | **Fixed** — added the accented variant to the token set. |
 | 5 | `ingest_pz` adds pack-odds/records for a new promo volume, but the **source snapshot isn't auto-refreshed** (30-day TTL), so the new promo cards get `pokemon_type=None` from a stale cache. Had to `--force` the PROMO-B snapshot manually. | Med | **Documented** (runbook step 3). Consider having ingest force-refresh snapshots for any set whose card count grew. |
 | 6 | EV/recommendations only score packs present in `pull_probability_model.json`, and that model wasn't rebuilt on ingest — so a new pack silently never appeared in EV. | High — new pack invisible in the product | **Fixed** (#62): `ingest_pz --rebuild-refs` now also rebuilds the pull model, and `build_pack_ev` warns when a PZ-odds pack has no model entry. |
-| 7 | Discovery is not wired into the normal sync: `run_recommendations.py` runs `--no-fetch` and routes unknown cards to `sync_review_queue.json`. Nothing tells you "a new set exists — run ingest." | Low/Med | Recommend: sync detects an unregistered `set_code` and prints a loud "new set detected" hint. |
-| 8 | Adding a set is a **manual dual-edit** (`SET_REGISTRY` + `SET_ALIASES`), kept consistent only by an import-time assertion + one test. Source slugs are hand-guessed. | Low (assertion catches drift) | Consider a `scripts/add_set.py` scaffold that writes both entries and curls each source URL. |
+| 7 | Discovery is not wired into the normal sync: `run_recommendations.py` runs `--no-fetch` and routes unknown cards to `sync_review_queue.json`. Nothing tells you "a new set exists — run ingest." | Low/Med | **Fixed** (2026-08-05) — `sync_collection.detect_unregistered_sets` writes `data/sync/new_sets_detected.json`, published as `sync_status.pending_sets` and shown as a dashboard banner with an Adopt button. Cost us the whole B4 release: the 2026-08-03 sync completed with zero net change and no hint that Ruler of the Skies existed. |
+| 8 | Adding a set is a **manual dual-edit** (`SET_REGISTRY` + `SET_ALIASES`), kept consistent only by an import-time assertion + one test. Source slugs are hand-guessed. | Low (assertion catches drift) | **Fixed** (2026-08-05) — `scripts/adopt_set.py` writes both entries, but only after resolving the Serebii slug by trying candidate shapes against the live page and reading the expansion name off Limitless. Guard tests gate the result; failure rolls the registration back. |
 | 9 | **tcgdex lag**: B3b has no `hp`/`stage` (tcgdex is the authority) and Limitless hasn't uploaded B3b **large** card art yet (`_EN.png` 403; small `_SM.webp` works). UI degrades to placeholders for detail images. | Low — transient, self-heals when upstreams catch up | Recommend a periodic "tcgdex/limitless backfill" that re-fetches `tcgdex: None` sets and flips `TCGDEX_COVERED`. |
 
 ## What worked well
@@ -73,3 +86,22 @@ release goes faster.
 - The web layer is genuinely data-derived: new set, cards, packs, rarities, and the by-type/by-rarity/by-stage grids all appeared with zero frontend code changes.
 - PZ per-card odds gave B3b **full-confidence** EV immediately (no in-app-verification wait), and the zod read-boundary contract meant a bad shape would have failed loudly rather than silently.
 - `card_reference` confidence held up: B3b names are `confirmed` (Serebii + Bulbapedia agree) despite tcgdex being absent.
+
+## B4 — Ruler of the Skies (2026-07-29)
+
+Integrated 2026-08-05. 233 cards, single pack, `ruleroftheskies` on Serebii,
+tcgdex absent as usual. Notes specific to this release:
+
+- **Pokémon Zone lagged the release by ~6 days.** The 2026-08-03 sync fetched 864
+  cards with zero B4 among them because PZ's own catalog had not ingested the set;
+  it appeared on 2026-08-04. Nothing in the pipeline could have surfaced B4 before
+  PZ carried it — worth checking `pokemon-zone.com` before assuming a bug.
+- **`fetch_ext_ref.py --set B4` is required**, not optional. HP and stage come from
+  ext_ref for tcgdex-uncovered sets (`build_card_reference.py` `hp_final` /
+  `stage_final`), *not* from `fetch_combat_stats.py`, whose cache only feeds
+  `evolves_from`. Skipping it leaves 202 Pokémon with null HP and stage.
+- **Gap #3 recurred**: 16 B4 Mega ex printings landed typeless. Types were read
+  off the Limitless card page title (`<p class="card-text-title">` → `Name - Type -
+  HP`) and pinned in `card_type_overrides.json`.
+- **PROMO-B grew to 86 cards** in the same release (72→86). Its snapshot needed
+  `--force` (gap #5) and two more Mega ex type overrides.

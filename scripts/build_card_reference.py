@@ -369,7 +369,10 @@ def reconcile_card(
     # complete — used by validators and the collection stage backfill.
     category_final = tcgdex_card.get("category")
     stage_final = tcgdex_card.get("stage") or _EXT_STAGE_TO_TCGDEX.get(ext_stage)
-    hp_final = tcgdex_card.get("hp")
+    # hp gets the same fallback as stage. It didn't, which left 953 Pokémon with
+    # hp: null while ext_ref already held the number for 763 of them — an asymmetry
+    # with no reason behind it, since both come off the same Limitless card page.
+    hp_final = tcgdex_card.get("hp") or ext_rec.get("hp")
 
     # ── Type / category / trainer-subtype completion ─────────────────────────
     # external_card_reference (Limitless) is a *gap-filler only*: it has known

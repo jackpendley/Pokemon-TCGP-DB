@@ -60,3 +60,51 @@ export async function getSyncJob(id: string): Promise<SyncJob | null> {
 export async function isSyncEnabled(): Promise<boolean> {
   return selectRunner() !== null;
 }
+
+/**
+ * Fire .github/workflows/adopt-set.yml for a set Pokémon Zone is serving that the
+ * pipeline hasn't registered.
+ *
+ * Registering a set is a code change (SET_REGISTRY + SET_ALIASES, with slugs that
+ * are guesses until proven), so this stays owner-triggered rather than running off
+ * detection: scripts/adopt_set.py verifies every source URL first, reverts if the
+ * guard tests fail, and opens a PR instead of pushing to main.
+ */
+export async function adoptSet(
+  setCode: string,
+): Promise<{ ok: true } | { ok: false; reason: string }> {
+  if (!(await canTriggerSync())) {
+    return { ok: false, reason: "Sign in as the owner to adopt a set." };
+  }
+  if (!/^[A-Za-z0-9-]{1,10}$/.test(setCode)) {
+    return { ok: false, reason: "That doesn't look like a set code." };
+  }
+  if (!env.GITHUB_SYNC_TOKEN || !env.GITHUB_SYNC_REPO) {
+    return {
+      ok: false,
+      reason:
+        "Adopting a set needs GITHUB_SYNC_TOKEN/GITHUB_SYNC_REPO. Locally, run: python3 scripts/adopt_set.py " +
+        setCode,
+    };
+  }
+
+  const res = await fetch(
+    `https://api.github.com/repos/${env.GITHUB_SYNC_REPO}/dispatches`,
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/vnd.github+json",
+        Authorization: `Bearer ${env.GITHUB_SYNC_TOKEN}`,
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+      body: JSON.stringify({
+        event_type: "adopt-set",
+        client_payload: { set_code: setCode },
+      }),
+    },
+  );
+  if (res.status !== 204) {
+    return { ok: false, reason: `GitHub dispatch failed: HTTP ${res.status}` };
+  }
+  return { ok: true };
+}

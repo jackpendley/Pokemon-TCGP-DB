@@ -298,16 +298,54 @@ def _fetch_catalog(cookies: dict, auth_headers: dict) -> dict[str, dict]:
         return {}
 
 
-def _save_player_stats(body: dict | list | None) -> None:
-    """Extract and persist player currency/resource stats from the raw API body."""
+def _player_last_updated_at(body: dict | list | None) -> str | None:
+    """Pokémon Zone's own timestamp for when it last ingested the collection.
+
+    This is the only trustworthy answer to "did the refresh actually happen".
+    The sync task reporting ready=true does not mean anything was ingested: on
+    2026-08-04 a task completed with no successCount and left this timestamp
+    sitting on 2026-07-28, so the run republished a 6-day-old snapshot and
+    reported success.
+    """
     if not isinstance(body, dict):
-        return
+        return None
+    player = (body.get("data") or {}).get("player")
+    if not isinstance(player, dict):
+        return None
+    value = player.get("lastUpdatedAt")
+    return str(value) if value else None
+
+
+def _previous_last_updated_at() -> str | None:
+    """What PZ's ingest timestamp was on the previous run, if we recorded one."""
+    if not PLAYER_STATS_CACHE.exists():
+        return None
+    try:
+        return json.loads(PLAYER_STATS_CACHE.read_text(encoding="utf-8")).get(
+            "source_last_updated_at")
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def _save_player_stats(body: dict | list | None, catalog_misses: dict | None = None,
+                       player_synced: bool | None = None,
+                       sync_advisory_next: str | None = None,
+                       source_last_updated_at: str | None = None) -> None:
+    """Extract and persist player currency/resource stats from the raw API body.
+
+    catalog_misses (owned cards the PZ catalog could not name) and player_synced
+    (whether PZ finished refreshing its snapshot from the game) ride along here
+    because this file is published verbatim as sync_status.stats, which is what
+    the dashboard reads.
+    """
+    if not isinstance(body, dict):
+        body = {}
     data = body.get("data", {})
     if not isinstance(data, dict):
-        return
+        data = {}
     rd = data.get("resourceData", {})
     if not isinstance(rd, dict):
-        return
+        rd = {}
 
     stats: dict = {}
 
@@ -341,6 +379,20 @@ def _save_player_stats(body: dict | list | None) -> None:
         elif key == "SUBSCRIPTION_TICKET":
             stats["premium_tickets"] = item.get("value", 0)
 
+    if catalog_misses:
+        stats["catalog_misses"] = catalog_misses
+    if player_synced is not None:
+        # False means the numbers below are PZ's previous snapshot of the
+        # collection, not a fresh read from the game.
+        stats["player_synced"] = player_synced
+    if sync_advisory_next:
+        # PZ's advisory "next sync" hint. Context only — refreshes succeed inside it.
+        stats["sync_advisory_next"] = sync_advisory_next
+    if source_last_updated_at:
+        # When PZ last ingested from the game. Compared run-to-run to tell a real
+        # refresh from one that was accepted and did nothing.
+        stats["source_last_updated_at"] = source_last_updated_at
+
     if stats:
         PLAYER_STATS_CACHE.parent.mkdir(parents=True, exist_ok=True)
         PLAYER_STATS_CACHE.write_text(
@@ -355,22 +407,28 @@ def _fetch_and_normalize_cards(
     cookies: dict,
     auth_headers: dict,
     catalog: dict[str, dict],
-) -> tuple[list | None, dict | list | None, int]:
+) -> tuple[list | None, dict | list | None, int, dict]:
     """
     GET api_url and decode the raw card records using the catalog.
 
-    Returns (normalized_card_list, raw_body, http_status).
-    Returns (None, None, status) on failure.
+    Returns (normalized_card_list, raw_body, http_status, catalog_misses).
+
+    catalog_misses reports owned cards the catalog could not resolve:
+    {"count", "copies", "card_ids"}. These used to be dropped silently, which
+    is exactly how a whole unreleased-to-PZ set can vanish from a sync with no
+    trace — see the 2026-08-03 B4 investigation.
+
+    Returns (None, None, status, {}) on failure.
     """
     req_headers = {**auth_headers, "Accept": "application/json, */*"}
     try:
         r = _get(api_url, headers=req_headers, cookies=cookies, timeout=30)
         status = r.status_code
         if status != 200:
-            return None, None, status
+            return None, None, status, {}
         body = r.json()
     except Exception:
-        return None, None, 0
+        return None, None, 0, {}
 
     # Known Pokemon Zone format: {data: {cards: [...]}}
     owned_raw: list = []
@@ -385,31 +443,59 @@ def _fetch_and_normalize_cards(
             owned_raw = arr
 
     if not owned_raw:
-        return None, body, 200
+        return None, body, 200, {}
 
     raw_cards: list[dict] = []
+    missed_ids: list[str] = []
+    missed_copies = 0
     for card in owned_raw:
         if not isinstance(card, dict):
             continue
         card_id    = card.get("cardId", "")
         amount     = int(card.get("amount") or card.get("amountLang_EN") or 0)
-        player_exp = (card.get("expansionIds") or [""])[0]
+        # PZ reports every expansion a card registers in. The first is its debut
+        # printing; the rest matter since the 2026-07-29 update made a card count
+        # in the dex under all of them (see build_printing_groups.py).
+        player_exps = [e for e in (card.get("expansionIds") or []) if e]
+        player_exp  = player_exps[0] if player_exps else ""
         if amount <= 0:
             continue
         info = catalog.get(card_id) if catalog else None
         if info:
             set_code = player_exp if player_exp else info["set_code"]
             raw_cards.append({
-                "cardName":   info["name"],
-                "setCode":    set_code,
-                "cardNumber": info["card_number"],
-                "ownedCount": amount,
+                "cardName":     info["name"],
+                "setCode":      set_code,
+                "cardNumber":   info["card_number"],
+                "ownedCount":   amount,
+                "expansionIds": player_exps,
             })
         elif not catalog:
             # No catalog available — pass raw record; normalize_pz_record will handle it
             raw_cards.append(card)
+        else:
+            # Owned, but the catalog can't name it. Never drop this silently: it
+            # means PZ has not published the card's definition yet (a set released
+            # in-game but not yet ingested by PZ), or the catalog fetch truncated.
+            missed_ids.append(card_id)
+            missed_copies += amount
 
-    return (raw_cards or None), body, 200
+    misses: dict = {}
+    if missed_ids:
+        misses = {
+            "count":    len(missed_ids),
+            "copies":   missed_copies,
+            "card_ids": sorted(missed_ids)[:50],
+        }
+        print(
+            f"  WARNING: {len(missed_ids)} owned card(s) ({missed_copies} copies) are not in "
+            f"the PZ catalog and were skipped.\n"
+            f"           PZ likely has not published these card definitions yet "
+            f"(a newly released set), or the catalog response was truncated.",
+            file=sys.stderr,
+        )
+
+    return (raw_cards or None), body, 200, misses
 
 
 def import_curl_auth(curl_str: str) -> tuple[list, dict]:
@@ -455,7 +541,8 @@ def import_curl_auth(curl_str: str) -> tuple[list, dict]:
     # Step 2: owned cards (always use the canonical player URL)
     api_url = _PLAYER_URL
     print(f"  Fetching owned cards from {api_url}...")
-    arr, body, status = _fetch_and_normalize_cards(api_url, cookies, auth_headers, catalog)
+    arr, body, status, catalog_misses = _fetch_and_normalize_cards(
+        api_url, cookies, auth_headers, catalog)
 
     if status in (301, 302, 401, 403):
         raise APIDiscoveryFailedError(
@@ -510,9 +597,30 @@ def import_curl_auth(curl_str: str) -> tuple[list, dict]:
     DISCOVERY_CACHE.parent.mkdir(parents=True, exist_ok=True)
     DISCOVERY_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
     RAW_CACHE.write_text(json.dumps(arr, indent=2, ensure_ascii=False), encoding="utf-8")
-    _save_player_stats(body)
+    _save_player_stats(body, catalog_misses)
 
     return arr, cache
+
+
+# Pokémon Zone's advisory "next sync" hint, when it is still in the future.
+# Recorded for context only — see trigger_player_sync for why it must not gate a
+# refresh. Single-element list: one process, one sync.
+_SYNC_ADVISORY_NEXT: list = [None]
+
+
+def _parse_next_sync_at(value) -> "datetime | None":
+    """Parse Pokémon Zone's nextSyncPlayerAt, or None when absent/unparseable.
+
+    Always returns an aware datetime so callers can compare it directly; a naive
+    value is read as UTC, which is what the API sends.
+    """
+    if not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
 
 
 def trigger_player_sync(cookies: dict, auth_headers: dict, poll_interval: float = 2.0, timeout: int = 90) -> bool:
@@ -520,7 +628,8 @@ def trigger_player_sync(cookies: dict, auth_headers: dict, poll_interval: float 
     Trigger the Pokemon Zone 'Sync Player' button programmatically.
 
     Flow:
-      1. GET /api/users/identity/ → get friendId, check nextSyncPlayerAt rate limit
+      1. GET /api/users/identity/ → friendId (nextSyncPlayerAt is noted but is
+         advisory only — PZ does not enforce it)
       2. POST /api/players/sync/ with {"friendId": ...} + x-csrftoken
       3. Poll /api/players/sync/status/{taskId}/ until ready=true or timeout
 
@@ -550,6 +659,23 @@ def trigger_player_sync(cookies: dict, auth_headers: dict, poll_interval: float 
     if not friend_id:
         print("  Player sync: friendId missing — skipping.")
         return False
+
+    # nextSyncPlayerAt is ADVISORY, not enforced. It is set to trigger+12h on every
+    # accepted request, which made it look like a rate limit — but syncs demonstrably
+    # succeed inside the window: 2026-07-10/11 (2.7h apart), 2026-07-23 (2.3h),
+    # 2026-07-23/24 (7.4h) all completed, and a deliberate test on 2026-08-09 inside
+    # the window returned successCount=1008 in nine seconds.
+    #
+    # So it is recorded and reported, never acted on. Treating it as a hard block
+    # was wrong and stopped legitimate refreshes: the syncs that hung in August hung
+    # because Pokémon Zone's ingestion was down, and the window they happened to fall
+    # inside was a coincidence, not the cause.
+    next_at = _parse_next_sync_at(identity.get("nextSyncPlayerAt"))
+    _SYNC_ADVISORY_NEXT[0] = (
+        next_at.isoformat(timespec="minutes")
+        if next_at is not None and next_at > datetime.now(timezone.utc)
+        else None
+    )
 
     # Step 2: trigger sync
     csrftoken = cookies.get("csrftoken", "")
@@ -595,7 +721,9 @@ def trigger_player_sync(cookies: dict, auth_headers: dict, poll_interval: float 
         except Exception:
             pass  # transient poll error — keep trying
 
-    print(f"  Player sync timed out after {timeout}s — proceeding with collection fetch.")
+    print(f"  Player sync timed out after {timeout}s — Pokémon Zone has not finished "
+          f"pulling your collection from the game, so what follows is its previous "
+          f"snapshot and may be missing recent pulls.", file=sys.stderr)
     return False
 
 
@@ -625,8 +753,12 @@ def fetch_with_stored_auth() -> tuple[list, dict]:
     cookies      = auth.get("cookies", {})
     auth_headers = auth.get("auth_headers", {})
 
-    # Step 0: trigger PZ player sync (equivalent to clicking "Sync Player" in browser)
-    trigger_player_sync(cookies, auth_headers)
+    # Step 0: ask PZ to refresh its snapshot of the collection from the game
+    # (equivalent to clicking "Sync Player" in the browser). When this does not
+    # complete, everything below is PZ's *previous* snapshot — the fetch still
+    # succeeds, so the outcome has to travel or the run looks clean while
+    # silently republishing stale data.
+    player_synced = trigger_player_sync(cookies, auth_headers)
 
     # Step 1: card catalog
     catalog = _fetch_catalog(cookies, auth_headers)
@@ -636,7 +768,8 @@ def fetch_with_stored_auth() -> tuple[list, dict]:
         print("  WARNING: card catalog unavailable — card names may not resolve.")
 
     # Step 2: owned cards
-    arr, body, status = _fetch_and_normalize_cards(api_url, cookies, auth_headers, catalog)
+    arr, body, status, catalog_misses = _fetch_and_normalize_cards(
+        api_url, cookies, auth_headers, catalog)
 
     if status in (301, 302, 401, 403):
         raise AuthExpiredError(
@@ -660,16 +793,33 @@ def fetch_with_stored_auth() -> tuple[list, dict]:
             "Try re-running --curl-import."
         )
 
+    # A completed sync task is not proof of a refresh. Compare Pokémon Zone's own
+    # ingest timestamp against the previous run: if it did not move, PZ served the
+    # same snapshot it already had, whatever the task reported. Without this the
+    # 2026-08-04 run — task complete, nothing ingested, six-day-old data — looked
+    # like a clean success, and so did the six days after it.
+    previous_seen = _previous_last_updated_at()
+    source_last_updated_at = _player_last_updated_at(body)
+    if player_synced and previous_seen and source_last_updated_at == previous_seen:
+        print(f"  WARNING: Pokémon Zone reported the refresh complete but its snapshot "
+              f"still dates from {source_last_updated_at} — nothing new was ingested, "
+              f"so recent pulls are missing.", file=sys.stderr)
+        player_synced = False
+
     cache = {
         "discovered_at": datetime.now(timezone.utc).isoformat(),
         "api_url": api_url,
         "collection_array_key": "data.cards",
         "element_count": len(arr),
+        "player_synced": player_synced,
+        "source_last_updated_at": source_last_updated_at,
     }
     DISCOVERY_CACHE.parent.mkdir(parents=True, exist_ok=True)
     DISCOVERY_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
     RAW_CACHE.write_text(json.dumps(arr, indent=2, ensure_ascii=False), encoding="utf-8")
-    _save_player_stats(body)
+    _save_player_stats(body, catalog_misses, player_synced=player_synced,
+                       sync_advisory_next=_SYNC_ADVISORY_NEXT[0],
+                       source_last_updated_at=source_last_updated_at)
     print(f"  Fetched {len(arr)} cards via stored auth.")
 
     return arr, cache

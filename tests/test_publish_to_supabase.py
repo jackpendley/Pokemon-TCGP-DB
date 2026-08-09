@@ -39,7 +39,8 @@ FIXTURES = ROOT / "web" / "types" / "__fixtures__"
 CARD_COLUMNS = {
     "set_code", "card_number", "name", "rarity", "pokemon_type", "card_category",
     "trainer_subtype", "stage", "expansion", "is_ex", "is_mega", "evolves_from",
-    "hp", "pack_name", "power_score",
+    "hp", "pack_name", "power_score", "power_score_kind", "boosts",
+    "printing_group",
 }
 
 
@@ -73,9 +74,9 @@ def artifacts():
         "card_reference": card_reference,
         "card_power_scores": {
             "generated_at": "2026-01-01",
-            "scores": {"A1:1": {"power_score": 42.5, "hp": 70,
-                                "effective_damage": 30, "has_ability": False,
-                                "estimated": False}},
+            "scores": {"A1:1": {"power_score": 42.5, "score_kind": "pokemon",
+                                "hp": 70, "effective_damage": 30,
+                                "has_ability": False, "estimated": False}},
         },
         "pull_probability_model": {"generated_at": "2026-01-01", "packs": {}},
         "collection_normalized": {
@@ -144,6 +145,36 @@ class FakeClient:
 # Builders: payload shapes match the artifact contract
 # ---------------------------------------------------------------------------
 
+def test_card_rows_carry_printing_group():
+    """Coords in a printing group publish their group; singles publish null.
+
+    The group is what lets the catalog read credit one owned copy to every dex
+    slot the card now registers in (game update 2026-07-29).
+    """
+    card_reference = {"records": [
+        {"set_code": "A1", "card_number": 151, "name": "Cubone"},
+        {"set_code": "A4b", "card_number": 194, "name": "Cubone"},
+        {"set_code": "B4", "card_number": 1, "name": "Wurmple"},
+    ]}
+    groups = {"groups": [{"id": "g0042", "coords": [["A1", 151], ["A4b", 194]]}]}
+
+    by_coord = {(r["set_code"], r["card_number"]): r
+                for r in build_card_rows(card_reference, None, groups)}
+
+    assert by_coord[("A1", 151)]["printing_group"] == "g0042"
+    assert by_coord[("A4b", 194)]["printing_group"] == "g0042"
+    assert by_coord[("B4", 1)]["printing_group"] is None
+
+
+def test_card_rows_publish_without_printing_groups():
+    """A checkout predating printing_groups.json still publishes."""
+    card_reference = {"records": [
+        {"set_code": "B4", "card_number": 1, "name": "Wurmple"},
+    ]}
+    rows = build_card_rows(card_reference, None, None)
+    assert rows[0]["printing_group"] is None
+
+
 def test_card_rows_carry_every_column(rows):
     assert len(rows["cards"]) == 2
     for row in rows["cards"]:
@@ -151,6 +182,11 @@ def test_card_rows_carry_every_column(rows):
     by_coord = {(r["set_code"], r["card_number"]): r for r in rows["cards"]}
     assert by_coord[("A1", 1)]["power_score"] == 42.5
     assert by_coord[("A3", 200)]["power_score"] is None
+    # The kind travels with the score so consumers can't mix the two models.
+    assert by_coord[("A1", 1)]["power_score_kind"] == "pokemon"
+    assert by_coord[("A3", 200)]["power_score_kind"] is None
+    # Boosts travel with the score too; a card with no score has no boosts.
+    assert by_coord[("A3", 200)]["boosts"] is None
     # expansion falls back to set_code like loadCatalog does.
     assert by_coord[("A3", 200)]["expansion"] == "A3"
 
@@ -326,3 +362,79 @@ def test_should_snapshot_skips_republishes(monkeypatch):
     assert should_snapshot() is True  # live CI sync
     monkeypatch.setenv("SYNC_MODE", "skip")
     assert should_snapshot() is False  # push-to-main republish
+
+
+# ---------------------------------------------------------------------------
+# Every published column must exist in the schema
+# ---------------------------------------------------------------------------
+# Adding a field to a row builder without the matching migration fails only at
+# publish time, against the live database, after the run has already rewritten
+# collection.json — which is how sync_status.pending_sets shipped and broke the
+# first publish of the B4 release with PGRST204.
+
+import re as _re
+
+MIGRATIONS_DIR = ROOT / "supabase" / "migrations"
+
+
+def _declared_columns() -> dict[str, set[str]]:
+    """{table: columns} from CREATE TABLE bodies and ALTER TABLE ADD COLUMN."""
+    sql = "\n".join(
+        p.read_text(encoding="utf-8") for p in sorted(MIGRATIONS_DIR.glob("*.sql"))
+    )
+    sql = _re.sub(r"--[^\n]*", "", sql)          # strip comments
+    cols: dict[str, set[str]] = {}
+
+    for m in _re.finditer(
+        r"create\s+table\s+(?:if\s+not\s+exists\s+)?(?:public\.)?(\w+)\s*\((.*?)\n\s*\);",
+        sql, _re.S | _re.I,
+    ):
+        table, body = m.group(1), m.group(2)
+        found = set()
+        for line in body.split("\n"):
+            line = line.strip().lstrip("(").strip()
+            if not line or line.startswith(")"):
+                continue
+            word = _re.match(r"(\w+)", line)
+            if not word:
+                continue
+            name = word.group(1).lower()
+            if name in {"primary", "foreign", "unique", "check", "constraint"}:
+                continue
+            found.add(name)
+        cols.setdefault(table, set()).update(found)
+
+    for m in _re.finditer(
+        r"alter\s+table\s+(?:public\.)?(\w+)\s+add\s+column\s+"
+        r"(?:if\s+not\s+exists\s+)?(\w+)",
+        sql, _re.S | _re.I,
+    ):
+        cols.setdefault(m.group(1), set()).add(m.group(2).lower())
+    return cols
+
+
+def test_every_published_column_has_a_migration(rows):
+    declared = _declared_columns()
+    missing: list[str] = []
+    for table, table_rows in rows.items():
+        if not table_rows:
+            continue
+        known = declared.get(table)
+        assert known, f"no migration creates table {table!r}"
+        for column in table_rows[0]:
+            if column.lower() not in known:
+                missing.append(f"{table}.{column}")
+    assert not missing, (
+        "publisher writes columns with no migration: "
+        f"{sorted(set(missing))} — add one under supabase/migrations/"
+    )
+
+
+def test_column_parser_sees_a_known_late_added_column():
+    """Guards the parser itself: last_run arrives via ALTER in 0003, and
+    pending_sets via 0009, so both forms must be picked up."""
+    declared = _declared_columns()
+    assert "last_run" in declared["sync_status"]
+    assert "pending_sets" in declared["sync_status"]
+    assert "printing_group" in declared["cards"]
+    assert "set_code" in declared["cards"]

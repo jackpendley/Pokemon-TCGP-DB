@@ -43,22 +43,33 @@ import subprocess
 import sys
 from collections import defaultdict
 from dataclasses import dataclass
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _collection_io import (strip_comments, TRAINER_SUBTYPE_MAP, RARE_PLUS_RARITIES,
                             is_ex_from_name, pack_sources_by_coord as _ps_by_coord,
-                            field_slug as _normalize, RARITY_RANK, normalize_rarity,
+                            # Card-name matching uses norm_card_name, NOT field_slug.
+                            # field_slug is a key-slug helper that keeps internal
+                            # spacing (so "CastformSunny Form" never matched Pokémon
+                            # Zone's corrected "Castform Sunny Form", churning those
+                            # entries through add/miss every sync) and collapses
+                            # Nidoran♀/♂ to one key. norm_card_name was hardened for
+                            # exactly this in da3966d: ♀→f, ♂→m before stripping,
+                            # NFKD accent folding, then strip separators.
+                            norm_card_name as _normalize,
+                            RARITY_RANK, normalize_rarity,
                             load_collection_json, ROOT, COLLECTION_JSON,
                             REPRINT_LINKS_JSON,
                             PACK_SOURCES_JSON as PACK_SOURCES,
                             EXT_REF_JSON as EXT_REF,
-                            A4B_SET_CODE, A4B_ORIGINAL_SETS)
+                            A4B_SET_CODE, A4B_ORIGINAL_SETS,
+                            VALID_SET_CODES, canonical_set_code)
 
 
 SYNC_DIR        = ROOT / "data" / "sync"
 REVIEW_QUEUE    = SYNC_DIR / "sync_review_queue.json"
+NEW_SETS_JSON   = SYNC_DIR / "new_sets_detected.json"
 SYNC_DELTA      = SYNC_DIR / "last_sync_delta.json"
 SYNC_HISTORY    = SYNC_DIR / "sync_history.json"
 MAX_SYNC_HISTORY = 50  # cap retained history entries (newest kept)
@@ -109,11 +120,16 @@ def load_pack_sources() -> dict[tuple[str, int], dict]:
 
 
 def load_ext_ref() -> dict[str, list[dict]]:
-    """Return {normalized_name → [records with hp/set_code/number]}."""
+    """Return {normalized_name → [records with hp/set_code/number]}.
+
+    Indexed from the raw `name`. The stored `normalized_name` was written with
+    field_slug, which maps ♀/♂ to a separator and so already reads the same for
+    Nidoran♀ and Nidoran♂ — normalizing it again cannot recover the difference.
+    """
     records = json.loads(EXT_REF.read_text(encoding="utf-8"))
     result: dict[str, list[dict]] = {}
     for r in records:
-        nn = _normalize(r.get("normalized_name") or r.get("name", ""))
+        nn = _normalize(r.get("name") or r.get("normalized_name", ""))
         result.setdefault(nn, []).append(r)
     return result
 
@@ -1551,6 +1567,47 @@ def _normalize_pz_records(raw_cards: list) -> list:
     return pz_cards
 
 
+def detect_unregistered_sets(pz_cards: list) -> list[dict]:
+    """Set codes Pokémon Zone is serving that SET_REGISTRY doesn't know.
+
+    Nothing used to notice a new expansion: run_recommendations runs sync with
+    --no-fetch to stay offline and deterministic, so an unknown set's cards land
+    in the review queue with no hint that a whole set is missing (documented as
+    gap #7 in docs/adding-a-set.md). This is that hint — it drives the dashboard's
+    "new set detected" banner and its one-click adopt.
+
+    Returns [{"set_code", "card_count", "copies"}], highest card count first.
+    """
+    seen: dict[str, dict] = {}
+    for pz in pz_cards:
+        raw = str(getattr(pz, "set_code", "") or "").strip()
+        if not raw:
+            continue
+        code = canonical_set_code(raw)
+        if code in VALID_SET_CODES:
+            continue
+        entry = seen.setdefault(code, {"set_code": code, "card_count": 0, "copies": 0})
+        entry["card_count"] += 1
+        entry["copies"] += getattr(pz, "count", 0) or 0
+    return sorted(seen.values(), key=lambda e: -e["card_count"])
+
+
+def write_pending_sets(pending: list[dict]) -> None:
+    """Persist detected-but-unregistered sets for publish_to_supabase.
+
+    Always written, including when empty, so the dashboard banner clears itself
+    once a set has been adopted.
+    """
+    NEW_SETS_JSON.parent.mkdir(parents=True, exist_ok=True)
+    NEW_SETS_JSON.write_text(
+        json.dumps({
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "sets": pending,
+        }, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+
 def _describe_new_entry(entry: dict) -> str:
     """Compact one-line summary of an auto-added entry's assigned metadata.
 
@@ -1739,6 +1796,20 @@ def main() -> int:
 
     # ── Phase 2: Normalize PZ records ────────────────────────────────────
     pz_cards = _normalize_pz_records(raw_cards)
+
+    # A set Pokémon Zone serves but SET_REGISTRY doesn't know means an expansion
+    # released without being registered. Recorded (and published to the dashboard)
+    # rather than silently routed into the review queue as loose "new cards".
+    pending_sets = detect_unregistered_sets(pz_cards)
+    write_pending_sets(pending_sets)
+    if pending_sets:
+        summary = ", ".join(
+            f"{s['set_code']} ({s['card_count']} cards)" for s in pending_sets)
+        print(f"\n  NEW SET DETECTED: {summary}\n"
+              f"  These cards cannot be classified until the set is registered.\n"
+              f"  Adopt it from the dashboard, or run: "
+              f"python3 scripts/adopt_set.py {pending_sets[0]['set_code']}\n",
+              file=sys.stderr)
 
     # ── Phase 3: Match ────────────────────────────────────────────────────
     print(f"  Matching {len(pz_cards)} PZ cards to {len(collection_entries)} collection entries...")

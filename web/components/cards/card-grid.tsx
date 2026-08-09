@@ -60,15 +60,23 @@ function CardTile({
   card: CatalogCard;
   onClick: () => void;
 }) {
-  const owned = card.owned > 0;
+  // Dim by dex slot, but count by copies held at this printing. Since the
+  // 2026-07-29 update a card registers under every expansion it appears in, so a
+  // sibling printing can fill this slot while this coord holds no copies — that
+  // tile should read as collected, just without a "×N" chip.
+  const owned = card.dex_owned;
   const type = displayType(card);
 
   return (
     <button
       type="button"
       onClick={onClick}
+      // w-full is load-bearing: a <button> sizes to fit-content, so without it a
+      // long card name (Ancient Booster Energy Capsule, Puppy-Loving Girl) made
+      // the tile wider than its grid track and it overlapped its neighbours,
+      // instead of the name truncating. min-w-0 keeps that true in a flex parent.
       className={cn(
-        "flex flex-col text-left transition-transform hover:scale-[1.03]",
+        "flex w-full min-w-0 flex-col text-left transition-transform hover:scale-[1.03]",
         !owned && "opacity-55",
       )}
     >
@@ -84,7 +92,7 @@ function CardTile({
         <span className="truncate text-xs font-medium" title={card.name}>
           {card.name}
         </span>
-        {owned ? (
+        {card.owned > 0 ? (
           <span className="shrink-0 rounded bg-primary px-1 text-[10px] font-medium text-primary-foreground tabular-nums">
             ×{card.owned}
           </span>

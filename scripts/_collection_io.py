@@ -89,6 +89,7 @@ SET_REGISTRY: dict[str, dict] = {
     "B3":     {"pack_type": "single", "limitless_slug": "B3"},
     "B3a":    {"pack_type": "single", "limitless_slug": "B3a"},
     "B3b":    {"pack_type": "single", "limitless_slug": "B3b"},
+    "B4":     {"pack_type": "single", "limitless_slug": "B4"},
     "PROMO-A":{"pack_type": "single", "limitless_slug": "PROMO-A"},
     "PROMO-B":{"pack_type": "single", "limitless_slug": "PROMO-B"},
 }
@@ -282,6 +283,22 @@ RARE_PLUS_RARITIES = frozenset({
     "illustration_rare", "super_rare", "special_illustration_rare",
     "immersive", "shiny_rare", "shiny_super_rare", "ultra_rare",
 })
+
+# "◆◆◆◆ or higher" — the tier the 2026-07-29 update made a guaranteed pack
+# category ("If certain conditions are fulfilled, the next time a booster pack
+# from the same expansion … is opened, a ◆◆◆◆ or higher card will now be
+# obtained") and the new trigger for special pack-opening animations.
+#
+# This is RARE_PLUS_RARITIES plus double_rare, which sits one tier below it.
+# Written as an explicit set rather than a rank comparison on RARITIES, because
+# 'promo' and 'unknown' are stored *after* ultra_rare there as operational
+# sentinels — any ">= double_rare" index test would sweep them in.
+DOUBLE_RARE_PLUS_RARITIES = RARE_PLUS_RARITIES | {"double_rare"}
+
+
+def is_double_rare_plus(rarity: str | None) -> bool:
+    """True for ◆◆◆◆ and every tier above it (never for promo/unknown)."""
+    return normalize_rarity(rarity) in DOUBLE_RARE_PLUS_RARITIES
 
 # Canonical ordered rarity list — the 11 Pokémon TCG Pocket tiers per Bulbapedia
 # "Rarity (TCG Pocket)", low→high, plus operational sentinels. Drives RARITY_FIELDS
@@ -593,6 +610,44 @@ def load_collection_counts(path: Path | None = None) -> tuple[dict[str, int], di
             except (TypeError, ValueError):
                 pass
     return by_name, by_coord
+
+
+PRINTING_GROUPS_JSON = REFERENCE_DIR / "printing_groups.json"
+
+
+def credit_printing_groups(by_coord: dict[tuple[str, int], int],
+                           path: Path | None = None) -> dict[tuple[str, int], int]:
+    """Credit owned copies across every printing of the same physical card.
+
+    Since the 2026-07-29 update a card obtained from any pack registers in the dex
+    under *every* expansion it appears in, so its printings are no longer
+    independent: one copy of Cubone fills the Genetic Apex slot AND the Deluxe
+    Pack: ex slot, and pulling the A4b printing yields a duplicate rather than a
+    new card. EV therefore reads a group's combined count at every coord in it.
+
+    Copies themselves are never duplicated — this returns a *derived* view for
+    ownership questions. collection.json stays the record of what is physically
+    held, so quantity totals are unaffected.
+
+    Returns by_coord unchanged when printing_groups.json is absent.
+    """
+    p = path or PRINTING_GROUPS_JSON
+    if not p.exists():
+        return by_coord
+    try:
+        groups = json.loads(p.read_text(encoding="utf-8")).get("groups", [])
+    except (OSError, json.JSONDecodeError):
+        return by_coord
+
+    credited = dict(by_coord)
+    for g in groups:
+        coords = [(str(sc).upper(), int(cn)) for sc, cn in g.get("coords", [])]
+        total = sum(by_coord.get(c, 0) for c in coords)
+        if total <= 0:
+            continue
+        for c in coords:
+            credited[c] = total
+    return credited
 
 
 def field_slug(name: str) -> str:

@@ -238,15 +238,47 @@ def _read_meta_total() -> str:
 
 
 def _collection_status() -> str:
-    """Read total/unique from collection.json for the sync status line."""
+    """Read total/unique from collection.json for the sync status line.
+
+    Flags a run whose numbers came from Pokémon Zone's previous snapshot rather
+    than a fresh read of the game — otherwise a sync that changed nothing because
+    the upstream never refreshed is indistinguishable from one that found nothing
+    new, which is exactly how the missing Ruler of the Skies pulls stayed
+    invisible across three syncs.
+    """
     try:
         data = _load_collection_json()
         meta = data.get("meta", {})
         total = meta.get("total_cards", "?")
         unique = len(data.get("collection", []))
-        return f"{total} cards, {unique} unique"
+        status = f"{total} cards, {unique} unique"
+        stats = _read_player_stats()
+        if stats.get("player_synced") is False:
+            status += " — STALE: Pokémon Zone did not refresh from the game"
+            age = _source_age_days(stats.get("source_last_updated_at"))
+            if age is not None:
+                status += f" (its data is {age:.1f} days old)"
+        return status
     except Exception:
         return "synced"
+
+
+def _source_age_days(iso: str | None) -> float | None:
+    """Age of Pokémon Zone's snapshot in days, or None if unknown.
+
+    Surfaced on a stale run because the number is what makes the problem
+    actionable: "did not refresh" reads as a blip, "its data is 12 days old"
+    reads as an outage worth reporting upstream.
+    """
+    if not iso:
+        return None
+    try:
+        when = datetime.fromisoformat(str(iso).replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return None
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=timezone.utc)
+    return (datetime.now(timezone.utc) - when).total_seconds() / 86400
 
 
 def _read_player_stats() -> dict:
@@ -512,6 +544,16 @@ def main() -> int:
         _print_step("Normalize entries", rc, "FATAL — check data/pipeline.log")
         return 1
     _print_step("Normalize entries", rc, "OK")
+
+    # ── Printing groups (multi-expansion dex registration) ────────────────
+    # Coords that are the same physical card. Since the 2026-07-29 update one copy
+    # registers in the dex under every expansion the card appears in, so EV and the
+    # web catalog credit ownership across a group. Derived from reprint_links plus
+    # Pokémon Zone's expansionIds, so it has to be rebuilt after a sync refreshes
+    # the raw snapshot. Non-fatal: a stale grouping only under-credits.
+    rc, _ = _run("Printing groups", "scripts/build_printing_groups.py")
+    _print_step("Printing groups", 0 if rc == 0 else rc,
+                "OK" if rc == 0 else "WARN — ownership credited per coord only")
 
     # ── Normalize collection (web-facing artifacts) ───────────────────────
     # Produces collection_normalized.json + collection_summary.json, which the web

@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ]
   pull_request:
+  # On-demand re-run. Data-only sync commits carry [skip ci], so main's tip is
+  # often a commit CI deliberately skipped; this gives a way to validate main
+  # without pushing a no-op commit, and to re-run after an infrastructure blip.
+  workflow_dispatch:
 
 # Cancel superseded runs on the same ref to save minutes.
 concurrency:
@@ -56,9 +60,44 @@ jobs:
 
       - run: npm ci
 
-      # Schema tests run against committed fixtures and pages are force-dynamic,
-      # so none of these steps need the (gitignored) pipeline artifacts.
+      # Schema tests run against committed fixtures, and every cached read sits
+      # behind a runtime bail (connection()/params) so prerender never touches
+      # the (gitignored) pipeline artifacts. Reproduce this build locally with
+      # `npm run build:ci` — see web/AGENTS.md.
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
+
+  e2e:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - run: npm ci
+
+      # Chromium only: the mobile project runs an iPhone viewport on Chromium
+      # (see playwright.config.ts), so no second browser download is needed.
+      - run: npx playwright install --with-deps chromium
+
+      # playwright.config.ts builds and starts the app itself. CI has no pipeline
+      # artifacts (they're gitignored), so this run covers the data-free path:
+      # static shells, page errors and layout. Tests needing real cards gate
+      # themselves on the artifacts and skip here — see web/e2e/fixtures.ts.
+      - run: npm run test:e2e
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: web/playwright-report/
+          retention-days: 7

@@ -7,17 +7,18 @@ import { CardGrid } from "@/components/cards/card-grid";
 import { TypeSymbol, ENERGY_TYPES } from "@/components/cards/type-symbol";
 import { RaritySymbol } from "@/components/dashboard/rarity-symbol";
 import { SetLogo } from "@/components/sets/set-logo";
-import { FilterDropdown, FilterCheck } from "@/components/ui/filter-dropdown";
+import {
+  FilterCheck,
+  FilterDropdown,
+  toggleValue,
+} from "@/components/ui/filter-dropdown";
 import { MultiSelect } from "@/components/ui/multi-select";
 import { displayType, isMegaEx } from "@/lib/domain/card";
 import { formatNumber, formatPercent, titleCase } from "@/lib/domain/format";
+import { collapseToDebutPrinting } from "@/lib/domain/printing-groups";
 import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
 import { cn } from "@/lib/utils";
 import type { CatalogCard } from "@/types";
-
-/** Toggle a value in a string[] filter state. */
-const toggleValue = (arr: string[], v: string) =>
-  arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v];
 
 const BATCH = 150;
 const STAGE_ORDER = ["Basic", "Stage1", "Stage2", "Stage3"];
@@ -25,7 +26,22 @@ const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
 type CardClass = "all" | "ex" | "mega";
 type Ownership = "all" | "owned" | "missing";
 type Scope = "total" | "base";
-type Sort = "default" | "power";
+/**
+ * "default" is expansion order (the catalog's own set-then-number order) and
+ * keeps its value so existing ?sort= links stay valid.
+ */
+type Sort = "default" | "number" | "power";
+
+/**
+ * Sorts that list a card under every expansion it belongs to.
+ *
+ * Game rule (2026-07-29): "When sorting by expansion order or by collector card
+ * number, if the same card appears in multiple expansions … it will now be
+ * displayed in all expansions in which it appears. For all other sorting and
+ * filtering options, the card will only be displayed in the expansion in which
+ * it first appeared."
+ */
+const ALL_PRINTINGS_SORTS = new Set<Sort>(["default", "number"]);
 
 type Category = "all" | "Pokemon" | "Trainer";
 
@@ -104,7 +120,9 @@ export function CardsBrowser({
     initial?.scope === "base" ? "base" : "total",
   );
   const [sort, setSort] = useState<Sort>(
-    initial?.sort === "power" ? "power" : "default",
+    initial?.sort === "power" || initial?.sort === "number"
+      ? initial.sort
+      : "default",
   );
   const [visible, setVisible] = useState(BATCH);
   // Defer the search text so each keystroke keeps the input responsive while the
@@ -157,24 +175,49 @@ export function CardsBrowser({
       if (category !== "all" && c.card_category !== category) return false;
       if (classFilter === "ex" && !c.is_ex) return false;
       if (classFilter === "mega" && !isMegaEx(c)) return false;
-      if (ownership === "owned" && c.owned <= 0) return false;
-      if (ownership === "missing" && c.owned > 0) return false;
+      if (ownership === "owned" && !c.dex_owned) return false;
+      if (ownership === "missing" && c.dex_owned) return false;
       return true;
     });
   }, [cards, deferredQuery, sets, types, rarities, stages, scope, category, classFilter, ownership]);
 
-  const ordered = useMemo(
+  // Under any sort other than expansion order or collector number, a card that
+  // appears in several expansions is listed once, at its debut printing. When a
+  // set filter is active the debut may be filtered out, and collapsing after the
+  // filter correctly keeps the printing the user asked to see.
+  const listed = useMemo(
     () =>
-      sort === "power"
-        ? [...filtered].sort(
-            (a, b) => (b.power_score ?? -1) - (a.power_score ?? -1),
-          )
-        : filtered,
+      ALL_PRINTINGS_SORTS.has(sort) ? filtered : collapseToDebutPrinting(filtered),
     [filtered, sort],
   );
 
-  const ownedShown = filtered.filter((c) => c.owned > 0).length;
-  const ratio = filtered.length > 0 ? ownedShown / filtered.length : 0;
+  const ordered = useMemo(() => {
+    if (sort === "power") {
+      // Grouped by which model produced the score, then ranked within the
+      // group. Pokémon are scored on HP and damage, Trainers on rule text —
+      // interleaving them would rank a Supporter against a Charizard on
+      // scales that only share their range.
+      return [...listed].sort((a, b) => {
+        const kindRank = (c: CatalogCard) =>
+          c.power_score == null ? 2 : c.power_score_kind === "trainer" ? 1 : 0;
+        const byKind = kindRank(a) - kindRank(b);
+        if (byKind !== 0) return byKind;
+        return (b.power_score ?? -1) - (a.power_score ?? -1);
+      });
+    }
+    if (sort === "number") {
+      return [...listed].sort(
+        (a, b) =>
+          a.card_number - b.card_number ||
+          a.set_code.localeCompare(b.set_code),
+      );
+    }
+    // "default": the catalog already arrives in expansion-then-number order.
+    return listed;
+  }, [listed, sort]);
+
+  const ownedShown = ordered.filter((c) => c.dex_owned).length;
+  const ratio = ordered.length > 0 ? ownedShown / ordered.length : 0;
   const singleSet = sets.length === 1 ? sets[0] : null;
   const singleSetName = singleSet
     ? cards.find((c) => c.set_code === singleSet)?.expansion ?? singleSet
@@ -216,13 +259,13 @@ export function CardsBrowser({
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0]?.isIntersecting)
-          setVisible((v) => Math.min(v + BATCH, filtered.length));
+          setVisible((v) => Math.min(v + BATCH, listed.length));
       },
       { rootMargin: "600px" },
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, [filtered.length]);
+  }, [listed.length]);
 
   const shown = ordered.slice(0, visible);
   const selectCls = "h-9 rounded-md border bg-background px-2 text-sm";
@@ -421,18 +464,19 @@ export function CardsBrowser({
           className={selectCls}
           aria-label="Sort"
         >
-          <option value="default">Sort: default</option>
+          <option value="default">Sort: expansion order</option>
+          <option value="number">Sort: card number</option>
           <option value="power">Sort: power ▾</option>
         </select>
       </div>
 
       <p className="text-sm text-muted-foreground">
-        Showing {shown.length} of {filtered.length}
+        Showing {shown.length} of {listed.length}
       </p>
 
       <CardGrid cards={shown} allCards={cards} />
 
-      {shown.length < filtered.length ? (
+      {shown.length < listed.length ? (
         <div ref={sentinel} className="h-1" aria-hidden />
       ) : null}
     </div>

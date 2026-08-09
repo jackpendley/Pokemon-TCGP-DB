@@ -1,5 +1,9 @@
+import { Suspense } from "react";
+import { connection } from "next/server";
+
 import { CompletionCard } from "@/components/dashboard/completion-card";
 import { CountGrid, type CountItem } from "@/components/dashboard/count-grid";
+import { NewSetBanner } from "@/components/dashboard/new-set-banner";
 import { OwnerStatusCard } from "@/components/dashboard/owner-status-card";
 import {
   NextToOpen,
@@ -14,16 +18,17 @@ import {
   type HistoryEntryView,
 } from "@/components/sync/sync-history";
 import { SyncRevealDialog } from "@/components/sync/sync-reveal-dialog";
-import {
-  type AdditionItem,
-  type SetProgressItem,
-} from "@/components/sync/sync-reveal";
-import { Suspense } from "react";
-import { connection } from "next/server";
+import { type AdditionItem } from "@/components/sync/sync-reveal";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  CountGridSkeleton,
+  PanelSkeleton,
+  StatTilesSkeleton,
+  TextLinesSkeleton,
+} from "@/components/ui/skeletons";
 import {
   getCachedCatalog,
   getCachedCollectionSummary,
@@ -33,51 +38,215 @@ import {
 import { fetchOwnerSyncMeta } from "@/lib/data/supabase";
 import { isOwner } from "@/lib/auth/server";
 import { canTriggerSync, isSyncEnabled } from "@/app/sync/actions";
-import { isMegaEx } from "@/lib/domain/card";
+import {
+  buildSetTotals,
+  completionStats,
+  indexByCoord,
+  lookupCoord,
+  megaStats,
+  nextPackEntries,
+  ownedBySet,
+  rarityBreakdown,
+  setProgressFor,
+  stageBreakdown,
+  typeBreakdown,
+} from "@/lib/domain/dashboard";
 import { formatNumber, titleCase } from "@/lib/domain/format";
 import { compareRarity, isBaseRarity } from "@/lib/domain/rarity";
 import type { SyncDeltaEntry } from "@/types";
 
-const STAGE_ORDER = ["Basic", "Stage1", "Stage2", "Stage3"];
 const stageLabel = (s: string) => s.replace(/^Stage(\d)/, "Stage $1");
 // Animate sync results on the dashboard only right after a sync, not every visit.
 const RECENT_SYNC_MS = 10 * 60 * 1000;
 
-async function DashboardContent() {
-  // Dynamic hole: reads cookies (owner state) and the current time (recent-sync
-  // animation). connection() marks it request-time so those are allowed and the
-  // build never prerenders it against the gitignored local-json artifacts.
+/**
+ * Whether a sync completed recently enough to animate its results. Read at
+ * request time inside async Server Components; the purity rule targets client
+ * render, where Date.now() would be non-deterministic.
+ */
+function isRecentSync(fetchedAt: string | null | undefined): boolean {
+  if (!fetchedAt) return false;
+  const now = Date.now();
+  return now - new Date(fetchedAt).getTime() < RECENT_SYNC_MS;
+}
+
+/**
+ * The dashboard streams as several independent Suspense boundaries rather than
+ * one. Each section below awaits only the data it needs, so the completion ring
+ * does not wait on sync history and none of them wait on the owner cookie check.
+ * The page shell (headings, section structure) is outside every boundary, so PPR
+ * serves it as static HTML immediately.
+ *
+ * Every section starts with `await connection()` before its cached reads — see
+ * web/AGENTS.md; without it the data-free CI build would prerender these and hit
+ * the missing local-json artifacts.
+ */
+
+// ── Header ────────────────────────────────────────────────────────────────
+
+async function LastSyncedLine() {
   await connection();
-  const [summary, packEv, catalog, sync, syncEnabled, ownerCanSync, owner] =
-    await Promise.all([
-      getCachedCollectionSummary(),
-      getCachedPackEv(),
-      getCachedCatalog(),
-      getCachedSyncStatus(),
-      isSyncEnabled(),
-      canTriggerSync(),
-      isOwner(),
-    ]);
-  // Owner-only operator panel. Fetched only for the authenticated owner (never
-  // in local-json dev, where isOwner() is false and no Supabase exists).
-  const ownerMeta = owner ? await fetchOwnerSyncMeta() : null;
-
-  const { stats, reviewQueue, delta, history } = sync;
-
-  // "What to open next": every purchasable pack (so series/type filters have the
-  // full set to work with), joined to its strongest unowned pull targets resolved
-  // to full catalog cards (types + enlarge info). Ranking happens client-side.
-  const catalogByCoord = new Map(
-    catalog.map((c) => [`${c.set_code}:${c.card_number}`, c]),
+  const [summary, sync] = await Promise.all([
+    getCachedCollectionSummary(),
+    getCachedSyncStatus(),
+  ]);
+  return (
+    <p className="text-sm text-muted-foreground">
+      {sync.stats
+        ? `Last synced ${new Date(sync.stats.fetched_at).toLocaleString()}`
+        : `Collection snapshot · updated ${summary.meta.last_updated}`}
+    </p>
   );
-  const nextEntries: NextPackEntry[] = packEv.packs
-    .filter((p) => p.purchasable && !p.blocked)
-    .map((pack) => ({
-      pack,
-      targets: pack.top_power_cards
-        .map((t) => catalogByCoord.get(`${t.set_code}:${t.card_number}`))
-        .filter((c): c is NonNullable<typeof c> => c != null),
-    }));
+}
+
+/** Owner-only; renders nothing for everyone else, so it needs no placeholder. */
+async function SyncControl() {
+  await connection();
+  const [syncEnabled, ownerCanSync] = await Promise.all([
+    isSyncEnabled(),
+    canTriggerSync(),
+  ]);
+  return ownerCanSync ? <SyncButton enabled={syncEnabled} /> : null;
+}
+
+// ── Owner-only operator panel ─────────────────────────────────────────────
+
+async function OwnerPanel() {
+  await connection();
+  const owner = await isOwner();
+  // Never fetched in local-json dev, where isOwner() is false and no Supabase exists.
+  if (!owner) return null;
+  const [ownerMeta, summary, packEv, catalog] = await Promise.all([
+    fetchOwnerSyncMeta(),
+    getCachedCollectionSummary(),
+    getCachedPackEv(),
+    getCachedCatalog(),
+  ]);
+  if (!ownerMeta) return null;
+
+  return (
+    <>
+      <NewSetBanner sets={ownerMeta.pendingSets} />
+      <OwnerStatusCard
+        publishedAt={ownerMeta.publishedAt}
+        lastRun={ownerMeta.lastRun}
+        catalogMisses={ownerMeta.catalogMisses}
+        playerSynced={ownerMeta.playerSynced}
+        counts={{
+          cards: catalog.length,
+          packs: packEv.packs.length,
+          uniqueEntries: summary.unique_entries,
+          totalQuantity: summary.total_quantity,
+        }}
+      />
+    </>
+  );
+}
+
+// ── Post-sync reveal popup ────────────────────────────────────────────────
+
+/**
+ * Right after a sync: a dismissable popup of the cards you just got. Shown once
+ * per sync (dismissal remembered client-side); the sync stays listed in Sync
+ * history below.
+ */
+async function RevealSlot() {
+  await connection();
+  const [sync, catalog] = await Promise.all([
+    getCachedSyncStatus(),
+    getCachedCatalog(),
+  ]);
+  const { stats, delta } = sync;
+  if (!stats || !delta) return null;
+
+  if (!isRecentSync(stats.fetched_at)) return null;
+
+  const index = indexByCoord(catalog);
+  const additions: AdditionItem[] = delta.added.map((entry) => ({
+    entry,
+    card: lookupCoord(index, entry.set_code, entry.card_number),
+  }));
+  if (additions.length === 0) return null;
+
+  const setTotals = buildSetTotals(catalog);
+  return (
+    <SyncRevealDialog
+      key={stats.fetched_at}
+      items={additions}
+      setProgress={setProgressFor(delta.added, ownedBySet(setTotals), setTotals)}
+      count={delta.added_count}
+      revealId={stats.fetched_at}
+    />
+  );
+}
+
+// ── Completion band ───────────────────────────────────────────────────────
+
+async function StateBand() {
+  await connection();
+  const [catalog, summary, sync] = await Promise.all([
+    getCachedCatalog(),
+    getCachedCollectionSummary(),
+    getCachedSyncStatus(),
+  ]);
+  const completion = completionStats(catalog);
+
+  // Animate the ring up from its pre-sync value, but only right after a sync.
+  const { stats, delta } = sync;
+  const isRecent = isRecentSync(stats?.fetched_at);
+  const index = isRecent ? indexByCoord(catalog) : null;
+  const newOnes =
+    isRecent && delta ? delta.added.filter((e: SyncDeltaEntry) => e.is_new) : [];
+  const recentGain =
+    isRecent && newOnes.length > 0
+      ? {
+          total: newOnes.length,
+          base: newOnes.filter((e) =>
+            isBaseRarity(
+              lookupCoord(index!, e.set_code, e.card_number)?.rarity ?? null,
+            ),
+          ).length,
+        }
+      : undefined;
+
+  return (
+    <>
+      <CompletionCard
+        total={completion.total}
+        base={completion.base}
+        recentGain={recentGain}
+      />
+      <Card className="ring-2 ring-primary/30">
+        <CardContent className="flex h-full flex-col items-center justify-center py-2 text-center">
+          <div className="text-7xl font-bold tabular-nums leading-none text-primary">
+            {formatNumber(summary.total_quantity)}
+          </div>
+          <div className="mt-3 text-sm font-medium text-muted-foreground">
+            Total cards
+          </div>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {formatNumber(summary.unique_entries)} unique entries
+          </p>
+        </CardContent>
+      </Card>
+    </>
+  );
+}
+
+// ── What to open next ─────────────────────────────────────────────────────
+
+async function NextToOpenSection() {
+  await connection();
+  const [packEv, catalog, sync] = await Promise.all([
+    getCachedPackEv(),
+    getCachedCatalog(),
+    getCachedSyncStatus(),
+  ]);
+  const entries: NextPackEntry[] = nextPackEntries(
+    packEv.packs,
+    indexByCoord(catalog),
+  );
+  const stats = sync.stats;
   const currency = stats
     ? {
         pack_hourglasses: stats.pack_hourglasses,
@@ -86,291 +255,243 @@ async function DashboardContent() {
       }
     : null;
 
-  // Completion — derived web-side from the catalog (owned counts merged in).
-  const totalOwned = catalog.filter((c) => c.owned > 0).length;
-  const baseCards = catalog.filter((c) => isBaseRarity(c.rarity));
-  const baseOwned = baseCards.filter((c) => c.owned > 0).length;
+  return <NextToOpen entries={entries} currency={currency} />;
+}
 
-  const megaCards = catalog.filter(isMegaEx);
-  const megaQuantity = megaCards.reduce((n, c) => n + c.owned, 0);
-  const megaUnique = megaCards.filter((c) => c.owned > 0).length;
+// ── Collection breakdowns ─────────────────────────────────────────────────
 
-  // Per-rarity collected (unique owned / total).
-  const byRarity = new Map<string, { owned: number; total: number }>();
-  for (const c of catalog) {
-    const key = c.rarity ?? "unknown";
-    const e = byRarity.get(key) ?? { owned: 0, total: 0 };
-    e.total += 1;
-    if (c.owned > 0) e.owned += 1;
-    byRarity.set(key, e);
-  }
-  const rarityItems: CountItem[] = [...byRarity.keys()]
-    .sort(compareRarity)
-    .map((rarity) => ({
-      key: rarity,
-      label: titleCase(rarity),
-      value: byRarity.get(rarity)!.owned,
-      total: byRarity.get(rarity)!.total,
-      icon: <RaritySymbol rarity={rarity} />,
-      href: `/cards?rarity=${encodeURIComponent(rarity)}`,
-    }));
+async function CollectionTiles() {
+  await connection();
+  const [catalog, summary] = await Promise.all([
+    getCachedCatalog(),
+    getCachedCollectionSummary(),
+  ]);
+  const { pokemonQuantity, trainerQuantity } = typeBreakdown(catalog);
+  const mega = megaStats(catalog);
 
-  // Pokémon-type distribution (owned quantity) — derived from the catalog, not the
-  // collection summary, so it matches the /cards type filter (displayType) and has no
-  // "Unknown" bucket (some collection.json entries miscategorize Trainers as Pokémon).
-  const byPokemonType: Record<string, number> = {};
-  let pokemonQuantity = 0;
-  let trainerQuantity = 0;
-  for (const c of catalog) {
-    if (c.owned <= 0) continue;
-    if (c.pokemon_type)
-      byPokemonType[c.pokemon_type] = (byPokemonType[c.pokemon_type] ?? 0) + c.owned;
-    if (c.card_category === "Pokemon") pokemonQuantity += c.owned;
-    else if (c.card_category === "Trainer") trainerQuantity += c.owned;
-  }
+  return (
+    <>
+      <StatCard
+        title="Pokémon"
+        value={formatNumber(pokemonQuantity)}
+        href="/cards?category=Pokemon"
+        align="center"
+      />
+      <StatCard
+        title="Trainers"
+        value={formatNumber(trainerQuantity)}
+        href="/cards?category=Trainer"
+        align="center"
+      />
+      <StatCard
+        title="ex cards"
+        value={formatNumber(summary.ex_quantity)}
+        hint={`${formatNumber(summary.ex_entries)} unique`}
+        href="/cards?class=ex"
+        align="center"
+      />
+      <StatCard
+        title="Mega ex cards"
+        value={formatNumber(mega.quantity)}
+        hint={`${formatNumber(mega.unique)} of ${formatNumber(mega.total)} unique`}
+        href="/cards?class=mega"
+        align="center"
+      />
+    </>
+  );
+}
 
-  // Per-stage collected (unique owned / total) — same shape as rarity.
-  const byStage = new Map<string, { owned: number; total: number }>();
-  for (const c of catalog) {
-    if (!c.stage) continue;
-    const e = byStage.get(c.stage) ?? { owned: 0, total: 0 };
-    e.total += 1;
-    if (c.owned > 0) e.owned += 1;
-    byStage.set(c.stage, e);
-  }
-  const stageItems: CountItem[] = [...byStage.keys()]
-    .sort(
-      (a, b) =>
-        (STAGE_ORDER.indexOf(a) === -1 ? 99 : STAGE_ORDER.indexOf(a)) -
-        (STAGE_ORDER.indexOf(b) === -1 ? 99 : STAGE_ORDER.indexOf(b)),
-    )
-    .map((stage) => ({
-      key: stage,
-      label: stageLabel(stage),
-      value: byStage.get(stage)!.owned,
-      total: byStage.get(stage)!.total,
-      href: `/cards?stage=${encodeURIComponent(stage)}`,
-    }));
+async function TypeAndRarity() {
+  await connection();
+  const catalog = await getCachedCatalog();
+  const { byPokemonType } = typeBreakdown(catalog);
+  const rarityItems: CountItem[] = rarityBreakdown(catalog, compareRarity).map(
+    (b) => ({
+      key: b.key,
+      label: titleCase(b.key),
+      value: b.owned,
+      total: b.total,
+      icon: <RaritySymbol rarity={b.key} />,
+      href: `/cards?rarity=${encodeURIComponent(b.key)}`,
+    }),
+  );
 
-  // ── Sync data surfaced on the dashboard ────────────────────────────────
+  return (
+    <>
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="text-base">By type</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <TypePieChart data={byPokemonType} />
+        </CardContent>
+      </Card>
+      <CountGrid title="By rarity · collected" items={rarityItems} />
+    </>
+  );
+}
+
+async function StageGrid() {
+  await connection();
+  const catalog = await getCachedCatalog();
+  const stageItems: CountItem[] = stageBreakdown(catalog).map((b) => ({
+    key: b.key,
+    label: stageLabel(b.key),
+    value: b.owned,
+    total: b.total,
+    href: `/cards?stage=${encodeURIComponent(b.key)}`,
+  }));
+  return <CountGrid title="By stage · collected" items={stageItems} />;
+}
+
+// ── Sync history ──────────────────────────────────────────────────────────
+
+async function SyncHistorySection() {
+  await connection();
+  const [sync, catalog] = await Promise.all([
+    getCachedSyncStatus(),
+    getCachedCatalog(),
+  ]);
+  const { reviewQueue, history } = sync;
+
+  const index = indexByCoord(catalog);
+  const setTotals = buildSetTotals(catalog);
   const join = (entry: SyncDeltaEntry): AdditionItem => ({
     entry,
-    card: catalogByCoord.get(`${entry.set_code}:${entry.card_number}`) ?? null,
+    card: lookupCoord(index, entry.set_code, entry.card_number),
   });
 
-  // Current owned/total per set — drives each sync's progress rings.
-  const setTotals = new Map<string, { total: number; owned: number; expansion: string }>();
-  for (const c of catalog) {
-    const s = setTotals.get(c.set_code) ?? { total: 0, owned: 0, expansion: c.expansion };
-    s.total += 1;
-    if (c.owned > 0) s.owned += 1;
-    setTotals.set(c.set_code, s);
-  }
-
-  // Per-sync set progress (sets that gained, ranked by gain) with a before→after fill.
-  // ownedAfter supplies the per-set owned count as of that sync's completion.
-  const setProgressFor = (
-    added: SyncDeltaEntry[],
-    ownedAfter: Map<string, number>,
-  ): SetProgressItem[] => {
-    const gained = new Map<string, number>();
-    for (const e of added)
-      if (e.is_new && e.set_code)
-        gained.set(e.set_code, (gained.get(e.set_code) ?? 0) + 1);
-    return [...gained.entries()]
-      .map(([set_code, g]) => {
-        const t = setTotals.get(set_code);
-        const after = ownedAfter.get(set_code) ?? 0;
-        return {
-          set_code,
-          expansion: t?.expansion ?? set_code,
-          total: t?.total ?? 0,
-          after,
-          before: Math.max(0, after - g),
-          gained: g,
-        };
-      })
-      .sort((a, b) => b.gained - a.gained);
-  };
-  const currentOwned = new Map(
-    [...setTotals].map(([code, t]) => [code, t.owned]),
-  );
-  const additions: AdditionItem[] = (delta?.added ?? []).map(join);
-  const setProgress = delta ? setProgressFor(delta.added, currentOwned) : [];
-
-  // History is stored oldest→newest; walk newest→oldest rolling the owned
-  // counts back by each sync's gains, so every entry shows the totals as they
-  // stood at that sync rather than today's.
-  const runningOwned = new Map(currentOwned);
-  const historyEntries: HistoryEntryView[] = [...history].reverse().map((h) => {
-    const setProgress = setProgressFor(h.added, runningOwned);
-    for (const p of setProgress) runningOwned.set(p.set_code, p.before);
+  // History is stored oldest→newest; walk newest→oldest rolling the owned counts
+  // back by each sync's gains, so every entry shows the totals as they stood at
+  // that sync rather than today's.
+  const runningOwned = ownedBySet(setTotals);
+  const entries: HistoryEntryView[] = [...history].reverse().map((h) => {
+    const progress = setProgressFor(h.added, runningOwned, setTotals);
+    for (const p of progress) runningOwned.set(p.set_code, p.before);
     return {
       syncedAt: h.synced_at,
       addedCount: h.added_count,
       items: h.added.map(join),
-      setProgress,
+      setProgress: progress,
     };
   });
+
   const reviewItems = reviewQueue
     ? reviewQueue.new_cards.length +
       reviewQueue.ambiguous_matches.length +
       reviewQueue.missing_from_pz.length
     : 0;
 
-  // Request-time check in this async Server Component; the purity rule targets
-  // client render, where Date.now() would be non-deterministic.
-  // eslint-disable-next-line react-hooks/purity
-  const now = Date.now();
-  const isRecentSync =
-    !!stats && now - new Date(stats.fetched_at).getTime() < RECENT_SYNC_MS;
-  const newOnes = additions.filter((a) => a.entry.is_new);
-  const newUnique = {
-    total: newOnes.length,
-    base: newOnes.filter((a) => isBaseRarity(a.card?.rarity ?? null)).length,
-  };
-  const recentGain = isRecentSync ? newUnique : undefined;
-  const showReveal = isRecentSync && additions.length > 0;
+  return (
+    <Card>
+      <CardHeader className="pb-2">
+        <CardTitle className="flex items-center justify-between gap-2 text-base">
+          <span>Sync history</span>
+          <span className="flex items-center gap-2">
+            {reviewItems > 0 ? (
+              <Badge variant="outline">{reviewItems} to review</Badge>
+            ) : null}
+            {history.length > 0 ? (
+              <Badge variant="secondary">{history.length} syncs</Badge>
+            ) : null}
+          </span>
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <SyncHistory entries={entries} />
+      </CardContent>
+    </Card>
+  );
+}
 
+// ── Page shell (static; served immediately by PPR) ────────────────────────
+
+export default function DashboardPage() {
   return (
     <div className="space-y-8">
       <header className="flex flex-wrap items-start justify-between gap-4">
         <div className="space-y-1">
           <h1 className="text-2xl font-semibold tracking-tight">Dashboard</h1>
-          <p className="text-sm text-muted-foreground">
-            {stats
-              ? `Last synced ${new Date(stats.fetched_at).toLocaleString()}`
-              : `Collection snapshot · updated ${summary.meta.last_updated}`}
-          </p>
+          <Suspense fallback={<TextLinesSkeleton width="w-64" />}>
+            <LastSyncedLine />
+          </Suspense>
         </div>
-        {ownerCanSync ? <SyncButton enabled={syncEnabled} /> : null}
+        <Suspense fallback={null}>
+          <SyncControl />
+        </Suspense>
       </header>
 
-      {owner && ownerMeta ? (
-        <OwnerStatusCard
-          publishedAt={ownerMeta.publishedAt}
-          lastRun={ownerMeta.lastRun}
-          counts={{
-            cards: catalog.length,
-            packs: packEv.packs.length,
-            uniqueEntries: summary.unique_entries,
-            totalQuantity: summary.total_quantity,
-          }}
-        />
-      ) : null}
-
-      {/* Right after a sync: a dismissable popup of the cards you just got.
-          Shown once per sync (dismissal remembered client-side); the sync
-          remains listed in Sync history below. */}
-      {showReveal && delta && stats ? (
-        <SyncRevealDialog
-          key={stats.fetched_at}
-          items={additions}
-          setProgress={setProgress}
-          count={delta.added_count}
-          revealId={stats.fetched_at}
-        />
-      ) : null}
+      {/* Absent for every visitor except the signed-in owner, so it streams with
+          no placeholder — a skeleton here would flash a box that then vanishes. */}
+      <Suspense fallback={null}>
+        <OwnerPanel />
+      </Suspense>
+      <Suspense fallback={null}>
+        <RevealSlot />
+      </Suspense>
 
       {/* State band: completion ring beside the headline total. */}
       <section className="grid gap-4 lg:grid-cols-2">
-        <CompletionCard
-          total={{ owned: totalOwned, total: catalog.length }}
-          base={{ owned: baseOwned, total: baseCards.length }}
-          recentGain={recentGain}
-        />
-        <Card className="ring-2 ring-primary/30">
-          <CardContent className="flex h-full flex-col items-center justify-center py-2 text-center">
-            <div className="text-7xl font-bold tabular-nums leading-none text-primary">
-              {formatNumber(summary.total_quantity)}
-            </div>
-            <div className="mt-3 text-sm font-medium text-muted-foreground">
-              Total cards
-            </div>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {formatNumber(summary.unique_entries)} unique entries
-            </p>
-          </CardContent>
-        </Card>
+        <Suspense
+          fallback={
+            <>
+              <PanelSkeleton titleWidth="w-44" bodyClassName="h-64" />
+              <PanelSkeleton titleWidth="w-28" bodyClassName="h-64" />
+            </>
+          }
+        >
+          <StateBand />
+        </Suspense>
       </section>
 
       {/* Centerpiece: what to open next (filters + pack-hourglass balance). */}
-      <NextToOpen entries={nextEntries} currency={currency} />
+      <Suspense
+        fallback={
+          <section className="space-y-4">
+            <Skeleton className="h-7 w-56" />
+            <Skeleton className="h-9 w-96 max-w-full" />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[0, 1, 2].map((i) => (
+                <PanelSkeleton key={i} titleWidth="w-32" bodyClassName="h-56" />
+              ))}
+            </div>
+          </section>
+        }
+      >
+        <NextToOpenSection />
+      </Suspense>
 
       {/* Collection: secondary counts, then compact type/rarity/stage breakdowns. */}
       <section className="space-y-4">
         <h2 className="text-lg font-medium">Collection</h2>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          <StatCard
-            title="Pokémon"
-            value={formatNumber(pokemonQuantity)}
-            href="/cards?category=Pokemon"
-            align="center"
-          />
-          <StatCard
-            title="Trainers"
-            value={formatNumber(trainerQuantity)}
-            href="/cards?category=Trainer"
-            align="center"
-          />
-          <StatCard
-            title="ex cards"
-            value={formatNumber(summary.ex_quantity)}
-            hint={`${formatNumber(summary.ex_entries)} unique`}
-            href="/cards?class=ex"
-            align="center"
-          />
-          <StatCard
-            title="Mega ex cards"
-            value={formatNumber(megaQuantity)}
-            hint={`${formatNumber(megaUnique)} of ${formatNumber(megaCards.length)} unique`}
-            href="/cards?class=mega"
-            align="center"
-          />
+          <Suspense fallback={<StatTilesSkeleton className="contents" />}>
+            <CollectionTiles />
+          </Suspense>
         </div>
         <div className="grid gap-4 lg:grid-cols-2">
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-base">By type</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <TypePieChart data={byPokemonType} />
-            </CardContent>
-          </Card>
-          <CountGrid title="By rarity · collected" items={rarityItems} />
+          <Suspense
+            fallback={
+              <>
+                <PanelSkeleton titleWidth="w-20" bodyClassName="h-56" />
+                <CountGridSkeleton cells={9} titleWidth="w-44" />
+              </>
+            }
+          >
+            <TypeAndRarity />
+          </Suspense>
         </div>
-        <CountGrid title="By stage · collected" items={stageItems} />
+        <Suspense fallback={<CountGridSkeleton cells={3} titleWidth="w-44" />}>
+          <StageGrid />
+        </Suspense>
       </section>
 
       {/* Recent activity: sync history (+ review-queue chip). */}
-      <Card>
-        <CardHeader className="pb-2">
-          <CardTitle className="flex items-center justify-between gap-2 text-base">
-            <span>Sync history</span>
-            <span className="flex items-center gap-2">
-              {reviewItems > 0 ? (
-                <Badge variant="outline">{reviewItems} to review</Badge>
-              ) : null}
-              {history.length > 0 ? (
-                <Badge variant="secondary">{history.length} syncs</Badge>
-              ) : null}
-            </span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <SyncHistory entries={historyEntries} />
-        </CardContent>
-      </Card>
+      <Suspense
+        fallback={<PanelSkeleton titleWidth="w-28" bodyClassName="h-48" />}
+      >
+        <SyncHistorySection />
+      </Suspense>
     </div>
-  );
-}
-
-export default function DashboardPage() {
-  // The dashboard reads cookies (owner state) and the just-synced timestamp, so
-  // it streams as one dynamic hole; the cached data reads inside are hits.
-  return (
-    <Suspense fallback={<Skeleton className="h-[80vh] w-full" />}>
-      <DashboardContent />
-    </Suspense>
   );
 }
