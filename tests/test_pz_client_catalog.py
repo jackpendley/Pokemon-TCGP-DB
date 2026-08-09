@@ -11,6 +11,7 @@ picked up none of the newly-released B4 cards:
     expansion in that list.
 """
 
+import json
 import sys
 from pathlib import Path
 
@@ -106,8 +107,6 @@ def test_catalog_misses_reach_player_stats(monkeypatch, tmp_path):
 
     pz._save_player_stats({}, {"count": 2, "copies": 5, "card_ids": ["a", "b"]})
 
-    import json
-
     assert json.loads(target.read_text())["catalog_misses"]["copies"] == 5
 
 
@@ -198,7 +197,113 @@ def test_blocked_until_reaches_player_stats(monkeypatch, tmp_path):
     monkeypatch.setattr(pz, "PLAYER_STATS_CACHE", target)
     pz._save_player_stats({}, None, player_synced=False,
                           sync_blocked_until="2026-08-07T08:59+00:00")
-    import json as _json
-    saved = _json.loads(target.read_text())
+    saved = json.loads(target.read_text())
     assert saved["player_synced"] is False
     assert saved["sync_blocked_until"] == "2026-08-07T08:59+00:00"
+
+
+# ---------------------------------------------------------------------------
+# "Refresh completed" is not proof the snapshot advanced
+# ---------------------------------------------------------------------------
+# 2026-08-04: the sync task reported ready=true with no successCount, Pokémon
+# Zone's player.lastUpdatedAt stayed on 2026-07-28, and the run republished a
+# six-day-old snapshot as a clean success. Six more days of "successful" syncs
+# followed before anyone looked at the timestamp. The task's own verdict is not
+# trustworthy; PZ's ingest timestamp is.
+
+def _player_body(last_updated):
+    return {"data": {"player": {"lastUpdatedAt": last_updated}, "cards": []}}
+
+
+def test_reads_pz_ingest_timestamp():
+    assert pz._player_last_updated_at(
+        _player_body("2026-08-09T16:49:33Z")) == "2026-08-09T16:49:33Z"
+
+
+def test_missing_ingest_timestamp_is_none():
+    for body in ({}, {"data": {}}, {"data": {"player": {}}}, None, []):
+        assert pz._player_last_updated_at(body) is None
+
+
+def test_previous_timestamp_round_trips_through_player_stats(monkeypatch, tmp_path):
+    target = tmp_path / "player_stats.json"
+    monkeypatch.setattr(pz, "PLAYER_STATS_CACHE", target)
+    assert pz._previous_last_updated_at() is None      # nothing recorded yet
+
+    pz._save_player_stats({}, None, player_synced=True,
+                          source_last_updated_at="2026-07-28T05:28:43Z")
+    assert pz._previous_last_updated_at() == "2026-07-28T05:28:43Z"
+
+
+def test_unchanged_snapshot_is_reported_stale_despite_a_completed_task(monkeypatch, tmp_path):
+    """The exact 2026-08-04 signature: task says done, nothing was ingested."""
+    stats = tmp_path / "player_stats.json"
+    monkeypatch.setattr(pz, "PLAYER_STATS_CACHE", stats)
+    monkeypatch.setattr(pz, "DISCOVERY_CACHE", tmp_path / "d.json")
+    monkeypatch.setattr(pz, "RAW_CACHE", tmp_path / "r.json")
+    monkeypatch.setattr(pz, "AUTH_CACHE", tmp_path / "a.json")
+    (tmp_path / "a.json").write_text(json.dumps(
+        {"api_url": "http://x", "cookies": {}, "auth_headers": {}}), encoding="utf-8")
+
+    # Previous run recorded the same timestamp PZ is about to serve again.
+    pz._save_player_stats({}, None, player_synced=True,
+                          source_last_updated_at="2026-07-28T05:28:43Z")
+
+    body = {"data": {"player": {"lastUpdatedAt": "2026-07-28T05:28:43Z"},
+                     "cards": [{"cardId": "c1", "amount": 1, "expansionIds": ["A1"]}]}}
+    monkeypatch.setattr(pz, "trigger_player_sync", lambda *a, **k: True)
+    monkeypatch.setattr(pz, "_fetch_catalog", lambda *a, **k: {
+        "c1": {"name": "Bulbasaur", "set_code": "A1", "card_number": 1}})
+    monkeypatch.setattr(pz, "_get", lambda *a, **k: _Resp(body))
+
+    pz.fetch_with_stored_auth()
+    saved = json.loads(stats.read_text(encoding="utf-8"))
+    assert saved["player_synced"] is False, (
+        "an unchanged ingest timestamp must read as stale even when the task completed"
+    )
+
+
+def test_advanced_snapshot_reads_as_a_real_refresh(monkeypatch, tmp_path):
+    stats = tmp_path / "player_stats.json"
+    monkeypatch.setattr(pz, "PLAYER_STATS_CACHE", stats)
+    monkeypatch.setattr(pz, "DISCOVERY_CACHE", tmp_path / "d.json")
+    monkeypatch.setattr(pz, "RAW_CACHE", tmp_path / "r.json")
+    monkeypatch.setattr(pz, "AUTH_CACHE", tmp_path / "a.json")
+    (tmp_path / "a.json").write_text(json.dumps(
+        {"api_url": "http://x", "cookies": {}, "auth_headers": {}}), encoding="utf-8")
+
+    pz._save_player_stats({}, None, player_synced=True,
+                          source_last_updated_at="2026-07-28T05:28:43Z")
+
+    body = {"data": {"player": {"lastUpdatedAt": "2026-08-09T16:49:33Z"},
+                     "cards": [{"cardId": "c1", "amount": 1, "expansionIds": ["A1"]}]}}
+    monkeypatch.setattr(pz, "trigger_player_sync", lambda *a, **k: True)
+    monkeypatch.setattr(pz, "_fetch_catalog", lambda *a, **k: {
+        "c1": {"name": "Bulbasaur", "set_code": "A1", "card_number": 1}})
+    monkeypatch.setattr(pz, "_get", lambda *a, **k: _Resp(body))
+
+    pz.fetch_with_stored_auth()
+    saved = json.loads(stats.read_text(encoding="utf-8"))
+    assert saved["player_synced"] is True
+    assert saved["source_last_updated_at"] == "2026-08-09T16:49:33Z"
+
+
+def test_first_ever_run_is_not_flagged_stale(monkeypatch, tmp_path):
+    """With no previous timestamp there is nothing to compare — don't cry wolf."""
+    stats = tmp_path / "player_stats.json"
+    monkeypatch.setattr(pz, "PLAYER_STATS_CACHE", stats)
+    monkeypatch.setattr(pz, "DISCOVERY_CACHE", tmp_path / "d.json")
+    monkeypatch.setattr(pz, "RAW_CACHE", tmp_path / "r.json")
+    monkeypatch.setattr(pz, "AUTH_CACHE", tmp_path / "a.json")
+    (tmp_path / "a.json").write_text(json.dumps(
+        {"api_url": "http://x", "cookies": {}, "auth_headers": {}}), encoding="utf-8")
+
+    body = {"data": {"player": {"lastUpdatedAt": "2026-08-09T16:49:33Z"},
+                     "cards": [{"cardId": "c1", "amount": 1, "expansionIds": ["A1"]}]}}
+    monkeypatch.setattr(pz, "trigger_player_sync", lambda *a, **k: True)
+    monkeypatch.setattr(pz, "_fetch_catalog", lambda *a, **k: {
+        "c1": {"name": "Bulbasaur", "set_code": "A1", "card_number": 1}})
+    monkeypatch.setattr(pz, "_get", lambda *a, **k: _Resp(body))
+
+    pz.fetch_with_stored_auth()
+    assert json.loads(stats.read_text(encoding="utf-8"))["player_synced"] is True

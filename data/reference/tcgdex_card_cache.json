@@ -341,6 +341,12 @@
     "name": "Dubwool",
     "source": "tcgdex"
   },
+  "A1-216": {
+    "cached_at": "2026-08-09T16:56:42.685049+00:00",
+    "hp": null,
+    "name": "Helix Fossil",
+    "source": "tcgdex"
+  },
   "A1-218": {
     "cached_at": "2026-08-05T23:22:44.908113+00:00",
     "hp": null,
@@ -1054,6 +1060,12 @@
     "name": "Gliscor",
     "source": "tcgdex"
   },
+  "A4-101": {
+    "cached_at": "2026-08-09T16:56:40.216389+00:00",
+    "hp": 30,
+    "name": "Tyrogue",
+    "source": "tcgdex"
+  },
   "A4-102": {
     "cached_at": "2026-08-05T23:22:32.981044+00:00",
     "hp": 80,
@@ -1552,6 +1564,12 @@
     "name": "Sandslash",
     "source": "tcgdex"
   },
+  "B1-124": {
+    "cached_at": "2026-08-09T16:56:40.837561+00:00",
+    "hp": 130,
+    "name": "Hitmonchan ex",
+    "source": "tcgdex"
+  },
   "B1-125": {
     "cached_at": "2026-08-05T23:21:39.136914+00:00",
     "hp": 90,
@@ -1568,6 +1586,12 @@
     "cached_at": "2026-08-05T23:19:13.994098+00:00",
     "hp": 130,
     "name": "Hariyama",
+    "source": "tcgdex"
+  },
+  "B1-129": {
+    "cached_at": "2026-08-09T16:56:41.455408+00:00",
+    "hp": 130,
+    "name": "Hippowdon",
     "source": "tcgdex"
   },
   "B1-131": {
@@ -1624,6 +1648,18 @@
     "name": "Palossand",
     "source": "tcgdex"
   },
+  "B1-145": {
+    "cached_at": "2026-08-09T16:56:38.348948+00:00",
+    "hp": 70,
+    "name": "Rolycoly",
+    "source": "tcgdex"
+  },
+  "B1-146": {
+    "cached_at": "2026-08-09T16:56:39.582278+00:00",
+    "hp": 90,
+    "name": "Carkol",
+    "source": "tcgdex"
+  },
   "B1-148": {
     "cached_at": "2026-08-05T23:21:56.075254+00:00",
     "hp": 70,
@@ -1678,6 +1714,12 @@
     "name": "Toxapex",
     "source": "tcgdex"
   },
+  "B1-164": {
+    "cached_at": "2026-08-09T16:56:42.072194+00:00",
+    "hp": 90,
+    "name": "Morgrem",
+    "source": "tcgdex"
+  },
   "B1-166": {
     "cached_at": "2026-08-05T23:20:42.852384+00:00",
     "hp": 60,
@@ -1730,6 +1772,12 @@
     "cached_at": "2026-08-05T23:21:53.614360+00:00",
     "hp": 150,
     "name": "Pidgeot",
+    "source": "tcgdex"
+  },
+  "B1-184": {
+    "cached_at": "2026-08-09T16:56:38.967688+00:00",
+    "hp": 50,
+    "name": "Eevee",
     "source": "tcgdex"
   },
   "B1-185": {
