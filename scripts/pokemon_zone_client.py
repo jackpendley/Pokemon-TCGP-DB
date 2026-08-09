@@ -298,9 +298,39 @@ def _fetch_catalog(cookies: dict, auth_headers: dict) -> dict[str, dict]:
         return {}
 
 
+def _player_last_updated_at(body: dict | list | None) -> str | None:
+    """Pokémon Zone's own timestamp for when it last ingested the collection.
+
+    This is the only trustworthy answer to "did the refresh actually happen".
+    The sync task reporting ready=true does not mean anything was ingested: on
+    2026-08-04 a task completed with no successCount and left this timestamp
+    sitting on 2026-07-28, so the run republished a 6-day-old snapshot and
+    reported success.
+    """
+    if not isinstance(body, dict):
+        return None
+    player = (body.get("data") or {}).get("player")
+    if not isinstance(player, dict):
+        return None
+    value = player.get("lastUpdatedAt")
+    return str(value) if value else None
+
+
+def _previous_last_updated_at() -> str | None:
+    """What PZ's ingest timestamp was on the previous run, if we recorded one."""
+    if not PLAYER_STATS_CACHE.exists():
+        return None
+    try:
+        return json.loads(PLAYER_STATS_CACHE.read_text(encoding="utf-8")).get(
+            "source_last_updated_at")
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
 def _save_player_stats(body: dict | list | None, catalog_misses: dict | None = None,
                        player_synced: bool | None = None,
-                       sync_blocked_until: str | None = None) -> None:
+                       sync_blocked_until: str | None = None,
+                       source_last_updated_at: str | None = None) -> None:
     """Extract and persist player currency/resource stats from the raw API body.
 
     catalog_misses (owned cards the PZ catalog could not name) and player_synced
@@ -359,6 +389,10 @@ def _save_player_stats(body: dict | list | None, catalog_misses: dict | None = N
         # PZ's cooldown: no refresh is possible until this time, so a retry before
         # it can only return the same snapshot.
         stats["sync_blocked_until"] = sync_blocked_until
+    if source_last_updated_at:
+        # When PZ last ingested from the game. Compared run-to-run to tell a real
+        # refresh from one that was accepted and did nothing.
+        stats["source_last_updated_at"] = source_last_updated_at
 
     if stats:
         PLAYER_STATS_CACHE.parent.mkdir(parents=True, exist_ok=True)
@@ -763,18 +797,33 @@ def fetch_with_stored_auth() -> tuple[list, dict]:
             "Try re-running --curl-import."
         )
 
+    # A completed sync task is not proof of a refresh. Compare Pokémon Zone's own
+    # ingest timestamp against the previous run: if it did not move, PZ served the
+    # same snapshot it already had, whatever the task reported. Without this the
+    # 2026-08-04 run — task complete, nothing ingested, six-day-old data — looked
+    # like a clean success, and so did the six days after it.
+    previous_seen = _previous_last_updated_at()
+    source_last_updated_at = _player_last_updated_at(body)
+    if player_synced and previous_seen and source_last_updated_at == previous_seen:
+        print(f"  WARNING: Pokémon Zone reported the refresh complete but its snapshot "
+              f"still dates from {source_last_updated_at} — nothing new was ingested, "
+              f"so recent pulls are missing.", file=sys.stderr)
+        player_synced = False
+
     cache = {
         "discovered_at": datetime.now(timezone.utc).isoformat(),
         "api_url": api_url,
         "collection_array_key": "data.cards",
         "element_count": len(arr),
         "player_synced": player_synced,
+        "source_last_updated_at": source_last_updated_at,
     }
     DISCOVERY_CACHE.parent.mkdir(parents=True, exist_ok=True)
     DISCOVERY_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
     RAW_CACHE.write_text(json.dumps(arr, indent=2, ensure_ascii=False), encoding="utf-8")
     _save_player_stats(body, catalog_misses, player_synced=player_synced,
-                       sync_blocked_until=_SYNC_BLOCKED_UNTIL[0])
+                       sync_blocked_until=_SYNC_BLOCKED_UNTIL[0],
+                       source_last_updated_at=source_last_updated_at)
     print(f"  Fetched {len(arr)} cards via stored auth.")
 
     return arr, cache

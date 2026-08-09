@@ -255,14 +255,34 @@ def _collection_status() -> str:
         stats = _read_player_stats()
         if stats.get("player_synced") is False:
             blocked = stats.get("sync_blocked_until")
-            status += (
-                f" — STALE: Pokémon Zone rate-limits refreshes; next one at {blocked}"
-                if blocked
-                else " — STALE: Pokémon Zone did not refresh from the game"
-            )
+            if blocked:
+                status += f" — STALE: Pokémon Zone rate-limits refreshes; next one at {blocked}"
+            else:
+                status += " — STALE: Pokémon Zone did not refresh from the game"
+                age = _source_age_days(stats.get("source_last_updated_at"))
+                if age is not None:
+                    status += f" (its data is {age:.1f} days old)"
         return status
     except Exception:
         return "synced"
+
+
+def _source_age_days(iso: str | None) -> float | None:
+    """Age of Pokémon Zone's snapshot in days, or None if unknown.
+
+    Surfaced on a stale run because the number is what makes the problem
+    actionable: "did not refresh" reads as a blip, "its data is 12 days old"
+    reads as an outage worth reporting upstream.
+    """
+    if not iso:
+        return None
+    try:
+        when = datetime.fromisoformat(str(iso).replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return None
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=timezone.utc)
+    return (datetime.now(timezone.utc) - when).total_seconds() / 86400
 
 
 def _read_player_stats() -> dict:
