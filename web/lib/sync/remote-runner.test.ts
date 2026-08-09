@@ -20,7 +20,7 @@ const idle: SyncRunState = {
   publishedAt: BASELINE,
   lastRun: null,
   playerSynced: true,
-  syncBlockedUntil: null,
+  sourceUpdatedAt: null,
 };
 
 afterEach(() => {
@@ -100,7 +100,7 @@ describe("remoteSyncRunner", () => {
       publishedAt: ADVANCED,
       lastRun: { outcome: "ok" },
       playerSynced: true,
-      syncBlockedUntil: null,
+      sourceUpdatedAt: null,
     });
     const finished = await runner.get(job.id);
     expect(finished?.status).toBe("done");
@@ -116,7 +116,7 @@ describe("remoteSyncRunner", () => {
       publishedAt: ADVANCED,
       lastRun: { outcome: "auth_expired" },
       playerSynced: true,
-      syncBlockedUntil: null,
+      sourceUpdatedAt: null,
     });
     expect((await runner.get(job.id))?.status).toBe("needs_reauth");
   });
@@ -268,7 +268,7 @@ describe("remoteSyncRunner GitHub run reporting", () => {
       publishedAt: ADVANCED,
       lastRun: { outcome: "ok" },
       playerSynced: true,
-      syncBlockedUntil: null,
+      sourceUpdatedAt: null,
     });
     const polled = await runner.get(job.id);
 
@@ -287,7 +287,7 @@ describe("remoteSyncRunner GitHub run reporting", () => {
       publishedAt: ADVANCED,
       lastRun: { outcome: "ok" },
       playerSynced: false,
-      syncBlockedUntil: null,
+      sourceUpdatedAt: null,
     });
     const polled = await runner.get(job.id);
 

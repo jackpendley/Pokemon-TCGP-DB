@@ -254,14 +254,10 @@ def _collection_status() -> str:
         status = f"{total} cards, {unique} unique"
         stats = _read_player_stats()
         if stats.get("player_synced") is False:
-            blocked = stats.get("sync_blocked_until")
-            if blocked:
-                status += f" — STALE: Pokémon Zone rate-limits refreshes; next one at {blocked}"
-            else:
-                status += " — STALE: Pokémon Zone did not refresh from the game"
-                age = _source_age_days(stats.get("source_last_updated_at"))
-                if age is not None:
-                    status += f" (its data is {age:.1f} days old)"
+            status += " — STALE: Pokémon Zone did not refresh from the game"
+            age = _source_age_days(stats.get("source_last_updated_at"))
+            if age is not None:
+                status += f" (its data is {age:.1f} days old)"
         return status
     except Exception:
         return "synced"
