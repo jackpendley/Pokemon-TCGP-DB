@@ -329,7 +329,11 @@ def _previous_last_updated_at() -> str | None:
 
 def _save_player_stats(body: dict | list | None, catalog_misses: dict | None = None,
                        player_synced: bool | None = None,
+<<<<<<< HEAD
                        sync_advisory_next: str | None = None,
+=======
+                       sync_blocked_until: str | None = None,
+>>>>>>> origin/main
                        source_last_updated_at: str | None = None) -> None:
     """Extract and persist player currency/resource stats from the raw API body.
 
@@ -385,9 +389,16 @@ def _save_player_stats(body: dict | list | None, catalog_misses: dict | None = N
         # False means the numbers below are PZ's previous snapshot of the
         # collection, not a fresh read from the game.
         stats["player_synced"] = player_synced
+<<<<<<< HEAD
     if sync_advisory_next:
         # PZ's advisory "next sync" hint. Context only — refreshes succeed inside it.
         stats["sync_advisory_next"] = sync_advisory_next
+=======
+    if sync_blocked_until:
+        # PZ's cooldown: no refresh is possible until this time, so a retry before
+        # it can only return the same snapshot.
+        stats["sync_blocked_until"] = sync_blocked_until
+>>>>>>> origin/main
     if source_last_updated_at:
         # When PZ last ingested from the game. Compared run-to-run to tell a real
         # refresh from one that was accepted and did nothing.
@@ -818,7 +829,11 @@ def fetch_with_stored_auth() -> tuple[list, dict]:
     DISCOVERY_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
     RAW_CACHE.write_text(json.dumps(arr, indent=2, ensure_ascii=False), encoding="utf-8")
     _save_player_stats(body, catalog_misses, player_synced=player_synced,
+<<<<<<< HEAD
                        sync_advisory_next=_SYNC_ADVISORY_NEXT[0],
+=======
+                       sync_blocked_until=_SYNC_BLOCKED_UNTIL[0],
+>>>>>>> origin/main
                        source_last_updated_at=source_last_updated_at)
     print(f"  Fetched {len(arr)} cards via stored auth.")
 
