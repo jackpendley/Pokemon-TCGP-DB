@@ -29,8 +29,16 @@
 name: Sync & Publish
 
 on:
-  # Nightly at 02:00 America/Phoenix. Phoenix does not observe DST, so 09:00 UTC
-  # is 2am year-round and no seasonal drift handling is needed.
+  # Nightly, targeting ~2am America/Phoenix. Phoenix does not observe DST, so a
+  # fixed UTC hour is the same local time year-round and no seasonal split is
+  # needed.
+  #
+  # 08:40 UTC is 01:40 local — deliberately *before* the target and deliberately
+  # off the top of the hour. GitHub runs scheduled workflows on a best-effort
+  # queue and :00 is the most contended slot; the first nightly run was queued at
+  # 09:00 and started at 10:05, 66 minutes late. Firing at :40 both avoids the
+  # rush and leaves headroom, so a typical delay lands near 2am instead of after
+  # 3am. Do not "tidy" this back to the hour.
   #
   # This exists because the gap, not the upstream, was the bigger problem: after
   # Ruler of the Skies released on 2026-07-29 nobody ran a sync for six days, so
@@ -45,7 +53,7 @@ on:
   # syncs), which makes this unlikely rather than impossible. If the nightly run
   # stops appearing in the Actions tab, re-enable it there first.
   schedule:
-    - cron: "0 9 * * *"
+    - cron: "40 8 * * *"
   repository_dispatch:
     types: [sync]
   workflow_dispatch:
