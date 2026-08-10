@@ -27,11 +27,18 @@ yaml = pytest.importorskip("yaml")
 ROOT = Path(__file__).resolve().parent.parent
 WORKFLOW = ROOT / ".github" / "workflows" / "sync.yml"
 
-# The owner's timezone. Phoenix does not observe DST, so one UTC hour is 2am all
-# year and the cron needs no seasonal adjustment — do not "fix" this to a
-# DST-aware zone without also splitting the cron.
+# The owner's timezone. Phoenix does not observe DST, so a fixed UTC hour is the
+# same local time all year and the cron needs no seasonal adjustment — do not
+# "fix" this to a DST-aware zone without also splitting the cron.
 OWNER_TZ = "America/Phoenix"
-TARGET_LOCAL_HOUR = 2
+
+# The cron is aimed slightly BEFORE 2am on purpose. GitHub runs scheduled
+# workflows on a best-effort queue, and the first nightly run was queued at 09:00
+# UTC and started at 10:05 — 66 minutes late, because :00 is the most contended
+# slot. Firing at :40 avoids the rush and leaves headroom so a typical delay
+# still lands near 2am. The window below is what "overnight" means here; the
+# off-the-hour check is what stops someone tidying it back to :00.
+TARGET_WINDOW_LOCAL = range(1, 4)          # 01:00-03:59 local
 
 
 @pytest.fixture(scope="module")
@@ -50,19 +57,35 @@ def test_sync_runs_nightly(workflow):
     assert len(schedule) == 1, f"expected exactly one cron, got {schedule}"
 
 
-def test_cron_is_2am_in_the_owners_timezone(workflow):
+def test_cron_runs_overnight_and_never_drifts_with_the_seasons(workflow):
     cron = _triggers(workflow)["schedule"][0]["cron"]
     minute, hour, dom, month, dow = cron.split()
-    assert (minute, dom, month, dow) == ("0", "*", "*", "*"), f"not a daily cron: {cron}"
+    assert (dom, month, dow) == ("*", "*", "*"), f"not a daily cron: {cron}"
 
-    local = (datetime(2026, 6, 1, int(hour), tzinfo=timezone.utc)
-             .astimezone(ZoneInfo(OWNER_TZ)))
-    winter = (datetime(2026, 12, 1, int(hour), tzinfo=timezone.utc)
+    summer = (datetime(2026, 6, 1, int(hour), int(minute), tzinfo=timezone.utc)
               .astimezone(ZoneInfo(OWNER_TZ)))
-    assert local.hour == TARGET_LOCAL_HOUR, (
-        f"cron {cron} is {local.hour}:00 in {OWNER_TZ}, not {TARGET_LOCAL_HOUR}:00")
-    assert winter.hour == TARGET_LOCAL_HOUR, (
-        f"cron {cron} drifts to {winter.hour}:00 in winter — {OWNER_TZ} should not")
+    winter = (datetime(2026, 12, 1, int(hour), int(minute), tzinfo=timezone.utc)
+              .astimezone(ZoneInfo(OWNER_TZ)))
+
+    assert summer.hour in TARGET_WINDOW_LOCAL, (
+        f"cron {cron} fires at {summer.strftime('%H:%M')} local — outside the "
+        f"overnight window {TARGET_WINDOW_LOCAL.start}:00-{TARGET_WINDOW_LOCAL.stop - 1}:59")
+    assert (summer.hour, summer.minute) == (winter.hour, winter.minute), (
+        f"cron {cron} drifts between seasons ({summer:%H:%M} vs {winter:%H:%M}) — "
+        f"{OWNER_TZ} does not observe DST, so something else changed")
+
+
+def test_cron_avoids_the_contended_top_of_the_hour(workflow):
+    """The offset is the point, not an accident.
+
+    The first nightly run was scheduled for 09:00 UTC and started at 10:05 — 66
+    minutes late, because the top of the hour is where every scheduled workflow
+    on GitHub piles up. Rounding this back to :00 would quietly undo the fix.
+    """
+    minute = int(_triggers(workflow)["schedule"][0]["cron"].split()[0])
+    assert minute != 0, (
+        "the nightly cron is deliberately off the hour to dodge GitHub's "
+        "scheduled-workflow queue — see this module's TARGET_WINDOW_LOCAL note")
 
 
 def test_scheduled_run_is_a_live_sync_on_the_self_hosted_runner(workflow):
