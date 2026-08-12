@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 2270,
-    "last_updated": "2026-08-09",
+    "total_cards": 2296,
+    "last_updated": "2026-08-12",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -6694,7 +6694,7 @@
     },
     {
       "name": "Drowzee",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "type": "Psychic",
       "stage": 0,
@@ -7125,6 +7125,18 @@
       "rarity": "rare",
       "set_code": "B2b",
       "card_number": 35
+    },
+    {
+      "name": "Groudon",
+      "count": 1,
+      "card_type": "Pokemon",
+      "type": "Fighting",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 130,
+      "rarity": "rare",
+      "set_code": "B4",
+      "card_number": 83
     },
     {
       "name": "Haunter",
@@ -8514,7 +8526,7 @@
     },
     {
       "name": "Heatmor",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Fire",
       "stage": 0,
@@ -8881,6 +8893,18 @@
       "rarity": "common",
       "set_code": "B1",
       "card_number": 193
+    },
+    {
+      "name": "Skitty",
+      "count": 2,
+      "card_type": "Pokemon",
+      "type": "Colorless",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B4",
+      "card_number": 134
     },
     {
       "name": "Pyroar",
@@ -10734,7 +10758,7 @@
     },
     {
       "name": "Kricketune",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -10770,7 +10794,7 @@
     },
     {
       "name": "Shelmet",
-      "count": 5,
+      "count": 6,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -10806,7 +10830,7 @@
     },
     {
       "name": "Quilava",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -10938,7 +10962,7 @@
     },
     {
       "name": "Tynamo",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -10974,7 +10998,7 @@
     },
     {
       "name": "Clefairy",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11034,7 +11058,7 @@
     },
     {
       "name": "Hoopa",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11046,7 +11070,7 @@
     },
     {
       "name": "Anorith",
-      "count": 4,
+      "count": 5,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -11082,7 +11106,7 @@
     },
     {
       "name": "Timburr",
-      "count": 1,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11130,7 +11154,7 @@
     },
     {
       "name": "Mightyena",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -11142,7 +11166,7 @@
     },
     {
       "name": "Galarian Obstagoon",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 2,
       "stage_label": "Stage 2",
@@ -11202,7 +11226,7 @@
     },
     {
       "name": "Kecleon",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11226,7 +11250,7 @@
     },
     {
       "name": "Tranquill",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -11274,7 +11298,7 @@
     },
     {
       "name": "Type: Null",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11447,7 +11471,7 @@
     },
     {
       "name": "Root Fossil",
-      "count": 1,
+      "count": 2,
       "card_type": "Trainer",
       "trainer_subtype": "Item",
       "rarity": "common",
@@ -11465,12 +11489,61 @@
     },
     {
       "name": "Wally",
-      "count": 1,
+      "count": 2,
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "rarity": "uncommon",
       "set_code": "B4",
       "card_number": 153
+    },
+    {
+      "name": "Beautifly",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 130,
+      "rarity": "uncommon",
+      "set_code": "B4",
+      "card_number": 3,
+      "type": "Grass"
+    },
+    {
+      "name": "Escavalier",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 120,
+      "rarity": "uncommon",
+      "set_code": "B4",
+      "card_number": 110,
+      "type": "Metal"
+    },
+    {
+      "name": "Noivern",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 100,
+      "rarity": "rare",
+      "set_code": "B4",
+      "card_number": 122,
+      "type": "Dragon"
+    },
+    {
+      "name": "Blacephalon ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 140,
+      "rarity": "shiny_super_rare",
+      "set_code": "B4",
+      "card_number": 224,
+      "type": "Fire",
+      "variant": "alt art"
     }
   ]
 }
