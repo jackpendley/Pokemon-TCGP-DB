@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 2296,
-    "last_updated": "2026-08-12",
+    "total_cards": 2317,
+    "last_updated": "2026-08-19",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -1338,6 +1338,18 @@
       "rarity": "uncommon"
     },
     {
+      "name": "Heliolisk",
+      "type": "Lightning",
+      "stage": 1,
+      "hp": 80,
+      "card_type": "Pokemon",
+      "attack": "Thunderbolt 120",
+      "count": 1,
+      "set_code": "B4",
+      "card_number": 61,
+      "rarity": "uncommon"
+    },
+    {
       "name": "Helioptile",
       "type": "Lightning",
       "stage": 0,
@@ -1356,7 +1368,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Thunder Shock 10",
-      "count": 2,
+      "count": 3,
       "set_code": "B4",
       "card_number": 60,
       "rarity": "common"
@@ -1774,7 +1786,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Pester the Dizzy 20+",
-      "count": 2,
+      "count": 3,
       "set_code": "B4",
       "card_number": 78,
       "rarity": "uncommon"
@@ -2011,6 +2023,18 @@
       "count": 1,
       "set_code": "B1a",
       "card_number": 39,
+      "rarity": "common"
+    },
+    {
+      "name": "Makuhita",
+      "type": "Fighting",
+      "stage": 0,
+      "hp": 70,
+      "card_type": "Pokemon",
+      "attack": "Strength 40",
+      "count": 1,
+      "set_code": "B4",
+      "card_number": 79,
       "rarity": "common"
     },
     {
@@ -2688,7 +2712,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Flap 20",
-      "count": 3,
+      "count": 5,
       "set_code": "B4",
       "card_number": 101,
       "rarity": "common"
@@ -2956,7 +2980,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Reckless Charge 80",
-      "count": 1,
+      "count": 2,
       "set_code": "B4",
       "card_number": 96,
       "rarity": "uncommon"
@@ -10722,7 +10746,7 @@
     },
     {
       "name": "Cascoon",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -10782,7 +10806,7 @@
     },
     {
       "name": "Karrablast",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -10998,7 +11022,7 @@
     },
     {
       "name": "Clefairy",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11010,7 +11034,7 @@
     },
     {
       "name": "Clefable",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -11022,7 +11046,7 @@
     },
     {
       "name": "Mr. Mime",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11034,7 +11058,7 @@
     },
     {
       "name": "Chimecho",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11046,7 +11070,7 @@
     },
     {
       "name": "Swoobat",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -11286,7 +11310,7 @@
     },
     {
       "name": "Furfrou",
-      "count": 1,
+      "count": 2,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11387,7 +11411,7 @@
     },
     {
       "name": "Clear Veil",
-      "count": 3,
+      "count": 4,
       "card_type": "Trainer",
       "trainer_subtype": "Pokemon Tool",
       "rarity": "uncommon",
@@ -11405,7 +11429,7 @@
     },
     {
       "name": "Skyla",
-      "count": 1,
+      "count": 2,
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "rarity": "uncommon",
@@ -11544,6 +11568,42 @@
       "card_number": 224,
       "type": "Fire",
       "variant": "alt art"
+    },
+    {
+      "name": "Alomomola",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 100,
+      "rarity": "uncommon",
+      "set_code": "B4",
+      "card_number": 45,
+      "type": "Water"
+    },
+    {
+      "name": "Skarmory",
+      "count": 2,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 90,
+      "rarity": "common",
+      "set_code": "B4",
+      "card_number": 104,
+      "type": "Metal"
+    },
+    {
+      "name": "Mega Metagross ex",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 2,
+      "stage_label": "Stage 2",
+      "hp": 230,
+      "rarity": "promo",
+      "set_code": "B4",
+      "card_number": 109,
+      "type": "Metal"
     }
   ]
 }
