@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 2581,
-    "last_updated": "2026-08-21",
+    "total_cards": 2607,
+    "last_updated": "2026-08-23",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -257,7 +257,7 @@
       "hp": 110,
       "card_type": "Pokemon",
       "attack": "Shell Trap 40",
-      "count": 3,
+      "count": 4,
       "set_code": "B4",
       "card_number": 123,
       "rarity": "uncommon"
@@ -664,7 +664,7 @@
       "hp": 40,
       "card_type": "Pokemon",
       "attack": "Share",
-      "count": 1,
+      "count": 2,
       "set_code": "B4",
       "card_number": 125,
       "rarity": "common"
@@ -700,7 +700,7 @@
       "hp": 80,
       "card_type": "Pokemon",
       "attack": "Harden",
-      "count": 2,
+      "count": 3,
       "set_code": "B4",
       "card_number": 2,
       "rarity": "common"
@@ -3943,6 +3943,18 @@
       "rarity": "common"
     },
     {
+      "name": "Rattata",
+      "type": "Colorless",
+      "stage": 0,
+      "hp": 50,
+      "card_type": "Pokemon",
+      "attack": "Gnaw 20",
+      "count": 2,
+      "set_code": "B4",
+      "card_number": 129,
+      "rarity": "common"
+    },
+    {
       "name": "Jigglypuff",
       "type": "Colorless",
       "stage": 0,
@@ -4194,7 +4206,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Pokemon Tool",
       "effect": "Attached Pokemon gets +20 HP",
-      "count": 2,
+      "count": 3,
       "set_code": "A2",
       "card_number": 147,
       "rarity": "uncommon"
@@ -4323,7 +4335,7 @@
       "card_type": "Trainer",
       "trainer_subtype": "Supporter",
       "effect": "Active Pokemon Retreat Cost -2 this turn",
-      "count": 1,
+      "count": 2,
       "set_code": "A1a",
       "card_number": 68,
       "rarity": "uncommon"
@@ -4900,7 +4912,7 @@
     },
     {
       "name": "Cyclizar",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "type": "Dragon",
       "stage": 0,
@@ -9226,7 +9238,7 @@
     },
     {
       "name": "Skitty",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "type": "Colorless",
       "stage": 0,
@@ -11145,7 +11157,7 @@
     },
     {
       "name": "Kricketune",
-      "count": 4,
+      "count": 5,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -11217,7 +11229,7 @@
     },
     {
       "name": "Pheromosa",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11241,7 +11253,7 @@
     },
     {
       "name": "Starmie",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -11385,7 +11397,7 @@
     },
     {
       "name": "Wattrel",
-      "count": 1,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11397,7 +11409,7 @@
     },
     {
       "name": "Clefairy",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11445,7 +11457,7 @@
     },
     {
       "name": "Swoobat",
-      "count": 4,
+      "count": 5,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -11493,7 +11505,7 @@
     },
     {
       "name": "Drilbur",
-      "count": 4,
+      "count": 6,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11625,7 +11637,7 @@
     },
     {
       "name": "Kecleon",
-      "count": 3,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -11649,7 +11661,7 @@
     },
     {
       "name": "Tranquill",
-      "count": 2,
+      "count": 3,
       "card_type": "Pokemon",
       "stage": 1,
       "stage_label": "Stage 1",
@@ -11685,7 +11697,7 @@
     },
     {
       "name": "Furfrou",
-      "count": 2,
+      "count": 4,
       "card_type": "Pokemon",
       "stage": 0,
       "stage_label": "Basic",
@@ -13285,6 +13297,54 @@
       "rarity": "uncommon",
       "set_code": "A4b",
       "card_number": 337
+    },
+    {
+      "name": "Swalot",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 1,
+      "stage_label": "Stage 1",
+      "hp": 120,
+      "rarity": "uncommon",
+      "set_code": "B4",
+      "card_number": 99,
+      "type": "Darkness"
+    },
+    {
+      "name": "Beldum",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "common",
+      "set_code": "B4",
+      "card_number": 106,
+      "type": "Metal"
+    },
+    {
+      "name": "Duraludon",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 110,
+      "rarity": "uncommon",
+      "set_code": "B4",
+      "card_number": 112,
+      "type": "Metal"
+    },
+    {
+      "name": "Pikachu",
+      "count": 1,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "promo",
+      "set_code": "PROMO-B",
+      "card_number": 82,
+      "type": "Lightning"
     }
   ]
 }
