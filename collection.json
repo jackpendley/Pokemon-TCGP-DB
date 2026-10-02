@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 2607,
-    "last_updated": "2026-08-23",
+    "total_cards": 2609,
+    "last_updated": "2026-10-02",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -3985,7 +3985,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Leek Slap 40",
-      "count": 4,
+      "count": 6,
       "set_code": "A4b",
       "card_number": 359,
       "rarity": "illustration_rare"
