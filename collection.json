@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_cards": 2609,
-    "last_updated": "2026-10-02",
+    "total_cards": 2607,
+    "last_updated": "2026-10-04",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -5584,19 +5584,6 @@
       "set_code": "B3",
       "card_number": 93,
       "rarity": "uncommon"
-    },
-    {
-      "name": "Farfetch'd",
-      "count": 2,
-      "card_type": "Pokemon",
-      "stage": 0,
-      "stage_label": "Basic",
-      "variant": "alt art",
-      "set_code": "A1",
-      "card_number": 198,
-      "rarity": "common",
-      "type": "Colorless",
-      "hp": 60
     },
     {
       "name": "Meowscarada",
