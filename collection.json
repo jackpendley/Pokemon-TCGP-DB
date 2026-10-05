@@ -1,7 +1,7 @@
 {
   "meta": {
     "total_cards": 2607,
-    "last_updated": "2026-10-04",
+    "last_updated": "2026-10-05",
     "format": "Pokemon TCG Pocket"
   },
   "collection": [
@@ -3985,7 +3985,7 @@
       "hp": 60,
       "card_type": "Pokemon",
       "attack": "Leek Slap 40",
-      "count": 6,
+      "count": 2,
       "set_code": "A4b",
       "card_number": 359,
       "rarity": "illustration_rare"
@@ -13332,6 +13332,19 @@
       "set_code": "PROMO-B",
       "card_number": 82,
       "type": "Lightning"
+    },
+    {
+      "name": "Farfetch'd",
+      "count": 4,
+      "card_type": "Pokemon",
+      "stage": 0,
+      "stage_label": "Basic",
+      "hp": 60,
+      "rarity": "illustration_rare",
+      "set_code": "A4b",
+      "card_number": 359,
+      "type": "Colorless",
+      "variant": "alt art"
     }
   ]
 }
